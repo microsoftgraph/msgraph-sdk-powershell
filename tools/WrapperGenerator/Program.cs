@@ -87,6 +87,18 @@ internal static class Program
 
         var config = new GeneratorConfig(ClientNamespaceName: clientNamespace, OutputPath: outputPath,
             ApiVersion: apiVersion, UseCollisionData: useCollisionData);
+        await GenerateAsync(document, config, specPath, new StderrLogger(logLevel), CancellationToken.None).ConfigureAwait(false);
+
+        var count = Directory.GetFiles(outputPath, "*.g.cs").Length;
+        Console.WriteLine($"Generated {count} .g.cs file(s) to {outputPath}");
+        return 0;
+    }
+
+    internal static async Task GenerateAsync(OpenApiDocument document, GeneratorConfig config, string specPath,
+        ILogger logger, CancellationToken cancellationToken)
+    {
+        var service = new PowerShellWrapperGenerationService(document, config, logger);
+        service.ValidateGetGroups(cancellationToken);
         // The generation service writes only *.g.cs. Also write a minimal kiota-lock.json recording
         // the source spec path, so downstream tooling that keys off it — notably
         // tools/Compare-WrapperCmdletNames.ps1, which reads the v1.0/beta segment out of it to scope
@@ -101,17 +113,11 @@ internal static class Program
         // own Client/kiota-lock.json records it. This file is committed alongside the generated
         // sources, so an absolute path would bake the generating machine's layout into the
         // repository and differ for every clone.
-        Directory.CreateDirectory(outputPath);
-        var relativeSpecPath = Path.GetRelativePath(outputPath, specPath).Replace('\\', '/');
+        Directory.CreateDirectory(config.OutputPath);
+        var relativeSpecPath = Path.GetRelativePath(config.OutputPath, specPath).Replace('\\', '/');
         var lockJson = JsonSerializer.Serialize(new { descriptionLocation = relativeSpecPath }, LockFileJsonOptions);
-        await File.WriteAllTextAsync(Path.Combine(outputPath, "kiota-lock.json"), lockJson, CancellationToken.None).ConfigureAwait(false);
-
-        var service = new PowerShellWrapperGenerationService(document, config, new StderrLogger(logLevel));
-        await service.GenerateAsync(CancellationToken.None).ConfigureAwait(false);
-
-        var count = Directory.GetFiles(outputPath, "*.g.cs").Length;
-        Console.WriteLine($"Generated {count} .g.cs file(s) to {outputPath}");
-        return 0;
+        await File.WriteAllTextAsync(Path.Combine(config.OutputPath, "kiota-lock.json"), lockJson, cancellationToken).ConfigureAwait(false);
+        await service.GenerateAsync(cancellationToken).ConfigureAwait(false);
     }
 
     private static string ArgValue(string[] args, ref int i)

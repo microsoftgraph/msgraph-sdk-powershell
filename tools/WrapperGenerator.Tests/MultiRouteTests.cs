@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -14,1147 +15,686 @@ namespace WrapperGenerator.Tests;
 
 public sealed class MultiRouteTests
 {
-    private const string Legacy = "/bookingBusinesses";
-    private const string Solutions = "/solutions/bookingBusinesses";
-    private const string Item = "/{bookingBusiness-id}";
     private const string Client = "Microsoft.Graph.PowerShell.Test.Client";
-    private const string Entity = Client + ".Models.BookingBusiness";
+    private const string Entity = Client + ".Models.OnPremisesAgentGroup";
+    private const string Root = "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups";
+    private const string Item = Root + "/{onPremisesAgentGroup-id}";
+    private const string Agent = "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups";
+    private const string WidgetRoot = "/widgets";
+    private const string WidgetParent = "/widgets/{parent-id}/widgets";
 
     [Fact]
-    public async Task ListAndItemRoutesShareOnePublicCommandWithFourTypedWorkers()
+    public async Task ActualApplicationsFiveGetPathsEmitTwoPublicCommandsAndFiveOrderedWorkers()
     {
-        var document = Document();
-        foreach (var root in new[] { Legacy, Solutions })
-        {
-            Add(document, "GET", root, Get(document, list: true));
-            Add(document, "GET", root + Item, Get(document));
-        }
-        var group = Group("GET", "", includeItem: true);
+        var (document, groups) = Applications();
 
-        var files = await Generate(document, [group]);
+        var files = await Generate(document, groups, apiVersion: "beta");
 
-        Assert.Equal(5, files.Count);
-        var source = files["GetMgBookingBusiness.g.cs"];
-        Assert.Contains("DefaultParameterSetName = \"List\"", source);
-        Assert.Contains("[ValidateSet(\"Published\", \"Legacy\", \"Solutions\")]", source);
-        Assert.Contains("public string Route { get; set; } = \"Published\";", source);
-        Assert.Contains("? \"LEGACY\" : Route.ToUpperInvariant()", source);
-        Assert.Contains("[OutputType(typeof(" + Entity + "), ParameterSetName = new[] { \"List\" })]", source);
-        Assert.Contains("[OutputType(typeof(" + Entity + "), ParameterSetName = new[] { \"Get\" })]", source);
-        Assert.Contains("ParameterSetName = \"Get\", Position = 0", source);
-        Assert.Contains("public string BookingBusinessId", source);
-        Assert.DoesNotContain("SupportsShouldProcess", source);
-        for (var i = 0; i < 4; i++)
+        Assert.Equal(7, files.Count);
+        foreach (var group in groups)
         {
-            var worker = files[$"GetMgBookingBusiness_Route{i}.g.cs"];
-            var route = group.Routes[i];
-            var shape = route.Path.EndsWith(Item, StringComparison.Ordinal) ? "Get" : "List";
-            Assert.Contains($"(\"{route.Name.ToUpperInvariant()}\", \"{shape}\") => \"Get-MgBookingBusiness_Route{i}\"", source);
-            Assert.Contains($"[GraphRoute(\"GET\", \"{route.Path}\", ParameterSetName = \"{shape}\")]", source);
-            Assert.Contains($"[GraphRoute(\"GET\", \"{route.Path}\")]", worker);
-            Assert.Contains("[OutputType(typeof(" + Entity + "))]", worker);
-            Assert.Contains(route.Name == "Legacy" ? "client.BookingBusinesses" : "client.Solutions.BookingBusinesses", worker);
-            Assert.Contains(shape == "List" ? "result?.Value" : "[BookingBusinessId]", worker);
-            Assert.Contains(".GetAsync(", worker);
-            Assert.DoesNotContain("InvokeCommand.InvokeScript", worker);
-            AssertCatchFilters(worker);
+            var naming = Resolve(group.Routes[0].Path);
+            var source = files[FileStem(naming) + ".g.cs"];
+            Assert.Contains("DefaultParameterSetName = \"Root" + (group == groups[0] ? "List" : "Scalar") + "\"", source);
+            AssertForwarding(source);
+            AssertCatchFilters(source, dispatcher: true);
+            Assert.DoesNotContain("public string Route", source);
+            Assert.DoesNotContain("ValidateSet(", source);
+            Assert.DoesNotContain("BodyParameter", source);
+            Assert.DoesNotContain("SupportsShouldProcess", source);
+            for (var i = 0; i < group.Routes.Count; i++)
+            {
+                var route = group.Routes[i];
+                var shape = route.Path.EndsWith("/$count", StringComparison.Ordinal) ? "Scalar"
+                    : route.Path == Item ? "Get" : "List";
+                var set = route.Name + shape;
+                var worker = files[$"{FileStem(naming)}_Route{i}.g.cs"];
+                Assert.Contains($"[GraphRoute(\"GET\", \"{route.Path}\", ParameterSetName = \"{set}\")]", source);
+                Assert.Contains($"\"Get-{naming.Noun}_Route{i}\"", source);
+                Assert.Contains($"[GraphRoute(\"GET\", \"{route.Path}\")]", worker);
+                Assert.Contains(".GetAsync(", worker);
+                Assert.DoesNotContain("InvokeCommand.InvokeScript", worker);
+                AssertCatchFilters(worker);
+                var output = shape == "Scalar" ? "int" : Entity;
+                Assert.Contains($"[OutputType(typeof({output}), ParameterSetName = new[] {{ \"{set}\" }})]", source);
+                Assert.Contains($"[OutputType(typeof({output}))]", worker);
+            }
         }
-        AssertForwarding(source, "Route");
-        AssertCatchFilters(source, dispatcher: true);
+        var entitySource = files[FileStem(Resolve(Root)) + ".g.cs"];
+        foreach (var set in new[] { "RootList", "RootGet", "AgentList" })
+            AssertMandatory(entitySource, "OnPremisesPublishingProfileId", set);
+        AssertMandatory(entitySource, "OnPremisesAgentGroupId", "RootGet");
+        AssertMandatory(entitySource, "OnPremisesAgentId", "AgentList");
+        Assert.Contains("client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].AgentGroups.GetAsync(",
+            files[FileStem(Resolve(Root)) + "_Route0.g.cs"]);
+        Assert.Contains(".AgentGroups[OnPremisesAgentGroupId].GetAsync(",
+            files[FileStem(Resolve(Root)) + "_Route1.g.cs"]);
+        Assert.Contains(".Agents[OnPremisesAgentId].AgentGroups.GetAsync(",
+            files[FileStem(Resolve(Root)) + "_Route2.g.cs"]);
     }
 
     [Fact]
-    public async Task DispatcherPreservesQueryAliasesHeadersAndAllWithoutInventingParameters()
+    public async Task ExistingODataArraysAliasesHeadersAndPaginationArePreservedPerShape()
     {
-        var document = Document();
-        foreach (var root in new[] { Legacy, Solutions })
+        var (document, groups) = Applications();
+        foreach (var route in groups.SelectMany(g => g.Routes))
         {
-            var list = Get(document, list: true);
-            list.Parameters = [Header("ConsistencyLevel"), .. Queries("$select", "$expand", "$filter", "$search", "$orderby", "$top", "$skip", "$count")];
-            var item = Get(document);
-            item.Parameters = [Header("If-Match"), .. Queries("$select", "$expand")];
-            Add(document, "GET", root, list);
-            Add(document, "GET", root + Item, item);
+            var query = route.Path.EndsWith("/$count", StringComparison.Ordinal)
+                ? new[] { "$filter", "$search" }
+                : route.Path == Item ? new[] { "$select", "$expand" }
+                : new[] { "$select", "$expand", "$filter", "$search", "$orderby", "$top", "$skip", "$count" };
+            Operation(document, route.Path).Parameters = [Header("ConsistencyLevel"), .. Queries(query)];
         }
 
-        var files = await Generate(document, [Group("GET", "", includeItem: true)]);
-        var source = files["GetMgBookingBusiness.g.cs"];
+        var files = await Generate(document, groups, apiVersion: "beta");
+        var source = files[FileStem(Resolve(Root)) + ".g.cs"];
+
         foreach (var declaration in new[]
         {
             "string[]? Property", "string[]? ExpandProperty", "string? Filter", "string? Search",
             "string[]? Sort", "int Top", "int Skip", "SwitchParameter Count", "SwitchParameter All",
-            "string? ConsistencyLevel", "string? IfMatch",
+            "string? ConsistencyLevel",
         })
             Assert.Contains("public " + declaration, source);
         foreach (var alias in new[] { "Select", "Expand", "OrderBy" })
             Assert.Contains($"[Alias(\"{alias}\")]", source);
         Assert.DoesNotContain("public string? AccessToken", source);
-        Assert.DoesNotContain("public Dictionary", source);
-        AssertForwarding(source, "Route");
-
-        var listWorker = files["GetMgBookingBusiness_Route0.g.cs"];
+        AssertForwarding(source);
+        var listWorker = files[FileStem(Resolve(Root)) + "_Route0.g.cs"];
         foreach (var property in new[] { "Select", "Expand", "Filter", "Search", "Orderby", "Top", "Skip", "Count" })
             Assert.Contains("requestConfiguration.QueryParameters." + property, listWorker);
         Assert.Contains("requestConfiguration.Headers.Add(\"ConsistencyLevel\", ConsistencyLevel!)", listWorker);
         Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", listWorker);
-        Assert.Contains("WithUrl", listWorker);
         Assert.Contains("All.IsPresent", listWorker);
-
-        var itemWorker = files["GetMgBookingBusiness_Route1.g.cs"];
-        Assert.Contains("requestConfiguration.Headers.Add(\"If-Match\", IfMatch!)", itemWorker);
+        Assert.Contains("WithUrl", listWorker);
+        var itemWorker = files[FileStem(Resolve(Root)) + "_Route1.g.cs"];
         Assert.DoesNotContain("public SwitchParameter All", itemWorker);
-        Assert.DoesNotContain("public string? Filter", itemWorker);
+        Assert.DoesNotContain("public int Top", itemWorker);
+        var countWorker = files[FileStem(Resolve(Root + "/$count")) + "_Route1.g.cs"];
+        Assert.Contains("QueryParameters.Filter", countWorker);
+        Assert.Contains("QueryParameters.Search", countWorker);
+        Assert.DoesNotContain("public SwitchParameter All", countWorker);
     }
 
     [Fact]
-    public async Task CalendarViewPreservesRequiredStartAndEndOnBothListAndItemRoutes()
-    {
-        var (document, group) = CalendarViewFixture();
-
-        var files = await Generate(document, [group]);
-
-        Assert.Equal(5, files.Count);
-        var source = files["GetMgBookingBusinessCalendarView.g.cs"];
-        Assert.Contains("DefaultParameterSetName = \"List\"", source);
-        foreach (var parameter in new[] { "Start", "End" })
-        {
-            Assert.Contains("public string " + parameter + " { get; set; } = string.Empty;", source);
-            foreach (var shape in new[] { "List", "Get" })
-                Assert.Contains($"[Parameter(Mandatory = true, ParameterSetName = \"{shape}\")]", source);
-            Assert.DoesNotContain("public string? " + parameter, source);
-        }
-        Assert.Contains("public string BookingBusinessId", source);
-        Assert.Contains("public string BookingAppointmentId", source);
-        Assert.Contains("public SwitchParameter All", source);
-        Assert.Contains("[Alias(\"Select\")]", source);
-        AssertForwarding(source, "Route");
-        for (var i = 0; i < group.Routes.Count; i++)
-        {
-            var worker = files[$"GetMgBookingBusinessCalendarView_Route{i}.g.cs"].ReplaceLineEndings("\n");
-            var builder = i < 2 ? "client.BookingBusinesses" : "client.Solutions.BookingBusinesses";
-            builder += "[BookingBusinessId].CalendarView" + (i % 2 == 0 ? "" : "[BookingAppointmentId]");
-            Assert.Contains(builder + ".GetAsync(", worker);
-            foreach (var parameter in new[] { "Start", "End" })
-            {
-                Assert.Contains("[Parameter(Mandatory = true)]\n        public string "
-                    + parameter + " { get; set; } = string.Empty;", worker);
-                Assert.Contains($"if (this.IsParameterBound(nameof({parameter})))", worker);
-                Assert.Contains($"requestConfiguration.QueryParameters.{parameter} = {parameter};", worker);
-            }
-            Assert.Equal(i % 2 == 0, worker.Contains("public SwitchParameter All", StringComparison.Ordinal));
-        }
-    }
-
-    [Fact]
-    public async Task CalendarViewRejectsUnsupportedNonODataIntegerQueryExplicitly()
-    {
-        var (document, group) = CalendarViewFixture();
-        foreach (var route in group.Routes)
-        {
-            var operation = document.Paths[route.Path].Operations![HttpMethod.Get];
-            operation.Parameters!.Add(new OpenApiParameter
-            {
-                Name = "offset",
-                In = ParameterLocation.Query,
-                Schema = new OpenApiSchema { Type = JsonSchemaType.Integer },
-            });
-        }
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [group]));
-
-        Assert.Contains("Unsupported multi-route query parameter 'offset'", ex.Message);
-        Assert.Contains("only plain named strings", ex.Message);
-    }
-
-    [Theory]
-    [InlineData("missing")]
-    [InlineData("required")]
-    [InlineData("renamed")]
-    public async Task CalendarViewRequiresMatchingNonODataQueryShapesAcrossRoutes(string difference)
-    {
-        var (document, group) = CalendarViewFixture();
-        var operation = document.Paths[group.Routes[2].Path].Operations![HttpMethod.Get];
-        var start = (OpenApiParameter)operation.Parameters!.Single(p => p.Name == "start");
-        if (difference == "missing")
-            operation.Parameters!.Remove(start);
-        else if (difference == "required")
-            start.Required = false;
-        else
-            start.Name = "from";
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [group]));
-
-        Assert.Contains("Incompatible multi-route", ex.Message);
-    }
-
-    [Fact]
-    public async Task NonOptedInCalendarViewKeepsExistingQuerySurfaceUnchanged()
-    {
-        var (document, group) = CalendarViewFixture();
-        foreach (var route in group.Routes.Where(r => r.Name == "Solutions"))
-            document.Paths.Remove(route.Path);
-
-        var files = await Generate(document);
-
-        Assert.Equal(3, files.Count);
-        foreach (var source in files.Values)
-        {
-            Assert.DoesNotContain("public string Start", source);
-            Assert.DoesNotContain("public string End", source);
-            Assert.DoesNotContain("QueryParameters.Start", source);
-            Assert.DoesNotContain("QueryParameters.End", source);
-        }
-    }
-
-    [Fact]
-    public async Task ScalarWorkersForwardRequiredAndOptionalNonODataStrings()
-    {
-        var document = Document();
-        foreach (var root in new[] { Legacy, Solutions })
-        {
-            var operation = Count();
-            operation.Parameters =
-            [
-                new OpenApiParameter
-                {
-                    Name = "start", In = ParameterLocation.Query, Required = true,
-                    Schema = new OpenApiSchema { Type = JsonSchemaType.String },
-                },
-                new OpenApiParameter
-                {
-                    Name = "locale", In = ParameterLocation.Query,
-                    Schema = new OpenApiSchema { Type = JsonSchemaType.String },
-                },
-            ];
-            Add(document, "GET", root + "/$count", operation);
-        }
-
-        var files = await Generate(document, [Group("GET", "/$count")]);
-
-        var source = files["GetMgBookingBusinessCount.g.cs"];
-        Assert.Contains("[Parameter(Mandatory = true, ParameterSetName = \"Scalar\")]", source);
-        Assert.Contains("public string Start { get; set; } = string.Empty;", source);
-        Assert.Contains("[Parameter(Mandatory = false, ParameterSetName = \"Scalar\")]", source);
-        Assert.Contains("public string? Locale { get; set; }", source);
-        AssertForwarding(source, "Route");
-        foreach (var worker in files.Where(p => p.Key.Contains("_Route", StringComparison.Ordinal)).Select(p => p.Value))
-        {
-            Assert.Contains("[OutputType(typeof(int))]", worker);
-            Assert.Contains("public string Start { get; set; } = string.Empty;", worker);
-            Assert.Contains("public string? Locale { get; set; }", worker);
-            Assert.Contains("requestConfiguration.QueryParameters.Start = Start;", worker);
-            Assert.Contains("requestConfiguration.QueryParameters.Locale = Locale;", worker);
-        }
-    }
-
-    [Fact]
-    public async Task CountRoutesKeepScalarTypingAndOnlySupportedQueryOptions()
-    {
-        var document = Document();
-        foreach (var root in new[] { Legacy, Solutions })
-        {
-            var operation = Count();
-            operation.Parameters = [Header("ConsistencyLevel"), .. Queries("$filter", "$search")];
-            Add(document, "GET", root + "/$count", operation);
-        }
-
-        var files = await Generate(document, [Group("GET", "/$count")]);
-
-        Assert.Equal(3, files.Count);
-        var source = files["GetMgBookingBusinessCount.g.cs"];
-        Assert.Contains("DefaultParameterSetName = \"Scalar\"", source);
-        Assert.Contains("[OutputType(typeof(int), ParameterSetName = new[] { \"Scalar\" })]", source);
-        Assert.Contains("public string? Filter", source);
-        Assert.Contains("public string? Search", source);
-        Assert.Contains("public string? ConsistencyLevel", source);
-        foreach (var text in new[] { "SwitchParameter All", "string[]? Property", "public int Top", "BookingBusinessId" })
-            Assert.DoesNotContain(text, source);
-        foreach (var worker in files.Where(p => p.Key.Contains("_Route", StringComparison.Ordinal)).Select(p => p.Value))
-        {
-            Assert.Contains("[OutputType(typeof(int))]", worker);
-            Assert.Contains(".BookingBusinesses.Count.GetAsync(", worker);
-            Assert.Contains("requestConfiguration.QueryParameters.Filter", worker);
-            Assert.Contains("requestConfiguration.QueryParameters.Search", worker);
-            Assert.Contains("requestConfiguration.Headers.Add(\"ConsistencyLevel\", ConsistencyLevel!)", worker);
-            Assert.DoesNotContain("result.Value", worker);
-        }
-        AssertForwarding(source, "Route");
-    }
-
-    [Theory]
-    [InlineData("POST", "", "New", "PostAsync", "Medium")]
-    [InlineData("PATCH", Item, "Update", "PatchAsync", "Medium")]
-    [InlineData("PUT", Item, "Set", "PutAsync", "Medium")]
-    [InlineData("DELETE", Item, "Remove", "DeleteAsync", "High")]
-    [InlineData("DELETE", "", "Remove", "DeleteAsync", "High")]
-    public async Task MutationsUseTypedWorkersAndPreserveActualPathIds(
-        string method, string suffix, string verb, string call, string impact)
-    {
-        var document = Document();
-        foreach (var root in new[] { Legacy, Solutions })
-        {
-            var operation = Mutation(document, body: method != "DELETE");
-            operation.Parameters = [Header("If-Match")];
-            Add(document, method, root + suffix, operation);
-        }
-
-        var files = await Generate(document, [Group(method, suffix)]);
-
-        Assert.Equal(3, files.Count);
-        var source = files[$"{verb}MgBookingBusiness.g.cs"];
-        Assert.Contains("DefaultParameterSetName = \"Invoke\"", source);
-        Assert.Contains($"SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.{impact}", source);
-        Assert.Contains("public string? IfMatch", source);
-        Assert.Equal(suffix == Item, source.Contains("public string BookingBusinessId", StringComparison.Ordinal));
-        Assert.DoesNotContain("if (!ShouldProcess(", source);
-        AssertForwarding(source, "Route");
-        AssertCatchFilters(source, dispatcher: true);
-        for (var i = 0; i < 2; i++)
-        {
-            var worker = files[$"{verb}MgBookingBusiness_Route{i}.g.cs"];
-            Assert.Contains($".{call}(", worker);
-            Assert.Contains("if (!ShouldProcess(", worker);
-            Assert.Contains("ConfirmImpact = ConfirmImpact." + impact, worker);
-            Assert.Equal(suffix == Item, worker.Contains("[BookingBusinessId]", StringComparison.Ordinal));
-            Assert.Equal(suffix == Item, worker.Contains("public string BookingBusinessId", StringComparison.Ordinal));
-            Assert.Contains("requestConfiguration.Headers.Add(\"If-Match\", IfMatch!)", worker);
-            Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", worker);
-            Assert.DoesNotContain("re-fetching the updated resource", worker);
-            AssertCatchFilters(worker);
-            if (method != "DELETE")
-            {
-                Assert.Contains("public string? DisplayName", source);
-                Assert.Contains("public string? DisplayName", worker);
-                Assert.Contains("body.DisplayName = DisplayName", worker);
-                Assert.Contains(Entity, worker);
-            }
-        }
-    }
-
-    [Theory]
-    [InlineData(false)]
-    [InlineData(true)]
-    public async Task ActionWorkersKeepRouteSpecificRequestAndResponseNamespaces(bool expandedBody)
-    {
-        var document = Document();
-        const string suffix = Item + "/publish";
-        foreach (var root in new[] { Legacy, Solutions })
-        {
-            var operation = Mutation(document, body: false);
-            operation.Extensions = new Dictionary<string, IOpenApiExtension>
-            {
-                ["x-ms-docs-operation-type"] = new JsonNodeExtension("action"),
-            };
-            operation.Parameters = [Header("If-Match")];
-            if (expandedBody)
-            {
-                operation.RequestBody = JsonBody(new OpenApiSchema
-                {
-                    Type = JsonSchemaType.Object,
-                    Properties = new Dictionary<string, IOpenApiSchema>
-                    {
-                        ["notify"] = new OpenApiSchema { Type = JsonSchemaType.Boolean },
-                        ["business"] = Reference(document),
-                        ["recipients"] = new OpenApiSchema { Type = JsonSchemaType.Array, Items = new OpenApiSchema { Type = JsonSchemaType.String } },
-                    },
-                });
-                operation.Responses = JsonResponse(new OpenApiSchema
-                {
-                    Type = JsonSchemaType.Object,
-                    Properties = new Dictionary<string, IOpenApiSchema>
-                    {
-                        ["value"] = new OpenApiSchema { Type = JsonSchemaType.String },
-                    },
-                });
-            }
-            Add(document, "POST", root + suffix, operation);
-        }
-        var group = Group("POST", suffix) with { DefaultRoute = "Solutions" };
-
-        var files = await Generate(document, [group]);
-
-        var source = files["InvokeMgBookingBusinessPublish.g.cs"];
-        Assert.Contains("? \"SOLUTIONS\" : Route.ToUpperInvariant()", source);
-        Assert.Contains("SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium", source);
-        AssertForwarding(source, "Route");
-        for (var i = 0; i < 2; i++)
-        {
-            var worker = files[$"InvokeMgBookingBusinessPublish_Route{i}.g.cs"];
-            var operationNamespace = Client + (i == 0 ? "." : ".Solutions.") + "BookingBusinesses.Item.Publish.Publish";
-            Assert.Contains("if (!ShouldProcess(", worker);
-            Assert.Contains(".BookingBusinesses[BookingBusinessId].Publish.", worker);
-            if (expandedBody)
-            {
-                Assert.Contains("new global::" + operationNamespace + "PostRequestBody", worker);
-                Assert.Contains("[OutputType(typeof(global::" + operationNamespace + "PostResponse))]", worker);
-                Assert.Contains(".PostAsPublishPostResponseAsync(", worker);
-                Assert.Contains("public bool? Notify", source);
-                Assert.Contains("public " + Entity + "? Business", source);
-                Assert.Contains("public string[]? Recipients", source);
-                Assert.Contains("body.Notify = Notify", worker);
-                Assert.Contains("body.Business = Business", worker);
-                Assert.Contains("body.Recipients = Recipients!.ToList()", worker);
-                Assert.Contains("typeof(global::" + operationNamespace + "PostResponse)", source);
-            }
-            else
-            {
-                Assert.Contains(".PostAsync(", worker);
-                Assert.DoesNotContain("PostRequestBody", worker);
-                Assert.DoesNotContain("[OutputType(", source);
-            }
-            AssertCatchFilters(worker);
-        }
-    }
-
-    [Theory]
-    [InlineData(false)]
-    [InlineData(true)]
-    public async Task PublishedRouteUsesExplicitDefaultNotMemberOrdering(bool reverse)
-    {
-        var document = TwoItems();
-        var group = Group("GET", Item) with { DefaultRoute = "Solutions" };
-        if (reverse)
-            group = group with { Routes = group.Routes.Reverse().ToArray() };
-
-        var files = await Generate(document, [group]);
-
-        var source = files["GetMgBookingBusiness.g.cs"];
-        Assert.Contains("? \"SOLUTIONS\" : Route.ToUpperInvariant()", source);
-        var index = reverse ? 0 : 1;
-        Assert.Contains($"(\"SOLUTIONS\", \"Get\") => \"Get-MgBookingBusiness_Route{index}\"", source);
-        Assert.Contains("client.Solutions.BookingBusinesses[BookingBusinessId]", files[$"GetMgBookingBusiness_Route{index}.g.cs"]);
-    }
-
-    [Fact]
-    public void ParentDiscriminatedGovernanceDispatcherRetainsActualIdsAndFourParameterSets()
-    {
-        var routes = new[]
-        {
-            new MultiRoute("GET", "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances", "Definition"),
-            new MultiRoute("GET", "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}", "Definition"),
-            new MultiRoute("GET", "/identityGovernance/accessReviews/historyDefinitions/{accessReviewHistoryDefinition-id}/instances", "History"),
-            new MultiRoute("GET", "/identityGovernance/accessReviews/historyDefinitions/{accessReviewHistoryDefinition-id}/instances/{accessReviewInstance-id}", "History"),
-        };
-        var group = new MultiRouteGroup("v1.0", routes, "History");
-        var workers = routes.Select((route, i) =>
-        {
-            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, route.Path)) with
-            {
-                Noun = "MgIdentityGovernanceAccessReviewInstance",
-                ClassName = "GetMgIdentityGovernanceAccessReviewInstanceCommand",
-            };
-            var shape = i % 2 == 0 ? "List" : "Get";
-            return new CmdletEmitter.RouteWorker(naming, Naming.WithSuffix(naming, $"_Route{i}"),
-                route.Name, shape, CmdletEmitter.GetDispatchParameters(naming, shape, new HashSet<string> { "$select" }, []),
-                Client + ".Models.AccessReviewInstance");
-        }).ToArray();
-
-        var source = CmdletEmitter.EmitMultiRouteDispatcher(group, workers, new EmitContext(Client));
-
-        Assert.Contains("DefaultParameterSetName = \"HistoryList\"", source);
-        foreach (var set in new[] { "DefinitionList", "DefinitionGet", "HistoryList", "HistoryGet" })
-            Assert.Contains($"ParameterSetName = \"{set}\"", source);
-        foreach (var id in new[] { "AccessReviewScheduleDefinitionId", "AccessReviewHistoryDefinitionId", "AccessReviewInstanceId" })
-            Assert.Contains("public string " + id, source);
-        Assert.DoesNotContain("public string Route", source);
-        Assert.DoesNotContain("ValidateSet", source);
-        Assert.DoesNotContain("Id1", source);
-        for (var i = 0; i < workers.Length; i++)
-        {
-            Assert.Contains($"(\"\", \"{routes[i].Name}{workers[i].Shape}\") => \"Get-MgIdentityGovernanceAccessReviewInstance_Route{i}\"", source);
-            Assert.Contains($"[GraphRoute(\"GET\", \"{routes[i].Path}\", ParameterSetName = \"{routes[i].Name}{workers[i].Shape}\")]", source);
-        }
-        var idParameter = Assert.Single(workers[1].Parameters, p => p.Name == "AccessReviewInstanceId");
-        Assert.True(idParameter.Mandatory);
-        Assert.Equal(1, idParameter.Position);
-        AssertForwarding(source);
-    }
-
-    [Fact]
-    public async Task StructurallyRepeatedNounsCanDiscriminateRoutesWithoutInventingIds()
+    public async Task RepeatedResourceNamesSupportFourNaturalListAndItemSetsWithoutInventingIds()
     {
         var document = Document();
         var routes = new[]
         {
-            new MultiRoute("GET", "/widgets", "Root"),
-            new MultiRoute("GET", "/widgets/{widget-id}", "Root"),
-            new MultiRoute("GET", "/widgets/{parent-id}/widgets", "Parent"),
-            new MultiRoute("GET", "/widgets/{parent-id}/widgets/{widget-id}", "Parent"),
-        };
-        foreach (var (route, i) in routes.Select((r, i) => (r, i)))
-            Add(document, "GET", route.Path, Get(document, list: i % 2 == 0));
-
-        var files = await Generate(document, [new MultiRouteGroup("v1.0", routes, "Root")]);
-
-        var source = files["GetMgWidget.g.cs"];
-        Assert.Contains("DefaultParameterSetName = \"RootList\"", source);
-        Assert.Contains("public string ParentId", source);
-        Assert.Contains("public string WidgetId", source);
-        Assert.DoesNotContain("WidgetId1", source);
-        Assert.Contains("client.Widgets[ParentId].Widgets[WidgetId]", files["GetMgWidget_Route3.g.cs"]);
-    }
-
-    [Fact]
-    public async Task NoOptInStillFailsWithOriginalCollisionDiagnostic()
-    {
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(TwoItems(), useCollisionData: true));
-
-        Assert.Contains("collision", ex.Message);
-        Assert.Contains("GetMgBookingBusiness.g.cs", ex.Message);
-        Assert.Contains("/bookingbusinesses/{}", ex.Message);
-        Assert.Contains("/solutions/bookingbusinesses/{}", ex.Message);
-    }
-
-    [Fact]
-    public async Task WrongProfileDoesNotActivateGroup()
-    {
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Generate(TwoItems(), [Group("GET", Item) with { ApiVersion = "beta" }], useCollisionData: true));
-
-        Assert.Contains("collision", ex.Message);
-        Assert.DoesNotContain("Multi-route", ex.Message);
-    }
-
-    [Fact]
-    public async Task UnrelatedModuleIgnoresAbsentGroup()
-    {
-        var document = Document();
-        Add(document, "GET", "/widgets/{widget-id}", Get(document));
-
-        var files = await Generate(document, [Group("GET", Item)]);
-
-        Assert.Single(files);
-        Assert.Contains("GetMgWidget.g.cs", files.Keys);
-    }
-
-    [Theory]
-    [InlineData("single")]
-    [InlineData("empty")]
-    [InlineData("too-many")]
-    [InlineData("missing-default")]
-    [InlineData("same-name")]
-    [InlineData("published-name")]
-    [InlineData("invalid-name")]
-    [InlineData("invalid-selector")]
-    [InlineData("wildcard")]
-    [InlineData("relative-path")]
-    [InlineData("duplicate-operation")]
-    [InlineData("overlap")]
-    public async Task InvalidGroupsFailLoudly(string scenario)
-    {
-        var group = Group("GET", Item);
-        IReadOnlyList<MultiRouteGroup> groups = [scenario switch
-        {
-            "single" => group with { Routes = [group.Routes[0]] },
-            "empty" => group with { Routes = [] },
-            "too-many" => group with { Routes = Enumerable.Range(0, 33).Select(i => new MultiRoute("GET", "/widgets" + i, "Route" + i)).ToArray() },
-            "missing-default" => group with { DefaultRoute = "Missing" },
-            "same-name" => group with { Routes = group.Routes.Select(r => r with { Name = "Legacy" }).ToArray() },
-            "published-name" => group with { Routes = [group.Routes[0] with { Name = "Published" }, group.Routes[1]] },
-            "invalid-name" => group with { Routes = [group.Routes[0] with { Name = "not-a-name" }, group.Routes[1]] },
-            "invalid-selector" => group with { SelectorParameter = "route-name" },
-            "wildcard" => group with { Routes = [group.Routes[0] with { Path = Legacy + "/*" }, group.Routes[1]] },
-            "relative-path" => group with { Routes = [group.Routes[0] with { Path = "bookingBusinesses" }, group.Routes[1]] },
-            "duplicate-operation" => group with { Routes = [group.Routes[0], group.Routes[0] with { Name = "Solutions" }] },
-            _ => group,
-        }];
-        if (scenario == "overlap")
-            groups = [group, group];
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(TwoItems(), groups));
-
-        Assert.True(ex.Message.Contains("multi-route", StringComparison.OrdinalIgnoreCase), ex.Message);
-    }
-
-    [Theory]
-    [InlineData("missing")]
-    [InlineData("unsupported")]
-    [InlineData("suppressed")]
-    public async Task PartiallyPresentGroupsCannotSilentlyDiscardMembers(string scenario)
-    {
-        var document = TwoItems();
-        var group = Group("GET", Item);
-        if (scenario == "missing")
-            document.Paths.Remove(Solutions + Item);
-        else
-        {
-            var path = scenario == "suppressed" ? "/solutions" : "/solutions/bookingBusinesses/$unsupported";
-            document.Paths.Remove(Solutions + Item);
-            Add(document, "GET", path, Get(document));
-            group = group with { Routes = [group.Routes[0], group.Routes[1] with { Path = path }] };
-        }
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [group]));
-
-        Assert.Contains("incomplete", ex.Message);
-    }
-
-    [Theory]
-    [InlineData("response")]
-    [InlineData("query")]
-    [InlineData("header")]
-    [InlineData("required-query")]
-    [InlineData("query-type")]
-    public async Task IncompatibleOperationShapesAreRejected(string difference)
-    {
-        var document = TwoItems();
-        var right = document.Paths[Solutions + Item].Operations![HttpMethod.Get];
-        switch (difference)
-        {
-            case "response":
-                document.Components!.Schemas!["microsoft.graph.otherBusiness"] = new OpenApiSchema { Type = JsonSchemaType.Object };
-                right.Responses = JsonResponse(new OpenApiSchemaReference("microsoft.graph.otherBusiness", document));
-                break;
-            case "query":
-                right.Parameters = Queries("$select").ToList();
-                break;
-            case "header":
-                right.Parameters = [Header("If-Match")];
-                break;
-            default:
-                var left = document.Paths[Legacy + Item].Operations![HttpMethod.Get];
-                left.Parameters = Queries("$select").ToList();
-                right.Parameters = Queries("$select").ToList();
-                if (difference == "required-query")
-                    ((OpenApiParameter)right.Parameters[0]).Required = true;
-                else
-                    ((OpenApiParameter)right.Parameters[0]).Schema = new OpenApiSchema { Type = JsonSchemaType.Integer };
-                break;
-        }
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [Group("GET", Item)]));
-
-        Assert.Contains("Incompatible multi-route", ex.Message);
-    }
-
-    [Fact]
-    public async Task GetRoutesRejectUnexpectedRequestBody()
-    {
-        var document = TwoItems();
-        document.Paths[Solutions + Item].Operations![HttpMethod.Get].RequestBody = JsonBody(Reference(document));
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [Group("GET", Item)]));
-
-        Assert.Contains("Unsupported multi-route operation shape", ex.Message);
-        Assert.Contains("GET " + Solutions + Item, ex.Message);
-    }
-
-    [Theory]
-    [InlineData("AccessToken")]
-    [InlineData("Headers")]
-    [InlineData("BookingBusinessId")]
-    [InlineData("Property")]
-    [InlineData("IfMatch")]
-    public async Task SelectorCannotShadowAnExistingPublicParameter(string selector)
-    {
-        var document = TwoItems();
-        foreach (var root in new[] { Legacy, Solutions })
-            document.Paths[root + Item].Operations![HttpMethod.Get].Parameters = [Header("If-Match"), .. Queries("$select")];
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Generate(document, [Group("GET", Item) with { SelectorParameter = selector }]));
-
-        Assert.Contains(selector, ex.Message);
-        Assert.Contains("multi-route selector", ex.Message, StringComparison.OrdinalIgnoreCase);
-    }
-
-    [Theory]
-    [InlineData("$select", "Select")]
-    [InlineData("$select", "SeLeCt")]
-    [InlineData("$expand", "Expand")]
-    [InlineData("$orderby", "OrderBy")]
-    public async Task SelectorCannotShadowAQueryParameterAlias(string query, string selector)
-    {
-        var document = Document();
-        foreach (var root in new[] { Legacy, Solutions })
-        {
-            var operation = Get(document, list: true);
-            operation.Parameters = Queries(query).ToList();
-            Add(document, "GET", root, operation);
-        }
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Generate(document, [Group("GET", "") with { SelectorParameter = selector }]));
-
-        Assert.Contains($"selector '{selector}' conflicts with an existing parameter or alias", ex.Message);
-    }
-
-    [Theory]
-    [InlineData("select")]
-    [InlineData("SELECT")]
-    public async Task PublicQueryNamesCannotConflictWithAnotherParametersAlias(string queryName)
-    {
-        var document = Document();
-        foreach (var root in new[] { Legacy, Solutions })
-        {
-            var operation = Get(document, list: true);
-            operation.Parameters =
-            [
-                .. Queries("$select"),
-                new OpenApiParameter
-                {
-                    Name = queryName, In = ParameterLocation.Query,
-                    Schema = new OpenApiSchema { Type = JsonSchemaType.String },
-                },
-            ];
-            Add(document, "GET", root, operation);
-        }
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [Group("GET", "")]));
-
-        Assert.Contains("parameter alias 'Select' conflicts with another parameter or alias", ex.Message);
-    }
-
-    [Theory]
-    [InlineData("AccessToken")]
-    [InlineData("Headers")]
-    [InlineData("WhatIf")]
-    [InlineData("Confirm")]
-    [InlineData("Verbose")]
-    [InlineData("Debug")]
-    [InlineData("ErrorAction")]
-    [InlineData("PipelineVariable")]
-    [InlineData("Vb")]
-    [InlineData("Db")]
-    [InlineData("Ea")]
-    [InlineData("Wa")]
-    [InlineData("Infa")]
-    [InlineData("Proga")]
-    [InlineData("Ev")]
-    [InlineData("Wv")]
-    [InlineData("Iv")]
-    [InlineData("Ov")]
-    [InlineData("Ob")]
-    [InlineData("Pv")]
-    [InlineData("Wi")]
-    [InlineData("Cf")]
-    [InlineData("class")]
-    [InlineData("namespace")]
-    [InlineData("route")]
-    public async Task ReservedOrLowercaseSelectorsAreRejectedBeforeEmission(string selector)
-    {
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Generate(TwoItems(), [Group("GET", Item) with { SelectorParameter = selector }]));
-
-        Assert.Contains($"Invalid multi-route selector parameter '{selector}'", ex.Message);
-    }
-
-    [Theory]
-    [InlineData("HEAD")]
-    [InlineData("OPTIONS")]
-    [InlineData("TRACE")]
-    [InlineData("CONNECT")]
-    [InlineData("")]
-    public async Task RouteMembersRequireAnEmittableHttpMethod(string method)
-    {
-        var group = Group("GET", Item);
-        group = group with { Routes = [group.Routes[0] with { Method = method }, group.Routes[1]] };
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(TwoItems(), [group]));
-
-        Assert.Contains("Invalid exact multi-route member", ex.Message);
-    }
-
-    [Fact]
-    public async Task RouteLabelsCannotDifferOnlyByCase()
-    {
-        var group = Group("GET", Item);
-        group = group with
-        {
-            Routes = [.. group.Routes, new MultiRoute("GET", "/widgets", "legacy")],
-        };
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(TwoItems(), [group]));
-
-        Assert.Contains("labels differ only by case", ex.Message);
-    }
-
-    [Fact]
-    public async Task ExactRouteMatchingTreatsMethodAndPathCaseInsensitively()
-    {
-        var group = Group("GET", Item);
-        group = group with
-        {
-            Routes = group.Routes.Select(r => r with
-            {
-                Method = r.Method.ToLowerInvariant(), Path = r.Path.ToUpperInvariant(),
-            }).ToArray(),
-        };
-
-        var files = await Generate(TwoItems(), [group]);
-
-        Assert.Equal(3, files.Count);
-        Assert.Contains("client.BookingBusinesses[BookingBusinessId]", files["GetMgBookingBusiness_Route0.g.cs"]);
-        Assert.Contains("client.Solutions.BookingBusinesses[BookingBusinessId]", files["GetMgBookingBusiness_Route1.g.cs"]);
-    }
-
-    [Fact]
-    public async Task ExpandedBodyPropertyDoesNotAcquireTheQuerySelectAlias()
-    {
-        var document = Document();
-        var entity = (OpenApiSchema)document.Components!.Schemas!["microsoft.graph.bookingBusiness"];
-        entity.Properties!["property"] = new OpenApiSchema { Type = JsonSchemaType.String };
-        foreach (var root in new[] { Legacy, Solutions })
-            Add(document, "POST", root, Mutation(document, body: true));
-
-        var files = await Generate(document, [Group("POST", "")]);
-
-        foreach (var source in files.Values)
-        {
-            Assert.Contains("public string? Property", source);
-            Assert.DoesNotContain("[Alias(\"Select\")]", source);
-        }
-        Assert.Contains("body.Property = Property", files["NewMgBookingBusiness_Route0.g.cs"]);
-        Assert.Contains("body.Property = Property", files["NewMgBookingBusiness_Route1.g.cs"]);
-    }
-
-    [Fact]
-    public async Task IdenticalPathIdsRequireAnExplicitSelector()
-    {
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Generate(TwoItems(), [Group("GET", Item) with { SelectorParameter = null }]));
-
-        Assert.Contains("identical mandatory parameters", ex.Message);
-    }
-
-    [Theory]
-    [InlineData(0)]
-    [InlineData(1)]
-    [InlineData(2)]
-    public async Task ThreeWayNoSelectorGroupsRejectAmbiguousIdsRegardlessOfBaseline(int firstRoute)
-    {
-        var document = Document();
-        var routes = new[]
-        {
-            new MultiRoute("GET", "/widgets", "Root"),
-            new MultiRoute("GET", "/widgets/{parent-id}/widgets", "Parent"),
-            new MultiRoute("GET", "/solutions/widgets/{parent-id}/widgets", "SolutionsParent"),
-        };
-        foreach (var route in routes)
-            Add(document, "GET", route.Path, Get(document, list: true));
-        var ordered = routes.Skip(firstRoute).Concat(routes.Take(firstRoute)).ToArray();
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Generate(document, [new MultiRouteGroup("v1.0", ordered, "Root")]));
-
-        Assert.Contains("identical mandatory parameters", ex.Message);
-    }
-
-    [Fact]
-    public async Task NoSelectorRejectsIdenticalIdsAcrossItemAndChildListShapes()
-    {
-        var document = Document();
-        const string itemPath = "/widgets/{widget-id}";
-        const string childrenPath = "/widgets/{widget-id}/widgets";
-        Add(document, "GET", itemPath, Get(document));
-        Add(document, "GET", childrenPath, Get(document, list: true));
-        var group = new MultiRouteGroup("v1.0",
-        [
-            new MultiRoute("GET", itemPath, "Item"),
-            new MultiRoute("GET", childrenPath, "Children"),
-        ], "Children");
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [group]));
-
-        Assert.Contains("identical mandatory parameters", ex.Message);
-    }
-
-    [Theory]
-    [InlineData(false, "Children")]
-    [InlineData(false, "Item")]
-    [InlineData(true, "Children")]
-    public async Task RequiredQueriesParticipateInAmbiguityChecksWithinEachSelectorLabel(bool selector, string defaultRoute)
-    {
-        var (document, group) = RequiredQueryBindingFixture(selector, defaultRoute);
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [group]));
-
-        Assert.Contains("identical mandatory parameters", ex.Message);
-    }
-
-    [Theory]
-    [InlineData("Children")]
-    [InlineData("Item")]
-    public async Task RequiredQueriesParticipateInDefaultShadowChecksWithoutChangingAValidDefault(string defaultRoute)
-    {
-        var (document, group) = RequiredQueryBindingFixture(selector: false, defaultRoute);
-        document.Paths["/widgets/{widget-id}/widgets"].Operations![HttpMethod.Get].Parameters!.Add(
-            new OpenApiParameter
-            {
-                Name = "start", In = ParameterLocation.Query, Required = true,
-                Schema = new OpenApiSchema { Type = JsonSchemaType.String },
-            });
-
-        if (defaultRoute == "Children")
-        {
-            var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [group]));
-            Assert.Contains("default parameter set shadows a route", ex.Message);
-            return;
-        }
-
-        var files = await Generate(document, [group]);
-        Assert.Contains("DefaultParameterSetName = \"ItemGet\"", files["GetMgWidget.g.cs"]);
-        Assert.Contains("public string Start", files["GetMgWidget.g.cs"]);
-    }
-
-    [Theory]
-    [InlineData("Nested")]
-    [InlineData("Root")]
-    public async Task NoSelectorDefaultCannotShadowARouteWithFewerRequiredIds(string defaultRoute)
-    {
-        var document = Document();
-        const string rootPath = "/widgets";
-        const string nestedPath = "/widgets/{parent-id}/widgets";
-        Add(document, "GET", rootPath, Get(document, list: true));
-        Add(document, "GET", nestedPath, Get(document, list: true));
-        var group = new MultiRouteGroup("v1.0",
-        [
-            new MultiRoute("GET", rootPath, "Root"),
-            new MultiRoute("GET", nestedPath, "Nested"),
-        ], defaultRoute);
-
-        if (defaultRoute == "Nested")
-        {
-            var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [group]));
-
-            Assert.Contains("default parameter set shadows a route", ex.Message);
-            return;
-        }
-
-        var files = await Generate(document, [group]);
-
-        Assert.Equal(3, files.Count);
-        var source = files["GetMgWidget.g.cs"];
-        Assert.Contains("DefaultParameterSetName = \"RootList\"", source);
-        Assert.Contains("[Parameter(Mandatory = true, ParameterSetName = \"NestedList\", Position = 0)]", source);
-        Assert.DoesNotContain("Mandatory = true, ParameterSetName = \"RootList\"", source);
-        Assert.Contains("(\"\", \"RootList\") => \"Get-MgWidget_Route0\"", source);
-        Assert.Contains("(\"\", \"NestedList\") => \"Get-MgWidget_Route1\"", source);
-        Assert.Contains("client.Widgets.GetAsync(", files["GetMgWidget_Route0.g.cs"]);
-        Assert.Contains("client.Widgets[ParentId].Widgets.GetAsync(", files["GetMgWidget_Route1.g.cs"]);
-    }
-
-    [Fact]
-    public async Task SelectedFamiliesMustHaveMatchingListAndItemShapes()
-    {
-        var document = TwoItems();
-        Add(document, "GET", Legacy, Get(document, list: true));
-        var group = Group("GET", Item) with
-        {
-            Routes = [new MultiRoute("GET", Legacy, "Legacy"), .. Group("GET", Item).Routes],
-        };
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [group]));
-
-        Assert.Contains("same operation shapes", ex.Message);
-    }
-
-    [Fact]
-    public async Task DifferentPublicCommandsCannotBeMerged()
-    {
-        var document = TwoItems();
-        document.Paths.Remove(Solutions + Item);
-        const string other = "/widgets/{bookingBusiness-id}";
-        Add(document, "GET", other, Get(document));
-        var group = Group("GET", Item);
-        group = group with { Routes = [group.Routes[0], group.Routes[1] with { Path = other }] };
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [group]));
-
-        Assert.Contains("same public command", ex.Message);
-    }
-
-    [Theory]
-    [InlineData("v1.0")]
-    [InlineData("beta")]
-    public void BookingsSolutionPrefixUsesExistingSharedNamingRule(string apiVersion)
-    {
-        var config = new GeneratorConfig(Client, ".", ApiVersion: apiVersion, UseCollisionData: false);
-        var legacy = Naming.Resolve(new OperationInfo(HttpMethod.Get, Legacy + Item), config);
-        var solutions = Naming.Resolve(new OperationInfo(HttpMethod.Get, Solutions + Item), config);
-
-        Assert.Equal("MgBookingBusiness", legacy.Noun);
-        Assert.Equal(legacy.Noun, solutions.Noun);
-        Assert.Equal("BookingBusinesses[BookingBusinessId]", legacy.BuilderExpression);
-        Assert.Equal("Solutions.BookingBusinesses[BookingBusinessId]", solutions.BuilderExpression);
-    }
-
-    [Theory]
-    [InlineData("property-type")]
-    [InlineData("required-property")]
-    [InlineData("missing-property")]
-    public async Task ExpandedActionBodiesMustHaveCompatibleShapes(string difference)
-    {
-        var document = Document();
-        const string suffix = Item + "/publish";
-        foreach (var root in new[] { Legacy, Solutions })
-        {
-            var body = new OpenApiSchema
-            {
-                Type = JsonSchemaType.Object,
-                Properties = new Dictionary<string, IOpenApiSchema>
-                {
-                    ["notify"] = new OpenApiSchema { Type = JsonSchemaType.Boolean },
-                },
-            };
-            if (root == Solutions)
-            {
-                if (difference == "property-type")
-                    body.Properties["notify"] = new OpenApiSchema { Type = JsonSchemaType.String };
-                else if (difference == "required-property")
-                    body.Required = new HashSet<string> { "notify" };
-                else
-                    body.Properties.Clear();
-            }
-            var operation = Mutation(document, body: false);
-            operation.RequestBody = JsonBody(body);
-            operation.Extensions = new Dictionary<string, IOpenApiExtension>
-            {
-                ["x-ms-docs-operation-type"] = new JsonNodeExtension("action"),
-            };
-            Add(document, "POST", root + suffix, operation);
-        }
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Generate(document, [Group("POST", suffix)]));
-
-        Assert.Contains("Incompatible multi-route", ex.Message);
-    }
-
-    [Fact]
-    public async Task SelectorCannotShadowAnExpandedBodyProperty()
-    {
-        var document = Document();
-        foreach (var root in new[] { Legacy, Solutions })
-            Add(document, "POST", root, Mutation(document, body: true));
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Generate(document, [Group("POST", "") with { SelectorParameter = "DisplayName" }]));
-
-        Assert.Contains("conflicts with an existing parameter", ex.Message);
-    }
-
-    [Fact]
-    public async Task SelectorRequiresTheSameActualPublicPathParameters()
-    {
-        var document = TwoItems();
-        document.Paths.Remove(Solutions + Item);
-        const string path = Solutions + "/{different-id}";
-        Add(document, "GET", path, Get(document));
-        var group = Group("GET", Item);
-        group = group with { Routes = [group.Routes[0], group.Routes[1] with { Path = path }] };
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, [group]));
-
-        Assert.Contains("identical public parameters", ex.Message);
-    }
-
-    [Theory]
-    [InlineData(false)]
-    [InlineData(true)]
-    public async Task PatchWorkerRefetchesOnlyWhenItsOwnPathHasGet(bool includeGet)
-    {
-        var document = Document();
-        foreach (var root in new[] { Legacy, Solutions })
-        {
-            Add(document, "PATCH", root + Item, Mutation(document, body: true));
-            if (includeGet)
-                Add(document, "GET", root + Item, Get(document));
-        }
-        var groups = includeGet
-            ? new[] { Group("PATCH", Item), Group("GET", Item) }
-            : new[] { Group("PATCH", Item) };
-
-        var files = await Generate(document, groups);
-
-        foreach (var worker in files.Where(p => p.Key.StartsWith("UpdateMgBookingBusiness_Route", StringComparison.Ordinal)).Select(p => p.Value))
-            Assert.Equal(includeGet, worker.Contains("re-fetching the updated resource", StringComparison.Ordinal));
-    }
-
-    [Fact]
-    public async Task DuplicateOperationShapesWithinOneFamilyAreRejected()
-    {
-        var document = Document();
-        var routes = new[]
-        {
-            new MultiRoute("GET", "/widgets", "Root"),
-            new MultiRoute("GET", "/widgets/{parent-id}/widgets", "Root"),
-            new MultiRoute("GET", "/widgets/{other-id}/widgets", "Other"),
-        };
-        foreach (var route in routes)
-            Add(document, "GET", route.Path, Get(document, list: true));
-
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Generate(document, [new MultiRouteGroup("v1.0", routes, "Root")]));
-
-        Assert.Contains("not an unambiguous list/item pair", ex.Message);
-    }
-
-    [Fact]
-    public async Task SameNounDoesNotMakeUnrelatedListAndItemRoutesAPair()
-    {
-        var document = Document();
-        var routes = new[]
-        {
-            new MultiRoute("GET", "/widgets/{parent-id}/widgets", "Parent"),
-            new MultiRoute("GET", "/widgets/{different-id}/widgets/{widget-id}", "Parent"),
-            new MultiRoute("GET", "/widgets", "Root"),
-            new MultiRoute("GET", "/widgets/{widget-id}", "Root"),
+            new MultiRoute("GET", WidgetRoot, "Root"),
+            new MultiRoute("GET", WidgetRoot + "/{widget-id}", "Root"),
+            new MultiRoute("GET", WidgetParent, "Parent"),
+            new MultiRoute("GET", WidgetParent + "/{widget-id}", "Parent"),
         };
         for (var i = 0; i < routes.Length; i++)
             Add(document, "GET", routes[i].Path, Get(document, list: i % 2 == 0));
 
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Generate(document, [new MultiRouteGroup("v1.0", routes, "Root")]));
+        var files = await Generate(document, [new("v1.0", routes, "Root")]);
 
-        Assert.Contains("not an unambiguous list/item pair", ex.Message);
+        Assert.Equal(5, files.Count);
+        var source = files["GetMgWidget.g.cs"];
+        Assert.Contains("DefaultParameterSetName = \"RootList\"", source);
+        foreach (var set in new[] { "RootList", "RootGet", "ParentList", "ParentGet" })
+            Assert.Contains($"ParameterSetName = \"{set}\"", source);
+        AssertMandatory(source, "ParentId", "ParentList");
+        AssertMandatory(source, "ParentId", "ParentGet");
+        AssertMandatory(source, "WidgetId", "RootGet");
+        AssertMandatory(source, "WidgetId", "ParentGet");
+        Assert.DoesNotContain("WidgetId1", source);
+        Assert.DoesNotContain("public string Route", source);
+        Assert.Contains("client.Widgets[ParentId].Widgets[WidgetId].GetAsync(", files["GetMgWidget_Route3.g.cs"]);
+    }
+
+    [Fact]
+    public async Task RootFamilyWithOnlyAnItemUsesItsGetSetAsDefault()
+    {
+        var document = Document();
+        var routes = new[]
+        {
+            new MultiRoute("GET", WidgetRoot + "/{widget-id}", "Root"),
+            new MultiRoute("GET", WidgetParent + "/{widget-id}", "Parent"),
+        };
+        foreach (var route in routes)
+            Add(document, "GET", route.Path, Get(document));
+
+        var files = await Generate(document, [new("v1.0", routes, "Root")]);
+
+        Assert.Equal(3, files.Count);
+        Assert.Contains("DefaultParameterSetName = \"RootGet\"", files["GetMgWidget.g.cs"]);
+        AssertMandatory(files["GetMgWidget.g.cs"], "WidgetId", "RootGet");
+        AssertMandatory(files["GetMgWidget.g.cs"], "ParentId", "ParentGet");
+    }
+
+    [Fact]
+    public async Task CountGroupsKeepScalarWorkersAndRootScalarDefault()
+    {
+        var document = Document();
+        var routes = new[]
+        {
+            new MultiRoute("GET", WidgetRoot + "/$count", "Root"),
+            new MultiRoute("GET", WidgetParent + "/$count", "Parent"),
+        };
+        foreach (var route in routes)
+            Add(document, "GET", route.Path, Count());
+
+        var files = await Generate(document, [new("v1.0", routes, "Root")]);
+
+        Assert.Equal(3, files.Count);
+        var source = files["GetMgWidgetCount.g.cs"];
+        Assert.Contains("DefaultParameterSetName = \"RootScalar\"", source);
+        Assert.Contains("ParameterSetName = \"ParentScalar\"", source);
+        Assert.DoesNotContain("public SwitchParameter All", source);
+        Assert.DoesNotContain("BodyParameter", source);
+        AssertMandatory(source, "ParentId", "ParentScalar");
+    }
+
+    [Fact]
+    public async Task OrdinaryListAndItemPairRetainsItsOriginalDispatcherAndTypedWorkers()
+    {
+        var document = Document();
+        Add(document, "GET", WidgetRoot, Get(document, list: true));
+        Add(document, "GET", WidgetRoot + "/{widget-id}", Get(document));
+
+        var files = await Generate(document);
+
+        Assert.Equal(3, files.Count);
+        var source = files["GetMgWidget.g.cs"];
+        Assert.Contains("DefaultParameterSetName = \"List\"", source);
+        Assert.Contains("ParameterSetName = \"Get\"", source);
+        Assert.Contains("public string WidgetId", source);
+        Assert.Contains("client.Widgets.GetAsync(", files["GetMgWidget_List.g.cs"]);
+        Assert.Contains("client.Widgets[WidgetId].GetAsync(", files["GetMgWidget_Get.g.cs"]);
+        Assert.DoesNotContain("_Route", source);
+        Assert.Contains("InvokeCommand.InvokeScript", source);
+    }
+
+    [Fact]
+    public async Task OrdinarySingleRouteKeepsItsTypedEmitter()
+    {
+        var document = Document();
+        Add(document, "GET", WidgetRoot + "/{widget-id}", Get(document));
+
+        var files = await Generate(document);
+
+        Assert.Single(files);
+        var source = files["GetMgWidget.g.cs"];
+        Assert.Contains("[OutputType(typeof(" + Entity + "))]", source);
+        Assert.Contains("client.Widgets[WidgetId].GetAsync(", source);
+        Assert.DoesNotContain("_Route", source);
+        Assert.DoesNotContain("InvokeCommand.InvokeScript", source);
+        AssertCatchFilters(source);
+    }
+
+    [Fact]
+    public async Task UnoptedCollisionStillFailsInsteadOfSilentlyChoosingARoute()
+    {
+        var (document, _) = Widgets();
+
+        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, useCollisionData: true));
+
+        Assert.Contains("collision", ex.Message, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("GetMgWidget.g.cs", ex.Message);
+        Assert.Contains("/widgets", ex.Message);
+    }
+
+    [Fact]
+    public async Task WrongProfileLeavesTheOriginalCollisionGuardActive()
+    {
+        var (document, group) = Widgets();
+
+        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
+            Generate(document, [group with { ApiVersion = "beta" }], useCollisionData: true));
+
+        Assert.Contains("collision", ex.Message, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("multi-route", ex.Message, StringComparison.OrdinalIgnoreCase);
+    }
+
+    [Fact]
+    public async Task AbsentGroupsInAnotherModuleAreANoOp()
+    {
+        var document = Document();
+        Add(document, "GET", "/otherResources/{otherResource-id}", Get(document));
+        var (_, group) = Widgets();
+
+        var files = await Generate(document, [group]);
+
+        Assert.Single(files);
+        Assert.Contains("GetMgOtherResource.g.cs", files.Keys);
+    }
+
+    [Fact]
+    public void InternalModuleFactoryPreservesTheExactThreeArgumentGroupAndProfileScope()
+    {
+        var (_, group) = Widgets();
+
+        var entry = CmdletConfigurator.MergeRoutes(group, "Reviewed natural path-ID sets");
+        var config = new GeneratorConfig(Client, ".", "V1.0", false, [group, group with { ApiVersion = "beta" }]);
+
+        Assert.Equal(CmdletConfigurator.OverrideKind.MergeRoutes, entry.Kind);
+        Assert.Same(group, entry.RouteGroup);
+        Assert.Equal("Reviewed natural path-ID sets", entry.Reason);
+        Assert.Contains(group, CmdletConfigurator.GetMultiRouteGroups(config));
+        Assert.DoesNotContain(CmdletConfigurator.GetMultiRouteGroups(config), g => g.ApiVersion == "beta");
+        Assert.Equal(3, typeof(MultiRoute).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
+        Assert.Equal(3, typeof(MultiRouteGroup).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
+        Assert.Equal(5, typeof(GeneratorConfig).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
+    }
+
+    [Fact]
+    public void GroupConfigurationDoesNotOverrideCuratedOrDerivedNamingInEitherProfile()
+    {
+        var (_, group) = Widgets();
+        foreach (var apiVersion in new[] { "v1.0", "beta" })
+        {
+            var plain = new GeneratorConfig(Client, ".", apiVersion, true);
+            var grouped = plain with { MultiRouteGroups = [group with { ApiVersion = apiVersion }] };
+            foreach (var path in new[]
+            {
+                Root, Agent,
+                "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/resourceRoles",
+                "/solutions/backupRestore",
+            })
+            {
+                var before = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), plain);
+                var after = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), grouped);
+                Assert.Equal(before.VerbName, after.VerbName);
+                Assert.Equal(before.Noun, after.Noun);
+                Assert.Equal(before.ClassName, after.ClassName);
+                Assert.Equal(before.BuilderExpression, after.BuilderExpression);
+                Assert.Equal(before.PathParamNames, after.PathParamNames);
+                Assert.Equal(before.SourcePath, after.SourcePath);
+            }
+        }
     }
 
     [Theory]
-    [InlineData("query")]
-    [InlineData("non-json-body")]
-    [InlineData("binary-response")]
-    public async Task UnsupportedMutationShapesFailRatherThanEmitPartialDispatchers(string shape)
+    [InlineData("empty")]
+    [InlineData("single")]
+    [InlineData("missing-default")]
+    [InlineData("invalid-label")]
+    [InlineData("label-case")]
+    [InlineData("duplicate-operation")]
+    [InlineData("duplicate-group")]
+    [InlineData("wildcard")]
+    [InlineData("normalized-placeholder")]
+    public async Task InvalidReviewedGroupConfigurationFailsBeforeTouchingExistingOutput(string scenario)
     {
-        var document = Document();
-        foreach (var root in new[] { Legacy, Solutions })
+        var (document, group) = Widgets();
+        IReadOnlyList<MultiRouteGroup> groups = [scenario switch
         {
-            var operation = Mutation(document, body: true);
-            if (shape == "query")
-                operation.Parameters = Queries("$filter").ToList();
-            else if (shape == "non-json-body")
+            "empty" => group with { Routes = [] },
+            "single" => group with { Routes = [group.Routes[0]] },
+            "missing-default" => group with { DefaultRoute = "Missing" },
+            "invalid-label" => group with { Routes = [group.Routes[0], group.Routes[1] with { Name = "not-a-label" }] },
+            "label-case" => group with { Routes = [group.Routes[0], group.Routes[1] with { Name = "rOoT" }] },
+            "duplicate-operation" => group with { Routes = [group.Routes[0], group.Routes[0] with { Name = "Other" }] },
+            "wildcard" => group with { Routes = [group.Routes[0], group.Routes[1] with { Path = "/widgets/*/widgets" }] },
+            "normalized-placeholder" => group with { Routes = [group.Routes[0], group.Routes[1] with { Path = "/widgets/{}/widgets" }] },
+            _ => group,
+        }];
+        if (scenario == "duplicate-group")
+            groups = [group, group];
+
+        await RejectWithoutWrites(document, groups);
+    }
+
+    [Theory]
+    [InlineData("missing")]
+    [InlineData("filtered")]
+    [InlineData("post-only")]
+    [InlineData("suppressed")]
+    public async Task IncompleteSelectedGroupsCannotBeLoggedAndSkipped(string scenario)
+    {
+        var (document, group) = Widgets();
+        if (scenario == "filtered")
+            IncludePathFilter.Apply(document, [WidgetRoot + "#GET"]);
+        else if (scenario == "post-only")
+        {
+            foreach (var route in group.Routes)
+                Add(document, "POST", route.Path, Get(document, list: true));
+        }
+        else
+        {
+            document.Paths.Remove(WidgetParent);
+            if (scenario == "suppressed")
+            {
+                Add(document, "GET", "/solutions", Get(document, list: true));
+                group = group with { Routes = [group.Routes[0], group.Routes[1] with { Path = "/solutions" }] };
+                Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/solutions"));
+            }
+        }
+
+        await RejectWithoutWrites(document, [group]);
+    }
+
+    [Theory]
+    [InlineData("post")]
+    [InlineData("delete")]
+    [InlineData("action")]
+    [InlineData("function")]
+    [InlineData("media")]
+    [InlineData("reference")]
+    [InlineData("value")]
+    [InlineData("delta")]
+    [InlineData("composite")]
+    [InlineData("union")]
+    [InlineData("json-body")]
+    [InlineData("non-json-body")]
+    [InlineData("cookie")]
+    [InlineData("required-header")]
+    public async Task UnsupportedMemberShapesAreRejectedBeforeAnyFilesystemChanges(string scenario)
+    {
+        var (document, group) = Widgets();
+        var operation = Operation(document, WidgetParent);
+        switch (scenario)
+        {
+            case "post":
+            case "delete":
+                var method = scenario.ToUpperInvariant();
+                document.Paths[WidgetParent].Operations!.Remove(HttpMethod.Get);
+                Add(document, method, WidgetParent, operation);
+                group = group with { Routes = [group.Routes[0], group.Routes[1] with { Method = method }] };
+                break;
+            case "action":
+            case "function":
+                operation.Extensions = new Dictionary<string, IOpenApiExtension>
+                {
+                    ["x-ms-docs-operation-type"] = new JsonNodeExtension(scenario),
+                };
+                break;
+            case "media":
+                operation.Responses!["200"].Content!["application/octet-stream"] = new OpenApiMediaType
+                {
+                    Schema = new OpenApiSchema { Type = JsonSchemaType.String, Format = "binary" },
+                };
+                break;
+            case "reference":
+            case "value":
+            case "delta":
+            case "composite":
+                var path = scenario switch
+                {
+                    "reference" => WidgetParent + "/$ref",
+                    "value" => WidgetParent + "/$value",
+                    "delta" => WidgetParent + "/delta()",
+                    _ => "/widgets(parentId='{parent-id}',widgetId='{widget-id}')",
+                };
+                document.Paths.Remove(WidgetParent);
+                Add(document, "GET", path, operation);
+                group = group with { Routes = [group.Routes[0], group.Routes[1] with { Path = path }] };
+                if (scenario == "delta")
+                    operation.Extensions = new Dictionary<string, IOpenApiExtension>
+                    {
+                        ["x-ms-docs-operation-type"] = new JsonNodeExtension("function"),
+                    };
+                break;
+            case "union":
+                document.Components!.Schemas!["microsoft.graph.otherGroup"] = new OpenApiSchema { Type = JsonSchemaType.Object };
+                operation.Responses = JsonResponse(new OpenApiSchema
+                {
+                    OneOf = [Reference(document), new OpenApiSchemaReference("microsoft.graph.otherGroup", document)],
+                });
+                break;
+            case "json-body":
+            case "non-json-body":
                 operation.RequestBody = new OpenApiRequestBody
                 {
                     Content = new Dictionary<string, IOpenApiMediaType>
                     {
-                        ["application/octet-stream"] = new OpenApiMediaType
-                        {
-                            Schema = new OpenApiSchema { Type = JsonSchemaType.String, Format = "binary" },
-                        },
+                        [scenario == "json-body" ? "application/json" : "text/plain"] =
+                            new OpenApiMediaType { Schema = Reference(document) },
                     },
                 };
-            else
-                operation.Responses!["200"].Content!["application/octet-stream"] =
-                    new OpenApiMediaType { Schema = new OpenApiSchema { Type = JsonSchemaType.String, Format = "binary" } };
-            Add(document, "POST", root, operation);
+                break;
+            case "cookie":
+                operation.Parameters = [new OpenApiParameter
+                {
+                    Name = "session", In = ParameterLocation.Cookie,
+                    Schema = new OpenApiSchema { Type = JsonSchemaType.String },
+                }];
+                break;
+            default:
+                operation.Parameters = [Header("ConsistencyLevel", required: true)];
+                break;
         }
 
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Generate(document, [Group("POST", "")]));
-
-        Assert.Contains("Unsupported multi-route operation shape", ex.Message);
+        await RejectWithoutWrites(document, [group]);
     }
 
-    private static void AssertForwarding(string source, string? selector = null)
+    [Theory]
+    [InlineData("unknown-query")]
+    [InlineData("required-query")]
+    [InlineData("query-type")]
+    [InlineData("query-mismatch")]
+    [InlineData("response-type")]
+    [InlineData("primitive-list")]
+    [InlineData("item-filter")]
+    public async Task IncompatibleQueryAndResponseContractsCannotBeMerged(string scenario)
     {
-        Assert.Contains("new Dictionary<string, object>(MyInvocation.BoundParameters)", source);
+        var (document, group) = Widgets();
+        var left = Operation(document, WidgetRoot);
+        var right = Operation(document, WidgetParent);
+        switch (scenario)
+        {
+            case "unknown-query":
+                left.Parameters = Queries("offset").ToList();
+                right.Parameters = Queries("offset").ToList();
+                break;
+            case "required-query":
+                left.Parameters = Queries("$filter").ToList();
+                right.Parameters = Queries("$filter").ToList();
+                ((OpenApiParameter)right.Parameters[0]).Required = true;
+                break;
+            case "query-type":
+                left.Parameters = Queries("$top").ToList();
+                right.Parameters = [new OpenApiParameter
+                {
+                    Name = "$top", In = ParameterLocation.Query,
+                    Schema = new OpenApiSchema { Type = JsonSchemaType.String },
+                }];
+                break;
+            case "query-mismatch":
+                right.Parameters = Queries("$select").ToList();
+                break;
+            case "response-type":
+                document.Components!.Schemas!["microsoft.graph.otherGroup"] = new OpenApiSchema { Type = JsonSchemaType.Object };
+                right.Responses = Get(document, list: true,
+                    entity: new OpenApiSchemaReference("microsoft.graph.otherGroup", document)).Responses;
+                break;
+            case "primitive-list":
+                right.Responses = Get(document, list: true,
+                    entity: new OpenApiSchema { Type = JsonSchemaType.String }).Responses;
+                break;
+            default:
+                document.Paths.Remove(WidgetRoot);
+                document.Paths.Remove(WidgetParent);
+                var paths = new[] { WidgetRoot + "/{widget-id}", WidgetParent + "/{widget-id}" };
+                foreach (var path in paths)
+                {
+                    var item = Get(document);
+                    item.Parameters = Queries("$filter").ToList();
+                    Add(document, "GET", path, item);
+                }
+                group = new("v1.0", [new("GET", paths[0], "Root"), new("GET", paths[1], "Parent")], "Root");
+                break;
+        }
+
+        await RejectWithoutWrites(document, [group]);
+    }
+
+    [Theory]
+    [InlineData("identical-list-and-singleton")]
+    [InlineData("nested-default")]
+    [InlineData("nonstructural-list-item")]
+    public async Task AmbiguousMandatorySetsAndInvalidListItemFamiliesAreRejected(string scenario)
+    {
+        var document = Document();
+        MultiRouteGroup group;
+        if (scenario == "identical-list-and-singleton")
+        {
+            var singleton = WidgetRoot + "/{parent-id}";
+            Add(document, "GET", singleton, Get(document));
+            Add(document, "GET", WidgetParent, Get(document, list: true));
+            group = new("v1.0", [new("GET", singleton, "Root"), new("GET", WidgetParent, "Parent")], "Root");
+        }
+        else
+        {
+            Add(document, "GET", WidgetRoot, Get(document, list: true));
+            Add(document, "GET", WidgetParent, Get(document, list: true));
+            group = new("v1.0", [new("GET", WidgetRoot, "Root"), new("GET", WidgetParent, "Parent")],
+                scenario == "nested-default" ? "Parent" : "Root");
+            if (scenario == "nonstructural-list-item")
+            {
+                var item = WidgetParent + "/{widget-id}";
+                Add(document, "GET", item, Get(document));
+                group = group with { Routes = [.. group.Routes, new("GET", item, "Root")] };
+            }
+        }
+
+        await RejectWithoutWrites(document, [group]);
+    }
+
+    [Fact]
+    public async Task DifferentUnderlyingPublicNamesAreNotRenamedToForceAMerge()
+    {
+        var (document, group) = Widgets();
+        document.Paths.Remove(WidgetParent);
+        const string different = "/otherResources/{parent-id}";
+        Add(document, "GET", different, Get(document, list: true));
+        group = group with { Routes = [group.Routes[0], group.Routes[1] with { Path = different }] };
+
+        await RejectWithoutWrites(document, [group]);
+    }
+
+    [Fact]
+    public async Task AllGroupsArePreflightedBeforeCreatingAnOutputDirectoryOrWritingAnEarlierValidGroup()
+    {
+        var (document, groups) = Applications();
+        var widget = Get(document, list: true);
+        widget.Parameters = Queries("unsupported").ToList();
+        Add(document, "GET", WidgetRoot, Get(document, list: true));
+        Add(document, "GET", WidgetParent, widget);
+        var (_, invalid) = Widgets();
+        IReadOnlyList<MultiRouteGroup> all = [.. groups, invalid with { ApiVersion = "beta" }];
+        var output = OutputPath();
+        try
+        {
+            await Assert.ThrowsAsync<InvalidOperationException>(() => GenerateAt(document, all, output, "beta"));
+            Assert.False(Directory.Exists(output), "Preflight must precede even output directory creation.");
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+        await RejectWithoutWrites(document, all, "beta");
+    }
+
+    [Theory]
+    [InlineData("partial-applications")]
+    [InlineData("unsupported-group")]
+    public async Task CliPreflightRejectsGroupsBeforeCreatingOutputOrChangingTheLockMarker(string scenario)
+    {
+        OpenApiDocument document;
+        IReadOnlyList<MultiRouteGroup> groups;
+        string apiVersion;
+        if (scenario == "partial-applications")
+        {
+            var applications = Applications();
+            document = applications.Document;
+            groups = applications.Groups;
+            apiVersion = "beta";
+            IncludePathFilter.Apply(document, [Root + "#GET"]);
+        }
+        else
+        {
+            var widgets = Widgets();
+            document = widgets.Document;
+            groups = [widgets.Group];
+            apiVersion = "v1.0";
+            Operation(document, WidgetParent).Parameters = Queries("unsupported").ToList();
+        }
+        document.RegisterComponents();
+        foreach (var existingOutput in new[] { false, true })
+        {
+            var output = OutputPath();
+            var stale = Path.Combine(output, "Sentinel.g.cs");
+            var marker = Path.Combine(output, "kiota-lock.json");
+            const string generatedSentinel = "Preserve existing generated source.\r\n";
+            const string markerSentinel = "{\"descriptionLocation\":\"original-spec.yml\"}\r\n";
+            if (existingOutput)
+            {
+                Directory.CreateDirectory(output);
+                File.WriteAllText(stale, generatedSentinel);
+                File.WriteAllText(marker, markerSentinel);
+            }
+            try
+            {
+                var config = new GeneratorConfig(Client, output, apiVersion, false, groups);
+                var specPath = Path.Combine(Directory.GetCurrentDirectory(), "spec.yml");
+                await Assert.ThrowsAsync<InvalidOperationException>(() => WrapperGenerator.Program.GenerateAsync(
+                    document, config, specPath, NullLogger.Instance, CancellationToken.None));
+                if (existingOutput)
+                {
+                    Assert.Equal(generatedSentinel, File.ReadAllText(stale));
+                    Assert.Equal(markerSentinel, File.ReadAllText(marker));
+                    Assert.Equal(2, Directory.GetFiles(output, "*", SearchOption.AllDirectories).Length);
+                }
+                else
+                    Assert.False(Directory.Exists(output), "CLI group preflight must precede directory and marker creation.");
+            }
+            finally
+            {
+                if (Directory.Exists(output))
+                    Directory.Delete(output, recursive: true);
+            }
+        }
+    }
+
+    [Fact]
+    public async Task CliStillWritesTheSpecMarkerBeforeAnOrdinaryUnoptedCollisionFails()
+    {
+        var (document, _) = Widgets();
+        document.RegisterComponents();
+        var output = OutputPath();
+        var specPath = Path.Combine(Directory.GetCurrentDirectory(), "ordinary-spec.yml");
+        try
+        {
+            var config = new GeneratorConfig(Client, output, UseCollisionData: true);
+            var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => WrapperGenerator.Program.GenerateAsync(
+                document, config, specPath, NullLogger.Instance, CancellationToken.None));
+
+            Assert.Contains("collision", ex.Message, StringComparison.OrdinalIgnoreCase);
+            var marker = Path.Combine(output, "kiota-lock.json");
+            Assert.True(File.Exists(marker), "Ordinary collision captures still require the CLI spec marker.");
+            using var json = JsonDocument.Parse(File.ReadAllText(marker));
+            Assert.Equal(Path.GetRelativePath(output, specPath).Replace('\\', '/'),
+                json.RootElement.GetProperty("descriptionLocation").GetString());
+            Assert.NotEmpty(Directory.GetFiles(output, "*.g.cs"));
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
+    private static void AssertMandatory(string source, string parameter, string set)
+    {
+        var declaration = source.IndexOf("public string " + parameter + " ", StringComparison.Ordinal);
+        Assert.True(declaration >= 0, "Missing path parameter " + parameter);
+        var previousDeclaration = source.LastIndexOf("public ", declaration - 1, StringComparison.Ordinal);
+        var attributes = source[(previousDeclaration < 0 ? 0 : previousDeclaration)..declaration];
+        Assert.Contains($"[Parameter(Mandatory = true, ParameterSetName = \"{set}\"", attributes);
+    }
+
+    private static void AssertForwarding(string source)
+    {
         Assert.Contains("& $CmdletName @BoundParameters", source);
         Assert.Contains("PipelineResultTypes.Output | PipelineResultTypes.Error", source);
-        Assert.Contains("parameters, internalCmdletName", source);
-        if (selector is not null)
-            Assert.Contains($"parameters.Remove(\"{selector}\")", source);
-        else
-            Assert.DoesNotContain("parameters.Remove(", source);
+        Assert.Contains("MyInvocation.BoundParameters, internalCmdletName", source);
+        Assert.DoesNotContain("parameters.Remove(", source);
     }
 
     private static void AssertCatchFilters(string source, bool dispatcher = false)
@@ -1167,60 +707,58 @@ public sealed class MultiRouteTests
         }
     }
 
-    private static (OpenApiDocument Document, MultiRouteGroup Group) CalendarViewFixture()
+    private static async Task RejectWithoutWrites(
+        OpenApiDocument document, IReadOnlyList<MultiRouteGroup> groups, string apiVersion = "v1.0")
     {
-        var document = Document();
-        var routes = new List<MultiRoute>();
-        foreach (var (root, name) in new[] { (Legacy, "Legacy"), (Solutions, "Solutions") })
+        var output = OutputPath();
+        Directory.CreateDirectory(output);
+        var stale = Path.Combine(output, "Stale.g.cs");
+        var other = Path.Combine(output, "keep.txt");
+        const string sentinel = "Existing generated output must survive rejected configuration.\r\n";
+        File.WriteAllText(stale, sentinel);
+        File.WriteAllText(other, "unrelated");
+        try
         {
-            for (var i = 0; i < 2; i++)
-            {
-                var path = root + Item + "/calendarView" + (i == 0 ? "" : "/{bookingAppointment-id}");
-                var operation = Get(document, list: i == 0);
-                operation.Parameters =
-                [
-                    new OpenApiParameter
-                    {
-                        Name = "start", In = ParameterLocation.Query, Required = true,
-                        Schema = new OpenApiSchema { Type = JsonSchemaType.String },
-                    },
-                    new OpenApiParameter
-                    {
-                        Name = "end", In = ParameterLocation.Query, Required = true,
-                        Schema = new OpenApiSchema { Type = JsonSchemaType.String },
-                    },
-                    .. Queries("$select", "$expand"),
-                ];
-                Add(document, "GET", path, operation);
-                routes.Add(new MultiRoute("GET", path, name));
-            }
+            await Assert.ThrowsAsync<InvalidOperationException>(() => GenerateAt(document, groups, output, apiVersion));
+            Assert.Equal(sentinel, File.ReadAllText(stale));
+            Assert.Equal("unrelated", File.ReadAllText(other));
+            Assert.Equal(new[] { "Stale.g.cs", "keep.txt" },
+                Directory.GetFiles(output, "*", SearchOption.AllDirectories).Select(Path.GetFileName)
+                    .OrderBy(n => n, StringComparer.Ordinal).ToArray());
         }
-        return (document, new MultiRouteGroup("v1.0", routes, "Legacy", "Route"));
+        finally
+        {
+            Directory.Delete(output, recursive: true);
+        }
     }
 
-    private static (OpenApiDocument Document, MultiRouteGroup Group) RequiredQueryBindingFixture(bool selector, string defaultRoute)
+    private static (OpenApiDocument Document, MultiRouteGroup[] Groups) Applications()
     {
         var document = Document();
-        var routes = new List<MultiRoute>();
-        foreach (var prefix in selector ? new[] { "", "/solutions" } : new[] { "" })
-        {
-            var path = prefix + "/widgets/{widget-id}/widgets";
-            var children = Get(document, list: true);
-            children.Parameters =
-            [
-                new OpenApiParameter
-                {
-                    Name = "parentId", In = ParameterLocation.Query, Required = true,
-                    Schema = new OpenApiSchema { Type = JsonSchemaType.String },
-                },
-            ];
-            Add(document, "GET", path, children);
-            Add(document, "GET", path + "/{parent-id}", Get(document));
-            routes.Add(new("GET", path, selector ? (prefix.Length == 0 ? "Legacy" : "Solutions") : "Children"));
-            routes.Add(new("GET", path + "/{parent-id}", selector ? routes[^1].Name : "Item"));
-        }
-        return (document, new("v1.0", routes, selector ? "Legacy" : defaultRoute, selector ? "Route" : null));
+        Add(document, "GET", Root, Get(document, list: true));
+        Add(document, "GET", Item, Get(document));
+        Add(document, "GET", Agent, Get(document, list: true));
+        Add(document, "GET", Root + "/$count", Count());
+        Add(document, "GET", Agent + "/$count", Count());
+        return (document,
+        [
+            new("beta", [new("GET", Root, "Root"), new("GET", Item, "Root"), new("GET", Agent, "Agent")], "Root"),
+            new("beta", [new("GET", Root + "/$count", "Root"), new("GET", Agent + "/$count", "Agent")], "Root"),
+        ]);
     }
+
+    private static (OpenApiDocument Document, MultiRouteGroup Group) Widgets()
+    {
+        var document = Document();
+        Add(document, "GET", WidgetRoot, Get(document, list: true));
+        Add(document, "GET", WidgetParent, Get(document, list: true));
+        return (document, new("v1.0", [new("GET", WidgetRoot, "Root"), new("GET", WidgetParent, "Parent")], "Root"));
+    }
+
+    private static CmdletNaming Resolve(string path) => Naming.Resolve(
+        new OperationInfo(HttpMethod.Get, path), new GeneratorConfig(Client, ".", "beta", false));
+
+    private static string FileStem(CmdletNaming naming) => naming.ClassName[..^"Command".Length];
 
     private static OpenApiDocument Document() => new()
     {
@@ -1229,11 +767,12 @@ public sealed class MultiRouteTests
         {
             Schemas = new Dictionary<string, IOpenApiSchema>
             {
-                ["microsoft.graph.bookingBusiness"] = new OpenApiSchema
+                ["microsoft.graph.onPremisesAgentGroup"] = new OpenApiSchema
                 {
                     Type = JsonSchemaType.Object,
                     Properties = new Dictionary<string, IOpenApiSchema>
                     {
+                        ["id"] = new OpenApiSchema { Type = JsonSchemaType.String },
                         ["displayName"] = new OpenApiSchema { Type = JsonSchemaType.String },
                     },
                 },
@@ -1241,36 +780,27 @@ public sealed class MultiRouteTests
         },
     };
 
-    private static OpenApiDocument TwoItems()
-    {
-        var document = Document();
-        foreach (var root in new[] { Legacy, Solutions })
-            Add(document, "GET", root + Item, Get(document));
-        return document;
-    }
-
-    private static MultiRouteGroup Group(string method, string suffix, bool includeItem = false) => new(
-        "v1.0",
-        new[] { (Legacy, "Legacy"), (Solutions, "Solutions") }
-            .SelectMany(root => includeItem
-                ? new[] { new MultiRoute(method, root.Item1, root.Item2), new MultiRoute(method, root.Item1 + Item, root.Item2) }
-                : new[] { new MultiRoute(method, root.Item1 + suffix, root.Item2) }).ToArray(),
-        "Legacy", "Route");
-
     private static IOpenApiSchema Reference(OpenApiDocument document) =>
-        new OpenApiSchemaReference("microsoft.graph.bookingBusiness", document);
+        new OpenApiSchemaReference("microsoft.graph.onPremisesAgentGroup", document);
 
-    private static OpenApiOperation Get(OpenApiDocument document, bool list = false) => new()
+    private static OpenApiOperation Get(OpenApiDocument document, bool list = false, IOpenApiSchema? entity = null)
     {
-        Responses = JsonResponse(list ? new OpenApiSchema
+        if (!list)
+            return new() { Responses = JsonResponse(entity ?? Reference(document)) };
+        var collection = entity is null
+            ? "microsoft.graph.onPremisesAgentGroupCollectionResponse"
+            : "microsoft.graph.alternateCollectionResponse";
+        document.Components!.Schemas![collection] = new OpenApiSchema
         {
             Type = JsonSchemaType.Object,
             Properties = new Dictionary<string, IOpenApiSchema>
             {
-                ["value"] = new OpenApiSchema { Type = JsonSchemaType.Array, Items = Reference(document) },
+                ["value"] = new OpenApiSchema { Type = JsonSchemaType.Array, Items = entity ?? Reference(document) },
+                ["@odata.nextLink"] = new OpenApiSchema { Type = JsonSchemaType.String | JsonSchemaType.Null },
             },
-        } : Reference(document)),
-    };
+        };
+        return new() { Responses = JsonResponse(new OpenApiSchemaReference(collection, document)) };
+    }
 
     private static OpenApiOperation Count() => new()
     {
@@ -1289,20 +819,6 @@ public sealed class MultiRouteTests
         },
     };
 
-    private static OpenApiOperation Mutation(OpenApiDocument document, bool body) => new()
-    {
-        RequestBody = body ? JsonBody(Reference(document)) : null,
-        Responses = body ? JsonResponse(Reference(document)) : new OpenApiResponses { ["204"] = new OpenApiResponse() },
-    };
-
-    private static OpenApiRequestBody JsonBody(IOpenApiSchema schema) => new()
-    {
-        Content = new Dictionary<string, IOpenApiMediaType>
-        {
-            ["application/json"] = new OpenApiMediaType { Schema = schema },
-        },
-    };
-
     private static OpenApiResponses JsonResponse(IOpenApiSchema schema) => new()
     {
         ["200"] = new OpenApiResponse
@@ -1314,38 +830,45 @@ public sealed class MultiRouteTests
         },
     };
 
-    private static OpenApiParameter Header(string name) => new()
+    private static OpenApiParameter Header(string name, bool required = false) => new()
     {
-        Name = name, In = ParameterLocation.Header, Schema = new OpenApiSchema { Type = JsonSchemaType.String },
+        Name = name, In = ParameterLocation.Header, Required = required,
+        Schema = new OpenApiSchema { Type = JsonSchemaType.String },
     };
 
     private static IEnumerable<IOpenApiParameter> Queries(params string[] names) => names.Select(name => new OpenApiParameter
     {
         Name = name,
         In = ParameterLocation.Query,
-        Schema = new OpenApiSchema
-        {
-            Type = name is "$top" or "$skip" ? JsonSchemaType.Integer : name == "$count" ? JsonSchemaType.Boolean : JsonSchemaType.String,
-        },
+        Schema = name is "$select" or "$expand" or "$orderby"
+            ? new OpenApiSchema { Type = JsonSchemaType.Array, Items = new OpenApiSchema { Type = JsonSchemaType.String } }
+            : new OpenApiSchema
+            {
+                Type = name is "$top" or "$skip" ? JsonSchemaType.Integer
+                    : name == "$count" ? JsonSchemaType.Boolean : JsonSchemaType.String,
+            },
     });
 
-    private static void Add(OpenApiDocument document, string method, string path, OpenApiOperation operation)
-    {
-        if (!document.Paths.TryGetValue(path, out var item))
-            document.Paths[path] = item = new OpenApiPathItem { Operations = new Dictionary<HttpMethod, OpenApiOperation>() };
-        item.Operations![new HttpMethod(method)] = operation;
-    }
+    private static OpenApiOperation Operation(OpenApiDocument document, string path) =>
+        document.Paths[path].Operations![HttpMethod.Get];
+
+    private static void Add(OpenApiDocument document, string method, string path, OpenApiOperation operation) =>
+        document.Paths[path] = new OpenApiPathItem
+        {
+            Operations = new Dictionary<HttpMethod, OpenApiOperation> { [new HttpMethod(method)] = operation },
+        };
+
+    private static string OutputPath() =>
+        Path.Combine(Directory.GetCurrentDirectory(), ".multi-route-tests-" + Guid.NewGuid().ToString("N"));
 
     private static async Task<Dictionary<string, string>> Generate(
-        OpenApiDocument document, IReadOnlyList<MultiRouteGroup>? groups = null, bool useCollisionData = false)
+        OpenApiDocument document, IReadOnlyList<MultiRouteGroup>? groups = null, string apiVersion = "v1.0",
+        bool useCollisionData = false)
     {
-        var output = Path.Combine(Directory.GetCurrentDirectory(), ".multi-route-tests-" + Guid.NewGuid().ToString("N"));
+        var output = OutputPath();
         try
         {
-            document.RegisterComponents();
-            var config = new GeneratorConfig(Client, output, UseCollisionData: useCollisionData, MultiRouteGroups: groups);
-            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance)
-                .GenerateAsync(CancellationToken.None);
+            await GenerateAt(document, groups, output, apiVersion, useCollisionData);
             return Directory.GetFiles(output, "*.g.cs").ToDictionary(path => Path.GetFileName(path), File.ReadAllText);
         }
         finally
@@ -1353,5 +876,15 @@ public sealed class MultiRouteTests
             if (Directory.Exists(output))
                 Directory.Delete(output, recursive: true);
         }
+    }
+
+    private static Task GenerateAt(
+        OpenApiDocument document, IReadOnlyList<MultiRouteGroup>? groups, string output, string apiVersion,
+        bool useCollisionData = false)
+    {
+        document.RegisterComponents();
+        var config = new GeneratorConfig(Client, output, apiVersion, useCollisionData, groups);
+        return new PowerShellWrapperGenerationService(document, config, NullLogger.Instance)
+            .GenerateAsync(CancellationToken.None);
     }
 }

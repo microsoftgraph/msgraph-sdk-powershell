@@ -22,10 +22,10 @@ try {
 
     $sources = [ordered]@{
         GetMgThing = @'
-    [GraphRoute("GET", "/things", ParameterSetName = "PublishedList")]
-    [GraphRoute("GET", "/things/{thing-id}", ParameterSetName = "PublishedGet")]
-    [GraphRoute("GET", "/parents/{parent-id}/things", ParameterSetName = "LegacyList")]
-    [GraphRoute("GET", "/parents/{parent-id}/things/{thing-id}", ParameterSetName = "LegacyGet")]
+    [GraphRoute("GET", "/things", ParameterSetName = "RootList")]
+    [GraphRoute("GET", "/things/{thing-id}", ParameterSetName = "RootGet")]
+    [GraphRoute("GET", "/parents/{parent-id}/things", ParameterSetName = "ParentList")]
+    [GraphRoute("GET", "/parents/{parent-id}/things/{thing-id}", ParameterSetName = "ParentGet")]
     [Cmdlet(VerbsCommon.Get, "MgThing")]
     public sealed class GetMgThingCommand { /* InvokeCommand.InvokeScript */ }
 '@
@@ -49,21 +49,21 @@ try {
     [Cmdlet(VerbsCommon.Get, "MgThing_Route3")]
     public sealed class GetMgThing_Route3Command { }
 '@
-        RemoveMgThing = @'
-    [GraphRoute("DELETE", "/things/{thing-id}", ParameterSetName = "Invoke")]
-    [GraphRoute("DELETE", "/parents/{parent-id}/things/{thing-id}", ParameterSetName = "Invoke")]
-    [Cmdlet(VerbsCommon.Remove, "MgThing")]
-    public sealed class RemoveMgThingCommand { /* InvokeCommand.InvokeScript */ }
+        GetMgThingCount = @'
+    [GraphRoute("GET", "/things/$count", ParameterSetName = "RootScalar")]
+    [GraphRoute("GET", "/parents/{parent-id}/things/$count", ParameterSetName = "ParentScalar")]
+    [Cmdlet(VerbsCommon.Get, "MgThingCount")]
+    public sealed class GetMgThingCountCommand { /* InvokeCommand.InvokeScript */ }
 '@
-        RemoveMgThing_Route0 = @'
-    [GraphRoute("DELETE", "/things/{thing-id}")]
-    [Cmdlet(VerbsCommon.Remove, "MgThing_Route0")]
-    public sealed class RemoveMgThing_Route0Command { }
+        GetMgThingCount_Route0 = @'
+    [GraphRoute("GET", "/things/$count")]
+    [Cmdlet(VerbsCommon.Get, "MgThingCount_Route0")]
+    public sealed class GetMgThingCount_Route0Command { }
 '@
-        RemoveMgThing_Route1 = @'
-    [GraphRoute("DELETE", "/parents/{parent-id}/things/{thing-id}")]
-    [Cmdlet(VerbsCommon.Remove, "MgThing_Route1")]
-    public sealed class RemoveMgThing_Route1Command { }
+        GetMgThingCount_Route1 = @'
+    [GraphRoute("GET", "/parents/{parent-id}/things/$count")]
+    [Cmdlet(VerbsCommon.Get, "MgThingCount_Route1")]
+    public sealed class GetMgThingCount_Route1Command { }
 '@
         GetMgLegacy = @'
     [Cmdlet(VerbsCommon.Get, "MgLegacy")]
@@ -94,7 +94,7 @@ try {
     @(
         @{ ApiVersion = 'v1.0'; Method = 'GET'; Uri = '/things'; Command = 'Get-MgThing' }
         @{ ApiVersion = 'v1.0'; Method = 'GET'; Uri = '/things/{thing-id}'; Command = 'Get-MgThing' }
-        @{ ApiVersion = 'v1.0'; Method = 'DELETE'; Uri = '/things/{thing-id}'; Command = 'Remove-MgThing' }
+        @{ ApiVersion = 'v1.0'; Method = 'GET'; Uri = '/things/$count'; Command = 'Get-MgThingCount' }
         @{ ApiVersion = 'v1.0'; Method = 'GET'; Uri = '/legacy'; Command = 'Get-MgLegacy' }
         @{ ApiVersion = 'v1.0'; Method = 'GET'; Uri = '/legacy/{legacy-id}'; Command = 'Get-MgLegacy' }
     ) | ConvertTo-Json | Set-Content $oraclePath
@@ -109,8 +109,8 @@ try {
     Assert-RouteTest (@($rows | Where-Object Disposition -eq 'dispatcher').Count -eq 1) 'Only the legacy dispatcher should be skipped.'
     Assert-RouteTest (@($rows | Where-Object Command -match '_Route|_List|_Get').Count -eq 0) 'Workers were not mapped to their public commands.'
     Assert-RouteTest (@($rows | Where-Object { $_.Command -eq 'Get-MgThing' -and $_.RouteCount -ne '4' }).Count -eq 0) 'Workers must retain the public route count.'
-    Assert-RouteTest (@($rows | Where-Object ParameterSetName -eq 'LegacyList').Count -eq 1) 'Route parameter set metadata was lost.'
-    Assert-RouteTest (@($rows | Where-Object { $_.Command -eq 'Remove-MgThing' -and $_.ParameterSetName -eq 'Invoke' }).Count -eq 2) 'Routes sharing an Invoke parameter set lost their metadata.'
+    Assert-RouteTest (@($rows | Where-Object ParameterSetName -eq 'ParentList').Count -eq 1) 'Route parameter set metadata was lost.'
+    Assert-RouteTest (@($rows | Where-Object { $_.Command -eq 'Get-MgThingCount' -and $_.ParameterSetName -in 'RootScalar', 'ParentScalar' }).Count -eq 2) 'Count route parameter-set metadata was lost.'
 
     # Multi-route groups never infer suppression from an absent oracle row, even when another
     # family renames to this command. Unrelated single routes retain their historical policy.
@@ -133,7 +133,7 @@ try {
     $completeOracle = @(Get-Content $oraclePath -Raw | ConvertFrom-Json) + @(
         @{ ApiVersion = 'v1.0'; Method = 'GET'; Uri = '/parents/{id}/things'; Command = 'Get-MgThing' }
         @{ ApiVersion = 'v1.0'; Method = 'GET'; Uri = '/parents/{id}/things/{id}'; Command = 'Get-MgThing' }
-        @{ ApiVersion = 'v1.0'; Method = 'DELETE'; Uri = '/parents/{id}/things/{id}'; Command = 'Remove-MgThing' }
+        @{ ApiVersion = 'v1.0'; Method = 'GET'; Uri = '/parents/{id}/things/$count'; Command = 'Get-MgThingCount' }
     )
     $completeOracle | ConvertTo-Json | Set-Content $oraclePath
     $completeOutput = & pwsh -NoProfile -File "$PSScriptRoot\Compare-WrapperCmdletNames.ps1" `
@@ -172,7 +172,7 @@ try {
     Assert-RouteTest ($dispatchInventory.Dispatcher.Name -in 'Get-MgThing', 'Get-MgLegacy') 'Runtime gate failed to find a public GET dispatcher.'
     $routesOnly = @($commands | Where-Object Name -notlike '*Legacy*')
     Assert-RouteTest ((Get-WrapperDispatchInventory $routesOnly).Dispatcher.Name -eq 'Get-MgThing') 'Runtime gate requires obsolete _List workers to find a new dispatcher.'
-    $withOrphan = @($commands) + @([pscustomobject]@{ Name = 'Remove-MgMissing_Route0' })
+    $withOrphan = @($commands) + @([pscustomobject]@{ Name = 'Get-MgMissing_Route0' })
     Assert-RouteTest ((Get-WrapperDispatchInventory $withOrphan).Orphans.Count -eq 1) 'Runtime gate ignored an orphan route worker.'
     $legacyOnly = @($commands | Where-Object Name -like '*Legacy*')
     Assert-RouteTest ((Get-WrapperDispatchInventory $legacyOnly).Dispatcher.Name -eq 'Get-MgLegacy') 'Runtime gate broke legacy paired GET detection.'
