@@ -61,7 +61,7 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
             # Omit beta version of DeviceManagement.Administration module for further troubleshooting
             if (-not($betaExcludes -contains $ModuleName -and $GraphVersion -eq "beta")) {
                 # Download Kiota-compatible OpenAPI document for module.
-                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount -SingularizeOperationIds
+                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount -SingularizeOperationIds -DeferPruning
             }
         }
         catch {
@@ -74,7 +74,7 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
 # Keep legacy operation-ID directives usable without changing Kiota-compatible schemas.
 & $TweakOpenApiPS1 -OpenAPIFilesPath $OpenApiDocOutput -OperationIdsOnly
 
-# Remove operations whose deprecation removal date has passed and record the removals.
+# Remove expired deprecated operations, recording the complete profile.
 & $RemoveExpiredDeprecatedOperationsPS1 -OpenApiFilesPath $OpenApiDocOutput
 
 $stopwatch.Stop()
