@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace WrapperGenerator;
 
-// Exact reviewed GET routes whose existing mandatory IDs select the request.
+// Exact reviewed operation routes whose existing mandatory IDs select the request.
 public sealed record MultiRoute(string Method, string Path, string Name);
 
 public sealed record MultiRouteGroup(

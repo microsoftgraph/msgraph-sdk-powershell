@@ -98,7 +98,7 @@ internal static class Program
         ILogger logger, CancellationToken cancellationToken)
     {
         var service = new PowerShellWrapperGenerationService(document, config, logger);
-        service.ValidateGetGroups(cancellationToken);
+        service.ValidateRouteGroups(cancellationToken);
         // The generation service writes only *.g.cs. Also write a minimal kiota-lock.json recording
         // the source spec path, so downstream tooling that keys off it — notably
         // tools/Compare-WrapperCmdletNames.ps1, which reads the v1.0/beta segment out of it to scope

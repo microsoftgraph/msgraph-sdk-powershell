@@ -1,6 +1,6 @@
-# GET variants distinguished by existing path IDs
+# Compatible operation variants distinguished by existing path IDs
 
-Some published cmdlets expose the same conceptual GET operation through several paths.
+Some published cmdlets expose the same conceptual operation through several paths.
 When their existing mandatory path IDs distinguish those paths, one public command can
 retain natural PowerShell parameter sets. Ambiguous or genuinely different operations
 instead need manual review of a distinguishing cmdlet naming pattern. This feature does
@@ -16,11 +16,12 @@ MultiRoute(string Method, string Path, string Name)
 MultiRouteGroup(string ApiVersion, IReadOnlyList<MultiRoute> Routes, string DefaultRoute)
 ```
 
-`Method` must be `GET`; `Path` is the exact source-spec path, including named placeholders.
+`Method` is `GET`, `POST`, `PATCH`, `PUT` or `DELETE`; every member of a group uses the
+same method and operation kind. `Path` is the exact source-spec path, including named placeholders.
 Matching ignores case but does not erase placeholder names or accept wildcards. `Name`
 labels a route family for internal parameter-set names, not a new public parameter.
 `DefaultRoute` explicitly identifies the root family. Its list is the default when present;
-otherwise its single entity/count operation is the default.
+otherwise its single operation is the default.
 
 All members must already resolve to the same public name through existing naming rules
 and derived-data precedence. The annotation does not rename, unsuppress or classify away
@@ -65,21 +66,72 @@ The first command exposes `RootList` (default), `RootGet` and `AgentList`; the c
 defaults are preserved. No `Route`, `Published`, switch or other discriminator is added.
 Supplying both the root item ID and the agent ID is an invalid parameter-set combination.
 
-## Narrow supported contract
+## Supported homogeneous contracts
 
-A group contains either homogeneous entity GETs (collection/list and item shapes) or
-homogeneous scalar `/$count` GETs. Every operation has a distinct mandatory path-ID set;
+A group contains compatible entity GETs (collection/list and item shapes), scalar
+`/$count` GETs, resource creates/updates/replacements/deletes, or POST actions. It cannot
+mix these categories. Every operation has a distinct mandatory path-ID set;
 the default root set must be a subset of every other set. Each family's list/item pair,
 when both exist, must be structurally related. All entity workers emit the same model;
 same-shape response, query and header contracts must match.
 
-Workers reuse the unchanged ordinary typed `EmitListGet`, `EmitItemGet` and `EmitScalarGet`
-templates. Existing supported optional OData queries and aliases, declared optional string
+GET workers reuse the unchanged ordinary typed `EmitListGet`, `EmitItemGet` and `EmitScalarGet`
+templates. Their supported optional OData queries and aliases, declared optional string
 headers, generic `Headers`, inherited authentication parameters and list paging remain
 intact. The thin public dispatcher selects only by `ParameterSetName` and forwards bound
 parameters wholesale to `_Route0`, `_Route1`, ... workers in declaration order. It retains
 the existing worker ErrorRecord and does not reclassify pipeline stops or cancellation.
 Workers remain exported, like ordinary `_List`/`_Get` workers, for in-runspace invocation.
+
+### Resource mutations and POST actions
+
+The same annotation can group ordinary resource `POST` (`New`), `PATCH` (`Update`),
+`PUT` (`Set`), bodyless `DELETE` (`Remove`), or homogeneous POST actions. A mutation family
+has exactly one operation; its internal set is its label plus `New`, `Update`, `Set`,
+`Remove` or `Action`. There are still no selector parameters or capability flags.
+
+For example, after separately reviewing the service and published naming/parameter
+contracts, two repeated resource paths can retain their ordinary `Update-MgWidget` name:
+
+```csharp
+MergeRoutes(new MultiRouteGroup("v1.0",
+[
+    new("PATCH", "/widgets/{widget-id}", "Root"),
+    new("PATCH", "/widgets/{parent-id}/widgets/{widget-id}", "Parent"),
+], DefaultRoute: "Root"), "Reviewed identical public body, output and optional header contracts.")
+```
+
+`RootUpdate` requires `WidgetId`; `ParentUpdate` additionally requires `ParentId`. A body
+property colliding with an ID keeps the existing ordinary numeric suffix, such as
+`WidgetId1`, independently of the URL's `WidgetId`. If route-specific collision resolution
+would change the public body parameter names or types, the group is rejected.
+
+Resource JSON writes must use a named entity request body and the same named result
+entity supported by the ordinary typed emitter. A documented no-content status may
+coexist with that entity response. DELETE must have neither a body nor a result. An action
+may be bodyless or have an ordinary inline JSON body, and may return no output or one
+shared named entity. Bodyless and bodyful actions cannot share a group; neither can void
+and entity outputs. Per-action generated request-body class names remain private to each
+typed worker: only identical public property contracts may be grouped, without a shared
+cast or hand conversion.
+
+Body parameters come from the same scalar/complex/untyped binding descriptors and
+collision resolution as ordinary commands. Existing type aliases, nullable declarations,
+array/model/enum types, optional expanded fields and policy exclusions remain unchanged.
+Request requiredness, required-property sets and inline property schemas must agree,
+as must public parameter names/types, responses and optional string headers. Unsupported
+body properties fail rather than disappearing from one selected worker. No new
+`BodyParameter` or `Expanded` form is introduced. Mutations do not bind query parameters.
+
+Public mutation dispatchers advertise `SupportsShouldProcess`; DELETE retains
+`ConfirmImpact.High` and the other supported shapes retain `Medium`. The dispatcher
+does **not** call `ShouldProcess`: exactly the selected ordinary worker performs that
+gate, before constructing its body, acquiring transport or issuing requests.
+`WhatIf`, `Confirm`, explicit `Confirm:$false` and ambient preference handling remain
+the PowerShell engine's responsibility. The full bound-parameter splat is unchanged.
+PATCH's existing no-body-result re-fetch uses only the selected typed route, and only
+when that path declares GET; PUT never acquires a re-fetch. No operation tries another
+URL on failure.
 
 Preflight validates **all** configured groups before creating/clearing the output directory,
 writing the CLI's `kiota-lock.json` marker or writing any command. Ordinary collision
@@ -93,8 +145,11 @@ The following are rejected for grouped generation:
 
 - Identical mandatory path-ID sets, a default that shadows a shallower route, incompatible
   parameter types/aliases, duplicate membership or nonstructural list/item pairs.
-- Functions, actions, non-GET methods, media, `/$ref`, `/$value`, composite-key group routes,
-  request bodies (including non-JSON bodies), unresolved/union responses or mixed models.
+- Mixed methods/kinds, functions, media, `/$ref`, `/$value`, composite-key group routes,
+  GET request bodies, unresolved/union responses, mixed models or mutation queries.
+- Non-JSON, root union or unbindable bodies; incompatible body requiredness, properties
+  or public types; bodyless/bodyful or void/entity mixtures; resource JSON writes without
+  the ordinary matching named body/result model; route-specific public body forms.
 - Required queries, arbitrary/non-OData queries, unsupported query types, differing
   same-shape query/header contracts, required/non-string headers and unbound inherited
   query/header or unsupported parameter locations.
@@ -115,11 +170,13 @@ inventories, compiled parity, output manifests and worker/orphan/export checks r
 route. A missing oracle URI is not proof that a secondary operation is absent; the metadata
 producer can retain only the first URI of a multi-variant command.
 
-`MultiRouteTests` covers natural-ID grouping, root defaults, ordinary list/item behavior and
-fail-fast rejection boundaries. `Test-WrapperMultiRouteDispatcher.ps1` compiles the emitted
+`MultiRouteTests` covers natural-ID GET grouping, root defaults, ordinary list/item behavior
+and fail-fast rejection boundaries. `MutationRouteTests` covers compatible mutation/action
+workers, their body/output/ShouldProcess contracts and preflight rejection boundaries.
+`Test-WrapperMultiRouteDispatcher.ps1` compiles the emitted
 ID dispatcher against the real runtime and exercises natural binding, invalid combinations,
 query/header forwarding and error identity without Graph calls.
-`Test-WrapperRouteMetadata.ps1` checks compiled GET/count metadata, exports, parity and
+`Test-WrapperRouteMetadata.ps1` checks compiled GET/count and mutation/action metadata, exports, parity and
 coverage. The Applications disposable acceptance fixture additionally compiles the five
 actual typed GET workers and two public commands, and checks their five URLs and real
 PowerShell binder/mock-wire cases. Such focused proofs are not full-module or live-service

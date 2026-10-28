@@ -99,7 +99,9 @@ function Get-WrapperDispatchInventory {
     $workers = @($Commands | Where-Object Name -match $workerSuffix)
     $orphans = @($workers | Where-Object { $Commands.Name -notcontains ($_.Name -replace $workerSuffix, '') })
     $publicNames = @($workers | ForEach-Object { $_.Name -replace $workerSuffix, '' } | Sort-Object -Unique)
-    $dispatcher = $Commands | Where-Object { $_.Name -like 'Get-*' -and $publicNames -contains $_.Name } | Select-Object -First 1
+    $dispatchers = @($Commands | Where-Object { $publicNames -contains $_.Name })
+    $dispatcher = $dispatchers | Where-Object Name -like 'Get-*' | Select-Object -First 1
+    if (-not $dispatcher) { $dispatcher = $dispatchers | Select-Object -First 1 }
     [pscustomobject]@{ Workers = $workers; Orphans = $orphans; Dispatcher = $dispatcher }
 }
 
@@ -215,6 +217,7 @@ if (`$dispatcher) {
     foreach (`$p in (`$defaultSet.Parameters | Where-Object { `$_.IsMandatory -and `$_.ParameterType -eq [string] })) {
         `$splat[`$p.Name] = 'smoke-test'
     }
+    if (`$dispatcher.Parameters.ContainsKey('Confirm')) { `$splat['Confirm'] = `$false }
     try {
         & `$dispatcher @splat -ErrorAction Stop | Out-Null
         `$errorId = 'NO-ERROR'

@@ -135,7 +135,7 @@ public sealed partial class PowerShellWrapperGenerationService
         cancellationToken.ThrowIfCancellationRequested();
 
         var ctx = new EmitContext(ClientNamespace: config.ClientNamespaceName);
-        var getGroups = PrepareGetGroups(ctx, cancellationToken);
+        var routeGroups = PrepareRouteGroups(ctx, cancellationToken);
 
         writtenCmdletFiles.Clear();
         fileCollisions.Clear();
@@ -163,8 +163,9 @@ public sealed partial class PowerShellWrapperGenerationService
                 // calls on a resource rather than CRUD over one, which decides the verb, the
                 // request shape and the kiota member the call goes through.
                 var operationKind = ClassifyOperationKind(operation, httpMethod);
-                if (httpMethod == HttpMethod.Get && getGroups.Any(g => g.Workers.Any(w =>
-                    w.Naming.SourcePath.Equals(pathTemplate, StringComparison.OrdinalIgnoreCase))))
+                if (routeGroups.Any(g => g.Workers.Any(w =>
+                    w.Naming.SourceMethod.Equals(httpMethod.Method, StringComparison.OrdinalIgnoreCase)
+                    && w.Naming.SourcePath.Equals(pathTemplate, StringComparison.OrdinalIgnoreCase))))
                     continue;
 
                 // Operation shapes the emitters cannot produce a valid cmdlet for yet are
@@ -342,7 +343,7 @@ public sealed partial class PowerShellWrapperGenerationService
 
         written += await EmitGetOperationsAsync(getOperations, ctx, cancellationToken).ConfigureAwait(false);
         written += await EmitDeltaOperationsAsync(deltaOperations, ctx, cancellationToken).ConfigureAwait(false);
-        foreach (var group in getGroups)
+        foreach (var group in routeGroups)
         {
             for (var i = 0; i < group.Workers.Count; i++)
                 written += await WriteCmdletFileAsync(group.Workers[i].InternalNaming, group.WorkerSources[i], cancellationToken).ConfigureAwait(false);
@@ -874,7 +875,7 @@ public sealed partial class PowerShellWrapperGenerationService
     // resolve is dropped with a diagnostic rather than emitted against a guessed type name,
     // which would fail the module compile.
     private (IReadOnlyList<CmdletProperty> Scalars, IReadOnlyList<ComplexParameter> Complex, IReadOnlyList<UntypedParameter> Untyped) BindBodyProperties(
-        IOpenApiSchema bodySchema, EmitContext ctx, CmdletNaming naming, string entityType)
+        IOpenApiSchema bodySchema, EmitContext ctx, CmdletNaming naming, string entityType, bool recordDiagnostics = true)
     {
         var classified = SchemaProperties.Classify(bodySchema, ResolveComponentSchema);
         var (scalars, complex, untyped) = SchemaProperties.ResolveParameterNameCollisions(
@@ -889,23 +890,22 @@ public sealed partial class PowerShellWrapperGenerationService
         complex = [.. complex.Select(p => p.PascalName == enclosingTypeName ? p with { PascalName = p.PascalName + "Prop" } : p)];
         untyped = [.. untyped.Select(p => p.PascalName == enclosingTypeName ? p with { PascalName = p.PascalName + "Prop" } : p)];
 
-        foreach (var skipped in classified.Unsupported)
-            LogSkippedBodyProperty(naming.Noun, skipped.OpenApiName, skipped.Shape.ToString(), skipped.IsRequired);
+        if (recordDiagnostics)
+        {
+            foreach (var skipped in classified.Unsupported)
+                LogSkippedBodyProperty(naming.Noun, skipped.OpenApiName, skipped.Shape.ToString(), skipped.IsRequired);
 
-        // Named so an external reconciliation can tell a policy exclusion from an omission
-        // without re-deriving the policy from the spec.
-        foreach (var dropped in classified.Excluded)
-            LogExcludedBodyProperty(naming.Noun, dropped.OpenApiName, dropped.Policy.ToString());
+            // Policy exclusions remain distinct from unsupported shapes in run reconciliation.
+            foreach (var dropped in classified.Excluded)
+                LogExcludedBodyProperty(naming.Noun, dropped.OpenApiName, dropped.Policy.ToString());
 
-        // Totals for the run's reconciliation line: every classified property must end up in
-        // exactly one of these buckets, so a shape that silently fell through the classifier
-        // would show up as a mismatch at Graph scale, not just in the unit test.
-        propertiesSeenCount += classified.PropertiesSeen;
-        boundScalarCount += classified.Scalars.Count;
-        boundComplexCount += classified.Complex.Count;
-        boundUntypedCount += classified.Untyped.Count;
-        unsupportedPropertyCount += classified.Unsupported.Count;
-        excludedPropertyCount += classified.Excluded.Count;
+            propertiesSeenCount += classified.PropertiesSeen;
+            boundScalarCount += classified.Scalars.Count;
+            boundComplexCount += classified.Complex.Count;
+            boundUntypedCount += classified.Untyped.Count;
+            unsupportedPropertyCount += classified.Unsupported.Count;
+            excludedPropertyCount += classified.Excluded.Count;
+        }
 
         var parameters = new List<ComplexParameter>(complex.Count);
         foreach (var property in complex)

@@ -10,44 +10,48 @@ namespace WrapperGenerator;
 
 public sealed partial class PowerShellWrapperGenerationService
 {
-    private sealed record PreparedGetGroup(IReadOnlyList<CmdletEmitter.RouteWorker> Workers,
+    private sealed record PreparedRouteGroup(IReadOnlyList<CmdletEmitter.RouteWorker> Workers,
         IReadOnlyList<string> WorkerSources, string DispatcherSource);
 
-    internal void ValidateGetGroups(CancellationToken cancellationToken) =>
-        _ = PrepareGetGroups(new EmitContext(config.ClientNamespaceName), cancellationToken);
+    internal void ValidateRouteGroups(CancellationToken cancellationToken) =>
+        _ = PrepareRouteGroups(new EmitContext(config.ClientNamespaceName), cancellationToken, recordDiagnostics: false);
 
     // Validate every opted-in group and build its sources before touching the output directory.
-    private List<PreparedGetGroup> PrepareGetGroups(EmitContext ctx, CancellationToken cancellationToken)
+    private List<PreparedRouteGroup> PrepareRouteGroups(EmitContext ctx, CancellationToken cancellationToken, bool recordDiagnostics = true)
     {
-        var plans = new List<PreparedGetGroup>();
+        var plans = new List<PreparedRouteGroup>();
         var seen = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         foreach (var group in CmdletConfigurator.GetMultiRouteGroups(config))
         {
             if (group.Routes.Count < 2 || group.Routes.Count > 32
                 || !group.Routes.Any(r => r.Name == group.DefaultRoute)
                 || group.Routes.Select(r => r.Name).Distinct(StringComparer.OrdinalIgnoreCase).Count() < 2)
-                throw new InvalidOperationException("GET groups require 2 to 32 exact routes, at least two families and an explicit root default.");
+                throw new InvalidOperationException("Operation groups require 2 to 32 exact routes, at least two families and an explicit root default.");
+            var method = new HttpMethod(group.Routes[0].Method.ToUpperInvariant());
+            if (method != HttpMethod.Get && method != HttpMethod.Post && method != HttpMethod.Patch
+                && method != HttpMethod.Put && method != HttpMethod.Delete)
+                throw new InvalidOperationException($"Unsupported operation group method: {method}.");
             var labels = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (var route in group.Routes)
             {
-                if (!route.Method.Equals("GET", StringComparison.OrdinalIgnoreCase)
+                if (!route.Method.Equals(method.Method, StringComparison.OrdinalIgnoreCase)
                     || !Regex.IsMatch(route.Name, "^[A-Za-z][A-Za-z0-9]*$", RegexOptions.CultureInvariant)
                     || !route.Path.StartsWith('/') || route.Path.IndexOfAny(['*', '?', '#']) >= 0
                     || route.Path.Contains("{}", StringComparison.Ordinal))
-                    throw new InvalidOperationException($"Invalid exact GET group member: {route.Method} {route.Path} ({route.Name}).");
+                    throw new InvalidOperationException($"Invalid exact or mixed-method operation group member: {route.Method} {route.Path} ({route.Name}).");
                 if (labels.TryGetValue(route.Name, out var label) && label != route.Name)
-                    throw new InvalidOperationException("GET family labels must not differ only by case.");
+                    throw new InvalidOperationException("Operation family labels must not differ only by case.");
                 labels[route.Name] = route.Name;
                 if (!seen.Add(route.Method + " " + route.Path))
-                    throw new InvalidOperationException($"Duplicate GET group membership: {route.Path}.");
+                    throw new InvalidOperationException($"Duplicate operation group membership: {route.Method} {route.Path}.");
             }
             var paths = group.Routes.Select(r => document.Paths.SingleOrDefault(p =>
                 p.Key.Equals(r.Path, StringComparison.OrdinalIgnoreCase))).ToArray();
-            var present = paths.Select(p => p.Value?.Operations?.ContainsKey(HttpMethod.Get) == true).ToArray();
+            var present = paths.Select(p => p.Value?.Operations?.ContainsKey(method) == true).ToArray();
             if (paths.All(p => p.Value is null))
                 continue; // Module configuration is globally aggregated; unrelated modules have no members.
             if (present.Any(p => !p))
-                throw new InvalidOperationException("GET group is incomplete or filtered: "
+                throw new InvalidOperationException("Operation group is incomplete or filtered: "
                     + string.Join(", ", group.Routes.Where((_, i) => !present[i]).Select(r => r.Path)));
 
             var workers = new List<CmdletEmitter.RouteWorker>();
@@ -58,9 +62,18 @@ public sealed partial class PowerShellWrapperGenerationService
                 cancellationToken.ThrowIfCancellationRequested();
                 var path = paths[i].Key;
                 var pathItem = paths[i].Value!;
-                var operation = pathItem.Operations![HttpMethod.Get];
-                if (CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config))
-                    throw new InvalidOperationException($"GET group member is suppressed: {path}.");
+                var operation = pathItem.Operations![method];
+                if (CmdletConfigurator.IsSuppressed(method, path, config))
+                    throw new InvalidOperationException($"Operation group member is suppressed: {method} {path}.");
+                if (method != HttpMethod.Get)
+                {
+                    var (worker, mutationSource) = PrepareMutationRoute(method, path, pathItem, operation,
+                        group.Routes[i].Name, i, ctx, recordDiagnostics);
+                    workers.Add(worker);
+                    sources.Add(mutationSource);
+                    operations.Add(operation);
+                    continue;
+                }
                 if (ClassifyOperationKind(operation, HttpMethod.Get) != OperationKind.Resource
                     || (operation.Extensions?.TryGetValue("x-ms-docs-operation-type", out var kind) == true
                         && kind is JsonNodeExtension node && node.Node?.ToString()?.Trim('"') != "operation")
@@ -140,14 +153,15 @@ public sealed partial class PowerShellWrapperGenerationService
             {
                 var first = shape.First().Operation;
                 if (shape.Skip(1).Any(w => ParameterSignature(first) != ParameterSignature(w.Operation)
-                    || ResponseSignature(first) != ResponseSignature(w.Operation)))
-                    throw new InvalidOperationException("GET variants have incompatible response, query or header contracts.");
+                    || ResponseSignature(first) != ResponseSignature(w.Operation)
+                    || BodySignature(first) != BodySignature(w.Operation)))
+                    throw new InvalidOperationException("Operation variants have incompatible body, response, query or header contracts.");
             }
             var dispatcher = CmdletEmitter.EmitMultiRouteDispatcher(group, workers, ctx);
             plans.Add(new(workers, sources, dispatcher));
         }
         if (plans.GroupBy(p => p.Workers[0].Naming.ClassName, StringComparer.OrdinalIgnoreCase).Any(g => g.Count() > 1))
-            throw new InvalidOperationException("GET groups resolve to the same public command; review complete group membership.");
+            throw new InvalidOperationException("Operation groups resolve to the same public command; review complete group membership.");
         return plans;
     }
 
