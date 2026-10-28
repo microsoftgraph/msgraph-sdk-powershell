@@ -42,6 +42,21 @@ public sealed class CmdletConfiguratorTests
         Assert.Equal(expected, TryGetOverriddenVerb(new HttpMethod(method), path, null, VerbEntries));
     }
 
+    [Theory]
+    [InlineData(null, null)]
+    [InlineData("v1.0", null)]
+    [InlineData("beta", "Invoke")]
+    [InlineData("BETA", "Invoke")]
+    public void ProfileScopedEntriesRequireAMatchingConfiguredApiVersion(string? apiVersion, string? expected)
+    {
+        Entry[] entries =
+        [
+            new(OverrideKind.ReplaceVerb, null, "/fixtures/", PathMatch.Prefix, "Invoke", "Beta only", ApiVersion: "beta"),
+        ];
+        var config = apiVersion is null ? null : new GeneratorConfig("Test.Client", "unused", apiVersion, false);
+        Assert.Equal(expected, TryGetOverriddenVerb(HttpMethod.Get, FunctionPath, config, entries));
+    }
+
     [Fact]
     public void CuratedVerbSupportsUnscopedMethodsAndExistingPrefixSuffixMatching()
     {

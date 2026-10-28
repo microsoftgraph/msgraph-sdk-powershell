@@ -38,10 +38,10 @@ public static partial class CmdletConfigurator
     }
 
     internal sealed record Entry(OverrideKind Kind, HttpMethod? Method, string Pattern, PathMatch Match, string? Value, string Reason,
-        MultiRouteGroup? RouteGroup = null);
+        string? ApiVersion = null, MultiRouteGroup? RouteGroup = null);
 
     internal static Entry MergeRoutes(MultiRouteGroup group, string reason) =>
-        new(OverrideKind.MergeRoutes, null, "", PathMatch.Exact, null, reason, group);
+        new(OverrideKind.MergeRoutes, null, "", PathMatch.Exact, null, reason, RouteGroup: group);
 
     internal static IEnumerable<MultiRouteGroup> GetMultiRouteGroups(GeneratorConfig config) =>
         Entries.Where(e => e.Kind == OverrideKind.MergeRoutes).Select(e => e.RouteGroup
@@ -142,8 +142,8 @@ public static partial class CmdletConfigurator
         return NormalizePath(pathTemplate);
     }
 
-    // config carries the API version the derived collision data is keyed by; null (the unit
-    // tests' default) applies only the curated entries below, so a data-file change can never
+    // config scopes both derived data and profile-specific curated entries; null (the unit
+    // tests' default) applies only unscoped curated entries, so a data-file change can never
     // silently shift a pinned naming expectation.
     public static bool IsSuppressed(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config = null)
     {
@@ -154,7 +154,7 @@ public static partial class CmdletConfigurator
             return true;
         foreach (var entry in Entries)
         {
-            if (entry.Kind == OverrideKind.SuppressOperation && Matches(entry, httpMethod, path))
+            if (entry.Kind == OverrideKind.SuppressOperation && Matches(entry, httpMethod, path, config))
                 return true;
         }
         return false;
@@ -175,7 +175,7 @@ public static partial class CmdletConfigurator
             return derived.Verb;
         foreach (var entry in entries)
         {
-            if (entry.Kind == OverrideKind.ReplaceVerb && Matches(entry, httpMethod, path))
+            if (entry.Kind == OverrideKind.ReplaceVerb && Matches(entry, httpMethod, path, config))
                 return entry.Value;
         }
         return null;
@@ -198,7 +198,7 @@ public static partial class CmdletConfigurator
 
         foreach (var entry in Entries)
         {
-            if (!Matches(entry, httpMethod, path))
+            if (!Matches(entry, httpMethod, path, config))
                 continue;
             switch (entry.Kind)
             {
@@ -214,8 +214,11 @@ public static partial class CmdletConfigurator
         return noun;
     }
 
-    private static bool Matches(Entry entry, HttpMethod httpMethod, string normalizedPath)
+    private static bool Matches(Entry entry, HttpMethod httpMethod, string normalizedPath, GeneratorConfig? config)
     {
+        if (entry.ApiVersion is not null &&
+            !string.Equals(entry.ApiVersion, config?.ApiVersion, StringComparison.OrdinalIgnoreCase))
+            return false;
         // HttpMethod's own equality is case-insensitive, so no string comparison is needed.
         if (entry.Method is not null && entry.Method != httpMethod)
             return false;

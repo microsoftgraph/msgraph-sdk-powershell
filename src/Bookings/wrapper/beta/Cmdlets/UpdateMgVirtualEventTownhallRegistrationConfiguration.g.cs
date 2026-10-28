@@ -1,0 +1,98 @@
+#nullable enable
+
+using System;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Bookings.Client;
+using Microsoft.Graph.PowerShell.Bookings.Client.Models;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Bookings
+{
+    [GraphRoute("PATCH", "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration")]
+    [Cmdlet(VerbsData.Update, "MgVirtualEventTownhallRegistrationConfiguration", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhallRegistrationConfiguration))]
+    public class UpdateMgVirtualEventTownhallRegistrationConfigurationCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string VirtualEventTownhallId { get; set; } = string.Empty;
+
+        [Parameter(Mandatory = false)]
+        public int? Capacity { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? IsManualApprovalEnabled { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? IsWaitlistEnabled { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? RegistrationWebUrl { get; set; }
+
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(VirtualEventTownhallId, "Update"))
+                return;
+
+            var body = new Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhallRegistrationConfiguration();
+
+    if (this.IsParameterBound(nameof(Capacity)))
+        body.Capacity = Capacity;
+
+    if (this.IsParameterBound(nameof(IsManualApprovalEnabled)))
+        body.IsManualApprovalEnabled = IsManualApprovalEnabled;
+
+    if (this.IsParameterBound(nameof(IsWaitlistEnabled)))
+        body.IsWaitlistEnabled = IsWaitlistEnabled;
+
+    if (this.IsParameterBound(nameof(RegistrationWebUrl)))
+        body.RegistrationWebUrl = RegistrationWebUrl;
+
+
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhallRegistrationConfiguration? result;
+            try
+            {
+                result = client.Solutions.VirtualEvents.Townhalls[VirtualEventTownhallId].RegistrationConfiguration.PatchAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, VirtualEventTownhallId);
+                return;
+            }
+
+
+            if (result is null)
+            {
+                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
+                try
+                {
+                    result = client.Solutions.VirtualEvents.Townhalls[VirtualEventTownhallId].RegistrationConfiguration.GetAsync().GetAwaiter().GetResult();
+                }
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+                {
+                    ThrowGraphRequestFailed(ex, VirtualEventTownhallId);
+                    return;
+                }
+            }
+            if (result is not null)
+                WriteObject(result);
+        }
+    }
+}

@@ -380,6 +380,12 @@ The generated cmdlets **are** compiled: `Build-WrapperModule.ps1` builds each mo
 
 ## Migrate module AutoRest directives
 
+Curated entries in `src/<Module>/wrapper/<Module>_cmdletConfigurations.cs` apply to both
+profiles unless they specify `ApiVersion: "beta"` or `ApiVersion: "v1.0"`. Scoped entries
+require a matching generator configuration. `SuppressOperation` prevents cmdlet emission,
+not Kiota HTTP client generation or OpenAPI input retention; Bookings uses beta-only
+entries for its retired root-level routes while preserving `/solutions/...` cmdlets.
+
 Cmdlet removals and renames in the shared `src/<Module>/<Module>.md` file are migrated one
 module at a time. Profile-specific directives (including `src/<Module>/beta/readme.md` and
 `src/<Module>/v1.0/readme.md`) and all directives in `src/readme.graph.md` are explicitly out
