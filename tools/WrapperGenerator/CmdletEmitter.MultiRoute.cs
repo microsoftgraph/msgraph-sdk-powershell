@@ -161,7 +161,7 @@ namespace {{ctx.CmdletNamespace}}
                 InvokeCommand.InvokeScript(
                     "param($BoundParameters, $CmdletName) & $CmdletName @BoundParameters",
                     false,
-                    PipelineResultTypes.Output | PipelineResultTypes.Error,
+                    global::System.Management.Automation.Runspaces.PipelineResultTypes.Output | global::System.Management.Automation.Runspaces.PipelineResultTypes.Error,
                     null,
                     MyInvocation.BoundParameters, internalCmdletName);
             }
