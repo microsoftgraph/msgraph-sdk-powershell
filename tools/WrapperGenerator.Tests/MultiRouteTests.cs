@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using WrapperGenerator;
 using Xunit;
+using static WrapperGenerator.CmdletConfigurator;
 
 namespace WrapperGenerator.Tests;
 
@@ -274,16 +275,17 @@ public sealed class MultiRouteTests
         Add(document, "GET", "/groupSettings", Get(document, list: true));
         document.RegisterComponents();
         var output = OutputPath();
-        var shared = new GeneratorConfig(Client, output, UseCollisionData: true, OperationVariantGroups: [group]);
+        var shared = new GeneratorConfig(Client, output, UseCollisionData: true);
+        Entry[] entries = [GroupVariants(group, "Shared fixture registration")];
         try
         {
             foreach (var profile in new[] { "v1.0", "beta", "v1.0" })
             {
                 if (cli)
                     await WrapperGenerator.Program.GenerateAsync(document, shared, "fixture.yml",
-                        NullLogger.Instance, CancellationToken.None, profile);
+                        NullLogger.Instance, CancellationToken.None, profile, entries);
                 else
-                    await new PowerShellWrapperGenerationService(document, shared, NullLogger.Instance, profile)
+                    await new PowerShellWrapperGenerationService(document, shared, NullLogger.Instance, profile, entries)
                         .GenerateAsync(CancellationToken.None);
 
                 Assert.True(File.Exists(Path.Combine(output, "GetMgWidget.g.cs")));
@@ -317,29 +319,45 @@ public sealed class MultiRouteTests
         var (_, group) = Widgets();
 
         var entry = CmdletConfigurator.GroupVariants(group, "Reviewed natural path-ID sets");
-        var config = new GeneratorConfig(Client, ".", false, [group]);
+        Entry[] entries = [entry];
 
         Assert.Equal(CmdletConfigurator.OverrideKind.GroupVariants, entry.Kind);
         Assert.Same(group, entry.VariantGroup);
         Assert.Equal("Reviewed natural path-ID sets", entry.Reason);
-        Assert.Contains(group, CmdletConfigurator.GetOperationVariantGroups(config));
-        Assert.Single(CmdletConfigurator.GetOperationVariantGroups(config), g => ReferenceEquals(g, group));
+        Assert.Contains(group, CmdletConfigurator.GetOperationVariantGroups(entries));
+        Assert.Single(CmdletConfigurator.GetOperationVariantGroups(entries), g => ReferenceEquals(g, group));
         Assert.Equal(3, typeof(OperationVariant).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
         Assert.Equal(2, typeof(OperationVariantGroup).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
-        Assert.Equal(4, typeof(GeneratorConfig).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
+        Assert.Equal(3, typeof(GeneratorConfig).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
         Assert.Null(typeof(OperationVariantGroup).GetProperty("ApiVersion"));
         Assert.Null(typeof(GeneratorConfig).GetProperty("ApiVersion"));
         Assert.Null(typeof(CmdletConfigurator.Entry).GetProperty("ApiVersion"));
+        Assert.Null(typeof(GeneratorConfig).GetProperty("OperationVariantGroups"));
+        Assert.Equal(typeof(CmdletConfigurator), typeof(OperationVariant).DeclaringType);
+        Assert.Equal(typeof(CmdletConfigurator), typeof(OperationVariantGroup).DeclaringType);
+        Assert.Single(typeof(PowerShellWrapperGenerationService).GetConstructors());
     }
 
     [Fact]
-    public void GroupConfigurationDoesNotOverrideCuratedOrDerivedNamingInEitherProfile()
+    public async Task IsolatedRegistrationsDoNotChangeTheDefaultModuleConfiguration()
+    {
+        var (document, group) = Widgets();
+        var before = GetOperationVariantGroups().ToArray();
+
+        Assert.Equal(3, (await Generate(document, [group])).Count);
+        await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document, useCollisionData: true));
+        Assert.Equal(3, (await Generate(document, [group])).Count);
+
+        Assert.Equal(before, GetOperationVariantGroups());
+    }
+
+    [Fact]
+    public void RegisteredVariantsDoNotOverrideCuratedOrDerivedNamingInEitherProfile()
     {
         var (_, group) = Widgets();
         foreach (var apiVersion in new[] { "v1.0", "beta" })
         {
             var plain = new GeneratorConfig(Client, ".", true);
-            var grouped = plain with { OperationVariantGroups = [group] };
             foreach (var path in new[]
             {
                 Root, Agent,
@@ -348,7 +366,9 @@ public sealed class MultiRouteTests
             })
             {
                 var before = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), plain, apiVersion);
-                var after = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), grouped, apiVersion);
+                Entry[] entries = [GroupVariants(group, "Shared configuration")];
+                Assert.Same(group, Assert.Single(GetOperationVariantGroups(entries)));
+                var after = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), plain, apiVersion);
                 Assert.Equal(before.VerbName, after.VerbName);
                 Assert.Equal(before.Noun, after.Noun);
                 Assert.Equal(before.ClassName, after.ClassName);
@@ -806,12 +826,12 @@ public sealed class MultiRouteTests
             }
             try
             {
-                var config = new GeneratorConfig(Client, output, UseCollisionData: collisionData,
-                    OperationVariantGroups: groups);
+                var config = new GeneratorConfig(Client, output, UseCollisionData: collisionData);
+                var entries = RegisterGroups(groups);
                 var error = await Assert.ThrowsAsync<InvalidOperationException>(() => cli
                     ? WrapperGenerator.Program.GenerateAsync(document, config, "next.yml",
-                        NullLogger.Instance, CancellationToken.None)
-                    : new PowerShellWrapperGenerationService(document, config, NullLogger.Instance)
+                        NullLogger.Instance, CancellationToken.None, configurationEntries: entries)
+                    : new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, "v1.0", entries)
                         .GenerateAsync(CancellationToken.None));
                 if (errorFragment is not null)
                     Assert.Contains(errorFragment, error.Message);
@@ -872,10 +892,10 @@ public sealed class MultiRouteTests
             }
             try
             {
-                var config = new GeneratorConfig(Client, output, false, groups);
+                var config = new GeneratorConfig(Client, output, false);
                 var specPath = Path.Combine(Directory.GetCurrentDirectory(), "spec.yml");
                 await Assert.ThrowsAsync<InvalidOperationException>(() => WrapperGenerator.Program.GenerateAsync(
-                    document, config, specPath, NullLogger.Instance, CancellationToken.None, apiVersion));
+                    document, config, specPath, NullLogger.Instance, CancellationToken.None, apiVersion, RegisterGroups(groups)));
                 if (existingOutput)
                 {
                     Assert.Equal(generatedSentinel, File.ReadAllText(stale));
@@ -1125,8 +1145,11 @@ public sealed class MultiRouteTests
         bool useCollisionData = false)
     {
         document.RegisterComponents();
-        var config = new GeneratorConfig(Client, output, useCollisionData, groups);
-        return new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion)
+        var config = new GeneratorConfig(Client, output, useCollisionData);
+        return new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion, RegisterGroups(groups))
             .GenerateAsync(CancellationToken.None);
     }
+
+    private static Entry[]? RegisterGroups(IReadOnlyList<OperationVariantGroup>? groups) =>
+        groups?.Select(group => GroupVariants(group, "Isolated fixture registration")).ToArray();
 }

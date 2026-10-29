@@ -18,6 +18,17 @@ namespace WrapperGenerator;
 // inventory (the oracle, MgCommandMetadata.json).
 public static partial class CmdletConfigurator
 {
+    /// <summary>One reviewed operation behind a public command, selected by existing mandatory path IDs.</summary>
+    /// <param name="Method">The HTTP method shared by the group's operations.</param>
+    /// <param name="Path">The exact OpenAPI path, including named placeholders.</param>
+    /// <param name="FamilyName">A maintainer-chosen label used with the shape to name parameter sets.</param>
+    public sealed record OperationVariant(string Method, string Path, string FamilyName);
+
+    /// <summary>Compatible parameter-set variants registered in a module's cmdlet configuration.</summary>
+    /// <param name="Routes">The complete reviewed operations sharing one public cmdlet.</param>
+    /// <param name="DefaultFamily">The family whose minimal mandatory-ID set supplies the default.</param>
+    public sealed record OperationVariantGroup(IReadOnlyList<OperationVariant> Routes, string DefaultFamily);
+
     internal enum OverrideKind
     {
         SuppressOperation,
@@ -44,10 +55,9 @@ public static partial class CmdletConfigurator
     internal static Entry GroupVariants(OperationVariantGroup group, string reason) =>
         new(OverrideKind.GroupVariants, null, "", PathMatch.Exact, null, reason, VariantGroup: group);
 
-    internal static IEnumerable<OperationVariantGroup> GetOperationVariantGroups(GeneratorConfig config) =>
-        Entries.Where(e => e.Kind == OverrideKind.GroupVariants).Select(e => e.VariantGroup
-            ?? throw new InvalidOperationException("GroupVariants entry requires an operation variant group."))
-            .Concat(config.OperationVariantGroups ?? []);
+    internal static IEnumerable<OperationVariantGroup> GetOperationVariantGroups(IReadOnlyList<Entry>? entries = null) =>
+        (entries ?? Entries).Where(e => e.Kind == OverrideKind.GroupVariants).Select(e => e.VariantGroup
+            ?? throw new InvalidOperationException("GroupVariants entry requires an operation variant group."));
 
     // NormalizePath lowercases before matching, so a Pattern containing an uppercase letter can
     // never match anything: the entry is silently dead and the override looks applied but is not.

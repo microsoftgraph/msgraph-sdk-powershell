@@ -19,6 +19,7 @@ public sealed partial class PowerShellWrapperGenerationService
     private readonly OpenApiDocument document;
     private readonly GeneratorConfig config;
     private readonly string apiVersion;
+    private readonly IReadOnlyList<CmdletConfigurator.Entry>? configurationEntries;
     private readonly ILogger logger;
     private readonly HashSet<string> modelSubNamespaces;
 
@@ -41,6 +42,13 @@ public sealed partial class PowerShellWrapperGenerationService
 
     public PowerShellWrapperGenerationService(OpenApiDocument document, GeneratorConfig configuration, ILogger logger,
         string apiVersion = "v1.0")
+        : this(document, configuration, logger, apiVersion, null)
+    {
+    }
+
+    // Isolated tests provide the same registrations a module contributes to CmdletConfigurator.
+    internal PowerShellWrapperGenerationService(OpenApiDocument document, GeneratorConfig configuration, ILogger logger,
+        string apiVersion, IReadOnlyList<CmdletConfigurator.Entry>? configurationEntries)
     {
         ArgumentNullException.ThrowIfNull(document);
         ArgumentNullException.ThrowIfNull(configuration);
@@ -48,6 +56,7 @@ public sealed partial class PowerShellWrapperGenerationService
         this.document = document;
         config = configuration;
         this.apiVersion = apiVersion;
+        this.configurationEntries = configurationEntries;
         this.logger = logger;
 
         // Kiota nests each dotted schema-name segment as a sub-namespace under Models

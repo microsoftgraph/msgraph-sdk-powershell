@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using WrapperGenerator;
 using Xunit;
+using static WrapperGenerator.CmdletConfigurator;
 
 namespace WrapperGenerator.Tests;
 
@@ -1110,7 +1111,7 @@ public sealed class MutationRouteTests
     {
         document.RegisterComponents();
         return new PowerShellWrapperGenerationService(document,
-            new GeneratorConfig(Client, output, useCollisionData, groups), NullLogger.Instance, apiVersion)
+            new GeneratorConfig(Client, output, useCollisionData), NullLogger.Instance, apiVersion, RegisterGroups(groups))
             .GenerateAsync(CancellationToken.None);
     }
 
@@ -1133,11 +1134,14 @@ public sealed class MutationRouteTests
             }
             try
             {
-                var config = new GeneratorConfig(Client, output, UseCollisionData: collisionData, OperationVariantGroups: groups);
+                var config = new GeneratorConfig(Client, output, UseCollisionData: collisionData);
+                var entries = RegisterGroups(groups);
                 var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => cli
                     ? WrapperGenerator.Program.GenerateAsync(document, config,
-                        Path.Combine(Directory.GetCurrentDirectory(), "mutation-spec.yml"), NullLogger.Instance, CancellationToken.None)
-                    : new PowerShellWrapperGenerationService(document, config, NullLogger.Instance).GenerateAsync(CancellationToken.None));
+                        Path.Combine(Directory.GetCurrentDirectory(), "mutation-spec.yml"), NullLogger.Instance, CancellationToken.None,
+                        configurationEntries: entries)
+                    : new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, "v1.0", entries)
+                        .GenerateAsync(CancellationToken.None));
                 Assert.False(string.IsNullOrWhiteSpace(ex.Message));
                 if (existing)
                 {
@@ -1156,4 +1160,7 @@ public sealed class MutationRouteTests
             }
         }
     }
+
+    private static Entry[]? RegisterGroups(IReadOnlyList<OperationVariantGroup>? groups) =>
+        groups?.Select(group => GroupVariants(group, "Isolated fixture registration")).ToArray();
 }

@@ -9,11 +9,12 @@ not add a route switch, infer new public nouns, or make a retired endpoint suppo
 ## Exact reviewed configuration
 
 Module-owned `*_cmdletConfigurations.cs` arrays can contain entries produced by
-`CmdletConfigurator.GroupVariants(group, reason)`. The minimal records are:
+`CmdletConfigurator.GroupVariants(group, reason)`. The minimal records are nested in
+`CmdletConfigurator`, alongside the registration factory:
 
 ```csharp
-OperationVariant(string Method, string Path, string FamilyName)
-OperationVariantGroup(IReadOnlyList<OperationVariant> Routes, string DefaultFamily)
+CmdletConfigurator.OperationVariant(string Method, string Path, string FamilyName)
+CmdletConfigurator.OperationVariantGroup(IReadOnlyList<OperationVariant> Routes, string DefaultFamily)
 ```
 
 These names describe compatible variants of **one public command**. Existing mandatory
@@ -35,9 +36,10 @@ visible when inspecting parameter sets with `Get-Command`.
 
 All members must already resolve to the same public name through existing naming rules
 and derived-data precedence. The annotation does not rename, unsuppress or classify away
-an operation. Focused callers can provide the same groups through the optional
-`GeneratorConfig.OperationVariantGroups` argument. Authored configurations have no API-version
-parameter: define a group once and reuse it for v1.0 and beta generation. All curated
+an operation. `CmdletConfigurator` is the sole source of variant registrations, collected
+from the module's `*_cmdletConfigurations.cs` array. There is no separate variant list
+in `GeneratorConfig` or public generation-service overload. Authored configurations have
+no API-version parameter: define a group once and reuse it for v1.0 and beta generation. All curated
 suppression/rename entries likewise apply wherever their method and path match.
 
 The module's input determines which operations exist. A group with no matching paths is
@@ -45,12 +47,10 @@ irrelevant and ignored; a partially present group still fails rather than silent
 variants. Defining a group once does not make an unavailable endpoint exist in another
 profile. The generator does not automatically complete a partial group.
 
-`GeneratorConfig` contains only client namespace, output directory, the derived-data toggle,
-and optional variant groups:
+`GeneratorConfig` contains only client namespace, output directory, and the derived-data toggle:
 
 ```csharp
-new GeneratorConfig(clientNamespace, outputPath,
-    UseCollisionData: true, OperationVariantGroups: sharedGroups);
+new GeneratorConfig(clientNamespace, outputPath, UseCollisionData: true);
 ```
 
 The generation run's `--api-version` selects the correct **generated oracle data**, outside
@@ -58,9 +58,14 @@ authored configuration. `PowerShellWrapperGenerationService` receives that run c
 separately; the CLI forwards it to naming and suppression lookups without filtering the
 shared curated entries or variant registrations. Do not mix v1.0 oracle data into a beta run.
 
+Isolated unit tests supply module-style `GroupVariants(...)` entries through an internal
+constructor seam. It uses the same `CmdletConfigurator` registration reader without mutating
+global module configuration; it is not a second public configuration API.
+
 ### One definition, three invocations
 
-This single definition is usable by either profile whose input includes these operations:
+Inside the module's `CmdletConfigurator` partial-class configuration array, this single
+definition is usable by either profile whose input includes these operations:
 
 ```csharp
 GroupVariants(new OperationVariantGroup(

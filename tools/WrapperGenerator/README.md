@@ -389,7 +389,9 @@ oracle-derived data through the generation service, independently of authored ru
 input retention; Bookings uses shared exact-path rules for its retired root-level routes
 while preserving `/solutions/...` cmdlets.
 
-For compatible parameter-set variants, use `GroupVariants(new OperationVariantGroup(...))`.
+`CmdletConfigurator` owns the variant records and registrations. For compatible parameter-set
+variants, use `GroupVariants(new OperationVariantGroup(...))` in the module's configuration
+array; do not pass operation groups through `GeneratorConfig`, which holds only run settings.
 [`OperationVariant` parameter documentation and examples](docs/edge-cases/crosspath-merge-edge-cases.md#exact-reviewed-configuration)
 explain exact methods/paths, maintainer-chosen `FamilyName` labels, and `DefaultFamily`.
 One shared list/item/parent definition can produce `Get-MgWidget`, `Get-MgWidget -WidgetId`

@@ -95,9 +95,10 @@ internal static class Program
     }
 
     internal static async Task GenerateAsync(OpenApiDocument document, GeneratorConfig config, string specPath,
-        ILogger logger, CancellationToken cancellationToken, string apiVersion = "v1.0")
+        ILogger logger, CancellationToken cancellationToken, string apiVersion = "v1.0",
+        IReadOnlyList<CmdletConfigurator.Entry>? configurationEntries = null)
     {
-        var service = new PowerShellWrapperGenerationService(document, config, logger, apiVersion);
+        var service = new PowerShellWrapperGenerationService(document, config, logger, apiVersion, configurationEntries);
         await service.ValidateRouteGroupsAsync(cancellationToken).ConfigureAwait(false);
         // The generation service writes only *.g.cs. Also write a minimal kiota-lock.json recording
         // the source spec path, so downstream tooling that keys off it — notably

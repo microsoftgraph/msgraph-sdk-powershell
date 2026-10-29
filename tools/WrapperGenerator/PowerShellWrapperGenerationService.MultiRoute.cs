@@ -47,7 +47,7 @@ public sealed partial class PowerShellWrapperGenerationService
         }
 
         // Reuse actual eligibility, pairing and worker naming without writes or duplicated diagnostics.
-        var probe = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion);
+        var probe = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion, configurationEntries);
         await probe.EmitOrdinaryOperationsAsync(new EmitContext(config.ClientNamespaceName), groups,
             CheckOrdinaryOutput, cancellationToken).ConfigureAwait(false);
     }
@@ -57,7 +57,7 @@ public sealed partial class PowerShellWrapperGenerationService
     {
         var plans = new List<PreparedRouteGroup>();
         var seen = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        foreach (var group in CmdletConfigurator.GetOperationVariantGroups(config))
+        foreach (var group in CmdletConfigurator.GetOperationVariantGroups(configurationEntries))
         {
             if (group.Routes.Count < 2 || group.Routes.Count > 32
                 || !group.Routes.Any(r => r.FamilyName == group.DefaultFamily)
