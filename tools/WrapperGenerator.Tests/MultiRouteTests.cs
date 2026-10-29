@@ -593,6 +593,196 @@ public sealed class MultiRouteTests
     }
 
     [Theory]
+    [InlineData("ordinary-item", false)]
+    [InlineData("ordinary-item", true)]
+    [InlineData("ordinary-pair", false)]
+    [InlineData("ordinary-pair", true)]
+    [InlineData("ordinary-count", false)]
+    [InlineData("ordinary-count", true)]
+    [InlineData("ordinary-case", false)]
+    [InlineData("ordinary-case", true)]
+    public async Task GroupedOutputCollisionsAreRejectedBeforeServiceOrCliWrites(string scenario, bool collisionData)
+    {
+        var (document, group) = Widgets();
+        OperationVariantGroup[] groups = [group];
+        switch (scenario)
+        {
+            case "ordinary-item":
+                Add(document, "GET", WidgetRoot + "/{widget-id}", Get(document));
+                break;
+            case "ordinary-pair":
+                const string ordinaryList = "/widgets/{other-id}/widgets";
+                Add(document, "GET", ordinaryList, Get(document, list: true));
+                Add(document, "GET", ordinaryList + "/{widget-id}", Get(document));
+                break;
+            case "ordinary-count":
+                document.Paths.Clear();
+                foreach (var route in group.Routes)
+                    Add(document, "GET", route.Path + "/$count", Count());
+                groups = [group with { Routes = group.Routes.Select(r => r with { Path = r.Path + "/$count" }).ToArray() }];
+                Add(document, "GET", "/widgets/{other-id}/widgets/$count", Count());
+                break;
+            default:
+                const string caseVariant = "/widgeT/{other-id}";
+                Assert.Equal(Resolve(WidgetRoot).ClassName, Resolve(caseVariant).ClassName, ignoreCase: true);
+                Add(document, "GET", caseVariant, Get(document));
+                break;
+        }
+
+        await RejectBeforeServiceOrCliWrites(document, groups, collisionData, "output filename");
+    }
+
+    [Fact]
+    public async Task UnsupportedUngroupedItemDoesNotReserveAnOutputFilename()
+    {
+        var (document, group) = Widgets();
+        Add(document, "GET", WidgetRoot + "/{widget-id}", new OpenApiOperation());
+
+        var files = await Generate(document, [group]);
+
+        Assert.Equal(3, files.Count);
+        Assert.Contains("RootList", files["GetMgWidget.g.cs"]);
+        Assert.Contains("ParentList", files["GetMgWidget.g.cs"]);
+    }
+
+    [Theory]
+    [InlineData("response", "oneOf", false)]
+    [InlineData("response", "oneOf", true)]
+    [InlineData("response", "anyOf", false)]
+    [InlineData("response", "anyOf", true)]
+    [InlineData("item", "oneOf", false)]
+    [InlineData("item", "oneOf", true)]
+    [InlineData("item", "anyOf", false)]
+    [InlineData("item", "anyOf", true)]
+    public async Task NamedGetUnionsNestedInAllOfAreRejectedBeforeWrites(string location, string unionKind, bool namedBranch)
+    {
+        var (document, group) = Widgets();
+        var schemaName = location == "response"
+            ? "microsoft.graph.onPremisesAgentGroupCollectionResponse"
+            : "microsoft.graph.onPremisesAgentGroup";
+        var union = new OpenApiSchema();
+        var alternatives = new List<IOpenApiSchema>
+        {
+            new OpenApiSchema { Type = JsonSchemaType.Object },
+            new OpenApiSchema { Type = JsonSchemaType.String },
+        };
+        if (unionKind == "oneOf")
+            union.OneOf = alternatives;
+        else
+            union.AnyOf = alternatives;
+        var branch = new OpenApiSchema { AllOf = [union] };
+        document.Components!.Schemas!["microsoft.graph.unionBase"] = branch;
+        Assert.IsType<OpenApiSchema>(document.Components.Schemas[schemaName]).AllOf =
+            [namedBranch ? new OpenApiSchemaReference("microsoft.graph.unionBase", document) : branch];
+
+        await RejectBeforeServiceOrCliWrites(document, [group]);
+    }
+
+    [Fact]
+    public async Task NamedGetInheritanceWithoutUnionsRemainsSupported()
+    {
+        var (document, group) = Widgets();
+        document.Components!.Schemas!["microsoft.graph.entityBase"] = new OpenApiSchema
+        {
+            Type = JsonSchemaType.Object,
+            Properties = new Dictionary<string, IOpenApiSchema>
+            {
+                ["description"] = new OpenApiSchema { Type = JsonSchemaType.String },
+            },
+        };
+        Assert.IsType<OpenApiSchema>(document.Components.Schemas["microsoft.graph.onPremisesAgentGroup"]).AllOf =
+            [new OpenApiSchemaReference("microsoft.graph.entityBase", document)];
+        var collection = Assert.IsType<OpenApiSchema>(
+            document.Components.Schemas["microsoft.graph.onPremisesAgentGroupCollectionResponse"]);
+        var properties = collection.Properties;
+        collection.Properties = null;
+        collection.AllOf = [new OpenApiSchema { Type = JsonSchemaType.Object, Properties = properties }];
+
+        var files = await Generate(document, [group]);
+
+        Assert.Equal(3, files.Count);
+        Assert.Contains("RootList", files["GetMgWidget.g.cs"]);
+        Assert.Contains(Entity, files["GetMgWidget_Route0.g.cs"]);
+    }
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task EverySuccessfulGetResponseMustUseTheSelectedContract(bool matchingContract)
+    {
+        var (document, group) = Widgets();
+        document.Components!.Schemas!["microsoft.graph.otherCollection"] = new OpenApiSchema
+        {
+            Type = JsonSchemaType.Object,
+        };
+        foreach (var route in group.Routes)
+        {
+            var operation = Operation(document, route.Path);
+            var selected = operation.Responses!["200"].Content!["application/json"].Schema!;
+            operation.Responses["201"] = new OpenApiResponse
+            {
+                Content = new Dictionary<string, IOpenApiMediaType>
+                {
+                    ["application/vnd.fixture+json"] = new OpenApiMediaType
+                    {
+                        Schema = matchingContract ? selected
+                            : new OpenApiSchemaReference("microsoft.graph.otherCollection", document),
+                    },
+                },
+            };
+        }
+
+        if (matchingContract)
+            Assert.Equal(3, (await Generate(document, [group])).Count);
+        else
+            await RejectBeforeServiceOrCliWrites(document, [group], errorFragment: "success response schemas");
+    }
+
+    private static async Task RejectBeforeServiceOrCliWrites(OpenApiDocument document,
+        IReadOnlyList<OperationVariantGroup> groups, bool collisionData = false, string? errorFragment = null)
+    {
+        document.RegisterComponents();
+        foreach (var cli in new[] { false, true })
+        foreach (var existing in new[] { false, true })
+        {
+            var output = OutputPath();
+            const string generated = "Existing source must survive failed preflight.\r\n";
+            const string marker = "{\"descriptionLocation\":\"previous.yml\"}\r\n";
+            if (existing)
+            {
+                Directory.CreateDirectory(output);
+                File.WriteAllText(Path.Combine(output, "Sentinel.g.cs"), generated);
+                File.WriteAllText(Path.Combine(output, "kiota-lock.json"), marker);
+            }
+            try
+            {
+                var config = new GeneratorConfig(Client, output, UseCollisionData: collisionData,
+                    OperationVariantGroups: groups);
+                var error = await Assert.ThrowsAsync<InvalidOperationException>(() => cli
+                    ? WrapperGenerator.Program.GenerateAsync(document, config, "next.yml",
+                        NullLogger.Instance, CancellationToken.None)
+                    : new PowerShellWrapperGenerationService(document, config, NullLogger.Instance)
+                        .GenerateAsync(CancellationToken.None));
+                if (errorFragment is not null)
+                    Assert.Contains(errorFragment, error.Message);
+                if (existing)
+                {
+                    Assert.Equal(generated, File.ReadAllText(Path.Combine(output, "Sentinel.g.cs")));
+                    Assert.Equal(marker, File.ReadAllText(Path.Combine(output, "kiota-lock.json")));
+                    Assert.Equal(2, Directory.GetFiles(output, "*", SearchOption.AllDirectories).Length);
+                }
+                else
+                    Assert.False(Directory.Exists(output));
+            }
+            finally
+            {
+                if (Directory.Exists(output))
+                    Directory.Delete(output, recursive: true);
+            }
+        }
+    }
+
+    [Theory]
     [InlineData("partial-applications")]
     [InlineData("unsupported-group")]
     public async Task CliPreflightRejectsGroupsBeforeCreatingOutputOrChangingTheLockMarker(string scenario)
@@ -693,7 +883,8 @@ public sealed class MultiRouteTests
     private static void AssertForwarding(string source)
     {
         Assert.Contains("& $CmdletName @BoundParameters", source);
-        Assert.Contains("PipelineResultTypes.Output | PipelineResultTypes.Error", source);
+        Assert.Contains("global::System.Management.Automation.Runspaces.PipelineResultTypes.Output | " +
+            "global::System.Management.Automation.Runspaces.PipelineResultTypes.Error", source);
         Assert.Contains("MyInvocation.BoundParameters, internalCmdletName", source);
         Assert.DoesNotContain("parameters.Remove(", source);
     }

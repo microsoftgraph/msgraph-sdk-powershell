@@ -136,6 +136,7 @@ public sealed partial class PowerShellWrapperGenerationService
 
         var ctx = new EmitContext(ClientNamespace: config.ClientNamespaceName);
         var routeGroups = PrepareRouteGroups(ctx, cancellationToken);
+        await ValidateRouteOutputNamesAsync(routeGroups, cancellationToken).ConfigureAwait(false);
 
         writtenCmdletFiles.Clear();
         fileCollisions.Clear();
@@ -144,6 +145,47 @@ public sealed partial class PowerShellWrapperGenerationService
         foreach (var stale in Directory.GetFiles(config.OutputPath, "*.g.cs"))
             File.Delete(stale);
 
+        var written = await EmitOrdinaryOperationsAsync(ctx, routeGroups, WriteCmdletFileAsync, cancellationToken).ConfigureAwait(false);
+        foreach (var group in routeGroups)
+        {
+            for (var i = 0; i < group.Workers.Count; i++)
+                written += await WriteCmdletFileAsync(group.Workers[i].InternalNaming, group.WorkerSources[i], cancellationToken).ConfigureAwait(false);
+            written += await WriteCmdletFileAsync(group.Workers[0].Naming, group.DispatcherSource, cancellationToken).ConfigureAwait(false);
+        }
+
+        // All collisions for the run are reported together so one generation surfaces the
+        // complete list; see docs/edge-cases/naming-edge-cases.md for how each kind is resolved.
+        //
+        // Fatal only when the derived collision data is IN USE: there a collision means the data
+        // no longer covers the spec, and generating over it would silently drop an operation.
+        // With --no-collision-data the collisions ARE the intended output - that mode exists so
+        // tools/Derive-ParityResolutions.ps1 can inventory the raw, unresolved names - so they
+        // are reported and generation completes. Throwing there made the documented capture
+        // procedure impossible: the derivation asks for a tree the generator refused to produce.
+        if (fileCollisions.Count > 0)
+        {
+            var summary = $"{fileCollisions.Count} cmdlet name collision(s): a later operation would overwrite an already-written cmdlet file.";
+            if (config.UseCollisionData)
+            {
+                throw new InvalidOperationException(
+                    $"{summary} Resolve each with a CmdletConfigurator rename or suppression.\n  " + string.Join("\n  ", fileCollisions));
+            }
+
+            LogRawCollisionInventory(summary, string.Join("\n  ", fileCollisions));
+        }
+
+        LogBodyPropertyReconciliation(
+            propertiesSeenCount,
+            boundScalarCount, boundComplexCount, boundUntypedCount, excludedPropertyCount, unsupportedPropertyCount);
+
+        LogWroteFiles(written + 1, config.OutputPath);
+    }
+
+    private delegate Task<int> CmdletWriter(CmdletNaming naming, string source, CancellationToken cancellationToken);
+
+    private async Task<int> EmitOrdinaryOperationsAsync(EmitContext ctx, IReadOnlyList<PreparedRouteGroup> routeGroups,
+        CmdletWriter writeCmdlet, CancellationToken cancellationToken)
+    {
         // No per-module Shared.g.cs: the helpers it carried (GraphRouteAttribute, UntypedValue,
         // the bearer provider) live once in Microsoft.Graph.Wrapper.Runtime, which every module
         // project references.
@@ -231,7 +273,7 @@ public sealed partial class PowerShellWrapperGenerationService
                     var operationSource = EmitOperationCall(cmdletNaming, ctx, operation, operationKind, queryParams, pathTemplate);
                     if (operationSource is null)
                         continue;
-                    written += await WriteCmdletFileAsync(cmdletNaming, operationSource, cancellationToken).ConfigureAwait(false);
+                    written += await writeCmdlet(cmdletNaming, operationSource, cancellationToken).ConfigureAwait(false);
                     continue;
                 }
 
@@ -269,7 +311,7 @@ public sealed partial class PowerShellWrapperGenerationService
                     var contentSource = httpMethod == HttpMethod.Get
                         ? CmdletEmitter.EmitContentGet(cmdletNaming, ctx, contentType, contentIsStream)
                         : CmdletEmitter.EmitContentSet(cmdletNaming, ctx, contentType, contentIsStream);
-                    written += await WriteCmdletFileAsync(cmdletNaming, contentSource, cancellationToken).ConfigureAwait(false);
+                    written += await writeCmdlet(cmdletNaming, contentSource, cancellationToken).ConfigureAwait(false);
                     continue;
                 }
 
@@ -286,7 +328,7 @@ public sealed partial class PowerShellWrapperGenerationService
                         LogSkippedUnsupportedOperation(httpMethod.Method, cmdletNaming.NormalizedPath, "no wrapper emitter for this reference operation");
                         continue;
                     }
-                    written += await WriteCmdletFileAsync(cmdletNaming, refSource, cancellationToken).ConfigureAwait(false);
+                    written += await writeCmdlet(cmdletNaming, refSource, cancellationToken).ConfigureAwait(false);
                     continue;
                 }
 
@@ -295,7 +337,7 @@ public sealed partial class PowerShellWrapperGenerationService
                 // to resolve and no item GET it could pair with.
                 if (httpMethod == HttpMethod.Get && EndsWithSegment(pathTemplate, "$count"))
                 {
-                    written += await WriteCmdletFileAsync(cmdletNaming,
+                    written += await writeCmdlet(cmdletNaming,
                         CmdletEmitter.EmitScalarGet(cmdletNaming, ctx, "int", queryParams.ToHashSet()), cancellationToken).ConfigureAwait(false);
                     continue;
                 }
@@ -337,45 +379,13 @@ public sealed partial class PowerShellWrapperGenerationService
                     continue;
                 }
 
-                written += await WriteCmdletFileAsync(cmdletNaming, source, cancellationToken).ConfigureAwait(false);
+                written += await writeCmdlet(cmdletNaming, source, cancellationToken).ConfigureAwait(false);
             }
         }
 
-        written += await EmitGetOperationsAsync(getOperations, ctx, cancellationToken).ConfigureAwait(false);
-        written += await EmitDeltaOperationsAsync(deltaOperations, ctx, cancellationToken).ConfigureAwait(false);
-        foreach (var group in routeGroups)
-        {
-            for (var i = 0; i < group.Workers.Count; i++)
-                written += await WriteCmdletFileAsync(group.Workers[i].InternalNaming, group.WorkerSources[i], cancellationToken).ConfigureAwait(false);
-            written += await WriteCmdletFileAsync(group.Workers[0].Naming, group.DispatcherSource, cancellationToken).ConfigureAwait(false);
-        }
-
-        // All collisions for the run are reported together so one generation surfaces the
-        // complete list; see docs/edge-cases/naming-edge-cases.md for how each kind is resolved.
-        //
-        // Fatal only when the derived collision data is IN USE: there a collision means the data
-        // no longer covers the spec, and generating over it would silently drop an operation.
-        // With --no-collision-data the collisions ARE the intended output - that mode exists so
-        // tools/Derive-ParityResolutions.ps1 can inventory the raw, unresolved names - so they
-        // are reported and generation completes. Throwing there made the documented capture
-        // procedure impossible: the derivation asks for a tree the generator refused to produce.
-        if (fileCollisions.Count > 0)
-        {
-            var summary = $"{fileCollisions.Count} cmdlet name collision(s): a later operation would overwrite an already-written cmdlet file.";
-            if (config.UseCollisionData)
-            {
-                throw new InvalidOperationException(
-                    $"{summary} Resolve each with a CmdletConfigurator rename or suppression.\n  " + string.Join("\n  ", fileCollisions));
-            }
-
-            LogRawCollisionInventory(summary, string.Join("\n  ", fileCollisions));
-        }
-
-        LogBodyPropertyReconciliation(
-            propertiesSeenCount,
-            boundScalarCount, boundComplexCount, boundUntypedCount, excludedPropertyCount, unsupportedPropertyCount);
-
-        LogWroteFiles(written + 1, config.OutputPath);
+        written += await EmitGetOperationsAsync(getOperations, ctx, writeCmdlet, cancellationToken).ConfigureAwait(false);
+        written += await EmitDeltaOperationsAsync(deltaOperations, ctx, writeCmdlet, cancellationToken).ConfigureAwait(false);
+        return written;
     }
 
     // Pairs a list GET (GET /users/{id}/messages) with its item GET
@@ -396,7 +406,8 @@ public sealed partial class PowerShellWrapperGenerationService
     // the rule cannot resolve fails generation rather than being silently kept or dropped:
     // a wrong guess here would either invent a command the SDK does not ship or lose an
     // operation, and both are worse than a build that stops and names the route.
-    private async Task<int> EmitDeltaOperationsAsync(List<DeltaOperationRecord> deltaOperations, EmitContext ctx, CancellationToken cancellationToken)
+    private async Task<int> EmitDeltaOperationsAsync(List<DeltaOperationRecord> deltaOperations, EmitContext ctx,
+        CmdletWriter writeCmdlet, CancellationToken cancellationToken)
     {
         var written = 0;
         foreach (var pair in deltaOperations.GroupBy(d => d.PairKey, StringComparer.Ordinal))
@@ -436,13 +447,14 @@ public sealed partial class PowerShellWrapperGenerationService
             var source = CmdletEmitter.EmitDelta(op.Naming, ctx,
                 new CmdletEmitter.CallPlan(methodName, returnType, BodyTypeName: null, returnsStream),
                 op.QueryParams.ToHashSet(), deltaItemType);
-            written += await WriteCmdletFileAsync(op.Naming, source, cancellationToken).ConfigureAwait(false);
+            written += await writeCmdlet(op.Naming, source, cancellationToken).ConfigureAwait(false);
         }
 
         return written;
     }
 
-    private async Task<int> EmitGetOperationsAsync(List<GetOperationRecord> getOperations, EmitContext ctx, CancellationToken cancellationToken)
+    private async Task<int> EmitGetOperationsAsync(List<GetOperationRecord> getOperations, EmitContext ctx,
+        CmdletWriter writeCmdlet, CancellationToken cancellationToken)
     {
         var written = 0;
         var consumed = new HashSet<GetOperationRecord>();
@@ -484,9 +496,9 @@ public sealed partial class PowerShellWrapperGenerationService
                 internalListNaming, internalItemNaming, ctx, entityType, collectionResponseType,
                 listOp.QueryParams.ToHashSet(), itemOp.QueryParams.ToHashSet());
 
-            written += await WriteCmdletFileAsync(internalListNaming, internalListSource, cancellationToken).ConfigureAwait(false);
-            written += await WriteCmdletFileAsync(internalItemNaming, internalItemSource, cancellationToken).ConfigureAwait(false);
-            written += await WriteCmdletFileAsync(listOp.Naming, dispatcherSource, cancellationToken).ConfigureAwait(false);
+            written += await writeCmdlet(internalListNaming, internalListSource, cancellationToken).ConfigureAwait(false);
+            written += await writeCmdlet(internalItemNaming, internalItemSource, cancellationToken).ConfigureAwait(false);
+            written += await writeCmdlet(listOp.Naming, dispatcherSource, cancellationToken).ConfigureAwait(false);
             consumed.Add(listOp);
             consumed.Add(itemOp);
         }
@@ -519,20 +531,25 @@ public sealed partial class PowerShellWrapperGenerationService
                 source = CmdletEmitter.EmitItemGet(op.Naming, ctx, entityType, op.QueryParams.ToHashSet());
             }
 
-            written += await WriteCmdletFileAsync(op.Naming, source, cancellationToken).ConfigureAwait(false);
+            written += await writeCmdlet(op.Naming, source, cancellationToken).ConfigureAwait(false);
         }
 
         return written;
     }
 
-    private async Task<int> WriteCmdletFileAsync(CmdletNaming naming, string source, CancellationToken cancellationToken)
+    private static string CmdletFileName(CmdletNaming naming)
     {
         const string cmdletClassSuffix = "Command";
         var className = naming.ClassName;
         var fileBaseName = className.EndsWith(cmdletClassSuffix, StringComparison.Ordinal)
             ? className[..^cmdletClassSuffix.Length]
             : className;
-        var fileName = fileBaseName + ".g.cs";
+        return fileBaseName + ".g.cs";
+    }
+
+    private async Task<int> WriteCmdletFileAsync(CmdletNaming naming, string source, CancellationToken cancellationToken)
+    {
+        var fileName = CmdletFileName(naming);
         // Both colliding cmdlets usually share the same name, so the route is what actually
         // identifies which two operations collided. It is reported directly rather than left to
         // be reconstructed from the builder expression, which cannot express a function's OData

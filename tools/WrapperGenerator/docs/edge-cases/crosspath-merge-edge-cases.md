@@ -139,7 +139,13 @@ when that path declares GET; PUT never acquires a re-fetch. No operation tries a
 URL on failure.
 
 Preflight validates **all** configured groups before creating/clearing the output directory,
-writing the CLI's `kiota-lock.json` marker or writing any command. Ordinary collision
+writing the CLI's `kiota-lock.json` marker or writing any command. Grouped dispatcher and
+worker filenames are reserved case-insensitively and checked against the ordinary emission
+pipeline, including its list/item workers and dispatchers. An ungrouped operation that would
+occupy any reserved filename rejects the configuration, even with collision data disabled.
+Include that operation in the reviewed group or review its naming; generation never keeps
+an ordinary command in place of a grouped dispatcher. Unsupported ordinary operations that
+emit no command do not reserve filenames. Ordinary collision
 derivation still writes its marker before generation, as before. An unrelated module with
 none of a group's paths ignores it;
 a partially present, filtered or suppressed group fails. Invalid grouping never silently
@@ -152,6 +158,8 @@ The following are rejected for grouped generation:
   parameter types/aliases, duplicate membership or nonstructural list/item pairs.
 - Mixed methods/kinds, functions, media, `/$ref`, `/$value`, composite-key group routes,
   GET request bodies, unresolved/union responses, mixed models or mutation queries.
+  GET response and collection-item schemas are checked recursively through `allOf` and
+  named references for `oneOf`/`anyOf`; ordinary inheritance without a union remains valid.
 - Non-JSON, root union or unbindable bodies; incompatible body requiredness, properties
   or public types; bodyless/bodyful or void/entity mixtures; resource JSON writes without
   the ordinary matching named body/result model; route-specific public body forms.

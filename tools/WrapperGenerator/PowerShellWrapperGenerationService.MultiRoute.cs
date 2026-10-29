@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 
 namespace WrapperGenerator;
@@ -13,8 +15,42 @@ public sealed partial class PowerShellWrapperGenerationService
     private sealed record PreparedRouteGroup(IReadOnlyList<CmdletEmitter.RouteWorker> Workers,
         IReadOnlyList<string> WorkerSources, string DispatcherSource);
 
-    internal void ValidateRouteGroups(CancellationToken cancellationToken) =>
-        _ = PrepareRouteGroups(new EmitContext(config.ClientNamespaceName), cancellationToken, recordDiagnostics: false);
+    internal async Task ValidateRouteGroupsAsync(CancellationToken cancellationToken)
+    {
+        var groups = PrepareRouteGroups(new EmitContext(config.ClientNamespaceName), cancellationToken, recordDiagnostics: false);
+        await ValidateRouteOutputNamesAsync(groups, cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task ValidateRouteOutputNamesAsync(IReadOnlyList<PreparedRouteGroup> groups, CancellationToken cancellationToken)
+    {
+        if (groups.Count == 0)
+            return;
+
+        var reserved = new Dictionary<string, CmdletNaming>(StringComparer.OrdinalIgnoreCase);
+        foreach (var group in groups)
+        foreach (var naming in group.Workers.Select(w => w.InternalNaming).Append(group.Workers[0].Naming))
+        {
+            var fileName = CmdletFileName(naming);
+            if (!reserved.TryAdd(fileName, naming))
+                throw new InvalidOperationException($"Operation variant output filename '{fileName}' is shared by multiple grouped commands.");
+        }
+
+        Task<int> CheckOrdinaryOutput(CmdletNaming naming, string source, CancellationToken token)
+        {
+            token.ThrowIfCancellationRequested();
+            var fileName = CmdletFileName(naming);
+            if (reserved.TryGetValue(fileName, out var grouped))
+                throw new InvalidOperationException(
+                    $"Operation variant output filename '{fileName}' conflicts with ordinary {naming.SourceMethod} {naming.SourcePath} " +
+                    $"and grouped {grouped.SourceMethod} {grouped.SourcePath}. Review complete variant group membership or cmdlet naming.");
+            return Task.FromResult(0);
+        }
+
+        // Reuse actual eligibility, pairing and worker naming without writes or duplicated diagnostics.
+        var probe = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance);
+        await probe.EmitOrdinaryOperationsAsync(new EmitContext(config.ClientNamespaceName), groups,
+            CheckOrdinaryOutput, cancellationToken).ConfigureAwait(false);
+    }
 
     // Validate every opted-in group and build its sources before touching the output directory.
     private List<PreparedRouteGroup> PrepareRouteGroups(EmitContext ctx, CancellationToken cancellationToken, bool recordDiagnostics = true)
@@ -117,15 +153,16 @@ public sealed partial class PowerShellWrapperGenerationService
                     var response = TryGetSuccessJsonSchema(operation);
                     if (response is not null && (operation.Responses ?? []).Where(r => r.Key.StartsWith('2'))
                         .SelectMany(r => (r.Value.Content ?? new Dictionary<string, IOpenApiMediaType>()).Values)
-                        .Any(media => SchemaSignature(media.Schema) != SchemaSignature(response)))
+                        .Any(media => media.Schema is null || HasRootUnion(media.Schema)
+                            || SchemaSignature(media.Schema) != SchemaSignature(response)))
                         throw new InvalidOperationException($"Incompatible success response schemas in GET group member: {path}.");
-                    if (response is null || response.AnyOf?.Count > 0 || response.OneOf?.Count > 0)
+                    if (response is null || HasRootUnion(response))
                         throw new InvalidOperationException($"Unsupported GET group response or union: {path}.");
                     if (FindProperty(response, "value") is { } value)
                     {
                         if (response.GetReferenceId() is null || value.Type != JsonSchemaType.Array
+                            || value.Items is null || HasRootUnion(value.Items)
                             || !TryResolveListEntityTypeName(value, ctx.ModelsNamespace, out outputType)
-                            || value.Items?.AnyOf?.Count > 0 || value.Items?.OneOf?.Count > 0
                             || !PlainString(FindProperty(response, "@odata.nextLink")))
                             throw new InvalidOperationException($"Unsupported typed collection GET group response: {path}.");
                         shape = "List";

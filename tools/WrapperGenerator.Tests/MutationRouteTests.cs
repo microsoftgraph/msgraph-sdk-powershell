@@ -853,6 +853,34 @@ public sealed class MutationRouteTests
         }
     }
 
+    [Theory]
+    [InlineData("New", false)]
+    [InlineData("New", true)]
+    [InlineData("Update", false)]
+    [InlineData("Update", true)]
+    [InlineData("Set", false)]
+    [InlineData("Set", true)]
+    [InlineData("Remove", false)]
+    [InlineData("Remove", true)]
+    [InlineData("ActionEntity", false)]
+    [InlineData("ActionEntity", true)]
+    [InlineData("ActionVoid", false)]
+    [InlineData("ActionVoid", true)]
+    public async Task UngroupedMutationCannotOccupyAVariantDispatcherFilename(string family, bool collisionData)
+    {
+        var fixture = Create(family);
+        var path = Root + "/{other-id}/widgets" + (family == "New" ? "" : "/{widget-id}")
+            + (family.StartsWith("Action", StringComparison.Ordinal) ? "/promote" : "");
+        var operation = Operation(fixture, 0);
+        Add(fixture.Document, fixture.Method, path, operation);
+        var kind = family.StartsWith("Action", StringComparison.Ordinal) ? OperationKind.Action : OperationKind.Resource;
+        var naming = Naming.Resolve(new OperationInfo(new HttpMethod(fixture.Method), path, Kind: kind),
+            new GeneratorConfig(Client, ".", UseCollisionData: collisionData));
+        Assert.Equal(fixture.Stem + "Command", naming.ClassName);
+
+        await RejectBeforeWrites(fixture.Document, [fixture.Group], collisionData);
+    }
+
     private sealed record Fixture(OpenApiDocument Document, OperationVariantGroup Group,
         OpenApiSchema[] Bodies, string Family, string Method, string Verb, string Noun)
     {
@@ -964,7 +992,8 @@ public sealed class MutationRouteTests
     private static void AssertForwarding(string source)
     {
         Assert.Contains("& $CmdletName @BoundParameters", source);
-        Assert.Contains("PipelineResultTypes.Output | PipelineResultTypes.Error", source);
+        Assert.Contains("global::System.Management.Automation.Runspaces.PipelineResultTypes.Output | " +
+            "global::System.Management.Automation.Runspaces.PipelineResultTypes.Error", source);
         Assert.Contains("MyInvocation.BoundParameters, internalCmdletName", source);
         Assert.DoesNotContain(".Remove(", source);
         Assert.DoesNotContain(".Add(", source);
@@ -1086,7 +1115,8 @@ public sealed class MutationRouteTests
             .GenerateAsync(CancellationToken.None);
     }
 
-    private static async Task RejectBeforeWrites(OpenApiDocument document, IReadOnlyList<OperationVariantGroup> groups)
+    private static async Task RejectBeforeWrites(OpenApiDocument document, IReadOnlyList<OperationVariantGroup> groups,
+        bool collisionData = false)
     {
         document.RegisterComponents();
         foreach (var cli in new[] { false, true })
@@ -1104,7 +1134,7 @@ public sealed class MutationRouteTests
             }
             try
             {
-                var config = new GeneratorConfig(Client, output, UseCollisionData: false, OperationVariantGroups: groups);
+                var config = new GeneratorConfig(Client, output, UseCollisionData: collisionData, OperationVariantGroups: groups);
                 var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => cli
                     ? WrapperGenerator.Program.GenerateAsync(document, config,
                         Path.Combine(Directory.GetCurrentDirectory(), "mutation-spec.yml"), NullLogger.Instance, CancellationToken.None)
