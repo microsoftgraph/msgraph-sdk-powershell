@@ -18,6 +18,7 @@ public sealed partial class PowerShellWrapperGenerationService
 {
     private readonly OpenApiDocument document;
     private readonly GeneratorConfig config;
+    private readonly string apiVersion;
     private readonly ILogger logger;
     private readonly HashSet<string> modelSubNamespaces;
 
@@ -38,13 +39,15 @@ public sealed partial class PowerShellWrapperGenerationService
     private int unsupportedPropertyCount;
     private int excludedPropertyCount;
 
-    public PowerShellWrapperGenerationService(OpenApiDocument document, GeneratorConfig configuration, ILogger logger)
+    public PowerShellWrapperGenerationService(OpenApiDocument document, GeneratorConfig configuration, ILogger logger,
+        string apiVersion = "v1.0")
     {
         ArgumentNullException.ThrowIfNull(document);
         ArgumentNullException.ThrowIfNull(configuration);
         ArgumentNullException.ThrowIfNull(logger);
         this.document = document;
         config = configuration;
+        this.apiVersion = apiVersion;
         this.logger = logger;
 
         // Kiota nests each dotted schema-name segment as a sub-namespace under Models
@@ -232,7 +235,7 @@ public sealed partial class PowerShellWrapperGenerationService
 
                 // Skip operations the published SDK deliberately does not ship. CmdletConfigurator
                 // holds the citation for each one.
-                if (CmdletConfigurator.IsSuppressed(httpMethod, pathTemplate, config))
+                if (CmdletConfigurator.IsSuppressed(httpMethod, pathTemplate, config, apiVersion))
                 {
                     LogSuppressedOperation(httpMethod.Method, pathTemplate);
                     continue;
@@ -257,7 +260,7 @@ public sealed partial class PowerShellWrapperGenerationService
                 // the response as a byte array, so the media test below is scoped to resource
                 // operations rather than intercepting every GET.
 
-                var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams, operationKind), config);
+                var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams, operationKind), config, apiVersion);
 
                 // An action or function is emitted from its own shape: it is never half of a
                 // list/item pair, and its request and response types are the per-operation

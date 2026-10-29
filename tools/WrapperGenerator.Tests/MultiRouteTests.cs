@@ -47,7 +47,7 @@ public sealed class MultiRouteTests
                 var route = group.Routes[i];
                 var shape = route.Path.EndsWith("/$count", StringComparison.Ordinal) ? "Scalar"
                     : route.Path == Item ? "Get" : "List";
-                var set = route.Name + shape;
+                var set = route.FamilyName + shape;
                 var worker = files[$"{FileStem(naming)}_Route{i}.g.cs"];
                 Assert.Contains($"[GraphRoute(\"GET\", \"{route.Path}\", ParameterSetName = \"{set}\")]", source);
                 Assert.Contains($"\"Get-{naming.Noun}_Route{i}\"", source);
@@ -130,7 +130,7 @@ public sealed class MultiRouteTests
         for (var i = 0; i < routes.Length; i++)
             Add(document, "GET", routes[i].Path, Get(document, list: i % 2 == 0));
 
-        var files = await Generate(document, [new("v1.0", routes, "Root")]);
+        var files = await Generate(document, [new(routes, "Root")]);
 
         Assert.Equal(5, files.Count);
         var source = files["GetMgWidget.g.cs"];
@@ -158,7 +158,7 @@ public sealed class MultiRouteTests
         foreach (var route in routes)
             Add(document, "GET", route.Path, Get(document));
 
-        var files = await Generate(document, [new("v1.0", routes, "Root")]);
+        var files = await Generate(document, [new(routes, "Root")]);
 
         Assert.Equal(3, files.Count);
         Assert.Contains("DefaultParameterSetName = \"RootGet\"", files["GetMgWidget.g.cs"]);
@@ -178,7 +178,7 @@ public sealed class MultiRouteTests
         foreach (var route in routes)
             Add(document, "GET", route.Path, Count());
 
-        var files = await Generate(document, [new("v1.0", routes, "Root")]);
+        var files = await Generate(document, [new(routes, "Root")]);
 
         Assert.Equal(3, files.Count);
         var source = files["GetMgWidgetCount.g.cs"];
@@ -238,16 +238,64 @@ public sealed class MultiRouteTests
         Assert.Contains("/widgets", ex.Message);
     }
 
-    [Fact]
-    public async Task WrongProfileLeavesTheOriginalCollisionGuardActive()
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task SameVariantConfigurationAppliesToEitherIngestingProfile(string apiVersion)
     {
         var (document, group) = Widgets();
 
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Generate(document, [group with { ApiVersion = "beta" }], useCollisionData: true));
+        var files = await Generate(document, [group], apiVersion, useCollisionData: true);
 
-        Assert.Contains("collision", ex.Message, StringComparison.OrdinalIgnoreCase);
-        Assert.DoesNotContain("multi-route", ex.Message, StringComparison.OrdinalIgnoreCase);
+        Assert.Equal(3, files.Count);
+        Assert.Contains("RootList", files["GetMgWidget.g.cs"]);
+        Assert.Contains("ParentList", files["GetMgWidget.g.cs"]);
+    }
+
+    [Fact]
+    public async Task SharedVariantsEmitIdenticalSourcesWhenOnlyTheRunProfileChanges()
+    {
+        var (document, group) = Widgets();
+
+        var v1 = await Generate(document, [group], apiVersion: "v1.0");
+        var beta = await Generate(document, [group], apiVersion: "beta");
+
+        Assert.Equal(v1.Keys.Order(), beta.Keys.Order());
+        foreach (var file in v1)
+            Assert.Equal(file.Value, beta[file.Key]);
+    }
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task SharedConfigurationDoesNotMixTheGenerationRunsDerivedOracleData(bool cli)
+    {
+        var (document, group) = Widgets();
+        Add(document, "GET", "/groupSettings", Get(document, list: true));
+        document.RegisterComponents();
+        var output = OutputPath();
+        var shared = new GeneratorConfig(Client, output, UseCollisionData: true, OperationVariantGroups: [group]);
+        try
+        {
+            foreach (var profile in new[] { "v1.0", "beta", "v1.0" })
+            {
+                if (cli)
+                    await WrapperGenerator.Program.GenerateAsync(document, shared, "fixture.yml",
+                        NullLogger.Instance, CancellationToken.None, profile);
+                else
+                    await new PowerShellWrapperGenerationService(document, shared, NullLogger.Instance, profile)
+                        .GenerateAsync(CancellationToken.None);
+
+                Assert.True(File.Exists(Path.Combine(output, "GetMgWidget.g.cs")));
+                // This path is oracle-suppressed in v1.0, but not beta; authored rules are shared.
+                Assert.Equal(profile == "beta", File.Exists(Path.Combine(output, "GetMgGroupSetting.g.cs")));
+            }
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
     }
 
     [Fact]
@@ -264,22 +312,24 @@ public sealed class MultiRouteTests
     }
 
     [Fact]
-    public void InternalModuleFactoryPreservesTheExactThreeArgumentGroupAndProfileScope()
+    public void InternalModuleFactoryAndConfigurationHaveNoApiVersionParameters()
     {
         var (_, group) = Widgets();
 
         var entry = CmdletConfigurator.GroupVariants(group, "Reviewed natural path-ID sets");
-        var config = new GeneratorConfig(Client, ".", "V1.0", false, [group, group with { ApiVersion = "beta" }]);
+        var config = new GeneratorConfig(Client, ".", false, [group]);
 
         Assert.Equal(CmdletConfigurator.OverrideKind.GroupVariants, entry.Kind);
         Assert.Same(group, entry.VariantGroup);
-        Assert.Null(entry.ApiVersion);
         Assert.Equal("Reviewed natural path-ID sets", entry.Reason);
         Assert.Contains(group, CmdletConfigurator.GetOperationVariantGroups(config));
-        Assert.DoesNotContain(CmdletConfigurator.GetOperationVariantGroups(config), g => g.ApiVersion == "beta");
+        Assert.Single(CmdletConfigurator.GetOperationVariantGroups(config), g => ReferenceEquals(g, group));
         Assert.Equal(3, typeof(OperationVariant).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
-        Assert.Equal(3, typeof(OperationVariantGroup).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
-        Assert.Equal(5, typeof(GeneratorConfig).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
+        Assert.Equal(2, typeof(OperationVariantGroup).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
+        Assert.Equal(4, typeof(GeneratorConfig).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
+        Assert.Null(typeof(OperationVariantGroup).GetProperty("ApiVersion"));
+        Assert.Null(typeof(GeneratorConfig).GetProperty("ApiVersion"));
+        Assert.Null(typeof(CmdletConfigurator.Entry).GetProperty("ApiVersion"));
     }
 
     [Fact]
@@ -288,8 +338,8 @@ public sealed class MultiRouteTests
         var (_, group) = Widgets();
         foreach (var apiVersion in new[] { "v1.0", "beta" })
         {
-            var plain = new GeneratorConfig(Client, ".", apiVersion, true);
-            var grouped = plain with { OperationVariantGroups = [group with { ApiVersion = apiVersion }] };
+            var plain = new GeneratorConfig(Client, ".", true);
+            var grouped = plain with { OperationVariantGroups = [group] };
             foreach (var path in new[]
             {
                 Root, Agent,
@@ -297,8 +347,8 @@ public sealed class MultiRouteTests
                 "/solutions/backupRestore",
             })
             {
-                var before = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), plain);
-                var after = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), grouped);
+                var before = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), plain, apiVersion);
+                var after = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), grouped, apiVersion);
                 Assert.Equal(before.VerbName, after.VerbName);
                 Assert.Equal(before.Noun, after.Noun);
                 Assert.Equal(before.ClassName, after.ClassName);
@@ -326,10 +376,10 @@ public sealed class MultiRouteTests
         {
             "empty" => group with { Routes = [] },
             "single" => group with { Routes = [group.Routes[0]] },
-            "missing-default" => group with { DefaultRoute = "Missing" },
-            "invalid-label" => group with { Routes = [group.Routes[0], group.Routes[1] with { Name = "not-a-label" }] },
-            "label-case" => group with { Routes = [group.Routes[0], group.Routes[1] with { Name = "rOoT" }] },
-            "duplicate-operation" => group with { Routes = [group.Routes[0], group.Routes[0] with { Name = "Other" }] },
+            "missing-default" => group with { DefaultFamily = "Missing" },
+            "invalid-label" => group with { Routes = [group.Routes[0], group.Routes[1] with { FamilyName = "not-a-label" }] },
+            "label-case" => group with { Routes = [group.Routes[0], group.Routes[1] with { FamilyName = "rOoT" }] },
+            "duplicate-operation" => group with { Routes = [group.Routes[0], group.Routes[0] with { FamilyName = "Other" }] },
             "wildcard" => group with { Routes = [group.Routes[0], group.Routes[1] with { Path = "/widgets/*/widgets" }] },
             "normalized-placeholder" => group with { Routes = [group.Routes[0], group.Routes[1] with { Path = "/widgets/{}/widgets" }] },
             _ => group,
@@ -517,7 +567,7 @@ public sealed class MultiRouteTests
                     item.Parameters = Queries("$filter").ToList();
                     Add(document, "GET", path, item);
                 }
-                group = new("v1.0", [new("GET", paths[0], "Root"), new("GET", paths[1], "Parent")], "Root");
+                group = new([new("GET", paths[0], "Root"), new("GET", paths[1], "Parent")], "Root");
                 break;
         }
 
@@ -537,13 +587,13 @@ public sealed class MultiRouteTests
             var singleton = WidgetRoot + "/{parent-id}";
             Add(document, "GET", singleton, Get(document));
             Add(document, "GET", WidgetParent, Get(document, list: true));
-            group = new("v1.0", [new("GET", singleton, "Root"), new("GET", WidgetParent, "Parent")], "Root");
+            group = new([new("GET", singleton, "Root"), new("GET", WidgetParent, "Parent")], "Root");
         }
         else
         {
             Add(document, "GET", WidgetRoot, Get(document, list: true));
             Add(document, "GET", WidgetParent, Get(document, list: true));
-            group = new("v1.0", [new("GET", WidgetRoot, "Root"), new("GET", WidgetParent, "Parent")],
+            group = new([new("GET", WidgetRoot, "Root"), new("GET", WidgetParent, "Parent")],
                 scenario == "nested-default" ? "Parent" : "Root");
             if (scenario == "nonstructural-list-item")
             {
@@ -577,7 +627,7 @@ public sealed class MultiRouteTests
         Add(document, "GET", WidgetRoot, Get(document, list: true));
         Add(document, "GET", WidgetParent, widget);
         var (_, invalid) = Widgets();
-        IReadOnlyList<OperationVariantGroup> all = [.. groups, invalid with { ApiVersion = "beta" }];
+        IReadOnlyList<OperationVariantGroup> all = [.. groups, invalid];
         var output = OutputPath();
         try
         {
@@ -822,10 +872,10 @@ public sealed class MultiRouteTests
             }
             try
             {
-                var config = new GeneratorConfig(Client, output, apiVersion, false, groups);
+                var config = new GeneratorConfig(Client, output, false, groups);
                 var specPath = Path.Combine(Directory.GetCurrentDirectory(), "spec.yml");
                 await Assert.ThrowsAsync<InvalidOperationException>(() => WrapperGenerator.Program.GenerateAsync(
-                    document, config, specPath, NullLogger.Instance, CancellationToken.None));
+                    document, config, specPath, NullLogger.Instance, CancellationToken.None, apiVersion));
                 if (existingOutput)
                 {
                     Assert.Equal(generatedSentinel, File.ReadAllText(stale));
@@ -934,8 +984,8 @@ public sealed class MultiRouteTests
         Add(document, "GET", Agent + "/$count", Count());
         return (document,
         [
-            new("beta", [new("GET", Root, "Root"), new("GET", Item, "Root"), new("GET", Agent, "Agent")], "Root"),
-            new("beta", [new("GET", Root + "/$count", "Root"), new("GET", Agent + "/$count", "Agent")], "Root"),
+            new([new("GET", Root, "Root"), new("GET", Item, "Root"), new("GET", Agent, "Agent")], "Root"),
+            new([new("GET", Root + "/$count", "Root"), new("GET", Agent + "/$count", "Agent")], "Root"),
         ]);
     }
 
@@ -944,11 +994,11 @@ public sealed class MultiRouteTests
         var document = Document();
         Add(document, "GET", WidgetRoot, Get(document, list: true));
         Add(document, "GET", WidgetParent, Get(document, list: true));
-        return (document, new("v1.0", [new("GET", WidgetRoot, "Root"), new("GET", WidgetParent, "Parent")], "Root"));
+        return (document, new([new("GET", WidgetRoot, "Root"), new("GET", WidgetParent, "Parent")], "Root"));
     }
 
     private static CmdletNaming Resolve(string path) => Naming.Resolve(
-        new OperationInfo(HttpMethod.Get, path), new GeneratorConfig(Client, ".", "beta", false));
+        new OperationInfo(HttpMethod.Get, path), new GeneratorConfig(Client, ".", false), "beta");
 
     private static string FileStem(CmdletNaming naming) => naming.ClassName[..^"Command".Length];
 
@@ -1075,8 +1125,8 @@ public sealed class MultiRouteTests
         bool useCollisionData = false)
     {
         document.RegisterComponents();
-        var config = new GeneratorConfig(Client, output, apiVersion, useCollisionData, groups);
-        return new PowerShellWrapperGenerationService(document, config, NullLogger.Instance)
+        var config = new GeneratorConfig(Client, output, useCollisionData, groups);
+        return new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion)
             .GenerateAsync(CancellationToken.None);
     }
 }

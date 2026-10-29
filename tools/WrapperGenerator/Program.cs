@@ -86,8 +86,8 @@ internal static class Program
         IncludePathFilter.Apply(document, includePaths);
 
         var config = new GeneratorConfig(ClientNamespaceName: clientNamespace, OutputPath: outputPath,
-            ApiVersion: apiVersion, UseCollisionData: useCollisionData);
-        await GenerateAsync(document, config, specPath, new StderrLogger(logLevel), CancellationToken.None).ConfigureAwait(false);
+            UseCollisionData: useCollisionData);
+        await GenerateAsync(document, config, specPath, new StderrLogger(logLevel), CancellationToken.None, apiVersion).ConfigureAwait(false);
 
         var count = Directory.GetFiles(outputPath, "*.g.cs").Length;
         Console.WriteLine($"Generated {count} .g.cs file(s) to {outputPath}");
@@ -95,9 +95,9 @@ internal static class Program
     }
 
     internal static async Task GenerateAsync(OpenApiDocument document, GeneratorConfig config, string specPath,
-        ILogger logger, CancellationToken cancellationToken)
+        ILogger logger, CancellationToken cancellationToken, string apiVersion = "v1.0")
     {
-        var service = new PowerShellWrapperGenerationService(document, config, logger);
+        var service = new PowerShellWrapperGenerationService(document, config, logger, apiVersion);
         await service.ValidateRouteGroupsAsync(cancellationToken).ConfigureAwait(false);
         // The generation service writes only *.g.cs. Also write a minimal kiota-lock.json recording
         // the source spec path, so downstream tooling that keys off it — notably

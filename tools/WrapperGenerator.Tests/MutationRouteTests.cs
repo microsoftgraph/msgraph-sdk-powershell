@@ -58,7 +58,7 @@ public sealed class MutationRouteTests
         for (var i = 0; i < fixture.Group.Routes.Count; i++)
         {
             var route = fixture.Group.Routes[i];
-            var set = route.Name + shape;
+            var set = route.FamilyName + shape;
             var worker = files[$"{fixture.Stem}_Route{i}.g.cs"];
             Assert.Contains($"[GraphRoute(\"{fixture.Method}\", \"{route.Path}\", ParameterSetName = \"{set}\")]", source);
             Assert.Contains($"\"{set}\" => \"{fixture.Verb}-{fixture.Noun}_Route{i}\"", source);
@@ -120,18 +120,17 @@ public sealed class MutationRouteTests
     [InlineData("Remove")]
     [InlineData("ActionEntity")]
     [InlineData("ActionVoid")]
-    public async Task OptInRemainsProfileScopedAndTheThreeArgumentConfigurationIsUnchanged(string family)
+    public async Task SameMutationConfigurationAppliesToBothIngestingProfiles(string family)
     {
         var fixture = Create(family);
-        var beta = fixture.Group with { ApiVersion = "beta" };
-        var files = await Generate(fixture.Document, [beta], apiVersion: "beta");
-        Assert.Equal(3, files.Count);
-        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            Generate(fixture.Document, [beta], useCollisionData: true));
-        Assert.Contains("collision", ex.Message, StringComparison.OrdinalIgnoreCase);
-        Assert.Contains(fixture.Stem + ".g.cs", ex.Message);
+        foreach (var profile in new[] { "v1.0", "beta" })
+        {
+            var files = await Generate(fixture.Document, [fixture.Group], apiVersion: profile);
+            Assert.Equal(3, files.Count);
+            Assert.Contains(fixture.Stem + ".g.cs", files.Keys);
+        }
         Assert.Equal(3, typeof(OperationVariant).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
-        Assert.Equal(3, typeof(OperationVariantGroup).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
+        Assert.Equal(2, typeof(OperationVariantGroup).GetConstructors().Single(c => c.IsPublic).GetParameters().Length);
     }
 
     [Theory]
@@ -414,19 +413,19 @@ public sealed class MutationRouteTests
                 group = group with { Routes = [] };
                 break;
             case "duplicate":
-                group = group with { Routes = [group.Routes[0], group.Routes[0] with { Name = "Parent" }] };
+                group = group with { Routes = [group.Routes[0], group.Routes[0] with { FamilyName = "Parent" }] };
                 break;
             case "invalid-label":
-                group = group with { Routes = [group.Routes[0], group.Routes[1] with { Name = "not-a-label" }] };
+                group = group with { Routes = [group.Routes[0], group.Routes[1] with { FamilyName = "not-a-label" }] };
                 break;
             case "label-case":
-                group = group with { Routes = [group.Routes[0], group.Routes[1] with { Name = "rOoT" }] };
+                group = group with { Routes = [group.Routes[0], group.Routes[1] with { FamilyName = "rOoT" }] };
                 break;
             case "missing-default":
-                group = group with { DefaultRoute = "Missing" };
+                group = group with { DefaultFamily = "Missing" };
                 break;
             case "nested-default":
-                group = group with { DefaultRoute = "Parent" };
+                group = group with { DefaultFamily = "Parent" };
                 break;
             case "identical-mandatory":
                 group = MoveRight(fixture, Root + "/widgets/{widget-id}");
@@ -929,7 +928,7 @@ public sealed class MutationRouteTests
         }
         if (!action && family != "Remove")
             bodies[1] = bodies[0];
-        return new(document, new("v1.0", [new(method, paths[0], "Root"), new(method, paths[1], "Parent")], "Root"),
+        return new(document, new([new(method, paths[0], "Root"), new(method, paths[1], "Parent")], "Root"),
             bodies, family, method, verb, noun);
     }
 
@@ -1111,7 +1110,7 @@ public sealed class MutationRouteTests
     {
         document.RegisterComponents();
         return new PowerShellWrapperGenerationService(document,
-            new GeneratorConfig(Client, output, apiVersion, useCollisionData, groups), NullLogger.Instance)
+            new GeneratorConfig(Client, output, useCollisionData, groups), NullLogger.Instance, apiVersion)
             .GenerateAsync(CancellationToken.None);
     }
 

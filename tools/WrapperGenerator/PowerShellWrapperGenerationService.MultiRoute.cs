@@ -47,7 +47,7 @@ public sealed partial class PowerShellWrapperGenerationService
         }
 
         // Reuse actual eligibility, pairing and worker naming without writes or duplicated diagnostics.
-        var probe = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance);
+        var probe = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion);
         await probe.EmitOrdinaryOperationsAsync(new EmitContext(config.ClientNamespaceName), groups,
             CheckOrdinaryOutput, cancellationToken).ConfigureAwait(false);
     }
@@ -60,8 +60,8 @@ public sealed partial class PowerShellWrapperGenerationService
         foreach (var group in CmdletConfigurator.GetOperationVariantGroups(config))
         {
             if (group.Routes.Count < 2 || group.Routes.Count > 32
-                || !group.Routes.Any(r => r.Name == group.DefaultRoute)
-                || group.Routes.Select(r => r.Name).Distinct(StringComparer.OrdinalIgnoreCase).Count() < 2)
+                || !group.Routes.Any(r => r.FamilyName == group.DefaultFamily)
+                || group.Routes.Select(r => r.FamilyName).Distinct(StringComparer.OrdinalIgnoreCase).Count() < 2)
                 throw new InvalidOperationException("Operation groups require 2 to 32 exact routes, at least two families and an explicit root default.");
             var method = new HttpMethod(group.Routes[0].Method.ToUpperInvariant());
             if (method != HttpMethod.Get && method != HttpMethod.Post && method != HttpMethod.Patch
@@ -71,13 +71,13 @@ public sealed partial class PowerShellWrapperGenerationService
             foreach (var route in group.Routes)
             {
                 if (!route.Method.Equals(method.Method, StringComparison.OrdinalIgnoreCase)
-                    || !Regex.IsMatch(route.Name, "^[A-Za-z][A-Za-z0-9]*$", RegexOptions.CultureInvariant)
+                    || !Regex.IsMatch(route.FamilyName, "^[A-Za-z][A-Za-z0-9]*$", RegexOptions.CultureInvariant)
                     || !route.Path.StartsWith('/') || route.Path.IndexOfAny(['*', '?', '#']) >= 0
                     || route.Path.Contains("{}", StringComparison.Ordinal))
-                    throw new InvalidOperationException($"Invalid exact or mixed-method operation group member: {route.Method} {route.Path} ({route.Name}).");
-                if (labels.TryGetValue(route.Name, out var label) && label != route.Name)
+                    throw new InvalidOperationException($"Invalid exact or mixed-method operation group member: {route.Method} {route.Path} ({route.FamilyName}).");
+                if (labels.TryGetValue(route.FamilyName, out var label) && label != route.FamilyName)
                     throw new InvalidOperationException("Operation family labels must not differ only by case.");
-                labels[route.Name] = route.Name;
+                labels[route.FamilyName] = route.FamilyName;
                 if (!seen.Add(route.Method + " " + route.Path))
                     throw new InvalidOperationException($"Duplicate operation group membership: {route.Method} {route.Path}.");
             }
@@ -99,12 +99,12 @@ public sealed partial class PowerShellWrapperGenerationService
                 var path = paths[i].Key;
                 var pathItem = paths[i].Value!;
                 var operation = pathItem.Operations![method];
-                if (CmdletConfigurator.IsSuppressed(method, path, config))
+                if (CmdletConfigurator.IsSuppressed(method, path, config, apiVersion))
                     throw new InvalidOperationException($"Operation group member is suppressed: {method} {path}.");
                 if (method != HttpMethod.Get)
                 {
                     var (worker, mutationSource) = PrepareMutationRoute(method, path, pathItem, operation,
-                        group.Routes[i].Name, i, ctx, recordDiagnostics);
+                        group.Routes[i].FamilyName, i, ctx, recordDiagnostics);
                     workers.Add(worker);
                     sources.Add(mutationSource);
                     operations.Add(operation);
@@ -128,7 +128,7 @@ public sealed partial class PowerShellWrapperGenerationService
                 if (headers.Any(p => p.Required || !PlainString(p.Schema)))
                     throw new InvalidOperationException($"Unsupported GET group header contract: {path}.");
                 var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, path,
-                    headers.Select(p => p.Name!).ToArray()), config);
+                    headers.Select(p => p.Name!).ToArray()), config, apiVersion);
                 if (naming.CompositeKeyBuilderNamespace.Length != 0
                     || naming.PathParamNames.Distinct(StringComparer.OrdinalIgnoreCase).Count() != naming.PathParamNames.Count)
                     throw new InvalidOperationException($"GET groups require ordinary distinct path IDs: {path}.");
@@ -185,7 +185,7 @@ public sealed partial class PowerShellWrapperGenerationService
                     "Get" => CmdletEmitter.EmitItemGet(internalNaming, ctx, outputType, queryNames),
                     _ => CmdletEmitter.EmitScalarGet(internalNaming, ctx, "int", queryNames),
                 };
-                workers.Add(new(naming, internalNaming, group.Routes[i].Name, shape,
+                workers.Add(new(naming, internalNaming, group.Routes[i].FamilyName, shape,
                     CmdletEmitter.GetDispatchParameters(naming, shape, queryNames), outputType));
                 sources.Add(source);
                 operations.Add(operation);

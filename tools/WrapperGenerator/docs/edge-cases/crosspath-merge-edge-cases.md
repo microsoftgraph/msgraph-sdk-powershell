@@ -12,8 +12,8 @@ Module-owned `*_cmdletConfigurations.cs` arrays can contain entries produced by
 `CmdletConfigurator.GroupVariants(group, reason)`. The minimal records are:
 
 ```csharp
-OperationVariant(string Method, string Path, string Name)
-OperationVariantGroup(string ApiVersion, IReadOnlyList<OperationVariant> Routes, string DefaultRoute)
+OperationVariant(string Method, string Path, string FamilyName)
+OperationVariantGroup(IReadOnlyList<OperationVariant> Routes, string DefaultFamily)
 ```
 
 These names describe compatible variants of **one public command**. Existing mandatory
@@ -21,18 +21,64 @@ path IDs select its parameter set; registration does not add a `Route` parameter
 an endpoint selector. HTTP routes and `GraphRouteAttribute` still describe the actual
 requests made by each typed worker.
 
-`Method` is `GET`, `POST`, `PATCH`, `PUT` or `DELETE`; every member of a group uses the
-same method and operation kind. `Path` is the exact source-spec path, including named placeholders.
-Matching ignores case but does not erase placeholder names or accept wildcards. `Name`
-labels a route family for internal parameter-set names, not a new public parameter.
-`DefaultRoute` explicitly identifies the root family. Its list is the default when present;
-otherwise its single operation is the default.
+| Parameter | Meaning |
+|---|---|
+| `Method` | `GET`, `POST`, `PATCH`, `PUT` or `DELETE`. All group members must share the method and operation kind. |
+| `Path` | Exact OpenAPI path with named placeholders. Matching ignores case but neither erases placeholder names nor accepts wildcards. |
+| `FamilyName` | Maintainer-chosen family label, such as `Root`, `Profile`, `Parent` or `Agent`. These words have no built-in URL meaning. The label plus the operation shape names its parameter set: `ProfileList`, `ProfileGet`, `AgentList`, etc. |
+| `Routes` | The complete reviewed operations that should share one public command, including an ordinary item operation if it would otherwise collide with the dispatcher. |
+| `DefaultFamily` | An exact family label from `Routes`. Its list is the default when present; otherwise its single operation is the default. Its mandatory IDs must be a subset of every alternative's IDs. |
+
+`FamilyName` is not a cmdlet noun or a caller-supplied argument. Users select the variant
+through existing IDs, not `-FamilyName`, `-Profile`, `-Parent` or `-Route`. Labels are
+visible when inspecting parameter sets with `Get-Command`.
 
 All members must already resolve to the same public name through existing naming rules
 and derived-data precedence. The annotation does not rename, unsuppress or classify away
 an operation. Focused callers can provide the same groups through the optional
-`GeneratorConfig.OperationVariantGroups` argument; module groups are globally aggregated and
-filtered by API profile.
+`GeneratorConfig.OperationVariantGroups` argument. Authored configurations have no API-version
+parameter: define a group once and reuse it for v1.0 and beta generation. All curated
+suppression/rename entries likewise apply wherever their method and path match.
+
+The module's input determines which operations exist. A group with no matching paths is
+irrelevant and ignored; a partially present group still fails rather than silently dropping
+variants. Defining a group once does not make an unavailable endpoint exist in another
+profile. The generator does not automatically complete a partial group.
+
+`GeneratorConfig` contains only client namespace, output directory, the derived-data toggle,
+and optional variant groups:
+
+```csharp
+new GeneratorConfig(clientNamespace, outputPath,
+    UseCollisionData: true, OperationVariantGroups: sharedGroups);
+```
+
+The generation run's `--api-version` selects the correct **generated oracle data**, outside
+authored configuration. `PowerShellWrapperGenerationService` receives that run context
+separately; the CLI forwards it to naming and suppression lookups without filtering the
+shared curated entries or variant registrations. Do not mix v1.0 oracle data into a beta run.
+
+### One definition, three invocations
+
+This single definition is usable by either profile whose input includes these operations:
+
+```csharp
+GroupVariants(new OperationVariantGroup(
+[
+    new("GET", "/widgets", FamilyName: "Root"),
+    new("GET", "/widgets/{widget-id}", FamilyName: "Root"),
+    new("GET", "/widgets/{parent-id}/widgets", FamilyName: "Parent"),
+], DefaultFamily: "Root"), "Reviewed compatible widget list/item operations.")
+```
+
+| Caller invocation | Parameter set | Request |
+|---|---|---|
+| `Get-MgWidget` | `RootList` (default) | `GET /widgets` |
+| `Get-MgWidget -WidgetId $id` | `RootGet` | `GET /widgets/{widget-id}` |
+| `Get-MgWidget -ParentId $id` | `ParentList` | `GET /widgets/{parent-id}/widgets` |
+
+The maintainer could choose `Profile` instead of `Root`, provided `DefaultFamily` also
+becomes `Profile`. Only the parameter-set labels would change; URL selection still uses IDs.
 
 ### Applications acceptance case
 
@@ -51,18 +97,18 @@ These are compatible parameter-set variants, not different operations needing a 
 The module-owned entries for exactly those paths are:
 
 ```csharp
-GroupVariants(new OperationVariantGroup("beta",
+GroupVariants(new OperationVariantGroup(
 [
     new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups", "Root"),
     new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}", "Root"),
     new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups", "Agent"),
-], DefaultRoute: "Root"), "Reviewed 2.38.1 List/Get/List2 contracts and exact worker URLs."),
+], DefaultFamily: "Root"), "Reviewed 2.38.1 List/Get/List2 contracts and exact worker URLs."),
 
-GroupVariants(new OperationVariantGroup("beta",
+GroupVariants(new OperationVariantGroup(
 [
     new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/$count", "Root"),
     new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/$count", "Agent"),
-], DefaultRoute: "Root"), "Reviewed 2.38.1 Get/Get2 count contracts and exact worker URLs.")
+], DefaultFamily: "Root"), "Reviewed 2.38.1 Get/Get2 count contracts and exact worker URLs.")
 ```
 
 The first command exposes `RootList` (default), `RootGet` and `AgentList`; the count exposes
@@ -99,11 +145,11 @@ For example, after separately reviewing the service and published naming/paramet
 contracts, two repeated resource paths can retain their ordinary `Update-MgWidget` name:
 
 ```csharp
-GroupVariants(new OperationVariantGroup("v1.0",
+GroupVariants(new OperationVariantGroup(
 [
     new("PATCH", "/widgets/{widget-id}", "Root"),
     new("PATCH", "/widgets/{parent-id}/widgets/{widget-id}", "Parent"),
-], DefaultRoute: "Root"), "Reviewed identical public body, output and optional header contracts.")
+], DefaultFamily: "Root"), "Reviewed identical public body, output and optional header contracts.")
 ```
 
 `RootUpdate` requires `WidgetId`; `ParentUpdate` additionally requires `ParentId`. A body

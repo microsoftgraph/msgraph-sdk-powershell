@@ -30,7 +30,7 @@ public sealed partial class PowerShellWrapperGenerationService
         var headers = (operation.Parameters ?? []).Where(p => p.In == ParameterLocation.Header).ToArray();
         if (headers.Any(p => p.Required || !PlainString(p.Schema)))
             throw new InvalidOperationException($"Unsupported mutation group header contract: {path}.");
-        var naming = Naming.Resolve(new OperationInfo(method, path, headers.Select(p => p.Name!).ToArray(), kind), config);
+        var naming = Naming.Resolve(new OperationInfo(method, path, headers.Select(p => p.Name!).ToArray(), kind), config, apiVersion);
         if (naming.CompositeKeyBuilderNamespace.Length != 0
             || naming.PathParamNames.Distinct(StringComparer.OrdinalIgnoreCase).Count() != naming.PathParamNames.Count)
             throw new InvalidOperationException($"Operation groups require ordinary distinct path IDs: {path}.");

@@ -159,7 +159,7 @@ public static class Naming
         [HttpMethod.Delete] = PsVerb.Remove,
     };
 
-    public static CmdletNaming Resolve(OperationInfo operation, GeneratorConfig? config = null)
+    public static CmdletNaming Resolve(OperationInfo operation, GeneratorConfig? config = null, string apiVersion = "v1.0")
     {
         ArgumentNullException.ThrowIfNull(operation);
         // An action is a call, not a create, so POST does not mean New here. A function is a
@@ -175,14 +175,14 @@ public static class Naming
 
         // Published per-operation verbs, from derived data or a curated shared directive,
         // replace the structural default through the same approved-verb validation.
-        if (CmdletConfigurator.TryGetOverriddenVerb(operation.HttpMethod, operation.Path, config) is { } publishedVerb)
+        if (CmdletConfigurator.TryGetOverriddenVerb(operation.HttpMethod, operation.Path, config, apiVersion) is { } publishedVerb)
             verb = PsVerb.FromApprovedName(publishedVerb);
 
         // The noun comes from the URL path, not the operationId. OperationIds keep whatever
         // plurality the spec author chose, while the published SDK names follow the path:
         // GET /users/{id}/messages is Get-MgUserMessage. The few hand-tuned exceptions the
         // published SDK carries are mirrored as data in CmdletConfigurator, never as code here.
-        var noun = GeneratorConstants.NounPrefix + CmdletConfigurator.ApplyNounOverrides(operation.HttpMethod, operation.Path, BuildNounFromPath(operation.Path, operation.Kind), config);
+        var noun = GeneratorConstants.NounPrefix + CmdletConfigurator.ApplyNounOverrides(operation.HttpMethod, operation.Path, BuildNounFromPath(operation.Path, operation.Kind), config, apiVersion);
 
         // A list GET (/users/{id}/messages) and its item GET (/users/{id}/messages/{message-id})
         // get the same noun on purpose. PowerShellWrapperGenerationService pairs them into one

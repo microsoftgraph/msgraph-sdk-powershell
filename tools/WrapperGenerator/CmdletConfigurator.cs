@@ -38,7 +38,7 @@ public static partial class CmdletConfigurator
     }
 
     internal sealed record Entry(OverrideKind Kind, HttpMethod? Method, string Pattern, PathMatch Match, string? Value, string Reason,
-        string? ApiVersion = null, OperationVariantGroup? VariantGroup = null);
+        OperationVariantGroup? VariantGroup = null);
 
     // One command's compatible parameter-set variants, not a public endpoint selector.
     internal static Entry GroupVariants(OperationVariantGroup group, string reason) =>
@@ -47,8 +47,7 @@ public static partial class CmdletConfigurator
     internal static IEnumerable<OperationVariantGroup> GetOperationVariantGroups(GeneratorConfig config) =>
         Entries.Where(e => e.Kind == OverrideKind.GroupVariants).Select(e => e.VariantGroup
             ?? throw new InvalidOperationException("GroupVariants entry requires an operation variant group."))
-            .Concat(config.OperationVariantGroups ?? [])
-            .Where(g => g.ApiVersion.Equals(config.ApiVersion, StringComparison.OrdinalIgnoreCase));
+            .Concat(config.OperationVariantGroups ?? []);
 
     // NormalizePath lowercases before matching, so a Pattern containing an uppercase letter can
     // never match anything: the entry is silently dead and the override looks applied but is not.
@@ -143,19 +142,19 @@ public static partial class CmdletConfigurator
         return NormalizePath(pathTemplate);
     }
 
-    // config scopes both derived data and profile-specific curated entries; null (the unit
-    // tests' default) applies only unscoped curated entries, so a data-file change can never
-    // silently shift a pinned naming expectation.
-    public static bool IsSuppressed(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config = null)
+    // Authored rules are shared by every ingesting module. Only the generated oracle layer
+    // uses the generation run's API version; it is not part of the authored configuration.
+    public static bool IsSuppressed(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config = null,
+        string apiVersion = "v1.0")
     {
         ArgumentNullException.ThrowIfNull(httpMethod);
         ArgumentNullException.ThrowIfNull(pathTemplate);
         var path = NormalizePath(pathTemplate);
-        if (config is { UseCollisionData: true } && DerivedCollisionResolutions.IsSuppressed(config.ApiVersion, httpMethod, path))
+        if (config is { UseCollisionData: true } && DerivedCollisionResolutions.IsSuppressed(apiVersion, httpMethod, path))
             return true;
         foreach (var entry in Entries)
         {
-            if (entry.Kind == OverrideKind.SuppressOperation && Matches(entry, httpMethod, path, config))
+            if (entry.Kind == OverrideKind.SuppressOperation && Matches(entry, httpMethod, path))
                 return true;
         }
         return false;
@@ -163,26 +162,29 @@ public static partial class CmdletConfigurator
 
     // Derived names remain authoritative, including a null verb that keeps the structural
     // default. Otherwise a shared directive may require a curated verb in either profile.
-    public static string? TryGetOverriddenVerb(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config) =>
-        TryGetOverriddenVerb(httpMethod, pathTemplate, config, Entries);
+    public static string? TryGetOverriddenVerb(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config,
+        string apiVersion = "v1.0") =>
+        TryGetOverriddenVerb(httpMethod, pathTemplate, config, Entries, apiVersion);
 
-    internal static string? TryGetOverriddenVerb(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config, IReadOnlyList<Entry> entries)
+    internal static string? TryGetOverriddenVerb(HttpMethod httpMethod, string pathTemplate, GeneratorConfig? config,
+        IReadOnlyList<Entry> entries, string apiVersion = "v1.0")
     {
         ArgumentNullException.ThrowIfNull(httpMethod);
         ArgumentNullException.ThrowIfNull(pathTemplate);
         var path = NormalizePath(pathTemplate);
         if (config is { UseCollisionData: true }
-            && DerivedCollisionResolutions.TryReplaceName(config.ApiVersion, httpMethod, path, out var derived))
+            && DerivedCollisionResolutions.TryReplaceName(apiVersion, httpMethod, path, out var derived))
             return derived.Verb;
         foreach (var entry in entries)
         {
-            if (entry.Kind == OverrideKind.ReplaceVerb && Matches(entry, httpMethod, path, config))
+            if (entry.Kind == OverrideKind.ReplaceVerb && Matches(entry, httpMethod, path))
                 return entry.Value;
         }
         return null;
     }
 
-    public static string ApplyNounOverrides(HttpMethod httpMethod, string pathTemplate, string noun, GeneratorConfig? config = null)
+    public static string ApplyNounOverrides(HttpMethod httpMethod, string pathTemplate, string noun, GeneratorConfig? config = null,
+        string apiVersion = "v1.0")
     {
         ArgumentNullException.ThrowIfNull(httpMethod);
         ArgumentNullException.ThrowIfNull(pathTemplate);
@@ -190,7 +192,7 @@ public static partial class CmdletConfigurator
         var path = NormalizePath(pathTemplate);
 
         // A derived rename is the published noun verbatim; nothing curated may rewrite it.
-        if (config is { UseCollisionData: true } && DerivedCollisionResolutions.TryReplaceName(config.ApiVersion, httpMethod, path, out var derived))
+        if (config is { UseCollisionData: true } && DerivedCollisionResolutions.TryReplaceName(apiVersion, httpMethod, path, out var derived))
             return derived.Noun;
 
         // Published BackupRestore cmdlets retain the Solution prefix (for example,
@@ -199,7 +201,7 @@ public static partial class CmdletConfigurator
 
         foreach (var entry in Entries)
         {
-            if (!Matches(entry, httpMethod, path, config))
+            if (!Matches(entry, httpMethod, path))
                 continue;
             switch (entry.Kind)
             {
@@ -215,11 +217,8 @@ public static partial class CmdletConfigurator
         return noun;
     }
 
-    private static bool Matches(Entry entry, HttpMethod httpMethod, string normalizedPath, GeneratorConfig? config)
+    private static bool Matches(Entry entry, HttpMethod httpMethod, string normalizedPath)
     {
-        if (entry.ApiVersion is not null &&
-            !string.Equals(entry.ApiVersion, config?.ApiVersion, StringComparison.OrdinalIgnoreCase))
-            return false;
         // HttpMethod's own equality is case-insensitive, so no string comparison is needed.
         if (entry.Method is not null && entry.Method != httpMethod)
             return false;

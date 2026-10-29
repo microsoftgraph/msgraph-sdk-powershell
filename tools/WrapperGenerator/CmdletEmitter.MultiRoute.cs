@@ -69,7 +69,7 @@ public static partial class CmdletEmitter
             .OrderBy(p => p.Name, StringComparer.OrdinalIgnoreCase)
             .Select(p => $"{p.Name}:{p.Type}:{p.Mandatory}:{p.Alias}"))).Distinct(StringComparer.Ordinal).Count() != 1)
             throw new InvalidOperationException("Operation variants require identical public body and header parameters.");
-        var defaults = workers.Where(w => w.RouteName == group.DefaultRoute).ToArray();
+        var defaults = workers.Where(w => w.RouteName == group.DefaultFamily).ToArray();
         if (defaults.Length == 0)
             throw new InvalidOperationException("Operation variants require an explicit root default family.");
         foreach (var family in workers.GroupBy(w => w.RouteName))
@@ -111,7 +111,7 @@ public static partial class CmdletEmitter
         ValidateRouteDispatch(group, workers);
         static string SetName(RouteWorker worker) => worker.RouteName + worker.Shape;
         var naming = workers[0].Naming;
-        var defaultWorker = workers.Where(w => w.RouteName == group.DefaultRoute).OrderBy(w => w.Shape == "List" ? 0 : 1).First();
+        var defaultWorker = workers.Where(w => w.RouteName == group.DefaultFamily).OrderBy(w => w.Shape == "List" ? 0 : 1).First();
         var declarations = new List<string>();
         foreach (var parameter in workers.SelectMany(w => w.Parameters).GroupBy(p => p.Name, StringComparer.OrdinalIgnoreCase))
         {

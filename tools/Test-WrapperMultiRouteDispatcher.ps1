@@ -41,7 +41,7 @@ function Assert-DispatchTest([bool]$Condition, [string]$Message) {
 }
 
 function New-DispatchWorker([string]$Path, [string]$Label, [string]$Shape, [int]$Index, [string[]]$Query) {
-    $config = [WrapperGenerator.GeneratorConfig]::new('RouteInvocationFixture.Client', '.', 'beta', $false, $null)
+    $config = [WrapperGenerator.GeneratorConfig]::new('RouteInvocationFixture.Client', '.', $false, $null)
     $operation = [WrapperGenerator.OperationInfo]::new(
         [System.Net.Http.HttpMethod]::Get, $Path, [string[]]@('ConsistencyLevel'), [WrapperGenerator.OperationKind]::Resource)
     $naming = [WrapperGenerator.Naming]::Resolve($operation, $config)
@@ -57,7 +57,7 @@ function Write-DispatchSource($Workers) {
     $routes = [WrapperGenerator.OperationVariant[]]@($Workers | ForEach-Object {
         [WrapperGenerator.OperationVariant]::new('GET', $_.Naming.SourcePath, $_.RouteName)
     })
-    $group = [WrapperGenerator.OperationVariantGroup]::new('beta', $routes, 'Root')
+    $group = [WrapperGenerator.OperationVariantGroup]::new($routes, 'Root')
     $context = [WrapperGenerator.EmitContext]::new('RouteInvocationFixture.Client')
     $source = [WrapperGenerator.CmdletEmitter]::EmitMultiRouteDispatcher(
         $group, [WrapperGenerator.CmdletEmitter+RouteWorker[]]$Workers, $context)

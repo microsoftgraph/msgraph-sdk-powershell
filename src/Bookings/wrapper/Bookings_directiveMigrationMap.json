@@ -108,7 +108,7 @@
       "classification": "SubjectRename",
       "sourceContains": "subject: ^Solution(.*)$",
       "implementation": "CmdletConfigurator",
-      "notes": "Existing StripNounPrefix removes Solution from all live /solutions/ child nouns. Enumerate every exact compatible operation, including the suppressed virtualEvents root. Preserve the existing BackupRestore exception; retired beta top-level Bookings cmdlets are suppressed separately by beta-only module configuration.",
+      "notes": "Existing StripNounPrefix removes Solution from all live /solutions/ child nouns. Enumerate every exact compatible operation, including the suppressed virtualEvents root. Preserve the existing BackupRestore exception; retired top-level Bookings cmdlets are suppressed separately by shared exact-path module configuration.",
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
@@ -2442,7 +2442,7 @@
     ],
     "suppressedPaths": 29,
     "suppressedOperations": 53,
-    "implementation": "Bookings_cmdletConfigurations.cs; beta-only SuppressOperation entries.",
+    "implementation": "Bookings_cmdletConfigurations.cs; shared exact-path SuppressOperation entries.",
     "notes": "Suppress cmdlets for exact roots and descendants by segment, case-insensitively, even without upstream metadata. Do not retain a selectable Legacy cmdlet route or infer service support from historical command metadata. Preserve source/compatible specs, generated Kiota HTTP client routes, historical directives, v1.0 behavior, and every live compatible solutions operation."
   }
 }
