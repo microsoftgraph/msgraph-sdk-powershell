@@ -111,8 +111,8 @@ public sealed record CmdletNaming(
     // Pascal-cased and every {id} segment replaced by "Item", e.g. "Users.Item.AssignLicense".
     // Empty for a resource operation, which has no per-operation types.
     string OperationTypeNamespace = "",
-    // The kiota builder member for the action/function segment, and the last segment of the
-    // namespace its generated types live in.
+    // The Kiota builder type stem for the action/function segment, also used in its namespace.
+    // Not the escaped navigation property: PostPath still refers to PostRequestBuilder.
     string OperationMemberName = "",
     // The prefix kiota gives those generated types ("AssignLicense" ->
     // AssignLicensePostRequestBody). It differs from OperationMemberName for a
@@ -569,19 +569,17 @@ public static class Naming
         return EmittableODataSegments.ContainsKey(segment);
     }
 
-    // Kiota renames a builder property whose name would clash with a request method the builder
-    // declares: a /delete segment is exposed as DeletePath, not Delete. The rename is scoped to
+    // Kiota reserves request-method names for navigation properties: a /delete segment is
+    // exposed as DeletePath, not Delete. The rename is scoped to
     // the property — the generated namespace keeps the segment name
     // (…UsedRange.Delete.DeleteRequestBuilder DeletePath), and sibling segments that are not
     // method names (Clear, EntireColumn) are untouched.
     //
-    // Only "delete" occurs: of the 9,116 distinct routes in the configured v1.0 specs, 24 carry a
-    // /delete segment and none carries /get, /post, /patch, /put or /head. Mapping the other
-    // method names would encode a prediction no spec exercises, so only the observed clash is
-    // encoded; a new one appears as a module compile error rather than silently binding the
-    // wrong member.
+    // Verified with Kiota 1.36.1: Files' /delete and Financials beta's /post use this escape.
+    // Keep the mapping bounded to observed names; operation namespaces, request-body types,
+    // qualified names and parameterized function methods must not acquire the property suffix.
     private static string AvoidRequestMethodClash(string memberName) =>
-        memberName == "Delete" ? "DeletePath" : memberName;
+        memberName is "Delete" or "Post" ? memberName + "Path" : memberName;
 
     // Whether a list GET and an item GET form a mergeable pair for the public Get-MgX
     // dispatcher: the item's path must extend the list's path by exactly one id, either
