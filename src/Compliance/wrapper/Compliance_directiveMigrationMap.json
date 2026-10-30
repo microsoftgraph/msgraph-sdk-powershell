@@ -1,36 +1,69 @@
 {
   "review": {
-    "baseCommit": "b16f02829cf7c0f5f54aff1f54567ec9543be9f0",
+    "baseCommit": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad",
     "scope": "Only src/Compliance/Compliance.md; global and profile-specific readme directives excluded. Parameter/schema directives remain deferred; none occur in this shared file.",
     "compatibleSpecs": {
       "v1.0": {
         "path": "openApiDocs_KiotaCompat/v1.0/Compliance.yml",
-        "blobHash": "5359293c806144e221afd84a7051cfe486906f68"
+        "blobHash": "31064dc0edea9597e66f0e9e30aaa271a8990eba"
       },
       "beta": {
         "path": "openApiDocs_KiotaCompat/beta/Compliance.yml",
-        "blobHash": "9375aab1f35c429d71acd13befe02e97336de92c"
+        "blobHash": "219ed1b31d134f57bcbde55e7e02361ed599fb29"
       }
     },
     "availableOperationsInBothProfiles": [
       {
         "method": "GET",
         "path": "/compliance",
-        "operationId": "compliance.compliance.GetCompliance"
+        "operationId": "compliance_GetCompliance"
       },
       {
         "method": "PATCH",
         "path": "/compliance",
-        "operationId": "compliance.compliance.UpdateCompliance"
+        "operationId": "compliance_UpdateCompliance"
       }
     ],
     "retiredPath": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
     "retiredOperationIds": [
-      "compliance.ediscovery.cases.noncustodialDataSources.UpdateDataSource",
-      "compliance.ediscovery.cases.noncustodialDataSources.DeleteDataSource",
-      "compliance.ediscovery.cases.noncustodialDataSources.GetDataSource"
+      "compliance.ediscovery.case.noncustodialDataSource_UpdateDataSource",
+      "compliance.ediscovery.case.noncustodialDataSource_DeleteDataSource",
+      "compliance.ediscovery.case.noncustodialDataSource_GetDataSource"
     ],
-    "evidence": "Both complete compatible-spec path inventories contain only /compliance. All three previously cited beta operations and their entire eDiscovery route family were already absent at the reviewed base. Retired operations are historical evidence only, not current API mappings. Retain dormant exact suppression entries to preserve shared directive semantics; no redundant rename override is needed."
+    "originalSourceSelection": {
+      "v1.0": {
+        "path": "openApiDocs/v1.0/Compliance.yml",
+        "blobHash": "c684bccc4da19c2469703cd42473ac1ea380b648",
+        "selectedOperations": [],
+        "survivingOperations": []
+      },
+      "beta": {
+        "path": "openApiDocs/beta/Compliance.yml",
+        "blobHash": "d9ead892c982b360e557ed3e11613675de368717",
+        "selectedOperations": [
+          {
+            "directiveIndex": 1,
+            "method": "PATCH",
+            "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
+            "operationId": "compliance.ediscovery.case.noncustodialDataSource_UpdateDataSource"
+          },
+          {
+            "directiveIndex": 1,
+            "method": "DELETE",
+            "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
+            "operationId": "compliance.ediscovery.case.noncustodialDataSource_DeleteDataSource"
+          },
+          {
+            "directiveIndex": 2,
+            "method": "GET",
+            "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
+            "operationId": "compliance.ediscovery.case.noncustodialDataSource_GetDataSource"
+          }
+        ],
+        "survivingOperations": []
+      }
+    },
+    "evidence": "Reviewed after normally integrating #3849. The original beta shared subject/variant selectors cover exactly the nested dataSource PATCH/DELETE (directive 1) and GET (directive 2); the parent item GET/PATCH/DELETE are distinct neighboring operations, not the numbered variants. Each selected beta operation is deprecated with x-ms-deprecation removalDate 2023-02-01 and explicitly directs callers to /security instead. The original v1.0 spec has no eDiscovery selection. All selected source operations have zero same-profile compatible survivors: both complete compatible path inventories contain only /compliance. Current operation IDs reflect #3861/#3863 alignment. Source lineage is audit evidence only, not current API mappings or a translation-helper declaration. Retain dormant exact suppressions and structural naming without restoring expired APIs or overriding neighbors."
   },
   "mappings": [
     {

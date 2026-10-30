@@ -25,6 +25,14 @@ structural naming still supplies the intended noun if that route is reintroduced
 `ComplianceDirectiveMigrationTests` distinguishes these synthetic semantic checks
 from current-spec coverage and pins the unaffected root operations.
 
+Revalidation after the merged variant framework also checks the complete original
+same-profile source selection. The original beta spec contains exactly the three
+nested operations selected by these numbered variants; all are deprecated with a
+`2023-02-01` removal date and have no compatible-spec survivors. The original v1.0
+spec contains none. The parent item operations are distinct neighbors, not
+selected variants. No expired APIs are restored or grouped. The ledger records
+the current aligned operation IDs and original/compatible spec hashes.
+
 Only this shared file is in migration scope. Global and profile-specific readme
 directives are excluded. There are no parameter or schema directives in this
 shared file; those directive classes remain deferred.
