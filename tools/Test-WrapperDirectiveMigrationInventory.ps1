@@ -5,7 +5,7 @@ Validates reviewed directive mappings and the completion gate using isolated fix
 .DESCRIPTION
 Copies the inventory tool and preserved Compliance pilot inputs into a temporary repository
 layout. Exact fixture specifications exercise valid and stale evidence independently of live
-API pruning. Also checks read-only live candidate, deferred, and empty-module inventory.
+API pruning. Also checks read-only live deferred and empty-module inventory.
 This is not a claim that every live module ledger passes; audit those modules separately.
 #>
 [CmdletBinding()]
@@ -281,6 +281,305 @@ paths:
         throw 'Quoted YAML function keys must resolve exact unescaped method/path/operation-ID evidence.'
     }
 
+    Write-FixtureFile 'src\LegacyBridge\LegacyBridge.md' @'
+directive:
+  - remove-path-by-operation: ^legacy_.*Widget$
+'@
+    $legacySpec = @'
+openapi: 3.0.4
+paths:
+  '/widgets/{old-id}':
+    get:
+      operationId: legacy_GetWidget
+    patch:
+      operationId: legacy_UpdateWidget
+  '/retired/{old-id}':
+    delete:
+      operationId: legacy_DeleteWidget
+  /unselected:
+    get:
+      operationId: unrelated_GetOther
+'@
+    $currentSpec = @'
+openapi: 3.0.4
+paths:
+  '/widgets/{widget-id}':
+    get:
+      operationId: widgets.GetWidget
+    patch:
+      operationId: widgets.UpdateWidget
+  /unselected:
+    get:
+      operationId: widgets.GetOther
+  '/different/{widget-id}':
+    get:
+      operationId: widgets.GetDifferent
+'@
+    Write-FixtureFile 'openApiDocs\v1.0\LegacyBridge.yml' $legacySpec
+    Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' $currentSpec
+    $legacyMapping = @'
+{
+  "mappings": [{
+    "module": "LegacyBridge",
+    "directiveIndex": 1,
+    "classification": "OperationIdSuppression",
+    "sourceContains": "remove-path-by-operation: ^legacy_.*Widget$",
+    "implementation": "CmdletConfigurator",
+    "profiles": {
+      "v1.0": {
+        "operationIdSource": "Legacy",
+        "notes": "Reviewed exact old/new IDs and method/path bridges; one old operation was pruned.",
+        "absenceExpected": false,
+        "operations": [
+          { "method": "GET", "path": "/widgets/{widget-id}", "operationId": "widgets.GetWidget", "legacyPath": "/widgets/{old-id}", "legacyOperationId": "legacy_GetWidget" },
+          { "method": "PATCH", "path": "/widgets/{widget-id}", "operationId": "widgets.UpdateWidget", "legacyPath": "/widgets/{old-id}", "legacyOperationId": "legacy_UpdateWidget" }
+        ],
+        "removedLegacyOperations": [
+          { "method": "DELETE", "path": "/retired/{old-id}", "operationId": "legacy_DeleteWidget", "notes": "Actual old route has no compatible method/normalized-path counterpart." }
+        ]
+      },
+      "beta": {
+        "excluded": true,
+        "operations": [],
+        "notes": "No compatible beta spec; not an API-absence claim."
+      }
+    }
+  }]
+}
+'@
+    Set-Content $testMapping $legacyMapping
+    $bridged = @(& $fixtureTool -Module LegacyBridge -MappingPath $testMapping -FailOnUnresolved)
+    if ($bridged[0].Status -ne 'Mapped' -or $bridged[0].V1Operations.Count -ne 2 -or
+        $bridged[0].BetaOperations.Count -ne 0 -or
+        $bridged[0].Notes -notmatch 'reviewed legacy operation-ID translation') {
+        throw 'Reviewed complete legacy-ID bridges must map surviving compatible operations and retain exclusion notes.'
+    }
+    $literal = @(& $fixtureTool -Module LegacyBridge)
+    if ($literal[0].Status -ne 'Unresolved') {
+        throw 'Legacy specs must never cause automatic compatible regex resolution or inferred successors.'
+    }
+    $alignedSpec = $currentSpec.Replace('widgets.GetWidget', 'legacy_GetWidget').
+        Replace('widgets.UpdateWidget', 'legacy_UpdateWidget')
+    Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' $alignedSpec
+    $alignedMapping = $legacyMapping | ConvertFrom-Json
+    foreach ($operation in $alignedMapping.mappings[0].profiles.'v1.0'.operations) {
+        $operation.operationId = $operation.legacyOperationId
+    }
+    $alignedMapping | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+    $aligned = @(& $fixtureTool -Module LegacyBridge -MappingPath $testMapping -FailOnUnresolved)
+    if ($aligned[0].Status -ne 'Mapped' -or $aligned[0].V1Operations.Count -ne 2) {
+        throw 'Reviewed Legacy source coverage must remain valid when compatible operation IDs are aligned.'
+    }
+    $alignedMapping.mappings[0].profiles.'v1.0'.PSObject.Properties.Remove('operationIdSource')
+    $alignedMapping.mappings[0].profiles.'v1.0'.PSObject.Properties.Remove('removedLegacyOperations')
+    foreach ($operation in $alignedMapping.mappings[0].profiles.'v1.0'.operations) {
+        $operation.PSObject.Properties.Remove('legacyPath')
+        $operation.PSObject.Properties.Remove('legacyOperationId')
+    }
+    $alignedMapping | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+    $literalReviewed = @(& $fixtureTool -Module LegacyBridge -MappingPath $testMapping -FailOnUnresolved)
+    if ($literalReviewed[0].Status -ne 'Mapped' -or $literalReviewed[0].V1Operations.Count -ne 2) {
+        throw 'Aligned literal selectors must not require Legacy translation for their complete current match set.'
+    }
+    $alignedCandidate = @(& $fixtureTool -Module LegacyBridge)
+    if ($alignedCandidate[0].Status -ne 'Resolved' -or $alignedCandidate[0].Implementation -ne 'Candidate') {
+        throw 'Aligned operation IDs alone must not count as reviewed completion.'
+    }
+    Assert-Failure { & $fixtureTool -Module LegacyBridge -FailOnUnresolved } 'lack reviewed mappings'
+    Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' $currentSpec
+    $bridgeCases = @(
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.PSObject.Properties.Remove('operationIdSource') }; Pattern = 'requires explicit operationIdSource' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.operationIdSource = 'legacy' }; Pattern = "operationIdSource must be 'Legacy'" }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.notes = '' }; Pattern = 'legacy translation notes are required' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.absenceExpected = $true }; Pattern = 'requires absenceExpected: false' }
+        @{ Mutate = { param($d) $d.mappings[0].classification = 'SubjectRename' }; Pattern = 'classification changed|only supported for OperationIdSuppression' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.operations = @($d.mappings[0].profiles.'v1.0'.operations[0]) }; Pattern = 'complete original regex match set' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.PSObject.Properties.Remove('removedLegacyOperations') }; Pattern = 'complete original regex match set' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.operations[0].legacyOperationId = 'legacy_getWidget' }; Pattern = 'not an exact original regex match' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.operations[0].legacyPath = '/Widgets/{old-id}' }; Pattern = 'not an exact original regex match' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.operations[0].PSObject.Properties.Remove('legacyOperationId') }; Pattern = 'legacyPath and legacyOperationId evidence are required' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.operations[0].PSObject.Properties.Remove('legacyPath') }; Pattern = 'legacyPath and legacyOperationId evidence are required' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.operations[0].method = 'POST' }; Pattern = 'matched 0 operations' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.operations[0].path = '/different/{widget-id}'; $d.mappings[0].profiles.'v1.0'.operations[0].operationId = 'widgets.GetDifferent' }; Pattern = 'method/normalized path must be identical' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.operations[0].legacyPath = '/unselected'; $d.mappings[0].profiles.'v1.0'.operations[0].legacyOperationId = 'unrelated_GetOther' }; Pattern = 'not an exact original regex match' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.operations[0].operationId = 'stale.GetWidget' }; Pattern = 'operationId changed' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.operations += $d.mappings[0].profiles.'v1.0'.operations[0] }; Pattern = 'duplicate legacy evidence' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.removedLegacyOperations[0].notes = '' }; Pattern = 'requires review notes' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.removedLegacyOperations[0].operationId = 'unrelated_GetOther' }; Pattern = 'not an exact original regex match' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.removedLegacyOperations = $null }; Pattern = 'removedLegacyOperations must be an explicit array' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.removedLegacyOperations += [pscustomobject]@{method='GET';path='/widgets/{old-id}';operationId='legacy_GetWidget';notes='False removal claim'} }; Pattern = 'still has 1 compatible' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.beta | Add-Member operationIdSource 'Legacy' }; Pattern = 'cannot combine exclusion with legacy translation' }
+    )
+    foreach ($case in $bridgeCases) {
+        $document = $legacyMapping | ConvertFrom-Json
+        & $case.Mutate $document
+        $document | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+        Assert-Failure { & $fixtureTool -Module LegacyBridge -MappingPath $testMapping } $case.Pattern
+    }
+    Set-Content $testMapping $legacyMapping
+    Write-FixtureFile 'openApiDocs\v1.0\LegacyBridge.yml' ($legacySpec -replace 'legacy_', 'changed_')
+    Assert-Failure { & $fixtureTool -Module LegacyBridge -MappingPath $testMapping } 'matches no legacy operations'
+    Write-FixtureFile 'openApiDocs\v1.0\LegacyBridge.yml' ($legacySpec + @'
+
+  '/widgets/{ambiguous-id}':
+    get:
+      operationId: unrelated_Ambiguous
+'@)
+    Assert-Failure { & $fixtureTool -Module LegacyBridge -MappingPath $testMapping } 'legacy method/normalized path .* matched 2 operations'
+    Write-FixtureFile 'openApiDocs\v1.0\LegacyBridge.yml' $legacySpec
+    Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' ($currentSpec + @'
+
+  '/widgets/{ambiguous-id}':
+    get:
+      operationId: widgets.Ambiguous
+'@)
+    Assert-Failure { & $fixtureTool -Module LegacyBridge -MappingPath $testMapping } 'compatible method/normalized path .* matched 2 operations'
+    Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' $currentSpec
+    Remove-Item (Join-Path $fixtureRoot 'openApiDocs\v1.0\LegacyBridge.yml')
+    Assert-Failure { & $fixtureTool -Module LegacyBridge -MappingPath $testMapping } 'requires both same-module/profile'
+    Write-FixtureFile 'openApiDocs\v1.0\LegacyBridge.yml' $legacySpec
+    Remove-Item (Join-Path $fixtureRoot 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml')
+    Assert-Failure { & $fixtureTool -Module LegacyBridge -MappingPath $testMapping } 'requires both same-module/profile'
+    Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' "openapi: 3.0.4`npaths: {}"
+    $document = $legacyMapping | ConvertFrom-Json
+    foreach ($operation in $document.mappings[0].profiles.'v1.0'.operations) {
+        $document.mappings[0].profiles.'v1.0'.removedLegacyOperations += [pscustomobject]@{
+            method = $operation.method
+            path = $operation.legacyPath
+            operationId = $operation.legacyOperationId
+            notes = 'Reviewed old operation has no current compatible method/path.'
+        }
+    }
+    $document.mappings[0].profiles.'v1.0'.operations = @()
+    $document | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+    $removedOnly = @(& $fixtureTool -Module LegacyBridge -MappingPath $testMapping -FailOnUnresolved)
+    if ($removedOnly[0].Status -ne 'Mapped' -or $removedOnly[0].V1Operations.Count -ne 0) {
+        throw 'An entirely pruned, fully evidenced legacy match set needs no invented compatible operations.'
+    }
+    foreach ($case in @(
+        @{ OldPath = '/widgets/{old-id}/microsoft.graph.refresh'; NewPath = '/widgets/{widget-id}/refresh'; Method = 'POST' }
+        @{ OldPath = '/widgets/{old-id}/delta'; NewPath = '/widgets/{widget-id}/delta()'; Method = 'GET' }
+        @{ OldPath = '/widgets/{old-id}/delta'; NewPath = '/widgets/{widget-id}/delta()/'; Method = 'GET' }
+        @{ OldPath = '/widgets/{old-id}/delta()/'; NewPath = '/widgets/{widget-id}/delta/'; Method = 'GET' }
+        @{ OldPath = '/widgets/{old-id}/microsoft.graph.delta()//'; NewPath = '/widgets/{widget-id}/delta//'; Method = 'GET' }
+    )) {
+        Write-FixtureFile 'openApiDocs\v1.0\LegacyBridge.yml' ($legacySpec + "`n  '$($case.OldPath)':`n    $($case.Method.ToLowerInvariant()):`n      operationId: legacy_ConvertedWidget")
+        Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' ($currentSpec + "`n  '$($case.NewPath)':`n    $($case.Method.ToLowerInvariant()):`n      operationId: widgets.Converted")
+        $document = $legacyMapping | ConvertFrom-Json
+        $document.mappings[0].profiles.'v1.0'.removedLegacyOperations += [pscustomobject]@{
+            method = $case.Method
+            path = $case.OldPath
+            operationId = 'legacy_ConvertedWidget'
+            notes = 'False removal claim must not hide a known converter path change.'
+        }
+        $document | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+        Assert-Failure { & $fixtureTool -Module LegacyBridge -MappingPath $testMapping } 'cannot verify removal.*reviewed path translation'
+    }
+
+    $finalCases = @(
+        @{ Old = '/widgets/{old-id}/microsoft.graph.refresh'; New = '/widgets/{widget-id}/refresh'; Method = 'POST'; OldKind = 'action'; NewKind = 'action' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.delta'; New = '/widgets/{widget-id}/delta()'; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.delta()'; New = '/widgets/{widget-id}/delta'; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
+        @{ Old = '/widgets/{old-id}/delta'; New = '/widgets/{widget-id}/delta()'; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
+        @{ Old = '/widgets/{old-id}/delta()'; New = '/widgets/{widget-id}/delta'; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
+        @{ Old = '/widgets/{old-id}/delta'; New = '/widgets/{widget-id}/delta()/'; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
+        @{ Old = '/widgets/{old-id}/delta()/'; New = '/widgets/{widget-id}/delta/'; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.delta()//'; New = '/widgets/{widget-id}/delta//'; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.refresh//'; New = '/widgets/{widget-id}/refresh/'; Method = 'POST'; OldKind = 'action'; NewKind = 'action' }
+        @{ Old = "/widgets/{old-id}/microsoft.graph.resolve(Input='{old-input}')"; New = "/widgets/{widget-id}/resolve(Input='{input}')"; Method = 'GET'; OldKind = 'function'; NewKind = 'function' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.refresh'; New = '/widgets/{widget-id}/refresh'; Method = 'POST'; OldKind = ''; NewKind = 'action'; Error = 'both actual operations must declare the same action/function kind' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.refresh'; New = '/widgets/{widget-id}/refresh'; Method = 'POST'; OldKind = 'action'; NewKind = ''; Error = 'both actual operations must declare the same action/function kind' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.refresh'; New = '/widgets/{widget-id}/refresh'; Method = 'POST'; OldKind = 'action'; NewKind = 'function'; Error = 'both actual operations must declare the same action/function kind' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.user'; New = '/widgets/{widget-id}/user'; Method = 'GET'; OldKind = 'operation'; NewKind = 'operation'; Error = 'both actual operations must declare the same action/function kind' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.refresh'; New = '/widgets/{widget-id}/refresh'; Method = 'GET'; OldKind = 'action'; NewKind = 'action'; Error = 'action translation requires HTTP POST' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.delta'; New = '/widgets/{widget-id}/delta()'; Method = 'POST'; OldKind = 'function'; NewKind = 'function'; Error = 'function translation requires HTTP GET' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.refresh'; New = '/other/{widget-id}/refresh'; Method = 'POST'; OldKind = 'action'; NewKind = 'action'; Error = 'matched 0 operations|exact unique compatible counterpart' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.refresh'; New = '/widgets/{widget-id}/renamed'; Method = 'POST'; OldKind = 'action'; NewKind = 'action'; Error = 'matched 0 operations' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.refresh'; New = '/widgets/{widget-id}/refresh()'; Method = 'POST'; OldKind = 'action'; NewKind = 'action'; Error = 'only exact final' }
+        @{ Old = '/widgets/{old-id}/resolve'; New = '/widgets/{widget-id}/resolve()'; Method = 'GET'; OldKind = 'function'; NewKind = 'function'; Error = 'only exact final' }
+        @{ Old = "/widgets/{old-id}/microsoft.graph.delta(token='{token}')"; New = '/widgets/{widget-id}/delta()'; Method = 'GET'; OldKind = 'function'; NewKind = 'function'; Error = 'matched 0 operations' }
+        @{ Old = '/widgets/{old-id}/microsoft.graph.group/refresh'; New = '/widgets/{widget-id}/group/refresh'; Method = 'POST'; OldKind = 'action'; NewKind = 'action'; Error = 'matched 0 operations' }
+    )
+    foreach ($case in $finalCases) {
+        $oldMetadata = if ($case.OldKind) { "`n      x-ms-docs-operation-type: $($case.OldKind)" } else { '' }
+        $newMetadata = if ($case.NewKind) { "`n      x-ms-docs-operation-type: $($case.NewKind)" } else { '' }
+        # Cover operation metadata both before and after operationId.
+        Write-FixtureFile 'openApiDocs\v1.0\LegacyBridge.yml' ("openapi: 3.0.4`npaths:`n  `"$($case.Old)`":`n    $($case.Method.ToLowerInvariant()):$oldMetadata`n      operationId: legacy_ConvertedWidget")
+        Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' ("openapi: 3.0.4`npaths:`n  `"$($case.New)`":`n    $($case.Method.ToLowerInvariant()):`n      operationId: widgets.Converted$newMetadata")
+        $document = $legacyMapping | ConvertFrom-Json
+        $document.mappings[0].profiles.'v1.0'.removedLegacyOperations = @()
+        $document.mappings[0].profiles.'v1.0'.operations = @([pscustomobject]@{
+            method = $case.Method
+            path = $case.New
+            operationId = 'widgets.Converted'
+            legacyPath = $case.Old
+            legacyOperationId = 'legacy_ConvertedWidget'
+            legacyPathTranslation = 'UnqualifyFinalOperation'
+        })
+        $document | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+        if ($case.Error) {
+            Assert-Failure { & $fixtureTool -Module LegacyBridge -MappingPath $testMapping } $case.Error
+        }
+        else {
+            $translated = @(& $fixtureTool -Module LegacyBridge -MappingPath $testMapping -FailOnUnresolved)
+            if ($translated[0].Status -ne 'Mapped' -or $translated[0].V1Operations.Count -ne 1) {
+                throw 'Explicit kind-guarded final-operation translation must preserve the exact current operation.'
+            }
+            $document.mappings[0].profiles.'v1.0'.operations[0].PSObject.Properties.Remove('legacyPathTranslation')
+            $document | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+            Assert-Failure { & $fixtureTool -Module LegacyBridge -MappingPath $testMapping } 'method/normalized path must be identical'
+        }
+    }
+    # A target may not substitute a different valid operation for the unique converted route.
+    Write-FixtureFile 'openApiDocs\v1.0\LegacyBridge.yml' @'
+openapi: 3.0.4
+paths:
+  '/widgets/{old-id}/microsoft.graph.refresh':
+    post:
+      operationId: legacy_ConvertedWidget
+      x-ms-docs-operation-type: action
+'@
+    $finalCurrentSpec = @'
+openapi: 3.0.4
+paths:
+  '/widgets/{widget-id}/refresh':
+    post:
+      operationId: widgets.Converted
+      x-ms-docs-operation-type: action
+  '/other/{widget-id}/refresh':
+    post:
+      operationId: other.Refresh
+      x-ms-docs-operation-type: action
+'@
+    Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' $finalCurrentSpec
+    $document = $legacyMapping | ConvertFrom-Json
+    $document.mappings[0].profiles.'v1.0'.removedLegacyOperations = @()
+    $document.mappings[0].profiles.'v1.0'.operations = @([pscustomobject]@{
+        method = 'POST'
+        path = '/other/{widget-id}/refresh'
+        operationId = 'other.Refresh'
+        legacyPath = '/widgets/{old-id}/microsoft.graph.refresh'
+        legacyOperationId = 'legacy_ConvertedWidget'
+        legacyPathTranslation = 'UnqualifyFinalOperation'
+    })
+    $document | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+    Assert-Failure { & $fixtureTool -Module LegacyBridge -MappingPath $testMapping } 'exact unique compatible counterpart'
+    $document.mappings[0].profiles.'v1.0'.operations[0].path = '/widgets/{widget-id}/refresh'
+    $document.mappings[0].profiles.'v1.0'.operations[0].operationId = 'widgets.Converted'
+    $document | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+    Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' ($finalCurrentSpec + @'
+
+  '/widgets/{ambiguous-id}/refresh':
+    post:
+      operationId: widgets.AmbiguousRefresh
+      x-ms-docs-operation-type: action
+'@)
+    Assert-Failure { & $fixtureTool -Module LegacyBridge -MappingPath $testMapping } 'matched 2 operations'
+    Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' $finalCurrentSpec
+    $document.mappings[0].profiles.'v1.0'.operations[0].legacyPathTranslation = 'GenericAlias'
+    $document | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+    Assert-Failure { & $fixtureTool -Module LegacyBridge -MappingPath $testMapping } "legacyPathTranslation must be 'UnqualifyFinalOperation'"
+
     Write-FixtureFile 'src\Deferred\Deferred.md' @'
 ``` yaml
 directive:
@@ -316,16 +615,23 @@ directive:
     $document | ConvertTo-Json -Depth 10 | Set-Content $testMapping
     Assert-Failure { & $fixtureTool -Module Audit -MappingPath $testMapping -FailOnUnresolved } 'entries do not match a directive'
 
-    $applications = @((& $tool -Module Applications -AsJson | Out-String) | ConvertFrom-Json)
+    Write-FixtureFile 'src\Applications\Applications.md' @'
+directive:
+  - where:
+      verb: Get
+      subject: UnreviewedFixture
+    remove: true
+  - where:
+      parameter-name: Id
+    set:
+      alias: FixtureId
+'@
+    $applications = @((& $fixtureTool -Module Applications -AsJson | Out-String) | ConvertFrom-Json)
     if (@($applications | Where-Object Status -eq 'Deferred').Count -lt 1 -or
         @($applications | Where-Object Status -eq 'Unresolved').Count -lt 1) {
-        throw 'Live Applications must retain deferred and unresolved shared directives.'
+        throw 'An unreviewed fixture must expose deferred and unresolved shared directives.'
     }
-    $calendar = @(& $tool -Module Calendar)
-    if (@($calendar | Where-Object { $_.Status -eq 'Resolved' -and $_.Implementation -eq 'Candidate' }).Count -lt 1) {
-        throw 'Live Calendar operation-ID matches must remain candidates without reviewed evidence.'
-    }
-    Assert-Failure { & $tool -Module Calendar -FailOnUnresolved } 'lack reviewed mappings'
+    Assert-Failure { & $fixtureTool -Module Applications -FailOnUnresolved } 'lack reviewed mappings'
     $schemaDirective = @(& $tool -Module Identity.SignIns) | Where-Object Classification -eq 'DeferredSchema'
     if (@($schemaDirective).Count -ne 1 -or $schemaDirective.Status -ne 'Deferred') {
         throw 'Live schema/response directives must remain deferred.'
