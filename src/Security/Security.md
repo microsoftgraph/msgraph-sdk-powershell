@@ -12,7 +12,10 @@ The original operation-ID selector matches six legacy v1.0 and seven legacy beta
 operations. Every selected method/path survives. Six IDs now align with the
 compatible specification; the beta `aggregatedAppsDetails` function still has a
 different ID. Its exact source/current pair is retained in the ledger notes and
-tests. The literal-only inventory gate remains blocked on that source bridge;
+tests. Beta explicitly declares `operationIdSource: Legacy` and exact old/current
+evidence for all seven operations; v1.0 keeps its six literal mappings. This is
+source-evidence preparation, not a copied helper or an assertion of normal-target
+strict success. The literal-only inventory gate remains blocked on that source bridge;
 zero literal matches for that function is not API absence.
 
 Full beta generation also exposes six collection/item action collisions and seven

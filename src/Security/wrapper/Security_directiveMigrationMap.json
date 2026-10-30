@@ -6,7 +6,7 @@
       "classification": "OperationIdSuppression",
       "sourceContains": "remove-path-by-operation: ^security(.case.ediscoveryCase.noncustodialDataSource_.*DataSource)$|^security_DeleteAttackSimulation$|^security_UpdateAttackSimulation$|^security_GetAttackSimulation$|^security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail$",
       "implementation": "CmdletConfigurator",
-      "notes": "Complete original same-profile legacy selection: six v1.0 and seven beta operations, all surviving at exact method/path. Current IDs align for the six shared operations. The beta function legacy ID security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail is now security.dataDiscovery.cloudAppDiscovery.uploadedStream.cloudAppDiscoveryReport_aggregatedAppsDetail; it remains included below, NOT removed or absent. The target's literal-only strict inventory cannot validate this seventh source bridge until the reviewed legacy helper merges. No copied helper fields or passing-gate claim.",
+      "notes": "Complete original same-profile legacy selection: six v1.0 and seven beta operations, all surviving at exact method/path. Current IDs align for the six shared operations. The beta function legacy ID security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail is now security.dataDiscovery.cloudAppDiscovery.uploadedStream.cloudAppDiscoveryReport_aggregatedAppsDetail; it remains included below, NOT removed or absent. Beta declares reviewed Legacy source evidence for all seven operations; v1.0 stays literal. The target's literal-only strict inventory cannot validate this seventh source bridge until the reviewed legacy helper merges. No helper code is copied and no passing normal-target gate is claimed.",
       "profiles": {
         "v1.0": {
           "notes": "Complete original legacy regex set: six operations, all six exact method/path successors retained and suppressed.",
@@ -45,43 +45,58 @@
           ]
         },
         "beta": {
-          "notes": "Complete original legacy regex set: seven operations, all seven exact method/path successors retained and suppressed. The additional selected operation is an actual function, not inferred absence from renamed IDs.",
+          "operationIdSource": "Legacy",
+          "notes": "Complete original same-profile legacy selector set: seven operations, all surviving at exact method/path. The six shared operation IDs align. The seventh actual function has a renamed compatible ID; no API absence or path translation is asserted.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "GET",
               "path": "/security/attackSimulation",
-              "operationId": "security_GetAttackSimulation"
+              "operationId": "security_GetAttackSimulation",
+              "legacyPath": "/security/attackSimulation",
+              "legacyOperationId": "security_GetAttackSimulation"
             },
             {
               "method": "PATCH",
               "path": "/security/attackSimulation",
-              "operationId": "security_UpdateAttackSimulation"
+              "operationId": "security_UpdateAttackSimulation",
+              "legacyPath": "/security/attackSimulation",
+              "legacyOperationId": "security_UpdateAttackSimulation"
             },
             {
               "method": "DELETE",
               "path": "/security/attackSimulation",
-              "operationId": "security_DeleteAttackSimulation"
+              "operationId": "security_DeleteAttackSimulation",
+              "legacyPath": "/security/attackSimulation",
+              "legacyOperationId": "security_DeleteAttackSimulation"
             },
             {
               "method": "GET",
               "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "operationId": "security.case.ediscoveryCase.noncustodialDataSource_GetDataSource"
+              "operationId": "security.case.ediscoveryCase.noncustodialDataSource_GetDataSource",
+              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_GetDataSource"
             },
             {
               "method": "PATCH",
               "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "operationId": "security.case.ediscoveryCase.noncustodialDataSource_UpdateDataSource"
+              "operationId": "security.case.ediscoveryCase.noncustodialDataSource_UpdateDataSource",
+              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_UpdateDataSource"
             },
             {
               "method": "DELETE",
               "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "operationId": "security.case.ediscoveryCase.noncustodialDataSource_DeleteDataSource"
+              "operationId": "security.case.ediscoveryCase.noncustodialDataSource_DeleteDataSource",
+              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
+              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_DeleteDataSource"
             },
             {
               "method": "GET",
               "path": "/security/dataDiscovery/cloudAppDiscovery/uploadedStreams/{cloudAppDiscoveryReport-id}/microsoft.graph.security.aggregatedAppsDetails(period={period})",
-              "operationId": "security.dataDiscovery.cloudAppDiscovery.uploadedStream.cloudAppDiscoveryReport_aggregatedAppsDetail"
+              "operationId": "security.dataDiscovery.cloudAppDiscovery.uploadedStream.cloudAppDiscoveryReport_aggregatedAppsDetail",
+              "legacyPath": "/security/dataDiscovery/cloudAppDiscovery/uploadedStreams/{cloudAppDiscoveryReport-id}/microsoft.graph.security.aggregatedAppsDetails(period={period})",
+              "legacyOperationId": "security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail"
             }
           ]
         }

@@ -39,7 +39,11 @@ public sealed class SecurityDirectiveMigrationTests
 
         using var ledger = ReadLedger();
         var mapping = ledger.RootElement.GetProperty("mappings")[0].GetProperty("profiles").GetProperty(profile);
-        Assert.False(mapping.TryGetProperty("operationIdSource", out _));
+        if (profile == "beta")
+            Assert.Equal("Legacy", mapping.GetProperty("operationIdSource").GetString());
+        else
+            Assert.False(mapping.TryGetProperty("operationIdSource", out _));
+        Assert.False(mapping.TryGetProperty("removedLegacyOperations", out _));
         Assert.False(mapping.GetProperty("absenceExpected").GetBoolean());
         var reviewed = mapping.GetProperty("operations").EnumerateArray().ToArray();
         Assert.Equal(expectedCount, reviewed.Length);
@@ -57,6 +61,17 @@ public sealed class SecurityDirectiveMigrationTests
                 o => o.Method == method && o.Path == path);
             Assert.Equal(expected.GetProperty("operationId").GetString(), actual.Operation.OperationId);
             var original = Assert.Single(legacy, o => o.Method == method && o.Path == path);
+            if (profile == "beta")
+            {
+                Assert.Equal(original.Path, expected.GetProperty("legacyPath").GetString());
+                Assert.Equal(original.Operation.OperationId, expected.GetProperty("legacyOperationId").GetString());
+            }
+            else
+            {
+                Assert.False(expected.TryGetProperty("legacyPath", out _));
+                Assert.False(expected.TryGetProperty("legacyOperationId", out _));
+            }
+            Assert.False(expected.TryGetProperty("legacyPathTranslation", out _));
             if (path == AggregatedApps)
             {
                 Assert.Equal("security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail", original.Operation.OperationId);
