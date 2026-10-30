@@ -25,8 +25,9 @@ IDs. Its shared path-derived noun is now `*OnenoteSectionGroupNestedSectionGroup
 (and `*OnenoteSectionGroupNestedSectionGroupCount` for its distinct `$count`);
 ordinary root List/Get defaults remain unchanged. No selector or incompatible
 natural-ID group is introduced. Existing v1.0 oracle-derived data still suppresses
-the three nested collections; this baseline endpoint gap blocks a full-fidelity
-claim and is not repaired by silently changing global data in this module.
+the three nested collections and the three root collection counts. These baseline
+endpoint gaps block a full-fidelity claim and are not repaired by silently changing
+global data in this module.
 
 The current compatible IDs align with 289 of the corrected selector's 298 actual
 same-profile legacy selections. Nine section/page action/function IDs gained type
