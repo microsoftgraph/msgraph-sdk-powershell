@@ -9,11 +9,21 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CloudPcPoolCapabilityConfiguration : IAdditionalDataHolder, IParsable
+    public partial class PlanContainer : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>ID of the container (group ID, user ID, or Teams channel ID).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContainerId { get; set; }
+#nullable restore
+#else
+        public string ContainerId { get; set; }
+#endif
+        /// <summary>The containerType property</summary>
+        public global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.PlannerContainerType? ContainerType { get; set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,21 +33,21 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models
         public string OdataType { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.CloudPcPoolCapabilityConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.PlanContainer"/> and sets the default values.
         /// </summary>
-        public CloudPcPoolCapabilityConfiguration()
+        public PlanContainer()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.CloudPcPoolCapabilityConfiguration"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.PlanContainer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.CloudPcPoolCapabilityConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.PlanContainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.CloudPcPoolCapabilityConfiguration();
+            return new global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.PlanContainer();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,6 +57,8 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "containerId", n => { ContainerId = n.GetStringValue(); } },
+                { "containerType", n => { ContainerType = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.PlannerContainerType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -57,6 +69,8 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("containerId", ContainerId);
+            writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.PlannerContainerType>("containerType", ContainerType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
