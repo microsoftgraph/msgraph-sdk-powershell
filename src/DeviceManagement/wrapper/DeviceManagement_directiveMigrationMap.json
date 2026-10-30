@@ -6,7 +6,7 @@
       "classification": "OperationIdSuppression",
       "sourceContains": "remove-path-by-operation: ^deviceManagement.(deviceManagementScript.userRunState.deviceRunState_.*|groupPolicyConfiguration.definitionValue.presentationValue_.*|deviceShellScript.userRunState.deviceRunState_.*|deviceConfiguration_assignedAccessMultiModeProfile|deviceConfiguration_windowsPrivacyAccessControl|microsoftTunnelSite.microsoftTunnelServer_createServerLogCollectionRequest|groupPolicyConfiguration_updateDefinitionValue|intent_updateSetting)$",
       "implementation": "CmdletConfigurator",
-      "notes": "The complete original same-profile legacy selector matches v1.0=0/beta=12. All 12 beta operations survive; five actual POST actions unqualify only the final microsoft.graph. segment. Eleven current IDs now match the original regex, but POST /deviceManagement/intents/{deviceManagementIntent-id}/updateSettings changed from deviceManagement.intent_updateSetting to deviceManagement.intent.deviceManagementIntent_updateSetting. Its exact surviving operation remains included and suppressed, not reported absent. The current literal-only inventory therefore cannot validate this complete mapping until reviewed legacy translation lands in #3847. DeviceManagementDirectiveMigrationTests pins both complete source and current sets. No reserved unmerged helper schema or DeviceManagement.Actions ownership assumption.",
+      "notes": "The complete original same-profile legacy selector matches v1.0=0/beta=12. All 12 beta operations survive; five actual POST actions unqualify only the final microsoft.graph. segment. Eleven current IDs now match the original regex, but POST /deviceManagement/intents/{deviceManagementIntent-id}/updateSettings changed from deviceManagement.intent_updateSetting to deviceManagement.intent.deviceManagementIntent_updateSetting. Its exact surviving operation remains included and suppressed, not reported absent. Beta explicitly opts into reviewed legacy evidence with all 12 exact old/current records. The current literal-only inventory remains blocked until #3847 lands normally; declaring evidence does not copy its helper or waive that gate. DeviceManagementDirectiveMigrationTests pins the complete sets and kind-guarded translations. No DeviceManagement.Actions ownership assumption.",
       "profiles": {
         "v1.0": {
           "notes": "The original regex matches zero of the actual legacy v1.0 DeviceManagement operations. Compatible v1.0 was separately reviewed; no selected successor exists.",
@@ -14,68 +14,98 @@
           "operations": []
         },
         "beta": {
+          "operationIdSource": "Legacy",
           "notes": "Complete actual legacy beta match set=12, surviving current set=12, literal current regex set=11. Seven preserve literal method/path; five preserve POST/action kind and parent while unqualifying only the final namespace. The intent_updateSetting survivor has a differently qualified current ID; its presence intentionally prevents a false passing literal-only inventory.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "POST",
               "path": "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/assignedAccessMultiModeProfiles",
-              "operationId": "deviceManagement.deviceConfiguration_assignedAccessMultiModeProfile"
+              "operationId": "deviceManagement.deviceConfiguration_assignedAccessMultiModeProfile",
+              "legacyPath": "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.assignedAccessMultiModeProfiles",
+              "legacyOperationId": "deviceManagement.deviceConfiguration_assignedAccessMultiModeProfile",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/windowsPrivacyAccessControls",
-              "operationId": "deviceManagement.deviceConfiguration_windowsPrivacyAccessControl"
+              "operationId": "deviceManagement.deviceConfiguration_windowsPrivacyAccessControl",
+              "legacyPath": "/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.windowsPrivacyAccessControls",
+              "legacyOperationId": "deviceManagement.deviceConfiguration_windowsPrivacyAccessControl",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "GET",
               "path": "/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice",
-              "operationId": "deviceManagement.deviceManagementScript.userRunState.deviceRunState_GetManagedDevice"
+              "operationId": "deviceManagement.deviceManagementScript.userRunState.deviceRunState_GetManagedDevice",
+              "legacyPath": "/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice",
+              "legacyOperationId": "deviceManagement.deviceManagementScript.userRunState.deviceRunState_GetManagedDevice"
             },
             {
               "method": "GET",
               "path": "/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/$count",
-              "operationId": "deviceManagement.deviceManagementScript.userRunState.deviceRunState_GetCount"
+              "operationId": "deviceManagement.deviceManagementScript.userRunState.deviceRunState_GetCount",
+              "legacyPath": "/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/$count",
+              "legacyOperationId": "deviceManagement.deviceManagementScript.userRunState.deviceRunState_GetCount"
             },
             {
               "method": "GET",
               "path": "/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice",
-              "operationId": "deviceManagement.deviceShellScript.userRunState.deviceRunState_GetManagedDevice"
+              "operationId": "deviceManagement.deviceShellScript.userRunState.deviceRunState_GetManagedDevice",
+              "legacyPath": "/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice",
+              "legacyOperationId": "deviceManagement.deviceShellScript.userRunState.deviceRunState_GetManagedDevice"
             },
             {
               "method": "GET",
               "path": "/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/$count",
-              "operationId": "deviceManagement.deviceShellScript.userRunState.deviceRunState_GetCount"
+              "operationId": "deviceManagement.deviceShellScript.userRunState.deviceRunState_GetCount",
+              "legacyPath": "/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/$count",
+              "legacyOperationId": "deviceManagement.deviceShellScript.userRunState.deviceRunState_GetCount"
             },
             {
               "method": "GET",
               "path": "/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration-id}/definitionValues/{groupPolicyDefinitionValue-id}/presentationValues/{groupPolicyPresentationValue-id}/definitionValue",
-              "operationId": "deviceManagement.groupPolicyConfiguration.definitionValue.presentationValue_GetDefinitionValue"
+              "operationId": "deviceManagement.groupPolicyConfiguration.definitionValue.presentationValue_GetDefinitionValue",
+              "legacyPath": "/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration-id}/definitionValues/{groupPolicyDefinitionValue-id}/presentationValues/{groupPolicyPresentationValue-id}/definitionValue",
+              "legacyOperationId": "deviceManagement.groupPolicyConfiguration.definitionValue.presentationValue_GetDefinitionValue"
             },
             {
               "method": "GET",
               "path": "/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration-id}/definitionValues/{groupPolicyDefinitionValue-id}/presentationValues/{groupPolicyPresentationValue-id}/presentation",
-              "operationId": "deviceManagement.groupPolicyConfiguration.definitionValue.presentationValue_GetPresentation"
+              "operationId": "deviceManagement.groupPolicyConfiguration.definitionValue.presentationValue_GetPresentation",
+              "legacyPath": "/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration-id}/definitionValues/{groupPolicyDefinitionValue-id}/presentationValues/{groupPolicyPresentationValue-id}/presentation",
+              "legacyOperationId": "deviceManagement.groupPolicyConfiguration.definitionValue.presentationValue_GetPresentation"
             },
             {
               "method": "GET",
               "path": "/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration-id}/definitionValues/{groupPolicyDefinitionValue-id}/presentationValues/$count",
-              "operationId": "deviceManagement.groupPolicyConfiguration.definitionValue.presentationValue_GetCount"
+              "operationId": "deviceManagement.groupPolicyConfiguration.definitionValue.presentationValue_GetCount",
+              "legacyPath": "/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration-id}/definitionValues/{groupPolicyDefinitionValue-id}/presentationValues/$count",
+              "legacyOperationId": "deviceManagement.groupPolicyConfiguration.definitionValue.presentationValue_GetCount"
             },
             {
               "method": "POST",
               "path": "/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration-id}/updateDefinitionValues",
-              "operationId": "deviceManagement.groupPolicyConfiguration_updateDefinitionValue"
+              "operationId": "deviceManagement.groupPolicyConfiguration_updateDefinitionValue",
+              "legacyPath": "/deviceManagement/groupPolicyConfigurations/{groupPolicyConfiguration-id}/microsoft.graph.updateDefinitionValues",
+              "legacyOperationId": "deviceManagement.groupPolicyConfiguration_updateDefinitionValue",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/deviceManagement/intents/{deviceManagementIntent-id}/updateSettings",
-              "operationId": "deviceManagement.intent.deviceManagementIntent_updateSetting"
+              "operationId": "deviceManagement.intent.deviceManagementIntent_updateSetting",
+              "legacyPath": "/deviceManagement/intents/{deviceManagementIntent-id}/microsoft.graph.updateSettings",
+              "legacyOperationId": "deviceManagement.intent_updateSetting",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             },
             {
               "method": "POST",
               "path": "/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite-id}/microsoftTunnelServers/{microsoftTunnelServer-id}/createServerLogCollectionRequest",
-              "operationId": "deviceManagement.microsoftTunnelSite.microsoftTunnelServer_createServerLogCollectionRequest"
+              "operationId": "deviceManagement.microsoftTunnelSite.microsoftTunnelServer_createServerLogCollectionRequest",
+              "legacyPath": "/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite-id}/microsoftTunnelServers/{microsoftTunnelServer-id}/microsoft.graph.createServerLogCollectionRequest",
+              "legacyOperationId": "deviceManagement.microsoftTunnelSite.microsoftTunnelServer_createServerLogCollectionRequest",
+              "legacyPathTranslation": "UnqualifyFinalOperation"
             }
           ]
         }

@@ -135,6 +135,43 @@ public sealed class DeviceManagementDirectiveMigrationTests
             candidate.Kind == operation.Kind)).ToArray();
         Assert.Equal(ReadEvidence(mappings[0], profile).Order(StringComparer.Ordinal),
             survivors.Select(EvidenceKey).Order(StringComparer.Ordinal));
+        var profileEvidence = mappings[0].GetProperty("profiles").GetProperty(profile);
+        if (profile == "beta")
+        {
+            Assert.Equal("Legacy", profileEvidence.GetProperty("operationIdSource").GetString());
+            var bridges = profileEvidence.GetProperty("operations").EnumerateArray().ToArray();
+            var reviewedLegacy = bridges.Select(bridge => Assert.Single(original, operation =>
+                operation.Method == bridge.GetProperty("method").GetString() &&
+                operation.Path == bridge.GetProperty("legacyPath").GetString() &&
+                operation.OperationId == bridge.GetProperty("legacyOperationId").GetString())).ToArray();
+            Assert.Equal(original.Select(EvidenceKey).Order(StringComparer.Ordinal),
+                reviewedLegacy.Select(EvidenceKey).Order(StringComparer.Ordinal));
+            Assert.Equal(12, reviewedLegacy.Select(EvidenceKey).Distinct(StringComparer.Ordinal).Count());
+            Assert.Equal(5, bridges.Count(bridge => bridge.TryGetProperty("legacyPathTranslation", out _)));
+            foreach (var bridge in bridges)
+            {
+                var previous = Assert.Single(reviewedLegacy, operation =>
+                    operation.Method == bridge.GetProperty("method").GetString() &&
+                    operation.Path == bridge.GetProperty("legacyPath").GetString());
+                var successor = Assert.Single(current, operation =>
+                    operation.Method == previous.Method &&
+                    operation.Path == bridge.GetProperty("path").GetString() &&
+                    operation.OperationId == bridge.GetProperty("operationId").GetString());
+                Assert.Equal(previous.Kind, successor.Kind);
+                if (bridge.TryGetProperty("legacyPathTranslation", out var translation))
+                {
+                    Assert.Equal("UnqualifyFinalOperation", translation.GetString());
+                    Assert.Equal("POST", previous.Method);
+                    Assert.Equal(OperationKind.Action, previous.Kind);
+                    Assert.Equal(CompatiblePath(previous), successor.Path);
+                    Assert.NotEqual(previous.Path, successor.Path);
+                }
+                else
+                    Assert.Equal(previous.Path, successor.Path);
+            }
+        }
+        else
+            Assert.False(profileEvidence.TryGetProperty("operationIdSource", out _));
         Assert.Equal(literalCount, current.Count(operation => regex.IsMatch(operation.OperationId)));
         var unmatched = survivors.Where(operation => !regex.IsMatch(operation.OperationId)).ToArray();
         if (profile == "beta")
