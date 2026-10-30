@@ -1,14 +1,25 @@
 # tools/
 
-This directory holds two separate toolchains.
+The supported v3 toolchain uses Kiota and WrapperGenerator. It does not require an
+AutoRest submodule, Node.js, npm, or Rush.
 
 **The Kiota wrapper generator** — the 13 `*-Wrapper*`, `Derive-*` and `Test-BodyBindingCoverage`
 scripts documented below. They generate, build, package and verify the wrapper modules under
 `src/<Module>/wrapper/<ApiVersion>/`.
 
-**The AutoRest v2 pipeline** — everything else (`GenerateModules.ps1`, `BuildModule.ps1`,
-`PackModule.ps1`, `PublishModule.ps1`, and the rest). Those build the shipping
-`Microsoft.Graph.*` modules and are driven from `build.proj`; they are not covered here.
+**Authentication and shared helpers** — `GenerateAuthenticationModule.ps1` continues to use
+`BuildModule.ps1`, `TestModule.ps1`, `PackModule.ps1`, and `PublishModule.ps1`.
+Authentication targets in `build.proj` remain available; v3 service modules use
+`Build-WrapperModule.ps1` instead.
+
+The legacy AutoRest generation scripts and their CI, SDK release, weekly-generation, and
+command-metadata-refresh pipeline entry points have been retired from this branch. Use
+`.azure-pipelines/wrapper-release.yml` for the v3 wrapper release flow. Azure DevOps definitions
+that reference the removed pipeline YAML files must be retired separately by their owners.
+
+Module directive markdown and `src/readme.graph.md` are retained as historical migration
+inputs, not as an executable v3 AutoRest generation path. Keep them available while directives
+are migrated to the wrapper cmdlet configuration framework.
 
 The generator itself is documented in
 [WrapperGenerator/README.md](WrapperGenerator/README.md) — what it emits and why. This file is
@@ -78,6 +89,35 @@ the gate and the derivation cannot drift apart. Without `-CaptureInput` it requi
 `data/parity-input-ledger.<ApiVersion>.csv` and fails if it is missing.
 
 ## Scenarios
+
+### I need to refresh the Kiota-compatible OpenAPI documents
+
+```powershell
+.\tools\UpdateOpenApiKiotaCompat.ps1
+.\tools\UpdateOpenApiKiotaCompat.ps1 -BetaGraphVersion
+```
+
+The refresh keeps `fileName=openapi` and `style=Plain` as the source of the documents.
+Discriminators, `anyOf`/`oneOf`, navigation properties and response codes remain available
+for Kiota client generation. [Expired deprecated operations](Remove-ExpiredDeprecatedOpenApiOperations.md)
+are pruned, including on standalone `DownloadOpenApiDocKiotaCompat.ps1` calls.
+Retired root-level Bookings beta cmdlets are instead suppressed by
+`src/Bookings/wrapper/Bookings_cmdletConfigurations.cs`; their OpenAPI and Kiota HTTP
+client routes remain present when not annotated as expired.
+
+Operation IDs follow the existing PowerShell OpenAPI naming so operation-ID-based directives
+are easier to migrate. DevX ignores `singularizeOperationIds` for `style=Plain`, so the downloader
+requests a second view of the same Kiota source with `style=Powershell`,
+`singularizeOperationIds=true` and `format=json`. Only its operation IDs are copied, matched by
+path and HTTP method; none of its schemas, parameters or responses are used. Missing or
+ambiguous operation-ID mappings fail the refresh rather than silently leaving mixed naming.
+
+`TweakOpenApi.ps1 -OperationIdsOnly` then applies the existing preposition and word corrections.
+This mode does not rewrite success response codes or mark navigation properties read-only.
+For example, `auditLogs.auditLogRoot.UpdateAuditLogRoot` becomes
+`auditLog.auditLogRoot_UpdateAuditLogRoot`. The existing `openApiDocs` refresh is unchanged.
+These changes take effect on the next refresh; they do not regenerate the committed corpus
+or rewrite existing wrapper directive migration ledgers.
 
 ### I changed the generator and want to see what it did to the output
 

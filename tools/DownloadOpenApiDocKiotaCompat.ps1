@@ -5,8 +5,8 @@
 #
 # Instead of the PowerShell conversion profile, this slices the Kiota base
 # document (fileName=openapi, which has OpenApiConvertSettings.EnableDiscriminatorValue = true
-# and preserves AnyOf/OneOf + discriminators) and applies no PowerShell styling (style=Plain),
-# producing per-module OpenAPI docs suitable for Kiota SDK generation.
+# and preserves AnyOf/OneOf + discriminators) using style=Plain. When requested,
+# only operation IDs are copied from a PowerShell-styled view of the same source.
 [CmdletBinding()]
 Param(
     [string] $ModuleName,
@@ -14,6 +14,10 @@ Param(
     [string] $OpenApiDocOutput,
     [string] $GraphVersion,
     [switch] $ForceRefresh,
+    [switch] $SingularizeOperationIds,
+    # The bulk refresh prunes the complete profile once, retaining a single aggregate report.
+    [Parameter(DontShow)]
+    [switch] $DeferPruning,
     [int] $RequestCount = 1
 )
 
@@ -31,9 +35,23 @@ $Retries = 3
 $Delay = 3
 $Retrycount = 0
 $Completed = $false
+$Downloaded = $false
 while (-not $Completed) {
     try {
-        Invoke-WebRequest $OpenApiServiceUrl -OutFile "$OpenApiDocOutput\$ModuleName.yml"
+        $requestUrl = $OpenApiServiceUrl
+        $outputPath = Join-Path $OpenApiDocOutput "$ModuleName.yml"
+        Invoke-WebRequest $OpenApiServiceUrl -OutFile $outputPath -ErrorAction Stop
+        if ($SingularizeOperationIds.IsPresent) {
+            # Plain ignores singularizeOperationIds; use PowerShell styling only as an ID reference.
+            $operationIdServiceUrl = $OpenApiServiceUrl.Replace('style=Plain', 'style=Powershell')
+            $operationIdServiceUrl += '&singularizeOperationIds=true&format=json'
+            $requestUrl = $operationIdServiceUrl
+            $operationIdDocument = (Invoke-WebRequest $operationIdServiceUrl -ErrorAction Stop).Content |
+                ConvertFrom-Json -AsHashtable
+            & (Join-Path $PSScriptRoot 'Utilities\Set-OpenApiOperationIds.ps1') `
+                -OpenApiFilePath $outputPath -OperationIdDocument $operationIdDocument
+        }
+        $Downloaded = $true
         $Completed = $true
     }
     catch {
@@ -41,7 +59,7 @@ while (-not $Completed) {
         switch ($Exception.Response.StatusCode.value__) {
             { @(429, 503, 504) -contains $_ } {
                 if ($Retrycount -ge $Retries) {
-                    Write-Warning "Request to $OpenApiServiceUrl failed the maximum number of $Retrycount times."
+                    Write-Warning "Request to $requestUrl failed the maximum number of $Retrycount times."
                     throw
                 }
                 else {
@@ -56,21 +74,30 @@ while (-not $Completed) {
                         $DelayInSeconds = $mPow * $Delay
                     }
 
-                    Write-Warning "Request to $OpenApiServiceUrl failed. Retrying in $DelayInSeconds seconds."
+                    Write-Warning "Request to $requestUrl failed. Retrying in $DelayInSeconds seconds."
                     Start-Sleep $DelayInSeconds
                     $Retrycount++
                 }
             }
             404 {
-                Write-Warning "Request to $OpenApiServiceUrl returned 404. Download will be skipped."
+                if ($requestUrl -ne $OpenApiServiceUrl) {
+                    Write-Warning "Operation-ID reference request to $requestUrl returned 404."
+                    throw
+                }
+                Write-Warning "Request to $requestUrl returned 404. Download will be skipped."
                 $Completed = $true
             }
             default {
                 # Get HTTP error message from DevX api, Re-throw error to be handled Upstream
                 $ErrorMessage = $Exception.Message
-                Write-Warning "[$RequestCount] Request for $ModuleName failed with error message: $ErrorMessage"
+                Write-Warning "[$RequestCount] Request to $requestUrl for $ModuleName failed with error message: $ErrorMessage"
                 throw
             }
         }
     }
+}
+
+if ($Downloaded -and -not $DeferPruning) {
+    & (Join-Path $PSScriptRoot 'Remove-ExpiredDeprecatedOpenApiOperations.ps1') `
+        -OpenApiFilesPath $outputPath
 }

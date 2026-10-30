@@ -12,7 +12,7 @@ paths:
         - groups.calendar
       summary: Get calendar from groups
       description: The group's calendar. Read-only.
-      operationId: groups.GetCalendar
+      operationId: group_GetCalendar
       parameters:
         - name: $select
           in: query
@@ -52,7 +52,7 @@ paths:
         - groups.calendar
       summary: Get calendarPermissions from groups
       description: The permissions of the users with whom the calendar is shared.
-      operationId: groups.calendar.ListCalendarPermissions
+      operationId: group.calendar_ListCalendarPermission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -104,7 +104,7 @@ paths:
       tags:
         - groups.calendar
       summary: Create new navigation property to calendarPermissions for groups
-      operationId: groups.calendar.CreateCalendarPermissions
+      operationId: group.calendar_CreateCalendarPermission
       requestBody:
         description: New navigation property
         content:
@@ -130,7 +130,7 @@ paths:
         - groups.calendar
       summary: Get calendarPermissions from groups
       description: The permissions of the users with whom the calendar is shared.
-      operationId: groups.calendar.GetCalendarPermissions
+      operationId: group.calendar_GetCalendarPermission
       parameters:
         - name: $select
           in: query
@@ -168,7 +168,7 @@ paths:
       tags:
         - groups.calendar
       summary: Update the navigation property calendarPermissions in groups
-      operationId: groups.calendar.UpdateCalendarPermissions
+      operationId: group.calendar_UpdateCalendarPermission
       requestBody:
         description: New navigation property values
         content:
@@ -192,7 +192,7 @@ paths:
       tags:
         - groups.calendar
       summary: Delete navigation property calendarPermissions for groups
-      operationId: groups.calendar.DeleteCalendarPermissions
+      operationId: group.calendar_DeleteCalendarPermission
       parameters:
         - name: If-Match
           in: header
@@ -213,7 +213,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get the number of the resource
-      operationId: groups.calendar.calendarPermissions.GetCount-b54a
+      operationId: group.calendar.calendarPermission_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -230,7 +230,7 @@ paths:
         - groups.calendar
       summary: Get calendarView from groups
       description: The calendar view for the calendar. Navigation property. Read-only.
-      operationId: groups.calendar.ListCalendarView
+      operationId: group.calendar_ListCalendarView
       parameters:
         - name: startDateTime
           in: query
@@ -303,7 +303,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: groups.group.calendar.calendarView.delta
+      operationId: group.calendar.calendarView_delta
       parameters:
         - name: startDateTime
           in: query
@@ -386,7 +386,7 @@ paths:
         - groups.calendar
       summary: Get events from groups
       description: The events in the calendar. Navigation property. Read-only.
-      operationId: groups.calendar.ListEvents
+      operationId: group.calendar_ListEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -438,7 +438,7 @@ paths:
       tags:
         - groups.calendar
       summary: Create new navigation property to events for groups
-      operationId: groups.calendar.CreateEvents
+      operationId: group.calendar_CreateEvent
       requestBody:
         description: New navigation property
         content:
@@ -464,7 +464,7 @@ paths:
         - groups.calendar
       summary: Get events from groups
       description: The events in the calendar. Navigation property. Read-only.
-      operationId: groups.calendar.GetEvents
+      operationId: group.calendar_GetEvent
       parameters:
         - name: $select
           in: query
@@ -502,7 +502,7 @@ paths:
       tags:
         - groups.calendar
       summary: Update the navigation property events in groups
-      operationId: groups.calendar.UpdateEvents
+      operationId: group.calendar_UpdateEvent
       requestBody:
         description: New navigation property values
         content:
@@ -526,7 +526,7 @@ paths:
       tags:
         - groups.calendar
       summary: Delete navigation property events for groups
-      operationId: groups.calendar.DeleteEvents
+      operationId: group.calendar_DeleteEvent
       parameters:
         - name: If-Match
           in: header
@@ -548,7 +548,7 @@ paths:
         - groups.calendar
       summary: Get attachments from groups
       description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-      operationId: groups.calendar.events.ListAttachments
+      operationId: group.calendar.event_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -600,7 +600,7 @@ paths:
       tags:
         - groups.calendar
       summary: Create new navigation property to attachments for groups
-      operationId: groups.calendar.events.CreateAttachments
+      operationId: group.calendar.event_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -626,7 +626,7 @@ paths:
         - groups.calendar
       summary: Get attachments from groups
       description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-      operationId: groups.calendar.events.GetAttachments
+      operationId: group.calendar.event_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -664,7 +664,7 @@ paths:
       tags:
         - groups.calendar
       summary: Delete navigation property attachments for groups
-      operationId: groups.calendar.events.DeleteAttachments
+      operationId: group.calendar.event_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -685,7 +685,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get the number of the resource
-      operationId: groups.calendar.events.attachments.GetCount-a03a
+      operationId: group.calendar.event.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -705,7 +705,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta
-      operationId: groups.group.calendar.events.event.attachments.createUploadSession
+      operationId: group.calendar.event.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -737,7 +737,7 @@ paths:
         - groups.calendar
       summary: Get calendar from groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.calendar.events.GetCalendar
+      operationId: group.calendar.event_GetCalendar
       parameters:
         - name: $select
           in: query
@@ -777,7 +777,7 @@ paths:
         - groups.calendar
       summary: Get extensions from groups
       description: The collection of open extensions defined for the event. Nullable.
-      operationId: groups.calendar.events.ListExtensions
+      operationId: group.calendar.event_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -829,7 +829,7 @@ paths:
       tags:
         - groups.calendar
       summary: Create new navigation property to extensions for groups
-      operationId: groups.calendar.events.CreateExtensions
+      operationId: group.calendar.event_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -855,7 +855,7 @@ paths:
         - groups.calendar
       summary: Get extensions from groups
       description: The collection of open extensions defined for the event. Nullable.
-      operationId: groups.calendar.events.GetExtensions
+      operationId: group.calendar.event_GetExtension
       parameters:
         - name: $select
           in: query
@@ -893,7 +893,7 @@ paths:
       tags:
         - groups.calendar
       summary: Update the navigation property extensions in groups
-      operationId: groups.calendar.events.UpdateExtensions
+      operationId: group.calendar.event_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -917,7 +917,7 @@ paths:
       tags:
         - groups.calendar
       summary: Delete navigation property extensions for groups
-      operationId: groups.calendar.events.DeleteExtensions
+      operationId: group.calendar.event_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -938,7 +938,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get the number of the resource
-      operationId: groups.calendar.events.extensions.GetCount-d77e
+      operationId: group.calendar.event.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -955,7 +955,7 @@ paths:
         - groups.calendar
       summary: Get instances from groups
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
-      operationId: groups.calendar.events.ListInstances
+      operationId: group.calendar.event_ListInstance
       parameters:
         - name: startDateTime
           in: query
@@ -1028,7 +1028,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: groups.group.calendar.events.event.instances.delta
+      operationId: group.calendar.event.instance_delta
       parameters:
         - name: startDateTime
           in: query
@@ -1114,7 +1114,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-accept?view=graph-rest-beta
-      operationId: groups.group.calendar.events.event.accept
+      operationId: group.calendar.event_accept
       requestBody:
         description: Action parameters
         content:
@@ -1147,7 +1147,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-beta
-      operationId: groups.group.calendar.events.event.cancel
+      operationId: group.calendar.event_cancel
       requestBody:
         description: Action parameters
         content:
@@ -1176,7 +1176,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-decline?view=graph-rest-beta
-      operationId: groups.group.calendar.events.event.decline
+      operationId: group.calendar.event_decline
       requestBody:
         description: Action parameters
         content:
@@ -1214,7 +1214,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta
-      operationId: groups.group.calendar.events.event.dismissReminder
+      operationId: group.calendar.event_dismissReminder
       responses:
         '204':
           description: Success
@@ -1232,7 +1232,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-beta
-      operationId: groups.group.calendar.events.event.forward
+      operationId: group.calendar.event_forward
       requestBody:
         description: Action parameters
         content:
@@ -1265,7 +1265,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-permanentdelete?view=graph-rest-beta
-      operationId: groups.group.calendar.events.event.permanentDelete
+      operationId: group.calendar.event_permanentDelete
       responses:
         '204':
           description: Success
@@ -1283,7 +1283,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta
-      operationId: groups.group.calendar.events.event.snoozeReminder
+      operationId: group.calendar.event_snoozeReminder
       requestBody:
         description: Action parameters
         content:
@@ -1311,7 +1311,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta
-      operationId: groups.group.calendar.events.event.tentativelyAccept
+      operationId: group.calendar.event_tentativelyAccept
       requestBody:
         description: Action parameters
         content:
@@ -1345,7 +1345,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get the number of the resource
-      operationId: groups.calendar.events.GetCount-b856
+      operationId: group.calendar.event_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1365,7 +1365,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: groups.group.calendar.events.delta
+      operationId: group.calendar.event_delta
       parameters:
         - name: startDateTime
           in: query
@@ -1447,7 +1447,7 @@ paths:
       tags:
         - groups.calendar
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: groups.group.calendar.allowedCalendarSharingRoles
+      operationId: group.calendar_allowedCalendarSharingRole
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1486,7 +1486,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-beta
-      operationId: groups.group.calendar.getSchedule
+      operationId: group.calendar_getSchedule
       requestBody:
         description: Action parameters
         content:
@@ -1544,7 +1544,7 @@ paths:
       tags:
         - groups.calendar
       summary: Invoke action permanentDelete
-      operationId: groups.group.calendar.permanentDelete
+      operationId: group.calendar_permanentDelete
       responses:
         '204':
           description: Success
@@ -1562,7 +1562,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-calendarview?view=graph-rest-beta
-      operationId: groups.ListCalendarView
+      operationId: group_ListCalendarView
       parameters:
         - name: startDateTime
           in: query
@@ -1635,7 +1635,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: groups.group.calendarView.delta
+      operationId: group.calendarView_delta
       parameters:
         - name: startDateTime
           in: query
@@ -1721,7 +1721,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-events?view=graph-rest-beta
-      operationId: groups.ListEvents
+      operationId: group_ListEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1777,7 +1777,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-events?view=graph-rest-beta
-      operationId: groups.CreateEvents
+      operationId: group_CreateEvent
       requestBody:
         description: New navigation property
         content:
@@ -1806,7 +1806,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-get-event?view=graph-rest-beta
-      operationId: groups.GetEvents
+      operationId: group_GetEvent
       parameters:
         - name: $select
           in: query
@@ -1848,7 +1848,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-update-event?view=graph-rest-beta
-      operationId: groups.UpdateEvents
+      operationId: group_UpdateEvent
       requestBody:
         description: New navigation property values
         content:
@@ -1876,7 +1876,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete-event?view=graph-rest-beta
-      operationId: groups.DeleteEvents
+      operationId: group_DeleteEvent
       parameters:
         - name: If-Match
           in: header
@@ -1898,7 +1898,7 @@ paths:
         - groups.event
       summary: Get attachments from groups
       description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-      operationId: groups.events.ListAttachments
+      operationId: group.event_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1950,7 +1950,7 @@ paths:
       tags:
         - groups.event
       summary: Create new navigation property to attachments for groups
-      operationId: groups.events.CreateAttachments
+      operationId: group.event_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -1976,7 +1976,7 @@ paths:
         - groups.event
       summary: Get attachments from groups
       description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-      operationId: groups.events.GetAttachments
+      operationId: group.event_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -2014,7 +2014,7 @@ paths:
       tags:
         - groups.event
       summary: Delete navigation property attachments for groups
-      operationId: groups.events.DeleteAttachments
+      operationId: group.event_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -2035,7 +2035,7 @@ paths:
       tags:
         - groups.event
       summary: Get the number of the resource
-      operationId: groups.events.attachments.GetCount-87ba
+      operationId: group.event.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2055,7 +2055,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta
-      operationId: groups.group.events.event.attachments.createUploadSession
+      operationId: group.event.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -2087,7 +2087,7 @@ paths:
         - groups.event
       summary: Get calendar from groups
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: groups.events.GetCalendar
+      operationId: group.event_GetCalendar
       parameters:
         - name: $select
           in: query
@@ -2127,7 +2127,7 @@ paths:
         - groups.event
       summary: Get openTypeExtension
       description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
-      operationId: groups.events.ListExtensions
+      operationId: group.event_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2183,7 +2183,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-beta
-      operationId: groups.events.CreateExtensions
+      operationId: group.event_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -2212,7 +2212,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-beta
-      operationId: groups.events.GetExtensions
+      operationId: group.event_GetExtension
       parameters:
         - name: $select
           in: query
@@ -2250,7 +2250,7 @@ paths:
       tags:
         - groups.event
       summary: Update the navigation property extensions in groups
-      operationId: groups.events.UpdateExtensions
+      operationId: group.event_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -2274,7 +2274,7 @@ paths:
       tags:
         - groups.event
       summary: Delete navigation property extensions for groups
-      operationId: groups.events.DeleteExtensions
+      operationId: group.event_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -2295,7 +2295,7 @@ paths:
       tags:
         - groups.event
       summary: Get the number of the resource
-      operationId: groups.events.extensions.GetCount-0817
+      operationId: group.event.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2312,7 +2312,7 @@ paths:
         - groups.event
       summary: Get instances from groups
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
-      operationId: groups.events.ListInstances
+      operationId: group.event_ListInstance
       parameters:
         - name: startDateTime
           in: query
@@ -2385,7 +2385,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: groups.group.events.event.instances.delta
+      operationId: group.event.instance_delta
       parameters:
         - name: startDateTime
           in: query
@@ -2471,7 +2471,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-accept?view=graph-rest-beta
-      operationId: groups.group.events.event.accept
+      operationId: group.event_accept
       requestBody:
         description: Action parameters
         content:
@@ -2504,7 +2504,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-beta
-      operationId: groups.group.events.event.cancel
+      operationId: group.event_cancel
       requestBody:
         description: Action parameters
         content:
@@ -2533,7 +2533,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-decline?view=graph-rest-beta
-      operationId: groups.group.events.event.decline
+      operationId: group.event_decline
       requestBody:
         description: Action parameters
         content:
@@ -2571,7 +2571,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta
-      operationId: groups.group.events.event.dismissReminder
+      operationId: group.event_dismissReminder
       responses:
         '204':
           description: Success
@@ -2589,7 +2589,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-beta
-      operationId: groups.group.events.event.forward
+      operationId: group.event_forward
       requestBody:
         description: Action parameters
         content:
@@ -2622,7 +2622,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-permanentdelete?view=graph-rest-beta
-      operationId: groups.group.events.event.permanentDelete
+      operationId: group.event_permanentDelete
       responses:
         '204':
           description: Success
@@ -2640,7 +2640,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta
-      operationId: groups.group.events.event.snoozeReminder
+      operationId: group.event_snoozeReminder
       requestBody:
         description: Action parameters
         content:
@@ -2668,7 +2668,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta
-      operationId: groups.group.events.event.tentativelyAccept
+      operationId: group.event_tentativelyAccept
       requestBody:
         description: Action parameters
         content:
@@ -2702,7 +2702,7 @@ paths:
       tags:
         - groups.event
       summary: Get the number of the resource
-      operationId: groups.events.GetCount-ab92
+      operationId: group.event_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2722,7 +2722,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: groups.group.events.delta
+      operationId: group.event_delta
       parameters:
         - name: startDateTime
           in: query
@@ -2808,7 +2808,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-post?view=graph-rest-beta
-      operationId: places.place.CreatePlace
+      operationId: place_CreatePlace
       requestBody:
         description: New entity
         content:
@@ -2837,7 +2837,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-patch-places?view=graph-rest-beta
-      operationId: places.place.UpdatePlace
+      operationId: place_UpdatePlace
       requestBody:
         description: New property values
         content:
@@ -2865,7 +2865,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-delete?view=graph-rest-beta
-      operationId: places.place.DeletePlace
+      operationId: place_DeletePlace
       parameters:
         - name: If-Match
           in: header
@@ -2887,7 +2887,7 @@ paths:
         - places.checkInClaim
       summary: Get checkInClaim
       description: 'Read the properties and relationships of a checkInClaim object. This API provides the check-in status for a specific place, such as a desk, room, or workspace, associated with a particular reservation.'
-      operationId: places.ListCheckIns
+      operationId: place_ListCheckIn
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2943,7 +2943,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-post-checkins?view=graph-rest-beta
-      operationId: places.CreateCheckIns
+      operationId: place_CreateCheckIn
       requestBody:
         description: New navigation property
         content:
@@ -2972,7 +2972,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/checkinclaim-get?view=graph-rest-beta
-      operationId: places.GetCheckIns
+      operationId: place_GetCheckIn
       parameters:
         - name: $select
           in: query
@@ -3010,7 +3010,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Update the navigation property checkIns in places
-      operationId: places.UpdateCheckIns
+      operationId: place_UpdateCheckIn
       requestBody:
         description: New navigation property values
         content:
@@ -3034,7 +3034,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Delete navigation property checkIns for places
-      operationId: places.DeleteCheckIns
+      operationId: place_DeleteCheckIn
       parameters:
         - name: If-Match
           in: header
@@ -3055,7 +3055,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get the number of the resource
-      operationId: places.checkIns.GetCount-2709
+      operationId: place.checkIn_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3072,7 +3072,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.ListChildren
+      operationId: place_ListChild
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3126,7 +3126,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.GetChildren
+      operationId: place_GetChild
       parameters:
         - name: $select
           in: query
@@ -3165,7 +3165,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.children.GetCount-b657
+      operationId: place.child_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3185,7 +3185,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
-      operationId: places.place.GetPlace.AsBuilding
+      operationId: place_GetPlaceAsBuilding
       parameters:
         - name: $select
           in: query
@@ -3224,7 +3224,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsBuilding.ListCheckIns
+      operationId: placeAsBuilding_ListCheckIn
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3276,7 +3276,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Create new navigation property to checkIns for places
-      operationId: places.AsBuilding.CreateCheckIns
+      operationId: placeAsBuilding_CreateCheckIn
       requestBody:
         description: New navigation property
         content:
@@ -3302,7 +3302,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsBuilding.GetCheckIns
+      operationId: placeAsBuilding_GetCheckIn
       parameters:
         - name: $select
           in: query
@@ -3340,7 +3340,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Update the navigation property checkIns in places
-      operationId: places.AsBuilding.UpdateCheckIns
+      operationId: placeAsBuilding_UpdateCheckIn
       requestBody:
         description: New navigation property values
         content:
@@ -3364,7 +3364,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Delete navigation property checkIns for places
-      operationId: places.AsBuilding.DeleteCheckIns
+      operationId: placeAsBuilding_DeleteCheckIn
       parameters:
         - name: If-Match
           in: header
@@ -3385,7 +3385,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get the number of the resource
-      operationId: places.AsBuilding.checkIns.GetCount-114f
+      operationId: placeAsBuilding.checkIn_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3402,7 +3402,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsBuilding.ListChildren
+      operationId: placeAsBuilding_ListChild
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3456,7 +3456,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsBuilding.GetChildren
+      operationId: placeAsBuilding_GetChild
       parameters:
         - name: $select
           in: query
@@ -3495,7 +3495,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.AsBuilding.children.GetCount-e33c
+      operationId: placeAsBuilding.child_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3515,7 +3515,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/buildingmap-get?view=graph-rest-beta
-      operationId: places.AsBuilding.GetMap
+      operationId: placeAsBuilding_GetMap
       parameters:
         - name: $select
           in: query
@@ -3553,7 +3553,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Update the navigation property map in places
-      operationId: places.AsBuilding.UpdateMap
+      operationId: placeAsBuilding_UpdateMap
       requestBody:
         description: New navigation property values
         content:
@@ -3581,7 +3581,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/buildingmap-delete?view=graph-rest-beta
-      operationId: places.AsBuilding.DeleteMap
+      operationId: placeAsBuilding_DeleteMap
       parameters:
         - name: If-Match
           in: header
@@ -3606,7 +3606,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/buildingmap-list-footprints?view=graph-rest-beta
-      operationId: places.AsBuilding.map.ListFootprints
+      operationId: placeAsBuilding.map_ListFootprint
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3658,7 +3658,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Create new navigation property to footprints for places
-      operationId: places.AsBuilding.map.CreateFootprints
+      operationId: placeAsBuilding.map_CreateFootprint
       requestBody:
         description: New navigation property
         content:
@@ -3684,7 +3684,7 @@ paths:
         - places.buildingMap
       summary: Get footprints from places
       description: Represents the approximate physical extent of a referenced building. It corresponds to footprint.geojson in IMDF format.
-      operationId: places.AsBuilding.map.GetFootprints
+      operationId: placeAsBuilding.map_GetFootprint
       parameters:
         - name: $select
           in: query
@@ -3722,7 +3722,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Update the navigation property footprints in places
-      operationId: places.AsBuilding.map.UpdateFootprints
+      operationId: placeAsBuilding.map_UpdateFootprint
       requestBody:
         description: New navigation property values
         content:
@@ -3746,7 +3746,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Delete navigation property footprints for places
-      operationId: places.AsBuilding.map.DeleteFootprints
+      operationId: placeAsBuilding.map_DeleteFootprint
       parameters:
         - name: If-Match
           in: header
@@ -3767,7 +3767,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Get the number of the resource
-      operationId: places.AsBuilding.map.footprints.GetCount-273d
+      operationId: placeAsBuilding.map.footprint_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3787,7 +3787,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/buildingmap-list-levels?view=graph-rest-beta
-      operationId: places.AsBuilding.map.ListLevels
+      operationId: placeAsBuilding.map_ListLevel
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3839,7 +3839,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Create new navigation property to levels for places
-      operationId: places.AsBuilding.map.CreateLevels
+      operationId: placeAsBuilding.map_CreateLevel
       requestBody:
         description: New navigation property
         content:
@@ -3865,7 +3865,7 @@ paths:
         - places.buildingMap
       summary: Get levels from places
       description: Represents a physical floor structure within a building. It corresponds to level.geojson in IMDF format.
-      operationId: places.AsBuilding.map.GetLevels
+      operationId: placeAsBuilding.map_GetLevel
       parameters:
         - name: $select
           in: query
@@ -3903,7 +3903,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Update the navigation property levels in places
-      operationId: places.AsBuilding.map.UpdateLevels
+      operationId: placeAsBuilding.map_UpdateLevel
       requestBody:
         description: New navigation property values
         content:
@@ -3927,7 +3927,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Delete navigation property levels for places
-      operationId: places.AsBuilding.map.DeleteLevels
+      operationId: placeAsBuilding.map_DeleteLevel
       parameters:
         - name: If-Match
           in: header
@@ -3952,7 +3952,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/levelmap-list-fixtures?view=graph-rest-beta
-      operationId: places.AsBuilding.map.levels.ListFixtures
+      operationId: placeAsBuilding.map.level_ListFixture
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4004,7 +4004,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Create new navigation property to fixtures for places
-      operationId: places.AsBuilding.map.levels.CreateFixtures
+      operationId: placeAsBuilding.map.level_CreateFixture
       requestBody:
         description: New navigation property
         content:
@@ -4030,7 +4030,7 @@ paths:
         - places.buildingMap
       summary: Get fixtures from places
       description: Collection of fixtures (such as furniture or equipment) on this level. Supports upsert.
-      operationId: places.AsBuilding.map.levels.GetFixtures
+      operationId: placeAsBuilding.map.level_GetFixture
       parameters:
         - name: $select
           in: query
@@ -4072,7 +4072,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/fixturemap-update?view=graph-rest-beta
-      operationId: places.AsBuilding.map.levels.UpdateFixtures
+      operationId: placeAsBuilding.map.level_UpdateFixture
       requestBody:
         description: New navigation property values
         content:
@@ -4100,7 +4100,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/fixturemap-delete?view=graph-rest-beta
-      operationId: places.AsBuilding.map.levels.DeleteFixtures
+      operationId: placeAsBuilding.map.level_DeleteFixture
       parameters:
         - name: If-Match
           in: header
@@ -4121,7 +4121,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Get the number of the resource
-      operationId: places.AsBuilding.map.levels.fixtures.GetCount-85dd
+      operationId: placeAsBuilding.map.level.fixture_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4141,7 +4141,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/levelmap-list-sections?view=graph-rest-beta
-      operationId: places.AsBuilding.map.levels.ListSections
+      operationId: placeAsBuilding.map.level_ListSection
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4193,7 +4193,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Create new navigation property to sections for places
-      operationId: places.AsBuilding.map.levels.CreateSections
+      operationId: placeAsBuilding.map.level_CreateSection
       requestBody:
         description: New navigation property
         content:
@@ -4219,7 +4219,7 @@ paths:
         - places.buildingMap
       summary: Get sections from places
       description: Collection of sections (such as zones or partitions) on this level. Supports upsert.
-      operationId: places.AsBuilding.map.levels.GetSections
+      operationId: placeAsBuilding.map.level_GetSection
       parameters:
         - name: $select
           in: query
@@ -4257,7 +4257,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Update the navigation property sections in places
-      operationId: places.AsBuilding.map.levels.UpdateSections
+      operationId: placeAsBuilding.map.level_UpdateSection
       requestBody:
         description: New navigation property values
         content:
@@ -4281,7 +4281,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Delete navigation property sections for places
-      operationId: places.AsBuilding.map.levels.DeleteSections
+      operationId: placeAsBuilding.map.level_DeleteSection
       parameters:
         - name: If-Match
           in: header
@@ -4302,7 +4302,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Get the number of the resource
-      operationId: places.AsBuilding.map.levels.sections.GetCount-bdac
+      operationId: placeAsBuilding.map.level.section_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4322,7 +4322,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/levelmap-list-units?view=graph-rest-beta
-      operationId: places.AsBuilding.map.levels.ListUnits
+      operationId: placeAsBuilding.map.level_ListUnit
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4374,7 +4374,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Create new navigation property to units for places
-      operationId: places.AsBuilding.map.levels.CreateUnits
+      operationId: placeAsBuilding.map.level_CreateUnit
       requestBody:
         description: New navigation property
         content:
@@ -4400,7 +4400,7 @@ paths:
         - places.buildingMap
       summary: Get units from places
       description: Collection of units (such as rooms or offices) on this level. Supports upsert.
-      operationId: places.AsBuilding.map.levels.GetUnits
+      operationId: placeAsBuilding.map.level_GetUnit
       parameters:
         - name: $select
           in: query
@@ -4442,7 +4442,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unitmap-update?view=graph-rest-beta
-      operationId: places.AsBuilding.map.levels.UpdateUnits
+      operationId: placeAsBuilding.map.level_UpdateUnit
       requestBody:
         description: New navigation property values
         content:
@@ -4470,7 +4470,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unitmap-delete?view=graph-rest-beta
-      operationId: places.AsBuilding.map.levels.DeleteUnits
+      operationId: placeAsBuilding.map.level_DeleteUnit
       parameters:
         - name: If-Match
           in: header
@@ -4491,7 +4491,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Get the number of the resource
-      operationId: places.AsBuilding.map.levels.units.GetCount-3fc3
+      operationId: placeAsBuilding.map.level.unit_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4507,7 +4507,7 @@ paths:
       tags:
         - places.buildingMap
       summary: Get the number of the resource
-      operationId: places.AsBuilding.map.levels.GetCount-292f
+      operationId: placeAsBuilding.map.level_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4523,7 +4523,7 @@ paths:
       tags:
         - places.place.Functions
       summary: Invoke function descendants
-      operationId: places.place.descendants
+      operationId: place_descendant
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4593,7 +4593,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
-      operationId: places.place.GetPlace.AsDesk
+      operationId: place_GetPlaceAsDesk
       parameters:
         - name: $select
           in: query
@@ -4632,7 +4632,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsDesk.ListCheckIns
+      operationId: placeAsDesk_ListCheckIn
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4684,7 +4684,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Create new navigation property to checkIns for places
-      operationId: places.AsDesk.CreateCheckIns
+      operationId: placeAsDesk_CreateCheckIn
       requestBody:
         description: New navigation property
         content:
@@ -4710,7 +4710,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsDesk.GetCheckIns
+      operationId: placeAsDesk_GetCheckIn
       parameters:
         - name: $select
           in: query
@@ -4748,7 +4748,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Update the navigation property checkIns in places
-      operationId: places.AsDesk.UpdateCheckIns
+      operationId: placeAsDesk_UpdateCheckIn
       requestBody:
         description: New navigation property values
         content:
@@ -4772,7 +4772,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Delete navigation property checkIns for places
-      operationId: places.AsDesk.DeleteCheckIns
+      operationId: placeAsDesk_DeleteCheckIn
       parameters:
         - name: If-Match
           in: header
@@ -4793,7 +4793,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get the number of the resource
-      operationId: places.AsDesk.checkIns.GetCount-fd8b
+      operationId: placeAsDesk.checkIn_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4810,7 +4810,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsDesk.ListChildren
+      operationId: placeAsDesk_ListChild
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4864,7 +4864,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsDesk.GetChildren
+      operationId: placeAsDesk_GetChild
       parameters:
         - name: $select
           in: query
@@ -4903,7 +4903,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.AsDesk.children.GetCount-5222
+      operationId: placeAsDesk.child_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4923,7 +4923,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
-      operationId: places.place.GetPlace.AsFloor
+      operationId: place_GetPlaceAsFloor
       parameters:
         - name: $select
           in: query
@@ -4962,7 +4962,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsFloor.ListCheckIns
+      operationId: placeAsFloor_ListCheckIn
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5014,7 +5014,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Create new navigation property to checkIns for places
-      operationId: places.AsFloor.CreateCheckIns
+      operationId: placeAsFloor_CreateCheckIn
       requestBody:
         description: New navigation property
         content:
@@ -5040,7 +5040,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsFloor.GetCheckIns
+      operationId: placeAsFloor_GetCheckIn
       parameters:
         - name: $select
           in: query
@@ -5078,7 +5078,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Update the navigation property checkIns in places
-      operationId: places.AsFloor.UpdateCheckIns
+      operationId: placeAsFloor_UpdateCheckIn
       requestBody:
         description: New navigation property values
         content:
@@ -5102,7 +5102,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Delete navigation property checkIns for places
-      operationId: places.AsFloor.DeleteCheckIns
+      operationId: placeAsFloor_DeleteCheckIn
       parameters:
         - name: If-Match
           in: header
@@ -5123,7 +5123,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get the number of the resource
-      operationId: places.AsFloor.checkIns.GetCount-e279
+      operationId: placeAsFloor.checkIn_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5140,7 +5140,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsFloor.ListChildren
+      operationId: placeAsFloor_ListChild
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5194,7 +5194,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsFloor.GetChildren
+      operationId: placeAsFloor_GetChild
       parameters:
         - name: $select
           in: query
@@ -5233,7 +5233,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.AsFloor.children.GetCount-cd43
+      operationId: placeAsFloor.child_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5253,7 +5253,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
-      operationId: places.place.GetPlace.AsRoom
+      operationId: place_GetPlaceAsRoom
       parameters:
         - name: $select
           in: query
@@ -5292,7 +5292,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsRoom.ListCheckIns
+      operationId: placeAsRoom_ListCheckIn
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5344,7 +5344,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Create new navigation property to checkIns for places
-      operationId: places.AsRoom.CreateCheckIns
+      operationId: placeAsRoom_CreateCheckIn
       requestBody:
         description: New navigation property
         content:
@@ -5370,7 +5370,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsRoom.GetCheckIns
+      operationId: placeAsRoom_GetCheckIn
       parameters:
         - name: $select
           in: query
@@ -5408,7 +5408,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Update the navigation property checkIns in places
-      operationId: places.AsRoom.UpdateCheckIns
+      operationId: placeAsRoom_UpdateCheckIn
       requestBody:
         description: New navigation property values
         content:
@@ -5432,7 +5432,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Delete navigation property checkIns for places
-      operationId: places.AsRoom.DeleteCheckIns
+      operationId: placeAsRoom_DeleteCheckIn
       parameters:
         - name: If-Match
           in: header
@@ -5453,7 +5453,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get the number of the resource
-      operationId: places.AsRoom.checkIns.GetCount-9b19
+      operationId: placeAsRoom.checkIn_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5470,7 +5470,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsRoom.ListChildren
+      operationId: placeAsRoom_ListChild
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5524,7 +5524,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsRoom.GetChildren
+      operationId: placeAsRoom_GetChild
       parameters:
         - name: $select
           in: query
@@ -5563,7 +5563,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.AsRoom.children.GetCount-c27c
+      operationId: placeAsRoom.child_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5583,7 +5583,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-get?view=graph-rest-beta
-      operationId: places.place.GetPlace.AsRoomList
+      operationId: place_GetPlaceAsRoomList
       parameters:
         - name: $select
           in: query
@@ -5622,7 +5622,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsRoomList.ListCheckIns
+      operationId: placeAsRoomList_ListCheckIn
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5674,7 +5674,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Create new navigation property to checkIns for places
-      operationId: places.AsRoomList.CreateCheckIns
+      operationId: placeAsRoomList_CreateCheckIn
       requestBody:
         description: New navigation property
         content:
@@ -5700,7 +5700,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsRoomList.GetCheckIns
+      operationId: placeAsRoomList_GetCheckIn
       parameters:
         - name: $select
           in: query
@@ -5738,7 +5738,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Update the navigation property checkIns in places
-      operationId: places.AsRoomList.UpdateCheckIns
+      operationId: placeAsRoomList_UpdateCheckIn
       requestBody:
         description: New navigation property values
         content:
@@ -5762,7 +5762,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Delete navigation property checkIns for places
-      operationId: places.AsRoomList.DeleteCheckIns
+      operationId: placeAsRoomList_DeleteCheckIn
       parameters:
         - name: If-Match
           in: header
@@ -5783,7 +5783,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get the number of the resource
-      operationId: places.AsRoomList.checkIns.GetCount-e70f
+      operationId: placeAsRoomList.checkIn_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5800,7 +5800,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsRoomList.ListChildren
+      operationId: placeAsRoomList_ListChild
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5854,7 +5854,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsRoomList.GetChildren
+      operationId: placeAsRoomList_GetChild
       parameters:
         - name: $select
           in: query
@@ -5893,7 +5893,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.AsRoomList.children.GetCount-5a3a
+      operationId: placeAsRoomList.child_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5909,7 +5909,7 @@ paths:
       tags:
         - places.room
       summary: Get rooms from places
-      operationId: places.AsRoomList.ListRooms
+      operationId: placeAsRoomList_ListRoom
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5961,7 +5961,7 @@ paths:
       tags:
         - places.room
       summary: Create new navigation property to rooms for places
-      operationId: places.AsRoomList.CreateRooms
+      operationId: placeAsRoomList_CreateRoom
       requestBody:
         description: New navigation property
         content:
@@ -5986,7 +5986,7 @@ paths:
       tags:
         - places.room
       summary: Get rooms from places
-      operationId: places.AsRoomList.GetRooms
+      operationId: placeAsRoomList_GetRoom
       parameters:
         - name: $select
           in: query
@@ -6024,7 +6024,7 @@ paths:
       tags:
         - places.room
       summary: Update the navigation property rooms in places
-      operationId: places.AsRoomList.UpdateRooms
+      operationId: placeAsRoomList_UpdateRoom
       requestBody:
         description: New navigation property values
         content:
@@ -6048,7 +6048,7 @@ paths:
       tags:
         - places.room
       summary: Delete navigation property rooms for places
-      operationId: places.AsRoomList.DeleteRooms
+      operationId: placeAsRoomList_DeleteRoom
       parameters:
         - name: If-Match
           in: header
@@ -6070,7 +6070,7 @@ paths:
         - places.room
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsRoomList.rooms.ListCheckIns
+      operationId: placeAsRoomList.room_ListCheckIn
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6122,7 +6122,7 @@ paths:
       tags:
         - places.room
       summary: Create new navigation property to checkIns for places
-      operationId: places.AsRoomList.rooms.CreateCheckIns
+      operationId: placeAsRoomList.room_CreateCheckIn
       requestBody:
         description: New navigation property
         content:
@@ -6148,7 +6148,7 @@ paths:
         - places.room
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsRoomList.rooms.GetCheckIns
+      operationId: placeAsRoomList.room_GetCheckIn
       parameters:
         - name: $select
           in: query
@@ -6186,7 +6186,7 @@ paths:
       tags:
         - places.room
       summary: Update the navigation property checkIns in places
-      operationId: places.AsRoomList.rooms.UpdateCheckIns
+      operationId: placeAsRoomList.room_UpdateCheckIn
       requestBody:
         description: New navigation property values
         content:
@@ -6210,7 +6210,7 @@ paths:
       tags:
         - places.room
       summary: Delete navigation property checkIns for places
-      operationId: places.AsRoomList.rooms.DeleteCheckIns
+      operationId: placeAsRoomList.room_DeleteCheckIn
       parameters:
         - name: If-Match
           in: header
@@ -6231,7 +6231,7 @@ paths:
       tags:
         - places.room
       summary: Get the number of the resource
-      operationId: places.AsRoomList.rooms.checkIns.GetCount-28dc
+      operationId: placeAsRoomList.room.checkIn_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6248,7 +6248,7 @@ paths:
         - places.room
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsRoomList.rooms.ListChildren
+      operationId: placeAsRoomList.room_ListChild
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6302,7 +6302,7 @@ paths:
         - places.room
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsRoomList.rooms.GetChildren
+      operationId: placeAsRoomList.room_GetChild
       parameters:
         - name: $select
           in: query
@@ -6341,7 +6341,7 @@ paths:
       tags:
         - places.room
       summary: Get the number of the resource
-      operationId: places.AsRoomList.rooms.children.GetCount-8c2a
+      operationId: placeAsRoomList.room.child_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6357,7 +6357,7 @@ paths:
       tags:
         - places.room
       summary: Get the number of the resource
-      operationId: places.AsRoomList.rooms.GetCount-b534
+      operationId: placeAsRoomList.room_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6373,7 +6373,7 @@ paths:
       tags:
         - places.workspace
       summary: Get workspaces from places
-      operationId: places.AsRoomList.ListWorkspaces
+      operationId: placeAsRoomList_ListWorkspace
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6425,7 +6425,7 @@ paths:
       tags:
         - places.workspace
       summary: Create new navigation property to workspaces for places
-      operationId: places.AsRoomList.CreateWorkspaces
+      operationId: placeAsRoomList_CreateWorkspace
       requestBody:
         description: New navigation property
         content:
@@ -6450,7 +6450,7 @@ paths:
       tags:
         - places.workspace
       summary: Get workspaces from places
-      operationId: places.AsRoomList.GetWorkspaces
+      operationId: placeAsRoomList_GetWorkspace
       parameters:
         - name: $select
           in: query
@@ -6488,7 +6488,7 @@ paths:
       tags:
         - places.workspace
       summary: Update the navigation property workspaces in places
-      operationId: places.AsRoomList.UpdateWorkspaces
+      operationId: placeAsRoomList_UpdateWorkspace
       requestBody:
         description: New navigation property values
         content:
@@ -6512,7 +6512,7 @@ paths:
       tags:
         - places.workspace
       summary: Delete navigation property workspaces for places
-      operationId: places.AsRoomList.DeleteWorkspaces
+      operationId: placeAsRoomList_DeleteWorkspace
       parameters:
         - name: If-Match
           in: header
@@ -6534,7 +6534,7 @@ paths:
         - places.workspace
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsRoomList.workspaces.ListCheckIns
+      operationId: placeAsRoomList.workspace_ListCheckIn
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6586,7 +6586,7 @@ paths:
       tags:
         - places.workspace
       summary: Create new navigation property to checkIns for places
-      operationId: places.AsRoomList.workspaces.CreateCheckIns
+      operationId: placeAsRoomList.workspace_CreateCheckIn
       requestBody:
         description: New navigation property
         content:
@@ -6612,7 +6612,7 @@ paths:
         - places.workspace
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsRoomList.workspaces.GetCheckIns
+      operationId: placeAsRoomList.workspace_GetCheckIn
       parameters:
         - name: $select
           in: query
@@ -6650,7 +6650,7 @@ paths:
       tags:
         - places.workspace
       summary: Update the navigation property checkIns in places
-      operationId: places.AsRoomList.workspaces.UpdateCheckIns
+      operationId: placeAsRoomList.workspace_UpdateCheckIn
       requestBody:
         description: New navigation property values
         content:
@@ -6674,7 +6674,7 @@ paths:
       tags:
         - places.workspace
       summary: Delete navigation property checkIns for places
-      operationId: places.AsRoomList.workspaces.DeleteCheckIns
+      operationId: placeAsRoomList.workspace_DeleteCheckIn
       parameters:
         - name: If-Match
           in: header
@@ -6695,7 +6695,7 @@ paths:
       tags:
         - places.workspace
       summary: Get the number of the resource
-      operationId: places.AsRoomList.workspaces.checkIns.GetCount-8c5e
+      operationId: placeAsRoomList.workspace.checkIn_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6712,7 +6712,7 @@ paths:
         - places.workspace
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsRoomList.workspaces.ListChildren
+      operationId: placeAsRoomList.workspace_ListChild
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6766,7 +6766,7 @@ paths:
         - places.workspace
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsRoomList.workspaces.GetChildren
+      operationId: placeAsRoomList.workspace_GetChild
       parameters:
         - name: $select
           in: query
@@ -6805,7 +6805,7 @@ paths:
       tags:
         - places.workspace
       summary: Get the number of the resource
-      operationId: places.AsRoomList.workspaces.children.GetCount-88f2
+      operationId: placeAsRoomList.workspace.child_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6821,7 +6821,7 @@ paths:
       tags:
         - places.workspace
       summary: Get the number of the resource
-      operationId: places.AsRoomList.workspaces.GetCount-4b94
+      operationId: placeAsRoomList.workspace_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6841,7 +6841,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
-      operationId: places.place.GetPlace.AsSection
+      operationId: place_GetPlaceAsSection
       parameters:
         - name: $select
           in: query
@@ -6880,7 +6880,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsSection.ListCheckIns
+      operationId: placeAsSection_ListCheckIn
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6932,7 +6932,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Create new navigation property to checkIns for places
-      operationId: places.AsSection.CreateCheckIns
+      operationId: placeAsSection_CreateCheckIn
       requestBody:
         description: New navigation property
         content:
@@ -6958,7 +6958,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsSection.GetCheckIns
+      operationId: placeAsSection_GetCheckIn
       parameters:
         - name: $select
           in: query
@@ -6996,7 +6996,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Update the navigation property checkIns in places
-      operationId: places.AsSection.UpdateCheckIns
+      operationId: placeAsSection_UpdateCheckIn
       requestBody:
         description: New navigation property values
         content:
@@ -7020,7 +7020,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Delete navigation property checkIns for places
-      operationId: places.AsSection.DeleteCheckIns
+      operationId: placeAsSection_DeleteCheckIn
       parameters:
         - name: If-Match
           in: header
@@ -7041,7 +7041,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get the number of the resource
-      operationId: places.AsSection.checkIns.GetCount-4bba
+      operationId: placeAsSection.checkIn_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7058,7 +7058,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsSection.ListChildren
+      operationId: placeAsSection_ListChild
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7112,7 +7112,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsSection.GetChildren
+      operationId: placeAsSection_GetChild
       parameters:
         - name: $select
           in: query
@@ -7151,7 +7151,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.AsSection.children.GetCount-636f
+      operationId: placeAsSection.child_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7171,7 +7171,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
-      operationId: places.place.GetPlace.AsWorkspace
+      operationId: place_GetPlaceAsWorkspace
       parameters:
         - name: $select
           in: query
@@ -7210,7 +7210,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsWorkspace.ListCheckIns
+      operationId: placeAsWorkspace_ListCheckIn
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7262,7 +7262,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Create new navigation property to checkIns for places
-      operationId: places.AsWorkspace.CreateCheckIns
+      operationId: placeAsWorkspace_CreateCheckIn
       requestBody:
         description: New navigation property
         content:
@@ -7288,7 +7288,7 @@ paths:
         - places.checkInClaim
       summary: Get checkIns from places
       description: A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
-      operationId: places.AsWorkspace.GetCheckIns
+      operationId: placeAsWorkspace_GetCheckIn
       parameters:
         - name: $select
           in: query
@@ -7326,7 +7326,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Update the navigation property checkIns in places
-      operationId: places.AsWorkspace.UpdateCheckIns
+      operationId: placeAsWorkspace_UpdateCheckIn
       requestBody:
         description: New navigation property values
         content:
@@ -7350,7 +7350,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Delete navigation property checkIns for places
-      operationId: places.AsWorkspace.DeleteCheckIns
+      operationId: placeAsWorkspace_DeleteCheckIn
       parameters:
         - name: If-Match
           in: header
@@ -7371,7 +7371,7 @@ paths:
       tags:
         - places.checkInClaim
       summary: Get the number of the resource
-      operationId: places.AsWorkspace.checkIns.GetCount-d022
+      operationId: placeAsWorkspace.checkIn_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7388,7 +7388,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsWorkspace.ListChildren
+      operationId: placeAsWorkspace_ListChild
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7442,7 +7442,7 @@ paths:
         - places.place
       summary: Get children from places
       description: A collection of children places that is only used in the Upsert places API.
-      operationId: places.AsWorkspace.GetChildren
+      operationId: placeAsWorkspace_GetChild
       parameters:
         - name: $select
           in: query
@@ -7481,7 +7481,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.AsWorkspace.children.GetCount-5024
+      operationId: placeAsWorkspace.child_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7497,7 +7497,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.GetCount-f02b
+      operationId: place_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7517,7 +7517,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
-      operationId: places.place.ListPlace.AsBuilding
+      operationId: place_ListPlaceAsBuilding
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7569,7 +7569,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.place.Place.GetCount.AsBuilding-9b72
+      operationId: place_GetCountAsBuilding
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7589,7 +7589,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
-      operationId: places.place.ListPlace.AsDesk
+      operationId: place_ListPlaceAsDesk
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7641,7 +7641,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.place.Place.GetCount.AsDesk-6f90
+      operationId: place_GetCountAsDesk
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7661,7 +7661,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
-      operationId: places.place.ListPlace.AsFloor
+      operationId: place_ListPlaceAsFloor
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7713,7 +7713,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.place.Place.GetCount.AsFloor-2f1e
+      operationId: place_GetCountAsFloor
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7733,7 +7733,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-getoperation?view=graph-rest-beta
-      operationId: places.getOperation
+      operationId: place_getOperation
       responses:
         2XX:
           description: Success
@@ -7758,7 +7758,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-listoperations?view=graph-rest-beta
-      operationId: places.listOperations
+      operationId: place_listOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7828,7 +7828,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
-      operationId: places.place.ListPlace.AsRoom
+      operationId: place_ListPlaceAsRoom
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7880,7 +7880,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.place.Place.GetCount.AsRoom-56fc
+      operationId: place_GetCountAsRoom
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7900,7 +7900,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-get?view=graph-rest-beta
-      operationId: places.place.ListPlace.AsRoomList
+      operationId: place_ListPlaceAsRoomList
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7952,7 +7952,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.place.Place.GetCount.AsRoomList-e9fd
+      operationId: place_GetCountAsRoomList
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7972,7 +7972,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
-      operationId: places.place.ListPlace.AsSection
+      operationId: place_ListPlaceAsSection
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8024,7 +8024,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.place.Place.GetCount.AsSection-95fa
+      operationId: place_GetCountAsSection
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8044,7 +8044,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-list?view=graph-rest-beta
-      operationId: places.place.ListPlace.AsWorkspace
+      operationId: place_ListPlaceAsWorkspace
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8096,7 +8096,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: places.place.Place.GetCount.AsWorkspace-7f2e
+      operationId: place_GetCountAsWorkspace
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8113,7 +8113,7 @@ paths:
         - users.calendar
       summary: Get calendar from users
       description: The user's primary calendar. Read-only.
-      operationId: users.GetCalendar
+      operationId: user_GetCalendar
       parameters:
         - name: $select
           in: query
@@ -8151,7 +8151,7 @@ paths:
       tags:
         - users.calendar
       summary: Update the navigation property calendar in users
-      operationId: users.UpdateCalendar
+      operationId: user_UpdateCalendar
       requestBody:
         description: New navigation property values
         content:
@@ -8177,7 +8177,7 @@ paths:
         - users.calendar
       summary: Get calendarPermission
       description: Get the specified permissions object of a user or group calendar that has been shared.
-      operationId: users.calendar.ListCalendarPermissions
+      operationId: user.calendar_ListCalendarPermission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8233,7 +8233,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-beta
-      operationId: users.calendar.CreateCalendarPermissions
+      operationId: user.calendar_CreateCalendarPermission
       requestBody:
         description: New navigation property
         content:
@@ -8262,7 +8262,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-beta
-      operationId: users.calendar.GetCalendarPermissions
+      operationId: user.calendar_GetCalendarPermission
       parameters:
         - name: $select
           in: query
@@ -8304,7 +8304,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-beta
-      operationId: users.calendar.UpdateCalendarPermissions
+      operationId: user.calendar_UpdateCalendarPermission
       requestBody:
         description: New navigation property values
         content:
@@ -8332,7 +8332,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-beta
-      operationId: users.calendar.DeleteCalendarPermissions
+      operationId: user.calendar_DeleteCalendarPermission
       parameters:
         - name: If-Match
           in: header
@@ -8353,7 +8353,7 @@ paths:
       tags:
         - users.calendar
       summary: Get the number of the resource
-      operationId: users.calendar.calendarPermissions.GetCount-b877
+      operationId: user.calendar.calendarPermission_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8370,7 +8370,7 @@ paths:
         - users.calendar
       summary: Get calendarView from users
       description: The calendar view for the calendar. Navigation property. Read-only.
-      operationId: users.calendar.ListCalendarView
+      operationId: user.calendar_ListCalendarView
       parameters:
         - name: startDateTime
           in: query
@@ -8443,7 +8443,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: users.user.calendar.calendarView.delta
+      operationId: user.calendar.calendarView_delta
       parameters:
         - name: startDateTime
           in: query
@@ -8526,7 +8526,7 @@ paths:
         - users.calendar
       summary: Get events from users
       description: The events in the calendar. Navigation property. Read-only.
-      operationId: users.calendar.ListEvents
+      operationId: user.calendar_ListEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8578,7 +8578,7 @@ paths:
       tags:
         - users.calendar
       summary: Create new navigation property to events for users
-      operationId: users.calendar.CreateEvents
+      operationId: user.calendar_CreateEvent
       requestBody:
         description: New navigation property
         content:
@@ -8604,7 +8604,7 @@ paths:
         - users.calendar
       summary: Get events from users
       description: The events in the calendar. Navigation property. Read-only.
-      operationId: users.calendar.GetEvents
+      operationId: user.calendar_GetEvent
       parameters:
         - name: $select
           in: query
@@ -8642,7 +8642,7 @@ paths:
       tags:
         - users.calendar
       summary: Update the navigation property events in users
-      operationId: users.calendar.UpdateEvents
+      operationId: user.calendar_UpdateEvent
       requestBody:
         description: New navigation property values
         content:
@@ -8666,7 +8666,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete navigation property events for users
-      operationId: users.calendar.DeleteEvents
+      operationId: user.calendar_DeleteEvent
       parameters:
         - name: If-Match
           in: header
@@ -8688,7 +8688,7 @@ paths:
         - users.calendar
       summary: Get attachments from users
       description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-      operationId: users.calendar.events.ListAttachments
+      operationId: user.calendar.event_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8740,7 +8740,7 @@ paths:
       tags:
         - users.calendar
       summary: Create new navigation property to attachments for users
-      operationId: users.calendar.events.CreateAttachments
+      operationId: user.calendar.event_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -8766,7 +8766,7 @@ paths:
         - users.calendar
       summary: Get attachments from users
       description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-      operationId: users.calendar.events.GetAttachments
+      operationId: user.calendar.event_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -8804,7 +8804,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete navigation property attachments for users
-      operationId: users.calendar.events.DeleteAttachments
+      operationId: user.calendar.event_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -8825,7 +8825,7 @@ paths:
       tags:
         - users.calendar
       summary: Get the number of the resource
-      operationId: users.calendar.events.attachments.GetCount-114f
+      operationId: user.calendar.event.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8845,7 +8845,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta
-      operationId: users.user.calendar.events.event.attachments.createUploadSession
+      operationId: user.calendar.event.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -8877,7 +8877,7 @@ paths:
         - users.calendar
       summary: Get calendar from users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendar.events.GetCalendar
+      operationId: user.calendar.event_GetCalendar
       parameters:
         - name: $select
           in: query
@@ -8917,7 +8917,7 @@ paths:
         - users.calendar
       summary: Get extensions from users
       description: The collection of open extensions defined for the event. Nullable.
-      operationId: users.calendar.events.ListExtensions
+      operationId: user.calendar.event_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8969,7 +8969,7 @@ paths:
       tags:
         - users.calendar
       summary: Create new navigation property to extensions for users
-      operationId: users.calendar.events.CreateExtensions
+      operationId: user.calendar.event_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -8995,7 +8995,7 @@ paths:
         - users.calendar
       summary: Get extensions from users
       description: The collection of open extensions defined for the event. Nullable.
-      operationId: users.calendar.events.GetExtensions
+      operationId: user.calendar.event_GetExtension
       parameters:
         - name: $select
           in: query
@@ -9033,7 +9033,7 @@ paths:
       tags:
         - users.calendar
       summary: Update the navigation property extensions in users
-      operationId: users.calendar.events.UpdateExtensions
+      operationId: user.calendar.event_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -9057,7 +9057,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete navigation property extensions for users
-      operationId: users.calendar.events.DeleteExtensions
+      operationId: user.calendar.event_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -9078,7 +9078,7 @@ paths:
       tags:
         - users.calendar
       summary: Get the number of the resource
-      operationId: users.calendar.events.extensions.GetCount-15ec
+      operationId: user.calendar.event.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9095,7 +9095,7 @@ paths:
         - users.calendar
       summary: Get instances from users
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
-      operationId: users.calendar.events.ListInstances
+      operationId: user.calendar.event_ListInstance
       parameters:
         - name: startDateTime
           in: query
@@ -9168,7 +9168,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: users.user.calendar.events.event.instances.delta
+      operationId: user.calendar.event.instance_delta
       parameters:
         - name: startDateTime
           in: query
@@ -9254,7 +9254,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-accept?view=graph-rest-beta
-      operationId: users.user.calendar.events.event.accept
+      operationId: user.calendar.event_accept
       requestBody:
         description: Action parameters
         content:
@@ -9287,7 +9287,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-beta
-      operationId: users.user.calendar.events.event.cancel
+      operationId: user.calendar.event_cancel
       requestBody:
         description: Action parameters
         content:
@@ -9316,7 +9316,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-decline?view=graph-rest-beta
-      operationId: users.user.calendar.events.event.decline
+      operationId: user.calendar.event_decline
       requestBody:
         description: Action parameters
         content:
@@ -9354,7 +9354,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta
-      operationId: users.user.calendar.events.event.dismissReminder
+      operationId: user.calendar.event_dismissReminder
       responses:
         '204':
           description: Success
@@ -9372,7 +9372,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-beta
-      operationId: users.user.calendar.events.event.forward
+      operationId: user.calendar.event_forward
       requestBody:
         description: Action parameters
         content:
@@ -9405,7 +9405,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-permanentdelete?view=graph-rest-beta
-      operationId: users.user.calendar.events.event.permanentDelete
+      operationId: user.calendar.event_permanentDelete
       responses:
         '204':
           description: Success
@@ -9423,7 +9423,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta
-      operationId: users.user.calendar.events.event.snoozeReminder
+      operationId: user.calendar.event_snoozeReminder
       requestBody:
         description: Action parameters
         content:
@@ -9451,7 +9451,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta
-      operationId: users.user.calendar.events.event.tentativelyAccept
+      operationId: user.calendar.event_tentativelyAccept
       requestBody:
         description: Action parameters
         content:
@@ -9485,7 +9485,7 @@ paths:
       tags:
         - users.calendar
       summary: Get the number of the resource
-      operationId: users.calendar.events.GetCount-1a22
+      operationId: user.calendar.event_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9505,7 +9505,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: users.user.calendar.events.delta
+      operationId: user.calendar.event_delta
       parameters:
         - name: startDateTime
           in: query
@@ -9587,7 +9587,7 @@ paths:
       tags:
         - users.calendar
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.user.calendar.allowedCalendarSharingRoles
+      operationId: user.calendar_allowedCalendarSharingRole
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9626,7 +9626,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-beta
-      operationId: users.user.calendar.getSchedule
+      operationId: user.calendar_getSchedule
       requestBody:
         description: Action parameters
         content:
@@ -9684,7 +9684,7 @@ paths:
       tags:
         - users.calendar
       summary: Invoke action permanentDelete
-      operationId: users.user.calendar.permanentDelete
+      operationId: user.calendar_permanentDelete
       responses:
         '204':
           description: Success
@@ -9699,7 +9699,7 @@ paths:
         - users.calendarGroup
       summary: Get calendarGroups from users
       description: The user's calendar groups. Read-only. Nullable.
-      operationId: users.ListCalendarGroups
+      operationId: user_ListCalendarGroup
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9751,7 +9751,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create new navigation property to calendarGroups for users
-      operationId: users.CreateCalendarGroups
+      operationId: user_CreateCalendarGroup
       requestBody:
         description: New navigation property
         content:
@@ -9777,7 +9777,7 @@ paths:
         - users.calendarGroup
       summary: Get calendarGroups from users
       description: The user's calendar groups. Read-only. Nullable.
-      operationId: users.GetCalendarGroups
+      operationId: user_GetCalendarGroup
       parameters:
         - name: $select
           in: query
@@ -9815,7 +9815,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Update the navigation property calendarGroups in users
-      operationId: users.UpdateCalendarGroups
+      operationId: user_UpdateCalendarGroup
       requestBody:
         description: New navigation property values
         content:
@@ -9839,7 +9839,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Delete navigation property calendarGroups for users
-      operationId: users.DeleteCalendarGroups
+      operationId: user_DeleteCalendarGroup
       parameters:
         - name: If-Match
           in: header
@@ -9861,7 +9861,7 @@ paths:
         - users.calendarGroup
       summary: Get calendars from users
       description: The calendars in the calendar group. Navigation property. Read-only. Nullable.
-      operationId: users.calendarGroups.ListCalendars
+      operationId: user.calendarGroup_ListCalendar
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9913,7 +9913,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create new navigation property to calendars for users
-      operationId: users.calendarGroups.CreateCalendars
+      operationId: user.calendarGroup_CreateCalendar
       requestBody:
         description: New navigation property
         content:
@@ -9939,7 +9939,7 @@ paths:
         - users.calendarGroup
       summary: Get calendars from users
       description: The calendars in the calendar group. Navigation property. Read-only. Nullable.
-      operationId: users.calendarGroups.GetCalendars
+      operationId: user.calendarGroup_GetCalendar
       parameters:
         - name: $select
           in: query
@@ -9977,7 +9977,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Update the navigation property calendars in users
-      operationId: users.calendarGroups.UpdateCalendars
+      operationId: user.calendarGroup_UpdateCalendar
       requestBody:
         description: New navigation property values
         content:
@@ -10001,7 +10001,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Delete navigation property calendars for users
-      operationId: users.calendarGroups.DeleteCalendars
+      operationId: user.calendarGroup_DeleteCalendar
       parameters:
         - name: If-Match
           in: header
@@ -10023,7 +10023,7 @@ paths:
         - users.calendarGroup
       summary: Get calendarPermissions from users
       description: The permissions of the users with whom the calendar is shared.
-      operationId: users.calendarGroups.calendars.ListCalendarPermissions
+      operationId: user.calendarGroup.calendar_ListCalendarPermission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10075,7 +10075,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create new navigation property to calendarPermissions for users
-      operationId: users.calendarGroups.calendars.CreateCalendarPermissions
+      operationId: user.calendarGroup.calendar_CreateCalendarPermission
       requestBody:
         description: New navigation property
         content:
@@ -10101,7 +10101,7 @@ paths:
         - users.calendarGroup
       summary: Get calendarPermissions from users
       description: The permissions of the users with whom the calendar is shared.
-      operationId: users.calendarGroups.calendars.GetCalendarPermissions
+      operationId: user.calendarGroup.calendar_GetCalendarPermission
       parameters:
         - name: $select
           in: query
@@ -10139,7 +10139,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Update the navigation property calendarPermissions in users
-      operationId: users.calendarGroups.calendars.UpdateCalendarPermissions
+      operationId: user.calendarGroup.calendar_UpdateCalendarPermission
       requestBody:
         description: New navigation property values
         content:
@@ -10163,7 +10163,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Delete navigation property calendarPermissions for users
-      operationId: users.calendarGroups.calendars.DeleteCalendarPermissions
+      operationId: user.calendarGroup.calendar_DeleteCalendarPermission
       parameters:
         - name: If-Match
           in: header
@@ -10184,7 +10184,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get the number of the resource
-      operationId: users.calendarGroups.calendars.calendarPermissions.GetCount-98a8
+      operationId: user.calendarGroup.calendar.calendarPermission_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10201,7 +10201,7 @@ paths:
         - users.calendarGroup
       summary: Get calendarView from users
       description: The calendar view for the calendar. Navigation property. Read-only.
-      operationId: users.calendarGroups.calendars.ListCalendarView
+      operationId: user.calendarGroup.calendar_ListCalendarView
       parameters:
         - name: startDateTime
           in: query
@@ -10274,7 +10274,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.calendarView.delta
+      operationId: user.calendarGroup.calendar.calendarView_delta
       parameters:
         - name: startDateTime
           in: query
@@ -10357,7 +10357,7 @@ paths:
         - users.calendarGroup
       summary: Get events from users
       description: The events in the calendar. Navigation property. Read-only.
-      operationId: users.calendarGroups.calendars.ListEvents
+      operationId: user.calendarGroup.calendar_ListEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10409,7 +10409,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create new navigation property to events for users
-      operationId: users.calendarGroups.calendars.CreateEvents
+      operationId: user.calendarGroup.calendar_CreateEvent
       requestBody:
         description: New navigation property
         content:
@@ -10435,7 +10435,7 @@ paths:
         - users.calendarGroup
       summary: Get events from users
       description: The events in the calendar. Navigation property. Read-only.
-      operationId: users.calendarGroups.calendars.GetEvents
+      operationId: user.calendarGroup.calendar_GetEvent
       parameters:
         - name: $select
           in: query
@@ -10473,7 +10473,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Update the navigation property events in users
-      operationId: users.calendarGroups.calendars.UpdateEvents
+      operationId: user.calendarGroup.calendar_UpdateEvent
       requestBody:
         description: New navigation property values
         content:
@@ -10497,7 +10497,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Delete navigation property events for users
-      operationId: users.calendarGroups.calendars.DeleteEvents
+      operationId: user.calendarGroup.calendar_DeleteEvent
       parameters:
         - name: If-Match
           in: header
@@ -10519,7 +10519,7 @@ paths:
         - users.calendarGroup
       summary: Get attachments from users
       description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-      operationId: users.calendarGroups.calendars.events.ListAttachments
+      operationId: user.calendarGroup.calendar.event_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10571,7 +10571,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create new navigation property to attachments for users
-      operationId: users.calendarGroups.calendars.events.CreateAttachments
+      operationId: user.calendarGroup.calendar.event_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -10597,7 +10597,7 @@ paths:
         - users.calendarGroup
       summary: Get attachments from users
       description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-      operationId: users.calendarGroups.calendars.events.GetAttachments
+      operationId: user.calendarGroup.calendar.event_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -10635,7 +10635,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Delete navigation property attachments for users
-      operationId: users.calendarGroups.calendars.events.DeleteAttachments
+      operationId: user.calendarGroup.calendar.event_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -10656,7 +10656,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get the number of the resource
-      operationId: users.calendarGroups.calendars.events.attachments.GetCount-e742
+      operationId: user.calendarGroup.calendar.event.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10676,7 +10676,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.attachments.createUploadSession
+      operationId: user.calendarGroup.calendar.event.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -10708,7 +10708,7 @@ paths:
         - users.calendarGroup
       summary: Get calendar from users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendarGroups.calendars.events.GetCalendar
+      operationId: user.calendarGroup.calendar.event_GetCalendar
       parameters:
         - name: $select
           in: query
@@ -10748,7 +10748,7 @@ paths:
         - users.calendarGroup
       summary: Get extensions from users
       description: The collection of open extensions defined for the event. Nullable.
-      operationId: users.calendarGroups.calendars.events.ListExtensions
+      operationId: user.calendarGroup.calendar.event_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10800,7 +10800,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create new navigation property to extensions for users
-      operationId: users.calendarGroups.calendars.events.CreateExtensions
+      operationId: user.calendarGroup.calendar.event_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -10826,7 +10826,7 @@ paths:
         - users.calendarGroup
       summary: Get extensions from users
       description: The collection of open extensions defined for the event. Nullable.
-      operationId: users.calendarGroups.calendars.events.GetExtensions
+      operationId: user.calendarGroup.calendar.event_GetExtension
       parameters:
         - name: $select
           in: query
@@ -10864,7 +10864,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Update the navigation property extensions in users
-      operationId: users.calendarGroups.calendars.events.UpdateExtensions
+      operationId: user.calendarGroup.calendar.event_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -10888,7 +10888,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Delete navigation property extensions for users
-      operationId: users.calendarGroups.calendars.events.DeleteExtensions
+      operationId: user.calendarGroup.calendar.event_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -10909,7 +10909,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get the number of the resource
-      operationId: users.calendarGroups.calendars.events.extensions.GetCount-4cca
+      operationId: user.calendarGroup.calendar.event.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10926,7 +10926,7 @@ paths:
         - users.calendarGroup
       summary: Get instances from users
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
-      operationId: users.calendarGroups.calendars.events.ListInstances
+      operationId: user.calendarGroup.calendar.event_ListInstance
       parameters:
         - name: startDateTime
           in: query
@@ -10999,7 +10999,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.instances.delta
+      operationId: user.calendarGroup.calendar.event.instance_delta
       parameters:
         - name: startDateTime
           in: query
@@ -11085,7 +11085,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-accept?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.accept
+      operationId: user.calendarGroup.calendar.event_accept
       requestBody:
         description: Action parameters
         content:
@@ -11118,7 +11118,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.cancel
+      operationId: user.calendarGroup.calendar.event_cancel
       requestBody:
         description: Action parameters
         content:
@@ -11147,7 +11147,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-decline?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.decline
+      operationId: user.calendarGroup.calendar.event_decline
       requestBody:
         description: Action parameters
         content:
@@ -11185,7 +11185,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.dismissReminder
+      operationId: user.calendarGroup.calendar.event_dismissReminder
       responses:
         '204':
           description: Success
@@ -11203,7 +11203,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.forward
+      operationId: user.calendarGroup.calendar.event_forward
       requestBody:
         description: Action parameters
         content:
@@ -11236,7 +11236,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-permanentdelete?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.permanentDelete
+      operationId: user.calendarGroup.calendar.event_permanentDelete
       responses:
         '204':
           description: Success
@@ -11254,7 +11254,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.snoozeReminder
+      operationId: user.calendarGroup.calendar.event_snoozeReminder
       requestBody:
         description: Action parameters
         content:
@@ -11282,7 +11282,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.event.tentativelyAccept
+      operationId: user.calendarGroup.calendar.event_tentativelyAccept
       requestBody:
         description: Action parameters
         content:
@@ -11316,7 +11316,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get the number of the resource
-      operationId: users.calendarGroups.calendars.events.GetCount-f3ad
+      operationId: user.calendarGroup.calendar.event_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11336,7 +11336,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.events.delta
+      operationId: user.calendarGroup.calendar.event_delta
       parameters:
         - name: startDateTime
           in: query
@@ -11418,7 +11418,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.allowedCalendarSharingRoles
+      operationId: user.calendarGroup.calendar_allowedCalendarSharingRole
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11457,7 +11457,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.getSchedule
+      operationId: user.calendarGroup.calendar_getSchedule
       requestBody:
         description: Action parameters
         content:
@@ -11515,7 +11515,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Invoke action permanentDelete
-      operationId: users.user.calendarGroups.calendarGroup.calendars.calendar.permanentDelete
+      operationId: user.calendarGroup.calendar_permanentDelete
       responses:
         '204':
           description: Success
@@ -11529,7 +11529,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get the number of the resource
-      operationId: users.calendarGroups.calendars.GetCount-8e45
+      operationId: user.calendarGroup.calendar_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11545,11 +11545,11 @@ paths:
       tags:
         - users.calendarGroup
       summary: Invoke function delta
-      description: 'Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.'
+      description: 'Get a set of calendar resources added, updated, or deleted in a user''s mailbox. Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-delta?view=graph-rest-beta
-      operationId: users.user.calendarGroups.calendarGroup.calendars.delta
+      operationId: user.calendarGroup.calendar_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11615,7 +11615,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get the number of the resource
-      operationId: users.calendarGroups.GetCount-ee80
+      operationId: user.calendarGroup_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11632,7 +11632,7 @@ paths:
         - users.calendar
       summary: Get calendars from users
       description: The user's calendars. Read-only. Nullable.
-      operationId: users.ListCalendars
+      operationId: user_ListCalendar
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11684,7 +11684,7 @@ paths:
       tags:
         - users.calendar
       summary: Create new navigation property to calendars for users
-      operationId: users.CreateCalendars
+      operationId: user_CreateCalendar
       requestBody:
         description: New navigation property
         content:
@@ -11710,7 +11710,7 @@ paths:
         - users.calendar
       summary: Get calendars from users
       description: The user's calendars. Read-only. Nullable.
-      operationId: users.GetCalendars
+      operationId: user_GetCalendar
       parameters:
         - name: $select
           in: query
@@ -11748,7 +11748,7 @@ paths:
       tags:
         - users.calendar
       summary: Update the navigation property calendars in users
-      operationId: users.UpdateCalendars
+      operationId: user_UpdateCalendar
       requestBody:
         description: New navigation property values
         content:
@@ -11772,7 +11772,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete navigation property calendars for users
-      operationId: users.DeleteCalendars
+      operationId: user_DeleteCalendar
       parameters:
         - name: If-Match
           in: header
@@ -11794,7 +11794,7 @@ paths:
         - users.calendar
       summary: Get calendarPermissions from users
       description: The permissions of the users with whom the calendar is shared.
-      operationId: users.calendars.ListCalendarPermissions
+      operationId: user.calendar_ListCalendarPermission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11846,7 +11846,7 @@ paths:
       tags:
         - users.calendar
       summary: Create new navigation property to calendarPermissions for users
-      operationId: users.calendars.CreateCalendarPermissions
+      operationId: user.calendar_CreateCalendarPermission
       requestBody:
         description: New navigation property
         content:
@@ -11872,7 +11872,7 @@ paths:
         - users.calendar
       summary: Get calendarPermissions from users
       description: The permissions of the users with whom the calendar is shared.
-      operationId: users.calendars.GetCalendarPermissions
+      operationId: user.calendar_GetCalendarPermission
       parameters:
         - name: $select
           in: query
@@ -11910,7 +11910,7 @@ paths:
       tags:
         - users.calendar
       summary: Update the navigation property calendarPermissions in users
-      operationId: users.calendars.UpdateCalendarPermissions
+      operationId: user.calendar_UpdateCalendarPermission
       requestBody:
         description: New navigation property values
         content:
@@ -11934,7 +11934,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete navigation property calendarPermissions for users
-      operationId: users.calendars.DeleteCalendarPermissions
+      operationId: user.calendar_DeleteCalendarPermission
       parameters:
         - name: If-Match
           in: header
@@ -11955,7 +11955,7 @@ paths:
       tags:
         - users.calendar
       summary: Get the number of the resource
-      operationId: users.calendars.calendarPermissions.GetCount-a224
+      operationId: user.calendar.calendarPermission_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11972,7 +11972,7 @@ paths:
         - users.calendar
       summary: Get calendarView from users
       description: The calendar view for the calendar. Navigation property. Read-only.
-      operationId: users.calendars.ListCalendarView
+      operationId: user.calendar_ListCalendarView
       parameters:
         - name: startDateTime
           in: query
@@ -12045,7 +12045,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: users.user.calendars.calendar.calendarView.delta
+      operationId: user.calendar.calendarView_delta
       parameters:
         - name: startDateTime
           in: query
@@ -12128,7 +12128,7 @@ paths:
         - users.calendar
       summary: Get events from users
       description: The events in the calendar. Navigation property. Read-only.
-      operationId: users.calendars.ListEvents
+      operationId: user.calendar_ListEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12180,7 +12180,7 @@ paths:
       tags:
         - users.calendar
       summary: Create new navigation property to events for users
-      operationId: users.calendars.CreateEvents
+      operationId: user.calendar_CreateEvent
       requestBody:
         description: New navigation property
         content:
@@ -12206,7 +12206,7 @@ paths:
         - users.calendar
       summary: Get events from users
       description: The events in the calendar. Navigation property. Read-only.
-      operationId: users.calendars.GetEvents
+      operationId: user.calendar_GetEvent
       parameters:
         - name: $select
           in: query
@@ -12244,7 +12244,7 @@ paths:
       tags:
         - users.calendar
       summary: Update the navigation property events in users
-      operationId: users.calendars.UpdateEvents
+      operationId: user.calendar_UpdateEvent
       requestBody:
         description: New navigation property values
         content:
@@ -12268,7 +12268,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete navigation property events for users
-      operationId: users.calendars.DeleteEvents
+      operationId: user.calendar_DeleteEvent
       parameters:
         - name: If-Match
           in: header
@@ -12290,7 +12290,7 @@ paths:
         - users.calendar
       summary: Get attachments from users
       description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-      operationId: users.calendars.events.ListAttachments
+      operationId: user.calendar.event_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12342,7 +12342,7 @@ paths:
       tags:
         - users.calendar
       summary: Create new navigation property to attachments for users
-      operationId: users.calendars.events.CreateAttachments
+      operationId: user.calendar.event_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -12368,7 +12368,7 @@ paths:
         - users.calendar
       summary: Get attachments from users
       description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-      operationId: users.calendars.events.GetAttachments
+      operationId: user.calendar.event_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -12406,7 +12406,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete navigation property attachments for users
-      operationId: users.calendars.events.DeleteAttachments
+      operationId: user.calendar.event_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -12427,7 +12427,7 @@ paths:
       tags:
         - users.calendar
       summary: Get the number of the resource
-      operationId: users.calendars.events.attachments.GetCount-8147
+      operationId: user.calendar.event.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -12447,7 +12447,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta
-      operationId: users.user.calendars.calendar.events.event.attachments.createUploadSession
+      operationId: user.calendar.event.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -12479,7 +12479,7 @@ paths:
         - users.calendar
       summary: Get calendar from users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.calendars.events.GetCalendar
+      operationId: user.calendar.event_GetCalendar
       parameters:
         - name: $select
           in: query
@@ -12519,7 +12519,7 @@ paths:
         - users.calendar
       summary: Get extensions from users
       description: The collection of open extensions defined for the event. Nullable.
-      operationId: users.calendars.events.ListExtensions
+      operationId: user.calendar.event_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12571,7 +12571,7 @@ paths:
       tags:
         - users.calendar
       summary: Create new navigation property to extensions for users
-      operationId: users.calendars.events.CreateExtensions
+      operationId: user.calendar.event_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -12597,7 +12597,7 @@ paths:
         - users.calendar
       summary: Get extensions from users
       description: The collection of open extensions defined for the event. Nullable.
-      operationId: users.calendars.events.GetExtensions
+      operationId: user.calendar.event_GetExtension
       parameters:
         - name: $select
           in: query
@@ -12635,7 +12635,7 @@ paths:
       tags:
         - users.calendar
       summary: Update the navigation property extensions in users
-      operationId: users.calendars.events.UpdateExtensions
+      operationId: user.calendar.event_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -12659,7 +12659,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete navigation property extensions for users
-      operationId: users.calendars.events.DeleteExtensions
+      operationId: user.calendar.event_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -12680,7 +12680,7 @@ paths:
       tags:
         - users.calendar
       summary: Get the number of the resource
-      operationId: users.calendars.events.extensions.GetCount-b44d
+      operationId: user.calendar.event.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -12697,7 +12697,7 @@ paths:
         - users.calendar
       summary: Get instances from users
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
-      operationId: users.calendars.events.ListInstances
+      operationId: user.calendar.event_ListInstance
       parameters:
         - name: startDateTime
           in: query
@@ -12770,7 +12770,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: users.user.calendars.calendar.events.event.instances.delta
+      operationId: user.calendar.event.instance_delta
       parameters:
         - name: startDateTime
           in: query
@@ -12856,7 +12856,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-accept?view=graph-rest-beta
-      operationId: users.user.calendars.calendar.events.event.accept
+      operationId: user.calendar.event_accept
       requestBody:
         description: Action parameters
         content:
@@ -12889,7 +12889,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-beta
-      operationId: users.user.calendars.calendar.events.event.cancel
+      operationId: user.calendar.event_cancel
       requestBody:
         description: Action parameters
         content:
@@ -12918,7 +12918,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-decline?view=graph-rest-beta
-      operationId: users.user.calendars.calendar.events.event.decline
+      operationId: user.calendar.event_decline
       requestBody:
         description: Action parameters
         content:
@@ -12956,7 +12956,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta
-      operationId: users.user.calendars.calendar.events.event.dismissReminder
+      operationId: user.calendar.event_dismissReminder
       responses:
         '204':
           description: Success
@@ -12974,7 +12974,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-beta
-      operationId: users.user.calendars.calendar.events.event.forward
+      operationId: user.calendar.event_forward
       requestBody:
         description: Action parameters
         content:
@@ -13007,7 +13007,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-permanentdelete?view=graph-rest-beta
-      operationId: users.user.calendars.calendar.events.event.permanentDelete
+      operationId: user.calendar.event_permanentDelete
       responses:
         '204':
           description: Success
@@ -13025,7 +13025,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta
-      operationId: users.user.calendars.calendar.events.event.snoozeReminder
+      operationId: user.calendar.event_snoozeReminder
       requestBody:
         description: Action parameters
         content:
@@ -13053,7 +13053,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta
-      operationId: users.user.calendars.calendar.events.event.tentativelyAccept
+      operationId: user.calendar.event_tentativelyAccept
       requestBody:
         description: Action parameters
         content:
@@ -13087,7 +13087,7 @@ paths:
       tags:
         - users.calendar
       summary: Get the number of the resource
-      operationId: users.calendars.events.GetCount-efc7
+      operationId: user.calendar.event_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -13107,7 +13107,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: users.user.calendars.calendar.events.delta
+      operationId: user.calendar.event_delta
       parameters:
         - name: startDateTime
           in: query
@@ -13189,7 +13189,7 @@ paths:
       tags:
         - users.calendar
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.user.calendars.calendar.allowedCalendarSharingRoles
+      operationId: user.calendar_allowedCalendarSharingRole
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -13228,7 +13228,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-beta
-      operationId: users.user.calendars.calendar.getSchedule
+      operationId: user.calendar_getSchedule
       requestBody:
         description: Action parameters
         content:
@@ -13287,7 +13287,7 @@ paths:
         - users.calendar
       summary: Invoke action permanentDelete
       description: 'Permanently delete a calendar folder and the events that it contains and remove them from the mailbox. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.'
-      operationId: users.user.calendars.calendar.permanentDelete
+      operationId: user.calendar_permanentDelete
       responses:
         '204':
           description: Success
@@ -13301,7 +13301,7 @@ paths:
       tags:
         - users.calendar
       summary: Get the number of the resource
-      operationId: users.calendars.GetCount-a1b5
+      operationId: user.calendar_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -13317,11 +13317,11 @@ paths:
       tags:
         - users.calendar
       summary: Invoke function delta
-      description: 'Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.'
+      description: 'Get a set of calendar resources added, updated, or deleted in a user''s mailbox. Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-delta?view=graph-rest-beta
-      operationId: users.user.calendars.delta
+      operationId: user.calendar_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -13388,7 +13388,7 @@ paths:
         - users.event
       summary: Get calendarView from users
       description: The calendar view for the calendar. Read-only. Nullable.
-      operationId: users.ListCalendarView
+      operationId: user_ListCalendarView
       parameters:
         - name: startDateTime
           in: query
@@ -13461,7 +13461,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: users.user.calendarView.delta
+      operationId: user.calendarView_delta
       parameters:
         - name: startDateTime
           in: query
@@ -13544,7 +13544,7 @@ paths:
         - users.event
       summary: Get events from users
       description: The user's events. The default is to show events under the Default Calendar. Read-only. Nullable.
-      operationId: users.ListEvents
+      operationId: user_ListEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -13596,7 +13596,7 @@ paths:
       tags:
         - users.event
       summary: Create new navigation property to events for users
-      operationId: users.CreateEvents
+      operationId: user_CreateEvent
       requestBody:
         description: New navigation property
         content:
@@ -13622,7 +13622,7 @@ paths:
         - users.event
       summary: Get events from users
       description: The user's events. The default is to show events under the Default Calendar. Read-only. Nullable.
-      operationId: users.GetEvents
+      operationId: user_GetEvent
       parameters:
         - name: $select
           in: query
@@ -13660,7 +13660,7 @@ paths:
       tags:
         - users.event
       summary: Update the navigation property events in users
-      operationId: users.UpdateEvents
+      operationId: user_UpdateEvent
       requestBody:
         description: New navigation property values
         content:
@@ -13684,7 +13684,7 @@ paths:
       tags:
         - users.event
       summary: Delete navigation property events for users
-      operationId: users.DeleteEvents
+      operationId: user_DeleteEvent
       parameters:
         - name: If-Match
           in: header
@@ -13706,7 +13706,7 @@ paths:
         - users.event
       summary: Get attachments from users
       description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-      operationId: users.events.ListAttachments
+      operationId: user.event_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -13758,7 +13758,7 @@ paths:
       tags:
         - users.event
       summary: Create new navigation property to attachments for users
-      operationId: users.events.CreateAttachments
+      operationId: user.event_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -13784,7 +13784,7 @@ paths:
         - users.event
       summary: Get attachments from users
       description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
-      operationId: users.events.GetAttachments
+      operationId: user.event_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -13822,7 +13822,7 @@ paths:
       tags:
         - users.event
       summary: Delete navigation property attachments for users
-      operationId: users.events.DeleteAttachments
+      operationId: user.event_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -13843,7 +13843,7 @@ paths:
       tags:
         - users.event
       summary: Get the number of the resource
-      operationId: users.events.attachments.GetCount-711f
+      operationId: user.event.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -13863,7 +13863,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta
-      operationId: users.user.events.event.attachments.createUploadSession
+      operationId: user.event.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -13895,7 +13895,7 @@ paths:
         - users.event
       summary: Get calendar from users
       description: The calendar that contains the event. Navigation property. Read-only.
-      operationId: users.events.GetCalendar
+      operationId: user.event_GetCalendar
       parameters:
         - name: $select
           in: query
@@ -13935,7 +13935,7 @@ paths:
         - users.event
       summary: Get extensions from users
       description: The collection of open extensions defined for the event. Nullable.
-      operationId: users.events.ListExtensions
+      operationId: user.event_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -13987,7 +13987,7 @@ paths:
       tags:
         - users.event
       summary: Create new navigation property to extensions for users
-      operationId: users.events.CreateExtensions
+      operationId: user.event_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -14013,7 +14013,7 @@ paths:
         - users.event
       summary: Get extensions from users
       description: The collection of open extensions defined for the event. Nullable.
-      operationId: users.events.GetExtensions
+      operationId: user.event_GetExtension
       parameters:
         - name: $select
           in: query
@@ -14051,7 +14051,7 @@ paths:
       tags:
         - users.event
       summary: Update the navigation property extensions in users
-      operationId: users.events.UpdateExtensions
+      operationId: user.event_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -14075,7 +14075,7 @@ paths:
       tags:
         - users.event
       summary: Delete navigation property extensions for users
-      operationId: users.events.DeleteExtensions
+      operationId: user.event_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -14096,7 +14096,7 @@ paths:
       tags:
         - users.event
       summary: Get the number of the resource
-      operationId: users.events.extensions.GetCount-0041
+      operationId: user.event.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -14113,7 +14113,7 @@ paths:
         - users.event
       summary: Get instances from users
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn''t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.'
-      operationId: users.events.ListInstances
+      operationId: user.event_ListInstance
       parameters:
         - name: startDateTime
           in: query
@@ -14186,7 +14186,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: users.user.events.event.instances.delta
+      operationId: user.event.instance_delta
       parameters:
         - name: startDateTime
           in: query
@@ -14272,7 +14272,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-accept?view=graph-rest-beta
-      operationId: users.user.events.event.accept
+      operationId: user.event_accept
       requestBody:
         description: Action parameters
         content:
@@ -14305,7 +14305,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-cancel?view=graph-rest-beta
-      operationId: users.user.events.event.cancel
+      operationId: user.event_cancel
       requestBody:
         description: Action parameters
         content:
@@ -14334,7 +14334,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-decline?view=graph-rest-beta
-      operationId: users.user.events.event.decline
+      operationId: user.event_decline
       requestBody:
         description: Action parameters
         content:
@@ -14372,7 +14372,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-beta
-      operationId: users.user.events.event.dismissReminder
+      operationId: user.event_dismissReminder
       responses:
         '204':
           description: Success
@@ -14390,7 +14390,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-beta
-      operationId: users.user.events.event.forward
+      operationId: user.event_forward
       requestBody:
         description: Action parameters
         content:
@@ -14423,7 +14423,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-permanentdelete?view=graph-rest-beta
-      operationId: users.user.events.event.permanentDelete
+      operationId: user.event_permanentDelete
       responses:
         '204':
           description: Success
@@ -14441,7 +14441,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta
-      operationId: users.user.events.event.snoozeReminder
+      operationId: user.event_snoozeReminder
       requestBody:
         description: Action parameters
         content:
@@ -14469,7 +14469,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta
-      operationId: users.user.events.event.tentativelyAccept
+      operationId: user.event_tentativelyAccept
       requestBody:
         description: Action parameters
         content:
@@ -14503,7 +14503,7 @@ paths:
       tags:
         - users.event
       summary: Get the number of the resource
-      operationId: users.events.GetCount-d443
+      operationId: user.event_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -14523,7 +14523,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
-      operationId: users.user.events.delta
+      operationId: user.event_delta
       parameters:
         - name: startDateTime
           in: query
@@ -16144,6 +16144,7 @@ components:
           '#microsoft.graph.cloudPcServicePlan': '#/components/schemas/microsoft.graph.cloudPcServicePlan'
           '#microsoft.graph.cloudPcSnapshot': '#/components/schemas/microsoft.graph.cloudPcSnapshot'
           '#microsoft.graph.cloudPcSupportedRegion': '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+          '#microsoft.graph.cloudPcUserProfileSnapshot': '#/components/schemas/microsoft.graph.cloudPcUserProfileSnapshot'
           '#microsoft.graph.cloudPcUserSetting': '#/components/schemas/microsoft.graph.cloudPcUserSetting'
           '#microsoft.graph.cloudPcUserSettingAssignment': '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
           '#microsoft.graph.cloudPCUserSettingsPersistenceDetail': '#/components/schemas/microsoft.graph.cloudPCUserSettingsPersistenceDetail'
@@ -16223,6 +16224,9 @@ components:
           '#microsoft.graph.copilotSetting': '#/components/schemas/microsoft.graph.copilotSetting'
           '#microsoft.graph.correlatedIdentity': '#/components/schemas/microsoft.graph.correlatedIdentity'
           '#microsoft.graph.corsConfiguration_v2': '#/components/schemas/microsoft.graph.corsConfiguration_v2'
+          '#microsoft.graph.costManagementAlertSetting': '#/components/schemas/microsoft.graph.costManagementAlertSetting'
+          '#microsoft.graph.costManagementRoot': '#/components/schemas/microsoft.graph.costManagementRoot'
+          '#microsoft.graph.costManagementUserBalance': '#/components/schemas/microsoft.graph.costManagementUserBalance'
           '#microsoft.graph.credentialUsageSummary': '#/components/schemas/microsoft.graph.credentialUsageSummary'
           '#microsoft.graph.credentialUserRegistrationCount': '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
           '#microsoft.graph.credentialUserRegistrationDetails': '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
@@ -16551,6 +16555,7 @@ components:
           '#microsoft.graph.deviceShellScript': '#/components/schemas/microsoft.graph.deviceShellScript'
           '#microsoft.graph.directory': '#/components/schemas/microsoft.graph.directory'
           '#microsoft.graph.directoryAudit': '#/components/schemas/microsoft.graph.directoryAudit'
+          '#microsoft.graph.appManagementAudit': '#/components/schemas/microsoft.graph.appManagementAudit'
           '#microsoft.graph.directoryDefinition': '#/components/schemas/microsoft.graph.directoryDefinition'
           '#microsoft.graph.directoryObject': '#/components/schemas/microsoft.graph.directoryObject'
           '#microsoft.graph.administrativeUnit': '#/components/schemas/microsoft.graph.administrativeUnit'
@@ -16609,6 +16614,7 @@ components:
           '#microsoft.graph.user': '#/components/schemas/microsoft.graph.user'
           '#microsoft.graph.agentUser': '#/components/schemas/microsoft.graph.agentUser'
           '#microsoft.graph.directoryRoleAccessReviewPolicy': '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
+          '#microsoft.graph.directoryRoleManagementDeletedItemContainer': '#/components/schemas/microsoft.graph.directoryRoleManagementDeletedItemContainer'
           '#microsoft.graph.directorySetting': '#/components/schemas/microsoft.graph.directorySetting'
           '#microsoft.graph.distributionListMember': '#/components/schemas/microsoft.graph.distributionListMember'
           '#microsoft.graph.document': '#/components/schemas/microsoft.graph.document'
@@ -17196,9 +17202,22 @@ components:
           '#microsoft.graph.placeOperation': '#/components/schemas/microsoft.graph.placeOperation'
           '#microsoft.graph.planner': '#/components/schemas/microsoft.graph.planner'
           '#microsoft.graph.plannerDelta': '#/components/schemas/microsoft.graph.plannerDelta'
+          '#microsoft.graph.bucket': '#/components/schemas/microsoft.graph.bucket'
+          '#microsoft.graph.categoryDefinition': '#/components/schemas/microsoft.graph.categoryDefinition'
+          '#microsoft.graph.checklistItemV4': '#/components/schemas/microsoft.graph.checklistItemV4'
+          '#microsoft.graph.contentLink': '#/components/schemas/microsoft.graph.contentLink'
+          '#microsoft.graph.customChoiceOption': '#/components/schemas/microsoft.graph.customChoiceOption'
+          '#microsoft.graph.customFieldDefinition': '#/components/schemas/microsoft.graph.customFieldDefinition'
+          '#microsoft.graph.customFieldValue': '#/components/schemas/microsoft.graph.customFieldValue'
+          '#microsoft.graph.dependency': '#/components/schemas/microsoft.graph.dependency'
+          '#microsoft.graph.goal': '#/components/schemas/microsoft.graph.goal'
+          '#microsoft.graph.historyItem': '#/components/schemas/microsoft.graph.historyItem'
+          '#microsoft.graph.plan': '#/components/schemas/microsoft.graph.plan'
+          '#microsoft.graph.planContextLink': '#/components/schemas/microsoft.graph.planContextLink'
           '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
           '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
           '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+          '#microsoft.graph.plannerChatMessage': '#/components/schemas/microsoft.graph.plannerChatMessage'
           '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
           '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
           '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
@@ -17209,6 +17228,8 @@ components:
           '#microsoft.graph.businessScenarioTask': '#/components/schemas/microsoft.graph.businessScenarioTask'
           '#microsoft.graph.plannerTaskDetails': '#/components/schemas/microsoft.graph.plannerTaskDetails'
           '#microsoft.graph.plannerUser': '#/components/schemas/microsoft.graph.plannerUser'
+          '#microsoft.graph.task': '#/components/schemas/microsoft.graph.task'
+          '#microsoft.graph.userAssignment': '#/components/schemas/microsoft.graph.userAssignment'
           '#microsoft.graph.plannerGroup': '#/components/schemas/microsoft.graph.plannerGroup'
           '#microsoft.graph.plannerPlanConfiguration': '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
           '#microsoft.graph.plannerPlanConfigurationLocalization': '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
@@ -17285,6 +17306,7 @@ components:
           '#microsoft.graph.programControlType': '#/components/schemas/microsoft.graph.programControlType'
           '#microsoft.graph.pronounsSettings': '#/components/schemas/microsoft.graph.pronounsSettings'
           '#microsoft.graph.protectionPolicyBase': '#/components/schemas/microsoft.graph.protectionPolicyBase'
+          '#microsoft.graph.entraProtectionPolicy': '#/components/schemas/microsoft.graph.entraProtectionPolicy'
           '#microsoft.graph.exchangeProtectionPolicy': '#/components/schemas/microsoft.graph.exchangeProtectionPolicy'
           '#microsoft.graph.oneDriveForBusinessProtectionPolicy': '#/components/schemas/microsoft.graph.oneDriveForBusinessProtectionPolicy'
           '#microsoft.graph.sharePointProtectionPolicy': '#/components/schemas/microsoft.graph.sharePointProtectionPolicy'
@@ -17442,6 +17464,9 @@ components:
           '#microsoft.graph.singleValueLegacyExtendedProperty': '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
           '#microsoft.graph.softwareUpdateStatusSummary': '#/components/schemas/microsoft.graph.softwareUpdateStatusSummary'
           '#microsoft.graph.speakerAssignmentSubmission': '#/components/schemas/microsoft.graph.speakerAssignmentSubmission'
+          '#microsoft.graph.spendingPolicy': '#/components/schemas/microsoft.graph.spendingPolicy'
+          '#microsoft.graph.allUsersSpendingPolicy': '#/components/schemas/microsoft.graph.allUsersSpendingPolicy'
+          '#microsoft.graph.selectedGroupsSpendingPolicy': '#/components/schemas/microsoft.graph.selectedGroupsSpendingPolicy'
           '#microsoft.graph.storageQuotaBreakdown': '#/components/schemas/microsoft.graph.storageQuotaBreakdown'
           '#microsoft.graph.serviceStorageQuotaBreakdown': '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
           '#microsoft.graph.storageSettings': '#/components/schemas/microsoft.graph.storageSettings'
@@ -17481,6 +17506,7 @@ components:
           '#microsoft.graph.teamTemplateDefinition': '#/components/schemas/microsoft.graph.teamTemplateDefinition'
           '#microsoft.graph.teamwork': '#/components/schemas/microsoft.graph.teamwork'
           '#microsoft.graph.teamworkBot': '#/components/schemas/microsoft.graph.teamworkBot'
+          '#microsoft.graph.teamworkCustomEmoji': '#/components/schemas/microsoft.graph.teamworkCustomEmoji'
           '#microsoft.graph.teamworkDevice': '#/components/schemas/microsoft.graph.teamworkDevice'
           '#microsoft.graph.teamworkDeviceActivity': '#/components/schemas/microsoft.graph.teamworkDeviceActivity'
           '#microsoft.graph.teamworkDeviceConfiguration': '#/components/schemas/microsoft.graph.teamworkDeviceConfiguration'
@@ -17816,8 +17842,26 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
+          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
+          '#microsoft.graph.identityGovernance.userIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.userIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
+          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.guestLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.guestLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyReport'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+          '#microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule': '#/components/schemas/microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule'
+          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+          '#microsoft.graph.identityGovernance.invitationRedemptionRule': '#/components/schemas/microsoft.graph.identityGovernance.invitationRedemptionRule'
+          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
+          '#microsoft.graph.identityGovernance.lifecyclePolicySubjectReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectReport'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -17947,7 +17991,9 @@ components:
           '#microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement'
           '#microsoft.graph.partner.security.responseTimeSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.responseTimeSecurityRequirement'
           '#microsoft.graph.partner.security.securityScoreHistory': '#/components/schemas/microsoft.graph.partner.security.securityScoreHistory'
+          '#microsoft.graph.partners.billing.azureAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.azureAggregatedUsage'
           '#microsoft.graph.partners.billing.azureUsage': '#/components/schemas/microsoft.graph.partners.billing.azureUsage'
+          '#microsoft.graph.partners.billing.billedAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedAggregatedUsage'
           '#microsoft.graph.partners.billing.billedReconciliation': '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
           '#microsoft.graph.partners.billing.billedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedUsage'
           '#microsoft.graph.partners.billing.billing': '#/components/schemas/microsoft.graph.partners.billing.billing'
@@ -18081,6 +18127,7 @@ components:
           '#microsoft.graph.security.whoisBaseRecord': '#/components/schemas/microsoft.graph.security.whoisBaseRecord'
           '#microsoft.graph.security.whoisHistoryRecord': '#/components/schemas/microsoft.graph.security.whoisHistoryRecord'
           '#microsoft.graph.security.whoisRecord': '#/components/schemas/microsoft.graph.security.whoisRecord'
+          '#microsoft.graph.security.workbook': '#/components/schemas/microsoft.graph.security.workbook'
           '#microsoft.graph.security.zone': '#/components/schemas/microsoft.graph.security.zone'
           '#microsoft.graph.security.caseManagement.caseManagementEntity': '#/components/schemas/microsoft.graph.security.caseManagement.caseManagementEntity'
           '#microsoft.graph.security.caseManagement.activity': '#/components/schemas/microsoft.graph.security.caseManagement.activity'
@@ -19300,6 +19347,7 @@ components:
           '#microsoft.graph.wafAllowedHeadersDictionary': '#/components/schemas/microsoft.graph.wafAllowedHeadersDictionary'
           '#microsoft.graph.networkaccess.extendedProperties': '#/components/schemas/microsoft.graph.networkaccess.extendedProperties'
           '#microsoft.graph.partner.security.additionalDataDictionary': '#/components/schemas/microsoft.graph.partner.security.additionalDataDictionary'
+          '#microsoft.graph.security.workbookContent': '#/components/schemas/microsoft.graph.security.workbookContent'
     ReferenceNumeric:
       enum:
         - '-INF'

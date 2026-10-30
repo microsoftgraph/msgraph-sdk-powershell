@@ -11,7 +11,7 @@ paths:
       tags:
         - print.print
       summary: Get print
-      operationId: print.print.GetPrint
+      operationId: print_GetPrint
       parameters:
         - name: $select
           in: query
@@ -49,7 +49,7 @@ paths:
       tags:
         - print.print
       summary: Update print
-      operationId: print.print.UpdatePrint
+      operationId: print_UpdatePrint
       requestBody:
         description: New property values
         content:
@@ -78,7 +78,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-list-connectors?view=graph-rest-1.0
-      operationId: print.ListConnectors
+      operationId: print_ListConnector
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -130,7 +130,7 @@ paths:
       tags:
         - print.printConnector
       summary: Create new navigation property to connectors for print
-      operationId: print.CreateConnectors
+      operationId: print_CreateConnector
       requestBody:
         description: New navigation property
         content:
@@ -159,7 +159,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printconnector-get?view=graph-rest-1.0
-      operationId: print.GetConnectors
+      operationId: print_GetConnector
       parameters:
         - name: $select
           in: query
@@ -201,7 +201,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printconnector-update?view=graph-rest-1.0
-      operationId: print.UpdateConnectors
+      operationId: print_UpdateConnector
       requestBody:
         description: New navigation property values
         content:
@@ -229,7 +229,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printconnector-delete?view=graph-rest-1.0
-      operationId: print.DeleteConnectors
+      operationId: print_DeleteConnector
       parameters:
         - name: If-Match
           in: header
@@ -250,7 +250,7 @@ paths:
       tags:
         - print.printConnector
       summary: Get the number of the resource
-      operationId: print.connectors.GetCount-1d73
+      operationId: print.connector_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -267,7 +267,7 @@ paths:
         - print.printOperation
       summary: Get printOperation
       description: Retrieve the properties and relationships of a printOperation object.
-      operationId: print.ListOperations
+      operationId: print_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -319,7 +319,7 @@ paths:
       tags:
         - print.printOperation
       summary: Create new navigation property to operations for print
-      operationId: print.CreateOperations
+      operationId: print_CreateOperation
       requestBody:
         description: New navigation property
         content:
@@ -348,7 +348,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printoperation-get?view=graph-rest-1.0
-      operationId: print.GetOperations
+      operationId: print_GetOperation
       parameters:
         - name: $select
           in: query
@@ -386,7 +386,7 @@ paths:
       tags:
         - print.printOperation
       summary: Update the navigation property operations in print
-      operationId: print.UpdateOperations
+      operationId: print_UpdateOperation
       requestBody:
         description: New navigation property values
         content:
@@ -410,7 +410,7 @@ paths:
       tags:
         - print.printOperation
       summary: Delete navigation property operations for print
-      operationId: print.DeleteOperations
+      operationId: print_DeleteOperation
       parameters:
         - name: If-Match
           in: header
@@ -431,7 +431,7 @@ paths:
       tags:
         - print.printOperation
       summary: Get the number of the resource
-      operationId: print.operations.GetCount-8242
+      operationId: print.operation_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -451,7 +451,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-list-printers?view=graph-rest-1.0
-      operationId: print.ListPrinters
+      operationId: print_ListPrinter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -503,7 +503,7 @@ paths:
       tags:
         - print.printer
       summary: Create new navigation property to printers for print
-      operationId: print.CreatePrinters
+      operationId: print_CreatePrinter
       requestBody:
         description: New navigation property
         content:
@@ -532,7 +532,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-get?view=graph-rest-1.0
-      operationId: print.GetPrinters
+      operationId: print_GetPrinter
       parameters:
         - name: $select
           in: query
@@ -574,7 +574,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-update?view=graph-rest-1.0
-      operationId: print.UpdatePrinters
+      operationId: print_UpdatePrinter
       requestBody:
         description: New navigation property values
         content:
@@ -602,7 +602,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-delete?view=graph-rest-1.0
-      operationId: print.DeletePrinters
+      operationId: print_DeletePrinter
       parameters:
         - name: If-Match
           in: header
@@ -627,7 +627,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-list-connectors?view=graph-rest-1.0
-      operationId: print.printers.ListConnectors
+      operationId: print.printer_ListConnector
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -681,7 +681,7 @@ paths:
         - print.printer
       summary: Get connectors from print
       description: The connectors that are associated with the printer.
-      operationId: print.printers.GetConnectors
+      operationId: print.printer_GetConnector
       parameters:
         - name: $select
           in: query
@@ -720,7 +720,7 @@ paths:
       tags:
         - print.printer
       summary: Get the number of the resource
-      operationId: print.printers.connectors.GetCount-68ae
+      operationId: print.printer.connector_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -740,7 +740,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-list-jobs?view=graph-rest-1.0
-      operationId: print.printers.ListJobs
+      operationId: print.printer_ListJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -796,7 +796,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-post-jobs?view=graph-rest-1.0
-      operationId: print.printers.CreateJobs
+      operationId: print.printer_CreateJob
       requestBody:
         description: New navigation property
         content:
@@ -825,7 +825,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-get?view=graph-rest-1.0
-      operationId: print.printers.GetJobs
+      operationId: print.printer_GetJob
       parameters:
         - name: $select
           in: query
@@ -867,7 +867,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-update?view=graph-rest-1.0
-      operationId: print.printers.UpdateJobs
+      operationId: print.printer_UpdateJob
       requestBody:
         description: New navigation property values
         content:
@@ -891,7 +891,7 @@ paths:
       tags:
         - print.printer
       summary: Delete navigation property jobs for print
-      operationId: print.printers.DeleteJobs
+      operationId: print.printer_DeleteJob
       parameters:
         - name: If-Match
           in: header
@@ -916,7 +916,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printdocument-get-file?view=graph-rest-1.0
-      operationId: print.printers.jobs.ListDocuments
+      operationId: print.printer.job_ListDocument
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -968,7 +968,7 @@ paths:
       tags:
         - print.printer
       summary: Create new navigation property to documents for print
-      operationId: print.printers.jobs.CreateDocuments
+      operationId: print.printer.job_CreateDocument
       requestBody:
         description: New navigation property
         content:
@@ -993,7 +993,7 @@ paths:
       tags:
         - print.printer
       summary: Get documents from print
-      operationId: print.printers.jobs.GetDocuments
+      operationId: print.printer.job_GetDocument
       parameters:
         - name: $select
           in: query
@@ -1031,7 +1031,7 @@ paths:
       tags:
         - print.printer
       summary: Update the navigation property documents in print
-      operationId: print.printers.jobs.UpdateDocuments
+      operationId: print.printer.job_UpdateDocument
       requestBody:
         description: New navigation property values
         content:
@@ -1055,7 +1055,7 @@ paths:
       tags:
         - print.printer
       summary: Delete navigation property documents for print
-      operationId: print.printers.jobs.DeleteDocuments
+      operationId: print.printer.job_DeleteDocument
       parameters:
         - name: If-Match
           in: header
@@ -1080,7 +1080,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printdocument-get-file?view=graph-rest-1.0
-      operationId: print.printers.jobs.GetDocumentsContent
+      operationId: print.printer.job_GetDocumentsContent
       responses:
         2XX:
           description: Retrieved media content
@@ -1098,7 +1098,7 @@ paths:
         - print.printer
       summary: Update media content for the navigation property documents in print
       description: The unique identifier for an entity. Read-only.
-      operationId: print.printers.jobs.UpdateDocumentsContent
+      operationId: print.printer.job_SetDocumentsContent
       requestBody:
         description: New media content.
         content:
@@ -1119,7 +1119,7 @@ paths:
         - print.printer
       summary: Delete media content for the navigation property documents in print
       description: The unique identifier for an entity. Read-only.
-      operationId: print.printers.jobs.DeleteDocumentsContent
+      operationId: print.printer.job_DeleteDocumentsContent
       parameters:
         - name: If-Match
           in: header
@@ -1143,7 +1143,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
-      operationId: print.printers.printer.jobs.printJob.documents.printDocument.createUploadSession
+      operationId: print.printer.job.printJob.document.printDocument_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -1174,7 +1174,7 @@ paths:
       tags:
         - print.printer
       summary: Get the number of the resource
-      operationId: print.printers.jobs.documents.GetCount-db03
+      operationId: print.printer.job.document_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1194,7 +1194,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-abort?view=graph-rest-1.0
-      operationId: print.printers.printer.jobs.printJob.abort
+      operationId: print.printer.job.printJob_abort
       requestBody:
         description: Action parameters
         content:
@@ -1223,7 +1223,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
-      operationId: print.printers.printer.jobs.printJob.cancel
+      operationId: print.printer.job.printJob_cancel
       responses:
         '204':
           description: Success
@@ -1241,7 +1241,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-redirect?view=graph-rest-1.0
-      operationId: print.printers.printer.jobs.printJob.redirect
+      operationId: print.printer.job.printJob_redirect
       requestBody:
         description: Action parameters
         content:
@@ -1281,7 +1281,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0
-      operationId: print.printers.printer.jobs.printJob.start
+      operationId: print.printer.job.printJob_start
       responses:
         2XX:
           description: Success
@@ -1303,7 +1303,7 @@ paths:
         - print.printer
       summary: Get tasks from print
       description: A list of printTasks that were triggered by this print job.
-      operationId: print.printers.jobs.ListTasks
+      operationId: print.printer.job_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1355,7 +1355,7 @@ paths:
       tags:
         - print.printer
       summary: Create new navigation property to tasks for print
-      operationId: print.printers.jobs.CreateTasks
+      operationId: print.printer.job_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -1381,7 +1381,7 @@ paths:
         - print.printer
       summary: Get tasks from print
       description: A list of printTasks that were triggered by this print job.
-      operationId: print.printers.jobs.GetTasks
+      operationId: print.printer.job_GetTask
       parameters:
         - name: $select
           in: query
@@ -1419,7 +1419,7 @@ paths:
       tags:
         - print.printer
       summary: Update the navigation property tasks in print
-      operationId: print.printers.jobs.UpdateTasks
+      operationId: print.printer.job_UpdateTask
       requestBody:
         description: New navigation property values
         content:
@@ -1443,7 +1443,7 @@ paths:
       tags:
         - print.printer
       summary: Delete navigation property tasks for print
-      operationId: print.printers.jobs.DeleteTasks
+      operationId: print.printer.job_DeleteTask
       parameters:
         - name: If-Match
           in: header
@@ -1465,7 +1465,7 @@ paths:
         - print.printer
       summary: Get definition from print
       description: The printTaskDefinition that was used to create this task. Read-only.
-      operationId: print.printers.jobs.tasks.GetDefinition
+      operationId: print.printer.job.task_GetDefinition
       parameters:
         - name: $select
           in: query
@@ -1505,7 +1505,7 @@ paths:
         - print.printer
       summary: Get trigger from print
       description: The printTaskTrigger that triggered this task's execution. Read-only.
-      operationId: print.printers.jobs.tasks.GetTrigger
+      operationId: print.printer.job.task_GetTrigger
       parameters:
         - name: $select
           in: query
@@ -1544,7 +1544,7 @@ paths:
       tags:
         - print.printer
       summary: Get the number of the resource
-      operationId: print.printers.jobs.tasks.GetCount-7f2e
+      operationId: print.printer.job.task_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1560,7 +1560,7 @@ paths:
       tags:
         - print.printer
       summary: Get the number of the resource
-      operationId: print.printers.jobs.GetCount-86c3
+      operationId: print.printer.job_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1580,7 +1580,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-restorefactorydefaults?view=graph-rest-1.0
-      operationId: print.printers.printer.restoreFactoryDefaults
+      operationId: print.printer_restoreFactoryDefault
       responses:
         '204':
           description: Success
@@ -1598,7 +1598,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-list-shares?view=graph-rest-1.0
-      operationId: print.printers.ListShares
+      operationId: print.printer_ListShare
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1652,7 +1652,7 @@ paths:
         - print.printer
       summary: Get shares from print
       description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
-      operationId: print.printers.GetShares
+      operationId: print.printer_GetShare
       parameters:
         - name: $select
           in: query
@@ -1691,7 +1691,7 @@ paths:
       tags:
         - print.printer
       summary: Get the number of the resource
-      operationId: print.printers.shares.GetCount-5f30
+      operationId: print.printer.share_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1711,7 +1711,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-list-tasktriggers?view=graph-rest-1.0
-      operationId: print.printers.ListTaskTriggers
+      operationId: print.printer_ListTaskTrigger
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1767,7 +1767,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-post-tasktriggers?view=graph-rest-1.0
-      operationId: print.printers.CreateTaskTriggers
+      operationId: print.printer_CreateTaskTrigger
       requestBody:
         description: New navigation property
         content:
@@ -1796,7 +1796,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printtasktrigger-get?view=graph-rest-1.0
-      operationId: print.printers.GetTaskTriggers
+      operationId: print.printer_GetTaskTrigger
       parameters:
         - name: $select
           in: query
@@ -1834,7 +1834,7 @@ paths:
       tags:
         - print.printer
       summary: Update the navigation property taskTriggers in print
-      operationId: print.printers.UpdateTaskTriggers
+      operationId: print.printer_UpdateTaskTrigger
       requestBody:
         description: New navigation property values
         content:
@@ -1862,7 +1862,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-delete-tasktrigger?view=graph-rest-1.0
-      operationId: print.printers.DeleteTaskTriggers
+      operationId: print.printer_DeleteTaskTrigger
       parameters:
         - name: If-Match
           in: header
@@ -1884,7 +1884,7 @@ paths:
         - print.printer
       summary: Get definition from print
       description: An abstract definition that is used to create a printTask when triggered by a print event. Read-only.
-      operationId: print.printers.taskTriggers.GetDefinition
+      operationId: print.printer.taskTrigger_GetDefinition
       parameters:
         - name: $select
           in: query
@@ -1923,7 +1923,7 @@ paths:
       tags:
         - print.printer
       summary: Get the number of the resource
-      operationId: print.printers.taskTriggers.GetCount-f066
+      operationId: print.printer.taskTrigger_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1939,7 +1939,7 @@ paths:
       tags:
         - print.printer
       summary: Get the number of the resource
-      operationId: print.printers.GetCount-c43f
+      operationId: print.printer_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1959,7 +1959,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-create?view=graph-rest-1.0
-      operationId: print.printers.create
+      operationId: print.printer_create
       requestBody:
         description: Action parameters
         content:
@@ -2003,7 +2003,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-list-services?view=graph-rest-1.0
-      operationId: print.ListServices
+      operationId: print_ListService
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2055,7 +2055,7 @@ paths:
       tags:
         - print.printService
       summary: Create new navigation property to services for print
-      operationId: print.CreateServices
+      operationId: print_CreateService
       requestBody:
         description: New navigation property
         content:
@@ -2084,7 +2084,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printservice-get?view=graph-rest-1.0
-      operationId: print.GetServices
+      operationId: print_GetService
       parameters:
         - name: $select
           in: query
@@ -2122,7 +2122,7 @@ paths:
       tags:
         - print.printService
       summary: Update the navigation property services in print
-      operationId: print.UpdateServices
+      operationId: print_UpdateService
       requestBody:
         description: New navigation property values
         content:
@@ -2146,7 +2146,7 @@ paths:
       tags:
         - print.printService
       summary: Delete navigation property services for print
-      operationId: print.DeleteServices
+      operationId: print_DeleteService
       parameters:
         - name: If-Match
           in: header
@@ -2171,7 +2171,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printservice-list-endpoints?view=graph-rest-1.0
-      operationId: print.services.ListEndpoints
+      operationId: print.service_ListEndpoint
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2223,7 +2223,7 @@ paths:
       tags:
         - print.printService
       summary: Create new navigation property to endpoints for print
-      operationId: print.services.CreateEndpoints
+      operationId: print.service_CreateEndpoint
       requestBody:
         description: New navigation property
         content:
@@ -2252,7 +2252,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printserviceendpoint-get?view=graph-rest-1.0
-      operationId: print.services.GetEndpoints
+      operationId: print.service_GetEndpoint
       parameters:
         - name: $select
           in: query
@@ -2290,7 +2290,7 @@ paths:
       tags:
         - print.printService
       summary: Update the navigation property endpoints in print
-      operationId: print.services.UpdateEndpoints
+      operationId: print.service_UpdateEndpoint
       requestBody:
         description: New navigation property values
         content:
@@ -2314,7 +2314,7 @@ paths:
       tags:
         - print.printService
       summary: Delete navigation property endpoints for print
-      operationId: print.services.DeleteEndpoints
+      operationId: print.service_DeleteEndpoint
       parameters:
         - name: If-Match
           in: header
@@ -2335,7 +2335,7 @@ paths:
       tags:
         - print.printService
       summary: Get the number of the resource
-      operationId: print.services.endpoints.GetCount-805a
+      operationId: print.service.endpoint_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2351,7 +2351,7 @@ paths:
       tags:
         - print.printService
       summary: Get the number of the resource
-      operationId: print.services.GetCount-719b
+      operationId: print.service_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2371,7 +2371,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-list-shares?view=graph-rest-1.0
-      operationId: print.ListShares
+      operationId: print_ListShare
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2427,7 +2427,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-post-shares?view=graph-rest-1.0
-      operationId: print.CreateShares
+      operationId: print_CreateShare
       requestBody:
         description: New navigation property
         content:
@@ -2456,7 +2456,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-get?view=graph-rest-1.0
-      operationId: print.GetShares
+      operationId: print_GetShare
       parameters:
         - name: $select
           in: query
@@ -2498,7 +2498,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-update?view=graph-rest-1.0
-      operationId: print.UpdateShares
+      operationId: print_UpdateShare
       requestBody:
         description: New navigation property values
         content:
@@ -2526,7 +2526,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-delete?view=graph-rest-1.0
-      operationId: print.DeleteShares
+      operationId: print_DeleteShare
       parameters:
         - name: If-Match
           in: header
@@ -2551,7 +2551,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
-      operationId: print.shares.ListAllowedGroups
+      operationId: print.share_ListAllowedGroup
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2608,7 +2608,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
-      operationId: print.shares.allowedGroups.DeleteRefGroup
+      operationId: print.share.allowedGroup_DeleteGroupGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -2630,7 +2630,7 @@ paths:
         - print.printerShare
       summary: Get serviceProvisioningErrors property value
       description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a group object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
-      operationId: print.shares.allowedGroups.ListServiceProvisioningErrors
+      operationId: print.share.allowedGroup_ListServiceProvisioningError
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2682,7 +2682,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get the number of the resource
-      operationId: print.shares.allowedGroups.ServiceProvisioningErrors.GetCount-182d
+      operationId: print.share.allowedGroup.ServiceProvisioningError_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2698,7 +2698,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get the number of the resource
-      operationId: print.shares.allowedGroups.GetCount-9181
+      operationId: print.share.allowedGroup_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2718,7 +2718,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
-      operationId: print.shares.ListRefAllowedGroups
+      operationId: print.share_ListAllowedGroupGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2754,7 +2754,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-post-allowedgroups?view=graph-rest-1.0
-      operationId: print.shares.CreateRefAllowedGroups
+      operationId: print.share_CreateAllowedGroupGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -2773,7 +2773,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
-      operationId: print.shares.DeleteRefAllowedGroups
+      operationId: print.share_DeleteAllowedGroupGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -2806,7 +2806,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
-      operationId: print.shares.ListAllowedUsers
+      operationId: print.share_ListAllowedUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2863,7 +2863,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
-      operationId: print.shares.allowedUsers.DeleteRefUser
+      operationId: print.share.allowedUser_DeleteUserGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -2885,7 +2885,7 @@ paths:
         - print.printerShare
       summary: Get mailboxSettings property value
       description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Requires $select to retrieve.'
-      operationId: print.shares.allowedUsers.GetMailboxSettings
+      operationId: print.share.allowedUser_GetMailboxSetting
       parameters:
         - name: $select
           in: query
@@ -2922,7 +2922,7 @@ paths:
       tags:
         - print.printerShare
       summary: Update property mailboxSettings value.
-      operationId: print.shares.allowedUsers.UpdateMailboxSettings
+      operationId: print.share.allowedUser_UpdateMailboxSetting
       requestBody:
         description: New property values
         content:
@@ -2947,7 +2947,7 @@ paths:
         - print.printerShare
       summary: Get serviceProvisioningErrors property value
       description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
-      operationId: print.shares.allowedUsers.ListServiceProvisioningErrors
+      operationId: print.share.allowedUser_ListServiceProvisioningError
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2999,7 +2999,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get the number of the resource
-      operationId: print.shares.allowedUsers.ServiceProvisioningErrors.GetCount-1213
+      operationId: print.share.allowedUser.ServiceProvisioningError_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3015,7 +3015,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get the number of the resource
-      operationId: print.shares.allowedUsers.GetCount-ee00
+      operationId: print.share.allowedUser_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3035,7 +3035,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
-      operationId: print.shares.ListRefAllowedUsers
+      operationId: print.share_ListAllowedUserGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3071,7 +3071,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-post-allowedusers?view=graph-rest-1.0
-      operationId: print.shares.CreateRefAllowedUsers
+      operationId: print.share_CreateAllowedUserGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -3090,7 +3090,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
-      operationId: print.shares.DeleteRefAllowedUsers
+      operationId: print.share_DeleteAllowedUserGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -3123,7 +3123,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-list-jobs?view=graph-rest-1.0
-      operationId: print.shares.ListJobs
+      operationId: print.share_ListJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3179,7 +3179,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-post-jobs?view=graph-rest-1.0
-      operationId: print.shares.CreateJobs
+      operationId: print.share_CreateJob
       requestBody:
         description: New navigation property
         content:
@@ -3205,7 +3205,7 @@ paths:
         - print.printerShare
       summary: Get jobs from print
       description: The list of jobs that are queued for printing by the printer/printerShare.
-      operationId: print.shares.GetJobs
+      operationId: print.share_GetJob
       parameters:
         - name: $select
           in: query
@@ -3243,7 +3243,7 @@ paths:
       tags:
         - print.printerShare
       summary: Update the navigation property jobs in print
-      operationId: print.shares.UpdateJobs
+      operationId: print.share_UpdateJob
       requestBody:
         description: New navigation property values
         content:
@@ -3267,7 +3267,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete navigation property jobs for print
-      operationId: print.shares.DeleteJobs
+      operationId: print.share_DeleteJob
       parameters:
         - name: If-Match
           in: header
@@ -3288,7 +3288,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get documents from print
-      operationId: print.shares.jobs.ListDocuments
+      operationId: print.share.job_ListDocument
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3340,7 +3340,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property to documents for print
-      operationId: print.shares.jobs.CreateDocuments
+      operationId: print.share.job_CreateDocument
       requestBody:
         description: New navigation property
         content:
@@ -3365,7 +3365,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get documents from print
-      operationId: print.shares.jobs.GetDocuments
+      operationId: print.share.job_GetDocument
       parameters:
         - name: $select
           in: query
@@ -3403,7 +3403,7 @@ paths:
       tags:
         - print.printerShare
       summary: Update the navigation property documents in print
-      operationId: print.shares.jobs.UpdateDocuments
+      operationId: print.share.job_UpdateDocument
       requestBody:
         description: New navigation property values
         content:
@@ -3427,7 +3427,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete navigation property documents for print
-      operationId: print.shares.jobs.DeleteDocuments
+      operationId: print.share.job_DeleteDocument
       parameters:
         - name: If-Match
           in: header
@@ -3449,7 +3449,7 @@ paths:
         - print.printerShare
       summary: Get media content for the navigation property documents from print
       description: The unique identifier for an entity. Read-only.
-      operationId: print.shares.jobs.GetDocumentsContent
+      operationId: print.share.job_GetDocumentsContent
       responses:
         2XX:
           description: Retrieved media content
@@ -3467,7 +3467,7 @@ paths:
         - print.printerShare
       summary: Update media content for the navigation property documents in print
       description: The unique identifier for an entity. Read-only.
-      operationId: print.shares.jobs.UpdateDocumentsContent
+      operationId: print.share.job_SetDocumentsContent
       requestBody:
         description: New media content.
         content:
@@ -3488,7 +3488,7 @@ paths:
         - print.printerShare
       summary: Delete media content for the navigation property documents in print
       description: The unique identifier for an entity. Read-only.
-      operationId: print.shares.jobs.DeleteDocumentsContent
+      operationId: print.share.job_DeleteDocumentsContent
       parameters:
         - name: If-Match
           in: header
@@ -3512,7 +3512,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
-      operationId: print.shares.printerShare.jobs.printJob.documents.printDocument.createUploadSession
+      operationId: print.share.printerShare.job.printJob.document.printDocument_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -3543,7 +3543,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get the number of the resource
-      operationId: print.shares.jobs.documents.GetCount-acc8
+      operationId: print.share.job.document_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3563,7 +3563,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-abort?view=graph-rest-1.0
-      operationId: print.shares.printerShare.jobs.printJob.abort
+      operationId: print.share.printerShare.job.printJob_abort
       requestBody:
         description: Action parameters
         content:
@@ -3592,7 +3592,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
-      operationId: print.shares.printerShare.jobs.printJob.cancel
+      operationId: print.share.printerShare.job.printJob_cancel
       responses:
         '204':
           description: Success
@@ -3610,7 +3610,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-redirect?view=graph-rest-1.0
-      operationId: print.shares.printerShare.jobs.printJob.redirect
+      operationId: print.share.printerShare.job.printJob_redirect
       requestBody:
         description: Action parameters
         content:
@@ -3650,7 +3650,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0
-      operationId: print.shares.printerShare.jobs.printJob.start
+      operationId: print.share.printerShare.job.printJob_start
       responses:
         2XX:
           description: Success
@@ -3672,7 +3672,7 @@ paths:
         - print.printerShare
       summary: Get tasks from print
       description: A list of printTasks that were triggered by this print job.
-      operationId: print.shares.jobs.ListTasks
+      operationId: print.share.job_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3724,7 +3724,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property to tasks for print
-      operationId: print.shares.jobs.CreateTasks
+      operationId: print.share.job_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -3750,7 +3750,7 @@ paths:
         - print.printerShare
       summary: Get tasks from print
       description: A list of printTasks that were triggered by this print job.
-      operationId: print.shares.jobs.GetTasks
+      operationId: print.share.job_GetTask
       parameters:
         - name: $select
           in: query
@@ -3788,7 +3788,7 @@ paths:
       tags:
         - print.printerShare
       summary: Update the navigation property tasks in print
-      operationId: print.shares.jobs.UpdateTasks
+      operationId: print.share.job_UpdateTask
       requestBody:
         description: New navigation property values
         content:
@@ -3812,7 +3812,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete navigation property tasks for print
-      operationId: print.shares.jobs.DeleteTasks
+      operationId: print.share.job_DeleteTask
       parameters:
         - name: If-Match
           in: header
@@ -3834,7 +3834,7 @@ paths:
         - print.printerShare
       summary: Get definition from print
       description: The printTaskDefinition that was used to create this task. Read-only.
-      operationId: print.shares.jobs.tasks.GetDefinition
+      operationId: print.share.job.task_GetDefinition
       parameters:
         - name: $select
           in: query
@@ -3874,7 +3874,7 @@ paths:
         - print.printerShare
       summary: Get trigger from print
       description: The printTaskTrigger that triggered this task's execution. Read-only.
-      operationId: print.shares.jobs.tasks.GetTrigger
+      operationId: print.share.job.task_GetTrigger
       parameters:
         - name: $select
           in: query
@@ -3913,7 +3913,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get the number of the resource
-      operationId: print.shares.jobs.tasks.GetCount-c052
+      operationId: print.share.job.task_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3929,7 +3929,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get the number of the resource
-      operationId: print.shares.jobs.GetCount-d3ae
+      operationId: print.share.job_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3946,7 +3946,7 @@ paths:
         - print.printerShare
       summary: Get printer from print
       description: The printer that this printer share is related to.
-      operationId: print.shares.GetPrinter
+      operationId: print.share_GetPrinter
       parameters:
         - name: $select
           in: query
@@ -3985,7 +3985,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get the number of the resource
-      operationId: print.shares.GetCount-070b
+      operationId: print.share_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4005,7 +4005,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-list-taskdefinitions?view=graph-rest-1.0
-      operationId: print.ListTaskDefinitions
+      operationId: print_ListTaskDefinition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4061,7 +4061,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-post-taskdefinitions?view=graph-rest-1.0
-      operationId: print.CreateTaskDefinitions
+      operationId: print_CreateTaskDefinition
       requestBody:
         description: New navigation property
         content:
@@ -4090,7 +4090,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printtaskdefinition-get?view=graph-rest-1.0
-      operationId: print.GetTaskDefinitions
+      operationId: print_GetTaskDefinition
       parameters:
         - name: $select
           in: query
@@ -4132,7 +4132,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-update-taskdefinition?view=graph-rest-1.0
-      operationId: print.UpdateTaskDefinitions
+      operationId: print_UpdateTaskDefinition
       requestBody:
         description: New navigation property values
         content:
@@ -4160,7 +4160,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-delete-taskdefinition?view=graph-rest-1.0
-      operationId: print.DeleteTaskDefinitions
+      operationId: print_DeleteTaskDefinition
       parameters:
         - name: If-Match
           in: header
@@ -4185,7 +4185,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printtaskdefinition-list-tasks?view=graph-rest-1.0
-      operationId: print.taskDefinitions.ListTasks
+      operationId: print.taskDefinition_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4237,7 +4237,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Create new navigation property to tasks for print
-      operationId: print.taskDefinitions.CreateTasks
+      operationId: print.taskDefinition_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -4266,7 +4266,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printtask-get?view=graph-rest-1.0
-      operationId: print.taskDefinitions.GetTasks
+      operationId: print.taskDefinition_GetTask
       parameters:
         - name: $select
           in: query
@@ -4308,7 +4308,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printtaskdefinition-update-task?view=graph-rest-1.0
-      operationId: print.taskDefinitions.UpdateTasks
+      operationId: print.taskDefinition_UpdateTask
       requestBody:
         description: New navigation property values
         content:
@@ -4332,7 +4332,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Delete navigation property tasks for print
-      operationId: print.taskDefinitions.DeleteTasks
+      operationId: print.taskDefinition_DeleteTask
       parameters:
         - name: If-Match
           in: header
@@ -4354,7 +4354,7 @@ paths:
         - print.printTaskDefinition
       summary: Get definition from print
       description: The printTaskDefinition that was used to create this task. Read-only.
-      operationId: print.taskDefinitions.tasks.GetDefinition
+      operationId: print.taskDefinition.task_GetDefinition
       parameters:
         - name: $select
           in: query
@@ -4394,7 +4394,7 @@ paths:
         - print.printTaskDefinition
       summary: Get trigger from print
       description: The printTaskTrigger that triggered this task's execution. Read-only.
-      operationId: print.taskDefinitions.tasks.GetTrigger
+      operationId: print.taskDefinition.task_GetTrigger
       parameters:
         - name: $select
           in: query
@@ -4433,7 +4433,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get the number of the resource
-      operationId: print.taskDefinitions.tasks.GetCount-0c4f
+      operationId: print.taskDefinition.task_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4449,7 +4449,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get the number of the resource
-      operationId: print.taskDefinitions.GetCount-ee04
+      operationId: print.taskDefinition_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5217,6 +5217,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -5404,6 +5405,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -5672,6 +5674,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -6030,6 +6035,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
@@ -6784,7 +6790,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. To learn more about managing this property for Microsoft 365 vs. cloud security groups, see Key differences from Microsoft 365 group labeling.'
             assignedLicenses:
               type: array
               items:
@@ -10314,6 +10320,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               description: Represents a platform credential instance registered to a user on Mac OS.
               x-ms-navigationProperty: true
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
+              x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
               items:
@@ -11883,11 +11895,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Offline, OutOfOffice, PresenceUnknown.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.'
+              description: 'The base presence information for a user. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Focusing, InACall, InAMeeting, Offline, Presenting, PresenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               anyOf:
@@ -15746,6 +15758,7 @@ components:
               '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+              '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
               '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
               '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
               '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -15902,6 +15915,29 @@ components:
               type: string
               default: '#microsoft.graph.platformCredentialAuthenticationMethod'
       x-ms-discriminator-value: '#microsoft.graph.platformCredentialAuthenticationMethod'
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.device'
+                - type: object
+                  nullable: true
+              description: The registered device on which this resource account key resides. Supports $expand.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
+      x-ms-discriminator-value: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -19514,6 +19550,18 @@ components:
             resource:
               type: string
               description: Required. Specifies the resource that is monitored for changes. Don't include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+            vapidPublicKey:
+              type: string
+              description: 'Optional. The application server''s VAPID public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained by calling the getVapidPublicKey function on the subscription collection. The browser passes this value to PushManager.subscribe({ applicationServerKey: vapidPublicKey }) to bind the push subscription to this server identity. Required when notificationUrl targets a known Web Push service origin (for example, *.push.apple.com, fcm.googleapis.com, updates.push.services.mozilla.com); rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8292.'
+              nullable: true
+            webPushEncryptionP256dhPublicKey:
+              type: string
+              description: 'Optional. The subscriber''s ECDH public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''p256dh''). Used as the peer public key during ECDH key agreement to derive the per-message content encryption key for RFC 8291 payload encryption. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
+            webPushEncryptionSecret:
+              type: string
+              description: 'Optional. The subscriber''s auth secret, base64url-encoded (16 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''auth''). Used as the HMAC-SHA-256 salt for the HKDF combine step that derives key material for RFC 8291 payload encryption. Write-only: this value is never returned in GET responses (returned as null). Treat as a secret. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.subscription'
