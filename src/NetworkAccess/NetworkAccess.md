@@ -20,7 +20,11 @@ required; v1.0 is explicitly excluded, not an assertion of API-operation absence
 Profile-local readmes and `src/readme.graph.md` are ignored.
 The evidence ledger is `wrapper/NetworkAccess_directiveMigrationMap.json`;
 `NetworkAccessDirectiveMigrationTests` pins the exact suppression and unaffected
-neighbors. Existing structural naming already supplies the published nouns.
+neighbors. Structural naming supplies the published forwarding-rule noun.
+Three distinct linked-policy GETs use source-backed `PolicyLinkPolicy` nouns:
+the parent returns `networkaccess.policyLink`, while its `/policy` navigation
+returns `networkaccess.policy` with the same mandatory IDs. Ordinary List/Get
+names and default URLs are unchanged; no selector or variant group is introduced.
 Parameter aliases/transforms and schema/response directives remain Deferred;
 the active AutoRest directives below are retained.
 

@@ -17,24 +17,36 @@ public sealed class NetworkAccessDirectiveMigrationTests
     private const string Policy = "/networkAccess/forwardingPolicies/{forwardingPolicy-id}";
     private const string Rules = Policy + "/policyRules";
     private const string Rule = Rules + "/{policyRule-id}";
-    private static readonly GeneratorConfig Beta = new("Test.Client", "unused", "beta");
+    private static readonly (string Path, string Noun)[] LinkedPolicyFamilies =
+    [
+        ("/networkAccess/connectivity/remoteNetworks/{remoteNetwork-id}/forwardingProfiles/{forwardingProfile-id}/policies",
+            "MgNetworkAccessConnectivityRemoteNetworkForwardingProfilePolicy"),
+        ("/networkAccess/filteringProfiles/{filteringProfile-id}/policies", "MgNetworkAccessFilteringProfilePolicy"),
+        ("/networkAccess/forwardingProfiles/{forwardingProfile-id}/policies", "MgNetworkAccessForwardingProfilePolicy"),
+    ];
 
-    [Fact]
-    public void SharedUpdateSuppressionBridgesTheExactLegacyAndCompatibleOperation()
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public void SharedUpdateSuppressionBridgesTheExactLegacyAndCompatibleOperation(bool useCollisionData)
     {
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         var legacy = LoadSpec("openApiDocs");
         var compatible = LoadSpec("openApiDocs_KiotaCompat");
-        Assert.Equal("networkAccess.forwardingPolicy_UpdatePolicyRule",
-            legacy.Paths[Rule].Operations![HttpMethod.Patch].OperationId);
-        Assert.Equal("networkAccess.forwardingPolicies.UpdatePolicyRules",
-            compatible.Paths[Rule].Operations![HttpMethod.Patch].OperationId);
+        foreach (var document in new[] { legacy, compatible })
+        {
+            var selection = document.Paths.SelectMany(path => path.Value.Operations!
+                .Where(operation => operation.Value.OperationId == "networkAccess.forwardingPolicy_UpdatePolicyRule")
+                .Select(operation => $"{operation.Key} {path.Key}")).ToArray();
+            Assert.Equal(["PATCH " + Rule], selection);
+        }
 
         var suppressed = compatible.Paths.SelectMany(path => path.Value.Operations!
-            .Where(operation => CmdletConfigurator.IsSuppressed(operation.Key, path.Key, Beta))
+            .Where(operation => CmdletConfigurator.IsSuppressed(operation.Key, path.Key, config, apiVersion: "beta"))
             .Select(operation => $"{operation.Key} {path.Key}")).ToArray();
         Assert.Equal(["PATCH " + Rule], suppressed);
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Patch,
-            "/NETWORKACCESS/FORWARDINGPOLICIES/{renamed-id}/POLICYRULES/{renamed-rule-id}/", Beta));
+            "/NETWORKACCESS/FORWARDINGPOLICIES/{renamed-id}/POLICYRULES/{renamed-rule-id}/", config, apiVersion: "beta"));
     }
 
     [Theory]
@@ -50,11 +62,17 @@ public sealed class NetworkAccessDirectiveMigrationTests
     public void SharedSuppressionLeavesActualBetaNeighborsUntouched(string method, string path)
     {
         Assert.Contains(new HttpMethod(method), LoadSpec("openApiDocs_KiotaCompat").Paths[path].Operations!.Keys);
-        Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, Beta));
+        foreach (var useCollisionData in new[] { true, false })
+        {
+            var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
+            Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, config, apiVersion: "beta"));
+        }
     }
 
-    [Fact]
-    public async Task RealBetaGenerationOmitsOnlyTheSharedUpdateAndPreservesPublishedNeighborNames()
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public async Task RealBetaGenerationOmitsOnlyTheSharedUpdateAndPreservesPublishedNeighborNames(bool useCollisionData)
     {
         var document = LoadSpec("openApiDocs_KiotaCompat");
         document.Paths = new OpenApiPaths
@@ -67,7 +85,8 @@ public sealed class NetworkAccessDirectiveMigrationTests
         Directory.CreateDirectory(output);
         try
         {
-            await new PowerShellWrapperGenerationService(document, Beta with { OutputPath = output }, NullLogger.Instance)
+            var config = new GeneratorConfig("Test.Client", output, useCollisionData);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: "beta")
                 .GenerateAsync(CancellationToken.None);
             var files = Directory.GetFiles(output, "*.g.cs").Select(Path.GetFileName).ToArray();
             Assert.DoesNotContain("UpdateMgNetworkAccessForwardingPolicyRule.g.cs", files);
@@ -77,6 +96,72 @@ public sealed class NetworkAccessDirectiveMigrationTests
             Assert.Contains("GetMgNetworkAccessForwardingPolicyRule_List.g.cs", files);
             Assert.Contains("NewMgNetworkAccessForwardingPolicyRule.g.cs", files);
             Assert.Contains("RemoveMgNetworkAccessForwardingPolicyRule.g.cs", files);
+            var sources = Directory.GetFiles(output, "*.g.cs").Select(File.ReadAllText).ToArray();
+            Assert.DoesNotContain(sources, source => source.Contains($"[GraphRoute(\"PATCH\", \"{Rule}\")]"));
+            Assert.Contains(sources, source => source.Contains($"[GraphRoute(\"PATCH\", \"{Policy}\")]"));
+        }
+        finally
+        {
+            Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public async Task LinkedPoliciesKeepDistinctTypedNavigationsAndOrdinaryListItemDefaults(bool useCollisionData)
+    {
+        var document = LoadSpec("openApiDocs_KiotaCompat");
+        var paths = new OpenApiPaths();
+        foreach (var (path, _) in LinkedPolicyFamilies)
+        {
+            foreach (var route in new[] { path, path + "/{policyLink-id}", path + "/{policyLink-id}/policy" })
+            {
+                var item = document.Paths[route];
+                paths.Add(route, new OpenApiPathItem
+                {
+                    Operations = new() { [HttpMethod.Get] = item.Operations![HttpMethod.Get] },
+                    Parameters = item.Parameters,
+                });
+            }
+        }
+        document.Paths = paths;
+        var output = Path.Combine(Path.GetTempPath(), "networkaccess-directives", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(output);
+        try
+        {
+            var config = new GeneratorConfig("Test.Client", output, useCollisionData);
+            foreach (var (path, noun) in LinkedPolicyFamilies)
+            {
+                var itemPath = path + "/{policyLink-id}";
+                var navigationPath = itemPath + "/policy";
+                Assert.Equal("microsoft.graph.networkaccess.policyLink",
+                    Assert.IsType<OpenApiSchemaReference>(document.Paths[itemPath].Operations![HttpMethod.Get]
+                        .Responses!["2XX"].Content!["application/json"].Schema).Reference.Id);
+                Assert.Equal("microsoft.graph.networkaccess.policy",
+                    Assert.IsType<OpenApiSchemaReference>(document.Paths[navigationPath].Operations![HttpMethod.Get]
+                        .Responses!["2XX"].Content!["application/json"].Schema).Reference.Id);
+                foreach (var route in new[] { path, itemPath, navigationPath })
+                {
+                    Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, route, config, apiVersion: "beta"));
+                    Assert.Equal(route == navigationPath ? noun + "LinkPolicy" : noun,
+                        Naming.Resolve(new OperationInfo(HttpMethod.Get, route), config, apiVersion: "beta").Noun);
+                }
+            }
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: "beta")
+                .GenerateAsync(CancellationToken.None);
+            var files = Directory.GetFiles(output, "*.g.cs");
+            Assert.Equal(12, files.Length);
+            foreach (var (path, noun) in LinkedPolicyFamilies)
+            {
+                var dispatcher = File.ReadAllText(Path.Combine(output, $"Get{noun}.g.cs"));
+                Assert.Contains("DefaultParameterSetName = \"List\"", dispatcher);
+                Assert.Contains($"[GraphRoute(\"GET\", \"{path}\")]", File.ReadAllText(Path.Combine(output, $"Get{noun}_List.g.cs")));
+                Assert.Contains($"[GraphRoute(\"GET\", \"{path}/{{policyLink-id}}\")]", File.ReadAllText(Path.Combine(output, $"Get{noun}_Get.g.cs")));
+                var navigation = File.ReadAllText(Path.Combine(output, $"Get{noun}LinkPolicy.g.cs"));
+                Assert.Contains($"[GraphRoute(\"GET\", \"{path}/{{policyLink-id}}/policy\")]", navigation);
+                Assert.Contains(".Policy.GetAsync(", navigation);
+            }
         }
         finally
         {
