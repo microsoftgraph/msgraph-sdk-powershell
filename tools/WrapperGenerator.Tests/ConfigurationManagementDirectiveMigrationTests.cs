@@ -14,31 +14,31 @@ namespace WrapperGenerator.Tests;
 public sealed class ConfigurationManagementDirectiveMigrationTests
 {
     private const string Root = "/admin/configurationManagement/";
-    private const string OperationPrefix = "admin.configurationManagement.";
+    private const string OperationPrefix = "admin.configurationManagement";
     private const string NounPrefix = "MgAdminConfigurationManagement";
 
     private sealed record ExpectedOperation(string Method, string Path, string OperationId, string Verb, string Noun);
 
     private static readonly ExpectedOperation[] Operations =
     [
-        new("GET", "configurationDrifts", "ListConfigurationDrifts", "Get", "ConfigurationDrift"),
-        new("GET", "configurationDrifts/{configurationDrift-id}", "GetConfigurationDrifts", "Get", "ConfigurationDrift"),
-        new("GET", "configurationDrifts/$count", "configurationDrifts.GetCount-b132", "Get", "ConfigurationDriftCount"),
-        new("GET", "configurationMonitoringResults", "ListConfigurationMonitoringResults", "Get", "ConfigurationMonitoringResult"),
-        new("GET", "configurationMonitoringResults/{configurationMonitoringResult-id}", "GetConfigurationMonitoringResults", "Get", "ConfigurationMonitoringResult"),
-        new("GET", "configurationMonitoringResults/$count", "configurationMonitoringResults.GetCount-0ec6", "Get", "ConfigurationMonitoringResultCount"),
-        new("GET", "configurationMonitors", "ListConfigurationMonitors", "Get", "ConfigurationMonitor"),
-        new("POST", "configurationMonitors", "CreateConfigurationMonitors", "New", "ConfigurationMonitor"),
-        new("GET", "configurationMonitors/{configurationMonitor-id}", "GetConfigurationMonitors", "Get", "ConfigurationMonitor"),
-        new("PATCH", "configurationMonitors/{configurationMonitor-id}", "UpdateConfigurationMonitors", "Update", "ConfigurationMonitor"),
-        new("DELETE", "configurationMonitors/{configurationMonitor-id}", "DeleteConfigurationMonitors", "Remove", "ConfigurationMonitor"),
-        new("GET", "configurationMonitors/{configurationMonitor-id}/baseline", "configurationMonitors.GetBaseline", "Get", "ConfigurationMonitorBaseline"),
-        new("GET", "configurationMonitors/$count", "configurationMonitors.GetCount-e65d", "Get", "ConfigurationMonitorCount"),
-        new("GET", "configurationSnapshotJobs", "ListConfigurationSnapshotJobs", "Get", "ConfigurationSnapshotJob"),
-        new("GET", "configurationSnapshotJobs/{configurationSnapshotJob-id}", "GetConfigurationSnapshotJobs", "Get", "ConfigurationSnapshotJob"),
-        new("DELETE", "configurationSnapshotJobs/{configurationSnapshotJob-id}", "DeleteConfigurationSnapshotJobs", "Remove", "ConfigurationSnapshotJob"),
-        new("GET", "configurationSnapshots", "ListConfigurationSnapshots", "Get", "ConfigurationSnapshot"),
-        new("GET", "configurationSnapshots/{configurationBaseline-id}", "GetConfigurationSnapshots", "Get", "ConfigurationSnapshot"),
+        new("GET", "configurationDrifts", "_ListConfigurationDrift", "Get", "ConfigurationDrift"),
+        new("GET", "configurationDrifts/{configurationDrift-id}", "_GetConfigurationDrift", "Get", "ConfigurationDrift"),
+        new("GET", "configurationDrifts/$count", ".configurationDrift_GetCount", "Get", "ConfigurationDriftCount"),
+        new("GET", "configurationMonitoringResults", "_ListConfigurationMonitoringResult", "Get", "ConfigurationMonitoringResult"),
+        new("GET", "configurationMonitoringResults/{configurationMonitoringResult-id}", "_GetConfigurationMonitoringResult", "Get", "ConfigurationMonitoringResult"),
+        new("GET", "configurationMonitoringResults/$count", ".configurationMonitoringResult_GetCount", "Get", "ConfigurationMonitoringResultCount"),
+        new("GET", "configurationMonitors", "_ListConfigurationMonitor", "Get", "ConfigurationMonitor"),
+        new("POST", "configurationMonitors", "_CreateConfigurationMonitor", "New", "ConfigurationMonitor"),
+        new("GET", "configurationMonitors/{configurationMonitor-id}", "_GetConfigurationMonitor", "Get", "ConfigurationMonitor"),
+        new("PATCH", "configurationMonitors/{configurationMonitor-id}", "_UpdateConfigurationMonitor", "Update", "ConfigurationMonitor"),
+        new("DELETE", "configurationMonitors/{configurationMonitor-id}", "_DeleteConfigurationMonitor", "Remove", "ConfigurationMonitor"),
+        new("GET", "configurationMonitors/{configurationMonitor-id}/baseline", ".configurationMonitor_GetBaseline", "Get", "ConfigurationMonitorBaseline"),
+        new("GET", "configurationMonitors/$count", ".configurationMonitor_GetCount", "Get", "ConfigurationMonitorCount"),
+        new("GET", "configurationSnapshotJobs", "_ListConfigurationSnapshotJob", "Get", "ConfigurationSnapshotJob"),
+        new("GET", "configurationSnapshotJobs/{configurationSnapshotJob-id}", "_GetConfigurationSnapshotJob", "Get", "ConfigurationSnapshotJob"),
+        new("DELETE", "configurationSnapshotJobs/{configurationSnapshotJob-id}", "_DeleteConfigurationSnapshotJob", "Remove", "ConfigurationSnapshotJob"),
+        new("GET", "configurationSnapshots", "_ListConfigurationSnapshot", "Get", "ConfigurationSnapshot"),
+        new("GET", "configurationSnapshots/{configurationBaseline-id}", "_GetConfigurationSnapshot", "Get", "ConfigurationSnapshot"),
     ];
 
     [Theory]
@@ -63,15 +63,15 @@ public sealed class ConfigurationManagementDirectiveMigrationTests
         Assert.Equal(expectedOperations.OrderBy(value => value, StringComparer.Ordinal),
             actualOperations.OrderBy(value => value, StringComparer.Ordinal));
 
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: useCollisionData);
         foreach (var operation in Operations)
         {
             var method = new HttpMethod(operation.Method);
             var path = Root + operation.Path;
-            Assert.False(CmdletConfigurator.IsSuppressed(method, path, config), $"{profile}: {method} {path}");
-            Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(method, path, config));
-            Assert.Equal("UnchangedNoun", CmdletConfigurator.ApplyNounOverrides(method, path, "UnchangedNoun", config));
-            var naming = Naming.Resolve(new OperationInfo(method, path), config);
+            Assert.False(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile), $"{profile}: {method} {path}");
+            Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(method, path, config, apiVersion: profile));
+            Assert.Equal("UnchangedNoun", CmdletConfigurator.ApplyNounOverrides(method, path, "UnchangedNoun", config, apiVersion: profile));
+            var naming = Naming.Resolve(new OperationInfo(method, path), config, apiVersion: profile);
             Assert.Equal(operation.Verb, naming.VerbName);
             Assert.Equal(NounPrefix + operation.Noun, naming.Noun);
         }

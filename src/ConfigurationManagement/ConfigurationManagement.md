@@ -14,8 +14,8 @@ require:
 At the reviewed `powershell-v3` baseline `51d441eeb5`, this module had no
 `ConfigurationManagement.md` shared directive file. This file records that audit
 and introduces no new directives. The standard template `require` above preserves
-legacy global configuration wiring: `Copy-ModuleTemplate` creates the module file
-only when absent, so this audit file must retain that wiring itself. The required
+original legacy global configuration wiring: `Copy-ModuleTemplate` created the
+module file only when absent, so this audit file retains that wiring itself. The required
 global directives remain unchanged and outside this migration's scope.
 
 There are **zero shared cmdlet directives** to migrate. The existing
@@ -28,19 +28,23 @@ renames or suppressions for the reviewed operations; structural naming is retain
 ### Compatible specification evidence
 
 Both required profiles are available; no profile is excluded and no legacy
-`openApiDocs` fallback is used.
+`openApiDocs` fallback is used. The evidence below is refreshed against merged
+`powershell-v3` target `08e409a6aa8fd48736b8f9a9199559f46fc0d1ad`.
 
 | Profile | Compatible spec | Git blob |
 | --- | --- | --- |
-| v1.0 | `openApiDocs_KiotaCompat/v1.0/ConfigurationManagement.yml` | `56b11ca6a8967733c3185101caf4bb91294856ef` |
-| beta | `openApiDocs_KiotaCompat/beta/ConfigurationManagement.yml` | `8eaa133a303ae2e0e8133226938ec2dc74d27ec4` |
+| v1.0 | `openApiDocs_KiotaCompat/v1.0/ConfigurationManagement.yml` | `dd8ef9256120c1a463b2394238b81cfcc07ec5c0` |
+| beta | `openApiDocs_KiotaCompat/beta/ConfigurationManagement.yml` | `0893ccbc044acbfc320945f06b26c378e7554c7b` |
 
 Each spec contains the same 18 method/path/operation-ID tuples: drift and monitoring
 result list/item/count reads; monitor list/create/item read/update/delete/baseline/count;
 snapshot-job list/item reads and item deletion; and snapshot list/item reads.
 `ConfigurationManagementDirectiveMigrationTests` reads both real compatible specs,
-pins that complete operation inventory, and checks unchanged names and absence of
-suppression with derived collision data both enabled and disabled. These are
+pins that complete operation inventory using the current PowerShell-aligned IDs,
+and checks unchanged names and absence of suppression with derived collision data
+both enabled and disabled. Each naming and configuration lookup receives its
+profile explicitly as separate oracle context, not as an authored configuration
+filter or a `GeneratorConfig` property. These are
 unaffected-operation assertions, not claims of migrated suppressions or renames.
 
 ### Scope and deferred classes
