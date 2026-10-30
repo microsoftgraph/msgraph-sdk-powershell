@@ -11,10 +11,10 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Applications
 {
-    [GraphRoute("GET", "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/$count")]
-    [Cmdlet(VerbsCommon.Get, "MgServicePrincipalFederatedIdentityCredentialCount")]
+    [GraphRoute("GET", "/servicePrincipals/{servicePrincipal-id}/lifecycle/complianceIssues/$count")]
+    [Cmdlet(VerbsCommon.Get, "MgServicePrincipalLifecycleComplianceIssueCount")]
     [OutputType(typeof(int))]
-    public class GetMgServicePrincipalFederatedIdentityCredentialCountCommand : GraphClientCmdlet
+    public class GetMgServicePrincipalLifecycleComplianceIssueCountCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string ServicePrincipalId { get; set; } = string.Empty;
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             int? result;
             try
             {
-                result = client.ServicePrincipals[ServicePrincipalId].FederatedIdentityCredentials.Count.GetAsync(requestConfiguration =>
+                result = client.ServicePrincipals[ServicePrincipalId].Lifecycle.ComplianceIssues.Count.GetAsync(requestConfiguration =>
                 {
                     if (this.IsParameterBound(nameof(Filter)))
                         requestConfiguration.QueryParameters.Filter = Filter;

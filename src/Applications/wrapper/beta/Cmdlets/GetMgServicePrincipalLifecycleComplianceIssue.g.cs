@@ -8,16 +8,16 @@ using Microsoft.Graph.PowerShell.Applications.Client.Models;
 
 namespace Microsoft.Graph.PowerShell.Applications
 {
-    [GraphRoute("GET", "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials")]
-    [Cmdlet(VerbsCommon.Get, "MgServicePrincipalFederatedIdentityCredential", DefaultParameterSetName = "List")]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.FederatedIdentityCredentialCollectionResponse), ParameterSetName = new[] { "List" })]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.FederatedIdentityCredential), ParameterSetName = new[] { "Get" })]
-    public class GetMgServicePrincipalFederatedIdentityCredentialCommand : GraphClientCmdlet
+    [GraphRoute("GET", "/servicePrincipals/{servicePrincipal-id}/lifecycle/complianceIssues")]
+    [Cmdlet(VerbsCommon.Get, "MgServicePrincipalLifecycleComplianceIssue", DefaultParameterSetName = "List")]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.IdentityGovernance.ComplianceIssueCollectionResponse), ParameterSetName = new[] { "List" })]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.IdentityGovernance.ComplianceIssue), ParameterSetName = new[] { "Get" })]
+    public class GetMgServicePrincipalLifecycleComplianceIssueCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string ServicePrincipalId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
-        public string FederatedIdentityCredentialId { get; set; } = string.Empty;
+        public string ComplianceIssueId { get; set; } = string.Empty;
 
 
 
@@ -58,11 +58,11 @@ namespace Microsoft.Graph.PowerShell.Applications
 
 
 
-        // Delegates to Get-MgServicePrincipalFederatedIdentityCredential_Get or Get-MgServicePrincipalFederatedIdentityCredential_List, the two cmdlets
+        // Delegates to Get-MgServicePrincipalLifecycleComplianceIssue_Get or Get-MgServicePrincipalLifecycleComplianceIssue_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
         {
-            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgServicePrincipalFederatedIdentityCredential_Get" : "Get-MgServicePrincipalFederatedIdentityCredential_List";
+            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgServicePrincipalLifecycleComplianceIssue_Get" : "Get-MgServicePrincipalLifecycleComplianceIssue_List";
             try
             {
                 InvokeCommand.InvokeScript(
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? FederatedIdentityCredentialId : ServicePrincipalId);
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ComplianceIssueId : ServicePrincipalId);
                 return;
             }
         }

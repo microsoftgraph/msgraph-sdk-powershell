@@ -9,11 +9,19 @@ namespace Microsoft.Graph.PowerShell.Applications.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CloudPcPoolCapabilityConfiguration : IAdditionalDataHolder, IParsable
+    public partial class PlanCapability : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates whether calendar features are enabled for the plan.</summary>
+        public bool? Calendar { get; set; }
+        /// <summary>Indicates whether custom fields are enabled for the plan.</summary>
+        public bool? CustomFields { get; set; }
+        /// <summary>Indicates whether custom extension fields are enabled for the plan.</summary>
+        public bool? Extensions { get; set; }
+        /// <summary>Indicates whether goals are enabled for the plan.</summary>
+        public bool? Goals { get; set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,22 +30,24 @@ namespace Microsoft.Graph.PowerShell.Applications.Client.Models
 #else
         public string OdataType { get; set; }
 #endif
+        /// <summary>Indicates whether undo is enabled for the plan.</summary>
+        public bool? Undo { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Applications.Client.Models.CloudPcPoolCapabilityConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Applications.Client.Models.PlanCapability"/> and sets the default values.
         /// </summary>
-        public CloudPcPoolCapabilityConfiguration()
+        public PlanCapability()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Applications.Client.Models.CloudPcPoolCapabilityConfiguration"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Applications.Client.Models.PlanCapability"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Microsoft.Graph.PowerShell.Applications.Client.Models.CloudPcPoolCapabilityConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Microsoft.Graph.PowerShell.Applications.Client.Models.PlanCapability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.PowerShell.Applications.Client.Models.CloudPcPoolCapabilityConfiguration();
+            return new global::Microsoft.Graph.PowerShell.Applications.Client.Models.PlanCapability();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +57,12 @@ namespace Microsoft.Graph.PowerShell.Applications.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "calendar", n => { Calendar = n.GetBoolValue(); } },
+                { "customFields", n => { CustomFields = n.GetBoolValue(); } },
+                { "extensions", n => { Extensions = n.GetBoolValue(); } },
+                { "goals", n => { Goals = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "undo", n => { Undo = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +72,12 @@ namespace Microsoft.Graph.PowerShell.Applications.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("calendar", Calendar);
+            writer.WriteBoolValue("customFields", CustomFields);
+            writer.WriteBoolValue("extensions", Extensions);
+            writer.WriteBoolValue("goals", Goals);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteBoolValue("undo", Undo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

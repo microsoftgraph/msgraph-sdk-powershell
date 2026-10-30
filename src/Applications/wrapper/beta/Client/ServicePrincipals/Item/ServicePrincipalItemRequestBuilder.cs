@@ -22,7 +22,9 @@ using Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.GetM
 using Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.GetPasswordSingleSignOnCredentials;
 using Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.HomeRealmDiscoveryPolicies;
 using Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.LicenseDetails;
+using Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.Lifecycle;
 using Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.MemberOf;
+using Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.MicrosoftGraphIdentityGovernanceAttest;
 using Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.Oauth2PermissionGrants;
 using Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.OwnedObjects;
 using Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.Owners;
@@ -145,10 +147,20 @@ namespace Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item
         {
             get => new global::Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.LicenseDetails.LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The lifecycle property</summary>
+        public global::Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.Lifecycle.LifecycleRequestBuilder Lifecycle
+        {
+            get => new global::Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.Lifecycle.LifecycleRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The memberOf property</summary>
         public global::Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.MemberOf.MemberOfRequestBuilder MemberOf
         {
             get => new global::Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.MemberOf.MemberOfRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The microsoftGraphIdentityGovernanceAttest property</summary>
+        public global::Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.MicrosoftGraphIdentityGovernanceAttest.MicrosoftGraphIdentityGovernanceAttestRequestBuilder MicrosoftGraphIdentityGovernanceAttest
+        {
+            get => new global::Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.MicrosoftGraphIdentityGovernanceAttest.MicrosoftGraphIdentityGovernanceAttestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The oauth2PermissionGrants property</summary>
         public global::Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants
