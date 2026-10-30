@@ -16,10 +16,12 @@ public sealed class FinancialsDirectiveMigrationTests
 {
     private static readonly Lazy<OpenApiDocument> BetaDocument = new(LoadBetaDocument);
 
-    [Fact]
-    public void EmptySharedAuditLeavesEveryRealBetaOperationUnsuppressedAndStructurallyNamed()
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public void EmptySharedAuditLeavesEveryRealBetaOperationUnsuppressedAndOnlyRepairsTwoWriteNames(bool useCollisionData)
     {
-        var config = new GeneratorConfig("Microsoft.Graph.Beta.PowerShell.Financials.Client", "", ApiVersion: "beta");
+        var config = new GeneratorConfig("Microsoft.Graph.PowerShell.Financials.Client", "", UseCollisionData: useCollisionData);
         var operations = BetaDocument.Value.Paths
             .SelectMany(path => path.Value.Operations!.Select(operation => (Path: path.Key, Method: operation.Key)))
             .ToArray();
@@ -27,24 +29,26 @@ public sealed class FinancialsDirectiveMigrationTests
         Assert.Equal(648, operations.Length);
         foreach (var operation in operations)
         {
-            Assert.False(CmdletConfigurator.IsSuppressed(operation.Method, operation.Path, config),
+            Assert.False(CmdletConfigurator.IsSuppressed(operation.Method, operation.Path, config, apiVersion: "beta"),
                 $"Unexpected suppression: {operation.Method} {operation.Path}");
-            Assert.Equal("FinancialsAuditSentinel",
-                CmdletConfigurator.ApplyNounOverrides(operation.Method, operation.Path, "FinancialsAuditSentinel", config));
-            Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(operation.Method, operation.Path, config));
+            var itemNavigationWrite = operation.Path == "/financials/companies/{company-id}/items/{item-id}/itemCategory"
+                && (operation.Method == HttpMethod.Patch || operation.Method == HttpMethod.Delete);
+            Assert.Equal(itemNavigationWrite ? "FinancialCompanyItemCategoryByItem" : "FinancialsAuditSentinel",
+                CmdletConfigurator.ApplyNounOverrides(operation.Method, operation.Path, "FinancialsAuditSentinel", config, apiVersion: "beta"));
+            Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(operation.Method, operation.Path, config, apiVersion: "beta"));
         }
     }
 
     [Theory]
-    [InlineData("GET", "/financials", "financials.financials.GetFinancials", "Get", "MgFinancial")]
-    [InlineData("PATCH", "/financials", "financials.financials.UpdateFinancials", "Update", "MgFinancial")]
-    [InlineData("GET", "/financials/companies", "financials.ListCompanies", "Get", "MgFinancialCompany")]
-    [InlineData("GET", "/financials/companies/{company-id}", "financials.GetCompanies", "Get", "MgFinancialCompany")]
-    [InlineData("GET", "/financials/companies/{company-id}/accounts", "financials.companies.ListAccounts", "Get", "MgFinancialCompanyAccount")]
-    [InlineData("GET", "/financials/companies/{company-id}/accounts/{account-id}", "financials.companies.GetAccounts", "Get", "MgFinancialCompanyAccount")]
-    [InlineData("POST", "/financials/companies/{company-id}/customers", "financials.companies.CreateCustomers", "New", "MgFinancialCompanyCustomer")]
-    [InlineData("PATCH", "/financials/companies/{company-id}/customers/{customer-id}", "financials.companies.UpdateCustomers", "Update", "MgFinancialCompanyCustomer")]
-    [InlineData("DELETE", "/financials/companies/{company-id}/customers/{customer-id}", "financials.companies.DeleteCustomers", "Remove", "MgFinancialCompanyCustomer")]
+    [InlineData("GET", "/financials", "financial_GetFinancial", "Get", "MgFinancial")]
+    [InlineData("PATCH", "/financials", "financial_UpdateFinancial", "Update", "MgFinancial")]
+    [InlineData("GET", "/financials/companies", "financial_ListCompany", "Get", "MgFinancialCompany")]
+    [InlineData("GET", "/financials/companies/{company-id}", "financial_GetCompany", "Get", "MgFinancialCompany")]
+    [InlineData("GET", "/financials/companies/{company-id}/accounts", "financial.company_ListAccount", "Get", "MgFinancialCompanyAccount")]
+    [InlineData("GET", "/financials/companies/{company-id}/accounts/{account-id}", "financial.company_GetAccount", "Get", "MgFinancialCompanyAccount")]
+    [InlineData("POST", "/financials/companies/{company-id}/customers", "financial.company_CreateCustomer", "New", "MgFinancialCompanyCustomer")]
+    [InlineData("PATCH", "/financials/companies/{company-id}/customers/{customer-id}", "financial.company_UpdateCustomer", "Update", "MgFinancialCompanyCustomer")]
+    [InlineData("DELETE", "/financials/companies/{company-id}/customers/{customer-id}", "financial.company_DeleteCustomer", "Remove", "MgFinancialCompanyCustomer")]
     public void NeighboringBetaRoutesKeepTheirOperationIdentityAndName(
         string method, string path, string operationId, string verb, string noun)
     {
@@ -52,12 +56,15 @@ public sealed class FinancialsDirectiveMigrationTests
         var operation = BetaDocument.Value.Paths[path].Operations![httpMethod];
         Assert.Equal(operationId, operation.OperationId);
 
-        var config = new GeneratorConfig("Microsoft.Graph.Beta.PowerShell.Financials.Client", "", ApiVersion: "beta");
-        var naming = Naming.Resolve(new OperationInfo(httpMethod, path, HeaderParams: null), config);
-        Assert.Equal(verb, naming.VerbName);
-        Assert.Equal(noun, naming.Noun);
-        Assert.Equal(path, naming.SourcePath);
-        Assert.Equal(method, naming.SourceMethod);
+        foreach (var useCollisionData in new[] { true, false })
+        {
+            var config = new GeneratorConfig("Microsoft.Graph.PowerShell.Financials.Client", "", UseCollisionData: useCollisionData);
+            var naming = Naming.Resolve(new OperationInfo(httpMethod, path, HeaderParams: null), config, apiVersion: "beta");
+            Assert.Equal(verb, naming.VerbName);
+            Assert.Equal(noun, naming.Noun);
+            Assert.Equal(path, naming.SourcePath);
+            Assert.Equal(method, naming.SourceMethod);
+        }
     }
 
     [Fact]
@@ -99,9 +106,9 @@ public sealed class FinancialsDirectiveMigrationTests
 
     [Theory]
     [InlineData("/financials/companies/{company-id}/journals/{journal-id}/post",
-        "financials.companies.company.journals.journal.post", "InvokeMgFinancialCompanyJournalPost.g.cs")]
+        "financial.company.journal_post", "InvokeMgFinancialCompanyJournalPost.g.cs")]
     [InlineData("/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/postAndSend",
-        "financials.companies.company.salesInvoices.salesInvoice.postAndSend", "InvokeMgFinancialCompanySaleInvoicePostAndSend.g.cs")]
+        "financial.company.salesInvoice_postAndSend", "InvokeMgFinancialCompanySaleInvoicePostAndSend.g.cs")]
     public async Task RealBetaActionsRemainDistinctAndAreNotInventedCrudOverrides(
         string path, string operationId, string expectedFile)
     {
@@ -122,13 +129,57 @@ public sealed class FinancialsDirectiveMigrationTests
         return new OpenApiDocument { Paths = selected, Components = BetaDocument.Value.Components };
     }
 
-    private static async Task WithGeneratedSources(OpenApiDocument document, Action<string> assertSources)
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public async Task CompatibleNaturalIdVariantsAndDistinctWritesPreserveAllTwentySevenOperations(bool useCollisionData)
+    {
+        var groups = CmdletConfigurator.GetOperationVariantGroups()
+            .Where(group => group.Routes.All(route => route.Path.StartsWith("/financials/", StringComparison.Ordinal)))
+            .ToArray();
+        Assert.Equal(9, groups.Length);
+        Assert.Equal(23, groups.Sum(group => group.Routes.Count));
+        var legacy = LoadDocument("openApiDocs");
+        foreach (var route in groups.SelectMany(group => group.Routes))
+            Assert.Equal(legacy.Paths[route.Path].Operations![new HttpMethod(route.Method)].OperationId,
+                BetaDocument.Value.Paths[route.Path].Operations![new HttpMethod(route.Method)].OperationId);
+        await WithGeneratedSources(BetaDocument.Value, output =>
+        {
+            foreach (var group in groups)
+            {
+                Assert.Equal("Root", group.DefaultFamily);
+                var naming = Naming.Resolve(new OperationInfo(new HttpMethod(group.Routes[0].Method), group.Routes[0].Path),
+                    apiVersion: "beta");
+                var source = File.ReadAllText(Path.Combine(output, $"{naming.VerbName}{naming.Noun}.g.cs"));
+                Assert.Contains("DefaultParameterSetName = \"Root", source, StringComparison.Ordinal);
+                Assert.DoesNotContain("public string Route", source, StringComparison.Ordinal);
+                foreach (var route in group.Routes)
+                {
+                    var operation = BetaDocument.Value.Paths[route.Path].Operations![new HttpMethod(route.Method)];
+                    Assert.False(string.IsNullOrEmpty(operation.OperationId));
+                    Assert.Contains($"[GraphRoute(\"{route.Method}\", \"{route.Path}\", ParameterSetName = \"{route.FamilyName}",
+                        source, StringComparison.Ordinal);
+                }
+            }
+            foreach (var verb in new[] { "Update", "Remove" })
+            {
+                var root = File.ReadAllText(Path.Combine(output, $"{verb}MgFinancialCompanyItemCategory.g.cs"));
+                var nested = File.ReadAllText(Path.Combine(output, $"{verb}MgFinancialCompanyItemCategoryByItem.g.cs"));
+                Assert.Contains("/financials/companies/{company-id}/itemCategories/{itemCategory-id}", root, StringComparison.Ordinal);
+                Assert.Contains("/financials/companies/{company-id}/items/{item-id}/itemCategory", nested, StringComparison.Ordinal);
+                Assert.Contains("public string ItemCategoryId", root, StringComparison.Ordinal);
+                Assert.Contains("public string ItemId", nested, StringComparison.Ordinal);
+            }
+        }, useCollisionData);
+    }
+
+    private static async Task WithGeneratedSources(OpenApiDocument document, Action<string> assertSources, bool useCollisionData = true)
     {
         var output = Path.Combine(Path.GetTempPath(), "financials-directive-tests", Guid.NewGuid().ToString("N"));
         try
         {
-            var config = new GeneratorConfig("Microsoft.Graph.Beta.PowerShell.Financials.Client", output, ApiVersion: "beta");
-            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance)
+            var config = new GeneratorConfig("Microsoft.Graph.PowerShell.Financials.Client", output, UseCollisionData: useCollisionData);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: "beta")
                 .GenerateAsync(CancellationToken.None);
             assertSources(output);
         }
@@ -139,7 +190,9 @@ public sealed class FinancialsDirectiveMigrationTests
         }
     }
 
-    private static OpenApiDocument LoadBetaDocument()
+    private static OpenApiDocument LoadBetaDocument() => LoadDocument("openApiDocs_KiotaCompat");
+
+    private static OpenApiDocument LoadDocument(string specRoot)
     {
         var root = new DirectoryInfo(AppContext.BaseDirectory);
         while (root is not null
@@ -148,8 +201,8 @@ public sealed class FinancialsDirectiveMigrationTests
             root = root.Parent;
         Assert.NotNull(root);
 
-        // Read the compatible beta input itself, never a legacy or profile-local fallback.
-        var path = Path.Combine(root.FullName, "openApiDocs_KiotaCompat", "beta", "Financials.yml");
+        // Legacy input is read only for lineage assertions, never as a generation fallback.
+        var path = Path.Combine(root.FullName, specRoot, "beta", "Financials.yml");
         Assert.True(File.Exists(path), $"Required Financials beta specification is missing: {path}");
         var settings = new OpenApiReaderSettings();
         settings.AddYamlReader();

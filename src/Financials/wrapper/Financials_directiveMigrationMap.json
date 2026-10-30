@@ -2,7 +2,7 @@
   "audit": {
     "module": "Financials",
     "source": "src/Financials/Financials.md",
-    "disposition": "No shared cmdlet directives; no migration overrides required.",
+    "disposition": "No shared cmdlet directives or selector match sets; mappings stays empty. Independently preserve collision-prone published routes with compatible natural-ID groups and two explicit item-navigation write names.",
     "sharedCmdletDirectiveCount": 0,
     "deferredParameterDirectiveCount": 0,
     "deferredSchemaDirectiveCount": 0,
@@ -19,7 +19,8 @@
     "specEvidence": {
       "beta": {
         "path": "openApiDocs_KiotaCompat/beta/Financials.yml",
-        "gitBlob": "73134c9aaac7e9ddf6207de84e9a5e51695ab424",
+        "gitBlob": "82f1d616cff0416dbd226e02268ebdde6fded7b1",
+        "lineageNotes": "Lineage checked against openApiDocs/beta/Financials.yml at Git blob 0b7edf306b1217a3d6fd5c59c3e137bc7969fe28. There are no shared selectors; registered natural-ID routes retain exact legacy/current operation IDs.",
         "operationCount": 648,
         "operationsByMethod": {
           "GET": 307,
@@ -30,7 +31,9 @@
         }
       }
     },
-    "existingCoverage": "FinancialsCmdletConfigurations remains empty. Real beta operations are checked with curated and derived configuration enabled; no redundant overrides are added.",
+    "existingCoverage": "Nine profile-neutral OperationVariantGroup registrations preserve 23 real operations with natural path-ID parameter sets and Root defaults. Two exact PATCH/DELETE item-navigation noun repairs preserve both endpoints when alternative ItemId/ItemCategoryId sets have no shared minimal default. No suppressions.",
+    "publishedEvidence": "Repository MgCommandMetadata.json and official Microsoft.Graph.Beta.Financials 2.38.0 signed ProxyCmdletDefinitions.ps1: DimensionValue List/Get and List1/Get1; DimensionValueCount nested Get/root Get1; ItemCategory List/Get/Get1 and Update/Delete numbered alternatives; JournalLine and Account/Count/Create/Update/Delete numbered alternatives adding JournalId. Metadata first-URI retention is not API absence.",
+    "parityLimitation": "ItemCategoryByItem PATCH/DELETE are intentional source-path-based distinct names rather than published numbered sets. No beta-prefix normalization or full raw-parity pass is claimed.",
     "regressionTests": "tools/WrapperGenerator.Tests/FinancialsDirectiveMigrationTests.cs",
     "generationGate": "Targeted regression coverage only. Full beta Kiota generation, wrapper build, compiled discovery, and nonzero exports remain required before publication."
   },
