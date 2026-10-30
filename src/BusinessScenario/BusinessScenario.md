@@ -27,7 +27,7 @@ renames are invented for this audit.
 
 | Profile | Disposition | Evidence |
 | --- | --- | --- |
-| beta | Required | `openApiDocs_KiotaCompat\beta\BusinessScenario.yml`, Git blob `a983393bd3c39351c41be51b8a9c6cfe37f689c4`; 23 paths, 51 operations (20 GET, 7 POST, 12 PATCH, 12 DELETE). |
+| beta | Required | `openApiDocs_KiotaCompat\beta\BusinessScenario.yml`, Git blob `d9e1ebc5e38e58e0c197a07f388cf942d729c9f0`; 23 paths, 51 operations (20 GET, 7 POST, 12 PATCH, 12 DELETE). |
 | v1.0 | Excluded | `openApiDocs_KiotaCompat\v1.0\BusinessScenario.yml` is absent. This is a missing-compatible-spec exclusion, not an assertion that service operations are absent. No legacy specification fallback is used. |
 
 The existing committed beta output directory is `wrapper\Beta`; regeneration
@@ -45,21 +45,26 @@ directive migration mappings**:
 
 | Method | Path | Operation ID |
 | --- | --- | --- |
-| GET | `/solutions/businessScenarios` | `solutions.ListBusinessScenarios` |
-| POST | `/solutions/businessScenarios` | `solutions.CreateBusinessScenarios` |
-| GET | `/solutions/businessScenarios/{businessScenario-id}` | `solutions.GetBusinessScenarios` |
-| PATCH | `/solutions/businessScenarios/{businessScenario-id}` | `solutions.UpdateBusinessScenarios` |
-| DELETE | `/solutions/businessScenarios/{businessScenario-id}` | `solutions.DeleteBusinessScenarios` |
-| GET | `/solutions/businessScenarios/{businessScenario-id}/planner` | `solutions.businessScenarios.GetPlanner` |
-| POST | `/solutions/businessScenarios/{businessScenario-id}/planner/getPlan` | `solutions.businessScenarios.businessScenario.planner.getPlan` |
-| GET | `/solutions/businessScenarios/{businessScenario-id}/planner/tasks` | `solutions.businessScenarios.planner.ListTasks` |
-| GET | `/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}` | `solutions.businessScenarios.planner.GetTasks` |
-| GET | `/solutions/businessScenarios/$count` | `solutions.businessScenarios.GetCount-69a1` |
+| GET | `/solutions/businessScenarios` | `solution_ListBusinessScenario` |
+| POST | `/solutions/businessScenarios` | `solution_CreateBusinessScenario` |
+| GET | `/solutions/businessScenarios/{businessScenario-id}` | `solution_GetBusinessScenario` |
+| PATCH | `/solutions/businessScenarios/{businessScenario-id}` | `solution_UpdateBusinessScenario` |
+| DELETE | `/solutions/businessScenarios/{businessScenario-id}` | `solution_DeleteBusinessScenario` |
+| GET | `/solutions/businessScenarios/{businessScenario-id}/planner` | `solution.businessScenario_GetPlanner` |
+| POST | `/solutions/businessScenarios/{businessScenario-id}/planner/getPlan` | `solution.businessScenario.planner_getPlan` |
+| GET | `/solutions/businessScenarios/{businessScenario-id}/planner/tasks` | `solution.businessScenario.planner_ListTask` |
+| GET | `/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}` | `solution.businessScenario.planner_GetTask` |
+| GET | `/solutions/businessScenarios/$count` | `solution.businessScenario_GetCount` |
 
 `tools\WrapperGenerator.Tests\BusinessScenarioDirectiveMigrationTests.cs` loads
 the real compatible beta document, checks these operation identities and current
-names with derived data enabled and disabled, and checks that every beta
-operation remains unsuppressed. These names describe existing wrapper behavior,
+names with derived data enabled and disabled, and checks that all 51 beta
+operations remain unsuppressed. After merging `powershell-v3` containing #3849
+(`08e409a6aa8fd48736b8f9a9199559f46fc0d1ad`), the tests use the three-setting
+`GeneratorConfig` API and pass `apiVersion: "beta"` separately to naming and
+suppression, never implicitly selecting the v1.0 oracle. The identities above
+reflect the integrated compatible spec's operation-ID alignment.
+These names describe existing wrapper behavior,
 not newly implemented parity with profile-local AutoRest directives.
 
 ### Scope and deferred classes

@@ -14,16 +14,16 @@ public sealed class BusinessScenarioDirectiveMigrationTests
     private static readonly Lazy<OpenApiDocument> BetaDocument = new(LoadBetaDocument);
 
     [Theory]
-    [InlineData("GET", "/solutions/businessScenarios", "solutions.ListBusinessScenarios", "Get", "MgBusinessScenario")]
-    [InlineData("POST", "/solutions/businessScenarios", "solutions.CreateBusinessScenarios", "New", "MgBusinessScenario")]
-    [InlineData("GET", "/solutions/businessScenarios/{businessScenario-id}", "solutions.GetBusinessScenarios", "Get", "MgBusinessScenario")]
-    [InlineData("PATCH", "/solutions/businessScenarios/{businessScenario-id}", "solutions.UpdateBusinessScenarios", "Update", "MgBusinessScenario")]
-    [InlineData("DELETE", "/solutions/businessScenarios/{businessScenario-id}", "solutions.DeleteBusinessScenarios", "Remove", "MgBusinessScenario")]
-    [InlineData("GET", "/solutions/businessScenarios/{businessScenario-id}/planner", "solutions.businessScenarios.GetPlanner", "Get", "MgBusinessScenarioPlanner")]
-    [InlineData("POST", "/solutions/businessScenarios/{businessScenario-id}/planner/getPlan", "solutions.businessScenarios.businessScenario.planner.getPlan", "Invoke", "MgBusinessScenarioPlannerGetPlan", OperationKind.Action)]
-    [InlineData("GET", "/solutions/businessScenarios/{businessScenario-id}/planner/tasks", "solutions.businessScenarios.planner.ListTasks", "Get", "MgBusinessScenarioPlannerTask")]
-    [InlineData("GET", "/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}", "solutions.businessScenarios.planner.GetTasks", "Get", "MgBusinessScenarioPlannerTask")]
-    [InlineData("GET", "/solutions/businessScenarios/$count", "solutions.businessScenarios.GetCount-69a1", "Get", "MgBusinessScenarioCount")]
+    [InlineData("GET", "/solutions/businessScenarios", "solution_ListBusinessScenario", "Get", "MgBusinessScenario")]
+    [InlineData("POST", "/solutions/businessScenarios", "solution_CreateBusinessScenario", "New", "MgBusinessScenario")]
+    [InlineData("GET", "/solutions/businessScenarios/{businessScenario-id}", "solution_GetBusinessScenario", "Get", "MgBusinessScenario")]
+    [InlineData("PATCH", "/solutions/businessScenarios/{businessScenario-id}", "solution_UpdateBusinessScenario", "Update", "MgBusinessScenario")]
+    [InlineData("DELETE", "/solutions/businessScenarios/{businessScenario-id}", "solution_DeleteBusinessScenario", "Remove", "MgBusinessScenario")]
+    [InlineData("GET", "/solutions/businessScenarios/{businessScenario-id}/planner", "solution.businessScenario_GetPlanner", "Get", "MgBusinessScenarioPlanner")]
+    [InlineData("POST", "/solutions/businessScenarios/{businessScenario-id}/planner/getPlan", "solution.businessScenario.planner_getPlan", "Invoke", "MgBusinessScenarioPlannerGetPlan", OperationKind.Action)]
+    [InlineData("GET", "/solutions/businessScenarios/{businessScenario-id}/planner/tasks", "solution.businessScenario.planner_ListTask", "Get", "MgBusinessScenarioPlannerTask")]
+    [InlineData("GET", "/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}", "solution.businessScenario.planner_GetTask", "Get", "MgBusinessScenarioPlannerTask")]
+    [InlineData("GET", "/solutions/businessScenarios/$count", "solution.businessScenario_GetCount", "Get", "MgBusinessScenarioCount")]
     public void RealBetaOperationsRetainExistingNames(
         string method, string path, string operationId, string expectedVerb, string expectedNoun,
         OperationKind kind = OperationKind.Resource)
@@ -43,9 +43,9 @@ public sealed class BusinessScenarioDirectiveMigrationTests
 
         foreach (var useCollisionData in new[] { false, true })
         {
-            var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
-            Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, config));
-            var naming = Naming.Resolve(new OperationInfo(httpMethod, path, Kind: kind), config);
+            var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
+            Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, config, apiVersion: "beta"));
+            var naming = Naming.Resolve(new OperationInfo(httpMethod, path, Kind: kind), config, apiVersion: "beta");
             Assert.Equal(expectedVerb, naming.VerbName);
             Assert.Equal(expectedNoun, naming.Noun);
         }
@@ -56,19 +56,20 @@ public sealed class BusinessScenarioDirectiveMigrationTests
     [InlineData(true)]
     public void NoRealBetaOperationIsSuppressed(bool useCollisionData)
     {
-        var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
+        Assert.Equal(23, BetaDocument.Value.Paths.Count);
         var operationCount = 0;
         foreach (var (path, pathItem) in BetaDocument.Value.Paths)
         {
             Assert.NotNull(pathItem.Operations);
             foreach (var method in pathItem.Operations.Keys)
             {
-                Assert.False(CmdletConfigurator.IsSuppressed(method, path, config),
+                Assert.False(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: "beta"),
                     $"Unexpected suppression of beta {method} {path}.");
                 operationCount++;
             }
         }
-        Assert.True(operationCount > 0, "The compatible beta document must contain real operations.");
+        Assert.Equal(51, operationCount);
     }
 
     private static OpenApiDocument LoadBetaDocument()
