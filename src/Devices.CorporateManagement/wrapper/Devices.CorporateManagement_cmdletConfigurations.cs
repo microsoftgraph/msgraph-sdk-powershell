@@ -54,6 +54,40 @@ public static partial class CmdletConfigurator
             new(OverrideKind.ReplaceVerb, HttpMethod.Post, "/deviceappmanagement/policysets/{}/update",
                 PathMatch.Exact, "Update",
                 "Preserve the shared policySet Update1 action's published verb"),
+
+            GroupVariants(new OperationVariantGroup(
+            [
+                new("GET", "/deviceAppManagement/managedEBookCategories", "Root"),
+                new("GET", "/deviceAppManagement/managedEBookCategories/{managedEBookCategory-id}", "Root"),
+                new("GET", "/deviceAppManagement/managedEBooks/{managedEBook-id}/categories", "EBook"),
+                new("GET", "/deviceAppManagement/managedEBooks/{managedEBook-id}/categories/{managedEBookCategory-id}", "EBook"),
+            ], DefaultFamily: "Root"),
+                "The published managed eBook category GET exposes root and eBook-scoped variants distinguished by ManagedEBookId"),
+            GroupVariants(new OperationVariantGroup(
+            [
+                new("GET", "/deviceAppManagement/managedEBookCategories/$count", "Root"),
+                new("GET", "/deviceAppManagement/managedEBooks/{managedEBook-id}/categories/$count", "EBook"),
+            ], DefaultFamily: "Root"),
+                "Count the mobile eBook categories or the categories for one eBook using the existing ManagedEBookId"),
+
+            // These nested routes exist only in beta, while the root routes also exist in
+            // v1.0. A shared cross-path group would be incomplete in v1.0. The source calls
+            // them "direct relationships for this app"; preserve both endpoints explicitly.
+            new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/deviceappmanagement/mobileapps/{}/relationships",
+                PathMatch.Exact, "DeviceAppManagementMobileAppDirectRelationship",
+                "The source describes the nested navigation as the set of direct relationships for this app"),
+            new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/deviceappmanagement/mobileapps/{}/relationships/{}",
+                PathMatch.Exact, "DeviceAppManagementMobileAppDirectRelationship",
+                "The source describes the nested navigation as the set of direct relationships for this app"),
+            new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/deviceappmanagement/mobileapps/{}/relationships/$count",
+                PathMatch.Exact, "DeviceAppManagementMobileAppDirectRelationshipCount",
+                "Count direct relationships for the app without colliding with the root mobileAppRelationships count"),
+            new(OverrideKind.ReplaceNoun, HttpMethod.Post, "/deviceappmanagement/mobileapps/{}/relationships",
+                PathMatch.Exact, "DeviceAppManagementMobileAppDirectRelationship",
+                "Create a member of the source's direct relationships for this app navigation"),
+            new(OverrideKind.ReplaceNoun, HttpMethod.Delete, "/deviceappmanagement/mobileapps/{}/relationships/{}",
+                PathMatch.Exact, "DeviceAppManagementMobileAppDirectRelationship",
+                "Remove a member of the source's direct relationships for this app navigation"),
         ];
 
         // The shared iOS spelling rule needs exact route fallbacks for beta and for

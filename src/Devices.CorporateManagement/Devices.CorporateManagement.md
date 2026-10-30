@@ -15,6 +15,15 @@ require:
 
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
+The wrapper keeps the shared directives below active and records the reviewed
+dispositions in `wrapper/Devices.CorporateManagement_directiveMigrationMap.json`.
+Its eBook category GET variants use the existing mandatory `ManagedEBookId`, with
+the root list/count as defaults. The app-scoped navigation described as "direct
+relationships for this app" uses `DirectRelationship` for colliding GET, POST and
+DELETE commands; the existing noncolliding PATCH names are unchanged. This
+preserves endpoints without applying any profile-local removal directive or
+introducing a public route selector.
+
 ``` yaml
 directive:
 # Wrapper migration: the adjacent wrapper/Devices.CorporateManagement_directiveMigrationMap.json
@@ -22,7 +31,7 @@ directive:
 # pins reviewed naming and unaffected neighbors. Keep all AutoRest directives active.
 # Remove paths that are too long.
 # Wrapper migration: actual legacy IDs select zero v1.0 operations and two beta GETs.
-# Exact method/path translation to compatible IDs suppresses nested deviceStatuses/{id}/policy
+# Complete source/current method/path evidence suppresses nested deviceStatuses/{id}/policy
 # and deviceStatuses/$count under wdacSupplementalPolicies, not the status collection/items.
   - remove-path-by-operation: ^deviceAppManagement.wdacSupplementalPolicy.deviceStatus.*$|^deviceManagement.deviceHealthScript.deviceRunState.managedDevice_deleteUserFromSharedAppleDevice|^deviceAppManagement.mobileApp.userStatus.deviceStatus.app.microsoft.graph.iosVppApp_.*$|^deviceAppManagement.managedAppRegistration.(appliedPolicy|Intendedpolicy).microsoft.graph.*_.*$
 # Rename cmdlets with duplicates in their name.

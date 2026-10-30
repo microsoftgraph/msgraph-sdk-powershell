@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -26,7 +27,7 @@ public sealed class DevicesCorporateManagementDirectiveMigrationTests
     [InlineData("beta", true)]
     public void SharedRenamesAndNeighborsKeepTheirExactNames(string profile, bool useCollisionData)
     {
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         (string Method, string Path, OperationKind Kind, string Verb, string Noun)[] cases =
         [
             ("GET", "/deviceAppManagement", OperationKind.Resource, "Get", "DeviceAppManagement"),
@@ -52,7 +53,7 @@ public sealed class DevicesCorporateManagementDirectiveMigrationTests
         ];
         foreach (var (method, path, kind, verb, noun) in cases)
         {
-            var naming = Naming.Resolve(new(new HttpMethod(method), path, Kind: kind), config);
+            var naming = Naming.Resolve(new(new HttpMethod(method), path, Kind: kind), config, apiVersion: profile);
             Assert.Equal(verb, naming.VerbName);
             Assert.Equal("Mg" + noun, naming.Noun);
             Assert.Equal(verb + "Mg" + noun + "Command", naming.ClassName);
@@ -74,11 +75,21 @@ public sealed class DevicesCorporateManagementDirectiveMigrationTests
                 OperationKind.Action, "Invoke", "DeviceAppManagementTaskUpdateStatus");
             AssertName(HttpMethod.Get, "/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration-id}/deviceStatuses",
                 OperationKind.Resource, "Get", "DeviceAppManagementiOSLobAppProvisioningConfigurationDeviceStatus");
+            AssertName(HttpMethod.Get, "/deviceAppManagement/mobileApps/{mobileApp-id}/relationships",
+                OperationKind.Resource, "Get", "DeviceAppManagementMobileAppDirectRelationship");
+            AssertName(HttpMethod.Get, "/deviceAppManagement/mobileApps/{mobileApp-id}/relationships/$count",
+                OperationKind.Resource, "Get", "DeviceAppManagementMobileAppDirectRelationshipCount");
+            AssertName(HttpMethod.Post, "/deviceAppManagement/mobileApps/{mobileApp-id}/relationships",
+                OperationKind.Resource, "New", "DeviceAppManagementMobileAppDirectRelationship");
+            AssertName(HttpMethod.Delete, "/deviceAppManagement/mobileApps/{mobileApp-id}/relationships/{mobileAppRelationship-id}",
+                OperationKind.Resource, "Remove", "DeviceAppManagementMobileAppDirectRelationship");
+            AssertName(HttpMethod.Patch, "/deviceAppManagement/mobileApps/{mobileApp-id}/relationships/{mobileAppRelationship-id}",
+                OperationKind.Resource, "Update", "DeviceAppManagementMobileAppRelationship");
         }
 
         void AssertName(HttpMethod method, string path, OperationKind kind, string verb, string noun)
         {
-            var naming = Naming.Resolve(new(method, path, Kind: kind), config);
+            var naming = Naming.Resolve(new(method, path, Kind: kind), config, apiVersion: profile);
             Assert.Equal(verb, naming.VerbName);
             Assert.Equal("Mg" + noun, naming.Noun);
         }
@@ -102,7 +113,7 @@ public sealed class DevicesCorporateManagementDirectiveMigrationTests
         Assert.Equal(new[] { 1, 2, 3, 4, 5, 8, 9, 11, 12 }, mappings.Select(m => m.GetProperty("directiveIndex").GetInt32()));
         Assert.Equal(new[] { 6, 7, 10 }, ledger.RootElement.GetProperty("deferredDirectives").EnumerateArray()
             .Select(m => m.GetProperty("directiveIndex").GetInt32()));
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         var iosKeys = new HashSet<string>(StringComparer.Ordinal);
         foreach (var mapping in mappings)
         {
@@ -119,8 +130,8 @@ public sealed class DevicesCorporateManagementDirectiveMigrationTests
                 if (index != 8)
                     continue;
                 iosKeys.Add(method + " " + path);
-                Assert.False(CmdletConfigurator.IsSuppressed(method, path, config));
-                var noun = Naming.Resolve(new(method, path), config).Noun;
+                Assert.False(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile));
+                var noun = Naming.Resolve(new(method, path), config, apiVersion: profile).Noun;
                 Assert.Contains("iOS", noun);
                 Assert.DoesNotContain("Ios", noun);
             }
@@ -148,16 +159,18 @@ public sealed class DevicesCorporateManagementDirectiveMigrationTests
 
         var source = File.ReadAllText(Path.Combine(root, "src", Module, Module + ".md"));
         var oldIds = Regex.Match(source, @"remove-path-by-operation: ([^\r\n]+)").Groups[1].Value;
-        Assert.DoesNotContain(document.Paths.Values.SelectMany(p => p.Operations!.Values),
-            operation => Regex.IsMatch(operation.OperationId!, oldIds));
-        Assert.Equal("users.managedDevices.CreateLogCollectionRequests",
+        Assert.Equal(profile == "beta" ? 2 : 0, document.Paths.Values.SelectMany(p => p.Operations!.Values)
+            .Count(operation => Regex.IsMatch(operation.OperationId!, oldIds)));
+        Assert.Equal("user.managedDevice_CreateLogCollectionRequest",
             document.Paths[LogCollection].Operations![HttpMethod.Post].OperationId);
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, LogCollection, config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/deviceAppManagement/mobileAppRelationships/{mobileAppRelationship-id}", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/deviceAppManagement/mobileAppRelationships/$count", config));
-        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/deviceAppManagement/mobileApps/{mobileApp-id}/categories", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/deviceAppManagement/mobileAppCategories", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/deviceAppManagement/mobileApps/{mobileApp-id}/category", config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, LogCollection, config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/deviceAppManagement/mobileAppRelationships/{mobileAppRelationship-id}", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/deviceAppManagement/mobileAppRelationships/$count", config, apiVersion: profile));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/deviceAppManagement/mobileApps/{mobileApp-id}/categories", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/deviceAppManagement/mobileAppCategories", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/deviceAppManagement/mobileApps/{mobileApp-id}/category", config, apiVersion: profile));
+        Assert.DoesNotMatch("\"(operationIdSource|legacyPath|legacyOperationId|legacyPathTranslation|removedLegacyOperations)\"",
+            ledger.RootElement.GetRawText());
     }
 
     private static string FindRepoRoot()
@@ -194,24 +207,96 @@ public sealed class DevicesCorporateManagementDirectiveMigrationTests
             var path = Assert.Single(compatible.Paths, path =>
                 CmdletConfigurator.NormalizePathTemplate(path.Key) == CmdletConfigurator.NormalizePathTemplate(operation.Path));
             var translated = path.Value.Operations![operation.Method];
-            Assert.NotEqual(operation.Operation.OperationId, translated.OperationId);
+            Assert.Equal(operation.Operation.OperationId, translated.OperationId);
             foreach (var data in new[] { false, true })
                 Assert.True(CmdletConfigurator.IsSuppressed(operation.Method, path.Key,
-                    new GeneratorConfig("Test.Client", "unused", profile, data)));
+                    new GeneratorConfig("Test.Client", "unused", data), apiVersion: profile));
         }
+        var currentSelected = compatible.Paths.SelectMany(path => path.Value.Operations!
+                .Where(operation => selector.IsMatch(operation.Value.OperationId!))
+                .Select(operation => operation.Key + " " + CmdletConfigurator.NormalizePathTemplate(path.Key)))
+            .ToHashSet(StringComparer.Ordinal);
+        Assert.True(currentSelected.SetEquals(selected.Select(operation =>
+            operation.Method + " " + CmdletConfigurator.NormalizePathTemplate(operation.Path))),
+            "The complete actual original source matchset must equal the current literal selector set.");
         if (profile != "beta")
             return;
 
         const string statuses = "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deviceStatuses";
-        var config = new GeneratorConfig("Test.Client", "unused", profile);
-        Assert.Equal("deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.GetPolicy",
+        var config = new GeneratorConfig("Test.Client", "unused");
+        Assert.Equal("deviceAppManagement.wdacSupplementalPolicy.deviceStatus_GetPolicy",
             compatible.Paths[statuses + "/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}/policy"].Operations![HttpMethod.Get].OperationId);
-        Assert.Equal("deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.GetCount-c722",
+        Assert.Equal("deviceAppManagement.wdacSupplementalPolicy.deviceStatus_GetCount",
             compatible.Paths[statuses + "/$count"].Operations![HttpMethod.Get].OperationId);
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, statuses, config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, statuses, config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, statuses, config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, statuses, config, apiVersion: profile));
         foreach (var method in new[] { HttpMethod.Get, HttpMethod.Patch, HttpMethod.Delete })
-            Assert.False(CmdletConfigurator.IsSuppressed(method, statuses + "/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, statuses + "/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}/policy", config));
+            Assert.False(CmdletConfigurator.IsSuppressed(method, statuses + "/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, statuses + "/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}/policy", config, apiVersion: profile));
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task CurrentSpecCollisionFamiliesPreserveRoutesWithoutProfilePolicies(string profile, bool useCollisionData)
+    {
+        var settings = new OpenApiReaderSettings();
+        settings.AddYamlReader();
+        using var stream = File.OpenRead(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, Module + ".yml"));
+        var document = (await OpenApiDocument.LoadAsync(stream, settings: settings,
+            cancellationToken: TestContext.Current.CancellationToken)).Document!;
+        foreach (var path in document.Paths.Keys.Where(path => !Regex.IsMatch(path,
+            @"^/deviceAppManagement/(managedEBookCategories|managedEBooks/\{managedEBook-id\}/categories|mobileAppRelationships|mobileApps/\{mobileApp-id\}/relationships)(/|$)")).ToArray())
+            document.Paths.Remove(path);
+
+        var output = Path.Combine(Path.GetTempPath(), "corporatemanagement-tests-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            var service = new PowerShellWrapperGenerationService(document,
+                new GeneratorConfig("Test.Client", output, useCollisionData), NullLogger.Instance, apiVersion: profile);
+            await service.GenerateAsync(TestContext.Current.CancellationToken);
+            var files = Directory.GetFiles(output, "*.g.cs").ToDictionary(path => new FileInfo(path).Name, File.ReadAllText);
+            var relationship = files["GetMgDeviceAppManagementMobileAppRelationship.g.cs"];
+            Assert.Contains("DefaultParameterSetName = \"List\"", relationship);
+            Assert.DoesNotContain("public string Route", relationship);
+            if (profile == "v1.0")
+            {
+                Assert.DoesNotContain(files.Keys, file => file.Contains("_Route", StringComparison.Ordinal));
+                Assert.DoesNotContain(files.Keys, file => file.Contains("DirectRelationship", StringComparison.Ordinal));
+                return;
+            }
+            var category = files["GetMgDeviceAppManagementManagedEBookCategory.g.cs"];
+            Assert.Contains("DefaultParameterSetName = \"RootList\"", category);
+            Assert.Contains("public string ManagedEBookId", category);
+            foreach (var set in new[] { "RootList", "RootGet", "EBookList", "EBookGet" })
+                Assert.Contains("ParameterSetName = \"" + set + "\"", category);
+            Assert.DoesNotContain("public string Route", category);
+            Assert.Contains("DefaultParameterSetName = \"RootScalar\"",
+                files["GetMgDeviceAppManagementManagedEBookCategoryCount.g.cs"]);
+            Assert.Equal(6, files.Keys.Count(file => file.Contains("_Route", StringComparison.Ordinal)));
+            foreach (var path in document.Paths)
+            foreach (var method in path.Value.Operations!.Keys)
+                Assert.Contains(files.Values, text => text.Contains($"[GraphRoute(\"{method}\", \"{path.Key}\"",
+                    StringComparison.Ordinal));
+
+            var direct = files["GetMgDeviceAppManagementMobileAppDirectRelationship.g.cs"];
+            Assert.Contains("DefaultParameterSetName = \"List\"", direct);
+            Assert.Contains("public string MobileAppId", direct);
+            foreach (var verb in new[] { "New", "Remove" })
+            {
+                var mutation = files[verb + "MgDeviceAppManagementMobileAppDirectRelationship.g.cs"];
+                Assert.Contains("SupportsShouldProcess = true", mutation);
+                Assert.DoesNotContain("InvokeCommand.InvokeScript", mutation);
+            }
+            Assert.Contains("UpdateMgDeviceAppManagementMultipleMobileAppRelationship.g.cs", files.Keys);
+            Assert.Contains("UpdateMgDeviceAppManagementMobileAppRelationship.g.cs", files.Keys);
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
     }
 }
