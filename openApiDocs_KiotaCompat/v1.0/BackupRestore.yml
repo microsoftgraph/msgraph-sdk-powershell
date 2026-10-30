@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-get?view=graph-rest-1.0
-      operationId: solutions.GetBackupRestore
+      operationId: solution_GetBackupRestore
       parameters:
         - name: $select
           in: query
@@ -53,7 +53,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property backupRestore in solutions
-      operationId: solutions.UpdateBackupRestore
+      operationId: solution_UpdateBackupRestore
       requestBody:
         description: New navigation property values
         content:
@@ -77,7 +77,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property backupRestore for solutions
-      operationId: solutions.DeleteBackupRestore
+      operationId: solution_DeleteBackupRestore
       parameters:
         - name: If-Match
           in: header
@@ -102,7 +102,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-browsesessions?view=graph-rest-1.0
-      operationId: solutions.backupRestore.ListBrowseSessions
+      operationId: solution.backupRestore_ListBrowseSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -154,7 +154,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to browseSessions for solutions
-      operationId: solutions.backupRestore.CreateBrowseSessions
+      operationId: solution.backupRestore_CreateBrowseSession
       requestBody:
         description: New navigation property
         content:
@@ -180,7 +180,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get browseSessions from solutions
       description: The list of browse sessions in the tenant.
-      operationId: solutions.backupRestore.GetBrowseSessions
+      operationId: solution.backupRestore_GetBrowseSession
       parameters:
         - name: $select
           in: query
@@ -218,7 +218,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property browseSessions in solutions
-      operationId: solutions.backupRestore.UpdateBrowseSessions
+      operationId: solution.backupRestore_UpdateBrowseSession
       requestBody:
         description: New navigation property values
         content:
@@ -242,7 +242,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property browseSessions for solutions
-      operationId: solutions.backupRestore.DeleteBrowseSessions
+      operationId: solution.backupRestore_DeleteBrowseSession
       parameters:
         - name: If-Match
           in: header
@@ -263,7 +263,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Invoke action browse
-      operationId: solutions.backupRestore.browseSessions.browseSessionBase.browse
+      operationId: solution.backupRestore.browseSession.browseSessionBase_browse
       requestBody:
         description: Action parameters
         content:
@@ -316,7 +316,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Invoke function browse
-      operationId: solutions.backupRestore.browseSessions.browseSessionBase.browse-ae5b
+      operationId: solution.backupRestore.browseSession.browseSessionBase_browse
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -351,7 +351,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.browseSessions.GetCount-de6b
+      operationId: solution.backupRestore.browseSession_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -368,7 +368,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get driveInclusionRules from solutions
       description: The list of drive inclusion rules applied to the tenant.
-      operationId: solutions.backupRestore.ListDriveInclusionRules
+      operationId: solution.backupRestore_ListDriveInclusionRule
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -420,7 +420,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to driveInclusionRules for solutions
-      operationId: solutions.backupRestore.CreateDriveInclusionRules
+      operationId: solution.backupRestore_CreateDriveInclusionRule
       requestBody:
         description: New navigation property
         content:
@@ -446,7 +446,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get driveInclusionRules from solutions
       description: The list of drive inclusion rules applied to the tenant.
-      operationId: solutions.backupRestore.GetDriveInclusionRules
+      operationId: solution.backupRestore_GetDriveInclusionRule
       parameters:
         - name: $select
           in: query
@@ -484,7 +484,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property driveInclusionRules in solutions
-      operationId: solutions.backupRestore.UpdateDriveInclusionRules
+      operationId: solution.backupRestore_UpdateDriveInclusionRule
       requestBody:
         description: New navigation property values
         content:
@@ -508,7 +508,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property driveInclusionRules for solutions
-      operationId: solutions.backupRestore.DeleteDriveInclusionRules
+      operationId: solution.backupRestore_DeleteDriveInclusionRule
       parameters:
         - name: If-Match
           in: header
@@ -529,7 +529,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.driveInclusionRules.GetCount-d025
+      operationId: solution.backupRestore.driveInclusionRule_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -546,7 +546,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get driveProtectionUnits from solutions
       description: The list of drive protection units in the tenant.
-      operationId: solutions.backupRestore.ListDriveProtectionUnits
+      operationId: solution.backupRestore_ListDriveProtectionUnit
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -598,7 +598,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to driveProtectionUnits for solutions
-      operationId: solutions.backupRestore.CreateDriveProtectionUnits
+      operationId: solution.backupRestore_CreateDriveProtectionUnit
       requestBody:
         description: New navigation property
         content:
@@ -624,7 +624,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get driveProtectionUnits from solutions
       description: The list of drive protection units in the tenant.
-      operationId: solutions.backupRestore.GetDriveProtectionUnits
+      operationId: solution.backupRestore_GetDriveProtectionUnit
       parameters:
         - name: $select
           in: query
@@ -662,7 +662,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property driveProtectionUnits in solutions
-      operationId: solutions.backupRestore.UpdateDriveProtectionUnits
+      operationId: solution.backupRestore_UpdateDriveProtectionUnit
       requestBody:
         description: New navigation property values
         content:
@@ -686,7 +686,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property driveProtectionUnits for solutions
-      operationId: solutions.backupRestore.DeleteDriveProtectionUnits
+      operationId: solution.backupRestore_DeleteDriveProtectionUnit
       parameters:
         - name: If-Match
           in: header
@@ -707,7 +707,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.driveProtectionUnits.GetCount-d596
+      operationId: solution.backupRestore.driveProtectionUnit_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -723,7 +723,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get driveProtectionUnitsBulkAdditionJobs from solutions
-      operationId: solutions.backupRestore.ListDriveProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_ListDriveProtectionUnitsBulkAdditionJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -775,7 +775,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to driveProtectionUnitsBulkAdditionJobs for solutions
-      operationId: solutions.backupRestore.CreateDriveProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_CreateDriveProtectionUnitsBulkAdditionJob
       requestBody:
         description: New navigation property
         content:
@@ -800,7 +800,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get driveProtectionUnitsBulkAdditionJobs from solutions
-      operationId: solutions.backupRestore.GetDriveProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_GetDriveProtectionUnitsBulkAdditionJob
       parameters:
         - name: $select
           in: query
@@ -838,7 +838,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property driveProtectionUnitsBulkAdditionJobs in solutions
-      operationId: solutions.backupRestore.UpdateDriveProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_UpdateDriveProtectionUnitsBulkAdditionJob
       requestBody:
         description: New navigation property values
         content:
@@ -862,7 +862,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property driveProtectionUnitsBulkAdditionJobs for solutions
-      operationId: solutions.backupRestore.DeleteDriveProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_DeleteDriveProtectionUnitsBulkAdditionJob
       parameters:
         - name: If-Match
           in: header
@@ -883,7 +883,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.driveProtectionUnitsBulkAdditionJobs.GetCount-ebcb
+      operationId: solution.backupRestore.driveProtectionUnitsBulkAdditionJob_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -903,7 +903,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/emailnotificationssetting-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.GetEmailNotificationsSetting
+      operationId: solution.backupRestore_GetEmailNotificationsSetting
       parameters:
         - name: $select
           in: query
@@ -945,7 +945,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/emailnotificationssetting-update?view=graph-rest-1.0
-      operationId: solutions.backupRestore.UpdateEmailNotificationsSetting
+      operationId: solution.backupRestore_UpdateEmailNotificationsSetting
       requestBody:
         description: New navigation property values
         content:
@@ -969,7 +969,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property emailNotificationsSetting for solutions
-      operationId: solutions.backupRestore.DeleteEmailNotificationsSetting
+      operationId: solution.backupRestore_DeleteEmailNotificationsSetting
       parameters:
         - name: If-Match
           in: header
@@ -991,7 +991,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get exchangeProtectionPolicies from solutions
       description: The list of Exchange protection policies in the tenant.
-      operationId: solutions.backupRestore.ListExchangeProtectionPolicies
+      operationId: solution.backupRestore_ListExchangeProtectionPolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1047,7 +1047,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-exchangeprotectionpolicies?view=graph-rest-1.0
-      operationId: solutions.backupRestore.CreateExchangeProtectionPolicies
+      operationId: solution.backupRestore_CreateExchangeProtectionPolicy
       requestBody:
         description: New navigation property
         content:
@@ -1073,7 +1073,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get exchangeProtectionPolicies from solutions
       description: The list of Exchange protection policies in the tenant.
-      operationId: solutions.backupRestore.GetExchangeProtectionPolicies
+      operationId: solution.backupRestore_GetExchangeProtectionPolicy
       parameters:
         - name: $select
           in: query
@@ -1115,7 +1115,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/exchangeprotectionpolicy-update?view=graph-rest-1.0
-      operationId: solutions.backupRestore.UpdateExchangeProtectionPolicies
+      operationId: solution.backupRestore_UpdateExchangeProtectionPolicy
       requestBody:
         description: New navigation property values
         content:
@@ -1139,7 +1139,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property exchangeProtectionPolicies for solutions
-      operationId: solutions.backupRestore.DeleteExchangeProtectionPolicies
+      operationId: solution.backupRestore_DeleteExchangeProtectionPolicy
       parameters:
         - name: If-Match
           in: header
@@ -1164,7 +1164,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/exchangeprotectionpolicy-list-mailboxinclusionrules?view=graph-rest-1.0
-      operationId: solutions.backupRestore.exchangeProtectionPolicies.ListMailboxInclusionRules
+      operationId: solution.backupRestore.exchangeProtectionPolicy_ListMailboxInclusionRule
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1221,7 +1221,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/protectionrulebase-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.exchangeProtectionPolicies.GetMailboxInclusionRules
+      operationId: solution.backupRestore.exchangeProtectionPolicy_GetMailboxInclusionRule
       parameters:
         - name: $select
           in: query
@@ -1260,7 +1260,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.exchangeProtectionPolicies.mailboxInclusionRules.GetCount-2c50
+      operationId: solution.backupRestore.exchangeProtectionPolicy.mailboxInclusionRule_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1277,7 +1277,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get mailboxProtectionUnits from solutions
       description: The protection units (mailboxes) that are  protected under the Exchange protection policy.
-      operationId: solutions.backupRestore.exchangeProtectionPolicies.ListMailboxProtectionUnits
+      operationId: solution.backupRestore.exchangeProtectionPolicy_ListMailboxProtectionUnit
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1331,7 +1331,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get mailboxProtectionUnits from solutions
       description: The protection units (mailboxes) that are  protected under the Exchange protection policy.
-      operationId: solutions.backupRestore.exchangeProtectionPolicies.GetMailboxProtectionUnits
+      operationId: solution.backupRestore.exchangeProtectionPolicy_GetMailboxProtectionUnit
       parameters:
         - name: $select
           in: query
@@ -1370,7 +1370,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.exchangeProtectionPolicies.mailboxProtectionUnits.GetCount-555b
+      operationId: solution.backupRestore.exchangeProtectionPolicy.mailboxProtectionUnit_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1390,7 +1390,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/exchangeprotectionpolicy-list-mailboxprotectionunitsbulkadditionjobs?view=graph-rest-1.0
-      operationId: solutions.backupRestore.exchangeProtectionPolicies.ListMailboxProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore.exchangeProtectionPolicy_ListMailboxProtectionUnitsBulkAdditionJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1447,7 +1447,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/mailboxprotectionunitsbulkadditionjobs-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.exchangeProtectionPolicies.GetMailboxProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore.exchangeProtectionPolicy_GetMailboxProtectionUnitsBulkAdditionJob
       parameters:
         - name: $select
           in: query
@@ -1486,7 +1486,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.exchangeProtectionPolicies.mailboxProtectionUnitsBulkAdditionJobs.GetCount-c135
+      operationId: solution.backupRestore.exchangeProtectionPolicy.mailboxProtectionUnitsBulkAdditionJob_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1502,7 +1502,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.exchangeProtectionPolicies.GetCount-f24d
+      operationId: solution.backupRestore.exchangeProtectionPolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1519,7 +1519,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get exchangeRestoreSessions from solutions
       description: The list of Exchange restore sessions available in the tenant.
-      operationId: solutions.backupRestore.ListExchangeRestoreSessions
+      operationId: solution.backupRestore_ListExchangeRestoreSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1575,7 +1575,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-exchangerestoresessions?view=graph-rest-1.0
-      operationId: solutions.backupRestore.CreateExchangeRestoreSessions
+      operationId: solution.backupRestore_CreateExchangeRestoreSession
       requestBody:
         description: New navigation property
         content:
@@ -1601,7 +1601,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get exchangeRestoreSessions from solutions
       description: The list of Exchange restore sessions available in the tenant.
-      operationId: solutions.backupRestore.GetExchangeRestoreSessions
+      operationId: solution.backupRestore_GetExchangeRestoreSession
       parameters:
         - name: $select
           in: query
@@ -1643,7 +1643,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/exchangerestoresession-update?view=graph-rest-1.0
-      operationId: solutions.backupRestore.UpdateExchangeRestoreSessions
+      operationId: solution.backupRestore_UpdateExchangeRestoreSession
       requestBody:
         description: New navigation property values
         content:
@@ -1667,7 +1667,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property exchangeRestoreSessions for solutions
-      operationId: solutions.backupRestore.DeleteExchangeRestoreSessions
+      operationId: solution.backupRestore_DeleteExchangeRestoreSession
       parameters:
         - name: If-Match
           in: header
@@ -1688,7 +1688,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get granularMailboxRestoreArtifacts from solutions
-      operationId: solutions.backupRestore.exchangeRestoreSessions.ListGranularMailboxRestoreArtifacts
+      operationId: solution.backupRestore.exchangeRestoreSession_ListGranularMailboxRestoreArtifact
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1740,7 +1740,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to granularMailboxRestoreArtifacts for solutions
-      operationId: solutions.backupRestore.exchangeRestoreSessions.CreateGranularMailboxRestoreArtifacts
+      operationId: solution.backupRestore.exchangeRestoreSession_CreateGranularMailboxRestoreArtifact
       requestBody:
         description: New navigation property
         content:
@@ -1765,7 +1765,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get granularMailboxRestoreArtifacts from solutions
-      operationId: solutions.backupRestore.exchangeRestoreSessions.GetGranularMailboxRestoreArtifacts
+      operationId: solution.backupRestore.exchangeRestoreSession_GetGranularMailboxRestoreArtifact
       parameters:
         - name: $select
           in: query
@@ -1803,7 +1803,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property granularMailboxRestoreArtifacts in solutions
-      operationId: solutions.backupRestore.exchangeRestoreSessions.UpdateGranularMailboxRestoreArtifacts
+      operationId: solution.backupRestore.exchangeRestoreSession_UpdateGranularMailboxRestoreArtifact
       requestBody:
         description: New navigation property values
         content:
@@ -1827,7 +1827,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property granularMailboxRestoreArtifacts for solutions
-      operationId: solutions.backupRestore.exchangeRestoreSessions.DeleteGranularMailboxRestoreArtifacts
+      operationId: solution.backupRestore.exchangeRestoreSession_DeleteGranularMailboxRestoreArtifact
       parameters:
         - name: If-Match
           in: header
@@ -1849,7 +1849,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get restorePoint from solutions
       description: Represents the date and time when an artifact is protected by a protectionPolicy and can be restored.
-      operationId: solutions.backupRestore.exchangeRestoreSessions.granularMailboxRestoreArtifacts.GetRestorePoint
+      operationId: solution.backupRestore.exchangeRestoreSession.granularMailboxRestoreArtifact_GetRestorePoint
       parameters:
         - name: $select
           in: query
@@ -1888,7 +1888,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.exchangeRestoreSessions.granularMailboxRestoreArtifacts.GetCount-4d23
+      operationId: solution.backupRestore.exchangeRestoreSession.granularMailboxRestoreArtifact_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1908,7 +1908,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/exchangerestoresession-list-mailboxrestoreartifacts?view=graph-rest-1.0
-      operationId: solutions.backupRestore.exchangeRestoreSessions.ListMailboxRestoreArtifacts
+      operationId: solution.backupRestore.exchangeRestoreSession_ListMailboxRestoreArtifact
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1960,7 +1960,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to mailboxRestoreArtifacts for solutions
-      operationId: solutions.backupRestore.exchangeRestoreSessions.CreateMailboxRestoreArtifacts
+      operationId: solution.backupRestore.exchangeRestoreSession_CreateMailboxRestoreArtifact
       requestBody:
         description: New navigation property
         content:
@@ -1986,7 +1986,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get mailboxRestoreArtifacts from solutions
       description: A collection of restore points and destination details that can be used to restore Exchange mailboxes.
-      operationId: solutions.backupRestore.exchangeRestoreSessions.GetMailboxRestoreArtifacts
+      operationId: solution.backupRestore.exchangeRestoreSession_GetMailboxRestoreArtifact
       parameters:
         - name: $select
           in: query
@@ -2024,7 +2024,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property mailboxRestoreArtifacts in solutions
-      operationId: solutions.backupRestore.exchangeRestoreSessions.UpdateMailboxRestoreArtifacts
+      operationId: solution.backupRestore.exchangeRestoreSession_UpdateMailboxRestoreArtifact
       requestBody:
         description: New navigation property values
         content:
@@ -2048,7 +2048,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property mailboxRestoreArtifacts for solutions
-      operationId: solutions.backupRestore.exchangeRestoreSessions.DeleteMailboxRestoreArtifacts
+      operationId: solution.backupRestore.exchangeRestoreSession_DeleteMailboxRestoreArtifact
       parameters:
         - name: If-Match
           in: header
@@ -2070,7 +2070,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get restorePoint from solutions
       description: Represents the date and time when an artifact is protected by a protectionPolicy and can be restored.
-      operationId: solutions.backupRestore.exchangeRestoreSessions.mailboxRestoreArtifacts.GetRestorePoint
+      operationId: solution.backupRestore.exchangeRestoreSession.mailboxRestoreArtifact_GetRestorePoint
       parameters:
         - name: $select
           in: query
@@ -2109,7 +2109,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.exchangeRestoreSessions.mailboxRestoreArtifacts.GetCount-5e6f
+      operationId: solution.backupRestore.exchangeRestoreSession.mailboxRestoreArtifact_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2129,7 +2129,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/exchangerestoresession-list-mailboxrestoreartifactsbulkadditionrequests?view=graph-rest-1.0
-      operationId: solutions.backupRestore.exchangeRestoreSessions.ListMailboxRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.exchangeRestoreSession_ListMailboxRestoreArtifactsBulkAdditionRequest
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2185,7 +2185,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/exchangerestoresession-post-mailboxrestoreartifactsbulkadditionrequests?view=graph-rest-1.0
-      operationId: solutions.backupRestore.exchangeRestoreSessions.CreateMailboxRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.exchangeRestoreSession_CreateMailboxRestoreArtifactsBulkAdditionRequest
       requestBody:
         description: New navigation property
         content:
@@ -2214,7 +2214,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/mailboxrestoreartifactsbulkadditionrequest-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.exchangeRestoreSessions.GetMailboxRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.exchangeRestoreSession_GetMailboxRestoreArtifactsBulkAdditionRequest
       parameters:
         - name: $select
           in: query
@@ -2252,7 +2252,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property mailboxRestoreArtifactsBulkAdditionRequests in solutions
-      operationId: solutions.backupRestore.exchangeRestoreSessions.UpdateMailboxRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.exchangeRestoreSession_UpdateMailboxRestoreArtifactsBulkAdditionRequest
       requestBody:
         description: New navigation property values
         content:
@@ -2280,7 +2280,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/mailboxrestoreartifactsbulkadditionrequest-delete?view=graph-rest-1.0
-      operationId: solutions.backupRestore.exchangeRestoreSessions.DeleteMailboxRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.exchangeRestoreSession_DeleteMailboxRestoreArtifactsBulkAdditionRequest
       parameters:
         - name: If-Match
           in: header
@@ -2301,7 +2301,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.exchangeRestoreSessions.mailboxRestoreArtifactsBulkAdditionRequests.GetCount-609b
+      operationId: solution.backupRestore.exchangeRestoreSession.mailboxRestoreArtifactsBulkAdditionRequest_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2317,7 +2317,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.exchangeRestoreSessions.GetCount-155a
+      operationId: solution.backupRestore.exchangeRestoreSession_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2334,7 +2334,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get mailboxInclusionRules from solutions
       description: The list of mailbox inclusion rules applied to the tenant.
-      operationId: solutions.backupRestore.ListMailboxInclusionRules
+      operationId: solution.backupRestore_ListMailboxInclusionRule
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2386,7 +2386,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to mailboxInclusionRules for solutions
-      operationId: solutions.backupRestore.CreateMailboxInclusionRules
+      operationId: solution.backupRestore_CreateMailboxInclusionRule
       requestBody:
         description: New navigation property
         content:
@@ -2412,7 +2412,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get mailboxInclusionRules from solutions
       description: The list of mailbox inclusion rules applied to the tenant.
-      operationId: solutions.backupRestore.GetMailboxInclusionRules
+      operationId: solution.backupRestore_GetMailboxInclusionRule
       parameters:
         - name: $select
           in: query
@@ -2450,7 +2450,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property mailboxInclusionRules in solutions
-      operationId: solutions.backupRestore.UpdateMailboxInclusionRules
+      operationId: solution.backupRestore_UpdateMailboxInclusionRule
       requestBody:
         description: New navigation property values
         content:
@@ -2474,7 +2474,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property mailboxInclusionRules for solutions
-      operationId: solutions.backupRestore.DeleteMailboxInclusionRules
+      operationId: solution.backupRestore_DeleteMailboxInclusionRule
       parameters:
         - name: If-Match
           in: header
@@ -2495,7 +2495,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.mailboxInclusionRules.GetCount-d80a
+      operationId: solution.backupRestore.mailboxInclusionRule_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2512,7 +2512,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get mailboxProtectionUnits from solutions
       description: The list of mailbox protection units in the tenant.
-      operationId: solutions.backupRestore.ListMailboxProtectionUnits
+      operationId: solution.backupRestore_ListMailboxProtectionUnit
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2564,7 +2564,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to mailboxProtectionUnits for solutions
-      operationId: solutions.backupRestore.CreateMailboxProtectionUnits
+      operationId: solution.backupRestore_CreateMailboxProtectionUnit
       requestBody:
         description: New navigation property
         content:
@@ -2590,7 +2590,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get mailboxProtectionUnits from solutions
       description: The list of mailbox protection units in the tenant.
-      operationId: solutions.backupRestore.GetMailboxProtectionUnits
+      operationId: solution.backupRestore_GetMailboxProtectionUnit
       parameters:
         - name: $select
           in: query
@@ -2628,7 +2628,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property mailboxProtectionUnits in solutions
-      operationId: solutions.backupRestore.UpdateMailboxProtectionUnits
+      operationId: solution.backupRestore_UpdateMailboxProtectionUnit
       requestBody:
         description: New navigation property values
         content:
@@ -2652,7 +2652,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property mailboxProtectionUnits for solutions
-      operationId: solutions.backupRestore.DeleteMailboxProtectionUnits
+      operationId: solution.backupRestore_DeleteMailboxProtectionUnit
       parameters:
         - name: If-Match
           in: header
@@ -2673,7 +2673,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.mailboxProtectionUnits.GetCount-f991
+      operationId: solution.backupRestore.mailboxProtectionUnit_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2689,7 +2689,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get mailboxProtectionUnitsBulkAdditionJobs from solutions
-      operationId: solutions.backupRestore.ListMailboxProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_ListMailboxProtectionUnitsBulkAdditionJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2741,7 +2741,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to mailboxProtectionUnitsBulkAdditionJobs for solutions
-      operationId: solutions.backupRestore.CreateMailboxProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_CreateMailboxProtectionUnitsBulkAdditionJob
       requestBody:
         description: New navigation property
         content:
@@ -2766,7 +2766,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get mailboxProtectionUnitsBulkAdditionJobs from solutions
-      operationId: solutions.backupRestore.GetMailboxProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_GetMailboxProtectionUnitsBulkAdditionJob
       parameters:
         - name: $select
           in: query
@@ -2804,7 +2804,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property mailboxProtectionUnitsBulkAdditionJobs in solutions
-      operationId: solutions.backupRestore.UpdateMailboxProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_UpdateMailboxProtectionUnitsBulkAdditionJob
       requestBody:
         description: New navigation property values
         content:
@@ -2828,7 +2828,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property mailboxProtectionUnitsBulkAdditionJobs for solutions
-      operationId: solutions.backupRestore.DeleteMailboxProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_DeleteMailboxProtectionUnitsBulkAdditionJob
       parameters:
         - name: If-Match
           in: header
@@ -2849,7 +2849,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.mailboxProtectionUnitsBulkAdditionJobs.GetCount-8da2
+      operationId: solution.backupRestore.mailboxProtectionUnitsBulkAdditionJob_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2869,7 +2869,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-enable?view=graph-rest-1.0
-      operationId: solutions.backupRestore.enable
+      operationId: solution.backupRestore_enable
       requestBody:
         description: Action parameters
         content:
@@ -2904,7 +2904,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-onedriveforbusinessbrowsesessions?view=graph-rest-1.0
-      operationId: solutions.backupRestore.ListOneDriveForBusinessBrowseSessions
+      operationId: solution.backupRestore_ListOneDriveGraphFPreBusinessBrowseSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2960,7 +2960,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-onedriveforbusinessbrowsesessions?view=graph-rest-1.0
-      operationId: solutions.backupRestore.CreateOneDriveForBusinessBrowseSessions
+      operationId: solution.backupRestore_CreateOneDriveGraphFPreBusinessBrowseSession
       requestBody:
         description: New navigation property
         content:
@@ -2989,7 +2989,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onedriveforbusinessbrowsesession-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.GetOneDriveForBusinessBrowseSessions
+      operationId: solution.backupRestore_GetOneDriveGraphFPreBusinessBrowseSession
       parameters:
         - name: $select
           in: query
@@ -3027,7 +3027,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property oneDriveForBusinessBrowseSessions in solutions
-      operationId: solutions.backupRestore.UpdateOneDriveForBusinessBrowseSessions
+      operationId: solution.backupRestore_UpdateOneDriveGraphFPreBusinessBrowseSession
       requestBody:
         description: New navigation property values
         content:
@@ -3051,7 +3051,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property oneDriveForBusinessBrowseSessions for solutions
-      operationId: solutions.backupRestore.DeleteOneDriveForBusinessBrowseSessions
+      operationId: solution.backupRestore_DeleteOneDriveGraphFPreBusinessBrowseSession
       parameters:
         - name: If-Match
           in: header
@@ -3072,7 +3072,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.oneDriveForBusinessBrowseSessions.GetCount-85f3
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessBrowseSession_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3089,7 +3089,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get oneDriveForBusinessProtectionPolicies from solutions
       description: The list of OneDrive for Business protection policies in the tenant.
-      operationId: solutions.backupRestore.ListOneDriveForBusinessProtectionPolicies
+      operationId: solution.backupRestore_ListOneDriveGraphFPreBusinessProtectionPolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3145,7 +3145,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-onedriveforbusinessprotectionpolicies?view=graph-rest-1.0
-      operationId: solutions.backupRestore.CreateOneDriveForBusinessProtectionPolicies
+      operationId: solution.backupRestore_CreateOneDriveGraphFPreBusinessProtectionPolicy
       requestBody:
         description: New navigation property
         content:
@@ -3171,7 +3171,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get oneDriveForBusinessProtectionPolicies from solutions
       description: The list of OneDrive for Business protection policies in the tenant.
-      operationId: solutions.backupRestore.GetOneDriveForBusinessProtectionPolicies
+      operationId: solution.backupRestore_GetOneDriveGraphFPreBusinessProtectionPolicy
       parameters:
         - name: $select
           in: query
@@ -3213,7 +3213,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onedriveforbusinessprotectionpolicy-update?view=graph-rest-1.0
-      operationId: solutions.backupRestore.UpdateOneDriveForBusinessProtectionPolicies
+      operationId: solution.backupRestore_UpdateOneDriveGraphFPreBusinessProtectionPolicy
       requestBody:
         description: New navigation property values
         content:
@@ -3237,7 +3237,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property oneDriveForBusinessProtectionPolicies for solutions
-      operationId: solutions.backupRestore.DeleteOneDriveForBusinessProtectionPolicies
+      operationId: solution.backupRestore_DeleteOneDriveGraphFPreBusinessProtectionPolicy
       parameters:
         - name: If-Match
           in: header
@@ -3262,7 +3262,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onedriveforbusinessprotectionpolicy-list-driveinclusionrules?view=graph-rest-1.0
-      operationId: solutions.backupRestore.oneDriveForBusinessProtectionPolicies.ListDriveInclusionRules
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy_ListDriveInclusionRule
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3319,7 +3319,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/protectionrulebase-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.oneDriveForBusinessProtectionPolicies.GetDriveInclusionRules
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy_GetDriveInclusionRule
       parameters:
         - name: $select
           in: query
@@ -3358,7 +3358,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.oneDriveForBusinessProtectionPolicies.driveInclusionRules.GetCount-49f5
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy.driveInclusionRule_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3378,7 +3378,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-driveprotectionunits?view=graph-rest-1.0
-      operationId: solutions.backupRestore.oneDriveForBusinessProtectionPolicies.ListDriveProtectionUnits
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy_ListDriveProtectionUnit
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3432,7 +3432,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get driveProtectionUnits from solutions
       description: Contains the protection units associated with a  OneDrive for Business protection policy.
-      operationId: solutions.backupRestore.oneDriveForBusinessProtectionPolicies.GetDriveProtectionUnits
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy_GetDriveProtectionUnit
       parameters:
         - name: $select
           in: query
@@ -3471,7 +3471,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.oneDriveForBusinessProtectionPolicies.driveProtectionUnits.GetCount-2f14
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy.driveProtectionUnit_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3491,7 +3491,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onedriveforbusinessprotectionpolicy-list-driveprotectionunitsbulkadditionjobs?view=graph-rest-1.0
-      operationId: solutions.backupRestore.oneDriveForBusinessProtectionPolicies.ListDriveProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy_ListDriveProtectionUnitsBulkAdditionJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3548,7 +3548,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/driveprotectionunitsbulkadditionjobs-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.oneDriveForBusinessProtectionPolicies.GetDriveProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy_GetDriveProtectionUnitsBulkAdditionJob
       parameters:
         - name: $select
           in: query
@@ -3587,7 +3587,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.oneDriveForBusinessProtectionPolicies.driveProtectionUnitsBulkAdditionJobs.GetCount-44f9
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy.driveProtectionUnitsBulkAdditionJob_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3603,7 +3603,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.oneDriveForBusinessProtectionPolicies.GetCount-4e8f
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessProtectionPolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3620,7 +3620,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get oneDriveForBusinessRestoreSessions from solutions
       description: The list of OneDrive for Business restore sessions available in the tenant.
-      operationId: solutions.backupRestore.ListOneDriveForBusinessRestoreSessions
+      operationId: solution.backupRestore_ListOneDriveGraphFPreBusinessRestoreSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3676,7 +3676,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-onedriveforbusinessrestoresessions?view=graph-rest-1.0
-      operationId: solutions.backupRestore.CreateOneDriveForBusinessRestoreSessions
+      operationId: solution.backupRestore_CreateOneDriveGraphFPreBusinessRestoreSession
       requestBody:
         description: New navigation property
         content:
@@ -3702,7 +3702,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get oneDriveForBusinessRestoreSessions from solutions
       description: The list of OneDrive for Business restore sessions available in the tenant.
-      operationId: solutions.backupRestore.GetOneDriveForBusinessRestoreSessions
+      operationId: solution.backupRestore_GetOneDriveGraphFPreBusinessRestoreSession
       parameters:
         - name: $select
           in: query
@@ -3744,7 +3744,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-update?view=graph-rest-1.0
-      operationId: solutions.backupRestore.UpdateOneDriveForBusinessRestoreSessions
+      operationId: solution.backupRestore_UpdateOneDriveGraphFPreBusinessRestoreSession
       requestBody:
         description: New navigation property values
         content:
@@ -3768,7 +3768,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property oneDriveForBusinessRestoreSessions for solutions
-      operationId: solutions.backupRestore.DeleteOneDriveForBusinessRestoreSessions
+      operationId: solution.backupRestore_DeleteOneDriveGraphFPreBusinessRestoreSession
       parameters:
         - name: If-Match
           in: header
@@ -3793,7 +3793,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-list-driverestoreartifacts?view=graph-rest-1.0
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.ListDriveRestoreArtifacts
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_ListDriveRestoreArtifact
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3845,7 +3845,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to driveRestoreArtifacts for solutions
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.CreateDriveRestoreArtifacts
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_CreateDriveRestoreArtifact
       requestBody:
         description: New navigation property
         content:
@@ -3871,7 +3871,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get driveRestoreArtifacts from solutions
       description: A collection of restore points and destination details that can be used to restore a OneDrive for work or school drive.
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.GetDriveRestoreArtifacts
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_GetDriveRestoreArtifact
       parameters:
         - name: $select
           in: query
@@ -3909,7 +3909,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property driveRestoreArtifacts in solutions
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.UpdateDriveRestoreArtifacts
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_UpdateDriveRestoreArtifact
       requestBody:
         description: New navigation property values
         content:
@@ -3933,7 +3933,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property driveRestoreArtifacts for solutions
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.DeleteDriveRestoreArtifacts
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_DeleteDriveRestoreArtifact
       parameters:
         - name: If-Match
           in: header
@@ -3955,7 +3955,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get restorePoint from solutions
       description: Represents the date and time when an artifact is protected by a protectionPolicy and can be restored.
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.driveRestoreArtifacts.GetRestorePoint
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession.driveRestoreArtifact_GetRestorePoint
       parameters:
         - name: $select
           in: query
@@ -3994,7 +3994,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.driveRestoreArtifacts.GetCount-9e6d
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession.driveRestoreArtifact_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4014,7 +4014,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-list-driverestoreartifactsbulkadditionrequests?view=graph-rest-1.0
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.ListDriveRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_ListDriveRestoreArtifactsBulkAdditionRequest
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4070,7 +4070,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-post-driverestoreartifactsbulkadditionrequests?view=graph-rest-1.0
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.CreateDriveRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_CreateDriveRestoreArtifactsBulkAdditionRequest
       requestBody:
         description: New navigation property
         content:
@@ -4099,7 +4099,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/driverestoreartifactsbulkadditionrequest-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.GetDriveRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_GetDriveRestoreArtifactsBulkAdditionRequest
       parameters:
         - name: $select
           in: query
@@ -4137,7 +4137,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property driveRestoreArtifactsBulkAdditionRequests in solutions
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.UpdateDriveRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_UpdateDriveRestoreArtifactsBulkAdditionRequest
       requestBody:
         description: New navigation property values
         content:
@@ -4165,7 +4165,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/driverestoreartifactsbulkadditionrequest-delete?view=graph-rest-1.0
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.DeleteDriveRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_DeleteDriveRestoreArtifactsBulkAdditionRequest
       parameters:
         - name: If-Match
           in: header
@@ -4186,7 +4186,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.driveRestoreArtifactsBulkAdditionRequests.GetCount-9cac
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession.driveRestoreArtifactsBulkAdditionRequest_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4206,7 +4206,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-list-granulardriverestoreartifacts?view=graph-rest-1.0
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.ListGranularDriveRestoreArtifacts
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_ListGranularDriveRestoreArtifact
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4258,7 +4258,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to granularDriveRestoreArtifacts for solutions
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.CreateGranularDriveRestoreArtifacts
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_CreateGranularDriveRestoreArtifact
       requestBody:
         description: New navigation property
         content:
@@ -4284,7 +4284,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get granularDriveRestoreArtifacts from solutions
       description: A collection of browse session ID and item key details that can be used to restore OneDrive for work or school files and folders.
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.GetGranularDriveRestoreArtifacts
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_GetGranularDriveRestoreArtifact
       parameters:
         - name: $select
           in: query
@@ -4322,7 +4322,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property granularDriveRestoreArtifacts in solutions
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.UpdateGranularDriveRestoreArtifacts
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_UpdateGranularDriveRestoreArtifact
       requestBody:
         description: New navigation property values
         content:
@@ -4346,7 +4346,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property granularDriveRestoreArtifacts for solutions
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.DeleteGranularDriveRestoreArtifacts
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_DeleteGranularDriveRestoreArtifact
       parameters:
         - name: If-Match
           in: header
@@ -4367,7 +4367,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.granularDriveRestoreArtifacts.GetCount-9144
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession.granularDriveRestoreArtifact_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4383,7 +4383,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.oneDriveForBusinessRestoreSessions.GetCount-8c80
+      operationId: solution.backupRestore.oneDriveGraphFPreBusinessRestoreSession_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4400,7 +4400,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get protectionPolicies from solutions
       description: List of protection policies in the tenant.
-      operationId: solutions.backupRestore.ListProtectionPolicies
+      operationId: solution.backupRestore_ListProtectionPolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4452,7 +4452,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to protectionPolicies for solutions
-      operationId: solutions.backupRestore.CreateProtectionPolicies
+      operationId: solution.backupRestore_CreateProtectionPolicy
       requestBody:
         description: New navigation property
         content:
@@ -4478,7 +4478,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get protectionPolicies from solutions
       description: List of protection policies in the tenant.
-      operationId: solutions.backupRestore.GetProtectionPolicies
+      operationId: solution.backupRestore_GetProtectionPolicy
       parameters:
         - name: $select
           in: query
@@ -4516,7 +4516,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property protectionPolicies in solutions
-      operationId: solutions.backupRestore.UpdateProtectionPolicies
+      operationId: solution.backupRestore_UpdateProtectionPolicy
       requestBody:
         description: New navigation property values
         content:
@@ -4544,7 +4544,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/protectionpolicybase-delete?view=graph-rest-1.0
-      operationId: solutions.backupRestore.DeleteProtectionPolicies
+      operationId: solution.backupRestore_DeleteProtectionPolicy
       parameters:
         - name: If-Match
           in: header
@@ -4569,7 +4569,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/protectionpolicybase-activate?view=graph-rest-1.0
-      operationId: solutions.backupRestore.protectionPolicies.protectionPolicyBase.activate
+      operationId: solution.backupRestore.protectionPolicy.protectionPolicyBase_activate
       responses:
         2XX:
           description: Success
@@ -4594,7 +4594,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/protectionpolicybase-deactivate?view=graph-rest-1.0
-      operationId: solutions.backupRestore.protectionPolicies.protectionPolicyBase.deactivate
+      operationId: solution.backupRestore.protectionPolicy.protectionPolicyBase_deactivate
       responses:
         2XX:
           description: Success
@@ -4615,7 +4615,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.protectionPolicies.GetCount-4cd1
+      operationId: solution.backupRestore.protectionPolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4632,7 +4632,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get protectionUnitBase
       description: Read the properties and relationships of a protectionUnitBase object.
-      operationId: solutions.backupRestore.ListProtectionUnits
+      operationId: solution.backupRestore_ListProtectionUnit
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4689,7 +4689,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/protectionunitbase-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.GetProtectionUnits
+      operationId: solution.backupRestore_GetProtectionUnit
       parameters:
         - name: $select
           in: query
@@ -4732,7 +4732,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/protectionunitbase-canceloffboard?view=graph-rest-1.0
-      operationId: solutions.backupRestore.protectionUnits.protectionUnitBase.cancelOffboard
+      operationId: solution.backupRestore.protectionUnit.protectionUnitBase_cancelOffboard
       responses:
         2XX:
           description: Success
@@ -4757,7 +4757,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-driveprotectionunits?view=graph-rest-1.0
-      operationId: solutions.backupRestore.GetProtectionUnits.AsDriveProtectionUnit
+      operationId: solution.backupRestore_GetProtectionUnitAsDriveProtectionUnit
       parameters:
         - name: $select
           in: query
@@ -4799,7 +4799,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-mailboxprotectionunits?view=graph-rest-1.0
-      operationId: solutions.backupRestore.GetProtectionUnits.AsMailboxProtectionUnit
+      operationId: solution.backupRestore_GetProtectionUnitAsMailboxProtectionUnit
       parameters:
         - name: $select
           in: query
@@ -4841,7 +4841,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/protectionunitbase-offboard?view=graph-rest-1.0
-      operationId: solutions.backupRestore.protectionUnits.protectionUnitBase.offboard
+      operationId: solution.backupRestore.protectionUnit.protectionUnitBase_offboard
       responses:
         2XX:
           description: Success
@@ -4866,7 +4866,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-siteprotectionunits?view=graph-rest-1.0
-      operationId: solutions.backupRestore.GetProtectionUnits.AsSiteProtectionUnit
+      operationId: solution.backupRestore_GetProtectionUnitAsSiteProtectionUnit
       parameters:
         - name: $select
           in: query
@@ -4904,7 +4904,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.protectionUnits.GetCount-2032
+      operationId: solution.backupRestore.protectionUnit_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4924,7 +4924,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-driveprotectionunits?view=graph-rest-1.0
-      operationId: solutions.backupRestore.ListProtectionUnits.AsDriveProtectionUnit
+      operationId: solution.backupRestore_ListProtectionUnitAsDriveProtectionUnit
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4976,7 +4976,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.ProtectionUnits.GetCount.AsDriveProtectionUnit-f606
+      operationId: solution.backupRestore.ProtectionUnit_GetCountAsDriveProtectionUnit
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4996,7 +4996,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-mailboxprotectionunits?view=graph-rest-1.0
-      operationId: solutions.backupRestore.ListProtectionUnits.AsMailboxProtectionUnit
+      operationId: solution.backupRestore_ListProtectionUnitAsMailboxProtectionUnit
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5048,7 +5048,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.ProtectionUnits.GetCount.AsMailboxProtectionUnit-9041
+      operationId: solution.backupRestore.ProtectionUnit_GetCountAsMailboxProtectionUnit
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5068,7 +5068,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-siteprotectionunits?view=graph-rest-1.0
-      operationId: solutions.backupRestore.ListProtectionUnits.AsSiteProtectionUnit
+      operationId: solution.backupRestore_ListProtectionUnitAsSiteProtectionUnit
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5120,7 +5120,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.ProtectionUnits.GetCount.AsSiteProtectionUnit-4565
+      operationId: solution.backupRestore.ProtectionUnit_GetCountAsSiteProtectionUnit
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5140,7 +5140,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-restorepoints?view=graph-rest-1.0
-      operationId: solutions.backupRestore.ListRestorePoints
+      operationId: solution.backupRestore_ListRestorePoint
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5192,7 +5192,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to restorePoints for solutions
-      operationId: solutions.backupRestore.CreateRestorePoints
+      operationId: solution.backupRestore_CreateRestorePoint
       requestBody:
         description: New navigation property
         content:
@@ -5218,7 +5218,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get restorePoints from solutions
       description: List of restore points in the tenant.
-      operationId: solutions.backupRestore.GetRestorePoints
+      operationId: solution.backupRestore_GetRestorePoint
       parameters:
         - name: $select
           in: query
@@ -5256,7 +5256,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property restorePoints in solutions
-      operationId: solutions.backupRestore.UpdateRestorePoints
+      operationId: solution.backupRestore_UpdateRestorePoint
       requestBody:
         description: New navigation property values
         content:
@@ -5280,7 +5280,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property restorePoints for solutions
-      operationId: solutions.backupRestore.DeleteRestorePoints
+      operationId: solution.backupRestore_DeleteRestorePoint
       parameters:
         - name: If-Match
           in: header
@@ -5302,7 +5302,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get protectionUnit from solutions
       description: 'The site, drive, or mailbox units that are protected under a protection policy.'
-      operationId: solutions.backupRestore.restorePoints.GetProtectionUnit
+      operationId: solution.backupRestore.restorePoint_GetProtectionUnit
       parameters:
         - name: $select
           in: query
@@ -5341,7 +5341,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.restorePoints.GetCount-ca20
+      operationId: solution.backupRestore.restorePoint_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5361,7 +5361,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/restorepoint-search?view=graph-rest-1.0
-      operationId: solutions.backupRestore.restorePoints.search
+      operationId: solution.backupRestore.restorePoint_search
       requestBody:
         description: Action parameters
         content:
@@ -5419,7 +5419,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-restoresessions?view=graph-rest-1.0
-      operationId: solutions.backupRestore.ListRestoreSessions
+      operationId: solution.backupRestore_ListRestoreSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5471,7 +5471,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to restoreSessions for solutions
-      operationId: solutions.backupRestore.CreateRestoreSessions
+      operationId: solution.backupRestore_CreateRestoreSession
       requestBody:
         description: New navigation property
         content:
@@ -5500,7 +5500,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/restoresessionbase-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.GetRestoreSessions
+      operationId: solution.backupRestore_GetRestoreSession
       parameters:
         - name: $select
           in: query
@@ -5538,7 +5538,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property restoreSessions in solutions
-      operationId: solutions.backupRestore.UpdateRestoreSessions
+      operationId: solution.backupRestore_UpdateRestoreSession
       requestBody:
         description: New navigation property values
         content:
@@ -5566,7 +5566,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/restoresessionbase-delete?view=graph-rest-1.0
-      operationId: solutions.backupRestore.DeleteRestoreSessions
+      operationId: solution.backupRestore_DeleteRestoreSession
       parameters:
         - name: If-Match
           in: header
@@ -5591,7 +5591,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/restoresessionbase-activate?view=graph-rest-1.0
-      operationId: solutions.backupRestore.restoreSessions.restoreSessionBase.activate
+      operationId: solution.backupRestore.restoreSession.restoreSessionBase_activate
       responses:
         2XX:
           description: Success
@@ -5612,7 +5612,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.restoreSessions.GetCount-d907
+      operationId: solution.backupRestore.restoreSession_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5632,7 +5632,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-serviceapps?view=graph-rest-1.0
-      operationId: solutions.backupRestore.ListServiceApps
+      operationId: solution.backupRestore_ListServiceApp
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5688,7 +5688,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-serviceapps?view=graph-rest-1.0
-      operationId: solutions.backupRestore.CreateServiceApps
+      operationId: solution.backupRestore_CreateServiceApp
       requestBody:
         description: New navigation property
         content:
@@ -5717,7 +5717,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceapp-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.GetServiceApps
+      operationId: solution.backupRestore_GetServiceApp
       parameters:
         - name: $select
           in: query
@@ -5755,7 +5755,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property serviceApps in solutions
-      operationId: solutions.backupRestore.UpdateServiceApps
+      operationId: solution.backupRestore_UpdateServiceApp
       requestBody:
         description: New navigation property values
         content:
@@ -5783,7 +5783,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-delete-serviceapps?view=graph-rest-1.0
-      operationId: solutions.backupRestore.DeleteServiceApps
+      operationId: solution.backupRestore_DeleteServiceApp
       parameters:
         - name: If-Match
           in: header
@@ -5808,7 +5808,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceapp-activate?view=graph-rest-1.0
-      operationId: solutions.backupRestore.serviceApps.serviceApp.activate
+      operationId: solution.backupRestore.serviceApp_activate
       requestBody:
         description: Action parameters
         content:
@@ -5845,7 +5845,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceapp-deactivate?view=graph-rest-1.0
-      operationId: solutions.backupRestore.serviceApps.serviceApp.deactivate
+      operationId: solution.backupRestore.serviceApp_deactivate
       responses:
         2XX:
           description: Success
@@ -5866,7 +5866,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.serviceApps.GetCount-ef36
+      operationId: solution.backupRestore.serviceApp_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5886,7 +5886,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-sharepointbrowsesessions?view=graph-rest-1.0
-      operationId: solutions.backupRestore.ListSharePointBrowseSessions
+      operationId: solution.backupRestore_ListSharePointBrowseSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5942,7 +5942,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-sharepointbrowsesessions?view=graph-rest-1.0
-      operationId: solutions.backupRestore.CreateSharePointBrowseSessions
+      operationId: solution.backupRestore_CreateSharePointBrowseSession
       requestBody:
         description: New navigation property
         content:
@@ -5971,7 +5971,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sharepointbrowsesession-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.GetSharePointBrowseSessions
+      operationId: solution.backupRestore_GetSharePointBrowseSession
       parameters:
         - name: $select
           in: query
@@ -6009,7 +6009,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property sharePointBrowseSessions in solutions
-      operationId: solutions.backupRestore.UpdateSharePointBrowseSessions
+      operationId: solution.backupRestore_UpdateSharePointBrowseSession
       requestBody:
         description: New navigation property values
         content:
@@ -6033,7 +6033,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property sharePointBrowseSessions for solutions
-      operationId: solutions.backupRestore.DeleteSharePointBrowseSessions
+      operationId: solution.backupRestore_DeleteSharePointBrowseSession
       parameters:
         - name: If-Match
           in: header
@@ -6054,7 +6054,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.sharePointBrowseSessions.GetCount-c185
+      operationId: solution.backupRestore.sharePointBrowseSession_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6071,7 +6071,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get sharePointProtectionPolicies from solutions
       description: The list of SharePoint protection policies in the tenant.
-      operationId: solutions.backupRestore.ListSharePointProtectionPolicies
+      operationId: solution.backupRestore_ListSharePointProtectionPolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6127,7 +6127,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-sharepointprotectionpolicies?view=graph-rest-1.0
-      operationId: solutions.backupRestore.CreateSharePointProtectionPolicies
+      operationId: solution.backupRestore_CreateSharePointProtectionPolicy
       requestBody:
         description: New navigation property
         content:
@@ -6153,7 +6153,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get sharePointProtectionPolicies from solutions
       description: The list of SharePoint protection policies in the tenant.
-      operationId: solutions.backupRestore.GetSharePointProtectionPolicies
+      operationId: solution.backupRestore_GetSharePointProtectionPolicy
       parameters:
         - name: $select
           in: query
@@ -6195,7 +6195,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sharepointprotectionpolicy-update?view=graph-rest-1.0
-      operationId: solutions.backupRestore.UpdateSharePointProtectionPolicies
+      operationId: solution.backupRestore_UpdateSharePointProtectionPolicy
       requestBody:
         description: New navigation property values
         content:
@@ -6219,7 +6219,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property sharePointProtectionPolicies for solutions
-      operationId: solutions.backupRestore.DeleteSharePointProtectionPolicies
+      operationId: solution.backupRestore_DeleteSharePointProtectionPolicy
       parameters:
         - name: If-Match
           in: header
@@ -6244,7 +6244,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sharepointprotectionpolicy-list-siteinclusionrules?view=graph-rest-1.0
-      operationId: solutions.backupRestore.sharePointProtectionPolicies.ListSiteInclusionRules
+      operationId: solution.backupRestore.sharePointProtectionPolicy_ListSiteInclusionRule
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6301,7 +6301,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/protectionrulebase-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.sharePointProtectionPolicies.GetSiteInclusionRules
+      operationId: solution.backupRestore.sharePointProtectionPolicy_GetSiteInclusionRule
       parameters:
         - name: $select
           in: query
@@ -6340,7 +6340,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.sharePointProtectionPolicies.siteInclusionRules.GetCount-84d3
+      operationId: solution.backupRestore.sharePointProtectionPolicy.siteInclusionRule_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6360,7 +6360,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-list-siteprotectionunits?view=graph-rest-1.0
-      operationId: solutions.backupRestore.sharePointProtectionPolicies.ListSiteProtectionUnits
+      operationId: solution.backupRestore.sharePointProtectionPolicy_ListSiteProtectionUnit
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6414,7 +6414,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get siteProtectionUnits from solutions
       description: The protection units (sites) that are protected under the site protection policy.
-      operationId: solutions.backupRestore.sharePointProtectionPolicies.GetSiteProtectionUnits
+      operationId: solution.backupRestore.sharePointProtectionPolicy_GetSiteProtectionUnit
       parameters:
         - name: $select
           in: query
@@ -6453,7 +6453,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.sharePointProtectionPolicies.siteProtectionUnits.GetCount-e896
+      operationId: solution.backupRestore.sharePointProtectionPolicy.siteProtectionUnit_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6473,7 +6473,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sharepointprotectionpolicy-list-siteprotectionunitsbulkadditionjobs?view=graph-rest-1.0
-      operationId: solutions.backupRestore.sharePointProtectionPolicies.ListSiteProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore.sharePointProtectionPolicy_ListSiteProtectionUnitsBulkAdditionJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6530,7 +6530,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/siteprotectionunitsbulkadditionjobs-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.sharePointProtectionPolicies.GetSiteProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore.sharePointProtectionPolicy_GetSiteProtectionUnitsBulkAdditionJob
       parameters:
         - name: $select
           in: query
@@ -6569,7 +6569,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.sharePointProtectionPolicies.siteProtectionUnitsBulkAdditionJobs.GetCount-f26a
+      operationId: solution.backupRestore.sharePointProtectionPolicy.siteProtectionUnitsBulkAdditionJob_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6585,7 +6585,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.sharePointProtectionPolicies.GetCount-9529
+      operationId: solution.backupRestore.sharePointProtectionPolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6602,7 +6602,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get sharePointRestoreSessions from solutions
       description: The list of SharePoint restore sessions available in the tenant.
-      operationId: solutions.backupRestore.ListSharePointRestoreSessions
+      operationId: solution.backupRestore_ListSharePointRestoreSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6658,7 +6658,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/backuprestoreroot-post-sharepointrestoresessions?view=graph-rest-1.0
-      operationId: solutions.backupRestore.CreateSharePointRestoreSessions
+      operationId: solution.backupRestore_CreateSharePointRestoreSession
       requestBody:
         description: New navigation property
         content:
@@ -6684,7 +6684,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get sharePointRestoreSessions from solutions
       description: The list of SharePoint restore sessions available in the tenant.
-      operationId: solutions.backupRestore.GetSharePointRestoreSessions
+      operationId: solution.backupRestore_GetSharePointRestoreSession
       parameters:
         - name: $select
           in: query
@@ -6726,7 +6726,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sharepointrestoresession-update?view=graph-rest-1.0
-      operationId: solutions.backupRestore.UpdateSharePointRestoreSessions
+      operationId: solution.backupRestore_UpdateSharePointRestoreSession
       requestBody:
         description: New navigation property values
         content:
@@ -6750,7 +6750,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property sharePointRestoreSessions for solutions
-      operationId: solutions.backupRestore.DeleteSharePointRestoreSessions
+      operationId: solution.backupRestore_DeleteSharePointRestoreSession
       parameters:
         - name: If-Match
           in: header
@@ -6775,7 +6775,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sharepointrestoresession-list-granularsiterestoreartifacts?view=graph-rest-1.0
-      operationId: solutions.backupRestore.sharePointRestoreSessions.ListGranularSiteRestoreArtifacts
+      operationId: solution.backupRestore.sharePointRestoreSession_ListGranularSiteRestoreArtifact
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6827,7 +6827,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to granularSiteRestoreArtifacts for solutions
-      operationId: solutions.backupRestore.sharePointRestoreSessions.CreateGranularSiteRestoreArtifacts
+      operationId: solution.backupRestore.sharePointRestoreSession_CreateGranularSiteRestoreArtifact
       requestBody:
         description: New navigation property
         content:
@@ -6853,7 +6853,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get granularSiteRestoreArtifacts from solutions
       description: A collection of browse session ID and item key details that can be used to restore SharePoint files and folders.
-      operationId: solutions.backupRestore.sharePointRestoreSessions.GetGranularSiteRestoreArtifacts
+      operationId: solution.backupRestore.sharePointRestoreSession_GetGranularSiteRestoreArtifact
       parameters:
         - name: $select
           in: query
@@ -6891,7 +6891,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property granularSiteRestoreArtifacts in solutions
-      operationId: solutions.backupRestore.sharePointRestoreSessions.UpdateGranularSiteRestoreArtifacts
+      operationId: solution.backupRestore.sharePointRestoreSession_UpdateGranularSiteRestoreArtifact
       requestBody:
         description: New navigation property values
         content:
@@ -6915,7 +6915,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property granularSiteRestoreArtifacts for solutions
-      operationId: solutions.backupRestore.sharePointRestoreSessions.DeleteGranularSiteRestoreArtifacts
+      operationId: solution.backupRestore.sharePointRestoreSession_DeleteGranularSiteRestoreArtifact
       parameters:
         - name: If-Match
           in: header
@@ -6936,7 +6936,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.sharePointRestoreSessions.granularSiteRestoreArtifacts.GetCount-6398
+      operationId: solution.backupRestore.sharePointRestoreSession.granularSiteRestoreArtifact_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6956,7 +6956,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sharepointrestoresession-list-siterestoreartifacts?view=graph-rest-1.0
-      operationId: solutions.backupRestore.sharePointRestoreSessions.ListSiteRestoreArtifacts
+      operationId: solution.backupRestore.sharePointRestoreSession_ListSiteRestoreArtifact
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7008,7 +7008,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to siteRestoreArtifacts for solutions
-      operationId: solutions.backupRestore.sharePointRestoreSessions.CreateSiteRestoreArtifacts
+      operationId: solution.backupRestore.sharePointRestoreSession_CreateSiteRestoreArtifact
       requestBody:
         description: New navigation property
         content:
@@ -7034,7 +7034,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get siteRestoreArtifacts from solutions
       description: A collection of restore points and destination details that can be used to restore SharePoint sites.
-      operationId: solutions.backupRestore.sharePointRestoreSessions.GetSiteRestoreArtifacts
+      operationId: solution.backupRestore.sharePointRestoreSession_GetSiteRestoreArtifact
       parameters:
         - name: $select
           in: query
@@ -7072,7 +7072,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property siteRestoreArtifacts in solutions
-      operationId: solutions.backupRestore.sharePointRestoreSessions.UpdateSiteRestoreArtifacts
+      operationId: solution.backupRestore.sharePointRestoreSession_UpdateSiteRestoreArtifact
       requestBody:
         description: New navigation property values
         content:
@@ -7096,7 +7096,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property siteRestoreArtifacts for solutions
-      operationId: solutions.backupRestore.sharePointRestoreSessions.DeleteSiteRestoreArtifacts
+      operationId: solution.backupRestore.sharePointRestoreSession_DeleteSiteRestoreArtifact
       parameters:
         - name: If-Match
           in: header
@@ -7118,7 +7118,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get restorePoint from solutions
       description: Represents the date and time when an artifact is protected by a protectionPolicy and can be restored.
-      operationId: solutions.backupRestore.sharePointRestoreSessions.siteRestoreArtifacts.GetRestorePoint
+      operationId: solution.backupRestore.sharePointRestoreSession.siteRestoreArtifact_GetRestorePoint
       parameters:
         - name: $select
           in: query
@@ -7157,7 +7157,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.sharePointRestoreSessions.siteRestoreArtifacts.GetCount-1a1d
+      operationId: solution.backupRestore.sharePointRestoreSession.siteRestoreArtifact_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7177,7 +7177,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sharepointrestoresession-list-siterestoreartifactsbulkadditionrequests?view=graph-rest-1.0
-      operationId: solutions.backupRestore.sharePointRestoreSessions.ListSiteRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.sharePointRestoreSession_ListSiteRestoreArtifactsBulkAdditionRequest
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7233,7 +7233,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sharepointrestoresession-post-siterestoreartifactsbulkadditionrequests?view=graph-rest-1.0
-      operationId: solutions.backupRestore.sharePointRestoreSessions.CreateSiteRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.sharePointRestoreSession_CreateSiteRestoreArtifactsBulkAdditionRequest
       requestBody:
         description: New navigation property
         content:
@@ -7262,7 +7262,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/siterestoreartifactsbulkadditionrequest-get?view=graph-rest-1.0
-      operationId: solutions.backupRestore.sharePointRestoreSessions.GetSiteRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.sharePointRestoreSession_GetSiteRestoreArtifactsBulkAdditionRequest
       parameters:
         - name: $select
           in: query
@@ -7300,7 +7300,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property siteRestoreArtifactsBulkAdditionRequests in solutions
-      operationId: solutions.backupRestore.sharePointRestoreSessions.UpdateSiteRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.sharePointRestoreSession_UpdateSiteRestoreArtifactsBulkAdditionRequest
       requestBody:
         description: New navigation property values
         content:
@@ -7328,7 +7328,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/siterestoreartifactsbulkadditionrequest-delete?view=graph-rest-1.0
-      operationId: solutions.backupRestore.sharePointRestoreSessions.DeleteSiteRestoreArtifactsBulkAdditionRequests
+      operationId: solution.backupRestore.sharePointRestoreSession_DeleteSiteRestoreArtifactsBulkAdditionRequest
       parameters:
         - name: If-Match
           in: header
@@ -7349,7 +7349,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.sharePointRestoreSessions.siteRestoreArtifactsBulkAdditionRequests.GetCount-8b23
+      operationId: solution.backupRestore.sharePointRestoreSession.siteRestoreArtifactsBulkAdditionRequest_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7365,7 +7365,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.sharePointRestoreSessions.GetCount-3343
+      operationId: solution.backupRestore.sharePointRestoreSession_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7382,7 +7382,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get siteInclusionRules from solutions
       description: The list of site inclusion rules applied to the tenant.
-      operationId: solutions.backupRestore.ListSiteInclusionRules
+      operationId: solution.backupRestore_ListSiteInclusionRule
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7434,7 +7434,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to siteInclusionRules for solutions
-      operationId: solutions.backupRestore.CreateSiteInclusionRules
+      operationId: solution.backupRestore_CreateSiteInclusionRule
       requestBody:
         description: New navigation property
         content:
@@ -7460,7 +7460,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get siteInclusionRules from solutions
       description: The list of site inclusion rules applied to the tenant.
-      operationId: solutions.backupRestore.GetSiteInclusionRules
+      operationId: solution.backupRestore_GetSiteInclusionRule
       parameters:
         - name: $select
           in: query
@@ -7498,7 +7498,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property siteInclusionRules in solutions
-      operationId: solutions.backupRestore.UpdateSiteInclusionRules
+      operationId: solution.backupRestore_UpdateSiteInclusionRule
       requestBody:
         description: New navigation property values
         content:
@@ -7522,7 +7522,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property siteInclusionRules for solutions
-      operationId: solutions.backupRestore.DeleteSiteInclusionRules
+      operationId: solution.backupRestore_DeleteSiteInclusionRule
       parameters:
         - name: If-Match
           in: header
@@ -7543,7 +7543,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.siteInclusionRules.GetCount-66cd
+      operationId: solution.backupRestore.siteInclusionRule_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7560,7 +7560,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get siteProtectionUnits from solutions
       description: The list of site protection units in the tenant.
-      operationId: solutions.backupRestore.ListSiteProtectionUnits
+      operationId: solution.backupRestore_ListSiteProtectionUnit
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7612,7 +7612,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to siteProtectionUnits for solutions
-      operationId: solutions.backupRestore.CreateSiteProtectionUnits
+      operationId: solution.backupRestore_CreateSiteProtectionUnit
       requestBody:
         description: New navigation property
         content:
@@ -7638,7 +7638,7 @@ paths:
         - solutions.backupRestoreRoot
       summary: Get siteProtectionUnits from solutions
       description: The list of site protection units in the tenant.
-      operationId: solutions.backupRestore.GetSiteProtectionUnits
+      operationId: solution.backupRestore_GetSiteProtectionUnit
       parameters:
         - name: $select
           in: query
@@ -7676,7 +7676,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property siteProtectionUnits in solutions
-      operationId: solutions.backupRestore.UpdateSiteProtectionUnits
+      operationId: solution.backupRestore_UpdateSiteProtectionUnit
       requestBody:
         description: New navigation property values
         content:
@@ -7700,7 +7700,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property siteProtectionUnits for solutions
-      operationId: solutions.backupRestore.DeleteSiteProtectionUnits
+      operationId: solution.backupRestore_DeleteSiteProtectionUnit
       parameters:
         - name: If-Match
           in: header
@@ -7721,7 +7721,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.siteProtectionUnits.GetCount-bcec
+      operationId: solution.backupRestore.siteProtectionUnit_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7737,7 +7737,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get siteProtectionUnitsBulkAdditionJobs from solutions
-      operationId: solutions.backupRestore.ListSiteProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_ListSiteProtectionUnitsBulkAdditionJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7789,7 +7789,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Create new navigation property to siteProtectionUnitsBulkAdditionJobs for solutions
-      operationId: solutions.backupRestore.CreateSiteProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_CreateSiteProtectionUnitsBulkAdditionJob
       requestBody:
         description: New navigation property
         content:
@@ -7814,7 +7814,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get siteProtectionUnitsBulkAdditionJobs from solutions
-      operationId: solutions.backupRestore.GetSiteProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_GetSiteProtectionUnitsBulkAdditionJob
       parameters:
         - name: $select
           in: query
@@ -7852,7 +7852,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Update the navigation property siteProtectionUnitsBulkAdditionJobs in solutions
-      operationId: solutions.backupRestore.UpdateSiteProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_UpdateSiteProtectionUnitsBulkAdditionJob
       requestBody:
         description: New navigation property values
         content:
@@ -7876,7 +7876,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Delete navigation property siteProtectionUnitsBulkAdditionJobs for solutions
-      operationId: solutions.backupRestore.DeleteSiteProtectionUnitsBulkAdditionJobs
+      operationId: solution.backupRestore_DeleteSiteProtectionUnitsBulkAdditionJob
       parameters:
         - name: If-Match
           in: header
@@ -7897,7 +7897,7 @@ paths:
       tags:
         - solutions.backupRestoreRoot
       summary: Get the number of the resource
-      operationId: solutions.backupRestore.siteProtectionUnitsBulkAdditionJobs.GetCount-2498
+      operationId: solution.backupRestore.siteProtectionUnitsBulkAdditionJob_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9319,6 +9319,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -9506,6 +9507,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -9774,6 +9776,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -10132,6 +10137,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
