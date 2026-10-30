@@ -37,22 +37,30 @@ Both currently compatible profiles are required; none is excluded:
 
 | Profile | Compatible spec | Git blob | Existing output directory |
 | --- | --- | --- | --- |
-| v1.0 | `openApiDocs_KiotaCompat/v1.0/SchemaExtensions.yml` | `baa25f45d8054433fec5ebb2612ed502b9203ba3` | `wrapper/v1.0` |
-| beta | `openApiDocs_KiotaCompat/beta/SchemaExtensions.yml` | `8c603326a663de5210e85034d6850d99590ee2bd` | `wrapper/Beta` |
+| v1.0 | `openApiDocs_KiotaCompat/v1.0/SchemaExtensions.yml` | `121c9a107ef31504c720af9f088c2b7bc685a707` | `wrapper/v1.0` |
+| beta | `openApiDocs_KiotaCompat/beta/SchemaExtensions.yml` | `a0b0746ade2a173cb4e3aecdd2b299d96b63b39b` | `wrapper/Beta` |
 
 Each spec contains the following six operations. These are unaffected-route
 evidence, not directive mappings:
 
 | Method | Path | Operation ID |
 | --- | --- | --- |
-| GET | `/schemaExtensions` | `schemaExtensions.schemaExtension.ListSchemaExtension` |
-| POST | `/schemaExtensions` | `schemaExtensions.schemaExtension.CreateSchemaExtension` |
-| GET | `/schemaExtensions/{schemaExtension-id}` | `schemaExtensions.schemaExtension.GetSchemaExtension` |
-| PATCH | `/schemaExtensions/{schemaExtension-id}` | `schemaExtensions.schemaExtension.UpdateSchemaExtension` |
-| DELETE | `/schemaExtensions/{schemaExtension-id}` | `schemaExtensions.schemaExtension.DeleteSchemaExtension` |
-| GET | `/schemaExtensions/$count` | `schemaExtensions.GetCount-e324` |
+| GET | `/schemaExtensions` | `schemaExtension_ListSchemaExtension` |
+| POST | `/schemaExtensions` | `schemaExtension_CreateSchemaExtension` |
+| GET | `/schemaExtensions/{schemaExtension-id}` | `schemaExtension_GetSchemaExtension` |
+| PATCH | `/schemaExtensions/{schemaExtension-id}` | `schemaExtension_UpdateSchemaExtension` |
+| DELETE | `/schemaExtensions/{schemaExtension-id}` | `schemaExtension_DeleteSchemaExtension` |
+| GET | `/schemaExtensions/$count` | `schemaExtension_GetCount` |
+
+These are the current compatible IDs after operation-ID alignment in the target
+branch. The original audit used `schemaExtensions.schemaExtension.<operation>`
+for CRUD and `schemaExtensions.GetCount-e324` for count; the HTTP methods and paths
+above are unchanged. No shared source selector existed before or after alignment.
 
 `SchemaExtensionsDirectiveMigrationTests` reads both compatible specs and pins
 these operation identities and all seven emitted cmdlets, including the
-collection/item workers and count route. This preserves the existing surface
-without adding suppression or rename rules for nonexistent shared directives.
+collection/item workers and count route. Both profiles run with derived data
+enabled and disabled, passing the profile separately to the generation, naming,
+and suppression APIs. Exact method/path metadata is checked on each emitted
+worker. This preserves the existing surface without adding suppression or rename
+rules for nonexistent shared directives.

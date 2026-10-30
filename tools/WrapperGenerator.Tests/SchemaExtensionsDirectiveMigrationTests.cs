@@ -15,9 +15,11 @@ namespace WrapperGenerator.Tests;
 public sealed class SchemaExtensionsDirectiveMigrationTests
 {
     [Theory]
-    [InlineData("v1.0")]
-    [InlineData("beta")]
-    public async Task EmptySharedConfigurationPreservesAllCompatibleOperations(string profile)
+    [InlineData("v1.0", true)]
+    [InlineData("beta", true)]
+    [InlineData("v1.0", false)]
+    [InlineData("beta", false)]
+    public async Task EmptySharedConfigurationPreservesAllCompatibleOperations(string profile, bool useCollisionData)
     {
         var root = FindRepoRoot();
         var settings = new OpenApiReaderSettings();
@@ -29,22 +31,31 @@ public sealed class SchemaExtensionsDirectiveMigrationTests
 
         var expectedOperations = new[]
         {
-            (HttpMethod.Get, "/schemaExtensions", "schemaExtensions.schemaExtension.ListSchemaExtension"),
-            (HttpMethod.Post, "/schemaExtensions", "schemaExtensions.schemaExtension.CreateSchemaExtension"),
-            (HttpMethod.Get, "/schemaExtensions/{schemaExtension-id}", "schemaExtensions.schemaExtension.GetSchemaExtension"),
-            (HttpMethod.Patch, "/schemaExtensions/{schemaExtension-id}", "schemaExtensions.schemaExtension.UpdateSchemaExtension"),
-            (HttpMethod.Delete, "/schemaExtensions/{schemaExtension-id}", "schemaExtensions.schemaExtension.DeleteSchemaExtension"),
-            (HttpMethod.Get, "/schemaExtensions/$count", "schemaExtensions.GetCount-e324"),
+            (HttpMethod.Get, "/schemaExtensions", "schemaExtension_ListSchemaExtension", "Get", "MgSchemaExtension", "GetMgSchemaExtension_List.g.cs"),
+            (HttpMethod.Post, "/schemaExtensions", "schemaExtension_CreateSchemaExtension", "New", "MgSchemaExtension", "NewMgSchemaExtension.g.cs"),
+            (HttpMethod.Get, "/schemaExtensions/{schemaExtension-id}", "schemaExtension_GetSchemaExtension", "Get", "MgSchemaExtension", "GetMgSchemaExtension_Get.g.cs"),
+            (HttpMethod.Patch, "/schemaExtensions/{schemaExtension-id}", "schemaExtension_UpdateSchemaExtension", "Update", "MgSchemaExtension", "UpdateMgSchemaExtension.g.cs"),
+            (HttpMethod.Delete, "/schemaExtensions/{schemaExtension-id}", "schemaExtension_DeleteSchemaExtension", "Remove", "MgSchemaExtension", "RemoveMgSchemaExtension.g.cs"),
+            (HttpMethod.Get, "/schemaExtensions/$count", "schemaExtension_GetCount", "Get", "MgSchemaExtensionCount", "GetMgSchemaExtensionCount.g.cs"),
         };
-        foreach (var (method, path, operationId) in expectedOperations)
-            Assert.Equal(operationId, document.Paths[path].Operations![method].OperationId);
 
         var output = Path.Combine(Path.GetTempPath(), "wrapper-generator-tests", Guid.NewGuid().ToString("N"));
         Directory.CreateDirectory(output);
         try
         {
-            var config = new GeneratorConfig("Microsoft.Graph.PowerShell.SchemaExtensions.Client", output, profile);
-            var service = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance);
+            var config = new GeneratorConfig("Microsoft.Graph.PowerShell.SchemaExtensions.Client", output,
+                UseCollisionData: useCollisionData);
+            foreach (var (method, path, operationId, verb, noun, _) in expectedOperations)
+            {
+                Assert.Equal(operationId, document.Paths[path].Operations![method].OperationId);
+                Assert.False(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile));
+                var naming = Naming.Resolve(new OperationInfo(method, path), config, apiVersion: profile);
+                Assert.Equal(verb, naming.VerbName);
+                Assert.Equal(noun, naming.Noun);
+            }
+
+            var service = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance,
+                apiVersion: profile);
             await service.GenerateAsync(CancellationToken.None);
 
             var expectedFiles = new[]
@@ -59,9 +70,9 @@ public sealed class SchemaExtensionsDirectiveMigrationTests
             };
             Assert.Equal(expectedFiles.OrderBy(name => name, StringComparer.Ordinal),
                 Directory.GetFiles(output, "*.g.cs").Select(Path.GetFileName).OrderBy(name => name, StringComparer.Ordinal));
-            foreach (var (_, path, _) in expectedOperations)
-                Assert.Contains(Directory.GetFiles(output, "*.g.cs"),
-                    file => File.ReadAllText(file).Contains($"\"{path}\"", StringComparison.Ordinal));
+            foreach (var (method, path, _, _, _, file) in expectedOperations)
+                Assert.Contains($"[GraphRoute(\"{method.Method}\", \"{path}\")]",
+                    File.ReadAllText(Path.Combine(output, file)));
         }
         finally
         {
