@@ -155,7 +155,7 @@ public sealed class MutationRouteTests
         {
             var source = files[$"{fixture.Stem}_Route{i}.g.cs"];
             var expected = family == "Update" && (i == 0 ? rootGet : parentGet);
-            Assert.Equal(expected, source.Contains(".GetAsync()", StringComparison.Ordinal));
+            Assert.Equal(expected, source.Contains(".GetAsync(", StringComparison.Ordinal));
             Assert.Equal(expected, source.Contains("re-fetching the updated resource", StringComparison.Ordinal));
             Assert.Contains("." + MethodCall(family) + "(body,", source);
         }

@@ -1272,6 +1272,7 @@ namespace {{ctx.CmdletNamespace}}
     // schemaExtension update), so Update re-fetches to return the updated resource — but
     // only when the path actually has a GET (PATCH-only resources like /places/{id} have no
     // GetAsync on their builder; found by compiling the Calendar module).
+    // Keep caller -Headers, not mutation-only typed headers such as the pre-update If-Match.
     private static string ReFetchBlock(CmdletNaming naming, EmitContext ctx) => $$"""
 
             if (result is null)
@@ -1279,7 +1280,10 @@ namespace {{ctx.CmdletNamespace}}
                 WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
                 try
                 {
-                    result = {{ResourceCallReceiver(naming, ctx)}}.GetAsync().GetAwaiter().GetResult();
+                    result = {{ResourceCallReceiver(naming, ctx)}}.GetAsync(requestConfiguration =>
+                    {
+{{GenericHeadersBinding("                    ")}}
+                    }).GetAwaiter().GetResult();
                 }
 {{CatchBlock(TargetId(naming), "    ")}}
             }
