@@ -11,7 +11,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Get entities from bookingBusinesses
-      operationId: bookingBusinesses.bookingBusiness.ListBookingBusiness
+      operationId: bookingBusiness_ListBookingBusiness
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -63,7 +63,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Add new entity to bookingBusinesses
-      operationId: bookingBusinesses.bookingBusiness.CreateBookingBusiness
+      operationId: bookingBusiness_CreateBookingBusiness
       requestBody:
         description: New entity
         content:
@@ -89,7 +89,7 @@ paths:
         - bookingBusinesses.bookingBusiness
       summary: Get entity from bookingBusinesses by key
       description: Represents a Microsoft Bookings Business.
-      operationId: bookingBusinesses.bookingBusiness.GetBookingBusiness
+      operationId: bookingBusiness_GetBookingBusiness
       parameters:
         - name: $select
           in: query
@@ -127,7 +127,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Update entity in bookingBusinesses
-      operationId: bookingBusinesses.bookingBusiness.UpdateBookingBusiness
+      operationId: bookingBusiness_UpdateBookingBusiness
       requestBody:
         description: New property values
         content:
@@ -151,7 +151,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Delete entity from bookingBusinesses
-      operationId: bookingBusinesses.bookingBusiness.DeleteBookingBusiness
+      operationId: bookingBusiness_DeleteBookingBusiness
       parameters:
         - name: If-Match
           in: header
@@ -173,7 +173,7 @@ paths:
         - bookingBusinesses.bookingAppointment
       summary: Get appointments from bookingBusinesses
       description: All the appointments of this business. Read-only. Nullable.
-      operationId: bookingBusinesses.ListAppointments
+      operationId: bookingBusiness_ListAppointment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -225,7 +225,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Create new navigation property to appointments for bookingBusinesses
-      operationId: bookingBusinesses.CreateAppointments
+      operationId: bookingBusiness_CreateAppointment
       requestBody:
         description: New navigation property
         content:
@@ -251,7 +251,7 @@ paths:
         - bookingBusinesses.bookingAppointment
       summary: Get appointments from bookingBusinesses
       description: All the appointments of this business. Read-only. Nullable.
-      operationId: bookingBusinesses.GetAppointments
+      operationId: bookingBusiness_GetAppointment
       parameters:
         - name: $select
           in: query
@@ -289,7 +289,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Update the navigation property appointments in bookingBusinesses
-      operationId: bookingBusinesses.UpdateAppointments
+      operationId: bookingBusiness_UpdateAppointment
       requestBody:
         description: New navigation property values
         content:
@@ -313,7 +313,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Delete navigation property appointments for bookingBusinesses
-      operationId: bookingBusinesses.DeleteAppointments
+      operationId: bookingBusiness_DeleteAppointment
       parameters:
         - name: If-Match
           in: header
@@ -338,7 +338,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-beta
-      operationId: bookingBusinesses.bookingBusiness.appointments.bookingAppointment.cancel
+      operationId: bookingBusiness.appointment.bookingAppointment_cancel
       requestBody:
         description: Action parameters
         content:
@@ -363,7 +363,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get the number of the resource
-      operationId: bookingBusinesses.appointments.GetCount-2f19
+      operationId: bookingBusiness.appointment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -380,7 +380,7 @@ paths:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
       description: The set of appointments of this business in a specified date range. Read-only. Nullable.
-      operationId: bookingBusinesses.ListCalendarView
+      operationId: bookingBusiness_ListCalendarView
       parameters:
         - name: start
           in: query
@@ -448,7 +448,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Create new navigation property to calendarView for bookingBusinesses
-      operationId: bookingBusinesses.CreateCalendarView
+      operationId: bookingBusiness_CreateCalendarView
       requestBody:
         description: New navigation property
         content:
@@ -474,7 +474,7 @@ paths:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
       description: The set of appointments of this business in a specified date range. Read-only. Nullable.
-      operationId: bookingBusinesses.GetCalendarView
+      operationId: bookingBusiness_GetCalendarView
       parameters:
         - name: start
           in: query
@@ -528,7 +528,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Update the navigation property calendarView in bookingBusinesses
-      operationId: bookingBusinesses.UpdateCalendarView
+      operationId: bookingBusiness_UpdateCalendarView
       requestBody:
         description: New navigation property values
         content:
@@ -552,7 +552,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Delete navigation property calendarView for bookingBusinesses
-      operationId: bookingBusinesses.DeleteCalendarView
+      operationId: bookingBusiness_DeleteCalendarView
       parameters:
         - name: If-Match
           in: header
@@ -577,7 +577,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-beta
-      operationId: bookingBusinesses.bookingBusiness.calendarView.bookingAppointment.cancel
+      operationId: bookingBusiness.calendarView.bookingAppointment_cancel
       requestBody:
         description: Action parameters
         content:
@@ -602,7 +602,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get the number of the resource
-      operationId: bookingBusinesses.calendarView.GetCount-fa3d
+      operationId: bookingBusiness.calendarView_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -619,7 +619,7 @@ paths:
         - bookingBusinesses.bookingCustomer
       summary: Get customers from bookingBusinesses
       description: All the customers of this business. Read-only. Nullable.
-      operationId: bookingBusinesses.ListCustomers
+      operationId: bookingBusiness_ListCustomer
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -671,7 +671,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Create new navigation property to customers for bookingBusinesses
-      operationId: bookingBusinesses.CreateCustomers
+      operationId: bookingBusiness_CreateCustomer
       requestBody:
         description: New navigation property
         content:
@@ -697,7 +697,7 @@ paths:
         - bookingBusinesses.bookingCustomer
       summary: Get customers from bookingBusinesses
       description: All the customers of this business. Read-only. Nullable.
-      operationId: bookingBusinesses.GetCustomers
+      operationId: bookingBusiness_GetCustomer
       parameters:
         - name: $select
           in: query
@@ -735,7 +735,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Update the navigation property customers in bookingBusinesses
-      operationId: bookingBusinesses.UpdateCustomers
+      operationId: bookingBusiness_UpdateCustomer
       requestBody:
         description: New navigation property values
         content:
@@ -759,7 +759,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Delete navigation property customers for bookingBusinesses
-      operationId: bookingBusinesses.DeleteCustomers
+      operationId: bookingBusiness_DeleteCustomer
       parameters:
         - name: If-Match
           in: header
@@ -780,7 +780,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Get the number of the resource
-      operationId: bookingBusinesses.customers.GetCount-f551
+      operationId: bookingBusiness.customer_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -797,7 +797,7 @@ paths:
         - bookingBusinesses.bookingCustomQuestion
       summary: Get customQuestions from bookingBusinesses
       description: All custom questions of this business.
-      operationId: bookingBusinesses.ListCustomQuestions
+      operationId: bookingBusiness_ListCustomQuestion
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -849,7 +849,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Create new navigation property to customQuestions for bookingBusinesses
-      operationId: bookingBusinesses.CreateCustomQuestions
+      operationId: bookingBusiness_CreateCustomQuestion
       requestBody:
         description: New navigation property
         content:
@@ -875,7 +875,7 @@ paths:
         - bookingBusinesses.bookingCustomQuestion
       summary: Get customQuestions from bookingBusinesses
       description: All custom questions of this business.
-      operationId: bookingBusinesses.GetCustomQuestions
+      operationId: bookingBusiness_GetCustomQuestion
       parameters:
         - name: $select
           in: query
@@ -913,7 +913,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Update the navigation property customQuestions in bookingBusinesses
-      operationId: bookingBusinesses.UpdateCustomQuestions
+      operationId: bookingBusiness_UpdateCustomQuestion
       requestBody:
         description: New navigation property values
         content:
@@ -937,7 +937,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Delete navigation property customQuestions for bookingBusinesses
-      operationId: bookingBusinesses.DeleteCustomQuestions
+      operationId: bookingBusiness_DeleteCustomQuestion
       parameters:
         - name: If-Match
           in: header
@@ -958,7 +958,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Get the number of the resource
-      operationId: bookingBusinesses.customQuestions.GetCount-90cf
+      operationId: bookingBusiness.customQuestion_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -978,7 +978,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-beta
-      operationId: bookingBusinesses.bookingBusiness.getStaffAvailability
+      operationId: bookingBusiness_getStaffAvailability
       requestBody:
         description: Action parameters
         content:
@@ -1027,7 +1027,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-beta
-      operationId: bookingBusinesses.bookingBusiness.publish
+      operationId: bookingBusiness_publish
       responses:
         '204':
           description: Success
@@ -1045,7 +1045,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-beta
-      operationId: bookingBusinesses.bookingBusiness.unpublish
+      operationId: bookingBusiness_unpublish
       responses:
         '204':
           description: Success
@@ -1060,7 +1060,7 @@ paths:
         - bookingBusinesses.bookingService
       summary: Get services from bookingBusinesses
       description: All the services offered by this business. Read-only. Nullable.
-      operationId: bookingBusinesses.ListServices
+      operationId: bookingBusiness_ListService
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1112,7 +1112,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Create new navigation property to services for bookingBusinesses
-      operationId: bookingBusinesses.CreateServices
+      operationId: bookingBusiness_CreateService
       requestBody:
         description: New navigation property
         content:
@@ -1138,7 +1138,7 @@ paths:
         - bookingBusinesses.bookingService
       summary: Get services from bookingBusinesses
       description: All the services offered by this business. Read-only. Nullable.
-      operationId: bookingBusinesses.GetServices
+      operationId: bookingBusiness_GetService
       parameters:
         - name: $select
           in: query
@@ -1176,7 +1176,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Update the navigation property services in bookingBusinesses
-      operationId: bookingBusinesses.UpdateServices
+      operationId: bookingBusiness_UpdateService
       requestBody:
         description: New navigation property values
         content:
@@ -1200,7 +1200,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Delete navigation property services for bookingBusinesses
-      operationId: bookingBusinesses.DeleteServices
+      operationId: bookingBusiness_DeleteService
       parameters:
         - name: If-Match
           in: header
@@ -1221,7 +1221,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Get the number of the resource
-      operationId: bookingBusinesses.services.GetCount-e71d
+      operationId: bookingBusiness.service_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1238,7 +1238,7 @@ paths:
         - bookingBusinesses.bookingStaffMember
       summary: Get staffMembers from bookingBusinesses
       description: All the staff members that provide services in this business. Read-only. Nullable.
-      operationId: bookingBusinesses.ListStaffMembers
+      operationId: bookingBusiness_ListStaffMember
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1290,7 +1290,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Create new navigation property to staffMembers for bookingBusinesses
-      operationId: bookingBusinesses.CreateStaffMembers
+      operationId: bookingBusiness_CreateStaffMember
       requestBody:
         description: New navigation property
         content:
@@ -1316,7 +1316,7 @@ paths:
         - bookingBusinesses.bookingStaffMember
       summary: Get staffMembers from bookingBusinesses
       description: All the staff members that provide services in this business. Read-only. Nullable.
-      operationId: bookingBusinesses.GetStaffMembers
+      operationId: bookingBusiness_GetStaffMember
       parameters:
         - name: $select
           in: query
@@ -1354,7 +1354,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Update the navigation property staffMembers in bookingBusinesses
-      operationId: bookingBusinesses.UpdateStaffMembers
+      operationId: bookingBusiness_UpdateStaffMember
       requestBody:
         description: New navigation property values
         content:
@@ -1378,7 +1378,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Delete navigation property staffMembers for bookingBusinesses
-      operationId: bookingBusinesses.DeleteStaffMembers
+      operationId: bookingBusiness_DeleteStaffMember
       parameters:
         - name: If-Match
           in: header
@@ -1399,7 +1399,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Get the number of the resource
-      operationId: bookingBusinesses.staffMembers.GetCount-2251
+      operationId: bookingBusiness.staffMember_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1415,7 +1415,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Get the number of the resource
-      operationId: bookingBusinesses.GetCount-011d
+      operationId: bookingBusiness_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1431,7 +1431,7 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: Get entities from bookingCurrencies
-      operationId: bookingCurrencies.bookingCurrency.ListBookingCurrency
+      operationId: bookingCurrency_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1483,7 +1483,7 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: Add new entity to bookingCurrencies
-      operationId: bookingCurrencies.bookingCurrency.CreateBookingCurrency
+      operationId: bookingCurrency_CreateBookingCurrency
       requestBody:
         description: New entity
         content:
@@ -1508,7 +1508,7 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: Get entity from bookingCurrencies by key
-      operationId: bookingCurrencies.bookingCurrency.GetBookingCurrency
+      operationId: bookingCurrency_GetBookingCurrency
       parameters:
         - name: $select
           in: query
@@ -1546,7 +1546,7 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: Update entity in bookingCurrencies
-      operationId: bookingCurrencies.bookingCurrency.UpdateBookingCurrency
+      operationId: bookingCurrency_UpdateBookingCurrency
       requestBody:
         description: New property values
         content:
@@ -1570,7 +1570,7 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: Delete entity from bookingCurrencies
-      operationId: bookingCurrencies.bookingCurrency.DeleteBookingCurrency
+      operationId: bookingCurrency_DeleteBookingCurrency
       parameters:
         - name: If-Match
           in: header
@@ -1591,7 +1591,7 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: Get the number of the resource
-      operationId: bookingCurrencies.GetCount-60a7
+      operationId: bookingCurrency_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1607,7 +1607,7 @@ paths:
       tags:
         - solutions.solutionsRoot
       summary: Get solutions
-      operationId: solutions.solutionsRoot.GetSolutionsRoot
+      operationId: solution.solutionsRoot_GetSolutionsRoot
       parameters:
         - name: $select
           in: query
@@ -1645,7 +1645,7 @@ paths:
       tags:
         - solutions.solutionsRoot
       summary: Update solutions
-      operationId: solutions.solutionsRoot.UpdateSolutionsRoot
+      operationId: solution.solutionsRoot_UpdateSolutionsRoot
       requestBody:
         description: New property values
         content:
@@ -1671,7 +1671,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get bookingBusinesses from solutions
       description: A collection of businesses in Microsoft Bookings. Read-only. Nullable.
-      operationId: solutions.ListBookingBusinesses
+      operationId: solution_ListBookingBusiness
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1723,7 +1723,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to bookingBusinesses for solutions
-      operationId: solutions.CreateBookingBusinesses
+      operationId: solution_CreateBookingBusiness
       requestBody:
         description: New navigation property
         content:
@@ -1749,7 +1749,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get bookingBusinesses from solutions
       description: A collection of businesses in Microsoft Bookings. Read-only. Nullable.
-      operationId: solutions.GetBookingBusinesses
+      operationId: solution_GetBookingBusiness
       parameters:
         - name: $select
           in: query
@@ -1787,7 +1787,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property bookingBusinesses in solutions
-      operationId: solutions.UpdateBookingBusinesses
+      operationId: solution_UpdateBookingBusiness
       requestBody:
         description: New navigation property values
         content:
@@ -1815,7 +1815,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-beta
-      operationId: solutions.DeleteBookingBusinesses
+      operationId: solution_DeleteBookingBusiness
       parameters:
         - name: If-Match
           in: header
@@ -1837,7 +1837,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get bookingAppointment
       description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
-      operationId: solutions.bookingBusinesses.ListAppointments
+      operationId: solution.bookingBusiness_ListAppointment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1889,7 +1889,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to appointments for solutions
-      operationId: solutions.bookingBusinesses.CreateAppointments
+      operationId: solution.bookingBusiness_CreateAppointment
       requestBody:
         description: New navigation property
         content:
@@ -1918,7 +1918,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-beta
-      operationId: solutions.bookingBusinesses.GetAppointments
+      operationId: solution.bookingBusiness_GetAppointment
       parameters:
         - name: $select
           in: query
@@ -1960,7 +1960,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-beta
-      operationId: solutions.bookingBusinesses.UpdateAppointments
+      operationId: solution.bookingBusiness_UpdateAppointment
       requestBody:
         description: New navigation property values
         content:
@@ -1988,7 +1988,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-beta
-      operationId: solutions.bookingBusinesses.DeleteAppointments
+      operationId: solution.bookingBusiness_DeleteAppointment
       parameters:
         - name: If-Match
           in: header
@@ -2013,7 +2013,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-beta
-      operationId: solutions.bookingBusinesses.bookingBusiness.appointments.bookingAppointment.cancel
+      operationId: solution.bookingBusiness.appointment.bookingAppointment_cancel
       requestBody:
         description: Action parameters
         content:
@@ -2038,7 +2038,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get the number of the resource
-      operationId: solutions.bookingBusinesses.appointments.GetCount-205a
+      operationId: solution.bookingBusiness.appointment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2055,7 +2055,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get calendarView from solutions
       description: The set of appointments of this business in a specified date range. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses.ListCalendarView
+      operationId: solution.bookingBusiness_ListCalendarView
       parameters:
         - name: start
           in: query
@@ -2123,7 +2123,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to calendarView for solutions
-      operationId: solutions.bookingBusinesses.CreateCalendarView
+      operationId: solution.bookingBusiness_CreateCalendarView
       requestBody:
         description: New navigation property
         content:
@@ -2149,7 +2149,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get calendarView from solutions
       description: The set of appointments of this business in a specified date range. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses.GetCalendarView
+      operationId: solution.bookingBusiness_GetCalendarView
       parameters:
         - name: start
           in: query
@@ -2203,7 +2203,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property calendarView in solutions
-      operationId: solutions.bookingBusinesses.UpdateCalendarView
+      operationId: solution.bookingBusiness_UpdateCalendarView
       requestBody:
         description: New navigation property values
         content:
@@ -2227,7 +2227,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property calendarView for solutions
-      operationId: solutions.bookingBusinesses.DeleteCalendarView
+      operationId: solution.bookingBusiness_DeleteCalendarView
       parameters:
         - name: If-Match
           in: header
@@ -2252,7 +2252,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-beta
-      operationId: solutions.bookingBusinesses.bookingBusiness.calendarView.bookingAppointment.cancel
+      operationId: solution.bookingBusiness.calendarView.bookingAppointment_cancel
       requestBody:
         description: Action parameters
         content:
@@ -2277,7 +2277,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get the number of the resource
-      operationId: solutions.bookingBusinesses.calendarView.GetCount-f3a3
+      operationId: solution.bookingBusiness.calendarView_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2294,7 +2294,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get customers from solutions
       description: All the customers of this business. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses.ListCustomers
+      operationId: solution.bookingBusiness_ListCustomer
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2346,7 +2346,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to customers for solutions
-      operationId: solutions.bookingBusinesses.CreateCustomers
+      operationId: solution.bookingBusiness_CreateCustomer
       requestBody:
         description: New navigation property
         content:
@@ -2372,7 +2372,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get customers from solutions
       description: All the customers of this business. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses.GetCustomers
+      operationId: solution.bookingBusiness_GetCustomer
       parameters:
         - name: $select
           in: query
@@ -2410,7 +2410,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property customers in solutions
-      operationId: solutions.bookingBusinesses.UpdateCustomers
+      operationId: solution.bookingBusiness_UpdateCustomer
       requestBody:
         description: New navigation property values
         content:
@@ -2434,7 +2434,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property customers for solutions
-      operationId: solutions.bookingBusinesses.DeleteCustomers
+      operationId: solution.bookingBusiness_DeleteCustomer
       parameters:
         - name: If-Match
           in: header
@@ -2455,7 +2455,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get the number of the resource
-      operationId: solutions.bookingBusinesses.customers.GetCount-1771
+      operationId: solution.bookingBusiness.customer_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2472,7 +2472,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get customQuestions from solutions
       description: All custom questions of this business.
-      operationId: solutions.bookingBusinesses.ListCustomQuestions
+      operationId: solution.bookingBusiness_ListCustomQuestion
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2524,7 +2524,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to customQuestions for solutions
-      operationId: solutions.bookingBusinesses.CreateCustomQuestions
+      operationId: solution.bookingBusiness_CreateCustomQuestion
       requestBody:
         description: New navigation property
         content:
@@ -2550,7 +2550,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get customQuestions from solutions
       description: All custom questions of this business.
-      operationId: solutions.bookingBusinesses.GetCustomQuestions
+      operationId: solution.bookingBusiness_GetCustomQuestion
       parameters:
         - name: $select
           in: query
@@ -2588,7 +2588,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property customQuestions in solutions
-      operationId: solutions.bookingBusinesses.UpdateCustomQuestions
+      operationId: solution.bookingBusiness_UpdateCustomQuestion
       requestBody:
         description: New navigation property values
         content:
@@ -2612,7 +2612,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property customQuestions for solutions
-      operationId: solutions.bookingBusinesses.DeleteCustomQuestions
+      operationId: solution.bookingBusiness_DeleteCustomQuestion
       parameters:
         - name: If-Match
           in: header
@@ -2633,7 +2633,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get the number of the resource
-      operationId: solutions.bookingBusinesses.customQuestions.GetCount-385a
+      operationId: solution.bookingBusiness.customQuestion_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2653,7 +2653,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-beta
-      operationId: solutions.bookingBusinesses.bookingBusiness.getStaffAvailability
+      operationId: solution.bookingBusiness_getStaffAvailability
       requestBody:
         description: Action parameters
         content:
@@ -2702,7 +2702,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-beta
-      operationId: solutions.bookingBusinesses.bookingBusiness.publish
+      operationId: solution.bookingBusiness_publish
       responses:
         '204':
           description: Success
@@ -2720,7 +2720,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-beta
-      operationId: solutions.bookingBusinesses.bookingBusiness.unpublish
+      operationId: solution.bookingBusiness_unpublish
       responses:
         '204':
           description: Success
@@ -2735,7 +2735,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get services from solutions
       description: All the services offered by this business. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses.ListServices
+      operationId: solution.bookingBusiness_ListService
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2787,7 +2787,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to services for solutions
-      operationId: solutions.bookingBusinesses.CreateServices
+      operationId: solution.bookingBusiness_CreateService
       requestBody:
         description: New navigation property
         content:
@@ -2813,7 +2813,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get services from solutions
       description: All the services offered by this business. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses.GetServices
+      operationId: solution.bookingBusiness_GetService
       parameters:
         - name: $select
           in: query
@@ -2851,7 +2851,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property services in solutions
-      operationId: solutions.bookingBusinesses.UpdateServices
+      operationId: solution.bookingBusiness_UpdateService
       requestBody:
         description: New navigation property values
         content:
@@ -2875,7 +2875,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property services for solutions
-      operationId: solutions.bookingBusinesses.DeleteServices
+      operationId: solution.bookingBusiness_DeleteService
       parameters:
         - name: If-Match
           in: header
@@ -2896,7 +2896,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get the number of the resource
-      operationId: solutions.bookingBusinesses.services.GetCount-35c3
+      operationId: solution.bookingBusiness.service_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2913,7 +2913,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get staffMembers from solutions
       description: All the staff members that provide services in this business. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses.ListStaffMembers
+      operationId: solution.bookingBusiness_ListStaffMember
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2965,7 +2965,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to staffMembers for solutions
-      operationId: solutions.bookingBusinesses.CreateStaffMembers
+      operationId: solution.bookingBusiness_CreateStaffMember
       requestBody:
         description: New navigation property
         content:
@@ -2991,7 +2991,7 @@ paths:
         - solutions.bookingBusiness
       summary: Get staffMembers from solutions
       description: All the staff members that provide services in this business. Read-only. Nullable.
-      operationId: solutions.bookingBusinesses.GetStaffMembers
+      operationId: solution.bookingBusiness_GetStaffMember
       parameters:
         - name: $select
           in: query
@@ -3029,7 +3029,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property staffMembers in solutions
-      operationId: solutions.bookingBusinesses.UpdateStaffMembers
+      operationId: solution.bookingBusiness_UpdateStaffMember
       requestBody:
         description: New navigation property values
         content:
@@ -3053,7 +3053,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property staffMembers for solutions
-      operationId: solutions.bookingBusinesses.DeleteStaffMembers
+      operationId: solution.bookingBusiness_DeleteStaffMember
       parameters:
         - name: If-Match
           in: header
@@ -3074,7 +3074,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get the number of the resource
-      operationId: solutions.bookingBusinesses.staffMembers.GetCount-7947
+      operationId: solution.bookingBusiness.staffMember_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3090,7 +3090,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get the number of the resource
-      operationId: solutions.bookingBusinesses.GetCount-b75b
+      operationId: solution.bookingBusiness_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3110,7 +3110,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-beta
-      operationId: solutions.ListBookingCurrencies
+      operationId: solution_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3162,7 +3162,7 @@ paths:
       tags:
         - solutions.bookingCurrency
       summary: Create new navigation property to bookingCurrencies for solutions
-      operationId: solutions.CreateBookingCurrencies
+      operationId: solution_CreateBookingCurrency
       requestBody:
         description: New navigation property
         content:
@@ -3191,7 +3191,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-beta
-      operationId: solutions.GetBookingCurrencies
+      operationId: solution_GetBookingCurrency
       parameters:
         - name: $select
           in: query
@@ -3229,7 +3229,7 @@ paths:
       tags:
         - solutions.bookingCurrency
       summary: Update the navigation property bookingCurrencies in solutions
-      operationId: solutions.UpdateBookingCurrencies
+      operationId: solution_UpdateBookingCurrency
       requestBody:
         description: New navigation property values
         content:
@@ -3253,7 +3253,7 @@ paths:
       tags:
         - solutions.bookingCurrency
       summary: Delete navigation property bookingCurrencies for solutions
-      operationId: solutions.DeleteBookingCurrencies
+      operationId: solution_DeleteBookingCurrency
       parameters:
         - name: If-Match
           in: header
@@ -3274,7 +3274,7 @@ paths:
       tags:
         - solutions.bookingCurrency
       summary: Get the number of the resource
-      operationId: solutions.bookingCurrencies.GetCount-f6c6
+      operationId: solution.bookingCurrency_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3291,7 +3291,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get virtualEvents from solutions
       description: A collection of virtual events.
-      operationId: solutions.GetVirtualEvents
+      operationId: solution_GetVirtualEvent
       parameters:
         - name: $select
           in: query
@@ -3329,7 +3329,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property virtualEvents in solutions
-      operationId: solutions.UpdateVirtualEvents
+      operationId: solution_UpdateVirtualEvent
       requestBody:
         description: New navigation property values
         content:
@@ -3353,7 +3353,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property virtualEvents for solutions
-      operationId: solutions.DeleteVirtualEvents
+      operationId: solution_DeleteVirtualEvent
       parameters:
         - name: If-Match
           in: header
@@ -3374,7 +3374,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get events from solutions
-      operationId: solutions.virtualEvents.ListEvents
+      operationId: solution.virtualEvent_ListEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3426,7 +3426,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to events for solutions
-      operationId: solutions.virtualEvents.CreateEvents
+      operationId: solution.virtualEvent_CreateEvent
       requestBody:
         description: New navigation property
         content:
@@ -3451,7 +3451,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get events from solutions
-      operationId: solutions.virtualEvents.GetEvents
+      operationId: solution.virtualEvent_GetEvent
       parameters:
         - name: $select
           in: query
@@ -3489,7 +3489,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property events in solutions
-      operationId: solutions.virtualEvents.UpdateEvents
+      operationId: solution.virtualEvent_UpdateEvent
       requestBody:
         description: New navigation property values
         content:
@@ -3513,7 +3513,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property events for solutions
-      operationId: solutions.virtualEvents.DeleteEvents
+      operationId: solution.virtualEvent_DeleteEvent
       parameters:
         - name: If-Match
           in: header
@@ -3534,7 +3534,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Invoke action cancel
-      operationId: solutions.virtualEvents.events.virtualEvent.cancel
+      operationId: solution.virtualEvent.event.virtualEvent_cancel
       responses:
         '204':
           description: Success
@@ -3548,7 +3548,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Invoke action publish
-      operationId: solutions.virtualEvents.events.virtualEvent.publish
+      operationId: solution.virtualEvent.event.virtualEvent_publish
       responses:
         '204':
           description: Success
@@ -3562,7 +3562,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Invoke action setExternalEventInformation
-      operationId: solutions.virtualEvents.events.virtualEvent.setExternalEventInformation
+      operationId: solution.virtualEvent.event.virtualEvent_setExternalEventInformation
       requestBody:
         description: Action parameters
         content:
@@ -3588,7 +3588,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get presenters from solutions
       description: The virtual event presenters.
-      operationId: solutions.virtualEvents.events.ListPresenters
+      operationId: solution.virtualEvent.event_ListPresenter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3640,7 +3640,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to presenters for solutions
-      operationId: solutions.virtualEvents.events.CreatePresenters
+      operationId: solution.virtualEvent.event_CreatePresenter
       requestBody:
         description: New navigation property
         content:
@@ -3666,7 +3666,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get presenters from solutions
       description: The virtual event presenters.
-      operationId: solutions.virtualEvents.events.GetPresenters
+      operationId: solution.virtualEvent.event_GetPresenter
       parameters:
         - name: $select
           in: query
@@ -3704,7 +3704,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property presenters in solutions
-      operationId: solutions.virtualEvents.events.UpdatePresenters
+      operationId: solution.virtualEvent.event_UpdatePresenter
       requestBody:
         description: New navigation property values
         content:
@@ -3728,7 +3728,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property presenters for solutions
-      operationId: solutions.virtualEvents.events.DeletePresenters
+      operationId: solution.virtualEvent.event_DeletePresenter
       parameters:
         - name: If-Match
           in: header
@@ -3749,7 +3749,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
-      operationId: solutions.virtualEvents.events.presenters.ListSessions
+      operationId: solution.virtualEvent.event.presenter_ListSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3802,7 +3802,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
-      operationId: solutions.virtualEvents.events.presenters.GetSessions
+      operationId: solution.virtualEvent.event.presenter_GetSession
       parameters:
         - name: $select
           in: query
@@ -3841,7 +3841,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
-      operationId: solutions.virtualEvents.events.presenters.sessions.GetByJoinWebUrl
+      operationId: solution.virtualEvent.event.presenter.session_GetGraphBPreJoinWebUrl
       parameters:
         - name: $select
           in: query
@@ -3880,7 +3880,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.events.presenters.sessions.GetCount-f3b2
+      operationId: solution.virtualEvent.event.presenter.session_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3896,7 +3896,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.events.presenters.GetCount-9db5
+      operationId: solution.virtualEvent.event.presenter_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3913,7 +3913,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
       description: The sessions for the virtual event.
-      operationId: solutions.virtualEvents.events.ListSessions
+      operationId: solution.virtualEvent.event_ListSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3965,7 +3965,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to sessions for solutions
-      operationId: solutions.virtualEvents.events.CreateSessions
+      operationId: solution.virtualEvent.event_CreateSession
       requestBody:
         description: New navigation property
         content:
@@ -3991,7 +3991,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
       description: The sessions for the virtual event.
-      operationId: solutions.virtualEvents.events.GetSessions
+      operationId: solution.virtualEvent.event_GetSession
       parameters:
         - name: $select
           in: query
@@ -4029,7 +4029,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property sessions in solutions
-      operationId: solutions.virtualEvents.events.UpdateSessions
+      operationId: solution.virtualEvent.event_UpdateSession
       requestBody:
         description: New navigation property values
         content:
@@ -4053,7 +4053,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property sessions for solutions
-      operationId: solutions.virtualEvents.events.DeleteSessions
+      operationId: solution.virtualEvent.event_DeleteSession
       parameters:
         - name: If-Match
           in: header
@@ -4075,7 +4075,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get attendanceReports from solutions
       description: The attendance reports of an online meeting. Read-only.
-      operationId: solutions.virtualEvents.events.sessions.ListAttendanceReports
+      operationId: solution.virtualEvent.event.session_ListAttendanceReport
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4127,7 +4127,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to attendanceReports for solutions
-      operationId: solutions.virtualEvents.events.sessions.CreateAttendanceReports
+      operationId: solution.virtualEvent.event.session_CreateAttendanceReport
       requestBody:
         description: New navigation property
         content:
@@ -4153,7 +4153,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get attendanceReports from solutions
       description: The attendance reports of an online meeting. Read-only.
-      operationId: solutions.virtualEvents.events.sessions.GetAttendanceReports
+      operationId: solution.virtualEvent.event.session_GetAttendanceReport
       parameters:
         - name: $select
           in: query
@@ -4191,7 +4191,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property attendanceReports in solutions
-      operationId: solutions.virtualEvents.events.sessions.UpdateAttendanceReports
+      operationId: solution.virtualEvent.event.session_UpdateAttendanceReport
       requestBody:
         description: New navigation property values
         content:
@@ -4215,7 +4215,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property attendanceReports for solutions
-      operationId: solutions.virtualEvents.events.sessions.DeleteAttendanceReports
+      operationId: solution.virtualEvent.event.session_DeleteAttendanceReport
       parameters:
         - name: If-Match
           in: header
@@ -4237,7 +4237,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get attendanceRecords from solutions
       description: List of attendance records of an attendance report. Read-only.
-      operationId: solutions.virtualEvents.events.sessions.attendanceReports.ListAttendanceRecords
+      operationId: solution.virtualEvent.event.session.attendanceReport_ListAttendanceRecord
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4289,7 +4289,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to attendanceRecords for solutions
-      operationId: solutions.virtualEvents.events.sessions.attendanceReports.CreateAttendanceRecords
+      operationId: solution.virtualEvent.event.session.attendanceReport_CreateAttendanceRecord
       requestBody:
         description: New navigation property
         content:
@@ -4315,7 +4315,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get attendanceRecords from solutions
       description: List of attendance records of an attendance report. Read-only.
-      operationId: solutions.virtualEvents.events.sessions.attendanceReports.GetAttendanceRecords
+      operationId: solution.virtualEvent.event.session.attendanceReport_GetAttendanceRecord
       parameters:
         - name: $select
           in: query
@@ -4353,7 +4353,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property attendanceRecords in solutions
-      operationId: solutions.virtualEvents.events.sessions.attendanceReports.UpdateAttendanceRecords
+      operationId: solution.virtualEvent.event.session.attendanceReport_UpdateAttendanceRecord
       requestBody:
         description: New navigation property values
         content:
@@ -4377,7 +4377,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property attendanceRecords for solutions
-      operationId: solutions.virtualEvents.events.sessions.attendanceReports.DeleteAttendanceRecords
+      operationId: solution.virtualEvent.event.session.attendanceReport_DeleteAttendanceRecord
       parameters:
         - name: If-Match
           in: header
@@ -4398,7 +4398,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.events.sessions.attendanceReports.attendanceRecords.GetCount-b30c
+      operationId: solution.virtualEvent.event.session.attendanceReport.attendanceRecord_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4414,7 +4414,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.events.sessions.attendanceReports.GetCount-d074
+      operationId: solution.virtualEvent.event.session.attendanceReport_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4430,7 +4430,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get presenters from solutions
-      operationId: solutions.virtualEvents.events.sessions.ListPresenters
+      operationId: solution.virtualEvent.event.session_ListPresenter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4483,7 +4483,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get presenters from solutions
-      operationId: solutions.virtualEvents.events.sessions.GetPresenters
+      operationId: solution.virtualEvent.event.session_GetPresenter
       parameters:
         - name: $select
           in: query
@@ -4522,7 +4522,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.events.sessions.presenters.GetCount-2e7d
+      operationId: solution.virtualEvent.event.session.presenter_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4538,7 +4538,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
-      operationId: solutions.virtualEvents.events.sessions.ListRegistrations
+      operationId: solution.virtualEvent.event.session_ListRegistration
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4591,7 +4591,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
-      operationId: solutions.virtualEvents.events.sessions.GetRegistrations
+      operationId: solution.virtualEvent.event.session_GetRegistration
       parameters:
         - name: $select
           in: query
@@ -4630,7 +4630,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
-      operationId: solutions.virtualEvents.events.sessions.registrations.GetByEmail
+      operationId: solution.virtualEvent.event.session.registration_GetGraphBPreEmail
       parameters:
         - name: $select
           in: query
@@ -4669,7 +4669,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
-      operationId: solutions.virtualEvents.events.sessions.registrations.GetByUserId
+      operationId: solution.virtualEvent.event.session.registration_GetGraphBPreUserId
       parameters:
         - name: $select
           in: query
@@ -4708,7 +4708,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.events.sessions.registrations.GetCount-9a69
+      operationId: solution.virtualEvent.event.session.registration_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4725,7 +4725,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
       description: The sessions for the virtual event.
-      operationId: solutions.virtualEvents.events.sessions.GetByJoinWebUrl
+      operationId: solution.virtualEvent.event.session_GetGraphBPreJoinWebUrl
       parameters:
         - name: $select
           in: query
@@ -4763,7 +4763,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property sessions in solutions
-      operationId: solutions.virtualEvents.events.sessions.UpdateByJoinWebUrl
+      operationId: solution.virtualEvent.event.session_UpdateGraphBPreJoinWebUrl
       requestBody:
         description: New navigation property values
         content:
@@ -4787,7 +4787,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property sessions for solutions
-      operationId: solutions.virtualEvents.events.sessions.DeleteByJoinWebUrl
+      operationId: solution.virtualEvent.event.session_DeleteGraphBPreJoinWebUrl
       parameters:
         - name: If-Match
           in: header
@@ -4808,7 +4808,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.events.sessions.GetCount-70ae
+      operationId: solution.virtualEvent.event.session_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4824,7 +4824,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.events.GetCount-5984
+      operationId: solution.virtualEvent.event_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4841,7 +4841,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get virtualEventTownhall
       description: Read the properties and relationships of a virtualEventTownhall object.
-      operationId: solutions.virtualEvents.ListTownhalls
+      operationId: solution.virtualEvent_ListTownhall
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4897,7 +4897,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventsroot-post-townhalls?view=graph-rest-beta
-      operationId: solutions.virtualEvents.CreateTownhalls
+      operationId: solution.virtualEvent_CreateTownhall
       requestBody:
         description: New navigation property
         content:
@@ -4926,7 +4926,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventtownhall-get?view=graph-rest-beta
-      operationId: solutions.virtualEvents.GetTownhalls
+      operationId: solution.virtualEvent_GetTownhall
       parameters:
         - name: $select
           in: query
@@ -4968,7 +4968,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventtownhall-update?view=graph-rest-beta
-      operationId: solutions.virtualEvents.UpdateTownhalls
+      operationId: solution.virtualEvent_UpdateTownhall
       requestBody:
         description: New navigation property values
         content:
@@ -4992,7 +4992,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property townhalls for solutions
-      operationId: solutions.virtualEvents.DeleteTownhalls
+      operationId: solution.virtualEvent_DeleteTownhall
       parameters:
         - name: If-Match
           in: header
@@ -5017,7 +5017,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualevent-list-presenters?view=graph-rest-beta
-      operationId: solutions.virtualEvents.townhalls.ListPresenters
+      operationId: solution.virtualEvent.townhall_ListPresenter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5073,7 +5073,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualevent-post-presenters?view=graph-rest-beta
-      operationId: solutions.virtualEvents.townhalls.CreatePresenters
+      operationId: solution.virtualEvent.townhall_CreatePresenter
       requestBody:
         description: New navigation property
         content:
@@ -5102,7 +5102,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventpresenter-get?view=graph-rest-beta
-      operationId: solutions.virtualEvents.townhalls.GetPresenters
+      operationId: solution.virtualEvent.townhall_GetPresenter
       parameters:
         - name: $select
           in: query
@@ -5140,7 +5140,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property presenters in solutions
-      operationId: solutions.virtualEvents.townhalls.UpdatePresenters
+      operationId: solution.virtualEvent.townhall_UpdatePresenter
       requestBody:
         description: New navigation property values
         content:
@@ -5168,7 +5168,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventpresenter-delete?view=graph-rest-beta
-      operationId: solutions.virtualEvents.townhalls.DeletePresenters
+      operationId: solution.virtualEvent.townhall_DeletePresenter
       parameters:
         - name: If-Match
           in: header
@@ -5189,7 +5189,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
-      operationId: solutions.virtualEvents.townhalls.presenters.ListSessions
+      operationId: solution.virtualEvent.townhall.presenter_ListSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5242,7 +5242,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
-      operationId: solutions.virtualEvents.townhalls.presenters.GetSessions
+      operationId: solution.virtualEvent.townhall.presenter_GetSession
       parameters:
         - name: $select
           in: query
@@ -5281,7 +5281,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
-      operationId: solutions.virtualEvents.townhalls.presenters.sessions.GetByJoinWebUrl
+      operationId: solution.virtualEvent.townhall.presenter.session_GetGraphBPreJoinWebUrl
       parameters:
         - name: $select
           in: query
@@ -5320,7 +5320,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.townhalls.presenters.sessions.GetCount-aaa6
+      operationId: solution.virtualEvent.townhall.presenter.session_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5336,7 +5336,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.townhalls.presenters.GetCount-018d
+      operationId: solution.virtualEvent.townhall.presenter_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5356,7 +5356,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventtownhallregistrationconfiguration-get?view=graph-rest-beta
-      operationId: solutions.virtualEvents.townhalls.GetRegistrationConfiguration
+      operationId: solution.virtualEvent.townhall_GetRegistrationConfiguration
       parameters:
         - name: $select
           in: query
@@ -5394,7 +5394,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property registrationConfiguration in solutions
-      operationId: solutions.virtualEvents.townhalls.UpdateRegistrationConfiguration
+      operationId: solution.virtualEvent.townhall_UpdateRegistrationConfiguration
       requestBody:
         description: New navigation property values
         content:
@@ -5418,7 +5418,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property registrationConfiguration for solutions
-      operationId: solutions.virtualEvents.townhalls.DeleteRegistrationConfiguration
+      operationId: solution.virtualEvent.townhall_DeleteRegistrationConfiguration
       parameters:
         - name: If-Match
           in: header
@@ -5440,7 +5440,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get questions from solutions
       description: Registration questions.
-      operationId: solutions.virtualEvents.townhalls.registrationConfiguration.ListQuestions
+      operationId: solution.virtualEvent.townhall.registrationConfiguration_ListQuestion
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5492,7 +5492,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to questions for solutions
-      operationId: solutions.virtualEvents.townhalls.registrationConfiguration.CreateQuestions
+      operationId: solution.virtualEvent.townhall.registrationConfiguration_CreateQuestion
       requestBody:
         description: New navigation property
         content:
@@ -5518,7 +5518,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get questions from solutions
       description: Registration questions.
-      operationId: solutions.virtualEvents.townhalls.registrationConfiguration.GetQuestions
+      operationId: solution.virtualEvent.townhall.registrationConfiguration_GetQuestion
       parameters:
         - name: $select
           in: query
@@ -5556,7 +5556,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property questions in solutions
-      operationId: solutions.virtualEvents.townhalls.registrationConfiguration.UpdateQuestions
+      operationId: solution.virtualEvent.townhall.registrationConfiguration_UpdateQuestion
       requestBody:
         description: New navigation property values
         content:
@@ -5580,7 +5580,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property questions for solutions
-      operationId: solutions.virtualEvents.townhalls.registrationConfiguration.DeleteQuestions
+      operationId: solution.virtualEvent.townhall.registrationConfiguration_DeleteQuestion
       parameters:
         - name: If-Match
           in: header
@@ -5601,7 +5601,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.townhalls.registrationConfiguration.questions.GetCount-540e
+      operationId: solution.virtualEvent.townhall.registrationConfiguration.question_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5618,7 +5618,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
       description: Registration records of the town hall.
-      operationId: solutions.virtualEvents.townhalls.ListRegistrations
+      operationId: solution.virtualEvent.townhall_ListRegistration
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5670,7 +5670,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to registrations for solutions
-      operationId: solutions.virtualEvents.townhalls.CreateRegistrations
+      operationId: solution.virtualEvent.townhall_CreateRegistration
       requestBody:
         description: New navigation property
         content:
@@ -5696,7 +5696,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
       description: Registration records of the town hall.
-      operationId: solutions.virtualEvents.townhalls.GetRegistrations
+      operationId: solution.virtualEvent.townhall_GetRegistration
       parameters:
         - name: $select
           in: query
@@ -5734,7 +5734,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property registrations in solutions
-      operationId: solutions.virtualEvents.townhalls.UpdateRegistrations
+      operationId: solution.virtualEvent.townhall_UpdateRegistration
       requestBody:
         description: New navigation property values
         content:
@@ -5758,7 +5758,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property registrations for solutions
-      operationId: solutions.virtualEvents.townhalls.DeleteRegistrations
+      operationId: solution.virtualEvent.townhall_DeleteRegistration
       parameters:
         - name: If-Match
           in: header
@@ -5779,7 +5779,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Invoke action cancel
-      operationId: solutions.virtualEvents.townhalls.virtualEventTownhall.registrations.virtualEventRegistration.cancel
+      operationId: solution.virtualEvent.townhall.virtualEventTownhall.registration.virtualEventRegistration_cancel
       responses:
         '204':
           description: Success
@@ -5794,7 +5794,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
       description: Sessions for a registration.
-      operationId: solutions.virtualEvents.townhalls.registrations.ListSessions
+      operationId: solution.virtualEvent.townhall.registration_ListSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5848,7 +5848,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
       description: Sessions for a registration.
-      operationId: solutions.virtualEvents.townhalls.registrations.GetSessions
+      operationId: solution.virtualEvent.townhall.registration_GetSession
       parameters:
         - name: $select
           in: query
@@ -5888,7 +5888,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
       description: Sessions for a registration.
-      operationId: solutions.virtualEvents.townhalls.registrations.sessions.GetByJoinWebUrl
+      operationId: solution.virtualEvent.townhall.registration.session_GetGraphBPreJoinWebUrl
       parameters:
         - name: $select
           in: query
@@ -5927,7 +5927,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.townhalls.registrations.sessions.GetCount-b133
+      operationId: solution.virtualEvent.townhall.registration.session_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5944,7 +5944,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
       description: Registration records of the town hall.
-      operationId: solutions.virtualEvents.townhalls.registrations.GetByEmail
+      operationId: solution.virtualEvent.townhall.registration_GetGraphBPreEmail
       parameters:
         - name: $select
           in: query
@@ -5982,7 +5982,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property registrations in solutions
-      operationId: solutions.virtualEvents.townhalls.registrations.UpdateByEmail
+      operationId: solution.virtualEvent.townhall.registration_UpdateGraphBPreEmail
       requestBody:
         description: New navigation property values
         content:
@@ -6006,7 +6006,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property registrations for solutions
-      operationId: solutions.virtualEvents.townhalls.registrations.DeleteByEmail
+      operationId: solution.virtualEvent.townhall.registration_DeleteGraphBPreEmail
       parameters:
         - name: If-Match
           in: header
@@ -6027,7 +6027,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Invoke action cancel
-      operationId: solutions.virtualEvents.townhalls.virtualEventTownhall.registrations.email.cancel
+      operationId: solution.virtualEvent.townhall.virtualEventTownhall.registration.email_cancel
       responses:
         '204':
           description: Success
@@ -6042,7 +6042,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
       description: Registration records of the town hall.
-      operationId: solutions.virtualEvents.townhalls.registrations.GetByUserId
+      operationId: solution.virtualEvent.townhall.registration_GetGraphBPreUserId
       parameters:
         - name: $select
           in: query
@@ -6080,7 +6080,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property registrations in solutions
-      operationId: solutions.virtualEvents.townhalls.registrations.UpdateByUserId
+      operationId: solution.virtualEvent.townhall.registration_UpdateGraphBPreUserId
       requestBody:
         description: New navigation property values
         content:
@@ -6104,7 +6104,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property registrations for solutions
-      operationId: solutions.virtualEvents.townhalls.registrations.DeleteByUserId
+      operationId: solution.virtualEvent.townhall.registration_DeleteGraphBPreUserId
       parameters:
         - name: If-Match
           in: header
@@ -6125,7 +6125,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Invoke action cancel
-      operationId: solutions.virtualEvents.townhalls.virtualEventTownhall.registrations.userId.cancel
+      operationId: solution.virtualEvent.townhall.virtualEventTownhall.registration.userId_cancel
       responses:
         '204':
           description: Success
@@ -6139,7 +6139,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.townhalls.registrations.GetCount-02ff
+      operationId: solution.virtualEvent.townhall.registration_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6156,7 +6156,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
       description: The sessions for the virtual event.
-      operationId: solutions.virtualEvents.townhalls.ListSessions
+      operationId: solution.virtualEvent.townhall_ListSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6208,7 +6208,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to sessions for solutions
-      operationId: solutions.virtualEvents.townhalls.CreateSessions
+      operationId: solution.virtualEvent.townhall_CreateSession
       requestBody:
         description: New navigation property
         content:
@@ -6234,7 +6234,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
       description: The sessions for the virtual event.
-      operationId: solutions.virtualEvents.townhalls.GetSessions
+      operationId: solution.virtualEvent.townhall_GetSession
       parameters:
         - name: $select
           in: query
@@ -6272,7 +6272,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property sessions in solutions
-      operationId: solutions.virtualEvents.townhalls.UpdateSessions
+      operationId: solution.virtualEvent.townhall_UpdateSession
       requestBody:
         description: New navigation property values
         content:
@@ -6296,7 +6296,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property sessions for solutions
-      operationId: solutions.virtualEvents.townhalls.DeleteSessions
+      operationId: solution.virtualEvent.townhall_DeleteSession
       parameters:
         - name: If-Match
           in: header
@@ -6321,7 +6321,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-beta
-      operationId: solutions.virtualEvents.townhalls.sessions.ListAttendanceReports
+      operationId: solution.virtualEvent.townhall.session_ListAttendanceReport
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6373,7 +6373,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to attendanceReports for solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.CreateAttendanceReports
+      operationId: solution.virtualEvent.townhall.session_CreateAttendanceReport
       requestBody:
         description: New navigation property
         content:
@@ -6402,7 +6402,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-beta
-      operationId: solutions.virtualEvents.townhalls.sessions.GetAttendanceReports
+      operationId: solution.virtualEvent.townhall.session_GetAttendanceReport
       parameters:
         - name: $select
           in: query
@@ -6440,7 +6440,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property attendanceReports in solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.UpdateAttendanceReports
+      operationId: solution.virtualEvent.townhall.session_UpdateAttendanceReport
       requestBody:
         description: New navigation property values
         content:
@@ -6464,7 +6464,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property attendanceReports for solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.DeleteAttendanceReports
+      operationId: solution.virtualEvent.townhall.session_DeleteAttendanceReport
       parameters:
         - name: If-Match
           in: header
@@ -6486,7 +6486,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get attendanceRecords from solutions
       description: List of attendance records of an attendance report. Read-only.
-      operationId: solutions.virtualEvents.townhalls.sessions.attendanceReports.ListAttendanceRecords
+      operationId: solution.virtualEvent.townhall.session.attendanceReport_ListAttendanceRecord
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6538,7 +6538,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to attendanceRecords for solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.attendanceReports.CreateAttendanceRecords
+      operationId: solution.virtualEvent.townhall.session.attendanceReport_CreateAttendanceRecord
       requestBody:
         description: New navigation property
         content:
@@ -6564,7 +6564,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get attendanceRecords from solutions
       description: List of attendance records of an attendance report. Read-only.
-      operationId: solutions.virtualEvents.townhalls.sessions.attendanceReports.GetAttendanceRecords
+      operationId: solution.virtualEvent.townhall.session.attendanceReport_GetAttendanceRecord
       parameters:
         - name: $select
           in: query
@@ -6602,7 +6602,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property attendanceRecords in solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.attendanceReports.UpdateAttendanceRecords
+      operationId: solution.virtualEvent.townhall.session.attendanceReport_UpdateAttendanceRecord
       requestBody:
         description: New navigation property values
         content:
@@ -6626,7 +6626,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property attendanceRecords for solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.attendanceReports.DeleteAttendanceRecords
+      operationId: solution.virtualEvent.townhall.session.attendanceReport_DeleteAttendanceRecord
       parameters:
         - name: If-Match
           in: header
@@ -6647,7 +6647,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.townhalls.sessions.attendanceReports.attendanceRecords.GetCount-5499
+      operationId: solution.virtualEvent.townhall.session.attendanceReport.attendanceRecord_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6663,7 +6663,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.townhalls.sessions.attendanceReports.GetCount-47ac
+      operationId: solution.virtualEvent.townhall.session.attendanceReport_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6679,7 +6679,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get presenters from solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.ListPresenters
+      operationId: solution.virtualEvent.townhall.session_ListPresenter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6732,7 +6732,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get presenters from solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.GetPresenters
+      operationId: solution.virtualEvent.townhall.session_GetPresenter
       parameters:
         - name: $select
           in: query
@@ -6771,7 +6771,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.townhalls.sessions.presenters.GetCount-2bd7
+      operationId: solution.virtualEvent.townhall.session.presenter_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6787,7 +6787,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.ListRegistrations
+      operationId: solution.virtualEvent.townhall.session_ListRegistration
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6840,7 +6840,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.GetRegistrations
+      operationId: solution.virtualEvent.townhall.session_GetRegistration
       parameters:
         - name: $select
           in: query
@@ -6879,7 +6879,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.registrations.GetByEmail
+      operationId: solution.virtualEvent.townhall.session.registration_GetGraphBPreEmail
       parameters:
         - name: $select
           in: query
@@ -6918,7 +6918,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.registrations.GetByUserId
+      operationId: solution.virtualEvent.townhall.session.registration_GetGraphBPreUserId
       parameters:
         - name: $select
           in: query
@@ -6957,7 +6957,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.townhalls.sessions.registrations.GetCount-0090
+      operationId: solution.virtualEvent.townhall.session.registration_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6974,7 +6974,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
       description: The sessions for the virtual event.
-      operationId: solutions.virtualEvents.townhalls.sessions.GetByJoinWebUrl
+      operationId: solution.virtualEvent.townhall.session_GetGraphBPreJoinWebUrl
       parameters:
         - name: $select
           in: query
@@ -7012,7 +7012,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property sessions in solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.UpdateByJoinWebUrl
+      operationId: solution.virtualEvent.townhall.session_UpdateGraphBPreJoinWebUrl
       requestBody:
         description: New navigation property values
         content:
@@ -7036,7 +7036,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property sessions for solutions
-      operationId: solutions.virtualEvents.townhalls.sessions.DeleteByJoinWebUrl
+      operationId: solution.virtualEvent.townhall.session_DeleteGraphBPreJoinWebUrl
       parameters:
         - name: If-Match
           in: header
@@ -7057,7 +7057,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.townhalls.sessions.GetCount-b174
+      operationId: solution.virtualEvent.townhall.session_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7073,7 +7073,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.townhalls.GetCount-17d1
+      operationId: solution.virtualEvent.townhall_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7093,7 +7093,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuseridandrole?view=graph-rest-beta
-      operationId: solutions.virtualEvents.townhalls.getByUserIdAndRole
+      operationId: solution.virtualEvent.townhall_getGraphBPreUserIdAndRole
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7163,7 +7163,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuserrole?view=graph-rest-beta
-      operationId: solutions.virtualEvents.townhalls.getByUserRole
+      operationId: solution.virtualEvent.townhall_getGraphBPreUserRole
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7233,7 +7233,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventsroot-list-webinars?view=graph-rest-beta
-      operationId: solutions.virtualEvents.ListWebinars
+      operationId: solution.virtualEvent_ListWebinar
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7289,7 +7289,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventsroot-post-webinars?view=graph-rest-beta
-      operationId: solutions.virtualEvents.CreateWebinars
+      operationId: solution.virtualEvent_CreateWebinar
       requestBody:
         description: New navigation property
         content:
@@ -7318,7 +7318,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventwebinar-get?view=graph-rest-beta
-      operationId: solutions.virtualEvents.GetWebinars
+      operationId: solution.virtualEvent_GetWebinar
       parameters:
         - name: $select
           in: query
@@ -7360,7 +7360,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventwebinar-update?view=graph-rest-beta
-      operationId: solutions.virtualEvents.UpdateWebinars
+      operationId: solution.virtualEvent_UpdateWebinar
       requestBody:
         description: New navigation property values
         content:
@@ -7384,7 +7384,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property webinars for solutions
-      operationId: solutions.virtualEvents.DeleteWebinars
+      operationId: solution.virtualEvent_DeleteWebinar
       parameters:
         - name: If-Match
           in: header
@@ -7406,7 +7406,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get presenters from solutions
       description: The virtual event presenters.
-      operationId: solutions.virtualEvents.webinars.ListPresenters
+      operationId: solution.virtualEvent.webinar_ListPresenter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7458,7 +7458,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to presenters for solutions
-      operationId: solutions.virtualEvents.webinars.CreatePresenters
+      operationId: solution.virtualEvent.webinar_CreatePresenter
       requestBody:
         description: New navigation property
         content:
@@ -7484,7 +7484,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get presenters from solutions
       description: The virtual event presenters.
-      operationId: solutions.virtualEvents.webinars.GetPresenters
+      operationId: solution.virtualEvent.webinar_GetPresenter
       parameters:
         - name: $select
           in: query
@@ -7526,7 +7526,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventpresenter-update?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.UpdatePresenters
+      operationId: solution.virtualEvent.webinar_UpdatePresenter
       requestBody:
         description: New navigation property values
         content:
@@ -7550,7 +7550,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property presenters for solutions
-      operationId: solutions.virtualEvents.webinars.DeletePresenters
+      operationId: solution.virtualEvent.webinar_DeletePresenter
       parameters:
         - name: If-Match
           in: header
@@ -7571,7 +7571,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
-      operationId: solutions.virtualEvents.webinars.presenters.ListSessions
+      operationId: solution.virtualEvent.webinar.presenter_ListSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7624,7 +7624,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
-      operationId: solutions.virtualEvents.webinars.presenters.GetSessions
+      operationId: solution.virtualEvent.webinar.presenter_GetSession
       parameters:
         - name: $select
           in: query
@@ -7663,7 +7663,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
-      operationId: solutions.virtualEvents.webinars.presenters.sessions.GetByJoinWebUrl
+      operationId: solution.virtualEvent.webinar.presenter.session_GetGraphBPreJoinWebUrl
       parameters:
         - name: $select
           in: query
@@ -7702,7 +7702,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.webinars.presenters.sessions.GetCount-15b1
+      operationId: solution.virtualEvent.webinar.presenter.session_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7718,7 +7718,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.webinars.presenters.GetCount-74f6
+      operationId: solution.virtualEvent.webinar.presenter_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7738,7 +7738,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventwebinarregistrationconfiguration-get?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.GetRegistrationConfiguration
+      operationId: solution.virtualEvent.webinar_GetRegistrationConfiguration
       parameters:
         - name: $select
           in: query
@@ -7776,7 +7776,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property registrationConfiguration in solutions
-      operationId: solutions.virtualEvents.webinars.UpdateRegistrationConfiguration
+      operationId: solution.virtualEvent.webinar_UpdateRegistrationConfiguration
       requestBody:
         description: New navigation property values
         content:
@@ -7800,7 +7800,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property registrationConfiguration for solutions
-      operationId: solutions.virtualEvents.webinars.DeleteRegistrationConfiguration
+      operationId: solution.virtualEvent.webinar_DeleteRegistrationConfiguration
       parameters:
         - name: If-Match
           in: header
@@ -7825,7 +7825,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistrationconfiguration-list-questions?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.registrationConfiguration.ListQuestions
+      operationId: solution.virtualEvent.webinar.registrationConfiguration_ListQuestion
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7881,7 +7881,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistrationconfiguration-post-questions?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.registrationConfiguration.CreateQuestions
+      operationId: solution.virtualEvent.webinar.registrationConfiguration_CreateQuestion
       requestBody:
         description: New navigation property
         content:
@@ -7907,7 +7907,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get questions from solutions
       description: Registration questions.
-      operationId: solutions.virtualEvents.webinars.registrationConfiguration.GetQuestions
+      operationId: solution.virtualEvent.webinar.registrationConfiguration_GetQuestion
       parameters:
         - name: $select
           in: query
@@ -7945,7 +7945,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property questions in solutions
-      operationId: solutions.virtualEvents.webinars.registrationConfiguration.UpdateQuestions
+      operationId: solution.virtualEvent.webinar.registrationConfiguration_UpdateQuestion
       requestBody:
         description: New navigation property values
         content:
@@ -7973,7 +7973,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistrationquestionbase-delete?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.registrationConfiguration.DeleteQuestions
+      operationId: solution.virtualEvent.webinar.registrationConfiguration_DeleteQuestion
       parameters:
         - name: If-Match
           in: header
@@ -7994,7 +7994,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.webinars.registrationConfiguration.questions.GetCount-40bb
+      operationId: solution.virtualEvent.webinar.registrationConfiguration.question_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8014,7 +8014,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistration-list?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.ListRegistrations
+      operationId: solution.virtualEvent.webinar_ListRegistration
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8070,7 +8070,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventwebinar-post-registrations?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.CreateRegistrations
+      operationId: solution.virtualEvent.webinar_CreateRegistration
       requestBody:
         description: New navigation property
         content:
@@ -8099,7 +8099,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.GetRegistrations
+      operationId: solution.virtualEvent.webinar_GetRegistration
       parameters:
         - name: $select
           in: query
@@ -8137,7 +8137,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property registrations in solutions
-      operationId: solutions.virtualEvents.webinars.UpdateRegistrations
+      operationId: solution.virtualEvent.webinar_UpdateRegistration
       requestBody:
         description: New navigation property values
         content:
@@ -8161,7 +8161,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property registrations for solutions
-      operationId: solutions.virtualEvents.webinars.DeleteRegistrations
+      operationId: solution.virtualEvent.webinar_DeleteRegistration
       parameters:
         - name: If-Match
           in: header
@@ -8183,7 +8183,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Invoke action cancel
       description: 'Cancel a registrant''s registration record for a webinar or town hall. '
-      operationId: solutions.virtualEvents.webinars.virtualEventWebinar.registrations.virtualEventRegistration.cancel
+      operationId: solution.virtualEvent.webinar.virtualEventWebinar.registration.virtualEventRegistration_cancel
       responses:
         '204':
           description: Success
@@ -8201,7 +8201,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistration-list-sessions?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.registrations.ListSessions
+      operationId: solution.virtualEvent.webinar.registration_ListSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8255,7 +8255,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
       description: Sessions for a registration.
-      operationId: solutions.virtualEvents.webinars.registrations.GetSessions
+      operationId: solution.virtualEvent.webinar.registration_GetSession
       parameters:
         - name: $select
           in: query
@@ -8295,7 +8295,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
       description: Sessions for a registration.
-      operationId: solutions.virtualEvents.webinars.registrations.sessions.GetByJoinWebUrl
+      operationId: solution.virtualEvent.webinar.registration.session_GetGraphBPreJoinWebUrl
       parameters:
         - name: $select
           in: query
@@ -8334,7 +8334,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.webinars.registrations.sessions.GetCount-01e5
+      operationId: solution.virtualEvent.webinar.registration.session_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8354,7 +8354,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.registrations.GetByEmail
+      operationId: solution.virtualEvent.webinar.registration_GetGraphBPreEmail
       parameters:
         - name: $select
           in: query
@@ -8392,7 +8392,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property registrations in solutions
-      operationId: solutions.virtualEvents.webinars.registrations.UpdateByEmail
+      operationId: solution.virtualEvent.webinar.registration_UpdateGraphBPreEmail
       requestBody:
         description: New navigation property values
         content:
@@ -8416,7 +8416,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property registrations for solutions
-      operationId: solutions.virtualEvents.webinars.registrations.DeleteByEmail
+      operationId: solution.virtualEvent.webinar.registration_DeleteGraphBPreEmail
       parameters:
         - name: If-Match
           in: header
@@ -8438,7 +8438,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Invoke action cancel
       description: 'Cancel a registrant''s registration record for a webinar or town hall. '
-      operationId: solutions.virtualEvents.webinars.virtualEventWebinar.registrations.email.cancel
+      operationId: solution.virtualEvent.webinar.virtualEventWebinar.registration.email_cancel
       responses:
         '204':
           description: Success
@@ -8456,7 +8456,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.registrations.GetByUserId
+      operationId: solution.virtualEvent.webinar.registration_GetGraphBPreUserId
       parameters:
         - name: $select
           in: query
@@ -8494,7 +8494,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property registrations in solutions
-      operationId: solutions.virtualEvents.webinars.registrations.UpdateByUserId
+      operationId: solution.virtualEvent.webinar.registration_UpdateGraphBPreUserId
       requestBody:
         description: New navigation property values
         content:
@@ -8518,7 +8518,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property registrations for solutions
-      operationId: solutions.virtualEvents.webinars.registrations.DeleteByUserId
+      operationId: solution.virtualEvent.webinar.registration_DeleteGraphBPreUserId
       parameters:
         - name: If-Match
           in: header
@@ -8540,7 +8540,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Invoke action cancel
       description: 'Cancel a registrant''s registration record for a webinar or town hall. '
-      operationId: solutions.virtualEvents.webinars.virtualEventWebinar.registrations.userId.cancel
+      operationId: solution.virtualEvent.webinar.virtualEventWebinar.registration.userId_cancel
       responses:
         '204':
           description: Success
@@ -8554,7 +8554,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.webinars.registrations.GetCount-3dfd
+      operationId: solution.virtualEvent.webinar.registration_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8574,7 +8574,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualevent-list-sessions?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.ListSessions
+      operationId: solution.virtualEvent.webinar_ListSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8626,7 +8626,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to sessions for solutions
-      operationId: solutions.virtualEvents.webinars.CreateSessions
+      operationId: solution.virtualEvent.webinar_CreateSession
       requestBody:
         description: New navigation property
         content:
@@ -8655,7 +8655,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.GetSessions
+      operationId: solution.virtualEvent.webinar_GetSession
       parameters:
         - name: $select
           in: query
@@ -8693,7 +8693,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property sessions in solutions
-      operationId: solutions.virtualEvents.webinars.UpdateSessions
+      operationId: solution.virtualEvent.webinar_UpdateSession
       requestBody:
         description: New navigation property values
         content:
@@ -8717,7 +8717,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property sessions for solutions
-      operationId: solutions.virtualEvents.webinars.DeleteSessions
+      operationId: solution.virtualEvent.webinar_DeleteSession
       parameters:
         - name: If-Match
           in: header
@@ -8742,7 +8742,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.sessions.ListAttendanceReports
+      operationId: solution.virtualEvent.webinar.session_ListAttendanceReport
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8794,7 +8794,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to attendanceReports for solutions
-      operationId: solutions.virtualEvents.webinars.sessions.CreateAttendanceReports
+      operationId: solution.virtualEvent.webinar.session_CreateAttendanceReport
       requestBody:
         description: New navigation property
         content:
@@ -8823,7 +8823,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.sessions.GetAttendanceReports
+      operationId: solution.virtualEvent.webinar.session_GetAttendanceReport
       parameters:
         - name: $select
           in: query
@@ -8861,7 +8861,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property attendanceReports in solutions
-      operationId: solutions.virtualEvents.webinars.sessions.UpdateAttendanceReports
+      operationId: solution.virtualEvent.webinar.session_UpdateAttendanceReport
       requestBody:
         description: New navigation property values
         content:
@@ -8885,7 +8885,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property attendanceReports for solutions
-      operationId: solutions.virtualEvents.webinars.sessions.DeleteAttendanceReports
+      operationId: solution.virtualEvent.webinar.session_DeleteAttendanceReport
       parameters:
         - name: If-Match
           in: header
@@ -8907,7 +8907,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get attendanceRecords from solutions
       description: List of attendance records of an attendance report. Read-only.
-      operationId: solutions.virtualEvents.webinars.sessions.attendanceReports.ListAttendanceRecords
+      operationId: solution.virtualEvent.webinar.session.attendanceReport_ListAttendanceRecord
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8959,7 +8959,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create new navigation property to attendanceRecords for solutions
-      operationId: solutions.virtualEvents.webinars.sessions.attendanceReports.CreateAttendanceRecords
+      operationId: solution.virtualEvent.webinar.session.attendanceReport_CreateAttendanceRecord
       requestBody:
         description: New navigation property
         content:
@@ -8985,7 +8985,7 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get attendanceRecords from solutions
       description: List of attendance records of an attendance report. Read-only.
-      operationId: solutions.virtualEvents.webinars.sessions.attendanceReports.GetAttendanceRecords
+      operationId: solution.virtualEvent.webinar.session.attendanceReport_GetAttendanceRecord
       parameters:
         - name: $select
           in: query
@@ -9023,7 +9023,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property attendanceRecords in solutions
-      operationId: solutions.virtualEvents.webinars.sessions.attendanceReports.UpdateAttendanceRecords
+      operationId: solution.virtualEvent.webinar.session.attendanceReport_UpdateAttendanceRecord
       requestBody:
         description: New navigation property values
         content:
@@ -9047,7 +9047,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property attendanceRecords for solutions
-      operationId: solutions.virtualEvents.webinars.sessions.attendanceReports.DeleteAttendanceRecords
+      operationId: solution.virtualEvent.webinar.session.attendanceReport_DeleteAttendanceRecord
       parameters:
         - name: If-Match
           in: header
@@ -9068,7 +9068,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.webinars.sessions.attendanceReports.attendanceRecords.GetCount-1e38
+      operationId: solution.virtualEvent.webinar.session.attendanceReport.attendanceRecord_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9084,7 +9084,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.webinars.sessions.attendanceReports.GetCount-8057
+      operationId: solution.virtualEvent.webinar.session.attendanceReport_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9100,7 +9100,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get presenters from solutions
-      operationId: solutions.virtualEvents.webinars.sessions.ListPresenters
+      operationId: solution.virtualEvent.webinar.session_ListPresenter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9153,7 +9153,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get presenters from solutions
-      operationId: solutions.virtualEvents.webinars.sessions.GetPresenters
+      operationId: solution.virtualEvent.webinar.session_GetPresenter
       parameters:
         - name: $select
           in: query
@@ -9192,7 +9192,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.webinars.sessions.presenters.GetCount-ccf3
+      operationId: solution.virtualEvent.webinar.session.presenter_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9208,7 +9208,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
-      operationId: solutions.virtualEvents.webinars.sessions.ListRegistrations
+      operationId: solution.virtualEvent.webinar.session_ListRegistration
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9261,7 +9261,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
-      operationId: solutions.virtualEvents.webinars.sessions.GetRegistrations
+      operationId: solution.virtualEvent.webinar.session_GetRegistration
       parameters:
         - name: $select
           in: query
@@ -9300,7 +9300,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
-      operationId: solutions.virtualEvents.webinars.sessions.registrations.GetByEmail
+      operationId: solution.virtualEvent.webinar.session.registration_GetGraphBPreEmail
       parameters:
         - name: $select
           in: query
@@ -9339,7 +9339,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
-      operationId: solutions.virtualEvents.webinars.sessions.registrations.GetByUserId
+      operationId: solution.virtualEvent.webinar.session.registration_GetGraphBPreUserId
       parameters:
         - name: $select
           in: query
@@ -9378,7 +9378,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.webinars.sessions.registrations.GetCount-2837
+      operationId: solution.virtualEvent.webinar.session.registration_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9398,7 +9398,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.sessions.GetByJoinWebUrl
+      operationId: solution.virtualEvent.webinar.session_GetGraphBPreJoinWebUrl
       parameters:
         - name: $select
           in: query
@@ -9436,7 +9436,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update the navigation property sessions in solutions
-      operationId: solutions.virtualEvents.webinars.sessions.UpdateByJoinWebUrl
+      operationId: solution.virtualEvent.webinar.session_UpdateGraphBPreJoinWebUrl
       requestBody:
         description: New navigation property values
         content:
@@ -9460,7 +9460,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete navigation property sessions for solutions
-      operationId: solutions.virtualEvents.webinars.sessions.DeleteByJoinWebUrl
+      operationId: solution.virtualEvent.webinar.session_DeleteGraphBPreJoinWebUrl
       parameters:
         - name: If-Match
           in: header
@@ -9481,7 +9481,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.webinars.sessions.GetCount-fe15
+      operationId: solution.virtualEvent.webinar.session_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9497,7 +9497,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
-      operationId: solutions.virtualEvents.webinars.GetCount-bc1b
+      operationId: solution.virtualEvent.webinar_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9517,7 +9517,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuseridandrole?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.getByUserIdAndRole
+      operationId: solution.virtualEvent.webinar_getGraphBPreUserIdAndRole
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9587,7 +9587,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuserrole?view=graph-rest-beta
-      operationId: solutions.virtualEvents.webinars.getByUserRole
+      operationId: solution.virtualEvent.webinar_getGraphBPreUserRole
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11364,6 +11364,7 @@ components:
           '#microsoft.graph.cloudPcServicePlan': '#/components/schemas/microsoft.graph.cloudPcServicePlan'
           '#microsoft.graph.cloudPcSnapshot': '#/components/schemas/microsoft.graph.cloudPcSnapshot'
           '#microsoft.graph.cloudPcSupportedRegion': '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+          '#microsoft.graph.cloudPcUserProfileSnapshot': '#/components/schemas/microsoft.graph.cloudPcUserProfileSnapshot'
           '#microsoft.graph.cloudPcUserSetting': '#/components/schemas/microsoft.graph.cloudPcUserSetting'
           '#microsoft.graph.cloudPcUserSettingAssignment': '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
           '#microsoft.graph.cloudPCUserSettingsPersistenceDetail': '#/components/schemas/microsoft.graph.cloudPCUserSettingsPersistenceDetail'
@@ -11443,6 +11444,9 @@ components:
           '#microsoft.graph.copilotSetting': '#/components/schemas/microsoft.graph.copilotSetting'
           '#microsoft.graph.correlatedIdentity': '#/components/schemas/microsoft.graph.correlatedIdentity'
           '#microsoft.graph.corsConfiguration_v2': '#/components/schemas/microsoft.graph.corsConfiguration_v2'
+          '#microsoft.graph.costManagementAlertSetting': '#/components/schemas/microsoft.graph.costManagementAlertSetting'
+          '#microsoft.graph.costManagementRoot': '#/components/schemas/microsoft.graph.costManagementRoot'
+          '#microsoft.graph.costManagementUserBalance': '#/components/schemas/microsoft.graph.costManagementUserBalance'
           '#microsoft.graph.credentialUsageSummary': '#/components/schemas/microsoft.graph.credentialUsageSummary'
           '#microsoft.graph.credentialUserRegistrationCount': '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
           '#microsoft.graph.credentialUserRegistrationDetails': '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
@@ -11771,6 +11775,7 @@ components:
           '#microsoft.graph.deviceShellScript': '#/components/schemas/microsoft.graph.deviceShellScript'
           '#microsoft.graph.directory': '#/components/schemas/microsoft.graph.directory'
           '#microsoft.graph.directoryAudit': '#/components/schemas/microsoft.graph.directoryAudit'
+          '#microsoft.graph.appManagementAudit': '#/components/schemas/microsoft.graph.appManagementAudit'
           '#microsoft.graph.directoryDefinition': '#/components/schemas/microsoft.graph.directoryDefinition'
           '#microsoft.graph.directoryObject': '#/components/schemas/microsoft.graph.directoryObject'
           '#microsoft.graph.administrativeUnit': '#/components/schemas/microsoft.graph.administrativeUnit'
@@ -11829,6 +11834,7 @@ components:
           '#microsoft.graph.user': '#/components/schemas/microsoft.graph.user'
           '#microsoft.graph.agentUser': '#/components/schemas/microsoft.graph.agentUser'
           '#microsoft.graph.directoryRoleAccessReviewPolicy': '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
+          '#microsoft.graph.directoryRoleManagementDeletedItemContainer': '#/components/schemas/microsoft.graph.directoryRoleManagementDeletedItemContainer'
           '#microsoft.graph.directorySetting': '#/components/schemas/microsoft.graph.directorySetting'
           '#microsoft.graph.distributionListMember': '#/components/schemas/microsoft.graph.distributionListMember'
           '#microsoft.graph.document': '#/components/schemas/microsoft.graph.document'
@@ -12416,9 +12422,22 @@ components:
           '#microsoft.graph.placeOperation': '#/components/schemas/microsoft.graph.placeOperation'
           '#microsoft.graph.planner': '#/components/schemas/microsoft.graph.planner'
           '#microsoft.graph.plannerDelta': '#/components/schemas/microsoft.graph.plannerDelta'
+          '#microsoft.graph.bucket': '#/components/schemas/microsoft.graph.bucket'
+          '#microsoft.graph.categoryDefinition': '#/components/schemas/microsoft.graph.categoryDefinition'
+          '#microsoft.graph.checklistItemV4': '#/components/schemas/microsoft.graph.checklistItemV4'
+          '#microsoft.graph.contentLink': '#/components/schemas/microsoft.graph.contentLink'
+          '#microsoft.graph.customChoiceOption': '#/components/schemas/microsoft.graph.customChoiceOption'
+          '#microsoft.graph.customFieldDefinition': '#/components/schemas/microsoft.graph.customFieldDefinition'
+          '#microsoft.graph.customFieldValue': '#/components/schemas/microsoft.graph.customFieldValue'
+          '#microsoft.graph.dependency': '#/components/schemas/microsoft.graph.dependency'
+          '#microsoft.graph.goal': '#/components/schemas/microsoft.graph.goal'
+          '#microsoft.graph.historyItem': '#/components/schemas/microsoft.graph.historyItem'
+          '#microsoft.graph.plan': '#/components/schemas/microsoft.graph.plan'
+          '#microsoft.graph.planContextLink': '#/components/schemas/microsoft.graph.planContextLink'
           '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
           '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
           '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+          '#microsoft.graph.plannerChatMessage': '#/components/schemas/microsoft.graph.plannerChatMessage'
           '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
           '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
           '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
@@ -12429,6 +12448,8 @@ components:
           '#microsoft.graph.businessScenarioTask': '#/components/schemas/microsoft.graph.businessScenarioTask'
           '#microsoft.graph.plannerTaskDetails': '#/components/schemas/microsoft.graph.plannerTaskDetails'
           '#microsoft.graph.plannerUser': '#/components/schemas/microsoft.graph.plannerUser'
+          '#microsoft.graph.task': '#/components/schemas/microsoft.graph.task'
+          '#microsoft.graph.userAssignment': '#/components/schemas/microsoft.graph.userAssignment'
           '#microsoft.graph.plannerGroup': '#/components/schemas/microsoft.graph.plannerGroup'
           '#microsoft.graph.plannerPlanConfiguration': '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
           '#microsoft.graph.plannerPlanConfigurationLocalization': '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
@@ -12505,6 +12526,7 @@ components:
           '#microsoft.graph.programControlType': '#/components/schemas/microsoft.graph.programControlType'
           '#microsoft.graph.pronounsSettings': '#/components/schemas/microsoft.graph.pronounsSettings'
           '#microsoft.graph.protectionPolicyBase': '#/components/schemas/microsoft.graph.protectionPolicyBase'
+          '#microsoft.graph.entraProtectionPolicy': '#/components/schemas/microsoft.graph.entraProtectionPolicy'
           '#microsoft.graph.exchangeProtectionPolicy': '#/components/schemas/microsoft.graph.exchangeProtectionPolicy'
           '#microsoft.graph.oneDriveForBusinessProtectionPolicy': '#/components/schemas/microsoft.graph.oneDriveForBusinessProtectionPolicy'
           '#microsoft.graph.sharePointProtectionPolicy': '#/components/schemas/microsoft.graph.sharePointProtectionPolicy'
@@ -12662,6 +12684,9 @@ components:
           '#microsoft.graph.singleValueLegacyExtendedProperty': '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
           '#microsoft.graph.softwareUpdateStatusSummary': '#/components/schemas/microsoft.graph.softwareUpdateStatusSummary'
           '#microsoft.graph.speakerAssignmentSubmission': '#/components/schemas/microsoft.graph.speakerAssignmentSubmission'
+          '#microsoft.graph.spendingPolicy': '#/components/schemas/microsoft.graph.spendingPolicy'
+          '#microsoft.graph.allUsersSpendingPolicy': '#/components/schemas/microsoft.graph.allUsersSpendingPolicy'
+          '#microsoft.graph.selectedGroupsSpendingPolicy': '#/components/schemas/microsoft.graph.selectedGroupsSpendingPolicy'
           '#microsoft.graph.storageQuotaBreakdown': '#/components/schemas/microsoft.graph.storageQuotaBreakdown'
           '#microsoft.graph.serviceStorageQuotaBreakdown': '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
           '#microsoft.graph.storageSettings': '#/components/schemas/microsoft.graph.storageSettings'
@@ -12701,6 +12726,7 @@ components:
           '#microsoft.graph.teamTemplateDefinition': '#/components/schemas/microsoft.graph.teamTemplateDefinition'
           '#microsoft.graph.teamwork': '#/components/schemas/microsoft.graph.teamwork'
           '#microsoft.graph.teamworkBot': '#/components/schemas/microsoft.graph.teamworkBot'
+          '#microsoft.graph.teamworkCustomEmoji': '#/components/schemas/microsoft.graph.teamworkCustomEmoji'
           '#microsoft.graph.teamworkDevice': '#/components/schemas/microsoft.graph.teamworkDevice'
           '#microsoft.graph.teamworkDeviceActivity': '#/components/schemas/microsoft.graph.teamworkDeviceActivity'
           '#microsoft.graph.teamworkDeviceConfiguration': '#/components/schemas/microsoft.graph.teamworkDeviceConfiguration'
@@ -13036,8 +13062,26 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
+          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
+          '#microsoft.graph.identityGovernance.userIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.userIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
+          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.guestLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.guestLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyReport'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+          '#microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule': '#/components/schemas/microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule'
+          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+          '#microsoft.graph.identityGovernance.invitationRedemptionRule': '#/components/schemas/microsoft.graph.identityGovernance.invitationRedemptionRule'
+          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
+          '#microsoft.graph.identityGovernance.lifecyclePolicySubjectReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectReport'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -13167,7 +13211,9 @@ components:
           '#microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement'
           '#microsoft.graph.partner.security.responseTimeSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.responseTimeSecurityRequirement'
           '#microsoft.graph.partner.security.securityScoreHistory': '#/components/schemas/microsoft.graph.partner.security.securityScoreHistory'
+          '#microsoft.graph.partners.billing.azureAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.azureAggregatedUsage'
           '#microsoft.graph.partners.billing.azureUsage': '#/components/schemas/microsoft.graph.partners.billing.azureUsage'
+          '#microsoft.graph.partners.billing.billedAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedAggregatedUsage'
           '#microsoft.graph.partners.billing.billedReconciliation': '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
           '#microsoft.graph.partners.billing.billedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedUsage'
           '#microsoft.graph.partners.billing.billing': '#/components/schemas/microsoft.graph.partners.billing.billing'
@@ -13301,6 +13347,7 @@ components:
           '#microsoft.graph.security.whoisBaseRecord': '#/components/schemas/microsoft.graph.security.whoisBaseRecord'
           '#microsoft.graph.security.whoisHistoryRecord': '#/components/schemas/microsoft.graph.security.whoisHistoryRecord'
           '#microsoft.graph.security.whoisRecord': '#/components/schemas/microsoft.graph.security.whoisRecord'
+          '#microsoft.graph.security.workbook': '#/components/schemas/microsoft.graph.security.workbook'
           '#microsoft.graph.security.zone': '#/components/schemas/microsoft.graph.security.zone'
           '#microsoft.graph.security.caseManagement.caseManagementEntity': '#/components/schemas/microsoft.graph.security.caseManagement.caseManagementEntity'
           '#microsoft.graph.security.caseManagement.activity': '#/components/schemas/microsoft.graph.security.caseManagement.activity'
@@ -13661,6 +13708,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityLogBase'
+              description: The list of activity logs in the tenant.
               x-ms-navigationProperty: true
             browseSessions:
               type: array
@@ -13703,6 +13751,11 @@ components:
                 - type: object
                   nullable: true
               description: The email notification settings in the tenant.
+              x-ms-navigationProperty: true
+            entraProtectionPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.entraProtectionPolicy'
               x-ms-navigationProperty: true
             exchangeProtectionPolicies:
               type: array
@@ -14078,6 +14131,7 @@ components:
       discriminator:
         propertyName: '@odata.type'
         mapping:
+          '#microsoft.graph.applicationIdentity': '#/components/schemas/microsoft.graph.applicationIdentity'
           '#microsoft.graph.azureCommunicationServicesUserIdentity': '#/components/schemas/microsoft.graph.azureCommunicationServicesUserIdentity'
           '#microsoft.graph.communicationsApplicationIdentity': '#/components/schemas/microsoft.graph.communicationsApplicationIdentity'
           '#microsoft.graph.communicationsApplicationInstanceIdentity': '#/components/schemas/microsoft.graph.communicationsApplicationInstanceIdentity'
@@ -15100,12 +15154,15 @@ components:
                 - $ref: '#/components/schemas/microsoft.graph.publicError'
                 - type: object
                   nullable: true
+              description: Contains error details if an error occurred while processing this activity.
             eventDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp of activity completion.
               format: date-time
             performedBy:
               type: string
+              description: The identity of the person who performed the activity.
               nullable: true
             resultStatus:
               $ref: '#/components/schemas/microsoft.graph.activityLogResultStatus'
@@ -15298,6 +15355,18 @@ components:
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.emailNotificationsSetting'
+    microsoft.graph.entraProtectionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
+        - title: entraProtectionPolicy
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.entraProtectionPolicy'
+      x-ms-discriminator-value: '#microsoft.graph.entraProtectionPolicy'
     microsoft.graph.exchangeProtectionPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
@@ -15702,6 +15771,7 @@ components:
           discriminator:
             propertyName: '@odata.type'
             mapping:
+              '#microsoft.graph.entraProtectionPolicy': '#/components/schemas/microsoft.graph.entraProtectionPolicy'
               '#microsoft.graph.exchangeProtectionPolicy': '#/components/schemas/microsoft.graph.exchangeProtectionPolicy'
               '#microsoft.graph.oneDriveForBusinessProtectionPolicy': '#/components/schemas/microsoft.graph.oneDriveForBusinessProtectionPolicy'
               '#microsoft.graph.sharePointProtectionPolicy': '#/components/schemas/microsoft.graph.sharePointProtectionPolicy'
@@ -15756,7 +15826,7 @@ components:
             offboardRequestedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The time when protection unit offboard was requested.
+              description: 'The time when protection unit offboard was requested. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             pendingRetentionPeriodChange:
@@ -15764,6 +15834,7 @@ components:
                 - $ref: '#/components/schemas/microsoft.graph.retentionPeriodChange'
                 - type: object
                   nullable: true
+              description: The retention period change to be applied to the protection unit.
               readOnly: true
             policyId:
               type: string
@@ -17210,7 +17281,7 @@ components:
         period:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: The period of time to retain the protected data for a single Microsoft 365 service.
+          description: 'The period of time to retain the protected data for a single Microsoft 365 service. The possible values are: P90D, P180D, P365D, P730D, P1095D, P1460D, P1825D, P2190D, P2555D, P2920D, P3285D, and P3650D. Other values aren''t supported.'
           format: duration
           nullable: true
         '@odata.type':
@@ -17235,6 +17306,7 @@ components:
         effectiveFromDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time from which the retention period change takes effect. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026, is 2026-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         status:
@@ -17243,6 +17315,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: 'Specifies the retention period, in days, that applies after the change is completed.'
           format: int32
           nullable: true
         '@odata.type':
@@ -18619,9 +18692,22 @@ components:
           discriminator:
             propertyName: '@odata.type'
             mapping:
+              '#microsoft.graph.bucket': '#/components/schemas/microsoft.graph.bucket'
+              '#microsoft.graph.categoryDefinition': '#/components/schemas/microsoft.graph.categoryDefinition'
+              '#microsoft.graph.checklistItemV4': '#/components/schemas/microsoft.graph.checklistItemV4'
+              '#microsoft.graph.contentLink': '#/components/schemas/microsoft.graph.contentLink'
+              '#microsoft.graph.customChoiceOption': '#/components/schemas/microsoft.graph.customChoiceOption'
+              '#microsoft.graph.customFieldDefinition': '#/components/schemas/microsoft.graph.customFieldDefinition'
+              '#microsoft.graph.customFieldValue': '#/components/schemas/microsoft.graph.customFieldValue'
+              '#microsoft.graph.dependency': '#/components/schemas/microsoft.graph.dependency'
+              '#microsoft.graph.goal': '#/components/schemas/microsoft.graph.goal'
+              '#microsoft.graph.historyItem': '#/components/schemas/microsoft.graph.historyItem'
+              '#microsoft.graph.plan': '#/components/schemas/microsoft.graph.plan'
+              '#microsoft.graph.planContextLink': '#/components/schemas/microsoft.graph.planContextLink'
               '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
               '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
               '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+              '#microsoft.graph.plannerChatMessage': '#/components/schemas/microsoft.graph.plannerChatMessage'
               '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
               '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
               '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
@@ -18632,6 +18718,8 @@ components:
               '#microsoft.graph.businessScenarioTask': '#/components/schemas/microsoft.graph.businessScenarioTask'
               '#microsoft.graph.plannerTaskDetails': '#/components/schemas/microsoft.graph.plannerTaskDetails'
               '#microsoft.graph.plannerUser': '#/components/schemas/microsoft.graph.plannerUser'
+              '#microsoft.graph.task': '#/components/schemas/microsoft.graph.task'
+              '#microsoft.graph.userAssignment': '#/components/schemas/microsoft.graph.userAssignment'
     microsoft.graph.plannerAppliedCategories:
       title: plannerAppliedCategories
       required:
@@ -18646,9 +18734,25 @@ components:
         - '@odata.type'
       type: object
       properties:
+        isArchived:
+          type: boolean
+          description: Read-only. Indicates whether the entity is archived.
+          nullable: true
         justification:
           type: string
           description: Read-only. Reason why the entity was archived or unarchived.
+          nullable: true
+        modifiedBy:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.identitySet'
+            - type: object
+              nullable: true
+          description: Read-only. Identity of the user who archived or unarchived the entity.
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Read-only. Date and time at which the entity's archive status changed.
+          format: date-time
           nullable: true
         statusChangedBy:
           anyOf:
@@ -19456,6 +19560,7 @@ components:
           '#microsoft.graph.wafAllowedHeadersDictionary': '#/components/schemas/microsoft.graph.wafAllowedHeadersDictionary'
           '#microsoft.graph.networkaccess.extendedProperties': '#/components/schemas/microsoft.graph.networkaccess.extendedProperties'
           '#microsoft.graph.partner.security.additionalDataDictionary': '#/components/schemas/microsoft.graph.partner.security.additionalDataDictionary'
+          '#microsoft.graph.security.workbookContent': '#/components/schemas/microsoft.graph.security.workbookContent'
     microsoft.graph.plannerTaskChatMentionType:
       title: plannerTaskChatMentionType
       enum:
