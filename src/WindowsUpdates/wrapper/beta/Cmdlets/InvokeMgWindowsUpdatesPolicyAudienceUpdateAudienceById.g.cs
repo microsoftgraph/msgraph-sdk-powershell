@@ -1,0 +1,89 @@
+#nullable enable
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.WindowsUpdates.Client;
+using Microsoft.Graph.PowerShell.WindowsUpdates.Client.Models;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.WindowsUpdates
+{
+    [GraphRoute("POST", "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/microsoft.graph.windowsUpdates.updateAudienceById")]
+    [Cmdlet(VerbsLifecycle.Invoke, "MgWindowsUpdatesPolicyAudienceUpdateAudienceById", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+
+    public class InvokeMgWindowsUpdatesPolicyAudienceUpdateAudienceByIdCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string UpdatePolicyId { get; set; } = string.Empty;
+
+        [Parameter(Mandatory = false)]
+        public string? MemberEntityType { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string[]? AddMembers { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string[]? RemoveMembers { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string[]? AddExclusions { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string[]? RemoveExclusions { get; set; }
+
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(UpdatePolicyId, "Invoke"))
+                return;
+
+            var body = new global::Microsoft.Graph.PowerShell.WindowsUpdates.Client.Admin.Windows.Updates.UpdatePolicies.Item.Audience.MicrosoftGraphWindowsUpdatesUpdateAudienceById.UpdateAudienceByIdPostRequestBody();
+
+    if (this.IsParameterBound(nameof(MemberEntityType)))
+        body.MemberEntityType = MemberEntityType;
+
+    if (this.IsParameterBound(nameof(AddMembers)))
+        body.AddMembers = AddMembers!.ToList();
+
+    if (this.IsParameterBound(nameof(RemoveMembers)))
+        body.RemoveMembers = RemoveMembers!.ToList();
+
+    if (this.IsParameterBound(nameof(AddExclusions)))
+        body.AddExclusions = AddExclusions!.ToList();
+
+    if (this.IsParameterBound(nameof(RemoveExclusions)))
+        body.RemoveExclusions = RemoveExclusions!.ToList();
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+
+            try
+            {
+                client.Admin.Windows.Updates.UpdatePolicies[UpdatePolicyId].Audience.MicrosoftGraphWindowsUpdatesUpdateAudienceById.PostAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                })
+                    .GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, UpdatePolicyId);
+                return;
+            }
+
+        }
+    }
+}
