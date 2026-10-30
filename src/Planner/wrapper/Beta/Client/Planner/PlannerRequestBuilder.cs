@@ -4,8 +4,10 @@ using Microsoft.Graph.PowerShell.Planner.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Planner.Client.Models;
 using Microsoft.Graph.PowerShell.Planner.Client.Planner.Buckets;
 using Microsoft.Graph.PowerShell.Planner.Client.Planner.Plans;
+using Microsoft.Graph.PowerShell.Planner.Client.Planner.Plans_v2;
 using Microsoft.Graph.PowerShell.Planner.Client.Planner.Rosters;
 using Microsoft.Graph.PowerShell.Planner.Client.Planner.Tasks;
+using Microsoft.Graph.PowerShell.Planner.Client.Planner.Tasks_v2;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -32,6 +34,11 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Planner
         {
             get => new global::Microsoft.Graph.PowerShell.Planner.Client.Planner.Plans.PlansRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The plans_v2 property</summary>
+        public global::Microsoft.Graph.PowerShell.Planner.Client.Planner.Plans_v2.Plans_v2RequestBuilder Plans_v2
+        {
+            get => new global::Microsoft.Graph.PowerShell.Planner.Client.Planner.Plans_v2.Plans_v2RequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The rosters property</summary>
         public global::Microsoft.Graph.PowerShell.Planner.Client.Planner.Rosters.RostersRequestBuilder Rosters
         {
@@ -41,6 +48,11 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Planner
         public global::Microsoft.Graph.PowerShell.Planner.Client.Planner.Tasks.TasksRequestBuilder Tasks
         {
             get => new global::Microsoft.Graph.PowerShell.Planner.Client.Planner.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The tasks_v2 property</summary>
+        public global::Microsoft.Graph.PowerShell.Planner.Client.Planner.Tasks_v2.Tasks_v2RequestBuilder Tasks_v2
+        {
+            get => new global::Microsoft.Graph.PowerShell.Planner.Client.Planner.Tasks_v2.Tasks_v2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Planner.Client.Planner.PlannerRequestBuilder"/> and sets the default values.
@@ -59,7 +71,8 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Planner
         {
         }
         /// <summary>
-        /// Get planner
+        /// Read the properties and relationships of planner object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Planner.Client.Models.Planner"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +95,8 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Planner
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Planner.Client.Models.Planner>(requestInfo, global::Microsoft.Graph.PowerShell.Planner.Client.Models.Planner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update planner
+        /// Update the properties of a planner object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Planner.Client.Models.Planner"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +121,7 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Planner
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Planner.Client.Models.Planner>(requestInfo, global::Microsoft.Graph.PowerShell.Planner.Client.Models.Planner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get planner
+        /// Read the properties and relationships of planner object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +140,7 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Planner
             return requestInfo;
         }
         /// <summary>
-        /// Update planner
+        /// Update the properties of a planner object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +171,7 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Planner
             return new global::Microsoft.Graph.PowerShell.Planner.Client.Planner.PlannerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get planner
+        /// Read the properties and relationships of planner object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlannerRequestBuilderGetQueryParameters 

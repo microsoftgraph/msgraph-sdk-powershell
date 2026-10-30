@@ -6,9 +6,11 @@ using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.All;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.FavoritePlans;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.MyDayTasks;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans;
+using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans_v2;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.RecentPlans;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.RosterPlans;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Tasks;
+using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Tasks_v2;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -45,6 +47,11 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner
         {
             get => new global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.PlansRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The plans_v2 property</summary>
+        public global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans_v2.Plans_v2RequestBuilder Plans_v2
+        {
+            get => new global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans_v2.Plans_v2RequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The recentPlans property</summary>
         public global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.RecentPlans.RecentPlansRequestBuilder RecentPlans
         {
@@ -59,6 +66,11 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner
         public global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Tasks.TasksRequestBuilder Tasks
         {
             get => new global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The tasks_v2 property</summary>
+        public global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Tasks_v2.Tasks_v2RequestBuilder Tasks_v2
+        {
+            get => new global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Tasks_v2.Tasks_v2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.PlannerRequestBuilder"/> and sets the default values.

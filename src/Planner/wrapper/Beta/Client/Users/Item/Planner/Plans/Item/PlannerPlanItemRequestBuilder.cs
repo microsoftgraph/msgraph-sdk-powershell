@@ -5,6 +5,7 @@ using Microsoft.Graph.PowerShell.Planner.Client.Models;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.Archive;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.Buckets;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.Details;
+using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.ExtendExpiry;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.GetUsageRights;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.HistoryItems;
 using Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.MoveToContainer;
@@ -40,6 +41,11 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Ite
         public global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.Details.DetailsRequestBuilder Details
         {
             get => new global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.Details.DetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The extendExpiry property</summary>
+        public global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.ExtendExpiry.ExtendExpiryRequestBuilder ExtendExpiry
+        {
+            get => new global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.ExtendExpiry.ExtendExpiryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getUsageRights property</summary>
         public global::Microsoft.Graph.PowerShell.Planner.Client.Users.Item.Planner.Plans.Item.GetUsageRights.GetUsageRightsRequestBuilder GetUsageRights

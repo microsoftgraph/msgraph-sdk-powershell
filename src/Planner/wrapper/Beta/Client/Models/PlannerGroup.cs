@@ -20,6 +20,14 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerPlan> Plans { get; set; }
 #endif
+        /// <summary>Read-only. Nullable. The collection of Planner Graph V4 plans owned by the group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Planner.Client.Models.Plan>? PlansV2 { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Planner.Client.Models.Plan> PlansV2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,6 +47,7 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "plans", n => { Plans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerPlan>(global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "plans_v2", n => { PlansV2 = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.Plan>(global::Microsoft.Graph.PowerShell.Planner.Client.Models.Plan.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -50,6 +59,7 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerPlan>("plans", Plans);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.Plan>("plans_v2", PlansV2);
         }
     }
 }

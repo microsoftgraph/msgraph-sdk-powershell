@@ -36,6 +36,14 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerPlan> Plans { get; set; }
 #endif
+        /// <summary>Read-only. Nullable. The collection of Planner Graph V4 plans.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Planner.Client.Models.Plan>? PlansV2 { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Planner.Client.Models.Plan> PlansV2 { get; set; }
+#endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified rosters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,6 +59,14 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Models
 #nullable restore
 #else
         public List<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerTask> Tasks { get; set; }
+#endif
+        /// <summary>Read-only. Nullable. The collection of Planner Graph V4 tasks.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Planner.Client.Models.TaskObject>? TasksV2 { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Planner.Client.Models.TaskObject> TasksV2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,8 +89,10 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Models
                 { "buckets", n => { Buckets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerBucket>(global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerBucket.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "goals", n => { Goals = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerGoal>(global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerGoal.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "plans", n => { Plans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerPlan>(global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "plans_v2", n => { PlansV2 = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.Plan>(global::Microsoft.Graph.PowerShell.Planner.Client.Models.Plan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rosters", n => { Rosters = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerRoster>(global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerRoster.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerTask>(global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerTask.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tasks_v2", n => { TasksV2 = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.TaskObject>(global::Microsoft.Graph.PowerShell.Planner.Client.Models.TaskObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -88,8 +106,10 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerBucket>("buckets", Buckets);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerGoal>("goals", Goals);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerPlan>("plans", Plans);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.Plan>("plans_v2", PlansV2);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerRoster>("rosters", Rosters);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerTask>("tasks", Tasks);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Planner.Client.Models.TaskObject>("tasks_v2", TasksV2);
         }
     }
 }

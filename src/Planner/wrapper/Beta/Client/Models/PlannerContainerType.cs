@@ -44,5 +44,17 @@ namespace Microsoft.Graph.PowerShell.Planner.Client.Models
         #pragma warning disable CS1591
         PlannerTask,
         #pragma warning restore CS1591
+        [EnumMember(Value = "officeDocument")]
+        #pragma warning disable CS1591
+        OfficeDocument,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "meeting")]
+        #pragma warning disable CS1591
+        Meeting,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dataverseProject")]
+        #pragma warning disable CS1591
+        DataverseProject,
+        #pragma warning restore CS1591
     }
 }
