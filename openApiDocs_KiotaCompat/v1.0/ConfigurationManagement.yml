@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationdrifts?view=graph-rest-1.0
-      operationId: admin.configurationManagement.ListConfigurationDrifts
+      operationId: admin.configurationManagement_ListConfigurationDrift
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -72,7 +72,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationdrift-get?view=graph-rest-1.0
-      operationId: admin.configurationManagement.GetConfigurationDrifts
+      operationId: admin.configurationManagement_GetConfigurationDrift
       parameters:
         - name: $select
           in: query
@@ -111,7 +111,7 @@ paths:
       tags:
         - admin.configurationManagement
       summary: Get the number of the resource
-      operationId: admin.configurationManagement.configurationDrifts.GetCount-b132
+      operationId: admin.configurationManagement.configurationDrift_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -131,7 +131,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationmonitoringresults?view=graph-rest-1.0
-      operationId: admin.configurationManagement.ListConfigurationMonitoringResults
+      operationId: admin.configurationManagement_ListConfigurationMonitoringResult
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -188,7 +188,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationmonitoringresult-get?view=graph-rest-1.0
-      operationId: admin.configurationManagement.GetConfigurationMonitoringResults
+      operationId: admin.configurationManagement_GetConfigurationMonitoringResult
       parameters:
         - name: $select
           in: query
@@ -227,7 +227,7 @@ paths:
       tags:
         - admin.configurationManagement
       summary: Get the number of the resource
-      operationId: admin.configurationManagement.configurationMonitoringResults.GetCount-0ec6
+      operationId: admin.configurationManagement.configurationMonitoringResult_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -247,7 +247,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationmonitors?view=graph-rest-1.0
-      operationId: admin.configurationManagement.ListConfigurationMonitors
+      operationId: admin.configurationManagement_ListConfigurationMonitor
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -303,7 +303,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationmanagement-post-configurationmonitors?view=graph-rest-1.0
-      operationId: admin.configurationManagement.CreateConfigurationMonitors
+      operationId: admin.configurationManagement_CreateConfigurationMonitor
       requestBody:
         description: New navigation property
         content:
@@ -332,7 +332,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationmonitor-get?view=graph-rest-1.0
-      operationId: admin.configurationManagement.GetConfigurationMonitors
+      operationId: admin.configurationManagement_GetConfigurationMonitor
       parameters:
         - name: $select
           in: query
@@ -374,7 +374,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationmonitor-update?view=graph-rest-1.0
-      operationId: admin.configurationManagement.UpdateConfigurationMonitors
+      operationId: admin.configurationManagement_UpdateConfigurationMonitor
       requestBody:
         description: New navigation property values
         content:
@@ -402,7 +402,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationmonitor-delete?view=graph-rest-1.0
-      operationId: admin.configurationManagement.DeleteConfigurationMonitors
+      operationId: admin.configurationManagement_DeleteConfigurationMonitor
       parameters:
         - name: If-Match
           in: header
@@ -427,7 +427,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationbaseline-get?view=graph-rest-1.0
-      operationId: admin.configurationManagement.configurationMonitors.GetBaseline
+      operationId: admin.configurationManagement.configurationMonitor_GetBaseline
       parameters:
         - name: $select
           in: query
@@ -466,7 +466,7 @@ paths:
       tags:
         - admin.configurationManagement
       summary: Get the number of the resource
-      operationId: admin.configurationManagement.configurationMonitors.GetCount-e65d
+      operationId: admin.configurationManagement.configurationMonitor_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -486,7 +486,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationsnapshotjobs?view=graph-rest-1.0
-      operationId: admin.configurationManagement.ListConfigurationSnapshotJobs
+      operationId: admin.configurationManagement_ListConfigurationSnapshotJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -543,7 +543,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationsnapshotjob-get?view=graph-rest-1.0
-      operationId: admin.configurationManagement.GetConfigurationSnapshotJobs
+      operationId: admin.configurationManagement_GetConfigurationSnapshotJob
       parameters:
         - name: $select
           in: query
@@ -585,7 +585,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationsnapshotjob-delete?view=graph-rest-1.0
-      operationId: admin.configurationManagement.DeleteConfigurationSnapshotJobs
+      operationId: admin.configurationManagement_DeleteConfigurationSnapshotJob
       parameters:
         - name: If-Match
           in: header
@@ -610,7 +610,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationsnapshots?view=graph-rest-1.0
-      operationId: admin.configurationManagement.ListConfigurationSnapshots
+      operationId: admin.configurationManagement_ListConfigurationSnapshot
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -664,7 +664,7 @@ paths:
         - admin.configurationManagement
       summary: Get configurationSnapshots from admin
       description: A container for configuration snapshot baselines.
-      operationId: admin.configurationManagement.GetConfigurationSnapshots
+      operationId: admin.configurationManagement_GetConfigurationSnapshot
       parameters:
         - name: $select
           in: query
@@ -1039,6 +1039,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -1226,6 +1227,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -1494,6 +1496,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -1852,6 +1857,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'

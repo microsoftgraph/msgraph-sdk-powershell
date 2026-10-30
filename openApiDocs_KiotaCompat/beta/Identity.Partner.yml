@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadmincustomers?view=graph-rest-beta
-      operationId: tenantRelationships.ListDelegatedAdminCustomers
+      operationId: tenantRelationship_ListDelegatedAdminCustomer
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -67,7 +67,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Create new navigation property to delegatedAdminCustomers for tenantRelationships
-      operationId: tenantRelationships.CreateDelegatedAdminCustomers
+      operationId: tenantRelationship_CreateDelegatedAdminCustomer
       requestBody:
         description: New navigation property
         content:
@@ -96,7 +96,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-get?view=graph-rest-beta
-      operationId: tenantRelationships.GetDelegatedAdminCustomers
+      operationId: tenantRelationship_GetDelegatedAdminCustomer
       parameters:
         - name: $select
           in: query
@@ -134,7 +134,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Update the navigation property delegatedAdminCustomers in tenantRelationships
-      operationId: tenantRelationships.UpdateDelegatedAdminCustomers
+      operationId: tenantRelationship_UpdateDelegatedAdminCustomer
       requestBody:
         description: New navigation property values
         content:
@@ -158,7 +158,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Delete navigation property delegatedAdminCustomers for tenantRelationships
-      operationId: tenantRelationships.DeleteDelegatedAdminCustomers
+      operationId: tenantRelationship_DeleteDelegatedAdminCustomer
       parameters:
         - name: If-Match
           in: header
@@ -183,7 +183,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-list-servicemanagementdetails?view=graph-rest-beta
-      operationId: tenantRelationships.delegatedAdminCustomers.ListServiceManagementDetails
+      operationId: tenantRelationship.delegatedAdminCustomer_ListServiceManagementDetail
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -235,7 +235,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Create new navigation property to serviceManagementDetails for tenantRelationships
-      operationId: tenantRelationships.delegatedAdminCustomers.CreateServiceManagementDetails
+      operationId: tenantRelationship.delegatedAdminCustomer_CreateServiceManagementDetail
       requestBody:
         description: New navigation property
         content:
@@ -261,7 +261,7 @@ paths:
         - tenantRelationships.delegatedAdminCustomer
       summary: Get serviceManagementDetails from tenantRelationships
       description: Contains the management details of a service in the customer tenant that's managed by delegated administration.
-      operationId: tenantRelationships.delegatedAdminCustomers.GetServiceManagementDetails
+      operationId: tenantRelationship.delegatedAdminCustomer_GetServiceManagementDetail
       parameters:
         - name: $select
           in: query
@@ -299,7 +299,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Update the navigation property serviceManagementDetails in tenantRelationships
-      operationId: tenantRelationships.delegatedAdminCustomers.UpdateServiceManagementDetails
+      operationId: tenantRelationship.delegatedAdminCustomer_UpdateServiceManagementDetail
       requestBody:
         description: New navigation property values
         content:
@@ -323,7 +323,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Delete navigation property serviceManagementDetails for tenantRelationships
-      operationId: tenantRelationships.delegatedAdminCustomers.DeleteServiceManagementDetails
+      operationId: tenantRelationship.delegatedAdminCustomer_DeleteServiceManagementDetail
       parameters:
         - name: If-Match
           in: header
@@ -344,7 +344,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Get the number of the resource
-      operationId: tenantRelationships.delegatedAdminCustomers.serviceManagementDetails.GetCount-d662
+      operationId: tenantRelationship.delegatedAdminCustomer.serviceManagementDetail_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -360,7 +360,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Get the number of the resource
-      operationId: tenantRelationships.delegatedAdminCustomers.GetCount-e293
+      operationId: tenantRelationship.delegatedAdminCustomer_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -380,7 +380,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadminrelationships?view=graph-rest-beta
-      operationId: tenantRelationships.ListDelegatedAdminRelationships
+      operationId: tenantRelationship_ListDelegatedAdminRelationship
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -436,7 +436,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantrelationship-post-delegatedadminrelationships?view=graph-rest-beta
-      operationId: tenantRelationships.CreateDelegatedAdminRelationships
+      operationId: tenantRelationship_CreateDelegatedAdminRelationship
       requestBody:
         description: New navigation property
         content:
@@ -465,7 +465,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-get?view=graph-rest-beta
-      operationId: tenantRelationships.GetDelegatedAdminRelationships
+      operationId: tenantRelationship_GetDelegatedAdminRelationship
       parameters:
         - name: $select
           in: query
@@ -507,7 +507,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-beta
-      operationId: tenantRelationships.UpdateDelegatedAdminRelationships
+      operationId: tenantRelationship_UpdateDelegatedAdminRelationship
       requestBody:
         description: New navigation property values
         content:
@@ -535,7 +535,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-delete?view=graph-rest-beta
-      operationId: tenantRelationships.DeleteDelegatedAdminRelationships
+      operationId: tenantRelationship_DeleteDelegatedAdminRelationship
       parameters:
         - name: If-Match
           in: header
@@ -560,7 +560,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-accessassignments?view=graph-rest-beta
-      operationId: tenantRelationships.delegatedAdminRelationships.ListAccessAssignments
+      operationId: tenantRelationship.delegatedAdminRelationship_ListAccessAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -616,7 +616,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-accessassignments?view=graph-rest-beta
-      operationId: tenantRelationships.delegatedAdminRelationships.CreateAccessAssignments
+      operationId: tenantRelationship.delegatedAdminRelationship_CreateAccessAssignment
       requestBody:
         description: New navigation property
         content:
@@ -645,7 +645,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-get?view=graph-rest-beta
-      operationId: tenantRelationships.delegatedAdminRelationships.GetAccessAssignments
+      operationId: tenantRelationship.delegatedAdminRelationship_GetAccessAssignment
       parameters:
         - name: $select
           in: query
@@ -687,7 +687,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-update?view=graph-rest-beta
-      operationId: tenantRelationships.delegatedAdminRelationships.UpdateAccessAssignments
+      operationId: tenantRelationship.delegatedAdminRelationship_UpdateAccessAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -715,7 +715,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-delete?view=graph-rest-beta
-      operationId: tenantRelationships.delegatedAdminRelationships.DeleteAccessAssignments
+      operationId: tenantRelationship.delegatedAdminRelationship_DeleteAccessAssignment
       parameters:
         - name: If-Match
           in: header
@@ -736,7 +736,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get the number of the resource
-      operationId: tenantRelationships.delegatedAdminRelationships.accessAssignments.GetCount-8cbf
+      operationId: tenantRelationship.delegatedAdminRelationship.accessAssignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -756,7 +756,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-operations?view=graph-rest-beta
-      operationId: tenantRelationships.delegatedAdminRelationships.ListOperations
+      operationId: tenantRelationship.delegatedAdminRelationship_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -808,7 +808,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Create new navigation property to operations for tenantRelationships
-      operationId: tenantRelationships.delegatedAdminRelationships.CreateOperations
+      operationId: tenantRelationship.delegatedAdminRelationship_CreateOperation
       requestBody:
         description: New navigation property
         content:
@@ -837,7 +837,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationshipoperation-get?view=graph-rest-beta
-      operationId: tenantRelationships.delegatedAdminRelationships.GetOperations
+      operationId: tenantRelationship.delegatedAdminRelationship_GetOperation
       parameters:
         - name: $select
           in: query
@@ -875,7 +875,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Update the navigation property operations in tenantRelationships
-      operationId: tenantRelationships.delegatedAdminRelationships.UpdateOperations
+      operationId: tenantRelationship.delegatedAdminRelationship_UpdateOperation
       requestBody:
         description: New navigation property values
         content:
@@ -899,7 +899,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Delete navigation property operations for tenantRelationships
-      operationId: tenantRelationships.delegatedAdminRelationships.DeleteOperations
+      operationId: tenantRelationship.delegatedAdminRelationship_DeleteOperation
       parameters:
         - name: If-Match
           in: header
@@ -920,7 +920,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get the number of the resource
-      operationId: tenantRelationships.delegatedAdminRelationships.operations.GetCount-3beb
+      operationId: tenantRelationship.delegatedAdminRelationship.operation_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -940,7 +940,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-requests?view=graph-rest-beta
-      operationId: tenantRelationships.delegatedAdminRelationships.ListRequests
+      operationId: tenantRelationship.delegatedAdminRelationship_ListRequest
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -996,7 +996,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-requests?view=graph-rest-beta
-      operationId: tenantRelationships.delegatedAdminRelationships.CreateRequests
+      operationId: tenantRelationship.delegatedAdminRelationship_CreateRequest
       requestBody:
         description: New navigation property
         content:
@@ -1025,7 +1025,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationshiprequest-get?view=graph-rest-beta
-      operationId: tenantRelationships.delegatedAdminRelationships.GetRequests
+      operationId: tenantRelationship.delegatedAdminRelationship_GetRequest
       parameters:
         - name: $select
           in: query
@@ -1063,7 +1063,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Update the navigation property requests in tenantRelationships
-      operationId: tenantRelationships.delegatedAdminRelationships.UpdateRequests
+      operationId: tenantRelationship.delegatedAdminRelationship_UpdateRequest
       requestBody:
         description: New navigation property values
         content:
@@ -1087,7 +1087,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Delete navigation property requests for tenantRelationships
-      operationId: tenantRelationships.delegatedAdminRelationships.DeleteRequests
+      operationId: tenantRelationship.delegatedAdminRelationship_DeleteRequest
       parameters:
         - name: If-Match
           in: header
@@ -1108,7 +1108,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get the number of the resource
-      operationId: tenantRelationships.delegatedAdminRelationships.requests.GetCount-f3a6
+      operationId: tenantRelationship.delegatedAdminRelationship.request_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1124,7 +1124,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get the number of the resource
-      operationId: tenantRelationships.delegatedAdminRelationships.GetCount-9d12
+      operationId: tenantRelationship.delegatedAdminRelationship_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1748,6 +1748,7 @@ components:
           '#microsoft.graph.cloudPcServicePlan': '#/components/schemas/microsoft.graph.cloudPcServicePlan'
           '#microsoft.graph.cloudPcSnapshot': '#/components/schemas/microsoft.graph.cloudPcSnapshot'
           '#microsoft.graph.cloudPcSupportedRegion': '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+          '#microsoft.graph.cloudPcUserProfileSnapshot': '#/components/schemas/microsoft.graph.cloudPcUserProfileSnapshot'
           '#microsoft.graph.cloudPcUserSetting': '#/components/schemas/microsoft.graph.cloudPcUserSetting'
           '#microsoft.graph.cloudPcUserSettingAssignment': '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
           '#microsoft.graph.cloudPCUserSettingsPersistenceDetail': '#/components/schemas/microsoft.graph.cloudPCUserSettingsPersistenceDetail'
@@ -1827,6 +1828,9 @@ components:
           '#microsoft.graph.copilotSetting': '#/components/schemas/microsoft.graph.copilotSetting'
           '#microsoft.graph.correlatedIdentity': '#/components/schemas/microsoft.graph.correlatedIdentity'
           '#microsoft.graph.corsConfiguration_v2': '#/components/schemas/microsoft.graph.corsConfiguration_v2'
+          '#microsoft.graph.costManagementAlertSetting': '#/components/schemas/microsoft.graph.costManagementAlertSetting'
+          '#microsoft.graph.costManagementRoot': '#/components/schemas/microsoft.graph.costManagementRoot'
+          '#microsoft.graph.costManagementUserBalance': '#/components/schemas/microsoft.graph.costManagementUserBalance'
           '#microsoft.graph.credentialUsageSummary': '#/components/schemas/microsoft.graph.credentialUsageSummary'
           '#microsoft.graph.credentialUserRegistrationCount': '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
           '#microsoft.graph.credentialUserRegistrationDetails': '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
@@ -2155,6 +2159,7 @@ components:
           '#microsoft.graph.deviceShellScript': '#/components/schemas/microsoft.graph.deviceShellScript'
           '#microsoft.graph.directory': '#/components/schemas/microsoft.graph.directory'
           '#microsoft.graph.directoryAudit': '#/components/schemas/microsoft.graph.directoryAudit'
+          '#microsoft.graph.appManagementAudit': '#/components/schemas/microsoft.graph.appManagementAudit'
           '#microsoft.graph.directoryDefinition': '#/components/schemas/microsoft.graph.directoryDefinition'
           '#microsoft.graph.directoryObject': '#/components/schemas/microsoft.graph.directoryObject'
           '#microsoft.graph.administrativeUnit': '#/components/schemas/microsoft.graph.administrativeUnit'
@@ -2213,6 +2218,7 @@ components:
           '#microsoft.graph.user': '#/components/schemas/microsoft.graph.user'
           '#microsoft.graph.agentUser': '#/components/schemas/microsoft.graph.agentUser'
           '#microsoft.graph.directoryRoleAccessReviewPolicy': '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
+          '#microsoft.graph.directoryRoleManagementDeletedItemContainer': '#/components/schemas/microsoft.graph.directoryRoleManagementDeletedItemContainer'
           '#microsoft.graph.directorySetting': '#/components/schemas/microsoft.graph.directorySetting'
           '#microsoft.graph.distributionListMember': '#/components/schemas/microsoft.graph.distributionListMember'
           '#microsoft.graph.document': '#/components/schemas/microsoft.graph.document'
@@ -2800,9 +2806,22 @@ components:
           '#microsoft.graph.placeOperation': '#/components/schemas/microsoft.graph.placeOperation'
           '#microsoft.graph.planner': '#/components/schemas/microsoft.graph.planner'
           '#microsoft.graph.plannerDelta': '#/components/schemas/microsoft.graph.plannerDelta'
+          '#microsoft.graph.bucket': '#/components/schemas/microsoft.graph.bucket'
+          '#microsoft.graph.categoryDefinition': '#/components/schemas/microsoft.graph.categoryDefinition'
+          '#microsoft.graph.checklistItemV4': '#/components/schemas/microsoft.graph.checklistItemV4'
+          '#microsoft.graph.contentLink': '#/components/schemas/microsoft.graph.contentLink'
+          '#microsoft.graph.customChoiceOption': '#/components/schemas/microsoft.graph.customChoiceOption'
+          '#microsoft.graph.customFieldDefinition': '#/components/schemas/microsoft.graph.customFieldDefinition'
+          '#microsoft.graph.customFieldValue': '#/components/schemas/microsoft.graph.customFieldValue'
+          '#microsoft.graph.dependency': '#/components/schemas/microsoft.graph.dependency'
+          '#microsoft.graph.goal': '#/components/schemas/microsoft.graph.goal'
+          '#microsoft.graph.historyItem': '#/components/schemas/microsoft.graph.historyItem'
+          '#microsoft.graph.plan': '#/components/schemas/microsoft.graph.plan'
+          '#microsoft.graph.planContextLink': '#/components/schemas/microsoft.graph.planContextLink'
           '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
           '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
           '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+          '#microsoft.graph.plannerChatMessage': '#/components/schemas/microsoft.graph.plannerChatMessage'
           '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
           '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
           '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
@@ -2813,6 +2832,8 @@ components:
           '#microsoft.graph.businessScenarioTask': '#/components/schemas/microsoft.graph.businessScenarioTask'
           '#microsoft.graph.plannerTaskDetails': '#/components/schemas/microsoft.graph.plannerTaskDetails'
           '#microsoft.graph.plannerUser': '#/components/schemas/microsoft.graph.plannerUser'
+          '#microsoft.graph.task': '#/components/schemas/microsoft.graph.task'
+          '#microsoft.graph.userAssignment': '#/components/schemas/microsoft.graph.userAssignment'
           '#microsoft.graph.plannerGroup': '#/components/schemas/microsoft.graph.plannerGroup'
           '#microsoft.graph.plannerPlanConfiguration': '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
           '#microsoft.graph.plannerPlanConfigurationLocalization': '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
@@ -2889,6 +2910,7 @@ components:
           '#microsoft.graph.programControlType': '#/components/schemas/microsoft.graph.programControlType'
           '#microsoft.graph.pronounsSettings': '#/components/schemas/microsoft.graph.pronounsSettings'
           '#microsoft.graph.protectionPolicyBase': '#/components/schemas/microsoft.graph.protectionPolicyBase'
+          '#microsoft.graph.entraProtectionPolicy': '#/components/schemas/microsoft.graph.entraProtectionPolicy'
           '#microsoft.graph.exchangeProtectionPolicy': '#/components/schemas/microsoft.graph.exchangeProtectionPolicy'
           '#microsoft.graph.oneDriveForBusinessProtectionPolicy': '#/components/schemas/microsoft.graph.oneDriveForBusinessProtectionPolicy'
           '#microsoft.graph.sharePointProtectionPolicy': '#/components/schemas/microsoft.graph.sharePointProtectionPolicy'
@@ -3046,6 +3068,9 @@ components:
           '#microsoft.graph.singleValueLegacyExtendedProperty': '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
           '#microsoft.graph.softwareUpdateStatusSummary': '#/components/schemas/microsoft.graph.softwareUpdateStatusSummary'
           '#microsoft.graph.speakerAssignmentSubmission': '#/components/schemas/microsoft.graph.speakerAssignmentSubmission'
+          '#microsoft.graph.spendingPolicy': '#/components/schemas/microsoft.graph.spendingPolicy'
+          '#microsoft.graph.allUsersSpendingPolicy': '#/components/schemas/microsoft.graph.allUsersSpendingPolicy'
+          '#microsoft.graph.selectedGroupsSpendingPolicy': '#/components/schemas/microsoft.graph.selectedGroupsSpendingPolicy'
           '#microsoft.graph.storageQuotaBreakdown': '#/components/schemas/microsoft.graph.storageQuotaBreakdown'
           '#microsoft.graph.serviceStorageQuotaBreakdown': '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
           '#microsoft.graph.storageSettings': '#/components/schemas/microsoft.graph.storageSettings'
@@ -3085,6 +3110,7 @@ components:
           '#microsoft.graph.teamTemplateDefinition': '#/components/schemas/microsoft.graph.teamTemplateDefinition'
           '#microsoft.graph.teamwork': '#/components/schemas/microsoft.graph.teamwork'
           '#microsoft.graph.teamworkBot': '#/components/schemas/microsoft.graph.teamworkBot'
+          '#microsoft.graph.teamworkCustomEmoji': '#/components/schemas/microsoft.graph.teamworkCustomEmoji'
           '#microsoft.graph.teamworkDevice': '#/components/schemas/microsoft.graph.teamworkDevice'
           '#microsoft.graph.teamworkDeviceActivity': '#/components/schemas/microsoft.graph.teamworkDeviceActivity'
           '#microsoft.graph.teamworkDeviceConfiguration': '#/components/schemas/microsoft.graph.teamworkDeviceConfiguration'
@@ -3420,8 +3446,26 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
+          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
+          '#microsoft.graph.identityGovernance.userIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.userIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
+          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.guestLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.guestLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyReport'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+          '#microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule': '#/components/schemas/microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule'
+          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+          '#microsoft.graph.identityGovernance.invitationRedemptionRule': '#/components/schemas/microsoft.graph.identityGovernance.invitationRedemptionRule'
+          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
+          '#microsoft.graph.identityGovernance.lifecyclePolicySubjectReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectReport'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -3551,7 +3595,9 @@ components:
           '#microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement'
           '#microsoft.graph.partner.security.responseTimeSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.responseTimeSecurityRequirement'
           '#microsoft.graph.partner.security.securityScoreHistory': '#/components/schemas/microsoft.graph.partner.security.securityScoreHistory'
+          '#microsoft.graph.partners.billing.azureAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.azureAggregatedUsage'
           '#microsoft.graph.partners.billing.azureUsage': '#/components/schemas/microsoft.graph.partners.billing.azureUsage'
+          '#microsoft.graph.partners.billing.billedAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedAggregatedUsage'
           '#microsoft.graph.partners.billing.billedReconciliation': '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
           '#microsoft.graph.partners.billing.billedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedUsage'
           '#microsoft.graph.partners.billing.billing': '#/components/schemas/microsoft.graph.partners.billing.billing'
@@ -3685,6 +3731,7 @@ components:
           '#microsoft.graph.security.whoisBaseRecord': '#/components/schemas/microsoft.graph.security.whoisBaseRecord'
           '#microsoft.graph.security.whoisHistoryRecord': '#/components/schemas/microsoft.graph.security.whoisHistoryRecord'
           '#microsoft.graph.security.whoisRecord': '#/components/schemas/microsoft.graph.security.whoisRecord'
+          '#microsoft.graph.security.workbook': '#/components/schemas/microsoft.graph.security.workbook'
           '#microsoft.graph.security.zone': '#/components/schemas/microsoft.graph.security.zone'
           '#microsoft.graph.security.caseManagement.caseManagementEntity': '#/components/schemas/microsoft.graph.security.caseManagement.caseManagementEntity'
           '#microsoft.graph.security.caseManagement.activity': '#/components/schemas/microsoft.graph.security.caseManagement.activity'

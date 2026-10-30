@@ -1,6 +1,6 @@
 {
-  "generatedAtUtc": "2026-10-06T23:52:28.7533292Z",
-  "cutoffDate": "2026-10-04",
+  "generatedAtUtc": "2026-10-23T19:31:13.9823247Z",
+  "cutoffDate": "2026-10-21",
   "bufferDays": 2,
   "modules": {
     "CloudCommunications": {
@@ -5676,12 +5676,6 @@
         "uriRemoved": true
       },
       "/users/{user-id}/outlook/tasks/$count": {
-        "operationsRemoved": [
-          "get"
-        ],
-        "uriRemoved": true
-      },
-      "/users/{user-id}/settings/exchange": {
         "operationsRemoved": [
           "get"
         ],
