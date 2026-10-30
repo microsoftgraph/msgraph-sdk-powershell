@@ -26,7 +26,7 @@
       "classification": "OperationIdSuppression",
       "sourceContains": "remove-path-by-operation: .*exceptionOccurrence.*|user\\.joinedTeam.*|user\\.onenote\\..*.parent.*|user.*\\.calendarView.*|.*\\.notebook\\.section.*|.*\\.sectionGroup\\.section.*|.*\\.section\\.page.*|user\\.calendar\\.event.*|user\\.calendarGroup\\.calendar.*|user\\.calendar\\.event.*|user\\.event\\.calendar\\.event.*|user\\.pendingAccessReviewInstance\\.stage\\.decision.*|user\\.pendingAccessReviewInstance(\\.decision|\\.stage\\.decision)\\.instance.*",
       "implementation": "ReviewedNoMatchingModuleOperation",
-      "notes": "Original regex evaluated on ALL actual same-profile legacy operations (20 v1.0, 30 beta): zero matches in both. Actual compatible IDs also yield zero. absenceExpected describes this empty selector, NOT API/action absence. Every actual action has a unique metadata-guarded qualified-final-segment successor in operationAudit; no removal or suppression is invented.",
+      "notes": "Original regex evaluated on ALL actual same-profile legacy operations (20 v1.0, 30 beta): zero matches in both. Actual compatible IDs also yield zero. absenceExpected describes this empty selector, NOT API/action absence. Every actual action has a unique metadata-guarded qualified-final-segment successor in operationAudit; no removal or suppression is invented. Current compatible IDs are aligned with the actual legacy IDs; the path bridge remains necessary.",
       "profiles": {
         "v1.0": {
           "absenceExpected": true,
@@ -52,7 +52,7 @@
             {
               "method": "POST",
               "path": "/users/{user-id}/removeAllDevicesFromManagement",
-              "operationId": "users.user.removeAllDevicesFromManagement"
+              "operationId": "user_removeAllDevicesFromManagement"
             }
           ]
         },
@@ -62,7 +62,7 @@
             {
               "method": "POST",
               "path": "/users/{user-id}/removeAllDevicesFromManagement",
-              "operationId": "users.user.removeAllDevicesFromManagement"
+              "operationId": "user_removeAllDevicesFromManagement"
             }
           ]
         }
@@ -86,7 +86,7 @@
             {
               "method": "POST",
               "path": "/users/{user-id}/invalidateAllRefreshTokens",
-              "operationId": "users.user.invalidateAllRefreshTokens"
+              "operationId": "user_invalidateAllRefreshToken"
             }
           ]
         }
@@ -110,7 +110,7 @@
             {
               "method": "POST",
               "path": "/users/getUserOwnedObjects",
-              "operationId": "users.getUserOwnedObjects"
+              "operationId": "user_getUserOwnedObject"
             }
           ]
         }
@@ -184,7 +184,7 @@
             {
               "method": "POST",
               "path": "/users/{user-id}/changePassword",
-              "operationId": "users.user.changePassword"
+              "operationId": "user_changePassword"
             }
           ]
         },
@@ -194,7 +194,7 @@
             {
               "method": "POST",
               "path": "/users/{user-id}/changePassword",
-              "operationId": "users.user.changePassword"
+              "operationId": "user_changePassword"
             }
           ]
         }
@@ -351,7 +351,7 @@
       "legacySpec": "openApiDocs\\v1.0\\Users.Actions.yml",
       "legacySpecBlob": "161a667ae1163bbec5a300d87a7a3285ba85170f",
       "compatibleSpec": "openApiDocs_KiotaCompat\\v1.0\\Users.Actions.yml",
-      "compatibleSpecBlob": "0c140046e29e17087ee8a02947d4a33f60812544",
+      "compatibleSpecBlob": "44eb54b2d295130bf275b63c4c81fbd8bf0e892d",
       "legacyOperationCount": 20,
       "compatibleOperationCount": 20,
       "originalRegexLegacyMatches": 0,
@@ -359,6 +359,7 @@
       "exactPathOverlap": 0,
       "kindGuardedUniqueFinalSegmentBridges": 20,
       "removedOperations": [],
+      "compatibleOnlyOperations": [],
       "operations": [
         {
           "method": "POST",
@@ -366,7 +367,7 @@
           "oldOperationId": "user_assignLicense",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/assignLicense",
-          "newOperationId": "users.user.assignLicense",
+          "newOperationId": "user_assignLicense",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -377,7 +378,7 @@
           "oldOperationId": "user_changePassword",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/changePassword",
-          "newOperationId": "users.user.changePassword",
+          "newOperationId": "user_changePassword",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -388,7 +389,7 @@
           "oldOperationId": "user_checkMemberGroup",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/checkMemberGroups",
-          "newOperationId": "users.user.checkMemberGroups",
+          "newOperationId": "user_checkMemberGroup",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -399,7 +400,7 @@
           "oldOperationId": "user_checkMemberObject",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/checkMemberObjects",
-          "newOperationId": "users.user.checkMemberObjects",
+          "newOperationId": "user_checkMemberObject",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -410,7 +411,7 @@
           "oldOperationId": "user_exportPersonalData",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/exportPersonalData",
-          "newOperationId": "users.user.exportPersonalData",
+          "newOperationId": "user_exportPersonalData",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -421,7 +422,7 @@
           "oldOperationId": "user_findMeetingTime",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/findMeetingTimes",
-          "newOperationId": "users.user.findMeetingTimes",
+          "newOperationId": "user_findMeetingTime",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -432,7 +433,7 @@
           "oldOperationId": "user_getMailTip",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/getMailTips",
-          "newOperationId": "users.user.getMailTips",
+          "newOperationId": "user_getMailTip",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -443,7 +444,7 @@
           "oldOperationId": "user_getMemberGroup",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/getMemberGroups",
-          "newOperationId": "users.user.getMemberGroups",
+          "newOperationId": "user_getMemberGroup",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -454,7 +455,7 @@
           "oldOperationId": "user_getMemberObject",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/getMemberObjects",
-          "newOperationId": "users.user.getMemberObjects",
+          "newOperationId": "user_getMemberObject",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -465,7 +466,7 @@
           "oldOperationId": "user_removeAllDevicesFromManagement",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/removeAllDevicesFromManagement",
-          "newOperationId": "users.user.removeAllDevicesFromManagement",
+          "newOperationId": "user_removeAllDevicesFromManagement",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -476,7 +477,7 @@
           "oldOperationId": "user_reprocessLicenseAssignment",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/reprocessLicenseAssignment",
-          "newOperationId": "users.user.reprocessLicenseAssignment",
+          "newOperationId": "user_reprocessLicenseAssignment",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -487,7 +488,7 @@
           "oldOperationId": "user_restore",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/restore",
-          "newOperationId": "users.user.restore",
+          "newOperationId": "user_restore",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -498,7 +499,7 @@
           "oldOperationId": "user_retryServiceProvisioning",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/retryServiceProvisioning",
-          "newOperationId": "users.user.retryServiceProvisioning",
+          "newOperationId": "user_retryServiceProvisioning",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -509,7 +510,7 @@
           "oldOperationId": "user_revokeSignInSession",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/revokeSignInSessions",
-          "newOperationId": "users.user.revokeSignInSessions",
+          "newOperationId": "user_revokeSignInSession",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -520,7 +521,7 @@
           "oldOperationId": "user_sendMail",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/sendMail",
-          "newOperationId": "users.user.sendMail",
+          "newOperationId": "user_sendMail",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -531,7 +532,7 @@
           "oldOperationId": "user_translateExchangeId",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/translateExchangeIds",
-          "newOperationId": "users.user.translateExchangeIds",
+          "newOperationId": "user_translateExchangeId",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -542,7 +543,7 @@
           "oldOperationId": "user_wipeManagedAppRegistrationsGraphBPreDeviceTag",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/wipeManagedAppRegistrationsByDeviceTag",
-          "newOperationId": "users.user.wipeManagedAppRegistrationsByDeviceTag",
+          "newOperationId": "user_wipeManagedAppRegistrationsGraphBPreDeviceTag",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -553,7 +554,7 @@
           "oldOperationId": "user_getAvailableExtensionProperty",
           "oldMetadataKind": "action",
           "newPath": "/users/getAvailableExtensionProperties",
-          "newOperationId": "users.getAvailableExtensionProperties",
+          "newOperationId": "user_getAvailableExtensionProperty",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -564,7 +565,7 @@
           "oldOperationId": "user_getGraphBPreId",
           "oldMetadataKind": "action",
           "newPath": "/users/getByIds",
-          "newOperationId": "users.getByIds",
+          "newOperationId": "user_getGraphBPreId",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -575,7 +576,7 @@
           "oldOperationId": "user_validateProperty",
           "oldMetadataKind": "action",
           "newPath": "/users/validateProperties",
-          "newOperationId": "users.validateProperties",
+          "newOperationId": "user_validateProperty",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -587,14 +588,37 @@
       "legacySpec": "openApiDocs\\beta\\Users.Actions.yml",
       "legacySpecBlob": "855f5e2151b45aa6b89f52ac3fd757274cb4dcf1",
       "compatibleSpec": "openApiDocs_KiotaCompat\\beta\\Users.Actions.yml",
-      "compatibleSpecBlob": "7cf97dde83463e501da1e05b7fac8a2970d34504",
+      "compatibleSpecBlob": "4ab438c0bb4ec50612ad4e9866b6dd6a18109fbd",
       "legacyOperationCount": 30,
-      "compatibleOperationCount": 30,
+      "compatibleOperationCount": 33,
       "originalRegexLegacyMatches": 0,
       "originalRegexCompatibleMatches": 0,
       "exactPathOverlap": 0,
       "kindGuardedUniqueFinalSegmentBridges": 30,
       "removedOperations": [],
+      "compatibleOnlyOperations": [
+        {
+          "method": "POST",
+          "path": "/users/{user-id}/microsoft.graph.identityGovernance.addSelfAsSponsor",
+          "operationId": "user_addSelfAsSponsor",
+          "metadataKind": "action",
+          "notes": "Present in current compatible spec only; no fabricated legacy predecessor or shared-selector match. Preserve the qualified action and existing structural naming."
+        },
+        {
+          "method": "POST",
+          "path": "/users/{user-id}/microsoft.graph.identityGovernance.attest",
+          "operationId": "user_attest",
+          "metadataKind": "action",
+          "notes": "Present in current compatible spec only; no fabricated legacy predecessor or shared-selector match. Preserve the qualified action and existing structural naming."
+        },
+        {
+          "method": "POST",
+          "path": "/users/{user-id}/microsoft.graph.identityGovernance.removeSelfAsSponsor",
+          "operationId": "user_removeSelfAsSponsor",
+          "metadataKind": "action",
+          "notes": "Present in current compatible spec only; no fabricated legacy predecessor or shared-selector match. Preserve the qualified action and existing structural naming."
+        }
+      ],
       "operations": [
         {
           "method": "POST",
@@ -602,7 +626,7 @@
           "oldOperationId": "user_assignLicense",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/assignLicense",
-          "newOperationId": "users.user.assignLicense",
+          "newOperationId": "user_assignLicense",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -613,7 +637,7 @@
           "oldOperationId": "user_changePassword",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/changePassword",
-          "newOperationId": "users.user.changePassword",
+          "newOperationId": "user_changePassword",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -624,7 +648,7 @@
           "oldOperationId": "user_checkMemberGroup",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/checkMemberGroups",
-          "newOperationId": "users.user.checkMemberGroups",
+          "newOperationId": "user_checkMemberGroup",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -635,7 +659,7 @@
           "oldOperationId": "user_checkMemberObject",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/checkMemberObjects",
-          "newOperationId": "users.user.checkMemberObjects",
+          "newOperationId": "user_checkMemberObject",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -646,7 +670,7 @@
           "oldOperationId": "user_convertExternalToInternalMemberUser",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/convertExternalToInternalMemberUser",
-          "newOperationId": "users.user.convertExternalToInternalMemberUser",
+          "newOperationId": "user_convertExternalToInternalMemberUser",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -657,7 +681,7 @@
           "oldOperationId": "user_deletePasswordSingleSignOnCredential",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/deletePasswordSingleSignOnCredentials",
-          "newOperationId": "users.user.deletePasswordSingleSignOnCredentials",
+          "newOperationId": "user_deletePasswordSingleSignOnCredential",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -668,7 +692,7 @@
           "oldOperationId": "user_exportPersonalData",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/exportPersonalData",
-          "newOperationId": "users.user.exportPersonalData",
+          "newOperationId": "user_exportPersonalData",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -679,7 +703,7 @@
           "oldOperationId": "user_findMeetingLocation",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/findMeetingLocations",
-          "newOperationId": "users.user.findMeetingLocations",
+          "newOperationId": "user_findMeetingLocation",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -690,7 +714,7 @@
           "oldOperationId": "user_findMeetingTime",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/findMeetingTimes",
-          "newOperationId": "users.user.findMeetingTimes",
+          "newOperationId": "user_findMeetingTime",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -701,7 +725,7 @@
           "oldOperationId": "user_getMailTip",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/getMailTips",
-          "newOperationId": "users.user.getMailTips",
+          "newOperationId": "user_getMailTip",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -712,7 +736,7 @@
           "oldOperationId": "user_getMemberGroup",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/getMemberGroups",
-          "newOperationId": "users.user.getMemberGroups",
+          "newOperationId": "user_getMemberGroup",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -723,7 +747,7 @@
           "oldOperationId": "user_getMemberObject",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/getMemberObjects",
-          "newOperationId": "users.user.getMemberObjects",
+          "newOperationId": "user_getMemberObject",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -734,7 +758,7 @@
           "oldOperationId": "user_getPasswordSingleSignOnCredential",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/getPasswordSingleSignOnCredentials",
-          "newOperationId": "users.user.getPasswordSingleSignOnCredentials",
+          "newOperationId": "user_getPasswordSingleSignOnCredential",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -745,7 +769,7 @@
           "oldOperationId": "user_invalidateAllRefreshToken",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/invalidateAllRefreshTokens",
-          "newOperationId": "users.user.invalidateAllRefreshTokens",
+          "newOperationId": "user_invalidateAllRefreshToken",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -756,7 +780,7 @@
           "oldOperationId": "user_removeAllDevicesFromManagement",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/removeAllDevicesFromManagement",
-          "newOperationId": "users.user.removeAllDevicesFromManagement",
+          "newOperationId": "user_removeAllDevicesFromManagement",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -767,7 +791,7 @@
           "oldOperationId": "user_reprocessLicenseAssignment",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/reprocessLicenseAssignment",
-          "newOperationId": "users.user.reprocessLicenseAssignment",
+          "newOperationId": "user_reprocessLicenseAssignment",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -778,7 +802,7 @@
           "oldOperationId": "user_restore",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/restore",
-          "newOperationId": "users.user.restore",
+          "newOperationId": "user_restore",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -789,7 +813,7 @@
           "oldOperationId": "user_retryServiceProvisioning",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/retryServiceProvisioning",
-          "newOperationId": "users.user.retryServiceProvisioning",
+          "newOperationId": "user_retryServiceProvisioning",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -800,7 +824,7 @@
           "oldOperationId": "user_revokeSignInSession",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/revokeSignInSessions",
-          "newOperationId": "users.user.revokeSignInSessions",
+          "newOperationId": "user_revokeSignInSession",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -811,7 +835,7 @@
           "oldOperationId": "user_sendMail",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/sendMail",
-          "newOperationId": "users.user.sendMail",
+          "newOperationId": "user_sendMail",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -822,7 +846,7 @@
           "oldOperationId": "user_translateExchangeId",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/translateExchangeIds",
-          "newOperationId": "users.user.translateExchangeIds",
+          "newOperationId": "user_translateExchangeId",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -833,7 +857,7 @@
           "oldOperationId": "user_unblockManagedApp",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/unblockManagedApps",
-          "newOperationId": "users.user.unblockManagedApps",
+          "newOperationId": "user_unblockManagedApp",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -844,7 +868,7 @@
           "oldOperationId": "user_wipeAndBlockManagedApp",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/wipeAndBlockManagedApps",
-          "newOperationId": "users.user.wipeAndBlockManagedApps",
+          "newOperationId": "user_wipeAndBlockManagedApp",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -855,7 +879,7 @@
           "oldOperationId": "user_wipeManagedAppRegistrationGraphBPreDeviceTag",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/wipeManagedAppRegistrationByDeviceTag",
-          "newOperationId": "users.user.wipeManagedAppRegistrationByDeviceTag",
+          "newOperationId": "user_wipeManagedAppRegistrationGraphBPreDeviceTag",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -866,7 +890,7 @@
           "oldOperationId": "user_wipeManagedAppRegistrationsGraphBPreAzureAdDeviceId",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/wipeManagedAppRegistrationsByAzureAdDeviceId",
-          "newOperationId": "users.user.wipeManagedAppRegistrationsByAzureAdDeviceId",
+          "newOperationId": "user_wipeManagedAppRegistrationsGraphBPreAzureAdDeviceId",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -877,7 +901,7 @@
           "oldOperationId": "user_wipeManagedAppRegistrationsGraphBPreDeviceTag",
           "oldMetadataKind": "action",
           "newPath": "/users/{user-id}/wipeManagedAppRegistrationsByDeviceTag",
-          "newOperationId": "users.user.wipeManagedAppRegistrationsByDeviceTag",
+          "newOperationId": "user_wipeManagedAppRegistrationsGraphBPreDeviceTag",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -888,7 +912,7 @@
           "oldOperationId": "user_getGraphBPreId",
           "oldMetadataKind": "action",
           "newPath": "/users/getByIds",
-          "newOperationId": "users.getByIds",
+          "newOperationId": "user_getGraphBPreId",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -899,7 +923,7 @@
           "oldOperationId": "user_getUserOwnedObject",
           "oldMetadataKind": "action",
           "newPath": "/users/getUserOwnedObjects",
-          "newOperationId": "users.getUserOwnedObjects",
+          "newOperationId": "user_getUserOwnedObject",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -910,7 +934,7 @@
           "oldOperationId": "user_validatePassword",
           "oldMetadataKind": "action",
           "newPath": "/users/validatePassword",
-          "newOperationId": "users.validatePassword",
+          "newOperationId": "user_validatePassword",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false
@@ -921,7 +945,7 @@
           "oldOperationId": "user_validateProperty",
           "oldMetadataKind": "action",
           "newPath": "/users/validateProperties",
-          "newOperationId": "users.validateProperties",
+          "newOperationId": "user_validateProperty",
           "newMetadataKind": "action",
           "bridge": "Same method and parent; actual action metadata on both operations; remove microsoft.graph. from final operation segment only",
           "selectedByOriginalSuppressionRegex": false

@@ -29,7 +29,8 @@ directive:
 # Remove invalid paths.
 # Wrapper migration 1: original regex matches zero of the actual 20 v1.0 / 30 beta
 # legacy operations. Full metadata-guarded path bridges are audited in the ledger;
-# renamed compatible IDs alone are not evidence of absence. No suppression added.
+# current compatible IDs are aligned; all 20 v1.0 / 33 beta IDs also match zero.
+# Three compatible-only beta actions are audited separately. No suppression added.
   - remove-path-by-operation: .*exceptionOccurrence.*|user\.joinedTeam.*|user\.onenote\..*.parent.*|user.*\.calendarView.*|.*\.notebook\.section.*|.*\.sectionGroup\.section.*|.*\.section\.page.*|user\.calendar\.event.*|user\.calendarGroup\.calendar.*|user\.calendar\.event.*|user\.event\.calendar\.event.*|user\.pendingAccessReviewInstance\.stage\.decision.*|user\.pendingAccessReviewInstance(\.decision|\.stage\.decision)\.instance.*
 # Rename All due to https://github.com/Azure/autorest.powershell/issues/1002.
 # Wrapper migration 2: exact POST removeAllDevicesFromManagement fallback preserves
