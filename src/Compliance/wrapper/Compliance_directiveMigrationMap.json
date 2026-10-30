@@ -1,4 +1,70 @@
 {
+  "review": {
+    "baseCommit": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad",
+    "scope": "Only src/Compliance/Compliance.md; global and profile-specific readme directives excluded. Parameter/schema directives remain deferred; none occur in this shared file.",
+    "compatibleSpecs": {
+      "v1.0": {
+        "path": "openApiDocs_KiotaCompat/v1.0/Compliance.yml",
+        "blobHash": "31064dc0edea9597e66f0e9e30aaa271a8990eba"
+      },
+      "beta": {
+        "path": "openApiDocs_KiotaCompat/beta/Compliance.yml",
+        "blobHash": "219ed1b31d134f57bcbde55e7e02361ed599fb29"
+      }
+    },
+    "availableOperationsInBothProfiles": [
+      {
+        "method": "GET",
+        "path": "/compliance",
+        "operationId": "compliance_GetCompliance"
+      },
+      {
+        "method": "PATCH",
+        "path": "/compliance",
+        "operationId": "compliance_UpdateCompliance"
+      }
+    ],
+    "retiredPath": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
+    "retiredOperationIds": [
+      "compliance.ediscovery.case.noncustodialDataSource_UpdateDataSource",
+      "compliance.ediscovery.case.noncustodialDataSource_DeleteDataSource",
+      "compliance.ediscovery.case.noncustodialDataSource_GetDataSource"
+    ],
+    "originalSourceSelection": {
+      "v1.0": {
+        "path": "openApiDocs/v1.0/Compliance.yml",
+        "blobHash": "c684bccc4da19c2469703cd42473ac1ea380b648",
+        "selectedOperations": [],
+        "survivingOperations": []
+      },
+      "beta": {
+        "path": "openApiDocs/beta/Compliance.yml",
+        "blobHash": "d9ead892c982b360e557ed3e11613675de368717",
+        "selectedOperations": [
+          {
+            "directiveIndex": 1,
+            "method": "PATCH",
+            "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
+            "operationId": "compliance.ediscovery.case.noncustodialDataSource_UpdateDataSource"
+          },
+          {
+            "directiveIndex": 1,
+            "method": "DELETE",
+            "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
+            "operationId": "compliance.ediscovery.case.noncustodialDataSource_DeleteDataSource"
+          },
+          {
+            "directiveIndex": 2,
+            "method": "GET",
+            "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
+            "operationId": "compliance.ediscovery.case.noncustodialDataSource_GetDataSource"
+          }
+        ],
+        "survivingOperations": []
+      }
+    },
+    "evidence": "Reviewed after normally integrating #3849. The original beta shared subject/variant selectors cover exactly the nested dataSource PATCH/DELETE (directive 1) and GET (directive 2); the parent item GET/PATCH/DELETE are distinct neighboring operations, not the numbered variants. Each selected beta operation is deprecated with x-ms-deprecation removalDate 2023-02-01 and explicitly directs callers to /security instead. The original v1.0 spec has no eDiscovery selection. All selected source operations have zero same-profile compatible survivors: both complete compatible path inventories contain only /compliance. Current operation IDs reflect #3861/#3863 alignment. Source lineage is audit evidence only, not current API mappings or a translation-helper declaration. Retain dormant exact suppressions and structural naming without restoring expired APIs or overriding neighbors."
+  },
   "mappings": [
     {
       "module": "Compliance",
@@ -6,26 +72,15 @@
       "classification": "CmdletSuppression",
       "sourceContains": "variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$|^Delete1$|^DeleteViaIdentity1$",
       "implementation": "CmdletConfigurator",
-      "notes": "Suppress nested dataSource PATCH and DELETE; keep the parent noncustodialDataSource item operations.",
+      "notes": "Expected absence in both profiles: the nested dataSource PATCH and DELETE and all eDiscovery parent routes are retired from the compatible specs. Existing exact suppressions are retained as dormant semantic coverage, not claimed as generated-operation coverage. Root GET/PATCH /compliance remain unaffected.",
       "profiles": {
         "v1.0": {
           "absenceExpected": true,
           "operations": []
         },
         "beta": {
-          "absenceExpected": false,
-          "operations": [
-            {
-              "method": "PATCH",
-              "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
-              "operationId": "compliance.ediscovery.cases.noncustodialDataSources.UpdateDataSource"
-            },
-            {
-              "method": "DELETE",
-              "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
-              "operationId": "compliance.ediscovery.cases.noncustodialDataSources.DeleteDataSource"
-            }
-          ]
+          "absenceExpected": true,
+          "operations": []
         }
       }
     },
@@ -35,21 +90,15 @@
       "classification": "SubjectRename",
       "sourceContains": "variant: ^Get1$|^GetViaIdentity1$",
       "implementation": "StructuralNaming",
-      "notes": "The wrapper derives the appended DataSource noun directly from the nested navigation path; NamingTests pins the result.",
+      "notes": "Expected absence in both profiles: the nested dataSource GET and all eDiscovery routes are retired from the compatible specs. Structural naming retains the appended DataSource noun without a redundant override. Its synthetic naming regression is not evidence of an available or generated API.",
       "profiles": {
         "v1.0": {
           "absenceExpected": true,
           "operations": []
         },
         "beta": {
-          "absenceExpected": false,
-          "operations": [
-            {
-              "method": "GET",
-              "path": "/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/dataSource",
-              "operationId": "compliance.ediscovery.cases.noncustodialDataSources.GetDataSource"
-            }
-          ]
+          "absenceExpected": true,
+          "operations": []
         }
       }
     }
