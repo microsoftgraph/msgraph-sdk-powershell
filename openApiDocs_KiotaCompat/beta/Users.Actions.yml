@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-assignlicense?view=graph-rest-beta
-      operationId: users.user.assignLicense
+      operationId: user_assignLicense
       requestBody:
         $ref: '#/components/requestBodies/assignLicenseRequestBody'
       responses:
@@ -35,7 +35,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-changepassword?view=graph-rest-beta
-      operationId: users.user.changePassword
+      operationId: user_changePassword
       requestBody:
         $ref: '#/components/requestBodies/changePasswordRequestBody'
       responses:
@@ -55,7 +55,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
-      operationId: users.user.checkMemberGroups
+      operationId: user_checkMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -96,7 +96,7 @@ paths:
       tags:
         - users.user.Actions
       summary: Invoke action checkMemberObjects
-      operationId: users.user.checkMemberObjects
+      operationId: user_checkMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -141,7 +141,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-convertexternaltointernalmemberuser?view=graph-rest-beta
-      operationId: users.user.convertExternalToInternalMemberUser
+      operationId: user_convertExternalToInternalMemberUser
       requestBody:
         $ref: '#/components/requestBodies/convertExternalToInternalMemberUserRequestBody'
       responses:
@@ -161,7 +161,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-deletepasswordsinglesignoncredentials?view=graph-rest-beta
-      operationId: users.user.deletePasswordSingleSignOnCredentials
+      operationId: user_deletePasswordSingleSignOnCredential
       requestBody:
         $ref: '#/components/requestBodies/deletePasswordSingleSignOnCredentialsRequestBody'
       responses:
@@ -181,7 +181,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-exportpersonaldata?view=graph-rest-beta
-      operationId: users.user.exportPersonalData
+      operationId: user_exportPersonalData
       requestBody:
         $ref: '#/components/requestBodies/exportPersonalDataRequestBody'
       responses:
@@ -197,7 +197,7 @@ paths:
       tags:
         - users.user.Actions
       summary: Invoke action findMeetingLocations
-      operationId: users.user.findMeetingLocations
+      operationId: user_findMeetingLocation
       requestBody:
         $ref: '#/components/requestBodies/findMeetingLocationsRequestBody'
       responses:
@@ -217,7 +217,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-findmeetingtimes?view=graph-rest-beta
-      operationId: users.user.findMeetingTimes
+      operationId: user_findMeetingTime
       requestBody:
         $ref: '#/components/requestBodies/findMeetingTimesRequestBody'
       responses:
@@ -237,7 +237,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-getmailtips?view=graph-rest-beta
-      operationId: users.user.getMailTips
+      operationId: user_getMailTip
       requestBody:
         $ref: '#/components/requestBodies/getMailTipsRequestBody'
       responses:
@@ -260,7 +260,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta
-      operationId: users.user.getMemberGroups
+      operationId: user_getMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -301,7 +301,7 @@ paths:
       tags:
         - users.user.Actions
       summary: Invoke action getMemberObjects
-      operationId: users.user.getMemberObjects
+      operationId: user_getMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -346,7 +346,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-beta
-      operationId: users.user.getPasswordSingleSignOnCredentials
+      operationId: user_getPasswordSingleSignOnCredential
       responses:
         2XX:
           $ref: '#/components/responses/getPasswordSingleSignOnCredentialsResponse'
@@ -358,6 +358,48 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/microsoft.graph.identityGovernance.addSelfAsSponsor':
+    post:
+      tags:
+        - users.user.Actions
+      summary: Invoke action addSelfAsSponsor
+      operationId: user_addSelfAsSponsor
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/microsoft.graph.identityGovernance.attest':
+    post:
+      tags:
+        - users.user.Actions
+      summary: Invoke action attest
+      operationId: user_attest
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/microsoft.graph.identityGovernance.removeSelfAsSponsor':
+    post:
+      tags:
+        - users.user.Actions
+      summary: Invoke action removeSelfAsSponsor
+      operationId: user_removeSelfAsSponsor
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/invalidateAllRefreshTokens':
     post:
       tags:
@@ -367,7 +409,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta
-      operationId: users.user.invalidateAllRefreshTokens
+      operationId: user_invalidateAllRefreshToken
       responses:
         2XX:
           $ref: '#/components/responses/invalidateAllRefreshTokensResponse'
@@ -382,7 +424,7 @@ paths:
         - users.user.Actions
       summary: Invoke action removeAllDevicesFromManagement
       description: Retire all devices from management for this user
-      operationId: users.user.removeAllDevicesFromManagement
+      operationId: user_removeAllDevicesFromManagement
       responses:
         '204':
           description: Success
@@ -400,7 +442,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-reprocesslicenseassignment?view=graph-rest-beta
-      operationId: users.user.reprocessLicenseAssignment
+      operationId: user_reprocessLicenseAssignment
       responses:
         2XX:
           $ref: '#/components/responses/reprocessLicenseAssignmentResponse'
@@ -418,7 +460,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-beta
-      operationId: users.user.restore
+      operationId: user_restore
       responses:
         2XX:
           description: Success
@@ -443,7 +485,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-retryserviceprovisioning?view=graph-rest-beta
-      operationId: users.user.retryServiceProvisioning
+      operationId: user_retryServiceProvisioning
       responses:
         '204':
           description: Success
@@ -461,7 +503,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-beta
-      operationId: users.user.revokeSignInSessions
+      operationId: user_revokeSignInSession
       responses:
         2XX:
           $ref: '#/components/responses/revokeSignInSessionsResponse'
@@ -479,7 +521,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-sendmail?view=graph-rest-beta
-      operationId: users.user.sendMail
+      operationId: user_sendMail
       requestBody:
         $ref: '#/components/requestBodies/sendMailRequestBody'
       responses:
@@ -499,7 +541,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-beta
-      operationId: users.user.translateExchangeIds
+      operationId: user_translateExchangeId
       requestBody:
         $ref: '#/components/requestBodies/translateExchangeIdsRequestBody'
       responses:
@@ -519,7 +561,7 @@ paths:
         - users.user.Actions
       summary: Invoke action unblockManagedApps
       description: Unblocks the managed app user from app check-in.
-      operationId: users.user.unblockManagedApps
+      operationId: user_unblockManagedApp
       responses:
         '204':
           description: Success
@@ -534,7 +576,7 @@ paths:
         - users.user.Actions
       summary: Invoke action wipeAndBlockManagedApps
       description: Blocks the managed app user from app check-in.
-      operationId: users.user.wipeAndBlockManagedApps
+      operationId: user_wipeAndBlockManagedApp
       responses:
         '204':
           description: Success
@@ -549,7 +591,7 @@ paths:
         - users.user.Actions
       summary: Invoke action wipeManagedAppRegistrationByDeviceTag
       description: Issues a wipe operation on an app registration with specified device tag.
-      operationId: users.user.wipeManagedAppRegistrationByDeviceTag
+      operationId: user_wipeManagedAppRegistrationGraphBPreDeviceTag
       requestBody:
         $ref: '#/components/requestBodies/wipeManagedAppRegistrationByDeviceTagRequestBody'
       responses:
@@ -566,7 +608,7 @@ paths:
         - users.user.Actions
       summary: Invoke action wipeManagedAppRegistrationsByAzureAdDeviceId
       description: Issues a wipe operation on an app registration with specified aad device Id.
-      operationId: users.user.wipeManagedAppRegistrationsByAzureAdDeviceId
+      operationId: user_wipeManagedAppRegistrationsGraphBPreAzureAdDeviceId
       requestBody:
         $ref: '#/components/requestBodies/wipeManagedAppRegistrationsByAzureAdDeviceIdRequestBody'
       responses:
@@ -583,7 +625,7 @@ paths:
         - users.user.Actions
       summary: Invoke action wipeManagedAppRegistrationsByDeviceTag
       description: Issues a wipe operation on an app registration with specified device tag.
-      operationId: users.user.wipeManagedAppRegistrationsByDeviceTag
+      operationId: user_wipeManagedAppRegistrationsGraphBPreDeviceTag
       requestBody:
         $ref: '#/components/requestBodies/wipeManagedAppRegistrationsByDeviceTagRequestBody'
       responses:
@@ -603,7 +645,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-beta
-      operationId: users.getByIds
+      operationId: user_getGraphBPreId
       requestBody:
         description: Action parameters
         content:
@@ -654,7 +696,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-beta
-      operationId: users.getUserOwnedObjects
+      operationId: user_getUserOwnedObject
       requestBody:
         description: Action parameters
         content:
@@ -693,7 +735,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-validatepassword?view=graph-rest-beta
-      operationId: users.validatePassword
+      operationId: user_validatePassword
       requestBody:
         description: Action parameters
         content:
@@ -728,7 +770,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-beta
-      operationId: users.validateProperties
+      operationId: user_validateProperty
       requestBody:
         description: Action parameters
         content:
@@ -1257,6 +1299,7 @@ components:
           '#microsoft.graph.cloudPcServicePlan': '#/components/schemas/microsoft.graph.cloudPcServicePlan'
           '#microsoft.graph.cloudPcSnapshot': '#/components/schemas/microsoft.graph.cloudPcSnapshot'
           '#microsoft.graph.cloudPcSupportedRegion': '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+          '#microsoft.graph.cloudPcUserProfileSnapshot': '#/components/schemas/microsoft.graph.cloudPcUserProfileSnapshot'
           '#microsoft.graph.cloudPcUserSetting': '#/components/schemas/microsoft.graph.cloudPcUserSetting'
           '#microsoft.graph.cloudPcUserSettingAssignment': '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
           '#microsoft.graph.cloudPCUserSettingsPersistenceDetail': '#/components/schemas/microsoft.graph.cloudPCUserSettingsPersistenceDetail'
@@ -1336,6 +1379,9 @@ components:
           '#microsoft.graph.copilotSetting': '#/components/schemas/microsoft.graph.copilotSetting'
           '#microsoft.graph.correlatedIdentity': '#/components/schemas/microsoft.graph.correlatedIdentity'
           '#microsoft.graph.corsConfiguration_v2': '#/components/schemas/microsoft.graph.corsConfiguration_v2'
+          '#microsoft.graph.costManagementAlertSetting': '#/components/schemas/microsoft.graph.costManagementAlertSetting'
+          '#microsoft.graph.costManagementRoot': '#/components/schemas/microsoft.graph.costManagementRoot'
+          '#microsoft.graph.costManagementUserBalance': '#/components/schemas/microsoft.graph.costManagementUserBalance'
           '#microsoft.graph.credentialUsageSummary': '#/components/schemas/microsoft.graph.credentialUsageSummary'
           '#microsoft.graph.credentialUserRegistrationCount': '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
           '#microsoft.graph.credentialUserRegistrationDetails': '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
@@ -1664,6 +1710,7 @@ components:
           '#microsoft.graph.deviceShellScript': '#/components/schemas/microsoft.graph.deviceShellScript'
           '#microsoft.graph.directory': '#/components/schemas/microsoft.graph.directory'
           '#microsoft.graph.directoryAudit': '#/components/schemas/microsoft.graph.directoryAudit'
+          '#microsoft.graph.appManagementAudit': '#/components/schemas/microsoft.graph.appManagementAudit'
           '#microsoft.graph.directoryDefinition': '#/components/schemas/microsoft.graph.directoryDefinition'
           '#microsoft.graph.directoryObject': '#/components/schemas/microsoft.graph.directoryObject'
           '#microsoft.graph.administrativeUnit': '#/components/schemas/microsoft.graph.administrativeUnit'
@@ -1722,6 +1769,7 @@ components:
           '#microsoft.graph.user': '#/components/schemas/microsoft.graph.user'
           '#microsoft.graph.agentUser': '#/components/schemas/microsoft.graph.agentUser'
           '#microsoft.graph.directoryRoleAccessReviewPolicy': '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
+          '#microsoft.graph.directoryRoleManagementDeletedItemContainer': '#/components/schemas/microsoft.graph.directoryRoleManagementDeletedItemContainer'
           '#microsoft.graph.directorySetting': '#/components/schemas/microsoft.graph.directorySetting'
           '#microsoft.graph.distributionListMember': '#/components/schemas/microsoft.graph.distributionListMember'
           '#microsoft.graph.document': '#/components/schemas/microsoft.graph.document'
@@ -2309,9 +2357,22 @@ components:
           '#microsoft.graph.placeOperation': '#/components/schemas/microsoft.graph.placeOperation'
           '#microsoft.graph.planner': '#/components/schemas/microsoft.graph.planner'
           '#microsoft.graph.plannerDelta': '#/components/schemas/microsoft.graph.plannerDelta'
+          '#microsoft.graph.bucket': '#/components/schemas/microsoft.graph.bucket'
+          '#microsoft.graph.categoryDefinition': '#/components/schemas/microsoft.graph.categoryDefinition'
+          '#microsoft.graph.checklistItemV4': '#/components/schemas/microsoft.graph.checklistItemV4'
+          '#microsoft.graph.contentLink': '#/components/schemas/microsoft.graph.contentLink'
+          '#microsoft.graph.customChoiceOption': '#/components/schemas/microsoft.graph.customChoiceOption'
+          '#microsoft.graph.customFieldDefinition': '#/components/schemas/microsoft.graph.customFieldDefinition'
+          '#microsoft.graph.customFieldValue': '#/components/schemas/microsoft.graph.customFieldValue'
+          '#microsoft.graph.dependency': '#/components/schemas/microsoft.graph.dependency'
+          '#microsoft.graph.goal': '#/components/schemas/microsoft.graph.goal'
+          '#microsoft.graph.historyItem': '#/components/schemas/microsoft.graph.historyItem'
+          '#microsoft.graph.plan': '#/components/schemas/microsoft.graph.plan'
+          '#microsoft.graph.planContextLink': '#/components/schemas/microsoft.graph.planContextLink'
           '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
           '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
           '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+          '#microsoft.graph.plannerChatMessage': '#/components/schemas/microsoft.graph.plannerChatMessage'
           '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
           '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
           '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
@@ -2322,6 +2383,8 @@ components:
           '#microsoft.graph.businessScenarioTask': '#/components/schemas/microsoft.graph.businessScenarioTask'
           '#microsoft.graph.plannerTaskDetails': '#/components/schemas/microsoft.graph.plannerTaskDetails'
           '#microsoft.graph.plannerUser': '#/components/schemas/microsoft.graph.plannerUser'
+          '#microsoft.graph.task': '#/components/schemas/microsoft.graph.task'
+          '#microsoft.graph.userAssignment': '#/components/schemas/microsoft.graph.userAssignment'
           '#microsoft.graph.plannerGroup': '#/components/schemas/microsoft.graph.plannerGroup'
           '#microsoft.graph.plannerPlanConfiguration': '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
           '#microsoft.graph.plannerPlanConfigurationLocalization': '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
@@ -2398,6 +2461,7 @@ components:
           '#microsoft.graph.programControlType': '#/components/schemas/microsoft.graph.programControlType'
           '#microsoft.graph.pronounsSettings': '#/components/schemas/microsoft.graph.pronounsSettings'
           '#microsoft.graph.protectionPolicyBase': '#/components/schemas/microsoft.graph.protectionPolicyBase'
+          '#microsoft.graph.entraProtectionPolicy': '#/components/schemas/microsoft.graph.entraProtectionPolicy'
           '#microsoft.graph.exchangeProtectionPolicy': '#/components/schemas/microsoft.graph.exchangeProtectionPolicy'
           '#microsoft.graph.oneDriveForBusinessProtectionPolicy': '#/components/schemas/microsoft.graph.oneDriveForBusinessProtectionPolicy'
           '#microsoft.graph.sharePointProtectionPolicy': '#/components/schemas/microsoft.graph.sharePointProtectionPolicy'
@@ -2555,6 +2619,9 @@ components:
           '#microsoft.graph.singleValueLegacyExtendedProperty': '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
           '#microsoft.graph.softwareUpdateStatusSummary': '#/components/schemas/microsoft.graph.softwareUpdateStatusSummary'
           '#microsoft.graph.speakerAssignmentSubmission': '#/components/schemas/microsoft.graph.speakerAssignmentSubmission'
+          '#microsoft.graph.spendingPolicy': '#/components/schemas/microsoft.graph.spendingPolicy'
+          '#microsoft.graph.allUsersSpendingPolicy': '#/components/schemas/microsoft.graph.allUsersSpendingPolicy'
+          '#microsoft.graph.selectedGroupsSpendingPolicy': '#/components/schemas/microsoft.graph.selectedGroupsSpendingPolicy'
           '#microsoft.graph.storageQuotaBreakdown': '#/components/schemas/microsoft.graph.storageQuotaBreakdown'
           '#microsoft.graph.serviceStorageQuotaBreakdown': '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
           '#microsoft.graph.storageSettings': '#/components/schemas/microsoft.graph.storageSettings'
@@ -2594,6 +2661,7 @@ components:
           '#microsoft.graph.teamTemplateDefinition': '#/components/schemas/microsoft.graph.teamTemplateDefinition'
           '#microsoft.graph.teamwork': '#/components/schemas/microsoft.graph.teamwork'
           '#microsoft.graph.teamworkBot': '#/components/schemas/microsoft.graph.teamworkBot'
+          '#microsoft.graph.teamworkCustomEmoji': '#/components/schemas/microsoft.graph.teamworkCustomEmoji'
           '#microsoft.graph.teamworkDevice': '#/components/schemas/microsoft.graph.teamworkDevice'
           '#microsoft.graph.teamworkDeviceActivity': '#/components/schemas/microsoft.graph.teamworkDeviceActivity'
           '#microsoft.graph.teamworkDeviceConfiguration': '#/components/schemas/microsoft.graph.teamworkDeviceConfiguration'
@@ -2929,8 +2997,26 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
+          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
+          '#microsoft.graph.identityGovernance.userIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.userIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
+          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.guestLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.guestLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyReport'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+          '#microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule': '#/components/schemas/microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule'
+          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+          '#microsoft.graph.identityGovernance.invitationRedemptionRule': '#/components/schemas/microsoft.graph.identityGovernance.invitationRedemptionRule'
+          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
+          '#microsoft.graph.identityGovernance.lifecyclePolicySubjectReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectReport'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -3060,7 +3146,9 @@ components:
           '#microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement'
           '#microsoft.graph.partner.security.responseTimeSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.responseTimeSecurityRequirement'
           '#microsoft.graph.partner.security.securityScoreHistory': '#/components/schemas/microsoft.graph.partner.security.securityScoreHistory'
+          '#microsoft.graph.partners.billing.azureAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.azureAggregatedUsage'
           '#microsoft.graph.partners.billing.azureUsage': '#/components/schemas/microsoft.graph.partners.billing.azureUsage'
+          '#microsoft.graph.partners.billing.billedAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedAggregatedUsage'
           '#microsoft.graph.partners.billing.billedReconciliation': '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
           '#microsoft.graph.partners.billing.billedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedUsage'
           '#microsoft.graph.partners.billing.billing': '#/components/schemas/microsoft.graph.partners.billing.billing'
@@ -3194,6 +3282,7 @@ components:
           '#microsoft.graph.security.whoisBaseRecord': '#/components/schemas/microsoft.graph.security.whoisBaseRecord'
           '#microsoft.graph.security.whoisHistoryRecord': '#/components/schemas/microsoft.graph.security.whoisHistoryRecord'
           '#microsoft.graph.security.whoisRecord': '#/components/schemas/microsoft.graph.security.whoisRecord'
+          '#microsoft.graph.security.workbook': '#/components/schemas/microsoft.graph.security.workbook'
           '#microsoft.graph.security.zone': '#/components/schemas/microsoft.graph.security.zone'
           '#microsoft.graph.security.caseManagement.caseManagementEntity': '#/components/schemas/microsoft.graph.security.caseManagement.caseManagementEntity'
           '#microsoft.graph.security.caseManagement.activity': '#/components/schemas/microsoft.graph.security.caseManagement.activity'
@@ -3688,7 +3777,7 @@ components:
               nullable: true
             country:
               type: string
-              description: 'The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The ISO 3166-1 alpha-2 location code associated with the user; for example, US or GB. The property name is part of the Microsoft Graph API contract. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -4026,7 +4115,7 @@ components:
               nullable: true
             usageLocation:
               type: string
-              description: 'A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'A two-letter country/region code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries/regions. Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
@@ -4276,6 +4365,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
+              x-ms-navigationProperty: true
+            lifecycle:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.userIdentityLifecycle'
+                - type: object
+                  nullable: true
+              description: Lifecycle information for the user. Read-only.
               x-ms-navigationProperty: true
             mailFolders:
               type: array
@@ -5793,7 +5889,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.'
+              description: 'The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable. App roles and exposed delegated permission scopes (publishedPermissionScopes) share a default limit of 700 permission definitions per service principal, including definitions inherited from the application and definitions added directly to the service principal. Enabled and disabled definitions both count. This limit counts definitions, not app role assignments. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             createdByAppId:
               type: string
               description: The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.
@@ -5885,7 +5981,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionScope'
-              description: 'The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.'
+              description: 'The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0. These scopes and appRoles share a default limit of 700 permission definitions per service principal. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             publisherName:
               type: string
               description: The name of the Microsoft Entra tenant that published the application.
@@ -5999,6 +6095,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
+              x-ms-navigationProperty: true
+            lifecycle:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+                - type: object
+                  nullable: true
+              description: The lifecycle governance state of the agent identity backed by this service principal.
               x-ms-navigationProperty: true
             memberOf:
               type: array
@@ -6794,8 +6897,6 @@ components:
             - '@odata.type'
           type: object
           properties:
-            capabilities:
-              $ref: '#/components/schemas/microsoft.graph.cloudPcPoolCapabilityConfiguration'
             cloudPcConfiguration:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConfiguration'
             createdDateTime:
@@ -7483,6 +7584,12 @@ components:
               description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.'
               format: date-time
               nullable: true
+            cloudLicensing:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.cloudLicensing.deviceCloudLicensing'
+                - type: object
+                  nullable: true
+              description: 'The cloud licensing relationships for this device, including assignments, usage rights, and waiting members.'
             complianceExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -7702,9 +7809,8 @@ components:
               type: string
               description: Notes about the distribution list.
               nullable: true
-            personIdentifier:
+            personId:
               type: string
-              description: The unique identifier of the distribution list in the mailbox. Read-only.
               nullable: true
             members:
               type: array
@@ -8127,7 +8233,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. To learn more about managing this property for Microsoft 365 vs. cloud security groups, see Key differences from Microsoft 365 group labeling.'
             assignedLicenses:
               type: array
               items:
@@ -8161,6 +8267,9 @@ components:
               type: string
               description: 'An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.'
               nullable: true
+            disableNesting:
+              type: boolean
+              description: 'Indicates whether other groups can be added as members of this group. The default value is false. When set to true, other groups can''t be added as members. You can set this property only for security groups that have isAssignableToRole set to false. The property is read-only for Microsoft 365 groups and groups that have isAssignableToRole set to true. Not nullable. Requires $select to retrieve. Supports $filter (eq). The least privileged permission to read or write this property is Group-NestingSupport.ReadWrite.All.'
             displayName:
               type: string
               description: 'The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
@@ -8777,6 +8886,20 @@ components:
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.licenseDetails'
+    microsoft.graph.identityGovernance.userIdentityLifecycle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+        - title: userIdentityLifecycle
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            complianceState:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceState'
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.identityGovernance.userIdentityLifecycle'
+      x-ms-discriminator-value: '#microsoft.graph.identityGovernance.userIdentityLifecycle'
     microsoft.graph.mailFolder:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10121,6 +10244,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               x-ms-navigationProperty: true
+            plans_v2:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plan'
+              description: Read-only. Nullable. The collection of Planner Graph V4 plans associated with the user.
+              x-ms-navigationProperty: true
             recentPlans:
               type: array
               items:
@@ -10139,6 +10268,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
               description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
               x-ms-navigationProperty: true
+            tasks_v2:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.task'
+              description: Read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.
+              x-ms-navigationProperty: true
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.plannerUser'
@@ -10152,11 +10287,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Offline, OutOfOffice, PresenceUnknown.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.'
+              description: 'The base presence information for a user. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Focusing, InACall, InAMeeting, Offline, Presenting, PresenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               anyOf:
@@ -11983,6 +12118,40 @@ components:
               type: string
               default: '#microsoft.graph.homeRealmDiscoveryPolicy'
       x-ms-discriminator-value: '#microsoft.graph.homeRealmDiscoveryPolicy'
+    microsoft.graph.identityGovernance.identityLifecycle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityLifecycle
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            lastAttestationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the identity was last attested. This value can be null if the identity hasn't yet been attested.
+              format: date-time
+              nullable: true
+            complianceIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+              description: The collection of compliance issues that describe why the identity is currently non-compliant with its governing policy.
+              x-ms-navigationProperty: true
+            effectiveGoverningPolicy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+                - type: object
+                  nullable: true
+              description: The highest-priority lifecycle policy that currently governs the identity. Supports $expand.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
+              '#microsoft.graph.identityGovernance.userIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.userIdentityLifecycle'
     microsoft.graph.permissionGrantPreApprovalPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -13290,18 +13459,6 @@ components:
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.cloudClipboardItem'
-    microsoft.graph.cloudPcPoolCapabilityConfiguration:
-      title: cloudPcPoolCapabilityConfiguration
-      required:
-        - '@odata.type'
-      type: object
-      properties:
-        '@odata.type':
-          type: string
-      discriminator:
-        propertyName: '@odata.type'
-        mapping:
-          '#microsoft.graph.cloudPcAgentPoolCapabilityConfiguration': '#/components/schemas/microsoft.graph.cloudPcAgentPoolCapabilityConfiguration'
     microsoft.graph.cloudPcConfiguration:
       title: cloudPcConfiguration
       required:
@@ -14042,6 +14199,29 @@ components:
           description: For internal use only.
           format: int32
           nullable: true
+        '@odata.type':
+          type: string
+    microsoft.graph.cloudLicensing.deviceCloudLicensing:
+      title: deviceCloudLicensing
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        assignments:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudLicensing.assignment'
+          x-ms-navigationProperty: true
+        usageRights:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudLicensing.usageRight'
+          x-ms-navigationProperty: true
+        waitingMembers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.cloudLicensing.waitingMember'
+          x-ms-navigationProperty: true
         '@odata.type':
           type: string
     microsoft.graph.command:
@@ -15958,6 +16138,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerPlans owned by the group.
               x-ms-navigationProperty: true
+            plans_v2:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plan'
+              description: Read-only. Nullable. The collection of Planner Graph V4 plans owned by the group.
+              x-ms-navigationProperty: true
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.plannerGroup'
@@ -16637,6 +16823,15 @@ components:
           nullable: true
         '@odata.type':
           type: string
+    microsoft.graph.identityGovernance.complianceState:
+      title: complianceState
+      enum:
+        - compliant
+        - warning
+        - warningNotify
+        - nonCompliant
+        - unknownFutureValue
+      type: string
     microsoft.graph.messageRule:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -19344,6 +19539,9 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingNote'
+            recapUrl:
+              type: string
+              nullable: true
             viewpoint:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.callAiInsightViewPoint'
@@ -20062,9 +20260,22 @@ components:
           discriminator:
             propertyName: '@odata.type'
             mapping:
+              '#microsoft.graph.bucket': '#/components/schemas/microsoft.graph.bucket'
+              '#microsoft.graph.categoryDefinition': '#/components/schemas/microsoft.graph.categoryDefinition'
+              '#microsoft.graph.checklistItemV4': '#/components/schemas/microsoft.graph.checklistItemV4'
+              '#microsoft.graph.contentLink': '#/components/schemas/microsoft.graph.contentLink'
+              '#microsoft.graph.customChoiceOption': '#/components/schemas/microsoft.graph.customChoiceOption'
+              '#microsoft.graph.customFieldDefinition': '#/components/schemas/microsoft.graph.customFieldDefinition'
+              '#microsoft.graph.customFieldValue': '#/components/schemas/microsoft.graph.customFieldValue'
+              '#microsoft.graph.dependency': '#/components/schemas/microsoft.graph.dependency'
+              '#microsoft.graph.goal': '#/components/schemas/microsoft.graph.goal'
+              '#microsoft.graph.historyItem': '#/components/schemas/microsoft.graph.historyItem'
+              '#microsoft.graph.plan': '#/components/schemas/microsoft.graph.plan'
+              '#microsoft.graph.planContextLink': '#/components/schemas/microsoft.graph.planContextLink'
               '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
               '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
               '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+              '#microsoft.graph.plannerChatMessage': '#/components/schemas/microsoft.graph.plannerChatMessage'
               '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
               '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
               '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
@@ -20075,6 +20286,8 @@ components:
               '#microsoft.graph.businessScenarioTask': '#/components/schemas/microsoft.graph.businessScenarioTask'
               '#microsoft.graph.plannerTaskDetails': '#/components/schemas/microsoft.graph.plannerTaskDetails'
               '#microsoft.graph.plannerUser': '#/components/schemas/microsoft.graph.plannerUser'
+              '#microsoft.graph.task': '#/components/schemas/microsoft.graph.task'
+              '#microsoft.graph.userAssignment': '#/components/schemas/microsoft.graph.userAssignment'
     microsoft.graph.plannerFavoritePlanReferenceCollection:
       title: plannerFavoritePlanReferenceCollection
       required:
@@ -20413,6 +20626,330 @@ components:
             propertyName: '@odata.type'
             mapping:
               '#microsoft.graph.businessScenarioTask': '#/components/schemas/microsoft.graph.businessScenarioTask'
+    microsoft.graph.plan:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plan
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            archivalInfo:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
+                - type: object
+                  nullable: true
+              description: 'Information about whether the entity is archived, and when it was archived.'
+            calendar:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.planCalendar'
+                - type: object
+                  nullable: true
+              description: Working-time calendar settings for the plan.
+            capabilities:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.planCapability'
+                - type: object
+                  nullable: true
+              description: 'Server-computed, read-only capability flags indicating which optional features are enabled for the entity.'
+              readOnly: true
+            container:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.planContainer'
+                - type: object
+                  nullable: true
+              description: 'Identifies the group, Teams channel, or user that owns the plan. Required, and immutable after creation.'
+            contentSensitivityLabelAssignment:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.contentSensitivityLabelAssignment'
+                - type: object
+                  nullable: true
+              description: The sensitivity label assigned to content associated with the plan.
+            creationInfo:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.creationInfo'
+                - type: object
+                  nullable: true
+              description: Read-only creation metadata for the entity.
+              readOnly: true
+            displayName:
+              type: string
+              description: Title of the plan.
+            duration:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Duration of the plan, in days.'
+              format: int32
+              nullable: true
+            extensions:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.extensionFieldCollection'
+                - type: object
+                  nullable: true
+              description: Custom extension field values set on the entity. Supports $select.
+            hasChat:
+              type: boolean
+              description: Indicates whether the plan has an associated chat.
+              nullable: true
+            lastModifiedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) who last modified the entity. Read-only.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only.
+              format: date-time
+              nullable: true
+            planView:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.planView'
+                - type: object
+                  nullable: true
+              description: 'Plan-scoped view settings, including category definitions.'
+            sharedWithContainers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerSharedWithContainer'
+              description: 'The list of containers (for example, additional groups or channels) that the plan is shared with.'
+            buckets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bucket'
+              description: The collection of buckets in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            contexts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.planContextLink'
+              description: The collection of context links describing where the plan is surfaced. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            customFieldDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.customFieldDefinition'
+              description: The collection of custom field definitions in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            dependencies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.dependency'
+              description: The collection of dependencies between items in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            goals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.goal'
+              description: The collection of goals in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            historyItems:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.historyItem'
+              description: The collection of history (audit) items for the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            links:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contentLink'
+              description: The collection of content links attached to the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.task'
+              description: The collection of tasks in the plan. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.plan'
+    microsoft.graph.task:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: task
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            archivalInfo:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
+                - type: object
+                  nullable: true
+              description: 'Information about whether the entity is archived, and when it was archived.'
+            bucketId:
+              type: string
+              description: ID of the bucket that the task belongs to.
+              nullable: true
+            capabilities:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.taskCapability'
+                - type: object
+                  nullable: true
+              description: 'Server-computed, read-only capability flags indicating which optional features are enabled for the entity.'
+              readOnly: true
+            completedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user who marked the task complete.
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the task was completed.
+              format: date-time
+              nullable: true
+            creationInfo:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.creationInfo'
+                - type: object
+                  nullable: true
+              description: Read-only creation metadata for the entity.
+              readOnly: true
+            displayName:
+              type: string
+              description: Title of the task.
+            dueDateTime:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.dateWithOptionalTime'
+                - type: object
+                  nullable: true
+              description: 'Date and, optionally, time the task is due.'
+            extensions:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.extensionFieldCollection'
+                - type: object
+                  nullable: true
+              description: Custom extension field values set on the entity. Supports $select.
+            finishDateTime:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.dateWithOptionalTime'
+                - type: object
+                  nullable: true
+              description: 'Date and, optionally, time the task was finished.'
+            goalIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: IDs of the goals that the task is associated with.
+            hasChat:
+              type: boolean
+              description: Indicates whether the task has an associated chat.
+              nullable: true
+            hasChildren:
+              type: boolean
+              description: Indicates whether the task has subtasks.
+              nullable: true
+            isCritical:
+              type: boolean
+              description: 'Indicates whether the task is on the critical path, as computed from its dependencies.'
+              nullable: true
+            lastModifiedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) who last modified the entity. Read-only.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only.
+              format: date-time
+              nullable: true
+            notes:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.itemBody'
+                - type: object
+                  nullable: true
+              description: Additional details or notes about the task.
+            parentTaskId:
+              type: string
+              description: 'ID of the parent task, if this task is a subtask.'
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'Percentage of the task''s completion, ranging from 0 to 100.'
+              format: int32
+            personalView:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.taskPersonalView'
+                - type: object
+                  nullable: true
+              description: 'Per-user personal view settings for the task, such as My Day membership.'
+            planId:
+              type: string
+              description: ID of the plan that contains the task. Immutable after creation.
+              nullable: true
+            planView:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.taskPlanView'
+                - type: object
+                  nullable: true
+              description: 'Task view settings scoped to the plan, such as applied category IDs.'
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: Priority of the task. Supported values range from 0 (urgent) to 10 (low).
+              format: int32
+            recurrence:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.plannerTaskRecurrence'
+                - type: object
+                  nullable: true
+              description: 'Recurrence pattern for the task, if it repeats.'
+            startDateTime:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.dateWithOptionalTime'
+                - type: object
+                  nullable: true
+              description: 'Date and, optionally, time the task is scheduled to start.'
+            status:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.plannerTaskStatus'
+                - type: object
+                  nullable: true
+              description: 'Indicates progress on the task. The possible values are: notStarted, inProgress, completed, blocked, unknownFutureValue.'
+            checklist:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.checklistItemV4'
+              description: The collection of checklist items on the task. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            customFieldValues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.customFieldValue'
+              description: The collection of custom field values set on the task. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            links:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contentLink'
+              description: The collection of content links attached to the task. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            messages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerChatMessage'
+              description: The collection of chat messages associated with the task. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            userAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userAssignment'
+              description: The collection of user assignments on the task. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.task'
     microsoft.graph.outOfOfficeSettings:
       title: outOfOfficeSettings
       required:
@@ -21218,6 +21755,7 @@ components:
       discriminator:
         propertyName: '@odata.type'
         mapping:
+          '#microsoft.graph.applicationIdentity': '#/components/schemas/microsoft.graph.applicationIdentity'
           '#microsoft.graph.azureCommunicationServicesUserIdentity': '#/components/schemas/microsoft.graph.azureCommunicationServicesUserIdentity'
           '#microsoft.graph.communicationsApplicationIdentity': '#/components/schemas/microsoft.graph.communicationsApplicationIdentity'
           '#microsoft.graph.communicationsApplicationInstanceIdentity': '#/components/schemas/microsoft.graph.communicationsApplicationInstanceIdentity'
@@ -22363,6 +22901,130 @@ components:
           description: Indicates the configured expression. Required.
         '@odata.type':
           type: string
+    microsoft.graph.identityGovernance.complianceIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: complianceIssue
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            description:
+              type: string
+              description: A human-readable description of the compliance issue.
+            governingPolicyReferenceId:
+              type: string
+              description: The identifier of the lifecycle policy that generated the compliance issue.
+            issueCode:
+              type: string
+              description: A code that identifies the type of compliance issue.
+            ruleType:
+              type: string
+              description: 'The type of rule that generated the compliance issue, so callers can identify which rule caused non-compliance.'
+              nullable: true
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+    microsoft.graph.identityGovernance.lifecyclePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicy
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the policy was created.
+              format: date-time
+            description:
+              type: string
+              description: The description of the policy.
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the policy.
+            enforcementAction:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction'
+            gracePeriodInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The number of days after an identity becomes non-compliant before the enforcement action is applied.
+              format: int32
+              nullable: true
+            isEnabled:
+              type: boolean
+              description: Indicates whether the policy is enabled and actively evaluated.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the policy was last modified.
+              format: date-time
+            notificationSchedule:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings'
+                - type: object
+                  nullable: true
+              description: 'The notification settings for the policy, including the offsets, in days after non-compliance, at which notifications are sent.'
+            policySource:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySource'
+            scope:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.subjectSet'
+                - type: object
+                  nullable: true
+              description: 'The set of subjects that the policy applies to. For example, use an allExcludingGroupsSubjectSet to exclude specific groups from evaluation.'
+            versionNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'The version number of the policy, which increments each time the policy is updated.'
+              format: int32
+            createdBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                - type: object
+                  nullable: true
+              description: The user or service principal that created the policy.
+              x-ms-navigationProperty: true
+            lastModifiedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                - type: object
+                  nullable: true
+              description: The user or service principal that last modified the policy.
+              x-ms-navigationProperty: true
+            report:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyReport'
+                - type: object
+                  nullable: true
+              description: The latest processing report for the policy.
+              x-ms-navigationProperty: true
+            rules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+              description: The collection of inline compliance rules evaluated for the policy. Rules are combined with AND logic. A maximum of 10 rules are allowed per policy.
+              x-ms-navigationProperty: true
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+              description: The collection of previous versions of the policy.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
+              '#microsoft.graph.identityGovernance.guestLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.guestLifecyclePolicy'
     microsoft.graph.preApprovalDetail:
       title: preApprovalDetail
       required:
@@ -23231,6 +23893,10 @@ components:
         reactionContentUrl:
           type: string
           description: The hosted content URL for the custom reaction type.
+          nullable: true
+        reactionId:
+          type: string
+          description: The service-issued identifier for a custom emoji reaction. The identifier is scoped to the tenant.
           nullable: true
         reactionType:
           type: string
@@ -26277,6 +26943,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: 'A collection of plannerPlan objects owned by the Teams channel. Currently, only shared channels are supported. Read-only. Nullable.'
               x-ms-navigationProperty: true
+            plans_v2:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plan'
+              description: 'Read-only. Nullable. The collection of Planner Graph V4 plans owned by the Teams channel. Currently, only shared channels are supported.'
+              x-ms-navigationProperty: true
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.teamsChannelPlanner'
@@ -29095,9 +29767,25 @@ components:
         - '@odata.type'
       type: object
       properties:
+        isArchived:
+          type: boolean
+          description: Read-only. Indicates whether the entity is archived.
+          nullable: true
         justification:
           type: string
           description: Read-only. Reason why the entity was archived or unarchived.
+          nullable: true
+        modifiedBy:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.identitySet'
+            - type: object
+              nullable: true
+          description: Read-only. Identity of the user who archived or unarchived the entity.
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Read-only. Date and time at which the entity's archive status changed.
+          format: date-time
           nullable: true
         statusChangedBy:
           anyOf:
@@ -29618,6 +30306,831 @@ components:
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.plannerProgressTaskBoardTaskFormat'
+    microsoft.graph.planCalendar:
+      title: planCalendar
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        timeZone:
+          type: string
+          description: Time zone the plan's calendar is expressed in.
+          nullable: true
+        workDayDefaults:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.workDayDefaults'
+            - type: object
+              nullable: true
+          description: Default working-day start and end times for the plan.
+        '@odata.type':
+          type: string
+    microsoft.graph.planCapability:
+      title: planCapability
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        calendar:
+          type: boolean
+          description: Indicates whether calendar features are enabled for the plan.
+        customFields:
+          type: boolean
+          description: Indicates whether custom fields are enabled for the plan.
+        extensions:
+          type: boolean
+          description: Indicates whether custom extension fields are enabled for the plan.
+        goals:
+          type: boolean
+          description: Indicates whether goals are enabled for the plan.
+        undo:
+          type: boolean
+          description: Indicates whether undo is enabled for the plan.
+        '@odata.type':
+          type: string
+    microsoft.graph.planContainer:
+      title: planContainer
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        containerId:
+          type: string
+          description: 'ID of the container (group ID, user ID, or Teams channel ID).'
+          nullable: true
+        containerType:
+          $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
+        '@odata.type':
+          type: string
+    microsoft.graph.creationInfo:
+      title: creationInfo
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        createdBy:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.identitySet'
+            - type: object
+              nullable: true
+          description: Identity of the user (or application) that created the entity.
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Date and time the entity was created.
+          format: date-time
+          nullable: true
+        externalId:
+          type: string
+          description: 'Identifier of the entity in an external system, if it originated outside Planner.'
+          nullable: true
+        externalUrl:
+          type: string
+          description: 'URL of the entity in the external system, if applicable.'
+          nullable: true
+        externalVersion:
+          type: string
+          description: 'Version of the entity in the external system, if applicable.'
+          nullable: true
+        scenarioId:
+          type: string
+          description: Identifier of the scenario or workflow that created the entity.
+          nullable: true
+        scope:
+          type: string
+          description: Scope the entity was created in.
+          nullable: true
+        '@odata.type':
+          type: string
+    microsoft.graph.extensionFieldCollection:
+      title: extensionFieldCollection
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        '@odata.type':
+          type: string
+    microsoft.graph.planView:
+      title: planView
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.categoryDefinition'
+          x-ms-navigationProperty: true
+        '@odata.type':
+          type: string
+    microsoft.graph.bucket:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: bucket
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            capabilities:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.bucketCapability'
+                - type: object
+                  nullable: true
+              description: 'Server-computed, read-only capability flags indicating which optional features are enabled for the entity.'
+              readOnly: true
+            creationInfo:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.creationInfo'
+                - type: object
+                  nullable: true
+              description: Read-only creation metadata for the entity.
+              readOnly: true
+            displayName:
+              type: string
+              description: Title of the bucket.
+            extensions:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.extensionFieldCollection'
+                - type: object
+                  nullable: true
+              description: Custom extension field values set on the entity. Supports $select.
+            lastModifiedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) who last modified the entity. Read-only.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only.
+              format: date-time
+              nullable: true
+            planId:
+              type: string
+              description: ID of the plan that contains the bucket. Immutable after creation.
+              nullable: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.bucket'
+    microsoft.graph.planContextLink:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: planContextLink
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            associationType:
+              type: string
+              description: Describes how the plan is associated with the surface.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the context link was created. Read-only.
+              format: date-time
+              nullable: true
+              readOnly: true
+            customLinkText:
+              type: string
+              description: 'Custom text used to render the link, if provided.'
+              nullable: true
+            displayAs:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.plannerPlanContextType'
+                - type: object
+                  nullable: true
+              description: 'How the context link should be displayed. The possible values are: teamsTab, sharePointPage, meetingNotes, other, unknownFutureValue, loopPage, project. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: loopPage , project.'
+            displayNameSegments:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Display name segments used to render where the plan is surfaced.
+            isActive:
+              type: boolean
+              description: Indicates whether the context link is currently active.
+              nullable: true
+            isCreation:
+              type: boolean
+              description: Indicates whether this context link represents the original creation surface for the plan.
+              nullable: true
+            key:
+              type: string
+              description: Identifier for the context the plan is surfaced in.
+              nullable: true
+            ownerAppId:
+              type: string
+              description: Application ID of the app that owns the surface the plan is linked from.
+              nullable: true
+            webUrl:
+              type: string
+              description: URL of the surface where the plan is displayed.
+              nullable: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.planContextLink'
+    microsoft.graph.customFieldDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: customFieldDefinition
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            archivalInfo:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
+                - type: object
+                  nullable: true
+              description: 'Information about whether the entity is archived, and when it was archived.'
+            createdBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) who created the entity. Read-only.
+              readOnly: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the entity was created. The value is represented in ISO 8601 format and is always in UTC time. Read-only.
+              format: date-time
+              nullable: true
+              readOnly: true
+            deletedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: 'Identity of the user who deleted the custom field definition, if it was deleted.'
+              readOnly: true
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time the custom field definition was deleted, if applicable.'
+              format: date-time
+              nullable: true
+              readOnly: true
+            displayName:
+              type: string
+              description: Name of the custom field.
+            lastModifiedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) who last modified the entity. Read-only.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only.
+              format: date-time
+              nullable: true
+            planId:
+              type: string
+              description: 'ID of the plan the custom field is defined on. Required, and immutable after creation.'
+            rollupType:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.customFieldRollupType'
+                - type: object
+                  nullable: true
+              description: 'How values of this custom field are rolled up across tasks. The possible values are: noRollup, max, min, sum, average, unknownFutureValue.'
+            valueType:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.customFieldValueType'
+                - type: object
+                  nullable: true
+              description: 'Data type of the custom field''s values.. The possible values are: text, date, utcDateTime, number, decimal, flag, singleChoiceText, multipleChoiceText, unknownFutureValue.'
+            choiceOptions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.customChoiceOption'
+              description: The collection of selectable choice options for a single-choice or multiple-choice custom field. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.customFieldDefinition'
+    microsoft.graph.dependency:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: dependency
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            archivalInfo:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
+                - type: object
+                  nullable: true
+              description: 'Information about whether the entity is archived, and when it was archived.'
+            constraint:
+              $ref: '#/components/schemas/microsoft.graph.dependencyType'
+            creationInfo:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.creationInfo'
+                - type: object
+                  nullable: true
+              description: Read-only creation metadata for the entity.
+              readOnly: true
+            extensions:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.extensionFieldCollection'
+                - type: object
+                  nullable: true
+              description: Custom extension field values set on the entity. Supports $select.
+            lastModifiedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) who last modified the entity. Read-only.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only.
+              format: date-time
+              nullable: true
+            sourceItemId:
+              type: string
+              description: ID of the source item in the dependency.
+            targetItemId:
+              type: string
+              description: ID of the target item in the dependency.
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.dependency'
+    microsoft.graph.goal:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: goal
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            archivalInfo:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.plannerArchivalInfo'
+                - type: object
+                  nullable: true
+              description: 'Information about whether the entity is archived, and when it was archived.'
+            capabilities:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.goalCapability'
+                - type: object
+                  nullable: true
+              description: 'Server-computed, read-only capability flags indicating which optional features are enabled for the entity.'
+              readOnly: true
+            createdBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) who created the entity. Read-only.
+              readOnly: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the entity was created. The value is represented in ISO 8601 format and is always in UTC time. Read-only.
+              format: date-time
+              nullable: true
+              readOnly: true
+            displayName:
+              type: string
+              description: Title of the goal.
+            extensions:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.extensionFieldCollection'
+                - type: object
+                  nullable: true
+              description: Custom extension field values set on the entity. Supports $select.
+            finishDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Date the goal is targeted to finish.
+              format: date
+              nullable: true
+            lastModifiedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) who last modified the entity. Read-only.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only.
+              format: date-time
+              nullable: true
+            notes:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.itemBody'
+                - type: object
+                  nullable: true
+              description: Additional details or notes about the goal.
+            planId:
+              type: string
+              description: 'ID of the plan that contains the goal. Required, and immutable after creation.'
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: Priority of the goal.
+              format: int32
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              description: Date the goal starts.
+              format: date
+              nullable: true
+            status:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.plannerGoalStatus'
+                - type: object
+                  nullable: true
+              description: 'Progress status of the goal. The possible values are: notStarted, onTrack, behind, atRisk, closed, unknownFutureValue.'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.task'
+              description: The collection of tasks associated with the goal. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.goal'
+    microsoft.graph.historyItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: historyItem
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            actor:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) that performed the change.
+            entityId:
+              type: string
+              description: ID of the entity the history item describes.
+              nullable: true
+            entityType:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.historyEntityType'
+                - type: object
+                  nullable: true
+              description: 'Type of the entity the history item describes. The possible values are: task, unknownFutureValue.'
+            eventType:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.historyEventType'
+                - type: object
+                  nullable: true
+              description: 'Type of the change event that occurred. The possible values are: created, updated, deleted, undeleted, moved, unknownFutureValue.'
+            newData:
+              type: string
+              description: Serialized representation of the entity state after the change.
+              nullable: true
+            occurredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the change occurred. Read-only.
+              format: date-time
+              nullable: true
+              readOnly: true
+            oldData:
+              type: string
+              description: Serialized representation of the entity state before the change.
+              nullable: true
+            planId:
+              type: string
+              description: ID of the plan the change occurred in.
+              nullable: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.historyItem'
+    microsoft.graph.contentLink:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: contentLink
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            capabilities:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.contentLinkCapability'
+                - type: object
+                  nullable: true
+              description: 'Server-computed, read-only capability flags indicating which optional features are enabled for the entity.'
+              readOnly: true
+            createdBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) who created the entity. Read-only.
+              readOnly: true
+            displayName:
+              type: string
+              description: Display label for the link.
+              nullable: true
+            extensions:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.extensionFieldCollection'
+                - type: object
+                  nullable: true
+              description: Custom extension field values set on the entity. Supports $select.
+            lastModifiedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) who last modified the entity. Read-only.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only.
+              format: date-time
+              nullable: true
+            linkType:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.contentLinkType'
+                - type: object
+                  nullable: true
+              description: 'Type of content the link points to. The possible values are: documentReference, webReference, unknownFutureValue.'
+            webUrl:
+              type: string
+              description: URL the link points to.
+              nullable: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.contentLink'
+    microsoft.graph.taskCapability:
+      title: taskCapability
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        assignedPriorityForTaskPersonalView:
+          type: boolean
+          description: Indicates whether assigned priority is shown in the task's personal view.
+        dependencies:
+          type: boolean
+          description: Indicates whether dependencies are enabled for the task.
+        history:
+          type: boolean
+          description: Indicates whether history tracking is enabled for the task.
+        '@odata.type':
+          type: string
+    microsoft.graph.dateWithOptionalTime:
+      title: dateWithOptionalTime
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        date:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: The date component of the value.
+          format: date
+          nullable: true
+        isTimeSpecified:
+          type: boolean
+          description: Indicates whether a specific time (not just a date) was provided.
+        time:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          description: The optional time-of-day component of the value.
+          format: time
+          nullable: true
+        timeZone:
+          type: string
+          description: 'Time zone the time value is expressed in, if time is set.'
+          nullable: true
+        '@odata.type':
+          type: string
+    microsoft.graph.taskPersonalView:
+      title: taskPersonalView
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        isOnMyDay:
+          type: boolean
+          description: Indicates whether the task is included in the user's My Day view.
+        '@odata.type':
+          type: string
+    microsoft.graph.taskPlanView:
+      title: taskPlanView
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        appliedCategoryIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: IDs of the categories applied to the task within this plan.
+        '@odata.type':
+          type: string
+    microsoft.graph.plannerTaskStatus:
+      title: plannerTaskStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - blocked
+        - unknownFutureValue
+      type: string
+    microsoft.graph.checklistItemV4:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: checklistItemV4
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            capabilities:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.checklistCapability'
+                - type: object
+                  nullable: true
+              description: 'Server-computed, read-only capability flags indicating which optional features are enabled for the entity.'
+              readOnly: true
+            completedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user who checked the checklist item.
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the checklist item was checked.
+              format: date-time
+              nullable: true
+            createdBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) who created the entity. Read-only.
+              readOnly: true
+            displayName:
+              type: string
+              description: Title of the checklist item.
+              nullable: true
+            extensions:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.extensionFieldCollection'
+                - type: object
+                  nullable: true
+              description: Custom extension field values set on the entity. Supports $select.
+            isChecked:
+              type: boolean
+              description: Indicates whether the checklist item is checked (completed).
+              nullable: true
+            lastModifiedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) who last modified the entity. Read-only.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the entity was last modified. The value is represented in ISO 8601 format and is always in UTC time. Read-only.
+              format: date-time
+              nullable: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.checklistItemV4'
+    microsoft.graph.customFieldValue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: customFieldValue
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            customFieldDefinitionId:
+              type: string
+              description: ID of the customFieldDefinition this value is for. Immutable after creation.
+              nullable: true
+            value:
+              type: string
+              description: 'The value of the custom field, formatted according to the field''s valueType.'
+              nullable: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.customFieldValue'
+    microsoft.graph.plannerChatMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerChatMessage
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            content:
+              type: string
+              description: Body content of the chat message.
+              nullable: true
+            createdBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) who created the entity. Read-only.
+              readOnly: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the entity was created. The value is represented in ISO 8601 format and is always in UTC time. Read-only.
+              format: date-time
+              nullable: true
+              readOnly: true
+            deletedTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the message was deleted.
+              format: date-time
+              nullable: true
+            editedTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the message was last edited.
+              format: date-time
+              nullable: true
+            isDeleted:
+              type: boolean
+              description: Indicates whether the message was deleted.
+              nullable: true
+            isEdited:
+              type: boolean
+              description: Indicates whether the message was edited after it was sent.
+              nullable: true
+            messageType:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.plannerChatMessageType'
+                - type: object
+                  nullable: true
+              description: 'Format of the message content. The possible values are: richTextHtml, plainText, unknownFutureValue.'
+            parentEntityId:
+              type: string
+              description: ID of the task or plan the message belongs to.
+              nullable: true
+            properties:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.chatMessageProperties'
+                - type: object
+                  nullable: true
+              description: '@mentions and reactions associated with the message.'
+            threadType:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.plannerChatThreadType'
+                - type: object
+                  nullable: true
+              description: 'Indicates whether the message belongs to a task-level or plan-level conversation. The possible values are: task, plan, unknownFutureValue.'
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.plannerChatMessage'
+    microsoft.graph.userAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: userAssignment
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            assignedBy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identitySet'
+                - type: object
+                  nullable: true
+              description: Identity of the user (or application) that made the assignment.
+            assignedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time the assignment was made.
+              format: date-time
+              nullable: true
+            capabilities:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.userAssignmentCapability'
+                - type: object
+                  nullable: true
+              description: 'Server-computed, read-only capability flags indicating which optional features are enabled for the entity.'
+              readOnly: true
+            user:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.userAssignment'
     microsoft.graph.workLocationSource:
       title: workLocationSource
       enum:
@@ -29880,6 +31393,10 @@ components:
             - type: object
               nullable: true
           description: 'The possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.'
+        relationshipLabel:
+          type: string
+          description: 'Information (free-text) describing the relationship between the user and the related person. This property provides additional context beyond the predefined relationship values and can be used by clients, including AI-powered experiences, to better understand and reason about the relationship.'
+          nullable: true
         userId:
           type: string
           description: The user's directory object ID (Microsoft Entra ID or CID).
@@ -31600,6 +33117,119 @@ components:
           description: An ordered list of transformations that are applied in sequence.
         '@odata.type':
           type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction:
+      title: lifecyclePolicyEnforcementAction
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        '@odata.type':
+          type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.identityGovernance.deleteOnlyEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.deleteOnlyEnforcementAction'
+          '#microsoft.graph.identityGovernance.disableOnlyEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.disableOnlyEnforcementAction'
+          '#microsoft.graph.identityGovernance.disableThenDeleteEnforcementAction': '#/components/schemas/microsoft.graph.identityGovernance.disableThenDeleteEnforcementAction'
+    microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings:
+      title: lifecyclePolicyNotificationSettings
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        additionalFallbackRecipients:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The email addresses used when no targeted notification recipient has a valid email address. These addresses aren't copied on every notification or used alongside a valid targeted recipient.
+        offsetsAfterNonComplianceInDays:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: number
+            format: int32
+            nullable: true
+          description: 'The offsets, in days after an identity becomes non-compliant, at which notifications are sent.'
+        '@odata.type':
+          type: string
+    microsoft.graph.identityGovernance.lifecyclePolicySource:
+      title: lifecyclePolicySource
+      enum:
+        - userCreated
+        - systemDefault
+        - unknownFutureValue
+      type: string
+    microsoft.graph.subjectSet:
+      title: subjectSet
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        '@odata.type':
+          type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.identityGovernance.allExcludingAgentBuilderPlatformsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.allExcludingAgentBuilderPlatformsSubjectSet'
+          '#microsoft.graph.identityGovernance.allExcludingGroupsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.allExcludingGroupsSubjectSet'
+          '#microsoft.graph.identityGovernance.allExcludingSpecificObjectsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.allExcludingSpecificObjectsSubjectSet'
+          '#microsoft.graph.identityGovernance.groupBasedSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.groupBasedSubjectSet'
+          '#microsoft.graph.identityGovernance.ruleBasedSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.ruleBasedSubjectSet'
+          '#microsoft.graph.identityGovernance.selectedObjectsSubjectSet': '#/components/schemas/microsoft.graph.identityGovernance.selectedObjectsSubjectSet'
+    microsoft.graph.identityGovernance.lifecyclePolicyReport:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicyReport
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            policyVersion:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The version of the lifecycle policy represented by the report.
+              format: int32
+            scopeProcessing:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessing'
+            subjectsInScopeCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The number of subjects currently in scope for the policy.
+              format: int32
+            subjects:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectReport'
+              description: The processing results for subjects included in the report.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.identityGovernance.lifecyclePolicyReport'
+    microsoft.graph.identityGovernance.lifecyclePolicyRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicyRule
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+              description: Indicates whether the rule is enabled and evaluated as part of its policy.
+            '@odata.type':
+              type: string
+          discriminator:
+            propertyName: '@odata.type'
+            mapping:
+              '#microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule': '#/components/schemas/microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule'
+              '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+              '#microsoft.graph.identityGovernance.invitationRedemptionRule': '#/components/schemas/microsoft.graph.identityGovernance.invitationRedemptionRule'
+              '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+              '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
     microsoft.graph.preApprovedPermissions:
       title: preApprovedPermissions
       required:
@@ -32280,7 +33910,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.processContentMetadataBase'
-          description: 'A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses, file metadata for files, and content activity metadata for enforcement result status entries. Required.'
+          description: 'A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. For the ContentActivity API only, use content activity metadata for DLP enforcement results or evaluation incomplete activity metadata when policy evaluation couldn''t be completed. The ContentActivity-specific types aren''t supported by the processContent or processContentAsync APIs. Required.'
         contextMetadata:
           anyOf:
             - $ref: '#/components/schemas/microsoft.graph.contextMetadata'
@@ -34687,6 +36317,9 @@ components:
         - teamsChannel
         - onlineMeeting
         - plannerTask
+        - officeDocument
+        - meeting
+        - dataverseProject
       type: string
     microsoft.graph.sensitivityLabelAssignmentMethod:
       title: sensitivityLabelAssignmentMethod
@@ -35065,6 +36698,208 @@ components:
           type: string
           description: 'The type of reaction, such as like, heart, or emoji characters.'
           nullable: true
+        '@odata.type':
+          type: string
+    microsoft.graph.workDayDefaults:
+      title: workDayDefaults
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        endTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          description: Default end time of the working day.
+          format: time
+          nullable: true
+        startTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          description: Default start time of the working day.
+          format: time
+          nullable: true
+        '@odata.type':
+          type: string
+    microsoft.graph.categoryDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: categoryDefinition
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            capabilities:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.categoryDefinitionCapability'
+                - type: object
+                  nullable: true
+              description: 'Server-computed, read-only capability flags indicating which optional features are enabled for the entity.'
+              readOnly: true
+            displayName:
+              type: string
+              description: Name of the category.
+            extensions:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.extensionFieldCollection'
+                - type: object
+                  nullable: true
+              description: Custom extension field values set on the entity. Supports $select.
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.categoryDefinition'
+    microsoft.graph.bucketCapability:
+      title: bucketCapability
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        extensions:
+          type: boolean
+          description: Indicates whether custom extension fields are enabled for the bucket.
+        '@odata.type':
+          type: string
+    microsoft.graph.plannerPlanContextType:
+      title: plannerPlanContextType
+      enum:
+        - teamsTab
+        - sharePointPage
+        - meetingNotes
+        - other
+        - unknownFutureValue
+        - loopPage
+        - project
+      type: string
+    microsoft.graph.customFieldRollupType:
+      title: customFieldRollupType
+      enum:
+        - noRollup
+        - max
+        - min
+        - sum
+        - average
+        - unknownFutureValue
+      type: string
+    microsoft.graph.customFieldValueType:
+      title: customFieldValueType
+      enum:
+        - text
+        - date
+        - utcDateTime
+        - number
+        - decimal
+        - flag
+        - singleChoiceText
+        - multipleChoiceText
+        - unknownFutureValue
+      type: string
+    microsoft.graph.customChoiceOption:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: customChoiceOption
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Display text of the choice option.
+              nullable: true
+            extensions:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.extensionFieldCollection'
+                - type: object
+                  nullable: true
+              description: Custom extension field values set on the entity. Supports $select.
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.customChoiceOption'
+    microsoft.graph.dependencyType:
+      title: dependencyType
+      enum:
+        - sourceFinishDrivesTargetStart
+        - sourceStartDrivesTargetStart
+        - sourceFinishDrivesTargetFinish
+        - targetStartDrivesSourceFinish
+        - unknownFutureValue
+      type: string
+    microsoft.graph.goalCapability:
+      title: goalCapability
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        '@odata.type':
+          type: string
+    microsoft.graph.contentLinkCapability:
+      title: contentLinkCapability
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        extensions:
+          type: boolean
+          description: Indicates whether custom extension fields are enabled for the content link.
+        '@odata.type':
+          type: string
+    microsoft.graph.contentLinkType:
+      title: contentLinkType
+      enum:
+        - documentReference
+        - webReference
+        - unknownFutureValue
+      type: string
+    microsoft.graph.checklistCapability:
+      title: checklistCapability
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        extensions:
+          type: boolean
+          description: Indicates whether custom extension fields are enabled for the checklist item.
+        '@odata.type':
+          type: string
+    microsoft.graph.plannerChatMessageType:
+      title: plannerChatMessageType
+      enum:
+        - richTextHtml
+        - plainText
+        - unknownFutureValue
+      type: string
+    microsoft.graph.chatMessageProperties:
+      title: chatMessageProperties
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        mentions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.chatMention'
+          description: Collection of @mentions in the message.
+        reactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.chatReaction'
+          description: Collection of reactions applied to the message.
+        '@odata.type':
+          type: string
+    microsoft.graph.plannerChatThreadType:
+      title: plannerChatThreadType
+      enum:
+        - task
+        - plan
+        - unknownFutureValue
+      type: string
+    microsoft.graph.userAssignmentCapability:
+      title: userAssignmentCapability
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        extensions:
+          type: boolean
+          description: Indicates whether custom extension fields are enabled for the user assignment.
         '@odata.type':
           type: string
     microsoft.graph.allowedAudiences:
@@ -37196,6 +39031,59 @@ components:
           '#microsoft.graph.toLowercaseTransformation': '#/components/schemas/microsoft.graph.toLowercaseTransformation'
           '#microsoft.graph.toUppercaseTransformation': '#/components/schemas/microsoft.graph.toUppercaseTransformation'
           '#microsoft.graph.trimTransformation': '#/components/schemas/microsoft.graph.trimTransformation'
+    microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessing:
+      title: lifecyclePolicyScopeProcessing
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        currentStartedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the current scope-processing operation started.
+          format: date-time
+          nullable: true
+        currentStatus:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingStatus'
+        lastSuccessfulProcessingDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when scope processing last completed successfully.
+          format: date-time
+          nullable: true
+        latestAttempt:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingAttempt'
+            - type: object
+              nullable: true
+          description: The latest retained scope-processing attempt.
+        '@odata.type':
+          type: string
+    microsoft.graph.identityGovernance.lifecyclePolicySubjectReport:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicySubjectReport
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            compliance:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectCompliance'
+            effectivePolicy:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyReference'
+                - type: object
+                  nullable: true
+              description: A reference to the effective lifecycle policy for the subject.
+            enforcement:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectEnforcement'
+            relationship:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRelationship'
+            subject:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectReference'
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.identityGovernance.lifecyclePolicySubjectReport'
     microsoft.graph.permissionKind:
       title: permissionKind
       enum:
@@ -37639,6 +39527,7 @@ components:
         propertyName: '@odata.type'
         mapping:
           '#microsoft.graph.contentActivityMetadata': '#/components/schemas/microsoft.graph.contentActivityMetadata'
+          '#microsoft.graph.evaluationIncompleteActivityMetadata': '#/components/schemas/microsoft.graph.evaluationIncompleteActivityMetadata'
           '#microsoft.graph.processConversationMetadata': '#/components/schemas/microsoft.graph.processConversationMetadata'
           '#microsoft.graph.processFileMetadata': '#/components/schemas/microsoft.graph.processFileMetadata'
     microsoft.graph.contextMetadata:
@@ -38523,6 +40412,7 @@ components:
           '#microsoft.graph.wafAllowedHeadersDictionary': '#/components/schemas/microsoft.graph.wafAllowedHeadersDictionary'
           '#microsoft.graph.networkaccess.extendedProperties': '#/components/schemas/microsoft.graph.networkaccess.extendedProperties'
           '#microsoft.graph.partner.security.additionalDataDictionary': '#/components/schemas/microsoft.graph.partner.security.additionalDataDictionary'
+          '#microsoft.graph.security.workbookContent': '#/components/schemas/microsoft.graph.security.workbookContent'
     microsoft.graph.plannerTaskChatMentionType:
       title: plannerTaskChatMentionType
       enum:
@@ -38546,6 +40436,59 @@ components:
           type: string
           description: 'The date and time when the reaction was added. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        '@odata.type':
+          type: string
+    microsoft.graph.categoryDefinitionCapability:
+      title: categoryDefinitionCapability
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        extensions:
+          type: boolean
+          description: Indicates whether custom extension fields are enabled for the category definition.
+        '@odata.type':
+          type: string
+    microsoft.graph.chatMention:
+      title: chatMention
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        index:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: Character position of the mention within the message content.
+          format: int32
+          nullable: true
+        mentioned:
+          type: string
+          description: Identifier of the mentioned user or application.
+          nullable: true
+        type:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.chatMentionType'
+            - type: object
+              nullable: true
+          description: 'Type of the mentioned entity. The possible values are: user, application, unknownFutureValue.'
+        '@odata.type':
+          type: string
+    microsoft.graph.chatReaction:
+      title: chatReaction
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        key:
+          type: string
+          description: 'Identifier of the reaction (for example, an emoji key).'
+          nullable: true
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.creationTimestamp'
+          description: 'Users who applied the reaction, and when.'
         '@odata.type':
           type: string
     microsoft.graph.additionalStorageAllocations:
@@ -39215,6 +41158,136 @@ components:
           description: 'This flag is only relevant in the case where the attribute is multivalued. By default, transformations are only applied to the first element in a multi-valued claim, however setting this flag to true ensures the transformation is applied to all values, resulting in a multivalued output.'
         '@odata.type':
           type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingStatus:
+      title: lifecyclePolicyScopeProcessingStatus
+      enum:
+        - idle
+        - notStarted
+        - evaluating
+        - processing
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingAttempt:
+      title: lifecyclePolicyScopeProcessingAttempt
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        completedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the attempt completed.
+          format: date-time
+          nullable: true
+        error:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.publicError'
+            - type: object
+              nullable: true
+          description: The error associated with an unsuccessful attempt.
+        startedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the attempt started.
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingAttemptStatus'
+        '@odata.type':
+          type: string
+    microsoft.graph.identityGovernance.lifecyclePolicySubjectCompliance:
+      title: lifecyclePolicySubjectCompliance
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        evaluatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the subject's compliance was evaluated.
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyComplianceStatus'
+        '@odata.type':
+          type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyReference:
+      title: lifecyclePolicyReference
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier of the referenced lifecycle policy.
+        version:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The version of the referenced lifecycle policy.
+          format: int32
+        '@odata.type':
+          type: string
+    microsoft.graph.identityGovernance.lifecyclePolicySubjectEnforcement:
+      title: lifecyclePolicySubjectEnforcement
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        isLocked:
+          type: boolean
+          description: Indicates whether enforcement is locked.
+        isTerminal:
+          type: boolean
+          description: Indicates whether enforcement reached a terminal state.
+        lastAction:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementActionState'
+        lastActionDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the last enforcement action completed.
+          format: date-time
+          nullable: true
+        nextAction:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyNextEnforcementAction'
+            - type: object
+              nullable: true
+          description: 'The next enforcement action. The possible values are: nonComplianceNotification, firstNotification, secondNotification, finalNotification, disable, disableNotification, delete, unknownFutureValue.'
+        nextActionDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the next enforcement action is scheduled.
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementStatus'
+        '@odata.type':
+          type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyRelationship:
+      title: lifecyclePolicyRelationship
+      enum:
+        - effective
+        - inScopeButIneffective
+        - pending
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityGovernance.lifecyclePolicySubjectReference:
+      title: lifecyclePolicySubjectReference
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier of the subject.
+        '@odata.type':
+          type: string
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.identityGovernance.lifecyclePolicyAgentIdentitySubjectReference': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyAgentIdentitySubjectReference'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyUserSubjectReference': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyUserSubjectReference'
     microsoft.graph.synchronizationError:
       title: synchronizationError
       required:
@@ -40024,6 +42097,33 @@ components:
         - charcoal
         - silver
       type: string
+    microsoft.graph.chatMentionType:
+      title: chatMentionType
+      enum:
+        - user
+        - application
+        - unknownFutureValue
+      type: string
+    microsoft.graph.creationTimestamp:
+      title: creationTimestamp
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        createdBy:
+          anyOf:
+            - $ref: '#/components/schemas/microsoft.graph.identitySet'
+            - type: object
+              nullable: true
+          description: Identity of the user (or application) associated with the action.
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Date and time the action occurred.
+          format: date-time
+          nullable: true
+        '@odata.type':
+          type: string
     microsoft.graph.printTaskProcessingState:
       title: printTaskProcessingState
       enum:
@@ -40124,6 +42224,64 @@ components:
           description: 'Collection of domain names where wildcards in the path portion of redirect URIs are blocked. Accepts only valid host names (no wildcards) as defined in RFC 3986 §3.2.2. For example, login.microsoft.com or contoso.com.'
         '@odata.type':
           type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingAttemptStatus:
+      title: lifecyclePolicyScopeProcessingAttemptStatus
+      enum:
+        - notStarted
+        - evaluating
+        - processing
+        - completed
+        - failed
+        - timedOut
+        - invalidScope
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyComplianceStatus:
+      title: lifecyclePolicyComplianceStatus
+      enum:
+        - notEvaluated
+        - compliant
+        - nonCompliant
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementActionState:
+      title: lifecyclePolicyEnforcementActionState
+      enum:
+        - none
+        - warningStateEnabled
+        - nonComplianceNotificationSent
+        - firstNotificationSent
+        - secondNotificationSent
+        - finalNotificationSent
+        - disabled
+        - deleted
+        - complianceRestored
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyNextEnforcementAction:
+      title: lifecyclePolicyNextEnforcementAction
+      enum:
+        - nonComplianceNotification
+        - firstNotification
+        - secondNotification
+        - finalNotification
+        - disable
+        - disableNotification
+        - delete
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementStatus:
+      title: lifecyclePolicyEnforcementStatus
+      enum:
+        - notRequired
+        - notStarted
+        - processing
+        - waiting
+        - actionDue
+        - complete
+        - unknown
+        - unknownFutureValue
+      type: string
     microsoft.graph.attributeMapping:
       title: attributeMapping
       required:
