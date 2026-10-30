@@ -6,6 +6,60 @@ retain natural PowerShell parameter sets. Ambiguous or genuinely different opera
 instead need manual review of a distinguishing cmdlet naming pattern. This feature does
 not add a route switch, infer new public nouns, or make a retired endpoint supported.
 
+## Native required DELETE queries are ordinary inputs, not variant selectors
+
+The beta Identity.DirectoryManagement spec declares
+`DELETE /administrativeUnits/{administrativeUnit-id}/members/$ref` as an ordinary
+operation with required query `@id`, an unformatted string, and optional `If-Match`.
+This is native OpenAPI input, not a legacy directive transform. Kiota 1.36.1 generates
+`RefRequestBuilderDeleteQueryParameters.Id` with `[QueryParameter("%40id")]`.
+Without a binding, its URL template sends `?@id=` with an empty value.
+
+Ordinary bodyless DELETE emission exposes this as mandatory `-Id`, rejects missing,
+null and empty arguments before transport, and assigns the strongly typed member in
+the existing request-configuration lambda. Kiota retains ownership of the wire name
+and URI encoding. Path IDs, `-IfMatch`, custom `-Headers`, GraphSession acquisition,
+route metadata and the single High-ConfirmImpact `ShouldProcess` gate are unchanged.
+No body serialization or URL construction is introduced.
+
+DELETE parameters inherit from the path item, with operation-level declarations overriding
+the same exact `(name, location)`. The bounded query support accepts required plain,
+non-nullable, unformatted scalar strings with form serialization and identifier-shaped
+names (an optional leading `@`, followed by an ASCII letter and ASCII letters/digits).
+Unsupported required types, names, serialization contracts and parameter/member collisions
+fail generation with the parameter and route identified. Optional query expansion is not
+part of this feature, and no query-authoring registration is added.
+
+This does **not** make a query-dependent DELETE eligible for an operation variant group.
+Mutation groups still reject query inputs, including inherited ones; only existing
+mandatory **path** IDs discriminate natural variants. Collection reference deletion
+by URI and deletion through `/members/{directoryObject-id}/$ref` must retain their
+reviewed distinct command names rather than being grouped by the new query argument.
+
+`RequiredDeleteQueryTests` pins production-shaped metadata, inheritance/overrides,
+explicit unsupported-contract failures, unchanged no-query neighbors and grouped-query
+rejection. `tools/Test-WrapperRequiredDeleteQuery.ps1` generates actual Kiota 1.36.1
+builders, compiles wrappers with the unchanged production project templates and imports
+normal manifests against the installed Authentication module. Its in-memory GraphSession
+transport verifies exact encoded/decoded DELETE URIs, reserved/Unicode escaping, ETags,
+custom headers and absent bodies. It exercises missing/null/empty binding, WhatIf, and
+genuine Yes/No confirmation hosts (one prompt and at most one DELETE per invocation).
+The inherited-query fixture and item/no-query neighbors run through the same gate.
+Neither RMS nor a live Graph connection is required.
+
+```powershell
+dotnet build .\tools\WrapperGenerator\WrapperGenerator.csproj --no-restore
+dotnet test .\tools\WrapperGenerator.Tests\WrapperGenerator.Tests.csproj --no-restore `
+    --filter 'FullyQualifiedName~RequiredDeleteQueryTests|FullyQualifiedName~EmitterTests|FullyQualifiedName~MutationRouteTests|FullyQualifiedName~GenerationServiceRegressionTests'
+pwsh -NoProfile -NonInteractive -File .\tools\Test-WrapperRequiredDeleteQuery.ps1 `
+    -KiotaPath <kiota-1.36.1-executable> -ArtifactRoot <new-artifact-directory>
+```
+
+The optional `-BaselineCmdletsDirectory` compiles an independently captured pre-fix
+ordinary wrapper against the same real client and demonstrates its absent `-Id` and
+empty `?@id=` request. Generated proof sources/binaries and `evidence.json` stay under
+`ArtifactRoot`; they are not module migration output or committed generated trees.
+
 ## Exact reviewed configuration
 
 Module-owned `*_cmdletConfigurations.cs` arrays can contain entries produced by

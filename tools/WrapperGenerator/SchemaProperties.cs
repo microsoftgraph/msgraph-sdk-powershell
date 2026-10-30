@@ -490,7 +490,7 @@ public static class SchemaProperties
     // so this mapping must match kiota's or the emitted code does not compile.
     private static readonly char[] KiotaPropertyNameSeparators = ['_', '.'];
 
-    private static string ToKiotaPropertyName(string openApiName)
+    internal static string ToKiotaPropertyName(string openApiName)
     {
         // An OData annotation is a member like any other once kiota has named it: the leading
         // "@" is dropped and the dotted parts are Pascal-cased and joined, so "@odata.id"
