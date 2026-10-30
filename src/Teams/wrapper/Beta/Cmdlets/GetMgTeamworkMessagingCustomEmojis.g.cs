@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Teams
     public class GetMgTeamworkMessagingCustomEmojisCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
-        public string TeamworkCustomEmojiDisplayName { get; set; } = string.Empty;
+        public string TeamworkCustomEmojiId { get; set; } = string.Empty;
 
 
 
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Teams
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? TeamworkCustomEmojiDisplayName : null);
+                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? TeamworkCustomEmojiId : null);
                 return;
             }
         }

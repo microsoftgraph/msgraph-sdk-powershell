@@ -32,6 +32,14 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Models
 #endif
         /// <summary>The possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.</summary>
         public global::Microsoft.Graph.PowerShell.Teams.Client.Models.PersonRelationship? Relationship { get; set; }
+        /// <summary>Information (free-text) describing the relationship between the user and the related person. This property provides additional context beyond the predefined relationship values and can be used by clients, including AI-powered experiences, to better understand and reason about the relationship.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RelationshipLabel { get; set; }
+#nullable restore
+#else
+        public string RelationshipLabel { get; set; }
+#endif
         /// <summary>The user&apos;s directory object ID (Microsoft Entra ID or CID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +84,7 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "relationship", n => { Relationship = n.GetEnumValue<global::Microsoft.Graph.PowerShell.Teams.Client.Models.PersonRelationship>(); } },
+                { "relationshipLabel", n => { RelationshipLabel = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
@@ -90,6 +99,7 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.Teams.Client.Models.PersonRelationship>("relationship", Relationship);
+            writer.WriteStringValue("relationshipLabel", RelationshipLabel);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteAdditionalData(AdditionalData);

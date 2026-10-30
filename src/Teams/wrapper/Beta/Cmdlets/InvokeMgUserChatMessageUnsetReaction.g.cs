@@ -29,6 +29,12 @@ namespace Microsoft.Graph.PowerShell.Teams
         [Parameter(Mandatory = false)]
         public string? ReactionType { get; set; }
 
+        [Parameter(Mandatory = false)]
+        public string? DisplayName { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? ReactionId { get; set; }
+
 
 
 
@@ -44,6 +50,12 @@ namespace Microsoft.Graph.PowerShell.Teams
 
     if (this.IsParameterBound(nameof(ReactionType)))
         body.ReactionType = ReactionType;
+
+    if (this.IsParameterBound(nameof(DisplayName)))
+        body.DisplayName = DisplayName;
+
+    if (this.IsParameterBound(nameof(ReactionId)))
+        body.ReactionId = ReactionId;
 
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
