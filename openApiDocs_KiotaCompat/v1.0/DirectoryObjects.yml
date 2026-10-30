@@ -11,7 +11,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Get entities from directoryObjects
-      operationId: directoryObjects.directoryObject.ListDirectoryObject
+      operationId: directoryObject_ListDirectoryObject
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -73,7 +73,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Add new entity to directoryObjects
-      operationId: directoryObjects.directoryObject.CreateDirectoryObject
+      operationId: directoryObject_CreateDirectoryObject
       requestBody:
         description: New entity
         content:
@@ -102,7 +102,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-get?view=graph-rest-1.0
-      operationId: directoryObjects.directoryObject.GetDirectoryObject
+      operationId: directoryObject_GetDirectoryObject
       parameters:
         - name: $select
           in: query
@@ -140,7 +140,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Update entity in directoryObjects
-      operationId: directoryObjects.directoryObject.UpdateDirectoryObject
+      operationId: directoryObject_UpdateDirectoryObject
       requestBody:
         description: New property values
         content:
@@ -168,7 +168,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-delete?view=graph-rest-1.0
-      operationId: directoryObjects.directoryObject.DeleteDirectoryObject
+      operationId: directoryObject_DeleteDirectoryObject
       parameters:
         - name: If-Match
           in: header
@@ -193,7 +193,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: directoryObjects.directoryObject.checkMemberGroups
+      operationId: directoryObject_checkMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -234,7 +234,7 @@ paths:
       tags:
         - directoryObjects.directoryObject.Actions
       summary: Invoke action checkMemberObjects
-      operationId: directoryObjects.directoryObject.checkMemberObjects
+      operationId: directoryObject_checkMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -279,7 +279,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: directoryObjects.directoryObject.getMemberGroups
+      operationId: directoryObject_getMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -324,7 +324,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
-      operationId: directoryObjects.directoryObject.getMemberObjects
+      operationId: directoryObject_getMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -369,7 +369,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: directoryObjects.directoryObject.restore
+      operationId: directoryObject_restore
       responses:
         2XX:
           description: Success
@@ -390,7 +390,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Get the number of the resource
-      operationId: directoryObjects.GetCount-3210
+      operationId: directoryObject_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -420,7 +420,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-1.0
-      operationId: directoryObjects.delta
+      operationId: directoryObject_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -490,7 +490,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: directoryObjects.getAvailableExtensionProperties
+      operationId: directoryObject_getAvailableExtensionProperty
       requestBody:
         description: Action parameters
         content:
@@ -536,7 +536,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: directoryObjects.getByIds
+      operationId: directoryObject_getGraphBPreId
       requestBody:
         description: Action parameters
         content:
@@ -587,7 +587,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: directoryObjects.validateProperties
+      operationId: directoryObject_validateProperty
       requestBody:
         description: Action parameters
         content:
@@ -845,6 +845,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -1032,6 +1033,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -1300,6 +1302,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -1658,6 +1663,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
