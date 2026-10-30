@@ -8,8 +8,8 @@
 # preserve discriminators/AnyOf/OneOf and are suitable for Kiota SDK generation.
 #
 # The output is written to a separate folder (default: .\openApiDocs_KiotaCompat) so the
-# existing PowerShell OpenAPI flow (.\openApiDocs) remains untouched. The PowerShell-specific
-# post-processing (TweakOpenApi.ps1) is intentionally NOT run.
+# existing PowerShell OpenAPI flow (.\openApiDocs) remains untouched. Operation IDs use
+# PowerShell formatting and TweakOpenApi.ps1, without applying schema or response tweaks.
 [CmdletBinding()]
 Param(
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
@@ -38,6 +38,7 @@ $OpenApiDocOutput = Join-Path $OpenApiDocOutput $GraphVersion
 
 # Load PS Scripts
 $DownloadOpenApiDocPS1 = Join-Path $PSScriptRoot ".\DownloadOpenApiDocKiotaCompat.ps1" -Resolve
+$TweakOpenApiPS1 = Join-Path $PSScriptRoot ".\TweakOpenApi.ps1" -Resolve
 $RemoveExpiredDeprecatedOperationsPS1 = Join-Path $PSScriptRoot ".\Remove-ExpiredDeprecatedOpenApiOperations.ps1" -Resolve
 
 if (-not (Test-Path $ModuleMappingConfigPath)) {
@@ -60,7 +61,7 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
             # Omit beta version of DeviceManagement.Administration module for further troubleshooting
             if (-not($betaExcludes -contains $ModuleName -and $GraphVersion -eq "beta")) {
                 # Download Kiota-compatible OpenAPI document for module.
-                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount
+                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount -SingularizeOperationIds -DeferPruning
             }
         }
         catch {
@@ -70,7 +71,10 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-D
     }
 }
 
-# Remove operations whose deprecation removal date has passed and record the removals.
+# Keep legacy operation-ID directives usable without changing Kiota-compatible schemas.
+& $TweakOpenApiPS1 -OpenAPIFilesPath $OpenApiDocOutput -OperationIdsOnly
+
+# Remove expired deprecated operations, recording the complete profile.
 & $RemoveExpiredDeprecatedOperationsPS1 -OpenApiFilesPath $OpenApiDocOutput
 
 $stopwatch.Stop()
