@@ -441,16 +441,17 @@ function Build-Module {
             AliasesToExport   = @()
             VariablesToExport = @()
         }
-        # Std.UriTemplate is requested by Microsoft.Kiota.Abstractions (measured: the AssemblyRef
-        # lives there, not in the HTTP library). That requester sits in Authentication's isolated
-        # load context, so its directory probing can never reach this module folder - and
-        # Authentication cannot serve the request either, because its Dependencies folder does
-        # not ship the assembly. Preloading it here puts it in the default context, where the
-        # isolated context's fallback resolution unifies with it. The Multipart serializer needs
+        # Std.UriTemplate and RecyclableMemoryStream are requested by Kiota.Abstractions and
+        # Kiota.Serialization.Json respectively, inside Authentication's isolated load context.
+        # Authentication 2.38.1 ships neither dependency, and its probing cannot reach this
+        # module folder. Preloading these standalone dependencies puts them in the default
+        # context, where isolated-context fallback resolution unifies with them, including
+        # typed POST/PATCH serialization. Keep their versions derived from the restore graph
+        # via PruneModuleBin, not a second dependency/version declaration. Multipart needs
         # no entry: its requester is the client assembly in this folder, so normal
         # module-directory probing finds it. Proven live by tools/Test-WrapperLive.ps1 on the
         # session path.
-        $manifestArgs.RequiredAssemblies = @('Std.UriTemplate.dll')
+        $manifestArgs.RequiredAssemblies = @('Std.UriTemplate.dll', 'Microsoft.IO.RecyclableMemoryStream.dll')
         New-ModuleManifest @manifestArgs
 
         if ($Pack) {

@@ -14,6 +14,8 @@ already loaded. Checks, per module:
                                                 binary older than any of them is refused,
                                                 because every check below would pass against
                                                 a module built before the change under test
+     package dependencies                      - standalone DLLs and manifest preloads are present;
+                                                no duplicate shared dependency closure ships
   1. Import-Module <psd1> succeeds            - the user's first experience
   2. exported cmdlet count == manifest count  - nothing silently dropped at load
   3. no orphan workers                        - every *_Get/*_List or *_RouteN worker has its public
@@ -157,6 +159,29 @@ function Test-OnePackage {
             $result.Detail = "package does not contain required assembly '$required'"
             return $result
         }
+    }
+
+    # These are the only standalone dependencies not supplied by Authentication. The two
+    # requested from its isolated context must also be preloaded by the normal manifest.
+    $standalone = @('Std.UriTemplate.dll', 'Microsoft.Kiota.Serialization.Multipart.dll', 'Microsoft.IO.RecyclableMemoryStream.dll')
+    foreach ($dependency in $standalone) {
+        if (-not (Test-Path (Join-Path $versioned $dependency))) {
+            $result.Detail = "package does not contain standalone dependency '$dependency'"
+            return $result
+        }
+    }
+    foreach ($dependency in 'Std.UriTemplate.dll', 'Microsoft.IO.RecyclableMemoryStream.dll') {
+        if ($manifestData.RequiredAssemblies -notcontains $dependency) {
+            $result.Detail = "manifest does not preload isolated-context dependency '$dependency'"
+            return $result
+        }
+    }
+    $unexpected = @(Get-ChildItem $versioned -Recurse -Filter '*.dll' -File | Where-Object {
+        $_.Name -notlike 'Microsoft.Graph.Wrapper.*.dll' -and $_.Name -notin $standalone
+    })
+    if ($unexpected) {
+        $result.Detail = "package duplicates shared dependencies: $($unexpected.Name -join ', ')"
+        return $result
     }
 
     # A package older than the sources it was built from passes every check below while proving

@@ -50,16 +50,17 @@
 
   <!-- The module folder may carry ONLY the wrapper assemblies plus the kiota dependencies the
        installed Microsoft.Graph.Authentication module does not ship (Std.UriTemplate,
-       Microsoft.Kiota.Serialization.Multipart). Every other dependency must resolve from that
-       module's isolated load context: a copy here loads a second type identity into the default
-       context, and the first request through the shared session pipeline dies casting between
+       Microsoft.Kiota.Serialization.Multipart, Microsoft.IO.RecyclableMemoryStream). Every other
+       dependency must resolve from that module's isolated load context: a copy here loads a
+       second type identity into the default context, and the first request through the shared
+       session pipeline dies casting between
        the two (proven live: ObservabilityOptions, kiota middleware vs wrapper adapter).
        Removal is by package identity, not filename, so the kept assemblies' versions stay
        derived from the restore graph instead of being pinned here. -->
   <Target Name="PruneModuleBin" AfterTargets="ResolveReferences">
     <ItemGroup>
       <ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)"
-          Condition="'%(ReferenceCopyLocalPaths.NuGetPackageId)' != '' And '%(ReferenceCopyLocalPaths.NuGetPackageId)' != 'Std.UriTemplate' And '%(ReferenceCopyLocalPaths.NuGetPackageId)' != 'Microsoft.Kiota.Serialization.Multipart'" />
+          Condition="'%(ReferenceCopyLocalPaths.NuGetPackageId)' != '' And '%(ReferenceCopyLocalPaths.NuGetPackageId)' != 'Std.UriTemplate' And '%(ReferenceCopyLocalPaths.NuGetPackageId)' != 'Microsoft.Kiota.Serialization.Multipart' And '%(ReferenceCopyLocalPaths.NuGetPackageId)' != 'Microsoft.IO.RecyclableMemoryStream'" />
     </ItemGroup>
   </Target>
 
