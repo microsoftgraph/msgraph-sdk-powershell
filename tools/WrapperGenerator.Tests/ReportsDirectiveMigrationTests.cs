@@ -43,9 +43,9 @@ public sealed class ReportsDirectiveMigrationTests
         var mapping = Mapping(2).GetProperty("profiles").GetProperty(profile);
         Assert.False(mapping.TryGetProperty("operationIdSource", out _));
         Assert.False(mapping.GetProperty("absenceExpected").GetBoolean());
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         var accounted = new HashSet<string>(StringComparer.Ordinal);
-        var sourceReview = mapping.GetProperty("sourceReview");
+        var sourceReview = SourceReview(profile);
         var survivors = sourceReview.GetProperty("survivingLegacyOperations").EnumerateArray().ToArray();
         var removed = sourceReview.GetProperty("removedLegacyOperations").EnumerateArray().ToArray();
         var additional = sourceReview.GetProperty("additionalCurrentOperations").EnumerateArray().ToArray();
@@ -64,7 +64,7 @@ public sealed class ReportsDirectiveMigrationTests
             Assert.Equal(operationId, current.Paths[path].Operations![method].OperationId);
             Assert.Matches(LegacySuppression, operationId);
             Assert.True(currentKeys.Add($"{method} {path}"));
-            Assert.True(CmdletConfigurator.IsSuppressed(method, path, config));
+            Assert.True(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile));
         }
         var literalMatches = current.Paths.SelectMany(path => path.Value.Operations!
             .Where(operation => Regex.IsMatch(operation.Value.OperationId!, LegacySuppression))
@@ -83,7 +83,7 @@ public sealed class ReportsDirectiveMigrationTests
             Assert.Equal(CmdletConfigurator.NormalizePathTemplate(legacyPath), CmdletConfigurator.NormalizePathTemplate(path));
             Assert.True(accounted.Add($"{method} {legacyPath} {legacyId}"));
             Assert.Contains($"{method} {path}", currentKeys);
-            Assert.True(CmdletConfigurator.IsSuppressed(method, path, config), $"{profile}: {method} {path}");
+            Assert.True(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile), $"{profile}: {method} {path}");
         }
 
         foreach (var entry in removed)
@@ -113,7 +113,7 @@ public sealed class ReportsDirectiveMigrationTests
     {
         var spec = Specs["beta"].Value;
         var legacy = ReadSpec("openApiDocs", "beta");
-        var review = Mapping(2).GetProperty("profiles").GetProperty("beta").GetProperty("sourceReview");
+        var review = SourceReview("beta");
         var additions = review.GetProperty("additionalCurrentOperations").EnumerateArray().ToArray();
         var expected = new HashSet<string>(StringComparer.Ordinal)
         {
@@ -137,7 +137,7 @@ public sealed class ReportsDirectiveMigrationTests
         };
         Assert.Equal(17, additions.Length);
         Assert.True(expected.SetEquals(additions.Select(entry => $"{Text(entry, "method")} {Text(entry, "path")}")));
-        var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         foreach (var entry in additions)
         {
             var method = new HttpMethod(Text(entry, "method"));
@@ -151,9 +151,9 @@ public sealed class ReportsDirectiveMigrationTests
             Assert.Equal("operation", kind.Node!.ToString().Trim('"'));
             Assert.False(string.IsNullOrWhiteSpace(Text(entry, "previousCompatibleOperationId")));
             Assert.Contains("Not an action/function, argument overload, or inferred replacement", Text(entry, "notes"), StringComparison.Ordinal);
-            Assert.True(CmdletConfigurator.IsSuppressed(method, path, config));
+            Assert.True(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: "beta"));
             Assert.True(spec.Paths[path].Operations!.ContainsKey(HttpMethod.Get));
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config, apiVersion: "beta"));
         }
     }
 
@@ -165,7 +165,7 @@ public sealed class ReportsDirectiveMigrationTests
     public void NeighboringReadsNestedMutationsAndReportsOwnedActionsRemain(string profile, bool useCollisionData)
     {
         var spec = Specs[profile].Value;
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         (HttpMethod Method, string Path)[] neighbors =
         [
             (HttpMethod.Get, "/deviceManagement/reports"),
@@ -199,7 +199,7 @@ public sealed class ReportsDirectiveMigrationTests
         foreach (var (method, path) in neighbors)
         {
             Assert.True(spec.Paths[path].Operations!.ContainsKey(method), $"Missing neighbor: {profile} {method} {path}");
-            Assert.False(CmdletConfigurator.IsSuppressed(method, path, config), $"Suppressed neighbor: {profile} {method} {path}");
+            Assert.False(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile), $"Suppressed neighbor: {profile} {method} {path}");
         }
     }
 
@@ -210,17 +210,17 @@ public sealed class ReportsDirectiveMigrationTests
     [InlineData("beta", true)]
     public void SharedFunctionNamesRetainTheirOwnedRoutes(string profile, bool useCollisionData)
     {
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         foreach (var item in FunctionCases(profile))
         {
             var operation = Specs[profile].Value.Paths[item.Path].Operations![HttpMethod.Get];
             Assert.Equal(item.OperationId, operation.OperationId);
             var extension = Assert.IsType<JsonNodeExtension>(operation.Extensions!["x-ms-docs-operation-type"]);
             Assert.Equal("function", extension.Node!.ToString().Trim('"'));
-            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, item.Path, Kind: OperationKind.Function), config);
+            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, item.Path, Kind: OperationKind.Function), config, apiVersion: profile);
             Assert.Equal("Get", naming.VerbName);
             Assert.Equal("Mg" + item.Noun, naming.Noun);
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, item.Path, config));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, item.Path, config, apiVersion: profile));
         }
     }
 
@@ -241,8 +241,8 @@ public sealed class ReportsDirectiveMigrationTests
         var output = Path.Combine(Path.GetTempPath(), "reports-directive-tests", Guid.NewGuid().ToString("N"));
         try
         {
-            var config = new GeneratorConfig("Test.Client", output, profile, useCollisionData);
-            await new PowerShellWrapperGenerationService(target, config, NullLogger.Instance)
+            var config = new GeneratorConfig("Test.Client", output, useCollisionData);
+            await new PowerShellWrapperGenerationService(target, config, NullLogger.Instance, apiVersion: profile)
                 .GenerateAsync(CancellationToken.None);
             var expected = cases.Select(item => "GetMg" + item.Noun + ".g.cs").OrderBy(name => name).ToArray();
             var files = Directory.GetFiles(output, "*.g.cs").Select(Path.GetFileName).OrderBy(name => name).ToArray();
@@ -265,14 +265,43 @@ public sealed class ReportsDirectiveMigrationTests
     [InlineData(true)]
     public void ApplicationSummaryRenameKeepsStructuralGetAndCountNames(bool useCollisionData)
     {
-        var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         foreach (var suffix in new[] { "", "/{applicationSignInDetailedSummary-id}", "/$count" })
         {
             var path = "/reports/applicationSignInDetailedSummary" + suffix;
             var operation = Specs["beta"].Value.Paths[path].Operations![HttpMethod.Get];
             Assert.NotNull(operation.OperationId);
             Assert.Equal("MgReportApplicationSignInDetailedSummary" + (suffix == "/$count" ? "Count" : ""),
-                Naming.Resolve(new OperationInfo(HttpMethod.Get, path), config).Noun);
+                Naming.Resolve(new OperationInfo(HttpMethod.Get, path), config, apiVersion: "beta").Noun);
+        }
+    }
+
+    [Fact]
+    public void LiteralLedgerDoesNotDeclareLegacyTranslationFields()
+    {
+        using var document = JsonDocument.Parse(File.ReadAllText(Path.Combine(
+            RepoRoot, "src", "Reports", "wrapper", "Reports_directiveMigrationMap.json")));
+        AssertNoLegacyFields(document.RootElement);
+
+        static void AssertNoLegacyFields(JsonElement element)
+        {
+            if (element.ValueKind == JsonValueKind.Object)
+            {
+                foreach (var property in element.EnumerateObject())
+                {
+                    Assert.DoesNotContain(property.Name, new[]
+                    {
+                        "operationIdSource", "legacyPath", "legacyOperationId",
+                        "legacyPathTranslation", "removedLegacyOperations",
+                    });
+                    AssertNoLegacyFields(property.Value);
+                }
+            }
+            else if (element.ValueKind == JsonValueKind.Array)
+            {
+                foreach (var item in element.EnumerateArray())
+                    AssertNoLegacyFields(item);
+            }
         }
     }
 
@@ -301,6 +330,13 @@ public sealed class ReportsDirectiveMigrationTests
     }
 
     private static string Text(JsonElement entry, string name) => entry.GetProperty(name).GetString()!;
+
+    private static JsonElement SourceReview(string profile)
+    {
+        using var document = JsonDocument.Parse(File.ReadAllText(Path.Combine(
+            RepoRoot, "tools", "WrapperGenerator.Tests", "ReportsDirectiveSourceReview.json")));
+        return document.RootElement.GetProperty("profiles").GetProperty(profile).Clone();
+    }
 
     private static OpenApiDocument ReadSpec(string directory, string profile)
     {

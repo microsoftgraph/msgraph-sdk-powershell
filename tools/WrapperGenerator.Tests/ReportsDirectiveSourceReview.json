@@ -1,0 +1,949 @@
+{
+  "source": "src\\Reports\\Reports.md",
+  "directiveIndex": 2,
+  "profiles": {
+    "v1.0": {
+      "legacyMatchCount": 34,
+      "survivingLegacyOperations": [
+        {
+          "method": "GET",
+          "path": "/auditLogs",
+          "operationId": "auditLog.auditLogRoot_GetAuditLogRoot",
+          "legacyPath": "/auditLogs",
+          "legacyOperationId": "auditLog.auditLogRoot_GetAuditLogRoot"
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs",
+          "operationId": "auditLog.auditLogRoot_UpdateAuditLogRoot",
+          "legacyPath": "/auditLogs",
+          "legacyOperationId": "auditLog.auditLogRoot_UpdateAuditLogRoot"
+        },
+        {
+          "method": "POST",
+          "path": "/auditLogs/directoryAudits",
+          "operationId": "auditLog_CreateDirectoryAudit",
+          "legacyPath": "/auditLogs/directoryAudits",
+          "legacyOperationId": "auditLog_CreateDirectoryAudit"
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs/directoryAudits/{directoryAudit-id}",
+          "operationId": "auditLog_UpdateDirectoryAudit",
+          "legacyPath": "/auditLogs/directoryAudits/{directoryAudit-id}",
+          "legacyOperationId": "auditLog_UpdateDirectoryAudit"
+        },
+        {
+          "method": "DELETE",
+          "path": "/auditLogs/directoryAudits/{directoryAudit-id}",
+          "operationId": "auditLog_DeleteDirectoryAudit",
+          "legacyPath": "/auditLogs/directoryAudits/{directoryAudit-id}",
+          "legacyOperationId": "auditLog_DeleteDirectoryAudit"
+        },
+        {
+          "method": "POST",
+          "path": "/auditLogs/provisioning",
+          "operationId": "auditLog_CreateProvisioning",
+          "legacyPath": "/auditLogs/provisioning",
+          "legacyOperationId": "auditLog_CreateProvisioning"
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs/provisioning/{provisioningObjectSummary-id}",
+          "operationId": "auditLog_UpdateProvisioning",
+          "legacyPath": "/auditLogs/provisioning/{provisioningObjectSummary-id}",
+          "legacyOperationId": "auditLog_UpdateProvisioning"
+        },
+        {
+          "method": "DELETE",
+          "path": "/auditLogs/provisioning/{provisioningObjectSummary-id}",
+          "operationId": "auditLog_DeleteProvisioning",
+          "legacyPath": "/auditLogs/provisioning/{provisioningObjectSummary-id}",
+          "legacyOperationId": "auditLog_DeleteProvisioning"
+        },
+        {
+          "method": "POST",
+          "path": "/auditLogs/signIns",
+          "operationId": "auditLog_CreateSignIn",
+          "legacyPath": "/auditLogs/signIns",
+          "legacyOperationId": "auditLog_CreateSignIn"
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs/signIns/{signIn-id}",
+          "operationId": "auditLog_UpdateSignIn",
+          "legacyPath": "/auditLogs/signIns/{signIn-id}",
+          "legacyOperationId": "auditLog_UpdateSignIn"
+        },
+        {
+          "method": "DELETE",
+          "path": "/auditLogs/signIns/{signIn-id}",
+          "operationId": "auditLog_DeleteSignIn",
+          "legacyPath": "/auditLogs/signIns/{signIn-id}",
+          "legacyOperationId": "auditLog_DeleteSignIn"
+        },
+        {
+          "method": "POST",
+          "path": "/deviceManagement/reports/exportJobs",
+          "operationId": "deviceManagement.report_CreateExportJob",
+          "legacyPath": "/deviceManagement/reports/exportJobs",
+          "legacyOperationId": "deviceManagement.report_CreateExportJob"
+        },
+        {
+          "method": "PATCH",
+          "path": "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}",
+          "operationId": "deviceManagement.report_UpdateExportJob",
+          "legacyPath": "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}",
+          "legacyOperationId": "deviceManagement.report_UpdateExportJob"
+        },
+        {
+          "method": "DELETE",
+          "path": "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}",
+          "operationId": "deviceManagement.report_DeleteExportJob",
+          "legacyPath": "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}",
+          "legacyOperationId": "deviceManagement.report_DeleteExportJob"
+        },
+        {
+          "method": "GET",
+          "path": "/reports",
+          "operationId": "report.reportRoot_GetReportRoot",
+          "legacyPath": "/reports",
+          "legacyOperationId": "report.reportRoot_GetReportRoot"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports",
+          "operationId": "report.reportRoot_UpdateReportRoot",
+          "legacyPath": "/reports",
+          "legacyOperationId": "report.reportRoot_UpdateReportRoot"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/authenticationMethods",
+          "operationId": "report_UpdateAuthenticationMethod",
+          "legacyPath": "/reports/authenticationMethods",
+          "legacyOperationId": "report_UpdateAuthenticationMethod"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/authenticationMethods",
+          "operationId": "report_DeleteAuthenticationMethod",
+          "legacyPath": "/reports/authenticationMethods",
+          "legacyOperationId": "report_DeleteAuthenticationMethod"
+        },
+        {
+          "method": "POST",
+          "path": "/reports/dailyPrintUsageByPrinter",
+          "operationId": "report_CreateDailyPrintUsageGraphBPrePrinter",
+          "legacyPath": "/reports/dailyPrintUsageByPrinter",
+          "legacyOperationId": "report_CreateDailyPrintUsageGraphBPrePrinter"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "operationId": "report_UpdateDailyPrintUsageGraphBPrePrinter",
+          "legacyPath": "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "legacyOperationId": "report_UpdateDailyPrintUsageGraphBPrePrinter"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "operationId": "report_DeleteDailyPrintUsageGraphBPrePrinter",
+          "legacyPath": "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "legacyOperationId": "report_DeleteDailyPrintUsageGraphBPrePrinter"
+        },
+        {
+          "method": "POST",
+          "path": "/reports/dailyPrintUsageByUser",
+          "operationId": "report_CreateDailyPrintUsageGraphBPreUser",
+          "legacyPath": "/reports/dailyPrintUsageByUser",
+          "legacyOperationId": "report_CreateDailyPrintUsageGraphBPreUser"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/dailyPrintUsageByUser/{printUsageByUser-id}",
+          "operationId": "report_UpdateDailyPrintUsageGraphBPreUser",
+          "legacyPath": "/reports/dailyPrintUsageByUser/{printUsageByUser-id}",
+          "legacyOperationId": "report_UpdateDailyPrintUsageGraphBPreUser"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/dailyPrintUsageByUser/{printUsageByUser-id}",
+          "operationId": "report_DeleteDailyPrintUsageGraphBPreUser",
+          "legacyPath": "/reports/dailyPrintUsageByUser/{printUsageByUser-id}",
+          "legacyOperationId": "report_DeleteDailyPrintUsageGraphBPreUser"
+        },
+        {
+          "method": "POST",
+          "path": "/reports/monthlyPrintUsageByPrinter",
+          "operationId": "report_CreateMonthlyPrintUsageGraphBPrePrinter",
+          "legacyPath": "/reports/monthlyPrintUsageByPrinter",
+          "legacyOperationId": "report_CreateMonthlyPrintUsageGraphBPrePrinter"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "operationId": "report_UpdateMonthlyPrintUsageGraphBPrePrinter",
+          "legacyPath": "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "legacyOperationId": "report_UpdateMonthlyPrintUsageGraphBPrePrinter"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "operationId": "report_DeleteMonthlyPrintUsageGraphBPrePrinter",
+          "legacyPath": "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "legacyOperationId": "report_DeleteMonthlyPrintUsageGraphBPrePrinter"
+        },
+        {
+          "method": "POST",
+          "path": "/reports/monthlyPrintUsageByUser",
+          "operationId": "report_CreateMonthlyPrintUsageGraphBPreUser",
+          "legacyPath": "/reports/monthlyPrintUsageByUser",
+          "legacyOperationId": "report_CreateMonthlyPrintUsageGraphBPreUser"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}",
+          "operationId": "report_UpdateMonthlyPrintUsageGraphBPreUser",
+          "legacyPath": "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}",
+          "legacyOperationId": "report_UpdateMonthlyPrintUsageGraphBPreUser"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}",
+          "operationId": "report_DeleteMonthlyPrintUsageGraphBPreUser",
+          "legacyPath": "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}",
+          "legacyOperationId": "report_DeleteMonthlyPrintUsageGraphBPreUser"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/partners",
+          "operationId": "report_UpdatePartner",
+          "legacyPath": "/reports/partners",
+          "legacyOperationId": "report_UpdatePartner"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/partners",
+          "operationId": "report_DeletePartner",
+          "legacyPath": "/reports/partners",
+          "legacyOperationId": "report_DeletePartner"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/security",
+          "operationId": "report_UpdateSecurity",
+          "legacyPath": "/reports/security",
+          "legacyOperationId": "report_UpdateSecurity"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/security",
+          "operationId": "report_DeleteSecurity",
+          "legacyPath": "/reports/security",
+          "legacyOperationId": "report_DeleteSecurity"
+        }
+      ],
+      "removedLegacyOperations": [],
+      "additionalCurrentOperations": []
+    },
+    "beta": {
+      "legacyMatchCount": 84,
+      "survivingLegacyOperations": [
+        {
+          "method": "GET",
+          "path": "/auditLogs",
+          "operationId": "auditLog.auditLogRoot_GetAuditLogRoot",
+          "legacyPath": "/auditLogs",
+          "legacyOperationId": "auditLog.auditLogRoot_GetAuditLogRoot"
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs",
+          "operationId": "auditLog.auditLogRoot_UpdateAuditLogRoot",
+          "legacyPath": "/auditLogs",
+          "legacyOperationId": "auditLog.auditLogRoot_UpdateAuditLogRoot"
+        },
+        {
+          "method": "POST",
+          "path": "/auditLogs/customSecurityAttributeAudits",
+          "operationId": "auditLog_CreateCustomSecurityAttributeAudit",
+          "legacyPath": "/auditLogs/customSecurityAttributeAudits",
+          "legacyOperationId": "auditLog_CreateCustomSecurityAttributeAudit"
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit-id}",
+          "operationId": "auditLog_UpdateCustomSecurityAttributeAudit",
+          "legacyPath": "/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit-id}",
+          "legacyOperationId": "auditLog_UpdateCustomSecurityAttributeAudit"
+        },
+        {
+          "method": "DELETE",
+          "path": "/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit-id}",
+          "operationId": "auditLog_DeleteCustomSecurityAttributeAudit",
+          "legacyPath": "/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit-id}",
+          "legacyOperationId": "auditLog_DeleteCustomSecurityAttributeAudit"
+        },
+        {
+          "method": "POST",
+          "path": "/auditLogs/directoryAudits",
+          "operationId": "auditLog_CreateDirectoryAudit",
+          "legacyPath": "/auditLogs/directoryAudits",
+          "legacyOperationId": "auditLog_CreateDirectoryAudit"
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs/directoryAudits/{directoryAudit-id}",
+          "operationId": "auditLog_UpdateDirectoryAudit",
+          "legacyPath": "/auditLogs/directoryAudits/{directoryAudit-id}",
+          "legacyOperationId": "auditLog_UpdateDirectoryAudit"
+        },
+        {
+          "method": "DELETE",
+          "path": "/auditLogs/directoryAudits/{directoryAudit-id}",
+          "operationId": "auditLog_DeleteDirectoryAudit",
+          "legacyPath": "/auditLogs/directoryAudits/{directoryAudit-id}",
+          "legacyOperationId": "auditLog_DeleteDirectoryAudit"
+        },
+        {
+          "method": "POST",
+          "path": "/auditLogs/directoryProvisioning",
+          "operationId": "auditLog_CreateDirectoryProvisioning",
+          "legacyPath": "/auditLogs/directoryProvisioning",
+          "legacyOperationId": "auditLog_CreateDirectoryProvisioning"
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs/directoryProvisioning/{provisioningObjectSummary-id}",
+          "operationId": "auditLog_UpdateDirectoryProvisioning",
+          "legacyPath": "/auditLogs/directoryProvisioning/{provisioningObjectSummary-id}",
+          "legacyOperationId": "auditLog_UpdateDirectoryProvisioning"
+        },
+        {
+          "method": "DELETE",
+          "path": "/auditLogs/directoryProvisioning/{provisioningObjectSummary-id}",
+          "operationId": "auditLog_DeleteDirectoryProvisioning",
+          "legacyPath": "/auditLogs/directoryProvisioning/{provisioningObjectSummary-id}",
+          "legacyOperationId": "auditLog_DeleteDirectoryProvisioning"
+        },
+        {
+          "method": "POST",
+          "path": "/auditLogs/provisioning",
+          "operationId": "auditLog_CreateProvisioning",
+          "legacyPath": "/auditLogs/provisioning",
+          "legacyOperationId": "auditLog_CreateProvisioning"
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs/provisioning/{provisioningObjectSummary-id}",
+          "operationId": "auditLog_UpdateProvisioning",
+          "legacyPath": "/auditLogs/provisioning/{provisioningObjectSummary-id}",
+          "legacyOperationId": "auditLog_UpdateProvisioning"
+        },
+        {
+          "method": "DELETE",
+          "path": "/auditLogs/provisioning/{provisioningObjectSummary-id}",
+          "operationId": "auditLog_DeleteProvisioning",
+          "legacyPath": "/auditLogs/provisioning/{provisioningObjectSummary-id}",
+          "legacyOperationId": "auditLog_DeleteProvisioning"
+        },
+        {
+          "method": "POST",
+          "path": "/auditLogs/signIns",
+          "operationId": "auditLog_CreateSignIn",
+          "legacyPath": "/auditLogs/signIns",
+          "legacyOperationId": "auditLog_CreateSignIn"
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs/signIns/{signIn-id}",
+          "operationId": "auditLog_UpdateSignIn",
+          "legacyPath": "/auditLogs/signIns/{signIn-id}",
+          "legacyOperationId": "auditLog_UpdateSignIn"
+        },
+        {
+          "method": "DELETE",
+          "path": "/auditLogs/signIns/{signIn-id}",
+          "operationId": "auditLog_DeleteSignIn",
+          "legacyPath": "/auditLogs/signIns/{signIn-id}",
+          "legacyOperationId": "auditLog_DeleteSignIn"
+        },
+        {
+          "method": "POST",
+          "path": "/auditLogs/signUps",
+          "operationId": "auditLog_CreateSignUp",
+          "legacyPath": "/auditLogs/signUps",
+          "legacyOperationId": "auditLog_CreateSignUp"
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs/signUps/{selfServiceSignUp-id}",
+          "operationId": "auditLog_UpdateSignUp",
+          "legacyPath": "/auditLogs/signUps/{selfServiceSignUp-id}",
+          "legacyOperationId": "auditLog_UpdateSignUp"
+        },
+        {
+          "method": "DELETE",
+          "path": "/auditLogs/signUps/{selfServiceSignUp-id}",
+          "operationId": "auditLog_DeleteSignUp",
+          "legacyPath": "/auditLogs/signUps/{selfServiceSignUp-id}",
+          "legacyOperationId": "auditLog_DeleteSignUp"
+        },
+        {
+          "method": "POST",
+          "path": "/deviceManagement/reports/cachedReportConfigurations",
+          "operationId": "deviceManagement.report_CreateCachedReportConfiguration",
+          "legacyPath": "/deviceManagement/reports/cachedReportConfigurations",
+          "legacyOperationId": "deviceManagement.report_CreateCachedReportConfiguration"
+        },
+        {
+          "method": "PATCH",
+          "path": "/deviceManagement/reports/cachedReportConfigurations/{deviceManagementCachedReportConfiguration-id}",
+          "operationId": "deviceManagement.report_UpdateCachedReportConfiguration",
+          "legacyPath": "/deviceManagement/reports/cachedReportConfigurations/{deviceManagementCachedReportConfiguration-id}",
+          "legacyOperationId": "deviceManagement.report_UpdateCachedReportConfiguration"
+        },
+        {
+          "method": "DELETE",
+          "path": "/deviceManagement/reports/cachedReportConfigurations/{deviceManagementCachedReportConfiguration-id}",
+          "operationId": "deviceManagement.report_DeleteCachedReportConfiguration",
+          "legacyPath": "/deviceManagement/reports/cachedReportConfigurations/{deviceManagementCachedReportConfiguration-id}",
+          "legacyOperationId": "deviceManagement.report_DeleteCachedReportConfiguration"
+        },
+        {
+          "method": "POST",
+          "path": "/deviceManagement/reports/exportJobs",
+          "operationId": "deviceManagement.report_CreateExportJob",
+          "legacyPath": "/deviceManagement/reports/exportJobs",
+          "legacyOperationId": "deviceManagement.report_CreateExportJob"
+        },
+        {
+          "method": "PATCH",
+          "path": "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}",
+          "operationId": "deviceManagement.report_UpdateExportJob",
+          "legacyPath": "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}",
+          "legacyOperationId": "deviceManagement.report_UpdateExportJob"
+        },
+        {
+          "method": "DELETE",
+          "path": "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}",
+          "operationId": "deviceManagement.report_DeleteExportJob",
+          "legacyPath": "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}",
+          "legacyOperationId": "deviceManagement.report_DeleteExportJob"
+        },
+        {
+          "method": "GET",
+          "path": "/reports",
+          "operationId": "report.reportRoot_GetReportRoot",
+          "legacyPath": "/reports",
+          "legacyOperationId": "report.reportRoot_GetReportRoot"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports",
+          "operationId": "report.reportRoot_UpdateReportRoot",
+          "legacyPath": "/reports",
+          "legacyOperationId": "report.reportRoot_UpdateReportRoot"
+        },
+        {
+          "method": "POST",
+          "path": "/reports/appCredentialSignInActivities",
+          "operationId": "report_CreateAppCredentialSignInActivity",
+          "legacyPath": "/reports/appCredentialSignInActivities",
+          "legacyOperationId": "report_CreateAppCredentialSignInActivity"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/appCredentialSignInActivities/{appCredentialSignInActivity-id}",
+          "operationId": "report_UpdateAppCredentialSignInActivity",
+          "legacyPath": "/reports/appCredentialSignInActivities/{appCredentialSignInActivity-id}",
+          "legacyOperationId": "report_UpdateAppCredentialSignInActivity"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/appCredentialSignInActivities/{appCredentialSignInActivity-id}",
+          "operationId": "report_DeleteAppCredentialSignInActivity",
+          "legacyPath": "/reports/appCredentialSignInActivities/{appCredentialSignInActivity-id}",
+          "legacyOperationId": "report_DeleteAppCredentialSignInActivity"
+        },
+        {
+          "method": "POST",
+          "path": "/reports/applicationSignInDetailedSummary",
+          "operationId": "report_CreateApplicationSignInDetailedSummary",
+          "legacyPath": "/reports/applicationSignInDetailedSummary",
+          "legacyOperationId": "report_CreateApplicationSignInDetailedSummary"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary-id}",
+          "operationId": "report_UpdateApplicationSignInDetailedSummary",
+          "legacyPath": "/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary-id}",
+          "legacyOperationId": "report_UpdateApplicationSignInDetailedSummary"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary-id}",
+          "operationId": "report_DeleteApplicationSignInDetailedSummary",
+          "legacyPath": "/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary-id}",
+          "legacyOperationId": "report_DeleteApplicationSignInDetailedSummary"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/authenticationMethods",
+          "operationId": "report_UpdateAuthenticationMethod",
+          "legacyPath": "/reports/authenticationMethods",
+          "legacyOperationId": "report_UpdateAuthenticationMethod"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/authenticationMethods",
+          "operationId": "report_DeleteAuthenticationMethod",
+          "legacyPath": "/reports/authenticationMethods",
+          "legacyOperationId": "report_DeleteAuthenticationMethod"
+        },
+        {
+          "method": "POST",
+          "path": "/reports/dailyPrintUsage",
+          "operationId": "report_CreateDailyPrintUsage",
+          "legacyPath": "/reports/dailyPrintUsage",
+          "legacyOperationId": "report_CreateDailyPrintUsage"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/dailyPrintUsage/{printUsage-id}",
+          "operationId": "report_UpdateDailyPrintUsage",
+          "legacyPath": "/reports/dailyPrintUsage/{printUsage-id}",
+          "legacyOperationId": "report_UpdateDailyPrintUsage"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/dailyPrintUsage/{printUsage-id}",
+          "operationId": "report_DeleteDailyPrintUsage",
+          "legacyPath": "/reports/dailyPrintUsage/{printUsage-id}",
+          "legacyOperationId": "report_DeleteDailyPrintUsage"
+        },
+        {
+          "method": "POST",
+          "path": "/reports/dailyPrintUsageByPrinter",
+          "operationId": "report_CreateDailyPrintUsageGraphBPrePrinter",
+          "legacyPath": "/reports/dailyPrintUsageByPrinter",
+          "legacyOperationId": "report_CreateDailyPrintUsageGraphBPrePrinter"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "operationId": "report_UpdateDailyPrintUsageGraphBPrePrinter",
+          "legacyPath": "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "legacyOperationId": "report_UpdateDailyPrintUsageGraphBPrePrinter"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "operationId": "report_DeleteDailyPrintUsageGraphBPrePrinter",
+          "legacyPath": "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "legacyOperationId": "report_DeleteDailyPrintUsageGraphBPrePrinter"
+        },
+        {
+          "method": "POST",
+          "path": "/reports/dailyPrintUsageByUser",
+          "operationId": "report_CreateDailyPrintUsageGraphBPreUser",
+          "legacyPath": "/reports/dailyPrintUsageByUser",
+          "legacyOperationId": "report_CreateDailyPrintUsageGraphBPreUser"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/dailyPrintUsageByUser/{printUsageByUser-id}",
+          "operationId": "report_UpdateDailyPrintUsageGraphBPreUser",
+          "legacyPath": "/reports/dailyPrintUsageByUser/{printUsageByUser-id}",
+          "legacyOperationId": "report_UpdateDailyPrintUsageGraphBPreUser"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/dailyPrintUsageByUser/{printUsageByUser-id}",
+          "operationId": "report_DeleteDailyPrintUsageGraphBPreUser",
+          "legacyPath": "/reports/dailyPrintUsageByUser/{printUsageByUser-id}",
+          "legacyOperationId": "report_DeleteDailyPrintUsageGraphBPreUser"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/healthMonitoring",
+          "operationId": "report_UpdateHealthMonitoring",
+          "legacyPath": "/reports/healthMonitoring",
+          "legacyOperationId": "report_UpdateHealthMonitoring"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/healthMonitoring",
+          "operationId": "report_DeleteHealthMonitoring",
+          "legacyPath": "/reports/healthMonitoring",
+          "legacyOperationId": "report_DeleteHealthMonitoring"
+        },
+        {
+          "method": "POST",
+          "path": "/reports/monthlyPrintUsageByPrinter",
+          "operationId": "report_CreateMonthlyPrintUsageGraphBPrePrinter",
+          "legacyPath": "/reports/monthlyPrintUsageByPrinter",
+          "legacyOperationId": "report_CreateMonthlyPrintUsageGraphBPrePrinter"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "operationId": "report_UpdateMonthlyPrintUsageGraphBPrePrinter",
+          "legacyPath": "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "legacyOperationId": "report_UpdateMonthlyPrintUsageGraphBPrePrinter"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "operationId": "report_DeleteMonthlyPrintUsageGraphBPrePrinter",
+          "legacyPath": "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}",
+          "legacyOperationId": "report_DeleteMonthlyPrintUsageGraphBPrePrinter"
+        },
+        {
+          "method": "POST",
+          "path": "/reports/monthlyPrintUsageByUser",
+          "operationId": "report_CreateMonthlyPrintUsageGraphBPreUser",
+          "legacyPath": "/reports/monthlyPrintUsageByUser",
+          "legacyOperationId": "report_CreateMonthlyPrintUsageGraphBPreUser"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}",
+          "operationId": "report_UpdateMonthlyPrintUsageGraphBPreUser",
+          "legacyPath": "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}",
+          "legacyOperationId": "report_UpdateMonthlyPrintUsageGraphBPreUser"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}",
+          "operationId": "report_DeleteMonthlyPrintUsageGraphBPreUser",
+          "legacyPath": "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}",
+          "legacyOperationId": "report_DeleteMonthlyPrintUsageGraphBPreUser"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/partners",
+          "operationId": "report_UpdatePartner",
+          "legacyPath": "/reports/partners",
+          "legacyOperationId": "report_UpdatePartner"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/partners",
+          "operationId": "report_DeletePartner",
+          "legacyPath": "/reports/partners",
+          "legacyOperationId": "report_DeletePartner"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/security",
+          "operationId": "report_UpdateSecurity",
+          "legacyPath": "/reports/security",
+          "legacyOperationId": "report_UpdateSecurity"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/security",
+          "operationId": "report_DeleteSecurity",
+          "legacyPath": "/reports/security",
+          "legacyOperationId": "report_DeleteSecurity"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/serviceActivity",
+          "operationId": "report_UpdateServiceActivity",
+          "legacyPath": "/reports/serviceActivity",
+          "legacyOperationId": "report_UpdateServiceActivity"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/serviceActivity",
+          "operationId": "report_DeleteServiceActivity",
+          "legacyPath": "/reports/serviceActivity",
+          "legacyOperationId": "report_DeleteServiceActivity"
+        },
+        {
+          "method": "POST",
+          "path": "/reports/servicePrincipalSignInActivities",
+          "operationId": "report_CreateServicePrincipalSignInActivity",
+          "legacyPath": "/reports/servicePrincipalSignInActivities",
+          "legacyOperationId": "report_CreateServicePrincipalSignInActivity"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/servicePrincipalSignInActivities/{servicePrincipalSignInActivity-id}",
+          "operationId": "report_UpdateServicePrincipalSignInActivity",
+          "legacyPath": "/reports/servicePrincipalSignInActivities/{servicePrincipalSignInActivity-id}",
+          "legacyOperationId": "report_UpdateServicePrincipalSignInActivity"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/servicePrincipalSignInActivities/{servicePrincipalSignInActivity-id}",
+          "operationId": "report_DeleteServicePrincipalSignInActivity",
+          "legacyPath": "/reports/servicePrincipalSignInActivities/{servicePrincipalSignInActivity-id}",
+          "legacyOperationId": "report_DeleteServicePrincipalSignInActivity"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/sla",
+          "operationId": "report_UpdateSla",
+          "legacyPath": "/reports/sla",
+          "legacyOperationId": "report_UpdateSla"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/sla",
+          "operationId": "report_DeleteSla",
+          "legacyPath": "/reports/sla",
+          "legacyOperationId": "report_DeleteSla"
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/userInsights",
+          "operationId": "report_UpdateUserInsight",
+          "legacyPath": "/reports/userInsights",
+          "legacyOperationId": "report_UpdateUserInsight"
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/userInsights",
+          "operationId": "report_DeleteUserInsight",
+          "legacyPath": "/reports/userInsights",
+          "legacyOperationId": "report_DeleteUserInsight"
+        }
+      ],
+      "removedLegacyOperations": [
+        {
+          "method": "POST",
+          "path": "/reports/credentialUserRegistrationDetails",
+          "operationId": "report_CreateCredentialUserRegistrationDetail",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/credentialUserRegistrationDetails/{credentialUserRegistrationDetails-id}",
+          "operationId": "report_UpdateCredentialUserRegistrationDetail",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/credentialUserRegistrationDetails/{credentialUserRegistrationDetails-id}",
+          "operationId": "report_DeleteCredentialUserRegistrationDetail",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "POST",
+          "path": "/reports/dailyPrintUsageSummariesByPrinter",
+          "operationId": "report_CreateDailyPrintUsageSummariesGraphBPrePrinter",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/dailyPrintUsageSummariesByPrinter/{printUsageByPrinter-id}",
+          "operationId": "report_UpdateDailyPrintUsageSummariesGraphBPrePrinter",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/dailyPrintUsageSummariesByPrinter/{printUsageByPrinter-id}",
+          "operationId": "report_DeleteDailyPrintUsageSummariesGraphBPrePrinter",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "POST",
+          "path": "/reports/dailyPrintUsageSummariesByUser",
+          "operationId": "report_CreateDailyPrintUsageSummariesGraphBPreUser",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/dailyPrintUsageSummariesByUser/{printUsageByUser-id}",
+          "operationId": "report_UpdateDailyPrintUsageSummariesGraphBPreUser",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/dailyPrintUsageSummariesByUser/{printUsageByUser-id}",
+          "operationId": "report_DeleteDailyPrintUsageSummariesGraphBPreUser",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "POST",
+          "path": "/reports/monthlyPrintUsageSummariesByPrinter",
+          "operationId": "report_CreateMonthlyPrintUsageSummariesGraphBPrePrinter",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/monthlyPrintUsageSummariesByPrinter/{printUsageByPrinter-id}",
+          "operationId": "report_UpdateMonthlyPrintUsageSummariesGraphBPrePrinter",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/monthlyPrintUsageSummariesByPrinter/{printUsageByPrinter-id}",
+          "operationId": "report_DeleteMonthlyPrintUsageSummariesGraphBPrePrinter",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "POST",
+          "path": "/reports/monthlyPrintUsageSummariesByUser",
+          "operationId": "report_CreateMonthlyPrintUsageSummariesGraphBPreUser",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/monthlyPrintUsageSummariesByUser/{printUsageByUser-id}",
+          "operationId": "report_UpdateMonthlyPrintUsageSummariesGraphBPreUser",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/monthlyPrintUsageSummariesByUser/{printUsageByUser-id}",
+          "operationId": "report_DeleteMonthlyPrintUsageSummariesGraphBPreUser",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "POST",
+          "path": "/reports/userCredentialUsageDetails",
+          "operationId": "report_CreateUserCredentialUsageDetail",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/userCredentialUsageDetails/{userCredentialUsageDetails-id}",
+          "operationId": "report_UpdateUserCredentialUsageDetail",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/userCredentialUsageDetails/{userCredentialUsageDetails-id}",
+          "operationId": "report_DeleteUserCredentialUsageDetail",
+          "notes": "This exact legacy method/path was pruned from the compatible Reports spec; no successor is inferred."
+        }
+      ],
+      "additionalCurrentOperations": [
+        {
+          "method": "POST",
+          "path": "/auditLogs/auditActivityTypes",
+          "operationId": "auditLog_CreateAuditActivityType",
+          "previousCompatibleOperationId": "auditLogs.CreateAuditActivityTypes",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Audit event type definitions, not credential or print usage data. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs/auditActivityTypes/{auditActivityType-id}",
+          "operationId": "auditLog_UpdateAuditActivityType",
+          "previousCompatibleOperationId": "auditLogs.UpdateAuditActivityTypes",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Audit event type definitions, not credential or print usage data. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "DELETE",
+          "path": "/auditLogs/auditActivityTypes/{auditActivityType-id}",
+          "operationId": "auditLog_DeleteAuditActivityType",
+          "previousCompatibleOperationId": "auditLogs.DeleteAuditActivityTypes",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Audit event type definitions, not credential or print usage data. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "POST",
+          "path": "/auditLogs/signInEventsAppSummary",
+          "operationId": "auditLog_CreateSignInEventsAppSummary",
+          "previousCompatibleOperationId": "auditLogs.CreateSignInEventsAppSummary",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Application sign-in event aggregates, not credential-registration or credential-usage detail. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs/signInEventsAppSummary/{signInEventsAppActivity-appId}",
+          "operationId": "auditLog_UpdateSignInEventsAppSummary",
+          "previousCompatibleOperationId": "auditLogs.UpdateSignInEventsAppSummary",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Application sign-in event aggregates, not credential-registration or credential-usage detail. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "DELETE",
+          "path": "/auditLogs/signInEventsAppSummary/{signInEventsAppActivity-appId}",
+          "operationId": "auditLog_DeleteSignInEventsAppSummary",
+          "previousCompatibleOperationId": "auditLogs.DeleteSignInEventsAppSummary",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Application sign-in event aggregates, not credential-registration or credential-usage detail. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "POST",
+          "path": "/auditLogs/signInEventsSummary",
+          "operationId": "auditLog_CreateSignInEventsSummary",
+          "previousCompatibleOperationId": "auditLogs.CreateSignInEventsSummary",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Daily sign-in event aggregates, not credential-registration or credential-usage detail. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "PATCH",
+          "path": "/auditLogs/signInEventsSummary/{signInEventsActivity-id}",
+          "operationId": "auditLog_UpdateSignInEventsSummary",
+          "previousCompatibleOperationId": "auditLogs.UpdateSignInEventsSummary",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Daily sign-in event aggregates, not credential-registration or credential-usage detail. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "DELETE",
+          "path": "/auditLogs/signInEventsSummary/{signInEventsActivity-id}",
+          "operationId": "auditLog_DeleteSignInEventsSummary",
+          "previousCompatibleOperationId": "auditLogs.DeleteSignInEventsSummary",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Daily sign-in event aggregates, not credential-registration or credential-usage detail. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/azureADPremiumLicenseInsight",
+          "operationId": "report_UpdateAzureADPremiumLicenseInsight",
+          "previousCompatibleOperationId": "reports.UpdateAzureADPremiumLicenseInsight",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Premium license entitlement and P1/P2 utilization, not the removed credential detail reports. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/azureADPremiumLicenseInsight",
+          "operationId": "report_DeleteAzureADPremiumLicenseInsight",
+          "previousCompatibleOperationId": "reports.DeleteAzureADPremiumLicenseInsight",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Premium license entitlement and P1/P2 utilization, not the removed credential detail reports. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/correlations/{identityCorrelation-id}",
+          "operationId": "report_UpdateCorrelation",
+          "previousCompatibleOperationId": "reports.UpdateCorrelations",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Identity correlation resource, not a credential detail or print usage summary successor. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/correlations/{identityCorrelation-id}",
+          "operationId": "report_DeleteCorrelation",
+          "previousCompatibleOperationId": "reports.DeleteCorrelations",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Identity correlation resource, not a credential detail or print usage summary successor. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/identityAnalytics",
+          "operationId": "report_UpdateIdentityAnalytic",
+          "previousCompatibleOperationId": "reports.UpdateIdentityAnalytics",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Tenant identity analytics root, not a credential detail or print usage summary successor. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/identityAnalytics",
+          "operationId": "report_DeleteIdentityAnalytic",
+          "previousCompatibleOperationId": "reports.DeleteIdentityAnalytics",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. Tenant identity analytics root, not a credential detail or print usage summary successor. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "PATCH",
+          "path": "/reports/microsoftAppsFileStorageContainerUsageSummary",
+          "operationId": "report_UpdateMicrosoftAppsFileStorageContainerUsageSummary",
+          "previousCompatibleOperationId": "reports.UpdateMicrosoftAppsFileStorageContainerUsageSummary",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. SharePoint Embedded container storage usage, not the removed printer/user print usage summaries. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        },
+        {
+          "method": "DELETE",
+          "path": "/reports/microsoftAppsFileStorageContainerUsageSummary",
+          "operationId": "report_DeleteMicrosoftAppsFileStorageContainerUsageSummary",
+          "previousCompatibleOperationId": "reports.DeleteMicrosoftAppsFileStorageContainerUsageSummary",
+          "notes": "Genuine additional resource CRUD operation, already present in compatible spec 51d441eeb5; now literally selected after #3861 aligned IDs. The unchanged unanchored regex suppresses root report/audit mutations, not only a frozen historical path list. SharePoint Embedded container storage usage, not the removed printer/user print usage summaries. Not an action/function, argument overload, or inferred replacement for a removed operation. Its GET and nonmatching descendants remain."
+        }
+      ]
+    }
+  }
+}

@@ -77,7 +77,7 @@ public static partial class CmdletConfigurator
         new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/reports/userinsights", PathMatch.Exact, null, ReportsSuppressionReason),
 
         // Additional beta resource mutations selected literally after #3861 aligned IDs.
-        // The ledger separately preserves all original 84 source matches and their outcomes.
+        // The test fixture preserves all original 84 source matches and their outcomes.
         new(OverrideKind.SuppressOperation, HttpMethod.Post, "/auditlogs/auditactivitytypes", PathMatch.Exact, null, ReportsSuppressionReason),
         new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/auditlogs/auditactivitytypes/{}", PathMatch.Exact, null, ReportsSuppressionReason),
         new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/auditlogs/auditactivitytypes/{}", PathMatch.Exact, null, ReportsSuppressionReason),

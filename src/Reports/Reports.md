@@ -28,10 +28,10 @@ directive:
         script: "'D7', 'D30', 'D90', 'D180'"
 # Remove invalid paths.
 # Wrapper migration: exact surviving method/path operations are suppressed in
-# Reports_cmdletConfigurations.cs. Reports_directiveMigrationMap.json records the
-# complete original legacy match set (beta: 66 survivors and 18 pruned routes).
+# Reports_cmdletConfigurations.cs. ReportsDirectiveSourceReview.json in the generator
+# tests records the complete original match set (beta: 66 survivors, 18 pruned routes).
 # After #3861 aligned IDs, the unchanged regex literally also selects 17 additional
-# beta resource mutations; each is separately justified in sourceReview. The
+# beta resource mutations; each is separately justified in that test fixture. The
 # baseline inventory validates every current match (v1.0: 34; beta: 83).
 # Use exact entries, not broad root prefixes. Keep all AutoRest directives active.
   - remove-path-by-operation: auditLog\.auditLogRoot.*|report.reportRoot.*|(auditLog|report)_(Create|Delete|Update).*
