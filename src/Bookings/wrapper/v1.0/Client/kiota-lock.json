@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "F517A8D01A91704D80593D62E5F039A809EB5A218EB24508042E818A143F4BBCE5D4EDB25FDEDAC1EFDA2D82804FCE91676CA1D5595F23EE6FF2119982B3F96A",
+  "descriptionHash": "DECD865D80F9A3A503C8276F4DB1F9CAB32403F0E977921EF8318E719C8DD059BC34E2516C18710C452605F0BCE3B022A8613552C19C23A1072C37929670F938",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Bookings.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Bookings.Client",

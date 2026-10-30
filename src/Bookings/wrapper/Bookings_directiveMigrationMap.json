@@ -1,0 +1,2448 @@
+{
+  "reviewScope": {
+    "source": "src/Bookings/Bookings.md",
+    "profiles": [
+      "v1.0",
+      "beta"
+    ],
+    "excluded": "All profile-local readme directives (including Bookings/v1.0/readme.md and Bookings/beta/readme.md) and src/readme.graph.md are explicitly ignored.",
+    "deferred": "Parameter aliases/transforms and schema/response directives remain deferred; none occur in the three shared groups.",
+    "naming": "Retain the existing Solution-prefix strip and BackupRestore exception without redundant overrides. The retired beta root families are suppressed by module cmdlet configuration, not renamed or kept selectable as cmdlets. The compatible input and Kiota HTTP client retain those routes. The baseline uses Mg in both profiles; unrelated beta prefix/verb parity remains out of scope."
+  },
+  "mappings": [
+    {
+      "module": "Bookings",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^solution\\.solutionsRoot.*$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Evaluate the original selector against the complete actual historical match set and current compatible specs. Both now use solution.solutionsRoot_GetSolutionsRoot / UpdateSolutionsRoot on exact GET/PATCH /solutions. Existing exact root suppression covers both; no API absence or legacy-default route policy is inferred.",
+      "profiles": {
+        "v1.0": {
+          "notes": "Historical GET /solutions is solution.solutionsRoot_GetSolutionsRoot; PATCH /solutions is solution.solutionsRoot_UpdateSolutionsRoot. Tests verify the complete original selector match set in openApiDocs/v1.0/Bookings.yml and equality with these current compatible operations.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/solutions",
+              "operationId": "solution.solutionsRoot_GetSolutionsRoot"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions",
+              "operationId": "solution.solutionsRoot_UpdateSolutionsRoot"
+            }
+          ]
+        },
+        "beta": {
+          "notes": "Historical GET /solutions is solution.solutionsRoot_GetSolutionsRoot; PATCH /solutions is solution.solutionsRoot_UpdateSolutionsRoot. Tests verify the complete original selector match set in openApiDocs/beta/Bookings.yml and equality with these current compatible operations.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/solutions",
+              "operationId": "solution.solutionsRoot_GetSolutionsRoot"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions",
+              "operationId": "solution.solutionsRoot_UpdateSolutionsRoot"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Bookings",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "variant: ^Get$|^Delete$|^Update$|^UpdateExpanded$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Existing exact /solutions/virtualEvents suppression covers GET, PATCH (including expanded parameter forms), and DELETE in both profiles. Do not suppress child events, webinars, townhalls, or unrelated booking operations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents",
+              "operationId": "solution_GetVirtualEvent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents",
+              "operationId": "solution_UpdateVirtualEvent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents",
+              "operationId": "solution_DeleteVirtualEvent"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents",
+              "operationId": "solution_GetVirtualEvent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents",
+              "operationId": "solution_UpdateVirtualEvent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents",
+              "operationId": "solution_DeleteVirtualEvent"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Bookings",
+      "directiveIndex": 3,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^Solution(.*)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Existing StripNounPrefix removes Solution from all live /solutions/ child nouns. Enumerate every exact compatible operation, including the suppressed virtualEvents root. Preserve the existing BackupRestore exception; retired top-level Bookings cmdlets are suppressed separately by shared exact-path module configuration.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses",
+              "operationId": "solution_ListBookingBusiness"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses",
+              "operationId": "solution_CreateBookingBusiness"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}",
+              "operationId": "solution_DeleteBookingBusiness"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}",
+              "operationId": "solution_GetBookingBusiness"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}",
+              "operationId": "solution_UpdateBookingBusiness"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments",
+              "operationId": "solution.bookingBusiness_ListAppointment"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments",
+              "operationId": "solution.bookingBusiness_CreateAppointment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}",
+              "operationId": "solution.bookingBusiness_DeleteAppointment"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}",
+              "operationId": "solution.bookingBusiness_GetAppointment"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}",
+              "operationId": "solution.bookingBusiness_UpdateAppointment"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}/cancel",
+              "operationId": "solution.bookingBusiness.appointment.bookingAppointment_cancel"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/$count",
+              "operationId": "solution.bookingBusiness.appointment_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView",
+              "operationId": "solution.bookingBusiness_ListCalendarView"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView",
+              "operationId": "solution.bookingBusiness_CreateCalendarView"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}",
+              "operationId": "solution.bookingBusiness_DeleteCalendarView"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}",
+              "operationId": "solution.bookingBusiness_GetCalendarView"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}",
+              "operationId": "solution.bookingBusiness_UpdateCalendarView"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}/cancel",
+              "operationId": "solution.bookingBusiness.calendarView.bookingAppointment_cancel"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/$count",
+              "operationId": "solution.bookingBusiness.calendarView_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers",
+              "operationId": "solution.bookingBusiness_ListCustomer"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers",
+              "operationId": "solution.bookingBusiness_CreateCustomer"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomerBase-id}",
+              "operationId": "solution.bookingBusiness_DeleteCustomer"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomerBase-id}",
+              "operationId": "solution.bookingBusiness_GetCustomer"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomerBase-id}",
+              "operationId": "solution.bookingBusiness_UpdateCustomer"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers/$count",
+              "operationId": "solution.bookingBusiness.customer_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions",
+              "operationId": "solution.bookingBusiness_ListCustomQuestion"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions",
+              "operationId": "solution.bookingBusiness_CreateCustomQuestion"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}",
+              "operationId": "solution.bookingBusiness_DeleteCustomQuestion"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}",
+              "operationId": "solution.bookingBusiness_GetCustomQuestion"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}",
+              "operationId": "solution.bookingBusiness_UpdateCustomQuestion"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/$count",
+              "operationId": "solution.bookingBusiness.customQuestion_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/getStaffAvailability",
+              "operationId": "solution.bookingBusiness_getStaffAvailability"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/publish",
+              "operationId": "solution.bookingBusiness_publish"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/services",
+              "operationId": "solution.bookingBusiness_ListService"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/services",
+              "operationId": "solution.bookingBusiness_CreateService"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}",
+              "operationId": "solution.bookingBusiness_DeleteService"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}",
+              "operationId": "solution.bookingBusiness_GetService"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}",
+              "operationId": "solution.bookingBusiness_UpdateService"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/services/$count",
+              "operationId": "solution.bookingBusiness.service_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers",
+              "operationId": "solution.bookingBusiness_ListStaffMember"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers",
+              "operationId": "solution.bookingBusiness_CreateStaffMember"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMemberBase-id}",
+              "operationId": "solution.bookingBusiness_DeleteStaffMember"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMemberBase-id}",
+              "operationId": "solution.bookingBusiness_GetStaffMember"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMemberBase-id}",
+              "operationId": "solution.bookingBusiness_UpdateStaffMember"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/$count",
+              "operationId": "solution.bookingBusiness.staffMember_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/unpublish",
+              "operationId": "solution.bookingBusiness_unpublish"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/$count",
+              "operationId": "solution.bookingBusiness_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingCurrencies",
+              "operationId": "solution_ListBookingCurrency"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingCurrencies",
+              "operationId": "solution_CreateBookingCurrency"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingCurrencies/{bookingCurrency-id}",
+              "operationId": "solution_DeleteBookingCurrency"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingCurrencies/{bookingCurrency-id}",
+              "operationId": "solution_GetBookingCurrency"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingCurrencies/{bookingCurrency-id}",
+              "operationId": "solution_UpdateBookingCurrency"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingCurrencies/$count",
+              "operationId": "solution.bookingCurrency_GetCount"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents",
+              "operationId": "solution_DeleteVirtualEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents",
+              "operationId": "solution_GetVirtualEvent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents",
+              "operationId": "solution_UpdateVirtualEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events",
+              "operationId": "solution.virtualEvent_ListEvent"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events",
+              "operationId": "solution.virtualEvent_CreateEvent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}",
+              "operationId": "solution.virtualEvent_DeleteEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}",
+              "operationId": "solution.virtualEvent_GetEvent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}",
+              "operationId": "solution.virtualEvent_UpdateEvent"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/cancel",
+              "operationId": "solution.virtualEvent.event.virtualEvent_cancel"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters",
+              "operationId": "solution.virtualEvent.event_ListPresenter"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters",
+              "operationId": "solution.virtualEvent.event_CreatePresenter"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.event_DeletePresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.event_GetPresenter"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.event_UpdatePresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters/$count",
+              "operationId": "solution.virtualEvent.event.presenter_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/publish",
+              "operationId": "solution.virtualEvent.event.virtualEvent_publish"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions",
+              "operationId": "solution.virtualEvent.event_ListSession"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions",
+              "operationId": "solution.virtualEvent.event_CreateSession"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.event_DeleteSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.event_GetSession"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.event_UpdateSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports",
+              "operationId": "solution.virtualEvent.event.session_ListAttendanceReport"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports",
+              "operationId": "solution.virtualEvent.event.session_CreateAttendanceReport"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.event.session_DeleteAttendanceReport"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.event.session_GetAttendanceReport"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.event.session_UpdateAttendanceReport"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport_ListAttendanceRecord"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport_CreateAttendanceRecord"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport_DeleteAttendanceRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport_GetAttendanceRecord"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport_UpdateAttendanceRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/$count",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport.attendanceRecord_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/$count",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/$count",
+              "operationId": "solution.virtualEvent.event.session_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/setExternalEventInformation",
+              "operationId": "solution.virtualEvent.event.virtualEvent_setExternalEventInformation"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/$count",
+              "operationId": "solution.virtualEvent.event_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls",
+              "operationId": "solution.virtualEvent_ListTownhall"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls",
+              "operationId": "solution.virtualEvent_CreateTownhall"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}",
+              "operationId": "solution.virtualEvent_DeleteTownhall"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}",
+              "operationId": "solution.virtualEvent_GetTownhall"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}",
+              "operationId": "solution.virtualEvent_UpdateTownhall"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters",
+              "operationId": "solution.virtualEvent.townhall_ListPresenter"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters",
+              "operationId": "solution.virtualEvent.townhall_CreatePresenter"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.townhall_DeletePresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.townhall_GetPresenter"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.townhall_UpdatePresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/$count",
+              "operationId": "solution.virtualEvent.townhall.presenter_GetCount"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration",
+              "operationId": "solution.virtualEvent.townhall_DeleteRegistrationConfiguration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration",
+              "operationId": "solution.virtualEvent.townhall_GetRegistrationConfiguration"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration",
+              "operationId": "solution.virtualEvent.townhall_UpdateRegistrationConfiguration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions",
+              "operationId": "solution.virtualEvent.townhall.registrationConfiguration_ListQuestion"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions",
+              "operationId": "solution.virtualEvent.townhall.registrationConfiguration_CreateQuestion"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}",
+              "operationId": "solution.virtualEvent.townhall.registrationConfiguration_DeleteQuestion"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}",
+              "operationId": "solution.virtualEvent.townhall.registrationConfiguration_GetQuestion"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}",
+              "operationId": "solution.virtualEvent.townhall.registrationConfiguration_UpdateQuestion"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/$count",
+              "operationId": "solution.virtualEvent.townhall.registrationConfiguration.question_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations",
+              "operationId": "solution.virtualEvent.townhall_ListRegistration"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations",
+              "operationId": "solution.virtualEvent.townhall_CreateRegistration"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.townhall.registration_DeleteGraphBPreEmail"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.townhall.registration_GetGraphBPreEmail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.townhall.registration_UpdateGraphBPreEmail"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email='{email}')/cancel",
+              "operationId": "solution.virtualEvent.townhall.virtualEventTownhall.registration.email_cancel"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.townhall.registration_DeleteGraphBPreUserId"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.townhall.registration_GetGraphBPreUserId"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.townhall.registration_UpdateGraphBPreUserId"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId='{userId}')/cancel",
+              "operationId": "solution.virtualEvent.townhall.virtualEventTownhall.registration.userId_cancel"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.townhall_DeleteRegistration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.townhall_GetRegistration"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.townhall_UpdateRegistration"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/cancel",
+              "operationId": "solution.virtualEvent.townhall.virtualEventTownhall.registration.virtualEventRegistration_cancel"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions",
+              "operationId": "solution.virtualEvent.townhall.registration_ListSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.townhall.registration_GetSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions/$count",
+              "operationId": "solution.virtualEvent.townhall.registration.session_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/$count",
+              "operationId": "solution.virtualEvent.townhall.registration_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions",
+              "operationId": "solution.virtualEvent.townhall_ListSession"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions",
+              "operationId": "solution.virtualEvent.townhall_CreateSession"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.townhall_DeleteSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.townhall_GetSession"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.townhall_UpdateSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports",
+              "operationId": "solution.virtualEvent.townhall.session_ListAttendanceReport"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports",
+              "operationId": "solution.virtualEvent.townhall.session_CreateAttendanceReport"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.townhall.session_DeleteAttendanceReport"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.townhall.session_GetAttendanceReport"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.townhall.session_UpdateAttendanceReport"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport_ListAttendanceRecord"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport_CreateAttendanceRecord"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport_DeleteAttendanceRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport_GetAttendanceRecord"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport_UpdateAttendanceRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/$count",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport.attendanceRecord_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/$count",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/$count",
+              "operationId": "solution.virtualEvent.townhall.session_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/$count",
+              "operationId": "solution.virtualEvent.townhall_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/getByUserIdAndRole(userId='{userId}',role='{role}')",
+              "operationId": "solution.virtualEvent.townhall_getGraphBPreUserIdAndRole"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/getByUserRole(role='{role}')",
+              "operationId": "solution.virtualEvent.townhall_getGraphBPreUserRole"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars",
+              "operationId": "solution.virtualEvent_ListWebinar"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars",
+              "operationId": "solution.virtualEvent_CreateWebinar"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}",
+              "operationId": "solution.virtualEvent_DeleteWebinar"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}",
+              "operationId": "solution.virtualEvent_GetWebinar"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}",
+              "operationId": "solution.virtualEvent_UpdateWebinar"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters",
+              "operationId": "solution.virtualEvent.webinar_ListPresenter"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters",
+              "operationId": "solution.virtualEvent.webinar_CreatePresenter"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.webinar_DeletePresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.webinar_GetPresenter"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.webinar_UpdatePresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/$count",
+              "operationId": "solution.virtualEvent.webinar.presenter_GetCount"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration",
+              "operationId": "solution.virtualEvent.webinar_DeleteRegistrationConfiguration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration",
+              "operationId": "solution.virtualEvent.webinar_GetRegistrationConfiguration"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration",
+              "operationId": "solution.virtualEvent.webinar_UpdateRegistrationConfiguration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions",
+              "operationId": "solution.virtualEvent.webinar.registrationConfiguration_ListQuestion"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions",
+              "operationId": "solution.virtualEvent.webinar.registrationConfiguration_CreateQuestion"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}",
+              "operationId": "solution.virtualEvent.webinar.registrationConfiguration_DeleteQuestion"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}",
+              "operationId": "solution.virtualEvent.webinar.registrationConfiguration_GetQuestion"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}",
+              "operationId": "solution.virtualEvent.webinar.registrationConfiguration_UpdateQuestion"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions/$count",
+              "operationId": "solution.virtualEvent.webinar.registrationConfiguration.question_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations",
+              "operationId": "solution.virtualEvent.webinar_ListRegistration"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations",
+              "operationId": "solution.virtualEvent.webinar_CreateRegistration"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.webinar.registration_DeleteGraphBPreEmail"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.webinar.registration_GetGraphBPreEmail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.webinar.registration_UpdateGraphBPreEmail"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(email='{email}')/cancel",
+              "operationId": "solution.virtualEvent.webinar.virtualEventWebinar.registration.email_cancel"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.webinar.registration_DeleteGraphBPreUserId"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.webinar.registration_GetGraphBPreUserId"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.webinar.registration_UpdateGraphBPreUserId"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(userId='{userId}')/cancel",
+              "operationId": "solution.virtualEvent.webinar.virtualEventWebinar.registration.userId_cancel"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.webinar_DeleteRegistration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.webinar_GetRegistration"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.webinar_UpdateRegistration"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/cancel",
+              "operationId": "solution.virtualEvent.webinar.virtualEventWebinar.registration.virtualEventRegistration_cancel"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions",
+              "operationId": "solution.virtualEvent.webinar.registration_ListSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.webinar.registration_GetSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions/$count",
+              "operationId": "solution.virtualEvent.webinar.registration.session_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/$count",
+              "operationId": "solution.virtualEvent.webinar.registration_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions",
+              "operationId": "solution.virtualEvent.webinar_ListSession"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions",
+              "operationId": "solution.virtualEvent.webinar_CreateSession"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.webinar_DeleteSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.webinar_GetSession"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.webinar_UpdateSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports",
+              "operationId": "solution.virtualEvent.webinar.session_ListAttendanceReport"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports",
+              "operationId": "solution.virtualEvent.webinar.session_CreateAttendanceReport"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.webinar.session_DeleteAttendanceReport"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.webinar.session_GetAttendanceReport"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.webinar.session_UpdateAttendanceReport"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport_ListAttendanceRecord"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport_CreateAttendanceRecord"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport_DeleteAttendanceRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport_GetAttendanceRecord"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport_UpdateAttendanceRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/$count",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport.attendanceRecord_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/$count",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/$count",
+              "operationId": "solution.virtualEvent.webinar.session_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/$count",
+              "operationId": "solution.virtualEvent.webinar_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}')",
+              "operationId": "solution.virtualEvent.webinar_getGraphBPreUserIdAndRole"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/getByUserRole(role='{role}')",
+              "operationId": "solution.virtualEvent.webinar_getGraphBPreUserRole"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses",
+              "operationId": "solution_ListBookingBusiness"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses",
+              "operationId": "solution_CreateBookingBusiness"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}",
+              "operationId": "solution_DeleteBookingBusiness"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}",
+              "operationId": "solution_GetBookingBusiness"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}",
+              "operationId": "solution_UpdateBookingBusiness"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments",
+              "operationId": "solution.bookingBusiness_ListAppointment"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments",
+              "operationId": "solution.bookingBusiness_CreateAppointment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}",
+              "operationId": "solution.bookingBusiness_DeleteAppointment"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}",
+              "operationId": "solution.bookingBusiness_GetAppointment"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}",
+              "operationId": "solution.bookingBusiness_UpdateAppointment"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}/cancel",
+              "operationId": "solution.bookingBusiness.appointment.bookingAppointment_cancel"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/$count",
+              "operationId": "solution.bookingBusiness.appointment_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView",
+              "operationId": "solution.bookingBusiness_ListCalendarView"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView",
+              "operationId": "solution.bookingBusiness_CreateCalendarView"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}",
+              "operationId": "solution.bookingBusiness_DeleteCalendarView"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}",
+              "operationId": "solution.bookingBusiness_GetCalendarView"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}",
+              "operationId": "solution.bookingBusiness_UpdateCalendarView"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}/cancel",
+              "operationId": "solution.bookingBusiness.calendarView.bookingAppointment_cancel"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/$count",
+              "operationId": "solution.bookingBusiness.calendarView_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers",
+              "operationId": "solution.bookingBusiness_ListCustomer"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers",
+              "operationId": "solution.bookingBusiness_CreateCustomer"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomer-id}",
+              "operationId": "solution.bookingBusiness_DeleteCustomer"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomer-id}",
+              "operationId": "solution.bookingBusiness_GetCustomer"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomer-id}",
+              "operationId": "solution.bookingBusiness_UpdateCustomer"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customers/$count",
+              "operationId": "solution.bookingBusiness.customer_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions",
+              "operationId": "solution.bookingBusiness_ListCustomQuestion"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions",
+              "operationId": "solution.bookingBusiness_CreateCustomQuestion"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}",
+              "operationId": "solution.bookingBusiness_DeleteCustomQuestion"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}",
+              "operationId": "solution.bookingBusiness_GetCustomQuestion"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}",
+              "operationId": "solution.bookingBusiness_UpdateCustomQuestion"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/$count",
+              "operationId": "solution.bookingBusiness.customQuestion_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/getStaffAvailability",
+              "operationId": "solution.bookingBusiness_getStaffAvailability"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/publish",
+              "operationId": "solution.bookingBusiness_publish"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/services",
+              "operationId": "solution.bookingBusiness_ListService"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/services",
+              "operationId": "solution.bookingBusiness_CreateService"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}",
+              "operationId": "solution.bookingBusiness_DeleteService"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}",
+              "operationId": "solution.bookingBusiness_GetService"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}",
+              "operationId": "solution.bookingBusiness_UpdateService"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/services/$count",
+              "operationId": "solution.bookingBusiness.service_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers",
+              "operationId": "solution.bookingBusiness_ListStaffMember"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers",
+              "operationId": "solution.bookingBusiness_CreateStaffMember"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMember-id}",
+              "operationId": "solution.bookingBusiness_DeleteStaffMember"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMember-id}",
+              "operationId": "solution.bookingBusiness_GetStaffMember"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMember-id}",
+              "operationId": "solution.bookingBusiness_UpdateStaffMember"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/$count",
+              "operationId": "solution.bookingBusiness.staffMember_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingBusinesses/{bookingBusiness-id}/unpublish",
+              "operationId": "solution.bookingBusiness_unpublish"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingBusinesses/$count",
+              "operationId": "solution.bookingBusiness_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingCurrencies",
+              "operationId": "solution_ListBookingCurrency"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/bookingCurrencies",
+              "operationId": "solution_CreateBookingCurrency"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/bookingCurrencies/{bookingCurrency-id}",
+              "operationId": "solution_DeleteBookingCurrency"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingCurrencies/{bookingCurrency-id}",
+              "operationId": "solution_GetBookingCurrency"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/bookingCurrencies/{bookingCurrency-id}",
+              "operationId": "solution_UpdateBookingCurrency"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/bookingCurrencies/$count",
+              "operationId": "solution.bookingCurrency_GetCount"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents",
+              "operationId": "solution_DeleteVirtualEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents",
+              "operationId": "solution_GetVirtualEvent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents",
+              "operationId": "solution_UpdateVirtualEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events",
+              "operationId": "solution.virtualEvent_ListEvent"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events",
+              "operationId": "solution.virtualEvent_CreateEvent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}",
+              "operationId": "solution.virtualEvent_DeleteEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}",
+              "operationId": "solution.virtualEvent_GetEvent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}",
+              "operationId": "solution.virtualEvent_UpdateEvent"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/cancel",
+              "operationId": "solution.virtualEvent.event.virtualEvent_cancel"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters",
+              "operationId": "solution.virtualEvent.event_ListPresenter"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters",
+              "operationId": "solution.virtualEvent.event_CreatePresenter"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.event_DeletePresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.event_GetPresenter"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.event_UpdatePresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}/sessions",
+              "operationId": "solution.virtualEvent.event.presenter_ListSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.event.presenter.session_GetGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.event.presenter_GetSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters/{virtualEventPresenter-id}/sessions/$count",
+              "operationId": "solution.virtualEvent.event.presenter.session_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/presenters/$count",
+              "operationId": "solution.virtualEvent.event.presenter_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/publish",
+              "operationId": "solution.virtualEvent.event.virtualEvent_publish"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions",
+              "operationId": "solution.virtualEvent.event_ListSession"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions",
+              "operationId": "solution.virtualEvent.event_CreateSession"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.event.session_DeleteGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.event.session_GetGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.event.session_UpdateGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.event_DeleteSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.event_GetSession"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.event_UpdateSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports",
+              "operationId": "solution.virtualEvent.event.session_ListAttendanceReport"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports",
+              "operationId": "solution.virtualEvent.event.session_CreateAttendanceReport"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.event.session_DeleteAttendanceReport"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.event.session_GetAttendanceReport"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.event.session_UpdateAttendanceReport"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport_ListAttendanceRecord"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport_CreateAttendanceRecord"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport_DeleteAttendanceRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport_GetAttendanceRecord"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport_UpdateAttendanceRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/$count",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport.attendanceRecord_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/attendanceReports/$count",
+              "operationId": "solution.virtualEvent.event.session.attendanceReport_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/presenters",
+              "operationId": "solution.virtualEvent.event.session_ListPresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.event.session_GetPresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/presenters/$count",
+              "operationId": "solution.virtualEvent.event.session.presenter_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/registrations",
+              "operationId": "solution.virtualEvent.event.session_ListRegistration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.event.session.registration_GetGraphBPreEmail"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.event.session.registration_GetGraphBPreUserId"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.event.session_GetRegistration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/registrations/$count",
+              "operationId": "solution.virtualEvent.event.session.registration_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/sessions/$count",
+              "operationId": "solution.virtualEvent.event.session_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/events/{virtualEvent-id}/setExternalEventInformation",
+              "operationId": "solution.virtualEvent.event.virtualEvent_setExternalEventInformation"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/events/$count",
+              "operationId": "solution.virtualEvent.event_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls",
+              "operationId": "solution.virtualEvent_ListTownhall"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls",
+              "operationId": "solution.virtualEvent_CreateTownhall"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}",
+              "operationId": "solution.virtualEvent_DeleteTownhall"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}",
+              "operationId": "solution.virtualEvent_GetTownhall"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}",
+              "operationId": "solution.virtualEvent_UpdateTownhall"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters",
+              "operationId": "solution.virtualEvent.townhall_ListPresenter"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters",
+              "operationId": "solution.virtualEvent.townhall_CreatePresenter"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.townhall_DeletePresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.townhall_GetPresenter"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.townhall_UpdatePresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}/sessions",
+              "operationId": "solution.virtualEvent.townhall.presenter_ListSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.townhall.presenter.session_GetGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.townhall.presenter_GetSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/{virtualEventPresenter-id}/sessions/$count",
+              "operationId": "solution.virtualEvent.townhall.presenter.session_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/presenters/$count",
+              "operationId": "solution.virtualEvent.townhall.presenter_GetCount"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration",
+              "operationId": "solution.virtualEvent.townhall_DeleteRegistrationConfiguration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration",
+              "operationId": "solution.virtualEvent.townhall_GetRegistrationConfiguration"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration",
+              "operationId": "solution.virtualEvent.townhall_UpdateRegistrationConfiguration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions",
+              "operationId": "solution.virtualEvent.townhall.registrationConfiguration_ListQuestion"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions",
+              "operationId": "solution.virtualEvent.townhall.registrationConfiguration_CreateQuestion"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}",
+              "operationId": "solution.virtualEvent.townhall.registrationConfiguration_DeleteQuestion"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}",
+              "operationId": "solution.virtualEvent.townhall.registrationConfiguration_GetQuestion"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}",
+              "operationId": "solution.virtualEvent.townhall.registrationConfiguration_UpdateQuestion"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/$count",
+              "operationId": "solution.virtualEvent.townhall.registrationConfiguration.question_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations",
+              "operationId": "solution.virtualEvent.townhall_ListRegistration"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations",
+              "operationId": "solution.virtualEvent.townhall_CreateRegistration"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.townhall.registration_DeleteGraphBPreEmail"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.townhall.registration_GetGraphBPreEmail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.townhall.registration_UpdateGraphBPreEmail"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email='{email}')/cancel",
+              "operationId": "solution.virtualEvent.townhall.virtualEventTownhall.registration.email_cancel"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.townhall.registration_DeleteGraphBPreUserId"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.townhall.registration_GetGraphBPreUserId"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.townhall.registration_UpdateGraphBPreUserId"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId='{userId}')/cancel",
+              "operationId": "solution.virtualEvent.townhall.virtualEventTownhall.registration.userId_cancel"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.townhall_DeleteRegistration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.townhall_GetRegistration"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.townhall_UpdateRegistration"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/cancel",
+              "operationId": "solution.virtualEvent.townhall.virtualEventTownhall.registration.virtualEventRegistration_cancel"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions",
+              "operationId": "solution.virtualEvent.townhall.registration_ListSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.townhall.registration.session_GetGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.townhall.registration_GetSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions/$count",
+              "operationId": "solution.virtualEvent.townhall.registration.session_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/$count",
+              "operationId": "solution.virtualEvent.townhall.registration_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions",
+              "operationId": "solution.virtualEvent.townhall_ListSession"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions",
+              "operationId": "solution.virtualEvent.townhall_CreateSession"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.townhall.session_DeleteGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.townhall.session_GetGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.townhall.session_UpdateGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.townhall_DeleteSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.townhall_GetSession"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.townhall_UpdateSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports",
+              "operationId": "solution.virtualEvent.townhall.session_ListAttendanceReport"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports",
+              "operationId": "solution.virtualEvent.townhall.session_CreateAttendanceReport"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.townhall.session_DeleteAttendanceReport"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.townhall.session_GetAttendanceReport"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.townhall.session_UpdateAttendanceReport"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport_ListAttendanceRecord"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport_CreateAttendanceRecord"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport_DeleteAttendanceRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport_GetAttendanceRecord"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport_UpdateAttendanceRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/$count",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport.attendanceRecord_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/attendanceReports/$count",
+              "operationId": "solution.virtualEvent.townhall.session.attendanceReport_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/presenters",
+              "operationId": "solution.virtualEvent.townhall.session_ListPresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.townhall.session_GetPresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/presenters/$count",
+              "operationId": "solution.virtualEvent.townhall.session.presenter_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/registrations",
+              "operationId": "solution.virtualEvent.townhall.session_ListRegistration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.townhall.session.registration_GetGraphBPreEmail"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.townhall.session.registration_GetGraphBPreUserId"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.townhall.session_GetRegistration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/{virtualEventSession-id}/registrations/$count",
+              "operationId": "solution.virtualEvent.townhall.session.registration_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/sessions/$count",
+              "operationId": "solution.virtualEvent.townhall.session_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/$count",
+              "operationId": "solution.virtualEvent.townhall_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/getByUserIdAndRole(userId='{userId}',role='{role}')",
+              "operationId": "solution.virtualEvent.townhall_getGraphBPreUserIdAndRole"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/townhalls/getByUserRole(role='{role}')",
+              "operationId": "solution.virtualEvent.townhall_getGraphBPreUserRole"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars",
+              "operationId": "solution.virtualEvent_ListWebinar"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars",
+              "operationId": "solution.virtualEvent_CreateWebinar"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}",
+              "operationId": "solution.virtualEvent_DeleteWebinar"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}",
+              "operationId": "solution.virtualEvent_GetWebinar"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}",
+              "operationId": "solution.virtualEvent_UpdateWebinar"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters",
+              "operationId": "solution.virtualEvent.webinar_ListPresenter"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters",
+              "operationId": "solution.virtualEvent.webinar_CreatePresenter"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.webinar_DeletePresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.webinar_GetPresenter"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.webinar_UpdatePresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}/sessions",
+              "operationId": "solution.virtualEvent.webinar.presenter_ListSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.webinar.presenter.session_GetGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.webinar.presenter_GetSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/{virtualEventPresenter-id}/sessions/$count",
+              "operationId": "solution.virtualEvent.webinar.presenter.session_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/presenters/$count",
+              "operationId": "solution.virtualEvent.webinar.presenter_GetCount"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration",
+              "operationId": "solution.virtualEvent.webinar_DeleteRegistrationConfiguration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration",
+              "operationId": "solution.virtualEvent.webinar_GetRegistrationConfiguration"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration",
+              "operationId": "solution.virtualEvent.webinar_UpdateRegistrationConfiguration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions",
+              "operationId": "solution.virtualEvent.webinar.registrationConfiguration_ListQuestion"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions",
+              "operationId": "solution.virtualEvent.webinar.registrationConfiguration_CreateQuestion"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}",
+              "operationId": "solution.virtualEvent.webinar.registrationConfiguration_DeleteQuestion"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}",
+              "operationId": "solution.virtualEvent.webinar.registrationConfiguration_GetQuestion"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}",
+              "operationId": "solution.virtualEvent.webinar.registrationConfiguration_UpdateQuestion"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration/questions/$count",
+              "operationId": "solution.virtualEvent.webinar.registrationConfiguration.question_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations",
+              "operationId": "solution.virtualEvent.webinar_ListRegistration"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations",
+              "operationId": "solution.virtualEvent.webinar_CreateRegistration"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.webinar.registration_DeleteGraphBPreEmail"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.webinar.registration_GetGraphBPreEmail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.webinar.registration_UpdateGraphBPreEmail"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(email='{email}')/cancel",
+              "operationId": "solution.virtualEvent.webinar.virtualEventWebinar.registration.email_cancel"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.webinar.registration_DeleteGraphBPreUserId"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.webinar.registration_GetGraphBPreUserId"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.webinar.registration_UpdateGraphBPreUserId"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(userId='{userId}')/cancel",
+              "operationId": "solution.virtualEvent.webinar.virtualEventWebinar.registration.userId_cancel"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.webinar_DeleteRegistration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.webinar_GetRegistration"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.webinar_UpdateRegistration"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/cancel",
+              "operationId": "solution.virtualEvent.webinar.virtualEventWebinar.registration.virtualEventRegistration_cancel"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions",
+              "operationId": "solution.virtualEvent.webinar.registration_ListSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.webinar.registration.session_GetGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.webinar.registration_GetSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions/$count",
+              "operationId": "solution.virtualEvent.webinar.registration.session_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/$count",
+              "operationId": "solution.virtualEvent.webinar.registration_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions",
+              "operationId": "solution.virtualEvent.webinar_ListSession"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions",
+              "operationId": "solution.virtualEvent.webinar_CreateSession"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.webinar.session_DeleteGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.webinar.session_GetGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions(joinWebUrl='{joinWebUrl}')",
+              "operationId": "solution.virtualEvent.webinar.session_UpdateGraphBPreJoinWebUrl"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.webinar_DeleteSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.webinar_GetSession"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}",
+              "operationId": "solution.virtualEvent.webinar_UpdateSession"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports",
+              "operationId": "solution.virtualEvent.webinar.session_ListAttendanceReport"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports",
+              "operationId": "solution.virtualEvent.webinar.session_CreateAttendanceReport"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.webinar.session_DeleteAttendanceReport"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.webinar.session_GetAttendanceReport"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}",
+              "operationId": "solution.virtualEvent.webinar.session_UpdateAttendanceReport"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport_ListAttendanceRecord"
+            },
+            {
+              "method": "POST",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport_CreateAttendanceRecord"
+            },
+            {
+              "method": "DELETE",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport_DeleteAttendanceRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport_GetAttendanceRecord"
+            },
+            {
+              "method": "PATCH",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport_UpdateAttendanceRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/$count",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport.attendanceRecord_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/attendanceReports/$count",
+              "operationId": "solution.virtualEvent.webinar.session.attendanceReport_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/presenters",
+              "operationId": "solution.virtualEvent.webinar.session_ListPresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/presenters/{virtualEventPresenter-id}",
+              "operationId": "solution.virtualEvent.webinar.session_GetPresenter"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/presenters/$count",
+              "operationId": "solution.virtualEvent.webinar.session.presenter_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/registrations",
+              "operationId": "solution.virtualEvent.webinar.session_ListRegistration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/registrations(email='{email}')",
+              "operationId": "solution.virtualEvent.webinar.session.registration_GetGraphBPreEmail"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/registrations(userId='{userId}')",
+              "operationId": "solution.virtualEvent.webinar.session.registration_GetGraphBPreUserId"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/registrations/{virtualEventRegistration-id}",
+              "operationId": "solution.virtualEvent.webinar.session_GetRegistration"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/registrations/$count",
+              "operationId": "solution.virtualEvent.webinar.session.registration_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/$count",
+              "operationId": "solution.virtualEvent.webinar.session_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/$count",
+              "operationId": "solution.virtualEvent.webinar_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}')",
+              "operationId": "solution.virtualEvent.webinar_getGraphBPreUserIdAndRole"
+            },
+            {
+              "method": "GET",
+              "path": "/solutions/virtualEvents/webinars/getByUserRole(role='{role}')",
+              "operationId": "solution.virtualEvent.webinar_getGraphBPreUserRole"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "retirementPolicy": {
+    "profile": "beta",
+    "removalDate": "2024-04-30",
+    "source": "https://devblogs.microsoft.com/microsoft365dev/breaking-changes-in-microsoft-bookings-graph-apis-beta/",
+    "retiredRoots": [
+      "/bookingBusinesses",
+      "/bookingCurrencies"
+    ],
+    "replacementRoots": [
+      "/solutions/bookingBusinesses",
+      "/solutions/bookingCurrencies"
+    ],
+    "suppressedPaths": 29,
+    "suppressedOperations": 53,
+    "implementation": "Bookings_cmdletConfigurations.cs; shared exact-path SuppressOperation entries.",
+    "notes": "Suppress cmdlets for exact roots and descendants by segment, case-insensitively, even without upstream metadata. Do not retain a selectable Legacy cmdlet route or infer service support from historical command metadata. Preserve source/compatible specs, generated Kiota HTTP client routes, historical directives, v1.0 behavior, and every live compatible solutions operation."
+  }
+}
