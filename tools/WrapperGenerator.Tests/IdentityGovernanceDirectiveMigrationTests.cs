@@ -544,7 +544,11 @@ public sealed class IdentityGovernanceDirectiveMigrationTests
                 Assert.True(File.Exists(Path.Combine(output, "InvokeMgIdentityGovernanceRoleManagementAlertRefresh.g.cs")));
                 Assert.True(File.Exists(Path.Combine(output, "InvokeMgIdentityGovernanceRoleManagementAlertRefreshByScope.g.cs")));
                 var associatedCreate = File.ReadAllText(Path.Combine(output, "NewMgProgramAssociatedControl.g.cs"));
-                Assert.Contains("ProgramId", associatedCreate, StringComparison.Ordinal);
+                Assert.Contains("body.ProgramId = ProgramId1;", associatedCreate, StringComparison.Ordinal);
+                Assert.Contains("client.Programs[ProgramId].Controls.PostAsync", associatedCreate, StringComparison.Ordinal);
+                var associatedUpdate = File.ReadAllText(Path.Combine(output, "UpdateMgProgramAssociatedControl.g.cs"));
+                Assert.Contains("body.ProgramId = ProgramId1;", associatedUpdate, StringComparison.Ordinal);
+                Assert.Contains("client.Programs[ProgramId].Controls[ProgramControlId].PatchAsync", associatedUpdate, StringComparison.Ordinal);
                 var scopedRefresh = File.ReadAllText(Path.Combine(output, "InvokeMgIdentityGovernanceRoleManagementAlertRefreshByScope.g.cs"));
                 Assert.Contains("ScopeId", scopedRefresh, StringComparison.Ordinal);
                 Assert.Contains("ScopeType", scopedRefresh, StringComparison.Ordinal);
