@@ -138,9 +138,14 @@ public sealed class SitesDirectiveMigrationTests
             {
                 var oldOperation = legacy.Paths[oldPath].Operations![method];
                 var newOperation = current.Paths[path].Operations![method];
-                Assert.Equal(oldOperation.Extensions!["x-ms-docs-operation-type"].ToString(), newOperation.Extensions!["x-ms-docs-operation-type"].ToString());
+                var oldKind = Assert.IsType<JsonNodeExtension>(oldOperation.Extensions!["x-ms-docs-operation-type"]).Node!.ToString().Trim('"');
+                var newKind = Assert.IsType<JsonNodeExtension>(newOperation.Extensions!["x-ms-docs-operation-type"]).Node!.ToString().Trim('"');
+                Assert.Equal(oldKind, newKind);
+                Assert.True(oldKind == "action" && method == HttpMethod.Post || oldKind == "function" && method == HttpMethod.Get);
                 Assert.Equal(NormalizeLineagePath(Regex.Replace(oldPath, @"/microsoft\.graph\.([^/]+)$", "/$1")), NormalizeLineagePath(path));
             }
+            Assert.Single(current.Paths, candidate => NormalizeLineagePath(candidate.Key) == NormalizeLineagePath(path)
+                && candidate.Value.Operations!.ContainsKey(method));
         }
         var suppressions = mappings.Where(mapping => mapping.GetProperty("directiveIndex").GetInt32() is 1 or 2)
             .SelectMany(mapping => mapping.GetProperty("profiles").GetProperty(profile).GetProperty("operations").EnumerateArray())
