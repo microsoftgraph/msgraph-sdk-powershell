@@ -21,6 +21,8 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public List<string> AdministrativeUnitIdFilters { get; set; }
 #endif
+        /// <summary>The approximate number of records retrieved by the query. This value can be higher or lower than recordCountLimit due to distributed counting. Read-only.</summary>
+        public long? ApproximateReturnedRecordCount { get; private set; }
         /// <summary>The display name of the audit log query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +43,9 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public List<string> IpAddressFilters { get; set; }
 #endif
-        /// <summary>The keyword to filter on.</summary>
+        /// <summary>Indicates whether the query exceeded the per-search record-count limit. The default value is false. A value of true is authoritative and isn&apos;t derived from approximateReturnedRecordCount. Read-only.</summary>
+        public bool? IsRecordCountLimitExceeded { get; private set; }
+        /// <summary>Free text to match against the non-indexed content of each record: the workload-specific properties inside auditData, including its AppAccessContext object. The indexed common-schema properties, such as the operation name, aren&apos;t matched by keyword; use their own filters, such as operationFilters, for those.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? KeywordFilter { get; set; }
@@ -65,6 +69,8 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
 #else
         public List<string> OperationFilters { get; set; }
 #endif
+        /// <summary>The record-count threshold used to limit query result retrieval. Read-only.</summary>
+        public long? RecordCountLimit { get; private set; }
         /// <summary>The collection of audit log records retrieved by the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,13 +124,16 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "administrativeUnitIdFilters", n => { AdministrativeUnitIdFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "approximateReturnedRecordCount", n => { ApproximateReturnedRecordCount = n.GetLongValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "filterEndDateTime", n => { FilterEndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "filterStartDateTime", n => { FilterStartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "ipAddressFilters", n => { IpAddressFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "isRecordCountLimitExceeded", n => { IsRecordCountLimitExceeded = n.GetBoolValue(); } },
                 { "keywordFilter", n => { KeywordFilter = n.GetStringValue(); } },
                 { "objectIdFilters", n => { ObjectIdFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "operationFilters", n => { OperationFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "recordCountLimit", n => { RecordCountLimit = n.GetLongValue(); } },
                 { "recordTypeFilters", n => { RecordTypeFilters = n.GetCollectionOfEnumValues<global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditLogRecordType>()?.AsList(); } },
                 { "records", n => { Records = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditLogRecord>(global::Microsoft.Graph.PowerShell.Security.Client.Models.Security.AuditLogRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "serviceFilters", n => { ServiceFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
