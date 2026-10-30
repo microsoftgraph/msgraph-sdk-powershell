@@ -152,6 +152,21 @@ public sealed class DirectoryManagementDirectiveMigrationTests
                 Assert.Equal(selectedCurrent, currentKeys.OrderBy(k => k));
             }
         }
+        if (profile == "beta")
+        {
+            foreach (var neighbor in ledger.RootElement.GetProperty("independentNeighborEvidence").EnumerateArray())
+            {
+                var name = neighbor.GetProperty("module").GetString()!;
+                var originalNeighbor = await ReadSpec(root, "openApiDocs", profile, name);
+                var currentNeighbor = await ReadSpec(root, "openApiDocs_KiotaCompat", profile, name);
+                var method = new HttpMethod(neighbor.GetProperty("method").GetString()!);
+                var path = neighbor.GetProperty("path").GetString()!;
+                Assert.Equal(neighbor.GetProperty("originalOperationId").GetString(),
+                    originalNeighbor.Paths[path].Operations![method].OperationId);
+                Assert.Equal(neighbor.GetProperty("currentOperationId").GetString(),
+                    currentNeighbor.Paths[path].Operations![method].OperationId);
+            }
+        }
     }
 
     [Theory]
@@ -230,11 +245,11 @@ public sealed class DirectoryManagementDirectiveMigrationTests
         return root?.FullName ?? throw new InvalidOperationException("Repository root not found.");
     }
 
-    private static async Task<OpenApiDocument> ReadSpec(string root, string source, string profile)
+    private static async Task<OpenApiDocument> ReadSpec(string root, string source, string profile, string module = "Identity.DirectoryManagement")
     {
         var settings = new OpenApiReaderSettings();
         settings.AddYamlReader();
-        using var input = File.OpenRead(Path.Combine(root, source, profile, "Identity.DirectoryManagement.yml"));
+        using var input = File.OpenRead(Path.Combine(root, source, profile, module + ".yml"));
         var parsed = await OpenApiDocument.LoadAsync(input, settings: settings, cancellationToken: CancellationToken.None);
         return Assert.IsType<OpenApiDocument>(parsed.Document);
     }
