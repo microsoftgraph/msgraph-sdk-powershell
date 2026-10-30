@@ -12,13 +12,13 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Applications
 {
-    [GraphRoute("GET", "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials")]
-    [Cmdlet(VerbsCommon.Get, "MgServicePrincipalFederatedIdentityCredential_List")]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.FederatedIdentityCredential))]
-    public class GetMgServicePrincipalFederatedIdentityCredential_ListCommand : GraphClientCmdlet
+    [GraphRoute("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups")]
+    [Cmdlet(VerbsCommon.Get, "MgOnPremisePublishingProfileAgentGroup_Route0")]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.OnPremisesAgentGroup))]
+    public class GetMgOnPremisePublishingProfileAgentGroup_Route0Command : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
-        public string ServicePrincipalId { get; set; } = string.Empty;
+        public string OnPremisesPublishingProfileId { get; set; } = string.Empty;
 
 
 
@@ -63,10 +63,10 @@ namespace Microsoft.Graph.PowerShell.Applications
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
-            Microsoft.Graph.PowerShell.Applications.Client.Models.FederatedIdentityCredentialCollectionResponse? result;
+            Microsoft.Graph.PowerShell.Applications.Client.Models.OnPremisesAgentGroupCollectionResponse? result;
             try
             {
-                result = client.ServicePrincipals[ServicePrincipalId].FederatedIdentityCredentials.GetAsync(requestConfiguration =>
+                result = client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].AgentGroups.GetAsync(requestConfiguration =>
                 {
                     if (this.IsParameterBound(nameof(Filter)))
                         requestConfiguration.QueryParameters.Filter = Filter;
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.PowerShell.Applications
                         // The nextLink already carries the original query state, and a raw-URL
                         // builder ignores templated query parameters anyway - so the continuation
                         // re-applies headers only; query bindings here would be dead code.
-                        result = client.ServicePrincipals[ServicePrincipalId].FederatedIdentityCredentials.WithUrl(nextLink).GetAsync(requestConfiguration =>
+                        result = client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].AgentGroups.WithUrl(nextLink).GetAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, ServicePrincipalId);
+                ThrowGraphRequestFailed(ex, OnPremisesPublishingProfileId);
                 return;
             }
         }

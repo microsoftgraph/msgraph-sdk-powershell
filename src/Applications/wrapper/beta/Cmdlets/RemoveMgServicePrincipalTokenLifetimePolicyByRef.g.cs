@@ -10,14 +10,12 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Applications
 {
-    [GraphRoute("DELETE", "/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}/$ref")]
+    [GraphRoute("DELETE", "/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/$ref")]
     [Cmdlet(VerbsCommon.Remove, "MgServicePrincipalTokenLifetimePolicyByRef", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     public class RemoveMgServicePrincipalTokenLifetimePolicyByRefCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string ServicePrincipalId { get; set; } = string.Empty;
-        [Parameter(Mandatory = true, Position = 1)]
-        public string TokenLifetimePolicyId { get; set; } = string.Empty;
 
 
         [Parameter(Mandatory = false,
@@ -29,7 +27,7 @@ namespace Microsoft.Graph.PowerShell.Applications
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(TokenLifetimePolicyId, "Remove"))
+            if (!ShouldProcess(ServicePrincipalId, "Remove"))
                 return;
 
         var requestAdapter = GetRequestAdapter();
@@ -38,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                client.ServicePrincipals[ServicePrincipalId].TokenLifetimePolicies[TokenLifetimePolicyId].Ref.DeleteAsync(requestConfiguration =>
+                client.ServicePrincipals[ServicePrincipalId].TokenLifetimePolicies.Ref.DeleteAsync(requestConfiguration =>
                 {
 
                         if (this.IsParameterBound(nameof(IfMatch)))
@@ -50,7 +48,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, TokenLifetimePolicyId);
+                ThrowGraphRequestFailed(ex, ServicePrincipalId);
                 return;
             }
         }

@@ -10,7 +10,7 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Applications
 {
-    [GraphRoute("DELETE", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/{connectorGroup-id}/$ref")]
+    [GraphRoute("DELETE", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/$ref")]
     [Cmdlet(VerbsCommon.Remove, "MgOnPremisePublishingProfileConnectorMemberOfByRef", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     public class RemoveMgOnPremisePublishingProfileConnectorMemberOfByRefCommand : GraphClientCmdlet
     {
@@ -18,8 +18,6 @@ namespace Microsoft.Graph.PowerShell.Applications
         public string OnPremisesPublishingProfileId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 1)]
         public string ConnectorId { get; set; } = string.Empty;
-        [Parameter(Mandatory = true, Position = 2)]
-        public string ConnectorGroupId { get; set; } = string.Empty;
 
 
         [Parameter(Mandatory = false,
@@ -31,7 +29,7 @@ namespace Microsoft.Graph.PowerShell.Applications
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(ConnectorGroupId, "Remove"))
+            if (!ShouldProcess(ConnectorId, "Remove"))
                 return;
 
         var requestAdapter = GetRequestAdapter();
@@ -40,7 +38,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].Connectors[ConnectorId].MemberOf[ConnectorGroupId].Ref.DeleteAsync(requestConfiguration =>
+                client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].Connectors[ConnectorId].MemberOf.Ref.DeleteAsync(requestConfiguration =>
                 {
 
                         if (this.IsParameterBound(nameof(IfMatch)))
@@ -52,7 +50,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, ConnectorGroupId);
+                ThrowGraphRequestFailed(ex, ConnectorId);
                 return;
             }
         }

@@ -2,139 +2,98 @@
 
 using System;
 using System.Management.Automation;
-using System.Net.Http;
+using System.Management.Automation.Runspaces;
 using Microsoft.Graph.Wrapper.Runtime;
-using Microsoft.Graph.PowerShell.Applications.Client;
-using Microsoft.Graph.PowerShell.Applications.Client.Models;
-using Microsoft.Kiota.Abstractions;
-using Microsoft.Kiota.Abstractions.Authentication;
-using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Applications
 {
-    [GraphRoute("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups")]
-    [Cmdlet(VerbsCommon.Get, "MgOnPremisePublishingProfileAgentGroup")]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.OnPremisesAgentGroup))]
+    [GraphRoute("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups", ParameterSetName = "RootList")]
+    [GraphRoute("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}", ParameterSetName = "RootGet")]
+    [GraphRoute("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups", ParameterSetName = "AgentList")]
+    [Cmdlet(VerbsCommon.Get, "MgOnPremisePublishingProfileAgentGroup", DefaultParameterSetName = "RootList")]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.OnPremisesAgentGroup), ParameterSetName = new[] { "RootList" })]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.OnPremisesAgentGroup), ParameterSetName = new[] { "RootGet" })]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.OnPremisesAgentGroup), ParameterSetName = new[] { "AgentList" })]
     public class GetMgOnPremisePublishingProfileAgentGroupCommand : GraphClientCmdlet
     {
-        [Parameter(Mandatory = true, Position = 0)]
+        [Parameter(Mandatory = true, ParameterSetName = "RootList", Position = 0)]
+        [Parameter(Mandatory = true, ParameterSetName = "RootGet", Position = 0)]
+        [Parameter(Mandatory = true, ParameterSetName = "AgentList", Position = 0)]
         public string OnPremisesPublishingProfileId { get; set; } = string.Empty;
 
-
-
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "RootList")]
+        [Parameter(Mandatory = false, ParameterSetName = "AgentList")]
         public string? Filter { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "RootList")]
+        [Parameter(Mandatory = false, ParameterSetName = "RootGet")]
+        [Parameter(Mandatory = false, ParameterSetName = "AgentList")]
         [Alias("Select")]
         public string[]? Property { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "RootList")]
+        [Parameter(Mandatory = false, ParameterSetName = "RootGet")]
+        [Parameter(Mandatory = false, ParameterSetName = "AgentList")]
         [Alias("Expand")]
         public string[]? ExpandProperty { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "RootList")]
+        [Parameter(Mandatory = false, ParameterSetName = "AgentList")]
         [Alias("OrderBy")]
         public string[]? Sort { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "RootList")]
+        [Parameter(Mandatory = false, ParameterSetName = "AgentList")]
         public string? Search { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "RootList")]
+        [Parameter(Mandatory = false, ParameterSetName = "AgentList")]
         public int Top { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "RootList")]
+        [Parameter(Mandatory = false, ParameterSetName = "AgentList")]
         public int Skip { get; set; }
 
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "RootList")]
+        [Parameter(Mandatory = false, ParameterSetName = "AgentList")]
         public SwitchParameter Count { get; set; }
 
-        // Follows every @odata.nextLink until the collection is exhausted (a bound -Top caps
-        // the total). Without it only the first page returns, plus a truncation warning when
-        // more pages existed.
-        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = false, ParameterSetName = "RootList")]
+        [Parameter(Mandatory = false, ParameterSetName = "AgentList")]
         public SwitchParameter All { get; set; }
 
+        [Parameter(Mandatory = true, ParameterSetName = "RootGet", Position = 1)]
+        public string OnPremisesAgentGroupId { get; set; } = string.Empty;
 
+        [Parameter(Mandatory = true, ParameterSetName = "AgentList", Position = 1)]
+        public string OnPremisesAgentId { get; set; } = string.Empty;
 
         protected override void ProcessRecord()
         {
-
-        var requestAdapter = GetRequestAdapter();
-        var client = new ApiClient(requestAdapter);
-
-            Microsoft.Graph.PowerShell.Applications.Client.Models.OnPremisesAgentGroupCollectionResponse? result;
+            var internalCmdletName = ParameterSetName switch
+            {
+                "RootList" => "Get-MgOnPremisePublishingProfileAgentGroup_Route0",
+                "RootGet" => "Get-MgOnPremisePublishingProfileAgentGroup_Route1",
+                "AgentList" => "Get-MgOnPremisePublishingProfileAgentGroup_Route2",
+                _ => throw new InvalidOperationException("Unsupported operation parameter set."),
+            };
             try
             {
-                result = client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].AgentGroups.GetAsync(requestConfiguration =>
-                {
-                    if (this.IsParameterBound(nameof(Filter)))
-                        requestConfiguration.QueryParameters.Filter = Filter;
-
-                    if (this.IsParameterBound(nameof(Property)))
-                        requestConfiguration.QueryParameters.Select = Property;
-
-                    if (this.IsParameterBound(nameof(ExpandProperty)))
-                        requestConfiguration.QueryParameters.Expand = ExpandProperty;
-
-                    if (this.IsParameterBound(nameof(Sort)))
-                        requestConfiguration.QueryParameters.Orderby = Sort;
-
-                    if (this.IsParameterBound(nameof(Search)))
-                        requestConfiguration.QueryParameters.Search = Search;
-
-                    if (this.IsParameterBound(nameof(Top)))
-                        requestConfiguration.QueryParameters.Top = Top;
-
-                    if (this.IsParameterBound(nameof(Skip)))
-                        requestConfiguration.QueryParameters.Skip = Skip;
-
-                    if (Count.IsPresent)
-                        requestConfiguration.QueryParameters.Count = true;
-
-
-
-        AddRequestHeaders(requestConfiguration.Headers);
-                }).GetAwaiter().GetResult();
-
-                // A collection response and its Value are both nullable on the kiota client; an
-                // empty page writes nothing rather than dereferencing null. Each page streams to
-                // the pipeline before the next request is issued, matching the published SDK.
-                if (result?.Value is { } items)
-                    WriteObject(items, enumerateCollection: true);
-
-                if (All.IsPresent)
-                {
-                    var fetched = result?.Value?.Count ?? 0;
-                    var nextLink = result?.OdataNextLink;
-                    while (!string.IsNullOrEmpty(nextLink) && !Stopping && (!this.IsParameterBound(nameof(Top)) || fetched < Top))
-                    {
-                        // The nextLink already carries the original query state, and a raw-URL
-                        // builder ignores templated query parameters anyway - so the continuation
-                        // re-applies headers only; query bindings here would be dead code.
-                        result = client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].AgentGroups.WithUrl(nextLink).GetAsync(requestConfiguration =>
-                        {
-
-                AddRequestHeaders(requestConfiguration.Headers);
-                        }, StoppingToken).GetAwaiter().GetResult();
-                        if (result?.Value is { } page)
-                        {
-                            WriteObject(page, enumerateCollection: true);
-                            fetched += page.Count;
-                        }
-                        nextLink = result?.OdataNextLink;
-                    }
-                }
-                else if (!string.IsNullOrEmpty(result?.OdataNextLink))
-                {
-                    // Deliberately stronger than the published SDK, which truncates silently;
-                    // approved in the design spec. One line, no extra request.
-                    WriteWarning("More results are available. Use -All to return all pages.");
-                }
+                InvokeCommand.InvokeScript(
+                    "param($BoundParameters, $CmdletName) & $CmdletName @BoundParameters",
+                    false,
+                    global::System.Management.Automation.Runspaces.PipelineResultTypes.Output | global::System.Management.Automation.Runspaces.PipelineResultTypes.Error,
+                    null,
+                    MyInvocation.BoundParameters, internalCmdletName);
+            }
+            catch (RuntimeException rex) when (rex is not PipelineStoppedException && rex.ErrorRecord is not null)
+            {
+                ThrowTerminatingError(rex.ErrorRecord);
+                return;
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, OnPremisesPublishingProfileId);
+                ThrowGraphRequestFailed(ex, null);
                 return;
             }
         }

@@ -12,15 +12,13 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Applications
 {
-    [GraphRoute("GET", "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}")]
-    [Cmdlet(VerbsCommon.Get, "MgServicePrincipalFederatedIdentityCredential_Get")]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.FederatedIdentityCredential))]
-    public class GetMgServicePrincipalFederatedIdentityCredential_GetCommand : GraphClientCmdlet
+    [GraphRoute("GET", "/servicePrincipals/{servicePrincipal-id}/lifecycle/effectiveGoverningPolicy")]
+    [Cmdlet(VerbsCommon.Get, "MgServicePrincipalLifecycleEffectiveGoverningPolicy")]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.IdentityGovernance.LifecyclePolicy))]
+    public class GetMgServicePrincipalLifecycleEffectiveGoverningPolicyCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string ServicePrincipalId { get; set; } = string.Empty;
-        [Parameter(Mandatory = true, Position = 1)]
-        public string FederatedIdentityCredentialId { get; set; } = string.Empty;
 
 
 
@@ -39,10 +37,10 @@ namespace Microsoft.Graph.PowerShell.Applications
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
-            Microsoft.Graph.PowerShell.Applications.Client.Models.FederatedIdentityCredential? result;
+            Microsoft.Graph.PowerShell.Applications.Client.Models.IdentityGovernance.LifecyclePolicy? result;
             try
             {
-                result = client.ServicePrincipals[ServicePrincipalId].FederatedIdentityCredentials[FederatedIdentityCredentialId].GetAsync(requestConfiguration =>
+                result = client.ServicePrincipals[ServicePrincipalId].Lifecycle.EffectiveGoverningPolicy.GetAsync(requestConfiguration =>
                 {
                     if (this.IsParameterBound(nameof(Property)))
                         requestConfiguration.QueryParameters.Select = Property;
@@ -57,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, FederatedIdentityCredentialId);
+                ThrowGraphRequestFailed(ex, ServicePrincipalId);
                 return;
             }
 

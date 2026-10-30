@@ -12,20 +12,26 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Applications
 {
-    [GraphRoute("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/$ref")]
-    [Cmdlet(VerbsCommon.Get, "MgOnPremisePublishingProfileConnectorMemberOfByRef")]
-    [OutputType(typeof(string))]
-    public class GetMgOnPremisePublishingProfileConnectorMemberOfByRefCommand : GraphClientCmdlet
+    [GraphRoute("GET", "/servicePrincipals/{servicePrincipal-id}/lifecycle/complianceIssues")]
+    [Cmdlet(VerbsCommon.Get, "MgServicePrincipalLifecycleComplianceIssue_List")]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.IdentityGovernance.ComplianceIssue))]
+    public class GetMgServicePrincipalLifecycleComplianceIssue_ListCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
-        public string OnPremisesPublishingProfileId { get; set; } = string.Empty;
-        [Parameter(Mandatory = true, Position = 1)]
-        public string ConnectorId { get; set; } = string.Empty;
+        public string ServicePrincipalId { get; set; } = string.Empty;
 
 
 
         [Parameter(Mandatory = false)]
         public string? Filter { get; set; }
+
+        [Parameter(Mandatory = false)]
+        [Alias("Select")]
+        public string[]? Property { get; set; }
+
+        [Parameter(Mandatory = false)]
+        [Alias("Expand")]
+        public string[]? ExpandProperty { get; set; }
 
         [Parameter(Mandatory = false)]
         [Alias("OrderBy")]
@@ -57,13 +63,19 @@ namespace Microsoft.Graph.PowerShell.Applications
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
-            Microsoft.Graph.PowerShell.Applications.Client.Models.StringCollectionResponse? result;
+            Microsoft.Graph.PowerShell.Applications.Client.Models.IdentityGovernance.ComplianceIssueCollectionResponse? result;
             try
             {
-                result = client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].Connectors[ConnectorId].MemberOf.Ref.GetAsync(requestConfiguration =>
+                result = client.ServicePrincipals[ServicePrincipalId].Lifecycle.ComplianceIssues.GetAsync(requestConfiguration =>
                 {
                     if (this.IsParameterBound(nameof(Filter)))
                         requestConfiguration.QueryParameters.Filter = Filter;
+
+                    if (this.IsParameterBound(nameof(Property)))
+                        requestConfiguration.QueryParameters.Select = Property;
+
+                    if (this.IsParameterBound(nameof(ExpandProperty)))
+                        requestConfiguration.QueryParameters.Expand = ExpandProperty;
 
                     if (this.IsParameterBound(nameof(Sort)))
                         requestConfiguration.QueryParameters.Orderby = Sort;
@@ -100,7 +112,7 @@ namespace Microsoft.Graph.PowerShell.Applications
                         // The nextLink already carries the original query state, and a raw-URL
                         // builder ignores templated query parameters anyway - so the continuation
                         // re-applies headers only; query bindings here would be dead code.
-                        result = client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].Connectors[ConnectorId].MemberOf.Ref.WithUrl(nextLink).GetAsync(requestConfiguration =>
+                        result = client.ServicePrincipals[ServicePrincipalId].Lifecycle.ComplianceIssues.WithUrl(nextLink).GetAsync(requestConfiguration =>
                         {
 
                 AddRequestHeaders(requestConfiguration.Headers);
@@ -122,7 +134,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, ConnectorId);
+                ThrowGraphRequestFailed(ex, ServicePrincipalId);
                 return;
             }
         }

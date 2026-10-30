@@ -10,14 +10,16 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Applications
 {
-    [GraphRoute("DELETE", "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}")]
-    [Cmdlet(VerbsCommon.Remove, "MgServicePrincipalFederatedIdentityCredential", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    public class RemoveMgServicePrincipalFederatedIdentityCredentialCommand : GraphClientCmdlet
+    [GraphRoute("DELETE", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/$ref")]
+    [Cmdlet(VerbsCommon.Remove, "MgOnPremisePublishingProfileAgentGroupOnPremiseAgentGroupByRef", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
+    public class RemoveMgOnPremisePublishingProfileAgentGroupOnPremiseAgentGroupByRefCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
-        public string ServicePrincipalId { get; set; } = string.Empty;
+        public string OnPremisesPublishingProfileId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 1)]
-        public string FederatedIdentityCredentialId { get; set; } = string.Empty;
+        public string OnPremisesAgentId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 2)]
+        public string OnPremisesAgentGroupId { get; set; } = string.Empty;
 
 
         [Parameter(Mandatory = false,
@@ -29,7 +31,7 @@ namespace Microsoft.Graph.PowerShell.Applications
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(FederatedIdentityCredentialId, "Remove"))
+            if (!ShouldProcess(OnPremisesAgentGroupId, "Remove"))
                 return;
 
         var requestAdapter = GetRequestAdapter();
@@ -38,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                client.ServicePrincipals[ServicePrincipalId].FederatedIdentityCredentials[FederatedIdentityCredentialId].DeleteAsync(requestConfiguration =>
+                client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].Agents[OnPremisesAgentId].AgentGroups[OnPremisesAgentGroupId].Ref.DeleteAsync(requestConfiguration =>
                 {
 
                         if (this.IsParameterBound(nameof(IfMatch)))
@@ -50,7 +52,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, FederatedIdentityCredentialId);
+                ThrowGraphRequestFailed(ex, OnPremisesAgentGroupId);
                 return;
             }
         }
