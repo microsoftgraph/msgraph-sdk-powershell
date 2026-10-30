@@ -26,7 +26,7 @@ directive:
 # records reviewed absence; DevicesCloudPrintDirectiveMigrationTests pins it.
 # Keep the AutoRest directive active until the service-module pipeline is retired.
   - remove-path-by-operation: ^print(_.*Report|\.report.*)
-# Wrapper migration: suppress only POST /print/printers (print.CreatePrinters),
+# Wrapper migration: suppress only POST /print/printers (print_CreatePrinter),
 # not the /print/printers/create action or any other printer operation.
 # Devices.CloudPrint_cmdletConfigurations.cs extends existing v1.0 derived
 # suppression to beta and no-data runs. The adjacent ledger and module tests

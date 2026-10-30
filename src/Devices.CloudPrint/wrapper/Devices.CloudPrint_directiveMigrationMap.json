@@ -10,24 +10,24 @@
         {
           "method": "DELETE",
           "path": "/print/shares/{printerShare-id}/allowedGroups/{group-id}/$ref",
-          "operationId": "print.shares.allowedGroups.DeleteRefGroup"
+          "operationId": "print.share.allowedGroup_DeleteGroupGraphBPreRef"
         },
         {
           "method": "DELETE",
           "path": "/print/shares/{printerShare-id}/allowedUsers/{user-id}/$ref",
-          "operationId": "print.shares.allowedUsers.DeleteRefUser"
+          "operationId": "print.share.allowedUser_DeleteUserGraphBPreRef"
         }
       ],
       "retain": [
         {
           "method": "DELETE",
           "path": "/print/shares/{printerShare-id}/allowedGroups/$ref",
-          "operationId": "print.shares.DeleteRefAllowedGroups"
+          "operationId": "print.share_DeleteAllowedGroupGraphBPreRef"
         },
         {
           "method": "DELETE",
           "path": "/print/shares/{printerShare-id}/allowedUsers/$ref",
-          "operationId": "print.shares.DeleteRefAllowedUsers"
+          "operationId": "print.share_DeleteAllowedUserGraphBPreRef"
         }
       ]
     }
@@ -57,7 +57,7 @@
       "classification": "CmdletSuppression",
       "sourceContains": "variant: ^Create$|^CreateExpanded$",
       "implementation": "CmdletConfigurator",
-      "notes": "New PrintPrinter Create/CreateExpanded are the ordinary collection POST print.CreatePrinters in both profiles. The separately identified POST /print/printers/create action (print.printers.create) remains: v1.0 derived naming exposes that action as New-MgPrintPrinter. Existing parity-suppressions.v1.0.json already suppresses the ordinary POST with derived data enabled; one exact curated entry supplies the missing beta/no-data coverage without adding duplicate per-profile overrides. Printer GET, item PATCH/DELETE, job POST, and the create action remain available.",
+      "notes": "New PrintPrinter Create/CreateExpanded are the ordinary collection POST print_CreatePrinter in both profiles. Reviewed original same-profile openApiDocs and current compatible specs select exactly this same method/path/operation-ID set after ID alignment; the compatible survivor set is complete. The distinct action print.printer_create is POST /print/printers/microsoft.graph.create in the original spec and POST /print/printers/create in the compatible spec; it remains available, and v1.0 derived naming exposes it as New-MgPrintPrinter. Existing parity-suppressions.v1.0.json already suppresses the ordinary POST with derived data enabled; one exact curated entry supplies the missing beta/no-data coverage without duplicate per-profile overrides. GeneratorConfig run settings are shared while explicit separate runtime profiles select derived data in tests. Printer GET, item PATCH/DELETE, job POST, and the create action remain available.",
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
@@ -65,7 +65,7 @@
             {
               "method": "POST",
               "path": "/print/printers",
-              "operationId": "print.CreatePrinters"
+              "operationId": "print_CreatePrinter"
             }
           ]
         },
@@ -75,7 +75,7 @@
             {
               "method": "POST",
               "path": "/print/printers",
-              "operationId": "print.CreatePrinters"
+              "operationId": "print_CreatePrinter"
             }
           ]
         }
