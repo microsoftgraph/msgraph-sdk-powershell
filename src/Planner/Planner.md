@@ -22,6 +22,9 @@ directive:
 # for every original legacy regex match and its compatible successor (137 v1.0,
 # 206 beta). Planner_cmdletConfigurations.cs suppresses those exact routes,
 # including the unanchored group/user matches and qualified beta calls.
+# Current v1.0 IDs support complete literal evidence; beta still needs the
+# reviewed Legacy bridge for 24 actual action/function final-segment changes.
+# Do not publish until the normally merged inventory helper validates beta.
   - remove-path-by-operation: ^user.planner_(Create|Update|Delete)All|planner.bucket_(Get|Create|Update|Delete)Task|planner.bucket.task.*|planner.plan_(Get|Create|Update|Delete)Bucket|planner.plan.bucket.*|planner.plan_(Get|Create|Update|Delete)Task|planner.plan.task.*$
 # Remove cmdlets
 # Wrapper migration 2: suppress singleton DELETE, preserving GET and PATCH.
