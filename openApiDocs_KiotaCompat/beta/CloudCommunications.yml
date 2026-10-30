@@ -11,7 +11,7 @@ paths:
       tags:
         - communications.cloudCommunications
       summary: Get communications
-      operationId: communications.cloudCommunications.GetCloudCommunications
+      operationId: communication.cloudCommunication_GetCloudCommunication
       parameters:
         - name: $select
           in: query
@@ -49,7 +49,7 @@ paths:
       tags:
         - communications.cloudCommunications
       summary: Update communications
-      operationId: communications.cloudCommunications.UpdateCloudCommunications
+      operationId: communication.cloudCommunication_UpdateCloudCommunication
       requestBody:
         description: New property values
         content:
@@ -75,7 +75,7 @@ paths:
         - communications.adhocCall
       summary: Get adhocCalls from communications
       description: A collection of ad hoc calls in Teams.
-      operationId: communications.ListAdhocCalls
+      operationId: communication_ListAdhocCall
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -127,7 +127,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Create new navigation property to adhocCalls for communications
-      operationId: communications.CreateAdhocCalls
+      operationId: communication_CreateAdhocCall
       requestBody:
         description: New navigation property
         content:
@@ -153,7 +153,7 @@ paths:
         - communications.adhocCall
       summary: Get adhocCalls from communications
       description: A collection of ad hoc calls in Teams.
-      operationId: communications.GetAdhocCalls
+      operationId: communication_GetAdhocCall
       parameters:
         - name: $select
           in: query
@@ -191,7 +191,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Update the navigation property adhocCalls in communications
-      operationId: communications.UpdateAdhocCalls
+      operationId: communication_UpdateAdhocCall
       requestBody:
         description: New navigation property values
         content:
@@ -215,7 +215,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Delete navigation property adhocCalls for communications
-      operationId: communications.DeleteAdhocCalls
+      operationId: communication_DeleteAdhocCall
       parameters:
         - name: If-Match
           in: header
@@ -237,7 +237,7 @@ paths:
         - communications.adhocCall
       summary: Get recordings from communications
       description: The recordings of a call. Read-only.
-      operationId: communications.adhocCalls.ListRecordings
+      operationId: communication.adhocCall_ListRecording
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -289,7 +289,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Create new navigation property to recordings for communications
-      operationId: communications.adhocCalls.CreateRecordings
+      operationId: communication.adhocCall_CreateRecording
       requestBody:
         description: New navigation property
         content:
@@ -315,7 +315,7 @@ paths:
         - communications.adhocCall
       summary: Get recordings from communications
       description: The recordings of a call. Read-only.
-      operationId: communications.adhocCalls.GetRecordings
+      operationId: communication.adhocCall_GetRecording
       parameters:
         - name: $select
           in: query
@@ -353,7 +353,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Update the navigation property recordings in communications
-      operationId: communications.adhocCalls.UpdateRecordings
+      operationId: communication.adhocCall_UpdateRecording
       requestBody:
         description: New navigation property values
         content:
@@ -377,7 +377,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Delete navigation property recordings for communications
-      operationId: communications.adhocCalls.DeleteRecordings
+      operationId: communication.adhocCall_DeleteRecording
       parameters:
         - name: If-Match
           in: header
@@ -399,7 +399,7 @@ paths:
         - communications.adhocCall
       summary: Get content for the navigation property recordings from communications
       description: The content of the recording. Read-only.
-      operationId: communications.adhocCalls.GetRecordingsContent
+      operationId: communication.adhocCall_GetRecordingsContent
       responses:
         2XX:
           description: Retrieved media content
@@ -417,7 +417,7 @@ paths:
         - communications.adhocCall
       summary: Update content for the navigation property recordings in communications
       description: The content of the recording. Read-only.
-      operationId: communications.adhocCalls.UpdateRecordingsContent
+      operationId: communication.adhocCall_SetRecordingsContent
       requestBody:
         description: New media content.
         content:
@@ -442,7 +442,7 @@ paths:
         - communications.adhocCall
       summary: Delete content for the navigation property recordings in communications
       description: The content of the recording. Read-only.
-      operationId: communications.adhocCalls.DeleteRecordingsContent
+      operationId: communication.adhocCall_DeleteRecordingsContent
       parameters:
         - name: If-Match
           in: header
@@ -462,7 +462,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Get the number of the resource
-      operationId: communications.adhocCalls.recordings.GetCount-6c48
+      operationId: communication.adhocCall.recording_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -478,7 +478,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Invoke function delta
-      operationId: communications.adhocCalls.adhocCall.recordings.delta
+      operationId: communication.adhocCall.recording_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -545,7 +545,7 @@ paths:
         - communications.adhocCall
       summary: Get transcripts from communications
       description: The transcripts of a call. Read-only.
-      operationId: communications.adhocCalls.ListTranscripts
+      operationId: communication.adhocCall_ListTranscript
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -597,7 +597,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Create new navigation property to transcripts for communications
-      operationId: communications.adhocCalls.CreateTranscripts
+      operationId: communication.adhocCall_CreateTranscript
       requestBody:
         description: New navigation property
         content:
@@ -623,7 +623,7 @@ paths:
         - communications.adhocCall
       summary: Get transcripts from communications
       description: The transcripts of a call. Read-only.
-      operationId: communications.adhocCalls.GetTranscripts
+      operationId: communication.adhocCall_GetTranscript
       parameters:
         - name: $select
           in: query
@@ -661,7 +661,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Update the navigation property transcripts in communications
-      operationId: communications.adhocCalls.UpdateTranscripts
+      operationId: communication.adhocCall_UpdateTranscript
       requestBody:
         description: New navigation property values
         content:
@@ -685,7 +685,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Delete navigation property transcripts for communications
-      operationId: communications.adhocCalls.DeleteTranscripts
+      operationId: communication.adhocCall_DeleteTranscript
       parameters:
         - name: If-Match
           in: header
@@ -707,7 +707,7 @@ paths:
         - communications.adhocCall
       summary: Get content for the navigation property transcripts from communications
       description: The content of the transcript. Read-only.
-      operationId: communications.adhocCalls.GetTranscriptsContent
+      operationId: communication.adhocCall_GetTranscriptsContent
       responses:
         2XX:
           description: Retrieved media content
@@ -725,7 +725,7 @@ paths:
         - communications.adhocCall
       summary: Update content for the navigation property transcripts in communications
       description: The content of the transcript. Read-only.
-      operationId: communications.adhocCalls.UpdateTranscriptsContent
+      operationId: communication.adhocCall_SetTranscriptsContent
       requestBody:
         description: New media content.
         content:
@@ -750,7 +750,7 @@ paths:
         - communications.adhocCall
       summary: Delete content for the navigation property transcripts in communications
       description: The content of the transcript. Read-only.
-      operationId: communications.adhocCalls.DeleteTranscriptsContent
+      operationId: communication.adhocCall_DeleteTranscriptsContent
       parameters:
         - name: If-Match
           in: header
@@ -771,7 +771,7 @@ paths:
         - communications.adhocCall
       summary: Get metadataContent for the navigation property transcripts from communications
       description: The time-aligned metadata of the utterances in the transcript. Read-only.
-      operationId: communications.adhocCalls.GetTranscriptsMetadataContent
+      operationId: communication.adhocCall_GetTranscriptsMetadataContent
       responses:
         2XX:
           description: Retrieved media content
@@ -789,7 +789,7 @@ paths:
         - communications.adhocCall
       summary: Update metadataContent for the navigation property transcripts in communications
       description: The time-aligned metadata of the utterances in the transcript. Read-only.
-      operationId: communications.adhocCalls.UpdateTranscriptsMetadataContent
+      operationId: communication.adhocCall_SetTranscriptsMetadataContent
       requestBody:
         description: New media content.
         content:
@@ -810,7 +810,7 @@ paths:
         - communications.adhocCall
       summary: Delete metadataContent for the navigation property transcripts in communications
       description: The time-aligned metadata of the utterances in the transcript. Read-only.
-      operationId: communications.adhocCalls.DeleteTranscriptsMetadataContent
+      operationId: communication.adhocCall_DeleteTranscriptsMetadataContent
       parameters:
         - name: If-Match
           in: header
@@ -830,7 +830,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Get the number of the resource
-      operationId: communications.adhocCalls.transcripts.GetCount-c91e
+      operationId: communication.adhocCall.transcript_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -846,7 +846,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Invoke function delta
-      operationId: communications.adhocCalls.adhocCall.transcripts.delta
+      operationId: communication.adhocCall.transcript_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -912,7 +912,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Get the number of the resource
-      operationId: communications.adhocCalls.GetCount-c122
+      operationId: communication.adhocCall_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -928,7 +928,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Invoke function getAllRecordings
-      operationId: communications.adhocCalls.getAllRecordings
+      operationId: communication.adhocCall_getAllRecording
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -994,7 +994,7 @@ paths:
       tags:
         - communications.adhocCall
       summary: Invoke function getAllTranscripts
-      operationId: communications.adhocCalls.getAllTranscripts
+      operationId: communication.adhocCall_getAllTranscript
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1064,7 +1064,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecords-cloudcommunications-list-callrecords?view=graph-rest-beta
-      operationId: communications.ListCallRecords
+      operationId: communication_ListCallRecord
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1116,7 +1116,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to callRecords for communications
-      operationId: communications.CreateCallRecords
+      operationId: communication_CreateCallRecord
       requestBody:
         description: New navigation property
         content:
@@ -1145,7 +1145,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecords-callrecord-get?view=graph-rest-beta
-      operationId: communications.GetCallRecords
+      operationId: communication_GetCallRecord
       parameters:
         - name: $select
           in: query
@@ -1183,7 +1183,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property callRecords in communications
-      operationId: communications.UpdateCallRecords
+      operationId: communication_UpdateCallRecord
       requestBody:
         description: New navigation property values
         content:
@@ -1207,7 +1207,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property callRecords for communications
-      operationId: communications.DeleteCallRecords
+      operationId: communication_DeleteCallRecord
       parameters:
         - name: If-Match
           in: header
@@ -1229,7 +1229,7 @@ paths:
         - communications.callRecord
       summary: Get organizer_v2 from communications
       description: Identity of the organizer of the call. This relationship is expanded by default in callRecord methods.
-      operationId: communications.callRecords.GetOrganizer_v2
+      operationId: communication.callRecord_GetOrganizer_v2
       parameters:
         - name: $select
           in: query
@@ -1267,7 +1267,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property organizer_v2 in communications
-      operationId: communications.callRecords.UpdateOrganizer_v2
+      operationId: communication.callRecord_UpdateOrganizer_v2
       requestBody:
         description: New navigation property values
         content:
@@ -1291,7 +1291,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property organizer_v2 for communications
-      operationId: communications.callRecords.DeleteOrganizer_v2
+      operationId: communication.callRecord_DeleteOrganizer_v2
       parameters:
         - name: If-Match
           in: header
@@ -1316,7 +1316,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecords-callrecord-list-participants_v2?view=graph-rest-beta
-      operationId: communications.callRecords.ListParticipants_v2
+      operationId: communication.callRecord_ListParticipants_v2
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1368,7 +1368,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to participants_v2 for communications
-      operationId: communications.callRecords.CreateParticipants_v2
+      operationId: communication.callRecord_CreateParticipants_v2
       requestBody:
         description: New navigation property
         content:
@@ -1394,7 +1394,7 @@ paths:
         - communications.callRecord
       summary: Get participants_v2 from communications
       description: List of distinct participants in the call.
-      operationId: communications.callRecords.GetParticipants_v2
+      operationId: communication.callRecord_GetParticipants_v2
       parameters:
         - name: $select
           in: query
@@ -1432,7 +1432,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property participants_v2 in communications
-      operationId: communications.callRecords.UpdateParticipants_v2
+      operationId: communication.callRecord_UpdateParticipants_v2
       requestBody:
         description: New navigation property values
         content:
@@ -1456,7 +1456,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property participants_v2 for communications
-      operationId: communications.callRecords.DeleteParticipants_v2
+      operationId: communication.callRecord_DeleteParticipants_v2
       parameters:
         - name: If-Match
           in: header
@@ -1477,7 +1477,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get the number of the resource
-      operationId: communications.callRecords.participants_v2.GetCount-ecf7
+      operationId: communication.callRecord.participants_v2_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1497,7 +1497,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecords-callrecord-list-sessions?view=graph-rest-beta
-      operationId: communications.callRecords.ListSessions
+      operationId: communication.callRecord_ListSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1549,7 +1549,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to sessions for communications
-      operationId: communications.callRecords.CreateSessions
+      operationId: communication.callRecord_CreateSession
       requestBody:
         description: New navigation property
         content:
@@ -1575,7 +1575,7 @@ paths:
         - communications.callRecord
       summary: Get sessions from communications
       description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
-      operationId: communications.callRecords.GetSessions
+      operationId: communication.callRecord_GetSession
       parameters:
         - name: $select
           in: query
@@ -1613,7 +1613,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property sessions in communications
-      operationId: communications.callRecords.UpdateSessions
+      operationId: communication.callRecord_UpdateSession
       requestBody:
         description: New navigation property values
         content:
@@ -1637,7 +1637,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property sessions for communications
-      operationId: communications.callRecords.DeleteSessions
+      operationId: communication.callRecord_DeleteSession
       parameters:
         - name: If-Match
           in: header
@@ -1659,7 +1659,7 @@ paths:
         - communications.callRecord
       summary: Get segments from communications
       description: The list of segments involved in the session. Read-only. Nullable.
-      operationId: communications.callRecords.sessions.ListSegments
+      operationId: communication.callRecord.session_ListSegment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1711,7 +1711,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to segments for communications
-      operationId: communications.callRecords.sessions.CreateSegments
+      operationId: communication.callRecord.session_CreateSegment
       requestBody:
         description: New navigation property
         content:
@@ -1737,7 +1737,7 @@ paths:
         - communications.callRecord
       summary: Get segments from communications
       description: The list of segments involved in the session. Read-only. Nullable.
-      operationId: communications.callRecords.sessions.GetSegments
+      operationId: communication.callRecord.session_GetSegment
       parameters:
         - name: $select
           in: query
@@ -1775,7 +1775,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property segments in communications
-      operationId: communications.callRecords.sessions.UpdateSegments
+      operationId: communication.callRecord.session_UpdateSegment
       requestBody:
         description: New navigation property values
         content:
@@ -1799,7 +1799,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property segments for communications
-      operationId: communications.callRecords.sessions.DeleteSegments
+      operationId: communication.callRecord.session_DeleteSegment
       parameters:
         - name: If-Match
           in: header
@@ -1820,7 +1820,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get the number of the resource
-      operationId: communications.callRecords.sessions.segments.GetCount-4fed
+      operationId: communication.callRecord.session.segment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1836,7 +1836,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get the number of the resource
-      operationId: communications.callRecords.sessions.GetCount-c743
+      operationId: communication.callRecord.session_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1852,7 +1852,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get the number of the resource
-      operationId: communications.callRecords.GetCount-e558
+      operationId: communication.callRecord_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1869,7 +1869,7 @@ paths:
         - communications.callRecord
       summary: Invoke function getDirectRoutingCalls
       description: Get a log of direct routing calls as a collection of directRoutingLogRow entries.
-      operationId: communications.callRecords.getDirectRoutingCalls
+      operationId: communication.callRecord_getDirectRoutingCall
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1905,7 +1905,7 @@ paths:
         - communications.callRecord
       summary: Invoke function getPstnBlockedUsersLog
       description: Get the log of users who are blocked/unblocked from making public switched telephone network (PSTN) calls in Microsoft Teams as a collection of pstnBlockedUsersLogRow entries. The log includes information about each blocked user such as their assigned phone number and the reason they were blocked/unblocked from making calls.
-      operationId: communications.callRecords.getPstnBlockedUsersLog
+      operationId: communication.callRecord_getPstnBlockedUsersLog
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1941,7 +1941,7 @@ paths:
         - communications.callRecord
       summary: Invoke function getPstnCalls
       description: Get a log of PSTN calls as a collection of pstnCallLogRow entries.
-      operationId: communications.callRecords.getPstnCalls
+      operationId: communication.callRecord_getPstnCall
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1977,7 +1977,7 @@ paths:
         - communications.callRecord
       summary: Invoke function getPstnOnlineMeetingDialoutReport
       description: "Get aggregated report of usage and money spent for the audio conferencing dial-out service over a selected period as a collection of pstnOnlineMeetingDialoutReport entries.\r\nThe report is aggregated by user, user location, destination context (domestic/international), and currency. The report includes:"
-      operationId: communications.callRecords.getPstnOnlineMeetingDialoutReport
+      operationId: communication.callRecord_getPstnOnlineMeetingDialoutReport
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2013,7 +2013,7 @@ paths:
         - communications.callRecord
       summary: Invoke function getSmsLog
       description: Get the log of a sent/received SMS as a collection of smsLogRow entries.
-      operationId: communications.callRecords.getSmsLog
+      operationId: communication.callRecord_getSmsLog
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2049,7 +2049,7 @@ paths:
         - communications.call
       summary: Get call
       description: Retrieve the properties and relationships of a call object.
-      operationId: communications.ListCalls
+      operationId: communication_ListCall
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2105,7 +2105,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-calls?view=graph-rest-beta
-      operationId: communications.CreateCalls
+      operationId: communication_CreateCall
       requestBody:
         description: New navigation property
         content:
@@ -2134,7 +2134,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-get?view=graph-rest-beta
-      operationId: communications.GetCalls
+      operationId: communication_GetCall
       parameters:
         - name: $select
           in: query
@@ -2172,7 +2172,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property calls in communications
-      operationId: communications.UpdateCalls
+      operationId: communication_UpdateCall
       requestBody:
         description: New navigation property values
         content:
@@ -2200,7 +2200,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-delete?view=graph-rest-beta
-      operationId: communications.DeleteCalls
+      operationId: communication_DeleteCall
       parameters:
         - name: If-Match
           in: header
@@ -2225,7 +2225,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-beta
-      operationId: communications.calls.ListAudioRoutingGroups
+      operationId: communication.call_ListAudioRoutingGroup
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2281,7 +2281,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-beta
-      operationId: communications.calls.CreateAudioRoutingGroups
+      operationId: communication.call_CreateAudioRoutingGroup
       requestBody:
         description: New navigation property
         content:
@@ -2310,7 +2310,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/audioroutinggroup-get?view=graph-rest-beta
-      operationId: communications.calls.GetAudioRoutingGroups
+      operationId: communication.call_GetAudioRoutingGroup
       parameters:
         - name: $select
           in: query
@@ -2352,7 +2352,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/audioroutinggroup-update?view=graph-rest-beta
-      operationId: communications.calls.UpdateAudioRoutingGroups
+      operationId: communication.call_UpdateAudioRoutingGroup
       requestBody:
         description: New navigation property values
         content:
@@ -2380,7 +2380,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/audioroutinggroup-delete?view=graph-rest-beta
-      operationId: communications.calls.DeleteAudioRoutingGroups
+      operationId: communication.call_DeleteAudioRoutingGroup
       parameters:
         - name: If-Match
           in: header
@@ -2401,7 +2401,7 @@ paths:
       tags:
         - communications.call
       summary: Get the number of the resource
-      operationId: communications.calls.audioRoutingGroups.GetCount-157e
+      operationId: communication.call.audioRoutingGroup_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2421,7 +2421,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-list-contentsharingsessions?view=graph-rest-beta
-      operationId: communications.calls.ListContentSharingSessions
+      operationId: communication.call_ListContentSharingSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2473,7 +2473,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to contentSharingSessions for communications
-      operationId: communications.calls.CreateContentSharingSessions
+      operationId: communication.call_CreateContentSharingSession
       requestBody:
         description: New navigation property
         content:
@@ -2502,7 +2502,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contentsharingsession-get?view=graph-rest-beta
-      operationId: communications.calls.GetContentSharingSessions
+      operationId: communication.call_GetContentSharingSession
       parameters:
         - name: $select
           in: query
@@ -2540,7 +2540,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property contentSharingSessions in communications
-      operationId: communications.calls.UpdateContentSharingSessions
+      operationId: communication.call_UpdateContentSharingSession
       requestBody:
         description: New navigation property values
         content:
@@ -2564,7 +2564,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property contentSharingSessions for communications
-      operationId: communications.calls.DeleteContentSharingSessions
+      operationId: communication.call_DeleteContentSharingSession
       parameters:
         - name: If-Match
           in: header
@@ -2585,7 +2585,7 @@ paths:
       tags:
         - communications.call
       summary: Get pngOfCurrentSlide for the navigation property contentSharingSessions from communications
-      operationId: communications.calls.GetContentSharingSessionsPngOfCurrentSlide
+      operationId: communication.call_GetContentSharingSessionsPngGraphOPreCurrentSlide
       responses:
         2XX:
           description: Retrieved media content
@@ -2602,7 +2602,7 @@ paths:
       tags:
         - communications.call
       summary: Update pngOfCurrentSlide for the navigation property contentSharingSessions in communications
-      operationId: communications.calls.UpdateContentSharingSessionsPngOfCurrentSlide
+      operationId: communication.call_SetContentSharingSessionsPngGraphOPreCurrentSlide
       requestBody:
         description: New media content.
         content:
@@ -2622,7 +2622,7 @@ paths:
       tags:
         - communications.call
       summary: Delete pngOfCurrentSlide for the navigation property contentSharingSessions in communications
-      operationId: communications.calls.DeleteContentSharingSessionsPngOfCurrentSlide
+      operationId: communication.call_DeleteContentSharingSessionsPngGraphOPreCurrentSlide
       parameters:
         - name: If-Match
           in: header
@@ -2642,7 +2642,7 @@ paths:
       tags:
         - communications.call
       summary: Get the number of the resource
-      operationId: communications.calls.contentSharingSessions.GetCount-a2b2
+      operationId: communication.call.contentSharingSession_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2662,7 +2662,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-beta
-      operationId: communications.calls.call.addLargeGalleryView
+      operationId: communication.call_addLargeGalleryView
       requestBody:
         description: Action parameters
         content:
@@ -2698,7 +2698,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-answer?view=graph-rest-beta
-      operationId: communications.calls.call.answer
+      operationId: communication.call_answer
       requestBody:
         description: Action parameters
         content:
@@ -2746,7 +2746,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-beta
-      operationId: communications.calls.call.cancelMediaProcessing
+      operationId: communication.call_cancelMediaProcessing
       requestBody:
         description: Action parameters
         content:
@@ -2782,7 +2782,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-changescreensharingrole?view=graph-rest-beta
-      operationId: communications.calls.call.changeScreenSharingRole
+      operationId: communication.call_changeScreenSharingRole
       requestBody:
         description: Action parameters
         content:
@@ -2810,7 +2810,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-keepalive?view=graph-rest-beta
-      operationId: communications.calls.call.keepAlive
+      operationId: communication.call_keepAlive
       responses:
         '204':
           description: Success
@@ -2828,7 +2828,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-mute?view=graph-rest-beta
-      operationId: communications.calls.call.mute
+      operationId: communication.call_mute
       requestBody:
         description: Action parameters
         content:
@@ -2864,7 +2864,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-playprompt?view=graph-rest-beta
-      operationId: communications.calls.call.playPrompt
+      operationId: communication.call_playPrompt
       requestBody:
         description: Action parameters
         content:
@@ -2904,7 +2904,7 @@ paths:
       tags:
         - communications.call
       summary: Invoke action record
-      operationId: communications.calls.call.record
+      operationId: communication.call_record
       requestBody:
         description: Action parameters
         content:
@@ -2979,7 +2979,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-record?view=graph-rest-beta
-      operationId: communications.calls.call.recordResponse
+      operationId: communication.call_recordResponse
       requestBody:
         description: Action parameters
         content:
@@ -3054,7 +3054,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-redirect?view=graph-rest-beta
-      operationId: communications.calls.call.redirect
+      operationId: communication.call_redirect
       requestBody:
         description: Action parameters
         content:
@@ -3106,7 +3106,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-reject?view=graph-rest-beta
-      operationId: communications.calls.call.reject
+      operationId: communication.call_reject
       requestBody:
         description: Action parameters
         content:
@@ -3136,7 +3136,7 @@ paths:
       tags:
         - communications.call
       summary: Invoke action sendDtmfTones
-      operationId: communications.calls.call.sendDtmfTones
+      operationId: communication.call_sendDtmfTone
       requestBody:
         description: Action parameters
         content:
@@ -3178,7 +3178,7 @@ paths:
       tags:
         - communications.call
       summary: Invoke action startRecording
-      operationId: communications.calls.call.startRecording
+      operationId: communication.call_startRecording
       requestBody:
         description: Action parameters
         content:
@@ -3210,7 +3210,7 @@ paths:
       tags:
         - communications.call
       summary: Invoke action startTranscription
-      operationId: communications.calls.call.startTranscription
+      operationId: communication.call_startTranscription
       requestBody:
         description: Action parameters
         content:
@@ -3245,7 +3245,7 @@ paths:
       tags:
         - communications.call
       summary: Invoke action stopRecording
-      operationId: communications.calls.call.stopRecording
+      operationId: communication.call_stopRecording
       requestBody:
         description: Action parameters
         content:
@@ -3277,7 +3277,7 @@ paths:
       tags:
         - communications.call
       summary: Invoke action stopTranscription
-      operationId: communications.calls.call.stopTranscription
+      operationId: communication.call_stopTranscription
       requestBody:
         description: Action parameters
         content:
@@ -3316,7 +3316,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-beta
-      operationId: communications.calls.call.subscribeToTone
+      operationId: communication.call_subscribeToTone
       requestBody:
         description: Action parameters
         content:
@@ -3352,7 +3352,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-transfer?view=graph-rest-beta
-      operationId: communications.calls.call.transfer
+      operationId: communication.call_transfer
       requestBody:
         description: Action parameters
         content:
@@ -3385,7 +3385,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-unmute?view=graph-rest-beta
-      operationId: communications.calls.call.unmute
+      operationId: communication.call_unmute
       requestBody:
         description: Action parameters
         content:
@@ -3421,7 +3421,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-beta
-      operationId: communications.calls.call.updateRecordingStatus
+      operationId: communication.call_updateRecordingStatus
       requestBody:
         description: Action parameters
         content:
@@ -3456,7 +3456,7 @@ paths:
         - communications.call
       summary: Get addLargeGalleryViewOperation
       description: Get the status of an operation that adds the large gallery view to a call.
-      operationId: communications.calls.ListOperations
+      operationId: communication.call_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3508,7 +3508,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to operations for communications
-      operationId: communications.calls.CreateOperations
+      operationId: communication.call_CreateOperation
       requestBody:
         description: New navigation property
         content:
@@ -3537,7 +3537,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/addlargegalleryviewoperation-get?view=graph-rest-beta
-      operationId: communications.calls.GetOperations
+      operationId: communication.call_GetOperation
       parameters:
         - name: $select
           in: query
@@ -3575,7 +3575,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property operations in communications
-      operationId: communications.calls.UpdateOperations
+      operationId: communication.call_UpdateOperation
       requestBody:
         description: New navigation property values
         content:
@@ -3599,7 +3599,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property operations for communications
-      operationId: communications.calls.DeleteOperations
+      operationId: communication.call_DeleteOperation
       parameters:
         - name: If-Match
           in: header
@@ -3620,7 +3620,7 @@ paths:
       tags:
         - communications.call
       summary: Get the number of the resource
-      operationId: communications.calls.operations.GetCount-3444
+      operationId: communication.call.operation_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3640,7 +3640,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-list-participants?view=graph-rest-beta
-      operationId: communications.calls.ListParticipants
+      operationId: communication.call_ListParticipant
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3692,7 +3692,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to participants for communications
-      operationId: communications.calls.CreateParticipants
+      operationId: communication.call_CreateParticipant
       requestBody:
         description: New navigation property
         content:
@@ -3721,7 +3721,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-get?view=graph-rest-beta
-      operationId: communications.calls.GetParticipants
+      operationId: communication.call_GetParticipant
       parameters:
         - name: $select
           in: query
@@ -3759,7 +3759,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property participants in communications
-      operationId: communications.calls.UpdateParticipants
+      operationId: communication.call_UpdateParticipant
       requestBody:
         description: New navigation property values
         content:
@@ -3787,7 +3787,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-beta
-      operationId: communications.calls.DeleteParticipants
+      operationId: communication.call_DeleteParticipant
       parameters:
         - name: If-Match
           in: header
@@ -3812,7 +3812,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-mute?view=graph-rest-beta
-      operationId: communications.calls.call.participants.participant.mute
+      operationId: communication.call.participant_mute
       requestBody:
         description: Action parameters
         content:
@@ -3848,7 +3848,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-reportsyntheticmedia?view=graph-rest-beta
-      operationId: communications.calls.call.participants.participant.reportSyntheticMedia
+      operationId: communication.call.participant_reportSyntheticMedium
       requestBody:
         description: Action parameters
         content:
@@ -3904,7 +3904,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-startholdmusic?view=graph-rest-beta
-      operationId: communications.calls.call.participants.participant.startHoldMusic
+      operationId: communication.call.participant_startHoldMusic
       requestBody:
         description: Action parameters
         content:
@@ -3945,7 +3945,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-beta
-      operationId: communications.calls.call.participants.participant.stopHoldMusic
+      operationId: communication.call.participant_stopHoldMusic
       requestBody:
         description: Action parameters
         content:
@@ -3977,7 +3977,7 @@ paths:
       tags:
         - communications.call
       summary: Get the number of the resource
-      operationId: communications.calls.participants.GetCount-4efe
+      operationId: communication.call.participant_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3997,7 +3997,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-beta
-      operationId: communications.calls.call.participants.invite
+      operationId: communication.call.participant_invite
       requestBody:
         description: Action parameters
         content:
@@ -4037,7 +4037,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-muteall?view=graph-rest-beta
-      operationId: communications.calls.call.participants.muteAll
+      operationId: communication.call.participant_muteAll
       requestBody:
         description: Action parameters
         content:
@@ -4074,7 +4074,7 @@ paths:
       tags:
         - communications.call
       summary: Get the number of the resource
-      operationId: communications.calls.GetCount-5d04
+      operationId: communication.call_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4094,7 +4094,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-logteleconferencedevicequality?view=graph-rest-beta
-      operationId: communications.calls.logTeleconferenceDeviceQuality
+      operationId: communication.call_logTeleconferenceDeviceQuality
       requestBody:
         description: Action parameters
         content:
@@ -4122,7 +4122,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudcommunications-getallonlinemeetingmessages?view=graph-rest-beta
-      operationId: communications.getAllOnlineMeetingMessages
+      operationId: communication_getAllOnlineMeetingMessage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4192,7 +4192,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-beta
-      operationId: communications.getPresencesByUserId
+      operationId: communication_getPresencesGraphBPreUserId
       requestBody:
         description: Action parameters
         content:
@@ -4235,7 +4235,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get onlineMeetingConversations from communications
       description: A collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
-      operationId: communications.ListOnlineMeetingConversations
+      operationId: communication_ListOnlineMeetingConversation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4287,7 +4287,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Create new navigation property to onlineMeetingConversations for communications
-      operationId: communications.CreateOnlineMeetingConversations
+      operationId: communication_CreateOnlineMeetingConversation
       requestBody:
         description: New navigation property
         content:
@@ -4313,7 +4313,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get onlineMeetingConversations from communications
       description: A collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
-      operationId: communications.GetOnlineMeetingConversations
+      operationId: communication_GetOnlineMeetingConversation
       parameters:
         - name: $select
           in: query
@@ -4351,7 +4351,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Update the navigation property onlineMeetingConversations in communications
-      operationId: communications.UpdateOnlineMeetingConversations
+      operationId: communication_UpdateOnlineMeetingConversation
       requestBody:
         description: New navigation property values
         content:
@@ -4375,7 +4375,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Delete navigation property onlineMeetingConversations for communications
-      operationId: communications.DeleteOnlineMeetingConversations
+      operationId: communication_DeleteOnlineMeetingConversation
       parameters:
         - name: If-Match
           in: header
@@ -4397,7 +4397,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get messages from communications
       description: The messages in a Viva Engage conversation.
-      operationId: communications.onlineMeetingConversations.ListMessages
+      operationId: communication.onlineMeetingConversation_ListMessage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4449,7 +4449,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Create new navigation property to messages for communications
-      operationId: communications.onlineMeetingConversations.CreateMessages
+      operationId: communication.onlineMeetingConversation_CreateMessage
       requestBody:
         description: New navigation property
         content:
@@ -4475,7 +4475,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get messages from communications
       description: The messages in a Viva Engage conversation.
-      operationId: communications.onlineMeetingConversations.GetMessages
+      operationId: communication.onlineMeetingConversation_GetMessage
       parameters:
         - name: $select
           in: query
@@ -4513,7 +4513,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Update the navigation property messages in communications
-      operationId: communications.onlineMeetingConversations.UpdateMessages
+      operationId: communication.onlineMeetingConversation_UpdateMessage
       requestBody:
         description: New navigation property values
         content:
@@ -4537,7 +4537,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Delete navigation property messages for communications
-      operationId: communications.onlineMeetingConversations.DeleteMessages
+      operationId: communication.onlineMeetingConversation_DeleteMessage
       parameters:
         - name: If-Match
           in: header
@@ -4559,7 +4559,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get conversation from communications
       description: The Viva Engage conversation to which this message belongs. This relationship establishes the thread context for the message.
-      operationId: communications.onlineMeetingConversations.messages.GetConversation
+      operationId: communication.onlineMeetingConversation.message_GetConversation
       parameters:
         - name: $select
           in: query
@@ -4602,7 +4602,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/engagementconversationdiscussionmessage-list-reactions?view=graph-rest-beta
-      operationId: communications.onlineMeetingConversations.messages.ListReactions
+      operationId: communication.onlineMeetingConversation.message_ListReaction
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4654,7 +4654,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Create new navigation property to reactions for communications
-      operationId: communications.onlineMeetingConversations.messages.CreateReactions
+      operationId: communication.onlineMeetingConversation.message_CreateReaction
       requestBody:
         description: New navigation property
         content:
@@ -4680,7 +4680,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get reactions from communications
       description: A collection of reactions (such as like and smile) that users have applied to this message.
-      operationId: communications.onlineMeetingConversations.messages.GetReactions
+      operationId: communication.onlineMeetingConversation.message_GetReaction
       parameters:
         - name: $select
           in: query
@@ -4718,7 +4718,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Update the navigation property reactions in communications
-      operationId: communications.onlineMeetingConversations.messages.UpdateReactions
+      operationId: communication.onlineMeetingConversation.message_UpdateReaction
       requestBody:
         description: New navigation property values
         content:
@@ -4742,7 +4742,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Delete navigation property reactions for communications
-      operationId: communications.onlineMeetingConversations.messages.DeleteReactions
+      operationId: communication.onlineMeetingConversation.message_DeleteReaction
       parameters:
         - name: If-Match
           in: header
@@ -4763,7 +4763,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Get the number of the resource
-      operationId: communications.onlineMeetingConversations.messages.reactions.GetCount-89b7
+      operationId: communication.onlineMeetingConversation.message.reaction_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4780,7 +4780,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get replies from communications
       description: A collection of messages that are replies to this message and form a threaded discussion.
-      operationId: communications.onlineMeetingConversations.messages.ListReplies
+      operationId: communication.onlineMeetingConversation.message_ListReply
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4832,7 +4832,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Create new navigation property to replies for communications
-      operationId: communications.onlineMeetingConversations.messages.CreateReplies
+      operationId: communication.onlineMeetingConversation.message_CreateReply
       requestBody:
         description: New navigation property
         content:
@@ -4858,7 +4858,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get replies from communications
       description: A collection of messages that are replies to this message and form a threaded discussion.
-      operationId: communications.onlineMeetingConversations.messages.GetReplies
+      operationId: communication.onlineMeetingConversation.message_GetReply
       parameters:
         - name: $select
           in: query
@@ -4896,7 +4896,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Update the navigation property replies in communications
-      operationId: communications.onlineMeetingConversations.messages.UpdateReplies
+      operationId: communication.onlineMeetingConversation.message_UpdateReply
       requestBody:
         description: New navigation property values
         content:
@@ -4920,7 +4920,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Delete navigation property replies for communications
-      operationId: communications.onlineMeetingConversations.messages.DeleteReplies
+      operationId: communication.onlineMeetingConversation.message_DeleteReply
       parameters:
         - name: If-Match
           in: header
@@ -4942,7 +4942,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get conversation from communications
       description: The Viva Engage conversation to which this message belongs. This relationship establishes the thread context for the message.
-      operationId: communications.onlineMeetingConversations.messages.replies.GetConversation
+      operationId: communication.onlineMeetingConversation.message.reply_GetConversation
       parameters:
         - name: $select
           in: query
@@ -4982,7 +4982,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get reactions from communications
       description: A collection of reactions (such as like and smile) that users have applied to this message.
-      operationId: communications.onlineMeetingConversations.messages.replies.ListReactions
+      operationId: communication.onlineMeetingConversation.message.reply_ListReaction
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5034,7 +5034,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Create new navigation property to reactions for communications
-      operationId: communications.onlineMeetingConversations.messages.replies.CreateReactions
+      operationId: communication.onlineMeetingConversation.message.reply_CreateReaction
       requestBody:
         description: New navigation property
         content:
@@ -5060,7 +5060,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get reactions from communications
       description: A collection of reactions (such as like and smile) that users have applied to this message.
-      operationId: communications.onlineMeetingConversations.messages.replies.GetReactions
+      operationId: communication.onlineMeetingConversation.message.reply_GetReaction
       parameters:
         - name: $select
           in: query
@@ -5098,7 +5098,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Update the navigation property reactions in communications
-      operationId: communications.onlineMeetingConversations.messages.replies.UpdateReactions
+      operationId: communication.onlineMeetingConversation.message.reply_UpdateReaction
       requestBody:
         description: New navigation property values
         content:
@@ -5122,7 +5122,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Delete navigation property reactions for communications
-      operationId: communications.onlineMeetingConversations.messages.replies.DeleteReactions
+      operationId: communication.onlineMeetingConversation.message.reply_DeleteReaction
       parameters:
         - name: If-Match
           in: header
@@ -5143,7 +5143,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Get the number of the resource
-      operationId: communications.onlineMeetingConversations.messages.replies.reactions.GetCount-e8c6
+      operationId: communication.onlineMeetingConversation.message.reply.reaction_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5160,7 +5160,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get replyTo from communications
       description: 'The parent message to which this message is a reply, if it is part of a reply chain.'
-      operationId: communications.onlineMeetingConversations.messages.replies.GetReplyTo
+      operationId: communication.onlineMeetingConversation.message.reply_GetReplyTo
       parameters:
         - name: $select
           in: query
@@ -5199,7 +5199,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Get the number of the resource
-      operationId: communications.onlineMeetingConversations.messages.replies.GetCount-6213
+      operationId: communication.onlineMeetingConversation.message.reply_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5216,7 +5216,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get replyTo from communications
       description: 'The parent message to which this message is a reply, if it is part of a reply chain.'
-      operationId: communications.onlineMeetingConversations.messages.GetReplyTo
+      operationId: communication.onlineMeetingConversation.message_GetReplyTo
       parameters:
         - name: $select
           in: query
@@ -5255,7 +5255,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Get the number of the resource
-      operationId: communications.onlineMeetingConversations.messages.GetCount-6781
+      operationId: communication.onlineMeetingConversation.message_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5272,7 +5272,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get onlineMeeting from communications
       description: The online meeting associated with the conversation.
-      operationId: communications.onlineMeetingConversations.GetOnlineMeeting
+      operationId: communication.onlineMeetingConversation_GetOnlineMeeting
       parameters:
         - name: $select
           in: query
@@ -5312,7 +5312,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get alternativeRecording for the navigation property onlineMeeting from communications
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      operationId: communications.onlineMeetingConversations.GetOnlineMeetingAlternativeRecording
+      operationId: communication.onlineMeetingConversation_GetOnlineMeetingAlternativeRecording
       responses:
         2XX:
           description: Retrieved media content
@@ -5330,7 +5330,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Update alternativeRecording for the navigation property onlineMeeting in communications
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      operationId: communications.onlineMeetingConversations.UpdateOnlineMeetingAlternativeRecording
+      operationId: communication.onlineMeetingConversation_SetOnlineMeetingAlternativeRecording
       requestBody:
         description: New media content.
         content:
@@ -5351,7 +5351,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Delete alternativeRecording for the navigation property onlineMeeting in communications
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      operationId: communications.onlineMeetingConversations.DeleteOnlineMeetingAlternativeRecording
+      operationId: communication.onlineMeetingConversation_DeleteOnlineMeetingAlternativeRecording
       parameters:
         - name: If-Match
           in: header
@@ -5372,7 +5372,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get attendeeReport for the navigation property onlineMeeting from communications
       description: The content stream of the attendee report of a Teams live event. Read-only.
-      operationId: communications.onlineMeetingConversations.GetOnlineMeetingAttendeeReport
+      operationId: communication.onlineMeetingConversation_GetOnlineMeetingAttendeeReport
       responses:
         2XX:
           description: Retrieved media content
@@ -5390,7 +5390,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Update attendeeReport for the navigation property onlineMeeting in communications
       description: The content stream of the attendee report of a Teams live event. Read-only.
-      operationId: communications.onlineMeetingConversations.UpdateOnlineMeetingAttendeeReport
+      operationId: communication.onlineMeetingConversation_SetOnlineMeetingAttendeeReport
       requestBody:
         description: New media content.
         content:
@@ -5411,7 +5411,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Delete attendeeReport for the navigation property onlineMeeting in communications
       description: The content stream of the attendee report of a Teams live event. Read-only.
-      operationId: communications.onlineMeetingConversations.DeleteOnlineMeetingAttendeeReport
+      operationId: communication.onlineMeetingConversation_DeleteOnlineMeetingAttendeeReport
       parameters:
         - name: If-Match
           in: header
@@ -5431,7 +5431,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Get broadcastRecording for the navigation property onlineMeeting from communications
-      operationId: communications.onlineMeetingConversations.GetOnlineMeetingBroadcastRecording
+      operationId: communication.onlineMeetingConversation_GetOnlineMeetingBroadcastRecording
       responses:
         2XX:
           description: Retrieved media content
@@ -5448,7 +5448,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Update broadcastRecording for the navigation property onlineMeeting in communications
-      operationId: communications.onlineMeetingConversations.UpdateOnlineMeetingBroadcastRecording
+      operationId: communication.onlineMeetingConversation_SetOnlineMeetingBroadcastRecording
       requestBody:
         description: New media content.
         content:
@@ -5468,7 +5468,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Delete broadcastRecording for the navigation property onlineMeeting in communications
-      operationId: communications.onlineMeetingConversations.DeleteOnlineMeetingBroadcastRecording
+      operationId: communication.onlineMeetingConversation_DeleteOnlineMeetingBroadcastRecording
       parameters:
         - name: If-Match
           in: header
@@ -5489,7 +5489,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get recording for the navigation property onlineMeeting from communications
       description: The content stream of the recording of a Teams live event. Read-only.
-      operationId: communications.onlineMeetingConversations.GetOnlineMeetingRecording
+      operationId: communication.onlineMeetingConversation_GetOnlineMeetingRecording
       responses:
         2XX:
           description: Retrieved media content
@@ -5507,7 +5507,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Update recording for the navigation property onlineMeeting in communications
       description: The content stream of the recording of a Teams live event. Read-only.
-      operationId: communications.onlineMeetingConversations.UpdateOnlineMeetingRecording
+      operationId: communication.onlineMeetingConversation_SetOnlineMeetingRecording
       requestBody:
         description: New media content.
         content:
@@ -5528,7 +5528,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Delete recording for the navigation property onlineMeeting in communications
       description: The content stream of the recording of a Teams live event. Read-only.
-      operationId: communications.onlineMeetingConversations.DeleteOnlineMeetingRecording
+      operationId: communication.onlineMeetingConversation_DeleteOnlineMeetingRecording
       parameters:
         - name: If-Match
           in: header
@@ -5549,7 +5549,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get starter from communications
       description: The first message in a Viva Engage conversation.
-      operationId: communications.onlineMeetingConversations.GetStarter
+      operationId: communication.onlineMeetingConversation_GetStarter
       parameters:
         - name: $select
           in: query
@@ -5587,7 +5587,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Update the navigation property starter in communications
-      operationId: communications.onlineMeetingConversations.UpdateStarter
+      operationId: communication.onlineMeetingConversation_UpdateStarter
       requestBody:
         description: New navigation property values
         content:
@@ -5611,7 +5611,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Delete navigation property starter for communications
-      operationId: communications.onlineMeetingConversations.DeleteStarter
+      operationId: communication.onlineMeetingConversation_DeleteStarter
       parameters:
         - name: If-Match
           in: header
@@ -5633,7 +5633,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get conversation from communications
       description: The Viva Engage conversation to which this message belongs. This relationship establishes the thread context for the message.
-      operationId: communications.onlineMeetingConversations.starter.GetConversation
+      operationId: communication.onlineMeetingConversation.starter_GetConversation
       parameters:
         - name: $select
           in: query
@@ -5673,7 +5673,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get reactions from communications
       description: A collection of reactions (such as like and smile) that users have applied to this message.
-      operationId: communications.onlineMeetingConversations.starter.ListReactions
+      operationId: communication.onlineMeetingConversation.starter_ListReaction
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5725,7 +5725,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Create new navigation property to reactions for communications
-      operationId: communications.onlineMeetingConversations.starter.CreateReactions
+      operationId: communication.onlineMeetingConversation.starter_CreateReaction
       requestBody:
         description: New navigation property
         content:
@@ -5751,7 +5751,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get reactions from communications
       description: A collection of reactions (such as like and smile) that users have applied to this message.
-      operationId: communications.onlineMeetingConversations.starter.GetReactions
+      operationId: communication.onlineMeetingConversation.starter_GetReaction
       parameters:
         - name: $select
           in: query
@@ -5789,7 +5789,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Update the navigation property reactions in communications
-      operationId: communications.onlineMeetingConversations.starter.UpdateReactions
+      operationId: communication.onlineMeetingConversation.starter_UpdateReaction
       requestBody:
         description: New navigation property values
         content:
@@ -5813,7 +5813,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Delete navigation property reactions for communications
-      operationId: communications.onlineMeetingConversations.starter.DeleteReactions
+      operationId: communication.onlineMeetingConversation.starter_DeleteReaction
       parameters:
         - name: If-Match
           in: header
@@ -5834,7 +5834,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Get the number of the resource
-      operationId: communications.onlineMeetingConversations.starter.reactions.GetCount-690a
+      operationId: communication.onlineMeetingConversation.starter.reaction_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5851,7 +5851,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get replies from communications
       description: A collection of messages that are replies to this message and form a threaded discussion.
-      operationId: communications.onlineMeetingConversations.starter.ListReplies
+      operationId: communication.onlineMeetingConversation.starter_ListReply
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5903,7 +5903,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Create new navigation property to replies for communications
-      operationId: communications.onlineMeetingConversations.starter.CreateReplies
+      operationId: communication.onlineMeetingConversation.starter_CreateReply
       requestBody:
         description: New navigation property
         content:
@@ -5929,7 +5929,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get replies from communications
       description: A collection of messages that are replies to this message and form a threaded discussion.
-      operationId: communications.onlineMeetingConversations.starter.GetReplies
+      operationId: communication.onlineMeetingConversation.starter_GetReply
       parameters:
         - name: $select
           in: query
@@ -5967,7 +5967,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Update the navigation property replies in communications
-      operationId: communications.onlineMeetingConversations.starter.UpdateReplies
+      operationId: communication.onlineMeetingConversation.starter_UpdateReply
       requestBody:
         description: New navigation property values
         content:
@@ -5991,7 +5991,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Delete navigation property replies for communications
-      operationId: communications.onlineMeetingConversations.starter.DeleteReplies
+      operationId: communication.onlineMeetingConversation.starter_DeleteReply
       parameters:
         - name: If-Match
           in: header
@@ -6013,7 +6013,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get conversation from communications
       description: The Viva Engage conversation to which this message belongs. This relationship establishes the thread context for the message.
-      operationId: communications.onlineMeetingConversations.starter.replies.GetConversation
+      operationId: communication.onlineMeetingConversation.starter.reply_GetConversation
       parameters:
         - name: $select
           in: query
@@ -6053,7 +6053,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get reactions from communications
       description: A collection of reactions (such as like and smile) that users have applied to this message.
-      operationId: communications.onlineMeetingConversations.starter.replies.ListReactions
+      operationId: communication.onlineMeetingConversation.starter.reply_ListReaction
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6105,7 +6105,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Create new navigation property to reactions for communications
-      operationId: communications.onlineMeetingConversations.starter.replies.CreateReactions
+      operationId: communication.onlineMeetingConversation.starter.reply_CreateReaction
       requestBody:
         description: New navigation property
         content:
@@ -6131,7 +6131,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get reactions from communications
       description: A collection of reactions (such as like and smile) that users have applied to this message.
-      operationId: communications.onlineMeetingConversations.starter.replies.GetReactions
+      operationId: communication.onlineMeetingConversation.starter.reply_GetReaction
       parameters:
         - name: $select
           in: query
@@ -6169,7 +6169,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Update the navigation property reactions in communications
-      operationId: communications.onlineMeetingConversations.starter.replies.UpdateReactions
+      operationId: communication.onlineMeetingConversation.starter.reply_UpdateReaction
       requestBody:
         description: New navigation property values
         content:
@@ -6193,7 +6193,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Delete navigation property reactions for communications
-      operationId: communications.onlineMeetingConversations.starter.replies.DeleteReactions
+      operationId: communication.onlineMeetingConversation.starter.reply_DeleteReaction
       parameters:
         - name: If-Match
           in: header
@@ -6214,7 +6214,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Get the number of the resource
-      operationId: communications.onlineMeetingConversations.starter.replies.reactions.GetCount-ede3
+      operationId: communication.onlineMeetingConversation.starter.reply.reaction_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6231,7 +6231,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get replyTo from communications
       description: 'The parent message to which this message is a reply, if it is part of a reply chain.'
-      operationId: communications.onlineMeetingConversations.starter.replies.GetReplyTo
+      operationId: communication.onlineMeetingConversation.starter.reply_GetReplyTo
       parameters:
         - name: $select
           in: query
@@ -6270,7 +6270,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Get the number of the resource
-      operationId: communications.onlineMeetingConversations.starter.replies.GetCount-8c87
+      operationId: communication.onlineMeetingConversation.starter.reply_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6287,7 +6287,7 @@ paths:
         - communications.onlineMeetingEngagementConversation
       summary: Get replyTo from communications
       description: 'The parent message to which this message is a reply, if it is part of a reply chain.'
-      operationId: communications.onlineMeetingConversations.starter.GetReplyTo
+      operationId: communication.onlineMeetingConversation.starter_GetReplyTo
       parameters:
         - name: $select
           in: query
@@ -6326,7 +6326,7 @@ paths:
       tags:
         - communications.onlineMeetingEngagementConversation
       summary: Get the number of the resource
-      operationId: communications.onlineMeetingConversations.GetCount-42c0
+      operationId: communication.onlineMeetingConversation_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6346,7 +6346,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-beta
-      operationId: communications.ListOnlineMeetings
+      operationId: communication_ListOnlineMeeting
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6398,7 +6398,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to onlineMeetings for communications
-      operationId: communications.CreateOnlineMeetings
+      operationId: communication_CreateOnlineMeeting
       requestBody:
         description: New navigation property
         content:
@@ -6423,7 +6423,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get onlineMeetings from communications
-      operationId: communications.GetOnlineMeetings
+      operationId: communication_GetOnlineMeeting
       parameters:
         - name: $select
           in: query
@@ -6461,7 +6461,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property onlineMeetings in communications
-      operationId: communications.UpdateOnlineMeetings
+      operationId: communication_UpdateOnlineMeeting
       requestBody:
         description: New navigation property values
         content:
@@ -6485,7 +6485,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property onlineMeetings for communications
-      operationId: communications.DeleteOnlineMeetings
+      operationId: communication_DeleteOnlineMeeting
       parameters:
         - name: If-Match
           in: header
@@ -6507,7 +6507,7 @@ paths:
         - communications.onlineMeeting
       summary: Get aiInsights from communications
       description: The AI insights generated for an online meeting. Read-only.
-      operationId: communications.onlineMeetings.ListAiInsights
+      operationId: communication.onlineMeeting_ListAiInsight
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6559,7 +6559,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to aiInsights for communications
-      operationId: communications.onlineMeetings.CreateAiInsights
+      operationId: communication.onlineMeeting_CreateAiInsight
       requestBody:
         description: New navigation property
         content:
@@ -6585,7 +6585,7 @@ paths:
         - communications.onlineMeeting
       summary: Get aiInsights from communications
       description: The AI insights generated for an online meeting. Read-only.
-      operationId: communications.onlineMeetings.GetAiInsights
+      operationId: communication.onlineMeeting_GetAiInsight
       parameters:
         - name: $select
           in: query
@@ -6623,7 +6623,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property aiInsights in communications
-      operationId: communications.onlineMeetings.UpdateAiInsights
+      operationId: communication.onlineMeeting_UpdateAiInsight
       requestBody:
         description: New navigation property values
         content:
@@ -6647,7 +6647,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property aiInsights for communications
-      operationId: communications.onlineMeetings.DeleteAiInsights
+      operationId: communication.onlineMeeting_DeleteAiInsight
       parameters:
         - name: If-Match
           in: header
@@ -6668,7 +6668,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get the number of the resource
-      operationId: communications.onlineMeetings.aiInsights.GetCount-e9fa
+      operationId: communication.onlineMeeting.aiInsight_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6685,7 +6685,7 @@ paths:
         - communications.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from communications
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      operationId: communications.GetOnlineMeetingsAlternativeRecording
+      operationId: communication_GetOnlineMeetingsAlternativeRecording
       responses:
         2XX:
           description: Retrieved media content
@@ -6703,7 +6703,7 @@ paths:
         - communications.onlineMeeting
       summary: Update alternativeRecording for the navigation property onlineMeetings in communications
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      operationId: communications.UpdateOnlineMeetingsAlternativeRecording
+      operationId: communication_SetOnlineMeetingsAlternativeRecording
       requestBody:
         description: New media content.
         content:
@@ -6724,7 +6724,7 @@ paths:
         - communications.onlineMeeting
       summary: Delete alternativeRecording for the navigation property onlineMeetings in communications
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      operationId: communications.DeleteOnlineMeetingsAlternativeRecording
+      operationId: communication_DeleteOnlineMeetingsAlternativeRecording
       parameters:
         - name: If-Match
           in: header
@@ -6745,7 +6745,7 @@ paths:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
       description: The attendance reports of an online meeting. Read-only.
-      operationId: communications.onlineMeetings.ListAttendanceReports
+      operationId: communication.onlineMeeting_ListAttendanceReport
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6797,7 +6797,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to attendanceReports for communications
-      operationId: communications.onlineMeetings.CreateAttendanceReports
+      operationId: communication.onlineMeeting_CreateAttendanceReport
       requestBody:
         description: New navigation property
         content:
@@ -6823,7 +6823,7 @@ paths:
         - communications.onlineMeeting
       summary: Get attendanceReports from communications
       description: The attendance reports of an online meeting. Read-only.
-      operationId: communications.onlineMeetings.GetAttendanceReports
+      operationId: communication.onlineMeeting_GetAttendanceReport
       parameters:
         - name: $select
           in: query
@@ -6861,7 +6861,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property attendanceReports in communications
-      operationId: communications.onlineMeetings.UpdateAttendanceReports
+      operationId: communication.onlineMeeting_UpdateAttendanceReport
       requestBody:
         description: New navigation property values
         content:
@@ -6885,7 +6885,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property attendanceReports for communications
-      operationId: communications.onlineMeetings.DeleteAttendanceReports
+      operationId: communication.onlineMeeting_DeleteAttendanceReport
       parameters:
         - name: If-Match
           in: header
@@ -6907,7 +6907,7 @@ paths:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
       description: List of attendance records of an attendance report. Read-only.
-      operationId: communications.onlineMeetings.attendanceReports.ListAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_ListAttendanceRecord
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6959,7 +6959,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to attendanceRecords for communications
-      operationId: communications.onlineMeetings.attendanceReports.CreateAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_CreateAttendanceRecord
       requestBody:
         description: New navigation property
         content:
@@ -6985,7 +6985,7 @@ paths:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
       description: List of attendance records of an attendance report. Read-only.
-      operationId: communications.onlineMeetings.attendanceReports.GetAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_GetAttendanceRecord
       parameters:
         - name: $select
           in: query
@@ -7023,7 +7023,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property attendanceRecords in communications
-      operationId: communications.onlineMeetings.attendanceReports.UpdateAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_UpdateAttendanceRecord
       requestBody:
         description: New navigation property values
         content:
@@ -7047,7 +7047,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property attendanceRecords for communications
-      operationId: communications.onlineMeetings.attendanceReports.DeleteAttendanceRecords
+      operationId: communication.onlineMeeting.attendanceReport_DeleteAttendanceRecord
       parameters:
         - name: If-Match
           in: header
@@ -7068,7 +7068,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get the number of the resource
-      operationId: communications.onlineMeetings.attendanceReports.attendanceRecords.GetCount-73e4
+      operationId: communication.onlineMeeting.attendanceReport.attendanceRecord_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7084,7 +7084,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get the number of the resource
-      operationId: communications.onlineMeetings.attendanceReports.GetCount-c621
+      operationId: communication.onlineMeeting.attendanceReport_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7101,7 +7101,7 @@ paths:
         - communications.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from communications
       description: The content stream of the attendee report of a Teams live event. Read-only.
-      operationId: communications.GetOnlineMeetingsAttendeeReport
+      operationId: communication_GetOnlineMeetingsAttendeeReport
       responses:
         2XX:
           description: Retrieved media content
@@ -7119,7 +7119,7 @@ paths:
         - communications.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in communications
       description: The content stream of the attendee report of a Teams live event. Read-only.
-      operationId: communications.UpdateOnlineMeetingsAttendeeReport
+      operationId: communication_SetOnlineMeetingsAttendeeReport
       requestBody:
         description: New media content.
         content:
@@ -7140,7 +7140,7 @@ paths:
         - communications.onlineMeeting
       summary: Delete attendeeReport for the navigation property onlineMeetings in communications
       description: The content stream of the attendee report of a Teams live event. Read-only.
-      operationId: communications.DeleteOnlineMeetingsAttendeeReport
+      operationId: communication_DeleteOnlineMeetingsAttendeeReport
       parameters:
         - name: If-Match
           in: header
@@ -7160,7 +7160,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get broadcastRecording for the navigation property onlineMeetings from communications
-      operationId: communications.GetOnlineMeetingsBroadcastRecording
+      operationId: communication_GetOnlineMeetingsBroadcastRecording
       responses:
         2XX:
           description: Retrieved media content
@@ -7177,7 +7177,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update broadcastRecording for the navigation property onlineMeetings in communications
-      operationId: communications.UpdateOnlineMeetingsBroadcastRecording
+      operationId: communication_SetOnlineMeetingsBroadcastRecording
       requestBody:
         description: New media content.
         content:
@@ -7197,7 +7197,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete broadcastRecording for the navigation property onlineMeetings in communications
-      operationId: communications.DeleteOnlineMeetingsBroadcastRecording
+      operationId: communication_DeleteOnlineMeetingsBroadcastRecording
       parameters:
         - name: If-Match
           in: header
@@ -7218,7 +7218,7 @@ paths:
         - communications.onlineMeeting
       summary: Get meetingAttendanceReport from communications
       description: The attendance report of the latest online meeting session. Read-only.
-      operationId: communications.onlineMeetings.GetMeetingAttendanceReport
+      operationId: communication.onlineMeeting_GetMeetingAttendanceReport
       parameters:
         - name: $select
           in: query
@@ -7256,7 +7256,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property meetingAttendanceReport in communications
-      operationId: communications.onlineMeetings.UpdateMeetingAttendanceReport
+      operationId: communication.onlineMeeting_UpdateMeetingAttendanceReport
       requestBody:
         description: New navigation property values
         content:
@@ -7280,7 +7280,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property meetingAttendanceReport for communications
-      operationId: communications.onlineMeetings.DeleteMeetingAttendanceReport
+      operationId: communication.onlineMeeting_DeleteMeetingAttendanceReport
       parameters:
         - name: If-Match
           in: header
@@ -7302,7 +7302,7 @@ paths:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
       description: List of attendance records of an attendance report. Read-only.
-      operationId: communications.onlineMeetings.meetingAttendanceReport.ListAttendanceRecords
+      operationId: communication.onlineMeeting.meetingAttendanceReport_ListAttendanceRecord
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7354,7 +7354,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to attendanceRecords for communications
-      operationId: communications.onlineMeetings.meetingAttendanceReport.CreateAttendanceRecords
+      operationId: communication.onlineMeeting.meetingAttendanceReport_CreateAttendanceRecord
       requestBody:
         description: New navigation property
         content:
@@ -7380,7 +7380,7 @@ paths:
         - communications.onlineMeeting
       summary: Get attendanceRecords from communications
       description: List of attendance records of an attendance report. Read-only.
-      operationId: communications.onlineMeetings.meetingAttendanceReport.GetAttendanceRecords
+      operationId: communication.onlineMeeting.meetingAttendanceReport_GetAttendanceRecord
       parameters:
         - name: $select
           in: query
@@ -7418,7 +7418,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property attendanceRecords in communications
-      operationId: communications.onlineMeetings.meetingAttendanceReport.UpdateAttendanceRecords
+      operationId: communication.onlineMeeting.meetingAttendanceReport_UpdateAttendanceRecord
       requestBody:
         description: New navigation property values
         content:
@@ -7442,7 +7442,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property attendanceRecords for communications
-      operationId: communications.onlineMeetings.meetingAttendanceReport.DeleteAttendanceRecords
+      operationId: communication.onlineMeeting.meetingAttendanceReport_DeleteAttendanceRecord
       parameters:
         - name: If-Match
           in: header
@@ -7463,7 +7463,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get the number of the resource
-      operationId: communications.onlineMeetings.meetingAttendanceReport.attendanceRecords.GetCount-da72
+      operationId: communication.onlineMeeting.meetingAttendanceReport.attendanceRecord_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7483,7 +7483,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
-      operationId: communications.onlineMeetings.onlineMeeting.getVirtualAppointmentJoinWebUrl
+      operationId: communication.onlineMeeting_getVirtualAppointmentJoinWebUrl
       responses:
         2XX:
           description: Success
@@ -7509,7 +7509,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-beta
-      operationId: communications.onlineMeetings.onlineMeeting.sendVirtualAppointmentReminderSms
+      operationId: communication.onlineMeeting_sendVirtualAppointmentReminderSm
       requestBody:
         description: Action parameters
         content:
@@ -7544,7 +7544,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta
-      operationId: communications.onlineMeetings.onlineMeeting.sendVirtualAppointmentSms
+      operationId: communication.onlineMeeting_sendVirtualAppointmentSm
       requestBody:
         description: Action parameters
         content:
@@ -7576,7 +7576,7 @@ paths:
         - communications.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from communications
       description: The content stream of the recording of a Teams live event. Read-only.
-      operationId: communications.GetOnlineMeetingsRecording
+      operationId: communication_GetOnlineMeetingsRecording
       responses:
         2XX:
           description: Retrieved media content
@@ -7594,7 +7594,7 @@ paths:
         - communications.onlineMeeting
       summary: Update recording for the navigation property onlineMeetings in communications
       description: The content stream of the recording of a Teams live event. Read-only.
-      operationId: communications.UpdateOnlineMeetingsRecording
+      operationId: communication_SetOnlineMeetingsRecording
       requestBody:
         description: New media content.
         content:
@@ -7615,7 +7615,7 @@ paths:
         - communications.onlineMeeting
       summary: Delete recording for the navigation property onlineMeetings in communications
       description: The content stream of the recording of a Teams live event. Read-only.
-      operationId: communications.DeleteOnlineMeetingsRecording
+      operationId: communication_DeleteOnlineMeetingsRecording
       parameters:
         - name: If-Match
           in: header
@@ -7636,7 +7636,7 @@ paths:
         - communications.onlineMeeting
       summary: Get recordings from communications
       description: The recordings of an online meeting. Read-only.
-      operationId: communications.onlineMeetings.ListRecordings
+      operationId: communication.onlineMeeting_ListRecording
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7688,7 +7688,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to recordings for communications
-      operationId: communications.onlineMeetings.CreateRecordings
+      operationId: communication.onlineMeeting_CreateRecording
       requestBody:
         description: New navigation property
         content:
@@ -7714,7 +7714,7 @@ paths:
         - communications.onlineMeeting
       summary: Get recordings from communications
       description: The recordings of an online meeting. Read-only.
-      operationId: communications.onlineMeetings.GetRecordings
+      operationId: communication.onlineMeeting_GetRecording
       parameters:
         - name: $select
           in: query
@@ -7752,7 +7752,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property recordings in communications
-      operationId: communications.onlineMeetings.UpdateRecordings
+      operationId: communication.onlineMeeting_UpdateRecording
       requestBody:
         description: New navigation property values
         content:
@@ -7776,7 +7776,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property recordings for communications
-      operationId: communications.onlineMeetings.DeleteRecordings
+      operationId: communication.onlineMeeting_DeleteRecording
       parameters:
         - name: If-Match
           in: header
@@ -7798,7 +7798,7 @@ paths:
         - communications.onlineMeeting
       summary: Get content for the navigation property recordings from communications
       description: The content of the recording. Read-only.
-      operationId: communications.onlineMeetings.GetRecordingsContent
+      operationId: communication.onlineMeeting_GetRecordingsContent
       responses:
         2XX:
           description: Retrieved media content
@@ -7816,7 +7816,7 @@ paths:
         - communications.onlineMeeting
       summary: Update content for the navigation property recordings in communications
       description: The content of the recording. Read-only.
-      operationId: communications.onlineMeetings.UpdateRecordingsContent
+      operationId: communication.onlineMeeting_SetRecordingsContent
       requestBody:
         description: New media content.
         content:
@@ -7841,7 +7841,7 @@ paths:
         - communications.onlineMeeting
       summary: Delete content for the navigation property recordings in communications
       description: The content of the recording. Read-only.
-      operationId: communications.onlineMeetings.DeleteRecordingsContent
+      operationId: communication.onlineMeeting_DeleteRecordingsContent
       parameters:
         - name: If-Match
           in: header
@@ -7861,7 +7861,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get the number of the resource
-      operationId: communications.onlineMeetings.recordings.GetCount-0fd0
+      operationId: communication.onlineMeeting.recording_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7877,7 +7877,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Invoke function delta
-      operationId: communications.onlineMeetings.onlineMeeting.recordings.delta
+      operationId: communication.onlineMeeting.recording_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7944,7 +7944,7 @@ paths:
         - communications.onlineMeeting
       summary: Get transcripts from communications
       description: The transcripts of an online meeting. Read-only.
-      operationId: communications.onlineMeetings.ListTranscripts
+      operationId: communication.onlineMeeting_ListTranscript
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7996,7 +7996,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to transcripts for communications
-      operationId: communications.onlineMeetings.CreateTranscripts
+      operationId: communication.onlineMeeting_CreateTranscript
       requestBody:
         description: New navigation property
         content:
@@ -8022,7 +8022,7 @@ paths:
         - communications.onlineMeeting
       summary: Get transcripts from communications
       description: The transcripts of an online meeting. Read-only.
-      operationId: communications.onlineMeetings.GetTranscripts
+      operationId: communication.onlineMeeting_GetTranscript
       parameters:
         - name: $select
           in: query
@@ -8060,7 +8060,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property transcripts in communications
-      operationId: communications.onlineMeetings.UpdateTranscripts
+      operationId: communication.onlineMeeting_UpdateTranscript
       requestBody:
         description: New navigation property values
         content:
@@ -8084,7 +8084,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property transcripts for communications
-      operationId: communications.onlineMeetings.DeleteTranscripts
+      operationId: communication.onlineMeeting_DeleteTranscript
       parameters:
         - name: If-Match
           in: header
@@ -8106,7 +8106,7 @@ paths:
         - communications.onlineMeeting
       summary: Get content for the navigation property transcripts from communications
       description: The content of the transcript. Read-only.
-      operationId: communications.onlineMeetings.GetTranscriptsContent
+      operationId: communication.onlineMeeting_GetTranscriptsContent
       responses:
         2XX:
           description: Retrieved media content
@@ -8124,7 +8124,7 @@ paths:
         - communications.onlineMeeting
       summary: Update content for the navigation property transcripts in communications
       description: The content of the transcript. Read-only.
-      operationId: communications.onlineMeetings.UpdateTranscriptsContent
+      operationId: communication.onlineMeeting_SetTranscriptsContent
       requestBody:
         description: New media content.
         content:
@@ -8149,7 +8149,7 @@ paths:
         - communications.onlineMeeting
       summary: Delete content for the navigation property transcripts in communications
       description: The content of the transcript. Read-only.
-      operationId: communications.onlineMeetings.DeleteTranscriptsContent
+      operationId: communication.onlineMeeting_DeleteTranscriptsContent
       parameters:
         - name: If-Match
           in: header
@@ -8170,7 +8170,7 @@ paths:
         - communications.onlineMeeting
       summary: Get metadataContent for the navigation property transcripts from communications
       description: The time-aligned metadata of the utterances in the transcript. Read-only.
-      operationId: communications.onlineMeetings.GetTranscriptsMetadataContent
+      operationId: communication.onlineMeeting_GetTranscriptsMetadataContent
       responses:
         2XX:
           description: Retrieved media content
@@ -8188,7 +8188,7 @@ paths:
         - communications.onlineMeeting
       summary: Update metadataContent for the navigation property transcripts in communications
       description: The time-aligned metadata of the utterances in the transcript. Read-only.
-      operationId: communications.onlineMeetings.UpdateTranscriptsMetadataContent
+      operationId: communication.onlineMeeting_SetTranscriptsMetadataContent
       requestBody:
         description: New media content.
         content:
@@ -8209,7 +8209,7 @@ paths:
         - communications.onlineMeeting
       summary: Delete metadataContent for the navigation property transcripts in communications
       description: The time-aligned metadata of the utterances in the transcript. Read-only.
-      operationId: communications.onlineMeetings.DeleteTranscriptsMetadataContent
+      operationId: communication.onlineMeeting_DeleteTranscriptsMetadataContent
       parameters:
         - name: If-Match
           in: header
@@ -8229,7 +8229,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get the number of the resource
-      operationId: communications.onlineMeetings.transcripts.GetCount-7670
+      operationId: communication.onlineMeeting.transcript_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8245,7 +8245,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Invoke function delta
-      operationId: communications.onlineMeetings.onlineMeeting.transcripts.delta
+      operationId: communication.onlineMeeting.transcript_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8311,7 +8311,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get onlineMeetings from communications
-      operationId: communications.onlineMeetings.GetByJoinWebUrl
+      operationId: communication.onlineMeeting_GetGraphBPreJoinWebUrl
       parameters:
         - name: $select
           in: query
@@ -8349,7 +8349,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property onlineMeetings in communications
-      operationId: communications.onlineMeetings.UpdateByJoinWebUrl
+      operationId: communication.onlineMeeting_UpdateGraphBPreJoinWebUrl
       requestBody:
         description: New navigation property values
         content:
@@ -8373,7 +8373,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property onlineMeetings for communications
-      operationId: communications.onlineMeetings.DeleteByJoinWebUrl
+      operationId: communication.onlineMeeting_DeleteGraphBPreJoinWebUrl
       parameters:
         - name: If-Match
           in: header
@@ -8398,7 +8398,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
-      operationId: communications.onlineMeetings.joinWebUrl.getVirtualAppointmentJoinWebUrl
+      operationId: communication.onlineMeeting.joinWebUrl_getVirtualAppointmentJoinWebUrl
       responses:
         2XX:
           description: Success
@@ -8424,7 +8424,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-beta
-      operationId: communications.onlineMeetings.joinWebUrl.sendVirtualAppointmentReminderSms
+      operationId: communication.onlineMeeting.joinWebUrl_sendVirtualAppointmentReminderSm
       requestBody:
         description: Action parameters
         content:
@@ -8459,7 +8459,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta
-      operationId: communications.onlineMeetings.joinWebUrl.sendVirtualAppointmentSms
+      operationId: communication.onlineMeeting.joinWebUrl_sendVirtualAppointmentSm
       requestBody:
         description: Action parameters
         content:
@@ -8490,7 +8490,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get the number of the resource
-      operationId: communications.onlineMeetings.GetCount-91a5
+      operationId: communication.onlineMeeting_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8510,7 +8510,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta
-      operationId: communications.onlineMeetings.createOrGet
+      operationId: communication.onlineMeeting_createOrGet
       requestBody:
         description: Action parameters
         content:
@@ -8568,7 +8568,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-getallrecordings?view=graph-rest-beta
-      operationId: communications.onlineMeetings.getAllRecordings
+      operationId: communication.onlineMeeting_getAllRecording
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8638,7 +8638,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-getalltranscripts?view=graph-rest-beta
-      operationId: communications.onlineMeetings.getAllTranscripts
+      operationId: communication.onlineMeeting_getAllTranscript
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8705,7 +8705,7 @@ paths:
         - communications.presence
       summary: Get presence
       description: Get a user's presence information.
-      operationId: communications.ListPresences
+      operationId: communication_ListPresence
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8757,7 +8757,7 @@ paths:
       tags:
         - communications.presence
       summary: Create new navigation property to presences for communications
-      operationId: communications.CreatePresences
+      operationId: communication_CreatePresence
       requestBody:
         description: New navigation property
         content:
@@ -8786,7 +8786,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-beta
-      operationId: communications.GetPresences
+      operationId: communication_GetPresence
       parameters:
         - name: $select
           in: query
@@ -8824,7 +8824,7 @@ paths:
       tags:
         - communications.presence
       summary: Update the navigation property presences in communications
-      operationId: communications.UpdatePresences
+      operationId: communication_UpdatePresence
       requestBody:
         description: New navigation property values
         content:
@@ -8848,7 +8848,7 @@ paths:
       tags:
         - communications.presence
       summary: Delete navigation property presences for communications
-      operationId: communications.DeletePresences
+      operationId: communication_DeletePresence
       parameters:
         - name: If-Match
           in: header
@@ -8873,7 +8873,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-clearautomaticlocation?view=graph-rest-beta
-      operationId: communications.presences.presence.clearAutomaticLocation
+      operationId: communication.presence_clearAutomaticLocation
       responses:
         '204':
           description: Success
@@ -8891,7 +8891,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-clearlocation?view=graph-rest-beta
-      operationId: communications.presences.presence.clearLocation
+      operationId: communication.presence_clearLocation
       responses:
         '204':
           description: Success
@@ -8909,7 +8909,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-beta
-      operationId: communications.presences.presence.clearPresence
+      operationId: communication.presence_clearPresence
       requestBody:
         description: Action parameters
         content:
@@ -8938,7 +8938,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-beta
-      operationId: communications.presences.presence.clearUserPreferredPresence
+      operationId: communication.presence_clearUserPreferredPresence
       responses:
         '204':
           description: Success
@@ -8956,7 +8956,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setautomaticlocation?view=graph-rest-beta
-      operationId: communications.presences.presence.setAutomaticLocation
+      operationId: communication.presence_setAutomaticLocation
       requestBody:
         description: Action parameters
         content:
@@ -8987,7 +8987,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setmanuallocation?view=graph-rest-beta
-      operationId: communications.presences.presence.setManualLocation
+      operationId: communication.presence_setManualLocation
       requestBody:
         description: Action parameters
         content:
@@ -9018,7 +9018,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-beta
-      operationId: communications.presences.presence.setPresence
+      operationId: communication.presence_setPresence
       requestBody:
         description: Action parameters
         content:
@@ -9056,7 +9056,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta
-      operationId: communications.presences.presence.setStatusMessage
+      operationId: communication.presence_setStatusMessage
       requestBody:
         description: Action parameters
         content:
@@ -9087,7 +9087,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-beta
-      operationId: communications.presences.presence.setUserPreferredPresence
+      operationId: communication.presence_setUserPreferredPresence
       requestBody:
         description: Action parameters
         content:
@@ -9118,7 +9118,7 @@ paths:
       tags:
         - communications.presence
       summary: Get the number of the resource
-      operationId: communications.presences.GetCount-e4ed
+      operationId: communication.presence_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9135,7 +9135,7 @@ paths:
         - users.onlineMeeting
       summary: Get onlineMeetings from users
       description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
-      operationId: users.ListOnlineMeetings
+      operationId: user_ListOnlineMeeting
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9187,7 +9187,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to onlineMeetings for users
-      operationId: users.CreateOnlineMeetings
+      operationId: user_CreateOnlineMeeting
       requestBody:
         description: New navigation property
         content:
@@ -9213,7 +9213,7 @@ paths:
         - users.onlineMeeting
       summary: Get onlineMeetings from users
       description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
-      operationId: users.GetOnlineMeetings
+      operationId: user_GetOnlineMeeting
       parameters:
         - name: $select
           in: query
@@ -9251,7 +9251,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property onlineMeetings in users
-      operationId: users.UpdateOnlineMeetings
+      operationId: user_UpdateOnlineMeeting
       requestBody:
         description: New navigation property values
         content:
@@ -9275,7 +9275,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property onlineMeetings for users
-      operationId: users.DeleteOnlineMeetings
+      operationId: user_DeleteOnlineMeeting
       parameters:
         - name: If-Match
           in: header
@@ -9297,7 +9297,7 @@ paths:
         - users.onlineMeeting
       summary: Get aiInsights from users
       description: The AI insights generated for an online meeting. Read-only.
-      operationId: users.onlineMeetings.ListAiInsights
+      operationId: user.onlineMeeting_ListAiInsight
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9349,7 +9349,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to aiInsights for users
-      operationId: users.onlineMeetings.CreateAiInsights
+      operationId: user.onlineMeeting_CreateAiInsight
       requestBody:
         description: New navigation property
         content:
@@ -9375,7 +9375,7 @@ paths:
         - users.onlineMeeting
       summary: Get aiInsights from users
       description: The AI insights generated for an online meeting. Read-only.
-      operationId: users.onlineMeetings.GetAiInsights
+      operationId: user.onlineMeeting_GetAiInsight
       parameters:
         - name: $select
           in: query
@@ -9413,7 +9413,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property aiInsights in users
-      operationId: users.onlineMeetings.UpdateAiInsights
+      operationId: user.onlineMeeting_UpdateAiInsight
       requestBody:
         description: New navigation property values
         content:
@@ -9437,7 +9437,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property aiInsights for users
-      operationId: users.onlineMeetings.DeleteAiInsights
+      operationId: user.onlineMeeting_DeleteAiInsight
       parameters:
         - name: If-Match
           in: header
@@ -9458,7 +9458,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get the number of the resource
-      operationId: users.onlineMeetings.aiInsights.GetCount-0afd
+      operationId: user.onlineMeeting.aiInsight_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9475,7 +9475,7 @@ paths:
         - users.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from users
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      operationId: users.GetOnlineMeetingsAlternativeRecording
+      operationId: user_GetOnlineMeetingsAlternativeRecording
       responses:
         2XX:
           description: Retrieved media content
@@ -9493,7 +9493,7 @@ paths:
         - users.onlineMeeting
       summary: Update alternativeRecording for the navigation property onlineMeetings in users
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      operationId: users.UpdateOnlineMeetingsAlternativeRecording
+      operationId: user_SetOnlineMeetingsAlternativeRecording
       requestBody:
         description: New media content.
         content:
@@ -9514,7 +9514,7 @@ paths:
         - users.onlineMeeting
       summary: Delete alternativeRecording for the navigation property onlineMeetings in users
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      operationId: users.DeleteOnlineMeetingsAlternativeRecording
+      operationId: user_DeleteOnlineMeetingsAlternativeRecording
       parameters:
         - name: If-Match
           in: header
@@ -9535,7 +9535,7 @@ paths:
         - users.onlineMeeting
       summary: Get attendanceReports from users
       description: The attendance reports of an online meeting. Read-only.
-      operationId: users.onlineMeetings.ListAttendanceReports
+      operationId: user.onlineMeeting_ListAttendanceReport
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9587,7 +9587,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to attendanceReports for users
-      operationId: users.onlineMeetings.CreateAttendanceReports
+      operationId: user.onlineMeeting_CreateAttendanceReport
       requestBody:
         description: New navigation property
         content:
@@ -9613,7 +9613,7 @@ paths:
         - users.onlineMeeting
       summary: Get attendanceReports from users
       description: The attendance reports of an online meeting. Read-only.
-      operationId: users.onlineMeetings.GetAttendanceReports
+      operationId: user.onlineMeeting_GetAttendanceReport
       parameters:
         - name: $select
           in: query
@@ -9651,7 +9651,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property attendanceReports in users
-      operationId: users.onlineMeetings.UpdateAttendanceReports
+      operationId: user.onlineMeeting_UpdateAttendanceReport
       requestBody:
         description: New navigation property values
         content:
@@ -9675,7 +9675,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property attendanceReports for users
-      operationId: users.onlineMeetings.DeleteAttendanceReports
+      operationId: user.onlineMeeting_DeleteAttendanceReport
       parameters:
         - name: If-Match
           in: header
@@ -9697,7 +9697,7 @@ paths:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
       description: List of attendance records of an attendance report. Read-only.
-      operationId: users.onlineMeetings.attendanceReports.ListAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_ListAttendanceRecord
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9749,7 +9749,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to attendanceRecords for users
-      operationId: users.onlineMeetings.attendanceReports.CreateAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_CreateAttendanceRecord
       requestBody:
         description: New navigation property
         content:
@@ -9775,7 +9775,7 @@ paths:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
       description: List of attendance records of an attendance report. Read-only.
-      operationId: users.onlineMeetings.attendanceReports.GetAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_GetAttendanceRecord
       parameters:
         - name: $select
           in: query
@@ -9813,7 +9813,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property attendanceRecords in users
-      operationId: users.onlineMeetings.attendanceReports.UpdateAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_UpdateAttendanceRecord
       requestBody:
         description: New navigation property values
         content:
@@ -9837,7 +9837,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property attendanceRecords for users
-      operationId: users.onlineMeetings.attendanceReports.DeleteAttendanceRecords
+      operationId: user.onlineMeeting.attendanceReport_DeleteAttendanceRecord
       parameters:
         - name: If-Match
           in: header
@@ -9858,7 +9858,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get the number of the resource
-      operationId: users.onlineMeetings.attendanceReports.attendanceRecords.GetCount-3340
+      operationId: user.onlineMeeting.attendanceReport.attendanceRecord_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9874,7 +9874,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get the number of the resource
-      operationId: users.onlineMeetings.attendanceReports.GetCount-e849
+      operationId: user.onlineMeeting.attendanceReport_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9891,7 +9891,7 @@ paths:
         - users.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from users
       description: The content stream of the attendee report of a Teams live event. Read-only.
-      operationId: users.GetOnlineMeetingsAttendeeReport
+      operationId: user_GetOnlineMeetingsAttendeeReport
       responses:
         2XX:
           description: Retrieved media content
@@ -9909,7 +9909,7 @@ paths:
         - users.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in users
       description: The content stream of the attendee report of a Teams live event. Read-only.
-      operationId: users.UpdateOnlineMeetingsAttendeeReport
+      operationId: user_SetOnlineMeetingsAttendeeReport
       requestBody:
         description: New media content.
         content:
@@ -9930,7 +9930,7 @@ paths:
         - users.onlineMeeting
       summary: Delete attendeeReport for the navigation property onlineMeetings in users
       description: The content stream of the attendee report of a Teams live event. Read-only.
-      operationId: users.DeleteOnlineMeetingsAttendeeReport
+      operationId: user_DeleteOnlineMeetingsAttendeeReport
       parameters:
         - name: If-Match
           in: header
@@ -9950,7 +9950,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get broadcastRecording for the navigation property onlineMeetings from users
-      operationId: users.GetOnlineMeetingsBroadcastRecording
+      operationId: user_GetOnlineMeetingsBroadcastRecording
       responses:
         2XX:
           description: Retrieved media content
@@ -9967,7 +9967,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update broadcastRecording for the navigation property onlineMeetings in users
-      operationId: users.UpdateOnlineMeetingsBroadcastRecording
+      operationId: user_SetOnlineMeetingsBroadcastRecording
       requestBody:
         description: New media content.
         content:
@@ -9987,7 +9987,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete broadcastRecording for the navigation property onlineMeetings in users
-      operationId: users.DeleteOnlineMeetingsBroadcastRecording
+      operationId: user_DeleteOnlineMeetingsBroadcastRecording
       parameters:
         - name: If-Match
           in: header
@@ -10008,7 +10008,7 @@ paths:
         - users.onlineMeeting
       summary: Get meetingAttendanceReport from users
       description: The attendance report of the latest online meeting session. Read-only.
-      operationId: users.onlineMeetings.GetMeetingAttendanceReport
+      operationId: user.onlineMeeting_GetMeetingAttendanceReport
       parameters:
         - name: $select
           in: query
@@ -10046,7 +10046,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property meetingAttendanceReport in users
-      operationId: users.onlineMeetings.UpdateMeetingAttendanceReport
+      operationId: user.onlineMeeting_UpdateMeetingAttendanceReport
       requestBody:
         description: New navigation property values
         content:
@@ -10070,7 +10070,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property meetingAttendanceReport for users
-      operationId: users.onlineMeetings.DeleteMeetingAttendanceReport
+      operationId: user.onlineMeeting_DeleteMeetingAttendanceReport
       parameters:
         - name: If-Match
           in: header
@@ -10092,7 +10092,7 @@ paths:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
       description: List of attendance records of an attendance report. Read-only.
-      operationId: users.onlineMeetings.meetingAttendanceReport.ListAttendanceRecords
+      operationId: user.onlineMeeting.meetingAttendanceReport_ListAttendanceRecord
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10144,7 +10144,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to attendanceRecords for users
-      operationId: users.onlineMeetings.meetingAttendanceReport.CreateAttendanceRecords
+      operationId: user.onlineMeeting.meetingAttendanceReport_CreateAttendanceRecord
       requestBody:
         description: New navigation property
         content:
@@ -10170,7 +10170,7 @@ paths:
         - users.onlineMeeting
       summary: Get attendanceRecords from users
       description: List of attendance records of an attendance report. Read-only.
-      operationId: users.onlineMeetings.meetingAttendanceReport.GetAttendanceRecords
+      operationId: user.onlineMeeting.meetingAttendanceReport_GetAttendanceRecord
       parameters:
         - name: $select
           in: query
@@ -10208,7 +10208,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property attendanceRecords in users
-      operationId: users.onlineMeetings.meetingAttendanceReport.UpdateAttendanceRecords
+      operationId: user.onlineMeeting.meetingAttendanceReport_UpdateAttendanceRecord
       requestBody:
         description: New navigation property values
         content:
@@ -10232,7 +10232,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property attendanceRecords for users
-      operationId: users.onlineMeetings.meetingAttendanceReport.DeleteAttendanceRecords
+      operationId: user.onlineMeeting.meetingAttendanceReport_DeleteAttendanceRecord
       parameters:
         - name: If-Match
           in: header
@@ -10253,7 +10253,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get the number of the resource
-      operationId: users.onlineMeetings.meetingAttendanceReport.attendanceRecords.GetCount-1860
+      operationId: user.onlineMeeting.meetingAttendanceReport.attendanceRecord_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10273,7 +10273,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
-      operationId: users.user.onlineMeetings.onlineMeeting.getVirtualAppointmentJoinWebUrl
+      operationId: user.onlineMeeting_getVirtualAppointmentJoinWebUrl
       responses:
         2XX:
           description: Success
@@ -10299,7 +10299,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-beta
-      operationId: users.user.onlineMeetings.onlineMeeting.sendVirtualAppointmentReminderSms
+      operationId: user.onlineMeeting_sendVirtualAppointmentReminderSm
       requestBody:
         description: Action parameters
         content:
@@ -10334,7 +10334,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta
-      operationId: users.user.onlineMeetings.onlineMeeting.sendVirtualAppointmentSms
+      operationId: user.onlineMeeting_sendVirtualAppointmentSm
       requestBody:
         description: Action parameters
         content:
@@ -10366,7 +10366,7 @@ paths:
         - users.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from users
       description: The content stream of the recording of a Teams live event. Read-only.
-      operationId: users.GetOnlineMeetingsRecording
+      operationId: user_GetOnlineMeetingsRecording
       responses:
         2XX:
           description: Retrieved media content
@@ -10384,7 +10384,7 @@ paths:
         - users.onlineMeeting
       summary: Update recording for the navigation property onlineMeetings in users
       description: The content stream of the recording of a Teams live event. Read-only.
-      operationId: users.UpdateOnlineMeetingsRecording
+      operationId: user_SetOnlineMeetingsRecording
       requestBody:
         description: New media content.
         content:
@@ -10405,7 +10405,7 @@ paths:
         - users.onlineMeeting
       summary: Delete recording for the navigation property onlineMeetings in users
       description: The content stream of the recording of a Teams live event. Read-only.
-      operationId: users.DeleteOnlineMeetingsRecording
+      operationId: user_DeleteOnlineMeetingsRecording
       parameters:
         - name: If-Match
           in: header
@@ -10426,7 +10426,7 @@ paths:
         - users.onlineMeeting
       summary: Get callRecording
       description: 'Get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from all meeting types except live events. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.'
-      operationId: users.onlineMeetings.ListRecordings
+      operationId: user.onlineMeeting_ListRecording
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10478,7 +10478,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to recordings for users
-      operationId: users.onlineMeetings.CreateRecordings
+      operationId: user.onlineMeeting_CreateRecording
       requestBody:
         description: New navigation property
         content:
@@ -10507,7 +10507,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-beta
-      operationId: users.onlineMeetings.GetRecordings
+      operationId: user.onlineMeeting_GetRecording
       parameters:
         - name: $select
           in: query
@@ -10545,7 +10545,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property recordings in users
-      operationId: users.onlineMeetings.UpdateRecordings
+      operationId: user.onlineMeeting_UpdateRecording
       requestBody:
         description: New navigation property values
         content:
@@ -10569,7 +10569,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property recordings for users
-      operationId: users.onlineMeetings.DeleteRecordings
+      operationId: user.onlineMeeting_DeleteRecording
       parameters:
         - name: If-Match
           in: header
@@ -10594,7 +10594,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-beta
-      operationId: users.onlineMeetings.GetRecordingsContent
+      operationId: user.onlineMeeting_GetRecordingsContent
       responses:
         2XX:
           description: Retrieved media content
@@ -10612,7 +10612,7 @@ paths:
         - users.onlineMeeting
       summary: Update content for the navigation property recordings in users
       description: The content of the recording. Read-only.
-      operationId: users.onlineMeetings.UpdateRecordingsContent
+      operationId: user.onlineMeeting_SetRecordingsContent
       requestBody:
         description: New media content.
         content:
@@ -10637,7 +10637,7 @@ paths:
         - users.onlineMeeting
       summary: Delete content for the navigation property recordings in users
       description: The content of the recording. Read-only.
-      operationId: users.onlineMeetings.DeleteRecordingsContent
+      operationId: user.onlineMeeting_DeleteRecordingsContent
       parameters:
         - name: If-Match
           in: header
@@ -10657,7 +10657,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get the number of the resource
-      operationId: users.onlineMeetings.recordings.GetCount-6c9a
+      operationId: user.onlineMeeting.recording_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10673,7 +10673,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Invoke function delta
-      operationId: users.user.onlineMeetings.onlineMeeting.recordings.delta
+      operationId: user.onlineMeeting.recording_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10743,7 +10743,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-beta
-      operationId: users.onlineMeetings.ListTranscripts
+      operationId: user.onlineMeeting_ListTranscript
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10795,7 +10795,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to transcripts for users
-      operationId: users.onlineMeetings.CreateTranscripts
+      operationId: user.onlineMeeting_CreateTranscript
       requestBody:
         description: New navigation property
         content:
@@ -10824,7 +10824,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta
-      operationId: users.onlineMeetings.GetTranscripts
+      operationId: user.onlineMeeting_GetTranscript
       parameters:
         - name: $select
           in: query
@@ -10862,7 +10862,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property transcripts in users
-      operationId: users.onlineMeetings.UpdateTranscripts
+      operationId: user.onlineMeeting_UpdateTranscript
       requestBody:
         description: New navigation property values
         content:
@@ -10886,7 +10886,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property transcripts for users
-      operationId: users.onlineMeetings.DeleteTranscripts
+      operationId: user.onlineMeeting_DeleteTranscript
       parameters:
         - name: If-Match
           in: header
@@ -10911,7 +10911,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta
-      operationId: users.onlineMeetings.GetTranscriptsContent
+      operationId: user.onlineMeeting_GetTranscriptsContent
       responses:
         2XX:
           description: Retrieved media content
@@ -10929,7 +10929,7 @@ paths:
         - users.onlineMeeting
       summary: Update content for the navigation property transcripts in users
       description: The content of the transcript. Read-only.
-      operationId: users.onlineMeetings.UpdateTranscriptsContent
+      operationId: user.onlineMeeting_SetTranscriptsContent
       requestBody:
         description: New media content.
         content:
@@ -10954,7 +10954,7 @@ paths:
         - users.onlineMeeting
       summary: Delete content for the navigation property transcripts in users
       description: The content of the transcript. Read-only.
-      operationId: users.onlineMeetings.DeleteTranscriptsContent
+      operationId: user.onlineMeeting_DeleteTranscriptsContent
       parameters:
         - name: If-Match
           in: header
@@ -10978,7 +10978,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-beta
-      operationId: users.onlineMeetings.GetTranscriptsMetadataContent
+      operationId: user.onlineMeeting_GetTranscriptsMetadataContent
       responses:
         2XX:
           description: Retrieved media content
@@ -10996,7 +10996,7 @@ paths:
         - users.onlineMeeting
       summary: Update metadataContent for the navigation property transcripts in users
       description: The time-aligned metadata of the utterances in the transcript. Read-only.
-      operationId: users.onlineMeetings.UpdateTranscriptsMetadataContent
+      operationId: user.onlineMeeting_SetTranscriptsMetadataContent
       requestBody:
         description: New media content.
         content:
@@ -11017,7 +11017,7 @@ paths:
         - users.onlineMeeting
       summary: Delete metadataContent for the navigation property transcripts in users
       description: The time-aligned metadata of the utterances in the transcript. Read-only.
-      operationId: users.onlineMeetings.DeleteTranscriptsMetadataContent
+      operationId: user.onlineMeeting_DeleteTranscriptsMetadataContent
       parameters:
         - name: If-Match
           in: header
@@ -11037,7 +11037,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get the number of the resource
-      operationId: users.onlineMeetings.transcripts.GetCount-3b6f
+      operationId: user.onlineMeeting.transcript_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11053,7 +11053,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Invoke function delta
-      operationId: users.user.onlineMeetings.onlineMeeting.transcripts.delta
+      operationId: user.onlineMeeting.transcript_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11120,7 +11120,7 @@ paths:
         - users.onlineMeeting
       summary: Get onlineMeetings from users
       description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
-      operationId: users.onlineMeetings.GetByJoinWebUrl
+      operationId: user.onlineMeeting_GetGraphBPreJoinWebUrl
       parameters:
         - name: $select
           in: query
@@ -11158,7 +11158,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property onlineMeetings in users
-      operationId: users.onlineMeetings.UpdateByJoinWebUrl
+      operationId: user.onlineMeeting_UpdateGraphBPreJoinWebUrl
       requestBody:
         description: New navigation property values
         content:
@@ -11182,7 +11182,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property onlineMeetings for users
-      operationId: users.onlineMeetings.DeleteByJoinWebUrl
+      operationId: user.onlineMeeting_DeleteGraphBPreJoinWebUrl
       parameters:
         - name: If-Match
           in: header
@@ -11207,7 +11207,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
-      operationId: users.user.onlineMeetings.joinWebUrl.getVirtualAppointmentJoinWebUrl
+      operationId: user.onlineMeeting.joinWebUrl_getVirtualAppointmentJoinWebUrl
       responses:
         2XX:
           description: Success
@@ -11233,7 +11233,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-beta
-      operationId: users.user.onlineMeetings.joinWebUrl.sendVirtualAppointmentReminderSms
+      operationId: user.onlineMeeting.joinWebUrl_sendVirtualAppointmentReminderSm
       requestBody:
         description: Action parameters
         content:
@@ -11268,7 +11268,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta
-      operationId: users.user.onlineMeetings.joinWebUrl.sendVirtualAppointmentSms
+      operationId: user.onlineMeeting.joinWebUrl_sendVirtualAppointmentSm
       requestBody:
         description: Action parameters
         content:
@@ -11299,7 +11299,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get the number of the resource
-      operationId: users.onlineMeetings.GetCount-1fc7
+      operationId: user.onlineMeeting_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11319,7 +11319,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta
-      operationId: users.user.onlineMeetings.createOrGet
+      operationId: user.onlineMeeting_createOrGet
       requestBody:
         description: Action parameters
         content:
@@ -11377,7 +11377,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-getallrecordings?view=graph-rest-beta
-      operationId: users.user.onlineMeetings.getAllRecordings
+      operationId: user.onlineMeeting_getAllRecording
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11447,7 +11447,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-getalltranscripts?view=graph-rest-beta
-      operationId: users.user.onlineMeetings.getAllTranscripts
+      operationId: user.onlineMeeting_getAllTranscript
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11517,7 +11517,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-beta
-      operationId: users.GetPresence
+      operationId: user_GetPresence
       parameters:
         - name: $select
           in: query
@@ -11555,7 +11555,7 @@ paths:
       tags:
         - users.presence
       summary: Update the navigation property presence in users
-      operationId: users.UpdatePresence
+      operationId: user_UpdatePresence
       requestBody:
         description: New navigation property values
         content:
@@ -11579,7 +11579,7 @@ paths:
       tags:
         - users.presence
       summary: Delete navigation property presence for users
-      operationId: users.DeletePresence
+      operationId: user_DeletePresence
       parameters:
         - name: If-Match
           in: header
@@ -11604,7 +11604,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-clearautomaticlocation?view=graph-rest-beta
-      operationId: users.user.presence.clearAutomaticLocation
+      operationId: user.presence_clearAutomaticLocation
       responses:
         '204':
           description: Success
@@ -11622,7 +11622,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-clearlocation?view=graph-rest-beta
-      operationId: users.user.presence.clearLocation
+      operationId: user.presence_clearLocation
       responses:
         '204':
           description: Success
@@ -11640,7 +11640,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-beta
-      operationId: users.user.presence.clearPresence
+      operationId: user.presence_clearPresence
       requestBody:
         description: Action parameters
         content:
@@ -11669,7 +11669,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-beta
-      operationId: users.user.presence.clearUserPreferredPresence
+      operationId: user.presence_clearUserPreferredPresence
       responses:
         '204':
           description: Success
@@ -11687,7 +11687,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setautomaticlocation?view=graph-rest-beta
-      operationId: users.user.presence.setAutomaticLocation
+      operationId: user.presence_setAutomaticLocation
       requestBody:
         description: Action parameters
         content:
@@ -11718,7 +11718,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setmanuallocation?view=graph-rest-beta
-      operationId: users.user.presence.setManualLocation
+      operationId: user.presence_setManualLocation
       requestBody:
         description: Action parameters
         content:
@@ -11749,7 +11749,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-beta
-      operationId: users.user.presence.setPresence
+      operationId: user.presence_setPresence
       requestBody:
         description: Action parameters
         content:
@@ -11787,7 +11787,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta
-      operationId: users.user.presence.setStatusMessage
+      operationId: user.presence_setStatusMessage
       requestBody:
         description: Action parameters
         content:
@@ -11818,7 +11818,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-beta
-      operationId: users.user.presence.setUserPreferredPresence
+      operationId: user.presence_setUserPreferredPresence
       requestBody:
         description: Action parameters
         content:
@@ -13545,11 +13545,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Offline, OutOfOffice, PresenceUnknown.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.'
+              description: 'The base presence information for a user. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Focusing, InACall, InAMeeting, Offline, Presenting, PresenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               anyOf:
@@ -13804,6 +13804,9 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingNote'
+            recapUrl:
+              type: string
+              nullable: true
             viewpoint:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.callAiInsightViewPoint'
@@ -14521,6 +14524,7 @@ components:
           '#microsoft.graph.cloudPcServicePlan': '#/components/schemas/microsoft.graph.cloudPcServicePlan'
           '#microsoft.graph.cloudPcSnapshot': '#/components/schemas/microsoft.graph.cloudPcSnapshot'
           '#microsoft.graph.cloudPcSupportedRegion': '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+          '#microsoft.graph.cloudPcUserProfileSnapshot': '#/components/schemas/microsoft.graph.cloudPcUserProfileSnapshot'
           '#microsoft.graph.cloudPcUserSetting': '#/components/schemas/microsoft.graph.cloudPcUserSetting'
           '#microsoft.graph.cloudPcUserSettingAssignment': '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
           '#microsoft.graph.cloudPCUserSettingsPersistenceDetail': '#/components/schemas/microsoft.graph.cloudPCUserSettingsPersistenceDetail'
@@ -14600,6 +14604,9 @@ components:
           '#microsoft.graph.copilotSetting': '#/components/schemas/microsoft.graph.copilotSetting'
           '#microsoft.graph.correlatedIdentity': '#/components/schemas/microsoft.graph.correlatedIdentity'
           '#microsoft.graph.corsConfiguration_v2': '#/components/schemas/microsoft.graph.corsConfiguration_v2'
+          '#microsoft.graph.costManagementAlertSetting': '#/components/schemas/microsoft.graph.costManagementAlertSetting'
+          '#microsoft.graph.costManagementRoot': '#/components/schemas/microsoft.graph.costManagementRoot'
+          '#microsoft.graph.costManagementUserBalance': '#/components/schemas/microsoft.graph.costManagementUserBalance'
           '#microsoft.graph.credentialUsageSummary': '#/components/schemas/microsoft.graph.credentialUsageSummary'
           '#microsoft.graph.credentialUserRegistrationCount': '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
           '#microsoft.graph.credentialUserRegistrationDetails': '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
@@ -14928,6 +14935,7 @@ components:
           '#microsoft.graph.deviceShellScript': '#/components/schemas/microsoft.graph.deviceShellScript'
           '#microsoft.graph.directory': '#/components/schemas/microsoft.graph.directory'
           '#microsoft.graph.directoryAudit': '#/components/schemas/microsoft.graph.directoryAudit'
+          '#microsoft.graph.appManagementAudit': '#/components/schemas/microsoft.graph.appManagementAudit'
           '#microsoft.graph.directoryDefinition': '#/components/schemas/microsoft.graph.directoryDefinition'
           '#microsoft.graph.directoryObject': '#/components/schemas/microsoft.graph.directoryObject'
           '#microsoft.graph.administrativeUnit': '#/components/schemas/microsoft.graph.administrativeUnit'
@@ -14986,6 +14994,7 @@ components:
           '#microsoft.graph.user': '#/components/schemas/microsoft.graph.user'
           '#microsoft.graph.agentUser': '#/components/schemas/microsoft.graph.agentUser'
           '#microsoft.graph.directoryRoleAccessReviewPolicy': '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
+          '#microsoft.graph.directoryRoleManagementDeletedItemContainer': '#/components/schemas/microsoft.graph.directoryRoleManagementDeletedItemContainer'
           '#microsoft.graph.directorySetting': '#/components/schemas/microsoft.graph.directorySetting'
           '#microsoft.graph.distributionListMember': '#/components/schemas/microsoft.graph.distributionListMember'
           '#microsoft.graph.document': '#/components/schemas/microsoft.graph.document'
@@ -15573,9 +15582,22 @@ components:
           '#microsoft.graph.placeOperation': '#/components/schemas/microsoft.graph.placeOperation'
           '#microsoft.graph.planner': '#/components/schemas/microsoft.graph.planner'
           '#microsoft.graph.plannerDelta': '#/components/schemas/microsoft.graph.plannerDelta'
+          '#microsoft.graph.bucket': '#/components/schemas/microsoft.graph.bucket'
+          '#microsoft.graph.categoryDefinition': '#/components/schemas/microsoft.graph.categoryDefinition'
+          '#microsoft.graph.checklistItemV4': '#/components/schemas/microsoft.graph.checklistItemV4'
+          '#microsoft.graph.contentLink': '#/components/schemas/microsoft.graph.contentLink'
+          '#microsoft.graph.customChoiceOption': '#/components/schemas/microsoft.graph.customChoiceOption'
+          '#microsoft.graph.customFieldDefinition': '#/components/schemas/microsoft.graph.customFieldDefinition'
+          '#microsoft.graph.customFieldValue': '#/components/schemas/microsoft.graph.customFieldValue'
+          '#microsoft.graph.dependency': '#/components/schemas/microsoft.graph.dependency'
+          '#microsoft.graph.goal': '#/components/schemas/microsoft.graph.goal'
+          '#microsoft.graph.historyItem': '#/components/schemas/microsoft.graph.historyItem'
+          '#microsoft.graph.plan': '#/components/schemas/microsoft.graph.plan'
+          '#microsoft.graph.planContextLink': '#/components/schemas/microsoft.graph.planContextLink'
           '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
           '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
           '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+          '#microsoft.graph.plannerChatMessage': '#/components/schemas/microsoft.graph.plannerChatMessage'
           '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
           '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
           '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
@@ -15586,6 +15608,8 @@ components:
           '#microsoft.graph.businessScenarioTask': '#/components/schemas/microsoft.graph.businessScenarioTask'
           '#microsoft.graph.plannerTaskDetails': '#/components/schemas/microsoft.graph.plannerTaskDetails'
           '#microsoft.graph.plannerUser': '#/components/schemas/microsoft.graph.plannerUser'
+          '#microsoft.graph.task': '#/components/schemas/microsoft.graph.task'
+          '#microsoft.graph.userAssignment': '#/components/schemas/microsoft.graph.userAssignment'
           '#microsoft.graph.plannerGroup': '#/components/schemas/microsoft.graph.plannerGroup'
           '#microsoft.graph.plannerPlanConfiguration': '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
           '#microsoft.graph.plannerPlanConfigurationLocalization': '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
@@ -15662,6 +15686,7 @@ components:
           '#microsoft.graph.programControlType': '#/components/schemas/microsoft.graph.programControlType'
           '#microsoft.graph.pronounsSettings': '#/components/schemas/microsoft.graph.pronounsSettings'
           '#microsoft.graph.protectionPolicyBase': '#/components/schemas/microsoft.graph.protectionPolicyBase'
+          '#microsoft.graph.entraProtectionPolicy': '#/components/schemas/microsoft.graph.entraProtectionPolicy'
           '#microsoft.graph.exchangeProtectionPolicy': '#/components/schemas/microsoft.graph.exchangeProtectionPolicy'
           '#microsoft.graph.oneDriveForBusinessProtectionPolicy': '#/components/schemas/microsoft.graph.oneDriveForBusinessProtectionPolicy'
           '#microsoft.graph.sharePointProtectionPolicy': '#/components/schemas/microsoft.graph.sharePointProtectionPolicy'
@@ -15819,6 +15844,9 @@ components:
           '#microsoft.graph.singleValueLegacyExtendedProperty': '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
           '#microsoft.graph.softwareUpdateStatusSummary': '#/components/schemas/microsoft.graph.softwareUpdateStatusSummary'
           '#microsoft.graph.speakerAssignmentSubmission': '#/components/schemas/microsoft.graph.speakerAssignmentSubmission'
+          '#microsoft.graph.spendingPolicy': '#/components/schemas/microsoft.graph.spendingPolicy'
+          '#microsoft.graph.allUsersSpendingPolicy': '#/components/schemas/microsoft.graph.allUsersSpendingPolicy'
+          '#microsoft.graph.selectedGroupsSpendingPolicy': '#/components/schemas/microsoft.graph.selectedGroupsSpendingPolicy'
           '#microsoft.graph.storageQuotaBreakdown': '#/components/schemas/microsoft.graph.storageQuotaBreakdown'
           '#microsoft.graph.serviceStorageQuotaBreakdown': '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
           '#microsoft.graph.storageSettings': '#/components/schemas/microsoft.graph.storageSettings'
@@ -15858,6 +15886,7 @@ components:
           '#microsoft.graph.teamTemplateDefinition': '#/components/schemas/microsoft.graph.teamTemplateDefinition'
           '#microsoft.graph.teamwork': '#/components/schemas/microsoft.graph.teamwork'
           '#microsoft.graph.teamworkBot': '#/components/schemas/microsoft.graph.teamworkBot'
+          '#microsoft.graph.teamworkCustomEmoji': '#/components/schemas/microsoft.graph.teamworkCustomEmoji'
           '#microsoft.graph.teamworkDevice': '#/components/schemas/microsoft.graph.teamworkDevice'
           '#microsoft.graph.teamworkDeviceActivity': '#/components/schemas/microsoft.graph.teamworkDeviceActivity'
           '#microsoft.graph.teamworkDeviceConfiguration': '#/components/schemas/microsoft.graph.teamworkDeviceConfiguration'
@@ -16193,8 +16222,26 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
+          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
+          '#microsoft.graph.identityGovernance.userIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.userIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
+          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.guestLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.guestLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyReport'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+          '#microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule': '#/components/schemas/microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule'
+          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+          '#microsoft.graph.identityGovernance.invitationRedemptionRule': '#/components/schemas/microsoft.graph.identityGovernance.invitationRedemptionRule'
+          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
+          '#microsoft.graph.identityGovernance.lifecyclePolicySubjectReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectReport'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -16324,7 +16371,9 @@ components:
           '#microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement'
           '#microsoft.graph.partner.security.responseTimeSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.responseTimeSecurityRequirement'
           '#microsoft.graph.partner.security.securityScoreHistory': '#/components/schemas/microsoft.graph.partner.security.securityScoreHistory'
+          '#microsoft.graph.partners.billing.azureAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.azureAggregatedUsage'
           '#microsoft.graph.partners.billing.azureUsage': '#/components/schemas/microsoft.graph.partners.billing.azureUsage'
+          '#microsoft.graph.partners.billing.billedAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedAggregatedUsage'
           '#microsoft.graph.partners.billing.billedReconciliation': '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
           '#microsoft.graph.partners.billing.billedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedUsage'
           '#microsoft.graph.partners.billing.billing': '#/components/schemas/microsoft.graph.partners.billing.billing'
@@ -16458,6 +16507,7 @@ components:
           '#microsoft.graph.security.whoisBaseRecord': '#/components/schemas/microsoft.graph.security.whoisBaseRecord'
           '#microsoft.graph.security.whoisHistoryRecord': '#/components/schemas/microsoft.graph.security.whoisHistoryRecord'
           '#microsoft.graph.security.whoisRecord': '#/components/schemas/microsoft.graph.security.whoisRecord'
+          '#microsoft.graph.security.workbook': '#/components/schemas/microsoft.graph.security.workbook'
           '#microsoft.graph.security.zone': '#/components/schemas/microsoft.graph.security.zone'
           '#microsoft.graph.security.caseManagement.caseManagementEntity': '#/components/schemas/microsoft.graph.security.caseManagement.caseManagementEntity'
           '#microsoft.graph.security.caseManagement.activity': '#/components/schemas/microsoft.graph.security.caseManagement.activity'
@@ -17999,6 +18049,7 @@ components:
       discriminator:
         propertyName: '@odata.type'
         mapping:
+          '#microsoft.graph.applicationIdentity': '#/components/schemas/microsoft.graph.applicationIdentity'
           '#microsoft.graph.azureCommunicationServicesUserIdentity': '#/components/schemas/microsoft.graph.azureCommunicationServicesUserIdentity'
           '#microsoft.graph.communicationsApplicationIdentity': '#/components/schemas/microsoft.graph.communicationsApplicationIdentity'
           '#microsoft.graph.communicationsApplicationInstanceIdentity': '#/components/schemas/microsoft.graph.communicationsApplicationInstanceIdentity'
