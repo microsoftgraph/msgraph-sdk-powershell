@@ -19,12 +19,6 @@
     },
     {
       "file": [
-        "autorest.powershell\\docs\\samples\\timeswire\\readme.md"
-      ],
-      "_justification": "[AutoRest] Examples contain random values recognized as secret"
-    },
-    {
-      "file": [
         "src\\Applications\\beta\\examples\\New-MgBetaServicePrincipalPasswordSingleSignOnCredentials.md",
         "src\\Applications\\beta\\examples\\Remove-MgBetaApplicationPassword.md",
         "src\\Applications\\beta\\examples\\Update-MgBetaServicePrincipalPasswordSingleSignOnCredentials.md",

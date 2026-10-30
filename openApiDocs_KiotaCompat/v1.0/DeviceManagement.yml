@@ -12,7 +12,7 @@ paths:
         - admin.edge
       summary: Get edge from admin
       description: A container for Microsoft Edge resources. Read-only.
-      operationId: admin.GetEdge
+      operationId: admin_GetEdge
       parameters:
         - name: $select
           in: query
@@ -50,7 +50,7 @@ paths:
       tags:
         - admin.edge
       summary: Update the navigation property edge in admin
-      operationId: admin.UpdateEdge
+      operationId: admin_UpdateEdge
       requestBody:
         description: New navigation property values
         content:
@@ -74,7 +74,7 @@ paths:
       tags:
         - admin.edge
       summary: Delete navigation property edge for admin
-      operationId: admin.DeleteEdge
+      operationId: admin_DeleteEdge
       parameters:
         - name: If-Match
           in: header
@@ -96,7 +96,7 @@ paths:
         - admin.edge
       summary: Get internetExplorerMode from admin
       description: A container for Internet Explorer mode resources.
-      operationId: admin.edge.GetInternetExplorerMode
+      operationId: admin.edge_GetInternetExplorerMode
       parameters:
         - name: $select
           in: query
@@ -134,7 +134,7 @@ paths:
       tags:
         - admin.edge
       summary: Update the navigation property internetExplorerMode in admin
-      operationId: admin.edge.UpdateInternetExplorerMode
+      operationId: admin.edge_UpdateInternetExplorerMode
       requestBody:
         description: New navigation property values
         content:
@@ -158,7 +158,7 @@ paths:
       tags:
         - admin.edge
       summary: Delete navigation property internetExplorerMode for admin
-      operationId: admin.edge.DeleteInternetExplorerMode
+      operationId: admin.edge_DeleteInternetExplorerMode
       parameters:
         - name: If-Match
           in: header
@@ -183,7 +183,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/internetexplorermode-list-sitelists?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.ListSiteLists
+      operationId: admin.edge.internetExplorerMode_ListSiteList
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -239,7 +239,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/internetexplorermode-post-sitelists?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.CreateSiteLists
+      operationId: admin.edge.internetExplorerMode_CreateSiteList
       requestBody:
         description: New navigation property
         content:
@@ -268,7 +268,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-get?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.GetSiteLists
+      operationId: admin.edge.internetExplorerMode_GetSiteList
       parameters:
         - name: $select
           in: query
@@ -310,7 +310,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-update?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.UpdateSiteLists
+      operationId: admin.edge.internetExplorerMode_UpdateSiteList
       requestBody:
         description: New navigation property values
         content:
@@ -338,7 +338,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/internetexplorermode-delete-sitelists?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.DeleteSiteLists
+      operationId: admin.edge.internetExplorerMode_DeleteSiteList
       parameters:
         - name: If-Match
           in: header
@@ -360,7 +360,7 @@ paths:
         - admin.edge
       summary: Invoke action publish
       description: Publish the specified browserSiteList for devices to download.
-      operationId: admin.edge.internetExplorerMode.siteLists.browserSiteList.publish
+      operationId: admin.edge.internetExplorerMode.siteList.browserSiteList_publish
       requestBody:
         description: Action parameters
         content:
@@ -403,7 +403,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-list-sharedcookies?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.siteLists.ListSharedCookies
+      operationId: admin.edge.internetExplorerMode.siteList_ListSharedCookie
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -459,7 +459,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-post-sharedcookies?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.siteLists.CreateSharedCookies
+      operationId: admin.edge.internetExplorerMode.siteList_CreateSharedCookie
       requestBody:
         description: New navigation property
         content:
@@ -488,7 +488,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersharedcookie-get?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.siteLists.GetSharedCookies
+      operationId: admin.edge.internetExplorerMode.siteList_GetSharedCookie
       parameters:
         - name: $select
           in: query
@@ -530,7 +530,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersharedcookie-update?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.siteLists.UpdateSharedCookies
+      operationId: admin.edge.internetExplorerMode.siteList_UpdateSharedCookie
       requestBody:
         description: New navigation property values
         content:
@@ -558,7 +558,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-delete-sharedcookies?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.siteLists.DeleteSharedCookies
+      operationId: admin.edge.internetExplorerMode.siteList_DeleteSharedCookie
       parameters:
         - name: If-Match
           in: header
@@ -579,7 +579,7 @@ paths:
       tags:
         - admin.edge
       summary: Get the number of the resource
-      operationId: admin.edge.internetExplorerMode.siteLists.sharedCookies.GetCount-0de2
+      operationId: admin.edge.internetExplorerMode.siteList.sharedCookie_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -599,7 +599,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-list-sites?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.siteLists.ListSites
+      operationId: admin.edge.internetExplorerMode.siteList_ListSite
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -655,7 +655,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-post-sites?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.siteLists.CreateSites
+      operationId: admin.edge.internetExplorerMode.siteList_CreateSite
       requestBody:
         description: New navigation property
         content:
@@ -684,7 +684,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersite-get?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.siteLists.GetSites
+      operationId: admin.edge.internetExplorerMode.siteList_GetSite
       parameters:
         - name: $select
           in: query
@@ -726,7 +726,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersite-update?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.siteLists.UpdateSites
+      operationId: admin.edge.internetExplorerMode.siteList_UpdateSite
       requestBody:
         description: New navigation property values
         content:
@@ -754,7 +754,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-delete-sites?view=graph-rest-1.0
-      operationId: admin.edge.internetExplorerMode.siteLists.DeleteSites
+      operationId: admin.edge.internetExplorerMode.siteList_DeleteSite
       parameters:
         - name: If-Match
           in: header
@@ -775,7 +775,7 @@ paths:
       tags:
         - admin.edge
       summary: Get the number of the resource
-      operationId: admin.edge.internetExplorerMode.siteLists.sites.GetCount-da97
+      operationId: admin.edge.internetExplorerMode.siteList.site_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -791,7 +791,7 @@ paths:
       tags:
         - admin.edge
       summary: Get the number of the resource
-      operationId: admin.edge.internetExplorerMode.siteLists.GetCount-d3d6
+      operationId: admin.edge.internetExplorerMode.siteList_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -807,7 +807,7 @@ paths:
       tags:
         - deviceManagement.deviceManagement
       summary: Get deviceManagement
-      operationId: deviceManagement.deviceManagement.GetDeviceManagement
+      operationId: deviceManagement_GetDeviceManagement
       parameters:
         - name: $select
           in: query
@@ -845,7 +845,7 @@ paths:
       tags:
         - deviceManagement.deviceManagement
       summary: Update deviceManagement
-      operationId: deviceManagement.deviceManagement.UpdateDeviceManagement
+      operationId: deviceManagement_UpdateDeviceManagement
       requestBody:
         description: New property values
         content:
@@ -871,7 +871,7 @@ paths:
         - deviceManagement.detectedApp
       summary: Get detectedApps from deviceManagement
       description: The list of detected apps associated with a device.
-      operationId: deviceManagement.ListDetectedApps
+      operationId: deviceManagement_ListDetectedApp
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -923,7 +923,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Create new navigation property to detectedApps for deviceManagement
-      operationId: deviceManagement.CreateDetectedApps
+      operationId: deviceManagement_CreateDetectedApp
       requestBody:
         description: New navigation property
         content:
@@ -949,7 +949,7 @@ paths:
         - deviceManagement.detectedApp
       summary: Get detectedApps from deviceManagement
       description: The list of detected apps associated with a device.
-      operationId: deviceManagement.GetDetectedApps
+      operationId: deviceManagement_GetDetectedApp
       parameters:
         - name: $select
           in: query
@@ -987,7 +987,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Update the navigation property detectedApps in deviceManagement
-      operationId: deviceManagement.UpdateDetectedApps
+      operationId: deviceManagement_UpdateDetectedApp
       requestBody:
         description: New navigation property values
         content:
@@ -1011,7 +1011,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Delete navigation property detectedApps for deviceManagement
-      operationId: deviceManagement.DeleteDetectedApps
+      operationId: deviceManagement_DeleteDetectedApp
       parameters:
         - name: If-Match
           in: header
@@ -1033,7 +1033,7 @@ paths:
         - deviceManagement.detectedApp
       summary: Get managedDevices from deviceManagement
       description: The devices that have the discovered application installed
-      operationId: deviceManagement.detectedApps.ListManagedDevices
+      operationId: deviceManagement.detectedApp_ListManagedDevice
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1087,7 +1087,7 @@ paths:
         - deviceManagement.detectedApp
       summary: Get managedDevices from deviceManagement
       description: The devices that have the discovered application installed
-      operationId: deviceManagement.detectedApps.GetManagedDevices
+      operationId: deviceManagement.detectedApp_GetManagedDevice
       parameters:
         - name: $select
           in: query
@@ -1126,7 +1126,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get the number of the resource
-      operationId: deviceManagement.detectedApps.managedDevices.GetCount-d78c
+      operationId: deviceManagement.detectedApp.managedDevice_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1142,7 +1142,7 @@ paths:
       tags:
         - deviceManagement.detectedApp
       summary: Get the number of the resource
-      operationId: deviceManagement.detectedApps.GetCount-0228
+      operationId: deviceManagement.detectedApp_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1159,7 +1159,7 @@ paths:
         - deviceManagement.deviceCategory
       summary: Get deviceCategories from deviceManagement
       description: The list of device categories with the tenant.
-      operationId: deviceManagement.ListDeviceCategories
+      operationId: deviceManagement_ListDeviceCategory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1211,7 +1211,7 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Create new navigation property to deviceCategories for deviceManagement
-      operationId: deviceManagement.CreateDeviceCategories
+      operationId: deviceManagement_CreateDeviceCategory
       requestBody:
         description: New navigation property
         content:
@@ -1237,7 +1237,7 @@ paths:
         - deviceManagement.deviceCategory
       summary: Get deviceCategories from deviceManagement
       description: The list of device categories with the tenant.
-      operationId: deviceManagement.GetDeviceCategories
+      operationId: deviceManagement_GetDeviceCategory
       parameters:
         - name: $select
           in: query
@@ -1275,7 +1275,7 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Update the navigation property deviceCategories in deviceManagement
-      operationId: deviceManagement.UpdateDeviceCategories
+      operationId: deviceManagement_UpdateDeviceCategory
       requestBody:
         description: New navigation property values
         content:
@@ -1299,7 +1299,7 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Delete navigation property deviceCategories for deviceManagement
-      operationId: deviceManagement.DeleteDeviceCategories
+      operationId: deviceManagement_DeleteDeviceCategory
       parameters:
         - name: If-Match
           in: header
@@ -1320,7 +1320,7 @@ paths:
       tags:
         - deviceManagement.deviceCategory
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceCategories.GetCount-ed54
+      operationId: deviceManagement.deviceCategory_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1337,7 +1337,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceCompliancePolicies from deviceManagement
       description: The device compliance policies.
-      operationId: deviceManagement.ListDeviceCompliancePolicies
+      operationId: deviceManagement_ListDeviceCompliancePolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1389,7 +1389,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to deviceCompliancePolicies for deviceManagement
-      operationId: deviceManagement.CreateDeviceCompliancePolicies
+      operationId: deviceManagement_CreateDeviceCompliancePolicy
       requestBody:
         description: New navigation property
         content:
@@ -1415,7 +1415,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceCompliancePolicies from deviceManagement
       description: The device compliance policies.
-      operationId: deviceManagement.GetDeviceCompliancePolicies
+      operationId: deviceManagement_GetDeviceCompliancePolicy
       parameters:
         - name: $select
           in: query
@@ -1453,7 +1453,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property deviceCompliancePolicies in deviceManagement
-      operationId: deviceManagement.UpdateDeviceCompliancePolicies
+      operationId: deviceManagement_UpdateDeviceCompliancePolicy
       requestBody:
         description: New navigation property values
         content:
@@ -1477,7 +1477,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property deviceCompliancePolicies for deviceManagement
-      operationId: deviceManagement.DeleteDeviceCompliancePolicies
+      operationId: deviceManagement_DeleteDeviceCompliancePolicy
       parameters:
         - name: If-Match
           in: header
@@ -1499,7 +1499,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get assignments from deviceManagement
       description: The collection of assignments for this compliance policy.
-      operationId: deviceManagement.deviceCompliancePolicies.ListAssignments
+      operationId: deviceManagement.deviceCompliancePolicy_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1551,7 +1551,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.CreateAssignments
+      operationId: deviceManagement.deviceCompliancePolicy_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -1577,7 +1577,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get assignments from deviceManagement
       description: The collection of assignments for this compliance policy.
-      operationId: deviceManagement.deviceCompliancePolicies.GetAssignments
+      operationId: deviceManagement.deviceCompliancePolicy_GetAssignment
       parameters:
         - name: $select
           in: query
@@ -1615,7 +1615,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.UpdateAssignments
+      operationId: deviceManagement.deviceCompliancePolicy_UpdateAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -1639,7 +1639,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.DeleteAssignments
+      operationId: deviceManagement.deviceCompliancePolicy_DeleteAssignment
       parameters:
         - name: If-Match
           in: header
@@ -1660,7 +1660,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceCompliancePolicies.assignments.GetCount-332a
+      operationId: deviceManagement.deviceCompliancePolicy.assignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1677,7 +1677,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceSettingStateSummaries from deviceManagement
       description: Compliance Setting State Device Summary
-      operationId: deviceManagement.deviceCompliancePolicies.ListDeviceSettingStateSummaries
+      operationId: deviceManagement.deviceCompliancePolicy_ListDeviceSettingStateSummary
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1729,7 +1729,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to deviceSettingStateSummaries for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.CreateDeviceSettingStateSummaries
+      operationId: deviceManagement.deviceCompliancePolicy_CreateDeviceSettingStateSummary
       requestBody:
         description: New navigation property
         content:
@@ -1755,7 +1755,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceSettingStateSummaries from deviceManagement
       description: Compliance Setting State Device Summary
-      operationId: deviceManagement.deviceCompliancePolicies.GetDeviceSettingStateSummaries
+      operationId: deviceManagement.deviceCompliancePolicy_GetDeviceSettingStateSummary
       parameters:
         - name: $select
           in: query
@@ -1793,7 +1793,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property deviceSettingStateSummaries in deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.UpdateDeviceSettingStateSummaries
+      operationId: deviceManagement.deviceCompliancePolicy_UpdateDeviceSettingStateSummary
       requestBody:
         description: New navigation property values
         content:
@@ -1817,7 +1817,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property deviceSettingStateSummaries for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.DeleteDeviceSettingStateSummaries
+      operationId: deviceManagement.deviceCompliancePolicy_DeleteDeviceSettingStateSummary
       parameters:
         - name: If-Match
           in: header
@@ -1838,7 +1838,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceCompliancePolicies.deviceSettingStateSummaries.GetCount-6b27
+      operationId: deviceManagement.deviceCompliancePolicy.deviceSettingStateSummary_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1855,7 +1855,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatuses from deviceManagement
       description: List of DeviceComplianceDeviceStatus.
-      operationId: deviceManagement.deviceCompliancePolicies.ListDeviceStatuses
+      operationId: deviceManagement.deviceCompliancePolicy_ListDeviceStatus
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1907,7 +1907,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to deviceStatuses for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.CreateDeviceStatuses
+      operationId: deviceManagement.deviceCompliancePolicy_CreateDeviceStatus
       requestBody:
         description: New navigation property
         content:
@@ -1933,7 +1933,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatuses from deviceManagement
       description: List of DeviceComplianceDeviceStatus.
-      operationId: deviceManagement.deviceCompliancePolicies.GetDeviceStatuses
+      operationId: deviceManagement.deviceCompliancePolicy_GetDeviceStatus
       parameters:
         - name: $select
           in: query
@@ -1971,7 +1971,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property deviceStatuses in deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.UpdateDeviceStatuses
+      operationId: deviceManagement.deviceCompliancePolicy_UpdateDeviceStatus
       requestBody:
         description: New navigation property values
         content:
@@ -1995,7 +1995,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property deviceStatuses for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.DeleteDeviceStatuses
+      operationId: deviceManagement.deviceCompliancePolicy_DeleteDeviceStatus
       parameters:
         - name: If-Match
           in: header
@@ -2016,7 +2016,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceCompliancePolicies.deviceStatuses.GetCount-f70b
+      operationId: deviceManagement.deviceCompliancePolicy.deviceStatus_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2033,7 +2033,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get deviceStatusOverview from deviceManagement
       description: Device compliance devices status overview
-      operationId: deviceManagement.deviceCompliancePolicies.GetDeviceStatusOverview
+      operationId: deviceManagement.deviceCompliancePolicy_GetDeviceStatusOverview
       parameters:
         - name: $select
           in: query
@@ -2071,7 +2071,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property deviceStatusOverview in deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.UpdateDeviceStatusOverview
+      operationId: deviceManagement.deviceCompliancePolicy_UpdateDeviceStatusOverview
       requestBody:
         description: New navigation property values
         content:
@@ -2095,7 +2095,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property deviceStatusOverview for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.DeleteDeviceStatusOverview
+      operationId: deviceManagement.deviceCompliancePolicy_DeleteDeviceStatusOverview
       parameters:
         - name: If-Match
           in: header
@@ -2116,7 +2116,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Invoke action assign
-      operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy.assign
+      operationId: deviceManagement.deviceCompliancePolicy_assign
       requestBody:
         description: Action parameters
         content:
@@ -2158,7 +2158,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Invoke action scheduleActionsForRules
-      operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy.scheduleActionsForRules
+      operationId: deviceManagement.deviceCompliancePolicy_scheduleActionsGraphFPreRule
       requestBody:
         description: Action parameters
         content:
@@ -2185,7 +2185,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
       description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies.ListScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicy_ListScheduledActionsGraphFPreRule
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2237,7 +2237,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionsForRule for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.CreateScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicy_CreateScheduledActionsGraphFPreRule
       requestBody:
         description: New navigation property
         content:
@@ -2263,7 +2263,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
       description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-      operationId: deviceManagement.deviceCompliancePolicies.GetScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicy_GetScheduledActionsGraphFPreRule
       parameters:
         - name: $select
           in: query
@@ -2301,7 +2301,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionsForRule in deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.UpdateScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicy_UpdateScheduledActionsGraphFPreRule
       requestBody:
         description: New navigation property values
         content:
@@ -2325,7 +2325,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionsForRule for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.DeleteScheduledActionsForRule
+      operationId: deviceManagement.deviceCompliancePolicy_DeleteScheduledActionsGraphFPreRule
       parameters:
         - name: If-Match
           in: header
@@ -2347,7 +2347,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
       description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule.ListScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicy.scheduledActionsGraphFPreRule_ListScheduledActionConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2399,7 +2399,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionConfigurations for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule.CreateScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicy.scheduledActionsGraphFPreRule_CreateScheduledActionConfiguration
       requestBody:
         description: New navigation property
         content:
@@ -2425,7 +2425,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
       description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule.GetScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicy.scheduledActionsGraphFPreRule_GetScheduledActionConfiguration
       parameters:
         - name: $select
           in: query
@@ -2463,7 +2463,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionConfigurations in deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule.UpdateScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicy.scheduledActionsGraphFPreRule_UpdateScheduledActionConfiguration
       requestBody:
         description: New navigation property values
         content:
@@ -2487,7 +2487,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionConfigurations for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule.DeleteScheduledActionConfigurations
+      operationId: deviceManagement.deviceCompliancePolicy.scheduledActionsGraphFPreRule_DeleteScheduledActionConfiguration
       parameters:
         - name: If-Match
           in: header
@@ -2508,7 +2508,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule.scheduledActionConfigurations.GetCount-b4b5
+      operationId: deviceManagement.deviceCompliancePolicy.scheduledActionsGraphFPreRule.scheduledActionConfiguration_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2524,7 +2524,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule.GetCount-afd5
+      operationId: deviceManagement.deviceCompliancePolicy.scheduledActionsGraphFPreRule_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2541,7 +2541,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatuses from deviceManagement
       description: List of DeviceComplianceUserStatus.
-      operationId: deviceManagement.deviceCompliancePolicies.ListUserStatuses
+      operationId: deviceManagement.deviceCompliancePolicy_ListUserStatus
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2593,7 +2593,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to userStatuses for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.CreateUserStatuses
+      operationId: deviceManagement.deviceCompliancePolicy_CreateUserStatus
       requestBody:
         description: New navigation property
         content:
@@ -2619,7 +2619,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatuses from deviceManagement
       description: List of DeviceComplianceUserStatus.
-      operationId: deviceManagement.deviceCompliancePolicies.GetUserStatuses
+      operationId: deviceManagement.deviceCompliancePolicy_GetUserStatus
       parameters:
         - name: $select
           in: query
@@ -2657,7 +2657,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property userStatuses in deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.UpdateUserStatuses
+      operationId: deviceManagement.deviceCompliancePolicy_UpdateUserStatus
       requestBody:
         description: New navigation property values
         content:
@@ -2681,7 +2681,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property userStatuses for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.DeleteUserStatuses
+      operationId: deviceManagement.deviceCompliancePolicy_DeleteUserStatus
       parameters:
         - name: If-Match
           in: header
@@ -2702,7 +2702,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceCompliancePolicies.userStatuses.GetCount-fa4a
+      operationId: deviceManagement.deviceCompliancePolicy.userStatus_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2719,7 +2719,7 @@ paths:
         - deviceManagement.deviceCompliancePolicy
       summary: Get userStatusOverview from deviceManagement
       description: Device compliance users status overview
-      operationId: deviceManagement.deviceCompliancePolicies.GetUserStatusOverview
+      operationId: deviceManagement.deviceCompliancePolicy_GetUserStatusOverview
       parameters:
         - name: $select
           in: query
@@ -2757,7 +2757,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property userStatusOverview in deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.UpdateUserStatusOverview
+      operationId: deviceManagement.deviceCompliancePolicy_UpdateUserStatusOverview
       requestBody:
         description: New navigation property values
         content:
@@ -2781,7 +2781,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property userStatusOverview for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicies.DeleteUserStatusOverview
+      operationId: deviceManagement.deviceCompliancePolicy_DeleteUserStatusOverview
       parameters:
         - name: If-Match
           in: header
@@ -2802,7 +2802,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceCompliancePolicies.GetCount-6c5d
+      operationId: deviceManagement.deviceCompliancePolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2819,7 +2819,7 @@ paths:
         - deviceManagement.deviceCompliancePolicyDeviceStateSummary
       summary: Get deviceCompliancePolicyDeviceStateSummary from deviceManagement
       description: The device compliance state summary for this account.
-      operationId: deviceManagement.GetDeviceCompliancePolicyDeviceStateSummary
+      operationId: deviceManagement_GetDeviceCompliancePolicyDeviceStateSummary
       parameters:
         - name: $select
           in: query
@@ -2857,7 +2857,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicyDeviceStateSummary
       summary: Update the navigation property deviceCompliancePolicyDeviceStateSummary in deviceManagement
-      operationId: deviceManagement.UpdateDeviceCompliancePolicyDeviceStateSummary
+      operationId: deviceManagement_UpdateDeviceCompliancePolicyDeviceStateSummary
       requestBody:
         description: New navigation property values
         content:
@@ -2881,7 +2881,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicyDeviceStateSummary
       summary: Delete navigation property deviceCompliancePolicyDeviceStateSummary for deviceManagement
-      operationId: deviceManagement.DeleteDeviceCompliancePolicyDeviceStateSummary
+      operationId: deviceManagement_DeleteDeviceCompliancePolicyDeviceStateSummary
       parameters:
         - name: If-Match
           in: header
@@ -2903,7 +2903,7 @@ paths:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceCompliancePolicySettingStateSummaries from deviceManagement
       description: The summary states of compliance policy settings for this account.
-      operationId: deviceManagement.ListDeviceCompliancePolicySettingStateSummaries
+      operationId: deviceManagement_ListDeviceCompliancePolicySettingStateSummary
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2955,7 +2955,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Create new navigation property to deviceCompliancePolicySettingStateSummaries for deviceManagement
-      operationId: deviceManagement.CreateDeviceCompliancePolicySettingStateSummaries
+      operationId: deviceManagement_CreateDeviceCompliancePolicySettingStateSummary
       requestBody:
         description: New navigation property
         content:
@@ -2981,7 +2981,7 @@ paths:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceCompliancePolicySettingStateSummaries from deviceManagement
       description: The summary states of compliance policy settings for this account.
-      operationId: deviceManagement.GetDeviceCompliancePolicySettingStateSummaries
+      operationId: deviceManagement_GetDeviceCompliancePolicySettingStateSummary
       parameters:
         - name: $select
           in: query
@@ -3019,7 +3019,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
-      operationId: deviceManagement.UpdateDeviceCompliancePolicySettingStateSummaries
+      operationId: deviceManagement_UpdateDeviceCompliancePolicySettingStateSummary
       requestBody:
         description: New navigation property values
         content:
@@ -3043,7 +3043,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
-      operationId: deviceManagement.DeleteDeviceCompliancePolicySettingStateSummaries
+      operationId: deviceManagement_DeleteDeviceCompliancePolicySettingStateSummary
       parameters:
         - name: If-Match
           in: header
@@ -3064,7 +3064,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries.ListDeviceComplianceSettingStates
+      operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_ListDeviceComplianceSettingState
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3116,7 +3116,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Create new navigation property to deviceComplianceSettingStates for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries.CreateDeviceComplianceSettingStates
+      operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_CreateDeviceComplianceSettingState
       requestBody:
         description: New navigation property
         content:
@@ -3141,7 +3141,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries.GetDeviceComplianceSettingStates
+      operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_GetDeviceComplianceSettingState
       parameters:
         - name: $select
           in: query
@@ -3179,7 +3179,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Update the navigation property deviceComplianceSettingStates in deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries.UpdateDeviceComplianceSettingStates
+      operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_UpdateDeviceComplianceSettingState
       requestBody:
         description: New navigation property values
         content:
@@ -3203,7 +3203,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Delete navigation property deviceComplianceSettingStates for deviceManagement
-      operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries.DeleteDeviceComplianceSettingStates
+      operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_DeleteDeviceComplianceSettingState
       parameters:
         - name: If-Match
           in: header
@@ -3224,7 +3224,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries.deviceComplianceSettingStates.GetCount-49c2
+      operationId: deviceManagement.deviceCompliancePolicySettingStateSummary.deviceComplianceSettingState_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3240,7 +3240,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceCompliancePolicySettingStateSummaries.GetCount-ca06
+      operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3257,7 +3257,7 @@ paths:
         - deviceManagement.deviceConfigurationDeviceStateSummary
       summary: Get deviceConfigurationDeviceStateSummaries from deviceManagement
       description: The device configuration device state summary for this account.
-      operationId: deviceManagement.GetDeviceConfigurationDeviceStateSummaries
+      operationId: deviceManagement_GetDeviceConfigurationDeviceStateSummary
       parameters:
         - name: $select
           in: query
@@ -3295,7 +3295,7 @@ paths:
       tags:
         - deviceManagement.deviceConfigurationDeviceStateSummary
       summary: Update the navigation property deviceConfigurationDeviceStateSummaries in deviceManagement
-      operationId: deviceManagement.UpdateDeviceConfigurationDeviceStateSummaries
+      operationId: deviceManagement_UpdateDeviceConfigurationDeviceStateSummary
       requestBody:
         description: New navigation property values
         content:
@@ -3319,7 +3319,7 @@ paths:
       tags:
         - deviceManagement.deviceConfigurationDeviceStateSummary
       summary: Delete navigation property deviceConfigurationDeviceStateSummaries for deviceManagement
-      operationId: deviceManagement.DeleteDeviceConfigurationDeviceStateSummaries
+      operationId: deviceManagement_DeleteDeviceConfigurationDeviceStateSummary
       parameters:
         - name: If-Match
           in: header
@@ -3341,7 +3341,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Get deviceConfigurations from deviceManagement
       description: The device configurations.
-      operationId: deviceManagement.ListDeviceConfigurations
+      operationId: deviceManagement_ListDeviceConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3393,7 +3393,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to deviceConfigurations for deviceManagement
-      operationId: deviceManagement.CreateDeviceConfigurations
+      operationId: deviceManagement_CreateDeviceConfiguration
       requestBody:
         description: New navigation property
         content:
@@ -3419,7 +3419,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Get deviceConfigurations from deviceManagement
       description: The device configurations.
-      operationId: deviceManagement.GetDeviceConfigurations
+      operationId: deviceManagement_GetDeviceConfiguration
       parameters:
         - name: $select
           in: query
@@ -3457,7 +3457,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property deviceConfigurations in deviceManagement
-      operationId: deviceManagement.UpdateDeviceConfigurations
+      operationId: deviceManagement_UpdateDeviceConfiguration
       requestBody:
         description: New navigation property values
         content:
@@ -3481,7 +3481,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property deviceConfigurations for deviceManagement
-      operationId: deviceManagement.DeleteDeviceConfigurations
+      operationId: deviceManagement_DeleteDeviceConfiguration
       parameters:
         - name: If-Match
           in: header
@@ -3503,7 +3503,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Get assignments from deviceManagement
       description: The list of assignments for the device configuration profile.
-      operationId: deviceManagement.deviceConfigurations.ListAssignments
+      operationId: deviceManagement.deviceConfiguration_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3555,7 +3555,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.deviceConfigurations.CreateAssignments
+      operationId: deviceManagement.deviceConfiguration_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -3581,7 +3581,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Get assignments from deviceManagement
       description: The list of assignments for the device configuration profile.
-      operationId: deviceManagement.deviceConfigurations.GetAssignments
+      operationId: deviceManagement.deviceConfiguration_GetAssignment
       parameters:
         - name: $select
           in: query
@@ -3619,7 +3619,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.deviceConfigurations.UpdateAssignments
+      operationId: deviceManagement.deviceConfiguration_UpdateAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -3643,7 +3643,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.deviceConfigurations.DeleteAssignments
+      operationId: deviceManagement.deviceConfiguration_DeleteAssignment
       parameters:
         - name: If-Match
           in: header
@@ -3664,7 +3664,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceConfigurations.assignments.GetCount-170b
+      operationId: deviceManagement.deviceConfiguration.assignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3681,7 +3681,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Get deviceSettingStateSummaries from deviceManagement
       description: Device Configuration Setting State Device Summary
-      operationId: deviceManagement.deviceConfigurations.ListDeviceSettingStateSummaries
+      operationId: deviceManagement.deviceConfiguration_ListDeviceSettingStateSummary
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3733,7 +3733,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to deviceSettingStateSummaries for deviceManagement
-      operationId: deviceManagement.deviceConfigurations.CreateDeviceSettingStateSummaries
+      operationId: deviceManagement.deviceConfiguration_CreateDeviceSettingStateSummary
       requestBody:
         description: New navigation property
         content:
@@ -3759,7 +3759,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Get deviceSettingStateSummaries from deviceManagement
       description: Device Configuration Setting State Device Summary
-      operationId: deviceManagement.deviceConfigurations.GetDeviceSettingStateSummaries
+      operationId: deviceManagement.deviceConfiguration_GetDeviceSettingStateSummary
       parameters:
         - name: $select
           in: query
@@ -3797,7 +3797,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property deviceSettingStateSummaries in deviceManagement
-      operationId: deviceManagement.deviceConfigurations.UpdateDeviceSettingStateSummaries
+      operationId: deviceManagement.deviceConfiguration_UpdateDeviceSettingStateSummary
       requestBody:
         description: New navigation property values
         content:
@@ -3821,7 +3821,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property deviceSettingStateSummaries for deviceManagement
-      operationId: deviceManagement.deviceConfigurations.DeleteDeviceSettingStateSummaries
+      operationId: deviceManagement.deviceConfiguration_DeleteDeviceSettingStateSummary
       parameters:
         - name: If-Match
           in: header
@@ -3842,7 +3842,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceConfigurations.deviceSettingStateSummaries.GetCount-921c
+      operationId: deviceManagement.deviceConfiguration.deviceSettingStateSummary_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3859,7 +3859,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatuses from deviceManagement
       description: Device configuration installation status by device.
-      operationId: deviceManagement.deviceConfigurations.ListDeviceStatuses
+      operationId: deviceManagement.deviceConfiguration_ListDeviceStatus
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3911,7 +3911,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to deviceStatuses for deviceManagement
-      operationId: deviceManagement.deviceConfigurations.CreateDeviceStatuses
+      operationId: deviceManagement.deviceConfiguration_CreateDeviceStatus
       requestBody:
         description: New navigation property
         content:
@@ -3937,7 +3937,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatuses from deviceManagement
       description: Device configuration installation status by device.
-      operationId: deviceManagement.deviceConfigurations.GetDeviceStatuses
+      operationId: deviceManagement.deviceConfiguration_GetDeviceStatus
       parameters:
         - name: $select
           in: query
@@ -3975,7 +3975,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property deviceStatuses in deviceManagement
-      operationId: deviceManagement.deviceConfigurations.UpdateDeviceStatuses
+      operationId: deviceManagement.deviceConfiguration_UpdateDeviceStatus
       requestBody:
         description: New navigation property values
         content:
@@ -3999,7 +3999,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property deviceStatuses for deviceManagement
-      operationId: deviceManagement.deviceConfigurations.DeleteDeviceStatuses
+      operationId: deviceManagement.deviceConfiguration_DeleteDeviceStatus
       parameters:
         - name: If-Match
           in: header
@@ -4020,7 +4020,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceConfigurations.deviceStatuses.GetCount-ce20
+      operationId: deviceManagement.deviceConfiguration.deviceStatus_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4037,7 +4037,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Get deviceStatusOverview from deviceManagement
       description: Device Configuration devices status overview
-      operationId: deviceManagement.deviceConfigurations.GetDeviceStatusOverview
+      operationId: deviceManagement.deviceConfiguration_GetDeviceStatusOverview
       parameters:
         - name: $select
           in: query
@@ -4075,7 +4075,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property deviceStatusOverview in deviceManagement
-      operationId: deviceManagement.deviceConfigurations.UpdateDeviceStatusOverview
+      operationId: deviceManagement.deviceConfiguration_UpdateDeviceStatusOverview
       requestBody:
         description: New navigation property values
         content:
@@ -4099,7 +4099,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property deviceStatusOverview for deviceManagement
-      operationId: deviceManagement.deviceConfigurations.DeleteDeviceStatusOverview
+      operationId: deviceManagement.deviceConfiguration_DeleteDeviceStatusOverview
       parameters:
         - name: If-Match
           in: header
@@ -4120,7 +4120,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Invoke action assign
-      operationId: deviceManagement.deviceConfigurations.deviceConfiguration.assign
+      operationId: deviceManagement.deviceConfiguration_assign
       requestBody:
         description: Action parameters
         content:
@@ -4162,7 +4162,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Invoke function getOmaSettingPlainTextValue
-      operationId: deviceManagement.deviceConfigurations.deviceConfiguration.getOmaSettingPlainTextValue
+      operationId: deviceManagement.deviceConfiguration_getOmaSettingPlainTextValue
       responses:
         2XX:
           description: Success
@@ -4185,7 +4185,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Get userStatuses from deviceManagement
       description: Device configuration installation status by user.
-      operationId: deviceManagement.deviceConfigurations.ListUserStatuses
+      operationId: deviceManagement.deviceConfiguration_ListUserStatus
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4237,7 +4237,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Create new navigation property to userStatuses for deviceManagement
-      operationId: deviceManagement.deviceConfigurations.CreateUserStatuses
+      operationId: deviceManagement.deviceConfiguration_CreateUserStatus
       requestBody:
         description: New navigation property
         content:
@@ -4263,7 +4263,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Get userStatuses from deviceManagement
       description: Device configuration installation status by user.
-      operationId: deviceManagement.deviceConfigurations.GetUserStatuses
+      operationId: deviceManagement.deviceConfiguration_GetUserStatus
       parameters:
         - name: $select
           in: query
@@ -4301,7 +4301,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property userStatuses in deviceManagement
-      operationId: deviceManagement.deviceConfigurations.UpdateUserStatuses
+      operationId: deviceManagement.deviceConfiguration_UpdateUserStatus
       requestBody:
         description: New navigation property values
         content:
@@ -4325,7 +4325,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property userStatuses for deviceManagement
-      operationId: deviceManagement.deviceConfigurations.DeleteUserStatuses
+      operationId: deviceManagement.deviceConfiguration_DeleteUserStatus
       parameters:
         - name: If-Match
           in: header
@@ -4346,7 +4346,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceConfigurations.userStatuses.GetCount-a3f6
+      operationId: deviceManagement.deviceConfiguration.userStatus_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4363,7 +4363,7 @@ paths:
         - deviceManagement.deviceConfiguration
       summary: Get userStatusOverview from deviceManagement
       description: Device Configuration users status overview
-      operationId: deviceManagement.deviceConfigurations.GetUserStatusOverview
+      operationId: deviceManagement.deviceConfiguration_GetUserStatusOverview
       parameters:
         - name: $select
           in: query
@@ -4401,7 +4401,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Update the navigation property userStatusOverview in deviceManagement
-      operationId: deviceManagement.deviceConfigurations.UpdateUserStatusOverview
+      operationId: deviceManagement.deviceConfiguration_UpdateUserStatusOverview
       requestBody:
         description: New navigation property values
         content:
@@ -4425,7 +4425,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Delete navigation property userStatusOverview for deviceManagement
-      operationId: deviceManagement.deviceConfigurations.DeleteUserStatusOverview
+      operationId: deviceManagement.deviceConfiguration_DeleteUserStatusOverview
       parameters:
         - name: If-Match
           in: header
@@ -4446,7 +4446,7 @@ paths:
       tags:
         - deviceManagement.deviceConfiguration
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceConfigurations.GetCount-2013
+      operationId: deviceManagement.deviceConfiguration_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4463,7 +4463,7 @@ paths:
         - deviceManagement.managedDeviceOverview
       summary: Get managedDeviceOverview from deviceManagement
       description: Device overview
-      operationId: deviceManagement.GetManagedDeviceOverview
+      operationId: deviceManagement_GetManagedDeviceOverview
       parameters:
         - name: $select
           in: query
@@ -4503,7 +4503,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get managedDevices from deviceManagement
       description: The list of managed devices.
-      operationId: deviceManagement.ListManagedDevices
+      operationId: deviceManagement_ListManagedDevice
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4555,7 +4555,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Create new navigation property to managedDevices for deviceManagement
-      operationId: deviceManagement.CreateManagedDevices
+      operationId: deviceManagement_CreateManagedDevice
       requestBody:
         description: New navigation property
         content:
@@ -4581,7 +4581,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get managedDevices from deviceManagement
       description: The list of managed devices.
-      operationId: deviceManagement.GetManagedDevices
+      operationId: deviceManagement_GetManagedDevice
       parameters:
         - name: $select
           in: query
@@ -4619,7 +4619,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property managedDevices in deviceManagement
-      operationId: deviceManagement.UpdateManagedDevices
+      operationId: deviceManagement_UpdateManagedDevice
       requestBody:
         description: New navigation property values
         content:
@@ -4643,7 +4643,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property managedDevices for deviceManagement
-      operationId: deviceManagement.DeleteManagedDevices
+      operationId: deviceManagement_DeleteManagedDevice
       parameters:
         - name: If-Match
           in: header
@@ -4665,7 +4665,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get deviceCategory from deviceManagement
       description: Device category
-      operationId: deviceManagement.managedDevices.GetDeviceCategory
+      operationId: deviceManagement.managedDevice_GetDeviceCategory
       parameters:
         - name: $select
           in: query
@@ -4703,7 +4703,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property deviceCategory in deviceManagement
-      operationId: deviceManagement.managedDevices.UpdateDeviceCategory
+      operationId: deviceManagement.managedDevice_UpdateDeviceCategory
       requestBody:
         description: New navigation property values
         content:
@@ -4727,7 +4727,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property deviceCategory for deviceManagement
-      operationId: deviceManagement.managedDevices.DeleteDeviceCategory
+      operationId: deviceManagement.managedDevice_DeleteDeviceCategory
       parameters:
         - name: If-Match
           in: header
@@ -4749,7 +4749,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get ref of deviceCategory from deviceManagement
       description: Device category
-      operationId: deviceManagement.managedDevices.GetRefDeviceCategory
+      operationId: deviceManagement.managedDevice_GetDeviceCategoryGraphBPreRef
       responses:
         2XX:
           description: Retrieved navigation property link
@@ -4766,7 +4766,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the ref of navigation property deviceCategory in deviceManagement
-      operationId: deviceManagement.managedDevices.UpdateRefDeviceCategory
+      operationId: deviceManagement.managedDevice_SetDeviceCategoryGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPutBody'
       responses:
@@ -4781,7 +4781,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete ref of navigation property deviceCategory for deviceManagement
-      operationId: deviceManagement.managedDevices.DeleteRefDeviceCategory
+      operationId: deviceManagement.managedDevice_DeleteDeviceCategoryGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -4803,7 +4803,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get deviceCompliancePolicyStates from deviceManagement
       description: Device compliance policy states for this device.
-      operationId: deviceManagement.managedDevices.ListDeviceCompliancePolicyStates
+      operationId: deviceManagement.managedDevice_ListDeviceCompliancePolicyState
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4855,7 +4855,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Create new navigation property to deviceCompliancePolicyStates for deviceManagement
-      operationId: deviceManagement.managedDevices.CreateDeviceCompliancePolicyStates
+      operationId: deviceManagement.managedDevice_CreateDeviceCompliancePolicyState
       requestBody:
         description: New navigation property
         content:
@@ -4881,7 +4881,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get deviceCompliancePolicyStates from deviceManagement
       description: Device compliance policy states for this device.
-      operationId: deviceManagement.managedDevices.GetDeviceCompliancePolicyStates
+      operationId: deviceManagement.managedDevice_GetDeviceCompliancePolicyState
       parameters:
         - name: $select
           in: query
@@ -4919,7 +4919,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property deviceCompliancePolicyStates in deviceManagement
-      operationId: deviceManagement.managedDevices.UpdateDeviceCompliancePolicyStates
+      operationId: deviceManagement.managedDevice_UpdateDeviceCompliancePolicyState
       requestBody:
         description: New navigation property values
         content:
@@ -4943,7 +4943,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property deviceCompliancePolicyStates for deviceManagement
-      operationId: deviceManagement.managedDevices.DeleteDeviceCompliancePolicyStates
+      operationId: deviceManagement.managedDevice_DeleteDeviceCompliancePolicyState
       parameters:
         - name: If-Match
           in: header
@@ -4964,7 +4964,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get the number of the resource
-      operationId: deviceManagement.managedDevices.deviceCompliancePolicyStates.GetCount-dafa
+      operationId: deviceManagement.managedDevice.deviceCompliancePolicyState_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4981,7 +4981,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get deviceConfigurationStates from deviceManagement
       description: Device configuration states for this device.
-      operationId: deviceManagement.managedDevices.ListDeviceConfigurationStates
+      operationId: deviceManagement.managedDevice_ListDeviceConfigurationState
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5033,7 +5033,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Create new navigation property to deviceConfigurationStates for deviceManagement
-      operationId: deviceManagement.managedDevices.CreateDeviceConfigurationStates
+      operationId: deviceManagement.managedDevice_CreateDeviceConfigurationState
       requestBody:
         description: New navigation property
         content:
@@ -5059,7 +5059,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get deviceConfigurationStates from deviceManagement
       description: Device configuration states for this device.
-      operationId: deviceManagement.managedDevices.GetDeviceConfigurationStates
+      operationId: deviceManagement.managedDevice_GetDeviceConfigurationState
       parameters:
         - name: $select
           in: query
@@ -5097,7 +5097,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property deviceConfigurationStates in deviceManagement
-      operationId: deviceManagement.managedDevices.UpdateDeviceConfigurationStates
+      operationId: deviceManagement.managedDevice_UpdateDeviceConfigurationState
       requestBody:
         description: New navigation property values
         content:
@@ -5121,7 +5121,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property deviceConfigurationStates for deviceManagement
-      operationId: deviceManagement.managedDevices.DeleteDeviceConfigurationStates
+      operationId: deviceManagement.managedDevice_DeleteDeviceConfigurationState
       parameters:
         - name: If-Match
           in: header
@@ -5142,7 +5142,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get the number of the resource
-      operationId: deviceManagement.managedDevices.deviceConfigurationStates.GetCount-a01e
+      operationId: deviceManagement.managedDevice.deviceConfigurationState_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5159,7 +5159,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get logCollectionRequests from deviceManagement
       description: List of log collection requests
-      operationId: deviceManagement.managedDevices.ListLogCollectionRequests
+      operationId: deviceManagement.managedDevice_ListLogCollectionRequest
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5211,7 +5211,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Create new navigation property to logCollectionRequests for deviceManagement
-      operationId: deviceManagement.managedDevices.CreateLogCollectionRequests
+      operationId: deviceManagement.managedDevice_CreateLogCollectionRequest
       requestBody:
         description: New navigation property
         content:
@@ -5237,7 +5237,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get logCollectionRequests from deviceManagement
       description: List of log collection requests
-      operationId: deviceManagement.managedDevices.GetLogCollectionRequests
+      operationId: deviceManagement.managedDevice_GetLogCollectionRequest
       parameters:
         - name: $select
           in: query
@@ -5275,7 +5275,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property logCollectionRequests in deviceManagement
-      operationId: deviceManagement.managedDevices.UpdateLogCollectionRequests
+      operationId: deviceManagement.managedDevice_UpdateLogCollectionRequest
       requestBody:
         description: New navigation property values
         content:
@@ -5299,7 +5299,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property logCollectionRequests for deviceManagement
-      operationId: deviceManagement.managedDevices.DeleteLogCollectionRequests
+      operationId: deviceManagement.managedDevice_DeleteLogCollectionRequest
       parameters:
         - name: If-Match
           in: header
@@ -5320,7 +5320,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Invoke action createDownloadUrl
-      operationId: deviceManagement.managedDevices.managedDevice.logCollectionRequests.deviceLogCollectionResponse.createDownloadUrl
+      operationId: deviceManagement.managedDevice.logCollectionRequest.deviceLogCollectionResponse_createDownloadUrl
       responses:
         2XX:
           description: Success
@@ -5342,7 +5342,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get the number of the resource
-      operationId: deviceManagement.managedDevices.logCollectionRequests.GetCount-78aa
+      operationId: deviceManagement.managedDevice.logCollectionRequest_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5359,7 +5359,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action bypassActivationLock
       description: Bypass activation lock
-      operationId: deviceManagement.managedDevices.managedDevice.bypassActivationLock
+      operationId: deviceManagement.managedDevice_bypassActivationLock
       responses:
         '204':
           description: Success
@@ -5374,7 +5374,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action cleanWindowsDevice
       description: Clean Windows device
-      operationId: deviceManagement.managedDevices.managedDevice.cleanWindowsDevice
+      operationId: deviceManagement.managedDevice_cleanWindowsDevice
       requestBody:
         description: Action parameters
         content:
@@ -5400,7 +5400,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action deleteUserFromSharedAppleDevice
       description: Delete user from shared Apple device
-      operationId: deviceManagement.managedDevices.managedDevice.deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.managedDevice_deleteUserFromSharedAppleDevice
       requestBody:
         description: Action parameters
         content:
@@ -5426,7 +5426,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action disableLostMode
       description: Disable lost mode
-      operationId: deviceManagement.managedDevices.managedDevice.disableLostMode
+      operationId: deviceManagement.managedDevice_disableLostMode
       responses:
         '204':
           description: Success
@@ -5441,7 +5441,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action locateDevice
       description: Locate a device
-      operationId: deviceManagement.managedDevices.managedDevice.locateDevice
+      operationId: deviceManagement.managedDevice_locateDevice
       responses:
         '204':
           description: Success
@@ -5456,7 +5456,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action logoutSharedAppleDeviceActiveUser
       description: Logout shared Apple device active user
-      operationId: deviceManagement.managedDevices.managedDevice.logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.managedDevice_logoutSharedAppleDeviceActiveUser
       responses:
         '204':
           description: Success
@@ -5471,7 +5471,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action rebootNow
       description: Reboot device
-      operationId: deviceManagement.managedDevices.managedDevice.rebootNow
+      operationId: deviceManagement.managedDevice_rebootNow
       responses:
         '204':
           description: Success
@@ -5486,7 +5486,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action recoverPasscode
       description: Recover passcode
-      operationId: deviceManagement.managedDevices.managedDevice.recoverPasscode
+      operationId: deviceManagement.managedDevice_recoverPasscode
       responses:
         '204':
           description: Success
@@ -5501,7 +5501,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action remoteLock
       description: Remote lock
-      operationId: deviceManagement.managedDevices.managedDevice.remoteLock
+      operationId: deviceManagement.managedDevice_remoteLock
       responses:
         '204':
           description: Success
@@ -5516,7 +5516,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action requestRemoteAssistance
       description: Request remote assistance
-      operationId: deviceManagement.managedDevices.managedDevice.requestRemoteAssistance
+      operationId: deviceManagement.managedDevice_requestRemoteAssistance
       responses:
         '204':
           description: Success
@@ -5531,7 +5531,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action resetPasscode
       description: Reset passcode
-      operationId: deviceManagement.managedDevices.managedDevice.resetPasscode
+      operationId: deviceManagement.managedDevice_resetPasscode
       responses:
         '204':
           description: Success
@@ -5546,7 +5546,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action retire
       description: Retire a device
-      operationId: deviceManagement.managedDevices.managedDevice.retire
+      operationId: deviceManagement.managedDevice_retire
       responses:
         '204':
           description: Success
@@ -5561,7 +5561,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action shutDown
       description: Shut down device
-      operationId: deviceManagement.managedDevices.managedDevice.shutDown
+      operationId: deviceManagement.managedDevice_shutDown
       responses:
         '204':
           description: Success
@@ -5575,7 +5575,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Invoke action syncDevice
-      operationId: deviceManagement.managedDevices.managedDevice.syncDevice
+      operationId: deviceManagement.managedDevice_syncDevice
       responses:
         '204':
           description: Success
@@ -5589,7 +5589,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.managedDevices.managedDevice.updateWindowsDeviceAccount
+      operationId: deviceManagement.managedDevice_updateWindowsDeviceAccount
       requestBody:
         description: Action parameters
         content:
@@ -5616,7 +5616,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.managedDevices.managedDevice.windowsDefenderScan
+      operationId: deviceManagement.managedDevice_windowsDefenderScan
       requestBody:
         description: Action parameters
         content:
@@ -5641,7 +5641,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.managedDevices.managedDevice.windowsDefenderUpdateSignatures
+      operationId: deviceManagement.managedDevice_windowsDefenderUpdateSignature
       responses:
         '204':
           description: Success
@@ -5656,7 +5656,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Invoke action wipe
       description: Wipe a device
-      operationId: deviceManagement.managedDevices.managedDevice.wipe
+      operationId: deviceManagement.managedDevice_wipe
       requestBody:
         description: Action parameters
         content:
@@ -5694,7 +5694,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get users from deviceManagement
       description: The primary users associated with the managed device.
-      operationId: deviceManagement.managedDevices.ListUsers
+      operationId: deviceManagement.managedDevice_ListUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5748,7 +5748,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get windowsProtectionState from deviceManagement
       description: The device protection status. This property is read-only.
-      operationId: deviceManagement.managedDevices.GetWindowsProtectionState
+      operationId: deviceManagement.managedDevice_GetWindowsProtectionState
       parameters:
         - name: $select
           in: query
@@ -5786,7 +5786,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property windowsProtectionState in deviceManagement
-      operationId: deviceManagement.managedDevices.UpdateWindowsProtectionState
+      operationId: deviceManagement.managedDevice_UpdateWindowsProtectionState
       requestBody:
         description: New navigation property values
         content:
@@ -5810,7 +5810,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property windowsProtectionState for deviceManagement
-      operationId: deviceManagement.managedDevices.DeleteWindowsProtectionState
+      operationId: deviceManagement.managedDevice_DeleteWindowsProtectionState
       parameters:
         - name: If-Match
           in: header
@@ -5832,7 +5832,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get detectedMalwareState from deviceManagement
       description: Device malware list
-      operationId: deviceManagement.managedDevices.windowsProtectionState.ListDetectedMalwareState
+      operationId: deviceManagement.managedDevice.windowsProtectionState_ListDetectedMalwareState
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5884,7 +5884,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Create new navigation property to detectedMalwareState for deviceManagement
-      operationId: deviceManagement.managedDevices.windowsProtectionState.CreateDetectedMalwareState
+      operationId: deviceManagement.managedDevice.windowsProtectionState_CreateDetectedMalwareState
       requestBody:
         description: New navigation property
         content:
@@ -5910,7 +5910,7 @@ paths:
         - deviceManagement.managedDevice
       summary: Get detectedMalwareState from deviceManagement
       description: Device malware list
-      operationId: deviceManagement.managedDevices.windowsProtectionState.GetDetectedMalwareState
+      operationId: deviceManagement.managedDevice.windowsProtectionState_GetDetectedMalwareState
       parameters:
         - name: $select
           in: query
@@ -5948,7 +5948,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property detectedMalwareState in deviceManagement
-      operationId: deviceManagement.managedDevices.windowsProtectionState.UpdateDetectedMalwareState
+      operationId: deviceManagement.managedDevice.windowsProtectionState_UpdateDetectedMalwareState
       requestBody:
         description: New navigation property values
         content:
@@ -5972,7 +5972,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property detectedMalwareState for deviceManagement
-      operationId: deviceManagement.managedDevices.windowsProtectionState.DeleteDetectedMalwareState
+      operationId: deviceManagement.managedDevice.windowsProtectionState_DeleteDetectedMalwareState
       parameters:
         - name: If-Match
           in: header
@@ -5993,7 +5993,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get the number of the resource
-      operationId: deviceManagement.managedDevices.windowsProtectionState.detectedMalwareState.GetCount-59c4
+      operationId: deviceManagement.managedDevice.windowsProtectionState.detectedMalwareState_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6009,7 +6009,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get the number of the resource
-      operationId: deviceManagement.managedDevices.GetCount-8108
+      operationId: deviceManagement.managedDevice_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6026,7 +6026,7 @@ paths:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get mobileAppTroubleshootingEvents from deviceManagement
       description: The collection property of MobileAppTroubleshootingEvent.
-      operationId: deviceManagement.ListMobileAppTroubleshootingEvents
+      operationId: deviceManagement_ListMobileAppTroubleshootingEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6078,7 +6078,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Create new navigation property to mobileAppTroubleshootingEvents for deviceManagement
-      operationId: deviceManagement.CreateMobileAppTroubleshootingEvents
+      operationId: deviceManagement_CreateMobileAppTroubleshootingEvent
       requestBody:
         description: New navigation property
         content:
@@ -6104,7 +6104,7 @@ paths:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get mobileAppTroubleshootingEvents from deviceManagement
       description: The collection property of MobileAppTroubleshootingEvent.
-      operationId: deviceManagement.GetMobileAppTroubleshootingEvents
+      operationId: deviceManagement_GetMobileAppTroubleshootingEvent
       parameters:
         - name: $select
           in: query
@@ -6142,7 +6142,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Update the navigation property mobileAppTroubleshootingEvents in deviceManagement
-      operationId: deviceManagement.UpdateMobileAppTroubleshootingEvents
+      operationId: deviceManagement_UpdateMobileAppTroubleshootingEvent
       requestBody:
         description: New navigation property values
         content:
@@ -6166,7 +6166,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Delete navigation property mobileAppTroubleshootingEvents for deviceManagement
-      operationId: deviceManagement.DeleteMobileAppTroubleshootingEvents
+      operationId: deviceManagement_DeleteMobileAppTroubleshootingEvent
       parameters:
         - name: If-Match
           in: header
@@ -6188,7 +6188,7 @@ paths:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
       description: Indicates collection of App Log Upload Request.
-      operationId: deviceManagement.mobileAppTroubleshootingEvents.ListAppLogCollectionRequests
+      operationId: deviceManagement.mobileAppTroubleshootingEvent_ListAppLogCollectionRequest
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6240,7 +6240,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Create new navigation property to appLogCollectionRequests for deviceManagement
-      operationId: deviceManagement.mobileAppTroubleshootingEvents.CreateAppLogCollectionRequests
+      operationId: deviceManagement.mobileAppTroubleshootingEvent_CreateAppLogCollectionRequest
       requestBody:
         description: New navigation property
         content:
@@ -6266,7 +6266,7 @@ paths:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get appLogCollectionRequests from deviceManagement
       description: Indicates collection of App Log Upload Request.
-      operationId: deviceManagement.mobileAppTroubleshootingEvents.GetAppLogCollectionRequests
+      operationId: deviceManagement.mobileAppTroubleshootingEvent_GetAppLogCollectionRequest
       parameters:
         - name: $select
           in: query
@@ -6304,7 +6304,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Update the navigation property appLogCollectionRequests in deviceManagement
-      operationId: deviceManagement.mobileAppTroubleshootingEvents.UpdateAppLogCollectionRequests
+      operationId: deviceManagement.mobileAppTroubleshootingEvent_UpdateAppLogCollectionRequest
       requestBody:
         description: New navigation property values
         content:
@@ -6328,7 +6328,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Delete navigation property appLogCollectionRequests for deviceManagement
-      operationId: deviceManagement.mobileAppTroubleshootingEvents.DeleteAppLogCollectionRequests
+      operationId: deviceManagement.mobileAppTroubleshootingEvent_DeleteAppLogCollectionRequest
       parameters:
         - name: If-Match
           in: header
@@ -6349,7 +6349,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Invoke action createDownloadUrl
-      operationId: deviceManagement.mobileAppTroubleshootingEvents.mobileAppTroubleshootingEvent.appLogCollectionRequests.appLogCollectionRequest.createDownloadUrl
+      operationId: deviceManagement.mobileAppTroubleshootingEvent.appLogCollectionRequest_createDownloadUrl
       responses:
         2XX:
           description: Success
@@ -6370,7 +6370,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get the number of the resource
-      operationId: deviceManagement.mobileAppTroubleshootingEvents.appLogCollectionRequests.GetCount-0428
+      operationId: deviceManagement.mobileAppTroubleshootingEvent.appLogCollectionRequest_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6386,7 +6386,7 @@ paths:
       tags:
         - deviceManagement.mobileAppTroubleshootingEvent
       summary: Get the number of the resource
-      operationId: deviceManagement.mobileAppTroubleshootingEvents.GetCount-9f2d
+      operationId: deviceManagement.mobileAppTroubleshootingEvent_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6403,7 +6403,7 @@ paths:
         - deviceManagement.notificationMessageTemplate
       summary: Get notificationMessageTemplates from deviceManagement
       description: The Notification Message Templates.
-      operationId: deviceManagement.ListNotificationMessageTemplates
+      operationId: deviceManagement_ListNotificationMessageTemplate
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6455,7 +6455,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Create new navigation property to notificationMessageTemplates for deviceManagement
-      operationId: deviceManagement.CreateNotificationMessageTemplates
+      operationId: deviceManagement_CreateNotificationMessageTemplate
       requestBody:
         description: New navigation property
         content:
@@ -6481,7 +6481,7 @@ paths:
         - deviceManagement.notificationMessageTemplate
       summary: Get notificationMessageTemplates from deviceManagement
       description: The Notification Message Templates.
-      operationId: deviceManagement.GetNotificationMessageTemplates
+      operationId: deviceManagement_GetNotificationMessageTemplate
       parameters:
         - name: $select
           in: query
@@ -6519,7 +6519,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Update the navigation property notificationMessageTemplates in deviceManagement
-      operationId: deviceManagement.UpdateNotificationMessageTemplates
+      operationId: deviceManagement_UpdateNotificationMessageTemplate
       requestBody:
         description: New navigation property values
         content:
@@ -6543,7 +6543,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Delete navigation property notificationMessageTemplates for deviceManagement
-      operationId: deviceManagement.DeleteNotificationMessageTemplates
+      operationId: deviceManagement_DeleteNotificationMessageTemplate
       parameters:
         - name: If-Match
           in: header
@@ -6565,7 +6565,7 @@ paths:
         - deviceManagement.notificationMessageTemplate
       summary: Get localizedNotificationMessages from deviceManagement
       description: The list of localized messages for this Notification Message Template.
-      operationId: deviceManagement.notificationMessageTemplates.ListLocalizedNotificationMessages
+      operationId: deviceManagement.notificationMessageTemplate_ListLocalizedNotificationMessage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6617,7 +6617,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Create new navigation property to localizedNotificationMessages for deviceManagement
-      operationId: deviceManagement.notificationMessageTemplates.CreateLocalizedNotificationMessages
+      operationId: deviceManagement.notificationMessageTemplate_CreateLocalizedNotificationMessage
       requestBody:
         description: New navigation property
         content:
@@ -6643,7 +6643,7 @@ paths:
         - deviceManagement.notificationMessageTemplate
       summary: Get localizedNotificationMessages from deviceManagement
       description: The list of localized messages for this Notification Message Template.
-      operationId: deviceManagement.notificationMessageTemplates.GetLocalizedNotificationMessages
+      operationId: deviceManagement.notificationMessageTemplate_GetLocalizedNotificationMessage
       parameters:
         - name: $select
           in: query
@@ -6681,7 +6681,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Update the navigation property localizedNotificationMessages in deviceManagement
-      operationId: deviceManagement.notificationMessageTemplates.UpdateLocalizedNotificationMessages
+      operationId: deviceManagement.notificationMessageTemplate_UpdateLocalizedNotificationMessage
       requestBody:
         description: New navigation property values
         content:
@@ -6705,7 +6705,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Delete navigation property localizedNotificationMessages for deviceManagement
-      operationId: deviceManagement.notificationMessageTemplates.DeleteLocalizedNotificationMessages
+      operationId: deviceManagement.notificationMessageTemplate_DeleteLocalizedNotificationMessage
       parameters:
         - name: If-Match
           in: header
@@ -6726,7 +6726,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get the number of the resource
-      operationId: deviceManagement.notificationMessageTemplates.localizedNotificationMessages.GetCount-dee6
+      operationId: deviceManagement.notificationMessageTemplate.localizedNotificationMessage_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6743,7 +6743,7 @@ paths:
         - deviceManagement.notificationMessageTemplate
       summary: Invoke action sendTestMessage
       description: Sends test message using the specified notificationMessageTemplate in the default locale
-      operationId: deviceManagement.notificationMessageTemplates.notificationMessageTemplate.sendTestMessage
+      operationId: deviceManagement.notificationMessageTemplate_sendTestMessage
       responses:
         '204':
           description: Success
@@ -6757,7 +6757,7 @@ paths:
       tags:
         - deviceManagement.notificationMessageTemplate
       summary: Get the number of the resource
-      operationId: deviceManagement.notificationMessageTemplates.GetCount-1654
+      operationId: deviceManagement.notificationMessageTemplate_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6774,7 +6774,7 @@ paths:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Get softwareUpdateStatusSummary from deviceManagement
       description: The software update status summary.
-      operationId: deviceManagement.GetSoftwareUpdateStatusSummary
+      operationId: deviceManagement_GetSoftwareUpdateStatusSummary
       parameters:
         - name: $select
           in: query
@@ -6814,7 +6814,7 @@ paths:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Get troubleshootingEvents from deviceManagement
       description: The list of troubleshooting events for the tenant.
-      operationId: deviceManagement.ListTroubleshootingEvents
+      operationId: deviceManagement_ListTroubleshootingEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6866,7 +6866,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Create new navigation property to troubleshootingEvents for deviceManagement
-      operationId: deviceManagement.CreateTroubleshootingEvents
+      operationId: deviceManagement_CreateTroubleshootingEvent
       requestBody:
         description: New navigation property
         content:
@@ -6892,7 +6892,7 @@ paths:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Get troubleshootingEvents from deviceManagement
       description: The list of troubleshooting events for the tenant.
-      operationId: deviceManagement.GetTroubleshootingEvents
+      operationId: deviceManagement_GetTroubleshootingEvent
       parameters:
         - name: $select
           in: query
@@ -6930,7 +6930,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Update the navigation property troubleshootingEvents in deviceManagement
-      operationId: deviceManagement.UpdateTroubleshootingEvents
+      operationId: deviceManagement_UpdateTroubleshootingEvent
       requestBody:
         description: New navigation property values
         content:
@@ -6954,7 +6954,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Delete navigation property troubleshootingEvents for deviceManagement
-      operationId: deviceManagement.DeleteTroubleshootingEvents
+      operationId: deviceManagement_DeleteTroubleshootingEvent
       parameters:
         - name: If-Match
           in: header
@@ -6975,7 +6975,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementTroubleshootingEvent
       summary: Get the number of the resource
-      operationId: deviceManagement.troubleshootingEvents.GetCount-0f54
+      operationId: deviceManagement.troubleshootingEvent_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6992,7 +6992,7 @@ paths:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Get windowsInformationProtectionAppLearningSummaries from deviceManagement
       description: The windows information protection app learning summaries.
-      operationId: deviceManagement.ListWindowsInformationProtectionAppLearningSummaries
+      operationId: deviceManagement_ListWindowsInformationProtectionAppLearningSummary
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7044,7 +7044,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Create new navigation property to windowsInformationProtectionAppLearningSummaries for deviceManagement
-      operationId: deviceManagement.CreateWindowsInformationProtectionAppLearningSummaries
+      operationId: deviceManagement_CreateWindowsInformationProtectionAppLearningSummary
       requestBody:
         description: New navigation property
         content:
@@ -7070,7 +7070,7 @@ paths:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Get windowsInformationProtectionAppLearningSummaries from deviceManagement
       description: The windows information protection app learning summaries.
-      operationId: deviceManagement.GetWindowsInformationProtectionAppLearningSummaries
+      operationId: deviceManagement_GetWindowsInformationProtectionAppLearningSummary
       parameters:
         - name: $select
           in: query
@@ -7108,7 +7108,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Update the navigation property windowsInformationProtectionAppLearningSummaries in deviceManagement
-      operationId: deviceManagement.UpdateWindowsInformationProtectionAppLearningSummaries
+      operationId: deviceManagement_UpdateWindowsInformationProtectionAppLearningSummary
       requestBody:
         description: New navigation property values
         content:
@@ -7132,7 +7132,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Delete navigation property windowsInformationProtectionAppLearningSummaries for deviceManagement
-      operationId: deviceManagement.DeleteWindowsInformationProtectionAppLearningSummaries
+      operationId: deviceManagement_DeleteWindowsInformationProtectionAppLearningSummary
       parameters:
         - name: If-Match
           in: header
@@ -7153,7 +7153,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionAppLearningSummary
       summary: Get the number of the resource
-      operationId: deviceManagement.windowsInformationProtectionAppLearningSummaries.GetCount-07af
+      operationId: deviceManagement.windowsInformationProtectionAppLearningSummary_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7170,7 +7170,7 @@ paths:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
       description: The windows information protection network learning summaries.
-      operationId: deviceManagement.ListWindowsInformationProtectionNetworkLearningSummaries
+      operationId: deviceManagement_ListWindowsInformationProtectionNetworkLearningSummary
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7222,7 +7222,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
-      operationId: deviceManagement.CreateWindowsInformationProtectionNetworkLearningSummaries
+      operationId: deviceManagement_CreateWindowsInformationProtectionNetworkLearningSummary
       requestBody:
         description: New navigation property
         content:
@@ -7248,7 +7248,7 @@ paths:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Get windowsInformationProtectionNetworkLearningSummaries from deviceManagement
       description: The windows information protection network learning summaries.
-      operationId: deviceManagement.GetWindowsInformationProtectionNetworkLearningSummaries
+      operationId: deviceManagement_GetWindowsInformationProtectionNetworkLearningSummary
       parameters:
         - name: $select
           in: query
@@ -7286,7 +7286,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Update the navigation property windowsInformationProtectionNetworkLearningSummaries in deviceManagement
-      operationId: deviceManagement.UpdateWindowsInformationProtectionNetworkLearningSummaries
+      operationId: deviceManagement_UpdateWindowsInformationProtectionNetworkLearningSummary
       requestBody:
         description: New navigation property values
         content:
@@ -7310,7 +7310,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Delete navigation property windowsInformationProtectionNetworkLearningSummaries for deviceManagement
-      operationId: deviceManagement.DeleteWindowsInformationProtectionNetworkLearningSummaries
+      operationId: deviceManagement_DeleteWindowsInformationProtectionNetworkLearningSummary
       parameters:
         - name: If-Match
           in: header
@@ -7331,7 +7331,7 @@ paths:
       tags:
         - deviceManagement.windowsInformationProtectionNetworkLearningSummary
       summary: Get the number of the resource
-      operationId: deviceManagement.windowsInformationProtectionNetworkLearningSummaries.GetCount-c2c3
+      operationId: deviceManagement.windowsInformationProtectionNetworkLearningSummary_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7348,7 +7348,7 @@ paths:
         - deviceManagement.windowsMalwareInformation
       summary: Get windowsMalwareInformation from deviceManagement
       description: The list of affected malware in the tenant.
-      operationId: deviceManagement.ListWindowsMalwareInformation
+      operationId: deviceManagement_ListWindowsMalwareInformation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7400,7 +7400,7 @@ paths:
       tags:
         - deviceManagement.windowsMalwareInformation
       summary: Create new navigation property to windowsMalwareInformation for deviceManagement
-      operationId: deviceManagement.CreateWindowsMalwareInformation
+      operationId: deviceManagement_CreateWindowsMalwareInformation
       requestBody:
         description: New navigation property
         content:
@@ -7426,7 +7426,7 @@ paths:
         - deviceManagement.windowsMalwareInformation
       summary: Get windowsMalwareInformation from deviceManagement
       description: The list of affected malware in the tenant.
-      operationId: deviceManagement.GetWindowsMalwareInformation
+      operationId: deviceManagement_GetWindowsMalwareInformation
       parameters:
         - name: $select
           in: query
@@ -7464,7 +7464,7 @@ paths:
       tags:
         - deviceManagement.windowsMalwareInformation
       summary: Update the navigation property windowsMalwareInformation in deviceManagement
-      operationId: deviceManagement.UpdateWindowsMalwareInformation
+      operationId: deviceManagement_UpdateWindowsMalwareInformation
       requestBody:
         description: New navigation property values
         content:
@@ -7488,7 +7488,7 @@ paths:
       tags:
         - deviceManagement.windowsMalwareInformation
       summary: Delete navigation property windowsMalwareInformation for deviceManagement
-      operationId: deviceManagement.DeleteWindowsMalwareInformation
+      operationId: deviceManagement_DeleteWindowsMalwareInformation
       parameters:
         - name: If-Match
           in: header
@@ -7510,7 +7510,7 @@ paths:
         - deviceManagement.windowsMalwareInformation
       summary: Get deviceMalwareStates from deviceManagement
       description: List of devices affected by current malware with the malware state on each device
-      operationId: deviceManagement.windowsMalwareInformation.ListDeviceMalwareStates
+      operationId: deviceManagement.windowsMalwareInformation_ListDeviceMalwareState
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7562,7 +7562,7 @@ paths:
       tags:
         - deviceManagement.windowsMalwareInformation
       summary: Create new navigation property to deviceMalwareStates for deviceManagement
-      operationId: deviceManagement.windowsMalwareInformation.CreateDeviceMalwareStates
+      operationId: deviceManagement.windowsMalwareInformation_CreateDeviceMalwareState
       requestBody:
         description: New navigation property
         content:
@@ -7588,7 +7588,7 @@ paths:
         - deviceManagement.windowsMalwareInformation
       summary: Get deviceMalwareStates from deviceManagement
       description: List of devices affected by current malware with the malware state on each device
-      operationId: deviceManagement.windowsMalwareInformation.GetDeviceMalwareStates
+      operationId: deviceManagement.windowsMalwareInformation_GetDeviceMalwareState
       parameters:
         - name: $select
           in: query
@@ -7626,7 +7626,7 @@ paths:
       tags:
         - deviceManagement.windowsMalwareInformation
       summary: Update the navigation property deviceMalwareStates in deviceManagement
-      operationId: deviceManagement.windowsMalwareInformation.UpdateDeviceMalwareStates
+      operationId: deviceManagement.windowsMalwareInformation_UpdateDeviceMalwareState
       requestBody:
         description: New navigation property values
         content:
@@ -7650,7 +7650,7 @@ paths:
       tags:
         - deviceManagement.windowsMalwareInformation
       summary: Delete navigation property deviceMalwareStates for deviceManagement
-      operationId: deviceManagement.windowsMalwareInformation.DeleteDeviceMalwareStates
+      operationId: deviceManagement.windowsMalwareInformation_DeleteDeviceMalwareState
       parameters:
         - name: If-Match
           in: header
@@ -7671,7 +7671,7 @@ paths:
       tags:
         - deviceManagement.windowsMalwareInformation
       summary: Get the number of the resource
-      operationId: deviceManagement.windowsMalwareInformation.deviceMalwareStates.GetCount-bf2c
+      operationId: deviceManagement.windowsMalwareInformation.deviceMalwareState_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7687,7 +7687,7 @@ paths:
       tags:
         - deviceManagement.windowsMalwareInformation
       summary: Get the number of the resource
-      operationId: deviceManagement.windowsMalwareInformation.GetCount-3d28
+      operationId: deviceManagement.windowsMalwareInformation_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10494,6 +10494,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -10681,6 +10682,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -10949,6 +10951,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -11307,6 +11312,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
@@ -19342,6 +19348,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               description: Represents a platform credential instance registered to a user on Mac OS.
               x-ms-navigationProperty: true
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
+              x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
               items:
@@ -21368,11 +21380,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Offline, OutOfOffice, PresenceUnknown.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.'
+              description: 'The base presence information for a user. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Focusing, InACall, InAMeeting, Offline, Presenting, PresenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               anyOf:
@@ -22579,6 +22591,7 @@ components:
               '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+              '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
               '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
               '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
               '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -22735,6 +22748,29 @@ components:
               type: string
               default: '#microsoft.graph.platformCredentialAuthenticationMethod'
       x-ms-discriminator-value: '#microsoft.graph.platformCredentialAuthenticationMethod'
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.device'
+                - type: object
+                  nullable: true
+              description: The registered device on which this resource account key resides. Supports $expand.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
+      x-ms-discriminator-value: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -25128,7 +25164,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. To learn more about managing this property for Microsoft 365 vs. cloud security groups, see Key differences from Microsoft 365 group labeling.'
             assignedLicenses:
               type: array
               items:
@@ -29251,6 +29287,18 @@ components:
             resource:
               type: string
               description: Required. Specifies the resource that is monitored for changes. Don't include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+            vapidPublicKey:
+              type: string
+              description: 'Optional. The application server''s VAPID public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained by calling the getVapidPublicKey function on the subscription collection. The browser passes this value to PushManager.subscribe({ applicationServerKey: vapidPublicKey }) to bind the push subscription to this server identity. Required when notificationUrl targets a known Web Push service origin (for example, *.push.apple.com, fcm.googleapis.com, updates.push.services.mozilla.com); rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8292.'
+              nullable: true
+            webPushEncryptionP256dhPublicKey:
+              type: string
+              description: 'Optional. The subscriber''s ECDH public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''p256dh''). Used as the peer public key during ECDH key agreement to derive the per-message content encryption key for RFC 8291 payload encryption. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
+            webPushEncryptionSecret:
+              type: string
+              description: 'Optional. The subscriber''s auth secret, base64url-encoded (16 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''auth''). Used as the HMAC-SHA-256 salt for the HKDF combine step that derives key material for RFC 8291 payload encryption. Write-only: this value is never returned in GET responses (returned as null). Treat as a secret. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.subscription'

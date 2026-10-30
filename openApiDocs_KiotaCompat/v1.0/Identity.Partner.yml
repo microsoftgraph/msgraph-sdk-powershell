@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadmincustomers?view=graph-rest-1.0
-      operationId: tenantRelationships.ListDelegatedAdminCustomers
+      operationId: tenantRelationship_ListDelegatedAdminCustomer
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -67,7 +67,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Create new navigation property to delegatedAdminCustomers for tenantRelationships
-      operationId: tenantRelationships.CreateDelegatedAdminCustomers
+      operationId: tenantRelationship_CreateDelegatedAdminCustomer
       requestBody:
         description: New navigation property
         content:
@@ -96,7 +96,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-get?view=graph-rest-1.0
-      operationId: tenantRelationships.GetDelegatedAdminCustomers
+      operationId: tenantRelationship_GetDelegatedAdminCustomer
       parameters:
         - name: $select
           in: query
@@ -134,7 +134,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Update the navigation property delegatedAdminCustomers in tenantRelationships
-      operationId: tenantRelationships.UpdateDelegatedAdminCustomers
+      operationId: tenantRelationship_UpdateDelegatedAdminCustomer
       requestBody:
         description: New navigation property values
         content:
@@ -158,7 +158,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Delete navigation property delegatedAdminCustomers for tenantRelationships
-      operationId: tenantRelationships.DeleteDelegatedAdminCustomers
+      operationId: tenantRelationship_DeleteDelegatedAdminCustomer
       parameters:
         - name: If-Match
           in: header
@@ -183,7 +183,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-list-servicemanagementdetails?view=graph-rest-1.0
-      operationId: tenantRelationships.delegatedAdminCustomers.ListServiceManagementDetails
+      operationId: tenantRelationship.delegatedAdminCustomer_ListServiceManagementDetail
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -235,7 +235,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Create new navigation property to serviceManagementDetails for tenantRelationships
-      operationId: tenantRelationships.delegatedAdminCustomers.CreateServiceManagementDetails
+      operationId: tenantRelationship.delegatedAdminCustomer_CreateServiceManagementDetail
       requestBody:
         description: New navigation property
         content:
@@ -261,7 +261,7 @@ paths:
         - tenantRelationships.delegatedAdminCustomer
       summary: Get serviceManagementDetails from tenantRelationships
       description: Contains the management details of a service in the customer tenant that's managed by delegated administration.
-      operationId: tenantRelationships.delegatedAdminCustomers.GetServiceManagementDetails
+      operationId: tenantRelationship.delegatedAdminCustomer_GetServiceManagementDetail
       parameters:
         - name: $select
           in: query
@@ -299,7 +299,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Update the navigation property serviceManagementDetails in tenantRelationships
-      operationId: tenantRelationships.delegatedAdminCustomers.UpdateServiceManagementDetails
+      operationId: tenantRelationship.delegatedAdminCustomer_UpdateServiceManagementDetail
       requestBody:
         description: New navigation property values
         content:
@@ -323,7 +323,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Delete navigation property serviceManagementDetails for tenantRelationships
-      operationId: tenantRelationships.delegatedAdminCustomers.DeleteServiceManagementDetails
+      operationId: tenantRelationship.delegatedAdminCustomer_DeleteServiceManagementDetail
       parameters:
         - name: If-Match
           in: header
@@ -344,7 +344,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Get the number of the resource
-      operationId: tenantRelationships.delegatedAdminCustomers.serviceManagementDetails.GetCount-d662
+      operationId: tenantRelationship.delegatedAdminCustomer.serviceManagementDetail_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -360,7 +360,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminCustomer
       summary: Get the number of the resource
-      operationId: tenantRelationships.delegatedAdminCustomers.GetCount-e293
+      operationId: tenantRelationship.delegatedAdminCustomer_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -380,7 +380,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadminrelationships?view=graph-rest-1.0
-      operationId: tenantRelationships.ListDelegatedAdminRelationships
+      operationId: tenantRelationship_ListDelegatedAdminRelationship
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -436,7 +436,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantrelationship-post-delegatedadminrelationships?view=graph-rest-1.0
-      operationId: tenantRelationships.CreateDelegatedAdminRelationships
+      operationId: tenantRelationship_CreateDelegatedAdminRelationship
       requestBody:
         description: New navigation property
         content:
@@ -465,7 +465,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-get?view=graph-rest-1.0
-      operationId: tenantRelationships.GetDelegatedAdminRelationships
+      operationId: tenantRelationship_GetDelegatedAdminRelationship
       parameters:
         - name: $select
           in: query
@@ -507,7 +507,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-1.0
-      operationId: tenantRelationships.UpdateDelegatedAdminRelationships
+      operationId: tenantRelationship_UpdateDelegatedAdminRelationship
       requestBody:
         description: New navigation property values
         content:
@@ -535,7 +535,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-delete?view=graph-rest-1.0
-      operationId: tenantRelationships.DeleteDelegatedAdminRelationships
+      operationId: tenantRelationship_DeleteDelegatedAdminRelationship
       parameters:
         - name: If-Match
           in: header
@@ -560,7 +560,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-accessassignments?view=graph-rest-1.0
-      operationId: tenantRelationships.delegatedAdminRelationships.ListAccessAssignments
+      operationId: tenantRelationship.delegatedAdminRelationship_ListAccessAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -616,7 +616,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-accessassignments?view=graph-rest-1.0
-      operationId: tenantRelationships.delegatedAdminRelationships.CreateAccessAssignments
+      operationId: tenantRelationship.delegatedAdminRelationship_CreateAccessAssignment
       requestBody:
         description: New navigation property
         content:
@@ -645,7 +645,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-get?view=graph-rest-1.0
-      operationId: tenantRelationships.delegatedAdminRelationships.GetAccessAssignments
+      operationId: tenantRelationship.delegatedAdminRelationship_GetAccessAssignment
       parameters:
         - name: $select
           in: query
@@ -687,7 +687,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-update?view=graph-rest-1.0
-      operationId: tenantRelationships.delegatedAdminRelationships.UpdateAccessAssignments
+      operationId: tenantRelationship.delegatedAdminRelationship_UpdateAccessAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -715,7 +715,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-delete?view=graph-rest-1.0
-      operationId: tenantRelationships.delegatedAdminRelationships.DeleteAccessAssignments
+      operationId: tenantRelationship.delegatedAdminRelationship_DeleteAccessAssignment
       parameters:
         - name: If-Match
           in: header
@@ -736,7 +736,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get the number of the resource
-      operationId: tenantRelationships.delegatedAdminRelationships.accessAssignments.GetCount-8cbf
+      operationId: tenantRelationship.delegatedAdminRelationship.accessAssignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -756,7 +756,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-operations?view=graph-rest-1.0
-      operationId: tenantRelationships.delegatedAdminRelationships.ListOperations
+      operationId: tenantRelationship.delegatedAdminRelationship_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -808,7 +808,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Create new navigation property to operations for tenantRelationships
-      operationId: tenantRelationships.delegatedAdminRelationships.CreateOperations
+      operationId: tenantRelationship.delegatedAdminRelationship_CreateOperation
       requestBody:
         description: New navigation property
         content:
@@ -837,7 +837,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationshipoperation-get?view=graph-rest-1.0
-      operationId: tenantRelationships.delegatedAdminRelationships.GetOperations
+      operationId: tenantRelationship.delegatedAdminRelationship_GetOperation
       parameters:
         - name: $select
           in: query
@@ -875,7 +875,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Update the navigation property operations in tenantRelationships
-      operationId: tenantRelationships.delegatedAdminRelationships.UpdateOperations
+      operationId: tenantRelationship.delegatedAdminRelationship_UpdateOperation
       requestBody:
         description: New navigation property values
         content:
@@ -899,7 +899,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Delete navigation property operations for tenantRelationships
-      operationId: tenantRelationships.delegatedAdminRelationships.DeleteOperations
+      operationId: tenantRelationship.delegatedAdminRelationship_DeleteOperation
       parameters:
         - name: If-Match
           in: header
@@ -920,7 +920,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get the number of the resource
-      operationId: tenantRelationships.delegatedAdminRelationships.operations.GetCount-3beb
+      operationId: tenantRelationship.delegatedAdminRelationship.operation_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -940,7 +940,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-requests?view=graph-rest-1.0
-      operationId: tenantRelationships.delegatedAdminRelationships.ListRequests
+      operationId: tenantRelationship.delegatedAdminRelationship_ListRequest
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -996,7 +996,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-requests?view=graph-rest-1.0
-      operationId: tenantRelationships.delegatedAdminRelationships.CreateRequests
+      operationId: tenantRelationship.delegatedAdminRelationship_CreateRequest
       requestBody:
         description: New navigation property
         content:
@@ -1025,7 +1025,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/delegatedadminrelationshiprequest-get?view=graph-rest-1.0
-      operationId: tenantRelationships.delegatedAdminRelationships.GetRequests
+      operationId: tenantRelationship.delegatedAdminRelationship_GetRequest
       parameters:
         - name: $select
           in: query
@@ -1063,7 +1063,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Update the navigation property requests in tenantRelationships
-      operationId: tenantRelationships.delegatedAdminRelationships.UpdateRequests
+      operationId: tenantRelationship.delegatedAdminRelationship_UpdateRequest
       requestBody:
         description: New navigation property values
         content:
@@ -1087,7 +1087,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Delete navigation property requests for tenantRelationships
-      operationId: tenantRelationships.delegatedAdminRelationships.DeleteRequests
+      operationId: tenantRelationship.delegatedAdminRelationship_DeleteRequest
       parameters:
         - name: If-Match
           in: header
@@ -1108,7 +1108,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get the number of the resource
-      operationId: tenantRelationships.delegatedAdminRelationships.requests.GetCount-f3a6
+      operationId: tenantRelationship.delegatedAdminRelationship.request_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1124,7 +1124,7 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Get the number of the resource
-      operationId: tenantRelationships.delegatedAdminRelationships.GetCount-9d12
+      operationId: tenantRelationship.delegatedAdminRelationship_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1464,6 +1464,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -1651,6 +1652,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -1919,6 +1921,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -2277,6 +2282,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'

@@ -173,6 +173,39 @@ paths:
         Assert-Failure { & $fixtureTool -Module Suppression -MappingPath $testMapping } $case.Pattern
     }
 
+    $exclusion = $reviewed | ConvertFrom-Json
+    $exclusion.mappings[0].profiles.beta = [pscustomobject]@{
+        excluded = $true
+        operations = @()
+        notes = 'Missing compatible spec; no API-operation absence assertion.'
+    }
+    $exclusion | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+    Assert-Failure { & $fixtureTool -Module Suppression -MappingPath $testMapping } 'compatible spec exists'
+    Remove-Item (Join-Path $fixtureRoot 'openApiDocs_KiotaCompat\beta\Suppression.yml')
+    $excluded = @(& $fixtureTool -Module Suppression -MappingPath $testMapping -FailOnUnresolved)
+    if ($excluded[0].Status -ne 'Mapped' -or $excluded[0].BetaOperations.Count -ne 0 -or
+        $excluded[0].Notes -notmatch 'beta excluded: Missing compatible spec') {
+        throw 'Explicit missing-spec exclusion must pass without asserting API-operation absence and remain visible in inventory.'
+    }
+    $exclusionCases = @(
+        @{ Mutate = { param($d) $d.mappings[0].profiles.beta.operations = @($d.mappings[0].profiles.'v1.0'.operations[0]) }; Pattern = 'must not declare operations' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.beta | Add-Member absenceExpected $true }; Pattern = 'must not declare absenceExpected' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.beta | Add-Member absenceExpected $false }; Pattern = 'must not declare absenceExpected' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.beta | Add-Member absenceExpected $null }; Pattern = 'must not declare absenceExpected' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.beta.notes = '' }; Pattern = 'exclusion notes are required' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.beta.excluded = 'true' }; Pattern = 'excluded must be a boolean' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.beta.excluded = $null }; Pattern = 'excluded must be a boolean' }
+        @{ Mutate = { param($d) $d.mappings[0].profiles.beta.operations = $null }; Pattern = 'operations must be an explicit array' }
+    )
+    $exclusionJson = $exclusion | ConvertTo-Json -Depth 10
+    foreach ($case in $exclusionCases) {
+        $document = $exclusionJson | ConvertFrom-Json
+        & $case.Mutate $document
+        $document | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+        Assert-Failure { & $fixtureTool -Module Suppression -MappingPath $testMapping } $case.Pattern
+    }
+    Write-FixtureFile 'openApiDocs_KiotaCompat\beta\Suppression.yml' ($spec.Replace('/items/', '/beta/items/'))
+
     $document = $reviewed | ConvertFrom-Json
     $document.mappings[0].profiles.'v1.0'.operations = @()
     $document.mappings[0].profiles.'v1.0'.absenceExpected = $true
@@ -200,6 +233,53 @@ paths:
         throw 'Unsupported regex syntax must remain unresolved with a visible review reason.'
     }
     Assert-Failure { & $fixtureTool -Module Suppression -MappingPath $testMapping } 'regex cannot be validated'
+
+    Write-FixtureFile 'src\QuotedFunction\QuotedFunction.md' @'
+directive:
+  - where:
+      subject: FixtureResolve
+    set:
+      subject: ReviewedFixtureResolve
+'@
+    Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\QuotedFunction.yml' @'
+openapi: 3.0.4
+paths:
+  '/fixtures/{fixture-id}/resolve(Input=''{Input}'')':
+    get:
+      operationId: fixture_Resolve
+'@
+    Write-FixtureFile 'openApiDocs_KiotaCompat\beta\QuotedFunction.yml' @'
+openapi: 3.0.4
+paths:
+  "/fixtures/{fixture-id}/resolve(Input='{Input}')":
+    get:
+      operationId: fixture_Resolve
+'@
+    $functionMapping = [pscustomobject]@{
+        module = 'QuotedFunction'
+        directiveIndex = 1
+        classification = 'SubjectRename'
+        sourceContains = 'subject: ReviewedFixtureResolve'
+        implementation = 'CmdletConfigurator'
+        profiles = [pscustomobject]@{}
+    }
+    foreach ($profile in @('v1.0', 'beta')) {
+        $functionMapping.profiles | Add-Member $profile ([pscustomobject]@{
+            absenceExpected = $false
+            operations = @([pscustomobject]@{
+                method = 'GET'
+                path = "/fixtures/{fixture-id}/resolve(Input='{Input}')"
+                operationId = 'fixture_Resolve'
+            })
+        })
+    }
+    @{ mappings = @($functionMapping) } | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+    $quoted = @(& $fixtureTool -Module QuotedFunction -MappingPath $testMapping -FailOnUnresolved)
+    if ($quoted[0].Status -ne 'Mapped' -or
+        $quoted[0].V1Operations[0] -cne "GET /fixtures/{fixture-id}/resolve(Input='{Input}') [fixture_Resolve]" -or
+        $quoted[0].BetaOperations[0] -cne $quoted[0].V1Operations[0]) {
+        throw 'Quoted YAML function keys must resolve exact unescaped method/path/operation-ID evidence.'
+    }
 
     Write-FixtureFile 'src\Deferred\Deferred.md' @'
 ``` yaml
