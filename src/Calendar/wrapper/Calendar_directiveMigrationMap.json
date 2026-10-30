@@ -1,6 +1,6 @@
 {
   "scope": "Only src/Calendar/Calendar.md; global and profile-local directives are excluded. Parameter aliases/transforms and schema/response directives remain deferred.",
-  "prerequisite": "Reviewed inventory #3837 and verb support #3838 are merged. Current powershell-v3 target abab9dac88dd1e1d15e8e43fa766ab9be7cba34d includes aligned operation IDs #3861 and refreshed compatible specs #3863: the existing literal inventory schema now validates the complete 136/137-operation source set without unmerged #3847 or reserved Legacy translation fields. Independent legacy proof remains in these notes, source blob hashes, and module tests.",
+  "prerequisite": "Reviewed inventory #3837, verb support #3838 and natural-ID operation variant framework #3849 are merged. Current powershell-v3 target 08e409a6aa8fd48736b8f9a9199559f46fc0d1ad retains aligned operation IDs #3861 and refreshed compatible specs #3863: the existing literal inventory schema validates the complete 136/137-operation source set without unmerged #3847 or reserved Legacy translation fields. Module tests use the three-setting GeneratorConfig and separate profile context for derived data, including beta with collision data enabled and disabled. No Calendar variant grouping is introduced; independent legacy proof remains in notes, source blob hashes and tests.",
   "specBlobs": {
     "v1.0": "9371766a3e422aec32ba2b68d096e2fd4d115042",
     "beta": "5baa13cd8fe2804cea0ecf4a59f7815728b55a67"
@@ -1662,5 +1662,5 @@
     "v1.0": "7103e6e3a02ff3a5b63e577910ea0863516b468c",
     "beta": "8b01cbfc54946d1e5f49a760c43eb2b1663811dc"
   },
-  "reviewedTargetCommit": "abab9dac88dd1e1d15e8e43fa766ab9be7cba34d"
+  "reviewedTargetCommit": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad"
 }

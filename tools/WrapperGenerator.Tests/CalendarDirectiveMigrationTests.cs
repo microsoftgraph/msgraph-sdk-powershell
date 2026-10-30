@@ -112,7 +112,7 @@ public sealed class CalendarDirectiveMigrationTests
     [InlineData("beta", true)]
     public void ReviewedSuppressionsWorkWithAndWithoutDerivedData(string profile, bool useCollisionData)
     {
-        var config = new GeneratorConfig("Test.Client", "", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "", useCollisionData);
         using var ledger = ReadLedger();
         foreach (var directive in ledger.RootElement.GetProperty("mappings").EnumerateArray()
                      .Where(d => d.GetProperty("directiveIndex").GetInt32() is 1 or 5 or 6))
@@ -121,20 +121,20 @@ public sealed class CalendarDirectiveMigrationTests
             {
                 var method = new HttpMethod(operation.GetProperty("method").GetString()!);
                 var path = operation.GetProperty("path").GetString()!;
-                Assert.True(CmdletConfigurator.IsSuppressed(method, path, config), $"{profile} {method} {path}");
+                Assert.True(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile), $"{profile} {method} {path}");
             }
         }
-        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/users/{user-id}/calendar/events/{event-id}/cancel", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/calendar", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/events/delta()", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/users/{user-id}/events/{event-id}/cancel", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/groups/{group-id}/calendar/getSchedule", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/groups/{group-id}/calendar/events/{event-id}", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/groups/{group-id}/calendar/events/{event-id}", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, "/groups/{group-id}/calendar/events/{event-id}", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/groups/{group-id}/calendar/events", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars", config));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/users/{user-id}/calendar/events/{event-id}/cancel", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/calendar", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/events/delta()", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/users/{user-id}/events/{event-id}/cancel", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/groups/{group-id}/calendar/getSchedule", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/groups/{group-id}/calendar/events/{event-id}", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/groups/{group-id}/calendar/events/{event-id}", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, "/groups/{group-id}/calendar/events/{event-id}", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/groups/{group-id}/calendar/events", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars", config, apiVersion: profile));
     }
 
     [Theory]
@@ -144,32 +144,36 @@ public sealed class CalendarDirectiveMigrationTests
     [InlineData("beta", true)]
     public void RenamesStayExactAndStructuralNeighborsNeedNoOverrides(string profile, bool useCollisionData)
     {
-        var config = new GeneratorConfig("Test.Client", "", profile, useCollisionData);
-        Assert.Equal("MgUserDefaultCalendar", Resolve(HttpMethod.Get, "/users/{user-id}/calendar", config).Noun);
-        Assert.Equal("MgUserDefaultCalendarEvent", Resolve(HttpMethod.Get, "/users/{user-id}/calendar/events", config).Noun);
-        Assert.Equal("MgUserDefaultCalendarEvent", Resolve(HttpMethod.Post, "/users/{user-id}/calendar/events", config).Noun);
-        Assert.Equal("MgUserCalendar", Resolve(HttpMethod.Get, "/users/{user-id}/calendars", config).Noun);
-        Assert.Equal("MgUserCalendar", Resolve(HttpMethod.Get, "/users/{user-id}/calendars/{calendar-id}", config).Noun);
-        Assert.Equal("MgGroupCalendarEvent", Resolve(HttpMethod.Get, "/groups/{group-id}/calendar/events/{event-id}", config).Noun);
-        Assert.Equal("MgUserEvent", Resolve(HttpMethod.Get, "/users/{user-id}/events/{event-id}", config).Noun);
+        var config = new GeneratorConfig("Test.Client", "", useCollisionData);
+        Assert.Equal("MgUserDefaultCalendar", Resolve(HttpMethod.Get, "/users/{user-id}/calendar", config, profile).Noun);
+        Assert.Equal("MgUserDefaultCalendarEvent", Resolve(HttpMethod.Get, "/users/{user-id}/calendar/events", config, profile).Noun);
+        Assert.Equal("MgUserDefaultCalendarEvent", Resolve(HttpMethod.Post, "/users/{user-id}/calendar/events", config, profile).Noun);
+        Assert.Equal("MgUserCalendar", Resolve(HttpMethod.Get, "/users/{user-id}/calendars", config, profile).Noun);
+        Assert.Equal("MgUserCalendar", Resolve(HttpMethod.Get, "/users/{user-id}/calendars/{calendar-id}", config, profile).Noun);
+        Assert.Equal("MgGroupCalendarEvent", Resolve(HttpMethod.Get, "/groups/{group-id}/calendar/events/{event-id}", config, profile).Noun);
+        Assert.Equal("MgUserEvent", Resolve(HttpMethod.Get, "/users/{user-id}/events/{event-id}", config, profile).Noun);
 
-        var sharing = Resolve(HttpMethod.Get, SharingPath, config, OperationKind.Function);
+        var sharing = Resolve(HttpMethod.Get, SharingPath, config, profile, OperationKind.Function);
         Assert.Equal("MgCalendarUserCalendarAllowedCalendarSharingRoles", sharing.Noun);
         Assert.Equal("Invoke", sharing.VerbName);
         Assert.Equal("InvokeMgCalendarUserCalendarAllowedCalendarSharingRolesCommand", sharing.ClassName);
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, SharingPath, config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, SharingPath, config, apiVersion: profile));
+        Assert.Equal(profile == "v1.0" && useCollisionData ? "Stop" : "Invoke",
+            Resolve(HttpMethod.Post, "/users/{user-id}/events/{event-id}/cancel", config, profile, OperationKind.Action).VerbName);
     }
 
-    [Fact]
-    public void SharingRoleRenameAlsoWorksWithoutAnyGeneratorConfiguration()
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public void SharingRoleRenameAlsoWorksWithoutAnyGeneratorConfiguration(string profile)
     {
-        var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, SharingPath, Kind: OperationKind.Function));
+        var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, SharingPath, Kind: OperationKind.Function), apiVersion: profile);
         Assert.Equal("Invoke", naming.VerbName);
         Assert.Equal("MgCalendarUserCalendarAllowedCalendarSharingRoles", naming.Noun);
         Assert.Equal("InvokeMgCalendarUserCalendarAllowedCalendarSharingRolesCommand", naming.ClassName);
-        Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(HttpMethod.Post, SharingPath, null));
+        Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(HttpMethod.Post, SharingPath, null, apiVersion: profile));
         Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(HttpMethod.Get,
-            "/users/{user-id}/events/{event-id}/calendar/allowedCalendarSharingRoles(User='{User}')", null));
+            "/users/{user-id}/events/{event-id}/calendar/allowedCalendarSharingRoles(User='{User}')", null, apiVersion: profile));
     }
 
     [Theory]
@@ -185,12 +189,12 @@ public sealed class CalendarDirectiveMigrationTests
         const string groupItem = "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}";
         Assert.Equal("user.calendarGroup_GetCalendar", LegacySpec(profile).Paths[groupItem].Operations![HttpMethod.Get].OperationId);
         Assert.Equal("user.calendarGroup_GetCalendar", spec.Paths[groupItem].Operations![HttpMethod.Get].OperationId);
-        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, groupItem));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, groupItem, apiVersion: profile));
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
-            groupItem + "/allowedCalendarSharingRoles(User='{User}')"));
+            groupItem + "/allowedCalendarSharingRoles(User='{User}')", apiVersion: profile));
         Assert.Equal("user_UpdateCalendar", spec.Paths["/users/{user-id}/calendar"].Operations![HttpMethod.Patch].OperationId);
         Assert.Equal("user.calendar_GetEvent", spec.Paths["/users/{user-id}/calendar/events/{event-id}"].Operations![HttpMethod.Get].OperationId);
-        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/calendar"));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/calendar", apiVersion: profile));
     }
 
     [Theory]
@@ -221,19 +225,19 @@ public sealed class CalendarDirectiveMigrationTests
                 && row.GetProperty("Method").GetString() == method.Method
                 && row.GetProperty("Uri").GetString() is { } uri
                 && CmdletConfigurator.NormalizePathTemplate(uri) == normalized);
-            Assert.True(CmdletConfigurator.IsSuppressed(method, path, new GeneratorConfig("Test.Client", "", profile)));
-            Assert.True(CmdletConfigurator.IsSuppressed(method, path));
+            Assert.True(CmdletConfigurator.IsSuppressed(method, path, new GeneratorConfig("Test.Client", ""), apiVersion: profile));
+            Assert.True(CmdletConfigurator.IsSuppressed(method, path, apiVersion: profile));
         }
         foreach (var path in new[] { "/groups/{group-id}/calendar/calendarView", "/users/{user-id}/calendar/calendarView" })
         {
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, new GeneratorConfig("Test.Client", "", profile)));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, new GeneratorConfig("Test.Client", ""), apiVersion: profile));
             Assert.Contains(oracle.RootElement.EnumerateArray(), row =>
                 row.GetProperty("ApiVersion").GetString() == profile
                 && row.GetProperty("Method").GetString() == "GET"
                 && row.GetProperty("Uri").GetString() == path);
         }
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/users/{user-id}/calendar/permanentDelete",
-            new GeneratorConfig("Test.Client", "", profile)));
+            new GeneratorConfig("Test.Client", ""), apiVersion: profile));
     }
 
     [Theory]
@@ -288,8 +292,8 @@ public sealed class CalendarDirectiveMigrationTests
         Directory.CreateDirectory(output);
         try
         {
-            var config = new GeneratorConfig("Test.Client", output, profile);
-            await new PowerShellWrapperGenerationService(subset, config, NullLogger.Instance)
+            var config = new GeneratorConfig("Test.Client", output);
+            await new PowerShellWrapperGenerationService(subset, config, NullLogger.Instance, apiVersion: profile)
                 .GenerateAsync(CancellationToken.None);
             var files = Directory.GetFiles(output, "*.g.cs").Select(Path.GetFileName).ToArray();
             Assert.Contains("GetMgUserDefaultCalendar.g.cs", files);
@@ -318,9 +322,9 @@ public sealed class CalendarDirectiveMigrationTests
         }
     }
 
-    private static CmdletNaming Resolve(HttpMethod method, string path, GeneratorConfig config,
+    private static CmdletNaming Resolve(HttpMethod method, string path, GeneratorConfig config, string profile,
         OperationKind kind = OperationKind.Resource) =>
-        Naming.Resolve(new OperationInfo(method, path, Kind: kind), config);
+        Naming.Resolve(new OperationInfo(method, path, Kind: kind), config, apiVersion: profile);
 
     private static OpenApiDocument Spec(string profile) => profile == "v1.0" ? V1.Value : Beta.Value;
 
