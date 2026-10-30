@@ -9,10 +9,10 @@ using Microsoft.Graph.PowerShell.People.Client.Models;
 namespace Microsoft.Graph.PowerShell.People
 {
     [GraphRoute("GET", "/users/{user-id}/analytics/activityStatistics")]
-    [Cmdlet(VerbsCommon.Get, "MgUserAnalyticActivityStatistics", DefaultParameterSetName = "List")]
+    [Cmdlet(VerbsCommon.Get, "MgUserActivityStatistics", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.People.Client.Models.ActivityStatisticsCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.People.Client.Models.ActivityStatistics), ParameterSetName = new[] { "Get" })]
-    public class GetMgUserAnalyticActivityStatisticsCommand : GraphClientCmdlet
+    public class GetMgUserActivityStatisticsCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
@@ -58,11 +58,11 @@ namespace Microsoft.Graph.PowerShell.People
 
 
 
-        // Delegates to Get-MgUserAnalyticActivityStatistics_Get or Get-MgUserAnalyticActivityStatistics_List, the two cmdlets
+        // Delegates to Get-MgUserActivityStatistics_Get or Get-MgUserActivityStatistics_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
         {
-            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgUserAnalyticActivityStatistics_Get" : "Get-MgUserAnalyticActivityStatistics_List";
+            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgUserActivityStatistics_Get" : "Get-MgUserActivityStatistics_List";
             try
             {
                 InvokeCommand.InvokeScript(

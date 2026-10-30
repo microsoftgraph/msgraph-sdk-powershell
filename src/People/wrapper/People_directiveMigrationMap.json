@@ -1,0 +1,110 @@
+{
+  "audit": {
+    "source": "src/People/People.md",
+    "requiredProfiles": ["v1.0", "beta"],
+    "excludedProfiles": [],
+    "ignoredSources": ["src/readme.graph.md", "src/People/v1.0/readme.md", "src/People/beta/readme.md"],
+    "deferredDirectives": [
+      {
+        "directiveIndex": 2,
+        "classification": "DeferredParameter",
+        "notes": "Preserve the active AutoRest source-file-csharp Client/ServiceClient transform without porting it. Parameter aliases/transforms and schema/response directives are deferred."
+      }
+    ],
+    "targetCommit": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad",
+    "specBlobs": {
+      "v1.0": "1d05e8dbb2ad71ad4ecb5d9144291cc290516894",
+      "beta": "fd224e37fbba7d97a0c8b6697c0d19e1c1830192"
+    },
+    "legacySpecBlobs": {
+      "v1.0": "1ab390cf83317405e3563c0f85121eca7c3209cd",
+      "beta": "71381c77637c49c0e029f725e569629e7f9b4341"
+    },
+    "selectorReview": "The original operation-ID regex was evaluated case-sensitively against every actual same-profile openApiDocs operation: v1.0 0/3, beta 3/129. After the normal powershell-v3 operation-ID alignment and spec refresh, the current literal compatible selector matches exactly the same complete sets: v1.0 0/3, beta 3/129. Each original match survives at one exact unique unchanged method/path with the same aligned ID; there are no missing survivors, additional literal matches or removals. The supported literal mapping is therefore sufficient without the unmerged Legacy helper. The singular ActivityStatistic alternative does not match the plural legacy ActivityStatistics IDs; do not broaden the suppression.",
+    "subjectReview": "Directive 3 selects the five beta collection/item ActivityStatistics operations, not the separately suffixed Count subject. Directives 4 and 5 have no insight routes in either actual legacy or compatible People specification. These are reviewed selector absences, not claims based on zero literal compatible operation-ID matches.",
+    "existingCoverage": "People had no curated entries. v1.0 derived data does not implement these beta-only routes, and no beta derived data is present. Exact noun overrides are needed only for directive 3; ordinary people/profile/project/count neighbors retain structural naming.",
+    "legacySuppressionLineage": [
+      {"method": "GET", "path": "/users/{user-id}/analytics", "operationId": "user_GetAnalytic", "compatibleOperationId": "user_GetAnalytic"},
+      {"method": "PATCH", "path": "/users/{user-id}/analytics", "operationId": "user_UpdateAnalytic", "compatibleOperationId": "user_UpdateAnalytic"},
+      {"method": "DELETE", "path": "/users/{user-id}/analytics", "operationId": "user_DeleteAnalytic", "compatibleOperationId": "user_DeleteAnalytic"}
+    ],
+    "legacySubjectLineage": [
+      {"method": "GET", "path": "/users/{user-id}/analytics/activityStatistics", "operationId": "user.analytic_ListActivityStatistics", "compatibleOperationId": "user.analytic_ListActivityStatistics"},
+      {"method": "POST", "path": "/users/{user-id}/analytics/activityStatistics", "operationId": "user.analytic_CreateActivityStatistics", "compatibleOperationId": "user.analytic_CreateActivityStatistics"},
+      {"method": "GET", "path": "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}", "operationId": "user.analytic_GetActivityStatistics", "compatibleOperationId": "user.analytic_GetActivityStatistics"},
+      {"method": "PATCH", "path": "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}", "operationId": "user.analytic_UpdateActivityStatistics", "compatibleOperationId": "user.analytic_UpdateActivityStatistics"},
+      {"method": "DELETE", "path": "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}", "operationId": "user.analytic_DeleteActivityStatistics", "compatibleOperationId": "user.analytic_DeleteActivityStatistics"}
+    ]
+  },
+  "mappings": [
+    {
+      "module": "People",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^user_(Get|Create|Update|Delete)Analytic$|^user.analytic_(Create|Update|Delete)ActivityStatistic$|^user_.*Insight$|^user.insight_(Create|Update|Delete)(Shared|Trending|Used)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress exactly the three original beta legacy matches; preserve all ActivityStatistics neighbors. Current aligned literal selector matches equal every original legacy-selected survivor, proven against both actual same-profile sources.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": [],
+          "notes": "Reviewed selector absence: original legacy and literal compatible regex each match zero; both specs contain only the three people routes."
+        },
+        "beta": {
+          "notes": "Literal current matches equal all three original same-profile legacy-selected survivors at exact unique unchanged method/path pairs with aligned IDs. No Legacy helper fields or prerequisite cherry-picks are needed.",
+          "absenceExpected": false,
+          "operations": [
+            {"method": "GET", "path": "/users/{user-id}/analytics", "operationId": "user_GetAnalytic"},
+            {"method": "PATCH", "path": "/users/{user-id}/analytics", "operationId": "user_UpdateAnalytic"},
+            {"method": "DELETE", "path": "/users/{user-id}/analytics", "operationId": "user_DeleteAnalytic"}
+          ]
+        }
+      }
+    },
+    {
+      "module": "People",
+      "directiveIndex": 3,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(User)Analytic(ActivityStatistics)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Retain the shared anchored subject rename for the five beta ActivityStatistics collection/item operations; do not rename or suppress the Count neighbor.",
+      "profiles": {
+        "v1.0": {"absenceExpected": true, "operations": []},
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {"method": "GET", "path": "/users/{user-id}/analytics/activityStatistics", "operationId": "user.analytic_ListActivityStatistics"},
+            {"method": "POST", "path": "/users/{user-id}/analytics/activityStatistics", "operationId": "user.analytic_CreateActivityStatistics"},
+            {"method": "GET", "path": "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}", "operationId": "user.analytic_GetActivityStatistics"},
+            {"method": "PATCH", "path": "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}", "operationId": "user.analytic_UpdateActivityStatistics"},
+            {"method": "DELETE", "path": "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}", "operationId": "user.analytic_DeleteActivityStatistics"}
+          ]
+        }
+      }
+    },
+    {
+      "module": "People",
+      "directiveIndex": 4,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(User)(Insight)(.*)$",
+      "implementation": "StructuralNaming",
+      "notes": "Reviewed absence in both actual legacy and compatible People specs: no /users/{user-id}/insights or insight navigation routes exist. No override or fictitious operation is needed.",
+      "profiles": {
+        "v1.0": {"absenceExpected": true, "operations": []},
+        "beta": {"absenceExpected": true, "operations": []}
+      }
+    },
+    {
+      "module": "People",
+      "directiveIndex": 5,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(User)(Shared)(LastSharedMethodInsight)$",
+      "implementation": "StructuralNaming",
+      "notes": "Reviewed absence in both actual legacy and compatible People specs: no shared/lastSharedMethod insight route exists. No override or fictitious operation is needed.",
+      "profiles": {
+        "v1.0": {"absenceExpected": true, "operations": []},
+        "beta": {"absenceExpected": true, "operations": []}
+      }
+    }
+  ]
+}

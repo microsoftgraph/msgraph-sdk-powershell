@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "A028509847C67CD31EDEC0DEFD70FC0E85149BA3966C42FC30F767E5D5BFD3AA449F3D25F5EB8E95FEA3E456D602C65D419DF65146F2AFD27E4CA70F88D757AB",
-  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/Beta/People.yml",
+  "descriptionHash": "FE3F7AEA94362726B95C1F3C1B1E418B14A122EAFCEBA684F30E14F86B468B4EC3C2B0B6DDEF3C1D40DFC98A2A6A79FD2508494B326124318503CC32A9055F20",
+  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/beta/People.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.People.Client",

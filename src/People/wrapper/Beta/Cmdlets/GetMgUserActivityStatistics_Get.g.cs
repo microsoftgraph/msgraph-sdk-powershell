@@ -13,9 +13,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.People
 {
     [GraphRoute("GET", "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}")]
-    [Cmdlet(VerbsCommon.Get, "MgUserAnalyticActivityStatistics_Get")]
+    [Cmdlet(VerbsCommon.Get, "MgUserActivityStatistics_Get")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.People.Client.Models.ActivityStatistics))]
-    public class GetMgUserAnalyticActivityStatistics_GetCommand : GraphClientCmdlet
+    public class GetMgUserActivityStatistics_GetCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
