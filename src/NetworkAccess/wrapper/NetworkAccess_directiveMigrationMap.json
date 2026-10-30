@@ -1,0 +1,64 @@
+{
+  "scope": {
+    "source": "src/NetworkAccess/NetworkAccess.md",
+    "requiredProfiles": [ "beta" ],
+    "excludedProfiles": [ "v1.0" ],
+    "ignored": [ "profile-local readmes", "src/readme.graph.md" ],
+    "deferred": [ "parameter aliases/transforms (directives 1 and 2)", "schema/response directives" ],
+    "compatibleSpecBlob": "f95ae7517c789a57a8b09d4841de2f287e76d016",
+    "sourceSpecBlob": "acc4717025d6afdf0b6ce6ecaaa119f34deb2b62",
+    "notes": "No operation-ID regex selectors occur in this shared file. Actual source and compatible IDs are now aligned. No API removals are claimed."
+  },
+  "linkedPolicyNaming": {
+    "reason": "Three existing GET collisions are different operations, not compatible mandatory-path-ID variants: the policyLink item and nested policy have identical mandatory IDs but different response models. Keep ordinary policy-link collection/item defaults; assign only the nested policy navigation a meaningful PolicyLinkPolicy noun reflecting its actual parent type and property. This is not a profile-local directive migration or an oracle-absence suppression.",
+    "parentResponseSchema": "microsoft.graph.networkaccess.policyLink",
+    "navigationResponseSchema": "microsoft.graph.networkaccess.policy",
+    "operations": [
+      {
+        "method": "GET",
+        "path": "/networkAccess/connectivity/remoteNetworks/{remoteNetwork-id}/forwardingProfiles/{forwardingProfile-id}/policies/{policyLink-id}/policy",
+        "operationId": "networkAccess.connectivity.remoteNetwork.forwardingProfile.policy_GetPolicy",
+        "noun": "MgNetworkAccessConnectivityRemoteNetworkForwardingProfilePolicyLinkPolicy"
+      },
+      {
+        "method": "GET",
+        "path": "/networkAccess/filteringProfiles/{filteringProfile-id}/policies/{policyLink-id}/policy",
+        "operationId": "networkAccess.filteringProfile.policy_GetPolicy",
+        "noun": "MgNetworkAccessFilteringProfilePolicyLinkPolicy"
+      },
+      {
+        "method": "GET",
+        "path": "/networkAccess/forwardingProfiles/{forwardingProfile-id}/policies/{policyLink-id}/policy",
+        "operationId": "networkAccess.forwardingProfile.policy_GetPolicy",
+        "noun": "MgNetworkAccessForwardingProfilePolicyLinkPolicy"
+      }
+    ]
+  },
+  "mappings": [
+    {
+      "module": "NetworkAccess",
+      "directiveIndex": 3,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^NetworkAccessForwardingPolicyRule$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The shared where selector removes every Update variant of NetworkAccessForwardingPolicyRule. Actual beta source and compatible specifications now both identify the unique PATCH/path as networkAccess.forwardingPolicy_UpdatePolicyRule. The complete reviewed source selection is that one operation, with no removals. Published beta metadata contains GET/List, POST and DELETE for the policyRules family but no PATCH command for this item. Suppress only that PATCH; retain all other methods, the parent policy PATCH, and other policy families. Structural naming already supplies the published forwarding-policy-rule noun.",
+      "profiles": {
+        "v1.0": {
+          "excluded": true,
+          "operations": [],
+          "notes": "Explicitly excluded profile; not an API-operation absence assertion."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/networkAccess/forwardingPolicies/{forwardingPolicy-id}/policyRules/{policyRule-id}",
+              "operationId": "networkAccess.forwardingPolicy_UpdatePolicyRule"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
