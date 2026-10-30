@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "571517862B3C3CEB35A865218B1D6CAEC55E01481631619538E5F9ED00B8E51B7F51312CE23ECC158EDDC3342AE8F7C2620071D7D3A93A74C69385414297831C",
+  "descriptionHash": "6A46D4FCC3E219107247692F6BB9B01EDF028AB8289E0E9CC412226967F4ED28284CFE05E938A2249EC0D627DADD38C2CB4101C4FF7EAA120E955EBAD2BB7D63",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Search.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Search.Client",
