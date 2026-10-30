@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.RoleManagement.D
         {
         }
         /// <summary>
-        /// Delete a unifiedRoleDefinition object. You can&apos;t delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
+        /// Delete a unifiedRoleDefinition object. You can&apos;t delete built-in roles. Deleting an active custom role definition soft-deletes it. You can then restore the role or permanently delete it from the deleted-items collection. This feature requires a Microsoft Entra ID P1 or P2 license.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.RoleManagement.D
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UnifiedRoleDefinition>(requestInfo, global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a unifiedRoleDefinition object. You can&apos;t delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
+        /// Delete a unifiedRoleDefinition object. You can&apos;t delete built-in roles. Deleting an active custom role definition soft-deletes it. You can then restore the role or permanently delete it from the deleted-items collection. This feature requires a Microsoft Entra ID P1 or P2 license.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

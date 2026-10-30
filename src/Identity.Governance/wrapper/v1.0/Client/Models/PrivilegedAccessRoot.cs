@@ -12,6 +12,14 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
     public partial class PrivilegedAccessRoot : global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The custom extensions configured for PIM role management operations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.RoleManagementCustomCalloutExtension>? CustomExtensions { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.RoleManagementCustomCalloutExtension> CustomExtensions { get; set; }
+#endif
         /// <summary>A group that&apos;s governed through Privileged Identity Management (PIM).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +46,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "customExtensions", n => { CustomExtensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.RoleManagementCustomCalloutExtension>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.RoleManagementCustomCalloutExtension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "group", n => { Group = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroup>(global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroup.CreateFromDiscriminatorValue); } },
             };
         }
@@ -49,6 +58,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.RoleManagementCustomCalloutExtension>("customExtensions", CustomExtensions);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroup>("group", Group);
         }
     }
