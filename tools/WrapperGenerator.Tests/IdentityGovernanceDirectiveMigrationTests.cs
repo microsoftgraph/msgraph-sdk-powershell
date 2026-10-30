@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
@@ -530,12 +531,15 @@ public sealed class IdentityGovernanceDirectiveMigrationTests
     public async Task CompleteCompatibleSurfaceEmitsWithoutLosingCollidingRoutes(string profile)
     {
         var output = Path.Combine(Path.GetTempPath(), "governance-directive-tests", Guid.NewGuid().ToString("N"));
+        var logger = new UnsupportedOperationLogger();
         try
         {
             await new PowerShellWrapperGenerationService(await Specs[profile].Value,
-                Config() with { OutputPath = output }, NullLogger.Instance, apiVersion: profile)
+                Config() with { OutputPath = output }, logger, apiVersion: profile)
                 .GenerateAsync(TestContext.Current.CancellationToken);
             Assert.NotEmpty(Directory.GetFiles(output, "*.g.cs"));
+            foreach (var warning in logger.Warnings)
+                TestContext.Current.TestOutputHelper!.WriteLine($"{profile}: {warning}");
             if (profile == "beta")
             {
                 foreach (var noun in new[] { "ProgramControl", "ProgramAssociatedControl" })
@@ -558,6 +562,19 @@ public sealed class IdentityGovernanceDirectiveMigrationTests
         {
             if (Directory.Exists(output))
                 Directory.Delete(output, recursive: true);
+        }
+    }
+
+    private sealed class UnsupportedOperationLogger : ILogger
+    {
+        internal List<string> Warnings { get; } = [];
+        public IDisposable? BeginScope<TState>(TState state) where TState : notnull => null;
+        public bool IsEnabled(LogLevel logLevel) => logLevel >= LogLevel.Warning;
+        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception,
+            Func<TState, Exception?, string> formatter)
+        {
+            if (IsEnabled(logLevel))
+                Warnings.Add(formatter(state, exception));
         }
     }
 

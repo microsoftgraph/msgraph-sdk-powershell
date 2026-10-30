@@ -33,6 +33,12 @@ request contracts retain distinct names: the scope-based alert refresh and
 program-associated control writes cannot share their body parameters with their
 neighbors. Exact evidence is in the ledger's `compatibleSurfaceCorrections`.
 
+Existing wrapper limitations remain explicit rather than becoming new suppression
+rules: the current compatible v1.0 generation reports 50 unsupported content
+responses and three call segments not classified as operations; beta reports 25
+unsupported content responses, eight such call segments, and 22 OData parameter
+aliases. These diagnostics are not API-absence evidence.
+
 ``` yaml
 directive:
 #Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0. The affected operation Ids starts from connectedOrganization_DeleteExternalSponsorGraphBPreRef$
