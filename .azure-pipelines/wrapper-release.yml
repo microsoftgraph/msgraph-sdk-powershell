@@ -49,7 +49,7 @@ extends:
     sdl:
       binskim:
         enabled: false
-        justificationForDisabling: "Matches sdk-release.yml; BinSkim currently blocks internal-feed publishing."
+        justificationForDisabling: "BinSkim currently blocks internal-feed publishing."
       credscan:
         suppressionsFile: $(Build.SourcesDirectory)/.azure-pipelines/config/credscan/credscan-suppressions.json
       policheck:
@@ -71,13 +71,7 @@ extends:
             artifactName: drop
             publishLocation: Container
         steps:
-        - script: git submodule update --init --recursive
-          displayName: Initialize submodules
-
-        # Deliberately NOT install-tools.yml: that template is the AutoRest toolchain - Node,
-        # the private npm feed, AutoRest, Rush and a full rush rebuild - none of which this
-        # pipeline uses. The wrapper modules compile from committed sources, so the whole
-        # toolchain is the .NET SDK, feed auth for restore, and the kiota CLI.
+        # The v3 toolchain is the .NET SDK, feed auth for restore, and the kiota CLI.
         - task: UseDotNet@2
           displayName: Use .NET SDK 10
           retryCountOnTaskFailure: 2

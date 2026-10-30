@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-1.0
-      operationId: groupLifecyclePolicies.groupLifecyclePolicy.ListGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy_ListGroupLifecyclePolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -71,7 +71,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-1.0
-      operationId: groupLifecyclePolicies.groupLifecyclePolicy.CreateGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy_CreateGroupLifecyclePolicy
       requestBody:
         description: New entity
         content:
@@ -100,7 +100,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-get?view=graph-rest-1.0
-      operationId: groupLifecyclePolicies.groupLifecyclePolicy.GetGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy_GetGroupLifecyclePolicy
       parameters:
         - name: $select
           in: query
@@ -142,7 +142,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-update?view=graph-rest-1.0
-      operationId: groupLifecyclePolicies.groupLifecyclePolicy.UpdateGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy_UpdateGroupLifecyclePolicy
       requestBody:
         description: New property values
         content:
@@ -170,7 +170,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-delete?view=graph-rest-1.0
-      operationId: groupLifecyclePolicies.groupLifecyclePolicy.DeleteGroupLifecyclePolicy
+      operationId: groupLifecyclePolicy_DeleteGroupLifecyclePolicy
       parameters:
         - name: If-Match
           in: header
@@ -195,7 +195,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-addgroup?view=graph-rest-1.0
-      operationId: groupLifecyclePolicies.groupLifecyclePolicy.addGroup
+      operationId: groupLifecyclePolicy_addGroup
       requestBody:
         description: Action parameters
         content:
@@ -231,7 +231,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0
-      operationId: groupLifecyclePolicies.groupLifecyclePolicy.removeGroup
+      operationId: groupLifecyclePolicy_removeGroup
       requestBody:
         description: Action parameters
         content:
@@ -263,7 +263,7 @@ paths:
       tags:
         - groupLifecyclePolicies.groupLifecyclePolicy
       summary: Get the number of the resource
-      operationId: groupLifecyclePolicies.GetCount-ca62
+      operationId: groupLifecyclePolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -283,7 +283,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list?view=graph-rest-1.0
-      operationId: groups.group.ListGroup
+      operationId: group_ListGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -349,7 +349,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-groups?view=graph-rest-1.0
-      operationId: groups.group.CreateGroup
+      operationId: group_CreateGroup
       requestBody:
         description: New entity
         content:
@@ -378,7 +378,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-get?view=graph-rest-1.0
-      operationId: groups.group.GetGroup
+      operationId: group_GetGroup
       parameters:
         - name: $select
           in: query
@@ -420,7 +420,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0
-      operationId: groups.group.UpdateGroup
+      operationId: group_UpdateGroup
       requestBody:
         description: New property values
         content:
@@ -448,7 +448,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete?view=graph-rest-1.0
-      operationId: groups.group.DeleteGroup
+      operationId: group_DeleteGroup
       parameters:
         - name: If-Match
           in: header
@@ -473,7 +473,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0
-      operationId: groups.ListAcceptedSenders
+      operationId: group_ListAcceptedSender
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -529,7 +529,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete-acceptedsenders?view=graph-rest-1.0
-      operationId: groups.acceptedSenders.DeleteRefDirectoryObject
+      operationId: group.acceptedSender_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -550,7 +550,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.acceptedSenders.GetCount-576b
+      operationId: group.acceptedSender_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -570,7 +570,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0
-      operationId: groups.ListRefAcceptedSenders
+      operationId: group_ListAcceptedSenderGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -606,7 +606,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-acceptedsenders?view=graph-rest-1.0
-      operationId: groups.CreateRefAcceptedSenders
+      operationId: group_CreateAcceptedSenderGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -624,7 +624,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete-acceptedsenders?view=graph-rest-1.0
-      operationId: groups.DeleteRefAcceptedSenders
+      operationId: group_DeleteAcceptedSenderGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -657,7 +657,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-conversations?view=graph-rest-1.0
-      operationId: groups.ListConversations
+      operationId: group_ListConversation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -713,7 +713,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
-      operationId: groups.CreateConversations
+      operationId: group_CreateConversation
       requestBody:
         description: New navigation property
         content:
@@ -742,7 +742,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
-      operationId: groups.GetConversations
+      operationId: group_GetConversation
       parameters:
         - name: $select
           in: query
@@ -784,7 +784,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
-      operationId: groups.DeleteConversations
+      operationId: group_DeleteConversation
       parameters:
         - name: If-Match
           in: header
@@ -809,7 +809,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conversation-list-threads?view=graph-rest-1.0
-      operationId: groups.conversations.ListThreads
+      operationId: group.conversation_ListThread
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -865,7 +865,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conversation-post-threads?view=graph-rest-1.0
-      operationId: groups.conversations.CreateThreads
+      operationId: group.conversation_CreateThread
       requestBody:
         description: New navigation property
         content:
@@ -891,7 +891,7 @@ paths:
         - groups.conversation
       summary: Get threads from groups
       description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
-      operationId: groups.conversations.GetThreads
+      operationId: group.conversation_GetThread
       parameters:
         - name: $select
           in: query
@@ -929,7 +929,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property threads in groups
-      operationId: groups.conversations.UpdateThreads
+      operationId: group.conversation_UpdateThread
       requestBody:
         description: New navigation property values
         content:
@@ -953,7 +953,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property threads for groups
-      operationId: groups.conversations.DeleteThreads
+      operationId: group.conversation_DeleteThread
       parameters:
         - name: If-Match
           in: header
@@ -978,7 +978,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
-      operationId: groups.group.conversations.conversation.threads.conversationThread.reply
+      operationId: group.conversation.thread.conversationThread_reply
       requestBody:
         description: Action parameters
         content:
@@ -1002,7 +1002,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get posts from groups
-      operationId: groups.conversations.threads.ListPosts
+      operationId: group.conversation.thread_ListPost
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1055,7 +1055,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get posts from groups
-      operationId: groups.conversations.threads.GetPosts
+      operationId: group.conversation.thread_GetPost
       parameters:
         - name: $select
           in: query
@@ -1095,7 +1095,7 @@ paths:
         - groups.conversation
       summary: Get attachments from groups
       description: Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts.ListAttachments
+      operationId: group.conversation.thread.post_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1147,7 +1147,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to attachments for groups
-      operationId: groups.conversations.threads.posts.CreateAttachments
+      operationId: group.conversation.thread.post_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -1173,7 +1173,7 @@ paths:
         - groups.conversation
       summary: Get attachments from groups
       description: Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts.GetAttachments
+      operationId: group.conversation.thread.post_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -1211,7 +1211,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property attachments for groups
-      operationId: groups.conversations.threads.posts.DeleteAttachments
+      operationId: group.conversation.thread.post_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -1232,7 +1232,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get the number of the resource
-      operationId: groups.conversations.threads.posts.attachments.GetCount-d70e
+      operationId: group.conversation.thread.post.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1252,7 +1252,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.group.conversations.conversation.threads.conversationThread.posts.post.attachments.createUploadSession
+      operationId: group.conversation.thread.conversationThread.post.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -1284,7 +1284,7 @@ paths:
         - groups.conversation
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts.ListExtensions
+      operationId: group.conversation.thread.post_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1336,7 +1336,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to extensions for groups
-      operationId: groups.conversations.threads.posts.CreateExtensions
+      operationId: group.conversation.thread.post_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -1362,7 +1362,7 @@ paths:
         - groups.conversation
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts.GetExtensions
+      operationId: group.conversation.thread.post_GetExtension
       parameters:
         - name: $select
           in: query
@@ -1400,7 +1400,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property extensions in groups
-      operationId: groups.conversations.threads.posts.UpdateExtensions
+      operationId: group.conversation.thread.post_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -1424,7 +1424,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property extensions for groups
-      operationId: groups.conversations.threads.posts.DeleteExtensions
+      operationId: group.conversation.thread.post_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -1445,7 +1445,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get the number of the resource
-      operationId: groups.conversations.threads.posts.extensions.GetCount-e717
+      operationId: group.conversation.thread.post.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1462,7 +1462,7 @@ paths:
         - groups.conversation
       summary: Get inReplyTo from groups
       description: Read-only. Supports $expand.
-      operationId: groups.conversations.threads.posts.GetInReplyTo
+      operationId: group.conversation.thread.post_GetInReplyTo
       parameters:
         - name: $select
           in: query
@@ -1502,7 +1502,7 @@ paths:
         - groups.conversation
       summary: Get attachments from groups
       description: Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts.inReplyTo.ListAttachments
+      operationId: group.conversation.thread.post.inReplyTo_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1554,7 +1554,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to attachments for groups
-      operationId: groups.conversations.threads.posts.inReplyTo.CreateAttachments
+      operationId: group.conversation.thread.post.inReplyTo_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -1580,7 +1580,7 @@ paths:
         - groups.conversation
       summary: Get attachments from groups
       description: Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts.inReplyTo.GetAttachments
+      operationId: group.conversation.thread.post.inReplyTo_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -1618,7 +1618,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property attachments for groups
-      operationId: groups.conversations.threads.posts.inReplyTo.DeleteAttachments
+      operationId: group.conversation.thread.post.inReplyTo_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -1639,7 +1639,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get the number of the resource
-      operationId: groups.conversations.threads.posts.inReplyTo.attachments.GetCount-d80c
+      operationId: group.conversation.thread.post.inReplyTo.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1659,7 +1659,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.group.conversations.conversation.threads.conversationThread.posts.post.inReplyTo.attachments.createUploadSession
+      operationId: group.conversation.thread.conversationThread.post.inReplyTo.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -1691,7 +1691,7 @@ paths:
         - groups.conversation
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts.inReplyTo.ListExtensions
+      operationId: group.conversation.thread.post.inReplyTo_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1743,7 +1743,7 @@ paths:
       tags:
         - groups.conversation
       summary: Create new navigation property to extensions for groups
-      operationId: groups.conversations.threads.posts.inReplyTo.CreateExtensions
+      operationId: group.conversation.thread.post.inReplyTo_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -1769,7 +1769,7 @@ paths:
         - groups.conversation
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.conversations.threads.posts.inReplyTo.GetExtensions
+      operationId: group.conversation.thread.post.inReplyTo_GetExtension
       parameters:
         - name: $select
           in: query
@@ -1807,7 +1807,7 @@ paths:
       tags:
         - groups.conversation
       summary: Update the navigation property extensions in groups
-      operationId: groups.conversations.threads.posts.inReplyTo.UpdateExtensions
+      operationId: group.conversation.thread.post.inReplyTo_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -1831,7 +1831,7 @@ paths:
       tags:
         - groups.conversation
       summary: Delete navigation property extensions for groups
-      operationId: groups.conversations.threads.posts.inReplyTo.DeleteExtensions
+      operationId: group.conversation.thread.post.inReplyTo_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -1852,7 +1852,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get the number of the resource
-      operationId: groups.conversations.threads.posts.inReplyTo.extensions.GetCount-6de4
+      operationId: group.conversation.thread.post.inReplyTo.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1872,7 +1872,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
-      operationId: groups.group.conversations.conversation.threads.conversationThread.posts.post.inReplyTo.forward
+      operationId: group.conversation.thread.conversationThread.post.inReplyTo_forward
       requestBody:
         description: Action parameters
         content:
@@ -1901,7 +1901,7 @@ paths:
       tags:
         - groups.conversation
       summary: Invoke action reply
-      operationId: groups.group.conversations.conversation.threads.conversationThread.posts.post.inReplyTo.reply
+      operationId: group.conversation.thread.conversationThread.post.inReplyTo_reply
       requestBody:
         description: Action parameters
         content:
@@ -1929,7 +1929,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
-      operationId: groups.group.conversations.conversation.threads.conversationThread.posts.post.forward
+      operationId: group.conversation.thread.conversationThread.post_forward
       requestBody:
         description: Action parameters
         content:
@@ -1958,7 +1958,7 @@ paths:
       tags:
         - groups.conversation
       summary: Invoke action reply
-      operationId: groups.group.conversations.conversation.threads.conversationThread.posts.post.reply
+      operationId: group.conversation.thread.conversationThread.post_reply
       requestBody:
         description: Action parameters
         content:
@@ -1982,7 +1982,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get the number of the resource
-      operationId: groups.conversations.threads.posts.GetCount-3615
+      operationId: group.conversation.thread.post_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1998,7 +1998,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get the number of the resource
-      operationId: groups.conversations.threads.GetCount-401a
+      operationId: group.conversation.thread_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2014,7 +2014,7 @@ paths:
       tags:
         - groups.conversation
       summary: Get the number of the resource
-      operationId: groups.conversations.GetCount-c7df
+      operationId: group.conversation_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2031,7 +2031,7 @@ paths:
         - groups.directoryObject
       summary: Get createdOnBehalfOf from groups
       description: 'The user (or application) that created the group. NOTE: This property isn''t set if the user is an administrator. Read-only.'
-      operationId: groups.GetCreatedOnBehalfOf
+      operationId: group_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: $select
           in: query
@@ -2071,7 +2071,7 @@ paths:
         - groups.extension
       summary: Get extensions from groups
       description: The collection of open extensions defined for the group. Read-only. Nullable.
-      operationId: groups.ListExtensions
+      operationId: group_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2123,7 +2123,7 @@ paths:
       tags:
         - groups.extension
       summary: Create new navigation property to extensions for groups
-      operationId: groups.CreateExtensions
+      operationId: group_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -2149,7 +2149,7 @@ paths:
         - groups.extension
       summary: Get extensions from groups
       description: The collection of open extensions defined for the group. Read-only. Nullable.
-      operationId: groups.GetExtensions
+      operationId: group_GetExtension
       parameters:
         - name: $select
           in: query
@@ -2187,7 +2187,7 @@ paths:
       tags:
         - groups.extension
       summary: Update the navigation property extensions in groups
-      operationId: groups.UpdateExtensions
+      operationId: group_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -2211,7 +2211,7 @@ paths:
       tags:
         - groups.extension
       summary: Delete navigation property extensions for groups
-      operationId: groups.DeleteExtensions
+      operationId: group_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -2232,7 +2232,7 @@ paths:
       tags:
         - groups.extension
       summary: Get the number of the resource
-      operationId: groups.extensions.GetCount-e2e0
+      operationId: group.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2252,7 +2252,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-grouplifecyclepolicies?view=graph-rest-1.0
-      operationId: groups.ListGroupLifecyclePolicies
+      operationId: group_ListGroupLifecyclePolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2304,7 +2304,7 @@ paths:
       tags:
         - groups.groupLifecyclePolicy
       summary: Create new navigation property to groupLifecyclePolicies for groups
-      operationId: groups.CreateGroupLifecyclePolicies
+      operationId: group_CreateGroupLifecyclePolicy
       requestBody:
         description: New navigation property
         content:
@@ -2330,7 +2330,7 @@ paths:
         - groups.groupLifecyclePolicy
       summary: Get groupLifecyclePolicies from groups
       description: The collection of lifecycle policies for this group. Read-only. Nullable.
-      operationId: groups.GetGroupLifecyclePolicies
+      operationId: group_GetGroupLifecyclePolicy
       parameters:
         - name: $select
           in: query
@@ -2368,7 +2368,7 @@ paths:
       tags:
         - groups.groupLifecyclePolicy
       summary: Update the navigation property groupLifecyclePolicies in groups
-      operationId: groups.UpdateGroupLifecyclePolicies
+      operationId: group_UpdateGroupLifecyclePolicy
       requestBody:
         description: New navigation property values
         content:
@@ -2392,7 +2392,7 @@ paths:
       tags:
         - groups.groupLifecyclePolicy
       summary: Delete navigation property groupLifecyclePolicies for groups
-      operationId: groups.DeleteGroupLifecyclePolicies
+      operationId: group_DeleteGroupLifecyclePolicy
       parameters:
         - name: If-Match
           in: header
@@ -2417,7 +2417,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-addgroup?view=graph-rest-1.0
-      operationId: groups.group.groupLifecyclePolicies.groupLifecyclePolicy.addGroup
+      operationId: group.groupLifecyclePolicy_addGroup
       requestBody:
         description: Action parameters
         content:
@@ -2453,7 +2453,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0
-      operationId: groups.group.groupLifecyclePolicies.groupLifecyclePolicy.removeGroup
+      operationId: group.groupLifecyclePolicy_removeGroup
       requestBody:
         description: Action parameters
         content:
@@ -2485,7 +2485,7 @@ paths:
       tags:
         - groups.groupLifecyclePolicy
       summary: Get the number of the resource
-      operationId: groups.groupLifecyclePolicies.GetCount-ba70
+      operationId: group.groupLifecyclePolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2505,7 +2505,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0
-      operationId: groups.ListMemberOf
+      operationId: group_ListMemberGraphOPre
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2569,7 +2569,7 @@ paths:
         - groups.directoryObject
       summary: Get memberOf from groups
       description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.'
-      operationId: groups.GetMemberOf
+      operationId: group_GetMemberGraphOPre
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2618,7 +2618,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: groups.GetMemberOf.AsAdministrativeUnit
+      operationId: group_GetMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2670,7 +2670,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0
-      operationId: groups.GetMemberOf.AsGroup
+      operationId: group_GetMemberGraphOPreAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2718,7 +2718,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.memberOf.GetCount-e9c5
+      operationId: group.memberOf_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2744,7 +2744,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: groups.ListMemberOf.AsAdministrativeUnit
+      operationId: group_ListMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2806,7 +2806,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.MemberOf.GetCount.AsAdministrativeUnit-4c17
+      operationId: group.MemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2836,7 +2836,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0
-      operationId: groups.ListMemberOf.AsGroup
+      operationId: group_ListMemberGraphOPreAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2898,7 +2898,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.MemberOf.GetCount.AsGroup-6572
+      operationId: group.MemberOf_GetCountAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2928,7 +2928,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
-      operationId: groups.ListMembers
+      operationId: group_ListMember
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2995,7 +2995,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0
-      operationId: groups.members.DeleteRefDirectoryObject
+      operationId: group.member_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -3016,7 +3016,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-      operationId: groups.GetMembers.AsApplication
+      operationId: group_GetMemberAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3064,7 +3064,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-      operationId: groups.GetMembers.AsDevice
+      operationId: group_GetMemberAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3112,7 +3112,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: groups.GetMembers.AsGroup
+      operationId: group_GetMemberAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3160,7 +3160,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-      operationId: groups.GetMembers.AsOrgContact
+      operationId: group_GetMemberAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3208,7 +3208,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: groups.GetMembers.AsServicePrincipal
+      operationId: group_GetMemberAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3260,7 +3260,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
-      operationId: groups.GetMembers.AsUser
+      operationId: group_GetMemberAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3308,7 +3308,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.members.GetCount-e1e6
+      operationId: group.member_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3338,7 +3338,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
-      operationId: groups.ListRefMembers
+      operationId: group_ListMemberGraphBPreRef
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3384,7 +3384,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
-      operationId: groups.CreateRefMembers
+      operationId: group_CreateMemberGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -3403,7 +3403,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0
-      operationId: groups.DeleteRefMembers
+      operationId: group_DeleteMemberGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -3432,7 +3432,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-      operationId: groups.ListMembers.AsApplication
+      operationId: group_ListMemberAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3494,7 +3494,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.Members.GetCount.AsApplication-2734
+      operationId: group.Member_GetCountAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3520,7 +3520,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-      operationId: groups.ListMembers.AsDevice
+      operationId: group_ListMemberAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3582,7 +3582,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.Members.GetCount.AsDevice-e7a3
+      operationId: group.Member_GetCountAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3608,7 +3608,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: groups.ListMembers.AsGroup
+      operationId: group_ListMemberAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3670,7 +3670,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.Members.GetCount.AsGroup-86be
+      operationId: group.Member_GetCountAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3696,7 +3696,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-      operationId: groups.ListMembers.AsOrgContact
+      operationId: group_ListMemberAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3758,7 +3758,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.Members.GetCount.AsOrgContact-9781
+      operationId: group.Member_GetCountAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3784,7 +3784,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: groups.ListMembers.AsServicePrincipal
+      operationId: group_ListMemberAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3846,7 +3846,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.Members.GetCount.AsServicePrincipal-c922
+      operationId: group.Member_GetCountAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3876,7 +3876,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
-      operationId: groups.ListMembers.AsUser
+      operationId: group_ListMemberAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3938,7 +3938,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.Members.GetCount.AsUser-b36e
+      operationId: group.Member_GetCountAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3965,7 +3965,7 @@ paths:
         - groups.directoryObject
       summary: Get membersWithLicenseErrors from groups
       description: A list of group members with license errors from this group-based license assignment. Read-only.
-      operationId: groups.ListMembersWithLicenseErrors
+      operationId: group_ListMembersGraphWPreLicenseError
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4029,7 +4029,7 @@ paths:
         - groups.directoryObject
       summary: Get membersWithLicenseErrors from groups
       description: A list of group members with license errors from this group-based license assignment. Read-only.
-      operationId: groups.GetMembersWithLicenseErrors
+      operationId: group_GetMembersGraphWPreLicenseError
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4078,7 +4078,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-      operationId: groups.GetMembersWithLicenseErrors.AsApplication
+      operationId: group_GetMembersGraphWPreLicenseErrorAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4126,7 +4126,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-      operationId: groups.GetMembersWithLicenseErrors.AsDevice
+      operationId: group_GetMembersGraphWPreLicenseErrorAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4174,7 +4174,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: groups.GetMembersWithLicenseErrors.AsGroup
+      operationId: group_GetMembersGraphWPreLicenseErrorAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4222,7 +4222,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-      operationId: groups.GetMembersWithLicenseErrors.AsOrgContact
+      operationId: group_GetMembersGraphWPreLicenseErrorAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4270,7 +4270,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: groups.GetMembersWithLicenseErrors.AsServicePrincipal
+      operationId: group_GetMembersGraphWPreLicenseErrorAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4318,7 +4318,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-      operationId: groups.GetMembersWithLicenseErrors.AsUser
+      operationId: group_GetMembersGraphWPreLicenseErrorAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4366,7 +4366,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.membersWithLicenseErrors.GetCount-3ebc
+      operationId: group.membersGraphWPreLicenseError_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4392,7 +4392,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-      operationId: groups.ListMembersWithLicenseErrors.AsApplication
+      operationId: group_ListMembersGraphWPreLicenseErrorAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4454,7 +4454,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.MembersWithLicenseErrors.GetCount.AsApplication-85ba
+      operationId: group.MembersGraphWPreLicenseError_GetCountAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4480,7 +4480,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-      operationId: groups.ListMembersWithLicenseErrors.AsDevice
+      operationId: group_ListMembersGraphWPreLicenseErrorAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4542,7 +4542,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.MembersWithLicenseErrors.GetCount.AsDevice-5960
+      operationId: group.MembersGraphWPreLicenseError_GetCountAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4568,7 +4568,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: groups.ListMembersWithLicenseErrors.AsGroup
+      operationId: group_ListMembersGraphWPreLicenseErrorAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4630,7 +4630,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.MembersWithLicenseErrors.GetCount.AsGroup-bee4
+      operationId: group.MembersGraphWPreLicenseError_GetCountAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4656,7 +4656,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-      operationId: groups.ListMembersWithLicenseErrors.AsOrgContact
+      operationId: group_ListMembersGraphWPreLicenseErrorAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4718,7 +4718,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.MembersWithLicenseErrors.GetCount.AsOrgContact-7eba
+      operationId: group.MembersGraphWPreLicenseError_GetCountAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4744,7 +4744,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: groups.ListMembersWithLicenseErrors.AsServicePrincipal
+      operationId: group_ListMembersGraphWPreLicenseErrorAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4806,7 +4806,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.MembersWithLicenseErrors.GetCount.AsServicePrincipal-0062
+      operationId: group.MembersGraphWPreLicenseError_GetCountAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4832,7 +4832,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-      operationId: groups.ListMembersWithLicenseErrors.AsUser
+      operationId: group_ListMembersGraphWPreLicenseErrorAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4894,7 +4894,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.MembersWithLicenseErrors.GetCount.AsUser-0a9e
+      operationId: group.MembersGraphWPreLicenseError_GetCountAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4924,7 +4924,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-addfavorite?view=graph-rest-1.0
-      operationId: groups.group.addFavorite
+      operationId: group_addFavorite
       responses:
         '204':
           description: Success
@@ -4942,7 +4942,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-assignlicense?view=graph-rest-1.0
-      operationId: groups.group.assignLicense
+      operationId: group_assignLicense
       requestBody:
         description: Action parameters
         content:
@@ -4981,7 +4981,7 @@ paths:
       tags:
         - groups.group.Actions
       summary: Invoke action checkGrantedPermissionsForApp
-      operationId: groups.group.checkGrantedPermissionsForApp
+      operationId: group_checkGrantedPermissionsGraphFPreApp
       responses:
         2XX:
           description: Success
@@ -5015,7 +5015,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: groups.group.checkMemberGroups
+      operationId: group_checkMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -5056,7 +5056,7 @@ paths:
       tags:
         - groups.group.Actions
       summary: Invoke action checkMemberObjects
-      operationId: groups.group.checkMemberObjects
+      operationId: group_checkMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -5101,7 +5101,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: groups.group.getMemberGroups
+      operationId: group_getMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -5146,7 +5146,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
-      operationId: groups.group.getMemberObjects
+      operationId: group_getMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -5191,7 +5191,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-removefavorite?view=graph-rest-1.0
-      operationId: groups.group.removeFavorite
+      operationId: group_removeFavorite
       responses:
         '204':
           description: Success
@@ -5209,7 +5209,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-renew?view=graph-rest-1.0
-      operationId: groups.group.renew
+      operationId: group_renew
       responses:
         '204':
           description: Success
@@ -5227,7 +5227,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-resetunseencount?view=graph-rest-1.0
-      operationId: groups.group.resetUnseenCount
+      operationId: group_resetUnseenCount
       responses:
         '204':
           description: Success
@@ -5245,7 +5245,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: groups.group.restore
+      operationId: group_restore
       responses:
         2XX:
           description: Success
@@ -5270,7 +5270,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-retryserviceprovisioning?view=graph-rest-1.0
-      operationId: groups.group.retryServiceProvisioning
+      operationId: group_retryServiceProvisioning
       responses:
         '204':
           description: Success
@@ -5288,7 +5288,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-subscribebymail?view=graph-rest-1.0
-      operationId: groups.group.subscribeByMail
+      operationId: group_subscribeGraphBPreMail
       responses:
         '204':
           description: Success
@@ -5306,7 +5306,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-unsubscribebymail?view=graph-rest-1.0
-      operationId: groups.group.unsubscribeByMail
+      operationId: group_unsubscribeGraphBPreMail
       responses:
         '204':
           description: Success
@@ -5324,7 +5324,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-validateproperties?view=graph-rest-1.0
-      operationId: groups.group.validateProperties
+      operationId: group_validateProperty
       requestBody:
         description: Action parameters
         content:
@@ -5357,7 +5357,7 @@ paths:
       tags:
         - groups.onPremisesSyncBehavior
       summary: Get onPremisesSyncBehavior from groups
-      operationId: groups.GetOnPremisesSyncBehavior
+      operationId: group_GetOnPremisesSyncBehavior
       parameters:
         - name: $select
           in: query
@@ -5395,7 +5395,7 @@ paths:
       tags:
         - groups.onPremisesSyncBehavior
       summary: Update the navigation property onPremisesSyncBehavior in groups
-      operationId: groups.UpdateOnPremisesSyncBehavior
+      operationId: group_UpdateOnPremisesSyncBehavior
       requestBody:
         description: New navigation property values
         content:
@@ -5419,7 +5419,7 @@ paths:
       tags:
         - groups.onPremisesSyncBehavior
       summary: Delete navigation property onPremisesSyncBehavior for groups
-      operationId: groups.DeleteOnPremisesSyncBehavior
+      operationId: group_DeleteOnPremisesSyncBehavior
       parameters:
         - name: If-Match
           in: header
@@ -5444,7 +5444,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0
-      operationId: groups.ListOwners
+      operationId: group_ListOwner
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5511,7 +5511,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete-owners?view=graph-rest-1.0
-      operationId: groups.owners.DeleteRefDirectoryObject
+      operationId: group.owner_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -5532,7 +5532,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-      operationId: groups.GetOwners.AsApplication
+      operationId: group_GetOwnerAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5580,7 +5580,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-      operationId: groups.GetOwners.AsDevice
+      operationId: group_GetOwnerAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5628,7 +5628,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: groups.GetOwners.AsGroup
+      operationId: group_GetOwnerAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5676,7 +5676,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-      operationId: groups.GetOwners.AsOrgContact
+      operationId: group_GetOwnerAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5724,7 +5724,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: groups.GetOwners.AsServicePrincipal
+      operationId: group_GetOwnerAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5772,7 +5772,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-      operationId: groups.GetOwners.AsUser
+      operationId: group_GetOwnerAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5820,7 +5820,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.owners.GetCount-9fe3
+      operationId: group.owner_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5850,7 +5850,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0
-      operationId: groups.ListRefOwners
+      operationId: group_ListOwnerGraphBPreRef
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5896,7 +5896,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-owners?view=graph-rest-1.0
-      operationId: groups.CreateRefOwners
+      operationId: group_CreateOwnerGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -5915,7 +5915,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete-owners?view=graph-rest-1.0
-      operationId: groups.DeleteRefOwners
+      operationId: group_DeleteOwnerGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -5944,7 +5944,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-      operationId: groups.ListOwners.AsApplication
+      operationId: group_ListOwnerAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -6006,7 +6006,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.Owners.GetCount.AsApplication-bd83
+      operationId: group.Owner_GetCountAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -6032,7 +6032,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-      operationId: groups.ListOwners.AsDevice
+      operationId: group_ListOwnerAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -6094,7 +6094,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.Owners.GetCount.AsDevice-2b5b
+      operationId: group.Owner_GetCountAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -6120,7 +6120,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: groups.ListOwners.AsGroup
+      operationId: group_ListOwnerAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -6182,7 +6182,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.Owners.GetCount.AsGroup-a694
+      operationId: group.Owner_GetCountAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -6208,7 +6208,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-      operationId: groups.ListOwners.AsOrgContact
+      operationId: group_ListOwnerAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -6270,7 +6270,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.Owners.GetCount.AsOrgContact-b70b
+      operationId: group.Owner_GetCountAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -6296,7 +6296,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: groups.ListOwners.AsServicePrincipal
+      operationId: group_ListOwnerAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -6358,7 +6358,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.Owners.GetCount.AsServicePrincipal-8498
+      operationId: group.Owner_GetCountAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -6384,7 +6384,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-      operationId: groups.ListOwners.AsUser
+      operationId: group_ListOwnerAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -6446,7 +6446,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.Owners.GetCount.AsUser-1c87
+      operationId: group.Owner_GetCountAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -6476,7 +6476,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-permissiongrants?view=graph-rest-1.0
-      operationId: groups.ListPermissionGrants
+      operationId: group_ListPermissionGrant
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6528,7 +6528,7 @@ paths:
       tags:
         - groups.resourceSpecificPermissionGrant
       summary: Create new navigation property to permissionGrants for groups
-      operationId: groups.CreatePermissionGrants
+      operationId: group_CreatePermissionGrant
       requestBody:
         description: New navigation property
         content:
@@ -6553,7 +6553,7 @@ paths:
       tags:
         - groups.resourceSpecificPermissionGrant
       summary: Get permissionGrants from groups
-      operationId: groups.GetPermissionGrants
+      operationId: group_GetPermissionGrant
       parameters:
         - name: $select
           in: query
@@ -6591,7 +6591,7 @@ paths:
       tags:
         - groups.resourceSpecificPermissionGrant
       summary: Update the navigation property permissionGrants in groups
-      operationId: groups.UpdatePermissionGrants
+      operationId: group_UpdatePermissionGrant
       requestBody:
         description: New navigation property values
         content:
@@ -6615,7 +6615,7 @@ paths:
       tags:
         - groups.resourceSpecificPermissionGrant
       summary: Delete navigation property permissionGrants for groups
-      operationId: groups.DeletePermissionGrants
+      operationId: group_DeletePermissionGrant
       parameters:
         - name: If-Match
           in: header
@@ -6636,7 +6636,7 @@ paths:
       tags:
         - groups.resourceSpecificPermissionGrant
       summary: Get the number of the resource
-      operationId: groups.permissionGrants.GetCount-76af
+      operationId: group.permissionGrant_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6653,7 +6653,7 @@ paths:
         - groups.profilePhoto
       summary: Get photo from groups
       description: The group's profile photo
-      operationId: groups.GetPhoto
+      operationId: group_GetPhoto
       parameters:
         - name: $select
           in: query
@@ -6691,7 +6691,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Update the navigation property photo in groups
-      operationId: groups.UpdatePhoto
+      operationId: group_UpdatePhoto
       requestBody:
         description: New navigation property values
         content:
@@ -6715,7 +6715,7 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Delete navigation property photo for groups
-      operationId: groups.DeletePhoto
+      operationId: group_DeletePhoto
       parameters:
         - name: If-Match
           in: header
@@ -6737,7 +6737,7 @@ paths:
         - groups.profilePhoto
       summary: Get media content for the navigation property photo from groups
       description: The group's profile photo
-      operationId: groups.GetPhotoContent
+      operationId: group_GetPhotoContent
       responses:
         2XX:
           description: Retrieved media content
@@ -6755,7 +6755,7 @@ paths:
         - groups.profilePhoto
       summary: Update media content for the navigation property photo in groups
       description: The group's profile photo
-      operationId: groups.UpdatePhotoContent
+      operationId: group_SetPhotoContent
       requestBody:
         description: New media content.
         content:
@@ -6776,7 +6776,7 @@ paths:
         - groups.profilePhoto
       summary: Delete media content for the navigation property photo in groups
       description: The group's profile photo
-      operationId: groups.DeletePhotoContent
+      operationId: group_DeletePhotoContent
       parameters:
         - name: If-Match
           in: header
@@ -6800,7 +6800,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
-      operationId: groups.ListPhotos
+      operationId: group_ListPhoto
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6854,7 +6854,7 @@ paths:
         - groups.profilePhoto
       summary: Get photos from groups
       description: The profile photos owned by the group. Read-only. Nullable.
-      operationId: groups.GetPhotos
+      operationId: group_GetPhoto
       parameters:
         - name: $select
           in: query
@@ -6897,7 +6897,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
-      operationId: groups.GetPhotosContent
+      operationId: group_GetPhotosContent
       responses:
         2XX:
           description: Retrieved media content
@@ -6915,7 +6915,7 @@ paths:
         - groups.profilePhoto
       summary: Update media content for the navigation property photos in groups
       description: The unique identifier for an entity. Read-only.
-      operationId: groups.UpdatePhotosContent
+      operationId: group_SetPhotosContent
       requestBody:
         description: New media content.
         content:
@@ -6936,7 +6936,7 @@ paths:
         - groups.profilePhoto
       summary: Delete media content for the navigation property photos in groups
       description: The unique identifier for an entity. Read-only.
-      operationId: groups.DeletePhotosContent
+      operationId: group_DeletePhotosContent
       parameters:
         - name: If-Match
           in: header
@@ -6960,7 +6960,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0
-      operationId: groups.ListRejectedSenders
+      operationId: group_ListRejectedSender
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7016,7 +7016,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete-rejectedsenders?view=graph-rest-1.0
-      operationId: groups.rejectedSenders.DeleteRefDirectoryObject
+      operationId: group.rejectedSender_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -7037,7 +7037,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.rejectedSenders.GetCount-b188
+      operationId: group.rejectedSender_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7057,7 +7057,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0
-      operationId: groups.ListRefRejectedSenders
+      operationId: group_ListRejectedSenderGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7093,7 +7093,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-rejectedsenders?view=graph-rest-1.0
-      operationId: groups.CreateRefRejectedSenders
+      operationId: group_CreateRejectedSenderGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -7111,7 +7111,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete-rejectedsenders?view=graph-rest-1.0
-      operationId: groups.DeleteRefRejectedSenders
+      operationId: group_DeleteRejectedSenderGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -7144,7 +7144,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0
-      operationId: groups.ListSettings
+      operationId: group_ListSetting
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7200,7 +7200,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0
-      operationId: groups.CreateSettings
+      operationId: group_CreateSetting
       requestBody:
         description: New navigation property
         content:
@@ -7229,7 +7229,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
-      operationId: groups.GetSettings
+      operationId: group_GetSetting
       parameters:
         - name: $select
           in: query
@@ -7271,7 +7271,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
-      operationId: groups.UpdateSettings
+      operationId: group_UpdateSetting
       requestBody:
         description: New navigation property values
         content:
@@ -7295,7 +7295,7 @@ paths:
       tags:
         - groups.groupSetting
       summary: Delete navigation property settings for groups
-      operationId: groups.DeleteSettings
+      operationId: group_DeleteSetting
       parameters:
         - name: If-Match
           in: header
@@ -7316,7 +7316,7 @@ paths:
       tags:
         - groups.groupSetting
       summary: Get the number of the resource
-      operationId: groups.settings.GetCount-7641
+      operationId: group.setting_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7332,7 +7332,7 @@ paths:
       tags:
         - groups.group.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.group.sites.site.getByPath.getActivitiesByInterval-4c35
+      operationId: group.site.getGraphBPrePath_getActivitiesGraphBPreInterval
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7398,7 +7398,7 @@ paths:
       tags:
         - groups.group.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: groups.group.sites.site.getByPath.getActivitiesByInterval-ad27
+      operationId: group.site.getGraphBPrePath_getActivitiesGraphBPreInterval
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7468,7 +7468,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-1.0
-      operationId: groups.group.sites.site.getByPath.getApplicableContentTypesForList
+      operationId: group.site.getGraphBPrePath_getApplicableContentTypesGraphFPreList
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7538,7 +7538,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-threads?view=graph-rest-1.0
-      operationId: groups.ListThreads
+      operationId: group_ListThread
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7594,7 +7594,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-threads?view=graph-rest-1.0
-      operationId: groups.CreateThreads
+      operationId: group_CreateThread
       requestBody:
         description: New navigation property
         content:
@@ -7623,7 +7623,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
-      operationId: groups.GetThreads
+      operationId: group_GetThread
       parameters:
         - name: $select
           in: query
@@ -7664,7 +7664,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-update-thread?view=graph-rest-1.0
-      operationId: groups.UpdateThreads
+      operationId: group_UpdateThread
       requestBody:
         description: New navigation property values
         content:
@@ -7692,7 +7692,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
-      operationId: groups.DeleteThreads
+      operationId: group_DeleteThread
       parameters:
         - name: If-Match
           in: header
@@ -7717,7 +7717,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
-      operationId: groups.group.threads.conversationThread.reply
+      operationId: group.thread.conversationThread_reply
       requestBody:
         description: Action parameters
         content:
@@ -7745,7 +7745,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
-      operationId: groups.threads.ListPosts
+      operationId: group.thread_ListPost
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7798,7 +7798,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get posts from groups
-      operationId: groups.threads.GetPosts
+      operationId: group.thread_GetPost
       parameters:
         - name: $select
           in: query
@@ -7841,7 +7841,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
-      operationId: groups.threads.posts.ListAttachments
+      operationId: group.thread.post_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7893,7 +7893,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to attachments for groups
-      operationId: groups.threads.posts.CreateAttachments
+      operationId: group.thread.post_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -7919,7 +7919,7 @@ paths:
         - groups.conversationThread
       summary: Get attachments from groups
       description: Read-only. Nullable. Supports $expand.
-      operationId: groups.threads.posts.GetAttachments
+      operationId: group.thread.post_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -7957,7 +7957,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property attachments for groups
-      operationId: groups.threads.posts.DeleteAttachments
+      operationId: group.thread.post_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -7978,7 +7978,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get the number of the resource
-      operationId: groups.threads.posts.attachments.GetCount-b54e
+      operationId: group.thread.post.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7998,7 +7998,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.group.threads.conversationThread.posts.post.attachments.createUploadSession
+      operationId: group.thread.conversationThread.post.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -8030,7 +8030,7 @@ paths:
         - groups.conversationThread
       summary: Get open extension
       description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
-      operationId: groups.threads.posts.ListExtensions
+      operationId: group.thread.post_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8082,7 +8082,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to extensions for groups
-      operationId: groups.threads.posts.CreateExtensions
+      operationId: group.thread.post_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -8111,7 +8111,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
-      operationId: groups.threads.posts.GetExtensions
+      operationId: group.thread.post_GetExtension
       parameters:
         - name: $select
           in: query
@@ -8153,7 +8153,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-update?view=graph-rest-1.0
-      operationId: groups.threads.posts.UpdateExtensions
+      operationId: group.thread.post_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -8177,7 +8177,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property extensions for groups
-      operationId: groups.threads.posts.DeleteExtensions
+      operationId: group.thread.post_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -8198,7 +8198,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get the number of the resource
-      operationId: groups.threads.posts.extensions.GetCount-5e10
+      operationId: group.thread.post.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8215,7 +8215,7 @@ paths:
         - groups.conversationThread
       summary: Get inReplyTo from groups
       description: Read-only. Supports $expand.
-      operationId: groups.threads.posts.GetInReplyTo
+      operationId: group.thread.post_GetInReplyTo
       parameters:
         - name: $select
           in: query
@@ -8255,7 +8255,7 @@ paths:
         - groups.conversationThread
       summary: Get attachments from groups
       description: Read-only. Nullable. Supports $expand.
-      operationId: groups.threads.posts.inReplyTo.ListAttachments
+      operationId: group.thread.post.inReplyTo_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8307,7 +8307,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to attachments for groups
-      operationId: groups.threads.posts.inReplyTo.CreateAttachments
+      operationId: group.thread.post.inReplyTo_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -8333,7 +8333,7 @@ paths:
         - groups.conversationThread
       summary: Get attachments from groups
       description: Read-only. Nullable. Supports $expand.
-      operationId: groups.threads.posts.inReplyTo.GetAttachments
+      operationId: group.thread.post.inReplyTo_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -8371,7 +8371,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property attachments for groups
-      operationId: groups.threads.posts.inReplyTo.DeleteAttachments
+      operationId: group.thread.post.inReplyTo_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -8392,7 +8392,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get the number of the resource
-      operationId: groups.threads.posts.inReplyTo.attachments.GetCount-5b74
+      operationId: group.thread.post.inReplyTo.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8412,7 +8412,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: groups.group.threads.conversationThread.posts.post.inReplyTo.attachments.createUploadSession
+      operationId: group.thread.conversationThread.post.inReplyTo.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -8444,7 +8444,7 @@ paths:
         - groups.conversationThread
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.threads.posts.inReplyTo.ListExtensions
+      operationId: group.thread.post.inReplyTo_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8496,7 +8496,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Create new navigation property to extensions for groups
-      operationId: groups.threads.posts.inReplyTo.CreateExtensions
+      operationId: group.thread.post.inReplyTo_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -8522,7 +8522,7 @@ paths:
         - groups.conversationThread
       summary: Get extensions from groups
       description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-      operationId: groups.threads.posts.inReplyTo.GetExtensions
+      operationId: group.thread.post.inReplyTo_GetExtension
       parameters:
         - name: $select
           in: query
@@ -8560,7 +8560,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Update the navigation property extensions in groups
-      operationId: groups.threads.posts.inReplyTo.UpdateExtensions
+      operationId: group.thread.post.inReplyTo_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -8584,7 +8584,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Delete navigation property extensions for groups
-      operationId: groups.threads.posts.inReplyTo.DeleteExtensions
+      operationId: group.thread.post.inReplyTo_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -8605,7 +8605,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get the number of the resource
-      operationId: groups.threads.posts.inReplyTo.extensions.GetCount-364f
+      operationId: group.thread.post.inReplyTo.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8625,7 +8625,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
-      operationId: groups.group.threads.conversationThread.posts.post.inReplyTo.forward
+      operationId: group.thread.conversationThread.post.inReplyTo_forward
       requestBody:
         description: Action parameters
         content:
@@ -8654,7 +8654,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Invoke action reply
-      operationId: groups.group.threads.conversationThread.posts.post.inReplyTo.reply
+      operationId: group.thread.conversationThread.post.inReplyTo_reply
       requestBody:
         description: Action parameters
         content:
@@ -8682,7 +8682,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
-      operationId: groups.group.threads.conversationThread.posts.post.forward
+      operationId: group.thread.conversationThread.post_forward
       requestBody:
         description: Action parameters
         content:
@@ -8711,7 +8711,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Invoke action reply
-      operationId: groups.group.threads.conversationThread.posts.post.reply
+      operationId: group.thread.conversationThread.post_reply
       requestBody:
         description: Action parameters
         content:
@@ -8735,7 +8735,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get the number of the resource
-      operationId: groups.threads.posts.GetCount-fcff
+      operationId: group.thread.post_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8751,7 +8751,7 @@ paths:
       tags:
         - groups.conversationThread
       summary: Get the number of the resource
-      operationId: groups.threads.GetCount-22d8
+      operationId: group.thread_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8771,7 +8771,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-1.0
-      operationId: groups.ListTransitiveMemberOf
+      operationId: group_ListTransitiveMemberGraphOPre
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -8835,7 +8835,7 @@ paths:
         - groups.directoryObject
       summary: Get transitiveMemberOf from groups
       description: 'The groups that a group is a member of, either directly or through nested membership. Nullable.'
-      operationId: groups.GetTransitiveMemberOf
+      operationId: group_GetTransitiveMemberGraphOPre
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -8884,7 +8884,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: groups.GetTransitiveMemberOf.AsAdministrativeUnit
+      operationId: group_GetTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -8932,7 +8932,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: groups.GetTransitiveMemberOf.AsGroup
+      operationId: group_GetTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -8980,7 +8980,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.transitiveMemberOf.GetCount-c756
+      operationId: group.transitiveMemberOf_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9006,7 +9006,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: groups.ListTransitiveMemberOf.AsAdministrativeUnit
+      operationId: group_ListTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9068,7 +9068,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.TransitiveMemberOf.GetCount.AsAdministrativeUnit-af58
+      operationId: group.TransitiveMemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9094,7 +9094,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: groups.ListTransitiveMemberOf.AsGroup
+      operationId: group_ListTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9156,7 +9156,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.TransitiveMemberOf.GetCount.AsGroup-4a46
+      operationId: group.TransitiveMemberOf_GetCountAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9186,7 +9186,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0
-      operationId: groups.ListTransitiveMembers
+      operationId: group_ListTransitiveMember
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9250,7 +9250,7 @@ paths:
         - groups.directoryObject
       summary: Get transitiveMembers from groups
       description: The direct and transitive members of a group. Nullable.
-      operationId: groups.GetTransitiveMembers
+      operationId: group_GetTransitiveMember
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9299,7 +9299,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-      operationId: groups.GetTransitiveMembers.AsApplication
+      operationId: group_GetTransitiveMemberAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9347,7 +9347,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-      operationId: groups.GetTransitiveMembers.AsDevice
+      operationId: group_GetTransitiveMemberAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9399,7 +9399,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0
-      operationId: groups.GetTransitiveMembers.AsGroup
+      operationId: group_GetTransitiveMemberAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9447,7 +9447,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-      operationId: groups.GetTransitiveMembers.AsOrgContact
+      operationId: group_GetTransitiveMemberAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9495,7 +9495,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: groups.GetTransitiveMembers.AsServicePrincipal
+      operationId: group_GetTransitiveMemberAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9547,7 +9547,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0
-      operationId: groups.GetTransitiveMembers.AsUser
+      operationId: group_GetTransitiveMemberAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9595,7 +9595,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.transitiveMembers.GetCount-1996
+      operationId: group.transitiveMember_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9621,7 +9621,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-      operationId: groups.ListTransitiveMembers.AsApplication
+      operationId: group_ListTransitiveMemberAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9683,7 +9683,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.TransitiveMembers.GetCount.AsApplication-eafb
+      operationId: group.TransitiveMember_GetCountAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9709,7 +9709,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-      operationId: groups.ListTransitiveMembers.AsDevice
+      operationId: group_ListTransitiveMemberAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9771,7 +9771,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.TransitiveMembers.GetCount.AsDevice-0e55
+      operationId: group.TransitiveMember_GetCountAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9801,7 +9801,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0
-      operationId: groups.ListTransitiveMembers.AsGroup
+      operationId: group_ListTransitiveMemberAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9863,7 +9863,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.TransitiveMembers.GetCount.AsGroup-d4d7
+      operationId: group.TransitiveMember_GetCountAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9889,7 +9889,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-      operationId: groups.ListTransitiveMembers.AsOrgContact
+      operationId: group_ListTransitiveMemberAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9951,7 +9951,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.TransitiveMembers.GetCount.AsOrgContact-a89e
+      operationId: group.TransitiveMember_GetCountAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9977,7 +9977,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: groups.ListTransitiveMembers.AsServicePrincipal
+      operationId: group_ListTransitiveMemberAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -10039,7 +10039,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.TransitiveMembers.GetCount.AsServicePrincipal-102f
+      operationId: group.TransitiveMember_GetCountAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -10069,7 +10069,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0
-      operationId: groups.ListTransitiveMembers.AsUser
+      operationId: group_ListTransitiveMemberAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -10131,7 +10131,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: groups.TransitiveMembers.GetCount.AsUser-c600
+      operationId: group.TransitiveMember_GetCountAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -10161,7 +10161,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-get?view=graph-rest-1.0
-      operationId: groups.group.GetGroupByUniqueName
+      operationId: group_GetGroupGraphBPreUniqueName
       parameters:
         - name: $select
           in: query
@@ -10203,7 +10203,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0
-      operationId: groups.group.UpdateGroupByUniqueName
+      operationId: group_UpdateGroupGraphBPreUniqueName
       requestBody:
         description: New property values
         content:
@@ -10231,7 +10231,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete?view=graph-rest-1.0
-      operationId: groups.group.DeleteGroupByUniqueName
+      operationId: group_DeleteGroupGraphBPreUniqueName
       parameters:
         - name: If-Match
           in: header
@@ -10252,7 +10252,7 @@ paths:
       tags:
         - groups.group
       summary: Get the number of the resource
-      operationId: groups.GetCount-044a
+      operationId: group_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -10282,7 +10282,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delta?view=graph-rest-1.0
-      operationId: groups.delta
+      operationId: group_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10352,7 +10352,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: groups.getAvailableExtensionProperties
+      operationId: group_getAvailableExtensionProperty
       requestBody:
         description: Action parameters
         content:
@@ -10398,7 +10398,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: groups.getByIds
+      operationId: group_getGraphBPreId
       requestBody:
         description: Action parameters
         content:
@@ -10449,7 +10449,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: groups.validateProperties
+      operationId: group_validateProperty
       requestBody:
         description: Action parameters
         content:
@@ -10489,7 +10489,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0
-      operationId: groupSettings.groupSetting.ListGroupSetting
+      operationId: groupSetting_ListGroupSetting
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10545,7 +10545,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0
-      operationId: groupSettings.groupSetting.CreateGroupSetting
+      operationId: groupSetting_CreateGroupSetting
       requestBody:
         description: New entity
         content:
@@ -10574,7 +10574,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
-      operationId: groupSettings.groupSetting.GetGroupSetting
+      operationId: groupSetting_GetGroupSetting
       parameters:
         - name: $select
           in: query
@@ -10616,7 +10616,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
-      operationId: groupSettings.groupSetting.UpdateGroupSetting
+      operationId: groupSetting_UpdateGroupSetting
       requestBody:
         description: New property values
         content:
@@ -10644,7 +10644,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/groupsetting-delete?view=graph-rest-1.0
-      operationId: groupSettings.groupSetting.DeleteGroupSetting
+      operationId: groupSetting_DeleteGroupSetting
       parameters:
         - name: If-Match
           in: header
@@ -10665,7 +10665,7 @@ paths:
       tags:
         - groupSettings.groupSetting
       summary: Get the number of the resource
-      operationId: groupSettings.GetCount-d8de
+      operationId: groupSetting_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10685,7 +10685,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/groupsettingtemplate-list?view=graph-rest-1.0
-      operationId: groupSettingTemplates.groupSettingTemplate.ListGroupSettingTemplate
+      operationId: groupSettingTemplate_ListGroupSettingTemplate
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10737,7 +10737,7 @@ paths:
       tags:
         - groupSettingTemplates.groupSettingTemplate
       summary: Add new entity to groupSettingTemplates
-      operationId: groupSettingTemplates.groupSettingTemplate.CreateGroupSettingTemplate
+      operationId: groupSettingTemplate_CreateGroupSettingTemplate
       requestBody:
         description: New entity
         content:
@@ -10766,7 +10766,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/groupsettingtemplate-get?view=graph-rest-1.0
-      operationId: groupSettingTemplates.groupSettingTemplate.GetGroupSettingTemplate
+      operationId: groupSettingTemplate_GetGroupSettingTemplate
       parameters:
         - name: $select
           in: query
@@ -10804,7 +10804,7 @@ paths:
       tags:
         - groupSettingTemplates.groupSettingTemplate
       summary: Update entity in groupSettingTemplates
-      operationId: groupSettingTemplates.groupSettingTemplate.UpdateGroupSettingTemplate
+      operationId: groupSettingTemplate_UpdateGroupSettingTemplate
       requestBody:
         description: New property values
         content:
@@ -10828,7 +10828,7 @@ paths:
       tags:
         - groupSettingTemplates.groupSettingTemplate
       summary: Delete entity from groupSettingTemplates
-      operationId: groupSettingTemplates.groupSettingTemplate.DeleteGroupSettingTemplate
+      operationId: groupSettingTemplate_DeleteGroupSettingTemplate
       parameters:
         - name: If-Match
           in: header
@@ -10853,7 +10853,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: groupSettingTemplates.groupSettingTemplate.checkMemberGroups
+      operationId: groupSettingTemplate_checkMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -10894,7 +10894,7 @@ paths:
       tags:
         - groupSettingTemplates.groupSettingTemplate.Actions
       summary: Invoke action checkMemberObjects
-      operationId: groupSettingTemplates.groupSettingTemplate.checkMemberObjects
+      operationId: groupSettingTemplate_checkMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -10939,7 +10939,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: groupSettingTemplates.groupSettingTemplate.getMemberGroups
+      operationId: groupSettingTemplate_getMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -10984,7 +10984,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
-      operationId: groupSettingTemplates.groupSettingTemplate.getMemberObjects
+      operationId: groupSettingTemplate_getMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -11029,7 +11029,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: groupSettingTemplates.groupSettingTemplate.restore
+      operationId: groupSettingTemplate_restore
       responses:
         2XX:
           description: Success
@@ -11050,7 +11050,7 @@ paths:
       tags:
         - groupSettingTemplates.groupSettingTemplate
       summary: Get the number of the resource
-      operationId: groupSettingTemplates.GetCount-f6d8
+      operationId: groupSettingTemplate_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11070,7 +11070,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-1.0
-      operationId: groupSettingTemplates.delta
+      operationId: groupSettingTemplate_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11140,7 +11140,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: groupSettingTemplates.getAvailableExtensionProperties
+      operationId: groupSettingTemplate_getAvailableExtensionProperty
       requestBody:
         description: Action parameters
         content:
@@ -11186,7 +11186,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: groupSettingTemplates.getByIds
+      operationId: groupSettingTemplate_getGraphBPreId
       requestBody:
         description: Action parameters
         content:
@@ -11237,7 +11237,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: groupSettingTemplates.validateProperties
+      operationId: groupSettingTemplate_validateProperty
       requestBody:
         description: Action parameters
         content:
@@ -11318,7 +11318,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. To learn more about managing this property for Microsoft 365 vs. cloud security groups, see Key differences from Microsoft 365 group labeling.'
             assignedLicenses:
               type: array
               items:
@@ -12156,7 +12156,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.'
+              description: 'The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable. App roles and exposed delegated permission scopes (api.oauth2PermissionScopes) share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. This limit is separate from the aggregate 1,200-entry application manifest limit and from app role assignment limits. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             authenticationBehaviors:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.authenticationBehaviors'
@@ -12734,7 +12734,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The roles exposed by the application that''s linked to this service principal. For more information, see the appRoles property definition on the application entity. Not nullable.'
+              description: 'The roles exposed by the application that''s linked to this service principal. For more information, see the appRoles property definition on the application entity. Not nullable. App roles and exposed delegated permission scopes (oauth2PermissionScopes) share a default limit of 700 permission definitions per service principal, including definitions inherited from the application and definitions added directly to the service principal. Enabled and disabled definitions both count. This limit counts definitions, not app role assignments. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             createdByAppId:
               type: string
               description: The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.
@@ -12796,7 +12796,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionScope'
-              description: 'The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity''s api property. Not nullable.'
+              description: 'The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. These scopes and appRoles share a default limit of 700 permission definitions per service principal. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             passwordCredentials:
               type: array
               items:
@@ -14186,6 +14186,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -14373,6 +14374,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -14641,6 +14643,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -14999,6 +15004,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
@@ -16452,7 +16458,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.permissionScope'
-          description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.'
+          description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes. These scopes and the application''s appRoles share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
         preAuthorizedApplications:
           type: array
           items:
@@ -17764,6 +17770,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               description: Represents a platform credential instance registered to a user on Mac OS.
+              x-ms-navigationProperty: true
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
               x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
@@ -19305,11 +19317,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Offline, OutOfOffice, PresenceUnknown.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.'
+              description: 'The base presence information for a user. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Focusing, InACall, InAMeeting, Offline, Presenting, PresenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               anyOf:
@@ -22890,6 +22902,7 @@ components:
               '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+              '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
               '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
               '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
               '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -23046,6 +23059,29 @@ components:
               type: string
               default: '#microsoft.graph.platformCredentialAuthenticationMethod'
       x-ms-discriminator-value: '#microsoft.graph.platformCredentialAuthenticationMethod'
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.device'
+                - type: object
+                  nullable: true
+              description: The registered device on which this resource account key resides. Supports $expand.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
+      x-ms-discriminator-value: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -26906,6 +26942,18 @@ components:
             resource:
               type: string
               description: Required. Specifies the resource that is monitored for changes. Don't include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+            vapidPublicKey:
+              type: string
+              description: 'Optional. The application server''s VAPID public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained by calling the getVapidPublicKey function on the subscription collection. The browser passes this value to PushManager.subscribe({ applicationServerKey: vapidPublicKey }) to bind the push subscription to this server identity. Required when notificationUrl targets a known Web Push service origin (for example, *.push.apple.com, fcm.googleapis.com, updates.push.services.mozilla.com); rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8292.'
+              nullable: true
+            webPushEncryptionP256dhPublicKey:
+              type: string
+              description: 'Optional. The subscriber''s ECDH public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''p256dh''). Used as the peer public key during ECDH key agreement to derive the per-message content encryption key for RFC 8291 payload encryption. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
+            webPushEncryptionSecret:
+              type: string
+              description: 'Optional. The subscriber''s auth secret, base64url-encoded (16 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''auth''). Used as the HMAC-SHA-256 salt for the HKDF combine step that derives key material for RFC 8291 payload encryption. Write-only: this value is never returned in GET responses (returned as null). Treat as a secret. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.subscription'
