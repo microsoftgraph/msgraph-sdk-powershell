@@ -75,7 +75,7 @@ public sealed class CompositeKeyTests
             using var stream = new MemoryStream(Encoding.UTF8.GetBytes(Spec(parent)));
             var document = (await OpenApiDocument.LoadAsync(stream, settings: settings,
                 cancellationToken: CancellationToken.None)).Document!;
-            var config = new GeneratorConfig("Regression.Client", output, ApiVersion: "beta", UseCollisionData: false);
+            var config = new GeneratorConfig("Regression.Client", output, UseCollisionData: false);
             await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance)
                 .GenerateAsync(CancellationToken.None);
             var sources = Directory.GetFiles(output, "*.g.cs").Select(file => File.ReadAllText(file).ReplaceLineEndings("\n"))

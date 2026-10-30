@@ -8,7 +8,7 @@ namespace WrapperGenerator;
 // selected OpenAPI operation: mandatory path-id parameters, an optional -AccessToken with a
 // Connect-MgGraph fallback, a ShouldProcess gate on mutating calls, and the Kiota client's
 // property/indexer chain for the actual request.
-public static class CmdletEmitter
+public static partial class CmdletEmitter
 {
     // Transport acquisition lives on GraphClientCmdlet in Microsoft.Graph.Wrapper.Runtime: the
     // session path reuses one adapter keyed to the session HttpClient's identity, the token
@@ -139,8 +139,9 @@ public static class CmdletEmitter
     // are documented without it, so an unbound -OutFile writes the bytes to the pipeline
     // instead, and both documented usages work.
     // The [GraphRoute] attribute line for a cmdlet class. See GraphRouteAttribute in Microsoft.Graph.Wrapper.Runtime.
-    private static string RouteAttr(CmdletNaming naming) =>
-        $"    [GraphRoute(\"{EscapeLiteral(naming.SourceMethod)}\", \"{EscapeLiteral(naming.SourcePath)}\")]";
+    private static string RouteAttr(CmdletNaming naming, string? parameterSetName = null) =>
+        $"    [GraphRoute(\"{EscapeLiteral(naming.SourceMethod)}\", \"{EscapeLiteral(naming.SourcePath)}\""
+        + (parameterSetName is null ? "" : $", ParameterSetName = \"{EscapeLiteral(parameterSetName)}\"") + ")]";
 
     private static string OutFileParamDecl() => """
 
@@ -1288,10 +1289,13 @@ namespace {{ctx.CmdletNamespace}}
     // body property collides with a path id. The body assignment keeps PascalName — the
     // Kiota model property is unaffected by the parameter rename.
     private static string EmitPropertyParameters(IReadOnlyList<CmdletProperty> properties) =>
-        string.Join("\n", properties.Select(p => $$"""
+        EmitBodyParameters(GetBodyDispatchParameters(properties, [], []));
+
+    private static string EmitBodyParameters(IReadOnlyList<DispatchParameter> parameters) =>
+        string.Join("\n", parameters.Select(p => $$"""
 
                 [Parameter(Mandatory = false)]
-                public {{p.PsTypeName}}? {{p.ParameterName}} { get; set; }
+                public {{p.Type}} {{p.Name}} { get; set; }
         """));
 
     private static string EmitPropertyAssignments(IReadOnlyList<CmdletProperty> properties) =>
@@ -1307,11 +1311,7 @@ namespace {{ctx.CmdletNamespace}}
     // TypeName is fully qualified: the models namespace is imported, but a model whose name
     // matches a cmdlet parameter or BCL type would otherwise bind to the wrong symbol.
     private static string EmitComplexParameters(IReadOnlyList<ComplexParameter> properties) =>
-        string.Join("\n", properties.Select(p => $$"""
-
-                [Parameter(Mandatory = false)]
-                public {{p.ElementNullableTypeName}}? {{p.ParameterName}} { get; set; }
-        """));
+        EmitBodyParameters(GetBodyDispatchParameters([], properties, []));
 
     private static string EmitComplexAssignments(IReadOnlyList<ComplexParameter> properties) =>
         string.Join("\n", properties.Select(p => $$"""
@@ -1324,11 +1324,7 @@ namespace {{ctx.CmdletNamespace}}
     // PowerShell value. A conversion result of null means "omit", which is why the assignment
     // is guarded on the converted value and not merely on the parameter being bound.
     private static string EmitUntypedParameters(IReadOnlyList<UntypedParameter> properties) =>
-        string.Join("\n", properties.Select(p => $$"""
-
-                [Parameter(Mandatory = false)]
-                public object? {{p.ParameterName}} { get; set; }
-        """));
+        EmitBodyParameters(GetBodyDispatchParameters([], [], properties));
 
     private static string EmitUntypedAssignments(IReadOnlyList<UntypedParameter> properties) =>
         string.Join("\n", properties.Select(p => $$"""
