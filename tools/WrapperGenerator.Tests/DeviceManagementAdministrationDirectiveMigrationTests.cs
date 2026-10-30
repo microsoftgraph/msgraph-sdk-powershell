@@ -13,24 +13,23 @@ namespace WrapperGenerator.Tests;
 public sealed class DeviceManagementAdministrationDirectiveMigrationTests
 {
     private const string Module = "DeviceManagement.Administration";
+    private const string Profile = "v1.0";
     private const string Root = "/deviceManagement/virtualEndpoint";
-    private static readonly GeneratorConfig Config = new("Test.Client", "unused", "v1.0");
+    private static readonly GeneratorConfig Config = new("Test.Client", "unused");
     private static readonly Lazy<OpenApiDocument> Legacy = new(() => Load("openApiDocs"));
     private static readonly Lazy<OpenApiDocument> Compatible = new(() => Load("openApiDocs_KiotaCompat"));
 
     [Theory]
-    [InlineData("POST", "/auditEvents", "CreateAuditEvent", "CreateAuditEvents")]
-    [InlineData("PATCH", "/auditEvents/{cloudPcAuditEvent-id}", "UpdateAuditEvent", "UpdateAuditEvents")]
-    [InlineData("DELETE", "/auditEvents/{cloudPcAuditEvent-id}", "DeleteAuditEvent", "DeleteAuditEvents")]
-    [InlineData("POST", "/cloudPCs", "CreateCloudPC", "CreateCloudPCs")]
-    [InlineData("PATCH", "/cloudPCs/{cloudPC-id}", "UpdateCloudPC", "UpdateCloudPCs")]
-    [InlineData("DELETE", "/cloudPCs/{cloudPC-id}", "DeleteCloudPC", "DeleteCloudPCs")]
-    public void CollectionWritesReuseExistingDerivedSuppressions(
-        string method, string suffix, string legacyId, string compatibleId)
+    [InlineData("POST", "/auditEvents", "CreateAuditEvent")]
+    [InlineData("PATCH", "/auditEvents/{cloudPcAuditEvent-id}", "UpdateAuditEvent")]
+    [InlineData("DELETE", "/auditEvents/{cloudPcAuditEvent-id}", "DeleteAuditEvent")]
+    [InlineData("POST", "/cloudPCs", "CreateCloudPC")]
+    [InlineData("PATCH", "/cloudPCs/{cloudPC-id}", "UpdateCloudPC")]
+    [InlineData("DELETE", "/cloudPCs/{cloudPC-id}", "DeleteCloudPC")]
+    public void CollectionWritesReuseExistingDerivedSuppressions(string method, string suffix, string operationId)
     {
         AssertSuppressedBridge(method, Root + suffix,
-            "deviceManagement.virtualEndpoint_" + legacyId,
-            "deviceManagement.virtualEndpoint." + compatibleId);
+            "deviceManagement.virtualEndpoint_" + operationId);
     }
 
     [Theory]
@@ -39,8 +38,7 @@ public sealed class DeviceManagementAdministrationDirectiveMigrationTests
     public void SingletonWritesReuseExistingDerivedSuppressions(string method, string verb)
     {
         AssertSuppressedBridge(method, Root,
-            "deviceManagement_" + verb + "VirtualEndpoint",
-            "deviceManagement." + verb + "VirtualEndpoint");
+            "deviceManagement_" + verb + "VirtualEndpoint");
     }
 
     [Fact]
@@ -53,7 +51,7 @@ public sealed class DeviceManagementAdministrationDirectiveMigrationTests
         for (var i = 0; i < mappings.Length; i++)
         {
             Assert.Equal(i + 1, mappings[i].GetProperty("directiveIndex").GetInt32());
-            var profile = mappings[i].GetProperty("profiles").GetProperty("v1.0");
+            var profile = mappings[i].GetProperty("profiles").GetProperty(Profile);
             var expected = Compatible.Value.Paths
                 .Where(path => i == 2
                     ? path.Key == Root + "/auditEvents" || path.Key == Root + "/auditEvents/{cloudPcAuditEvent-id}"
@@ -94,21 +92,21 @@ public sealed class DeviceManagementAdministrationDirectiveMigrationTests
 
     [Theory]
     [InlineData("/auditEvents/microsoft.graph.getAuditActivityTypes()", "/auditEvents/getAuditActivityTypes()",
-        "auditEvent_getAuditActivityType", "auditEvents.getAuditActivityTypes",
+        "auditEvent_getAuditActivityType",
         "MgDeviceManagementVirtualEndpointAuditEventAuditActivityType")]
     [InlineData("/deviceImages/microsoft.graph.getSourceImages()", "/deviceImages/getSourceImages()",
-        "deviceImage_getSourceImage", "deviceImages.getSourceImages",
+        "deviceImage_getSourceImage",
         "MgDeviceManagementVirtualEndpointDeviceImageSourceImage")]
     public void FunctionSubjectsAreReadOnlyAndDoNotMatchTheWriteVerbSelector(
-        string legacySuffix, string compatibleSuffix, string legacyId, string compatibleId, string noun)
+        string legacySuffix, string compatibleSuffix, string operationId, string noun)
     {
         var legacyPath = Legacy.Value.Paths[Root + legacySuffix];
         var compatiblePath = Compatible.Value.Paths[Root + compatibleSuffix];
         Assert.Equal(HttpMethod.Get, Assert.Single(legacyPath.Operations!).Key);
         Assert.Equal(HttpMethod.Get, Assert.Single(compatiblePath.Operations!).Key);
-        Assert.Equal("deviceManagement.virtualEndpoint." + legacyId,
+        Assert.Equal("deviceManagement.virtualEndpoint." + operationId,
             legacyPath.Operations![HttpMethod.Get].OperationId);
-        Assert.Equal("deviceManagement.virtualEndpoint." + compatibleId,
+        Assert.Equal("deviceManagement.virtualEndpoint." + operationId,
             compatiblePath.Operations![HttpMethod.Get].OperationId);
         AssertNaming("GET", Root + compatibleSuffix, OperationKind.Function, "Get", noun);
     }
@@ -130,7 +128,7 @@ public sealed class DeviceManagementAdministrationDirectiveMigrationTests
     {
         const string path = Root + "/cloudPCs/{cloudPC-id}/reboot";
         var operation = Compatible.Value.Paths[path].Operations![HttpMethod.Post];
-        Assert.Equal("deviceManagement.virtualEndpoint.cloudPCs.cloudPC.reboot", operation.OperationId);
+        Assert.Equal("deviceManagement.virtualEndpoint.cloudPC_reboot", operation.OperationId);
         AssertNaming("POST", path, OperationKind.Action, "Restart", "MgDeviceManagementVirtualEndpointCloudPc");
         Assert.False(File.Exists(Path.Combine(RepoRoot(), "openApiDocs_KiotaCompat", "v1.0", "DeviceManagement.Actions.yml")));
     }
@@ -143,23 +141,43 @@ public sealed class DeviceManagementAdministrationDirectiveMigrationTests
         AssertNaming("GET", path, OperationKind.Resource, "Get", "MgDeviceManagementPartner");
     }
 
-    private static void AssertSuppressedBridge(string method, string path, string legacyId, string compatibleId)
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public void SeparateProfileContextPreservesStructuralAndCuratedNeighbors(bool useCollisionData)
+    {
+        var config = Config with { UseCollisionData = useCollisionData };
+        foreach (var (path, noun) in new[]
+        {
+            (Root, "MgDeviceManagementVirtualEndpoint"),
+            ("/deviceManagement/deviceManagementPartners", "MgDeviceManagementPartner"),
+        })
+        {
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config, apiVersion: Profile));
+            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), config, apiVersion: Profile);
+            Assert.Equal("Get", naming.VerbName);
+            Assert.Equal(noun, naming.Noun);
+        }
+    }
+
+    private static void AssertSuppressedBridge(string method, string path, string operationId)
     {
         var httpMethod = new HttpMethod(method);
-        Assert.Equal(legacyId, Legacy.Value.Paths[path].Operations![httpMethod].OperationId);
-        Assert.Equal(compatibleId, Compatible.Value.Paths[path].Operations![httpMethod].OperationId);
-        Assert.True(CmdletConfigurator.IsSuppressed(httpMethod, path, Config));
-        Assert.True(DerivedCollisionResolutions.IsSuppressed("v1.0", httpMethod,
+        Assert.Equal(operationId, Legacy.Value.Paths[path].Operations![httpMethod].OperationId);
+        Assert.Equal(operationId, Compatible.Value.Paths[path].Operations![httpMethod].OperationId);
+        Assert.True(CmdletConfigurator.IsSuppressed(httpMethod, path, Config, apiVersion: Profile));
+        Assert.True(DerivedCollisionResolutions.IsSuppressed(Profile, httpMethod,
             CmdletConfigurator.NormalizePathTemplate(path)));
-        Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, Config with { UseCollisionData = false }));
+        Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, Config with { UseCollisionData = false },
+            apiVersion: Profile));
     }
 
     private static void AssertNaming(string method, string path, OperationKind kind, string verb, string noun)
     {
         var httpMethod = new HttpMethod(method);
         Assert.True(Compatible.Value.Paths[path].Operations!.ContainsKey(httpMethod));
-        Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, Config));
-        var naming = Naming.Resolve(new OperationInfo(httpMethod, path, Kind: kind), Config);
+        Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, Config, apiVersion: Profile));
+        var naming = Naming.Resolve(new OperationInfo(httpMethod, path, Kind: kind), Config, apiVersion: Profile);
         Assert.Equal(verb, naming.VerbName);
         Assert.Equal(noun, naming.Noun);
     }
@@ -168,7 +186,7 @@ public sealed class DeviceManagementAdministrationDirectiveMigrationTests
     {
         var settings = new OpenApiReaderSettings();
         settings.AddYamlReader();
-        using var stream = File.OpenRead(Path.Combine(RepoRoot(), specRoot, "v1.0", Module + ".yml"));
+        using var stream = File.OpenRead(Path.Combine(RepoRoot(), specRoot, Profile, Module + ".yml"));
         return OpenApiDocument.LoadAsync(stream, settings: settings).GetAwaiter().GetResult().Document
             ?? throw new InvalidDataException($"Could not load {specRoot} v1.0 {Module}.");
     }

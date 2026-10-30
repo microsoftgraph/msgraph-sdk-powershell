@@ -44,7 +44,7 @@
       "classification": "CmdletSuppression",
       "sourceContains": "subject: ^DeviceManagementVirtualEndpoint(AuditEvent|CloudPC|AuditEventAuditActivityType|DeviceImageSourceImage)$",
       "implementation": "DerivedCollisionResolutions",
-      "notes": "All six New/Update/Remove auditEvent and cloudPC operations already have exact v1.0 entries in tools/WrapperGenerator/data/parity-suppressions.v1.0.json. Reuse them without redundant curated suppressions. Module tests pin exact same-profile legacy/current IDs and method/path coverage. The auditActivityTypes and sourceImages functions are GET-only in both sources and do not match the verb selector; preserve them and the current Administration-owned actions. No DeviceManagement.Actions directives are imported.",
+      "notes": "All six New/Update/Remove auditEvent and cloudPC operations already have exact v1.0 entries in tools/WrapperGenerator/data/parity-suppressions.v1.0.json. Reuse them without redundant curated suppressions. After #3861/#3863, the compatible operation IDs match the actual same-profile legacy IDs; module tests pin their exact IDs and complete method/path coverage. The auditActivityTypes and sourceImages functions are GET-only in both sources and do not match the verb selector; preserve them and the current Administration-owned actions. No DeviceManagement.Actions directives are imported.",
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
@@ -52,32 +52,32 @@
             {
               "method": "POST",
               "path": "/deviceManagement/virtualEndpoint/auditEvents",
-              "operationId": "deviceManagement.virtualEndpoint.CreateAuditEvents"
+              "operationId": "deviceManagement.virtualEndpoint_CreateAuditEvent"
             },
             {
               "method": "PATCH",
               "path": "/deviceManagement/virtualEndpoint/auditEvents/{cloudPcAuditEvent-id}",
-              "operationId": "deviceManagement.virtualEndpoint.UpdateAuditEvents"
+              "operationId": "deviceManagement.virtualEndpoint_UpdateAuditEvent"
             },
             {
               "method": "DELETE",
               "path": "/deviceManagement/virtualEndpoint/auditEvents/{cloudPcAuditEvent-id}",
-              "operationId": "deviceManagement.virtualEndpoint.DeleteAuditEvents"
+              "operationId": "deviceManagement.virtualEndpoint_DeleteAuditEvent"
             },
             {
               "method": "POST",
               "path": "/deviceManagement/virtualEndpoint/cloudPCs",
-              "operationId": "deviceManagement.virtualEndpoint.CreateCloudPCs"
+              "operationId": "deviceManagement.virtualEndpoint_CreateCloudPC"
             },
             {
               "method": "PATCH",
               "path": "/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}",
-              "operationId": "deviceManagement.virtualEndpoint.UpdateCloudPCs"
+              "operationId": "deviceManagement.virtualEndpoint_UpdateCloudPC"
             },
             {
               "method": "DELETE",
               "path": "/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}",
-              "operationId": "deviceManagement.virtualEndpoint.DeleteCloudPCs"
+              "operationId": "deviceManagement.virtualEndpoint_DeleteCloudPC"
             }
           ]
         },
@@ -94,7 +94,7 @@
       "classification": "CmdletSuppression",
       "sourceContains": "subject: ^DeviceManagementVirtualEndpoint$",
       "implementation": "DerivedCollisionResolutions",
-      "notes": "The singleton PATCH and DELETE already have exact v1.0 entries in tools/WrapperGenerator/data/parity-suppressions.v1.0.json. Neither actual legacy nor compatible v1.0 source declares singleton POST. Module tests pin the old/new IDs, the two exact methods, preserved GET, and writable nested deviceImages. Keep the existing DeviceManagementPartner noun overrides unchanged; do not import profile-local or historical DeviceManagement.Actions directives.",
+      "notes": "The singleton PATCH and DELETE already have exact v1.0 entries in tools/WrapperGenerator/data/parity-suppressions.v1.0.json. Neither actual legacy nor compatible v1.0 source declares singleton POST. After #3861/#3863, the compatible operation IDs match the actual same-profile legacy IDs; module tests pin both sources, the two exact methods, preserved GET, and writable nested deviceImages. Keep the existing DeviceManagementPartner noun overrides unchanged; do not import profile-local or historical DeviceManagement.Actions directives.",
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
@@ -102,12 +102,12 @@
             {
               "method": "PATCH",
               "path": "/deviceManagement/virtualEndpoint",
-              "operationId": "deviceManagement.UpdateVirtualEndpoint"
+              "operationId": "deviceManagement_UpdateVirtualEndpoint"
             },
             {
               "method": "DELETE",
               "path": "/deviceManagement/virtualEndpoint",
-              "operationId": "deviceManagement.DeleteVirtualEndpoint"
+              "operationId": "deviceManagement_DeleteVirtualEndpoint"
             }
           ]
         },
