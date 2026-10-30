@@ -9,308 +9,159 @@
       "notes": "The original regex selects 21 actual legacy v1.0 and 22 beta operations. Bridge all surviving operations, including the beta updatePin action, and account for seven genuinely removed deprecated top-level /identityProviders routes per profile. The nested /identity/identityProviders operations already existed separately in each legacy spec, are not selected by this regex, and remain available. Existing curated top-level suppression is retained; exact curated entries fill gaps left by v1-only derived data.",
       "profiles": {
         "v1.0": {
-          "operationIdSource": "Legacy",
-          "notes": "Reviewed the complete original regex against actual openApiDocs\\v1.0\\Identity.SignIns.yml: 21 matches, 14 exact surviving bridges and 7 removed top-level provider routes; no inferred absence from renamed IDs.",
+          "notes": "Reviewed complete original same-profile legacy selection: 21 matches, 14 surviving aligned-ID operations and 7 removed top-level provider routes. Source-fidelity tests pin all source triples, removals and the beta action's kind-guarded final namespace removal. Literal current selector equals the complete surviving source set; no reserved Legacy-helper fields are needed.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "GET",
               "path": "/identity",
-              "operationId": "identity.identityContainer.GetIdentityContainer",
-              "legacyPath": "/identity",
-              "legacyOperationId": "identity.identityContainer_GetIdentityContainer"
+              "operationId": "identity.identityContainer_GetIdentityContainer"
             },
             {
               "method": "PATCH",
               "path": "/identity",
-              "operationId": "identity.identityContainer.UpdateIdentityContainer",
-              "legacyPath": "/identity",
-              "legacyOperationId": "identity.identityContainer_UpdateIdentityContainer"
+              "operationId": "identity.identityContainer_UpdateIdentityContainer"
             },
             {
               "method": "DELETE",
               "path": "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/$ref",
-              "operationId": "identity.b2xUserFlows.DeleteRefUserFlowIdentityProviders",
-              "legacyPath": "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/$ref",
-              "legacyOperationId": "identity.b2xUserFlow_DeleteUserFlowIdentityProviderGraphBPreRef"
+              "operationId": "identity.b2xUserFlow_DeleteUserFlowIdentityProviderGraphBPreRef"
             },
             {
               "method": "GET",
               "path": "/identityProtection",
-              "operationId": "identityProtection.identityProtectionRoot.GetIdentityProtectionRoot",
-              "legacyPath": "/identityProtection",
-              "legacyOperationId": "identityProtection.identityProtectionRoot_GetIdentityProtectionRoot"
+              "operationId": "identityProtection.identityProtectionRoot_GetIdentityProtectionRoot"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection",
-              "operationId": "identityProtection.identityProtectionRoot.UpdateIdentityProtectionRoot",
-              "legacyPath": "/identityProtection",
-              "legacyOperationId": "identityProtection.identityProtectionRoot_UpdateIdentityProtectionRoot"
+              "operationId": "identityProtection.identityProtectionRoot_UpdateIdentityProtectionRoot"
             },
             {
               "method": "GET",
               "path": "/invitations/invitedUser",
-              "operationId": "invitations.GetInvitedUser",
-              "legacyPath": "/invitations/invitedUser",
-              "legacyOperationId": "invitation_GetInvitedUser"
+              "operationId": "invitation_GetInvitedUser"
             },
             {
               "method": "GET",
               "path": "/policies",
-              "operationId": "policies.policyRoot.GetPolicyRoot",
-              "legacyPath": "/policies",
-              "legacyOperationId": "policy.policyRoot_GetPolicyRoot"
+              "operationId": "policy.policyRoot_GetPolicyRoot"
             },
             {
               "method": "PATCH",
               "path": "/policies",
-              "operationId": "policies.policyRoot.UpdatePolicyRoot",
-              "legacyPath": "/policies",
-              "legacyOperationId": "policy.policyRoot_UpdatePolicyRoot"
+              "operationId": "policy.policyRoot_UpdatePolicyRoot"
             },
             {
               "method": "GET",
               "path": "/policies/conditionalAccessPolicies",
-              "operationId": "policies.ListConditionalAccessPolicies",
-              "legacyPath": "/policies/conditionalAccessPolicies",
-              "legacyOperationId": "policy_ListConditionalAccessPolicy"
+              "operationId": "policy_ListConditionalAccessPolicy"
             },
             {
               "method": "POST",
               "path": "/policies/conditionalAccessPolicies",
-              "operationId": "policies.CreateConditionalAccessPolicies",
-              "legacyPath": "/policies/conditionalAccessPolicies",
-              "legacyOperationId": "policy_CreateConditionalAccessPolicy"
+              "operationId": "policy_CreateConditionalAccessPolicy"
             },
             {
               "method": "GET",
               "path": "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}",
-              "operationId": "policies.GetConditionalAccessPolicies",
-              "legacyPath": "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}",
-              "legacyOperationId": "policy_GetConditionalAccessPolicy"
+              "operationId": "policy_GetConditionalAccessPolicy"
             },
             {
               "method": "PATCH",
               "path": "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}",
-              "operationId": "policies.UpdateConditionalAccessPolicies",
-              "legacyPath": "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}",
-              "legacyOperationId": "policy_UpdateConditionalAccessPolicy"
+              "operationId": "policy_UpdateConditionalAccessPolicy"
             },
             {
               "method": "DELETE",
               "path": "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}",
-              "operationId": "policies.DeleteConditionalAccessPolicies",
-              "legacyPath": "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}",
-              "legacyOperationId": "policy_DeleteConditionalAccessPolicy"
+              "operationId": "policy_DeleteConditionalAccessPolicy"
             },
             {
               "method": "DELETE",
               "path": "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref",
-              "operationId": "policies.featureRolloutPolicies.DeleteRefAppliesTo",
-              "legacyPath": "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref",
-              "legacyOperationId": "policy.featureRolloutPolicy_DeleteAppliesToGraphBPreRef"
-            }
-          ],
-          "removedLegacyOperations": [
-            {
-              "method": "GET",
-              "path": "/identityProviders",
-              "operationId": "identityProvider_ListIdentityProvider",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
-            },
-            {
-              "method": "POST",
-              "path": "/identityProviders",
-              "operationId": "identityProvider_CreateIdentityProvider",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
-            },
-            {
-              "method": "GET",
-              "path": "/identityProviders/{identityProvider-id}",
-              "operationId": "identityProvider_GetIdentityProvider",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
-            },
-            {
-              "method": "PATCH",
-              "path": "/identityProviders/{identityProvider-id}",
-              "operationId": "identityProvider_UpdateIdentityProvider",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
-            },
-            {
-              "method": "DELETE",
-              "path": "/identityProviders/{identityProvider-id}",
-              "operationId": "identityProvider_DeleteIdentityProvider",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
-            },
-            {
-              "method": "GET",
-              "path": "/identityProviders/$count",
-              "operationId": "identityProvider_GetCount",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
-            },
-            {
-              "method": "GET",
-              "path": "/identityProviders/microsoft.graph.availableProviderTypes()",
-              "operationId": "identityProvider_availableProviderType",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
+              "operationId": "policy.featureRolloutPolicy_DeleteAppliesToGraphBPreRef"
             }
           ]
         },
         "beta": {
-          "operationIdSource": "Legacy",
-          "notes": "Reviewed the complete original regex against actual openApiDocs\\beta\\Identity.SignIns.yml: 22 matches, 15 exact surviving bridges and 7 removed top-level provider routes; no inferred absence from renamed IDs.",
+          "notes": "Reviewed complete original same-profile legacy selection: 22 matches, 15 surviving aligned-ID operations and 7 removed top-level provider routes. Source-fidelity tests pin all source triples, removals and the beta action's kind-guarded final namespace removal. Literal current selector equals the complete surviving source set; no reserved Legacy-helper fields are needed.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "GET",
               "path": "/identity",
-              "operationId": "identity.identityContainer.GetIdentityContainer",
-              "legacyPath": "/identity",
-              "legacyOperationId": "identity.identityContainer_GetIdentityContainer"
+              "operationId": "identity.identityContainer_GetIdentityContainer"
             },
             {
               "method": "PATCH",
               "path": "/identity",
-              "operationId": "identity.identityContainer.UpdateIdentityContainer",
-              "legacyPath": "/identity",
-              "legacyOperationId": "identity.identityContainer_UpdateIdentityContainer"
+              "operationId": "identity.identityContainer_UpdateIdentityContainer"
             },
             {
               "method": "DELETE",
               "path": "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/$ref",
-              "operationId": "identity.b2xUserFlows.DeleteRefUserFlowIdentityProviders",
-              "legacyPath": "/identity/b2xUserFlows/{b2xIdentityUserFlow-id}/userFlowIdentityProviders/$ref",
-              "legacyOperationId": "identity.b2xUserFlow_DeleteUserFlowIdentityProviderGraphBPreRef"
+              "operationId": "identity.b2xUserFlow_DeleteUserFlowIdentityProviderGraphBPreRef"
             },
             {
               "method": "GET",
               "path": "/identityProtection",
-              "operationId": "identityProtection.identityProtectionRoot.GetIdentityProtectionRoot",
-              "legacyPath": "/identityProtection",
-              "legacyOperationId": "identityProtection.identityProtectionRoot_GetIdentityProtectionRoot"
+              "operationId": "identityProtection.identityProtectionRoot_GetIdentityProtectionRoot"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection",
-              "operationId": "identityProtection.identityProtectionRoot.UpdateIdentityProtectionRoot",
-              "legacyPath": "/identityProtection",
-              "legacyOperationId": "identityProtection.identityProtectionRoot_UpdateIdentityProtectionRoot"
+              "operationId": "identityProtection.identityProtectionRoot_UpdateIdentityProtectionRoot"
             },
             {
               "method": "GET",
               "path": "/invitations/invitedUser",
-              "operationId": "invitations.GetInvitedUser",
-              "legacyPath": "/invitations/invitedUser",
-              "legacyOperationId": "invitation_GetInvitedUser"
+              "operationId": "invitation_GetInvitedUser"
             },
             {
               "method": "GET",
               "path": "/policies",
-              "operationId": "policies.policyRoot.GetPolicyRoot",
-              "legacyPath": "/policies",
-              "legacyOperationId": "policy.policyRoot_GetPolicyRoot"
+              "operationId": "policy.policyRoot_GetPolicyRoot"
             },
             {
               "method": "PATCH",
               "path": "/policies",
-              "operationId": "policies.policyRoot.UpdatePolicyRoot",
-              "legacyPath": "/policies",
-              "legacyOperationId": "policy.policyRoot_UpdatePolicyRoot"
+              "operationId": "policy.policyRoot_UpdatePolicyRoot"
             },
             {
               "method": "GET",
               "path": "/policies/conditionalAccessPolicies",
-              "operationId": "policies.ListConditionalAccessPolicies",
-              "legacyPath": "/policies/conditionalAccessPolicies",
-              "legacyOperationId": "policy_ListConditionalAccessPolicy"
+              "operationId": "policy_ListConditionalAccessPolicy"
             },
             {
               "method": "POST",
               "path": "/policies/conditionalAccessPolicies",
-              "operationId": "policies.CreateConditionalAccessPolicies",
-              "legacyPath": "/policies/conditionalAccessPolicies",
-              "legacyOperationId": "policy_CreateConditionalAccessPolicy"
+              "operationId": "policy_CreateConditionalAccessPolicy"
             },
             {
               "method": "GET",
               "path": "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}",
-              "operationId": "policies.GetConditionalAccessPolicies",
-              "legacyPath": "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}",
-              "legacyOperationId": "policy_GetConditionalAccessPolicy"
+              "operationId": "policy_GetConditionalAccessPolicy"
             },
             {
               "method": "PATCH",
               "path": "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}",
-              "operationId": "policies.UpdateConditionalAccessPolicies",
-              "legacyPath": "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}",
-              "legacyOperationId": "policy_UpdateConditionalAccessPolicy"
+              "operationId": "policy_UpdateConditionalAccessPolicy"
             },
             {
               "method": "DELETE",
               "path": "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}",
-              "operationId": "policies.DeleteConditionalAccessPolicies",
-              "legacyPath": "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}",
-              "legacyOperationId": "policy_DeleteConditionalAccessPolicy"
+              "operationId": "policy_DeleteConditionalAccessPolicy"
             },
             {
               "method": "DELETE",
               "path": "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref",
-              "operationId": "policies.featureRolloutPolicies.DeleteRefAppliesTo",
-              "legacyPath": "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref",
-              "legacyOperationId": "policy.featureRolloutPolicy_DeleteAppliesToGraphBPreRef"
+              "operationId": "policy.featureRolloutPolicy_DeleteAppliesToGraphBPreRef"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/authentication/qrCodePinMethod/pin/updatePin",
-              "operationId": "users.user.authentication.qrCodePinMethod.pin.updatePin",
-              "legacyPath": "/users/{user-id}/authentication/qrCodePinMethod/pin/microsoft.graph.updatePin",
-              "legacyOperationId": "user.authentication.qrCodePinMethod.pin_updatePin",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
-            }
-          ],
-          "removedLegacyOperations": [
-            {
-              "method": "GET",
-              "path": "/identityProviders",
-              "operationId": "identityProvider_ListIdentityProvider",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
-            },
-            {
-              "method": "POST",
-              "path": "/identityProviders",
-              "operationId": "identityProvider_CreateIdentityProvider",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
-            },
-            {
-              "method": "GET",
-              "path": "/identityProviders/{identityProvider-id}",
-              "operationId": "identityProvider_GetIdentityProvider",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
-            },
-            {
-              "method": "PATCH",
-              "path": "/identityProviders/{identityProvider-id}",
-              "operationId": "identityProvider_UpdateIdentityProvider",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
-            },
-            {
-              "method": "DELETE",
-              "path": "/identityProviders/{identityProvider-id}",
-              "operationId": "identityProvider_DeleteIdentityProvider",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
-            },
-            {
-              "method": "GET",
-              "path": "/identityProviders/$count",
-              "operationId": "identityProvider_GetCount",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
-            },
-            {
-              "method": "GET",
-              "path": "/identityProviders/microsoft.graph.availableProviderTypes()",
-              "operationId": "identityProvider_availableProviderType",
-              "notes": "Deprecated top-level /identityProviders route is absent from the compatible module, including guarded final action/function unqualification. Nested /identity/identityProviders is a distinct route already present in the same legacy spec and deliberately not selected."
+              "operationId": "user.authentication.qrCodePinMethod.pin_updatePin"
             }
           ]
         }
@@ -330,27 +181,27 @@
             {
               "method": "GET",
               "path": "/oauth2PermissionGrants",
-              "operationId": "oauth2PermissionGrants.oAuth2PermissionGrant.ListOAuth2PermissionGrant"
+              "operationId": "oauth2PermissionGrant_ListOAuth2PermissionGrant"
             },
             {
               "method": "POST",
               "path": "/oauth2PermissionGrants",
-              "operationId": "oauth2PermissionGrants.oAuth2PermissionGrant.CreateOAuth2PermissionGrant"
+              "operationId": "oauth2PermissionGrant_CreateOAuth2PermissionGrant"
             },
             {
               "method": "DELETE",
               "path": "/oauth2PermissionGrants/{oAuth2PermissionGrant-id}",
-              "operationId": "oauth2PermissionGrants.oAuth2PermissionGrant.DeleteOAuth2PermissionGrant"
+              "operationId": "oauth2PermissionGrant_DeleteOAuth2PermissionGrant"
             },
             {
               "method": "GET",
               "path": "/oauth2PermissionGrants/{oAuth2PermissionGrant-id}",
-              "operationId": "oauth2PermissionGrants.oAuth2PermissionGrant.GetOAuth2PermissionGrant"
+              "operationId": "oauth2PermissionGrant_GetOAuth2PermissionGrant"
             },
             {
               "method": "PATCH",
               "path": "/oauth2PermissionGrants/{oAuth2PermissionGrant-id}",
-              "operationId": "oauth2PermissionGrants.oAuth2PermissionGrant.UpdateOAuth2PermissionGrant"
+              "operationId": "oauth2PermissionGrant_UpdateOAuth2PermissionGrant"
             }
           ]
         },
@@ -360,27 +211,27 @@
             {
               "method": "GET",
               "path": "/oauth2PermissionGrants",
-              "operationId": "oauth2PermissionGrants.oAuth2PermissionGrant.ListOAuth2PermissionGrant"
+              "operationId": "oauth2PermissionGrant_ListOAuth2PermissionGrant"
             },
             {
               "method": "POST",
               "path": "/oauth2PermissionGrants",
-              "operationId": "oauth2PermissionGrants.oAuth2PermissionGrant.CreateOAuth2PermissionGrant"
+              "operationId": "oauth2PermissionGrant_CreateOAuth2PermissionGrant"
             },
             {
               "method": "DELETE",
               "path": "/oauth2PermissionGrants/{oAuth2PermissionGrant-id}",
-              "operationId": "oauth2PermissionGrants.oAuth2PermissionGrant.DeleteOAuth2PermissionGrant"
+              "operationId": "oauth2PermissionGrant_DeleteOAuth2PermissionGrant"
             },
             {
               "method": "GET",
               "path": "/oauth2PermissionGrants/{oAuth2PermissionGrant-id}",
-              "operationId": "oauth2PermissionGrants.oAuth2PermissionGrant.GetOAuth2PermissionGrant"
+              "operationId": "oauth2PermissionGrant_GetOAuth2PermissionGrant"
             },
             {
               "method": "PATCH",
               "path": "/oauth2PermissionGrants/{oAuth2PermissionGrant-id}",
-              "operationId": "oauth2PermissionGrants.oAuth2PermissionGrant.UpdateOAuth2PermissionGrant"
+              "operationId": "oauth2PermissionGrant_UpdateOAuth2PermissionGrant"
             }
           ]
         }
@@ -400,27 +251,27 @@
             {
               "method": "GET",
               "path": "/dataPolicyOperations",
-              "operationId": "dataPolicyOperations.dataPolicyOperation.ListDataPolicyOperation"
+              "operationId": "dataPolicyOperation_ListDataPolicyOperation"
             },
             {
               "method": "POST",
               "path": "/dataPolicyOperations",
-              "operationId": "dataPolicyOperations.dataPolicyOperation.CreateDataPolicyOperation"
+              "operationId": "dataPolicyOperation_CreateDataPolicyOperation"
             },
             {
               "method": "DELETE",
               "path": "/dataPolicyOperations/{dataPolicyOperation-id}",
-              "operationId": "dataPolicyOperations.dataPolicyOperation.DeleteDataPolicyOperation"
+              "operationId": "dataPolicyOperation_DeleteDataPolicyOperation"
             },
             {
               "method": "GET",
               "path": "/dataPolicyOperations/{dataPolicyOperation-id}",
-              "operationId": "dataPolicyOperations.dataPolicyOperation.GetDataPolicyOperation"
+              "operationId": "dataPolicyOperation_GetDataPolicyOperation"
             },
             {
               "method": "PATCH",
               "path": "/dataPolicyOperations/{dataPolicyOperation-id}",
-              "operationId": "dataPolicyOperations.dataPolicyOperation.UpdateDataPolicyOperation"
+              "operationId": "dataPolicyOperation_UpdateDataPolicyOperation"
             }
           ]
         },
@@ -430,27 +281,27 @@
             {
               "method": "GET",
               "path": "/dataPolicyOperations",
-              "operationId": "dataPolicyOperations.dataPolicyOperation.ListDataPolicyOperation"
+              "operationId": "dataPolicyOperation_ListDataPolicyOperation"
             },
             {
               "method": "POST",
               "path": "/dataPolicyOperations",
-              "operationId": "dataPolicyOperations.dataPolicyOperation.CreateDataPolicyOperation"
+              "operationId": "dataPolicyOperation_CreateDataPolicyOperation"
             },
             {
               "method": "DELETE",
               "path": "/dataPolicyOperations/{dataPolicyOperation-id}",
-              "operationId": "dataPolicyOperations.dataPolicyOperation.DeleteDataPolicyOperation"
+              "operationId": "dataPolicyOperation_DeleteDataPolicyOperation"
             },
             {
               "method": "GET",
               "path": "/dataPolicyOperations/{dataPolicyOperation-id}",
-              "operationId": "dataPolicyOperations.dataPolicyOperation.GetDataPolicyOperation"
+              "operationId": "dataPolicyOperation_GetDataPolicyOperation"
             },
             {
               "method": "PATCH",
               "path": "/dataPolicyOperations/{dataPolicyOperation-id}",
-              "operationId": "dataPolicyOperations.dataPolicyOperation.UpdateDataPolicyOperation"
+              "operationId": "dataPolicyOperation_UpdateDataPolicyOperation"
             }
           ]
         }
@@ -470,207 +321,207 @@
             {
               "method": "GET",
               "path": "/identityProtection/riskDetections",
-              "operationId": "identityProtection.ListRiskDetections"
+              "operationId": "identityProtection_ListRiskDetection"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskDetections",
-              "operationId": "identityProtection.CreateRiskDetections"
+              "operationId": "identityProtection_CreateRiskDetection"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/riskDetections/{riskDetection-id}",
-              "operationId": "identityProtection.DeleteRiskDetections"
+              "operationId": "identityProtection_DeleteRiskDetection"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskDetections/{riskDetection-id}",
-              "operationId": "identityProtection.GetRiskDetections"
+              "operationId": "identityProtection_GetRiskDetection"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/riskDetections/{riskDetection-id}",
-              "operationId": "identityProtection.UpdateRiskDetections"
+              "operationId": "identityProtection_UpdateRiskDetection"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskDetections/$count",
-              "operationId": "identityProtection.riskDetections.GetCount-ee19"
+              "operationId": "identityProtection.riskDetection_GetCount"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyServicePrincipals",
-              "operationId": "identityProtection.ListRiskyServicePrincipals"
+              "operationId": "identityProtection_ListRiskyServicePrincipal"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyServicePrincipals",
-              "operationId": "identityProtection.CreateRiskyServicePrincipals"
+              "operationId": "identityProtection_CreateRiskyServicePrincipal"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}",
-              "operationId": "identityProtection.DeleteRiskyServicePrincipals"
+              "operationId": "identityProtection_DeleteRiskyServicePrincipal"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}",
-              "operationId": "identityProtection.GetRiskyServicePrincipals"
+              "operationId": "identityProtection_GetRiskyServicePrincipal"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}",
-              "operationId": "identityProtection.UpdateRiskyServicePrincipals"
+              "operationId": "identityProtection_UpdateRiskyServicePrincipal"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}/history",
-              "operationId": "identityProtection.riskyServicePrincipals.ListHistory"
+              "operationId": "identityProtection.riskyServicePrincipal_ListHistory"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}/history",
-              "operationId": "identityProtection.riskyServicePrincipals.CreateHistory"
+              "operationId": "identityProtection.riskyServicePrincipal_CreateHistory"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}/history/{riskyServicePrincipalHistoryItem-id}",
-              "operationId": "identityProtection.riskyServicePrincipals.DeleteHistory"
+              "operationId": "identityProtection.riskyServicePrincipal_DeleteHistory"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}/history/{riskyServicePrincipalHistoryItem-id}",
-              "operationId": "identityProtection.riskyServicePrincipals.GetHistory"
+              "operationId": "identityProtection.riskyServicePrincipal_GetHistory"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}/history/{riskyServicePrincipalHistoryItem-id}",
-              "operationId": "identityProtection.riskyServicePrincipals.UpdateHistory"
+              "operationId": "identityProtection.riskyServicePrincipal_UpdateHistory"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}/history/$count",
-              "operationId": "identityProtection.riskyServicePrincipals.history.GetCount-818f"
+              "operationId": "identityProtection.riskyServicePrincipal.history_GetCount"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyServicePrincipals/$count",
-              "operationId": "identityProtection.riskyServicePrincipals.GetCount-d335"
+              "operationId": "identityProtection.riskyServicePrincipal_GetCount"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyServicePrincipals/confirmCompromised",
-              "operationId": "identityProtection.riskyServicePrincipals.confirmCompromised"
+              "operationId": "identityProtection.riskyServicePrincipal_confirmCompromised"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyServicePrincipals/dismiss",
-              "operationId": "identityProtection.riskyServicePrincipals.dismiss"
+              "operationId": "identityProtection.riskyServicePrincipal_dismiss"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyUsers",
-              "operationId": "identityProtection.ListRiskyUsers"
+              "operationId": "identityProtection_ListRiskyUser"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyUsers",
-              "operationId": "identityProtection.CreateRiskyUsers"
+              "operationId": "identityProtection_CreateRiskyUser"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}",
-              "operationId": "identityProtection.DeleteRiskyUsers"
+              "operationId": "identityProtection_DeleteRiskyUser"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}",
-              "operationId": "identityProtection.GetRiskyUsers"
+              "operationId": "identityProtection_GetRiskyUser"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}",
-              "operationId": "identityProtection.UpdateRiskyUsers"
+              "operationId": "identityProtection_UpdateRiskyUser"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}/history",
-              "operationId": "identityProtection.riskyUsers.ListHistory"
+              "operationId": "identityProtection.riskyUser_ListHistory"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}/history",
-              "operationId": "identityProtection.riskyUsers.CreateHistory"
+              "operationId": "identityProtection.riskyUser_CreateHistory"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}/history/{riskyUserHistoryItem-id}",
-              "operationId": "identityProtection.riskyUsers.DeleteHistory"
+              "operationId": "identityProtection.riskyUser_DeleteHistory"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}/history/{riskyUserHistoryItem-id}",
-              "operationId": "identityProtection.riskyUsers.GetHistory"
+              "operationId": "identityProtection.riskyUser_GetHistory"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}/history/{riskyUserHistoryItem-id}",
-              "operationId": "identityProtection.riskyUsers.UpdateHistory"
+              "operationId": "identityProtection.riskyUser_UpdateHistory"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}/history/$count",
-              "operationId": "identityProtection.riskyUsers.history.GetCount-33a2"
+              "operationId": "identityProtection.riskyUser.history_GetCount"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyUsers/$count",
-              "operationId": "identityProtection.riskyUsers.GetCount-2b7d"
+              "operationId": "identityProtection.riskyUser_GetCount"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyUsers/confirmCompromised",
-              "operationId": "identityProtection.riskyUsers.confirmCompromised"
+              "operationId": "identityProtection.riskyUser_confirmCompromised"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyUsers/confirmSafe",
-              "operationId": "identityProtection.riskyUsers.confirmSafe"
+              "operationId": "identityProtection.riskyUser_confirmSafe"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyUsers/dismiss",
-              "operationId": "identityProtection.riskyUsers.dismiss"
+              "operationId": "identityProtection.riskyUser_dismiss"
             },
             {
               "method": "GET",
               "path": "/identityProtection/servicePrincipalRiskDetections",
-              "operationId": "identityProtection.ListServicePrincipalRiskDetections"
+              "operationId": "identityProtection_ListServicePrincipalRiskDetection"
             },
             {
               "method": "POST",
               "path": "/identityProtection/servicePrincipalRiskDetections",
-              "operationId": "identityProtection.CreateServicePrincipalRiskDetections"
+              "operationId": "identityProtection_CreateServicePrincipalRiskDetection"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/servicePrincipalRiskDetections/{servicePrincipalRiskDetection-id}",
-              "operationId": "identityProtection.DeleteServicePrincipalRiskDetections"
+              "operationId": "identityProtection_DeleteServicePrincipalRiskDetection"
             },
             {
               "method": "GET",
               "path": "/identityProtection/servicePrincipalRiskDetections/{servicePrincipalRiskDetection-id}",
-              "operationId": "identityProtection.GetServicePrincipalRiskDetections"
+              "operationId": "identityProtection_GetServicePrincipalRiskDetection"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/servicePrincipalRiskDetections/{servicePrincipalRiskDetection-id}",
-              "operationId": "identityProtection.UpdateServicePrincipalRiskDetections"
+              "operationId": "identityProtection_UpdateServicePrincipalRiskDetection"
             },
             {
               "method": "GET",
               "path": "/identityProtection/servicePrincipalRiskDetections/$count",
-              "operationId": "identityProtection.servicePrincipalRiskDetections.GetCount-1bc5"
+              "operationId": "identityProtection.servicePrincipalRiskDetection_GetCount"
             }
           ]
         },
@@ -680,282 +531,282 @@
             {
               "method": "GET",
               "path": "/identityProtection/agentRiskDetections",
-              "operationId": "identityProtection.ListAgentRiskDetections"
+              "operationId": "identityProtection_ListAgentRiskDetection"
             },
             {
               "method": "POST",
               "path": "/identityProtection/agentRiskDetections",
-              "operationId": "identityProtection.CreateAgentRiskDetections"
+              "operationId": "identityProtection_CreateAgentRiskDetection"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/agentRiskDetections/{agentRiskDetection-id}",
-              "operationId": "identityProtection.DeleteAgentRiskDetections"
+              "operationId": "identityProtection_DeleteAgentRiskDetection"
             },
             {
               "method": "GET",
               "path": "/identityProtection/agentRiskDetections/{agentRiskDetection-id}",
-              "operationId": "identityProtection.GetAgentRiskDetections"
+              "operationId": "identityProtection_GetAgentRiskDetection"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/agentRiskDetections/{agentRiskDetection-id}",
-              "operationId": "identityProtection.UpdateAgentRiskDetections"
+              "operationId": "identityProtection_UpdateAgentRiskDetection"
             },
             {
               "method": "GET",
               "path": "/identityProtection/agentRiskDetections/$count",
-              "operationId": "identityProtection.agentRiskDetections.GetCount-60c3"
+              "operationId": "identityProtection.agentRiskDetection_GetCount"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskDetections",
-              "operationId": "identityProtection.ListRiskDetections"
+              "operationId": "identityProtection_ListRiskDetection"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskDetections",
-              "operationId": "identityProtection.CreateRiskDetections"
+              "operationId": "identityProtection_CreateRiskDetection"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/riskDetections/{riskDetection-id}",
-              "operationId": "identityProtection.DeleteRiskDetections"
+              "operationId": "identityProtection_DeleteRiskDetection"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskDetections/{riskDetection-id}",
-              "operationId": "identityProtection.GetRiskDetections"
+              "operationId": "identityProtection_GetRiskDetection"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/riskDetections/{riskDetection-id}",
-              "operationId": "identityProtection.UpdateRiskDetections"
+              "operationId": "identityProtection_UpdateRiskDetection"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskDetections/$count",
-              "operationId": "identityProtection.riskDetections.GetCount-ee19"
+              "operationId": "identityProtection.riskDetection_GetCount"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyAgents",
-              "operationId": "identityProtection.ListRiskyAgents"
+              "operationId": "identityProtection_ListRiskyAgent"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyAgents",
-              "operationId": "identityProtection.CreateRiskyAgents"
+              "operationId": "identityProtection_CreateRiskyAgent"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/riskyAgents/{riskyAgent-id}",
-              "operationId": "identityProtection.DeleteRiskyAgents"
+              "operationId": "identityProtection_DeleteRiskyAgent"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyAgents/{riskyAgent-id}",
-              "operationId": "identityProtection.GetRiskyAgents"
+              "operationId": "identityProtection_GetRiskyAgent"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/riskyAgents/{riskyAgent-id}",
-              "operationId": "identityProtection.UpdateRiskyAgents"
+              "operationId": "identityProtection_UpdateRiskyAgent"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyAgents/$count",
-              "operationId": "identityProtection.riskyAgents.GetCount-225d"
+              "operationId": "identityProtection.riskyAgent_GetCount"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyAgents/confirmCompromised",
-              "operationId": "identityProtection.riskyAgents.confirmCompromised"
+              "operationId": "identityProtection.riskyAgent_confirmCompromised"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyAgents/confirmSafe",
-              "operationId": "identityProtection.riskyAgents.confirmSafe"
+              "operationId": "identityProtection.riskyAgent_confirmSafe"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyAgents/dismiss",
-              "operationId": "identityProtection.riskyAgents.dismiss"
+              "operationId": "identityProtection.riskyAgent_dismiss"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyServicePrincipals",
-              "operationId": "identityProtection.ListRiskyServicePrincipals"
+              "operationId": "identityProtection_ListRiskyServicePrincipal"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyServicePrincipals",
-              "operationId": "identityProtection.CreateRiskyServicePrincipals"
+              "operationId": "identityProtection_CreateRiskyServicePrincipal"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}",
-              "operationId": "identityProtection.DeleteRiskyServicePrincipals"
+              "operationId": "identityProtection_DeleteRiskyServicePrincipal"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}",
-              "operationId": "identityProtection.GetRiskyServicePrincipals"
+              "operationId": "identityProtection_GetRiskyServicePrincipal"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}",
-              "operationId": "identityProtection.UpdateRiskyServicePrincipals"
+              "operationId": "identityProtection_UpdateRiskyServicePrincipal"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}/history",
-              "operationId": "identityProtection.riskyServicePrincipals.ListHistory"
+              "operationId": "identityProtection.riskyServicePrincipal_ListHistory"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}/history",
-              "operationId": "identityProtection.riskyServicePrincipals.CreateHistory"
+              "operationId": "identityProtection.riskyServicePrincipal_CreateHistory"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}/history/{riskyServicePrincipalHistoryItem-id}",
-              "operationId": "identityProtection.riskyServicePrincipals.DeleteHistory"
+              "operationId": "identityProtection.riskyServicePrincipal_DeleteHistory"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}/history/{riskyServicePrincipalHistoryItem-id}",
-              "operationId": "identityProtection.riskyServicePrincipals.GetHistory"
+              "operationId": "identityProtection.riskyServicePrincipal_GetHistory"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}/history/{riskyServicePrincipalHistoryItem-id}",
-              "operationId": "identityProtection.riskyServicePrincipals.UpdateHistory"
+              "operationId": "identityProtection.riskyServicePrincipal_UpdateHistory"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyServicePrincipals/{riskyServicePrincipal-id}/history/$count",
-              "operationId": "identityProtection.riskyServicePrincipals.history.GetCount-818f"
+              "operationId": "identityProtection.riskyServicePrincipal.history_GetCount"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyServicePrincipals/$count",
-              "operationId": "identityProtection.riskyServicePrincipals.GetCount-d335"
+              "operationId": "identityProtection.riskyServicePrincipal_GetCount"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyServicePrincipals/confirmCompromised",
-              "operationId": "identityProtection.riskyServicePrincipals.confirmCompromised"
+              "operationId": "identityProtection.riskyServicePrincipal_confirmCompromised"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyServicePrincipals/dismiss",
-              "operationId": "identityProtection.riskyServicePrincipals.dismiss"
+              "operationId": "identityProtection.riskyServicePrincipal_dismiss"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyUsers",
-              "operationId": "identityProtection.ListRiskyUsers"
+              "operationId": "identityProtection_ListRiskyUser"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyUsers",
-              "operationId": "identityProtection.CreateRiskyUsers"
+              "operationId": "identityProtection_CreateRiskyUser"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}",
-              "operationId": "identityProtection.DeleteRiskyUsers"
+              "operationId": "identityProtection_DeleteRiskyUser"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}",
-              "operationId": "identityProtection.GetRiskyUsers"
+              "operationId": "identityProtection_GetRiskyUser"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}",
-              "operationId": "identityProtection.UpdateRiskyUsers"
+              "operationId": "identityProtection_UpdateRiskyUser"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}/history",
-              "operationId": "identityProtection.riskyUsers.ListHistory"
+              "operationId": "identityProtection.riskyUser_ListHistory"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}/history",
-              "operationId": "identityProtection.riskyUsers.CreateHistory"
+              "operationId": "identityProtection.riskyUser_CreateHistory"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}/history/{riskyUserHistoryItem-id}",
-              "operationId": "identityProtection.riskyUsers.DeleteHistory"
+              "operationId": "identityProtection.riskyUser_DeleteHistory"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}/history/{riskyUserHistoryItem-id}",
-              "operationId": "identityProtection.riskyUsers.GetHistory"
+              "operationId": "identityProtection.riskyUser_GetHistory"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}/history/{riskyUserHistoryItem-id}",
-              "operationId": "identityProtection.riskyUsers.UpdateHistory"
+              "operationId": "identityProtection.riskyUser_UpdateHistory"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyUsers/{riskyUser-id}/history/$count",
-              "operationId": "identityProtection.riskyUsers.history.GetCount-33a2"
+              "operationId": "identityProtection.riskyUser.history_GetCount"
             },
             {
               "method": "GET",
               "path": "/identityProtection/riskyUsers/$count",
-              "operationId": "identityProtection.riskyUsers.GetCount-2b7d"
+              "operationId": "identityProtection.riskyUser_GetCount"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyUsers/confirmCompromised",
-              "operationId": "identityProtection.riskyUsers.confirmCompromised"
+              "operationId": "identityProtection.riskyUser_confirmCompromised"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyUsers/confirmSafe",
-              "operationId": "identityProtection.riskyUsers.confirmSafe"
+              "operationId": "identityProtection.riskyUser_confirmSafe"
             },
             {
               "method": "POST",
               "path": "/identityProtection/riskyUsers/dismiss",
-              "operationId": "identityProtection.riskyUsers.dismiss"
+              "operationId": "identityProtection.riskyUser_dismiss"
             },
             {
               "method": "GET",
               "path": "/identityProtection/servicePrincipalRiskDetections",
-              "operationId": "identityProtection.ListServicePrincipalRiskDetections"
+              "operationId": "identityProtection_ListServicePrincipalRiskDetection"
             },
             {
               "method": "POST",
               "path": "/identityProtection/servicePrincipalRiskDetections",
-              "operationId": "identityProtection.CreateServicePrincipalRiskDetections"
+              "operationId": "identityProtection_CreateServicePrincipalRiskDetection"
             },
             {
               "method": "DELETE",
               "path": "/identityProtection/servicePrincipalRiskDetections/{servicePrincipalRiskDetection-id}",
-              "operationId": "identityProtection.DeleteServicePrincipalRiskDetections"
+              "operationId": "identityProtection_DeleteServicePrincipalRiskDetection"
             },
             {
               "method": "GET",
               "path": "/identityProtection/servicePrincipalRiskDetections/{servicePrincipalRiskDetection-id}",
-              "operationId": "identityProtection.GetServicePrincipalRiskDetections"
+              "operationId": "identityProtection_GetServicePrincipalRiskDetection"
             },
             {
               "method": "PATCH",
               "path": "/identityProtection/servicePrincipalRiskDetections/{servicePrincipalRiskDetection-id}",
-              "operationId": "identityProtection.UpdateServicePrincipalRiskDetections"
+              "operationId": "identityProtection_UpdateServicePrincipalRiskDetection"
             },
             {
               "method": "GET",
               "path": "/identityProtection/servicePrincipalRiskDetections/$count",
-              "operationId": "identityProtection.servicePrincipalRiskDetections.GetCount-1bc5"
+              "operationId": "identityProtection.servicePrincipalRiskDetection_GetCount"
             }
           ]
         }
@@ -975,17 +826,17 @@
             {
               "method": "DELETE",
               "path": "/users/{user-id}/authentication",
-              "operationId": "users.DeleteAuthentication"
+              "operationId": "user_DeleteAuthentication"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/authentication",
-              "operationId": "users.GetAuthentication"
+              "operationId": "user_GetAuthentication"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/authentication",
-              "operationId": "users.UpdateAuthentication"
+              "operationId": "user_UpdateAuthentication"
             }
           ]
         },
@@ -995,17 +846,17 @@
             {
               "method": "DELETE",
               "path": "/users/{user-id}/authentication",
-              "operationId": "users.DeleteAuthentication"
+              "operationId": "user_DeleteAuthentication"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/authentication",
-              "operationId": "users.GetAuthentication"
+              "operationId": "user_GetAuthentication"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/authentication",
-              "operationId": "users.UpdateAuthentication"
+              "operationId": "user_UpdateAuthentication"
             }
           ]
         }
@@ -1029,52 +880,52 @@
             {
               "method": "GET",
               "path": "/informationProtection/sensitivityLabels",
-              "operationId": "informationProtection.ListSensitivityLabels"
+              "operationId": "informationProtection_ListSensitivityLabel"
             },
             {
               "method": "POST",
               "path": "/informationProtection/sensitivityLabels",
-              "operationId": "informationProtection.CreateSensitivityLabels"
+              "operationId": "informationProtection_CreateSensitivityLabel"
             },
             {
               "method": "DELETE",
               "path": "/informationProtection/sensitivityLabels/{sensitivityLabel-id}",
-              "operationId": "informationProtection.DeleteSensitivityLabels"
+              "operationId": "informationProtection_DeleteSensitivityLabel"
             },
             {
               "method": "GET",
               "path": "/informationProtection/sensitivityLabels/{sensitivityLabel-id}",
-              "operationId": "informationProtection.GetSensitivityLabels"
+              "operationId": "informationProtection_GetSensitivityLabel"
             },
             {
               "method": "PATCH",
               "path": "/informationProtection/sensitivityLabels/{sensitivityLabel-id}",
-              "operationId": "informationProtection.UpdateSensitivityLabels"
+              "operationId": "informationProtection_UpdateSensitivityLabel"
             },
             {
               "method": "GET",
               "path": "/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels",
-              "operationId": "informationProtection.sensitivityLabels.ListSublabels"
+              "operationId": "informationProtection.sensitivityLabel_ListSublabel"
             },
             {
               "method": "POST",
               "path": "/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels",
-              "operationId": "informationProtection.sensitivityLabels.CreateSublabels"
+              "operationId": "informationProtection.sensitivityLabel_CreateSublabel"
             },
             {
               "method": "DELETE",
               "path": "/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/{sensitivityLabel-id1}",
-              "operationId": "informationProtection.sensitivityLabels.DeleteSublabels"
+              "operationId": "informationProtection.sensitivityLabel_DeleteSublabel"
             },
             {
               "method": "GET",
               "path": "/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/{sensitivityLabel-id1}",
-              "operationId": "informationProtection.sensitivityLabels.GetSublabels"
+              "operationId": "informationProtection.sensitivityLabel_GetSublabel"
             },
             {
               "method": "PATCH",
               "path": "/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/{sensitivityLabel-id1}",
-              "operationId": "informationProtection.sensitivityLabels.UpdateSublabels"
+              "operationId": "informationProtection.sensitivityLabel_UpdateSublabel"
             }
           ]
         }
@@ -1094,7 +945,7 @@
             {
               "method": "POST",
               "path": "/users/{user-id}/authentication/passwordMethods",
-              "operationId": "users.authentication.CreatePasswordMethods"
+              "operationId": "user.authentication_CreatePasswordMethod"
             }
           ]
         },
@@ -1104,7 +955,7 @@
             {
               "method": "POST",
               "path": "/users/{user-id}/authentication/passwordMethods",
-              "operationId": "users.authentication.CreatePasswordMethods"
+              "operationId": "user.authentication_CreatePasswordMethod"
             }
           ]
         }
@@ -1124,107 +975,107 @@
             {
               "method": "DELETE",
               "path": "/identity/conditionalAccess/authenticationStrength",
-              "operationId": "identity.conditionalAccess.DeleteAuthenticationStrength"
+              "operationId": "identity.conditionalAccess_DeleteAuthenticationStrength"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength",
-              "operationId": "identity.conditionalAccess.GetAuthenticationStrength"
+              "operationId": "identity.conditionalAccess_GetAuthenticationStrength"
             },
             {
               "method": "PATCH",
               "path": "/identity/conditionalAccess/authenticationStrength",
-              "operationId": "identity.conditionalAccess.UpdateAuthenticationStrength"
+              "operationId": "identity.conditionalAccess_UpdateAuthenticationStrength"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes",
-              "operationId": "identity.conditionalAccess.authenticationStrength.ListAuthenticationMethodModes"
+              "operationId": "identity.conditionalAccess.authenticationStrength_ListAuthenticationMethodMode"
             },
             {
               "method": "POST",
               "path": "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes",
-              "operationId": "identity.conditionalAccess.authenticationStrength.CreateAuthenticationMethodModes"
+              "operationId": "identity.conditionalAccess.authenticationStrength_CreateAuthenticationMethodMode"
             },
             {
               "method": "DELETE",
               "path": "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/{authenticationMethodModeDetail-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.DeleteAuthenticationMethodModes"
+              "operationId": "identity.conditionalAccess.authenticationStrength_DeleteAuthenticationMethodMode"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/{authenticationMethodModeDetail-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.GetAuthenticationMethodModes"
+              "operationId": "identity.conditionalAccess.authenticationStrength_GetAuthenticationMethodMode"
             },
             {
               "method": "PATCH",
               "path": "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/{authenticationMethodModeDetail-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.UpdateAuthenticationMethodModes"
+              "operationId": "identity.conditionalAccess.authenticationStrength_UpdateAuthenticationMethodMode"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/$count",
-              "operationId": "identity.conditionalAccess.authenticationStrength.authenticationMethodModes.GetCount-e876"
+              "operationId": "identity.conditionalAccess.authenticationStrength.authenticationMethodMode_GetCount"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/policies",
-              "operationId": "identity.conditionalAccess.authenticationStrength.ListPolicies"
+              "operationId": "identity.conditionalAccess.authenticationStrength_ListPolicy"
             },
             {
               "method": "POST",
               "path": "/identity/conditionalAccess/authenticationStrength/policies",
-              "operationId": "identity.conditionalAccess.authenticationStrength.CreatePolicies"
+              "operationId": "identity.conditionalAccess.authenticationStrength_CreatePolicy"
             },
             {
               "method": "DELETE",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.DeletePolicies"
+              "operationId": "identity.conditionalAccess.authenticationStrength_DeletePolicy"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.GetPolicies"
+              "operationId": "identity.conditionalAccess.authenticationStrength_GetPolicy"
             },
             {
               "method": "PATCH",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.UpdatePolicies"
+              "operationId": "identity.conditionalAccess.authenticationStrength_UpdatePolicy"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.ListCombinationConfigurations"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy_ListCombinationConfiguration"
             },
             {
               "method": "DELETE",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/{authenticationCombinationConfiguration-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.DeleteCombinationConfigurations"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy_DeleteCombinationConfiguration"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/{authenticationCombinationConfiguration-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.GetCombinationConfigurations"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy_GetCombinationConfiguration"
             },
             {
               "method": "PATCH",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/{authenticationCombinationConfiguration-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.UpdateCombinationConfigurations"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy_UpdateCombinationConfiguration"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/$count",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.combinationConfigurations.GetCount-64b7"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy.combinationConfiguration_GetCount"
             },
             {
               "method": "POST",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/updateAllowedCombinations",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.authenticationStrengthPolicy.updateAllowedCombinations"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy.authenticationStrengthPolicy_updateAllowedCombination"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/$count",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.GetCount-8166"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy_GetCount"
             }
           ]
         },
@@ -1234,107 +1085,107 @@
             {
               "method": "DELETE",
               "path": "/identity/conditionalAccess/authenticationStrength",
-              "operationId": "identity.conditionalAccess.DeleteAuthenticationStrength"
+              "operationId": "identity.conditionalAccess_DeleteAuthenticationStrength"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength",
-              "operationId": "identity.conditionalAccess.GetAuthenticationStrength"
+              "operationId": "identity.conditionalAccess_GetAuthenticationStrength"
             },
             {
               "method": "PATCH",
               "path": "/identity/conditionalAccess/authenticationStrength",
-              "operationId": "identity.conditionalAccess.UpdateAuthenticationStrength"
+              "operationId": "identity.conditionalAccess_UpdateAuthenticationStrength"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes",
-              "operationId": "identity.conditionalAccess.authenticationStrength.ListAuthenticationMethodModes"
+              "operationId": "identity.conditionalAccess.authenticationStrength_ListAuthenticationMethodMode"
             },
             {
               "method": "POST",
               "path": "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes",
-              "operationId": "identity.conditionalAccess.authenticationStrength.CreateAuthenticationMethodModes"
+              "operationId": "identity.conditionalAccess.authenticationStrength_CreateAuthenticationMethodMode"
             },
             {
               "method": "DELETE",
               "path": "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/{authenticationMethodModeDetail-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.DeleteAuthenticationMethodModes"
+              "operationId": "identity.conditionalAccess.authenticationStrength_DeleteAuthenticationMethodMode"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/{authenticationMethodModeDetail-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.GetAuthenticationMethodModes"
+              "operationId": "identity.conditionalAccess.authenticationStrength_GetAuthenticationMethodMode"
             },
             {
               "method": "PATCH",
               "path": "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/{authenticationMethodModeDetail-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.UpdateAuthenticationMethodModes"
+              "operationId": "identity.conditionalAccess.authenticationStrength_UpdateAuthenticationMethodMode"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/authenticationMethodModes/$count",
-              "operationId": "identity.conditionalAccess.authenticationStrength.authenticationMethodModes.GetCount-e876"
+              "operationId": "identity.conditionalAccess.authenticationStrength.authenticationMethodMode_GetCount"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/policies",
-              "operationId": "identity.conditionalAccess.authenticationStrength.ListPolicies"
+              "operationId": "identity.conditionalAccess.authenticationStrength_ListPolicy"
             },
             {
               "method": "POST",
               "path": "/identity/conditionalAccess/authenticationStrength/policies",
-              "operationId": "identity.conditionalAccess.authenticationStrength.CreatePolicies"
+              "operationId": "identity.conditionalAccess.authenticationStrength_CreatePolicy"
             },
             {
               "method": "DELETE",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.DeletePolicies"
+              "operationId": "identity.conditionalAccess.authenticationStrength_DeletePolicy"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.GetPolicies"
+              "operationId": "identity.conditionalAccess.authenticationStrength_GetPolicy"
             },
             {
               "method": "PATCH",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.UpdatePolicies"
+              "operationId": "identity.conditionalAccess.authenticationStrength_UpdatePolicy"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.ListCombinationConfigurations"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy_ListCombinationConfiguration"
             },
             {
               "method": "DELETE",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/{authenticationCombinationConfiguration-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.DeleteCombinationConfigurations"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy_DeleteCombinationConfiguration"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/{authenticationCombinationConfiguration-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.GetCombinationConfigurations"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy_GetCombinationConfiguration"
             },
             {
               "method": "PATCH",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/{authenticationCombinationConfiguration-id}",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.UpdateCombinationConfigurations"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy_UpdateCombinationConfiguration"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/combinationConfigurations/$count",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.combinationConfigurations.GetCount-64b7"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy.combinationConfiguration_GetCount"
             },
             {
               "method": "POST",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy-id}/updateAllowedCombinations",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.authenticationStrengthPolicy.updateAllowedCombinations"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy.authenticationStrengthPolicy_updateAllowedCombination"
             },
             {
               "method": "GET",
               "path": "/identity/conditionalAccess/authenticationStrength/policies/$count",
-              "operationId": "identity.conditionalAccess.authenticationStrength.policies.GetCount-8166"
+              "operationId": "identity.conditionalAccess.authenticationStrength.policy_GetCount"
             }
           ]
         }
@@ -1346,7 +1197,7 @@
       "classification": "CmdletSuppression",
       "sourceContains": "variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$",
       "implementation": "ExistingConfiguration",
-      "notes": "The numbered IdentityProvider Update1 variants resolve to legacy PATCH /identityProviders/{identityProvider-id}, not PATCH /identity/identityProviders/{identityProviderBase-id} (the shipped nested command has unnumbered Update variants). The entire deprecated top-level set is absent from both compatible specs and is already accounted for in directive 1 removedLegacyOperations and the existing curated prefix suppression. No redundant override is added; preserve nested provider PATCH.",
+      "notes": "The numbered IdentityProvider Update1 variants resolve to legacy PATCH /identityProviders/{identityProvider-id}, not PATCH /identity/identityProviders/{identityProviderBase-id} (the shipped nested command has unnumbered Update variants). The entire deprecated top-level set is absent from both compatible specs and is already accounted for in directive 1 source-fidelity tests and the existing curated prefix suppression. No redundant override is added; preserve nested provider PATCH.",
       "profiles": {
         "v1.0": {
           "absenceExpected": true,

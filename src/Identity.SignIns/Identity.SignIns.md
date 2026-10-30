@@ -28,6 +28,22 @@ The response-content removal (directive 10) remains **DeferredSchema** and is
 unchanged. Parameter aliases and transforms remain deferred and unchanged; this
 shared file contains no parameter directives.
 
+Current compatible operation IDs are aligned with the legacy selectors. The ledger
+uses literal current triples; source-backed tests independently account for the full
+original sets, including the seven removed top-level provider operations per profile
+and beta's final action namespace removal. No unmerged Legacy-helper schema is used.
+
+The shared wrapper configuration also resolves five pre-existing beta generation
+collisions without dropping endpoints: item reference deletions include their exact
+referenced entity type in the noun, while collection reference names remain unchanged.
+The custom-extension action accepting endpoint/authentication configuration has a
+distinct `Test-MgIdentityCustomAuthenticationExtensionEndpointAuthenticationConfiguration`
+name from the bodyless existing-extension test. These are ordinary distinct commands,
+not grouped variants or a migration of excluded profile-local directives. Existing
+v1.0 derived suppressions and names remain authoritative. Required `@id` query
+binding on collection reference deletions is a separately owned generator prerequisite,
+not something this module config implements or bypasses.
+
 ``` yaml
 directive:
 # Wrapper migration 1: the original regex is evaluated against each actual legacy
