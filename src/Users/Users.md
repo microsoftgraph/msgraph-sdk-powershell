@@ -28,8 +28,8 @@ Exact legacy-to-compatible evidence is recorded in
 directive:
 # Remove invalid root paths e.g. users{id}/todo
 # Wrapper migration, directive 1: the ORIGINAL case-sensitive regex selects only
-# root todo GET/PATCH/DELETE in each legacy profile. All three survive under new
-# compatible IDs and are suppressed by exact method/path module configuration.
+# root todo GET/PATCH/DELETE in each legacy profile. All three survive with
+# aligned compatible IDs and exact method/path module suppressions.
 # It does not select user_GetOutlook or any nested todo/lists operation.
   - remove-path-by-operation: user_(Get|Create|Update|Delete|Set)(Todo|outlook)
 # Remove commands

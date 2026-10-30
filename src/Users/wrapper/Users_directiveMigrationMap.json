@@ -1,19 +1,22 @@
 {
   "audit": {
     "source": "src/Users/Users.md",
-    "baseline": "51d441eeb5",
+    "baseline": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad",
     "requiredProfiles": ["v1.0", "beta"],
     "excludedProfiles": [],
     "ignored": ["src/Users/v1.0/readme.md", "src/Users/beta/readme.md", "src/readme.graph.md"],
     "deferred": "Parameter aliases/transforms and schema/response directives; none occur in the shared source.",
     "compatibleSpecBlobs": {
-      "v1.0": "0d36575d756dbf5f302913140e61710f57b6e51f",
-      "beta": "82ce2bdab5d5849ecd2a2e2ee459618b7edef10e"
+      "v1.0": "7cb83e0f6f59232ce7e7fd585001d3836c3938d2",
+      "beta": "71a3ce7e835abfecb84bad4776a22e5a6814531c"
     },
-    "lineage": "Original operation-ID regex evaluated case-sensitively on actual same-profile openApiDocs Users.yml: exactly three matches per profile, all surviving at the exact same method/path with renamed IDs. user_GetOutlook does not match lowercase outlook. No actual removals or action/function qualification translations.",
+    "legacySpecBlobs": {
+      "v1.0": "6eab7f412e4e1fd88e1156b4daa0e68a7a1c5edb",
+      "beta": "639e0bee6e68c4a9550dcdc2cd071c3f9ab1adbc"
+    },
+    "lineage": "The original case-sensitive regex selects exactly root todo GET/PATCH/DELETE in each actual same-profile legacy spec. All three survive at identical exact method/path with aligned user_GetTodo/user_UpdateTodo/user_DeleteTodo IDs in the current compatible specs. The complete original-survivor and literal-current selected sets are equal (3/3 in each profile). user_GetOutlook does not match lowercase outlook. No removals, namespace translations or reserved legacy-ledger fields are needed.",
     "coverage": "Exact module entries preserve v1.0 derived suppressions while supplying the missing beta coverage. Existing curated /photos suppressions remain unchanged. The unreachable UserTodo List rename is subsumed, not implemented as a new public noun.",
-    "betaPhotoMediaContract": {
-      "profile": "beta",
+    "photoMediaContract": {
       "defaultPath": "/users/{user-id}/photo/$value",
       "additionalPath": "/users/{user-id}/photos/{profilePhoto-id}/$value",
       "methods": ["GET", "DELETE"],
@@ -21,18 +24,20 @@
       "getHelp": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.users/get-mgbetauserphotocontent?view=graph-powershell-beta",
       "deleteHelp": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.users/remove-mgbetauserphotocontent?view=graph-powershell-beta",
       "defaultEvidence": "Published Get (Default) requires UserId and OutFile; Get1 additionally requires ProfilePhotoId. Delete (Default) requires UserId; Delete1 additionally requires ProfilePhotoId. Thus the singleton is independently verified as the published default, not guessed from the metadata oracle's first URI.",
-      "routeFidelity": "Both actual compatible routes remain unsuppressed. GET is binary application/octet-stream with 2XX response; DELETE has 204. A full beta build requires reviewed opt-in media routing support; do not treat the absent initial beta output or generator collision as permission to drop either route."
+      "routeFidelity": "Media is incompatible with the merged natural-ID entity dispatcher. An exact shared noun repair names the explicit ProfilePhotoId route UserPhotoContentById, justified by source user_GetPhotosContent/user_SetPhotosContent/user_DeletePhotosContent and its distinct mandatory ID. Singleton UserPhotoContent and its URL remain unchanged. No endpoints are pruned and no grouping, selectors, profile authoring or capability flags are introduced.",
+      "wrapperSemantics": "Keep existing optional OutFile behavior (bytes when omitted). Frozen v1.0 derived suppressions of the additional GET/DELETE media route remain unchanged; beta exposes the distinct ById commands. PUT media with only a 2XX response remains an unsuppressed baseline client-only operation, not a compiled neighbor pass."
     },
     "betaCollisionRepair": {
       "method": "DELETE",
       "path": "/users/{user-id}/sponsors/{directoryObject-id}/$ref",
-      "operationId": "users.sponsors.DeleteRefDirectoryObject",
+      "operationId": "user.sponsor_DeleteDirectoryObjectGraphBPreRef",
       "noun": "UserSponsorDirectoryObjectByRef",
       "evidence": "The repository's beta MgCommandMetadata row independently publishes Remove-MgBetaUserSponsorDirectoryObjectByRef for this exact item URI. It is not the root Remove-MgBetaUserSponsorByRef command. No route is suppressed or renamed speculatively.",
       "publishedHelp": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.users/remove-mgbetausersponsordirectoryobjectbyref?view=graph-powershell-beta",
       "publishedHelpCommit": "07b0cf8f6305213f3c3830c301fca69a3e82ed17",
       "requiredParameters": ["UserId", "DirectoryObjectId"],
-      "rootNeighbor": "DELETE /users/{user-id}/sponsors/$ref remains separately named SponsorByRef; compatible spec requires string @id, published help exposes mandatory Id. Existing ordinary emitter does not bind this query; this baseline limitation is not an all-surface fidelity pass."
+      "rootNeighbor": "DELETE /users/{user-id}/sponsors/$ref remains separately named SponsorByRef. Both current specs require query @id:string and published help requires Id. Native required DELETE-query binding requires normal integration of shared prerequisite #3882; no module authoring flags, copied repair, one-member group or false query-fidelity pass.",
+      "rootPublishedHelp": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.users/remove-mgbetausersponsorbyref?view=graph-powershell-beta"
     }
   },
   "mappings": [
@@ -45,58 +50,44 @@
       "notes": "Suppress exactly root todo GET/PATCH/DELETE, preserving nested todo/lists. The complete original legacy match set has three surviving operations in each profile; uppercase user_GetOutlook is not selected.",
       "profiles": {
         "v1.0": {
-          "operationIdSource": "Legacy",
-          "notes": "All three actual original-regex matches are uniquely bridged by exact method/path; compatible literal-ID matches are zero because IDs changed, not because APIs disappeared.",
+          "notes": "All three original matches survive at exact method/path with aligned IDs. Complete source-survivor and current literal selector sets are equal.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "GET",
               "path": "/users/{user-id}/todo",
-              "operationId": "users.GetTodo",
-              "legacyPath": "/users/{user-id}/todo",
-              "legacyOperationId": "user_GetTodo"
+              "operationId": "user_GetTodo"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/todo",
-              "operationId": "users.UpdateTodo",
-              "legacyPath": "/users/{user-id}/todo",
-              "legacyOperationId": "user_UpdateTodo"
+              "operationId": "user_UpdateTodo"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/todo",
-              "operationId": "users.DeleteTodo",
-              "legacyPath": "/users/{user-id}/todo",
-              "legacyOperationId": "user_DeleteTodo"
+              "operationId": "user_DeleteTodo"
             }
           ]
         },
         "beta": {
-          "operationIdSource": "Legacy",
-          "notes": "All three actual original-regex matches are uniquely bridged by exact method/path; compatible literal-ID matches are zero because IDs changed, not because APIs disappeared.",
+          "notes": "All three original matches survive at exact method/path with aligned IDs. Complete source-survivor and current literal selector sets are equal.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "GET",
               "path": "/users/{user-id}/todo",
-              "operationId": "users.GetTodo",
-              "legacyPath": "/users/{user-id}/todo",
-              "legacyOperationId": "user_GetTodo"
+              "operationId": "user_GetTodo"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/todo",
-              "operationId": "users.UpdateTodo",
-              "legacyPath": "/users/{user-id}/todo",
-              "legacyOperationId": "user_UpdateTodo"
+              "operationId": "user_UpdateTodo"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/todo",
-              "operationId": "users.DeleteTodo",
-              "legacyPath": "/users/{user-id}/todo",
-              "legacyOperationId": "user_DeleteTodo"
+              "operationId": "user_DeleteTodo"
             }
           ]
         }
@@ -108,18 +99,18 @@
       "classification": "CmdletSuppression",
       "sourceContains": "subject: ^UserLicenseDetail$",
       "implementation": "CmdletConfigurator",
-      "notes": "New UserLicenseDetail selects only POST /users/{user-id}/licenseDetails: legacy user_CreateLicenseDetail -> compatible users.CreateLicenseDetails in both profiles. Retain collection/item reads and item mutations.",
+      "notes": "New UserLicenseDetail selects only POST /users/{user-id}/licenseDetails: user_CreateLicenseDetail in both legacy and current compatible profiles. Retain collection/item reads and item mutations.",
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
           "operations": [
-            { "method": "POST", "path": "/users/{user-id}/licenseDetails", "operationId": "users.CreateLicenseDetails" }
+            { "method": "POST", "path": "/users/{user-id}/licenseDetails", "operationId": "user_CreateLicenseDetail" }
           ]
         },
         "beta": {
           "absenceExpected": false,
           "operations": [
-            { "method": "POST", "path": "/users/{user-id}/licenseDetails", "operationId": "users.CreateLicenseDetails" }
+            { "method": "POST", "path": "/users/{user-id}/licenseDetails", "operationId": "user_CreateLicenseDetail" }
           ]
         }
       }
@@ -135,13 +126,13 @@
         "v1.0": {
           "absenceExpected": false,
           "operations": [
-            { "method": "GET", "path": "/users/{user-id}/todo", "operationId": "users.GetTodo" }
+            { "method": "GET", "path": "/users/{user-id}/todo", "operationId": "user_GetTodo" }
           ]
         },
         "beta": {
           "absenceExpected": false,
           "operations": [
-            { "method": "GET", "path": "/users/{user-id}/todo", "operationId": "users.GetTodo" }
+            { "method": "GET", "path": "/users/{user-id}/todo", "operationId": "user_GetTodo" }
           ]
         }
       }
@@ -152,18 +143,18 @@
       "classification": "CmdletSuppression",
       "sourceContains": "subject: ^UserPhoto$",
       "implementation": "CmdletConfigurator",
-      "notes": "Update UserPhoto selects only PATCH /users/{user-id}/photo: legacy user_UpdatePhoto -> compatible users.UpdatePhoto in both profiles. Preserve singleton GET and GET/PUT photo/$value, plus the pre-existing curated /photos behavior.",
+      "notes": "Update UserPhoto selects only PATCH /users/{user-id}/photo: user_UpdatePhoto in both legacy and current compatible profiles. Preserve singleton GET and unsuppressed GET/PUT photo/$value selection, plus the pre-existing curated /photos behavior.",
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
           "operations": [
-            { "method": "PATCH", "path": "/users/{user-id}/photo", "operationId": "users.UpdatePhoto" }
+            { "method": "PATCH", "path": "/users/{user-id}/photo", "operationId": "user_UpdatePhoto" }
           ]
         },
         "beta": {
           "absenceExpected": false,
           "operations": [
-            { "method": "PATCH", "path": "/users/{user-id}/photo", "operationId": "users.UpdatePhoto" }
+            { "method": "PATCH", "path": "/users/{user-id}/photo", "operationId": "user_UpdatePhoto" }
           ]
         }
       }

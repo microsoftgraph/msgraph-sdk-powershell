@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -6,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -17,9 +19,9 @@ public sealed class UsersDirectiveMigrationTests
 {
     private static readonly (string Method, string Path, string LegacyId, string CurrentId)[] RootTodo =
     [
-        ("GET", "/users/{user-id}/todo", "user_GetTodo", "users.GetTodo"),
-        ("PATCH", "/users/{user-id}/todo", "user_UpdateTodo", "users.UpdateTodo"),
-        ("DELETE", "/users/{user-id}/todo", "user_DeleteTodo", "users.DeleteTodo"),
+        ("GET", "/users/{user-id}/todo", "user_GetTodo", "user_GetTodo"),
+        ("PATCH", "/users/{user-id}/todo", "user_UpdateTodo", "user_UpdateTodo"),
+        ("DELETE", "/users/{user-id}/todo", "user_DeleteTodo", "user_DeleteTodo"),
     ];
 
     [Theory]
@@ -40,6 +42,11 @@ public sealed class UsersDirectiveMigrationTests
             .ToArray();
 
         Assert.Equal(RootTodo.Length, selected.Length);
+        var currentSelected = compatible.Paths.SelectMany(path => path.Value.Operations!
+            .Where(operation => regex.IsMatch(operation.Value.OperationId!))
+            .Select(operation => $"{operation.Key.Method} {path.Key} [{operation.Value.OperationId}]")).ToArray();
+        Assert.Equal(selected.Select(operation => $"{operation.Method} {operation.Path} [{operation.Id}]").Order(),
+            currentSelected.Order());
         foreach (var expected in RootTodo)
         {
             Assert.Single(selected, operation => operation.Method == expected.Method
@@ -47,7 +54,7 @@ public sealed class UsersDirectiveMigrationTests
             var successor = Assert.Single(compatible.Paths[expected.Path].Operations!,
                 operation => operation.Key.Method == expected.Method);
             Assert.Equal(expected.CurrentId, successor.Value.OperationId);
-            Assert.DoesNotMatch(regex, successor.Value.OperationId!);
+            Assert.Matches(regex, successor.Value.OperationId!);
         }
 
         Assert.DoesNotMatch(regex, "user_GetOutlook");
@@ -88,7 +95,8 @@ public sealed class UsersDirectiveMigrationTests
         }
 
         var rootMapping = mappings[0].GetProperty("profiles").GetProperty(profile);
-        Assert.Equal("Legacy", rootMapping.GetProperty("operationIdSource").GetString());
+        Assert.False(rootMapping.TryGetProperty("operationIdSource", out _));
+        Assert.False(rootMapping.TryGetProperty("removedLegacyOperations", out _));
         var bridges = rootMapping.GetProperty("operations").EnumerateArray().ToArray();
         Assert.Equal(RootTodo.Length, bridges.Length);
         foreach (var expected in RootTodo)
@@ -96,15 +104,19 @@ public sealed class UsersDirectiveMigrationTests
             Assert.Single(bridges, bridge =>
                 bridge.GetProperty("method").GetString() == expected.Method
                 && bridge.GetProperty("path").GetString() == expected.Path
-                && bridge.GetProperty("operationId").GetString() == expected.CurrentId
-                && bridge.GetProperty("legacyPath").GetString() == expected.Path
-                && bridge.GetProperty("legacyOperationId").GetString() == expected.LegacyId);
+                && bridge.GetProperty("operationId").GetString() == expected.CurrentId);
         }
+        Assert.All(bridges, bridge =>
+        {
+            Assert.False(bridge.TryGetProperty("legacyPath", out _));
+            Assert.False(bridge.TryGetProperty("legacyOperationId", out _));
+            Assert.False(bridge.TryGetProperty("legacyPathTranslation", out _));
+        });
         Assert.Equal("SupersededBySuppression", mappings[2].GetProperty("implementation").GetString());
         var subsumed = Assert.Single(mappings[2].GetProperty("profiles").GetProperty(profile)
             .GetProperty("operations").EnumerateArray());
         Assert.Equal("/users/{user-id}/todo", subsumed.GetProperty("path").GetString());
-        Assert.Equal("users.GetTodo", subsumed.GetProperty("operationId").GetString());
+        Assert.Equal("user_GetTodo", subsumed.GetProperty("operationId").GetString());
     }
 
     [Theory]
@@ -115,25 +127,27 @@ public sealed class UsersDirectiveMigrationTests
     public async Task SharedSuppressionsAreExactInBothCompatibleProfiles(string profile, bool useCollisionData)
     {
         var document = await ReadSpec("openApiDocs_KiotaCompat", profile);
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         foreach (var operation in RootTodo)
-            AssertSuppressed(document, config, operation.Method, operation.Path, operation.CurrentId);
-        AssertSuppressed(document, config, "POST", "/users/{user-id}/licenseDetails", "users.CreateLicenseDetails");
-        AssertSuppressed(document, config, "PATCH", "/users/{user-id}/photo", "users.UpdatePhoto");
+            AssertSuppressed(document, config, profile, operation.Method, operation.Path, operation.CurrentId);
+        AssertSuppressed(document, config, profile, "POST", "/users/{user-id}/licenseDetails", "user_CreateLicenseDetail");
+        AssertSuppressed(document, config, profile, "PATCH", "/users/{user-id}/photo", "user_UpdatePhoto");
 
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/users/{user-id}/todo", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/todo/lists/{todoTaskList-id}", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/photos/{profilePhoto-id}/child", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/licensedetails/child", config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/users/{user-id}/todo", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/todo/lists/{todoTaskList-id}", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/photos/{profilePhoto-id}/child", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/licensedetails/child", config, apiVersion: profile));
     }
 
     [Theory]
-    [InlineData("v1.0")]
-    [InlineData("beta")]
-    public async Task UnaffectedNeighborsAndExistingCuratedPhotoBehaviorRemain(string profile)
+    [InlineData("v1.0", true)]
+    [InlineData("v1.0", false)]
+    [InlineData("beta", true)]
+    [InlineData("beta", false)]
+    public async Task UnaffectedNeighborsAndExistingCuratedPhotoBehaviorRemain(string profile, bool useCollisionData)
     {
         var document = await ReadSpec("openApiDocs_KiotaCompat", profile);
-        var config = new GeneratorConfig("Test.Client", "unused", profile);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         (string Method, string Path, string Noun)[] neighbors =
         [
             ("GET", "/users", "MgUser"),
@@ -152,30 +166,33 @@ public sealed class UsersDirectiveMigrationTests
         {
             var method = new HttpMethod(neighbor.Method);
             Assert.True(document.Paths[neighbor.Path].Operations!.ContainsKey(method));
-            Assert.False(CmdletConfigurator.IsSuppressed(method, neighbor.Path, config));
-            Assert.Equal(neighbor.Noun, Naming.Resolve(new OperationInfo(method, neighbor.Path), config).Noun);
+            Assert.False(CmdletConfigurator.IsSuppressed(method, neighbor.Path, config, apiVersion: profile));
+            Assert.Equal(neighbor.Noun, Naming.Resolve(new OperationInfo(method, neighbor.Path), config, apiVersion: profile).Noun);
         }
 
         foreach (var path in new[] { "/users/{user-id}/photos", "/users/{user-id}/photos/{profilePhoto-id}" })
         {
             Assert.True(document.Paths.ContainsKey(path));
-            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config));
+            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config, apiVersion: profile));
         }
         // Preserve the existing v1.0 derived Outlook suppression without extending a
         // case-sensitive legacy selector to an operation it did not select in beta.
-        Assert.Equal(profile == "v1.0",
-            CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/outlook", config));
+        Assert.Equal(profile == "v1.0" && useCollisionData,
+            CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/outlook", config, apiVersion: profile));
     }
 
     [Theory]
-    [InlineData("v1.0", "Mg")]
-    [InlineData("beta", "MgBeta")]
-    public async Task SponsorItemUsesItsExactPublishedNounWithoutDroppingEitherRoute(string profile, string publishedPrefix)
+    [InlineData("v1.0", "Mg", true)]
+    [InlineData("v1.0", "Mg", false)]
+    [InlineData("beta", "MgBeta", true)]
+    [InlineData("beta", "MgBeta", false)]
+    public async Task SponsorItemUsesItsExactPublishedNounWithoutDroppingEitherRoute(string profile, string publishedPrefix,
+        bool useCollisionData)
     {
         const string item = "/users/{user-id}/sponsors/{directoryObject-id}/$ref";
         const string root = "/users/{user-id}/sponsors/$ref";
         var document = await ReadSpec("openApiDocs_KiotaCompat", profile);
-        var config = new GeneratorConfig("Test.Client", "unused", profile);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         using var metadata = JsonDocument.Parse(File.ReadAllText(Path.Combine(RepoRoot(),
             "src", "Authentication", "Authentication", "custom", "common", "MgCommandMetadata.json")));
         foreach (var (path, noun) in new[]
@@ -185,8 +202,8 @@ public sealed class UsersDirectiveMigrationTests
         })
         {
             Assert.True(document.Paths[path].Operations!.ContainsKey(HttpMethod.Delete));
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, path, config));
-            Assert.Equal("Mg" + noun, Naming.Resolve(new OperationInfo(HttpMethod.Delete, path), config).Noun);
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, path, config, apiVersion: profile));
+            Assert.Equal("Mg" + noun, Naming.Resolve(new OperationInfo(HttpMethod.Delete, path), config, apiVersion: profile).Noun);
             Assert.Single(metadata.RootElement.EnumerateArray(), row =>
                 row.GetProperty("ApiVersion").GetString() == profile
                 && row.GetProperty("Command").GetString() == "Remove-" + publishedPrefix + noun
@@ -207,22 +224,22 @@ public sealed class UsersDirectiveMigrationTests
         const string singleton = "/users/{user-id}/photo/$value";
         const string item = "/users/{user-id}/photos/{profilePhoto-id}/$value";
         var document = await ReadSpec("openApiDocs_KiotaCompat", "beta");
-        var config = new GeneratorConfig("Test.Client", "unused", "beta");
+        var config = new GeneratorConfig("Test.Client", "unused");
         using var metadata = JsonDocument.Parse(File.ReadAllText(Path.Combine(RepoRoot(),
             "src", "Authentication", "Authentication", "custom", "common", "MgCommandMetadata.json")));
         foreach (var (method, singletonId, itemId, command) in new[]
         {
-            (HttpMethod.Get, "users.GetPhotoContent", "users.GetPhotosContent", "Get-MgBetaUserPhotoContent"),
-            (HttpMethod.Delete, "users.DeletePhotoContent", "users.DeletePhotosContent", "Remove-MgBetaUserPhotoContent"),
+            (HttpMethod.Get, "user_GetPhotoContent", "user_GetPhotosContent", "Get-MgBetaUserPhotoContent"),
+            (HttpMethod.Delete, "user_DeletePhotoContent", "user_DeletePhotosContent", "Remove-MgBetaUserPhotoContent"),
         })
         {
             Assert.Equal(singletonId, document.Paths[singleton].Operations![method].OperationId);
             Assert.Equal(itemId, document.Paths[item].Operations![method].OperationId);
-            Assert.False(CmdletConfigurator.IsSuppressed(method, singleton, config));
-            Assert.False(CmdletConfigurator.IsSuppressed(method, item, config));
-            Assert.Equal(new[] { "UserId" }, Naming.Resolve(new OperationInfo(method, singleton), config).PathParamNames);
+            Assert.False(CmdletConfigurator.IsSuppressed(method, singleton, config, apiVersion: "beta"));
+            Assert.False(CmdletConfigurator.IsSuppressed(method, item, config, apiVersion: "beta"));
+            Assert.Equal(new[] { "UserId" }, Naming.Resolve(new OperationInfo(method, singleton), config, apiVersion: "beta").PathParamNames);
             Assert.Equal(new[] { "UserId", "ProfilePhotoId" },
-                Naming.Resolve(new OperationInfo(method, item), config).PathParamNames);
+                Naming.Resolve(new OperationInfo(method, item), config, apiVersion: "beta").PathParamNames);
             var published = Assert.Single(metadata.RootElement.EnumerateArray(), row =>
                 row.GetProperty("ApiVersion").GetString() == "beta"
                 && row.GetProperty("Command").GetString() == command);
@@ -238,12 +255,94 @@ public sealed class UsersDirectiveMigrationTests
         }
     }
 
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task GeneratesSharedSuppressionsAndDistinctPublishedSponsorCommands(string profile)
+    {
+        var output = await GenerateActualProfile(profile);
+        var root = output["RemoveMgUserSponsorByRef.g.cs"];
+        Assert.Contains("client.Users[UserId].Sponsors.Ref.DeleteAsync", root, StringComparison.Ordinal);
+        Assert.DoesNotContain("public string DirectoryObjectId", root, StringComparison.Ordinal);
+        Assert.Contains("public string DirectoryObjectId",
+            output["RemoveMgUserSponsorDirectoryObjectByRef.g.cs"], StringComparison.Ordinal);
+        foreach (var suppressed in new[]
+        {
+            "GetMgUserTodo.g.cs", "UpdateMgUserTodo.g.cs", "RemoveMgUserTodo.g.cs",
+            "NewMgUserLicenseDetail.g.cs", "UpdateMgUserPhoto.g.cs",
+        })
+            Assert.False(output.ContainsKey(suppressed), $"Suppressed command was generated: {suppressed}");
+    }
+
+    [Fact]
+    public async Task GeneratesBetaMediaByIdWithoutGroupingOrChangingSingletonUrls()
+    {
+        var output = await GenerateActualProfile("beta");
+        foreach (var command in new[] { "Get", "Remove" })
+        {
+            var source = output[$"{command}MgUserPhotoContent.g.cs"];
+            Assert.Contains("/users/{user-id}/photo/$value", source, StringComparison.Ordinal);
+            Assert.DoesNotContain("ProfilePhotoId", source, StringComparison.Ordinal);
+            var byId = output[$"{command}MgUserPhotoContentById.g.cs"];
+            Assert.Contains("/users/{user-id}/photos/{profilePhoto-id}/$value", byId, StringComparison.Ordinal);
+            Assert.Contains("public string ProfilePhotoId", byId, StringComparison.Ordinal);
+            Assert.Contains($"client.Users[UserId].Photo.Content.{(command == "Get" ? "Get" : "Delete")}Async",
+                source, StringComparison.Ordinal);
+            Assert.Contains($"client.Users[UserId].Photos[ProfilePhotoId].Content.{(command == "Get" ? "Get" : "Delete")}Async",
+                byId, StringComparison.Ordinal);
+        }
+        Assert.Contains("OutFile", output["GetMgUserPhotoContent.g.cs"], StringComparison.Ordinal);
+        Assert.Contains("IfMatch", output["RemoveMgUserPhotoContent.g.cs"], StringComparison.Ordinal);
+        Assert.Contains("SupportsShouldProcess = true", output["RemoveMgUserPhotoContent.g.cs"], StringComparison.Ordinal);
+        Assert.Contains("OutFile", output["GetMgUserPhotoContentById.g.cs"], StringComparison.Ordinal);
+        Assert.Contains("IfMatch", output["RemoveMgUserPhotoContentById.g.cs"], StringComparison.Ordinal);
+        Assert.Contains("SupportsShouldProcess = true", output["RemoveMgUserPhotoContentById.g.cs"], StringComparison.Ordinal);
+        Assert.DoesNotContain(output.Keys, name => name.Contains("_Route", StringComparison.Ordinal));
+    }
+
+    [Theory]
+    [InlineData("v1.0", true)]
+    [InlineData("v1.0", false)]
+    [InlineData("beta", true)]
+    [InlineData("beta", false)]
+    public void MediaByIdNamesRemainSharedAndFrozenDerivedOmissionsRemain(string profile, bool useCollisionData)
+    {
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
+        foreach (var method in new[] { HttpMethod.Get, HttpMethod.Put, HttpMethod.Delete })
+        {
+            const string item = "/users/{user-id}/photos/{profilePhoto-id}/$value";
+            const string singleton = "/users/{user-id}/photo/$value";
+            Assert.Equal("MgUserPhotoContentById", Naming.Resolve(new OperationInfo(method, item), config, apiVersion: profile).Noun);
+            Assert.Equal("MgUserPhotoContent", Naming.Resolve(new OperationInfo(method, singleton), config, apiVersion: profile).Noun);
+            Assert.Equal(profile == "v1.0" && useCollisionData && method != HttpMethod.Put,
+                CmdletConfigurator.IsSuppressed(method, item, config, apiVersion: profile));
+        }
+    }
+
+    private static async Task<Dictionary<string, string>> GenerateActualProfile(string profile)
+    {
+        var document = await ReadSpec("openApiDocs_KiotaCompat", profile);
+        var output = Path.Combine(Path.GetTempPath(), "users-directive-generation", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(output);
+        try
+        {
+            var config = new GeneratorConfig("Microsoft.Graph.PowerShell.Users.Client", output);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(CancellationToken.None);
+            return Directory.GetFiles(output, "*.g.cs").ToDictionary(path => new FileInfo(path).Name, File.ReadAllText);
+        }
+        finally
+        {
+            Directory.Delete(output, recursive: true);
+        }
+    }
+
     private static void AssertSuppressed(OpenApiDocument document, GeneratorConfig config,
-        string methodName, string path, string operationId)
+        string profile, string methodName, string path, string operationId)
     {
         var method = new HttpMethod(methodName);
         Assert.Equal(operationId, document.Paths[path].Operations![method].OperationId);
-        Assert.True(CmdletConfigurator.IsSuppressed(method, path, config));
+        Assert.True(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile));
     }
 
     private static async Task<OpenApiDocument> ReadSpec(string root, string profile)
