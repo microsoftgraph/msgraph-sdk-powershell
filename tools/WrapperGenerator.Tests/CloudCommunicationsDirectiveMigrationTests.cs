@@ -163,6 +163,10 @@ public sealed class CloudCommunicationsDirectiveMigrationTests
         Assert.Equal("binary", binaryContent.Value.Schema.Format);
         Assert.Null(binary.RequestBody);
         Assert.Empty(binary.Parameters ?? []);
+        var upload = document.Paths[parent + "/recording"].Operations![HttpMethod.Put];
+        Assert.True(upload.RequestBody!.Required);
+        Assert.Equal("binary", upload.RequestBody.Content!["application/octet-stream"].Schema!.Format);
+        Assert.Equal(0, Assert.Single(upload.Responses!, response => response.Key.StartsWith('2')).Value.Content?.Count ?? 0);
 
         foreach (var operation in new[] { list, item })
         {

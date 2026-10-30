@@ -308,10 +308,10 @@
     "defaults": "Ordinary paired GETs retain their existing List default. The historical published combined Get2 alias-function default cannot be reproduced: COMM aliases remain baseline unsupported and USER aggregate remains selected by shared directive 5 suppression.",
     "history": "Supersedes inactive premerge beta Route/Allow* policy and all unactivated historical variant drafts; only the actually merged three-setting configuration and separate oracle profile are used.",
     "publishedBaselineEvidence": {
+      "version": "2.38.0",
       "kind": "Captured actual public proxy parameter sets and compiled route-construction IL, not first metadata URI; published combined names differ intentionally from these disambiguated nouns.",
       "package": "Microsoft.Graph.Beta.CloudCommunications",
-      "sha256": "BE21FFEF7F8F1B0D30ACC110589715E64A4FA31BC3E4A62051213E167D20C336",
-      "version": "2.38.0"
+      "sha256": "BE21FFEF7F8F1B0D30ACC110589715E64A4FA31BC3E4A62051213E167D20C336"
     },
     "profiles": {
       "v1.0": {
@@ -325,145 +325,193 @@
             "method": "GET",
             "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
             "operationId": "communication.onlineMeeting_GetMeetingAttendanceReport",
-            "noun": "CommunicationOnlineMeetingLatestAttendanceReport"
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReport",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "PATCH",
             "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
             "operationId": "communication.onlineMeeting_UpdateMeetingAttendanceReport",
-            "noun": "CommunicationOnlineMeetingLatestAttendanceReport"
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReport",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "DELETE",
             "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
             "operationId": "communication.onlineMeeting_DeleteMeetingAttendanceReport",
-            "noun": "CommunicationOnlineMeetingLatestAttendanceReport"
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReport",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "GET",
             "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords",
             "operationId": "communication.onlineMeeting.meetingAttendanceReport_ListAttendanceRecord",
-            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord"
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "POST",
             "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords",
             "operationId": "communication.onlineMeeting.meetingAttendanceReport_CreateAttendanceRecord",
-            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord"
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "GET",
             "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
             "operationId": "communication.onlineMeeting.meetingAttendanceReport_GetAttendanceRecord",
-            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord"
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "PATCH",
             "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
             "operationId": "communication.onlineMeeting.meetingAttendanceReport_UpdateAttendanceRecord",
-            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord"
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "DELETE",
             "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
             "operationId": "communication.onlineMeeting.meetingAttendanceReport_DeleteAttendanceRecord",
-            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord"
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "GET",
             "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/$count",
             "operationId": "communication.onlineMeeting.meetingAttendanceReport.attendanceRecord_GetCount",
-            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecordCount"
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecordCount",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "GET",
             "path": "/communications/onlineMeetings/{onlineMeeting-id}/recording",
             "operationId": "communication_GetOnlineMeetingsRecording",
-            "noun": "CommunicationOnlineMeetingLiveEventRecording"
+            "noun": "CommunicationOnlineMeetingLiveEventRecording",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "PUT",
             "path": "/communications/onlineMeetings/{onlineMeeting-id}/recording",
             "operationId": "communication_SetOnlineMeetingsRecording",
-            "noun": "CommunicationOnlineMeetingLiveEventRecording"
+            "noun": "CommunicationOnlineMeetingLiveEventRecording",
+            "expectedCompiled": false,
+            "baselineLimitation": "Existing emitter skips binary PUT with a bodyless success response. The route remains in the compatible client and is not suppressed or claimed as a compiled cmdlet."
           },
           {
             "method": "DELETE",
             "path": "/communications/onlineMeetings/{onlineMeeting-id}/recording",
             "operationId": "communication_DeleteOnlineMeetingsRecording",
-            "noun": "CommunicationOnlineMeetingLiveEventRecording"
+            "noun": "CommunicationOnlineMeetingLiveEventRecording",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "GET",
             "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
             "operationId": "user.onlineMeeting_GetMeetingAttendanceReport",
-            "noun": "UserOnlineMeetingLatestAttendanceReport"
+            "noun": "UserOnlineMeetingLatestAttendanceReport",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "PATCH",
             "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
             "operationId": "user.onlineMeeting_UpdateMeetingAttendanceReport",
-            "noun": "UserOnlineMeetingLatestAttendanceReport"
+            "noun": "UserOnlineMeetingLatestAttendanceReport",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "DELETE",
             "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
             "operationId": "user.onlineMeeting_DeleteMeetingAttendanceReport",
-            "noun": "UserOnlineMeetingLatestAttendanceReport"
+            "noun": "UserOnlineMeetingLatestAttendanceReport",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "GET",
             "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords",
             "operationId": "user.onlineMeeting.meetingAttendanceReport_ListAttendanceRecord",
-            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord"
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "POST",
             "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords",
             "operationId": "user.onlineMeeting.meetingAttendanceReport_CreateAttendanceRecord",
-            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord"
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "GET",
             "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
             "operationId": "user.onlineMeeting.meetingAttendanceReport_GetAttendanceRecord",
-            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord"
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "PATCH",
             "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
             "operationId": "user.onlineMeeting.meetingAttendanceReport_UpdateAttendanceRecord",
-            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord"
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "DELETE",
             "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
             "operationId": "user.onlineMeeting.meetingAttendanceReport_DeleteAttendanceRecord",
-            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord"
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "GET",
             "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/$count",
             "operationId": "user.onlineMeeting.meetingAttendanceReport.attendanceRecord_GetCount",
-            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecordCount"
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecordCount",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "GET",
             "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording",
             "operationId": "user_GetOnlineMeetingsRecording",
-            "noun": "UserOnlineMeetingLiveEventRecording"
+            "noun": "UserOnlineMeetingLiveEventRecording",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           },
           {
             "method": "PUT",
             "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording",
             "operationId": "user_SetOnlineMeetingsRecording",
-            "noun": "UserOnlineMeetingLiveEventRecording"
+            "noun": "UserOnlineMeetingLiveEventRecording",
+            "expectedCompiled": false,
+            "baselineLimitation": "Existing emitter skips binary PUT with a bodyless success response. The route remains in the compatible client and is not suppressed or claimed as a compiled cmdlet."
           },
           {
             "method": "DELETE",
             "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording",
             "operationId": "user_DeleteOnlineMeetingsRecording",
-            "noun": "UserOnlineMeetingLiveEventRecording"
+            "noun": "UserOnlineMeetingLiveEventRecording",
+            "expectedCompiled": true,
+            "baselineLimitation": null
           }
         ]
       }

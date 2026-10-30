@@ -48,6 +48,9 @@ intentionally differ from the published 2.38.0 combined command/default surface;
 the adjacent ledger records the exact source descriptions and affected operations.
 The rules are shared: both compatible profiles are checked, and paths absent from
 v1.0 do not require a separate profile-only configuration.
+The existing emitter still skips the two binary `/recording` PUT operations with
+bodyless success responses. Their typed client routes remain generated; this
+migration neither suppresses them nor claims new upload-cmdlet support.
 
 ``` yaml
 directive:
