@@ -29,7 +29,7 @@ public sealed class DeviceManagementEnrollmentDirectiveMigrationTests
     {
         var spec = await ReadSpecAsync("openApiDocs_KiotaCompat", profile);
         using var ledger = ReadLedger();
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         var count = 0;
         foreach (var mapping in ledger.RootElement.GetProperty("mappings").EnumerateArray())
         {
@@ -40,9 +40,9 @@ public sealed class DeviceManagementEnrollmentDirectiveMigrationTests
                 var path = operation.GetProperty("path").GetString()!;
                 var actual = spec.Paths![path].Operations![method];
                 Assert.Equal(operation.GetProperty("operationId").GetString(), actual.OperationId);
-                Assert.True(CmdletConfigurator.IsSuppressed(method, path, config), $"{method} {path}");
+                Assert.True(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile), $"{method} {path}");
                 Assert.True(CmdletConfigurator.IsSuppressed(method,
-                    CmdletConfigurator.NormalizePathTemplate(path) + "/", config), $"Normalized {method} {path}");
+                    CmdletConfigurator.NormalizePathTemplate(path) + "/", config, apiVersion: profile), $"Normalized {method} {path}");
                 count++;
             }
         }
@@ -50,11 +50,13 @@ public sealed class DeviceManagementEnrollmentDirectiveMigrationTests
     }
 
     [Theory]
-    [InlineData("v1.0", 0)]
-    [InlineData("beta", 11)]
-    public async Task LegacySelectorEvidenceCoversTheCompleteActualSourceSet(string profile, int expectedCount)
+    [InlineData("v1.0", 0, 0)]
+    [InlineData("beta", 11, 8)]
+    public async Task LegacySelectorEvidenceCoversTheCompleteActualSourceSet(
+        string profile, int expectedCount, int expectedCurrentLiteralCount)
     {
         var legacy = await ReadSpecAsync("openApiDocs", profile);
+        var compatible = await ReadSpecAsync("openApiDocs_KiotaCompat", profile);
         using var ledger = ReadLedger();
         var mapping = ledger.RootElement.GetProperty("mappings")[0].GetProperty("profiles").GetProperty(profile);
         var selector = new Regex(
@@ -75,7 +77,46 @@ public sealed class DeviceManagementEnrollmentDirectiveMigrationTests
 
         Assert.Equal(expectedCount, selected.Length);
         Assert.Equal(selected, reviewed);
+        Assert.Equal(expectedCurrentLiteralCount, compatible.Paths!
+            .Sum(path => path.Value.Operations!.Count(operation => selector.IsMatch(operation.Value.OperationId!))));
+        if (expectedCount == 0)
+        {
+            Assert.False(mapping.TryGetProperty("operationIdSource", out _));
+            Assert.False(mapping.TryGetProperty("removedLegacyOperations", out _));
+            return;
+        }
+
+        Assert.Equal("Legacy", mapping.GetProperty("operationIdSource").GetString());
         Assert.Empty(mapping.GetProperty("removedLegacyOperations").EnumerateArray());
+        var translated = 0;
+        foreach (var operation in mapping.GetProperty("operations").EnumerateArray())
+        {
+            var method = new HttpMethod(operation.GetProperty("method").GetString()!);
+            var oldPath = operation.GetProperty("legacyPath").GetString()!;
+            var path = operation.GetProperty("path").GetString()!;
+            var source = legacy.Paths![oldPath].Operations![method];
+            var successor = compatible.Paths![path].Operations![method];
+            Assert.Equal(operation.GetProperty("legacyOperationId").GetString(), source.OperationId);
+            Assert.Equal(operation.GetProperty("operationId").GetString(), successor.OperationId);
+            Assert.Single(compatible.Paths, candidate =>
+                CmdletConfigurator.NormalizePathTemplate(candidate.Key) ==
+                CmdletConfigurator.NormalizePathTemplate(path) && candidate.Value.Operations!.ContainsKey(method));
+            if (oldPath != path)
+            {
+                Assert.Equal("UnqualifyFinalOperation", operation.GetProperty("legacyPathTranslation").GetString());
+                Assert.Equal(HttpMethod.Get, method);
+                Assert.Equal("function", Assert.IsType<JsonNodeExtension>(
+                    source.Extensions!["x-ms-docs-operation-type"]).Node!.ToString());
+                Assert.Equal("function", Assert.IsType<JsonNodeExtension>(
+                    successor.Extensions!["x-ms-docs-operation-type"]).Node!.ToString());
+                Assert.Equal(oldPath[..(oldPath.LastIndexOf('/') + 1)],
+                    path[..(path.LastIndexOf('/') + 1)]);
+                Assert.Equal("microsoft.graph." + path[(path.LastIndexOf('/') + 1)..],
+                    oldPath[(oldPath.LastIndexOf('/') + 1)..]);
+                translated++;
+            }
+        }
+        Assert.Equal(3, translated);
     }
 
     [Theory]
@@ -86,7 +127,7 @@ public sealed class DeviceManagementEnrollmentDirectiveMigrationTests
     public async Task NeighboringCrudAndActionsRemainAvailable(string profile, bool useCollisionData)
     {
         var spec = await ReadSpecAsync("openApiDocs_KiotaCompat", profile);
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         foreach (var method in new[] { HttpMethod.Get, HttpMethod.Delete })
             AssertAvailable(method, AutopilotItem);
         foreach (var action in new[] { "assignUserToDevice", "unassignUserFromDevice", "updateDeviceProperties" })
@@ -114,22 +155,22 @@ public sealed class DeviceManagementEnrollmentDirectiveMigrationTests
         {
             Assert.True(spec.Paths!.ContainsKey(path), $"Missing neighbor {path}");
             Assert.True(spec.Paths[path].Operations!.ContainsKey(method), $"Missing neighbor {method} {path}");
-            Assert.False(CmdletConfigurator.IsSuppressed(method, path, config), $"{method} {path}");
+            Assert.False(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile), $"{method} {path}");
         }
     }
 
     [Fact]
     public void PublishedV1AutopilotActionNamesRemainDerived()
     {
-        var config = new GeneratorConfig("Test.Client", "unused", "v1.0");
+        var config = new GeneratorConfig("Test.Client", "unused");
         Assert.True(DerivedCollisionResolutions.IsSuppressed("v1.0", HttpMethod.Patch,
             CmdletConfigurator.NormalizePathTemplate(AutopilotItem)));
         Assert.Equal("DeviceManagementWindowsAutopilotDeviceIdentityDeviceProperty",
-            CmdletConfigurator.ApplyNounOverrides(HttpMethod.Post, AutopilotItem + "/updateDeviceProperties", "unused", config));
+            CmdletConfigurator.ApplyNounOverrides(HttpMethod.Post, AutopilotItem + "/updateDeviceProperties", "unused", config, apiVersion: "v1.0"));
         Assert.Equal("Update",
-            CmdletConfigurator.TryGetOverriddenVerb(HttpMethod.Post, AutopilotItem + "/updateDeviceProperties", config));
+            CmdletConfigurator.TryGetOverriddenVerb(HttpMethod.Post, AutopilotItem + "/updateDeviceProperties", config, apiVersion: "v1.0"));
         Assert.Equal("DeviceManagementWindowsAutopilotDeviceIdentityUserToDevice",
-            CmdletConfigurator.ApplyNounOverrides(HttpMethod.Post, AutopilotItem + "/assignUserToDevice", "unused", config));
+            CmdletConfigurator.ApplyNounOverrides(HttpMethod.Post, AutopilotItem + "/assignUserToDevice", "unused", config, apiVersion: "v1.0"));
     }
 
     private static JsonDocument ReadLedger() => JsonDocument.Parse(File.ReadAllText(

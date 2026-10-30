@@ -9,56 +9,54 @@
       "notes": "Reviewed the complete original regex match set in each actual same-profile legacy spec, then bridged all surviving operations. Preserve inherited navigation CRUD and direct role-definition assignedPrincipals functions. No selected legacy operation was removed.",
       "profiles": {
         "v1.0": {
-          "operationIdSource": "Legacy",
-          "notes": "The original selector matches zero actual legacy operations. Neither analytics nor inherited role routes exist in this profile.",
+          "notes": "The original selector matches zero actual legacy operations and zero current compatible operations; reviewed default no-match evidence, not a legacy bridge. Neither analytics nor inherited role routes exist in this profile.",
           "absenceExpected": true,
-          "operations": [],
-          "removedLegacyOperations": []
+          "operations": []
         },
         "beta": {
           "operationIdSource": "Legacy",
-          "notes": "All eleven original legacy regex matches survive. Three assignedPrincipals functions have a verified final namespace conversion; the other eight paths are unchanged.",
+          "notes": "All eleven original legacy regex matches survive. The current compatible regex selects only eight; all three additional assignedPrincipals GET operations remain actual functions with a verified final namespace conversion. Requires the normally merged reviewed Legacy validator; literal-only validation must not pass.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "GET",
               "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice",
-              "operationId": "deviceManagement.ListUserExperienceAnalyticsNotAutopilotReadyDevice",
+              "operationId": "deviceManagement_ListUserExperienceAnalyticsNotAutopilotReadyDevice",
               "legacyPath": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice",
               "legacyOperationId": "deviceManagement_ListUserExperienceAnalyticsNotAutopilotReadyDevice"
             },
             {
               "method": "POST",
               "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice",
-              "operationId": "deviceManagement.CreateUserExperienceAnalyticsNotAutopilotReadyDevice",
+              "operationId": "deviceManagement_CreateUserExperienceAnalyticsNotAutopilotReadyDevice",
               "legacyPath": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice",
               "legacyOperationId": "deviceManagement_CreateUserExperienceAnalyticsNotAutopilotReadyDevice"
             },
             {
               "method": "GET",
               "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
-              "operationId": "deviceManagement.GetUserExperienceAnalyticsNotAutopilotReadyDevice",
+              "operationId": "deviceManagement_GetUserExperienceAnalyticsNotAutopilotReadyDevice",
               "legacyPath": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
               "legacyOperationId": "deviceManagement_GetUserExperienceAnalyticsNotAutopilotReadyDevice"
             },
             {
               "method": "PATCH",
               "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
-              "operationId": "deviceManagement.UpdateUserExperienceAnalyticsNotAutopilotReadyDevice",
+              "operationId": "deviceManagement_UpdateUserExperienceAnalyticsNotAutopilotReadyDevice",
               "legacyPath": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
               "legacyOperationId": "deviceManagement_UpdateUserExperienceAnalyticsNotAutopilotReadyDevice"
             },
             {
               "method": "DELETE",
               "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
-              "operationId": "deviceManagement.DeleteUserExperienceAnalyticsNotAutopilotReadyDevice",
+              "operationId": "deviceManagement_DeleteUserExperienceAnalyticsNotAutopilotReadyDevice",
               "legacyPath": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
               "legacyOperationId": "deviceManagement_DeleteUserExperienceAnalyticsNotAutopilotReadyDevice"
             },
             {
               "method": "GET",
               "path": "/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
-              "operationId": "roleManagement.cloudPC.roleDefinitions.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition.assignedPrincipals",
+              "operationId": "roleManagement.cloudPC.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_assignedPrincipal",
               "legacyPath": "/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
               "legacyOperationId": "roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_assignedPrincipal",
               "legacyPathTranslation": "UnqualifyFinalOperation"
@@ -66,14 +64,14 @@
             {
               "method": "GET",
               "path": "/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
-              "operationId": "roleManagement.cloudPC.roleDefinitions.inheritsPermissionsFrom.GetCount-643c",
+              "operationId": "roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_GetCount",
               "legacyPath": "/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
               "legacyOperationId": "roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_GetCount"
             },
             {
               "method": "GET",
               "path": "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
-              "operationId": "roleManagement.deviceManagement.roleDefinitions.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition.assignedPrincipals",
+              "operationId": "roleManagement.deviceManagement.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_assignedPrincipal",
               "legacyPath": "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
               "legacyOperationId": "roleManagement.deviceManagement.roleDefinition.inheritsPermissionsFrom_assignedPrincipal",
               "legacyPathTranslation": "UnqualifyFinalOperation"
@@ -81,14 +79,14 @@
             {
               "method": "GET",
               "path": "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
-              "operationId": "roleManagement.deviceManagement.roleDefinitions.inheritsPermissionsFrom.GetCount-fb75",
+              "operationId": "roleManagement.deviceManagement.roleDefinition.inheritsPermissionsFrom_GetCount",
               "legacyPath": "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
               "legacyOperationId": "roleManagement.deviceManagement.roleDefinition.inheritsPermissionsFrom_GetCount"
             },
             {
               "method": "GET",
               "path": "/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
-              "operationId": "roleManagement.exchange.roleDefinitions.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition.assignedPrincipals",
+              "operationId": "roleManagement.exchange.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_assignedPrincipal",
               "legacyPath": "/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/microsoft.graph.assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
               "legacyOperationId": "roleManagement.exchange.roleDefinition.inheritsPermissionsFrom_assignedPrincipal",
               "legacyPathTranslation": "UnqualifyFinalOperation"
@@ -96,7 +94,7 @@
             {
               "method": "GET",
               "path": "/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
-              "operationId": "roleManagement.exchange.roleDefinitions.inheritsPermissionsFrom.GetCount-63fc",
+              "operationId": "roleManagement.exchange.roleDefinition.inheritsPermissionsFrom_GetCount",
               "legacyPath": "/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
               "legacyOperationId": "roleManagement.exchange.roleDefinition.inheritsPermissionsFrom_GetCount"
             }
@@ -119,7 +117,7 @@
             {
               "method": "PATCH",
               "path": "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}",
-              "operationId": "deviceManagement.UpdateWindowsAutopilotDeviceIdentities"
+              "operationId": "deviceManagement_UpdateWindowsAutopilotDeviceIdentity"
             }
           ]
         },
@@ -129,7 +127,7 @@
             {
               "method": "PATCH",
               "path": "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}",
-              "operationId": "deviceManagement.UpdateWindowsAutopilotDeviceIdentities"
+              "operationId": "deviceManagement_UpdateWindowsAutopilotDeviceIdentity"
             }
           ]
         }
@@ -153,7 +151,7 @@
             {
               "method": "GET",
               "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/$count",
-              "operationId": "deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice.GetCount-106d"
+              "operationId": "deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice_GetCount"
             }
           ]
         }
