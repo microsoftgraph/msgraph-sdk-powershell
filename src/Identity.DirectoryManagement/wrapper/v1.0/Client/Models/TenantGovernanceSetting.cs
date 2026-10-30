@@ -12,9 +12,9 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     public partial class TenantGovernanceSetting : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The canReceiveInvitations property</summary>
+        /// <summary>Indicates whether the tenant can receive governance invitations. When set to false, the tenant cannot receive new governance invitations. When set to true, other tenants can send your tenant invitations by providing your tenant id or domain name. Default value is false.</summary>
         public bool? CanReceiveInvitations { get; set; }
-        /// <summary>The isRelatedTenantsEnabled property</summary>
+        /// <summary>Indicates whether the related tenants feature is enabled for tenant discovery. When set to false, related tenant APIs don&apos;t work. This property can be enabled by calling the enableRelatedTenants action. Default value is false.</summary>
         public bool? IsRelatedTenantsEnabled { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

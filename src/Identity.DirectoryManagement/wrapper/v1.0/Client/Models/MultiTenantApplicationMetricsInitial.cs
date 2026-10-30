@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     public partial class MultiTenantApplicationMetricsInitial : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.MultiTenantApplicationMetricsBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Timestamp that represents when multitenant application metrics are initially aggregated for the related tenant.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

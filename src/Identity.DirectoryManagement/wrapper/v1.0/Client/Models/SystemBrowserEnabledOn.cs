@@ -25,9 +25,13 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
         #pragma warning disable CS1591
         Mac = 8,
         #pragma warning restore CS1591
+        [EnumMember(Value = "linux")]
+        #pragma warning disable CS1591
+        Linux = 16,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
-        UnknownFutureValue = 16,
+        UnknownFutureValue = 32,
         #pragma warning restore CS1591
     }
 }

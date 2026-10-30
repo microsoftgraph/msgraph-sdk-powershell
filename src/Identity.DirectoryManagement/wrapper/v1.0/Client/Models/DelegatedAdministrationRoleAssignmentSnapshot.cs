@@ -14,7 +14,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The groupDisplayName property</summary>
+        /// <summary>The display name of the security group identified by groupId at the time the snapshot was created. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupDisplayName { get; set; }
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string GroupDisplayName { get; set; }
 #endif
-        /// <summary>The groupId property</summary>
+        /// <summary>The object ID of the role-assignable security group in the governing tenant that will be assigned the specified roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId { get; set; }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string OdataType { get; set; }
 #endif
-        /// <summary>The roleTemplates property</summary>
+        /// <summary>The collection of role templates that define the Microsoft Entra roles to be assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RoleTemplate>? RoleTemplates { get; set; }

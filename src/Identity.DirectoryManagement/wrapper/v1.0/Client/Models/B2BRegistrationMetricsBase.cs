@@ -12,11 +12,11 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     public partial class B2BRegistrationMetricsBase : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The inboundTotalUsers property</summary>
+        /// <summary>The total number of inbound B2B guest users registered.</summary>
         public decimal? InboundTotalUsers { get; set; }
-        /// <summary>The outboundTotalUsers property</summary>
+        /// <summary>The total number of outbound B2B users from this tenant registered in other tenants.</summary>
         public decimal? OutboundTotalUsers { get; set; }
-        /// <summary>The watermarkDateTime property</summary>
+        /// <summary>The date and time when the metrics snapshot was taken.</summary>
         public DateTimeOffset? WatermarkDateTime { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

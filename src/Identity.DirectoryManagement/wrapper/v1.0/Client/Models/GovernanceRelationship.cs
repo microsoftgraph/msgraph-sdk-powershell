@@ -14,9 +14,9 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     {
         /// <summary>The createdType property</summary>
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RelationshipCreationType? CreatedType { get; set; }
-        /// <summary>The creationDateTime property</summary>
+        /// <summary>The date and time when the relationship was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026 is 2026-01-01T00:00:00Z. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
         public DateTimeOffset? CreationDateTime { get; set; }
-        /// <summary>The governedTenantId property</summary>
+        /// <summary>The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GovernedTenantId { get; set; }
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string GovernedTenantId { get; set; }
 #endif
-        /// <summary>The governedTenantName property</summary>
+        /// <summary>The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GovernedTenantName { get; set; }
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string GovernedTenantName { get; set; }
 #endif
-        /// <summary>The governingTenantId property</summary>
+        /// <summary>The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GoverningTenantId { get; set; }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string GoverningTenantId { get; set; }
 #endif
-        /// <summary>The governingTenantName property</summary>
+        /// <summary>The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GoverningTenantName { get; set; }
