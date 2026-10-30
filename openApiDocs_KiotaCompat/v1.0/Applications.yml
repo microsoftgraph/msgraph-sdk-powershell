@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list?view=graph-rest-1.0
-      operationId: applications.application.ListApplication
+      operationId: application_ListApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -81,7 +81,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0
-      operationId: applications.application.CreateApplication
+      operationId: application_CreateApplication
       requestBody:
         description: New entity
         content:
@@ -110,7 +110,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
-      operationId: applications.application.GetApplication
+      operationId: application_GetApplication
       parameters:
         - name: $select
           in: query
@@ -152,7 +152,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-1.0
-      operationId: applications.application.UpdateApplication
+      operationId: application_UpdateApplication
       requestBody:
         description: New property values
         content:
@@ -180,7 +180,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
-      operationId: applications.application.DeleteApplication
+      operationId: application_DeleteApplication
       parameters:
         - name: If-Match
           in: header
@@ -202,7 +202,7 @@ paths:
         - applications.appManagementPolicy
       summary: Get appManagementPolicies from applications
       description: The appManagementPolicy applied to this application.
-      operationId: applications.ListAppManagementPolicies
+      operationId: application_ListAppManagementPolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -259,7 +259,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appmanagementpolicy-delete-appliesto?view=graph-rest-1.0
-      operationId: applications.appManagementPolicies.DeleteRefAppManagementPolicy
+      operationId: application.appManagementPolicy_DeleteAppManagementPolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -280,7 +280,7 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Get the number of the resource
-      operationId: applications.appManagementPolicies.GetCount-3aad
+      operationId: application.appManagementPolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -297,7 +297,7 @@ paths:
         - applications.appManagementPolicy
       summary: Get ref of appManagementPolicies from applications
       description: The appManagementPolicy applied to this application.
-      operationId: applications.ListRefAppManagementPolicies
+      operationId: application_ListAppManagementPolicyGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -333,7 +333,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appmanagementpolicy-post-appliesto?view=graph-rest-1.0
-      operationId: applications.CreateRefAppManagementPolicies
+      operationId: application_CreateAppManagementPolicyGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -352,7 +352,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appmanagementpolicy-delete-appliesto?view=graph-rest-1.0
-      operationId: applications.DeleteRefAppManagementPolicies
+      operationId: application_DeleteAppManagementPolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -382,7 +382,7 @@ paths:
         - applications.directoryObject
       summary: Get createdOnBehalfOf from applications
       description: 'Supports $filter (/$count eq 0, /$count ne 0). Read-only.'
-      operationId: applications.GetCreatedOnBehalfOf
+      operationId: application_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: $select
           in: query
@@ -425,7 +425,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0
-      operationId: applications.ListExtensionProperties
+      operationId: application_ListExtensionProperty
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -481,7 +481,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0
-      operationId: applications.CreateExtensionProperties
+      operationId: application_CreateExtensionProperty
       requestBody:
         description: New navigation property
         content:
@@ -510,7 +510,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0
-      operationId: applications.GetExtensionProperties
+      operationId: application_GetExtensionProperty
       parameters:
         - name: $select
           in: query
@@ -548,7 +548,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Update the navigation property extensionProperties in applications
-      operationId: applications.UpdateExtensionProperties
+      operationId: application_UpdateExtensionProperty
       requestBody:
         description: New navigation property values
         content:
@@ -576,7 +576,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0
-      operationId: applications.DeleteExtensionProperties
+      operationId: application_DeleteExtensionProperty
       parameters:
         - name: If-Match
           in: header
@@ -597,7 +597,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Get the number of the resource
-      operationId: applications.extensionProperties.GetCount-3535
+      operationId: application.extensionProperty_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -617,7 +617,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/federatedidentitycredential-list?view=graph-rest-1.0
-      operationId: applications.ListFederatedIdentityCredentials
+      operationId: application_ListFederatedIdentityCredential
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -673,7 +673,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/federatedidentitycredential-post?view=graph-rest-1.0
-      operationId: applications.CreateFederatedIdentityCredentials
+      operationId: application_CreateFederatedIdentityCredential
       requestBody:
         description: New navigation property
         content:
@@ -702,7 +702,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0
-      operationId: applications.GetFederatedIdentityCredentials
+      operationId: application_GetFederatedIdentityCredential
       parameters:
         - name: $select
           in: query
@@ -744,7 +744,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/federatedidentitycredential-upsert?view=graph-rest-1.0
-      operationId: applications.UpdateFederatedIdentityCredentials
+      operationId: application_UpdateFederatedIdentityCredential
       requestBody:
         description: New navigation property values
         content:
@@ -772,7 +772,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0
-      operationId: applications.DeleteFederatedIdentityCredentials
+      operationId: application_DeleteFederatedIdentityCredential
       parameters:
         - name: If-Match
           in: header
@@ -797,7 +797,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0
-      operationId: applications.federatedIdentityCredentials.GetByName
+      operationId: application.federatedIdentityCredential_GetGraphBPreName
       parameters:
         - name: $select
           in: query
@@ -839,7 +839,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/federatedidentitycredential-upsert?view=graph-rest-1.0
-      operationId: applications.federatedIdentityCredentials.UpdateByName
+      operationId: application.federatedIdentityCredential_UpdateGraphBPreName
       requestBody:
         description: New navigation property values
         content:
@@ -867,7 +867,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0
-      operationId: applications.federatedIdentityCredentials.DeleteByName
+      operationId: application.federatedIdentityCredential_DeleteGraphBPreName
       parameters:
         - name: If-Match
           in: header
@@ -888,7 +888,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Get the number of the resource
-      operationId: applications.federatedIdentityCredentials.GetCount-d653
+      operationId: application.federatedIdentityCredential_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -904,7 +904,7 @@ paths:
       tags:
         - applications.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicies from applications
-      operationId: applications.ListHomeRealmDiscoveryPolicies
+      operationId: application_ListHomeRealmDiscoveryPolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -957,7 +957,7 @@ paths:
       tags:
         - applications.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicies from applications
-      operationId: applications.GetHomeRealmDiscoveryPolicies
+      operationId: application_GetHomeRealmDiscoveryPolicy
       parameters:
         - name: $select
           in: query
@@ -996,7 +996,7 @@ paths:
       tags:
         - applications.homeRealmDiscoveryPolicy
       summary: Get the number of the resource
-      operationId: applications.homeRealmDiscoveryPolicies.GetCount-1662
+      operationId: application.homeRealmDiscoveryPolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1013,7 +1013,7 @@ paths:
         - applications.application
       summary: Get logo for application from applications
       description: The main logo for the application. Not nullable.
-      operationId: applications.application.GetLogo
+      operationId: application_GetLogo
       responses:
         2XX:
           description: Retrieved media content
@@ -1031,7 +1031,7 @@ paths:
         - applications.application
       summary: Update logo for application in applications
       description: The main logo for the application. Not nullable.
-      operationId: applications.application.UpdateLogo
+      operationId: application_SetLogo
       requestBody:
         description: New media content.
         content:
@@ -1052,7 +1052,7 @@ paths:
         - applications.application
       summary: Delete logo for application in applications
       description: The main logo for the application. Not nullable.
-      operationId: applications.application.DeleteLogo
+      operationId: application_DeleteLogo
       parameters:
         - name: If-Match
           in: header
@@ -1076,7 +1076,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0
-      operationId: applications.application.addKey
+      operationId: application_addKey
       requestBody:
         description: Action parameters
         content:
@@ -1115,7 +1115,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0
-      operationId: applications.application.addPassword
+      operationId: application_addPassword
       requestBody:
         description: Action parameters
         content:
@@ -1150,7 +1150,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: applications.application.checkMemberGroups
+      operationId: application_checkMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -1191,7 +1191,7 @@ paths:
       tags:
         - applications.application.Actions
       summary: Invoke action checkMemberObjects
-      operationId: applications.application.checkMemberObjects
+      operationId: application_checkMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -1236,7 +1236,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: applications.application.getMemberGroups
+      operationId: application_getMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -1281,7 +1281,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
-      operationId: applications.application.getMemberObjects
+      operationId: application_getMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -1326,7 +1326,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentidentityblueprint-removekey?view=graph-rest-1.0
-      operationId: applications.application.removeKey
+      operationId: application_removeKey
       requestBody:
         description: Action parameters
         content:
@@ -1358,7 +1358,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0
-      operationId: applications.application.removePassword
+      operationId: application_removePassword
       requestBody:
         description: Action parameters
         content:
@@ -1388,7 +1388,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: applications.application.restore
+      operationId: application_restore
       responses:
         2XX:
           description: Success
@@ -1413,7 +1413,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentidentityblueprint-setverifiedpublisher?view=graph-rest-1.0
-      operationId: applications.application.setVerifiedPublisher
+      operationId: application_setVerifiedPublisher
       requestBody:
         description: Action parameters
         content:
@@ -1441,7 +1441,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentidentityblueprint-unsetverifiedpublisher?view=graph-rest-1.0
-      operationId: applications.application.unsetVerifiedPublisher
+      operationId: application_unsetVerifiedPublisher
       responses:
         '204':
           description: Success
@@ -1459,7 +1459,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
-      operationId: applications.ListOwners
+      operationId: application_ListOwner
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -1526,7 +1526,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0
-      operationId: applications.owners.DeleteRefDirectoryObject
+      operationId: application.owner_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -1547,7 +1547,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
-      operationId: applications.GetOwners.AsAppRoleAssignment
+      operationId: application_GetOwnerAsAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -1595,7 +1595,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: applications.GetOwners.AsEndpoint
+      operationId: application_GetOwnerAsEndpoint
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -1643,7 +1643,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: applications.GetOwners.AsServicePrincipal
+      operationId: application_GetOwnerAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -1691,7 +1691,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-      operationId: applications.GetOwners.AsUser
+      operationId: application_GetOwnerAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -1739,7 +1739,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the number of the resource
-      operationId: applications.owners.GetCount-2b88
+      operationId: application.owner_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -1769,7 +1769,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
-      operationId: applications.ListRefOwners
+      operationId: application_ListOwnerGraphBPreRef
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -1815,7 +1815,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0
-      operationId: applications.CreateRefOwners
+      operationId: application_CreateOwnerGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -1834,7 +1834,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0
-      operationId: applications.DeleteRefOwners
+      operationId: application_DeleteOwnerGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -1863,7 +1863,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
-      operationId: applications.ListOwners.AsAppRoleAssignment
+      operationId: application_ListOwnerAsAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -1925,7 +1925,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the number of the resource
-      operationId: applications.Owners.GetCount.AsAppRoleAssignment-eb25
+      operationId: application.Owner_GetCountAsAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -1951,7 +1951,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: applications.ListOwners.AsEndpoint
+      operationId: application_ListOwnerAsEndpoint
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2013,7 +2013,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the number of the resource
-      operationId: applications.Owners.GetCount.AsEndpoint-0426
+      operationId: application.Owner_GetCountAsEndpoint
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2039,7 +2039,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: applications.ListOwners.AsServicePrincipal
+      operationId: application_ListOwnerAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2101,7 +2101,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the number of the resource
-      operationId: applications.Owners.GetCount.AsServicePrincipal-0959
+      operationId: application.Owner_GetCountAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2127,7 +2127,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-      operationId: applications.ListOwners.AsUser
+      operationId: application_ListOwnerAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2189,7 +2189,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the number of the resource
-      operationId: applications.Owners.GetCount.AsUser-c674
+      operationId: application.Owner_GetCountAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2216,7 +2216,7 @@ paths:
         - applications.synchronization
       summary: Get synchronization from applications
       description: Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
-      operationId: applications.GetSynchronization
+      operationId: application_GetSynchronization
       parameters:
         - name: $select
           in: query
@@ -2254,7 +2254,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property synchronization in applications
-      operationId: applications.SetSynchronization
+      operationId: application_SetSynchronization
       requestBody:
         description: New navigation property values
         content:
@@ -2278,7 +2278,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property synchronization for applications
-      operationId: applications.DeleteSynchronization
+      operationId: application_DeleteSynchronization
       parameters:
         - name: If-Match
           in: header
@@ -2300,7 +2300,7 @@ paths:
         - applications.synchronization
       summary: Get jobs from applications
       description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
-      operationId: applications.synchronization.ListJobs
+      operationId: application.synchronization_ListJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2352,7 +2352,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create new navigation property to jobs for applications
-      operationId: applications.synchronization.CreateJobs
+      operationId: application.synchronization_CreateJob
       requestBody:
         description: New navigation property
         content:
@@ -2378,7 +2378,7 @@ paths:
         - applications.synchronization
       summary: Get jobs from applications
       description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
-      operationId: applications.synchronization.GetJobs
+      operationId: application.synchronization_GetJob
       parameters:
         - name: $select
           in: query
@@ -2416,7 +2416,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property jobs in applications
-      operationId: applications.synchronization.UpdateJobs
+      operationId: application.synchronization_UpdateJob
       requestBody:
         description: New navigation property values
         content:
@@ -2440,7 +2440,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property jobs for applications
-      operationId: applications.synchronization.DeleteJobs
+      operationId: application.synchronization_DeleteJob
       parameters:
         - name: If-Match
           in: header
@@ -2462,7 +2462,7 @@ paths:
         - applications.synchronization
       summary: Get bulkUpload from applications
       description: The bulk upload operation for the job.
-      operationId: applications.synchronization.jobs.GetBulkUpload
+      operationId: application.synchronization.job_GetBulkUpload
       parameters:
         - name: $select
           in: query
@@ -2500,7 +2500,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property bulkUpload in applications
-      operationId: applications.synchronization.jobs.UpdateBulkUpload
+      operationId: application.synchronization.job_UpdateBulkUpload
       requestBody:
         description: New navigation property values
         content:
@@ -2524,7 +2524,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property bulkUpload for applications
-      operationId: applications.synchronization.jobs.DeleteBulkUpload
+      operationId: application.synchronization.job_DeleteBulkUpload
       parameters:
         - name: If-Match
           in: header
@@ -2546,7 +2546,7 @@ paths:
         - applications.synchronization
       summary: Get media content for the navigation property bulkUpload from applications
       description: The bulk upload operation for the job.
-      operationId: applications.synchronization.jobs.GetBulkUploadContent
+      operationId: application.synchronization.job_GetBulkUploadContent
       responses:
         2XX:
           description: Retrieved media content
@@ -2564,7 +2564,7 @@ paths:
         - applications.synchronization
       summary: Update media content for the navigation property bulkUpload in applications
       description: The bulk upload operation for the job.
-      operationId: applications.synchronization.jobs.UpdateBulkUploadContent
+      operationId: application.synchronization.job_SetBulkUploadContent
       requestBody:
         description: New media content.
         content:
@@ -2585,7 +2585,7 @@ paths:
         - applications.synchronization
       summary: Delete media content for the navigation property bulkUpload in applications
       description: The bulk upload operation for the job.
-      operationId: applications.synchronization.jobs.DeleteBulkUploadContent
+      operationId: application.synchronization.job_DeleteBulkUploadContent
       parameters:
         - name: If-Match
           in: header
@@ -2609,7 +2609,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
-      operationId: applications.application.synchronization.jobs.synchronizationJob.pause
+      operationId: application.synchronization.job.synchronizationJob_pause
       responses:
         '204':
           description: Success
@@ -2627,7 +2627,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
-      operationId: applications.application.synchronization.jobs.synchronizationJob.provisionOnDemand
+      operationId: application.synchronization.job.synchronizationJob_provisionOnDemand
       requestBody:
         description: Action parameters
         content:
@@ -2661,7 +2661,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
-      operationId: applications.application.synchronization.jobs.synchronizationJob.restart
+      operationId: application.synchronization.job.synchronizationJob_restart
       requestBody:
         description: Action parameters
         content:
@@ -2692,7 +2692,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0
-      operationId: applications.application.synchronization.jobs.synchronizationJob.start
+      operationId: application.synchronization.job.synchronizationJob_start
       responses:
         '204':
           description: Success
@@ -2710,7 +2710,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
-      operationId: applications.application.synchronization.jobs.synchronizationJob.validateCredentials
+      operationId: application.synchronization.job.synchronizationJob_validateCredential
       requestBody:
         description: Action parameters
         content:
@@ -2747,7 +2747,7 @@ paths:
         - applications.synchronization
       summary: Get schema from applications
       description: The synchronization schema configured for the job.
-      operationId: applications.synchronization.jobs.GetSchema
+      operationId: application.synchronization.job_GetSchema
       parameters:
         - name: $select
           in: query
@@ -2785,7 +2785,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property schema in applications
-      operationId: applications.synchronization.jobs.UpdateSchema
+      operationId: application.synchronization.job_UpdateSchema
       requestBody:
         description: New navigation property values
         content:
@@ -2809,7 +2809,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property schema for applications
-      operationId: applications.synchronization.jobs.DeleteSchema
+      operationId: application.synchronization.job_DeleteSchema
       parameters:
         - name: If-Match
           in: header
@@ -2831,7 +2831,7 @@ paths:
         - applications.synchronization
       summary: Get directories from applications
       description: Contains the collection of directories and all of their objects.
-      operationId: applications.synchronization.jobs.schema.ListDirectories
+      operationId: application.synchronization.job.schema_ListDirectory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2883,7 +2883,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create new navigation property to directories for applications
-      operationId: applications.synchronization.jobs.schema.CreateDirectories
+      operationId: application.synchronization.job.schema_CreateDirectory
       requestBody:
         description: New navigation property
         content:
@@ -2909,7 +2909,7 @@ paths:
         - applications.synchronization
       summary: Get directories from applications
       description: Contains the collection of directories and all of their objects.
-      operationId: applications.synchronization.jobs.schema.GetDirectories
+      operationId: application.synchronization.job.schema_GetDirectory
       parameters:
         - name: $select
           in: query
@@ -2947,7 +2947,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property directories in applications
-      operationId: applications.synchronization.jobs.schema.UpdateDirectories
+      operationId: application.synchronization.job.schema_UpdateDirectory
       requestBody:
         description: New navigation property values
         content:
@@ -2971,7 +2971,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property directories for applications
-      operationId: applications.synchronization.jobs.schema.DeleteDirectories
+      operationId: application.synchronization.job.schema_DeleteDirectory
       parameters:
         - name: If-Match
           in: header
@@ -2996,7 +2996,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
-      operationId: applications.application.synchronization.jobs.synchronizationJob.schema.directories.directoryDefinition.discover
+      operationId: application.synchronization.job.synchronizationJob.schema.directory.directoryDefinition_discover
       responses:
         2XX:
           description: Success
@@ -3017,7 +3017,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get the number of the resource
-      operationId: applications.synchronization.jobs.schema.directories.GetCount-03bf
+      operationId: application.synchronization.job.schema.directory_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3037,7 +3037,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0
-      operationId: applications.application.synchronization.jobs.synchronizationJob.schema.filterOperators
+      operationId: application.synchronization.job.synchronizationJob.schema_filterOperator
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3107,7 +3107,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0
-      operationId: applications.application.synchronization.jobs.synchronizationJob.schema.functions
+      operationId: application.synchronization.job.synchronizationJob.schema_function
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3177,7 +3177,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
-      operationId: applications.application.synchronization.jobs.synchronizationJob.schema.parseExpression
+      operationId: application.synchronization.job.synchronizationJob.schema_parseExpression
       requestBody:
         description: Action parameters
         content:
@@ -3219,7 +3219,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get the number of the resource
-      operationId: applications.synchronization.jobs.GetCount-30ed
+      operationId: application.synchronization.job_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3235,7 +3235,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Invoke action validateCredentials
-      operationId: applications.application.synchronization.jobs.validateCredentials
+      operationId: application.synchronization.job_validateCredential
       requestBody:
         description: Action parameters
         content:
@@ -3275,7 +3275,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
-      operationId: applications.application.synchronization.acquireAccessToken
+      operationId: application.synchronization_acquireAccessToken
       requestBody:
         description: Action parameters
         content:
@@ -3301,7 +3301,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update property secrets value.
-      operationId: applications.synchronization.SetSecrets
+      operationId: application.synchronization_SetSecret
       requestBody:
         description: New property values
         content:
@@ -3335,7 +3335,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get the number of the resource
-      operationId: applications.synchronization.Secrets.GetCount-26f1
+      operationId: application.synchronization.Secret_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3352,7 +3352,7 @@ paths:
         - applications.synchronization
       summary: Get templates from applications
       description: Preconfigured synchronization settings for a particular application.
-      operationId: applications.synchronization.ListTemplates
+      operationId: application.synchronization_ListTemplate
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3404,7 +3404,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create new navigation property to templates for applications
-      operationId: applications.synchronization.CreateTemplates
+      operationId: application.synchronization_CreateTemplate
       requestBody:
         description: New navigation property
         content:
@@ -3430,7 +3430,7 @@ paths:
         - applications.synchronization
       summary: Get templates from applications
       description: Preconfigured synchronization settings for a particular application.
-      operationId: applications.synchronization.GetTemplates
+      operationId: application.synchronization_GetTemplate
       parameters:
         - name: $select
           in: query
@@ -3472,7 +3472,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0
-      operationId: applications.synchronization.UpdateTemplates
+      operationId: application.synchronization_UpdateTemplate
       requestBody:
         description: New navigation property values
         content:
@@ -3496,7 +3496,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property templates for applications
-      operationId: applications.synchronization.DeleteTemplates
+      operationId: application.synchronization_DeleteTemplate
       parameters:
         - name: If-Match
           in: header
@@ -3518,7 +3518,7 @@ paths:
         - applications.synchronization
       summary: Get schema from applications
       description: Default synchronization schema for the jobs based on this template.
-      operationId: applications.synchronization.templates.GetSchema
+      operationId: application.synchronization.template_GetSchema
       parameters:
         - name: $select
           in: query
@@ -3556,7 +3556,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property schema in applications
-      operationId: applications.synchronization.templates.UpdateSchema
+      operationId: application.synchronization.template_UpdateSchema
       requestBody:
         description: New navigation property values
         content:
@@ -3580,7 +3580,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property schema for applications
-      operationId: applications.synchronization.templates.DeleteSchema
+      operationId: application.synchronization.template_DeleteSchema
       parameters:
         - name: If-Match
           in: header
@@ -3602,7 +3602,7 @@ paths:
         - applications.synchronization
       summary: Get directories from applications
       description: Contains the collection of directories and all of their objects.
-      operationId: applications.synchronization.templates.schema.ListDirectories
+      operationId: application.synchronization.template.schema_ListDirectory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3654,7 +3654,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create new navigation property to directories for applications
-      operationId: applications.synchronization.templates.schema.CreateDirectories
+      operationId: application.synchronization.template.schema_CreateDirectory
       requestBody:
         description: New navigation property
         content:
@@ -3680,7 +3680,7 @@ paths:
         - applications.synchronization
       summary: Get directories from applications
       description: Contains the collection of directories and all of their objects.
-      operationId: applications.synchronization.templates.schema.GetDirectories
+      operationId: application.synchronization.template.schema_GetDirectory
       parameters:
         - name: $select
           in: query
@@ -3718,7 +3718,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property directories in applications
-      operationId: applications.synchronization.templates.schema.UpdateDirectories
+      operationId: application.synchronization.template.schema_UpdateDirectory
       requestBody:
         description: New navigation property values
         content:
@@ -3742,7 +3742,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property directories for applications
-      operationId: applications.synchronization.templates.schema.DeleteDirectories
+      operationId: application.synchronization.template.schema_DeleteDirectory
       parameters:
         - name: If-Match
           in: header
@@ -3767,7 +3767,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
-      operationId: applications.application.synchronization.templates.synchronizationTemplate.schema.directories.directoryDefinition.discover
+      operationId: application.synchronization.template.synchronizationTemplate.schema.directory.directoryDefinition_discover
       responses:
         2XX:
           description: Success
@@ -3788,7 +3788,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get the number of the resource
-      operationId: applications.synchronization.templates.schema.directories.GetCount-27bc
+      operationId: application.synchronization.template.schema.directory_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3808,7 +3808,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0
-      operationId: applications.application.synchronization.templates.synchronizationTemplate.schema.filterOperators
+      operationId: application.synchronization.template.synchronizationTemplate.schema_filterOperator
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3878,7 +3878,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0
-      operationId: applications.application.synchronization.templates.synchronizationTemplate.schema.functions
+      operationId: application.synchronization.template.synchronizationTemplate.schema_function
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3948,7 +3948,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
-      operationId: applications.application.synchronization.templates.synchronizationTemplate.schema.parseExpression
+      operationId: application.synchronization.template.synchronizationTemplate.schema_parseExpression
       requestBody:
         description: Action parameters
         content:
@@ -3990,7 +3990,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get the number of the resource
-      operationId: applications.synchronization.templates.GetCount-738a
+      operationId: application.synchronization.template_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4010,7 +4010,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
-      operationId: applications.ListTokenIssuancePolicies
+      operationId: application_ListTokenIssuancePolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4067,7 +4067,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0
-      operationId: applications.tokenIssuancePolicies.DeleteRefTokenIssuancePolicy
+      operationId: application.tokenIssuancePolicy_DeleteTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -4088,7 +4088,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Get the number of the resource
-      operationId: applications.tokenIssuancePolicies.GetCount-4be5
+      operationId: application.tokenIssuancePolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4108,7 +4108,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
-      operationId: applications.ListRefTokenIssuancePolicies
+      operationId: application_ListTokenIssuancePolicyGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4144,7 +4144,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-tokenissuancepolicies?view=graph-rest-1.0
-      operationId: applications.CreateRefTokenIssuancePolicies
+      operationId: application_CreateTokenIssuancePolicyGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -4163,7 +4163,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0
-      operationId: applications.DeleteRefTokenIssuancePolicies
+      operationId: application_DeleteTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -4196,7 +4196,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: applications.ListTokenLifetimePolicies
+      operationId: application_ListTokenLifetimePolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4253,7 +4253,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: applications.tokenLifetimePolicies.DeleteRefTokenLifetimePolicy
+      operationId: application.tokenLifetimePolicy_DeleteTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -4274,7 +4274,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Get the number of the resource
-      operationId: applications.tokenLifetimePolicies.GetCount-5de4
+      operationId: application.tokenLifetimePolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4294,7 +4294,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: applications.ListRefTokenLifetimePolicies
+      operationId: application_ListTokenLifetimePolicyGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4330,7 +4330,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: applications.CreateRefTokenLifetimePolicies
+      operationId: application_CreateTokenLifetimePolicyGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -4349,7 +4349,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: applications.DeleteRefTokenLifetimePolicies
+      operationId: application_DeleteTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -4382,7 +4382,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
-      operationId: applications.application.GetApplicationByAppId
+      operationId: application_GetApplicationGraphBPreAppId
       parameters:
         - name: $select
           in: query
@@ -4424,7 +4424,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-1.0
-      operationId: applications.application.UpdateApplicationByAppId
+      operationId: application_UpdateApplicationGraphBPreAppId
       requestBody:
         description: New property values
         content:
@@ -4452,7 +4452,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
-      operationId: applications.application.DeleteApplicationByAppId
+      operationId: application_DeleteApplicationGraphBPreAppId
       parameters:
         - name: If-Match
           in: header
@@ -4477,7 +4477,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
-      operationId: applications.application.GetApplicationByUniqueName
+      operationId: application_GetApplicationGraphBPreUniqueName
       parameters:
         - name: $select
           in: query
@@ -4519,7 +4519,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-1.0
-      operationId: applications.application.UpdateApplicationByUniqueName
+      operationId: application_UpdateApplicationGraphBPreUniqueName
       requestBody:
         description: New property values
         content:
@@ -4547,7 +4547,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
-      operationId: applications.application.DeleteApplicationByUniqueName
+      operationId: application_DeleteApplicationGraphBPreUniqueName
       parameters:
         - name: If-Match
           in: header
@@ -4568,7 +4568,7 @@ paths:
       tags:
         - applications.application
       summary: Get the number of the resource
-      operationId: applications.GetCount-8398
+      operationId: application_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4598,7 +4598,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delta?view=graph-rest-1.0
-      operationId: applications.delta
+      operationId: application_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4668,7 +4668,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: applications.getAvailableExtensionProperties
+      operationId: application_getAvailableExtensionProperty
       requestBody:
         description: Action parameters
         content:
@@ -4714,7 +4714,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: applications.getByIds
+      operationId: application_getGraphBPreId
       requestBody:
         description: Action parameters
         content:
@@ -4765,7 +4765,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: applications.validateProperties
+      operationId: application_validateProperty
       requestBody:
         description: Action parameters
         content:
@@ -4805,7 +4805,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-1.0
-      operationId: applicationTemplates.applicationTemplate.ListApplicationTemplate
+      operationId: applicationTemplate_ListApplicationTemplate
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4862,7 +4862,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/applicationtemplate-get?view=graph-rest-1.0
-      operationId: applicationTemplates.applicationTemplate.GetApplicationTemplate
+      operationId: applicationTemplate_GetApplicationTemplate
       parameters:
         - name: $select
           in: query
@@ -4905,7 +4905,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0
-      operationId: applicationTemplates.applicationTemplate.instantiate
+      operationId: applicationTemplate_instantiate
       requestBody:
         description: Action parameters
         content:
@@ -4940,7 +4940,7 @@ paths:
       tags:
         - applicationTemplates.applicationTemplate
       summary: Get the number of the resource
-      operationId: applicationTemplates.GetCount-d1a3
+      operationId: applicationTemplate_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4960,7 +4960,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-approleassignments?view=graph-rest-1.0
-      operationId: groups.ListAppRoleAssignments
+      operationId: group_ListAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5026,7 +5026,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-approleassignments?view=graph-rest-1.0
-      operationId: groups.CreateAppRoleAssignments
+      operationId: group_CreateAppRoleAssignment
       requestBody:
         description: New navigation property
         content:
@@ -5052,7 +5052,7 @@ paths:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
       description: Represents the app roles granted to a group for an application. Supports $expand.
-      operationId: groups.GetAppRoleAssignments
+      operationId: group_GetAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5100,7 +5100,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in groups
-      operationId: groups.UpdateAppRoleAssignments
+      operationId: group_UpdateAppRoleAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -5128,7 +5128,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete-approleassignments?view=graph-rest-1.0
-      operationId: groups.DeleteAppRoleAssignments
+      operationId: group_DeleteAppRoleAssignment
       parameters:
         - name: If-Match
           in: header
@@ -5149,7 +5149,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Get the number of the resource
-      operationId: groups.appRoleAssignments.GetCount-ce16
+      operationId: group.appRoleAssignment_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5179,7 +5179,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.ListServicePrincipal
+      operationId: servicePrincipal_ListServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5245,7 +5245,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.CreateServicePrincipal
+      operationId: servicePrincipal_CreateServicePrincipal
       requestBody:
         description: New entity
         content:
@@ -5274,7 +5274,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+      operationId: servicePrincipal_GetServicePrincipal
       parameters:
         - name: $select
           in: query
@@ -5316,7 +5316,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.UpdateServicePrincipal
+      operationId: servicePrincipal_UpdateServicePrincipal
       requestBody:
         description: New property values
         content:
@@ -5344,7 +5344,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.DeleteServicePrincipal
+      operationId: servicePrincipal_DeleteServicePrincipal
       parameters:
         - name: If-Match
           in: header
@@ -5366,7 +5366,7 @@ paths:
         - servicePrincipals.appManagementPolicy
       summary: Get appManagementPolicies from servicePrincipals
       description: The appManagementPolicy applied to this application.
-      operationId: servicePrincipals.ListAppManagementPolicies
+      operationId: servicePrincipal_ListAppManagementPolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5420,7 +5420,7 @@ paths:
         - servicePrincipals.appManagementPolicy
       summary: Get appManagementPolicies from servicePrincipals
       description: The appManagementPolicy applied to this application.
-      operationId: servicePrincipals.GetAppManagementPolicies
+      operationId: servicePrincipal_GetAppManagementPolicy
       parameters:
         - name: $select
           in: query
@@ -5459,7 +5459,7 @@ paths:
       tags:
         - servicePrincipals.appManagementPolicy
       summary: Get the number of the resource
-      operationId: servicePrincipals.appManagementPolicies.GetCount-5cee
+      operationId: servicePrincipal.appManagementPolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5479,7 +5479,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0
-      operationId: servicePrincipals.ListAppRoleAssignedTo
+      operationId: servicePrincipal_ListAppRoleAssignedTo
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5535,7 +5535,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0
-      operationId: servicePrincipals.CreateAppRoleAssignedTo
+      operationId: servicePrincipal_CreateAppRoleAssignedTo
       requestBody:
         description: New navigation property
         content:
@@ -5564,7 +5564,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approleassignment-get?view=graph-rest-1.0
-      operationId: servicePrincipals.GetAppRoleAssignedTo
+      operationId: servicePrincipal_GetAppRoleAssignedTo
       parameters:
         - name: $select
           in: query
@@ -5602,7 +5602,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Update the navigation property appRoleAssignedTo in servicePrincipals
-      operationId: servicePrincipals.UpdateAppRoleAssignedTo
+      operationId: servicePrincipal_UpdateAppRoleAssignedTo
       requestBody:
         description: New navigation property values
         content:
@@ -5630,7 +5630,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0
-      operationId: servicePrincipals.DeleteAppRoleAssignedTo
+      operationId: servicePrincipal_DeleteAppRoleAssignedTo
       parameters:
         - name: If-Match
           in: header
@@ -5651,7 +5651,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get the number of the resource
-      operationId: servicePrincipals.appRoleAssignedTo.GetCount-705c
+      operationId: servicePrincipal.appRoleAssignedTo_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5671,7 +5671,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-1.0
-      operationId: servicePrincipals.ListAppRoleAssignments
+      operationId: servicePrincipal_ListAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5737,7 +5737,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0
-      operationId: servicePrincipals.CreateAppRoleAssignments
+      operationId: servicePrincipal_CreateAppRoleAssignment
       requestBody:
         description: New navigation property
         content:
@@ -5766,7 +5766,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approleassignment-get?view=graph-rest-1.0
-      operationId: servicePrincipals.GetAppRoleAssignments
+      operationId: servicePrincipal_GetAppRoleAssignment
       parameters:
         - name: $select
           in: query
@@ -5804,7 +5804,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in servicePrincipals
-      operationId: servicePrincipals.UpdateAppRoleAssignments
+      operationId: servicePrincipal_UpdateAppRoleAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -5832,7 +5832,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignments?view=graph-rest-1.0
-      operationId: servicePrincipals.DeleteAppRoleAssignments
+      operationId: servicePrincipal_DeleteAppRoleAssignment
       parameters:
         - name: If-Match
           in: header
@@ -5853,7 +5853,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get the number of the resource
-      operationId: servicePrincipals.appRoleAssignments.GetCount-4e95
+      operationId: servicePrincipal.appRoleAssignment_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5883,7 +5883,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.ListClaimsMappingPolicies
+      operationId: servicePrincipal_ListClaimsMappingPolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5940,7 +5940,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.claimsMappingPolicies.DeleteRefClaimsMappingPolicy
+      operationId: servicePrincipal.claimsMappingPolicy_DeleteClaimsMappingPolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -5961,7 +5961,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Get the number of the resource
-      operationId: servicePrincipals.claimsMappingPolicies.GetCount-832a
+      operationId: servicePrincipal.claimsMappingPolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5981,7 +5981,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.ListRefClaimsMappingPolicies
+      operationId: servicePrincipal_ListClaimsMappingPolicyGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6017,7 +6017,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.CreateRefClaimsMappingPolicies
+      operationId: servicePrincipal_CreateClaimsMappingPolicyGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -6036,7 +6036,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.DeleteRefClaimsMappingPolicies
+      operationId: servicePrincipal_DeleteClaimsMappingPolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -6069,7 +6069,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-createdobjects?view=graph-rest-1.0
-      operationId: servicePrincipals.ListCreatedObjects
+      operationId: servicePrincipal_ListCreatedObject
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6123,7 +6123,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get createdObjects from servicePrincipals
       description: Directory objects created by this service principal. Read-only. Nullable.
-      operationId: servicePrincipals.GetCreatedObjects
+      operationId: servicePrincipal_GetCreatedObject
       parameters:
         - name: $select
           in: query
@@ -6162,7 +6162,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: servicePrincipals.GetCreatedObjects.AsServicePrincipal
+      operationId: servicePrincipal_GetCreatedObjectAsServicePrincipal
       parameters:
         - name: $select
           in: query
@@ -6200,7 +6200,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.createdObjects.GetCount-0714
+      operationId: servicePrincipal.createdObject_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6216,7 +6216,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListCreatedObjects.AsServicePrincipal
+      operationId: servicePrincipal_ListCreatedObjectAsServicePrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6268,7 +6268,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.CreatedObjects.GetCount.AsServicePrincipal-768a
+      operationId: servicePrincipal.CreatedObject_GetCountAsServicePrincipal
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6288,7 +6288,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0
-      operationId: servicePrincipals.ListDelegatedPermissionClassifications
+      operationId: servicePrincipal_ListDelegatedPermissionClassification
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6344,7 +6344,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0
-      operationId: servicePrincipals.CreateDelegatedPermissionClassifications
+      operationId: servicePrincipal_CreateDelegatedPermissionClassification
       requestBody:
         description: New navigation property
         content:
@@ -6369,7 +6369,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Get delegatedPermissionClassifications from servicePrincipals
-      operationId: servicePrincipals.GetDelegatedPermissionClassifications
+      operationId: servicePrincipal_GetDelegatedPermissionClassification
       parameters:
         - name: $select
           in: query
@@ -6407,7 +6407,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Update the navigation property delegatedPermissionClassifications in servicePrincipals
-      operationId: servicePrincipals.UpdateDelegatedPermissionClassifications
+      operationId: servicePrincipal_UpdateDelegatedPermissionClassification
       requestBody:
         description: New navigation property values
         content:
@@ -6435,7 +6435,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-1.0
-      operationId: servicePrincipals.DeleteDelegatedPermissionClassifications
+      operationId: servicePrincipal_DeleteDelegatedPermissionClassification
       parameters:
         - name: If-Match
           in: header
@@ -6456,7 +6456,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Get the number of the resource
-      operationId: servicePrincipals.delegatedPermissionClassifications.GetCount-31f9
+      operationId: servicePrincipal.delegatedPermissionClassification_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6472,7 +6472,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Get endpoints from servicePrincipals
-      operationId: servicePrincipals.ListEndpoints
+      operationId: servicePrincipal_ListEndpoint
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6524,7 +6524,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Create new navigation property to endpoints for servicePrincipals
-      operationId: servicePrincipals.CreateEndpoints
+      operationId: servicePrincipal_CreateEndpoint
       requestBody:
         description: New navigation property
         content:
@@ -6549,7 +6549,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Get endpoints from servicePrincipals
-      operationId: servicePrincipals.GetEndpoints
+      operationId: servicePrincipal_GetEndpoint
       parameters:
         - name: $select
           in: query
@@ -6587,7 +6587,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Update the navigation property endpoints in servicePrincipals
-      operationId: servicePrincipals.UpdateEndpoints
+      operationId: servicePrincipal_UpdateEndpoint
       requestBody:
         description: New navigation property values
         content:
@@ -6611,7 +6611,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Delete navigation property endpoints for servicePrincipals
-      operationId: servicePrincipals.DeleteEndpoints
+      operationId: servicePrincipal_DeleteEndpoint
       parameters:
         - name: If-Match
           in: header
@@ -6632,7 +6632,7 @@ paths:
       tags:
         - servicePrincipals.endpoint
       summary: Get the number of the resource
-      operationId: servicePrincipals.endpoints.GetCount-c0e0
+      operationId: servicePrincipal.endpoint_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6649,7 +6649,7 @@ paths:
         - servicePrincipals.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from servicePrincipals
       description: 'Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
-      operationId: servicePrincipals.ListFederatedIdentityCredentials
+      operationId: servicePrincipal_ListFederatedIdentityCredential
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6701,7 +6701,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Create new navigation property to federatedIdentityCredentials for servicePrincipals
-      operationId: servicePrincipals.CreateFederatedIdentityCredentials
+      operationId: servicePrincipal_CreateFederatedIdentityCredential
       requestBody:
         description: New navigation property
         content:
@@ -6727,7 +6727,7 @@ paths:
         - servicePrincipals.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from servicePrincipals
       description: 'Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
-      operationId: servicePrincipals.GetFederatedIdentityCredentials
+      operationId: servicePrincipal_GetFederatedIdentityCredential
       parameters:
         - name: $select
           in: query
@@ -6765,7 +6765,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Update the navigation property federatedIdentityCredentials in servicePrincipals
-      operationId: servicePrincipals.UpdateFederatedIdentityCredentials
+      operationId: servicePrincipal_UpdateFederatedIdentityCredential
       requestBody:
         description: New navigation property values
         content:
@@ -6789,7 +6789,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Delete navigation property federatedIdentityCredentials for servicePrincipals
-      operationId: servicePrincipals.DeleteFederatedIdentityCredentials
+      operationId: servicePrincipal_DeleteFederatedIdentityCredential
       parameters:
         - name: If-Match
           in: header
@@ -6811,7 +6811,7 @@ paths:
         - servicePrincipals.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from servicePrincipals
       description: 'Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
-      operationId: servicePrincipals.federatedIdentityCredentials.GetByName
+      operationId: servicePrincipal.federatedIdentityCredential_GetGraphBPreName
       parameters:
         - name: $select
           in: query
@@ -6849,7 +6849,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Update the navigation property federatedIdentityCredentials in servicePrincipals
-      operationId: servicePrincipals.federatedIdentityCredentials.UpdateByName
+      operationId: servicePrincipal.federatedIdentityCredential_UpdateGraphBPreName
       requestBody:
         description: New navigation property values
         content:
@@ -6873,7 +6873,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Delete navigation property federatedIdentityCredentials for servicePrincipals
-      operationId: servicePrincipals.federatedIdentityCredentials.DeleteByName
+      operationId: servicePrincipal.federatedIdentityCredential_DeleteGraphBPreName
       parameters:
         - name: If-Match
           in: header
@@ -6894,7 +6894,7 @@ paths:
       tags:
         - servicePrincipals.federatedIdentityCredential
       summary: Get the number of the resource
-      operationId: servicePrincipals.federatedIdentityCredentials.GetCount-d9cd
+      operationId: servicePrincipal.federatedIdentityCredential_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6914,7 +6914,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.ListHomeRealmDiscoveryPolicies
+      operationId: servicePrincipal_ListHomeRealmDiscoveryPolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6971,7 +6971,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.homeRealmDiscoveryPolicies.DeleteRefHomeRealmDiscoveryPolicy
+      operationId: servicePrincipal.homeRealmDiscoveryPolicy_DeleteHomeRealmDiscoveryPolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -6992,7 +6992,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get the number of the resource
-      operationId: servicePrincipals.homeRealmDiscoveryPolicies.GetCount-d161
+      operationId: servicePrincipal.homeRealmDiscoveryPolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7012,7 +7012,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.ListRefHomeRealmDiscoveryPolicies
+      operationId: servicePrincipal_ListHomeRealmDiscoveryPolicyGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7048,7 +7048,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.CreateRefHomeRealmDiscoveryPolicies
+      operationId: servicePrincipal_CreateHomeRealmDiscoveryPolicyGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -7067,7 +7067,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.DeleteRefHomeRealmDiscoveryPolicies
+      operationId: servicePrincipal_DeleteHomeRealmDiscoveryPolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -7100,7 +7100,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0
-      operationId: servicePrincipals.ListMemberOf
+      operationId: servicePrincipal_ListMemberGraphOPre
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -7164,7 +7164,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
       description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
-      operationId: servicePrincipals.GetMemberOf
+      operationId: servicePrincipal_GetMemberGraphOPre
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -7213,7 +7213,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: servicePrincipals.GetMemberOf.AsAdministrativeUnit
+      operationId: servicePrincipal_GetMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -7261,7 +7261,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.directoryRole
-      operationId: servicePrincipals.GetMemberOf.AsDirectoryRole
+      operationId: servicePrincipal_GetMemberGraphOPreAsDirectoryRole
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -7309,7 +7309,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: servicePrincipals.GetMemberOf.AsGroup
+      operationId: servicePrincipal_GetMemberGraphOPreAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -7357,7 +7357,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.memberOf.GetCount-be11
+      operationId: servicePrincipal.memberOf_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -7383,7 +7383,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListMemberOf.AsAdministrativeUnit
+      operationId: servicePrincipal_ListMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -7445,7 +7445,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.MemberOf.GetCount.AsAdministrativeUnit-472e
+      operationId: servicePrincipal.MemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -7471,7 +7471,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.directoryRole in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListMemberOf.AsDirectoryRole
+      operationId: servicePrincipal_ListMemberGraphOPreAsDirectoryRole
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -7533,7 +7533,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.MemberOf.GetCount.AsDirectoryRole-fa4e
+      operationId: servicePrincipal.MemberOf_GetCountAsDirectoryRole
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -7559,7 +7559,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListMemberOf.AsGroup
+      operationId: servicePrincipal_ListMemberGraphOPreAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -7621,7 +7621,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.MemberOf.GetCount.AsGroup-96d9
+      operationId: servicePrincipal.MemberOf_GetCountAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -7651,7 +7651,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.addKey
+      operationId: servicePrincipal_addKey
       requestBody:
         description: Action parameters
         content:
@@ -7690,7 +7690,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.addPassword
+      operationId: servicePrincipal_addPassword
       requestBody:
         description: Action parameters
         content:
@@ -7725,7 +7725,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.addTokenSigningCertificate
+      operationId: servicePrincipal_addTokenSigningCertificate
       requestBody:
         description: Action parameters
         content:
@@ -7763,7 +7763,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.checkMemberGroups
+      operationId: servicePrincipal_checkMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -7804,7 +7804,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal.Actions
       summary: Invoke action checkMemberObjects
-      operationId: servicePrincipals.servicePrincipal.checkMemberObjects
+      operationId: servicePrincipal_checkMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -7849,7 +7849,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.getMemberGroups
+      operationId: servicePrincipal_getMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -7894,7 +7894,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.getMemberObjects
+      operationId: servicePrincipal_getMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -7939,7 +7939,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.removeKey
+      operationId: servicePrincipal_removeKey
       requestBody:
         description: Action parameters
         content:
@@ -7971,7 +7971,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.removePassword
+      operationId: servicePrincipal_removePassword
       requestBody:
         description: Action parameters
         content:
@@ -8001,7 +8001,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.restore
+      operationId: servicePrincipal_restore
       responses:
         2XX:
           description: Success
@@ -8026,7 +8026,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0
-      operationId: servicePrincipals.ListOauth2PermissionGrants
+      operationId: servicePrincipal_ListOauth2PermissionGrant
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8080,7 +8080,7 @@ paths:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Get oauth2PermissionGrants from servicePrincipals
       description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
-      operationId: servicePrincipals.GetOauth2PermissionGrants
+      operationId: servicePrincipal_GetOauth2PermissionGrant
       parameters:
         - name: $select
           in: query
@@ -8119,7 +8119,7 @@ paths:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
       summary: Get the number of the resource
-      operationId: servicePrincipals.oauth2PermissionGrants.GetCount-f9dc
+      operationId: servicePrincipal.oauth2PermissionGrant_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8139,7 +8139,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-1.0
-      operationId: servicePrincipals.ListOwnedObjects
+      operationId: servicePrincipal_ListOwnedObject
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8193,7 +8193,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get ownedObjects from servicePrincipals
       description: 'Directory objects that this service principal owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      operationId: servicePrincipals.GetOwnedObjects
+      operationId: servicePrincipal_GetOwnedObject
       parameters:
         - name: $select
           in: query
@@ -8232,7 +8232,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-      operationId: servicePrincipals.GetOwnedObjects.AsApplication
+      operationId: servicePrincipal_GetOwnedObjectAsApplication
       parameters:
         - name: $select
           in: query
@@ -8270,7 +8270,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
-      operationId: servicePrincipals.GetOwnedObjects.AsAppRoleAssignment
+      operationId: servicePrincipal_GetOwnedObjectAsAppRoleAssignment
       parameters:
         - name: $select
           in: query
@@ -8308,7 +8308,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: servicePrincipals.GetOwnedObjects.AsEndpoint
+      operationId: servicePrincipal_GetOwnedObjectAsEndpoint
       parameters:
         - name: $select
           in: query
@@ -8346,7 +8346,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: servicePrincipals.GetOwnedObjects.AsGroup
+      operationId: servicePrincipal_GetOwnedObjectAsGroup
       parameters:
         - name: $select
           in: query
@@ -8384,7 +8384,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: servicePrincipals.GetOwnedObjects.AsServicePrincipal
+      operationId: servicePrincipal_GetOwnedObjectAsServicePrincipal
       parameters:
         - name: $select
           in: query
@@ -8422,7 +8422,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.ownedObjects.GetCount-7ae7
+      operationId: servicePrincipal.ownedObject_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8438,7 +8438,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwnedObjects.AsApplication
+      operationId: servicePrincipal_ListOwnedObjectAsApplication
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8490,7 +8490,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.OwnedObjects.GetCount.AsApplication-2b95
+      operationId: servicePrincipal.OwnedObject_GetCountAsApplication
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8506,7 +8506,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwnedObjects.AsAppRoleAssignment
+      operationId: servicePrincipal_ListOwnedObjectAsAppRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8558,7 +8558,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.OwnedObjects.GetCount.AsAppRoleAssignment-793c
+      operationId: servicePrincipal.OwnedObject_GetCountAsAppRoleAssignment
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8574,7 +8574,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwnedObjects.AsEndpoint
+      operationId: servicePrincipal_ListOwnedObjectAsEndpoint
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8626,7 +8626,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.OwnedObjects.GetCount.AsEndpoint-4594
+      operationId: servicePrincipal.OwnedObject_GetCountAsEndpoint
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8642,7 +8642,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwnedObjects.AsGroup
+      operationId: servicePrincipal_ListOwnedObjectAsGroup
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8694,7 +8694,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.OwnedObjects.GetCount.AsGroup-fc2e
+      operationId: servicePrincipal.OwnedObject_GetCountAsGroup
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8710,7 +8710,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwnedObjects.AsServicePrincipal
+      operationId: servicePrincipal_ListOwnedObjectAsServicePrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8762,7 +8762,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.OwnedObjects.GetCount.AsServicePrincipal-19c0
+      operationId: servicePrincipal.OwnedObject_GetCountAsServicePrincipal
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8779,7 +8779,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get owners from servicePrincipals
       description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
-      operationId: servicePrincipals.ListOwners
+      operationId: servicePrincipal_ListOwner
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -8846,7 +8846,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0
-      operationId: servicePrincipals.owners.DeleteRefDirectoryObject
+      operationId: servicePrincipal.owner_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -8867,7 +8867,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
-      operationId: servicePrincipals.GetOwners.AsAppRoleAssignment
+      operationId: servicePrincipal_GetOwnerAsAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -8915,7 +8915,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: servicePrincipals.GetOwners.AsEndpoint
+      operationId: servicePrincipal_GetOwnerAsEndpoint
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -8963,7 +8963,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: servicePrincipals.GetOwners.AsServicePrincipal
+      operationId: servicePrincipal_GetOwnerAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9011,7 +9011,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-      operationId: servicePrincipals.GetOwners.AsUser
+      operationId: servicePrincipal_GetOwnerAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9059,7 +9059,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.owners.GetCount-ec9a
+      operationId: servicePrincipal.owner_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9086,7 +9086,7 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get ref of owners from servicePrincipals
       description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
-      operationId: servicePrincipals.ListRefOwners
+      operationId: servicePrincipal_ListOwnerGraphBPreRef
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9132,7 +9132,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-1.0
-      operationId: servicePrincipals.CreateRefOwners
+      operationId: servicePrincipal_CreateOwnerGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -9151,7 +9151,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0
-      operationId: servicePrincipals.DeleteRefOwners
+      operationId: servicePrincipal_DeleteOwnerGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -9180,7 +9180,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwners.AsAppRoleAssignment
+      operationId: servicePrincipal_ListOwnerAsAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9242,7 +9242,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.Owners.GetCount.AsAppRoleAssignment-abce
+      operationId: servicePrincipal.Owner_GetCountAsAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9268,7 +9268,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwners.AsEndpoint
+      operationId: servicePrincipal_ListOwnerAsEndpoint
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9330,7 +9330,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.Owners.GetCount.AsEndpoint-9454
+      operationId: servicePrincipal.Owner_GetCountAsEndpoint
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9356,7 +9356,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwners.AsServicePrincipal
+      operationId: servicePrincipal_ListOwnerAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9418,7 +9418,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.Owners.GetCount.AsServicePrincipal-c35b
+      operationId: servicePrincipal.Owner_GetCountAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9444,7 +9444,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwners.AsUser
+      operationId: servicePrincipal_ListOwnerAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9506,7 +9506,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.Owners.GetCount.AsUser-aab7
+      operationId: servicePrincipal.Owner_GetCountAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9536,7 +9536,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-get?view=graph-rest-1.0
-      operationId: servicePrincipals.GetRemoteDesktopSecurityConfiguration
+      operationId: servicePrincipal_GetRemoteDesktopSecurityConfiguration
       parameters:
         - name: $select
           in: query
@@ -9578,7 +9578,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-update?view=graph-rest-1.0
-      operationId: servicePrincipals.UpdateRemoteDesktopSecurityConfiguration
+      operationId: servicePrincipal_UpdateRemoteDesktopSecurityConfiguration
       requestBody:
         description: New navigation property values
         content:
@@ -9606,7 +9606,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-remotedesktopsecurityconfiguration?view=graph-rest-1.0
-      operationId: servicePrincipals.DeleteRemoteDesktopSecurityConfiguration
+      operationId: servicePrincipal_DeleteRemoteDesktopSecurityConfiguration
       parameters:
         - name: If-Match
           in: header
@@ -9631,7 +9631,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-list-approvedclientapps?view=graph-rest-1.0
-      operationId: servicePrincipals.remoteDesktopSecurityConfiguration.ListApprovedClientApps
+      operationId: servicePrincipal.remoteDesktopSecurityConfiguration_ListApprovedClientApp
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9687,7 +9687,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-post-approvedclientapps?view=graph-rest-1.0
-      operationId: servicePrincipals.remoteDesktopSecurityConfiguration.CreateApprovedClientApps
+      operationId: servicePrincipal.remoteDesktopSecurityConfiguration_CreateApprovedClientApp
       requestBody:
         description: New navigation property
         content:
@@ -9716,7 +9716,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvedclientapp-get?view=graph-rest-1.0
-      operationId: servicePrincipals.remoteDesktopSecurityConfiguration.GetApprovedClientApps
+      operationId: servicePrincipal.remoteDesktopSecurityConfiguration_GetApprovedClientApp
       parameters:
         - name: $select
           in: query
@@ -9758,7 +9758,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvedclientapp-update?view=graph-rest-1.0
-      operationId: servicePrincipals.remoteDesktopSecurityConfiguration.UpdateApprovedClientApps
+      operationId: servicePrincipal.remoteDesktopSecurityConfiguration_UpdateApprovedClientApp
       requestBody:
         description: New navigation property values
         content:
@@ -9785,7 +9785,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-delete-approvedclientapps?view=graph-rest-1.0
-      operationId: servicePrincipals.remoteDesktopSecurityConfiguration.DeleteApprovedClientApps
+      operationId: servicePrincipal.remoteDesktopSecurityConfiguration_DeleteApprovedClientApp
       parameters:
         - name: If-Match
           in: header
@@ -9806,7 +9806,7 @@ paths:
       tags:
         - servicePrincipals.remoteDesktopSecurityConfiguration
       summary: Get the number of the resource
-      operationId: servicePrincipals.remoteDesktopSecurityConfiguration.approvedClientApps.GetCount-bea1
+      operationId: servicePrincipal.remoteDesktopSecurityConfiguration.approvedClientApp_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9826,7 +9826,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-list-targetdevicegroups?view=graph-rest-1.0
-      operationId: servicePrincipals.remoteDesktopSecurityConfiguration.ListTargetDeviceGroups
+      operationId: servicePrincipal.remoteDesktopSecurityConfiguration_ListTargetDeviceGroup
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9882,7 +9882,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-post-targetdevicegroups?view=graph-rest-1.0
-      operationId: servicePrincipals.remoteDesktopSecurityConfiguration.CreateTargetDeviceGroups
+      operationId: servicePrincipal.remoteDesktopSecurityConfiguration_CreateTargetDeviceGroup
       requestBody:
         description: New navigation property
         content:
@@ -9911,7 +9911,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/targetdevicegroup-get?view=graph-rest-1.0
-      operationId: servicePrincipals.remoteDesktopSecurityConfiguration.GetTargetDeviceGroups
+      operationId: servicePrincipal.remoteDesktopSecurityConfiguration_GetTargetDeviceGroup
       parameters:
         - name: $select
           in: query
@@ -9953,7 +9953,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/targetdevicegroup-update?view=graph-rest-1.0
-      operationId: servicePrincipals.remoteDesktopSecurityConfiguration.UpdateTargetDeviceGroups
+      operationId: servicePrincipal.remoteDesktopSecurityConfiguration_UpdateTargetDeviceGroup
       requestBody:
         description: New navigation property values
         content:
@@ -9981,7 +9981,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-delete-targetdevicegroups?view=graph-rest-1.0
-      operationId: servicePrincipals.remoteDesktopSecurityConfiguration.DeleteTargetDeviceGroups
+      operationId: servicePrincipal.remoteDesktopSecurityConfiguration_DeleteTargetDeviceGroup
       parameters:
         - name: If-Match
           in: header
@@ -10002,7 +10002,7 @@ paths:
       tags:
         - servicePrincipals.remoteDesktopSecurityConfiguration
       summary: Get the number of the resource
-      operationId: servicePrincipals.remoteDesktopSecurityConfiguration.targetDeviceGroups.GetCount-51f5
+      operationId: servicePrincipal.remoteDesktopSecurityConfiguration.targetDeviceGroup_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10019,7 +10019,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get synchronization from servicePrincipals
       description: Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
-      operationId: servicePrincipals.GetSynchronization
+      operationId: servicePrincipal_GetSynchronization
       parameters:
         - name: $select
           in: query
@@ -10057,7 +10057,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property synchronization in servicePrincipals
-      operationId: servicePrincipals.SetSynchronization
+      operationId: servicePrincipal_SetSynchronization
       requestBody:
         description: New navigation property values
         content:
@@ -10081,7 +10081,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property synchronization for servicePrincipals
-      operationId: servicePrincipals.DeleteSynchronization
+      operationId: servicePrincipal_DeleteSynchronization
       parameters:
         - name: If-Match
           in: header
@@ -10106,7 +10106,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.ListJobs
+      operationId: servicePrincipal.synchronization_ListJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10162,7 +10162,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.CreateJobs
+      operationId: servicePrincipal.synchronization_CreateJob
       requestBody:
         description: New navigation property
         content:
@@ -10191,7 +10191,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.GetJobs
+      operationId: servicePrincipal.synchronization_GetJob
       parameters:
         - name: $select
           in: query
@@ -10229,7 +10229,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property jobs in servicePrincipals
-      operationId: servicePrincipals.synchronization.UpdateJobs
+      operationId: servicePrincipal.synchronization_UpdateJob
       requestBody:
         description: New navigation property values
         content:
@@ -10257,7 +10257,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.DeleteJobs
+      operationId: servicePrincipal.synchronization_DeleteJob
       parameters:
         - name: If-Match
           in: header
@@ -10279,7 +10279,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get bulkUpload from servicePrincipals
       description: The bulk upload operation for the job.
-      operationId: servicePrincipals.synchronization.jobs.GetBulkUpload
+      operationId: servicePrincipal.synchronization.job_GetBulkUpload
       parameters:
         - name: $select
           in: query
@@ -10317,7 +10317,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property bulkUpload in servicePrincipals
-      operationId: servicePrincipals.synchronization.jobs.UpdateBulkUpload
+      operationId: servicePrincipal.synchronization.job_UpdateBulkUpload
       requestBody:
         description: New navigation property values
         content:
@@ -10341,7 +10341,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property bulkUpload for servicePrincipals
-      operationId: servicePrincipals.synchronization.jobs.DeleteBulkUpload
+      operationId: servicePrincipal.synchronization.job_DeleteBulkUpload
       parameters:
         - name: If-Match
           in: header
@@ -10363,7 +10363,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get media content for the navigation property bulkUpload from servicePrincipals
       description: The bulk upload operation for the job.
-      operationId: servicePrincipals.synchronization.jobs.GetBulkUploadContent
+      operationId: servicePrincipal.synchronization.job_GetBulkUploadContent
       responses:
         2XX:
           description: Retrieved media content
@@ -10381,7 +10381,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Update media content for the navigation property bulkUpload in servicePrincipals
       description: The bulk upload operation for the job.
-      operationId: servicePrincipals.synchronization.jobs.UpdateBulkUploadContent
+      operationId: servicePrincipal.synchronization.job_SetBulkUploadContent
       requestBody:
         description: New media content.
         content:
@@ -10402,7 +10402,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Delete media content for the navigation property bulkUpload in servicePrincipals
       description: The bulk upload operation for the job.
-      operationId: servicePrincipals.synchronization.jobs.DeleteBulkUploadContent
+      operationId: servicePrincipal.synchronization.job_DeleteBulkUploadContent
       parameters:
         - name: If-Match
           in: header
@@ -10426,7 +10426,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.pause
+      operationId: servicePrincipal.synchronization.job.synchronizationJob_pause
       responses:
         '204':
           description: Success
@@ -10444,7 +10444,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.provisionOnDemand
+      operationId: servicePrincipal.synchronization.job.synchronizationJob_provisionOnDemand
       requestBody:
         description: Action parameters
         content:
@@ -10478,7 +10478,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.restart
+      operationId: servicePrincipal.synchronization.job.synchronizationJob_restart
       requestBody:
         description: Action parameters
         content:
@@ -10509,7 +10509,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.start
+      operationId: servicePrincipal.synchronization.job.synchronizationJob_start
       responses:
         '204':
           description: Success
@@ -10527,7 +10527,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.validateCredentials
+      operationId: servicePrincipal.synchronization.job.synchronizationJob_validateCredential
       requestBody:
         description: Action parameters
         content:
@@ -10567,7 +10567,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.jobs.GetSchema
+      operationId: servicePrincipal.synchronization.job_GetSchema
       parameters:
         - name: $select
           in: query
@@ -10609,7 +10609,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.jobs.UpdateSchema
+      operationId: servicePrincipal.synchronization.job_UpdateSchema
       requestBody:
         description: New navigation property values
         content:
@@ -10633,7 +10633,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property schema for servicePrincipals
-      operationId: servicePrincipals.synchronization.jobs.DeleteSchema
+      operationId: servicePrincipal.synchronization.job_DeleteSchema
       parameters:
         - name: If-Match
           in: header
@@ -10655,7 +10655,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
       description: Contains the collection of directories and all of their objects.
-      operationId: servicePrincipals.synchronization.jobs.schema.ListDirectories
+      operationId: servicePrincipal.synchronization.job.schema_ListDirectory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10707,7 +10707,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create new navigation property to directories for servicePrincipals
-      operationId: servicePrincipals.synchronization.jobs.schema.CreateDirectories
+      operationId: servicePrincipal.synchronization.job.schema_CreateDirectory
       requestBody:
         description: New navigation property
         content:
@@ -10733,7 +10733,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
       description: Contains the collection of directories and all of their objects.
-      operationId: servicePrincipals.synchronization.jobs.schema.GetDirectories
+      operationId: servicePrincipal.synchronization.job.schema_GetDirectory
       parameters:
         - name: $select
           in: query
@@ -10771,7 +10771,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property directories in servicePrincipals
-      operationId: servicePrincipals.synchronization.jobs.schema.UpdateDirectories
+      operationId: servicePrincipal.synchronization.job.schema_UpdateDirectory
       requestBody:
         description: New navigation property values
         content:
@@ -10795,7 +10795,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property directories for servicePrincipals
-      operationId: servicePrincipals.synchronization.jobs.schema.DeleteDirectories
+      operationId: servicePrincipal.synchronization.job.schema_DeleteDirectory
       parameters:
         - name: If-Match
           in: header
@@ -10820,7 +10820,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.schema.directories.directoryDefinition.discover
+      operationId: servicePrincipal.synchronization.job.synchronizationJob.schema.directory.directoryDefinition_discover
       responses:
         2XX:
           description: Success
@@ -10841,7 +10841,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get the number of the resource
-      operationId: servicePrincipals.synchronization.jobs.schema.directories.GetCount-af56
+      operationId: servicePrincipal.synchronization.job.schema.directory_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10861,7 +10861,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.schema.filterOperators
+      operationId: servicePrincipal.synchronization.job.synchronizationJob.schema_filterOperator
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10931,7 +10931,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.schema.functions
+      operationId: servicePrincipal.synchronization.job.synchronizationJob.schema_function
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11001,7 +11001,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.schema.parseExpression
+      operationId: servicePrincipal.synchronization.job.synchronizationJob.schema_parseExpression
       requestBody:
         description: Action parameters
         content:
@@ -11043,7 +11043,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get the number of the resource
-      operationId: servicePrincipals.synchronization.jobs.GetCount-5eba
+      operationId: servicePrincipal.synchronization.job_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11059,7 +11059,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Invoke action validateCredentials
-      operationId: servicePrincipals.servicePrincipal.synchronization.jobs.validateCredentials
+      operationId: servicePrincipal.synchronization.job_validateCredential
       requestBody:
         description: Action parameters
         content:
@@ -11099,7 +11099,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.acquireAccessToken
+      operationId: servicePrincipal.synchronization_acquireAccessToken
       requestBody:
         description: Action parameters
         content:
@@ -11129,7 +11129,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-serviceprincipal-put-synchronization?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.SetSecrets
+      operationId: servicePrincipal.synchronization_SetSecret
       requestBody:
         description: New property values
         content:
@@ -11163,7 +11163,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get the number of the resource
-      operationId: servicePrincipals.synchronization.Secrets.GetCount-65c9
+      operationId: servicePrincipal.synchronization.Secret_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11183,7 +11183,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0
-      operationId: servicePrincipals.synchronization.ListTemplates
+      operationId: servicePrincipal.synchronization_ListTemplate
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11235,7 +11235,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create new navigation property to templates for servicePrincipals
-      operationId: servicePrincipals.synchronization.CreateTemplates
+      operationId: servicePrincipal.synchronization_CreateTemplate
       requestBody:
         description: New navigation property
         content:
@@ -11261,7 +11261,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get templates from servicePrincipals
       description: Preconfigured synchronization settings for a particular application.
-      operationId: servicePrincipals.synchronization.GetTemplates
+      operationId: servicePrincipal.synchronization_GetTemplate
       parameters:
         - name: $select
           in: query
@@ -11299,7 +11299,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property templates in servicePrincipals
-      operationId: servicePrincipals.synchronization.UpdateTemplates
+      operationId: servicePrincipal.synchronization_UpdateTemplate
       requestBody:
         description: New navigation property values
         content:
@@ -11323,7 +11323,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property templates for servicePrincipals
-      operationId: servicePrincipals.synchronization.DeleteTemplates
+      operationId: servicePrincipal.synchronization_DeleteTemplate
       parameters:
         - name: If-Match
           in: header
@@ -11345,7 +11345,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get schema from servicePrincipals
       description: Default synchronization schema for the jobs based on this template.
-      operationId: servicePrincipals.synchronization.templates.GetSchema
+      operationId: servicePrincipal.synchronization.template_GetSchema
       parameters:
         - name: $select
           in: query
@@ -11383,7 +11383,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property schema in servicePrincipals
-      operationId: servicePrincipals.synchronization.templates.UpdateSchema
+      operationId: servicePrincipal.synchronization.template_UpdateSchema
       requestBody:
         description: New navigation property values
         content:
@@ -11407,7 +11407,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property schema for servicePrincipals
-      operationId: servicePrincipals.synchronization.templates.DeleteSchema
+      operationId: servicePrincipal.synchronization.template_DeleteSchema
       parameters:
         - name: If-Match
           in: header
@@ -11429,7 +11429,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
       description: Contains the collection of directories and all of their objects.
-      operationId: servicePrincipals.synchronization.templates.schema.ListDirectories
+      operationId: servicePrincipal.synchronization.template.schema_ListDirectory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11481,7 +11481,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create new navigation property to directories for servicePrincipals
-      operationId: servicePrincipals.synchronization.templates.schema.CreateDirectories
+      operationId: servicePrincipal.synchronization.template.schema_CreateDirectory
       requestBody:
         description: New navigation property
         content:
@@ -11507,7 +11507,7 @@ paths:
         - servicePrincipals.synchronization
       summary: Get directories from servicePrincipals
       description: Contains the collection of directories and all of their objects.
-      operationId: servicePrincipals.synchronization.templates.schema.GetDirectories
+      operationId: servicePrincipal.synchronization.template.schema_GetDirectory
       parameters:
         - name: $select
           in: query
@@ -11545,7 +11545,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property directories in servicePrincipals
-      operationId: servicePrincipals.synchronization.templates.schema.UpdateDirectories
+      operationId: servicePrincipal.synchronization.template.schema_UpdateDirectory
       requestBody:
         description: New navigation property values
         content:
@@ -11569,7 +11569,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property directories for servicePrincipals
-      operationId: servicePrincipals.synchronization.templates.schema.DeleteDirectories
+      operationId: servicePrincipal.synchronization.template.schema_DeleteDirectory
       parameters:
         - name: If-Match
           in: header
@@ -11594,7 +11594,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.templates.synchronizationTemplate.schema.directories.directoryDefinition.discover
+      operationId: servicePrincipal.synchronization.template.synchronizationTemplate.schema.directory.directoryDefinition_discover
       responses:
         2XX:
           description: Success
@@ -11615,7 +11615,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get the number of the resource
-      operationId: servicePrincipals.synchronization.templates.schema.directories.GetCount-f937
+      operationId: servicePrincipal.synchronization.template.schema.directory_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11635,7 +11635,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.templates.synchronizationTemplate.schema.filterOperators
+      operationId: servicePrincipal.synchronization.template.synchronizationTemplate.schema_filterOperator
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11705,7 +11705,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.templates.synchronizationTemplate.schema.functions
+      operationId: servicePrincipal.synchronization.template.synchronizationTemplate.schema_function
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11775,7 +11775,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.synchronization.templates.synchronizationTemplate.schema.parseExpression
+      operationId: servicePrincipal.synchronization.template.synchronizationTemplate.schema_parseExpression
       requestBody:
         description: Action parameters
         content:
@@ -11817,7 +11817,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get the number of the resource
-      operationId: servicePrincipals.synchronization.templates.GetCount-1c9d
+      operationId: servicePrincipal.synchronization.template_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11834,7 +11834,7 @@ paths:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from servicePrincipals
       description: The tokenIssuancePolicies assigned to this service principal.
-      operationId: servicePrincipals.ListTokenIssuancePolicies
+      operationId: servicePrincipal_ListTokenIssuancePolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11887,7 +11887,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Delete ref of navigation property tokenIssuancePolicies for servicePrincipals
-      operationId: servicePrincipals.tokenIssuancePolicies.DeleteRefTokenIssuancePolicy
+      operationId: servicePrincipal.tokenIssuancePolicy_DeleteTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -11908,7 +11908,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get the number of the resource
-      operationId: servicePrincipals.tokenIssuancePolicies.GetCount-578b
+      operationId: servicePrincipal.tokenIssuancePolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11925,7 +11925,7 @@ paths:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get ref of tokenIssuancePolicies from servicePrincipals
       description: The tokenIssuancePolicies assigned to this service principal.
-      operationId: servicePrincipals.ListRefTokenIssuancePolicies
+      operationId: servicePrincipal_ListTokenIssuancePolicyGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -11957,7 +11957,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Create new navigation property ref to tokenIssuancePolicies for servicePrincipals
-      operationId: servicePrincipals.CreateRefTokenIssuancePolicies
+      operationId: servicePrincipal_CreateTokenIssuancePolicyGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -11972,7 +11972,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Delete ref of navigation property tokenIssuancePolicies for servicePrincipals
-      operationId: servicePrincipals.DeleteRefTokenIssuancePolicies
+      operationId: servicePrincipal_DeleteTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -12005,7 +12005,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.ListTokenLifetimePolicies
+      operationId: servicePrincipal_ListTokenLifetimePolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12062,7 +12062,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.tokenLifetimePolicies.DeleteRefTokenLifetimePolicy
+      operationId: servicePrincipal.tokenLifetimePolicy_DeleteTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -12083,7 +12083,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get the number of the resource
-      operationId: servicePrincipals.tokenLifetimePolicies.GetCount-4121
+      operationId: servicePrincipal.tokenLifetimePolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -12103,7 +12103,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.ListRefTokenLifetimePolicies
+      operationId: servicePrincipal_ListTokenLifetimePolicyGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12139,7 +12139,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.CreateRefTokenLifetimePolicies
+      operationId: servicePrincipal_CreateTokenLifetimePolicyGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -12158,7 +12158,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-tokenlifetimepolicies?view=graph-rest-1.0
-      operationId: servicePrincipals.DeleteRefTokenLifetimePolicies
+      operationId: servicePrincipal_DeleteTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -12191,7 +12191,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0
-      operationId: servicePrincipals.ListTransitiveMemberOf
+      operationId: servicePrincipal_ListTransitiveMemberGraphOPre
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -12254,7 +12254,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get transitiveMemberOf from servicePrincipals
-      operationId: servicePrincipals.GetTransitiveMemberOf
+      operationId: servicePrincipal_GetTransitiveMemberGraphOPre
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -12303,7 +12303,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: servicePrincipals.GetTransitiveMemberOf.AsAdministrativeUnit
+      operationId: servicePrincipal_GetTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -12351,7 +12351,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.directoryRole
-      operationId: servicePrincipals.GetTransitiveMemberOf.AsDirectoryRole
+      operationId: servicePrincipal_GetTransitiveMemberGraphOPreAsDirectoryRole
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -12399,7 +12399,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: servicePrincipals.GetTransitiveMemberOf.AsGroup
+      operationId: servicePrincipal_GetTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -12447,7 +12447,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.transitiveMemberOf.GetCount-4794
+      operationId: servicePrincipal.transitiveMemberOf_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -12473,7 +12473,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListTransitiveMemberOf.AsAdministrativeUnit
+      operationId: servicePrincipal_ListTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -12535,7 +12535,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.TransitiveMemberOf.GetCount.AsAdministrativeUnit-4450
+      operationId: servicePrincipal.TransitiveMemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -12561,7 +12561,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.directoryRole in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListTransitiveMemberOf.AsDirectoryRole
+      operationId: servicePrincipal_ListTransitiveMemberGraphOPreAsDirectoryRole
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -12623,7 +12623,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.TransitiveMemberOf.GetCount.AsDirectoryRole-8951
+      operationId: servicePrincipal.TransitiveMemberOf_GetCountAsDirectoryRole
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -12649,7 +12649,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListTransitiveMemberOf.AsGroup
+      operationId: servicePrincipal_ListTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -12711,7 +12711,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
-      operationId: servicePrincipals.TransitiveMemberOf.GetCount.AsGroup-e005
+      operationId: servicePrincipal.TransitiveMemberOf_GetCountAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -12741,7 +12741,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.GetServicePrincipalByAppId
+      operationId: servicePrincipal_GetServicePrincipalGraphBPreAppId
       parameters:
         - name: $select
           in: query
@@ -12783,7 +12783,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.UpdateServicePrincipalByAppId
+      operationId: servicePrincipal_UpdateServicePrincipalGraphBPreAppId
       requestBody:
         description: New property values
         content:
@@ -12811,7 +12811,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0
-      operationId: servicePrincipals.servicePrincipal.DeleteServicePrincipalByAppId
+      operationId: servicePrincipal_DeleteServicePrincipalGraphBPreAppId
       parameters:
         - name: If-Match
           in: header
@@ -12832,7 +12832,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Get the number of the resource
-      operationId: servicePrincipals.GetCount-da6d
+      operationId: servicePrincipal_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -12862,7 +12862,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delta?view=graph-rest-1.0
-      operationId: servicePrincipals.delta
+      operationId: servicePrincipal_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12932,7 +12932,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: servicePrincipals.getAvailableExtensionProperties
+      operationId: servicePrincipal_getAvailableExtensionProperty
       requestBody:
         description: Action parameters
         content:
@@ -12978,7 +12978,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: servicePrincipals.getByIds
+      operationId: servicePrincipal_getGraphBPreId
       requestBody:
         description: Action parameters
         content:
@@ -13029,7 +13029,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: servicePrincipals.validateProperties
+      operationId: servicePrincipal_validateProperty
       requestBody:
         description: Action parameters
         content:
@@ -13069,7 +13069,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-list-approleassignments?view=graph-rest-1.0
-      operationId: users.ListAppRoleAssignments
+      operationId: user_ListAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -13135,7 +13135,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-post-approleassignments?view=graph-rest-1.0
-      operationId: users.CreateAppRoleAssignments
+      operationId: user_CreateAppRoleAssignment
       requestBody:
         description: New navigation property
         content:
@@ -13161,7 +13161,7 @@ paths:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
       description: Represents the app roles a user is granted for an application. Supports $expand.
-      operationId: users.GetAppRoleAssignments
+      operationId: user_GetAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -13209,7 +13209,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in users
-      operationId: users.UpdateAppRoleAssignments
+      operationId: user_UpdateAppRoleAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -13237,7 +13237,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-delete-approleassignments?view=graph-rest-1.0
-      operationId: users.DeleteAppRoleAssignments
+      operationId: user_DeleteAppRoleAssignment
       parameters:
         - name: If-Match
           in: header
@@ -13258,7 +13258,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Get the number of the resource
-      operationId: users.appRoleAssignments.GetCount-d180
+      operationId: user.appRoleAssignment_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -13312,7 +13312,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.'
+              description: 'The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable. App roles and exposed delegated permission scopes (api.oauth2PermissionScopes) share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. This limit is separate from the aggregate 1,200-entry application manifest limit and from app role assignment limits. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             authenticationBehaviors:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.authenticationBehaviors'
@@ -13914,7 +13914,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The roles exposed by the application that''s linked to this service principal. For more information, see the appRoles property definition on the application entity. Not nullable.'
+              description: 'The roles exposed by the application that''s linked to this service principal. For more information, see the appRoles property definition on the application entity. Not nullable. App roles and exposed delegated permission scopes (oauth2PermissionScopes) share a default limit of 700 permission definitions per service principal, including definitions inherited from the application and definitions added directly to the service principal. Enabled and disabled definitions both count. This limit counts definitions, not app role assignments. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             createdByAppId:
               type: string
               description: The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.
@@ -13976,7 +13976,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionScope'
-              description: 'The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity''s api property. Not nullable.'
+              description: 'The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. These scopes and appRoles share a default limit of 700 permission definitions per service principal. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             passwordCredentials:
               type: array
               items:
@@ -15549,7 +15549,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. To learn more about managing this property for Microsoft 365 vs. cloud security groups, see Key differences from Microsoft 365 group labeling.'
             assignedLicenses:
               type: array
               items:
@@ -16126,7 +16126,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.permissionScope'
-          description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.'
+          description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes. These scopes and the application''s appRoles share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
         preAuthorizedApplications:
           type: array
           items:
@@ -16587,6 +16587,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -16774,6 +16775,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -17042,6 +17044,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -17400,6 +17405,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
@@ -18441,6 +18447,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               description: Represents a platform credential instance registered to a user on Mac OS.
+              x-ms-navigationProperty: true
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
               x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
@@ -20839,11 +20851,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Offline, OutOfOffice, PresenceUnknown.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.'
+              description: 'The base presence information for a user. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Focusing, InACall, InAMeeting, Offline, Presenting, PresenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               anyOf:
@@ -22666,6 +22678,7 @@ components:
               '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+              '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
               '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
               '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
               '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -22822,6 +22835,29 @@ components:
               type: string
               default: '#microsoft.graph.platformCredentialAuthenticationMethod'
       x-ms-discriminator-value: '#microsoft.graph.platformCredentialAuthenticationMethod'
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.device'
+                - type: object
+                  nullable: true
+              description: The registered device on which this resource account key resides. Supports $expand.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
+      x-ms-discriminator-value: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -30517,6 +30553,18 @@ components:
             resource:
               type: string
               description: Required. Specifies the resource that is monitored for changes. Don't include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+            vapidPublicKey:
+              type: string
+              description: 'Optional. The application server''s VAPID public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained by calling the getVapidPublicKey function on the subscription collection. The browser passes this value to PushManager.subscribe({ applicationServerKey: vapidPublicKey }) to bind the push subscription to this server identity. Required when notificationUrl targets a known Web Push service origin (for example, *.push.apple.com, fcm.googleapis.com, updates.push.services.mozilla.com); rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8292.'
+              nullable: true
+            webPushEncryptionP256dhPublicKey:
+              type: string
+              description: 'Optional. The subscriber''s ECDH public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''p256dh''). Used as the peer public key during ECDH key agreement to derive the per-message content encryption key for RFC 8291 payload encryption. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
+            webPushEncryptionSecret:
+              type: string
+              description: 'Optional. The subscriber''s auth secret, base64url-encoded (16 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''auth''). Used as the HMAC-SHA-256 salt for the HKDF combine step that derives key material for RFC 8291 payload encryption. Write-only: this value is never returned in GET responses (returned as null). Treat as a secret. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.subscription'

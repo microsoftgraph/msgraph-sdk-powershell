@@ -8,24 +8,31 @@ There are a few different recommended paths to get contributions into the releas
 
 The best way to get started with a contribution is to start a dialog with us. Sometimes features will be under development or out of scope for this SDK and it's best to check before starting work on contribution, especially for large work items.
 
-## Adding Scenario-Based Cmdlets
+## Adding or Modifying v3 Cmdlets
 
-- Clone the repo - <https://github.com/microsoftgraph/msgraph-sdk-powershell.git>.
-- Identify the module(s) that you want add the custom cmdlets to. E.g. [Groups](https://github.com/microsoftgraph/msgraph-sdk-powershell/tree/dev/src/Groups/Groups).
-- Navigate to the module’s custom folder. E.g. [Groups/custom](https://github.com/microsoftgraph/msgraph-sdk-powershell/tree/dev/src/Groups/Groups/custom). In here, you will find a readme.md that has basic instructions on how to add custom cmdlets. A full guide can be found [here](https://github.com/Azure/autorest/blob/master/docs/powershell/customization.md#creating-a-new-cmdlet).
-- In the custom directory, add your custom cmdlet naming the file as `{Verb}Mg{Subject}_{Variant}.(cs|ps)`. This file will contain the implementation of your custom cmdlet. You can refer to [NewMgGroupMember_Create.cs](https://github.com/microsoftgraph/msgraph-sdk-powershell/blob/dev/src/Groups/v1.0/custom/NewMgGroupMember_Create.cs) as an example.
-- Once done, bump up the module version number in the module’s root [readme.md](https://github.com/microsoftgraph/msgraph-sdk-powershell/blob/dev/src/Groups/Groups/readme.md#versioning) then run `.\msgraph-sdk-powershell\tools\GenerateModules.ps1 -Build` to create, build and export the cmdlets to `..\exports` folder.
+The v3 SDK uses Kiota clients and [WrapperGenerator](tools/WrapperGenerator/README.md).
+It does not require the AutoRest submodule or its Node.js/Rush toolchain.
 
-## Modifying Existing Cmdlets
+Identify the affected module and update its wrapper cmdlet configuration in
+`src\<Module>\wrapper\<Module>_cmdletConfigurations.cs`, or the generator when a behavior
+change is required. See the generator documentation for configuration matching and generated
+cmdlet behavior. Regenerate rather than hand-editing generated clients or cmdlets.
 
-When it comes to modifying existing cmdlets, we recommend you use [AutoREST directive](https://github.com/Azure/autorest.powershell/blob/master/docs/directives.md#cmdlet-hiding-exportation-suppression).
+Legacy per-module AutoRest directives, customizations, and `src\readme.graph.md` remain as
+historical migration references. They are not the v3 generation entry point.
 
-- Identify cmdlets you want to modify, and the modules they reside in.
-- In the module’s `readme.md`, add your directive in the AutoREST configuration sections to modify the lower-level cmdlets.
+## SDK Generation
 
-## SDK generation
+Use the .NET SDK and Kiota CLI described in the [wrapper tooling guide](tools/README.md).
+For example, generate and build one module with:
 
-See our [SDK generation steps wiki](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/Generation-Process) for more information.
+```powershell
+.\tools\Build-WrapperModule.ps1 -Module Mail -ApiVersion v1.0
+```
+
+Use `-ApiVersion beta` for beta modules and `-SkipKiota` to reuse a committed client.
+The v3 release pipeline is `.azure-pipelines\wrapper-release.yml`; the legacy AutoRest
+generation and release pipeline entry points have been retired from this branch.
 
 ## Debugging the Auth module
 
