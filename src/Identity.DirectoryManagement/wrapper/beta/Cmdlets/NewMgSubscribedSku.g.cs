@@ -1,0 +1,116 @@
+#nullable enable
+
+using System;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client;
+using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
+{
+    [GraphRoute("POST", "/subscribedSkus")]
+    [Cmdlet(VerbsCommon.New, "MgSubscribedSku", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.SubscribedSku))]
+    public class NewMgSubscribedSkuCommand : GraphClientCmdlet
+    {
+
+
+        [Parameter(Mandatory = false)]
+        public string? AccountId { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? AccountName { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? AppliesTo { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? CapabilityStatus { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public int? ConsumedUnits { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public global::System.Guid? SkuId { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? SkuPartNumber { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string[]? SubscriptionIds { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.LicenseUnitsDetail? PrepaidUnits { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.ServicePlanInfo[]? ServicePlans { get; set; }
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(null, "New"))
+                return;
+
+            var body = new Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.SubscribedSku();
+
+    if (this.IsParameterBound(nameof(AccountId)))
+        body.AccountId = AccountId;
+
+    if (this.IsParameterBound(nameof(AccountName)))
+        body.AccountName = AccountName;
+
+    if (this.IsParameterBound(nameof(AppliesTo)))
+        body.AppliesTo = AppliesTo;
+
+    if (this.IsParameterBound(nameof(CapabilityStatus)))
+        body.CapabilityStatus = CapabilityStatus;
+
+    if (this.IsParameterBound(nameof(ConsumedUnits)))
+        body.ConsumedUnits = ConsumedUnits;
+
+    if (this.IsParameterBound(nameof(SkuId)))
+        body.SkuId = SkuId;
+
+    if (this.IsParameterBound(nameof(SkuPartNumber)))
+        body.SkuPartNumber = SkuPartNumber;
+
+    if (this.IsParameterBound(nameof(SubscriptionIds)))
+        body.SubscriptionIds = SubscriptionIds!.ToList();
+
+    if (this.IsParameterBound(nameof(PrepaidUnits)))
+        body.PrepaidUnits = PrepaidUnits;
+
+    if (this.IsParameterBound(nameof(ServicePlans)))
+        body.ServicePlans = ServicePlans!.ToList();
+
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.SubscribedSku? result;
+            try
+            {
+                result = client.SubscribedSkus.PostAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, body);
+                return;
+            }
+
+            WriteObject(result);
+        }
+    }
+}
