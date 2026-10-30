@@ -18,10 +18,10 @@ Per ledger row, exactly one action:
 
   matched / corrected     no entry - the name is already right (or deliberately corrected)
   mismatch, same verb     rename - entry carries the published noun
-  no-oracle, name unshipped  suppress - the published SDK pruned the operation
+  no-oracle, multi-route  defer - the oracle retains only the first URI of a command
+  no-oracle, name unshipped single route  suppress - retain the historical derivation policy
   everything else         defer - reported, NO entry emitted:
       mismatch where the published verb differs (a noun rename cannot fix a verb),
-      no-oracle where our name ships from a DIFFERENT uri (cross-path; curated only),
       ambiguous oracle rows, and GET list/item pairs whose published nouns diverge
       (renaming one side would break pairing).
 
@@ -80,12 +80,14 @@ else {
     if (-not $moduleDirs) { Write-Error "no generated cmdlet folders under $GeneratedRoot"; exit 1 }
 
     $rows = [System.Collections.Generic.List[object]]::new()
-    $tmp = Join-Path ([System.IO.Path]::GetTempPath()) "parity-ledger-$PID.csv"
-    foreach ($d in $moduleDirs) {
-        & "$PSScriptRoot\Compare-WrapperCmdletNames.ps1" -GeneratedPath $d -OraclePath $OraclePath -OutLedger $tmp *> $null
-        foreach ($r in Import-Csv $tmp) { $rows.Add($r) }
+    $tmp = Join-Path $OutDir "parity-ledger-$PID.csv"
+    try {
+        foreach ($d in $moduleDirs) {
+            & "$PSScriptRoot\Compare-WrapperCmdletNames.ps1" -GeneratedPath $d -OraclePath $OraclePath -OutLedger $tmp *> $null
+            foreach ($r in Import-Csv $tmp) { $rows.Add($r) }
+        }
     }
-    Remove-Item $tmp -ErrorAction SilentlyContinue
+    finally { Remove-Item $tmp -ErrorAction SilentlyContinue }
     $rows = @($rows | Where-Object { $_.ApiVersion -eq $ApiVersion })
     if ($rows.Count -eq 0) { Write-Error "ledger produced no $ApiVersion rows; wrong tree?"; exit 1 }
     $rows | Export-Csv $inputLedgerPath -NoTypeInformation
@@ -103,8 +105,8 @@ function VerbOf([string]$command) { ($command -split '-', 2)[0] }
 
 $byKey = @{}
 foreach ($r in $rows) {
-    # A dispatcher issues no request of its own; its published name is decided by the _List/_Get
-    # pair it forwards to, which carry the same noun and are resolved on their own rows.
+    # Only legacy dispatchers lack routes. Metadata-bearing dispatchers contribute one ordinary
+    # row per reachable route, just like their workers.
     #
     # 'cast' and 'parameterized-function' are rows the gate can no longer produce: it now reads
     # each route from the [GraphRoute] attribute in the compiled assembly, so those shapes arrive
@@ -128,7 +130,11 @@ foreach ($r in $rows) {
             'rename', (NounOf $oc), $(if ($ocVerb -cne (VerbOf $r.Command)) { $ocVerb } else { $null }), $oc
         }
         'no-oracle' {
-            if ($shippedNames.Contains($r.Command)) { 'defer-crosspath', $null, $null, "$($r.Command) ships from a different uri" }
+            # Multi-route public commands and their workers carry the group's RouteCount.
+            # Their secondary routes may be omitted by the oracle, which retains the first URI.
+            # Single-route operations and frozen ledgers retain the historical derivation policy.
+            if ([int]$r.RouteCount -gt 1) { 'defer-no-oracle', $null, $null, "no oracle row for $key; secondary command routes may be omitted by the oracle" }
+            elseif ($shippedNames.Contains($r.Command)) { 'defer-crosspath', $null, $null, "$($r.Command) ships from a different uri" }
             else { 'suppress', $null, $null, "no oracle row for $key and '$($r.Command)' unshipped" }
         }
         # The gate found no [GraphRoute] on the compiled cmdlet, so there is no route to resolve
