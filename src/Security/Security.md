@@ -25,6 +25,15 @@ filters, response-union restrictions, or new suppressions resolve these collisio
 Existing v1.0 derived suppressions and curated child-navigation behavior remain
 unchanged. No mutation variant groups are introduced.
 
+On the integrated framework, full Release generation/build succeeds for both
+profiles (662 v1.0 exports; 1,003 beta exports). Fresh compiled route, naming,
+mandatory-ID and `WhatIf` checks are separate from transport validation. An actual
+beta bulk-action invocation using the compiled module and official Authentication
+2.38.1 fails on the shared missing `Microsoft.IO.RecyclableMemoryStream` 3.0.1
+dependency before a request is sent. No dependency shim is included here.
+Publication remains blocked on that shared packaging fix and the strict source
+bridge above; build success alone is not a body/HTTP or service-validity claim.
+
 ## AutoRest Configuration
 
 > see <https://aka.ms/autorest>
