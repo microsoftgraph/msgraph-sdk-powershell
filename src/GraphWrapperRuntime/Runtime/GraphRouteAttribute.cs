@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Wrapper.Runtime
     // reconstructing it from the builder expression. That reconstruction is lossy for a function
     // (the builder member keeps the argument names but not the OData argument syntax) and wrong
     // for a namespace-qualified action (kiota keeps the qualifier, the route does not).
-    [AttributeUsage(AttributeTargets.Class)]
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public sealed class GraphRouteAttribute : Attribute
     {
         public GraphRouteAttribute(string method, string path)
@@ -21,5 +21,7 @@ namespace Microsoft.Graph.Wrapper.Runtime
         public string Method { get; }
 
         public string Path { get; }
+
+        public string? ParameterSetName { get; set; }
     }
 }
