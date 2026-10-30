@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0
-      operationId: users.user.ListUser
+      operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -80,7 +80,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0
-      operationId: users.user.CreateUser
+      operationId: user_CreateUser
       requestBody:
         description: New entity
         content:
@@ -109,7 +109,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0
-      operationId: users.user.GetUser
+      operationId: user_GetUser
       parameters:
         - name: $select
           in: query
@@ -151,7 +151,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
-      operationId: users.user.UpdateUser
+      operationId: user_UpdateUser
       requestBody:
         description: New property values
         content:
@@ -179,7 +179,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-1.0
-      operationId: users.user.DeleteUser
+      operationId: user_DeleteUser
       parameters:
         - name: If-Match
           in: header
@@ -201,7 +201,7 @@ paths:
         - users.directoryObject
       summary: Get createdObjects from users
       description: Directory objects that the user created. Read-only. Nullable.
-      operationId: users.ListCreatedObjects
+      operationId: user_ListCreatedObject
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -255,7 +255,7 @@ paths:
         - users.directoryObject
       summary: Get createdObjects from users
       description: Directory objects that the user created. Read-only. Nullable.
-      operationId: users.GetCreatedObjects
+      operationId: user_GetCreatedObject
       parameters:
         - name: $select
           in: query
@@ -294,7 +294,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: users.GetCreatedObjects.AsServicePrincipal
+      operationId: user_GetCreatedObjectAsServicePrincipal
       parameters:
         - name: $select
           in: query
@@ -332,7 +332,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.createdObjects.GetCount-c0ed
+      operationId: user.createdObject_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -348,7 +348,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: users.ListCreatedObjects.AsServicePrincipal
+      operationId: user_ListCreatedObjectAsServicePrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -400,7 +400,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.CreatedObjects.GetCount.AsServicePrincipal-1751
+      operationId: user.CreatedObject_GetCountAsServicePrincipal
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -420,7 +420,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-list-directreports?view=graph-rest-1.0
-      operationId: users.ListDirectReports
+      operationId: user_ListDirectReport
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -484,7 +484,7 @@ paths:
         - users.directoryObject
       summary: Get directReports from users
       description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-      operationId: users.GetDirectReports
+      operationId: user_GetDirectReport
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -533,7 +533,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-      operationId: users.GetDirectReports.AsOrgContact
+      operationId: user_GetDirectReportAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -581,7 +581,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-      operationId: users.GetDirectReports.AsUser
+      operationId: user_GetDirectReportAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -629,7 +629,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.directReports.GetCount-0678
+      operationId: user.directReport_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -655,7 +655,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-      operationId: users.ListDirectReports.AsOrgContact
+      operationId: user_ListDirectReportAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -717,7 +717,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.DirectReports.GetCount.AsOrgContact-88c4
+      operationId: user.DirectReport_GetCountAsOrgContact
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -743,7 +743,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-      operationId: users.ListDirectReports.AsUser
+      operationId: user_ListDirectReportAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -805,7 +805,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.DirectReports.GetCount.AsUser-c9c7
+      operationId: user.DirectReport_GetCountAsUser
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -832,7 +832,7 @@ paths:
         - users.extension
       summary: Get extensions from users
       description: The collection of open extensions defined for the user. Read-only. Supports $expand. Nullable.
-      operationId: users.ListExtensions
+      operationId: user_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -884,7 +884,7 @@ paths:
       tags:
         - users.extension
       summary: Create new navigation property to extensions for users
-      operationId: users.CreateExtensions
+      operationId: user_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -910,7 +910,7 @@ paths:
         - users.extension
       summary: Get extensions from users
       description: The collection of open extensions defined for the user. Read-only. Supports $expand. Nullable.
-      operationId: users.GetExtensions
+      operationId: user_GetExtension
       parameters:
         - name: $select
           in: query
@@ -948,7 +948,7 @@ paths:
       tags:
         - users.extension
       summary: Update the navigation property extensions in users
-      operationId: users.UpdateExtensions
+      operationId: user_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -972,7 +972,7 @@ paths:
       tags:
         - users.extension
       summary: Delete navigation property extensions for users
-      operationId: users.DeleteExtensions
+      operationId: user_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -993,7 +993,7 @@ paths:
       tags:
         - users.extension
       summary: Get the number of the resource
-      operationId: users.extensions.GetCount-4b1c
+      operationId: user.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1010,7 +1010,7 @@ paths:
         - users.itemInsights
       summary: Get insights from users
       description: 'Represents relationships between a user and items such as OneDrive for work or school documents, calculated using advanced analytics and machine learning techniques. Read-only. Nullable.'
-      operationId: users.GetInsights
+      operationId: user_GetInsight
       parameters:
         - name: $select
           in: query
@@ -1048,7 +1048,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Update the navigation property insights in users
-      operationId: users.UpdateInsights
+      operationId: user_UpdateInsight
       requestBody:
         description: New navigation property values
         content:
@@ -1072,7 +1072,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Delete navigation property insights for users
-      operationId: users.DeleteInsights
+      operationId: user_DeleteInsight
       parameters:
         - name: If-Match
           in: header
@@ -1094,7 +1094,7 @@ paths:
         - users.itemInsights
       summary: Get shared from users
       description: 'Calculated relationship that identifies documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for work or school and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
-      operationId: users.insights.ListShared
+      operationId: user.insight_ListShared
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1152,7 +1152,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Create new navigation property to shared for users
-      operationId: users.insights.CreateShared
+      operationId: user.insight_CreateShared
       requestBody:
         description: New navigation property
         content:
@@ -1184,7 +1184,7 @@ paths:
         - users.itemInsights
       summary: Get shared from users
       description: 'Calculated relationship that identifies documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for work or school and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
-      operationId: users.insights.GetShared
+      operationId: user.insight_GetShared
       parameters:
         - name: $select
           in: query
@@ -1228,7 +1228,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Update the navigation property shared in users
-      operationId: users.insights.UpdateShared
+      operationId: user.insight_UpdateShared
       requestBody:
         description: New navigation property values
         content:
@@ -1258,7 +1258,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Delete navigation property shared for users
-      operationId: users.insights.DeleteShared
+      operationId: user.insight_DeleteShared
       parameters:
         - name: If-Match
           in: header
@@ -1285,7 +1285,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Get lastSharedMethod from users
-      operationId: users.insights.shared.GetLastSharedMethod
+      operationId: user.insight.shared_GetLastSharedMethod
       parameters:
         - name: $select
           in: query
@@ -1331,7 +1331,7 @@ paths:
         - users.itemInsights
       summary: Get resource from users
       description: 'Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
-      operationId: users.insights.shared.GetResource
+      operationId: user.insight.shared_GetResource
       parameters:
         - name: $select
           in: query
@@ -1376,7 +1376,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Get the number of the resource
-      operationId: users.insights.shared.GetCount-bfe2
+      operationId: user.insight.shared_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1399,7 +1399,7 @@ paths:
         - users.itemInsights
       summary: Get trending from users
       description: 'Calculated relationship that identifies documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for work or school and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
-      operationId: users.insights.ListTrending
+      operationId: user.insight_ListTrending
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1451,7 +1451,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Create new navigation property to trending for users
-      operationId: users.insights.CreateTrending
+      operationId: user.insight_CreateTrending
       requestBody:
         description: New navigation property
         content:
@@ -1477,7 +1477,7 @@ paths:
         - users.itemInsights
       summary: Get trending from users
       description: 'Calculated relationship that identifies documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for work or school and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
-      operationId: users.insights.GetTrending
+      operationId: user.insight_GetTrending
       parameters:
         - name: $select
           in: query
@@ -1515,7 +1515,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Update the navigation property trending in users
-      operationId: users.insights.UpdateTrending
+      operationId: user.insight_UpdateTrending
       requestBody:
         description: New navigation property values
         content:
@@ -1539,7 +1539,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Delete navigation property trending for users
-      operationId: users.insights.DeleteTrending
+      operationId: user.insight_DeleteTrending
       parameters:
         - name: If-Match
           in: header
@@ -1561,7 +1561,7 @@ paths:
         - users.itemInsights
       summary: Get resource from users
       description: Used for navigating to the trending document.
-      operationId: users.insights.trending.GetResource
+      operationId: user.insight.trending_GetResource
       parameters:
         - name: $select
           in: query
@@ -1600,7 +1600,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Get the number of the resource
-      operationId: users.insights.trending.GetCount-9a67
+      operationId: user.insight.trending_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1617,7 +1617,7 @@ paths:
         - users.itemInsights
       summary: Get used from users
       description: 'Calculated relationship that identifies the latest documents viewed or modified by a user, including OneDrive for work or school and SharePoint documents, ranked by recency of use.'
-      operationId: users.insights.ListUsed
+      operationId: user.insight_ListUsed
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1675,7 +1675,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Create new navigation property to used for users
-      operationId: users.insights.CreateUsed
+      operationId: user.insight_CreateUsed
       requestBody:
         description: New navigation property
         content:
@@ -1707,7 +1707,7 @@ paths:
         - users.itemInsights
       summary: Get used from users
       description: 'Calculated relationship that identifies the latest documents viewed or modified by a user, including OneDrive for work or school and SharePoint documents, ranked by recency of use.'
-      operationId: users.insights.GetUsed
+      operationId: user.insight_GetUsed
       parameters:
         - name: $select
           in: query
@@ -1751,7 +1751,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Update the navigation property used in users
-      operationId: users.insights.UpdateUsed
+      operationId: user.insight_UpdateUsed
       requestBody:
         description: New navigation property values
         content:
@@ -1781,7 +1781,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Delete navigation property used for users
-      operationId: users.insights.DeleteUsed
+      operationId: user.insight_DeleteUsed
       parameters:
         - name: If-Match
           in: header
@@ -1809,7 +1809,7 @@ paths:
         - users.itemInsights
       summary: Get resource from users
       description: 'Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
-      operationId: users.insights.used.GetResource
+      operationId: user.insight.used_GetResource
       parameters:
         - name: $select
           in: query
@@ -1854,7 +1854,7 @@ paths:
       tags:
         - users.itemInsights
       summary: Get the number of the resource
-      operationId: users.insights.used.GetCount-d5af
+      operationId: user.insight.used_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1877,7 +1877,7 @@ paths:
         - users.licenseDetails
       summary: Get licenseDetails from users
       description: A collection of this user's license details. Read-only.
-      operationId: users.ListLicenseDetails
+      operationId: user_ListLicenseDetail
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1929,7 +1929,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Create new navigation property to licenseDetails for users
-      operationId: users.CreateLicenseDetails
+      operationId: user_CreateLicenseDetail
       requestBody:
         description: New navigation property
         content:
@@ -1955,7 +1955,7 @@ paths:
         - users.licenseDetails
       summary: Get licenseDetails from users
       description: A collection of this user's license details. Read-only.
-      operationId: users.GetLicenseDetails
+      operationId: user_GetLicenseDetail
       parameters:
         - name: $select
           in: query
@@ -1993,7 +1993,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Update the navigation property licenseDetails in users
-      operationId: users.UpdateLicenseDetails
+      operationId: user_UpdateLicenseDetail
       requestBody:
         description: New navigation property values
         content:
@@ -2017,7 +2017,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Delete navigation property licenseDetails for users
-      operationId: users.DeleteLicenseDetails
+      operationId: user_DeleteLicenseDetail
       parameters:
         - name: If-Match
           in: header
@@ -2038,7 +2038,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Get the number of the resource
-      operationId: users.licenseDetails.GetCount-a83d
+      operationId: user.licenseDetail_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2058,7 +2058,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/licensedetails-getteamslicensingdetails?view=graph-rest-1.0
-      operationId: users.user.licenseDetails.getTeamsLicensingDetails
+      operationId: user.licenseDetail_getTeamsLicensingDetail
       responses:
         2XX:
           description: Success
@@ -2080,7 +2080,7 @@ paths:
         - users.mailboxSettings
       summary: Get mailboxSettings property value
       description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Requires $select to retrieve.'
-      operationId: users.GetMailboxSettings
+      operationId: user_GetMailboxSetting
       parameters:
         - name: $select
           in: query
@@ -2117,7 +2117,7 @@ paths:
       tags:
         - users.mailboxSettings
       summary: Update property mailboxSettings value.
-      operationId: users.UpdateMailboxSettings
+      operationId: user_UpdateMailboxSetting
       requestBody:
         description: New property values
         content:
@@ -2145,7 +2145,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-list-manager?view=graph-rest-1.0
-      operationId: users.GetManager
+      operationId: user_GetManager
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2198,7 +2198,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-list-manager?view=graph-rest-1.0
-      operationId: users.GetRefManager
+      operationId: user_GetManagerGraphBPreRef
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2230,7 +2230,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0
-      operationId: users.UpdateRefManager
+      operationId: user_SetManagerGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPutBody'
       responses:
@@ -2249,7 +2249,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-delete-manager?view=graph-rest-1.0
-      operationId: users.DeleteRefManager
+      operationId: user_DeleteManagerGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -2274,7 +2274,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-list-memberof?view=graph-rest-1.0
-      operationId: users.ListMemberOf
+      operationId: user_ListMemberGraphOPre
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2338,7 +2338,7 @@ paths:
         - users.directoryObject
       summary: Get memberOf from users
       description: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-      operationId: users.GetMemberOf
+      operationId: user_GetMemberGraphOPre
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2387,7 +2387,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: users.GetMemberOf.AsAdministrativeUnit
+      operationId: user_GetMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2435,7 +2435,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.directoryRole
-      operationId: users.GetMemberOf.AsDirectoryRole
+      operationId: user_GetMemberGraphOPreAsDirectoryRole
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2487,7 +2487,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0
-      operationId: users.GetMemberOf.AsGroup
+      operationId: user_GetMemberGraphOPreAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2535,7 +2535,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.memberOf.GetCount-fc20
+      operationId: user.memberOf_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2561,7 +2561,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: users.ListMemberOf.AsAdministrativeUnit
+      operationId: user_ListMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2623,7 +2623,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.MemberOf.GetCount.AsAdministrativeUnit-88a9
+      operationId: user.MemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2649,7 +2649,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.directoryRole in the microsoft.graph.directoryObject collection
-      operationId: users.ListMemberOf.AsDirectoryRole
+      operationId: user_ListMemberGraphOPreAsDirectoryRole
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2711,7 +2711,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.MemberOf.GetCount.AsDirectoryRole-b036
+      operationId: user.MemberOf_GetCountAsDirectoryRole
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2741,7 +2741,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0
-      operationId: users.ListMemberOf.AsGroup
+      operationId: user_ListMemberGraphOPreAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2803,7 +2803,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.MemberOf.GetCount.AsGroup-48c0
+      operationId: user.MemberOf_GetCountAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -2833,7 +2833,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-oauth2permissiongrants?view=graph-rest-1.0
-      operationId: users.ListOauth2PermissionGrants
+      operationId: user_ListOauth2PermissionGrant
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2886,7 +2886,7 @@ paths:
       tags:
         - users.oAuth2PermissionGrant
       summary: Get oauth2PermissionGrants from users
-      operationId: users.GetOauth2PermissionGrants
+      operationId: user_GetOauth2PermissionGrant
       parameters:
         - name: $select
           in: query
@@ -2925,7 +2925,7 @@ paths:
       tags:
         - users.oAuth2PermissionGrant
       summary: Get the number of the resource
-      operationId: users.oauth2PermissionGrants.GetCount-fb7b
+      operationId: user.oauth2PermissionGrant_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2941,7 +2941,7 @@ paths:
       tags:
         - users.onPremisesSyncBehavior
       summary: Get onPremisesSyncBehavior from users
-      operationId: users.GetOnPremisesSyncBehavior
+      operationId: user_GetOnPremisesSyncBehavior
       parameters:
         - name: $select
           in: query
@@ -2979,7 +2979,7 @@ paths:
       tags:
         - users.onPremisesSyncBehavior
       summary: Update the navigation property onPremisesSyncBehavior in users
-      operationId: users.UpdateOnPremisesSyncBehavior
+      operationId: user_UpdateOnPremisesSyncBehavior
       requestBody:
         description: New navigation property values
         content:
@@ -3003,7 +3003,7 @@ paths:
       tags:
         - users.onPremisesSyncBehavior
       summary: Delete navigation property onPremisesSyncBehavior for users
-      operationId: users.DeleteOnPremisesSyncBehavior
+      operationId: user_DeleteOnPremisesSyncBehavior
       parameters:
         - name: If-Match
           in: header
@@ -3024,7 +3024,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get outlook from users
-      operationId: users.GetOutlook
+      operationId: user_GetOutlook
       parameters:
         - name: $select
           in: query
@@ -3064,7 +3064,7 @@ paths:
         - users.outlookUser
       summary: Get masterCategories from users
       description: A list of categories defined for the user.
-      operationId: users.outlook.ListMasterCategories
+      operationId: user.outlook_ListMasterCategory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3116,7 +3116,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to masterCategories for users
-      operationId: users.outlook.CreateMasterCategories
+      operationId: user.outlook_CreateMasterCategory
       requestBody:
         description: New navigation property
         content:
@@ -3142,7 +3142,7 @@ paths:
         - users.outlookUser
       summary: Get masterCategories from users
       description: A list of categories defined for the user.
-      operationId: users.outlook.GetMasterCategories
+      operationId: user.outlook_GetMasterCategory
       parameters:
         - name: $select
           in: query
@@ -3180,7 +3180,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property masterCategories in users
-      operationId: users.outlook.UpdateMasterCategories
+      operationId: user.outlook_UpdateMasterCategory
       requestBody:
         description: New navigation property values
         content:
@@ -3204,7 +3204,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property masterCategories for users
-      operationId: users.outlook.DeleteMasterCategories
+      operationId: user.outlook_DeleteMasterCategory
       parameters:
         - name: If-Match
           in: header
@@ -3225,7 +3225,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get the number of the resource
-      operationId: users.outlook.masterCategories.GetCount-8560
+      operationId: user.outlook.masterCategory_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3245,7 +3245,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
-      operationId: users.user.outlook.supportedLanguages
+      operationId: user.outlook_supportedLanguage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3280,7 +3280,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Invoke function supportedTimeZones
-      operationId: users.user.outlook.supportedTimeZones-5c4f
+      operationId: user.outlook_supportedTimeZone
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3315,7 +3315,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Invoke function supportedTimeZones
-      operationId: users.user.outlook.supportedTimeZones-0d20
+      operationId: user.outlook_supportedTimeZone
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3351,7 +3351,7 @@ paths:
         - users.directoryObject
       summary: Get ownedDevices from users
       description: 'Devices the user owns. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      operationId: users.ListOwnedDevices
+      operationId: user_ListOwnedDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3415,7 +3415,7 @@ paths:
         - users.directoryObject
       summary: Get ownedDevices from users
       description: 'Devices the user owns. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      operationId: users.GetOwnedDevices
+      operationId: user_GetOwnedDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3464,7 +3464,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
-      operationId: users.GetOwnedDevices.AsAppRoleAssignment
+      operationId: user_GetOwnedDeviceAsAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3512,7 +3512,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-      operationId: users.GetOwnedDevices.AsDevice
+      operationId: user_GetOwnedDeviceAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3560,7 +3560,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: users.GetOwnedDevices.AsEndpoint
+      operationId: user_GetOwnedDeviceAsEndpoint
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3608,7 +3608,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.ownedDevices.GetCount-e76d
+      operationId: user.ownedDevice_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3634,7 +3634,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
-      operationId: users.ListOwnedDevices.AsAppRoleAssignment
+      operationId: user_ListOwnedDeviceAsAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3696,7 +3696,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.OwnedDevices.GetCount.AsAppRoleAssignment-59f6
+      operationId: user.OwnedDevice_GetCountAsAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3722,7 +3722,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-      operationId: users.ListOwnedDevices.AsDevice
+      operationId: user_ListOwnedDeviceAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3784,7 +3784,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.OwnedDevices.GetCount.AsDevice-64a9
+      operationId: user.OwnedDevice_GetCountAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3810,7 +3810,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: users.ListOwnedDevices.AsEndpoint
+      operationId: user_ListOwnedDeviceAsEndpoint
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3872,7 +3872,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.OwnedDevices.GetCount.AsEndpoint-bd17
+      operationId: user.OwnedDevice_GetCountAsEndpoint
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3902,7 +3902,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-list-ownedobjects?view=graph-rest-1.0
-      operationId: users.ListOwnedObjects
+      operationId: user_ListOwnedObject
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -3966,7 +3966,7 @@ paths:
         - users.directoryObject
       summary: Get ownedObjects from users
       description: 'Directory objects the user owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      operationId: users.GetOwnedObjects
+      operationId: user_GetOwnedObject
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4015,7 +4015,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-      operationId: users.GetOwnedObjects.AsApplication
+      operationId: user_GetOwnedObjectAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4063,7 +4063,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: users.GetOwnedObjects.AsGroup
+      operationId: user_GetOwnedObjectAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4111,7 +4111,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: users.GetOwnedObjects.AsServicePrincipal
+      operationId: user_GetOwnedObjectAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4159,7 +4159,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.ownedObjects.GetCount-2c09
+      operationId: user.ownedObject_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4185,7 +4185,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-      operationId: users.ListOwnedObjects.AsApplication
+      operationId: user_ListOwnedObjectAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4247,7 +4247,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.OwnedObjects.GetCount.AsApplication-1b6d
+      operationId: user.OwnedObject_GetCountAsApplication
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4273,7 +4273,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: users.ListOwnedObjects.AsGroup
+      operationId: user_ListOwnedObjectAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4335,7 +4335,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.OwnedObjects.GetCount.AsGroup-7af3
+      operationId: user.OwnedObject_GetCountAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4361,7 +4361,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: users.ListOwnedObjects.AsServicePrincipal
+      operationId: user_ListOwnedObjectAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4423,7 +4423,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.OwnedObjects.GetCount.AsServicePrincipal-370f
+      operationId: user.OwnedObject_GetCountAsServicePrincipal
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4450,7 +4450,7 @@ paths:
         - users.profilePhoto
       summary: Get photo from users
       description: The user's profile photo. Read-only.
-      operationId: users.GetPhoto
+      operationId: user_GetPhoto
       parameters:
         - name: $select
           in: query
@@ -4488,7 +4488,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Update the navigation property photo in users
-      operationId: users.UpdatePhoto
+      operationId: user_UpdatePhoto
       requestBody:
         description: New navigation property values
         content:
@@ -4512,7 +4512,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Delete navigation property photo for users
-      operationId: users.DeletePhoto
+      operationId: user_DeletePhoto
       parameters:
         - name: If-Match
           in: header
@@ -4534,7 +4534,7 @@ paths:
         - users.profilePhoto
       summary: Get media content for the navigation property photo from users
       description: The user's profile photo. Read-only.
-      operationId: users.GetPhotoContent
+      operationId: user_GetPhotoContent
       responses:
         2XX:
           description: Retrieved media content
@@ -4552,7 +4552,7 @@ paths:
         - users.profilePhoto
       summary: Update media content for the navigation property photo in users
       description: The user's profile photo. Read-only.
-      operationId: users.UpdatePhotoContent
+      operationId: user_SetPhotoContent
       requestBody:
         description: New media content.
         content:
@@ -4573,7 +4573,7 @@ paths:
         - users.profilePhoto
       summary: Delete media content for the navigation property photo in users
       description: The user's profile photo. Read-only.
-      operationId: users.DeletePhotoContent
+      operationId: user_DeletePhotoContent
       parameters:
         - name: If-Match
           in: header
@@ -4594,7 +4594,7 @@ paths:
         - users.profilePhoto
       summary: Get photos from users
       description: The collection of the user's profile photos in different sizes. Read-only.
-      operationId: users.ListPhotos
+      operationId: user_ListPhoto
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4648,7 +4648,7 @@ paths:
         - users.profilePhoto
       summary: Get photos from users
       description: The collection of the user's profile photos in different sizes. Read-only.
-      operationId: users.GetPhotos
+      operationId: user_GetPhoto
       parameters:
         - name: $select
           in: query
@@ -4688,7 +4688,7 @@ paths:
         - users.profilePhoto
       summary: Get media content for the navigation property photos from users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.GetPhotosContent
+      operationId: user_GetPhotosContent
       responses:
         2XX:
           description: Retrieved media content
@@ -4706,7 +4706,7 @@ paths:
         - users.profilePhoto
       summary: Update media content for the navigation property photos in users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.UpdatePhotosContent
+      operationId: user_SetPhotosContent
       requestBody:
         description: New media content.
         content:
@@ -4727,7 +4727,7 @@ paths:
         - users.profilePhoto
       summary: Delete media content for the navigation property photos in users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.DeletePhotosContent
+      operationId: user_DeletePhotosContent
       parameters:
         - name: If-Match
           in: header
@@ -4748,7 +4748,7 @@ paths:
         - users.directoryObject
       summary: Get registeredDevices from users
       description: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
-      operationId: users.ListRegisteredDevices
+      operationId: user_ListRegisteredDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4812,7 +4812,7 @@ paths:
         - users.directoryObject
       summary: Get registeredDevices from users
       description: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
-      operationId: users.GetRegisteredDevices
+      operationId: user_GetRegisteredDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4861,7 +4861,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
-      operationId: users.GetRegisteredDevices.AsAppRoleAssignment
+      operationId: user_GetRegisteredDeviceAsAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4909,7 +4909,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-      operationId: users.GetRegisteredDevices.AsDevice
+      operationId: user_GetRegisteredDeviceAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -4957,7 +4957,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: users.GetRegisteredDevices.AsEndpoint
+      operationId: user_GetRegisteredDeviceAsEndpoint
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5005,7 +5005,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.registeredDevices.GetCount-0403
+      operationId: user.registeredDevice_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5031,7 +5031,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
-      operationId: users.ListRegisteredDevices.AsAppRoleAssignment
+      operationId: user_ListRegisteredDeviceAsAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5093,7 +5093,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.RegisteredDevices.GetCount.AsAppRoleAssignment-cd2d
+      operationId: user.RegisteredDevice_GetCountAsAppRoleAssignment
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5119,7 +5119,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-      operationId: users.ListRegisteredDevices.AsDevice
+      operationId: user_ListRegisteredDeviceAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5181,7 +5181,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.RegisteredDevices.GetCount.AsDevice-16e2
+      operationId: user.RegisteredDevice_GetCountAsDevice
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5207,7 +5207,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: users.ListRegisteredDevices.AsEndpoint
+      operationId: user_ListRegisteredDeviceAsEndpoint
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5269,7 +5269,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.RegisteredDevices.GetCount.AsEndpoint-87c6
+      operationId: user.RegisteredDevice_GetCountAsEndpoint
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -5295,7 +5295,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get settings from users
-      operationId: users.GetSettings
+      operationId: user_GetSetting
       parameters:
         - name: $select
           in: query
@@ -5333,7 +5333,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property settings in users
-      operationId: users.UpdateSettings
+      operationId: user_UpdateSetting
       requestBody:
         description: New navigation property values
         content:
@@ -5357,7 +5357,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property settings for users
-      operationId: users.DeleteSettings
+      operationId: user_DeleteSetting
       parameters:
         - name: If-Match
           in: header
@@ -5382,7 +5382,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/usersettings-list-exchange?view=graph-rest-1.0
-      operationId: users.settings.GetExchange
+      operationId: user.setting_GetExchange
       parameters:
         - name: $select
           in: query
@@ -5422,7 +5422,7 @@ paths:
         - users.userSettings
       summary: Get itemInsights from users
       description: 'The user''s settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.'
-      operationId: users.settings.GetItemInsights
+      operationId: user.setting_GetItemInsight
       parameters:
         - name: $select
           in: query
@@ -5464,7 +5464,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0
-      operationId: users.settings.UpdateItemInsights
+      operationId: user.setting_UpdateItemInsight
       requestBody:
         description: New navigation property values
         content:
@@ -5488,7 +5488,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property itemInsights for users
-      operationId: users.settings.DeleteItemInsights
+      operationId: user.setting_DeleteItemInsight
       parameters:
         - name: If-Match
           in: header
@@ -5513,7 +5513,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
-      operationId: users.settings.GetShiftPreferences
+      operationId: user.setting_GetShiftPreference
       parameters:
         - name: $select
           in: query
@@ -5555,7 +5555,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0
-      operationId: users.settings.UpdateShiftPreferences
+      operationId: user.setting_UpdateShiftPreference
       requestBody:
         description: New navigation property values
         content:
@@ -5579,7 +5579,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property shiftPreferences for users
-      operationId: users.settings.DeleteShiftPreferences
+      operationId: user.setting_DeleteShiftPreference
       parameters:
         - name: If-Match
           in: header
@@ -5600,7 +5600,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get storage from users
-      operationId: users.settings.GetStorage
+      operationId: user.setting_GetStorage
       parameters:
         - name: $select
           in: query
@@ -5638,7 +5638,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property storage in users
-      operationId: users.settings.UpdateStorage
+      operationId: user.setting_UpdateStorage
       requestBody:
         description: New navigation property values
         content:
@@ -5662,7 +5662,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property storage for users
-      operationId: users.settings.DeleteStorage
+      operationId: user.setting_DeleteStorage
       parameters:
         - name: If-Match
           in: header
@@ -5683,7 +5683,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get quota from users
-      operationId: users.settings.storage.GetQuota
+      operationId: user.setting.storage_GetQuota
       parameters:
         - name: $select
           in: query
@@ -5721,7 +5721,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property quota in users
-      operationId: users.settings.storage.UpdateQuota
+      operationId: user.setting.storage_UpdateQuota
       requestBody:
         description: New navigation property values
         content:
@@ -5745,7 +5745,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property quota for users
-      operationId: users.settings.storage.DeleteQuota
+      operationId: user.setting.storage_DeleteQuota
       parameters:
         - name: If-Match
           in: header
@@ -5766,7 +5766,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get services from users
-      operationId: users.settings.storage.quota.ListServices
+      operationId: user.setting.storage.quota_ListService
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5818,7 +5818,7 @@ paths:
       tags:
         - users.userSettings
       summary: Create new navigation property to services for users
-      operationId: users.settings.storage.quota.CreateServices
+      operationId: user.setting.storage.quota_CreateService
       requestBody:
         description: New navigation property
         content:
@@ -5843,7 +5843,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get services from users
-      operationId: users.settings.storage.quota.GetServices
+      operationId: user.setting.storage.quota_GetService
       parameters:
         - name: $select
           in: query
@@ -5881,7 +5881,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property services in users
-      operationId: users.settings.storage.quota.UpdateServices
+      operationId: user.setting.storage.quota_UpdateService
       requestBody:
         description: New navigation property values
         content:
@@ -5905,7 +5905,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property services for users
-      operationId: users.settings.storage.quota.DeleteServices
+      operationId: user.setting.storage.quota_DeleteService
       parameters:
         - name: If-Match
           in: header
@@ -5926,7 +5926,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get the number of the resource
-      operationId: users.settings.storage.quota.services.GetCount-bab7
+      operationId: user.setting.storage.quota.service_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5943,7 +5943,7 @@ paths:
         - users.userSettings
       summary: Get windows from users
       description: The Windows settings of the user stored in the cloud.
-      operationId: users.settings.ListWindows
+      operationId: user.setting_ListWindow
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5995,7 +5995,7 @@ paths:
       tags:
         - users.userSettings
       summary: Create new navigation property to windows for users
-      operationId: users.settings.CreateWindows
+      operationId: user.setting_CreateWindow
       requestBody:
         description: New navigation property
         content:
@@ -6021,7 +6021,7 @@ paths:
         - users.userSettings
       summary: Get windows from users
       description: The Windows settings of the user stored in the cloud.
-      operationId: users.settings.GetWindows
+      operationId: user.setting_GetWindow
       parameters:
         - name: $select
           in: query
@@ -6059,7 +6059,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property windows in users
-      operationId: users.settings.UpdateWindows
+      operationId: user.setting_UpdateWindow
       requestBody:
         description: New navigation property values
         content:
@@ -6083,7 +6083,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property windows for users
-      operationId: users.settings.DeleteWindows
+      operationId: user.setting_DeleteWindow
       parameters:
         - name: If-Match
           in: header
@@ -6105,7 +6105,7 @@ paths:
         - users.userSettings
       summary: Get instances from users
       description: A collection of setting values for a given windowsSetting.
-      operationId: users.settings.windows.ListInstances
+      operationId: user.setting.window_ListInstance
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6157,7 +6157,7 @@ paths:
       tags:
         - users.userSettings
       summary: Create new navigation property to instances for users
-      operationId: users.settings.windows.CreateInstances
+      operationId: user.setting.window_CreateInstance
       requestBody:
         description: New navigation property
         content:
@@ -6183,7 +6183,7 @@ paths:
         - users.userSettings
       summary: Get instances from users
       description: A collection of setting values for a given windowsSetting.
-      operationId: users.settings.windows.GetInstances
+      operationId: user.setting.window_GetInstance
       parameters:
         - name: $select
           in: query
@@ -6221,7 +6221,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property instances in users
-      operationId: users.settings.windows.UpdateInstances
+      operationId: user.setting.window_UpdateInstance
       requestBody:
         description: New navigation property values
         content:
@@ -6245,7 +6245,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property instances for users
-      operationId: users.settings.windows.DeleteInstances
+      operationId: user.setting.window_DeleteInstance
       parameters:
         - name: If-Match
           in: header
@@ -6266,7 +6266,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get the number of the resource
-      operationId: users.settings.windows.instances.GetCount-b9e0
+      operationId: user.setting.window.instance_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6282,7 +6282,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get the number of the resource
-      operationId: users.settings.windows.GetCount-855b
+      operationId: user.setting.window_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6299,7 +6299,7 @@ paths:
         - users.userSettings
       summary: Get workHoursAndLocations from users
       description: The user's settings for work hours and location preferences for scheduling and availability management.
-      operationId: users.settings.GetWorkHoursAndLocations
+      operationId: user.setting_GetWorkHoursAndLocation
       parameters:
         - name: $select
           in: query
@@ -6337,7 +6337,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property workHoursAndLocations in users
-      operationId: users.settings.UpdateWorkHoursAndLocations
+      operationId: user.setting_UpdateWorkHoursAndLocation
       requestBody:
         description: New navigation property values
         content:
@@ -6362,11 +6362,11 @@ paths:
       tags:
         - users.userSettings
       summary: Invoke function occurrencesView
-      description: Get work plan occurrences from your own work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
+      description: Get work plan occurrences from a user's work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/workhoursandlocationssetting-occurrencesview?view=graph-rest-1.0
-      operationId: users.user.settings.workHoursAndLocations.occurrencesView
+      operationId: user.setting.workHoursAndLocation_occurrencesView
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6433,7 +6433,7 @@ paths:
         - users.userSettings
       summary: Get occurrences from users
       description: Collection of work plan occurrences.
-      operationId: users.settings.workHoursAndLocations.ListOccurrences
+      operationId: user.setting.workHoursAndLocation_ListOccurrence
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6485,7 +6485,7 @@ paths:
       tags:
         - users.userSettings
       summary: Create new navigation property to occurrences for users
-      operationId: users.settings.workHoursAndLocations.CreateOccurrences
+      operationId: user.setting.workHoursAndLocation_CreateOccurrence
       requestBody:
         description: New navigation property
         content:
@@ -6511,7 +6511,7 @@ paths:
         - users.userSettings
       summary: Get occurrences from users
       description: Collection of work plan occurrences.
-      operationId: users.settings.workHoursAndLocations.GetOccurrences
+      operationId: user.setting.workHoursAndLocation_GetOccurrence
       parameters:
         - name: $select
           in: query
@@ -6549,7 +6549,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property occurrences in users
-      operationId: users.settings.workHoursAndLocations.SetOccurrences
+      operationId: user.setting.workHoursAndLocation_SetOccurrence
       requestBody:
         description: New navigation property values
         content:
@@ -6573,7 +6573,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property occurrences for users
-      operationId: users.settings.workHoursAndLocations.DeleteOccurrences
+      operationId: user.setting.workHoursAndLocation_DeleteOccurrence
       parameters:
         - name: If-Match
           in: header
@@ -6594,7 +6594,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get the number of the resource
-      operationId: users.settings.workHoursAndLocations.occurrences.GetCount-5733
+      operationId: user.setting.workHoursAndLocation.occurrence_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6610,11 +6610,11 @@ paths:
       tags:
         - users.userSettings
       summary: Invoke action setCurrentLocation
-      description: Update your work location for the current day or current active segment. This action allows you to quickly update your work location without modifying individual occurrences.
+      description: Update a user's work location for the current day or current active segment. This action quickly updates the user's work location without modifying individual occurrences.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/workplanoccurrence-setcurrentlocation?view=graph-rest-1.0
-      operationId: users.user.settings.workHoursAndLocations.occurrences.setCurrentLocation
+      operationId: user.setting.workHoursAndLocation.occurrence_setCurrentLocation
       requestBody:
         description: Action parameters
         content:
@@ -6650,7 +6650,7 @@ paths:
         - users.userSettings
       summary: Get recurrences from users
       description: Collection of recurring work plans defined by the user.
-      operationId: users.settings.workHoursAndLocations.ListRecurrences
+      operationId: user.setting.workHoursAndLocation_ListRecurrence
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6702,7 +6702,7 @@ paths:
       tags:
         - users.userSettings
       summary: Create new navigation property to recurrences for users
-      operationId: users.settings.workHoursAndLocations.CreateRecurrences
+      operationId: user.setting.workHoursAndLocation_CreateRecurrence
       requestBody:
         description: New navigation property
         content:
@@ -6728,7 +6728,7 @@ paths:
         - users.userSettings
       summary: Get recurrences from users
       description: Collection of recurring work plans defined by the user.
-      operationId: users.settings.workHoursAndLocations.GetRecurrences
+      operationId: user.setting.workHoursAndLocation_GetRecurrence
       parameters:
         - name: $select
           in: query
@@ -6766,7 +6766,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property recurrences in users
-      operationId: users.settings.workHoursAndLocations.SetRecurrences
+      operationId: user.setting.workHoursAndLocation_SetRecurrence
       requestBody:
         description: New navigation property values
         content:
@@ -6790,7 +6790,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property recurrences for users
-      operationId: users.settings.workHoursAndLocations.DeleteRecurrences
+      operationId: user.setting.workHoursAndLocation_DeleteRecurrence
       parameters:
         - name: If-Match
           in: header
@@ -6811,7 +6811,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get the number of the resource
-      operationId: users.settings.workHoursAndLocations.recurrences.GetCount-86e6
+      operationId: user.setting.workHoursAndLocation.recurrence_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6831,7 +6831,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-sponsorof?view=graph-rest-1.0
-      operationId: users.ListSponsorOf
+      operationId: user_ListSponsorGraphOPre
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6885,7 +6885,7 @@ paths:
         - users.directoryObject
       summary: Get sponsorOf from users
       description: 'Directory objects that this user sponsors, such as guest users, agent users, agent blueprints, agent blueprint principals, and agent identities. If the user is a member of a group that''s a sponsor, the objects sponsored by that group are also included. Read-only. Nullable. Supports $filter, $count, $select, $expand, $top, and $skip.'
-      operationId: users.GetSponsorOf
+      operationId: user_GetSponsorGraphOPre
       parameters:
         - name: $select
           in: query
@@ -6924,7 +6924,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.sponsorOf.GetCount-f17d
+      operationId: user.sponsorOf_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6944,7 +6944,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-list-sponsors?view=graph-rest-1.0
-      operationId: users.ListSponsors
+      operationId: user_ListSponsor
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7001,7 +7001,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-delete-sponsors?view=graph-rest-1.0
-      operationId: users.sponsors.DeleteRefDirectoryObject
+      operationId: user.sponsor_DeleteDirectoryObjectGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -7022,7 +7022,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.sponsors.GetCount-f3b9
+      operationId: user.sponsor_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7042,7 +7042,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-list-sponsors?view=graph-rest-1.0
-      operationId: users.ListRefSponsors
+      operationId: user_ListSponsorGraphBPreRef
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7078,7 +7078,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-post-sponsors?view=graph-rest-1.0
-      operationId: users.CreateRefSponsors
+      operationId: user_CreateSponsorGraphBPreRef
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
@@ -7097,7 +7097,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-delete-sponsors?view=graph-rest-1.0
-      operationId: users.DeleteRefSponsors
+      operationId: user_DeleteSponsorGraphBPreRef
       parameters:
         - name: If-Match
           in: header
@@ -7127,7 +7127,7 @@ paths:
         - users.todo
       summary: Get todo from users
       description: Represents the To Do services available to a user.
-      operationId: users.GetTodo
+      operationId: user_GetTodo
       parameters:
         - name: $select
           in: query
@@ -7165,7 +7165,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property todo in users
-      operationId: users.UpdateTodo
+      operationId: user_UpdateTodo
       requestBody:
         description: New navigation property values
         content:
@@ -7189,7 +7189,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property todo for users
-      operationId: users.DeleteTodo
+      operationId: user_DeleteTodo
       parameters:
         - name: If-Match
           in: header
@@ -7211,7 +7211,7 @@ paths:
         - users.todo
       summary: Get lists from users
       description: The task lists in the users mailbox.
-      operationId: users.todo.ListLists
+      operationId: user.todo_ListList
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7263,7 +7263,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to lists for users
-      operationId: users.todo.CreateLists
+      operationId: user.todo_CreateList
       requestBody:
         description: New navigation property
         content:
@@ -7289,7 +7289,7 @@ paths:
         - users.todo
       summary: Get lists from users
       description: The task lists in the users mailbox.
-      operationId: users.todo.GetLists
+      operationId: user.todo_GetList
       parameters:
         - name: $select
           in: query
@@ -7327,7 +7327,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property lists in users
-      operationId: users.todo.UpdateLists
+      operationId: user.todo_UpdateList
       requestBody:
         description: New navigation property values
         content:
@@ -7351,7 +7351,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property lists for users
-      operationId: users.todo.DeleteLists
+      operationId: user.todo_DeleteList
       parameters:
         - name: If-Match
           in: header
@@ -7373,7 +7373,7 @@ paths:
         - users.todo
       summary: Get extensions from users
       description: The collection of open extensions defined for the task list. Nullable.
-      operationId: users.todo.lists.ListExtensions
+      operationId: user.todo.list_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7425,7 +7425,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to extensions for users
-      operationId: users.todo.lists.CreateExtensions
+      operationId: user.todo.list_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -7451,7 +7451,7 @@ paths:
         - users.todo
       summary: Get extensions from users
       description: The collection of open extensions defined for the task list. Nullable.
-      operationId: users.todo.lists.GetExtensions
+      operationId: user.todo.list_GetExtension
       parameters:
         - name: $select
           in: query
@@ -7489,7 +7489,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property extensions in users
-      operationId: users.todo.lists.UpdateExtensions
+      operationId: user.todo.list_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -7513,7 +7513,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property extensions for users
-      operationId: users.todo.lists.DeleteExtensions
+      operationId: user.todo.list_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -7534,7 +7534,7 @@ paths:
       tags:
         - users.todo
       summary: Get the number of the resource
-      operationId: users.todo.lists.extensions.GetCount-27f6
+      operationId: user.todo.list.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7551,7 +7551,7 @@ paths:
         - users.todo
       summary: Get tasks from users
       description: The tasks in this task list. Read-only. Nullable.
-      operationId: users.todo.lists.ListTasks
+      operationId: user.todo.list_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7603,7 +7603,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to tasks for users
-      operationId: users.todo.lists.CreateTasks
+      operationId: user.todo.list_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -7629,7 +7629,7 @@ paths:
         - users.todo
       summary: Get tasks from users
       description: The tasks in this task list. Read-only. Nullable.
-      operationId: users.todo.lists.GetTasks
+      operationId: user.todo.list_GetTask
       parameters:
         - name: $select
           in: query
@@ -7667,7 +7667,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property tasks in users
-      operationId: users.todo.lists.UpdateTasks
+      operationId: user.todo.list_UpdateTask
       requestBody:
         description: New navigation property values
         content:
@@ -7691,7 +7691,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property tasks for users
-      operationId: users.todo.lists.DeleteTasks
+      operationId: user.todo.list_DeleteTask
       parameters:
         - name: If-Match
           in: header
@@ -7713,7 +7713,7 @@ paths:
         - users.todo
       summary: Get attachments from users
       description: A collection of file attachments for the task.
-      operationId: users.todo.lists.tasks.ListAttachments
+      operationId: user.todo.list.task_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7765,7 +7765,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to attachments for users
-      operationId: users.todo.lists.tasks.CreateAttachments
+      operationId: user.todo.list.task_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -7791,7 +7791,7 @@ paths:
         - users.todo
       summary: Get attachments from users
       description: A collection of file attachments for the task.
-      operationId: users.todo.lists.tasks.GetAttachments
+      operationId: user.todo.list.task_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -7829,7 +7829,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property attachments for users
-      operationId: users.todo.lists.tasks.DeleteAttachments
+      operationId: user.todo.list.task_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -7851,7 +7851,7 @@ paths:
         - users.todo
       summary: Get media content for the navigation property attachments from users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.todo.lists.tasks.GetAttachmentsContent
+      operationId: user.todo.list.task_GetAttachmentsContent
       responses:
         2XX:
           description: Retrieved media content
@@ -7869,7 +7869,7 @@ paths:
         - users.todo
       summary: Update media content for the navigation property attachments in users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.todo.lists.tasks.UpdateAttachmentsContent
+      operationId: user.todo.list.task_SetAttachmentsContent
       requestBody:
         description: New media content.
         content:
@@ -7890,7 +7890,7 @@ paths:
         - users.todo
       summary: Delete media content for the navigation property attachments in users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.todo.lists.tasks.DeleteAttachmentsContent
+      operationId: user.todo.list.task_DeleteAttachmentsContent
       parameters:
         - name: If-Match
           in: header
@@ -7910,7 +7910,7 @@ paths:
       tags:
         - users.todo
       summary: Get the number of the resource
-      operationId: users.todo.lists.tasks.attachments.GetCount-e9c9
+      operationId: user.todo.list.task.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7930,7 +7930,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/taskfileattachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.user.todo.lists.todoTaskList.tasks.todoTask.attachments.createUploadSession
+      operationId: user.todo.list.todoTaskList.task.todoTask.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -7961,7 +7961,7 @@ paths:
       tags:
         - users.todo
       summary: Get attachmentSessions from users
-      operationId: users.todo.lists.tasks.ListAttachmentSessions
+      operationId: user.todo.list.task_ListAttachmentSession
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8014,7 +8014,7 @@ paths:
       tags:
         - users.todo
       summary: Get attachmentSessions from users
-      operationId: users.todo.lists.tasks.GetAttachmentSessions
+      operationId: user.todo.list.task_GetAttachmentSession
       parameters:
         - name: $select
           in: query
@@ -8052,7 +8052,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property attachmentSessions in users
-      operationId: users.todo.lists.tasks.UpdateAttachmentSessions
+      operationId: user.todo.list.task_UpdateAttachmentSession
       requestBody:
         description: New navigation property values
         content:
@@ -8076,7 +8076,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property attachmentSessions for users
-      operationId: users.todo.lists.tasks.DeleteAttachmentSessions
+      operationId: user.todo.list.task_DeleteAttachmentSession
       parameters:
         - name: If-Match
           in: header
@@ -8098,7 +8098,7 @@ paths:
         - users.todo
       summary: Get content for the navigation property attachmentSessions from users
       description: The content streams that are uploaded.
-      operationId: users.todo.lists.tasks.GetAttachmentSessionsContent
+      operationId: user.todo.list.task_GetAttachmentSessionsContent
       responses:
         2XX:
           description: Retrieved media content
@@ -8116,7 +8116,7 @@ paths:
         - users.todo
       summary: Update content for the navigation property attachmentSessions in users
       description: The content streams that are uploaded.
-      operationId: users.todo.lists.tasks.UpdateAttachmentSessionsContent
+      operationId: user.todo.list.task_SetAttachmentSessionsContent
       requestBody:
         description: New media content.
         content:
@@ -8141,7 +8141,7 @@ paths:
         - users.todo
       summary: Delete content for the navigation property attachmentSessions in users
       description: The content streams that are uploaded.
-      operationId: users.todo.lists.tasks.DeleteAttachmentSessionsContent
+      operationId: user.todo.list.task_DeleteAttachmentSessionsContent
       parameters:
         - name: If-Match
           in: header
@@ -8161,7 +8161,7 @@ paths:
       tags:
         - users.todo
       summary: Get the number of the resource
-      operationId: users.todo.lists.tasks.attachmentSessions.GetCount-53ee
+      operationId: user.todo.list.task.attachmentSession_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8178,7 +8178,7 @@ paths:
         - users.todo
       summary: Get checklistItems from users
       description: A collection of checklistItems linked to a task.
-      operationId: users.todo.lists.tasks.ListChecklistItems
+      operationId: user.todo.list.task_ListChecklistItem
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8230,7 +8230,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to checklistItems for users
-      operationId: users.todo.lists.tasks.CreateChecklistItems
+      operationId: user.todo.list.task_CreateChecklistItem
       requestBody:
         description: New navigation property
         content:
@@ -8256,7 +8256,7 @@ paths:
         - users.todo
       summary: Get checklistItems from users
       description: A collection of checklistItems linked to a task.
-      operationId: users.todo.lists.tasks.GetChecklistItems
+      operationId: user.todo.list.task_GetChecklistItem
       parameters:
         - name: $select
           in: query
@@ -8294,7 +8294,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property checklistItems in users
-      operationId: users.todo.lists.tasks.UpdateChecklistItems
+      operationId: user.todo.list.task_UpdateChecklistItem
       requestBody:
         description: New navigation property values
         content:
@@ -8318,7 +8318,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property checklistItems for users
-      operationId: users.todo.lists.tasks.DeleteChecklistItems
+      operationId: user.todo.list.task_DeleteChecklistItem
       parameters:
         - name: If-Match
           in: header
@@ -8339,7 +8339,7 @@ paths:
       tags:
         - users.todo
       summary: Get the number of the resource
-      operationId: users.todo.lists.tasks.checklistItems.GetCount-f104
+      operationId: user.todo.list.task.checklistItem_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8356,7 +8356,7 @@ paths:
         - users.todo
       summary: Get extensions from users
       description: The collection of open extensions defined for the task. Nullable.
-      operationId: users.todo.lists.tasks.ListExtensions
+      operationId: user.todo.list.task_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8408,7 +8408,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to extensions for users
-      operationId: users.todo.lists.tasks.CreateExtensions
+      operationId: user.todo.list.task_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -8434,7 +8434,7 @@ paths:
         - users.todo
       summary: Get extensions from users
       description: The collection of open extensions defined for the task. Nullable.
-      operationId: users.todo.lists.tasks.GetExtensions
+      operationId: user.todo.list.task_GetExtension
       parameters:
         - name: $select
           in: query
@@ -8472,7 +8472,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property extensions in users
-      operationId: users.todo.lists.tasks.UpdateExtensions
+      operationId: user.todo.list.task_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -8496,7 +8496,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property extensions for users
-      operationId: users.todo.lists.tasks.DeleteExtensions
+      operationId: user.todo.list.task_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -8517,7 +8517,7 @@ paths:
       tags:
         - users.todo
       summary: Get the number of the resource
-      operationId: users.todo.lists.tasks.extensions.GetCount-c962
+      operationId: user.todo.list.task.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8534,7 +8534,7 @@ paths:
         - users.todo
       summary: Get linkedResources from users
       description: A collection of resources linked to the task.
-      operationId: users.todo.lists.tasks.ListLinkedResources
+      operationId: user.todo.list.task_ListLinkedResource
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8586,7 +8586,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to linkedResources for users
-      operationId: users.todo.lists.tasks.CreateLinkedResources
+      operationId: user.todo.list.task_CreateLinkedResource
       requestBody:
         description: New navigation property
         content:
@@ -8612,7 +8612,7 @@ paths:
         - users.todo
       summary: Get linkedResources from users
       description: A collection of resources linked to the task.
-      operationId: users.todo.lists.tasks.GetLinkedResources
+      operationId: user.todo.list.task_GetLinkedResource
       parameters:
         - name: $select
           in: query
@@ -8650,7 +8650,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property linkedResources in users
-      operationId: users.todo.lists.tasks.UpdateLinkedResources
+      operationId: user.todo.list.task_UpdateLinkedResource
       requestBody:
         description: New navigation property values
         content:
@@ -8674,7 +8674,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property linkedResources for users
-      operationId: users.todo.lists.tasks.DeleteLinkedResources
+      operationId: user.todo.list.task_DeleteLinkedResource
       parameters:
         - name: If-Match
           in: header
@@ -8695,7 +8695,7 @@ paths:
       tags:
         - users.todo
       summary: Get the number of the resource
-      operationId: users.todo.lists.tasks.linkedResources.GetCount-58c2
+      operationId: user.todo.list.task.linkedResource_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8711,7 +8711,7 @@ paths:
       tags:
         - users.todo
       summary: Get the number of the resource
-      operationId: users.todo.lists.tasks.GetCount-9520
+      operationId: user.todo.list.task_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8731,7 +8731,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-delta?view=graph-rest-1.0
-      operationId: users.user.todo.lists.todoTaskList.tasks.delta
+      operationId: user.todo.list.todoTaskList.task_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8797,7 +8797,7 @@ paths:
       tags:
         - users.todo
       summary: Get the number of the resource
-      operationId: users.todo.lists.GetCount-47c4
+      operationId: user.todo.list_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8817,7 +8817,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotasklist-delta?view=graph-rest-1.0
-      operationId: users.user.todo.lists.delta
+      operationId: user.todo.list_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8887,7 +8887,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/agentuser-list-transitivememberof?view=graph-rest-1.0
-      operationId: users.ListTransitiveMemberOf
+      operationId: user_ListTransitiveMemberGraphOPre
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -8951,7 +8951,7 @@ paths:
         - users.directoryObject
       summary: Get transitiveMemberOf from users
       description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
-      operationId: users.GetTransitiveMemberOf
+      operationId: user_GetTransitiveMemberGraphOPre
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9000,7 +9000,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: users.GetTransitiveMemberOf.AsAdministrativeUnit
+      operationId: user_GetTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9048,7 +9048,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.directoryRole
-      operationId: users.GetTransitiveMemberOf.AsDirectoryRole
+      operationId: user_GetTransitiveMemberGraphOPreAsDirectoryRole
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9096,7 +9096,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: users.GetTransitiveMemberOf.AsGroup
+      operationId: user_GetTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9144,7 +9144,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.transitiveMemberOf.GetCount-b904
+      operationId: user.transitiveMemberOf_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9170,7 +9170,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: users.ListTransitiveMemberOf.AsAdministrativeUnit
+      operationId: user_ListTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9232,7 +9232,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.TransitiveMemberOf.GetCount.AsAdministrativeUnit-9c79
+      operationId: user.TransitiveMemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9258,7 +9258,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.directoryRole in the microsoft.graph.directoryObject collection
-      operationId: users.ListTransitiveMemberOf.AsDirectoryRole
+      operationId: user_ListTransitiveMemberGraphOPreAsDirectoryRole
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9320,7 +9320,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.TransitiveMemberOf.GetCount.AsDirectoryRole-462d
+      operationId: user.TransitiveMemberOf_GetCountAsDirectoryRole
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9346,7 +9346,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: users.ListTransitiveMemberOf.AsGroup
+      operationId: user_ListTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9408,7 +9408,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the number of the resource
-      operationId: users.TransitiveMemberOf.GetCount.AsGroup-062f
+      operationId: user.TransitiveMemberOf_GetCountAsGroup
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -9438,7 +9438,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0
-      operationId: users.user.GetUserByUserPrincipalName
+      operationId: user_GetUserGraphBPreUserPrincipalName
       parameters:
         - name: $select
           in: query
@@ -9480,7 +9480,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
-      operationId: users.user.UpdateUserByUserPrincipalName
+      operationId: user_UpdateUserGraphBPreUserPrincipalName
       requestBody:
         description: New property values
         content:
@@ -9508,7 +9508,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-1.0
-      operationId: users.user.DeleteUserByUserPrincipalName
+      operationId: user_DeleteUserGraphBPreUserPrincipalName
       parameters:
         - name: If-Match
           in: header
@@ -9529,7 +9529,7 @@ paths:
       tags:
         - users.user
       summary: Get the number of the resource
-      operationId: users.GetCount-ee47
+      operationId: user_GetCount
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -10396,7 +10396,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The roles exposed by the application that''s linked to this service principal. For more information, see the appRoles property definition on the application entity. Not nullable.'
+              description: 'The roles exposed by the application that''s linked to this service principal. For more information, see the appRoles property definition on the application entity. Not nullable. App roles and exposed delegated permission scopes (oauth2PermissionScopes) share a default limit of 700 permission definitions per service principal, including definitions inherited from the application and definitions added directly to the service principal. Enabled and disabled definitions both count. This limit counts definitions, not app role assignments. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             createdByAppId:
               type: string
               description: The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.
@@ -10458,7 +10458,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionScope'
-              description: 'The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity''s api property. Not nullable.'
+              description: 'The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. These scopes and appRoles share a default limit of 700 permission definitions per service principal. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             passwordCredentials:
               type: array
               items:
@@ -10926,6 +10926,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -11113,6 +11114,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -11381,6 +11383,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -11739,6 +11744,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
@@ -12314,7 +12320,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. To learn more about managing this property for Microsoft 365 vs. cloud security groups, see Key differences from Microsoft 365 group labeling.'
             assignedLicenses:
               type: array
               items:
@@ -13112,7 +13118,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.'
+              description: 'The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable. App roles and exposed delegated permission scopes (api.oauth2PermissionScopes) share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. This limit is separate from the aggregate 1,200-entry application manifest limit and from app role assignment limits. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             authenticationBehaviors:
               anyOf:
                 - $ref: '#/components/schemas/microsoft.graph.authenticationBehaviors'
@@ -14622,6 +14628,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               description: Represents a platform credential instance registered to a user on Mac OS.
+              x-ms-navigationProperty: true
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
               x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
@@ -16914,11 +16926,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Offline, OutOfOffice, PresenceUnknown.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.'
+              description: 'The base presence information for a user. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Focusing, InACall, InAMeeting, Offline, Presenting, PresenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               anyOf:
@@ -18072,7 +18084,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.permissionScope'
-          description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.'
+          description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes. These scopes and the application''s appRoles share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
         preAuthorizedApplications:
           type: array
           items:
@@ -19289,6 +19301,7 @@ components:
               '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+              '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
               '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
               '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
               '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -19445,6 +19458,29 @@ components:
               type: string
               default: '#microsoft.graph.platformCredentialAuthenticationMethod'
       x-ms-discriminator-value: '#microsoft.graph.platformCredentialAuthenticationMethod'
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.device'
+                - type: object
+                  nullable: true
+              description: The registered device on which this resource account key resides. Supports $expand.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
+      x-ms-discriminator-value: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -26359,6 +26395,18 @@ components:
             resource:
               type: string
               description: Required. Specifies the resource that is monitored for changes. Don't include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+            vapidPublicKey:
+              type: string
+              description: 'Optional. The application server''s VAPID public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained by calling the getVapidPublicKey function on the subscription collection. The browser passes this value to PushManager.subscribe({ applicationServerKey: vapidPublicKey }) to bind the push subscription to this server identity. Required when notificationUrl targets a known Web Push service origin (for example, *.push.apple.com, fcm.googleapis.com, updates.push.services.mozilla.com); rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8292.'
+              nullable: true
+            webPushEncryptionP256dhPublicKey:
+              type: string
+              description: 'Optional. The subscriber''s ECDH public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''p256dh''). Used as the peer public key during ECDH key agreement to derive the per-message content encryption key for RFC 8291 payload encryption. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
+            webPushEncryptionSecret:
+              type: string
+              description: 'Optional. The subscriber''s auth secret, base64url-encoded (16 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''auth''). Used as the HMAC-SHA-256 salt for the HKDF combine step that derives key material for RFC 8291 payload encryption. Write-only: this value is never returned in GET responses (returned as null). Treat as a secret. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.subscription'

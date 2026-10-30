@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/adminreportsettings-get?view=graph-rest-1.0
-      operationId: admin.GetReportSettings
+      operationId: admin_GetReportSetting
       parameters:
         - name: $select
           in: query
@@ -57,7 +57,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/adminreportsettings-update?view=graph-rest-1.0
-      operationId: admin.UpdateReportSettings
+      operationId: admin_UpdateReportSetting
       requestBody:
         description: New navigation property values
         content:
@@ -81,7 +81,7 @@ paths:
       tags:
         - admin.adminReportSettings
       summary: Delete navigation property reportSettings for admin
-      operationId: admin.DeleteReportSettings
+      operationId: admin_DeleteReportSetting
       parameters:
         - name: If-Match
           in: header
@@ -102,7 +102,7 @@ paths:
       tags:
         - auditLogs.auditLogRoot
       summary: Get auditLogs
-      operationId: auditLogs.auditLogRoot.GetAuditLogRoot
+      operationId: auditLog.auditLogRoot_GetAuditLogRoot
       parameters:
         - name: $select
           in: query
@@ -140,7 +140,7 @@ paths:
       tags:
         - auditLogs.auditLogRoot
       summary: Update auditLogs
-      operationId: auditLogs.auditLogRoot.UpdateAuditLogRoot
+      operationId: auditLog.auditLogRoot_UpdateAuditLogRoot
       requestBody:
         description: New property values
         content:
@@ -169,7 +169,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryaudit-list?view=graph-rest-1.0
-      operationId: auditLogs.ListDirectoryAudits
+      operationId: auditLog_ListDirectoryAudit
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -221,7 +221,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Create new navigation property to directoryAudits for auditLogs
-      operationId: auditLogs.CreateDirectoryAudits
+      operationId: auditLog_CreateDirectoryAudit
       requestBody:
         description: New navigation property
         content:
@@ -250,7 +250,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryaudit-get?view=graph-rest-1.0
-      operationId: auditLogs.GetDirectoryAudits
+      operationId: auditLog_GetDirectoryAudit
       parameters:
         - name: $select
           in: query
@@ -288,7 +288,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Update the navigation property directoryAudits in auditLogs
-      operationId: auditLogs.UpdateDirectoryAudits
+      operationId: auditLog_UpdateDirectoryAudit
       requestBody:
         description: New navigation property values
         content:
@@ -312,7 +312,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Delete navigation property directoryAudits for auditLogs
-      operationId: auditLogs.DeleteDirectoryAudits
+      operationId: auditLog_DeleteDirectoryAudit
       parameters:
         - name: If-Match
           in: header
@@ -333,7 +333,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Get the number of the resource
-      operationId: auditLogs.directoryAudits.GetCount-fedb
+      operationId: auditLog.directoryAudit_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -353,7 +353,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0
-      operationId: auditLogs.ListProvisioning
+      operationId: auditLog_ListProvisioning
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -405,7 +405,7 @@ paths:
       tags:
         - auditLogs.provisioningObjectSummary
       summary: Create new navigation property to provisioning for auditLogs
-      operationId: auditLogs.CreateProvisioning
+      operationId: auditLog_CreateProvisioning
       requestBody:
         description: New navigation property
         content:
@@ -430,7 +430,7 @@ paths:
       tags:
         - auditLogs.provisioningObjectSummary
       summary: Get provisioning from auditLogs
-      operationId: auditLogs.GetProvisioning
+      operationId: auditLog_GetProvisioning
       parameters:
         - name: $select
           in: query
@@ -468,7 +468,7 @@ paths:
       tags:
         - auditLogs.provisioningObjectSummary
       summary: Update the navigation property provisioning in auditLogs
-      operationId: auditLogs.UpdateProvisioning
+      operationId: auditLog_UpdateProvisioning
       requestBody:
         description: New navigation property values
         content:
@@ -492,7 +492,7 @@ paths:
       tags:
         - auditLogs.provisioningObjectSummary
       summary: Delete navigation property provisioning for auditLogs
-      operationId: auditLogs.DeleteProvisioning
+      operationId: auditLog_DeleteProvisioning
       parameters:
         - name: If-Match
           in: header
@@ -513,7 +513,7 @@ paths:
       tags:
         - auditLogs.provisioningObjectSummary
       summary: Get the number of the resource
-      operationId: auditLogs.provisioning.GetCount-2f99
+      operationId: auditLog.provisioning_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -533,7 +533,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/signin-list?view=graph-rest-1.0
-      operationId: auditLogs.ListSignIns
+      operationId: auditLog_ListSignIn
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -585,7 +585,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Create new navigation property to signIns for auditLogs
-      operationId: auditLogs.CreateSignIns
+      operationId: auditLog_CreateSignIn
       requestBody:
         description: New navigation property
         content:
@@ -614,7 +614,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/signin-get?view=graph-rest-1.0
-      operationId: auditLogs.GetSignIns
+      operationId: auditLog_GetSignIn
       parameters:
         - name: $select
           in: query
@@ -652,7 +652,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Update the navigation property signIns in auditLogs
-      operationId: auditLogs.UpdateSignIns
+      operationId: auditLog_UpdateSignIn
       requestBody:
         description: New navigation property values
         content:
@@ -676,7 +676,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Delete navigation property signIns for auditLogs
-      operationId: auditLogs.DeleteSignIns
+      operationId: auditLog_DeleteSignIn
       parameters:
         - name: If-Match
           in: header
@@ -697,7 +697,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Get the number of the resource
-      operationId: auditLogs.signIns.GetCount-9ee4
+      operationId: auditLog.signIn_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -717,7 +717,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/signin-confirmcompromised?view=graph-rest-1.0
-      operationId: auditLogs.signIns.confirmCompromised
+      operationId: auditLog.signIn_confirmCompromised
       requestBody:
         description: Action parameters
         content:
@@ -748,7 +748,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/signin-confirmsafe?view=graph-rest-1.0
-      operationId: auditLogs.signIns.confirmSafe
+      operationId: auditLog.signIn_confirmSafe
       requestBody:
         description: Action parameters
         content:
@@ -779,7 +779,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/signin-dismiss?view=graph-rest-1.0
-      operationId: auditLogs.signIns.dismiss
+      operationId: auditLog.signIn_dismiss
       requestBody:
         description: Action parameters
         content:
@@ -806,7 +806,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get reports from deviceManagement
-      operationId: deviceManagement.GetReports
+      operationId: deviceManagement_GetReport
       parameters:
         - name: $select
           in: query
@@ -844,7 +844,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property reports in deviceManagement
-      operationId: deviceManagement.UpdateReports
+      operationId: deviceManagement_UpdateReport
       requestBody:
         description: New navigation property values
         content:
@@ -868,7 +868,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property reports for deviceManagement
-      operationId: deviceManagement.DeleteReports
+      operationId: deviceManagement_DeleteReport
       parameters:
         - name: If-Match
           in: header
@@ -890,7 +890,7 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
       description: Entity representing a job to export a report.
-      operationId: deviceManagement.reports.ListExportJobs
+      operationId: deviceManagement.report_ListExportJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -942,7 +942,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Create new navigation property to exportJobs for deviceManagement
-      operationId: deviceManagement.reports.CreateExportJobs
+      operationId: deviceManagement.report_CreateExportJob
       requestBody:
         description: New navigation property
         content:
@@ -968,7 +968,7 @@ paths:
         - deviceManagement.deviceManagementReports
       summary: Get exportJobs from deviceManagement
       description: Entity representing a job to export a report.
-      operationId: deviceManagement.reports.GetExportJobs
+      operationId: deviceManagement.report_GetExportJob
       parameters:
         - name: $select
           in: query
@@ -1006,7 +1006,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property exportJobs in deviceManagement
-      operationId: deviceManagement.reports.UpdateExportJobs
+      operationId: deviceManagement.report_UpdateExportJob
       requestBody:
         description: New navigation property values
         content:
@@ -1030,7 +1030,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property exportJobs for deviceManagement
-      operationId: deviceManagement.reports.DeleteExportJobs
+      operationId: deviceManagement.report_DeleteExportJob
       parameters:
         - name: If-Match
           in: header
@@ -1051,7 +1051,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Get the number of the resource
-      operationId: deviceManagement.reports.exportJobs.GetCount-5277
+      operationId: deviceManagement.report.exportJob_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1067,7 +1067,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getCachedReport
-      operationId: deviceManagement.reports.getCachedReport
+      operationId: deviceManagement.report_getCachedReport
       requestBody:
         description: Action parameters
         content:
@@ -1131,7 +1131,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getCompliancePolicyNonComplianceReport
-      operationId: deviceManagement.reports.getCompliancePolicyNonComplianceReport
+      operationId: deviceManagement.report_getCompliancePolicyNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -1201,7 +1201,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getCompliancePolicyNonComplianceSummaryReport
-      operationId: deviceManagement.reports.getCompliancePolicyNonComplianceSummaryReport
+      operationId: deviceManagement.report_getCompliancePolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -1271,7 +1271,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getComplianceSettingNonComplianceReport
-      operationId: deviceManagement.reports.getComplianceSettingNonComplianceReport
+      operationId: deviceManagement.report_getComplianceSettingNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -1341,7 +1341,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getConfigurationPolicyNonComplianceReport
-      operationId: deviceManagement.reports.getConfigurationPolicyNonComplianceReport
+      operationId: deviceManagement.report_getConfigurationPolicyNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -1411,7 +1411,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getConfigurationPolicyNonComplianceSummaryReport
-      operationId: deviceManagement.reports.getConfigurationPolicyNonComplianceSummaryReport
+      operationId: deviceManagement.report_getConfigurationPolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -1481,7 +1481,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getConfigurationSettingNonComplianceReport
-      operationId: deviceManagement.reports.getConfigurationSettingNonComplianceReport
+      operationId: deviceManagement.report_getConfigurationSettingNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -1551,7 +1551,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getDeviceManagementIntentPerSettingContributingProfiles
-      operationId: deviceManagement.reports.getDeviceManagementIntentPerSettingContributingProfiles
+      operationId: deviceManagement.report_getDeviceManagementIntentPerSettingContributingProfile
       requestBody:
         description: Action parameters
         content:
@@ -1621,7 +1621,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getDeviceManagementIntentSettingsReport
-      operationId: deviceManagement.reports.getDeviceManagementIntentSettingsReport
+      operationId: deviceManagement.report_getDeviceManagementIntentSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -1691,7 +1691,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getDeviceNonComplianceReport
-      operationId: deviceManagement.reports.getDeviceNonComplianceReport
+      operationId: deviceManagement.report_getDeviceNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -1761,7 +1761,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getDevicesWithoutCompliancePolicyReport
-      operationId: deviceManagement.reports.getDevicesWithoutCompliancePolicyReport
+      operationId: deviceManagement.report_getDevicesWithoutCompliancePolicyReport
       requestBody:
         description: Action parameters
         content:
@@ -1831,7 +1831,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getHistoricalReport
-      operationId: deviceManagement.reports.getHistoricalReport
+      operationId: deviceManagement.report_getHistoricalReport
       requestBody:
         description: Action parameters
         content:
@@ -1898,7 +1898,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getNoncompliantDevicesAndSettingsReport
-      operationId: deviceManagement.reports.getNoncompliantDevicesAndSettingsReport
+      operationId: deviceManagement.report_getNoncompliantDevicesAndSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -1968,7 +1968,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getPolicyNonComplianceMetadata
-      operationId: deviceManagement.reports.getPolicyNonComplianceMetadata
+      operationId: deviceManagement.report_getPolicyNonComplianceMetadata
       requestBody:
         description: Action parameters
         content:
@@ -2038,7 +2038,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getPolicyNonComplianceReport
-      operationId: deviceManagement.reports.getPolicyNonComplianceReport
+      operationId: deviceManagement.report_getPolicyNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -2108,7 +2108,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getPolicyNonComplianceSummaryReport
-      operationId: deviceManagement.reports.getPolicyNonComplianceSummaryReport
+      operationId: deviceManagement.report_getPolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -2178,7 +2178,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getReportFilters
-      operationId: deviceManagement.reports.getReportFilters
+      operationId: deviceManagement.report_getReportFilter
       requestBody:
         description: Action parameters
         content:
@@ -2248,7 +2248,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action getSettingNonComplianceReport
-      operationId: deviceManagement.reports.getSettingNonComplianceReport
+      operationId: deviceManagement.report_getSettingNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -2318,7 +2318,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Invoke action retrieveDeviceAppInstallationStatusReport
-      operationId: deviceManagement.reports.retrieveDeviceAppInstallationStatusReport
+      operationId: deviceManagement.report_retrieveDeviceAppInstallationStatusReport
       requestBody:
         description: Action parameters
         content:
@@ -2388,7 +2388,7 @@ paths:
       tags:
         - reports.reportRoot
       summary: Get reports
-      operationId: reports.reportRoot.GetReportRoot
+      operationId: report.reportRoot_GetReportRoot
       parameters:
         - name: $select
           in: query
@@ -2426,7 +2426,7 @@ paths:
       tags:
         - reports.reportRoot
       summary: Update reports
-      operationId: reports.reportRoot.UpdateReportRoot
+      operationId: report.reportRoot_UpdateReportRoot
       requestBody:
         description: New property values
         content:
@@ -2452,7 +2452,7 @@ paths:
         - reports.authenticationMethodsRoot
       summary: Get authenticationMethods from reports
       description: Container for navigation properties for Microsoft Entra authentication methods resources.
-      operationId: reports.GetAuthenticationMethods
+      operationId: report_GetAuthenticationMethod
       parameters:
         - name: $select
           in: query
@@ -2490,7 +2490,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Update the navigation property authenticationMethods in reports
-      operationId: reports.UpdateAuthenticationMethods
+      operationId: report_UpdateAuthenticationMethod
       requestBody:
         description: New navigation property values
         content:
@@ -2514,7 +2514,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Delete navigation property authenticationMethods for reports
-      operationId: reports.DeleteAuthenticationMethods
+      operationId: report_DeleteAuthenticationMethod
       parameters:
         - name: If-Match
           in: header
@@ -2539,7 +2539,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbyfeature?view=graph-rest-1.0
-      operationId: reports.authenticationMethods.usersRegisteredByFeature-07f2
+      operationId: report.authenticationMethod_usersRegisteredGraphBPreFeature
       responses:
         2XX:
           description: Success
@@ -2557,7 +2557,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Invoke function usersRegisteredByFeature
-      operationId: reports.authenticationMethods.usersRegisteredByFeature-b345
+      operationId: report.authenticationMethod_usersRegisteredGraphBPreFeature
       responses:
         2XX:
           description: Success
@@ -2579,7 +2579,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbymethod?view=graph-rest-1.0
-      operationId: reports.authenticationMethods.usersRegisteredByMethod-d25d
+      operationId: report.authenticationMethod_usersRegisteredGraphBPreMethod
       responses:
         2XX:
           description: Success
@@ -2597,7 +2597,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Invoke function usersRegisteredByMethod
-      operationId: reports.authenticationMethods.usersRegisteredByMethod-fb94
+      operationId: report.authenticationMethod_usersRegisteredGraphBPreMethod
       responses:
         2XX:
           description: Success
@@ -2619,7 +2619,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationmethodsroot-list-userregistrationdetails?view=graph-rest-1.0
-      operationId: reports.authenticationMethods.ListUserRegistrationDetails
+      operationId: report.authenticationMethod_ListUserRegistrationDetail
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2671,7 +2671,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Create new navigation property to userRegistrationDetails for reports
-      operationId: reports.authenticationMethods.CreateUserRegistrationDetails
+      operationId: report.authenticationMethod_CreateUserRegistrationDetail
       requestBody:
         description: New navigation property
         content:
@@ -2700,7 +2700,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/userregistrationdetails-get?view=graph-rest-1.0
-      operationId: reports.authenticationMethods.GetUserRegistrationDetails
+      operationId: report.authenticationMethod_GetUserRegistrationDetail
       parameters:
         - name: $select
           in: query
@@ -2738,7 +2738,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Update the navigation property userRegistrationDetails in reports
-      operationId: reports.authenticationMethods.UpdateUserRegistrationDetails
+      operationId: report.authenticationMethod_UpdateUserRegistrationDetail
       requestBody:
         description: New navigation property values
         content:
@@ -2762,7 +2762,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Delete navigation property userRegistrationDetails for reports
-      operationId: reports.authenticationMethods.DeleteUserRegistrationDetails
+      operationId: report.authenticationMethod_DeleteUserRegistrationDetail
       parameters:
         - name: If-Match
           in: header
@@ -2783,7 +2783,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get the number of the resource
-      operationId: reports.authenticationMethods.userRegistrationDetails.GetCount-0ab7
+      operationId: report.authenticationMethod.userRegistrationDetail_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2803,7 +2803,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-list-dailyprintusagebyprinter?view=graph-rest-1.0
-      operationId: reports.ListDailyPrintUsageByPrinter
+      operationId: report_ListDailyPrintUsageGraphBPrePrinter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2855,7 +2855,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Create new navigation property to dailyPrintUsageByPrinter for reports
-      operationId: reports.CreateDailyPrintUsageByPrinter
+      operationId: report_CreateDailyPrintUsageGraphBPrePrinter
       requestBody:
         description: New navigation property
         content:
@@ -2884,7 +2884,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printusagebyprinter-get?view=graph-rest-1.0
-      operationId: reports.GetDailyPrintUsageByPrinter
+      operationId: report_GetDailyPrintUsageGraphBPrePrinter
       parameters:
         - name: $select
           in: query
@@ -2922,7 +2922,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Update the navigation property dailyPrintUsageByPrinter in reports
-      operationId: reports.UpdateDailyPrintUsageByPrinter
+      operationId: report_UpdateDailyPrintUsageGraphBPrePrinter
       requestBody:
         description: New navigation property values
         content:
@@ -2946,7 +2946,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Delete navigation property dailyPrintUsageByPrinter for reports
-      operationId: reports.DeleteDailyPrintUsageByPrinter
+      operationId: report_DeleteDailyPrintUsageGraphBPrePrinter
       parameters:
         - name: If-Match
           in: header
@@ -2967,7 +2967,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Get the number of the resource
-      operationId: reports.dailyPrintUsageByPrinter.GetCount-73e4
+      operationId: report.dailyPrintUsageGraphBPrePrinter_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2987,7 +2987,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-list-dailyprintusagebyuser?view=graph-rest-1.0
-      operationId: reports.ListDailyPrintUsageByUser
+      operationId: report_ListDailyPrintUsageGraphBPreUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3039,7 +3039,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Create new navigation property to dailyPrintUsageByUser for reports
-      operationId: reports.CreateDailyPrintUsageByUser
+      operationId: report_CreateDailyPrintUsageGraphBPreUser
       requestBody:
         description: New navigation property
         content:
@@ -3068,7 +3068,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printusagebyuser-get?view=graph-rest-1.0
-      operationId: reports.GetDailyPrintUsageByUser
+      operationId: report_GetDailyPrintUsageGraphBPreUser
       parameters:
         - name: $select
           in: query
@@ -3106,7 +3106,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Update the navigation property dailyPrintUsageByUser in reports
-      operationId: reports.UpdateDailyPrintUsageByUser
+      operationId: report_UpdateDailyPrintUsageGraphBPreUser
       requestBody:
         description: New navigation property values
         content:
@@ -3130,7 +3130,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Delete navigation property dailyPrintUsageByUser for reports
-      operationId: reports.DeleteDailyPrintUsageByUser
+      operationId: report_DeleteDailyPrintUsageGraphBPreUser
       parameters:
         - name: If-Match
           in: header
@@ -3151,7 +3151,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Get the number of the resource
-      operationId: reports.dailyPrintUsageByUser.GetCount-e839
+      operationId: report.dailyPrintUsageGraphBPreUser_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3168,7 +3168,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function deviceConfigurationDeviceActivity
       description: Metadata for the device configuration device activity report
-      operationId: reports.deviceConfigurationDeviceActivity
+      operationId: report_deviceConfigurationDeviceActivity
       responses:
         2XX:
           description: Success
@@ -3190,7 +3190,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function deviceConfigurationUserActivity
       description: Metadata for the device configuration user activity report
-      operationId: reports.deviceConfigurationUserActivity
+      operationId: report_deviceConfigurationUserActivity
       responses:
         2XX:
           description: Success
@@ -3215,7 +3215,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getemailactivitycounts?view=graph-rest-1.0
-      operationId: reports.getEmailActivityCounts
+      operationId: report_getEmailActivityCount
       responses:
         2XX:
           description: Success
@@ -3241,7 +3241,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getemailactivityusercounts?view=graph-rest-1.0
-      operationId: reports.getEmailActivityUserCounts
+      operationId: report_getEmailActivityUserCount
       responses:
         2XX:
           description: Success
@@ -3264,7 +3264,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getEmailActivityUserDetail
       description: Get details about email activity users have performed.
-      operationId: reports.getEmailActivityUserDetail-4d91
+      operationId: report_getEmailActivityUserDetail
       responses:
         2XX:
           description: Success
@@ -3287,7 +3287,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getEmailActivityUserDetail
       description: Get details about email activity users have performed.
-      operationId: reports.getEmailActivityUserDetail-6549
+      operationId: report_getEmailActivityUserDetail
       responses:
         2XX:
           description: Success
@@ -3313,7 +3313,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getemailappusageappsusercounts?view=graph-rest-1.0
-      operationId: reports.getEmailAppUsageAppsUserCounts
+      operationId: report_getEmailAppUsageAppsUserCount
       responses:
         2XX:
           description: Success
@@ -3339,7 +3339,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getemailappusageusercounts?view=graph-rest-1.0
-      operationId: reports.getEmailAppUsageUserCounts
+      operationId: report_getEmailAppUsageUserCount
       responses:
         2XX:
           description: Success
@@ -3362,7 +3362,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getEmailAppUsageUserDetail
       description: Get details about which activities users performed on the various email apps.
-      operationId: reports.getEmailAppUsageUserDetail-d5d6
+      operationId: report_getEmailAppUsageUserDetail
       responses:
         2XX:
           description: Success
@@ -3385,7 +3385,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getEmailAppUsageUserDetail
       description: Get details about which activities users performed on the various email apps.
-      operationId: reports.getEmailAppUsageUserDetail-6aff
+      operationId: report_getEmailAppUsageUserDetail
       responses:
         2XX:
           description: Success
@@ -3411,7 +3411,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getemailappusageversionsusercounts?view=graph-rest-1.0
-      operationId: reports.getEmailAppUsageVersionsUserCounts
+      operationId: report_getEmailAppUsageVersionsUserCount
       responses:
         2XX:
           description: Success
@@ -3437,7 +3437,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reports-getgrouparchivedprintjobs?view=graph-rest-1.0
-      operationId: reports.getGroupArchivedPrintJobs
+      operationId: report_getGroupArchivedPrintJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3476,7 +3476,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getm365appplatformusercounts?view=graph-rest-1.0
-      operationId: reports.getM365AppPlatformUserCounts
+      operationId: report_getM365AppPlatformUserCount
       responses:
         2XX:
           description: Success
@@ -3502,7 +3502,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getm365appusercounts?view=graph-rest-1.0
-      operationId: reports.getM365AppUserCounts
+      operationId: report_getM365AppUserCount
       responses:
         2XX:
           description: Success
@@ -3525,7 +3525,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getM365AppUserDetail
       description: Get a report that provides the details about which apps and platforms users have used.
-      operationId: reports.getM365AppUserDetail-0f08
+      operationId: report_getM365AppUserDetail
       responses:
         2XX:
           description: Success
@@ -3548,7 +3548,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getM365AppUserDetail
       description: Get a report that provides the details about which apps and platforms users have used.
-      operationId: reports.getM365AppUserDetail-8c91
+      operationId: report_getM365AppUserDetail
       responses:
         2XX:
           description: Success
@@ -3574,7 +3574,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getmailboxusagedetail?view=graph-rest-1.0
-      operationId: reports.getMailboxUsageDetail
+      operationId: report_getMailboxUsageDetail
       responses:
         2XX:
           description: Success
@@ -3600,7 +3600,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getmailboxusagemailboxcounts?view=graph-rest-1.0
-      operationId: reports.getMailboxUsageMailboxCounts
+      operationId: report_getMailboxUsageMailboxCount
       responses:
         2XX:
           description: Success
@@ -3626,7 +3626,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getmailboxusagequotastatusmailboxcounts?view=graph-rest-1.0
-      operationId: reports.getMailboxUsageQuotaStatusMailboxCounts
+      operationId: report_getMailboxUsageQuotaStatusMailboxCount
       responses:
         2XX:
           description: Success
@@ -3652,7 +3652,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getmailboxusagestorage?view=graph-rest-1.0
-      operationId: reports.getMailboxUsageStorage
+      operationId: report_getMailboxUsageStorage
       responses:
         2XX:
           description: Success
@@ -3678,7 +3678,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getoffice365activationcounts?view=graph-rest-1.0
-      operationId: reports.getOffice365ActivationCounts
+      operationId: report_getOffice365ActivationCount
       responses:
         2XX:
           description: Success
@@ -3704,7 +3704,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getoffice365activationsusercounts?view=graph-rest-1.0
-      operationId: reports.getOffice365ActivationsUserCounts
+      operationId: report_getOffice365ActivationsUserCount
       responses:
         2XX:
           description: Success
@@ -3730,7 +3730,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getoffice365activationsuserdetail?view=graph-rest-1.0
-      operationId: reports.getOffice365ActivationsUserDetail
+      operationId: report_getOffice365ActivationsUserDetail
       responses:
         2XX:
           description: Success
@@ -3756,7 +3756,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getoffice365activeusercounts?view=graph-rest-1.0
-      operationId: reports.getOffice365ActiveUserCounts
+      operationId: report_getOffice365ActiveUserCount
       responses:
         2XX:
           description: Success
@@ -3782,7 +3782,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getoffice365activeuserdetail?view=graph-rest-1.0
-      operationId: reports.getOffice365ActiveUserDetail-b911
+      operationId: report_getOffice365ActiveUserDetail
       responses:
         2XX:
           description: Success
@@ -3804,7 +3804,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function getOffice365ActiveUserDetail
-      operationId: reports.getOffice365ActiveUserDetail-3cc0
+      operationId: report_getOffice365ActiveUserDetail
       responses:
         2XX:
           description: Success
@@ -3830,7 +3830,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivitycounts?view=graph-rest-1.0
-      operationId: reports.getOffice365GroupsActivityCounts
+      operationId: report_getOffice365GroupsActivityCount
       responses:
         2XX:
           description: Success
@@ -3856,7 +3856,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivitydetail?view=graph-rest-1.0
-      operationId: reports.getOffice365GroupsActivityDetail-87d6
+      operationId: report_getOffice365GroupsActivityDetail
       responses:
         2XX:
           description: Success
@@ -3878,7 +3878,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function getOffice365GroupsActivityDetail
-      operationId: reports.getOffice365GroupsActivityDetail-fe77
+      operationId: report_getOffice365GroupsActivityDetail
       responses:
         2XX:
           description: Success
@@ -3904,7 +3904,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivityfilecounts?view=graph-rest-1.0
-      operationId: reports.getOffice365GroupsActivityFileCounts
+      operationId: report_getOffice365GroupsActivityFileCount
       responses:
         2XX:
           description: Success
@@ -3930,7 +3930,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivitygroupcounts?view=graph-rest-1.0
-      operationId: reports.getOffice365GroupsActivityGroupCounts
+      operationId: report_getOffice365GroupsActivityGroupCount
       responses:
         2XX:
           description: Success
@@ -3956,7 +3956,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivitystorage?view=graph-rest-1.0
-      operationId: reports.getOffice365GroupsActivityStorage
+      operationId: report_getOffice365GroupsActivityStorage
       responses:
         2XX:
           description: Success
@@ -3982,7 +3982,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getoffice365servicesusercounts?view=graph-rest-1.0
-      operationId: reports.getOffice365ServicesUserCounts
+      operationId: report_getOffice365ServicesUserCount
       responses:
         2XX:
           description: Success
@@ -4008,7 +4008,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getonedriveactivityfilecounts?view=graph-rest-1.0
-      operationId: reports.getOneDriveActivityFileCounts
+      operationId: report_getOneDriveActivityFileCount
       responses:
         2XX:
           description: Success
@@ -4034,7 +4034,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getonedriveactivityusercounts?view=graph-rest-1.0
-      operationId: reports.getOneDriveActivityUserCounts
+      operationId: report_getOneDriveActivityUserCount
       responses:
         2XX:
           description: Success
@@ -4060,7 +4060,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getonedriveactivityuserdetail?view=graph-rest-1.0
-      operationId: reports.getOneDriveActivityUserDetail-77b1
+      operationId: report_getOneDriveActivityUserDetail
       responses:
         2XX:
           description: Success
@@ -4082,7 +4082,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function getOneDriveActivityUserDetail
-      operationId: reports.getOneDriveActivityUserDetail-657c
+      operationId: report_getOneDriveActivityUserDetail
       responses:
         2XX:
           description: Success
@@ -4108,7 +4108,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getonedriveusageaccountcounts?view=graph-rest-1.0
-      operationId: reports.getOneDriveUsageAccountCounts
+      operationId: report_getOneDriveUsageAccountCount
       responses:
         2XX:
           description: Success
@@ -4134,7 +4134,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getonedriveusageaccountdetail?view=graph-rest-1.0
-      operationId: reports.getOneDriveUsageAccountDetail-3b63
+      operationId: report_getOneDriveUsageAccountDetail
       responses:
         2XX:
           description: Success
@@ -4156,7 +4156,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function getOneDriveUsageAccountDetail
-      operationId: reports.getOneDriveUsageAccountDetail-20b2
+      operationId: report_getOneDriveUsageAccountDetail
       responses:
         2XX:
           description: Success
@@ -4182,7 +4182,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getonedriveusagefilecounts?view=graph-rest-1.0
-      operationId: reports.getOneDriveUsageFileCounts
+      operationId: report_getOneDriveUsageFileCount
       responses:
         2XX:
           description: Success
@@ -4208,7 +4208,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getonedriveusagestorage?view=graph-rest-1.0
-      operationId: reports.getOneDriveUsageStorage
+      operationId: report_getOneDriveUsageStorage
       responses:
         2XX:
           description: Success
@@ -4234,7 +4234,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reports-getprinterarchivedprintjobs?view=graph-rest-1.0
-      operationId: reports.getPrinterArchivedPrintJobs
+      operationId: report_getPrinterArchivedPrintJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4273,7 +4273,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getrelyingpartydetailedsummary?view=graph-rest-1.0
-      operationId: reports.getRelyingPartyDetailedSummary
+      operationId: report_getRelyingPartyDetailedSummary
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4343,7 +4343,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getsharepointactivityfilecounts?view=graph-rest-1.0
-      operationId: reports.getSharePointActivityFileCounts
+      operationId: report_getSharePointActivityFileCount
       responses:
         2XX:
           description: Success
@@ -4369,7 +4369,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getsharepointactivitypages?view=graph-rest-1.0
-      operationId: reports.getSharePointActivityPages
+      operationId: report_getSharePointActivityPage
       responses:
         2XX:
           description: Success
@@ -4395,7 +4395,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getsharepointactivityusercounts?view=graph-rest-1.0
-      operationId: reports.getSharePointActivityUserCounts
+      operationId: report_getSharePointActivityUserCount
       responses:
         2XX:
           description: Success
@@ -4421,7 +4421,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getsharepointactivityuserdetail?view=graph-rest-1.0
-      operationId: reports.getSharePointActivityUserDetail-48b2
+      operationId: report_getSharePointActivityUserDetail
       responses:
         2XX:
           description: Success
@@ -4443,7 +4443,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function getSharePointActivityUserDetail
-      operationId: reports.getSharePointActivityUserDetail-9e51
+      operationId: report_getSharePointActivityUserDetail
       responses:
         2XX:
           description: Success
@@ -4469,7 +4469,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagedetail?view=graph-rest-1.0
-      operationId: reports.getSharePointSiteUsageDetail-a4c0
+      operationId: report_getSharePointSiteUsageDetail
       responses:
         2XX:
           description: Success
@@ -4491,7 +4491,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function getSharePointSiteUsageDetail
-      operationId: reports.getSharePointSiteUsageDetail-4fd6
+      operationId: report_getSharePointSiteUsageDetail
       responses:
         2XX:
           description: Success
@@ -4517,7 +4517,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagefilecounts?view=graph-rest-1.0
-      operationId: reports.getSharePointSiteUsageFileCounts
+      operationId: report_getSharePointSiteUsageFileCount
       responses:
         2XX:
           description: Success
@@ -4543,7 +4543,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagepages?view=graph-rest-1.0
-      operationId: reports.getSharePointSiteUsagePages
+      operationId: report_getSharePointSiteUsagePage
       responses:
         2XX:
           description: Success
@@ -4569,7 +4569,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagesitecounts?view=graph-rest-1.0
-      operationId: reports.getSharePointSiteUsageSiteCounts
+      operationId: report_getSharePointSiteUsageSiteCount
       responses:
         2XX:
           description: Success
@@ -4595,7 +4595,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagestorage?view=graph-rest-1.0
-      operationId: reports.getSharePointSiteUsageStorage
+      operationId: report_getSharePointSiteUsageStorage
       responses:
         2XX:
           description: Success
@@ -4621,7 +4621,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessactivitycounts?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessActivityCounts
+      operationId: report_getSkypeGraphFPreBusinessActivityCount
       responses:
         2XX:
           description: Success
@@ -4647,7 +4647,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessactivityusercounts?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessActivityUserCounts
+      operationId: report_getSkypeGraphFPreBusinessActivityUserCount
       responses:
         2XX:
           description: Success
@@ -4673,7 +4673,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessactivityuserdetail?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessActivityUserDetail-83d0
+      operationId: report_getSkypeGraphFPreBusinessActivityUserDetail
       responses:
         2XX:
           description: Success
@@ -4695,7 +4695,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessActivityUserDetail
-      operationId: reports.getSkypeForBusinessActivityUserDetail-74d9
+      operationId: report_getSkypeGraphFPreBusinessActivityUserDetail
       responses:
         2XX:
           description: Success
@@ -4721,7 +4721,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessdeviceusagedistributionusercounts?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessDeviceUsageDistributionUserCounts
+      operationId: report_getSkypeGraphFPreBusinessDeviceUsageDistributionUserCount
       responses:
         2XX:
           description: Success
@@ -4747,7 +4747,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessdeviceusageusercounts?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessDeviceUsageUserCounts
+      operationId: report_getSkypeGraphFPreBusinessDeviceUsageUserCount
       responses:
         2XX:
           description: Success
@@ -4773,7 +4773,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessdeviceusageuserdetail?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessDeviceUsageUserDetail-fe29
+      operationId: report_getSkypeGraphFPreBusinessDeviceUsageUserDetail
       responses:
         2XX:
           description: Success
@@ -4795,7 +4795,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserDetail
-      operationId: reports.getSkypeForBusinessDeviceUsageUserDetail-ee84
+      operationId: report_getSkypeGraphFPreBusinessDeviceUsageUserDetail
       responses:
         2XX:
           description: Success
@@ -4821,7 +4821,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessorganizeractivitycounts?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessOrganizerActivityCounts
+      operationId: report_getSkypeGraphFPreBusinessOrganizerActivityCount
       responses:
         2XX:
           description: Success
@@ -4847,7 +4847,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessorganizeractivityminutecounts?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessOrganizerActivityMinuteCounts
+      operationId: report_getSkypeGraphFPreBusinessOrganizerActivityMinuteCount
       responses:
         2XX:
           description: Success
@@ -4873,7 +4873,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessorganizeractivityusercounts?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessOrganizerActivityUserCounts
+      operationId: report_getSkypeGraphFPreBusinessOrganizerActivityUserCount
       responses:
         2XX:
           description: Success
@@ -4899,7 +4899,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessparticipantactivitycounts?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessParticipantActivityCounts
+      operationId: report_getSkypeGraphFPreBusinessParticipantActivityCount
       responses:
         2XX:
           description: Success
@@ -4925,7 +4925,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessparticipantactivityminutecounts?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessParticipantActivityMinuteCounts
+      operationId: report_getSkypeGraphFPreBusinessParticipantActivityMinuteCount
       responses:
         2XX:
           description: Success
@@ -4951,7 +4951,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessparticipantactivityusercounts?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessParticipantActivityUserCounts
+      operationId: report_getSkypeGraphFPreBusinessParticipantActivityUserCount
       responses:
         2XX:
           description: Success
@@ -4977,7 +4977,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinesspeertopeeractivitycounts?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessPeerToPeerActivityCounts
+      operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityCount
       responses:
         2XX:
           description: Success
@@ -5003,7 +5003,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinesspeertopeeractivityminutecounts?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessPeerToPeerActivityMinuteCounts
+      operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityMinuteCount
       responses:
         2XX:
           description: Success
@@ -5029,7 +5029,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinesspeertopeeractivityusercounts?view=graph-rest-1.0
-      operationId: reports.getSkypeForBusinessPeerToPeerActivityUserCounts
+      operationId: report_getSkypeGraphFPreBusinessPeerToPeerActivityUserCount
       responses:
         2XX:
           description: Success
@@ -5055,7 +5055,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getteamsdeviceusagedistributionusercounts?view=graph-rest-1.0
-      operationId: reports.getTeamsDeviceUsageDistributionUserCounts
+      operationId: report_getTeamsDeviceUsageDistributionUserCount
       responses:
         2XX:
           description: Success
@@ -5081,7 +5081,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getteamsdeviceusageusercounts?view=graph-rest-1.0
-      operationId: reports.getTeamsDeviceUsageUserCounts
+      operationId: report_getTeamsDeviceUsageUserCount
       responses:
         2XX:
           description: Success
@@ -5104,7 +5104,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getTeamsDeviceUsageUserDetail
       description: Get details about Microsoft Teams device usage by user.
-      operationId: reports.getTeamsDeviceUsageUserDetail-8630
+      operationId: report_getTeamsDeviceUsageUserDetail
       responses:
         2XX:
           description: Success
@@ -5127,7 +5127,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getTeamsDeviceUsageUserDetail
       description: Get details about Microsoft Teams device usage by user.
-      operationId: reports.getTeamsDeviceUsageUserDetail-62d3
+      operationId: report_getTeamsDeviceUsageUserDetail
       responses:
         2XX:
           description: Success
@@ -5153,7 +5153,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getteamsteamactivitycounts?view=graph-rest-1.0
-      operationId: reports.getTeamsTeamActivityCounts
+      operationId: report_getTeamsTeamActivityCount
       responses:
         2XX:
           description: Success
@@ -5176,7 +5176,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getTeamsTeamActivityDetail
       description: Get details about Microsoft Teams activity by team. The numbers include activities for both licensed and nonlicensed users.
-      operationId: reports.getTeamsTeamActivityDetail-391d
+      operationId: report_getTeamsTeamActivityDetail
       responses:
         2XX:
           description: Success
@@ -5199,7 +5199,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getTeamsTeamActivityDetail
       description: Get details about Microsoft Teams activity by team. The numbers include activities for both licensed and nonlicensed users.
-      operationId: reports.getTeamsTeamActivityDetail-ee18
+      operationId: report_getTeamsTeamActivityDetail
       responses:
         2XX:
           description: Success
@@ -5225,7 +5225,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getteamsteamactivitydistributioncounts?view=graph-rest-1.0
-      operationId: reports.getTeamsTeamActivityDistributionCounts
+      operationId: report_getTeamsTeamActivityDistributionCount
       responses:
         2XX:
           description: Success
@@ -5251,7 +5251,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getteamsteamcounts?view=graph-rest-1.0
-      operationId: reports.getTeamsTeamCounts
+      operationId: report_getTeamsTeamCount
       responses:
         2XX:
           description: Success
@@ -5277,7 +5277,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getteamsuseractivitycounts?view=graph-rest-1.0
-      operationId: reports.getTeamsUserActivityCounts
+      operationId: report_getTeamsUserActivityCount
       responses:
         2XX:
           description: Success
@@ -5303,7 +5303,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getteamsuseractivityusercounts?view=graph-rest-1.0
-      operationId: reports.getTeamsUserActivityUserCounts
+      operationId: report_getTeamsUserActivityUserCount
       responses:
         2XX:
           description: Success
@@ -5326,7 +5326,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getTeamsUserActivityUserDetail
       description: Get details about Microsoft Teams user activity by user.
-      operationId: reports.getTeamsUserActivityUserDetail-fba7
+      operationId: report_getTeamsUserActivityUserDetail
       responses:
         2XX:
           description: Success
@@ -5349,7 +5349,7 @@ paths:
         - reports.reportRoot.Functions
       summary: Invoke function getTeamsUserActivityUserDetail
       description: Get details about Microsoft Teams user activity by user.
-      operationId: reports.getTeamsUserActivityUserDetail-7554
+      operationId: report_getTeamsUserActivityUserDetail
       responses:
         2XX:
           description: Success
@@ -5375,7 +5375,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reports-getuserarchivedprintjobs?view=graph-rest-1.0
-      operationId: reports.getUserArchivedPrintJobs
+      operationId: report_getUserArchivedPrintJob
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5414,7 +5414,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getyammeractivitycounts?view=graph-rest-1.0
-      operationId: reports.getYammerActivityCounts
+      operationId: report_getYammerActivityCount
       responses:
         2XX:
           description: Success
@@ -5440,7 +5440,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getyammeractivityusercounts?view=graph-rest-1.0
-      operationId: reports.getYammerActivityUserCounts
+      operationId: report_getYammerActivityUserCount
       responses:
         2XX:
           description: Success
@@ -5466,7 +5466,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getyammeractivityuserdetail?view=graph-rest-1.0
-      operationId: reports.getYammerActivityUserDetail-41fe
+      operationId: report_getYammerActivityUserDetail
       responses:
         2XX:
           description: Success
@@ -5488,7 +5488,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function getYammerActivityUserDetail
-      operationId: reports.getYammerActivityUserDetail-9506
+      operationId: report_getYammerActivityUserDetail
       responses:
         2XX:
           description: Success
@@ -5514,7 +5514,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getyammerdeviceusagedistributionusercounts?view=graph-rest-1.0
-      operationId: reports.getYammerDeviceUsageDistributionUserCounts
+      operationId: report_getYammerDeviceUsageDistributionUserCount
       responses:
         2XX:
           description: Success
@@ -5540,7 +5540,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getyammerdeviceusageusercounts?view=graph-rest-1.0
-      operationId: reports.getYammerDeviceUsageUserCounts
+      operationId: report_getYammerDeviceUsageUserCount
       responses:
         2XX:
           description: Success
@@ -5566,7 +5566,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getyammerdeviceusageuserdetail?view=graph-rest-1.0
-      operationId: reports.getYammerDeviceUsageUserDetail-e734
+      operationId: report_getYammerDeviceUsageUserDetail
       responses:
         2XX:
           description: Success
@@ -5588,7 +5588,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function getYammerDeviceUsageUserDetail
-      operationId: reports.getYammerDeviceUsageUserDetail-07bb
+      operationId: report_getYammerDeviceUsageUserDetail
       responses:
         2XX:
           description: Success
@@ -5614,7 +5614,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getyammergroupsactivitycounts?view=graph-rest-1.0
-      operationId: reports.getYammerGroupsActivityCounts
+      operationId: report_getYammerGroupsActivityCount
       responses:
         2XX:
           description: Success
@@ -5640,7 +5640,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getyammergroupsactivitydetail?view=graph-rest-1.0
-      operationId: reports.getYammerGroupsActivityDetail-9ea3
+      operationId: report_getYammerGroupsActivityDetail
       responses:
         2XX:
           description: Success
@@ -5662,7 +5662,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function getYammerGroupsActivityDetail
-      operationId: reports.getYammerGroupsActivityDetail-99d3
+      operationId: report_getYammerGroupsActivityDetail
       responses:
         2XX:
           description: Success
@@ -5688,7 +5688,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getyammergroupsactivitygroupcounts?view=graph-rest-1.0
-      operationId: reports.getYammerGroupsActivityGroupCounts
+      operationId: report_getYammerGroupsActivityGroupCount
       responses:
         2XX:
           description: Success
@@ -5710,7 +5710,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function managedDeviceEnrollmentFailureDetails
-      operationId: reports.managedDeviceEnrollmentFailureDetails-8191
+      operationId: report_managedDeviceEnrollmentFailureDetail
       responses:
         2XX:
           description: Success
@@ -5731,7 +5731,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function managedDeviceEnrollmentFailureDetails
-      operationId: reports.managedDeviceEnrollmentFailureDetails-aa46
+      operationId: report_managedDeviceEnrollmentFailureDetail
       responses:
         2XX:
           description: Success
@@ -5752,7 +5752,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function managedDeviceEnrollmentTopFailures
-      operationId: reports.managedDeviceEnrollmentTopFailures-9ce7
+      operationId: report_managedDeviceEnrollmentTopFailure
       responses:
         2XX:
           description: Success
@@ -5773,7 +5773,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function managedDeviceEnrollmentTopFailures
-      operationId: reports.managedDeviceEnrollmentTopFailures-2157
+      operationId: report_managedDeviceEnrollmentTopFailure
       responses:
         2XX:
           description: Success
@@ -5798,7 +5798,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-list-monthlyprintusagebyprinter?view=graph-rest-1.0
-      operationId: reports.ListMonthlyPrintUsageByPrinter
+      operationId: report_ListMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5850,7 +5850,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Create new navigation property to monthlyPrintUsageByPrinter for reports
-      operationId: reports.CreateMonthlyPrintUsageByPrinter
+      operationId: report_CreateMonthlyPrintUsageGraphBPrePrinter
       requestBody:
         description: New navigation property
         content:
@@ -5876,7 +5876,7 @@ paths:
         - reports.printUsageByPrinter
       summary: Get monthlyPrintUsageByPrinter from reports
       description: 'Retrieve a list of monthly print usage summaries, grouped by printer.'
-      operationId: reports.GetMonthlyPrintUsageByPrinter
+      operationId: report_GetMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - name: $select
           in: query
@@ -5914,7 +5914,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Update the navigation property monthlyPrintUsageByPrinter in reports
-      operationId: reports.UpdateMonthlyPrintUsageByPrinter
+      operationId: report_UpdateMonthlyPrintUsageGraphBPrePrinter
       requestBody:
         description: New navigation property values
         content:
@@ -5938,7 +5938,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Delete navigation property monthlyPrintUsageByPrinter for reports
-      operationId: reports.DeleteMonthlyPrintUsageByPrinter
+      operationId: report_DeleteMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - name: If-Match
           in: header
@@ -5959,7 +5959,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Get the number of the resource
-      operationId: reports.monthlyPrintUsageByPrinter.GetCount-18cc
+      operationId: report.monthlyPrintUsageGraphBPrePrinter_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5979,7 +5979,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-list-monthlyprintusagebyuser?view=graph-rest-1.0
-      operationId: reports.ListMonthlyPrintUsageByUser
+      operationId: report_ListMonthlyPrintUsageGraphBPreUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6031,7 +6031,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Create new navigation property to monthlyPrintUsageByUser for reports
-      operationId: reports.CreateMonthlyPrintUsageByUser
+      operationId: report_CreateMonthlyPrintUsageGraphBPreUser
       requestBody:
         description: New navigation property
         content:
@@ -6057,7 +6057,7 @@ paths:
         - reports.printUsageByUser
       summary: Get monthlyPrintUsageByUser from reports
       description: 'Retrieve a list of monthly print usage summaries, grouped by user.'
-      operationId: reports.GetMonthlyPrintUsageByUser
+      operationId: report_GetMonthlyPrintUsageGraphBPreUser
       parameters:
         - name: $select
           in: query
@@ -6095,7 +6095,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Update the navigation property monthlyPrintUsageByUser in reports
-      operationId: reports.UpdateMonthlyPrintUsageByUser
+      operationId: report_UpdateMonthlyPrintUsageGraphBPreUser
       requestBody:
         description: New navigation property values
         content:
@@ -6119,7 +6119,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Delete navigation property monthlyPrintUsageByUser for reports
-      operationId: reports.DeleteMonthlyPrintUsageByUser
+      operationId: report_DeleteMonthlyPrintUsageGraphBPreUser
       parameters:
         - name: If-Match
           in: header
@@ -6140,7 +6140,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Get the number of the resource
-      operationId: reports.monthlyPrintUsageByUser.GetCount-60f0
+      operationId: report.monthlyPrintUsageGraphBPreUser_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6157,7 +6157,7 @@ paths:
         - reports.partners
       summary: Get partners from reports
       description: Represents billing details for a Microsoft direct partner.
-      operationId: reports.GetPartners
+      operationId: report_GetPartner
       parameters:
         - name: $select
           in: query
@@ -6195,7 +6195,7 @@ paths:
       tags:
         - reports.partners
       summary: Update the navigation property partners in reports
-      operationId: reports.UpdatePartners
+      operationId: report_UpdatePartner
       requestBody:
         description: New navigation property values
         content:
@@ -6219,7 +6219,7 @@ paths:
       tags:
         - reports.partners
       summary: Delete navigation property partners for reports
-      operationId: reports.DeletePartners
+      operationId: report_DeletePartner
       parameters:
         - name: If-Match
           in: header
@@ -6241,7 +6241,7 @@ paths:
         - reports.partners
       summary: Get billing from reports
       description: Represents billing details for billed and unbilled data.
-      operationId: reports.partners.GetBilling
+      operationId: report.partner_GetBilling
       parameters:
         - name: $select
           in: query
@@ -6279,7 +6279,7 @@ paths:
       tags:
         - reports.partners
       summary: Update the navigation property billing in reports
-      operationId: reports.partners.UpdateBilling
+      operationId: report.partner_UpdateBilling
       requestBody:
         description: New navigation property values
         content:
@@ -6303,7 +6303,7 @@ paths:
       tags:
         - reports.partners
       summary: Delete navigation property billing for reports
-      operationId: reports.partners.DeleteBilling
+      operationId: report.partner_DeleteBilling
       parameters:
         - name: If-Match
           in: header
@@ -6325,7 +6325,7 @@ paths:
         - reports.partners
       summary: Get manifest
       description: Read the properties and relationships of a manifest object.
-      operationId: reports.partners.billing.ListManifests
+      operationId: report.partner.billing_ListManifest
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6377,7 +6377,7 @@ paths:
       tags:
         - reports.partners
       summary: Create new navigation property to manifests for reports
-      operationId: reports.partners.billing.CreateManifests
+      operationId: report.partner.billing_CreateManifest
       requestBody:
         description: New navigation property
         content:
@@ -6406,7 +6406,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/partners-billing-manifest-get?view=graph-rest-1.0
-      operationId: reports.partners.billing.GetManifests
+      operationId: report.partner.billing_GetManifest
       parameters:
         - name: $select
           in: query
@@ -6444,7 +6444,7 @@ paths:
       tags:
         - reports.partners
       summary: Update the navigation property manifests in reports
-      operationId: reports.partners.billing.UpdateManifests
+      operationId: report.partner.billing_UpdateManifest
       requestBody:
         description: New navigation property values
         content:
@@ -6468,7 +6468,7 @@ paths:
       tags:
         - reports.partners
       summary: Delete navigation property manifests for reports
-      operationId: reports.partners.billing.DeleteManifests
+      operationId: report.partner.billing_DeleteManifest
       parameters:
         - name: If-Match
           in: header
@@ -6489,7 +6489,7 @@ paths:
       tags:
         - reports.partners
       summary: Get the number of the resource
-      operationId: reports.partners.billing.manifests.GetCount-f888
+      operationId: report.partner.billing.manifest_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6506,7 +6506,7 @@ paths:
         - reports.partners
       summary: Get operation
       description: Read the properties and relationships of an operation object.
-      operationId: reports.partners.billing.ListOperations
+      operationId: report.partner.billing_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6558,7 +6558,7 @@ paths:
       tags:
         - reports.partners
       summary: Create new navigation property to operations for reports
-      operationId: reports.partners.billing.CreateOperations
+      operationId: report.partner.billing_CreateOperation
       requestBody:
         description: New navigation property
         content:
@@ -6587,7 +6587,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/partners-billing-operation-get?view=graph-rest-1.0
-      operationId: reports.partners.billing.GetOperations
+      operationId: report.partner.billing_GetOperation
       parameters:
         - name: $select
           in: query
@@ -6625,7 +6625,7 @@ paths:
       tags:
         - reports.partners
       summary: Update the navigation property operations in reports
-      operationId: reports.partners.billing.UpdateOperations
+      operationId: report.partner.billing_UpdateOperation
       requestBody:
         description: New navigation property values
         content:
@@ -6649,7 +6649,7 @@ paths:
       tags:
         - reports.partners
       summary: Delete navigation property operations for reports
-      operationId: reports.partners.billing.DeleteOperations
+      operationId: report.partner.billing_DeleteOperation
       parameters:
         - name: If-Match
           in: header
@@ -6670,7 +6670,7 @@ paths:
       tags:
         - reports.partners
       summary: Get the number of the resource
-      operationId: reports.partners.billing.operations.GetCount-9331
+      operationId: report.partner.billing.operation_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6687,7 +6687,7 @@ paths:
         - reports.partners
       summary: Get reconciliation from reports
       description: Represents details for billed and unbilled invoice reconciliation data.
-      operationId: reports.partners.billing.GetReconciliation
+      operationId: report.partner.billing_GetReconciliation
       parameters:
         - name: $select
           in: query
@@ -6725,7 +6725,7 @@ paths:
       tags:
         - reports.partners
       summary: Update the navigation property reconciliation in reports
-      operationId: reports.partners.billing.UpdateReconciliation
+      operationId: report.partner.billing_UpdateReconciliation
       requestBody:
         description: New navigation property values
         content:
@@ -6749,7 +6749,7 @@ paths:
       tags:
         - reports.partners
       summary: Delete navigation property reconciliation for reports
-      operationId: reports.partners.billing.DeleteReconciliation
+      operationId: report.partner.billing_DeleteReconciliation
       parameters:
         - name: If-Match
           in: header
@@ -6771,7 +6771,7 @@ paths:
         - reports.partners
       summary: Get billed from reports
       description: Represents details for billed invoice reconciliation data.
-      operationId: reports.partners.billing.reconciliation.GetBilled
+      operationId: report.partner.billing.reconciliation_GetBilled
       parameters:
         - name: $select
           in: query
@@ -6809,7 +6809,7 @@ paths:
       tags:
         - reports.partners
       summary: Update the navigation property billed in reports
-      operationId: reports.partners.billing.reconciliation.UpdateBilled
+      operationId: report.partner.billing.reconciliation_UpdateBilled
       requestBody:
         description: New navigation property values
         content:
@@ -6833,7 +6833,7 @@ paths:
       tags:
         - reports.partners
       summary: Delete navigation property billed for reports
-      operationId: reports.partners.billing.reconciliation.DeleteBilled
+      operationId: report.partner.billing.reconciliation_DeleteBilled
       parameters:
         - name: If-Match
           in: header
@@ -6858,7 +6858,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/partners-billing-billedreconciliation-export?view=graph-rest-1.0
-      operationId: reports.partners.billing.reconciliation.billed.export
+      operationId: report.partner.billing.reconciliation.billed_export
       requestBody:
         description: Action parameters
         content:
@@ -6896,7 +6896,7 @@ paths:
         - reports.partners
       summary: Get unbilled from reports
       description: Represents details for unbilled invoice reconciliation data.
-      operationId: reports.partners.billing.reconciliation.GetUnbilled
+      operationId: report.partner.billing.reconciliation_GetUnbilled
       parameters:
         - name: $select
           in: query
@@ -6934,7 +6934,7 @@ paths:
       tags:
         - reports.partners
       summary: Update the navigation property unbilled in reports
-      operationId: reports.partners.billing.reconciliation.UpdateUnbilled
+      operationId: report.partner.billing.reconciliation_UpdateUnbilled
       requestBody:
         description: New navigation property values
         content:
@@ -6958,7 +6958,7 @@ paths:
       tags:
         - reports.partners
       summary: Delete navigation property unbilled for reports
-      operationId: reports.partners.billing.reconciliation.DeleteUnbilled
+      operationId: report.partner.billing.reconciliation_DeleteUnbilled
       parameters:
         - name: If-Match
           in: header
@@ -6983,7 +6983,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/partners-billing-unbilledreconciliation-export?view=graph-rest-1.0
-      operationId: reports.partners.billing.reconciliation.unbilled.export
+      operationId: report.partner.billing.reconciliation.unbilled_export
       requestBody:
         description: Action parameters
         content:
@@ -7026,7 +7026,7 @@ paths:
         - reports.partners
       summary: Get usage from reports
       description: Represents details for billed and unbilled Azure usage data.
-      operationId: reports.partners.billing.GetUsage
+      operationId: report.partner.billing_GetUsage
       parameters:
         - name: $select
           in: query
@@ -7064,7 +7064,7 @@ paths:
       tags:
         - reports.partners
       summary: Update the navigation property usage in reports
-      operationId: reports.partners.billing.UpdateUsage
+      operationId: report.partner.billing_UpdateUsage
       requestBody:
         description: New navigation property values
         content:
@@ -7088,7 +7088,7 @@ paths:
       tags:
         - reports.partners
       summary: Delete navigation property usage for reports
-      operationId: reports.partners.billing.DeleteUsage
+      operationId: report.partner.billing_DeleteUsage
       parameters:
         - name: If-Match
           in: header
@@ -7110,7 +7110,7 @@ paths:
         - reports.partners
       summary: Get billed from reports
       description: Represents details for billed Azure usage data.
-      operationId: reports.partners.billing.usage.GetBilled
+      operationId: report.partner.billing.usage_GetBilled
       parameters:
         - name: $select
           in: query
@@ -7148,7 +7148,7 @@ paths:
       tags:
         - reports.partners
       summary: Update the navigation property billed in reports
-      operationId: reports.partners.billing.usage.UpdateBilled
+      operationId: report.partner.billing.usage_UpdateBilled
       requestBody:
         description: New navigation property values
         content:
@@ -7172,7 +7172,7 @@ paths:
       tags:
         - reports.partners
       summary: Delete navigation property billed for reports
-      operationId: reports.partners.billing.usage.DeleteBilled
+      operationId: report.partner.billing.usage_DeleteBilled
       parameters:
         - name: If-Match
           in: header
@@ -7197,7 +7197,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/partners-billing-billedusage-export?view=graph-rest-1.0
-      operationId: reports.partners.billing.usage.billed.export
+      operationId: report.partner.billing.usage.billed_export
       requestBody:
         description: Action parameters
         content:
@@ -7235,7 +7235,7 @@ paths:
         - reports.partners
       summary: Get unbilled from reports
       description: Represents details for unbilled Azure usage data.
-      operationId: reports.partners.billing.usage.GetUnbilled
+      operationId: report.partner.billing.usage_GetUnbilled
       parameters:
         - name: $select
           in: query
@@ -7273,7 +7273,7 @@ paths:
       tags:
         - reports.partners
       summary: Update the navigation property unbilled in reports
-      operationId: reports.partners.billing.usage.UpdateUnbilled
+      operationId: report.partner.billing.usage_UpdateUnbilled
       requestBody:
         description: New navigation property values
         content:
@@ -7297,7 +7297,7 @@ paths:
       tags:
         - reports.partners
       summary: Delete navigation property unbilled for reports
-      operationId: reports.partners.billing.usage.DeleteUnbilled
+      operationId: report.partner.billing.usage_DeleteUnbilled
       parameters:
         - name: If-Match
           in: header
@@ -7322,7 +7322,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/partners-billing-unbilledusage-export?view=graph-rest-1.0
-      operationId: reports.partners.billing.usage.unbilled.export
+      operationId: report.partner.billing.usage.unbilled_export
       requestBody:
         description: Action parameters
         content:
@@ -7365,7 +7365,7 @@ paths:
         - reports.securityReportsRoot
       summary: Get security from reports
       description: Represents an abstract type that contains resources for attack simulation and training reports.
-      operationId: reports.GetSecurity
+      operationId: report_GetSecurity
       parameters:
         - name: $select
           in: query
@@ -7403,7 +7403,7 @@ paths:
       tags:
         - reports.securityReportsRoot
       summary: Update the navigation property security in reports
-      operationId: reports.UpdateSecurity
+      operationId: report_UpdateSecurity
       requestBody:
         description: New navigation property values
         content:
@@ -7427,7 +7427,7 @@ paths:
       tags:
         - reports.securityReportsRoot
       summary: Delete navigation property security for reports
-      operationId: reports.DeleteSecurity
+      operationId: report_DeleteSecurity
       parameters:
         - name: If-Match
           in: header
@@ -7452,7 +7452,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationrepeatoffenders?view=graph-rest-1.0
-      operationId: reports.security.getAttackSimulationRepeatOffenders
+      operationId: report.security_getAttackSimulationRepeatOffender
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7491,7 +7491,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationsimulationusercoverage?view=graph-rest-1.0
-      operationId: reports.security.getAttackSimulationSimulationUserCoverage
+      operationId: report.security_getAttackSimulationSimulationUserCoverage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7530,7 +7530,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationtrainingusercoverage?view=graph-rest-1.0
-      operationId: reports.security.getAttackSimulationTrainingUserCoverage
+      operationId: report.security_getAttackSimulationTrainingUserCoverage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8750,6 +8750,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -8937,6 +8938,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -9205,6 +9207,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -9563,6 +9568,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
