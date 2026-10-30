@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -18,40 +20,40 @@ public sealed class DeviceManagementFunctionsDirectiveMigrationTests
     private static FunctionRoute[] Routes(string profile) =>
     [
         new("/deviceManagement/getEffectivePermissions(scope='{scope}')",
-            profile == "beta" ? "deviceManagement.getEffectivePermissions-a04a" : "deviceManagement.getEffectivePermissions",
+            "deviceManagement_getEffectivePermission",
             "GetMgDeviceManagementGetEffectivePermissionsWithScope"),
         new("/deviceManagement/userExperienceAnalyticsSummarizeWorkFromAnywhereDevices()",
-            "deviceManagement.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices",
+            "deviceManagement_userExperienceAnalyticsSummarizeWorkFromAnywhereDevice",
             "GetMgDeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices"),
         new("/deviceManagement/verifyWindowsEnrollmentAutoDiscovery(domainName='{domainName}')",
-            "deviceManagement.verifyWindowsEnrollmentAutoDiscovery",
+            "deviceManagement_verifyWindowsEnrollmentAutoDiscovery",
             "GetMgDeviceManagementVerifyWindowsEnrollmentAutoDiscoveryWithDomainName"),
         .. profile == "beta" ? BetaOnlyRoutes : Array.Empty<FunctionRoute>(),
     ];
 
     private static readonly FunctionRoute[] BetaOnlyRoutes =
     [
-        new("/deviceManagement/getAssignedRoleDetails()", "deviceManagement.getAssignedRoleDetails",
+        new("/deviceManagement/getAssignedRoleDetails()", "deviceManagement_getAssignedRoleDetail",
             "GetMgDeviceManagementGetAssignedRoleDetails"),
-        new("/deviceManagement/getComanagedDevicesSummary()", "deviceManagement.getComanagedDevicesSummary",
+        new("/deviceManagement/getComanagedDevicesSummary()", "deviceManagement_getComanagedDevicesSummary",
             "GetMgDeviceManagementGetComanagedDevicesSummary"),
-        new("/deviceManagement/getComanagementEligibleDevicesSummary()", "deviceManagement.getComanagementEligibleDevicesSummary",
+        new("/deviceManagement/getComanagementEligibleDevicesSummary()", "deviceManagement_getComanagementEligibleDevicesSummary",
             "GetMgDeviceManagementGetComanagementEligibleDevicesSummary"),
-        new("/deviceManagement/getEffectivePermissions()", "deviceManagement.getEffectivePermissions-43d0",
+        new("/deviceManagement/getEffectivePermissions()", "deviceManagement_getEffectivePermission",
             "GetMgDeviceManagementGetEffectivePermissions"),
-        new("/deviceManagement/getRoleScopeTagsByIds(ids={ids})", "deviceManagement.getRoleScopeTagsByIds",
+        new("/deviceManagement/getRoleScopeTagsByIds(ids={ids})", "deviceManagement_getRoleScopeTagsGraphBPreId",
             "GetMgDeviceManagementGetRoleScopeTagsByIdsWithIds"),
-        new("/deviceManagement/getRoleScopeTagsByResource(resource='{resource}')", "deviceManagement.getRoleScopeTagsByResource",
+        new("/deviceManagement/getRoleScopeTagsByResource(resource='{resource}')", "deviceManagement_getRoleScopeTagsGraphBPreResource",
             "GetMgDeviceManagementGetRoleScopeTagsByResourceWithResource"),
         new("/deviceManagement/getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')",
-            "deviceManagement.getSuggestedEnrollmentLimit",
+            "deviceManagement_getSuggestedEnrollmentLimit",
             "GetMgDeviceManagementGetSuggestedEnrollmentLimitWithEnrollmentType"),
-        new("/deviceManagement/retrieveUserRoleDetail(userid='{userid}')", "deviceManagement.retrieveUserRoleDetail",
+        new("/deviceManagement/retrieveUserRoleDetail(userid='{userid}')", "deviceManagement_retrieveUserRoleDetail",
             "GetMgDeviceManagementRetrieveUserRoleDetailWithUserid"),
-        new("/deviceManagement/scopedForResource(resource='{resource}')", "deviceManagement.scopedForResource",
+        new("/deviceManagement/scopedForResource(resource='{resource}')", "deviceManagement_scopedGraphFPreResource",
             "GetMgDeviceManagementScopedForResourceWithResource"),
         new("/deviceManagement/userExperienceAnalyticsSummarizedDeviceScopes()",
-            "deviceManagement.userExperienceAnalyticsSummarizedDeviceScopes",
+            "deviceManagement_userExperienceAnalyticsSummarizedDeviceScope",
             "GetMgDeviceManagementUserExperienceAnalyticsSummarizedDeviceScopes"),
     ];
 
@@ -98,18 +100,42 @@ public sealed class DeviceManagementFunctionsDirectiveMigrationTests
     public void ReviewedFunctionsKeepExistingNamesWithoutNewSuppressions(string profile, bool useCollisionData)
     {
         var document = LoadSpec(profile);
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: useCollisionData);
 
         foreach (var route in Routes(profile))
         {
             Assert.Equal(route.OperationId, document.Paths[route.Path].Operations![HttpMethod.Get].OperationId);
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, route.Path, config));
-            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, route.Path, null, OperationKind.Function), config);
-            var expected = profile == "v1.0" && useCollisionData &&
-                route.OperationId == "deviceManagement.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices"
-                ? "InvokeMgExperienceDeviceManagement"
-                : route.FileStem;
-            Assert.Equal(expected + "Command", naming.ClassName);
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, route.Path, config, apiVersion: profile));
+            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, route.Path, null, OperationKind.Function),
+                config, apiVersion: profile);
+            Assert.Equal(ExpectedFileStem(route, profile, useCollisionData) + "Command", naming.ClassName);
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task GenerationKeepsEveryFunctionWithSeparateProfileContext(string profile, bool useCollisionData)
+    {
+        var output = Path.Combine(Path.GetTempPath(), "device-management-functions-audit", Guid.NewGuid().ToString("N"));
+        try
+        {
+            var config = new GeneratorConfig("Test.Client", output, UseCollisionData: useCollisionData);
+            await new PowerShellWrapperGenerationService(LoadSpec(profile), config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(CancellationToken.None);
+
+            var expected = Routes(profile).Select(route => ExpectedFileStem(route, profile, useCollisionData) + ".g.cs")
+                .OrderBy(name => name, StringComparer.Ordinal).ToArray();
+            var actual = Directory.GetFiles(output, "*.g.cs").Select(Path.GetFileName)
+                .OrderBy(name => name, StringComparer.Ordinal).ToArray();
+            Assert.Equal(expected, actual);
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
         }
     }
 
@@ -121,7 +147,7 @@ public sealed class DeviceManagementFunctionsDirectiveMigrationTests
         const string path = "/deviceManagement/getEffectivePermissions(scope='{scope}')";
         Assert.True(LoadSpec(profile).Paths.ContainsKey(path));
         var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, path, null, OperationKind.Function),
-            new GeneratorConfig("Test.Client", "unused", profile));
+            new GeneratorConfig("Test.Client", "unused"), apiVersion: profile);
 
         var parameter = Assert.Single(naming.FunctionParameters);
         Assert.Equal("scope", parameter.TemplateName);
@@ -129,6 +155,12 @@ public sealed class DeviceManagementFunctionsDirectiveMigrationTests
         Assert.Equal("GetEffectivePermissionsWithScope", naming.OperationMemberName);
         Assert.Equal("DeviceManagement.GetEffectivePermissionsWithScope", naming.OperationTypeNamespace);
     }
+
+    private static string ExpectedFileStem(FunctionRoute route, string profile, bool useCollisionData) =>
+        profile == "v1.0" && useCollisionData &&
+        route.Path == "/deviceManagement/userExperienceAnalyticsSummarizeWorkFromAnywhereDevices()"
+            ? "InvokeMgExperienceDeviceManagement"
+            : route.FileStem;
 
     private static OpenApiDocument LoadSpec(string profile)
     {

@@ -37,22 +37,24 @@ The beta name for that route remains
 `Get-MgDeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices`.
 
 Both compatible profiles are required; neither is excluded. The reviewed inputs
-at base `51d441eeb5` are:
+after normally integrating `powershell-v3` at `08e409a6aa` are:
 
 | Profile | Compatible specification | Git blob | GET function operations |
 | --- | --- | --- | --- |
-| v1.0 | `openApiDocs_KiotaCompat/v1.0/DeviceManagement.Functions.yml` | `4757fe33921b075f3f89216793b85159afbc6c54` | 3 |
-| beta | `openApiDocs_KiotaCompat/beta/DeviceManagement.Functions.yml` | `3130ee19ee1b97d1eed5f229c08ef01d904db071` | 13 |
+| v1.0 | `openApiDocs_KiotaCompat/v1.0/DeviceManagement.Functions.yml` | `76896f6c6f954fbe1f1474a6dac925dc66b79e37` | 3 |
+| beta | `openApiDocs_KiotaCompat/beta/DeviceManagement.Functions.yml` | `a27fdd5c9e3a5e09c2914e8c07ba48732e89f5da` | 13 |
 
 `DeviceManagementFunctionsDirectiveMigrationTests` reads those actual compatible
 specifications and pins their exact GET paths, operation IDs, function markers,
 and unchanged naming/suppression decisions with derived data both enabled and
-disabled. In particular, it distinguishes the beta parameterless
-`/deviceManagement/getEffectivePermissions()` operation
-(`deviceManagement.getEffectivePermissions-43d0`) from its scoped overload
+disabled. Generation, naming, and suppression calls pass the oracle profile
+separately from the shared `GeneratorConfig` run settings. In particular, route
+identity distinguishes the beta parameterless
+`/deviceManagement/getEffectivePermissions()` operation from its scoped overload
 `/deviceManagement/getEffectivePermissions(scope='{scope}')`
-(`deviceManagement.getEffectivePermissions-a04a`). The v1.0 scoped overload has
-operation ID `deviceManagement.getEffectivePermissions`. Neighboring enrollment,
+even though both now have the aligned operation ID
+`deviceManagement_getEffectivePermission`. The v1.0 scoped overload has the same
+aligned ID. No original shared selector needs a legacy-ID bridge. Neighboring enrollment,
 role-scope, and analytics functions are covered without adding overrides.
 
 These operation counts and naming assertions are not claims that every response
