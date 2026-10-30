@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -56,13 +57,13 @@ public sealed class ApplicationsDirectiveMigrationTests
 
                 foreach (var useCollisionData in new[] { false, true })
                 {
-                    var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
-                    Assert.Equal(index is 1 or 2 or 4, CmdletConfigurator.IsSuppressed(method, path, config));
+                    var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
+                    Assert.Equal(index is 1 or 2 or 4, CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile));
                     if (index == 3)
                     {
                         var expected = "MgOnPremisePublishingProfile" +
                             (path.EndsWith("/$count", StringComparison.Ordinal) ? "Count" : "");
-                        Assert.Equal(expected, Naming.Resolve(new OperationInfo(method, path), config).Noun);
+                        Assert.Equal(expected, Naming.Resolve(new OperationInfo(method, path), config, apiVersion: profile).Noun);
                         Assert.Equal(expected, Naming.Resolve(new OperationInfo(method, path)).Noun);
                     }
                 }
@@ -129,34 +130,34 @@ public sealed class ApplicationsDirectiveMigrationTests
     [InlineData("beta", true)]
     public void CollectionSuppressionRetainsItemActionsAndNeighboringResources(string profile, bool useCollisionData)
     {
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         foreach (var parent in new[] { "/applications/{application-id}", "/servicePrincipals/{servicePrincipal-id}" })
         {
             Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Post,
-                parent + "/synchronization/jobs/validateCredentials", config));
+                parent + "/synchronization/jobs/validateCredentials", config, apiVersion: profile));
             Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post,
-                parent + "/synchronization/jobs/{synchronizationJob-id}/validateCredentials", config));
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, parent + "/synchronization/jobs", config));
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, parent, config));
+                parent + "/synchronization/jobs/{synchronizationJob-id}/validateCredentials", config, apiVersion: profile));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, parent + "/synchronization/jobs", config, apiVersion: profile));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, parent, config, apiVersion: profile));
         }
 
         const string credentials = "/applications/{application-id}/federatedIdentityCredentials";
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, credentials, config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, credentials, config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, credentials, config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, credentials, config, apiVersion: profile));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
-            credentials + "/{federatedIdentityCredential-id}", config));
+            credentials + "/{federatedIdentityCredential-id}", config, apiVersion: profile));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch,
-            credentials + "/{federatedIdentityCredential-id}", config));
+            credentials + "/{federatedIdentityCredential-id}", config, apiVersion: profile));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete,
-            credentials + "/{federatedIdentityCredential-id}", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, credentials + "/$count", config));
+            credentials + "/{federatedIdentityCredential-id}", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, credentials + "/$count", config, apiVersion: profile));
 
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Patch,
-            "/SERVICEPRINCIPALS/{renamed-id}/FEDERATEDIDENTITYCREDENTIALS(name='{renamed-name}')/", config));
+            "/SERVICEPRINCIPALS/{renamed-id}/FEDERATEDIDENTITYCREDENTIALS(name='{renamed-name}')/", config, apiVersion: profile));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post,
-            "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials(name='{name}')", config));
+            "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials(name='{name}')", config, apiVersion: profile));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
-            "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentialsNeighbor", config));
+            "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentialsNeighbor", config, apiVersion: profile));
     }
 
     [Theory]
@@ -166,7 +167,7 @@ public sealed class ApplicationsDirectiveMigrationTests
     [InlineData("beta", true)]
     public void TranslatedLegacyCollectionSuppressionRetainsItemReferenceNeighbors(string profile, bool useCollisionData)
     {
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         string[] paths =
         [
             "/applications/{application-id}/owners/{directoryObject-id}/$ref",
@@ -179,30 +180,30 @@ public sealed class ApplicationsDirectiveMigrationTests
         ];
         foreach (var path in paths)
         {
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, path, config));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, path, config, apiVersion: profile));
             var collectionReference = Regex.Replace(path, @"/\{[^}]+\}/\$ref$", "/$ref");
-            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, collectionReference, config));
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, collectionReference, config));
+            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, collectionReference, config, apiVersion: profile));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, collectionReference, config, apiVersion: profile));
         }
 
         if (profile == "beta")
         {
             Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete,
                 "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups/{connectorGroup-id}/members/{connector-id}/$ref",
-                config));
+                config, apiVersion: profile));
             Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete,
                 "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/$ref",
-                config));
+                config, apiVersion: profile));
             Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
                 "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/$ref",
-                config));
+                config, apiVersion: profile));
             Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
-                "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf", config));
+                "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf", config, apiVersion: profile));
             Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post,
                 "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/$ref",
-                config));
+                config, apiVersion: profile));
             Assert.Equal("MgOnPremisePublishingProfileAgentGroup", Naming.Resolve(new OperationInfo(HttpMethod.Get,
-                "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups"), config).Noun);
+                "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups"), config, apiVersion: profile).Noun);
         }
     }
 
@@ -220,18 +221,18 @@ public sealed class ApplicationsDirectiveMigrationTests
         var collectionPath = Regex.Replace(itemPath, @"/\{[^}]+\}/\$ref$", "/$ref");
         foreach (var useCollisionData in new[] { false, true })
         {
-            var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, itemPath, config));
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, collectionPath, config));
-            var item = Naming.Resolve(new OperationInfo(HttpMethod.Delete, itemPath), config);
-            var collection = Naming.Resolve(new OperationInfo(HttpMethod.Delete, collectionPath), config);
+            var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, itemPath, config, apiVersion: "beta"));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, collectionPath, config, apiVersion: "beta"));
+            var item = Naming.Resolve(new OperationInfo(HttpMethod.Delete, itemPath), config, apiVersion: "beta");
+            var collection = Naming.Resolve(new OperationInfo(HttpMethod.Delete, collectionPath), config, apiVersion: "beta");
             Assert.Equal("Mg" + itemNoun, item.Noun);
             Assert.Equal("Mg" + collectionNoun, collection.Noun);
             Assert.Equal("Remove", item.VerbName);
             Assert.Equal("Remove", collection.VerbName);
             Assert.NotEqual(item.ClassName, collection.ClassName);
-            Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(HttpMethod.Get, itemPath, config));
-            Assert.Equal("Unchanged", CmdletConfigurator.ApplyNounOverrides(HttpMethod.Get, itemPath, "Unchanged", config));
+            Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(HttpMethod.Get, itemPath, config, apiVersion: "beta"));
+            Assert.Equal("Unchanged", CmdletConfigurator.ApplyNounOverrides(HttpMethod.Get, itemPath, "Unchanged", config, apiVersion: "beta"));
         }
     }
 
@@ -245,13 +246,84 @@ public sealed class ApplicationsDirectiveMigrationTests
     {
         foreach (var useCollisionData in new[] { false, true })
         {
-            var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config));
-            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), config);
+            var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config, apiVersion: "beta"));
+            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), config, apiVersion: "beta");
             Assert.Equal(noun, naming.Noun);
             Assert.Equal("Get", naming.VerbName);
             Assert.Equal(pathParameterCount, naming.PathParamNames.Count);
         }
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task SharedVariantRegistrationsPreserveCompleteIngestingProfileSurface(string profile, bool useCollisionData)
+    {
+        var groups = CmdletConfigurator.GetOperationVariantGroups()
+            .Where(g => g.Routes.Any(r => r.Path.StartsWith("/onPremisesPublishingProfiles/", StringComparison.Ordinal)))
+            .ToArray();
+        Assert.Equal(2, groups.Length);
+        Assert.All(groups, g => Assert.Equal("Root", g.DefaultFamily));
+        var selectedPaths = groups.SelectMany(g => g.Routes).Select(r => r.Path).ToHashSet(StringComparer.Ordinal);
+        Assert.Equal(5, selectedPaths.Count);
+        var settings = new OpenApiReaderSettings();
+        settings.AddYamlReader();
+        using var stream = File.OpenRead(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, "Applications.yml"));
+        var parsed = await OpenApiDocument.LoadAsync(stream, settings: settings,
+            cancellationToken: TestContext.Current.CancellationToken);
+        var document = Assert.IsType<OpenApiDocument>(parsed.Document);
+        foreach (var path in document.Paths.Keys.Where(p => !selectedPaths.Contains(p)).ToArray())
+            document.Paths.Remove(path);
+        foreach (var item in document.Paths.Values)
+        {
+            foreach (var method in item.Operations!.Keys.Where(m => m != HttpMethod.Get).ToArray())
+                item.Operations.Remove(method);
+        }
+        Assert.Equal(profile == "beta" ? 5 : 0, document.Paths.Count);
+        var output = Path.Combine(Path.GetTempPath(), "applications-variant-tests", Guid.NewGuid().ToString("N"));
+        try
+        {
+            var config = new GeneratorConfig("Microsoft.Graph.PowerShell.Applications.Client", output, useCollisionData);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(TestContext.Current.CancellationToken);
+            var files = Directory.GetFiles(output, "*.g.cs");
+            Assert.Equal(profile == "beta" ? 7 : 0, files.Length);
+            if (profile == "beta")
+            {
+                var resource = File.ReadAllText(Path.Combine(output, "GetMgOnPremisePublishingProfileAgentGroup.g.cs"));
+                var count = File.ReadAllText(Path.Combine(output, "GetMgOnPremisePublishingProfileAgentGroupCount.g.cs"));
+                Assert.Contains("DefaultParameterSetName = \"RootList\"", resource);
+                Assert.Contains("DefaultParameterSetName = \"RootScalar\"", count);
+                Assert.Contains("ParameterSetName = \"RootGet\"", resource);
+                Assert.Contains("ParameterSetName = \"AgentList\"", resource);
+                Assert.Contains("ParameterSetName = \"AgentScalar\"", count);
+                Assert.DoesNotContain("public string Route", resource + count);
+                foreach (var path in selectedPaths)
+                    Assert.Equal(2, files.Select(File.ReadAllText)
+                        .Count(text => text.Contains($"[GraphRoute(\"GET\", \"{path}\"", StringComparison.Ordinal)));
+            }
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0", "Test", "MgApplicationSynchronizationJobCredential")]
+    [InlineData("beta", "Invoke", "MgApplicationSynchronizationJobValidateCredentials")]
+    public void DerivedNamingUsesSeparateProfileContext(string profile, string verb, string noun)
+    {
+        var operation = new OperationInfo(HttpMethod.Post,
+            "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/validateCredentials",
+            Kind: OperationKind.Action);
+        var naming = Naming.Resolve(operation, new GeneratorConfig("Test.Client", "unused"), apiVersion: profile);
+        Assert.Equal(verb, naming.VerbName);
+        Assert.Equal(noun, naming.Noun);
     }
 
     private static string FindRepoRoot()

@@ -63,7 +63,7 @@ in both profiles. The migration ledger records current literal IDs; tests compar
 entire selection with the actual same-profile legacy input. Parameter aliases remain
 deferred, and profile-specific and global directives are not part of this migration.
 
-The remaining beta agent-group GET collisions are a published parameter-set family,
+The beta agent-group GET collisions are a published parameter-set family,
 not evidence that one endpoint is obsolete. The published Applications 2.38.1 proxy
 uses `List` (default), `Get`, and `List2` for the profile collection, profile item, and
 agent-scoped collection, respectively; the count command uses `Get` (default) and
@@ -71,9 +71,13 @@ agent-scoped collection, respectively; the count command uses `Get` (default) an
 documentation describes both the profile's agent groups and an agent's assigned
 groups; no retirement evidence justifies suppressing either.
 
-The current wrapper generator cannot dispatch this family under its shared published
-names. Resolving it requires reviewed multi-route support rather than an arbitrary
-rename, route default, or endpoint removal. See the official
+The shared module configuration registers two compatible operation-variant groups,
+preserving all five routes and the published public names without a route selector.
+Existing mandatory IDs select `RootList` (default), `RootGet`, and `AgentList`, or
+`RootScalar` (default) and `AgentScalar` for counts. These internal parameter-set
+labels differ from v2; public names, mandatory-ID behavior and default URLs remain.
+Neither group is present in v1.0, so that profile's ordinary generation is unchanged.
+See the official
 [list API](https://learn.microsoft.com/graph/api/onpremisesagentgroup-list?view=graph-rest-beta),
 [agent relationships](https://learn.microsoft.com/graph/api/resources/onpremisesagent?view=graph-rest-beta),
 [published command](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications/get-mgbetaonpremisepublishingprofileagentgroup?view=graph-powershell-beta),

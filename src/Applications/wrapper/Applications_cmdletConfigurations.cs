@@ -104,5 +104,19 @@ public static partial class CmdletConfigurator
             "/serviceprincipals/{}/tokenlifetimepolicies/{}/$ref",
             PathMatch.Exact, "ServicePrincipalTokenLifetimePolicyTokenLifetimePolicyByRef",
             "MgCommandMetadata.json publishes the item-reference TokenLifetimePolicy noun"),
+
+        GroupVariants(new OperationVariantGroup(
+        [
+            new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups", "Root"),
+            new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}", "Root"),
+            new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups", "Agent"),
+        ], DefaultFamily: "Root"),
+            "Published Applications 2.38.1 List/Get/List2 uses profile/group/agent IDs; default List is the profile collection"),
+        GroupVariants(new OperationVariantGroup(
+        [
+            new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/$count", "Root"),
+            new("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/$count", "Agent"),
+        ], DefaultFamily: "Root"),
+            "Published Applications 2.38.1 Get/Get2 uses profile/agent IDs; default Get is the profile count"),
     ];
 }
