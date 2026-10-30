@@ -99,21 +99,23 @@ public sealed class WindowsUpdatesDirectiveMigrationTests
         }
         Assert.Equal(77, suppressed.Count);
         Assert.Equal(266, Compatible.Value.Count);
-        var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         foreach (var route in Compatible.Value)
             Assert.Equal(suppressed.Contains(route.Method + " " + Normalize(route.Path)),
-                CmdletConfigurator.IsSuppressed(new HttpMethod(route.Method), route.Path, config));
+                CmdletConfigurator.IsSuppressed(new HttpMethod(route.Method), route.Path, config, apiVersion: "beta"));
     }
 
-    [Fact]
-    public void EverySurvivingRouteHasFinalWindowsUpdatesNameAndOnlyNormalListItemPairsShareNames()
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public void EverySurvivingRouteHasFinalWindowsUpdatesNameAndOnlyNormalListItemPairsShareNames(bool useCollisionData)
     {
-        var config = new GeneratorConfig("Test.Client", "unused", "beta");
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         var survivors = Compatible.Value.Where(route =>
-            !CmdletConfigurator.IsSuppressed(new HttpMethod(route.Method), route.Path, config)).ToArray();
+            !CmdletConfigurator.IsSuppressed(new HttpMethod(route.Method), route.Path, config, apiVersion: "beta")).ToArray();
         Assert.Equal(189, survivors.Length);
         var names = survivors.Select(route => Naming.Resolve(
-            new OperationInfo(new HttpMethod(route.Method), route.Path, Kind: route.Kind), config)).ToArray();
+            new OperationInfo(new HttpMethod(route.Method), route.Path, Kind: route.Kind), config, apiVersion: "beta")).ToArray();
         Assert.All(names, name => Assert.StartsWith("MgWindowsUpdates", name.Noun));
         foreach (var group in names.GroupBy(name => (name.VerbName, name.Noun)))
         {
@@ -153,9 +155,9 @@ public sealed class WindowsUpdatesDirectiveMigrationTests
         string method, string path, string expectedVerb, string expectedNoun)
     {
         var route = Assert.Single(Compatible.Value, route => route.Method == method && route.Path == path);
-        var config = new GeneratorConfig("Test.Client", "unused", "beta");
-        Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, config));
-        var name = Naming.Resolve(new OperationInfo(new HttpMethod(method), path, Kind: route.Kind), config);
+        var config = new GeneratorConfig("Test.Client", "unused");
+        Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, config, apiVersion: "beta"));
+        var name = Naming.Resolve(new OperationInfo(new HttpMethod(method), path, Kind: route.Kind), config, apiVersion: "beta");
         Assert.Equal(expectedVerb, name.VerbName);
         Assert.Equal(expectedNoun, name.Noun);
     }
@@ -176,7 +178,7 @@ public sealed class WindowsUpdatesDirectiveMigrationTests
         var current = Assert.Single(Compatible.Value, route => route.Method == "POST" && route.Path == path);
         Assert.Equal(OperationKind.Action, current.Kind);
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, path,
-            new GeneratorConfig("Test.Client", "unused", "beta")));
+            new GeneratorConfig("Test.Client", "unused"), apiVersion: "beta"));
     }
 
     [Theory]
@@ -189,7 +191,7 @@ public sealed class WindowsUpdatesDirectiveMigrationTests
     [InlineData("POST", "/admin/windows/updates/deployments/{id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssets/child")]
     public void SuppressionDoesNotLeakAcrossMethodsRoutesOrSubtrees(string method, string path)
     {
-        Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path));
+        Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, apiVersion: "beta"));
     }
 
     [Fact]
