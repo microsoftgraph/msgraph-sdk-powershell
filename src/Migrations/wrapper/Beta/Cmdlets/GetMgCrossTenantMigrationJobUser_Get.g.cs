@@ -12,12 +12,15 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Migrations
 {
-    [GraphRoute("GET", "/solutions/migrations")]
-    [Cmdlet(VerbsCommon.Get, "MgMigration")]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.MigrationsRoot))]
-    public class GetMgMigrationCommand : GraphClientCmdlet
+    [GraphRoute("GET", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}")]
+    [Cmdlet(VerbsCommon.Get, "MgCrossTenantMigrationJobUser_Get")]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationTask))]
+    public class GetMgCrossTenantMigrationJobUser_GetCommand : GraphClientCmdlet
     {
-
+        [Parameter(Mandatory = true, Position = 0)]
+        public string CrossTenantMigrationJobId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string CrossTenantMigrationTaskId { get; set; } = string.Empty;
 
 
 
@@ -36,10 +39,10 @@ namespace Microsoft.Graph.PowerShell.Migrations
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
-            Microsoft.Graph.PowerShell.Migrations.Client.Models.MigrationsRoot? result;
+            Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationTask? result;
             try
             {
-                result = client.Solutions.Migrations.GetAsync(requestConfiguration =>
+                result = client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].Users[CrossTenantMigrationTaskId].GetAsync(requestConfiguration =>
                 {
                     if (this.IsParameterBound(nameof(Property)))
                         requestConfiguration.QueryParameters.Select = Property;
@@ -54,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.Migrations
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, null);
+                ThrowGraphRequestFailed(ex, CrossTenantMigrationTaskId);
                 return;
             }
 

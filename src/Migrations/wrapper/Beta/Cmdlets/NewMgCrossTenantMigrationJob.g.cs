@@ -12,13 +12,12 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Migrations
 {
-    [GraphRoute("PATCH", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}")]
-    [Cmdlet(VerbsData.Update, "MgMigrationCrossTenantMigrationJob", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [GraphRoute("POST", "/solutions/migrations/crossTenantMigrationJobs")]
+    [Cmdlet(VerbsCommon.New, "MgCrossTenantMigrationJob", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob))]
-    public class UpdateMgMigrationCrossTenantMigrationJobCommand : GraphClientCmdlet
+    public class NewMgCrossTenantMigrationJobCommand : GraphClientCmdlet
     {
-        [Parameter(Mandatory = true, Position = 0)]
-        public string CrossTenantMigrationJobId { get; set; } = string.Empty;
+
 
         [Parameter(Mandatory = false)]
         public global::System.DateTimeOffset? CompleteAfterDateTime { get; set; }
@@ -69,7 +68,7 @@ namespace Microsoft.Graph.PowerShell.Migrations
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(CrossTenantMigrationJobId, "Update"))
+            if (!ShouldProcess(null, "New"))
                 return;
 
             var body = new Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob();
@@ -123,7 +122,7 @@ namespace Microsoft.Graph.PowerShell.Migrations
             Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob? result;
             try
             {
-                result = client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].PatchAsync(body, requestConfiguration =>
+                result = client.Solutions.Migrations.CrossTenantMigrationJobs.PostAsync(body, requestConfiguration =>
                 {
 
                         AddRequestHeaders(requestConfiguration.Headers);
@@ -131,26 +130,11 @@ namespace Microsoft.Graph.PowerShell.Migrations
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, CrossTenantMigrationJobId);
+                ThrowGraphRequestFailed(ex, body);
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, CrossTenantMigrationJobId);
-                    return;
-                }
-            }
-            if (result is not null)
-                WriteObject(result);
+            WriteObject(result);
         }
     }
 }
