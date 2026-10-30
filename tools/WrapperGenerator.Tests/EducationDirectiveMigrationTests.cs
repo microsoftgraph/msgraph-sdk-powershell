@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -63,7 +65,7 @@ public sealed class EducationDirectiveMigrationTests
         var reviewed = profileMap.GetProperty("operations").EnumerateArray().ToArray();
         Assert.Equal(selected.Length, reviewed.Length);
         var covered = new HashSet<SpecOperation>();
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
 
         foreach (var expected in reviewed)
         {
@@ -81,23 +83,23 @@ public sealed class EducationDirectiveMigrationTests
             Assert.Equal(old.OperationId, counterpart.OperationId);
             Assert.Contains(counterpart, currentSelection);
             Assert.Equal(HttpMethod.Delete, counterpart.Method);
-            Assert.True(CmdletConfigurator.IsSuppressed(method, counterpart.Path, config));
+            Assert.True(CmdletConfigurator.IsSuppressed(method, counterpart.Path, config, apiVersion: profile));
             Assert.True(CmdletConfigurator.IsSuppressed(method,
-                Regex.Replace(counterpart.Path, @"\{[^}]*\}", "{renamed-id}") + "/", config));
+                Regex.Replace(counterpart.Path, @"\{[^}]*\}", "{renamed-id}") + "/", config, apiVersion: profile));
 
             foreach (var neighborMethod in new[] { HttpMethod.Get, HttpMethod.Post })
             {
                 var neighbor = Assert.Single(compatible, operation =>
                     operation.Method == neighborMethod && operation.Path == counterpart.Path);
-                Assert.False(CmdletConfigurator.IsSuppressed(neighbor.Method, neighbor.Path, config));
+                Assert.False(CmdletConfigurator.IsSuppressed(neighbor.Method, neighbor.Path, config, apiVersion: profile));
             }
 
             var itemPath = counterpart.Path[..^"/$ref".Length] + "/{neighbor-id}/$ref";
             var itemDelete = Assert.Single(compatible, operation =>
                 operation.Method == HttpMethod.Delete
                 && CmdletConfigurator.NormalizePathTemplate(operation.Path) == CmdletConfigurator.NormalizePathTemplate(itemPath));
-            Assert.False(CmdletConfigurator.IsSuppressed(itemDelete.Method, itemDelete.Path, config));
-            Assert.False(CmdletConfigurator.IsSuppressed(method, counterpart.Path + "/unrelated", config));
+            Assert.False(CmdletConfigurator.IsSuppressed(itemDelete.Method, itemDelete.Path, config, apiVersion: profile));
+            Assert.False(CmdletConfigurator.IsSuppressed(method, counterpart.Path + "/unrelated", config, apiVersion: profile));
         }
 
         Assert.Equal(selected.Length, covered.Count);
@@ -110,19 +112,19 @@ public sealed class EducationDirectiveMigrationTests
     [InlineData("beta", true)]
     public void PreservesExistingCuratedSuppressionsAndUnrelatedRoutes(string profile, bool useCollisionData)
     {
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
-            "/education/classes/{class-id}/assignments/{assignment-id}/categories", config));
+            "/education/classes/{class-id}/assignments/{assignment-id}/categories", config, apiVersion: profile));
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
-            "/education/users/{user-id}/user", config));
+            "/education/users/{user-id}/user", config, apiVersion: profile));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete,
-            "/education/classes/{class-id}", config));
+            "/education/classes/{class-id}", config, apiVersion: profile));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
-            "/education/users/{user-id}/user/mailboxSettings", config));
+            "/education/users/{user-id}/user/mailboxSettings", config, apiVersion: profile));
         Assert.Equal(profile == "v1.0" && useCollisionData, CmdletConfigurator.IsSuppressed(HttpMethod.Delete,
-            "/groups/{group-id}/members/$ref", config));
+            "/groups/{group-id}/members/$ref", config, apiVersion: profile));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete,
-            "/groups/{group-id}/members/{member-id}/$ref", config));
+            "/groups/{group-id}/members/{member-id}/$ref", config, apiVersion: profile));
     }
 
     [Theory]
@@ -132,7 +134,7 @@ public sealed class EducationDirectiveMigrationTests
     [InlineData("beta", true)]
     public void KeepsPublishedCategoryCountAndDeltaRoutesWithoutNestedNameCollisions(string profile, bool useCollisionData)
     {
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         var operations = ReadOperations(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, "Education.yml"));
         using var oracle = JsonDocument.Parse(File.ReadAllText(Path.Combine(
             FindRepoRoot(), "src", "Authentication", "Authentication", "custom", "common", "MgCommandMetadata.json")));
@@ -155,26 +157,69 @@ public sealed class EducationDirectiveMigrationTests
                 && command.GetProperty("Method").GetString() == "GET"
                 && command.GetProperty("Uri").GetString() is { } uri
                 && CmdletConfigurator.NormalizePathTemplate(uri) == nestedPath);
-            Assert.True(CmdletConfigurator.IsSuppressed(nested.Method, nested.Path, config));
-            Assert.False(CmdletConfigurator.IsSuppressed(published.Method, published.Path, config));
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, nested.Path, config));
+            Assert.True(CmdletConfigurator.IsSuppressed(nested.Method, nested.Path, config, apiVersion: profile));
+            Assert.False(CmdletConfigurator.IsSuppressed(published.Method, published.Path, config, apiVersion: profile));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, nested.Path, config, apiVersion: profile));
             Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
-                $"/education/me/assignments/{{assignment-id}}/categories/{suffix}", config));
+                $"/education/me/assignments/{{assignment-id}}/categories/{suffix}", config, apiVersion: profile));
             Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
-                $"/education/users/{{user-id}}/assignments/{{assignment-id}}/categories/{suffix}", config));
+                $"/education/users/{{user-id}}/assignments/{{assignment-id}}/categories/{suffix}", config, apiVersion: profile));
         }
     }
 
-    private static SpecOperation[] ReadOperations(string path)
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task NamingAndGenerationUseSeparateProfileContextForReferenceNeighbors(string profile, bool useCollisionData)
+    {
+        const string collectionPath = "/education/classes/{educationClass-id}/members/$ref";
+        const string itemPath = "/education/classes/{educationClass-id}/members/{educationUser-id}/$ref";
+        var document = ReadDocument(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, "Education.yml"));
+        foreach (var path in document.Paths.Keys.Where(path => path != collectionPath && path != itemPath).ToArray())
+            document.Paths.Remove(path);
+
+        var output = Path.Combine(Path.GetTempPath(), "education-directive-tests", Guid.NewGuid().ToString("N"));
+        try
+        {
+            var config = new GeneratorConfig("Test.Client", output, useCollisionData);
+            var expectedNoun = profile == "v1.0" && useCollisionData
+                ? "MgEducationClassMemberEducationUserByRef"
+                : "MgEducationClassMemberByRef";
+            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Delete, itemPath), config, apiVersion: profile);
+            Assert.Equal(expectedNoun, naming.Noun);
+            var service = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile);
+            await service.GenerateAsync(CancellationToken.None);
+
+            var files = Directory.GetFiles(output, "*.g.cs");
+            Assert.Equal(3, files.Length);
+            Assert.True(File.Exists(Path.Combine(output, $"Remove{expectedNoun}.g.cs")));
+            var sources = files.Select(File.ReadAllText).ToArray();
+            Assert.DoesNotContain(sources, source => source.Contains($"[GraphRoute(\"DELETE\", \"{collectionPath}\")", StringComparison.Ordinal));
+            Assert.Contains(sources, source => source.Contains($"[GraphRoute(\"GET\", \"{collectionPath}\")", StringComparison.Ordinal));
+            Assert.Contains(sources, source => source.Contains($"[GraphRoute(\"POST\", \"{collectionPath}\")", StringComparison.Ordinal));
+            Assert.Contains(sources, source => source.Contains($"[GraphRoute(\"DELETE\", \"{itemPath}\")", StringComparison.Ordinal));
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
+    private static SpecOperation[] ReadOperations(string path) =>
+        ReadDocument(path).Paths.SelectMany(route => route.Value.Operations!
+            .Select(operation => new SpecOperation(operation.Key, route.Key, operation.Value.OperationId!))).ToArray();
+
+    private static OpenApiDocument ReadDocument(string path)
     {
         var settings = new OpenApiReaderSettings();
         settings.AddYamlReader();
         using var stream = File.OpenRead(path);
         var result = OpenApiDocument.LoadAsync(stream, settings: settings, cancellationToken: CancellationToken.None)
             .GetAwaiter().GetResult();
-        var document = result.Document ?? throw new InvalidOperationException($"Could not parse '{path}'.");
-        return document.Paths.SelectMany(route => route.Value.Operations!
-            .Select(operation => new SpecOperation(operation.Key, route.Key, operation.Value.OperationId!))).ToArray();
+        return result.Document ?? throw new InvalidOperationException($"Could not parse '{path}'.");
     }
 
     private static string FindRepoRoot()
