@@ -5,9 +5,8 @@ Parity gate for the WrapperGenerator cmdlet generator.
 .DESCRIPTION
 See tools/WrapperGenerator/README.md ("How a cmdlet name is built" and "Build, run, test").
 
-For every generated *.g.cs cmdlet file, reconstructs the HTTP method and URI from the
-client.<BuilderExpression>.<Method>Async( call chain (CmdletEmitter.cs's templates; the
-chain shape comes from CmdletNaming.BuildBuilderExpression), joins it against the
+For every generated *.g.cs cmdlet file, reads every HTTP method and URI from its compiled
+[GraphRoute] attributes, joins each against the
 Method+Uri -> Command inventory in MgCommandMetadata.json, and reports whether the
 emitted [Cmdlet(...)] name matches what the oracle says the published SDK calls that
 operation.
@@ -17,11 +16,10 @@ corrects instead of reproducing (tools/WrapperGenerator/docs/edge-cases/naming-e
 is the catalog). Those are matched against the $deliberateCorrections table below and
 reported as [CORRECTED] rather than [MISMATCH]; they do not fail the gate.
 
-Dispatcher cmdlets (the paired-GET public cmdlet that only forwards to its internal
-_List/_Get siblings via InvokeCommand.InvokeScript - see CmdletEmitter.EmitGetDispatcher)
-contain no direct Graph call, so there is nothing to reconstruct from their source; they
-are reported separately per module and excluded from the match ratio. Their two internal
-siblings do carry real calls and are what actually gets checked against the oracle.
+Dispatchers with route metadata are checked one route at a time, as are their internal
+workers. Legacy dispatchers without metadata are reported separately and excluded from
+the match ratio. A missing oracle entry is not evidence that a secondary route is absent:
+the published command metadata retains only the first URI for a command.
 
 Path parameter names are not exactly recoverable from the generated C#: CmdletNaming
 .ExtractPathParamNames PascalCases each hyphen-chunk of a raw "{some-id}" segment and
@@ -58,7 +56,7 @@ Path to MgCommandMetadata.json.
 param(
     [string]$GeneratedPath = (Join-Path $PSScriptRoot '..\generated'),
     [string]$OraclePath = (Join-Path $PSScriptRoot '..\src\Authentication\Authentication\custom\common\MgCommandMetadata.json'),
-    # Machine-readable copy of every per-file disposition, so downstream tooling (the parity
+    # Machine-readable copy of every per-route disposition, so downstream tooling (the parity
     # derivation) consumes this gate's oracle join instead of re-implementing it and drifting.
     [string]$OutLedger
 )
@@ -141,12 +139,18 @@ function Get-GraphRouteMap {
 
     $map = @{}
     foreach ($type in $types) {
-        $attr = $type.GetCustomAttributesData() | Where-Object { $_.AttributeType.Name -eq 'GraphRouteAttribute' }
-        if ($attr) {
-            $map[$type.Name] = [pscustomobject]@{
-                Method = [string]$attr.ConstructorArguments[0].Value
-                Path   = [string]$attr.ConstructorArguments[1].Value
-            }
+        $attributes = @($type.GetCustomAttributesData() | Where-Object { $_.AttributeType.Name -eq 'GraphRouteAttribute' })
+        if ($attributes.Count -gt 0) {
+            $map[$type.Name] = @(
+                foreach ($attribute in $attributes) {
+                    $parameterSet = $attribute.NamedArguments | Where-Object MemberName -eq 'ParameterSetName'
+                    [pscustomobject]@{
+                        Method = [string]$attribute.ConstructorArguments[0].Value
+                        Path = [string]$attribute.ConstructorArguments[1].Value
+                        ParameterSetName = if ($parameterSet) { [string]$parameterSet.TypedValue.Value } else { '' }
+                    }
+                }
+            )
         }
     }
     return $map
@@ -252,11 +256,13 @@ if ($modules.Count -eq 0) {
 
 $ledger = [System.Collections.Generic.List[object]]::new()
 function Add-LedgerRow {
-    param($Module, $File, $ApiVersion, $Command, $Method, $Uri, $Disposition, $OracleCommands)
+    param($Module, $File, $ApiVersion, $Command, $Method, $Uri, $Disposition, $OracleCommands,
+        $RouteCount = 0, $ParameterSetName = '')
     $ledger.Add([pscustomobject]@{
         Module = $Module; File = $File; ApiVersion = $ApiVersion; Command = $Command
         Method = $Method; Uri = $Uri; Disposition = $Disposition
         OracleCommands = (@($OracleCommands) -join ';')
+        RouteCount = $RouteCount; ParameterSetName = $ParameterSetName
     })
 }
 
@@ -297,55 +303,62 @@ foreach ($module in $modules | Sort-Object Name) {
         }
         $verb = $attrMatch.Groups[1].Value
         $generatedNoun = [regex]::Unescape($attrMatch.Groups[2].Value)
-        $publishedNoun = $generatedNoun -replace '_(List|Get)$', ''
+        $publishedNoun = $generatedNoun -replace '(_Route\d+(_(List|Get))?|_(List|Get))$', ''
         $generatedCommand = "$verb-$generatedNoun"
         $expectedCommand = "$verb-$publishedNoun"
 
-        # A dispatcher issues no request of its own; it forwards to the _List/_Get pair, whose
-        # names carry the same published noun and are verified in their own right.
-        if ($content -match 'InvokeCommand\.InvokeScript') {
+        $className = $file.Name -replace '\.g\.cs$', ''
+        $routes = @($routeMap[$className + 'Command'] | Where-Object { $_ })
+        $sourceRouteCount = [regex]::Matches($content, '\[GraphRoute\(').Count
+        # Old paired-GET dispatchers predate route metadata. New dispatchers carry all reachable
+        # routes and must not be skipped merely because they forward through InvokeScript.
+        if ($routes.Count -eq 0 -and $content -match 'InvokeCommand\.InvokeScript' -and $sourceRouteCount -eq 0) {
             $moduleDispatchers++
             Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand '' '' 'dispatcher' @()
             continue
         }
 
-        $route = $routeMap[(($file.Name -replace '\.g\.cs$', '') + 'Command')]
-        if (-not $route) {
+        if ($routes.Count -eq 0 -or ($sourceRouteCount -gt 0 -and $routes.Count -ne $sourceRouteCount)) {
             $moduleJoinable++
-            $moduleProblems += "  [NO ROUTE] $($file.Name): the compiled assembly carries no [GraphRoute] for this cmdlet - it was not emitted by this generator, or the build is stale."
+            $moduleProblems += "  [NO ROUTE] $($file.Name): compiled [GraphRoute] metadata is missing or incomplete (source: $sourceRouteCount, compiled: $($routes.Count)) - rebuild the module."
             Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand '' '' 'no-route' @()
             continue
         }
 
-        $method = $route.Method.ToUpperInvariant()
-        $normalizedUri = ConvertTo-OracleJoinKey -Path $route.Path
+        $publicClassName = $className -replace '(_Route\d+(_(List|Get))?|_(List|Get))$', ''
+        $publicRoutes = @($routeMap[$publicClassName + 'Command'] | Where-Object { $_ })
+        $routeCount = [Math]::Max($routes.Count, $publicRoutes.Count)
+        foreach ($route in $routes) {
+            $method = $route.Method.ToUpperInvariant()
+            $normalizedUri = ConvertTo-OracleJoinKey -Path $route.Path
 
-        $moduleJoinable++
+            $moduleJoinable++
 
-        $candidates = Find-OracleCommands -Index $oracleIndex -ApiVersion $apiVersion -Method $method -NormalizedUri $normalizedUri
+            $candidates = Find-OracleCommands -Index $oracleIndex -ApiVersion $apiVersion -Method $method -NormalizedUri $normalizedUri
 
-        if (-not $candidates -or $candidates.Count -eq 0) {
-            $moduleProblems += "  [NO ORACLE ENTRY] $($file.Name): '$generatedCommand' -> reconstructed $method $normalizedUri, no oracle row for that Method+URI."
-            Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'no-oracle' @()
-        }
-        elseif ($candidates.Count -gt 1) {
-            $moduleProblems += "  [AMBIGUOUS] $($file.Name): $method $normalizedUri matches multiple oracle commands: $($candidates -join ', ')."
-            Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'ambiguous' $candidates
-        }
-        elseif ($candidates.Contains($expectedCommand)) {
-            $moduleMatched++
-            Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'matched' $candidates
-        }
-        else {
-            $oracleCommand = $candidates | Select-Object -First 1
-            if ($deliberateCorrections[$oracleCommand] -eq $expectedCommand) {
-                $moduleCorrected++
-                $moduleCorrections += "  [CORRECTED] $($file.Name): oracle ships '$oracleCommand'; generator deliberately emits '$expectedCommand' (see tools/WrapperGenerator/docs/edge-cases/naming-edge-cases.md)."
-                Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'corrected' $candidates
+            if (-not $candidates -or $candidates.Count -eq 0) {
+                $moduleProblems += "  [NO ORACLE ENTRY] $($file.Name): '$generatedCommand' -> $method $normalizedUri, no oracle row for that Method+URI (the oracle can omit secondary command routes)."
+                Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'no-oracle' @() $routeCount $route.ParameterSetName
+            }
+            elseif ($candidates.Count -gt 1) {
+                $moduleProblems += "  [AMBIGUOUS] $($file.Name): $method $normalizedUri matches multiple oracle commands: $($candidates -join ', ')."
+                Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'ambiguous' $candidates $routeCount $route.ParameterSetName
+            }
+            elseif ($candidates.Contains($expectedCommand)) {
+                $moduleMatched++
+                Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'matched' $candidates $routeCount $route.ParameterSetName
             }
             else {
-                $moduleProblems += "  [MISMATCH] $($file.Name): generated '$expectedCommand', oracle says '$oracleCommand' for $method $normalizedUri."
-                Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'mismatch' $candidates
+                $oracleCommand = $candidates | Select-Object -First 1
+                if ($deliberateCorrections[$oracleCommand] -eq $expectedCommand) {
+                    $moduleCorrected++
+                    $moduleCorrections += "  [CORRECTED] $($file.Name): oracle ships '$oracleCommand'; generator deliberately emits '$expectedCommand' (see tools/WrapperGenerator/docs/edge-cases/naming-edge-cases.md)."
+                    Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'corrected' $candidates $routeCount $route.ParameterSetName
+                }
+                else {
+                    $moduleProblems += "  [MISMATCH] $($file.Name): generated '$expectedCommand', oracle says '$oracleCommand' for $method $normalizedUri."
+                    Add-LedgerRow $module.Name $file.Name $apiVersion $expectedCommand $method $normalizedUri 'mismatch' $candidates $routeCount $route.ParameterSetName
+                }
             }
         }
     }
@@ -355,7 +368,7 @@ foreach ($module in $modules | Sort-Object Name) {
     $castNote = if ($moduleUnparseable -gt 0) { " (+$moduleUnparseable cast cmdlet(s) skipped, not generated end to end yet)" } else { '' }
     $correctedNote = if ($moduleCorrected -gt 0) { " (+$moduleCorrected deliberately corrected name(s))" } else { '' }
     $versionNote = if ($apiVersion) { " [$apiVersion]" } else { ' [ApiVersion unknown - searched all versions]' }
-    Write-Host "$($module.Name)$($versionNote): $status cmdlets match the oracle$dispatcherNote$castNote$correctedNote"
+    Write-Host "$($module.Name)$($versionNote): $status cmdlet routes match the oracle$dispatcherNote$castNote$correctedNote"
     foreach ($line in $moduleSkips) { Write-Host $line -ForegroundColor DarkYellow }
     foreach ($line in $moduleCorrections) { Write-Host $line -ForegroundColor DarkCyan }
     foreach ($line in $moduleProblems) { Write-Host $line -ForegroundColor Yellow }
@@ -369,7 +382,7 @@ foreach ($module in $modules | Sort-Object Name) {
 }
 
 Write-Host ''
-Write-Host "TOTAL: $totalMatched of $totalJoinable cmdlets match the oracle across $($modules.Count) module(s) (+$totalDispatchers dispatcher cmdlet(s) skipped, +$totalUnparseable cast cmdlet(s) skipped, +$totalCorrected deliberately corrected)."
+Write-Host "TOTAL: $totalMatched of $totalJoinable cmdlet routes match the oracle across $($modules.Count) module(s) (+$totalDispatchers legacy dispatcher cmdlet(s) skipped, +$totalUnparseable cast cmdlet(s) skipped, +$totalCorrected deliberately corrected)."
 
 if ($OutLedger) {
     $ledger | Export-Csv -Path $OutLedger -NoTypeInformation
