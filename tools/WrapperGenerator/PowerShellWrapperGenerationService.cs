@@ -18,6 +18,8 @@ public sealed partial class PowerShellWrapperGenerationService
 {
     private readonly OpenApiDocument document;
     private readonly GeneratorConfig config;
+    private readonly string apiVersion;
+    private readonly IReadOnlyList<CmdletConfigurator.Entry>? configurationEntries;
     private readonly ILogger logger;
     private readonly HashSet<string> modelSubNamespaces;
 
@@ -38,13 +40,23 @@ public sealed partial class PowerShellWrapperGenerationService
     private int unsupportedPropertyCount;
     private int excludedPropertyCount;
 
-    public PowerShellWrapperGenerationService(OpenApiDocument document, GeneratorConfig configuration, ILogger logger)
+    public PowerShellWrapperGenerationService(OpenApiDocument document, GeneratorConfig configuration, ILogger logger,
+        string apiVersion = "v1.0")
+        : this(document, configuration, logger, apiVersion, null)
+    {
+    }
+
+    // Isolated tests provide the same registrations a module contributes to CmdletConfigurator.
+    internal PowerShellWrapperGenerationService(OpenApiDocument document, GeneratorConfig configuration, ILogger logger,
+        string apiVersion, IReadOnlyList<CmdletConfigurator.Entry>? configurationEntries)
     {
         ArgumentNullException.ThrowIfNull(document);
         ArgumentNullException.ThrowIfNull(configuration);
         ArgumentNullException.ThrowIfNull(logger);
         this.document = document;
         config = configuration;
+        this.apiVersion = apiVersion;
+        this.configurationEntries = configurationEntries;
         this.logger = logger;
 
         // Kiota nests each dotted schema-name segment as a sub-namespace under Models
@@ -135,6 +147,8 @@ public sealed partial class PowerShellWrapperGenerationService
         cancellationToken.ThrowIfCancellationRequested();
 
         var ctx = new EmitContext(ClientNamespace: config.ClientNamespaceName);
+        var routeGroups = PrepareRouteGroups(ctx, cancellationToken);
+        await ValidateRouteOutputNamesAsync(routeGroups, cancellationToken).ConfigureAwait(false);
 
         writtenCmdletFiles.Clear();
         fileCollisions.Clear();
@@ -143,6 +157,47 @@ public sealed partial class PowerShellWrapperGenerationService
         foreach (var stale in Directory.GetFiles(config.OutputPath, "*.g.cs"))
             File.Delete(stale);
 
+        var written = await EmitOrdinaryOperationsAsync(ctx, routeGroups, WriteCmdletFileAsync, cancellationToken).ConfigureAwait(false);
+        foreach (var group in routeGroups)
+        {
+            for (var i = 0; i < group.Workers.Count; i++)
+                written += await WriteCmdletFileAsync(group.Workers[i].InternalNaming, group.WorkerSources[i], cancellationToken).ConfigureAwait(false);
+            written += await WriteCmdletFileAsync(group.Workers[0].Naming, group.DispatcherSource, cancellationToken).ConfigureAwait(false);
+        }
+
+        // All collisions for the run are reported together so one generation surfaces the
+        // complete list; see docs/edge-cases/naming-edge-cases.md for how each kind is resolved.
+        //
+        // Fatal only when the derived collision data is IN USE: there a collision means the data
+        // no longer covers the spec, and generating over it would silently drop an operation.
+        // With --no-collision-data the collisions ARE the intended output - that mode exists so
+        // tools/Derive-ParityResolutions.ps1 can inventory the raw, unresolved names - so they
+        // are reported and generation completes. Throwing there made the documented capture
+        // procedure impossible: the derivation asks for a tree the generator refused to produce.
+        if (fileCollisions.Count > 0)
+        {
+            var summary = $"{fileCollisions.Count} cmdlet name collision(s): a later operation would overwrite an already-written cmdlet file.";
+            if (config.UseCollisionData)
+            {
+                throw new InvalidOperationException(
+                    $"{summary} Resolve each with a CmdletConfigurator rename or suppression.\n  " + string.Join("\n  ", fileCollisions));
+            }
+
+            LogRawCollisionInventory(summary, string.Join("\n  ", fileCollisions));
+        }
+
+        LogBodyPropertyReconciliation(
+            propertiesSeenCount,
+            boundScalarCount, boundComplexCount, boundUntypedCount, excludedPropertyCount, unsupportedPropertyCount);
+
+        LogWroteFiles(written + 1, config.OutputPath);
+    }
+
+    private delegate Task<int> CmdletWriter(CmdletNaming naming, string source, CancellationToken cancellationToken);
+
+    private async Task<int> EmitOrdinaryOperationsAsync(EmitContext ctx, IReadOnlyList<PreparedRouteGroup> routeGroups,
+        CmdletWriter writeCmdlet, CancellationToken cancellationToken)
+    {
         // No per-module Shared.g.cs: the helpers it carried (GraphRouteAttribute, UntypedValue,
         // the bearer provider) live once in Microsoft.Graph.Wrapper.Runtime, which every module
         // project references.
@@ -162,6 +217,10 @@ public sealed partial class PowerShellWrapperGenerationService
                 // calls on a resource rather than CRUD over one, which decides the verb, the
                 // request shape and the kiota member the call goes through.
                 var operationKind = ClassifyOperationKind(operation, httpMethod);
+                if (routeGroups.Any(g => g.Workers.Any(w =>
+                    w.Naming.SourceMethod.Equals(httpMethod.Method, StringComparison.OrdinalIgnoreCase)
+                    && w.Naming.SourcePath.Equals(pathTemplate, StringComparison.OrdinalIgnoreCase))))
+                    continue;
 
                 // Operation shapes the emitters cannot produce a valid cmdlet for yet are
                 // skipped up front instead of emitted malformed: OData $-segments would produce
@@ -185,7 +244,7 @@ public sealed partial class PowerShellWrapperGenerationService
 
                 // Skip operations the published SDK deliberately does not ship. CmdletConfigurator
                 // holds the citation for each one.
-                if (CmdletConfigurator.IsSuppressed(httpMethod, pathTemplate, config))
+                if (CmdletConfigurator.IsSuppressed(httpMethod, pathTemplate, config, apiVersion))
                 {
                     LogSuppressedOperation(httpMethod.Method, pathTemplate);
                     continue;
@@ -210,7 +269,7 @@ public sealed partial class PowerShellWrapperGenerationService
                 // the response as a byte array, so the media test below is scoped to resource
                 // operations rather than intercepting every GET.
 
-                var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams, operationKind), config);
+                var cmdletNaming = Naming.Resolve(new OperationInfo(httpMethod, pathTemplate, headerParams, operationKind), config, apiVersion);
 
                 // An action or function is emitted from its own shape: it is never half of a
                 // list/item pair, and its request and response types are the per-operation
@@ -226,7 +285,7 @@ public sealed partial class PowerShellWrapperGenerationService
                     var operationSource = EmitOperationCall(cmdletNaming, ctx, operation, operationKind, queryParams, pathTemplate);
                     if (operationSource is null)
                         continue;
-                    written += await WriteCmdletFileAsync(cmdletNaming, operationSource, cancellationToken).ConfigureAwait(false);
+                    written += await writeCmdlet(cmdletNaming, operationSource, cancellationToken).ConfigureAwait(false);
                     continue;
                 }
 
@@ -264,7 +323,7 @@ public sealed partial class PowerShellWrapperGenerationService
                     var contentSource = httpMethod == HttpMethod.Get
                         ? CmdletEmitter.EmitContentGet(cmdletNaming, ctx, contentType, contentIsStream)
                         : CmdletEmitter.EmitContentSet(cmdletNaming, ctx, contentType, contentIsStream);
-                    written += await WriteCmdletFileAsync(cmdletNaming, contentSource, cancellationToken).ConfigureAwait(false);
+                    written += await writeCmdlet(cmdletNaming, contentSource, cancellationToken).ConfigureAwait(false);
                     continue;
                 }
 
@@ -281,7 +340,7 @@ public sealed partial class PowerShellWrapperGenerationService
                         LogSkippedUnsupportedOperation(httpMethod.Method, cmdletNaming.NormalizedPath, "no wrapper emitter for this reference operation");
                         continue;
                     }
-                    written += await WriteCmdletFileAsync(cmdletNaming, refSource, cancellationToken).ConfigureAwait(false);
+                    written += await writeCmdlet(cmdletNaming, refSource, cancellationToken).ConfigureAwait(false);
                     continue;
                 }
 
@@ -290,7 +349,7 @@ public sealed partial class PowerShellWrapperGenerationService
                 // to resolve and no item GET it could pair with.
                 if (httpMethod == HttpMethod.Get && EndsWithSegment(pathTemplate, "$count"))
                 {
-                    written += await WriteCmdletFileAsync(cmdletNaming,
+                    written += await writeCmdlet(cmdletNaming,
                         CmdletEmitter.EmitScalarGet(cmdletNaming, ctx, "int", queryParams.ToHashSet()), cancellationToken).ConfigureAwait(false);
                     continue;
                 }
@@ -298,7 +357,15 @@ public sealed partial class PowerShellWrapperGenerationService
                 var responseSchema = httpMethod == HttpMethod.Get
                     ? TryGetSuccessJsonSchema(operation)
                     : null;
-                var collectionValueSchema = responseSchema is not null ? FindProperty(responseSchema, "value") : null;
+                var collectionValueSchema = responseSchema is not null && !HasRootUnion(responseSchema)
+                    ? FindProperty(responseSchema, "value") : null;
+                if (responseSchema is not null && responseSchema.GetReferenceId() is null
+                    && collectionValueSchema?.Items is { } collectionItemSchema && HasRootUnion(collectionItemSchema))
+                {
+                    LogSkippedUnsupportedOperation(httpMethod.Method, pathTemplate,
+                        "union collection items require a named response envelope");
+                    continue;
+                }
 
                 if (httpMethod == HttpMethod.Get && responseSchema is null)
                 {
@@ -332,39 +399,13 @@ public sealed partial class PowerShellWrapperGenerationService
                     continue;
                 }
 
-                written += await WriteCmdletFileAsync(cmdletNaming, source, cancellationToken).ConfigureAwait(false);
+                written += await writeCmdlet(cmdletNaming, source, cancellationToken).ConfigureAwait(false);
             }
         }
 
-        written += await EmitGetOperationsAsync(getOperations, ctx, cancellationToken).ConfigureAwait(false);
-        written += await EmitDeltaOperationsAsync(deltaOperations, ctx, cancellationToken).ConfigureAwait(false);
-
-        // All collisions for the run are reported together so one generation surfaces the
-        // complete list; see docs/edge-cases/naming-edge-cases.md for how each kind is resolved.
-        //
-        // Fatal only when the derived collision data is IN USE: there a collision means the data
-        // no longer covers the spec, and generating over it would silently drop an operation.
-        // With --no-collision-data the collisions ARE the intended output - that mode exists so
-        // tools/Derive-ParityResolutions.ps1 can inventory the raw, unresolved names - so they
-        // are reported and generation completes. Throwing there made the documented capture
-        // procedure impossible: the derivation asks for a tree the generator refused to produce.
-        if (fileCollisions.Count > 0)
-        {
-            var summary = $"{fileCollisions.Count} cmdlet name collision(s): a later operation would overwrite an already-written cmdlet file.";
-            if (config.UseCollisionData)
-            {
-                throw new InvalidOperationException(
-                    $"{summary} Resolve each with a CmdletConfigurator rename or suppression.\n  " + string.Join("\n  ", fileCollisions));
-            }
-
-            LogRawCollisionInventory(summary, string.Join("\n  ", fileCollisions));
-        }
-
-        LogBodyPropertyReconciliation(
-            propertiesSeenCount,
-            boundScalarCount, boundComplexCount, boundUntypedCount, excludedPropertyCount, unsupportedPropertyCount);
-
-        LogWroteFiles(written + 1, config.OutputPath);
+        written += await EmitGetOperationsAsync(getOperations, ctx, writeCmdlet, cancellationToken).ConfigureAwait(false);
+        written += await EmitDeltaOperationsAsync(deltaOperations, ctx, writeCmdlet, cancellationToken).ConfigureAwait(false);
+        return written;
     }
 
     // Pairs a list GET (GET /users/{id}/messages) with its item GET
@@ -385,7 +426,8 @@ public sealed partial class PowerShellWrapperGenerationService
     // the rule cannot resolve fails generation rather than being silently kept or dropped:
     // a wrong guess here would either invent a command the SDK does not ship or lose an
     // operation, and both are worse than a build that stops and names the route.
-    private async Task<int> EmitDeltaOperationsAsync(List<DeltaOperationRecord> deltaOperations, EmitContext ctx, CancellationToken cancellationToken)
+    private async Task<int> EmitDeltaOperationsAsync(List<DeltaOperationRecord> deltaOperations, EmitContext ctx,
+        CmdletWriter writeCmdlet, CancellationToken cancellationToken)
     {
         var written = 0;
         foreach (var pair in deltaOperations.GroupBy(d => d.PairKey, StringComparer.Ordinal))
@@ -425,13 +467,14 @@ public sealed partial class PowerShellWrapperGenerationService
             var source = CmdletEmitter.EmitDelta(op.Naming, ctx,
                 new CmdletEmitter.CallPlan(methodName, returnType, BodyTypeName: null, returnsStream),
                 op.QueryParams.ToHashSet(), deltaItemType);
-            written += await WriteCmdletFileAsync(op.Naming, source, cancellationToken).ConfigureAwait(false);
+            written += await writeCmdlet(op.Naming, source, cancellationToken).ConfigureAwait(false);
         }
 
         return written;
     }
 
-    private async Task<int> EmitGetOperationsAsync(List<GetOperationRecord> getOperations, EmitContext ctx, CancellationToken cancellationToken)
+    private async Task<int> EmitGetOperationsAsync(List<GetOperationRecord> getOperations, EmitContext ctx,
+        CmdletWriter writeCmdlet, CancellationToken cancellationToken)
     {
         var written = 0;
         var consumed = new HashSet<GetOperationRecord>();
@@ -454,7 +497,7 @@ public sealed partial class PowerShellWrapperGenerationService
                 continue;
 
             if (!TryResolveListEntityTypeName(listOp.CollectionValueSchema!, ctx.ModelsNamespace, out var listEntityType)
-                || !TryResolveEntityTypeName(itemOp.ResponseSchema, ctx.ModelsNamespace, out var entityType))
+                || !TryResolveResponseTypeName(itemOp.ResponseSchema, ctx.ModelsNamespace, out var entityType))
             {
                 LogSkippedUnsupportedOperation("GET", listOp.Naming.BuilderExpression, "response schema is not a resolvable $ref entity type");
                 continue;
@@ -473,9 +516,9 @@ public sealed partial class PowerShellWrapperGenerationService
                 internalListNaming, internalItemNaming, ctx, entityType, collectionResponseType,
                 listOp.QueryParams.ToHashSet(), itemOp.QueryParams.ToHashSet());
 
-            written += await WriteCmdletFileAsync(internalListNaming, internalListSource, cancellationToken).ConfigureAwait(false);
-            written += await WriteCmdletFileAsync(internalItemNaming, internalItemSource, cancellationToken).ConfigureAwait(false);
-            written += await WriteCmdletFileAsync(listOp.Naming, dispatcherSource, cancellationToken).ConfigureAwait(false);
+            written += await writeCmdlet(internalListNaming, internalListSource, cancellationToken).ConfigureAwait(false);
+            written += await writeCmdlet(internalItemNaming, internalItemSource, cancellationToken).ConfigureAwait(false);
+            written += await writeCmdlet(listOp.Naming, dispatcherSource, cancellationToken).ConfigureAwait(false);
             consumed.Add(listOp);
             consumed.Add(itemOp);
         }
@@ -499,7 +542,7 @@ public sealed partial class PowerShellWrapperGenerationService
             }
             else
             {
-                if (!TryResolveEntityTypeName(op.ResponseSchema, ctx.ModelsNamespace, out var entityType))
+                if (!TryResolveResponseTypeName(op.ResponseSchema, ctx.ModelsNamespace, out var entityType))
                 {
                     LogSkippedUnsupportedOperation("GET", op.Naming.BuilderExpression, "response schema is not a resolvable $ref entity type");
                     continue;
@@ -508,20 +551,25 @@ public sealed partial class PowerShellWrapperGenerationService
                 source = CmdletEmitter.EmitItemGet(op.Naming, ctx, entityType, op.QueryParams.ToHashSet());
             }
 
-            written += await WriteCmdletFileAsync(op.Naming, source, cancellationToken).ConfigureAwait(false);
+            written += await writeCmdlet(op.Naming, source, cancellationToken).ConfigureAwait(false);
         }
 
         return written;
     }
 
-    private async Task<int> WriteCmdletFileAsync(CmdletNaming naming, string source, CancellationToken cancellationToken)
+    private static string CmdletFileName(CmdletNaming naming)
     {
         const string cmdletClassSuffix = "Command";
         var className = naming.ClassName;
         var fileBaseName = className.EndsWith(cmdletClassSuffix, StringComparison.Ordinal)
             ? className[..^cmdletClassSuffix.Length]
             : className;
-        var fileName = fileBaseName + ".g.cs";
+        return fileBaseName + ".g.cs";
+    }
+
+    private async Task<int> WriteCmdletFileAsync(CmdletNaming naming, string source, CancellationToken cancellationToken)
+    {
+        var fileName = CmdletFileName(naming);
         // Both colliding cmdlets usually share the same name, so the route is what actually
         // identifies which two operations collided. It is reported directly rather than left to
         // be reconstructed from the builder expression, which cannot express a function's OData
@@ -622,7 +670,19 @@ public sealed partial class PowerShellWrapperGenerationService
         var itemSchema = collectionValueSchema.Items;
         if (itemSchema is null)
             return false;
-        return TryResolveEntityTypeName(itemSchema, modelsNamespace, out entityTypeName);
+        return TryResolveResponseTypeName(itemSchema, modelsNamespace, out entityTypeName);
+    }
+
+    private bool TryResolveResponseTypeName(IOpenApiSchema schema, string modelsNamespace, out string typeName)
+    {
+        // Kiota may emit a composed model or UntypedNode for a union, not the $ref's name.
+        // Keep its actual result intact rather than guessing that CLR type or choosing an arm.
+        if (HasRootUnion(schema))
+        {
+            typeName = "object";
+            return true;
+        }
+        return TryResolveEntityTypeName(schema, modelsNamespace, out typeName);
     }
 
     // The old openApiDocs specs declare "value" directly on the schema; the KiotaCompat specs
@@ -864,7 +924,7 @@ public sealed partial class PowerShellWrapperGenerationService
     // resolve is dropped with a diagnostic rather than emitted against a guessed type name,
     // which would fail the module compile.
     private (IReadOnlyList<CmdletProperty> Scalars, IReadOnlyList<ComplexParameter> Complex, IReadOnlyList<UntypedParameter> Untyped) BindBodyProperties(
-        IOpenApiSchema bodySchema, EmitContext ctx, CmdletNaming naming, string entityType)
+        IOpenApiSchema bodySchema, EmitContext ctx, CmdletNaming naming, string entityType, bool recordDiagnostics = true)
     {
         var classified = SchemaProperties.Classify(bodySchema, ResolveComponentSchema);
         var (scalars, complex, untyped) = SchemaProperties.ResolveParameterNameCollisions(
@@ -879,23 +939,22 @@ public sealed partial class PowerShellWrapperGenerationService
         complex = [.. complex.Select(p => p.PascalName == enclosingTypeName ? p with { PascalName = p.PascalName + "Prop" } : p)];
         untyped = [.. untyped.Select(p => p.PascalName == enclosingTypeName ? p with { PascalName = p.PascalName + "Prop" } : p)];
 
-        foreach (var skipped in classified.Unsupported)
-            LogSkippedBodyProperty(naming.Noun, skipped.OpenApiName, skipped.Shape.ToString(), skipped.IsRequired);
+        if (recordDiagnostics)
+        {
+            foreach (var skipped in classified.Unsupported)
+                LogSkippedBodyProperty(naming.Noun, skipped.OpenApiName, skipped.Shape.ToString(), skipped.IsRequired);
 
-        // Named so an external reconciliation can tell a policy exclusion from an omission
-        // without re-deriving the policy from the spec.
-        foreach (var dropped in classified.Excluded)
-            LogExcludedBodyProperty(naming.Noun, dropped.OpenApiName, dropped.Policy.ToString());
+            // Policy exclusions remain distinct from unsupported shapes in run reconciliation.
+            foreach (var dropped in classified.Excluded)
+                LogExcludedBodyProperty(naming.Noun, dropped.OpenApiName, dropped.Policy.ToString());
 
-        // Totals for the run's reconciliation line: every classified property must end up in
-        // exactly one of these buckets, so a shape that silently fell through the classifier
-        // would show up as a mismatch at Graph scale, not just in the unit test.
-        propertiesSeenCount += classified.PropertiesSeen;
-        boundScalarCount += classified.Scalars.Count;
-        boundComplexCount += classified.Complex.Count;
-        boundUntypedCount += classified.Untyped.Count;
-        unsupportedPropertyCount += classified.Unsupported.Count;
-        excludedPropertyCount += classified.Excluded.Count;
+            propertiesSeenCount += classified.PropertiesSeen;
+            boundScalarCount += classified.Scalars.Count;
+            boundComplexCount += classified.Complex.Count;
+            boundUntypedCount += classified.Untyped.Count;
+            unsupportedPropertyCount += classified.Unsupported.Count;
+            excludedPropertyCount += classified.Excluded.Count;
+        }
 
         var parameters = new List<ComplexParameter>(complex.Count);
         foreach (var property in complex)

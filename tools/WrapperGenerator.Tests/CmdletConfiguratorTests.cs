@@ -25,8 +25,8 @@ public sealed class CmdletConfiguratorTests
     [InlineData("beta", true)]
     public void CuratedVerbAppliesIndependentlyOfDerivedData(string? apiVersion, bool useCollisionData)
     {
-        var config = apiVersion is null ? null : new GeneratorConfig("Test.Client", "unused", apiVersion, useCollisionData);
-        var verb = TryGetOverriddenVerb(HttpMethod.Get, FunctionPath, config, VerbEntries);
+        var config = apiVersion is null ? null : new GeneratorConfig("Test.Client", "unused", useCollisionData);
+        var verb = TryGetOverriddenVerb(HttpMethod.Get, FunctionPath, config, VerbEntries, apiVersion ?? "v1.0");
 
         Assert.Equal("Invoke", verb);
         Assert.Equal(PsVerb.Invoke, PsVerb.FromApprovedName(verb!));
@@ -43,18 +43,18 @@ public sealed class CmdletConfiguratorTests
     }
 
     [Theory]
-    [InlineData(null, null)]
-    [InlineData("v1.0", null)]
+    [InlineData(null, "Invoke")]
+    [InlineData("v1.0", "Invoke")]
     [InlineData("beta", "Invoke")]
     [InlineData("BETA", "Invoke")]
-    public void ProfileScopedEntriesRequireAMatchingConfiguredApiVersion(string? apiVersion, string? expected)
+    public void SameCuratedEntryAppliesToEveryIngestingProfile(string? apiVersion, string? expected)
     {
         Entry[] entries =
         [
-            new(OverrideKind.ReplaceVerb, null, "/fixtures/", PathMatch.Prefix, "Invoke", "Beta only", ApiVersion: "beta"),
+            new(OverrideKind.ReplaceVerb, null, "/fixtures/", PathMatch.Prefix, "Invoke", "Shared module configuration"),
         ];
-        var config = apiVersion is null ? null : new GeneratorConfig("Test.Client", "unused", apiVersion, false);
-        Assert.Equal(expected, TryGetOverriddenVerb(HttpMethod.Get, FunctionPath, config, entries));
+        var config = apiVersion is null ? null : new GeneratorConfig("Test.Client", "unused", false);
+        Assert.Equal(expected, TryGetOverriddenVerb(HttpMethod.Get, FunctionPath, config, entries, apiVersion ?? "v1.0"));
     }
 
     [Fact]
@@ -99,6 +99,22 @@ public sealed class CmdletConfiguratorTests
         Assert.Equal(expected, TryGetOverriddenVerb(HttpMethod.Get, path, config, entries));
     }
 
+    [Fact]
+    public void RuntimeOracleProfileDoesNotScopeTheSharedCuratedVerb()
+    {
+        const string path = "/users/{user-id}/calendar/allowedCalendarSharingRoles(User='{User}')";
+        Entry[] entries =
+        [
+            new(OverrideKind.ReplaceVerb, HttpMethod.Get, NormalizePathTemplate(path),
+                PathMatch.Exact, "Confirm", "Shared configuration fallback"),
+        ];
+        var shared = new GeneratorConfig("Test.Client", "unused");
+
+        Assert.Equal("Invoke", TryGetOverriddenVerb(HttpMethod.Get, path, shared, entries, "v1.0"));
+        Assert.Equal("Confirm", TryGetOverriddenVerb(HttpMethod.Get, path, shared, entries, "beta"));
+        Assert.Equal("Invoke", TryGetOverriddenVerb(HttpMethod.Get, path, shared, entries, "v1.0"));
+    }
+
     [Theory]
     [InlineData(true, null)]
     [InlineData(false, "Confirm")]
@@ -118,7 +134,7 @@ public sealed class CmdletConfiguratorTests
     public void ExistingPublicLookupKeepsNullForUnmatchedOperationsAndRejectsNullArguments()
     {
         Assert.Null(TryGetOverriddenVerb(HttpMethod.Get, FunctionPath, null));
-        Assert.Null(TryGetOverriddenVerb(HttpMethod.Get, FunctionPath, new("Test.Client", "unused", "beta")));
+        Assert.Null(TryGetOverriddenVerb(HttpMethod.Get, FunctionPath, new("Test.Client", "unused"), "beta"));
         Assert.Throws<ArgumentNullException>(() => TryGetOverriddenVerb(null!, FunctionPath, null));
         Assert.Throws<ArgumentNullException>(() => TryGetOverriddenVerb(HttpMethod.Get, null!, null));
     }

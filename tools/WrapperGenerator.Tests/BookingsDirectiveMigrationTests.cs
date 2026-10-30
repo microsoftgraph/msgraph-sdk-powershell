@@ -80,25 +80,25 @@ public sealed class BookingsDirectiveMigrationTests
     public void ExistingReviewedSuppressionsAndRenamesApplyWithOrWithoutDerivedData(
         string profile, bool useCollisionData)
     {
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         using var ledger = ReadLedger();
         var mappings = ledger.RootElement.GetProperty("mappings").EnumerateArray().ToArray();
         foreach (var operation in ReadEvidence(mappings[0], profile, "operations")
             .Concat(ReadEvidence(mappings[1], profile, "operations")))
         {
-            Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(operation.Method), operation.Path, config));
+            Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(operation.Method), operation.Path, config, profile));
         }
 
         foreach (var operation in ReadEvidence(mappings[2], profile, "operations"))
         {
             var method = new HttpMethod(operation.Method);
-            var naming = Naming.Resolve(new OperationInfo(method, operation.Path), config);
+            var naming = Naming.Resolve(new OperationInfo(method, operation.Path), config, profile);
             Assert.False(naming.Noun.StartsWith("MgSolution", StringComparison.Ordinal));
             if (!useCollisionData)
             {
-                Assert.Equal("Probe", CmdletConfigurator.ApplyNounOverrides(method, operation.Path, "SolutionProbe", config));
+                Assert.Equal("Probe", CmdletConfigurator.ApplyNounOverrides(method, operation.Path, "SolutionProbe", config, profile));
                 Assert.Equal(operation.Path == "/solutions/virtualEvents",
-                    CmdletConfigurator.IsSuppressed(method, operation.Path, config));
+                    CmdletConfigurator.IsSuppressed(method, operation.Path, config, profile));
             }
         }
     }
@@ -109,7 +109,7 @@ public sealed class BookingsDirectiveMigrationTests
     public async Task NeighboringRoutesRetainNamesAndAreNotSuppressed(string profile)
     {
         var operations = await ReadOperationsAsync(profile);
-        var config = new GeneratorConfig("Test.Client", "unused", profile);
+        var config = new GeneratorConfig("Test.Client", "unused");
         var expected = new[]
         {
             ("GET", "/solutions/bookingBusinesses/{bookingBusiness-id}", "solution_GetBookingBusiness", "MgBookingBusiness"),
@@ -124,14 +124,14 @@ public sealed class BookingsDirectiveMigrationTests
         {
             Assert.Contains(new ReviewedOperation(method, path, operationId), operations);
             var httpMethod = new HttpMethod(method);
-            Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, config));
-            Assert.Equal(noun, Naming.Resolve(new OperationInfo(httpMethod, path), config).Noun);
+            Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, config, profile));
+            Assert.Equal(noun, Naming.Resolve(new OperationInfo(httpMethod, path), config, profile).Noun);
         }
 
         Assert.All(operations.Where(o =>
             Regex.IsMatch(o.Path, @"^/(bookingBusinesses|bookingCurrencies)(/|$)", RegexOptions.IgnoreCase)),
             operation => Assert.True(CmdletConfigurator.IsSuppressed(
-                new HttpMethod(operation.Method), operation.Path, config)));
+                new HttpMethod(operation.Method), operation.Path, config, profile)));
     }
 
     [Theory]
@@ -141,14 +141,14 @@ public sealed class BookingsDirectiveMigrationTests
     [InlineData("beta", true)]
     public void SolutionPrefixStripDoesNotRenameBackupRestore(string profile, bool useCollisionData)
     {
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         foreach (var path in new[] { "/solutions/backupRestore", "/solutions/backupRestore/restorePoints" })
         {
             Assert.Equal("SolutionBackupRestore",
-                CmdletConfigurator.ApplyNounOverrides(HttpMethod.Get, path, "SolutionBackupRestore", config));
+                CmdletConfigurator.ApplyNounOverrides(HttpMethod.Get, path, "SolutionBackupRestore", config, profile));
         }
         Assert.Equal("MgSolutionBackupRestore",
-            Naming.Resolve(new OperationInfo(HttpMethod.Get, "/solutions/backupRestore"), config).Noun);
+            Naming.Resolve(new OperationInfo(HttpMethod.Get, "/solutions/backupRestore"), config, profile).Noun);
     }
 
     [Theory]
@@ -162,7 +162,7 @@ public sealed class BookingsDirectiveMigrationTests
         var policy = ledger.RootElement.GetProperty("retirementPolicy");
         Assert.Equal("beta", policy.GetProperty("profile").GetString());
         Assert.Equal("2024-04-30", policy.GetProperty("removalDate").GetString());
-        Assert.Equal("Bookings_cmdletConfigurations.cs; beta-only SuppressOperation entries.",
+        Assert.Equal("Bookings_cmdletConfigurations.cs; shared exact-path SuppressOperation entries.",
             policy.GetProperty("implementation").GetString());
         var historical = await ReadOperationsAsync("beta", "openApiDocs");
         var retired = historical.Where(o =>
@@ -171,7 +171,7 @@ public sealed class BookingsDirectiveMigrationTests
         Assert.Equal(policy.GetProperty("suppressedOperations").GetInt32(), retired.Length);
         Assert.Equal(29, policy.GetProperty("suppressedPaths").GetInt32());
         Assert.Equal(policy.GetProperty("suppressedPaths").GetInt32(), retired.Select(o => o.Path).Distinct().Count());
-        var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
         foreach (var operation in retired)
         {
             var compatiblePath = operation.Method == "POST"
@@ -179,13 +179,13 @@ public sealed class BookingsDirectiveMigrationTests
                 : operation.Path;
             Assert.Contains(operations, current =>
                 current.Method == operation.Method && current.Path == compatiblePath);
-            Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(operation.Method), operation.Path, config));
-            Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(operation.Method), compatiblePath, config));
+            Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(operation.Method), operation.Path, config, "beta"));
+            Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(operation.Method), compatiblePath, config, "beta"));
             var successor = "/solutions" + compatiblePath;
             var supported = Assert.Single(operations, current => current.Method == operation.Method &&
                 CmdletConfigurator.NormalizePathTemplate(current.Path) ==
                 CmdletConfigurator.NormalizePathTemplate(successor));
-            Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(supported.Method), supported.Path, config));
+            Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(supported.Method), supported.Path, config, "beta"));
         }
     }
 
@@ -203,19 +203,18 @@ public sealed class BookingsDirectiveMigrationTests
     [InlineData("/solutions/bookingBusinesses/{id}/appointments", false)]
     [InlineData("/solutions/bookingCurrencies", false)]
     [InlineData("/solutions/bookingCurrencies/{id}", false)]
-    public void RetirementMatchesCompleteRootSegmentsAndBetaOnly(string path, bool retired)
+    public void SharedRetirementConfigurationMatchesCompleteRootSegmentsInEitherIngestingProfile(string path, bool retired)
     {
         foreach (var method in new[] { "GET", "POST", "PATCH", "DELETE", "PUT", "OPTIONS", "HEAD", "TRACE" })
         {
             var httpMethod = new HttpMethod(method);
             foreach (var useCollisionData in new[] { false, true })
             {
-                var beta = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
-                var v1 = new GeneratorConfig("Test.Client", "unused", "v1.0", useCollisionData);
-                Assert.Equal(retired, CmdletConfigurator.IsSuppressed(httpMethod, path, beta));
-                Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, v1));
+                var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
+                foreach (var profile in new[] { "v1.0", "beta" })
+                    Assert.Equal(retired, CmdletConfigurator.IsSuppressed(httpMethod, path, config, profile));
             }
-            Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path));
+            Assert.Equal(retired, CmdletConfigurator.IsSuppressed(httpMethod, path));
         }
     }
 
