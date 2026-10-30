@@ -244,6 +244,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
                 "#microsoft.graph.printTaskTrigger" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PrintTaskTrigger(),
                 "#microsoft.graph.profilePhoto" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.ProfilePhoto(),
                 "#microsoft.graph.remoteAssistancePartner" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.RemoteAssistancePartner(),
+                "#microsoft.graph.resourceAccountKeyAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.ResourceAccountKeyAuthenticationMethod(),
                 "#microsoft.graph.resourceOperation" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.ResourceOperation(),
                 "#microsoft.graph.resourceSpecificPermissionGrant" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.ResourceSpecificPermissionGrant(),
                 "#microsoft.graph.richLongRunningOperation" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.RichLongRunningOperation(),
