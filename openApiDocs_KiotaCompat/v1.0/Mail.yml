@@ -12,7 +12,7 @@ paths:
         - users.inferenceClassification
       summary: Get inferenceClassification from users
       description: Relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
-      operationId: users.GetInferenceClassification
+      operationId: user_GetInferenceClassification
       parameters:
         - name: $select
           in: query
@@ -50,7 +50,7 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Update the navigation property inferenceClassification in users
-      operationId: users.UpdateInferenceClassification
+      operationId: user_UpdateInferenceClassification
       requestBody:
         description: New navigation property values
         content:
@@ -76,7 +76,7 @@ paths:
         - users.inferenceClassification
       summary: Get overrides from users
       description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
-      operationId: users.inferenceClassification.ListOverrides
+      operationId: user.inferenceClassification_ListOverride
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -128,7 +128,7 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Create new navigation property to overrides for users
-      operationId: users.inferenceClassification.CreateOverrides
+      operationId: user.inferenceClassification_CreateOverride
       requestBody:
         description: New navigation property
         content:
@@ -154,7 +154,7 @@ paths:
         - users.inferenceClassification
       summary: Get overrides from users
       description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
-      operationId: users.inferenceClassification.GetOverrides
+      operationId: user.inferenceClassification_GetOverride
       parameters:
         - name: $select
           in: query
@@ -192,7 +192,7 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Update the navigation property overrides in users
-      operationId: users.inferenceClassification.UpdateOverrides
+      operationId: user.inferenceClassification_UpdateOverride
       requestBody:
         description: New navigation property values
         content:
@@ -216,7 +216,7 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Delete navigation property overrides for users
-      operationId: users.inferenceClassification.DeleteOverrides
+      operationId: user.inferenceClassification_DeleteOverride
       parameters:
         - name: If-Match
           in: header
@@ -237,7 +237,7 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Get the number of the resource
-      operationId: users.inferenceClassification.overrides.GetCount-f355
+      operationId: user.inferenceClassification.override_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -254,7 +254,7 @@ paths:
         - users.mailFolder
       summary: Get mailFolders from users
       description: The user's mail folders. Read-only. Nullable.
-      operationId: users.ListMailFolders
+      operationId: user_ListMailFolder
       parameters:
         - name: includeHiddenFolders
           in: query
@@ -313,7 +313,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to mailFolders for users
-      operationId: users.CreateMailFolders
+      operationId: user_CreateMailFolder
       requestBody:
         description: New navigation property
         content:
@@ -339,7 +339,7 @@ paths:
         - users.mailFolder
       summary: Get mailFolders from users
       description: The user's mail folders. Read-only. Nullable.
-      operationId: users.GetMailFolders
+      operationId: user_GetMailFolder
       parameters:
         - name: includeHiddenFolders
           in: query
@@ -384,7 +384,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property mailFolders in users
-      operationId: users.UpdateMailFolders
+      operationId: user_UpdateMailFolder
       requestBody:
         description: New navigation property values
         content:
@@ -408,7 +408,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property mailFolders for users
-      operationId: users.DeleteMailFolders
+      operationId: user_DeleteMailFolder
       parameters:
         - name: If-Match
           in: header
@@ -430,7 +430,7 @@ paths:
         - users.mailFolder
       summary: Get childFolders from users
       description: The collection of child folders in the mailFolder.
-      operationId: users.mailFolders.ListChildFolders
+      operationId: user.mailFolder_ListChildFolder
       parameters:
         - name: includeHiddenFolders
           in: query
@@ -489,7 +489,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to childFolders for users
-      operationId: users.mailFolders.CreateChildFolders
+      operationId: user.mailFolder_CreateChildFolder
       requestBody:
         description: New navigation property
         content:
@@ -515,7 +515,7 @@ paths:
         - users.mailFolder
       summary: Get childFolders from users
       description: The collection of child folders in the mailFolder.
-      operationId: users.mailFolders.GetChildFolders
+      operationId: user.mailFolder_GetChildFolder
       parameters:
         - name: includeHiddenFolders
           in: query
@@ -560,7 +560,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property childFolders in users
-      operationId: users.mailFolders.UpdateChildFolders
+      operationId: user.mailFolder_UpdateChildFolder
       requestBody:
         description: New navigation property values
         content:
@@ -584,7 +584,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property childFolders for users
-      operationId: users.mailFolders.DeleteChildFolders
+      operationId: user.mailFolder_DeleteChildFolder
       parameters:
         - name: If-Match
           in: header
@@ -606,7 +606,7 @@ paths:
         - users.mailFolder
       summary: Get messageRules from users
       description: The collection of rules that apply to the user's Inbox folder.
-      operationId: users.mailFolders.childFolders.ListMessageRules
+      operationId: user.mailFolder.childFolder_ListMessageRule
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -658,7 +658,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to messageRules for users
-      operationId: users.mailFolders.childFolders.CreateMessageRules
+      operationId: user.mailFolder.childFolder_CreateMessageRule
       requestBody:
         description: New navigation property
         content:
@@ -684,7 +684,7 @@ paths:
         - users.mailFolder
       summary: Get messageRules from users
       description: The collection of rules that apply to the user's Inbox folder.
-      operationId: users.mailFolders.childFolders.GetMessageRules
+      operationId: user.mailFolder.childFolder_GetMessageRule
       parameters:
         - name: $select
           in: query
@@ -722,7 +722,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property messageRules in users
-      operationId: users.mailFolders.childFolders.UpdateMessageRules
+      operationId: user.mailFolder.childFolder_UpdateMessageRule
       requestBody:
         description: New navigation property values
         content:
@@ -746,7 +746,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property messageRules for users
-      operationId: users.mailFolders.childFolders.DeleteMessageRules
+      operationId: user.mailFolder.childFolder_DeleteMessageRule
       parameters:
         - name: If-Match
           in: header
@@ -767,7 +767,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get the number of the resource
-      operationId: users.mailFolders.childFolders.messageRules.GetCount-22e6
+      operationId: user.mailFolder.childFolder.messageRule_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -784,7 +784,7 @@ paths:
         - users.mailFolder
       summary: Get messages from users
       description: The collection of messages in the mailFolder.
-      operationId: users.mailFolders.childFolders.ListMessages
+      operationId: user.mailFolder.childFolder_ListMessage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -836,7 +836,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to messages for users
-      operationId: users.mailFolders.childFolders.CreateMessages
+      operationId: user.mailFolder.childFolder_CreateMessage
       requestBody:
         description: New navigation property
         content:
@@ -862,7 +862,7 @@ paths:
         - users.mailFolder
       summary: Get messages from users
       description: The collection of messages in the mailFolder.
-      operationId: users.mailFolders.childFolders.GetMessages
+      operationId: user.mailFolder.childFolder_GetMessage
       parameters:
         - name: $select
           in: query
@@ -900,7 +900,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property messages in users
-      operationId: users.mailFolders.childFolders.UpdateMessages
+      operationId: user.mailFolder.childFolder_UpdateMessage
       requestBody:
         description: New navigation property values
         content:
@@ -924,7 +924,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property messages for users
-      operationId: users.mailFolders.childFolders.DeleteMessages
+      operationId: user.mailFolder.childFolder_DeleteMessage
       parameters:
         - name: If-Match
           in: header
@@ -946,7 +946,7 @@ paths:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.mailFolders.childFolders.GetMessagesContent
+      operationId: user.mailFolder.childFolder_GetMessagesContent
       responses:
         2XX:
           description: Retrieved media content
@@ -964,7 +964,7 @@ paths:
         - users.mailFolder
       summary: Update media content for the navigation property messages in users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.mailFolders.childFolders.UpdateMessagesContent
+      operationId: user.mailFolder.childFolder_SetMessagesContent
       requestBody:
         description: New media content.
         content:
@@ -985,7 +985,7 @@ paths:
         - users.mailFolder
       summary: Delete media content for the navigation property messages in users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.mailFolders.childFolders.DeleteMessagesContent
+      operationId: user.mailFolder.childFolder_DeleteMessagesContent
       parameters:
         - name: If-Match
           in: header
@@ -1006,7 +1006,7 @@ paths:
         - users.mailFolder
       summary: Get attachments from users
       description: The fileAttachment and itemAttachment attachments for the message.
-      operationId: users.mailFolders.childFolders.messages.ListAttachments
+      operationId: user.mailFolder.childFolder.message_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1058,7 +1058,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to attachments for users
-      operationId: users.mailFolders.childFolders.messages.CreateAttachments
+      operationId: user.mailFolder.childFolder.message_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -1084,7 +1084,7 @@ paths:
         - users.mailFolder
       summary: Get attachments from users
       description: The fileAttachment and itemAttachment attachments for the message.
-      operationId: users.mailFolders.childFolders.messages.GetAttachments
+      operationId: user.mailFolder.childFolder.message_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -1122,7 +1122,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property attachments for users
-      operationId: users.mailFolders.childFolders.messages.DeleteAttachments
+      operationId: user.mailFolder.childFolder.message_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -1143,7 +1143,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get the number of the resource
-      operationId: users.mailFolders.childFolders.messages.attachments.GetCount-5ef0
+      operationId: user.mailFolder.childFolder.message.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1163,7 +1163,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.attachments.createUploadSession
+      operationId: user.mailFolder.childFolder.mailFolder.message.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -1195,7 +1195,7 @@ paths:
         - users.mailFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the message. Nullable.
-      operationId: users.mailFolders.childFolders.messages.ListExtensions
+      operationId: user.mailFolder.childFolder.message_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1247,7 +1247,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to extensions for users
-      operationId: users.mailFolders.childFolders.messages.CreateExtensions
+      operationId: user.mailFolder.childFolder.message_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -1273,7 +1273,7 @@ paths:
         - users.mailFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the message. Nullable.
-      operationId: users.mailFolders.childFolders.messages.GetExtensions
+      operationId: user.mailFolder.childFolder.message_GetExtension
       parameters:
         - name: $select
           in: query
@@ -1311,7 +1311,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property extensions in users
-      operationId: users.mailFolders.childFolders.messages.UpdateExtensions
+      operationId: user.mailFolder.childFolder.message_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -1335,7 +1335,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property extensions for users
-      operationId: users.mailFolders.childFolders.messages.DeleteExtensions
+      operationId: user.mailFolder.childFolder.message_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -1356,7 +1356,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get the number of the resource
-      operationId: users.mailFolders.childFolders.messages.extensions.GetCount-1433
+      operationId: user.mailFolder.childFolder.message.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1376,7 +1376,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-copy?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.copy
+      operationId: user.mailFolder.childFolder.mailFolder.message_copy
       requestBody:
         description: Action parameters
         content:
@@ -1407,7 +1407,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke action createForward
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.createForward
+      operationId: user.mailFolder.childFolder.mailFolder.message_createForward
       requestBody:
         description: Action parameters
         content:
@@ -1452,7 +1452,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-createreply?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.createReply
+      operationId: user.mailFolder.childFolder.mailFolder.message_createReply
       requestBody:
         description: Action parameters
         content:
@@ -1493,7 +1493,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.createReplyAll
+      operationId: user.mailFolder.childFolder.mailFolder.message_createReplyAll
       requestBody:
         description: Action parameters
         content:
@@ -1534,7 +1534,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-forward?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.forward
+      operationId: user.mailFolder.childFolder.mailFolder.message_forward
       requestBody:
         description: Action parameters
         content:
@@ -1572,7 +1572,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-move?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.move
+      operationId: user.mailFolder.childFolder.mailFolder.message_move
       requestBody:
         description: Action parameters
         content:
@@ -1603,7 +1603,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke action permanentDelete
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.permanentDelete
+      operationId: user.mailFolder.childFolder.mailFolder.message_permanentDelete
       responses:
         '204':
           description: Success
@@ -1621,7 +1621,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-reply?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.reply
+      operationId: user.mailFolder.childFolder.mailFolder.message_reply
       requestBody:
         description: Action parameters
         content:
@@ -1655,7 +1655,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-replyall?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.replyAll
+      operationId: user.mailFolder.childFolder.mailFolder.message_replyAll
       requestBody:
         description: Action parameters
         content:
@@ -1689,7 +1689,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-send?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.send
+      operationId: user.mailFolder.childFolder.mailFolder.message_send
       responses:
         '204':
           description: Success
@@ -1703,7 +1703,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get the number of the resource
-      operationId: users.mailFolders.childFolders.messages.GetCount-a576
+      operationId: user.mailFolder.childFolder.message_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1723,7 +1723,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.delta
+      operationId: user.mailFolder.childFolder.mailFolder.message_delta
       parameters:
         - name: changeType
           in: query
@@ -1800,7 +1800,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.copy
+      operationId: user.mailFolder.childFolder.mailFolder_copy
       requestBody:
         description: Action parameters
         content:
@@ -1835,7 +1835,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.move
+      operationId: user.mailFolder.childFolder.mailFolder_move
       requestBody:
         description: Action parameters
         content:
@@ -1866,7 +1866,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke action permanentDelete
-      operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.permanentDelete
+      operationId: user.mailFolder.childFolder.mailFolder_permanentDelete
       responses:
         '204':
           description: Success
@@ -1880,7 +1880,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get the number of the resource
-      operationId: users.mailFolders.childFolders.GetCount-d2d8
+      operationId: user.mailFolder.childFolder_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1896,11 +1896,11 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke function delta
-      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\r\napplying state tokens in one or more of these calls,\r\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\r\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
+      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\r\napplying state tokens in one or more of these calls,\r\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\r\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time. Delta processing may create or update synchronization state stored in the mailbox. These writes are subject to mailbox storage quota enforcement. If a mailbox has reached its applicable storage quota, a mail folder delta request can return 403 ErrorQuotaExceeded, even when ordinary folder read requests continue to succeed. Reduce mailbox usage below the quota and retry the delta request. Applications should handle this error and direct affected users or administrators to address mailbox storage usage."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.childFolders.delta
+      operationId: user.mailFolder.childFolder_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1967,7 +1967,7 @@ paths:
         - users.mailFolder
       summary: Get messageRules from users
       description: The collection of rules that apply to the user's Inbox folder.
-      operationId: users.mailFolders.ListMessageRules
+      operationId: user.mailFolder_ListMessageRule
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2019,7 +2019,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to messageRules for users
-      operationId: users.mailFolders.CreateMessageRules
+      operationId: user.mailFolder_CreateMessageRule
       requestBody:
         description: New navigation property
         content:
@@ -2045,7 +2045,7 @@ paths:
         - users.mailFolder
       summary: Get messageRules from users
       description: The collection of rules that apply to the user's Inbox folder.
-      operationId: users.mailFolders.GetMessageRules
+      operationId: user.mailFolder_GetMessageRule
       parameters:
         - name: $select
           in: query
@@ -2083,7 +2083,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property messageRules in users
-      operationId: users.mailFolders.UpdateMessageRules
+      operationId: user.mailFolder_UpdateMessageRule
       requestBody:
         description: New navigation property values
         content:
@@ -2107,7 +2107,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property messageRules for users
-      operationId: users.mailFolders.DeleteMessageRules
+      operationId: user.mailFolder_DeleteMessageRule
       parameters:
         - name: If-Match
           in: header
@@ -2128,7 +2128,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get the number of the resource
-      operationId: users.mailFolders.messageRules.GetCount-f330
+      operationId: user.mailFolder.messageRule_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2145,7 +2145,7 @@ paths:
         - users.mailFolder
       summary: Get messages from users
       description: The collection of messages in the mailFolder.
-      operationId: users.mailFolders.ListMessages
+      operationId: user.mailFolder_ListMessage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2197,7 +2197,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to messages for users
-      operationId: users.mailFolders.CreateMessages
+      operationId: user.mailFolder_CreateMessage
       requestBody:
         description: New navigation property
         content:
@@ -2223,7 +2223,7 @@ paths:
         - users.mailFolder
       summary: Get messages from users
       description: The collection of messages in the mailFolder.
-      operationId: users.mailFolders.GetMessages
+      operationId: user.mailFolder_GetMessage
       parameters:
         - name: $select
           in: query
@@ -2261,7 +2261,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property messages in users
-      operationId: users.mailFolders.UpdateMessages
+      operationId: user.mailFolder_UpdateMessage
       requestBody:
         description: New navigation property values
         content:
@@ -2285,7 +2285,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property messages for users
-      operationId: users.mailFolders.DeleteMessages
+      operationId: user.mailFolder_DeleteMessage
       parameters:
         - name: If-Match
           in: header
@@ -2307,7 +2307,7 @@ paths:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.mailFolders.GetMessagesContent
+      operationId: user.mailFolder_GetMessagesContent
       responses:
         2XX:
           description: Retrieved media content
@@ -2325,7 +2325,7 @@ paths:
         - users.mailFolder
       summary: Update media content for the navigation property messages in users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.mailFolders.UpdateMessagesContent
+      operationId: user.mailFolder_SetMessagesContent
       requestBody:
         description: New media content.
         content:
@@ -2346,7 +2346,7 @@ paths:
         - users.mailFolder
       summary: Delete media content for the navigation property messages in users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.mailFolders.DeleteMessagesContent
+      operationId: user.mailFolder_DeleteMessagesContent
       parameters:
         - name: If-Match
           in: header
@@ -2367,7 +2367,7 @@ paths:
         - users.mailFolder
       summary: Get attachments from users
       description: The fileAttachment and itemAttachment attachments for the message.
-      operationId: users.mailFolders.messages.ListAttachments
+      operationId: user.mailFolder.message_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2419,7 +2419,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to attachments for users
-      operationId: users.mailFolders.messages.CreateAttachments
+      operationId: user.mailFolder.message_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -2445,7 +2445,7 @@ paths:
         - users.mailFolder
       summary: Get attachments from users
       description: The fileAttachment and itemAttachment attachments for the message.
-      operationId: users.mailFolders.messages.GetAttachments
+      operationId: user.mailFolder.message_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -2483,7 +2483,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property attachments for users
-      operationId: users.mailFolders.messages.DeleteAttachments
+      operationId: user.mailFolder.message_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -2504,7 +2504,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get the number of the resource
-      operationId: users.mailFolders.messages.attachments.GetCount-3c73
+      operationId: user.mailFolder.message.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2524,7 +2524,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.messages.message.attachments.createUploadSession
+      operationId: user.mailFolder.message.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -2556,7 +2556,7 @@ paths:
         - users.mailFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the message. Nullable.
-      operationId: users.mailFolders.messages.ListExtensions
+      operationId: user.mailFolder.message_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2608,7 +2608,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to extensions for users
-      operationId: users.mailFolders.messages.CreateExtensions
+      operationId: user.mailFolder.message_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -2634,7 +2634,7 @@ paths:
         - users.mailFolder
       summary: Get extensions from users
       description: The collection of open extensions defined for the message. Nullable.
-      operationId: users.mailFolders.messages.GetExtensions
+      operationId: user.mailFolder.message_GetExtension
       parameters:
         - name: $select
           in: query
@@ -2672,7 +2672,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Update the navigation property extensions in users
-      operationId: users.mailFolders.messages.UpdateExtensions
+      operationId: user.mailFolder.message_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -2696,7 +2696,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete navigation property extensions for users
-      operationId: users.mailFolders.messages.DeleteExtensions
+      operationId: user.mailFolder.message_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -2717,7 +2717,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get the number of the resource
-      operationId: users.mailFolders.messages.extensions.GetCount-651d
+      operationId: user.mailFolder.message.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2737,7 +2737,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-copy?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.messages.message.copy
+      operationId: user.mailFolder.message_copy
       requestBody:
         description: Action parameters
         content:
@@ -2768,7 +2768,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke action createForward
-      operationId: users.user.mailFolders.mailFolder.messages.message.createForward
+      operationId: user.mailFolder.message_createForward
       requestBody:
         description: Action parameters
         content:
@@ -2813,7 +2813,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-createreply?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.messages.message.createReply
+      operationId: user.mailFolder.message_createReply
       requestBody:
         description: Action parameters
         content:
@@ -2854,7 +2854,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.messages.message.createReplyAll
+      operationId: user.mailFolder.message_createReplyAll
       requestBody:
         description: Action parameters
         content:
@@ -2895,7 +2895,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-forward?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.messages.message.forward
+      operationId: user.mailFolder.message_forward
       requestBody:
         description: Action parameters
         content:
@@ -2933,7 +2933,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-move?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.messages.message.move
+      operationId: user.mailFolder.message_move
       requestBody:
         description: Action parameters
         content:
@@ -2964,7 +2964,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke action permanentDelete
-      operationId: users.user.mailFolders.mailFolder.messages.message.permanentDelete
+      operationId: user.mailFolder.message_permanentDelete
       responses:
         '204':
           description: Success
@@ -2982,7 +2982,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-reply?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.messages.message.reply
+      operationId: user.mailFolder.message_reply
       requestBody:
         description: Action parameters
         content:
@@ -3016,7 +3016,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-replyall?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.messages.message.replyAll
+      operationId: user.mailFolder.message_replyAll
       requestBody:
         description: Action parameters
         content:
@@ -3050,7 +3050,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-send?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.messages.message.send
+      operationId: user.mailFolder.message_send
       responses:
         '204':
           description: Success
@@ -3064,7 +3064,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get the number of the resource
-      operationId: users.mailFolders.messages.GetCount-9534
+      operationId: user.mailFolder.message_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3084,7 +3084,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.messages.delta
+      operationId: user.mailFolder.message_delta
       parameters:
         - name: changeType
           in: query
@@ -3161,7 +3161,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.copy
+      operationId: user.mailFolder_copy
       requestBody:
         description: Action parameters
         content:
@@ -3196,7 +3196,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0
-      operationId: users.user.mailFolders.mailFolder.move
+      operationId: user.mailFolder_move
       requestBody:
         description: Action parameters
         content:
@@ -3227,7 +3227,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke action permanentDelete
-      operationId: users.user.mailFolders.mailFolder.permanentDelete
+      operationId: user.mailFolder_permanentDelete
       responses:
         '204':
           description: Success
@@ -3241,7 +3241,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Get the number of the resource
-      operationId: users.mailFolders.GetCount-7dc9
+      operationId: user.mailFolder_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3257,11 +3257,11 @@ paths:
       tags:
         - users.mailFolder
       summary: Invoke function delta
-      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\r\napplying state tokens in one or more of these calls,\r\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\r\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
+      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\r\napplying state tokens in one or more of these calls,\r\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\r\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time. Delta processing may create or update synchronization state stored in the mailbox. These writes are subject to mailbox storage quota enforcement. If a mailbox has reached its applicable storage quota, a mail folder delta request can return 403 ErrorQuotaExceeded, even when ordinary folder read requests continue to succeed. Reduce mailbox usage below the quota and retry the delta request. Applications should handle this error and direct affected users or administrators to address mailbox storage usage."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
-      operationId: users.user.mailFolders.delta
+      operationId: user.mailFolder_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3328,7 +3328,7 @@ paths:
         - users.message
       summary: Get messages from users
       description: The messages in a mailbox or folder. Read-only. Nullable.
-      operationId: users.ListMessages
+      operationId: user_ListMessage
       parameters:
         - name: includeHiddenMessages
           in: query
@@ -3387,7 +3387,7 @@ paths:
       tags:
         - users.message
       summary: Create new navigation property to messages for users
-      operationId: users.CreateMessages
+      operationId: user_CreateMessage
       requestBody:
         description: New navigation property
         content:
@@ -3413,7 +3413,7 @@ paths:
         - users.message
       summary: Get messages from users
       description: The messages in a mailbox or folder. Read-only. Nullable.
-      operationId: users.GetMessages
+      operationId: user_GetMessage
       parameters:
         - name: includeHiddenMessages
           in: query
@@ -3458,7 +3458,7 @@ paths:
       tags:
         - users.message
       summary: Update the navigation property messages in users
-      operationId: users.UpdateMessages
+      operationId: user_UpdateMessage
       requestBody:
         description: New navigation property values
         content:
@@ -3482,7 +3482,7 @@ paths:
       tags:
         - users.message
       summary: Delete navigation property messages for users
-      operationId: users.DeleteMessages
+      operationId: user_DeleteMessage
       parameters:
         - name: If-Match
           in: header
@@ -3504,7 +3504,7 @@ paths:
         - users.message
       summary: Get media content for the navigation property messages from users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.GetMessagesContent
+      operationId: user_GetMessagesContent
       responses:
         2XX:
           description: Retrieved media content
@@ -3522,7 +3522,7 @@ paths:
         - users.message
       summary: Update media content for the navigation property messages in users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.UpdateMessagesContent
+      operationId: user_SetMessagesContent
       requestBody:
         description: New media content.
         content:
@@ -3543,7 +3543,7 @@ paths:
         - users.message
       summary: Delete media content for the navigation property messages in users
       description: The unique identifier for an entity. Read-only.
-      operationId: users.DeleteMessagesContent
+      operationId: user_DeleteMessagesContent
       parameters:
         - name: If-Match
           in: header
@@ -3564,7 +3564,7 @@ paths:
         - users.message
       summary: Get attachments from users
       description: The fileAttachment and itemAttachment attachments for the message.
-      operationId: users.messages.ListAttachments
+      operationId: user.message_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3616,7 +3616,7 @@ paths:
       tags:
         - users.message
       summary: Create new navigation property to attachments for users
-      operationId: users.messages.CreateAttachments
+      operationId: user.message_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -3642,7 +3642,7 @@ paths:
         - users.message
       summary: Get attachments from users
       description: The fileAttachment and itemAttachment attachments for the message.
-      operationId: users.messages.GetAttachments
+      operationId: user.message_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -3680,7 +3680,7 @@ paths:
       tags:
         - users.message
       summary: Delete navigation property attachments for users
-      operationId: users.messages.DeleteAttachments
+      operationId: user.message_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -3701,7 +3701,7 @@ paths:
       tags:
         - users.message
       summary: Get the number of the resource
-      operationId: users.messages.attachments.GetCount-a586
+      operationId: user.message.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3721,7 +3721,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
-      operationId: users.user.messages.message.attachments.createUploadSession
+      operationId: user.message.attachment_createUploadSession
       requestBody:
         description: Action parameters
         content:
@@ -3753,7 +3753,7 @@ paths:
         - users.message
       summary: Get extensions from users
       description: The collection of open extensions defined for the message. Nullable.
-      operationId: users.messages.ListExtensions
+      operationId: user.message_ListExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3805,7 +3805,7 @@ paths:
       tags:
         - users.message
       summary: Create new navigation property to extensions for users
-      operationId: users.messages.CreateExtensions
+      operationId: user.message_CreateExtension
       requestBody:
         description: New navigation property
         content:
@@ -3831,7 +3831,7 @@ paths:
         - users.message
       summary: Get extensions from users
       description: The collection of open extensions defined for the message. Nullable.
-      operationId: users.messages.GetExtensions
+      operationId: user.message_GetExtension
       parameters:
         - name: $select
           in: query
@@ -3869,7 +3869,7 @@ paths:
       tags:
         - users.message
       summary: Update the navigation property extensions in users
-      operationId: users.messages.UpdateExtensions
+      operationId: user.message_UpdateExtension
       requestBody:
         description: New navigation property values
         content:
@@ -3893,7 +3893,7 @@ paths:
       tags:
         - users.message
       summary: Delete navigation property extensions for users
-      operationId: users.messages.DeleteExtensions
+      operationId: user.message_DeleteExtension
       parameters:
         - name: If-Match
           in: header
@@ -3914,7 +3914,7 @@ paths:
       tags:
         - users.message
       summary: Get the number of the resource
-      operationId: users.messages.extensions.GetCount-5628
+      operationId: user.message.extension_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3934,7 +3934,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-copy?view=graph-rest-1.0
-      operationId: users.user.messages.message.copy
+      operationId: user.message_copy
       requestBody:
         description: Action parameters
         content:
@@ -3965,7 +3965,7 @@ paths:
       tags:
         - users.message
       summary: Invoke action createForward
-      operationId: users.user.messages.message.createForward
+      operationId: user.message_createForward
       requestBody:
         description: Action parameters
         content:
@@ -4010,7 +4010,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-createreply?view=graph-rest-1.0
-      operationId: users.user.messages.message.createReply
+      operationId: user.message_createReply
       requestBody:
         description: Action parameters
         content:
@@ -4051,7 +4051,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0
-      operationId: users.user.messages.message.createReplyAll
+      operationId: user.message_createReplyAll
       requestBody:
         description: Action parameters
         content:
@@ -4092,7 +4092,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-forward?view=graph-rest-1.0
-      operationId: users.user.messages.message.forward
+      operationId: user.message_forward
       requestBody:
         description: Action parameters
         content:
@@ -4130,7 +4130,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-move?view=graph-rest-1.0
-      operationId: users.user.messages.message.move
+      operationId: user.message_move
       requestBody:
         description: Action parameters
         content:
@@ -4161,7 +4161,7 @@ paths:
       tags:
         - users.message
       summary: Invoke action permanentDelete
-      operationId: users.user.messages.message.permanentDelete
+      operationId: user.message_permanentDelete
       responses:
         '204':
           description: Success
@@ -4179,7 +4179,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-reply?view=graph-rest-1.0
-      operationId: users.user.messages.message.reply
+      operationId: user.message_reply
       requestBody:
         description: Action parameters
         content:
@@ -4213,7 +4213,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-replyall?view=graph-rest-1.0
-      operationId: users.user.messages.message.replyAll
+      operationId: user.message_replyAll
       requestBody:
         description: Action parameters
         content:
@@ -4247,7 +4247,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-send?view=graph-rest-1.0
-      operationId: users.user.messages.message.send
+      operationId: user.message_send
       responses:
         '204':
           description: Success
@@ -4261,7 +4261,7 @@ paths:
       tags:
         - users.message
       summary: Get the number of the resource
-      operationId: users.messages.GetCount-0f52
+      operationId: user.message_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4281,7 +4281,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
-      operationId: users.user.messages.delta
+      operationId: user.message_delta
       parameters:
         - name: changeType
           in: query
@@ -4941,6 +4941,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -5128,6 +5129,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -5396,6 +5398,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -5754,6 +5759,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
