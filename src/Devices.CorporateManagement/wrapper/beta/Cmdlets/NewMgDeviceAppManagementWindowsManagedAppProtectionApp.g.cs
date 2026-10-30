@@ -1,0 +1,69 @@
+#nullable enable
+
+using System;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client;
+using Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
+{
+    [GraphRoute("POST", "/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection-id}/apps")]
+    [Cmdlet(VerbsCommon.New, "MgDeviceAppManagementWindowsManagedAppProtectionApp", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.ManagedMobileApp))]
+    public class NewMgDeviceAppManagementWindowsManagedAppProtectionAppCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string WindowsManagedAppProtectionId { get; set; } = string.Empty;
+
+        [Parameter(Mandatory = false)]
+        public string? Version { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppIdentifier? MobileAppIdentifier { get; set; }
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(WindowsManagedAppProtectionId, "New"))
+                return;
+
+            var body = new Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.ManagedMobileApp();
+
+    if (this.IsParameterBound(nameof(Version)))
+        body.Version = Version;
+
+    if (this.IsParameterBound(nameof(MobileAppIdentifier)))
+        body.MobileAppIdentifier = MobileAppIdentifier;
+
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.ManagedMobileApp? result;
+            try
+            {
+                result = client.DeviceAppManagement.WindowsManagedAppProtections[WindowsManagedAppProtectionId].Apps.PostAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, body);
+                return;
+            }
+
+            WriteObject(result);
+        }
+    }
+}
