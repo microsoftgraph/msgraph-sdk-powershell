@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Models
     public partial class BackupRestoreRoot : global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The activityLogs property</summary>
+        /// <summary>The list of activity logs in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ActivityLogBase>? ActivityLogs { get; set; }
@@ -75,6 +75,14 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Models
 #nullable restore
 #else
         public global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.EmailNotificationsSetting EmailNotificationsSetting { get; set; }
+#endif
+        /// <summary>The entraProtectionPolicies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.EntraProtectionPolicy>? EntraProtectionPolicies { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.EntraProtectionPolicy> EntraProtectionPolicies { get; set; }
 #endif
         /// <summary>The list of Exchange protection policies in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -310,6 +318,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Models
                 { "driveProtectionUnits", n => { DriveProtectionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.DriveProtectionUnit>(global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.DriveProtectionUnit.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "driveProtectionUnitsBulkAdditionJobs", n => { DriveProtectionUnitsBulkAdditionJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.DriveProtectionUnitsBulkAdditionJob>(global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.DriveProtectionUnitsBulkAdditionJob.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "emailNotificationsSetting", n => { EmailNotificationsSetting = n.GetObjectValue<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.EmailNotificationsSetting>(global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.EmailNotificationsSetting.CreateFromDiscriminatorValue); } },
+                { "entraProtectionPolicies", n => { EntraProtectionPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.EntraProtectionPolicy>(global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.EntraProtectionPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "exchangeProtectionPolicies", n => { ExchangeProtectionPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExchangeProtectionPolicy>(global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExchangeProtectionPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "exchangeRestoreSessions", n => { ExchangeRestoreSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExchangeRestoreSession>(global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExchangeRestoreSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "exclusionUnits", n => { ExclusionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExclusionUnitBase>(global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExclusionUnitBase.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -354,6 +363,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.DriveProtectionUnit>("driveProtectionUnits", DriveProtectionUnits);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.DriveProtectionUnitsBulkAdditionJob>("driveProtectionUnitsBulkAdditionJobs", DriveProtectionUnitsBulkAdditionJobs);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.EmailNotificationsSetting>("emailNotificationsSetting", EmailNotificationsSetting);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.EntraProtectionPolicy>("entraProtectionPolicies", EntraProtectionPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExchangeProtectionPolicy>("exchangeProtectionPolicies", ExchangeProtectionPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExchangeRestoreSession>("exchangeRestoreSessions", ExchangeRestoreSessions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExclusionUnitBase>("exclusionUnits", ExclusionUnits);
