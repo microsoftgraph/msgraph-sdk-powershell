@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -82,7 +84,7 @@ public sealed class UsersFunctionsDirectiveMigrationTests
             var newOperation = Assert.Single(compatible, op => op.Method == HttpMethod.Get && op.Path == newPath);
             Assert.Equal(bridge.GetProperty("sourceOperationId").GetString(), oldOperation.Definition.OperationId);
             Assert.Equal(bridge.GetProperty("operationId").GetString(), newOperation.Definition.OperationId);
-            Assert.NotEqual(oldOperation.Definition.OperationId, newOperation.Definition.OperationId);
+            Assert.Equal(oldOperation.Definition.OperationId, newOperation.Definition.OperationId);
             AssertActualFunction(oldOperation);
             AssertActualFunction(newOperation);
             Assert.Equal("function", bridge.GetProperty("sourceKind").GetString());
@@ -97,7 +99,7 @@ public sealed class UsersFunctionsDirectiveMigrationTests
             Assert.True(accountedCompatible.Add(newPath));
             // Audit lineage is not a suppression: no actual function matches a shared directive.
             Assert.False(CmdletConfigurator.IsSuppressed(newOperation.Method, newPath,
-                new GeneratorConfig("Test.Client", "unused", profile, UseCollisionData: false)));
+                new GeneratorConfig("Test.Client", "unused", UseCollisionData: false), apiVersion: profile));
         }
         Assert.True(accountedLegacy.SetEquals(legacy.Select(op => op.Path)));
         Assert.True(accountedCompatible.SetEquals(compatible.Select(op => op.Path)));
@@ -115,11 +117,58 @@ public sealed class UsersFunctionsDirectiveMigrationTests
     {
         var operation = Assert.Single(ReadOperations("openApiDocs_KiotaCompat", profile), op => op.Path == path);
         AssertActualFunction(operation);
-        var config = new GeneratorConfig("Test.Client", "unused", profile);
-        Assert.False(CmdletConfigurator.IsSuppressed(operation.Method, path, config));
-        var naming = Naming.Resolve(new OperationInfo(operation.Method, path, Kind: OperationKind.Function), config);
+        var config = new GeneratorConfig("Test.Client", "unused");
+        Assert.False(CmdletConfigurator.IsSuppressed(operation.Method, path, config, apiVersion: profile));
+        var naming = Naming.Resolve(new OperationInfo(operation.Method, path, Kind: OperationKind.Function),
+            config, apiVersion: profile);
         Assert.Equal(verb, naming.VerbName);
         Assert.Equal(noun, naming.Noun);
+    }
+
+    [Theory]
+    [InlineData("v1.0", false, "MgUserGetManagedAppPolicies")]
+    [InlineData("beta", false, "MgUserGetManagedAppPolicies")]
+    [InlineData("v1.0", true, "MgUserManagedAppPolicy")]
+    [InlineData("beta", true, "MgUserGetManagedAppPolicies")]
+    public void RuntimeProfileSelectsDerivedDataWithoutChangingSharedConfiguration(
+        string profile, bool useCollisionData, string noun)
+    {
+        const string path = "/users/{user-id}/getManagedAppPolicies()";
+        var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: useCollisionData);
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config, apiVersion: profile));
+        Assert.Equal(noun, Naming.Resolve(new OperationInfo(HttpMethod.Get, path, Kind: OperationKind.Function),
+            config, apiVersion: profile).Noun);
+    }
+
+    [Theory]
+    [InlineData("v1.0", false, 7)]
+    [InlineData("beta", false, 16)]
+    [InlineData("v1.0", true, 7)]
+    [InlineData("beta", true, 16)]
+    public async Task ServiceRetainsAllFunctionRoutesWithTheActualRuntimeProfile(string profile, bool useCollisionData, int count)
+    {
+        var document = ReadDocument("openApiDocs_KiotaCompat", profile);
+        var output = Path.Combine(Path.GetTempPath(), "users-functions-migration", Guid.NewGuid().ToString("N"));
+        try
+        {
+            var config = new GeneratorConfig("Test.Client", output, UseCollisionData: useCollisionData);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(CancellationToken.None);
+            var files = Directory.GetFiles(output, "*.g.cs");
+            Assert.Equal(count, files.Length);
+            var sources = files.Select(File.ReadAllText).ToArray();
+            foreach (var path in document.Paths.Keys)
+                Assert.Single(sources, text => text.Contains($"[GraphRoute(\"GET\", \"{path}\")]", StringComparison.Ordinal));
+            var neighbor = useCollisionData && profile == "v1.0"
+                ? "GetMgUserManagedAppPolicy.g.cs"
+                : "GetMgUserGetManagedAppPolicies.g.cs";
+            Assert.Contains(files, file => Path.GetFileName(file) == neighbor);
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
     }
 
     private static void AssertActualFunction(Operation operation)
@@ -132,15 +181,20 @@ public sealed class UsersFunctionsDirectiveMigrationTests
 
     private static Operation[] ReadOperations(string root, string profile)
     {
+        var document = ReadDocument(root, profile);
+        return document.Paths.SelectMany(path =>
+            (path.Value.Operations ?? new Dictionary<HttpMethod, OpenApiOperation>())
+                .Select(operation => new Operation(operation.Key, path.Key, operation.Value))).ToArray();
+    }
+
+    private static OpenApiDocument ReadDocument(string root, string profile)
+    {
         var settings = new OpenApiReaderSettings();
         settings.AddYamlReader();
         using var stream = File.OpenRead(Path.Combine(RepoRoot(), root, profile, "Users.Functions.yml"));
         var result = OpenApiDocument.LoadAsync(stream, settings: settings, cancellationToken: CancellationToken.None)
             .GetAwaiter().GetResult();
-        var document = Assert.IsType<OpenApiDocument>(result.Document);
-        return document.Paths.SelectMany(path =>
-            (path.Value.Operations ?? new Dictionary<HttpMethod, OpenApiOperation>())
-                .Select(operation => new Operation(operation.Key, path.Key, operation.Value))).ToArray();
+        return Assert.IsType<OpenApiDocument>(result.Document);
     }
 
     private static JsonDocument ReadLedger() =>

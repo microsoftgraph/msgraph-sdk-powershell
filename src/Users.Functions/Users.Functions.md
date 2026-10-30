@@ -24,7 +24,7 @@ directive:
 # Remove invalid paths.
 # Wrapper migration: reviewed the ORIGINAL regex against all actual legacy operations
 # (7 v1.0, 16 beta): zero matches in both profiles, also zero compatible matches.
-# This is selector absence, NOT API absence: every function survives with a renamed ID
+# This is selector absence, NOT API absence: every function survives with an aligned ID
 # and a metadata-kind-guarded final namespace bridge in the adjacent wrapper ledger's
 # scopeAudit. No suppression is added. UsersFunctionsDirectiveMigrationTests pins the
 # complete inventories and unaffected functions. Keep this AutoRest directive active.
