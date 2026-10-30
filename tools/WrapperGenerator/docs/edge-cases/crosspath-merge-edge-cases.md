@@ -131,6 +131,26 @@ the default root set must be a subset of every other set. Each family's list/ite
 when both exist, must be structurally related. All entity workers emit the same model;
 same-shape response, query and header contracts must match.
 
+### Response unions belong to Kiota
+
+The wrapper does not reject a response merely because it contains `oneOf` or `anyOf`,
+directly or through named references and `allOf`. The typed Kiota request builder owns
+deserialization: a union may become a generated composed model, or a Kiota untyped node
+for a shape it does not generate as a named model. Workers pass that actual result through
+unchanged; they neither pick an arm, flatten the schema nor convert the returned object.
+
+For example, `Widget: oneOf [BasicWidget, AdvancedWidget]` can be returned from both a
+root GET and a parent-scoped GET, or appear as the `value.items` type in a named collection
+response. The grouped command forwards the original Kiota union model(s). Collection paging
+continues through the typed envelope, preserving each item's concrete union representation.
+An `allOf`-nested union that Kiota exposes as `UntypedNode` is likewise returned intact.
+
+For union contracts the wrapper uses `object` for result declarations and output metadata
+rather than promising the schema reference's CLR name: Kiota may not generate that class.
+This does not change the result's runtime type or deserialization. Named non-union models
+and discriminator-based polymorphic collections keep their existing typed metadata.
+Normal route/parameter compatibility and successful-response comparisons still apply.
+
 GET workers reuse the unchanged ordinary typed `EmitListGet`, `EmitItemGet` and `EmitScalarGet`
 templates. Their supported optional OData queries and aliases, declared optional string
 headers, generic `Headers`, inherited authentication parameters and list paging remain
@@ -208,9 +228,7 @@ The following are rejected for grouped generation:
 - Identical mandatory path-ID sets, a default that shadows a shallower route, incompatible
   parameter types/aliases, duplicate membership or nonstructural list/item pairs.
 - Mixed methods/kinds, functions, media, `/$ref`, `/$value`, composite-key group routes,
-  GET request bodies, unresolved/union responses, mixed models or mutation queries.
-  GET response and collection-item schemas are checked recursively through `allOf` and
-  named references for `oneOf`/`anyOf`; ordinary inheritance without a union remains valid.
+  GET request bodies, unresolved response contracts, incompatible models or mutation queries.
 - Non-JSON, root union or unbindable bodies; incompatible body requiredness, properties
   or public types; bodyless/bodyful or void/entity mixtures; resource JSON writes without
   the ordinary matching named body/result model; route-specific public body forms.
@@ -219,7 +237,7 @@ The following are rejected for grouped generation:
   query/header or unsupported parameter locations.
 
 There are no policy flags, selector-based/asymmetric dispatch, mixed resource/function or
-media plans, response/body unions, derived-suppression bypass, arbitrary query bindings,
+media plans, route-specific body conversions, derived-suppression bypass, arbitrary query bindings,
 or independent ordinary-reference DELETE APIs in this capability. Their earlier
 implementations are recoverable in Git history, not part of the current supported surface.
 For a rejected ambiguous case, review the actual API operation and use a distinguishing
@@ -235,7 +253,8 @@ route. A missing oracle URI is not proof that a secondary operation is absent; t
 producer can retain only the first URI of a multi-variant command.
 
 `MultiRouteTests` covers natural-ID GET grouping, root defaults, ordinary list/item behavior
-and fail-fast rejection boundaries. `MutationRouteTests` covers compatible mutation/action
+and fail-fast rejection boundaries, plus union-response pass-through without choosing an arm.
+`MutationRouteTests` covers compatible mutation/action
 workers, their body/output/ShouldProcess contracts and preflight rejection boundaries.
 `Test-WrapperMultiRouteDispatcher.ps1` compiles the emitted
 ID dispatcher against the real runtime and exercises natural binding, invalid combinations,

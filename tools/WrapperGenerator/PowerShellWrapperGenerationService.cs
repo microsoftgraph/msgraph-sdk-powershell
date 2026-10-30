@@ -357,7 +357,8 @@ public sealed partial class PowerShellWrapperGenerationService
                 var responseSchema = httpMethod == HttpMethod.Get
                     ? TryGetSuccessJsonSchema(operation)
                     : null;
-                var collectionValueSchema = responseSchema is not null ? FindProperty(responseSchema, "value") : null;
+                var collectionValueSchema = responseSchema is not null && !HasRootUnion(responseSchema)
+                    ? FindProperty(responseSchema, "value") : null;
 
                 if (httpMethod == HttpMethod.Get && responseSchema is null)
                 {
@@ -489,7 +490,7 @@ public sealed partial class PowerShellWrapperGenerationService
                 continue;
 
             if (!TryResolveListEntityTypeName(listOp.CollectionValueSchema!, ctx.ModelsNamespace, out var listEntityType)
-                || !TryResolveEntityTypeName(itemOp.ResponseSchema, ctx.ModelsNamespace, out var entityType))
+                || !TryResolveResponseTypeName(itemOp.ResponseSchema, ctx.ModelsNamespace, out var entityType))
             {
                 LogSkippedUnsupportedOperation("GET", listOp.Naming.BuilderExpression, "response schema is not a resolvable $ref entity type");
                 continue;
@@ -534,7 +535,7 @@ public sealed partial class PowerShellWrapperGenerationService
             }
             else
             {
-                if (!TryResolveEntityTypeName(op.ResponseSchema, ctx.ModelsNamespace, out var entityType))
+                if (!TryResolveResponseTypeName(op.ResponseSchema, ctx.ModelsNamespace, out var entityType))
                 {
                     LogSkippedUnsupportedOperation("GET", op.Naming.BuilderExpression, "response schema is not a resolvable $ref entity type");
                     continue;
@@ -662,7 +663,19 @@ public sealed partial class PowerShellWrapperGenerationService
         var itemSchema = collectionValueSchema.Items;
         if (itemSchema is null)
             return false;
-        return TryResolveEntityTypeName(itemSchema, modelsNamespace, out entityTypeName);
+        return TryResolveResponseTypeName(itemSchema, modelsNamespace, out entityTypeName);
+    }
+
+    private bool TryResolveResponseTypeName(IOpenApiSchema schema, string modelsNamespace, out string typeName)
+    {
+        // Kiota may emit a composed model or UntypedNode for a union, not the $ref's name.
+        // Keep its actual result intact rather than guessing that CLR type or choosing an arm.
+        if (HasRootUnion(schema))
+        {
+            typeName = "object";
+            return true;
+        }
+        return TryResolveEntityTypeName(schema, modelsNamespace, out typeName);
     }
 
     // The old openApiDocs specs declare "value" directly on the schema; the KiotaCompat specs

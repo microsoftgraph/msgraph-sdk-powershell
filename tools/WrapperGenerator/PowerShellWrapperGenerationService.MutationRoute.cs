@@ -110,12 +110,12 @@ public sealed partial class PowerShellWrapperGenerationService
             if (response.Content!.Count != 1 || response.Content.Keys.Any(c => !IsJsonContent(c)))
                 throw new InvalidOperationException($"Unsupported mutation group response media: {path}.");
             var schema = response.Content.Values.Single().Schema;
-            if (schema is null || HasRootUnion(schema)
-                || !TryResolveEntityTypeName(schema, ctx.ModelsNamespace, out var entityType)
-                || ResolveComponentSchema(schema.GetReferenceId()!) is not { } entity
-                || (entity.Type is { } type && (type & ~JsonSchemaType.Null) != JsonSchemaType.Object)
+            if (schema is null
+                || !TryResolveResponseTypeName(schema, ctx.ModelsNamespace, out var entityType)
+                || (!HasRootUnion(schema) && (ResolveComponentSchema(schema.GetReferenceId()!) is not { } entity
+                    || (entity.Type is { } type && (type & ~JsonSchemaType.Null) != JsonSchemaType.Object)))
                 || (outputType is not null && outputType != entityType))
-                throw new InvalidOperationException($"Unsupported mutation group entity response or union: {path}.");
+                throw new InvalidOperationException($"Unsupported mutation group response contract: {path}.");
             outputType = entityType;
         }
         return outputType;

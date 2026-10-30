@@ -449,7 +449,6 @@ public sealed class MultiRouteTests
     [InlineData("value")]
     [InlineData("delta")]
     [InlineData("composite")]
-    [InlineData("union")]
     [InlineData("json-body")]
     [InlineData("non-json-body")]
     [InlineData("cookie")]
@@ -499,13 +498,6 @@ public sealed class MultiRouteTests
                     {
                         ["x-ms-docs-operation-type"] = new JsonNodeExtension("function"),
                     };
-                break;
-            case "union":
-                document.Components!.Schemas!["microsoft.graph.otherGroup"] = new OpenApiSchema { Type = JsonSchemaType.Object };
-                operation.Responses = JsonResponse(new OpenApiSchema
-                {
-                    OneOf = [Reference(document), new OpenApiSchemaReference("microsoft.graph.otherGroup", document)],
-                });
                 break;
             case "json-body":
             case "non-json-body":
@@ -724,7 +716,7 @@ public sealed class MultiRouteTests
     [InlineData("item", "oneOf", true)]
     [InlineData("item", "anyOf", false)]
     [InlineData("item", "anyOf", true)]
-    public async Task NamedGetUnionsNestedInAllOfAreRejectedBeforeWrites(string location, string unionKind, bool namedBranch)
+    public async Task NamedGetUnionsNestedInAllOfAreDelegatedToKiota(string location, string unionKind, bool namedBranch)
     {
         var (document, group) = Widgets();
         var schemaName = location == "response"
@@ -745,7 +737,50 @@ public sealed class MultiRouteTests
         Assert.IsType<OpenApiSchema>(document.Components.Schemas[schemaName]).AllOf =
             [namedBranch ? new OpenApiSchemaReference("microsoft.graph.unionBase", document) : branch];
 
-        await RejectBeforeServiceOrCliWrites(document, [group]);
+        var files = await Generate(document, [group]);
+
+        Assert.Equal(3, files.Count);
+        Assert.Contains("[OutputType(typeof(object)", files["GetMgWidget.g.cs"]);
+        foreach (var worker in files.Where(file => file.Key.Contains("_Route", StringComparison.Ordinal)))
+        {
+            Assert.Contains("[OutputType(typeof(object))]", worker.Value);
+            Assert.Contains(".GetAsync(", worker.Value);
+            Assert.DoesNotContain("BasicWidget", worker.Value);
+            Assert.DoesNotContain("AdvancedWidget", worker.Value);
+        }
+    }
+
+    [Theory]
+    [InlineData(false, false)]
+    [InlineData(false, true)]
+    [InlineData(true, false)]
+    [InlineData(true, true)]
+    public async Task InlineAndNamedUnionResponsesArePassedThroughWithoutChoosingAnArm(bool named, bool anyOf)
+    {
+        var (document, group) = Widgets();
+        document.Components!.Schemas!["microsoft.graph.otherGroup"] = new OpenApiSchema { Type = JsonSchemaType.Object };
+        var branches = new List<IOpenApiSchema>
+        {
+            Reference(document),
+            new OpenApiSchemaReference("microsoft.graph.otherGroup", document),
+        };
+        var union = new OpenApiSchema();
+        if (anyOf)
+            union.AnyOf = branches;
+        else
+            union.OneOf = branches;
+        document.Components.Schemas["microsoft.graph.unionResult"] = union;
+        foreach (var route in group.Routes)
+            Operation(document, route.Path).Responses = JsonResponse(named
+                ? new OpenApiSchemaReference("microsoft.graph.unionResult", document) : union);
+
+        var files = await Generate(document, [group]);
+
+        Assert.Equal(3, files.Count);
+        Assert.Contains("DefaultParameterSetName = \"RootGet\"", files["GetMgWidget.g.cs"]);
+        Assert.Contains("object? result;", files["GetMgWidget_Route0.g.cs"]);
+        Assert.Contains("WriteObject(result);", files["GetMgWidget_Route0.g.cs"]);
+        Assert.DoesNotContain("result?.Value", files["GetMgWidget_Route0.g.cs"]);
     }
 
     [Fact]

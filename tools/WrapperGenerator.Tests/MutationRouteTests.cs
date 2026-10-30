@@ -288,7 +288,7 @@ public sealed class MutationRouteTests
     [Theory]
     [InlineData("body")]
     [InlineData("response")]
-    public async Task RootUnionsHiddenByAllOfCannotPassAsOrdinaryNamedEntityOrInlineContracts(string location)
+    public async Task ResponseUnionsAreKiotaOwnedWhileExpandedRequestBodiesStillRequireBindableProperties(string location)
     {
         var fixture = Create(location == "body" ? "New" : "ActionEntity");
         var inheritedUnion = new OpenApiSchema
@@ -312,7 +312,48 @@ public sealed class MutationRouteTests
                     JsonResponse(new OpenApiSchemaReference("microsoft.graph.unionResult", fixture.Document));
         }
 
-        await RejectBeforeWrites(fixture.Document, [fixture.Group]);
+        if (location == "body")
+            await RejectBeforeWrites(fixture.Document, [fixture.Group]);
+        else
+        {
+            var files = await Generate(fixture.Document, [fixture.Group]);
+            Assert.Equal(3, files.Count);
+            Assert.Contains("[OutputType(typeof(object)", files[fixture.Stem + ".g.cs"]);
+            Assert.Contains("object? result;", files[fixture.Stem + "_Route0.g.cs"]);
+            Assert.Contains(".PostAsync(", files[fixture.Stem + "_Route0.g.cs"]);
+            Assert.Contains("WriteObject(result);", files[fixture.Stem + "_Route0.g.cs"]);
+        }
+    }
+
+    [Theory]
+    [InlineData(false, false)]
+    [InlineData(false, true)]
+    [InlineData(true, false)]
+    [InlineData(true, true)]
+    public async Task NamedAndInlineActionResponseUnionsArePassedThroughToKiota(bool named, bool anyOf)
+    {
+        var fixture = Create("ActionEntity");
+        var response = Choice(fixture.Document);
+        if (anyOf)
+        {
+            response.AnyOf = response.OneOf;
+            response.OneOf = null;
+        }
+        fixture.Document.Components!.Schemas!["microsoft.graph.unionResult"] = response;
+        foreach (var route in fixture.Group.Routes)
+            fixture.Document.Paths[route.Path].Operations![HttpMethod.Post].Responses = JsonResponse(named
+                ? new OpenApiSchemaReference("microsoft.graph.unionResult", fixture.Document) : response);
+
+        var files = await Generate(fixture.Document, [fixture.Group]);
+
+        Assert.Equal(3, files.Count);
+        Assert.Contains("[OutputType(typeof(object)", files[fixture.Stem + ".g.cs"]);
+        foreach (var worker in files.Where(file => file.Key.Contains("_Route", StringComparison.Ordinal)))
+        {
+            Assert.Contains("object? result;", worker.Value);
+            Assert.Contains(".PostAsync(", worker.Value);
+            Assert.Contains("WriteObject(result);", worker.Value);
+        }
     }
 
     [Theory]

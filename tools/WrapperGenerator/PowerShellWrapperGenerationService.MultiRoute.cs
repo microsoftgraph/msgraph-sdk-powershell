@@ -153,15 +153,15 @@ public sealed partial class PowerShellWrapperGenerationService
                     var response = TryGetSuccessJsonSchema(operation);
                     if (response is not null && (operation.Responses ?? []).Where(r => r.Key.StartsWith('2'))
                         .SelectMany(r => (r.Value.Content ?? new Dictionary<string, IOpenApiMediaType>()).Values)
-                        .Any(media => media.Schema is null || HasRootUnion(media.Schema)
+                        .Any(media => media.Schema is null
                             || SchemaSignature(media.Schema) != SchemaSignature(response)))
                         throw new InvalidOperationException($"Incompatible success response schemas in GET group member: {path}.");
-                    if (response is null || HasRootUnion(response))
-                        throw new InvalidOperationException($"Unsupported GET group response or union: {path}.");
-                    if (FindProperty(response, "value") is { } value)
+                    if (response is null)
+                        throw new InvalidOperationException($"Missing GET group response schema: {path}.");
+                    if (!HasRootUnion(response) && FindProperty(response, "value") is { } value)
                     {
                         if (response.GetReferenceId() is null || value.Type != JsonSchemaType.Array
-                            || value.Items is null || HasRootUnion(value.Items)
+                            || value.Items is null
                             || !TryResolveListEntityTypeName(value, ctx.ModelsNamespace, out outputType)
                             || !PlainString(FindProperty(response, "@odata.nextLink")))
                             throw new InvalidOperationException($"Unsupported typed collection GET group response: {path}.");
@@ -170,7 +170,7 @@ public sealed partial class PowerShellWrapperGenerationService
                     }
                     else
                     {
-                        if (!TryResolveEntityTypeName(response, ctx.ModelsNamespace, out outputType))
+                        if (!TryResolveResponseTypeName(response, ctx.ModelsNamespace, out outputType))
                             throw new InvalidOperationException($"Unsupported entity GET group response: {path}.");
                         shape = "Get";
                         source = "";
