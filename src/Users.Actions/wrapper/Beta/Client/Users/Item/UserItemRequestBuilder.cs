@@ -14,6 +14,9 @@ using Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.GetMemberGroups
 using Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.GetMemberObjects;
 using Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.GetPasswordSingleSignOnCredentials;
 using Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.InvalidateAllRefreshTokens;
+using Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.MicrosoftGraphIdentityGovernanceAddSelfAsSponsor;
+using Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.MicrosoftGraphIdentityGovernanceAttest;
+using Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsor;
 using Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.RemoveAllDevicesFromManagement;
 using Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.ReprocessLicenseAssignment;
 using Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.Restore;
@@ -109,6 +112,21 @@ namespace Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item
         public global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensRequestBuilder InvalidateAllRefreshTokens
         {
             get => new global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The microsoftGraphIdentityGovernanceAddSelfAsSponsor property</summary>
+        public global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.MicrosoftGraphIdentityGovernanceAddSelfAsSponsor.MicrosoftGraphIdentityGovernanceAddSelfAsSponsorRequestBuilder MicrosoftGraphIdentityGovernanceAddSelfAsSponsor
+        {
+            get => new global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.MicrosoftGraphIdentityGovernanceAddSelfAsSponsor.MicrosoftGraphIdentityGovernanceAddSelfAsSponsorRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The microsoftGraphIdentityGovernanceAttest property</summary>
+        public global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.MicrosoftGraphIdentityGovernanceAttest.MicrosoftGraphIdentityGovernanceAttestRequestBuilder MicrosoftGraphIdentityGovernanceAttest
+        {
+            get => new global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.MicrosoftGraphIdentityGovernanceAttest.MicrosoftGraphIdentityGovernanceAttestRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The microsoftGraphIdentityGovernanceRemoveSelfAsSponsor property</summary>
+        public global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsor.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsorRequestBuilder MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsor
+        {
+            get => new global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsor.MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The removeAllDevicesFromManagement property</summary>
         public global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.RemoveAllDevicesFromManagement.RemoveAllDevicesFromManagementRequestBuilder RemoveAllDevicesFromManagement
