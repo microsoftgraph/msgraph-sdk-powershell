@@ -1,0 +1,122 @@
+{
+  "mappings": [
+    {
+      "module": "DeviceManagement.Administration",
+      "directiveIndex": 1,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DeviceManagementGroupPolicyMigrationReport$",
+      "implementation": "NoMatchingOperations",
+      "notes": "Reviewed New-only GroupPolicyMigrationReport suppression: neither actual openApiDocs/v1.0 nor openApiDocs_KiotaCompat/v1.0 DeviceManagement.Administration.yml contains groupPolicyMigrationReports routes. No v1.0 override or invented operation-ID mapping is needed. DeviceManagementAdministrationDirectiveMigrationTests pins both sources.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "excluded": true,
+          "operations": [],
+          "notes": "Missing compatible beta spec; legacy beta exists but is outside the approved scope. No API-operation absence assertion."
+        }
+      }
+    },
+    {
+      "module": "DeviceManagement.Administration",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DeviceManagementGroupPolicyUploadedDefinitionFile$",
+      "implementation": "NoMatchingOperations",
+      "notes": "Reviewed Remove-only GroupPolicyUploadedDefinitionFile suppression: neither actual openApiDocs/v1.0 nor openApiDocs_KiotaCompat/v1.0 DeviceManagement.Administration.yml contains groupPolicyUploadedDefinitionFiles routes. No v1.0 override or invented operation-ID mapping is needed. DeviceManagementAdministrationDirectiveMigrationTests pins both sources.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "excluded": true,
+          "operations": [],
+          "notes": "Missing compatible beta spec; legacy beta exists but is outside the approved scope. No API-operation absence assertion."
+        }
+      }
+    },
+    {
+      "module": "DeviceManagement.Administration",
+      "directiveIndex": 3,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DeviceManagementVirtualEndpoint(AuditEvent|CloudPC|AuditEventAuditActivityType|DeviceImageSourceImage)$",
+      "implementation": "DerivedCollisionResolutions",
+      "notes": "All six New/Update/Remove auditEvent and cloudPC operations already have exact v1.0 entries in tools/WrapperGenerator/data/parity-suppressions.v1.0.json. Reuse them without redundant curated suppressions. After #3861/#3863, the compatible operation IDs match the actual same-profile legacy IDs; module tests pin their exact IDs and complete method/path coverage. The auditActivityTypes and sourceImages functions are GET-only in both sources and do not match the verb selector; preserve them and the current Administration-owned actions. No DeviceManagement.Actions directives are imported.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/deviceManagement/virtualEndpoint/auditEvents",
+              "operationId": "deviceManagement.virtualEndpoint_CreateAuditEvent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/deviceManagement/virtualEndpoint/auditEvents/{cloudPcAuditEvent-id}",
+              "operationId": "deviceManagement.virtualEndpoint_UpdateAuditEvent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/deviceManagement/virtualEndpoint/auditEvents/{cloudPcAuditEvent-id}",
+              "operationId": "deviceManagement.virtualEndpoint_DeleteAuditEvent"
+            },
+            {
+              "method": "POST",
+              "path": "/deviceManagement/virtualEndpoint/cloudPCs",
+              "operationId": "deviceManagement.virtualEndpoint_CreateCloudPC"
+            },
+            {
+              "method": "PATCH",
+              "path": "/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}",
+              "operationId": "deviceManagement.virtualEndpoint_UpdateCloudPC"
+            },
+            {
+              "method": "DELETE",
+              "path": "/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}",
+              "operationId": "deviceManagement.virtualEndpoint_DeleteCloudPC"
+            }
+          ]
+        },
+        "beta": {
+          "excluded": true,
+          "operations": [],
+          "notes": "Missing compatible beta spec; legacy beta exists but is outside the approved scope. No API-operation absence assertion."
+        }
+      }
+    },
+    {
+      "module": "DeviceManagement.Administration",
+      "directiveIndex": 4,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DeviceManagementVirtualEndpoint$",
+      "implementation": "DerivedCollisionResolutions",
+      "notes": "The singleton PATCH and DELETE already have exact v1.0 entries in tools/WrapperGenerator/data/parity-suppressions.v1.0.json. Neither actual legacy nor compatible v1.0 source declares singleton POST. After #3861/#3863, the compatible operation IDs match the actual same-profile legacy IDs; module tests pin both sources, the two exact methods, preserved GET, and writable nested deviceImages. Keep the existing DeviceManagementPartner noun overrides unchanged; do not import profile-local or historical DeviceManagement.Actions directives.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/deviceManagement/virtualEndpoint",
+              "operationId": "deviceManagement_UpdateVirtualEndpoint"
+            },
+            {
+              "method": "DELETE",
+              "path": "/deviceManagement/virtualEndpoint",
+              "operationId": "deviceManagement_DeleteVirtualEndpoint"
+            }
+          ]
+        },
+        "beta": {
+          "excluded": true,
+          "operations": [],
+          "notes": "Missing compatible beta spec; legacy beta exists but is outside the approved scope. No API-operation absence assertion."
+        }
+      }
+    }
+  ]
+}
