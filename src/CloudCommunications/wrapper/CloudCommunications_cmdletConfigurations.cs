@@ -7,7 +7,7 @@ public static partial class CmdletConfigurator
 {
     private static readonly List<Entry> CloudCommunicationsCmdletConfigurations =
     [
-        // The reviewed ledger bridges all 13 original legacy-ID matches per profile.
+        // The aligned compatible IDs retain all 13 original source matches per profile.
         // Exact methods and paths keep the neighboring call/callRecord operations intact.
         new(OverrideKind.SuppressOperation, HttpMethod.Get, "/communications",
             Match: PathMatch.Exact, Value: null,
@@ -68,5 +68,51 @@ public static partial class CmdletConfigurator
             "/users/{}/onlinemeetings/getalltranscripts(meetingorganizeruserid='@meetingorganizeruserid',startdatetime=@startdatetime,enddatetime=@enddatetime)",
             Match: PathMatch.Exact, Value: null,
             Reason: "CloudCommunications.md removes AllUserOnlineMeetingTranscript to avoid its alias conflict (#3241)"),
+
+        // The singleton is explicitly the latest session's report; it is not the
+        // attendanceReports collection or one of its ID-selected reports.
+        new(OverrideKind.ReplaceNoun, null,
+            "/communications/onlinemeetings/{}/meetingattendancereport",
+            Match: PathMatch.Exact, Value: "CommunicationOnlineMeetingLatestAttendanceReport",
+            Reason: "The beta schema describes the attendance report of the latest online meeting session"),
+        new(OverrideKind.ReplaceNoun, null,
+            "/communications/onlinemeetings/{}/meetingattendancereport/attendancerecords",
+            Match: PathMatch.Exact, Value: "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            Reason: "Keep latest-session attendance records distinct from report-ID-selected records"),
+        new(OverrideKind.ReplaceNoun, null,
+            "/communications/onlinemeetings/{}/meetingattendancereport/attendancerecords/{}",
+            Match: PathMatch.Exact, Value: "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            Reason: "Keep the latest-session record item paired with its own collection"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get,
+            "/communications/onlinemeetings/{}/meetingattendancereport/attendancerecords/$count",
+            Match: PathMatch.Exact, Value: "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecordCount",
+            Reason: "Count records for the latest session, not a separately selected attendance report"),
+        new(OverrideKind.ReplaceNoun, null,
+            "/users/{}/onlinemeetings/{}/meetingattendancereport",
+            Match: PathMatch.Exact, Value: "UserOnlineMeetingLatestAttendanceReport",
+            Reason: "The beta schema describes the attendance report of the latest online meeting session"),
+        new(OverrideKind.ReplaceNoun, null,
+            "/users/{}/onlinemeetings/{}/meetingattendancereport/attendancerecords",
+            Match: PathMatch.Exact, Value: "UserOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            Reason: "Keep latest-session attendance records distinct from report-ID-selected records"),
+        new(OverrideKind.ReplaceNoun, null,
+            "/users/{}/onlinemeetings/{}/meetingattendancereport/attendancerecords/{}",
+            Match: PathMatch.Exact, Value: "UserOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            Reason: "Keep the latest-session record item paired with its own collection"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get,
+            "/users/{}/onlinemeetings/{}/meetingattendancereport/attendancerecords/$count",
+            Match: PathMatch.Exact, Value: "UserOnlineMeetingLatestAttendanceReportAttendanceRecordCount",
+            Reason: "Count records for the latest session, not a separately selected attendance report"),
+
+        // /recording is a live-event byte stream; /recordings exposes callRecording
+        // entities and has its own /content endpoint. Keep these different contracts separate.
+        new(OverrideKind.ReplaceNoun, null,
+            "/communications/onlinemeetings/{}/recording",
+            Match: PathMatch.Exact, Value: "CommunicationOnlineMeetingLiveEventRecording",
+            Reason: "The beta navigation description identifies the content stream of a Teams live-event recording"),
+        new(OverrideKind.ReplaceNoun, null,
+            "/users/{}/onlinemeetings/{}/recording",
+            Match: PathMatch.Exact, Value: "UserOnlineMeetingLiveEventRecording",
+            Reason: "The beta navigation description identifies the content stream of a Teams live-event recording"),
     ];
 }

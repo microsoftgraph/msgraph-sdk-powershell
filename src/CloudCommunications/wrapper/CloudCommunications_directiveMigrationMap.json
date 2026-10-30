@@ -1,92 +1,5 @@
 {
-  "notes": "Shared CloudCommunications.md only; profile-local directives (including virtual-appointment SMS variants) and src/readme.graph.md are excluded. No shared parameter/schema directives require deferral. Compatible spec blobs at merged base 51d441eeb5: v1.0 71d2e73d74e255d74a0fbb492f72ac5e0782383f; beta d50be6813fa468a77007b2e6984daf61587abe9d. Required profiles: v1.0 and beta; neither is excluded.",
-  "betaCollisionPolicy": {
-    "status": "PreparedPendingCanonicalMerge",
-    "sourceCollisionEvents": 26,
-    "publicCommandGroups": 20,
-    "reviewedCompatibleOperations": 48,
-    "publishedEvidence": {
-      "package": "Microsoft.Graph.Beta.CloudCommunications",
-      "version": "2.38.0",
-      "url": "https://www.powershellgallery.com/api/v2/package/Microsoft.Graph.Beta.CloudCommunications/2.38.0",
-      "sha256": "BE21FFEF7F8F1B0D30ACC110589715E64A4FA31BC3E4A62051213E167D20C336",
-      "method": "Actual fresh-process public CmdletBinding and parameter-set dispatch correlated with compiled API URI construction IL; not first-URI command metadata.",
-      "attendanceAndRecordingDeleteDefaults": "All 18 nonmixed groups select the actual published singleton report/record collection/item/count or singleton recording DELETE default.",
-      "recordingGetDefault": "Both published commands default to Get2, the collection-bound getAllRecordings alias-argument function; no colliding singleton or plural recording route is the published default."
-    },
-    "recordingGet": {
-      "selectorParameter": "Route",
-      "selectorRequired": true,
-      "allowedRoles": [ "Binary", "Recordings" ],
-      "publishedChoiceAllowed": false,
-      "defaultOrFallbackAllowed": false,
-      "canonicalPreparedConfiguration": {
-        "defaultRoute": "",
-        "allowMixedMediaReads": true,
-        "requireExplicitRoute": true,
-        "allowAsymmetricRoutes": true,
-        "allowExplicitRouteSelection": true,
-        "allowResponseUnion": true,
-        "activation": "Only after the canonical capability lands through its normal target-branch merge."
-      },
-      "intentionalSdkDeviation": "Require an explicit route rather than choose a substitute for the unavailable published Get2 function default.",
-      "aggregatePolicy": {
-        "communication": "Keep the existing unsupported alias-argument function deferred; no invented argument declarations, guessed Kiota member, raw-URL fallback or noun override.",
-        "user": "Preserve exact shared directive 5 suppression. Never restore the selected user getAllRecordings function to imitate the published default."
-      },
-      "roleValidation": "Typed per-role workers must reject missing IDs and unsupported parameters before Graph; no parameter dropping, fallback or pruning.",
-      "operations": [
-        {
-          "method": "GET",
-          "path": "/communications/onlineMeetings/{onlineMeeting-id}/recording",
-          "operationId": "communications.GetOnlineMeetingsRecording",
-          "role": "Binary",
-          "readKind": "Binary",
-          "response": "application/octet-stream; string/binary"
-        },
-        {
-          "method": "GET",
-          "path": "/communications/onlineMeetings/{onlineMeeting-id}/recordings",
-          "operationId": "communications.onlineMeetings.ListRecordings",
-          "role": "Recordings",
-          "readKind": "List",
-          "response": "application/json; microsoft.graph.callRecordingCollectionResponse"
-        },
-        {
-          "method": "GET",
-          "path": "/communications/onlineMeetings/{onlineMeeting-id}/recordings/{callRecording-id}",
-          "operationId": "communications.onlineMeetings.GetRecordings",
-          "role": "Recordings",
-          "readKind": "Item",
-          "response": "application/json; microsoft.graph.callRecording"
-        },
-        {
-          "method": "GET",
-          "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording",
-          "operationId": "users.GetOnlineMeetingsRecording",
-          "role": "Binary",
-          "readKind": "Binary",
-          "response": "application/octet-stream; string/binary"
-        },
-        {
-          "method": "GET",
-          "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings",
-          "operationId": "users.onlineMeetings.ListRecordings",
-          "role": "Recordings",
-          "readKind": "List",
-          "response": "application/json; microsoft.graph.callRecordingCollectionResponse"
-        },
-        {
-          "method": "GET",
-          "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings/{callRecording-id}",
-          "operationId": "users.onlineMeetings.GetRecordings",
-          "role": "Recordings",
-          "readKind": "Item",
-          "response": "application/json; microsoft.graph.callRecording"
-        }
-      ]
-    }
-  },
+  "notes": "Shared CloudCommunications.md only; ignore all profile-local and global directives. No shared parameter/schema directives require deferral. Normal target merge 08e409a6aa8fd48736b8f9a9199559f46fc0d1ad includes aligned compatible IDs. Original same-profile legacy selector and current literal selector select exactly the same 13 surviving method/path operations per profile; lineage is pinned in module tests, not reserved unmerged-helper fields.",
   "mappings": [
     {
       "module": "CloudCommunications",
@@ -94,201 +7,147 @@
       "classification": "OperationIdSuppression",
       "sourceContains": "remove-path-by-operation: ^communication(.cloudCommunication_.*CloudCommunication|_(List|Create|Update|Delete)CallRecord|.callRecord.session_.*Segment|(_List|_Update)Call)$",
       "implementation": "CmdletConfigurator",
-      "notes": "The original regex matches 13 actual legacy operations per profile, not the renamed compatible IDs. Every old match bridges uniquely by method and normalized path to the listed compatible operation. Suppress those exact methods/paths in both profiles, including without derived data; retain item GET callRecords, POST/GET-item/DELETE calls, and all unrelated descendants. Existing v1.0 parity suppression covers only part of this shared directive.",
+      "notes": "The original legacy regex and the current compatible literal regex select exactly 13 identical method/path survivors per profile after ID alignment. Suppress only these exact operations; preserve item GET callRecords, POST/GET-item/DELETE calls and unrelated descendants. No legacy translation extension is needed.",
       "profiles": {
         "v1.0": {
-          "operationIdSource": "Legacy",
-          "notes": "All 13 matches from openApiDocs/v1.0/CloudCommunications.yml bridge to openApiDocs_KiotaCompat/v1.0/CloudCommunications.yml; no operation is absent or pruned.",
+          "notes": "All 13 original source matches survive at identical method/path with aligned literal IDs; zero pruned or inferred operations.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "GET",
               "path": "/communications",
-              "operationId": "communications.cloudCommunications.GetCloudCommunications",
-              "legacyPath": "/communications",
-              "legacyOperationId": "communication.cloudCommunication_GetCloudCommunication"
+              "operationId": "communication.cloudCommunication_GetCloudCommunication"
             },
             {
               "method": "PATCH",
               "path": "/communications",
-              "operationId": "communications.cloudCommunications.UpdateCloudCommunications",
-              "legacyPath": "/communications",
-              "legacyOperationId": "communication.cloudCommunication_UpdateCloudCommunication"
+              "operationId": "communication.cloudCommunication_UpdateCloudCommunication"
             },
             {
               "method": "GET",
               "path": "/communications/callRecords",
-              "operationId": "communications.ListCallRecords",
-              "legacyPath": "/communications/callRecords",
-              "legacyOperationId": "communication_ListCallRecord"
+              "operationId": "communication_ListCallRecord"
             },
             {
               "method": "POST",
               "path": "/communications/callRecords",
-              "operationId": "communications.CreateCallRecords",
-              "legacyPath": "/communications/callRecords",
-              "legacyOperationId": "communication_CreateCallRecord"
+              "operationId": "communication_CreateCallRecord"
             },
             {
               "method": "PATCH",
               "path": "/communications/callRecords/{callRecord-id}",
-              "operationId": "communications.UpdateCallRecords",
-              "legacyPath": "/communications/callRecords/{callRecord-id}",
-              "legacyOperationId": "communication_UpdateCallRecord"
+              "operationId": "communication_UpdateCallRecord"
             },
             {
               "method": "DELETE",
               "path": "/communications/callRecords/{callRecord-id}",
-              "operationId": "communications.DeleteCallRecords",
-              "legacyPath": "/communications/callRecords/{callRecord-id}",
-              "legacyOperationId": "communication_DeleteCallRecord"
+              "operationId": "communication_DeleteCallRecord"
             },
             {
               "method": "GET",
               "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
-              "operationId": "communications.callRecords.sessions.ListSegments",
-              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
-              "legacyOperationId": "communication.callRecord.session_ListSegment"
+              "operationId": "communication.callRecord.session_ListSegment"
             },
             {
               "method": "POST",
               "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
-              "operationId": "communications.callRecords.sessions.CreateSegments",
-              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
-              "legacyOperationId": "communication.callRecord.session_CreateSegment"
+              "operationId": "communication.callRecord.session_CreateSegment"
             },
             {
               "method": "GET",
               "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
-              "operationId": "communications.callRecords.sessions.GetSegments",
-              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
-              "legacyOperationId": "communication.callRecord.session_GetSegment"
+              "operationId": "communication.callRecord.session_GetSegment"
             },
             {
               "method": "PATCH",
               "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
-              "operationId": "communications.callRecords.sessions.UpdateSegments",
-              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
-              "legacyOperationId": "communication.callRecord.session_UpdateSegment"
+              "operationId": "communication.callRecord.session_UpdateSegment"
             },
             {
               "method": "DELETE",
               "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
-              "operationId": "communications.callRecords.sessions.DeleteSegments",
-              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
-              "legacyOperationId": "communication.callRecord.session_DeleteSegment"
+              "operationId": "communication.callRecord.session_DeleteSegment"
             },
             {
               "method": "GET",
               "path": "/communications/calls",
-              "operationId": "communications.ListCalls",
-              "legacyPath": "/communications/calls",
-              "legacyOperationId": "communication_ListCall"
+              "operationId": "communication_ListCall"
             },
             {
               "method": "PATCH",
               "path": "/communications/calls/{call-id}",
-              "operationId": "communications.UpdateCalls",
-              "legacyPath": "/communications/calls/{call-id}",
-              "legacyOperationId": "communication_UpdateCall"
+              "operationId": "communication_UpdateCall"
             }
           ]
         },
         "beta": {
-          "operationIdSource": "Legacy",
-          "notes": "All 13 matches from openApiDocs/beta/CloudCommunications.yml bridge to openApiDocs_KiotaCompat/beta/CloudCommunications.yml; no operation is absent or pruned.",
+          "notes": "All 13 original source matches survive at identical method/path with aligned literal IDs; zero pruned or inferred operations.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "GET",
               "path": "/communications",
-              "operationId": "communications.cloudCommunications.GetCloudCommunications",
-              "legacyPath": "/communications",
-              "legacyOperationId": "communication.cloudCommunication_GetCloudCommunication"
+              "operationId": "communication.cloudCommunication_GetCloudCommunication"
             },
             {
               "method": "PATCH",
               "path": "/communications",
-              "operationId": "communications.cloudCommunications.UpdateCloudCommunications",
-              "legacyPath": "/communications",
-              "legacyOperationId": "communication.cloudCommunication_UpdateCloudCommunication"
+              "operationId": "communication.cloudCommunication_UpdateCloudCommunication"
             },
             {
               "method": "GET",
               "path": "/communications/callRecords",
-              "operationId": "communications.ListCallRecords",
-              "legacyPath": "/communications/callRecords",
-              "legacyOperationId": "communication_ListCallRecord"
+              "operationId": "communication_ListCallRecord"
             },
             {
               "method": "POST",
               "path": "/communications/callRecords",
-              "operationId": "communications.CreateCallRecords",
-              "legacyPath": "/communications/callRecords",
-              "legacyOperationId": "communication_CreateCallRecord"
+              "operationId": "communication_CreateCallRecord"
             },
             {
               "method": "PATCH",
               "path": "/communications/callRecords/{callRecord-id}",
-              "operationId": "communications.UpdateCallRecords",
-              "legacyPath": "/communications/callRecords/{callRecord-id}",
-              "legacyOperationId": "communication_UpdateCallRecord"
+              "operationId": "communication_UpdateCallRecord"
             },
             {
               "method": "DELETE",
               "path": "/communications/callRecords/{callRecord-id}",
-              "operationId": "communications.DeleteCallRecords",
-              "legacyPath": "/communications/callRecords/{callRecord-id}",
-              "legacyOperationId": "communication_DeleteCallRecord"
+              "operationId": "communication_DeleteCallRecord"
             },
             {
               "method": "GET",
               "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
-              "operationId": "communications.callRecords.sessions.ListSegments",
-              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
-              "legacyOperationId": "communication.callRecord.session_ListSegment"
+              "operationId": "communication.callRecord.session_ListSegment"
             },
             {
               "method": "POST",
               "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
-              "operationId": "communications.callRecords.sessions.CreateSegments",
-              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
-              "legacyOperationId": "communication.callRecord.session_CreateSegment"
+              "operationId": "communication.callRecord.session_CreateSegment"
             },
             {
               "method": "GET",
               "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
-              "operationId": "communications.callRecords.sessions.GetSegments",
-              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
-              "legacyOperationId": "communication.callRecord.session_GetSegment"
+              "operationId": "communication.callRecord.session_GetSegment"
             },
             {
               "method": "PATCH",
               "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
-              "operationId": "communications.callRecords.sessions.UpdateSegments",
-              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
-              "legacyOperationId": "communication.callRecord.session_UpdateSegment"
+              "operationId": "communication.callRecord.session_UpdateSegment"
             },
             {
               "method": "DELETE",
               "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
-              "operationId": "communications.callRecords.sessions.DeleteSegments",
-              "legacyPath": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
-              "legacyOperationId": "communication.callRecord.session_DeleteSegment"
+              "operationId": "communication.callRecord.session_DeleteSegment"
             },
             {
               "method": "GET",
               "path": "/communications/calls",
-              "operationId": "communications.ListCalls",
-              "legacyPath": "/communications/calls",
-              "legacyOperationId": "communication_ListCall"
+              "operationId": "communication_ListCall"
             },
             {
               "method": "PATCH",
               "path": "/communications/calls/{call-id}",
-              "operationId": "communications.UpdateCalls",
-              "legacyPath": "/communications/calls/{call-id}",
-              "legacyOperationId": "communication_UpdateCall"
+              "operationId": "communication_UpdateCall"
             }
           ]
         }
@@ -313,7 +172,7 @@
             {
               "method": "POST",
               "path": "/communications/calls/{call-id}/participants/muteAll",
-              "operationId": "communications.calls.call.participants.muteAll"
+              "operationId": "communication.call.participant_muteAll"
             }
           ]
         }
@@ -333,7 +192,7 @@
             {
               "method": "POST",
               "path": "/communications/onlineMeetings/createOrGet",
-              "operationId": "communications.onlineMeetings.createOrGet"
+              "operationId": "communication.onlineMeeting_createOrGet"
             }
           ]
         },
@@ -343,7 +202,7 @@
             {
               "method": "POST",
               "path": "/communications/onlineMeetings/createOrGet",
-              "operationId": "communications.onlineMeetings.createOrGet"
+              "operationId": "communication.onlineMeeting_createOrGet"
             }
           ]
         }
@@ -363,7 +222,7 @@
             {
               "method": "POST",
               "path": "/users/{user-id}/onlineMeetings/createOrGet",
-              "operationId": "users.user.onlineMeetings.createOrGet"
+              "operationId": "user.onlineMeeting_createOrGet"
             }
           ]
         },
@@ -373,7 +232,7 @@
             {
               "method": "POST",
               "path": "/users/{user-id}/onlineMeetings/createOrGet",
-              "operationId": "users.user.onlineMeetings.createOrGet"
+              "operationId": "user.onlineMeeting_createOrGet"
             }
           ]
         }
@@ -393,7 +252,7 @@
             {
               "method": "GET",
               "path": "/users/{user-id}/onlineMeetings/getAllRecordings(meetingOrganizerUserId='@meetingOrganizerUserId',startDateTime=@startDateTime,endDateTime=@endDateTime)",
-              "operationId": "users.user.onlineMeetings.getAllRecordings"
+              "operationId": "user.onlineMeeting_getAllRecording"
             }
           ]
         },
@@ -403,7 +262,7 @@
             {
               "method": "GET",
               "path": "/users/{user-id}/onlineMeetings/getAllRecordings(meetingOrganizerUserId='@meetingOrganizerUserId',startDateTime=@startDateTime,endDateTime=@endDateTime)",
-              "operationId": "users.user.onlineMeetings.getAllRecordings"
+              "operationId": "user.onlineMeeting_getAllRecording"
             }
           ]
         }
@@ -423,7 +282,7 @@
             {
               "method": "GET",
               "path": "/users/{user-id}/onlineMeetings/getAllTranscripts(meetingOrganizerUserId='@meetingOrganizerUserId',startDateTime=@startDateTime,endDateTime=@endDateTime)",
-              "operationId": "users.user.onlineMeetings.getAllTranscripts"
+              "operationId": "user.onlineMeeting_getAllTranscript"
             }
           ]
         },
@@ -433,11 +292,181 @@
             {
               "method": "GET",
               "path": "/users/{user-id}/onlineMeetings/getAllTranscripts(meetingOrganizerUserId='@meetingOrganizerUserId',startDateTime=@startDateTime,endDateTime=@endDateTime)",
-              "operationId": "users.user.onlineMeetings.getAllTranscripts"
+              "operationId": "user.onlineMeeting_getAllTranscript"
             }
           ]
         }
       }
     }
-  ]
+  ],
+  "collisionNaming": {
+    "implementation": "SharedExactNounOverrides",
+    "normalTargetMerge": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad",
+    "latestReportEvidence": "The current compatible meetingAttendanceReport description in both scopes says: The attendance report of the latest online meeting session. Read-only.",
+    "liveEventEvidence": "The current compatible recording description in both scopes says: The content stream of the recording of a Teams live event. Read-only.",
+    "decision": "Meaningful distinct LatestAttendanceReport and LiveEventRecording nouns retain all source operations. No selector, profile-authored filter, response union, operation suppression or new mutation variant is used.",
+    "defaults": "Ordinary paired GETs retain their existing List default. The historical published combined Get2 alias-function default cannot be reproduced: COMM aliases remain baseline unsupported and USER aggregate remains selected by shared directive 5 suppression.",
+    "history": "Supersedes inactive premerge beta Route/Allow* policy and all unactivated historical variant drafts; only the actually merged three-setting configuration and separate oracle profile are used.",
+    "publishedBaselineEvidence": {
+      "kind": "Captured actual public proxy parameter sets and compiled route-construction IL, not first metadata URI; published combined names differ intentionally from these disambiguated nouns.",
+      "package": "Microsoft.Graph.Beta.CloudCommunications",
+      "sha256": "BE21FFEF7F8F1B0D30ACC110589715E64A4FA31BC3E4A62051213E167D20C336",
+      "version": "2.38.0"
+    },
+    "profiles": {
+      "v1.0": {
+        "compatibleSpecBlob": "953e67b74c8ca733f8e39ebd6d1af02432e20fb8",
+        "operations": []
+      },
+      "beta": {
+        "compatibleSpecBlob": "1efe3be4e3fced8a9e177e5bec11250543e292e3",
+        "operations": [
+          {
+            "method": "GET",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
+            "operationId": "communication.onlineMeeting_GetMeetingAttendanceReport",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReport"
+          },
+          {
+            "method": "PATCH",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
+            "operationId": "communication.onlineMeeting_UpdateMeetingAttendanceReport",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReport"
+          },
+          {
+            "method": "DELETE",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
+            "operationId": "communication.onlineMeeting_DeleteMeetingAttendanceReport",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReport"
+          },
+          {
+            "method": "GET",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords",
+            "operationId": "communication.onlineMeeting.meetingAttendanceReport_ListAttendanceRecord",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord"
+          },
+          {
+            "method": "POST",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords",
+            "operationId": "communication.onlineMeeting.meetingAttendanceReport_CreateAttendanceRecord",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord"
+          },
+          {
+            "method": "GET",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
+            "operationId": "communication.onlineMeeting.meetingAttendanceReport_GetAttendanceRecord",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord"
+          },
+          {
+            "method": "PATCH",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
+            "operationId": "communication.onlineMeeting.meetingAttendanceReport_UpdateAttendanceRecord",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord"
+          },
+          {
+            "method": "DELETE",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
+            "operationId": "communication.onlineMeeting.meetingAttendanceReport_DeleteAttendanceRecord",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord"
+          },
+          {
+            "method": "GET",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/$count",
+            "operationId": "communication.onlineMeeting.meetingAttendanceReport.attendanceRecord_GetCount",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecordCount"
+          },
+          {
+            "method": "GET",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/recording",
+            "operationId": "communication_GetOnlineMeetingsRecording",
+            "noun": "CommunicationOnlineMeetingLiveEventRecording"
+          },
+          {
+            "method": "PUT",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/recording",
+            "operationId": "communication_SetOnlineMeetingsRecording",
+            "noun": "CommunicationOnlineMeetingLiveEventRecording"
+          },
+          {
+            "method": "DELETE",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/recording",
+            "operationId": "communication_DeleteOnlineMeetingsRecording",
+            "noun": "CommunicationOnlineMeetingLiveEventRecording"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
+            "operationId": "user.onlineMeeting_GetMeetingAttendanceReport",
+            "noun": "UserOnlineMeetingLatestAttendanceReport"
+          },
+          {
+            "method": "PATCH",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
+            "operationId": "user.onlineMeeting_UpdateMeetingAttendanceReport",
+            "noun": "UserOnlineMeetingLatestAttendanceReport"
+          },
+          {
+            "method": "DELETE",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
+            "operationId": "user.onlineMeeting_DeleteMeetingAttendanceReport",
+            "noun": "UserOnlineMeetingLatestAttendanceReport"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords",
+            "operationId": "user.onlineMeeting.meetingAttendanceReport_ListAttendanceRecord",
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord"
+          },
+          {
+            "method": "POST",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords",
+            "operationId": "user.onlineMeeting.meetingAttendanceReport_CreateAttendanceRecord",
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
+            "operationId": "user.onlineMeeting.meetingAttendanceReport_GetAttendanceRecord",
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord"
+          },
+          {
+            "method": "PATCH",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
+            "operationId": "user.onlineMeeting.meetingAttendanceReport_UpdateAttendanceRecord",
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord"
+          },
+          {
+            "method": "DELETE",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
+            "operationId": "user.onlineMeeting.meetingAttendanceReport_DeleteAttendanceRecord",
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/$count",
+            "operationId": "user.onlineMeeting.meetingAttendanceReport.attendanceRecord_GetCount",
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecordCount"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording",
+            "operationId": "user_GetOnlineMeetingsRecording",
+            "noun": "UserOnlineMeetingLiveEventRecording"
+          },
+          {
+            "method": "PUT",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording",
+            "operationId": "user_SetOnlineMeetingsRecording",
+            "noun": "UserOnlineMeetingLiveEventRecording"
+          },
+          {
+            "method": "DELETE",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording",
+            "operationId": "user_DeleteOnlineMeetingsRecording",
+            "noun": "UserOnlineMeetingLiveEventRecording"
+          }
+        ]
+      }
+    }
+  }
 }

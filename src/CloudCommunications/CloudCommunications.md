@@ -22,34 +22,38 @@ virtual-appointment SMS variants) and `src/readme.graph.md` are excluded. This f
 contains no parameter or schema/response directives to defer. Keep the AutoRest
 directives active until the service-module pipeline is retired.
 
-### Reviewed beta wrapper collision policy
+### Reviewed wrapper collision naming
 
-The beta attendance-report and recording aliases retain every reviewed compatible
-route. Attendance operations use the singleton defaults verified from the actual
-Microsoft.Graph.Beta.CloudCommunications 2.38.0 public proxies and compiled route
-dispatch, not the first URI in command metadata.
+The singleton `meetingAttendanceReport` describes the attendance report of the
+**latest online meeting session**. Its commands use the distinct
+`OnlineMeetingLatestAttendanceReport` noun, including their attendance-record
+navigation and count commands. The `attendanceReports` collection and its
+ID-selected reports keep their existing `OnlineMeetingAttendanceReport` names.
+This avoids ambiguous parameter sets with the same mandatory meeting IDs.
 
-The reviewed beta recording GET policy intentionally differs from that published
-SDK: both communication-bound and user-bound commands require an explicit
-`-Route Binary` or `-Route Recordings`, with no `Published` choice or default
-fallback. `Binary` selects the singleton `/recording` download. `Recordings`
-selects `/recordings` or `/recordings/{callRecording-id}` according to the supplied
-item ID. Each role validates its own required IDs and supported parameters before
-calling Graph; neither role discards parameters or falls back to another route.
+The singleton `/recording` describes the **content stream of a Teams live-event
+recording**, not the JSON `callRecording` entities in `/recordings`. Its commands
+use `OnlineMeetingLiveEventRecording`; the plural recording list/item and their
+`/content` endpoints keep their existing names. Both communication-bound and
+user-bound routes remain available. No route selector, broad suppression, response
+union, or authored profile filter is introduced. Ordinary list/item dispatchers
+retain their existing `List` default.
 
 The published `Get2` default selects the collection-bound `getAllRecordings`
 alias-argument function, not any of these three routes. The communication-bound
 function remains unsupported by the current alias-argument generator, and the
 user-bound function remains explicitly suppressed by shared directive 5 below.
-Neither is restored to manufacture default compatibility. This policy is prepared
-in the adjacent migration ledger; activation requires the canonical shared
-dispatcher capability and its normal target-branch merge.
+Neither is restored to manufacture default compatibility. These meaningful names
+intentionally differ from the published 2.38.0 combined command/default surface;
+the adjacent ledger records the exact source descriptions and affected operations.
+The rules are shared: both compatible profiles are checked, and paths absent from
+v1.0 do not require a separate profile-only configuration.
 
 ``` yaml
 directive:
 # Remove invalid paths.
-# Wrapper migration: 13 actual legacy operation-ID matches in each profile bridge
-# uniquely to compatible operations. The ledger retains both old and current IDs;
+# Wrapper migration: all 13 actual legacy operation-ID matches in each profile
+# survive with aligned compatible IDs. Tests pin complete original/current sets;
 # exact method/path suppressions preserve neighboring call and callRecord routes.
   - remove-path-by-operation: ^communication(.cloudCommunication_.*CloudCommunication|_(List|Create|Update|Delete)CallRecord|.callRecord.session_.*Segment|(_List|_Update)Call)$
 # Rename cmdlets

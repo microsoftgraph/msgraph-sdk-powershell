@@ -24,19 +24,19 @@ public sealed class CloudCommunicationsDirectiveMigrationTests
 
     private static readonly (HttpMethod Method, string Path, string Id)[] LegacySuppressions =
     [
-        (HttpMethod.Get, "/communications", "communications.cloudCommunications.GetCloudCommunications"),
-        (HttpMethod.Patch, "/communications", "communications.cloudCommunications.UpdateCloudCommunications"),
-        (HttpMethod.Get, "/communications/callRecords", "communications.ListCallRecords"),
-        (HttpMethod.Post, "/communications/callRecords", "communications.CreateCallRecords"),
-        (HttpMethod.Patch, "/communications/callRecords/{callRecord-id}", "communications.UpdateCallRecords"),
-        (HttpMethod.Delete, "/communications/callRecords/{callRecord-id}", "communications.DeleteCallRecords"),
-        (HttpMethod.Get, "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments", "communications.callRecords.sessions.ListSegments"),
-        (HttpMethod.Post, "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments", "communications.callRecords.sessions.CreateSegments"),
-        (HttpMethod.Get, "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}", "communications.callRecords.sessions.GetSegments"),
-        (HttpMethod.Patch, "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}", "communications.callRecords.sessions.UpdateSegments"),
-        (HttpMethod.Delete, "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}", "communications.callRecords.sessions.DeleteSegments"),
-        (HttpMethod.Get, "/communications/calls", "communications.ListCalls"),
-        (HttpMethod.Patch, "/communications/calls/{call-id}", "communications.UpdateCalls"),
+        (HttpMethod.Get, "/communications", "communication.cloudCommunication_GetCloudCommunication"),
+        (HttpMethod.Patch, "/communications", "communication.cloudCommunication_UpdateCloudCommunication"),
+        (HttpMethod.Get, "/communications/callRecords", "communication_ListCallRecord"),
+        (HttpMethod.Post, "/communications/callRecords", "communication_CreateCallRecord"),
+        (HttpMethod.Patch, "/communications/callRecords/{callRecord-id}", "communication_UpdateCallRecord"),
+        (HttpMethod.Delete, "/communications/callRecords/{callRecord-id}", "communication_DeleteCallRecord"),
+        (HttpMethod.Get, "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments", "communication.callRecord.session_ListSegment"),
+        (HttpMethod.Post, "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments", "communication.callRecord.session_CreateSegment"),
+        (HttpMethod.Get, "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}", "communication.callRecord.session_GetSegment"),
+        (HttpMethod.Patch, "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}", "communication.callRecord.session_UpdateSegment"),
+        (HttpMethod.Delete, "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}", "communication.callRecord.session_DeleteSegment"),
+        (HttpMethod.Get, "/communications/calls", "communication_ListCall"),
+        (HttpMethod.Patch, "/communications/calls/{call-id}", "communication_UpdateCall"),
     ];
 
     [Theory]
@@ -57,6 +57,11 @@ public sealed class CloudCommunicationsDirectiveMigrationTests
         Assert.Equal(
             LegacySuppressions.Select(operation => $"{operation.Method} {CmdletConfigurator.NormalizePathTemplate(operation.Path)}").Order(),
             matches.Select(operation => $"{operation.Method} {CmdletConfigurator.NormalizePathTemplate(operation.Path)}").Order());
+        var currentMatches = compatible.Paths.SelectMany(path => path.Value.Operations!
+            .Where(operation => selector.IsMatch(operation.Value.OperationId!))
+            .Select(operation => $"{operation.Key} {path.Key} [{operation.Value.OperationId}]")).Order();
+        Assert.Equal(matches.Select(operation =>
+            $"{operation.Method} {operation.Path} [{legacy.Paths[operation.Path].Operations![operation.Method].OperationId}]").Order(), currentMatches);
         foreach (var (method, path) in matches)
         {
             var current = Assert.Single(compatible.Paths, candidate =>
@@ -65,6 +70,80 @@ public sealed class CloudCommunicationsDirectiveMigrationTests
             var reviewed = Assert.Single(LegacySuppressions, operation =>
                 operation.Method == method && operation.Path == current.Key);
             Assert.Equal(reviewed.Id, current.Value.Operations![method].OperationId);
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task GenerationPreservesDistinctLatestReportAndLiveEventSurfaces(string profile, bool useCollisionData)
+    {
+        var document = await LoadSpec(profile);
+        if (!useCollisionData)
+        {
+            foreach (var path in document.Paths.Keys.Where(path =>
+                !Regex.IsMatch(path, @"^/(communications|users/\{user-id\})/onlineMeetings/\{onlineMeeting-id\}/(meetingAttendanceReport|attendanceReports|recording|recordings)(/|$)")).ToArray())
+                document.Paths.Remove(path);
+        }
+        var output = Path.Combine(Path.GetTempPath(), "cloudcommunications-complete-source", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(output);
+        try
+        {
+            var config = new GeneratorConfig("Test.Client", output, useCollisionData);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(CancellationToken.None);
+            var files = Directory.GetFiles(output, "*.g.cs").ToDictionary(path => Path.GetFileName(path)!, File.ReadAllText);
+            foreach (var (parent, scope) in new[]
+            {
+                ("/communications/onlineMeetings/{onlineMeeting-id}", "Communication"),
+                ("/users/{user-id}/onlineMeetings/{onlineMeeting-id}", "User"),
+            })
+            {
+                var latest = parent + "/meetingAttendanceReport";
+                if (!document.Paths.ContainsKey(latest))
+                {
+                    Assert.DoesNotContain(files.Keys, file => file.Contains(scope + "OnlineMeetingLatestAttendanceReport", StringComparison.Ordinal));
+                    continue;
+                }
+                Assert.Contains("latest online meeting session", document.Paths[latest].Operations![HttpMethod.Get].Description!, StringComparison.Ordinal);
+                foreach (var (method, child, noun) in new[]
+                {
+                    ("GET", "", "LatestAttendanceReport"),
+                    ("PATCH", "", "LatestAttendanceReport"),
+                    ("DELETE", "", "LatestAttendanceReport"),
+                    ("GET", "/attendanceRecords", "LatestAttendanceReportAttendanceRecord"),
+                    ("POST", "/attendanceRecords", "LatestAttendanceReportAttendanceRecord"),
+                    ("GET", "/attendanceRecords/{attendanceRecord-id}", "LatestAttendanceReportAttendanceRecord"),
+                    ("PATCH", "/attendanceRecords/{attendanceRecord-id}", "LatestAttendanceReportAttendanceRecord"),
+                    ("DELETE", "/attendanceRecords/{attendanceRecord-id}", "LatestAttendanceReportAttendanceRecord"),
+                    ("GET", "/attendanceRecords/$count", "LatestAttendanceReportAttendanceRecordCount"),
+                })
+                {
+                    var naming = Naming.Resolve(new OperationInfo(new HttpMethod(method), latest + child), config, apiVersion: profile);
+                    Assert.Equal("Mg" + scope + "OnlineMeeting" + noun, naming.Noun);
+                    Assert.Contains(files.Values, source => source.Contains($"[GraphRoute(\"{method}\", \"{latest + child}\")]", StringComparison.Ordinal));
+                }
+                var records = files["GetMg" + scope + "OnlineMeetingLatestAttendanceReportAttendanceRecord.g.cs"];
+                Assert.Contains("DefaultParameterSetName = \"List\"", records, StringComparison.Ordinal);
+                Assert.DoesNotContain("public string Route", records, StringComparison.Ordinal);
+                var plural = files["GetMg" + scope + "OnlineMeetingAttendanceReport.g.cs"];
+                Assert.Contains("DefaultParameterSetName = \"List\"", plural, StringComparison.Ordinal);
+                Assert.DoesNotContain("LatestAttendanceReport", plural, StringComparison.Ordinal);
+                var binary = files["GetMg" + scope + "OnlineMeetingLiveEventRecording.g.cs"];
+                Assert.Contains("OutFile", binary, StringComparison.Ordinal);
+                Assert.Contains("[OutputType(typeof(byte[]))]", binary, StringComparison.Ordinal);
+                var json = files["GetMg" + scope + "OnlineMeetingRecording.g.cs"];
+                Assert.Contains("DefaultParameterSetName = \"List\"", json, StringComparison.Ordinal);
+                Assert.DoesNotContain("OutFile", json, StringComparison.Ordinal);
+                Assert.Contains(files.Values, source => source.Contains($"[GraphRoute(\"GET\", \"{parent}/recordings/{{callRecording-id}}/content\")]", StringComparison.Ordinal));
+                Assert.DoesNotContain(files.Values, source => source.Contains("public string Route", StringComparison.Ordinal));
+            }
+        }
+        finally
+        {
+            Directory.Delete(output, recursive: true);
         }
     }
 
@@ -117,8 +196,8 @@ public sealed class CloudCommunicationsDirectiveMigrationTests
     }
 
     [Theory]
-    [InlineData("/communications/onlineMeetings/{onlineMeeting-id}", "communications.onlineMeetings")]
-    [InlineData("/users/{user-id}/onlineMeetings/{onlineMeeting-id}", "users.onlineMeetings")]
+    [InlineData("/communications/onlineMeetings/{onlineMeeting-id}", "communication.onlineMeeting")]
+    [InlineData("/users/{user-id}/onlineMeetings/{onlineMeeting-id}", "user.onlineMeeting")]
     public async Task BetaAttendanceAliasesPreserveExactSameShapeOperationContracts(string parent, string idPrefix)
     {
         var document = await LoadSpec("beta");
@@ -126,20 +205,20 @@ public sealed class CloudCommunicationsDirectiveMigrationTests
         const string singleton = "/meetingAttendanceReport";
         (HttpMethod Method, string Child, string PluralId, string SingletonId, string? Body)[] pairs =
         [
-            (HttpMethod.Patch, "", "UpdateAttendanceReports", "UpdateMeetingAttendanceReport", "meetingAttendanceReport"),
-            (HttpMethod.Delete, "", "DeleteAttendanceReports", "DeleteMeetingAttendanceReport", null),
-            (HttpMethod.Post, "/attendanceRecords", "attendanceReports.CreateAttendanceRecords", "meetingAttendanceReport.CreateAttendanceRecords", "attendanceRecord"),
-            (HttpMethod.Patch, "/attendanceRecords/{attendanceRecord-id}", "attendanceReports.UpdateAttendanceRecords", "meetingAttendanceReport.UpdateAttendanceRecords", "attendanceRecord"),
-            (HttpMethod.Delete, "/attendanceRecords/{attendanceRecord-id}", "attendanceReports.DeleteAttendanceRecords", "meetingAttendanceReport.DeleteAttendanceRecords", null),
-            (HttpMethod.Get, "/attendanceRecords", "attendanceReports.ListAttendanceRecords", "meetingAttendanceReport.ListAttendanceRecords", null),
-            (HttpMethod.Get, "/attendanceRecords/{attendanceRecord-id}", "attendanceReports.GetAttendanceRecords", "meetingAttendanceReport.GetAttendanceRecords", null),
+            (HttpMethod.Patch, "", "UpdateAttendanceReport", "UpdateMeetingAttendanceReport", "meetingAttendanceReport"),
+            (HttpMethod.Delete, "", "DeleteAttendanceReport", "DeleteMeetingAttendanceReport", null),
+            (HttpMethod.Post, "/attendanceRecords", "attendanceReport_CreateAttendanceRecord", "meetingAttendanceReport_CreateAttendanceRecord", "attendanceRecord"),
+            (HttpMethod.Patch, "/attendanceRecords/{attendanceRecord-id}", "attendanceReport_UpdateAttendanceRecord", "meetingAttendanceReport_UpdateAttendanceRecord", "attendanceRecord"),
+            (HttpMethod.Delete, "/attendanceRecords/{attendanceRecord-id}", "attendanceReport_DeleteAttendanceRecord", "meetingAttendanceReport_DeleteAttendanceRecord", null),
+            (HttpMethod.Get, "/attendanceRecords", "attendanceReport_ListAttendanceRecord", "meetingAttendanceReport_ListAttendanceRecord", null),
+            (HttpMethod.Get, "/attendanceRecords/{attendanceRecord-id}", "attendanceReport_GetAttendanceRecord", "meetingAttendanceReport_GetAttendanceRecord", null),
         ];
         foreach (var (method, child, pluralId, singletonId, body) in pairs)
         {
             var pluralPath = parent + plural + child;
             var singletonPath = parent + singleton + child;
-            AssertOperation(document, method, pluralPath, idPrefix + "." + pluralId);
-            AssertOperation(document, method, singletonPath, idPrefix + "." + singletonId);
+            AssertOperation(document, method, pluralPath, idPrefix + (child.Length == 0 ? "_" : ".") + pluralId);
+            AssertOperation(document, method, singletonPath, idPrefix + (child.Length == 0 ? "_" : ".") + singletonId);
             var left = document.Paths[pluralPath].Operations![method];
             var right = document.Paths[singletonPath].Operations![method];
             Assert.DoesNotContain(left.Parameters ?? [], parameter => parameter.In != ParameterLocation.Path && parameter.Required);
@@ -185,27 +264,27 @@ public sealed class CloudCommunicationsDirectiveMigrationTests
     public async Task SharedSelectorsPreserveRenamesAndSuppressOnlyReviewedOperations(string profile, bool useCollisionData)
     {
         var document = await LoadSpec(profile);
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
 
-        AssertOperation(document, HttpMethod.Post, CreateOrGet, "communications.onlineMeetings.createOrGet");
-        AssertOperation(document, HttpMethod.Post, UserCreateOrGet, "users.user.onlineMeetings.createOrGet");
-        AssertOperation(document, HttpMethod.Get, Recording, "users.user.onlineMeetings.getAllRecordings");
-        AssertOperation(document, HttpMethod.Get, Transcript, "users.user.onlineMeetings.getAllTranscripts");
-        AssertNaming(CreateOrGet, "CreateOrGetCommunicationOnlineMeeting", config);
-        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Post, UserCreateOrGet, config));
-        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, Recording, config));
-        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, Transcript, config));
+        AssertOperation(document, HttpMethod.Post, CreateOrGet, "communication.onlineMeeting_createOrGet");
+        AssertOperation(document, HttpMethod.Post, UserCreateOrGet, "user.onlineMeeting_createOrGet");
+        AssertOperation(document, HttpMethod.Get, Recording, "user.onlineMeeting_getAllRecording");
+        AssertOperation(document, HttpMethod.Get, Transcript, "user.onlineMeeting_getAllTranscript");
+        AssertNaming(CreateOrGet, "CreateOrGetCommunicationOnlineMeeting", config, profile);
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Post, UserCreateOrGet, config, apiVersion: profile));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, Recording, config, apiVersion: profile));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, Transcript, config, apiVersion: profile));
         foreach (var (method, path, id) in LegacySuppressions)
         {
             AssertOperation(document, method, path, id);
-            Assert.True(CmdletConfigurator.IsSuppressed(method, path, config), $"{method} {path}");
-            Assert.False(CmdletConfigurator.IsSuppressed(method, path + "/unrelated", config));
+            Assert.True(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile), $"{method} {path}");
+            Assert.False(CmdletConfigurator.IsSuppressed(method, path + "/unrelated", config, apiVersion: profile));
         }
 
         if (profile == "beta")
         {
-            AssertOperation(document, HttpMethod.Post, MuteAll, "communications.calls.call.participants.muteAll");
-            AssertNaming(MuteAll, "MuteAllCommunicationCallParticipant", config);
+            AssertOperation(document, HttpMethod.Post, MuteAll, "communication.call.participant_muteAll");
+            AssertNaming(MuteAll, "MuteAllCommunicationCallParticipant", config, profile);
         }
         else
         {
@@ -214,38 +293,38 @@ public sealed class CloudCommunicationsDirectiveMigrationTests
 
         (HttpMethod Method, string Path, string Id)[] neighbors =
         [
-            (HttpMethod.Post, "/communications/calls", "communications.CreateCalls"),
-            (HttpMethod.Get, "/communications/calls/{call-id}", "communications.GetCalls"),
-            (HttpMethod.Delete, "/communications/calls/{call-id}", "communications.DeleteCalls"),
-            (HttpMethod.Get, "/communications/callRecords/{callRecord-id}", "communications.GetCallRecords"),
-            (HttpMethod.Get, "/communications/onlineMeetings", "communications.ListOnlineMeetings"),
-            (HttpMethod.Post, "/users/{user-id}/onlineMeetings", "users.CreateOnlineMeetings"),
-            (HttpMethod.Get, "/users/{user-id}/onlineMeetings", "users.ListOnlineMeetings"),
-            (HttpMethod.Get, "/users/{user-id}/onlineMeetings/{onlineMeeting-id}", "users.GetOnlineMeetings"),
-            (HttpMethod.Patch, "/users/{user-id}/onlineMeetings/{onlineMeeting-id}", "users.UpdateOnlineMeetings"),
-            (HttpMethod.Delete, "/users/{user-id}/onlineMeetings/{onlineMeeting-id}", "users.DeleteOnlineMeetings"),
-            (HttpMethod.Post, "/communications/calls/{call-id}/mute", "communications.calls.call.mute"),
-            (HttpMethod.Post, "/communications/calls/{call-id}/participants/{participant-id}/mute", "communications.calls.call.participants.participant.mute"),
-            (HttpMethod.Get, Recording.Replace("/users/{user-id}", "/communications", StringComparison.Ordinal), "communications.onlineMeetings.getAllRecordings"),
-            (HttpMethod.Get, Transcript.Replace("/users/{user-id}", "/communications", StringComparison.Ordinal), "communications.onlineMeetings.getAllTranscripts"),
-            (HttpMethod.Get, "/communications/adhocCalls/getAllRecordings(userId='@userId',startDateTime=@startDateTime,endDateTime=@endDateTime)", "communications.adhocCalls.getAllRecordings"),
-            (HttpMethod.Get, "/communications/adhocCalls/getAllTranscripts(userId='@userId',startDateTime=@startDateTime,endDateTime=@endDateTime)", "communications.adhocCalls.getAllTranscripts"),
-            (HttpMethod.Get, "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings", "users.onlineMeetings.ListRecordings"),
-            (HttpMethod.Get, "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts", "users.onlineMeetings.ListTranscripts"),
+            (HttpMethod.Post, "/communications/calls", "communication_CreateCall"),
+            (HttpMethod.Get, "/communications/calls/{call-id}", "communication_GetCall"),
+            (HttpMethod.Delete, "/communications/calls/{call-id}", "communication_DeleteCall"),
+            (HttpMethod.Get, "/communications/callRecords/{callRecord-id}", "communication_GetCallRecord"),
+            (HttpMethod.Get, "/communications/onlineMeetings", "communication_ListOnlineMeeting"),
+            (HttpMethod.Post, "/users/{user-id}/onlineMeetings", "user_CreateOnlineMeeting"),
+            (HttpMethod.Get, "/users/{user-id}/onlineMeetings", "user_ListOnlineMeeting"),
+            (HttpMethod.Get, "/users/{user-id}/onlineMeetings/{onlineMeeting-id}", "user_GetOnlineMeeting"),
+            (HttpMethod.Patch, "/users/{user-id}/onlineMeetings/{onlineMeeting-id}", "user_UpdateOnlineMeeting"),
+            (HttpMethod.Delete, "/users/{user-id}/onlineMeetings/{onlineMeeting-id}", "user_DeleteOnlineMeeting"),
+            (HttpMethod.Post, "/communications/calls/{call-id}/mute", "communication.call_mute"),
+            (HttpMethod.Post, "/communications/calls/{call-id}/participants/{participant-id}/mute", "communication.call.participant_mute"),
+            (HttpMethod.Get, Recording.Replace("/users/{user-id}", "/communications", StringComparison.Ordinal), "communication.onlineMeeting_getAllRecording"),
+            (HttpMethod.Get, Transcript.Replace("/users/{user-id}", "/communications", StringComparison.Ordinal), "communication.onlineMeeting_getAllTranscript"),
+            (HttpMethod.Get, "/communications/adhocCalls/getAllRecordings(userId='@userId',startDateTime=@startDateTime,endDateTime=@endDateTime)", "communication.adhocCall_getAllRecording"),
+            (HttpMethod.Get, "/communications/adhocCalls/getAllTranscripts(userId='@userId',startDateTime=@startDateTime,endDateTime=@endDateTime)", "communication.adhocCall_getAllTranscript"),
+            (HttpMethod.Get, "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recordings", "user.onlineMeeting_ListRecording"),
+            (HttpMethod.Get, "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts", "user.onlineMeeting_ListTranscript"),
         ];
         foreach (var (method, path, id) in neighbors)
         {
             AssertOperation(document, method, path, id);
-            Assert.False(CmdletConfigurator.IsSuppressed(method, path, config), $"{method} {path}");
+            Assert.False(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile), $"{method} {path}");
         }
 
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, UserCreateOrGet, config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, UserCreateOrGet + "/child", config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, Recording, config));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, Transcript + "/child", config));
-        Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(HttpMethod.Get, CreateOrGet, config));
-        Assert.Equal("Unchanged", CmdletConfigurator.ApplyNounOverrides(HttpMethod.Get, CreateOrGet, "Unchanged", config));
-        Assert.Equal("Unchanged", CmdletConfigurator.ApplyNounOverrides(HttpMethod.Post, MuteAll + "/child", "Unchanged", config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, UserCreateOrGet, config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, UserCreateOrGet + "/child", config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, Recording, config, apiVersion: profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, Transcript + "/child", config, apiVersion: profile));
+        Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(HttpMethod.Get, CreateOrGet, config, apiVersion: profile));
+        Assert.Equal("Unchanged", CmdletConfigurator.ApplyNounOverrides(HttpMethod.Get, CreateOrGet, "Unchanged", config, apiVersion: profile));
+        Assert.Equal("Unchanged", CmdletConfigurator.ApplyNounOverrides(HttpMethod.Post, MuteAll + "/child", "Unchanged", config, apiVersion: profile));
     }
 
     [Theory]
@@ -268,8 +347,8 @@ public sealed class CloudCommunicationsDirectiveMigrationTests
         Directory.CreateDirectory(output);
         try
         {
-            var config = new GeneratorConfig("Test.Client", output, profile, useCollisionData);
-            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance)
+            var config = new GeneratorConfig("Test.Client", output, useCollisionData);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile)
                 .GenerateAsync(CancellationToken.None);
             var files = Directory.GetFiles(output, "*.g.cs").Select(Path.GetFileName).ToArray();
             Assert.Contains("InvokeMgCreateOrGetCommunicationOnlineMeeting.g.cs", files);
@@ -297,10 +376,10 @@ public sealed class CloudCommunicationsDirectiveMigrationTests
         }
     }
 
-    private static void AssertNaming(string path, string noun, GeneratorConfig config)
+    private static void AssertNaming(string path, string noun, GeneratorConfig config, string profile)
     {
-        var naming = Naming.Resolve(new OperationInfo(HttpMethod.Post, path, Kind: OperationKind.Action), config);
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, path, config));
+        var naming = Naming.Resolve(new OperationInfo(HttpMethod.Post, path, Kind: OperationKind.Action), config, apiVersion: profile);
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, path, config, apiVersion: profile));
         Assert.Equal("Invoke", naming.VerbName);
         Assert.Equal("Mg" + noun, naming.Noun);
     }
