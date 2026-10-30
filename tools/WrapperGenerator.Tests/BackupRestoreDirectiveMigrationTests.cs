@@ -28,7 +28,7 @@ public sealed class BackupRestoreDirectiveMigrationTests
 
     [Theory]
     [InlineData("v1.0", 150, 247)]
-    [InlineData("beta", 194, 314)]
+    [InlineData("beta", 197, 320)]
     public async Task EveryRealSpecOperationRetainsCuratedAndDerivedDecisions(
         string profile, int expectedPaths, int expectedOperations)
     {
@@ -48,18 +48,19 @@ public sealed class BackupRestoreDirectiveMigrationTests
 
                 foreach (var useDerivedData in new[] { false, true })
                 {
-                    var config = new GeneratorConfig("Test.Client", "unused", profile, useDerivedData);
+                    var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: useDerivedData);
                     var expectedSuppression = useDerivedData &&
                         DerivedCollisionResolutions.IsSuppressed(profile, operation.Key, normalized);
                     var hasDerivedName = DerivedCollisionResolutions.TryReplaceName(
                         profile, operation.Key, normalized, out var derivedName) && useDerivedData;
 
                     Assert.Equal(expectedSuppression,
-                        CmdletConfigurator.IsSuppressed(operation.Key, path.Key, config));
+                        CmdletConfigurator.IsSuppressed(operation.Key, path.Key, config, apiVersion: profile));
                     Assert.Equal(hasDerivedName ? derivedName.Verb : null,
-                        CmdletConfigurator.TryGetOverriddenVerb(operation.Key, path.Key, config));
+                        CmdletConfigurator.TryGetOverriddenVerb(operation.Key, path.Key, config, apiVersion: profile));
                     Assert.Equal(hasDerivedName ? derivedName.Noun : structuralNoun,
-                        CmdletConfigurator.ApplyNounOverrides(operation.Key, path.Key, structuralNoun, config));
+                        CmdletConfigurator.ApplyNounOverrides(operation.Key, path.Key, structuralNoun, config,
+                            apiVersion: profile));
                 }
             }
         }
@@ -73,25 +74,25 @@ public sealed class BackupRestoreDirectiveMigrationTests
     public async Task RealResourceNeighborsKeepSolutionPrefix(string profile, bool useDerivedData)
     {
         var document = await LoadSpecAsync(profile);
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useDerivedData);
+        var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: useDerivedData);
         var cases = new[]
         {
-            ("GET", "/solutions/backupRestore", "solutions.GetBackupRestore",
+            ("GET", "/solutions/backupRestore", "solution_GetBackupRestore",
                 "Get", "MgSolutionBackupRestore"),
-            ("PATCH", "/solutions/backupRestore", "solutions.UpdateBackupRestore",
+            ("PATCH", "/solutions/backupRestore", "solution_UpdateBackupRestore",
                 "Update", "MgSolutionBackupRestore"),
-            ("DELETE", "/solutions/backupRestore", "solutions.DeleteBackupRestore",
+            ("DELETE", "/solutions/backupRestore", "solution_DeleteBackupRestore",
                 "Remove", "MgSolutionBackupRestore"),
             ("GET", "/solutions/backupRestore/protectionPolicies",
-                "solutions.backupRestore.ListProtectionPolicies", "Get", "MgSolutionBackupRestoreProtectionPolicy"),
+                "solution.backupRestore_ListProtectionPolicy", "Get", "MgSolutionBackupRestoreProtectionPolicy"),
             ("GET", "/solutions/backupRestore/protectionPolicies/{protectionPolicyBase-id}",
-                "solutions.backupRestore.GetProtectionPolicies", "Get", "MgSolutionBackupRestoreProtectionPolicy"),
+                "solution.backupRestore_GetProtectionPolicy", "Get", "MgSolutionBackupRestoreProtectionPolicy"),
             ("GET", "/solutions/backupRestore/serviceApps",
-                "solutions.backupRestore.ListServiceApps", "Get", "MgSolutionBackupRestoreServiceApp"),
+                "solution.backupRestore_ListServiceApp", "Get", "MgSolutionBackupRestoreServiceApp"),
             ("POST", "/solutions/backupRestore/serviceApps",
-                "solutions.backupRestore.CreateServiceApps", "New", "MgSolutionBackupRestoreServiceApp"),
+                "solution.backupRestore_CreateServiceApp", "New", "MgSolutionBackupRestoreServiceApp"),
             ("GET", "/solutions/backupRestore/exchangeProtectionPolicies/{exchangeProtectionPolicy-id}/mailboxProtectionUnits",
-                "solutions.backupRestore.exchangeProtectionPolicies.ListMailboxProtectionUnits",
+                "solution.backupRestore.exchangeProtectionPolicy_ListMailboxProtectionUnit",
                 "Get", "MgSolutionBackupRestoreExchangeProtectionPolicyMailboxProtectionUnit"),
         };
 
@@ -99,44 +100,46 @@ public sealed class BackupRestoreDirectiveMigrationTests
         {
             var httpMethod = new HttpMethod(method);
             AssertOperation(document, httpMethod, path, operationId);
-            Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, config));
-            var naming = Naming.Resolve(new OperationInfo(httpMethod, path), config);
+            Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, config, apiVersion: profile));
+            var naming = Naming.Resolve(new OperationInfo(httpMethod, path), config, apiVersion: profile);
             Assert.Equal(verb, naming.VerbName);
             Assert.Equal(noun, naming.Noun);
         }
     }
 
     [Theory]
-    [InlineData("v1.0", "Enable", "MgSolutionBackupRestore")]
-    [InlineData("beta", "Invoke", "MgSolutionBackupRestoreEnable")]
+    [InlineData("v1.0", true, "Enable", "MgSolutionBackupRestore")]
+    [InlineData("v1.0", false, "Invoke", "MgSolutionBackupRestoreEnable")]
+    [InlineData("beta", true, "Invoke", "MgSolutionBackupRestoreEnable")]
+    [InlineData("beta", false, "Invoke", "MgSolutionBackupRestoreEnable")]
     public async Task ExistingActionRenameAndFunctionNeighborRemainUnchanged(
-        string profile, string expectedVerb, string expectedNoun)
+        string profile, bool useDerivedData, string expectedVerb, string expectedNoun)
     {
         var document = await LoadSpecAsync(profile);
-        var config = new GeneratorConfig("Test.Client", "unused", profile);
+        var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: useDerivedData);
         const string enablePath = "/solutions/backupRestore/enable";
-        AssertOperation(document, HttpMethod.Post, enablePath, "solutions.backupRestore.enable");
+        AssertOperation(document, HttpMethod.Post, enablePath, "solution.backupRestore_enable");
         var naming = Naming.Resolve(new OperationInfo(HttpMethod.Post, enablePath,
-            Kind: OperationKind.Action), config);
+            Kind: OperationKind.Action), config, apiVersion: profile);
         Assert.Equal(expectedVerb, naming.VerbName);
         Assert.Equal(expectedNoun, naming.Noun);
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, enablePath, config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, enablePath, config, apiVersion: profile));
 
         const string browsePath = "/solutions/backupRestore/browseSessions/{browseSessionBase-id}/browse";
         const string functionPath = browsePath + "(nextFetchToken='{nextFetchToken}')";
         AssertOperation(document, HttpMethod.Get, functionPath,
-            "solutions.backupRestore.browseSessions.browseSessionBase.browse-ae5b");
+            "solution.backupRestore.browseSession.browseSessionBase_browse");
         // The existing v1.0 suppression key retains the named function placeholder;
         // NormalizePathTemplate erases it. Preserve and document that baseline discrepancy.
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, functionPath, config));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, functionPath, config, apiVersion: profile));
         AssertOperation(document, HttpMethod.Post, browsePath,
-            "solutions.backupRestore.browseSessions.browseSessionBase.browse");
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, browsePath, config));
+            "solution.backupRestore.browseSession.browseSessionBase_browse");
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, browsePath, config, apiVersion: profile));
         const string itemPath = "/solutions/backupRestore/browseSessions/{browseSessionBase-id}";
-        AssertOperation(document, HttpMethod.Get, itemPath, "solutions.backupRestore.GetBrowseSessions");
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, itemPath, config));
+        AssertOperation(document, HttpMethod.Get, itemPath, "solution.backupRestore_GetBrowseSession");
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, itemPath, config, apiVersion: profile));
         Assert.Equal("MgSolutionBackupRestoreBrowseSession",
-            Naming.Resolve(new OperationInfo(HttpMethod.Get, itemPath), config).Noun);
+            Naming.Resolve(new OperationInfo(HttpMethod.Get, itemPath), config, apiVersion: profile).Noun);
     }
 
     private static void AssertOperation(OpenApiDocument document, HttpMethod method, string path, string operationId)
