@@ -1,0 +1,61 @@
+#nullable enable
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Identity.Governance.Client;
+using Microsoft.Graph.PowerShell.Identity.Governance.Client.Models;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Identity.Governance
+{
+    [GraphRoute("POST", "/accessReviews/{accessReview-id}/instances/{accessReview-id1}/sendReminder")]
+    [Cmdlet(VerbsLifecycle.Invoke, "MgAccessReviewInstanceSendReminder", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+
+    public class InvokeMgAccessReviewInstanceSendReminderCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string AccessReviewId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string AccessReviewId1 { get; set; } = string.Empty;
+
+
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(AccessReviewId1, "Invoke"))
+                return;
+
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+
+            try
+            {
+                client.AccessReviews[AccessReviewId].Instances[AccessReviewId1].SendReminder.PostAsync(requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                })
+                    .GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, AccessReviewId1);
+                return;
+            }
+
+        }
+    }
+}

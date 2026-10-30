@@ -1,0 +1,162 @@
+#nullable enable
+
+using System;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Identity.Governance.Client;
+using Microsoft.Graph.PowerShell.Identity.Governance.Client.Models;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Identity.Governance
+{
+    [GraphRoute("PATCH", "/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/{privilegedAccessGroupAssignmentScheduleRequest-id}")]
+    [Cmdlet(VerbsData.Update, "MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupAssignmentScheduleRequest))]
+    public class UpdateMgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string PrivilegedAccessGroupAssignmentScheduleRequestId { get; set; } = string.Empty;
+
+        [Parameter(Mandatory = false)]
+        public string? ApprovalId { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public global::System.DateTimeOffset? CompletedDateTime { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public global::System.DateTimeOffset? CreatedDateTime { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? CustomData { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? Status { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? IsValidationOnly { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? Justification { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? GroupId { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? PrincipalId { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? TargetScheduleId { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentitySet? CreatedBy { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ScheduleRequestActions? Action { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.RequestSchedule? ScheduleInfo { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.TicketInfo? TicketInfo { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupRelationships? AccessId { get; set; }
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(PrivilegedAccessGroupAssignmentScheduleRequestId, "Update"))
+                return;
+
+            var body = new Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupAssignmentScheduleRequest();
+
+    if (this.IsParameterBound(nameof(ApprovalId)))
+        body.ApprovalId = ApprovalId;
+
+    if (this.IsParameterBound(nameof(CompletedDateTime)))
+        body.CompletedDateTime = CompletedDateTime;
+
+    if (this.IsParameterBound(nameof(CreatedDateTime)))
+        body.CreatedDateTime = CreatedDateTime;
+
+    if (this.IsParameterBound(nameof(CustomData)))
+        body.CustomData = CustomData;
+
+    if (this.IsParameterBound(nameof(Status)))
+        body.Status = Status;
+
+    if (this.IsParameterBound(nameof(IsValidationOnly)))
+        body.IsValidationOnly = IsValidationOnly;
+
+    if (this.IsParameterBound(nameof(Justification)))
+        body.Justification = Justification;
+
+    if (this.IsParameterBound(nameof(GroupId)))
+        body.GroupId = GroupId;
+
+    if (this.IsParameterBound(nameof(PrincipalId)))
+        body.PrincipalId = PrincipalId;
+
+    if (this.IsParameterBound(nameof(TargetScheduleId)))
+        body.TargetScheduleId = TargetScheduleId;
+
+    if (this.IsParameterBound(nameof(CreatedBy)))
+        body.CreatedBy = CreatedBy;
+
+    if (this.IsParameterBound(nameof(Action)))
+        body.Action = Action;
+
+    if (this.IsParameterBound(nameof(ScheduleInfo)))
+        body.ScheduleInfo = ScheduleInfo;
+
+    if (this.IsParameterBound(nameof(TicketInfo)))
+        body.TicketInfo = TicketInfo;
+
+    if (this.IsParameterBound(nameof(AccessId)))
+        body.AccessId = AccessId;
+
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupAssignmentScheduleRequest? result;
+            try
+            {
+                result = client.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests[PrivilegedAccessGroupAssignmentScheduleRequestId].PatchAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, PrivilegedAccessGroupAssignmentScheduleRequestId);
+                return;
+            }
+
+
+            if (result is null)
+            {
+                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
+                try
+                {
+                    result = client.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests[PrivilegedAccessGroupAssignmentScheduleRequestId].GetAsync().GetAwaiter().GetResult();
+                }
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+                {
+                    ThrowGraphRequestFailed(ex, PrivilegedAccessGroupAssignmentScheduleRequestId);
+                    return;
+                }
+            }
+            if (result is not null)
+                WriteObject(result);
+        }
+    }
+}
