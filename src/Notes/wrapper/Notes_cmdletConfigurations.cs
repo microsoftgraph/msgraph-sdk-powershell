@@ -33,6 +33,17 @@ public static partial class CmdletConfigurator
             PathMatch.Exact, "GroupOnenotePageContent", "Notes.md directive 5 appends Content to GroupOnenotePage"),
         new(OverrideKind.ReplaceVerb, HttpMethod.Post, "/groups/{}/onenote/pages/{}/onenotepatchcontent",
             PathMatch.Exact, "Update", "Notes.md directive 5 retains the published Update action verb"),
+        // The nested collection and root item require the same IDs. They cannot
+        // share natural-ID parameter sets; retain the collection under its path-derived name.
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/groups/{}/onenote/sectiongroups/{}/sectiongroups",
+            PathMatch.Exact, "GroupOnenoteSectionGroupNestedSectionGroup",
+            "The nested sectionGroups collection is not the root sectionGroup item; preserve both URLs"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/sites/{}/onenote/sectiongroups/{}/sectiongroups",
+            PathMatch.Exact, "SiteOnenoteSectionGroupNestedSectionGroup",
+            "The nested sectionGroups collection is not the root sectionGroup item; preserve both URLs"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/users/{}/onenote/sectiongroups/{}/sectiongroups",
+            PathMatch.Exact, "UserOnenoteSectionGroupNestedSectionGroup",
+            "The nested sectionGroups collection is not the root sectionGroup item; preserve both URLs"),
     ];
 
     // Exact compatible successors of the corrected Notes.md selector, not a

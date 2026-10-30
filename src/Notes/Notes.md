@@ -19,6 +19,20 @@ The v3 migration covers only this shared file. Profile-local readmes and
 `src/readme.graph.md` are intentionally ignored. Parameter aliases/transforms and
 schema/response directives remain deferred (none occur in this file).
 
+The nested `sectionGroups/{sectionGroup-id}/sectionGroups` collection is distinct
+from the root `sectionGroups/{sectionGroup-id}` item despite requiring the same
+IDs. Its shared path-derived noun is now `*OnenoteSectionGroupNestedSectionGroup`;
+ordinary root List/Get defaults remain unchanged. No selector or incompatible
+natural-ID group is introduced. Existing v1.0 oracle-derived data still suppresses
+the three nested collections; this baseline endpoint gap blocks a full-fidelity
+claim and is not repaired by silently changing global data in this module.
+
+The current compatible IDs align with 289 of the corrected selector's 298 actual
+same-profile legacy selections. Nine section/page action/function IDs gained type
+segments; all nine real successors remain suppressed and retain reviewed Legacy
+evidence. The strict target helper must gain that bridge through the normal
+prerequisite merge before this migration can be published.
+
 ``` yaml
 directive:
 # Remove paths that are not valid.

@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -133,11 +134,19 @@ public sealed class NotesDirectiveMigrationTests
             suppressionKeys.Add($"{operation.GetProperty("method").GetString()} {operation.GetProperty("path").GetString()}");
         Assert.Equal(301, suppressionKeys.Count);
 
-        var config = new GeneratorConfig("Notes", "", profile, UseCollisionData: false);
+        var literalKeys = compatible.Paths.SelectMany(path => path.Value.Operations!.Select(op =>
+                (Path: path.Key, Method: op.Key, Operation: op.Value)))
+            .Where(op => regex.IsMatch(op.Operation.OperationId!))
+            .Select(op => $"{op.Method} {op.Path}").ToHashSet();
+        Assert.Equal(289, literalKeys.Count);
+        Assert.True(literalKeys.IsSubsetOf(suppressionKeys));
+        Assert.Equal(9, operations.Count(op => !regex.IsMatch(op.GetProperty("operationId").GetString()!)));
+
+        var config = new GeneratorConfig("Notes", "", UseCollisionData: false);
         foreach (var path in compatible.Paths)
         foreach (var operation in path.Value.Operations!)
             Assert.Equal(suppressionKeys.Contains($"{operation.Key} {path.Key}"),
-                CmdletConfigurator.IsSuppressed(operation.Key, path.Key, config));
+                CmdletConfigurator.IsSuppressed(operation.Key, path.Key, config, apiVersion: profile));
     }
 
     [Theory]
@@ -153,9 +162,9 @@ public sealed class NotesDirectiveMigrationTests
             var nested = get + "/sectionGroups";
             foreach (var (path, operationId, isList) in new[]
             {
-                (list, $"{root}.onenote.ListSectionGroups", true),
-                (get, $"{root}.onenote.GetSectionGroups", false),
-                (nested, $"{root}.onenote.sectionGroups.ListSectionGroups", true),
+                (list, $"{root[..^1]}.onenote_ListSectionGroup", true),
+                (get, $"{root[..^1]}.onenote_GetSectionGroup", false),
+                (nested, $"{root[..^1]}.onenote.sectionGroup_ListSectionGroup", true),
             })
             {
                 var item = document.Paths[path];
@@ -195,6 +204,69 @@ public sealed class NotesDirectiveMigrationTests
     }
 
     [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task AmbiguousNestedCollectionKeepsItsOwnNameAndOrdinaryRootDefaults(string profile, bool derived)
+    {
+        var document = await ReadSpec("openApiDocs_KiotaCompat", profile);
+        var routes = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var (root, id) in new[] { ("groups", "group-id"), ("sites", "site-id"), ("users", "user-id") })
+        {
+            var list = $"/{root}/{{{id}}}/onenote/sectionGroups";
+            routes.Add(list);
+            routes.Add(list + "/{sectionGroup-id}");
+            routes.Add(list + "/{sectionGroup-id}/sectionGroups");
+        }
+        foreach (var path in document.Paths.Keys.ToArray())
+        {
+            if (!routes.Contains(path))
+            {
+                document.Paths.Remove(path);
+                continue;
+            }
+            foreach (var method in document.Paths[path].Operations!.Keys.Where(method => method != HttpMethod.Get).ToArray())
+                document.Paths[path].Operations!.Remove(method);
+        }
+        var output = Path.Combine(Path.GetTempPath(), "notes-natural-id-migration-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            var config = new GeneratorConfig("Notes.Client", output, UseCollisionData: derived);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(CancellationToken.None);
+            var files = Directory.GetFiles(output, "*.g.cs");
+            Assert.Equal(12, files.Length);
+            foreach (var subject in new[] { "Group", "Site", "User" })
+            {
+                var ordinary = await File.ReadAllTextAsync(Path.Combine(output, $"GetMg{subject}OnenoteSectionGroup.g.cs"),
+                    TestContext.Current.CancellationToken);
+                Assert.Contains("DefaultParameterSetName = \"List\"", ordinary);
+                var nested = await File.ReadAllTextAsync(Path.Combine(output,
+                    $"GetMg{subject}OnenoteSectionGroupNestedSectionGroup.g.cs"), TestContext.Current.CancellationToken);
+                Assert.Contains("sectionGroups/{sectionGroup-id}/sectionGroups", nested);
+                Assert.DoesNotContain("ValidateSet(\"Root\"", ordinary + nested);
+            }
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Fact]
+    public void ReportsFrozenV1NestedListSuppressionInsteadOfClaimingAllRoutesSurvive()
+    {
+        var config = new GeneratorConfig("Notes", "", UseCollisionData: true);
+        foreach (var root in new[] { "/groups/{group-id}", "/sites/{site-id}", "/users/{user-id}" })
+        {
+            var path = root + "/onenote/sectionGroups/{sectionGroup-id}/sectionGroups";
+            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config, apiVersion: "v1.0"));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config, apiVersion: "beta"));
+        }
+    }
+
+    [Theory]
     [InlineData("v1.0")]
     [InlineData("beta")]
     public async Task BroadSiteRenameAccountsForAllCandidatesAfterEarlierSuppressions(string profile)
@@ -213,9 +285,9 @@ public sealed class NotesDirectiveMigrationTests
         Assert.Equal(15, evidence.Length);
         Assert.True(candidates.SetEquals(evidence.Select(op =>
             $"{op.GetProperty("method").GetString()} {op.GetProperty("path").GetString()}")));
-        var config = new GeneratorConfig("Notes", "", profile);
+        var config = new GeneratorConfig("Notes", "");
         Assert.Equal(11, evidence.Count(op => CmdletConfigurator.IsSuppressed(
-            new HttpMethod(op.GetProperty("method").GetString()!), op.GetProperty("path").GetString()!, config)));
+            new HttpMethod(op.GetProperty("method").GetString()!), op.GetProperty("path").GetString()!, config, apiVersion: profile)));
     }
 
     [Theory]
@@ -225,7 +297,7 @@ public sealed class NotesDirectiveMigrationTests
     {
         using var ledger = JsonDocument.Parse(File.ReadAllText(
             Path.Combine(RepoRoot(), "src", "Notes", "wrapper", "Notes_directiveMigrationMap.json")));
-        var config = new GeneratorConfig("Notes", "", profile);
+        var config = new GeneratorConfig("Notes", "");
         foreach (var index in new[] { 5, 6, 7, 8 })
         {
             var mapping = ledger.RootElement.GetProperty("mappings")[index];
@@ -234,7 +306,7 @@ public sealed class NotesDirectiveMigrationTests
             Assert.False(profileMap.GetProperty("absenceExpected").GetBoolean());
             var operation = Assert.Single(profileMap.GetProperty("operations").EnumerateArray());
             Assert.Equal("POST", operation.GetProperty("method").GetString());
-            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Post, operation.GetProperty("path").GetString()!, config));
+            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Post, operation.GetProperty("path").GetString()!, config, apiVersion: profile));
         }
     }
 
@@ -274,7 +346,7 @@ public sealed class NotesDirectiveMigrationTests
     public async Task CompatibleProfilesRetainRenamedOperationsAndUnchangedNeighbors(string profile)
     {
         var document = await ReadSpec("openApiDocs_KiotaCompat", profile);
-        var config = new GeneratorConfig("Notes", "", profile);
+        var config = new GeneratorConfig("Notes", "");
         foreach (var route in new[]
         {
             "/sites/{site-id}/onenote/notebooks/{notebook-id}",
@@ -284,7 +356,7 @@ public sealed class NotesDirectiveMigrationTests
         {
             Assert.NotNull(document.Paths[route].Operations![HttpMethod.Patch].OperationId);
             Assert.NotNull(document.Paths[route].Operations![HttpMethod.Get].OperationId);
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, route, config));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, route, config, apiVersion: profile));
         }
         foreach (var route in new[]
         {
@@ -295,7 +367,7 @@ public sealed class NotesDirectiveMigrationTests
         {
             Assert.NotNull(document.Paths[route].Operations![HttpMethod.Patch].OperationId);
             Assert.NotNull(document.Paths[route + "/onenotePatchContent"].Operations![HttpMethod.Post].OperationId);
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, route + "/onenotePatchContent", config));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, route + "/onenotePatchContent", config, apiVersion: profile));
         }
         const string recent = "/groups/{group-id}/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})";
         Assert.NotNull(document.Paths[recent].Operations![HttpMethod.Get].OperationId);
@@ -307,13 +379,13 @@ public sealed class NotesDirectiveMigrationTests
     [InlineData("beta")]
     public void RemovesResourcePageUpdatesWithoutRemovingPatchContentAction(string profile)
     {
-        var config = new GeneratorConfig("Notes", "", profile);
+        var config = new GeneratorConfig("Notes", "");
         foreach (var root in new[] { "/groups/{group-id}", "/sites/{site-id}", "/users/{user-id}" })
         {
             var page = root + "/onenote/pages/{onenotePage-id}";
-            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, page, config));
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, page, config));
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, page + "/onenotePatchContent", config));
+            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, page, config, apiVersion: profile));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, page, config, apiVersion: profile));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, page + "/onenotePatchContent", config, apiVersion: profile));
         }
     }
 
@@ -326,12 +398,12 @@ public sealed class NotesDirectiveMigrationTests
     [InlineData("beta", "/sites/{site-id}/onenote/sections/{onenoteSection-id}", "MgSiteOnenoteSectionContent")]
     public void SiteUpdateRenameDoesNotRenameReadNeighbor(string profile, string path, string expected)
     {
-        var config = new GeneratorConfig("Notes", "", profile);
-        var update = Naming.Resolve(new OperationInfo(HttpMethod.Patch, path), config);
+        var config = new GeneratorConfig("Notes", "");
+        var update = Naming.Resolve(new OperationInfo(HttpMethod.Patch, path), config, apiVersion: profile);
         Assert.Equal("Update", update.VerbName);
         Assert.Equal(expected, update.Noun);
         Assert.Equal(expected[..^"Content".Length],
-            Naming.Resolve(new OperationInfo(HttpMethod.Get, path), config).Noun);
+            Naming.Resolve(new OperationInfo(HttpMethod.Get, path), config, apiVersion: profile).Noun);
     }
 
     [Theory]
@@ -341,8 +413,8 @@ public sealed class NotesDirectiveMigrationTests
     [InlineData("beta", "/sites/{site-id}/onenote/pages/{onenotePage-id}/onenotePatchContent", "MgSiteOnenotePageContent")]
     public void RetainsPublishedContentActionName(string profile, string path, string expected)
     {
-        var config = new GeneratorConfig("Notes", "", profile);
-        var action = Naming.Resolve(new OperationInfo(HttpMethod.Post, path, Kind: OperationKind.Action), config);
+        var config = new GeneratorConfig("Notes", "");
+        var action = Naming.Resolve(new OperationInfo(HttpMethod.Post, path, Kind: OperationKind.Action), config, apiVersion: profile);
         Assert.Equal("Update", action.VerbName);
         Assert.Equal(expected, action.Noun);
         Assert.Equal(path, action.SourcePath);
@@ -355,10 +427,10 @@ public sealed class NotesDirectiveMigrationTests
     {
         const string root = "/groups/{group-id}/onenote/notebooks";
         const string recent = root + "/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})";
-        var config = new GeneratorConfig("Notes", "", profile);
+        var config = new GeneratorConfig("Notes", "");
         Assert.Equal("MgGroupOnenoteRecentNotebook",
-            Naming.Resolve(new OperationInfo(HttpMethod.Get, recent, Kind: OperationKind.Function), config).Noun);
+            Naming.Resolve(new OperationInfo(HttpMethod.Get, recent, Kind: OperationKind.Function), config, apiVersion: profile).Noun);
         Assert.Equal("MgGroupOnenoteNotebook",
-            Naming.Resolve(new OperationInfo(HttpMethod.Get, root), config).Noun);
+            Naming.Resolve(new OperationInfo(HttpMethod.Get, root), config, apiVersion: profile).Noun);
     }
 }
