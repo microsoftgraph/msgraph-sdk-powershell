@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WrapperGenerator\WrapperGenerator.csproj" />
+    <None Update="Fixtures\required-delete-query.yml" CopyToOutputDirectory="PreserveNewest" />
+    <Compile Remove="Fixtures\DeleteQueryProbeHost.cs" />
   </ItemGroup>
 
 </Project>

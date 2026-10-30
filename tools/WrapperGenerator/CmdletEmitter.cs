@@ -117,11 +117,16 @@ public static partial class CmdletEmitter
     // Post/Patch/DeleteAsync always take a requestConfiguration lambda, because -Headers exists
     // on every cmdlet. Reuses the same binding fragments the GET emitters use, at this call
     // site's deeper indent, so there is one binding implementation instead of three.
-    private static string EmitCallWithOptionalHeaders(CmdletNaming naming, EmitContext ctx, string method, string? bodyArg)
+    private static string EmitCallWithOptionalHeaders(CmdletNaming naming, EmitContext ctx, string method, string? bodyArg,
+        IReadOnlyList<CmdletProperty>? requiredQueryParameters = null)
     {
         var call = $"{ResourceCallReceiver(naming, ctx)}.{method}(";
         var args = bodyArg is null ? "" : bodyArg + ", ";
         var bindings = HeaderBindingsFor(naming.HeaderParams, extraIndent: "                ") + GenericHeadersBinding("                ");
+        bindings += string.Concat((requiredQueryParameters ?? []).Select(p => $$"""
+
+                                requestConfiguration.QueryParameters.{{p.PascalName}} = {{p.ParameterName}};
+        """));
         return $"{call}{args}requestConfiguration =>\n                {{{bindings}\n                }})";
     }
 
@@ -1221,10 +1226,20 @@ namespace {{ctx.CmdletNamespace}}
 """;
     }
 
-    public static string EmitRemove(CmdletNaming naming, EmitContext ctx)
+    public static string EmitRemove(CmdletNaming naming, EmitContext ctx) => EmitRemove(naming, ctx, []);
+
+    internal static string EmitRemove(CmdletNaming naming, EmitContext ctx, IReadOnlyList<CmdletProperty> requiredQueryParameters)
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
+        ArgumentNullException.ThrowIfNull(requiredQueryParameters);
+        var queryDeclarations = string.Join("\n", requiredQueryParameters.Select((p, i) => $$"""
+
+                [Parameter(Mandatory = true, Position = {{naming.PathParamNames.Count + i}},
+                    HelpMessage = "Value for the '{{EscapeLiteral(p.OpenApiName)}}' query parameter.")]
+                [ValidateNotNullOrEmpty]
+                public {{p.PsTypeName}} {{p.ParameterName}} { get; set; } = string.Empty;
+        """));
         return $$"""
 #nullable enable
 
@@ -1242,7 +1257,7 @@ namespace {{ctx.CmdletNamespace}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming)}}
+{{PathParams(naming)}}{{queryDeclarations}}
 {{HeaderParamDecls(naming)}}
 {{GenericHeadersParamDecl()}}
 
@@ -1257,7 +1272,7 @@ namespace {{ctx.CmdletNamespace}}
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                {{EmitCallWithOptionalHeaders(naming, ctx, "DeleteAsync", null)}}
+                {{EmitCallWithOptionalHeaders(naming, ctx, "DeleteAsync", null, requiredQueryParameters)}}
                     .GetAwaiter().GetResult();
             }
 {{CatchBlock(TargetId(naming))}}

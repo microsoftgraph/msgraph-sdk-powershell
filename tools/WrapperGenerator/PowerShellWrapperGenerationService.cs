@@ -250,8 +250,11 @@ public sealed partial class PowerShellWrapperGenerationService
                     continue;
                 }
 
-                var queryParams = (operation.Parameters ?? []).Where(p => p.In == ParameterLocation.Query).Select(p => p.Name!).ToList();
-                var headerParams = (operation.Parameters ?? []).Where(p => p.In == ParameterLocation.Header).Select(p => p.Name!).ToList();
+                var parameters = httpMethod == HttpMethod.Delete
+                    ? EffectiveDeleteParameters(pathItem, operation, pathTemplate)
+                    : (operation.Parameters ?? []).ToArray();
+                var queryParams = parameters.Where(p => p.In == ParameterLocation.Query).Select(p => p.Name!).ToList();
+                var headerParams = parameters.Where(p => p.In == ParameterLocation.Header).Select(p => p.Name!).ToList();
 
                 // Only GET responses need inspecting: the list/item pairing is decided by the
                 // response shape, and DELETE returns 204 with no body.
@@ -382,7 +385,8 @@ public sealed partial class PowerShellWrapperGenerationService
 
                 string? source = httpMethod switch
                 {
-                    _ when httpMethod == HttpMethod.Delete => CmdletEmitter.EmitRemove(cmdletNaming, ctx),
+                    _ when httpMethod == HttpMethod.Delete => CmdletEmitter.EmitRemove(cmdletNaming, ctx,
+                        RequiredDeleteQueries(parameters, operation, cmdletNaming)),
                     _ when httpMethod == HttpMethod.Post => EmitNewFor(cmdletNaming, ctx, operation),
                     _ when httpMethod == HttpMethod.Patch => EmitUpdateFor(cmdletNaming, ctx, operation,
                         canReFetch: pathItem.Operations?.ContainsKey(HttpMethod.Get) == true),

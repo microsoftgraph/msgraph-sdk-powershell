@@ -1,0 +1,66 @@
+openapi: 3.0.4
+info:
+  title: Native required DELETE query regression
+  version: 1.0.0
+servers:
+  - url: https://graph.microsoft.com/beta
+paths:
+  /administrativeUnits/{administrativeUnit-id}/members/$ref:
+    delete:
+      operationId: administrativeUnit_DeleteMemberGraphBPreRef
+      x-ms-docs-operation-type: operation
+      parameters:
+        - name: If-Match
+          in: header
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: The delete Uri
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+  /administrativeUnits/{administrativeUnit-id}/members/{directoryObject-id}/$ref:
+    delete:
+      operationId: administrativeUnit_DeleteMemberRef
+      x-ms-docs-operation-type: operation
+      parameters:
+        - name: If-Match
+          in: header
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+  /administrativeUnits/{administrativeUnit-id}:
+    delete:
+      operationId: administrativeUnit_DeleteAdministrativeUnit
+      x-ms-docs-operation-type: operation
+      responses:
+        '204':
+          description: Success
+  /groups/{group-id}/members/$ref:
+    parameters:
+      - name: '@id'
+        in: query
+        description: The delete Uri
+        required: true
+        style: form
+        explode: false
+        schema:
+          type: string
+      - name: If-Match
+        in: header
+        schema:
+          type: string
+    delete:
+      operationId: group_DeleteMemberByUri
+      x-ms-docs-operation-type: operation
+      responses:
+        '204':
+          description: Success
