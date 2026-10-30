@@ -1,10 +1,10 @@
 {
   "scope": "Only shared Identity.DirectoryManagement.md; all profile-specific readmes and src/readme.graph.md are ignored. Parameter aliases/transforms and schema/response changes are deferred.",
   "compatibleSpecBlobs": {
-    "v1.0": "5569eb79e13fe9115308d54d3d073d9ef309006e",
-    "beta": "7a529879f20eb141d36765a4e67b95550092d226"
+    "v1.0": "00ccf2f5e2fa763d695b78ffc6c78f749b64fecf",
+    "beta": "5ce6586d86ff0f481b43f1dfa3d0cb69149a90c3"
   },
-  "legacySpecBlobs": {
+  "originalSpecBlobs": {
     "v1.0": "1316cc4dc691f62659f88ff1e985f3e7a2a51b49",
     "beta": "29148ef3e8787c023b2f94325e1fe3ecc22eb4f6"
   },
@@ -12,16 +12,20 @@
     {
       "module": "Identity.SignIns",
       "profile": "beta",
-      "notes": "This policies lineage already existed independently alongside the removed directory lineage in the legacy specs. It is not a resource-root translation and is outside this module's migration.",
       "method": "GET",
-      "legacyPath": "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref",
-      "legacyOperationId": "policy.featureRolloutPolicy_ListAppliesToGraphBPreRef",
-      "legacySpecBlob": "3bae4bc7964a818e46591f07248bb3a8d5acdb85",
       "path": "/policies/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref",
-      "operationId": "policies.featureRolloutPolicies.ListRefAppliesTo",
-      "compatibleSpecBlob": "f39001bb356f6a2b5525141150e7ee165ef21501"
+      "originalOperationId": "policy.featureRolloutPolicy_ListAppliesToGraphBPreRef",
+      "currentOperationId": "policy.featureRolloutPolicy_ListAppliesToGraphBPreRef",
+      "originalSpecBlob": "3bae4bc7964a818e46591f07248bb3a8d5acdb85",
+      "compatibleSpecBlob": "842138aad4ca3371d315b1a5c6610d0ff7cdbf17",
+      "notes": "Independently present in both source generations; never mapped from or suppressed with the removed directory root."
     }
   ],
+  "generationNaming": {
+    "notes": "Shared method/exact-path noun overrides apply to every ingesting profile. These are source-backed distinctions for five generation collisions, not additional source directives or natural-ID variant groups.",
+    "tagActions": "Collection addTag accepts resourceIds:string[] and returns impactedResources, named AddTagByResourceId; item addTag accepts displayName and returns recommendationTag. Collection removeTag accepts displayName plus resourceIds:string[], named RemoveTagByDisplayName; item removeTag accepts tagId and returns impactedResource. Recommendation-scoped pairs preserve recommendation-id. No invented selectors, Allow flags or profile filters.",
+    "referenceDelete": "Collection /administrativeUnits/{administrativeUnit-id}/members/$ref requires query @id (the delete Uri), named AdministrativeUnitMemberReferenceByUri. Item /members/{directoryObject-id}/$ref retains AdministrativeUnitMemberByRef and published mandatory DirectoryObjectId. Both paths preserved, not grouped or suppressed. Naming does not supply missing required query emission; compiled/full-body gates must expose that central capability blocker."
+  },
   "deferredDirectives": [
     {
       "notes": "This is a cmdlet alias directive; the inventory classifies alias-bearing directives as DeferredParameter. Alias emission is deferred, not silently dropped or represented as a noun override. The active source is retained.",
@@ -41,12 +45,14 @@
         "v1.0": {
           "absenceExpected": true,
           "operations": [],
-          "notes": "Reviewed 0 actual legacy source operations and 0 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [],
+          "notes": "Actual original source selection 0; exact compatible survivors 0; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         },
         "beta": {
           "absenceExpected": true,
           "operations": [],
-          "notes": "Reviewed 0 actual legacy source operations and 0 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [],
+          "notes": "Actual original source selection 0; exact compatible survivors 0; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         }
       }
     },
@@ -64,12 +70,23 @@
             {
               "method": "GET",
               "path": "/directory/deletedItems",
-              "operationId": "directory.ListDeletedItems",
-              "legacyPath": "/directory/deletedItems",
-              "legacyOperationId": "directory_ListDeletedItem"
+              "operationId": "directory_ListDeletedItem"
             }
           ],
-          "notes": "Reviewed 1 actual legacy source operations and 1 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems",
+              "operationId": "directory_ListDeletedItem",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems",
+                "operationId": "directory_ListDeletedItem"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 1; exact compatible survivors 1; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         },
         "beta": {
           "absenceExpected": false,
@@ -77,12 +94,23 @@
             {
               "method": "GET",
               "path": "/directory/deletedItems",
-              "operationId": "directory.ListDeletedItems",
-              "legacyPath": "/directory/deletedItems",
-              "legacyOperationId": "directory_ListDeletedItem"
+              "operationId": "directory_ListDeletedItem"
             }
           ],
-          "notes": "Reviewed 1 actual legacy source operations and 1 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems",
+              "operationId": "directory_ListDeletedItem",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems",
+                "operationId": "directory_ListDeletedItem"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 1; exact compatible survivors 1; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         }
       }
     },
@@ -100,12 +128,23 @@
             {
               "method": "GET",
               "path": "/directory/deletedItems/$count",
-              "operationId": "directory.deletedItems.GetCount-665f",
-              "legacyPath": "/directory/deletedItems/$count",
-              "legacyOperationId": "directory.deletedItem_GetCount"
+              "operationId": "directory.deletedItem_GetCount"
             }
           ],
-          "notes": "Reviewed 1 actual legacy source operations and 1 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/$count",
+              "operationId": "directory.deletedItem_GetCount",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/$count",
+                "operationId": "directory.deletedItem_GetCount"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 1; exact compatible survivors 1; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         },
         "beta": {
           "absenceExpected": false,
@@ -113,12 +152,23 @@
             {
               "method": "GET",
               "path": "/directory/deletedItems/$count",
-              "operationId": "directory.deletedItems.GetCount-665f",
-              "legacyPath": "/directory/deletedItems/$count",
-              "legacyOperationId": "directory.deletedItem_GetCount"
+              "operationId": "directory.deletedItem_GetCount"
             }
           ],
-          "notes": "Reviewed 1 actual legacy source operations and 1 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/$count",
+              "operationId": "directory.deletedItem_GetCount",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/$count",
+                "operationId": "directory.deletedItem_GetCount"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 1; exact compatible survivors 1; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         }
       }
     },
@@ -133,12 +183,14 @@
         "v1.0": {
           "absenceExpected": true,
           "operations": [],
-          "notes": "Reviewed 0 actual legacy source operations and 0 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [],
+          "notes": "Actual original source selection 0; exact compatible survivors 0; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         },
         "beta": {
           "absenceExpected": true,
           "operations": [],
-          "notes": "Reviewed 0 actual legacy source operations and 0 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [],
+          "notes": "Actual original source selection 0; exact compatible survivors 0; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         }
       }
     },
@@ -156,40 +208,87 @@
             {
               "method": "GET",
               "path": "/directoryRoleTemplates",
-              "operationId": "directoryRoleTemplates.directoryRoleTemplate.ListDirectoryRoleTemplate",
-              "legacyPath": "/directoryRoleTemplates",
-              "legacyOperationId": "directoryRoleTemplate_ListDirectoryRoleTemplate"
+              "operationId": "directoryRoleTemplate_ListDirectoryRoleTemplate"
             },
             {
               "method": "POST",
               "path": "/directoryRoleTemplates",
-              "operationId": "directoryRoleTemplates.directoryRoleTemplate.CreateDirectoryRoleTemplate",
-              "legacyPath": "/directoryRoleTemplates",
-              "legacyOperationId": "directoryRoleTemplate_CreateDirectoryRoleTemplate"
+              "operationId": "directoryRoleTemplate_CreateDirectoryRoleTemplate"
             },
             {
               "method": "GET",
               "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
-              "operationId": "directoryRoleTemplates.directoryRoleTemplate.GetDirectoryRoleTemplate",
-              "legacyPath": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
-              "legacyOperationId": "directoryRoleTemplate_GetDirectoryRoleTemplate"
+              "operationId": "directoryRoleTemplate_GetDirectoryRoleTemplate"
             },
             {
               "method": "PATCH",
               "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
-              "operationId": "directoryRoleTemplates.directoryRoleTemplate.UpdateDirectoryRoleTemplate",
-              "legacyPath": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
-              "legacyOperationId": "directoryRoleTemplate_UpdateDirectoryRoleTemplate"
+              "operationId": "directoryRoleTemplate_UpdateDirectoryRoleTemplate"
             },
             {
               "method": "DELETE",
               "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
-              "operationId": "directoryRoleTemplates.directoryRoleTemplate.DeleteDirectoryRoleTemplate",
-              "legacyPath": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
-              "legacyOperationId": "directoryRoleTemplate_DeleteDirectoryRoleTemplate"
+              "operationId": "directoryRoleTemplate_DeleteDirectoryRoleTemplate"
             }
           ],
-          "notes": "Reviewed 5 actual legacy source operations and 5 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [
+            {
+              "method": "GET",
+              "path": "/directoryRoleTemplates",
+              "operationId": "directoryRoleTemplate_ListDirectoryRoleTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directoryRoleTemplates",
+                "operationId": "directoryRoleTemplate_ListDirectoryRoleTemplate"
+              }
+            },
+            {
+              "method": "POST",
+              "path": "/directoryRoleTemplates",
+              "operationId": "directoryRoleTemplate_CreateDirectoryRoleTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "POST",
+                "path": "/directoryRoleTemplates",
+                "operationId": "directoryRoleTemplate_CreateDirectoryRoleTemplate"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "operationId": "directoryRoleTemplate_GetDirectoryRoleTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+                "operationId": "directoryRoleTemplate_GetDirectoryRoleTemplate"
+              }
+            },
+            {
+              "method": "PATCH",
+              "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "operationId": "directoryRoleTemplate_UpdateDirectoryRoleTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "PATCH",
+                "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+                "operationId": "directoryRoleTemplate_UpdateDirectoryRoleTemplate"
+              }
+            },
+            {
+              "method": "DELETE",
+              "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "operationId": "directoryRoleTemplate_DeleteDirectoryRoleTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+                "operationId": "directoryRoleTemplate_DeleteDirectoryRoleTemplate"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 5; exact compatible survivors 5; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         },
         "beta": {
           "absenceExpected": false,
@@ -197,75 +296,167 @@
             {
               "method": "GET",
               "path": "/directoryRoleTemplates",
-              "operationId": "directoryRoleTemplates.directoryRoleTemplate.ListDirectoryRoleTemplate",
-              "legacyPath": "/directoryRoleTemplates",
-              "legacyOperationId": "directoryRoleTemplate_ListDirectoryRoleTemplate"
+              "operationId": "directoryRoleTemplate_ListDirectoryRoleTemplate"
             },
             {
               "method": "POST",
               "path": "/directoryRoleTemplates",
-              "operationId": "directoryRoleTemplates.directoryRoleTemplate.CreateDirectoryRoleTemplate",
-              "legacyPath": "/directoryRoleTemplates",
-              "legacyOperationId": "directoryRoleTemplate_CreateDirectoryRoleTemplate"
+              "operationId": "directoryRoleTemplate_CreateDirectoryRoleTemplate"
             },
             {
               "method": "GET",
               "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
-              "operationId": "directoryRoleTemplates.directoryRoleTemplate.GetDirectoryRoleTemplate",
-              "legacyPath": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
-              "legacyOperationId": "directoryRoleTemplate_GetDirectoryRoleTemplate"
+              "operationId": "directoryRoleTemplate_GetDirectoryRoleTemplate"
             },
             {
               "method": "PATCH",
               "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
-              "operationId": "directoryRoleTemplates.directoryRoleTemplate.UpdateDirectoryRoleTemplate",
-              "legacyPath": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
-              "legacyOperationId": "directoryRoleTemplate_UpdateDirectoryRoleTemplate"
+              "operationId": "directoryRoleTemplate_UpdateDirectoryRoleTemplate"
             },
             {
               "method": "DELETE",
               "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
-              "operationId": "directoryRoleTemplates.directoryRoleTemplate.DeleteDirectoryRoleTemplate",
-              "legacyPath": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
-              "legacyOperationId": "directoryRoleTemplate_DeleteDirectoryRoleTemplate"
+              "operationId": "directoryRoleTemplate_DeleteDirectoryRoleTemplate"
             },
             {
               "method": "GET",
               "path": "/directorySettingTemplates",
-              "operationId": "directorySettingTemplates.directorySettingTemplate.ListDirectorySettingTemplate",
-              "legacyPath": "/directorySettingTemplates",
-              "legacyOperationId": "directorySettingTemplate_ListDirectorySettingTemplate"
+              "operationId": "directorySettingTemplate_ListDirectorySettingTemplate"
             },
             {
               "method": "POST",
               "path": "/directorySettingTemplates",
-              "operationId": "directorySettingTemplates.directorySettingTemplate.CreateDirectorySettingTemplate",
-              "legacyPath": "/directorySettingTemplates",
-              "legacyOperationId": "directorySettingTemplate_CreateDirectorySettingTemplate"
+              "operationId": "directorySettingTemplate_CreateDirectorySettingTemplate"
             },
             {
               "method": "GET",
               "path": "/directorySettingTemplates/{directorySettingTemplate-id}",
-              "operationId": "directorySettingTemplates.directorySettingTemplate.GetDirectorySettingTemplate",
-              "legacyPath": "/directorySettingTemplates/{directorySettingTemplate-id}",
-              "legacyOperationId": "directorySettingTemplate_GetDirectorySettingTemplate"
+              "operationId": "directorySettingTemplate_GetDirectorySettingTemplate"
             },
             {
               "method": "PATCH",
               "path": "/directorySettingTemplates/{directorySettingTemplate-id}",
-              "operationId": "directorySettingTemplates.directorySettingTemplate.UpdateDirectorySettingTemplate",
-              "legacyPath": "/directorySettingTemplates/{directorySettingTemplate-id}",
-              "legacyOperationId": "directorySettingTemplate_UpdateDirectorySettingTemplate"
+              "operationId": "directorySettingTemplate_UpdateDirectorySettingTemplate"
             },
             {
               "method": "DELETE",
               "path": "/directorySettingTemplates/{directorySettingTemplate-id}",
-              "operationId": "directorySettingTemplates.directorySettingTemplate.DeleteDirectorySettingTemplate",
-              "legacyPath": "/directorySettingTemplates/{directorySettingTemplate-id}",
-              "legacyOperationId": "directorySettingTemplate_DeleteDirectorySettingTemplate"
+              "operationId": "directorySettingTemplate_DeleteDirectorySettingTemplate"
             }
           ],
-          "notes": "Reviewed 10 actual legacy source operations and 10 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [
+            {
+              "method": "GET",
+              "path": "/directoryRoleTemplates",
+              "operationId": "directoryRoleTemplate_ListDirectoryRoleTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directoryRoleTemplates",
+                "operationId": "directoryRoleTemplate_ListDirectoryRoleTemplate"
+              }
+            },
+            {
+              "method": "POST",
+              "path": "/directoryRoleTemplates",
+              "operationId": "directoryRoleTemplate_CreateDirectoryRoleTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "POST",
+                "path": "/directoryRoleTemplates",
+                "operationId": "directoryRoleTemplate_CreateDirectoryRoleTemplate"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "operationId": "directoryRoleTemplate_GetDirectoryRoleTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+                "operationId": "directoryRoleTemplate_GetDirectoryRoleTemplate"
+              }
+            },
+            {
+              "method": "PATCH",
+              "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "operationId": "directoryRoleTemplate_UpdateDirectoryRoleTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "PATCH",
+                "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+                "operationId": "directoryRoleTemplate_UpdateDirectoryRoleTemplate"
+              }
+            },
+            {
+              "method": "DELETE",
+              "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+              "operationId": "directoryRoleTemplate_DeleteDirectoryRoleTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/directoryRoleTemplates/{directoryRoleTemplate-id}",
+                "operationId": "directoryRoleTemplate_DeleteDirectoryRoleTemplate"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directorySettingTemplates",
+              "operationId": "directorySettingTemplate_ListDirectorySettingTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directorySettingTemplates",
+                "operationId": "directorySettingTemplate_ListDirectorySettingTemplate"
+              }
+            },
+            {
+              "method": "POST",
+              "path": "/directorySettingTemplates",
+              "operationId": "directorySettingTemplate_CreateDirectorySettingTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "POST",
+                "path": "/directorySettingTemplates",
+                "operationId": "directorySettingTemplate_CreateDirectorySettingTemplate"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directorySettingTemplates/{directorySettingTemplate-id}",
+              "operationId": "directorySettingTemplate_GetDirectorySettingTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directorySettingTemplates/{directorySettingTemplate-id}",
+                "operationId": "directorySettingTemplate_GetDirectorySettingTemplate"
+              }
+            },
+            {
+              "method": "PATCH",
+              "path": "/directorySettingTemplates/{directorySettingTemplate-id}",
+              "operationId": "directorySettingTemplate_UpdateDirectorySettingTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "PATCH",
+                "path": "/directorySettingTemplates/{directorySettingTemplate-id}",
+                "operationId": "directorySettingTemplate_UpdateDirectorySettingTemplate"
+              }
+            },
+            {
+              "method": "DELETE",
+              "path": "/directorySettingTemplates/{directorySettingTemplate-id}",
+              "operationId": "directorySettingTemplate_DeleteDirectorySettingTemplate",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/directorySettingTemplates/{directorySettingTemplate-id}",
+                "operationId": "directorySettingTemplate_DeleteDirectorySettingTemplate"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 10; exact compatible survivors 10; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         }
       }
     },
@@ -283,33 +474,71 @@
             {
               "method": "GET",
               "path": "/contacts",
-              "operationId": "contacts.orgContact.ListOrgContact",
-              "legacyPath": "/contacts",
-              "legacyOperationId": "contact.orgContact_ListOrgContact"
+              "operationId": "contact.orgContact_ListOrgContact"
             },
             {
               "method": "GET",
               "path": "/contacts/{orgContact-id}",
-              "operationId": "contacts.orgContact.GetOrgContact",
-              "legacyPath": "/contacts/{orgContact-id}",
-              "legacyOperationId": "contact.orgContact_GetOrgContact"
+              "operationId": "contact.orgContact_GetOrgContact"
             },
             {
               "method": "PATCH",
               "path": "/contacts/{orgContact-id}",
-              "operationId": "contacts.orgContact.UpdateOrgContact",
-              "legacyPath": "/contacts/{orgContact-id}",
-              "legacyOperationId": "contact.orgContact_UpdateOrgContact"
+              "operationId": "contact.orgContact_UpdateOrgContact"
             },
             {
               "method": "DELETE",
               "path": "/contacts/{orgContact-id}",
-              "operationId": "contacts.orgContact.DeleteOrgContact",
-              "legacyPath": "/contacts/{orgContact-id}",
-              "legacyOperationId": "contact.orgContact_DeleteOrgContact"
+              "operationId": "contact.orgContact_DeleteOrgContact"
             }
           ],
-          "notes": "Reviewed 4 actual legacy source operations and 4 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [
+            {
+              "method": "GET",
+              "path": "/contacts",
+              "operationId": "contact.orgContact_ListOrgContact",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/contacts",
+                "operationId": "contact.orgContact_ListOrgContact"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/contacts/{orgContact-id}",
+              "operationId": "contact.orgContact_GetOrgContact",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/contacts/{orgContact-id}",
+                "operationId": "contact.orgContact_GetOrgContact"
+              }
+            },
+            {
+              "method": "PATCH",
+              "path": "/contacts/{orgContact-id}",
+              "operationId": "contact.orgContact_UpdateOrgContact",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "PATCH",
+                "path": "/contacts/{orgContact-id}",
+                "operationId": "contact.orgContact_UpdateOrgContact"
+              }
+            },
+            {
+              "method": "DELETE",
+              "path": "/contacts/{orgContact-id}",
+              "operationId": "contact.orgContact_DeleteOrgContact",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/contacts/{orgContact-id}",
+                "operationId": "contact.orgContact_DeleteOrgContact"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 4; exact compatible survivors 4; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         },
         "beta": {
           "absenceExpected": false,
@@ -317,33 +546,71 @@
             {
               "method": "GET",
               "path": "/contacts",
-              "operationId": "contacts.orgContact.ListOrgContact",
-              "legacyPath": "/contacts",
-              "legacyOperationId": "contact.orgContact_ListOrgContact"
+              "operationId": "contact.orgContact_ListOrgContact"
             },
             {
               "method": "GET",
               "path": "/contacts/{orgContact-id}",
-              "operationId": "contacts.orgContact.GetOrgContact",
-              "legacyPath": "/contacts/{orgContact-id}",
-              "legacyOperationId": "contact.orgContact_GetOrgContact"
+              "operationId": "contact.orgContact_GetOrgContact"
             },
             {
               "method": "PATCH",
               "path": "/contacts/{orgContact-id}",
-              "operationId": "contacts.orgContact.UpdateOrgContact",
-              "legacyPath": "/contacts/{orgContact-id}",
-              "legacyOperationId": "contact.orgContact_UpdateOrgContact"
+              "operationId": "contact.orgContact_UpdateOrgContact"
             },
             {
               "method": "DELETE",
               "path": "/contacts/{orgContact-id}",
-              "operationId": "contacts.orgContact.DeleteOrgContact",
-              "legacyPath": "/contacts/{orgContact-id}",
-              "legacyOperationId": "contact.orgContact_DeleteOrgContact"
+              "operationId": "contact.orgContact_DeleteOrgContact"
             }
           ],
-          "notes": "Reviewed 4 actual legacy source operations and 4 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [
+            {
+              "method": "GET",
+              "path": "/contacts",
+              "operationId": "contact.orgContact_ListOrgContact",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/contacts",
+                "operationId": "contact.orgContact_ListOrgContact"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/contacts/{orgContact-id}",
+              "operationId": "contact.orgContact_GetOrgContact",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/contacts/{orgContact-id}",
+                "operationId": "contact.orgContact_GetOrgContact"
+              }
+            },
+            {
+              "method": "PATCH",
+              "path": "/contacts/{orgContact-id}",
+              "operationId": "contact.orgContact_UpdateOrgContact",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "PATCH",
+                "path": "/contacts/{orgContact-id}",
+                "operationId": "contact.orgContact_UpdateOrgContact"
+              }
+            },
+            {
+              "method": "DELETE",
+              "path": "/contacts/{orgContact-id}",
+              "operationId": "contact.orgContact_DeleteOrgContact",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/contacts/{orgContact-id}",
+                "operationId": "contact.orgContact_DeleteOrgContact"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 4; exact compatible survivors 4; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         }
       }
     },
@@ -358,7 +625,8 @@
         "v1.0": {
           "absenceExpected": true,
           "operations": [],
-          "notes": "Reviewed 0 actual legacy source operations and 0 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [],
+          "notes": "Actual original source selection 0; exact compatible survivors 0; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         },
         "beta": {
           "absenceExpected": false,
@@ -366,40 +634,87 @@
             {
               "method": "GET",
               "path": "/settings",
-              "operationId": "settings.directorySetting.ListDirectorySetting",
-              "legacyPath": "/settings",
-              "legacyOperationId": "setting.directorySetting_ListDirectorySetting"
+              "operationId": "setting.directorySetting_ListDirectorySetting"
             },
             {
               "method": "POST",
               "path": "/settings",
-              "operationId": "settings.directorySetting.CreateDirectorySetting",
-              "legacyPath": "/settings",
-              "legacyOperationId": "setting.directorySetting_CreateDirectorySetting"
+              "operationId": "setting.directorySetting_CreateDirectorySetting"
             },
             {
               "method": "GET",
               "path": "/settings/{directorySetting-id}",
-              "operationId": "settings.directorySetting.GetDirectorySetting",
-              "legacyPath": "/settings/{directorySetting-id}",
-              "legacyOperationId": "setting.directorySetting_GetDirectorySetting"
+              "operationId": "setting.directorySetting_GetDirectorySetting"
             },
             {
               "method": "PATCH",
               "path": "/settings/{directorySetting-id}",
-              "operationId": "settings.directorySetting.UpdateDirectorySetting",
-              "legacyPath": "/settings/{directorySetting-id}",
-              "legacyOperationId": "setting.directorySetting_UpdateDirectorySetting"
+              "operationId": "setting.directorySetting_UpdateDirectorySetting"
             },
             {
               "method": "DELETE",
               "path": "/settings/{directorySetting-id}",
-              "operationId": "settings.directorySetting.DeleteDirectorySetting",
-              "legacyPath": "/settings/{directorySetting-id}",
-              "legacyOperationId": "setting.directorySetting_DeleteDirectorySetting"
+              "operationId": "setting.directorySetting_DeleteDirectorySetting"
             }
           ],
-          "notes": "Reviewed 5 actual legacy source operations and 5 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [
+            {
+              "method": "GET",
+              "path": "/settings",
+              "operationId": "setting.directorySetting_ListDirectorySetting",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/settings",
+                "operationId": "setting.directorySetting_ListDirectorySetting"
+              }
+            },
+            {
+              "method": "POST",
+              "path": "/settings",
+              "operationId": "setting.directorySetting_CreateDirectorySetting",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "POST",
+                "path": "/settings",
+                "operationId": "setting.directorySetting_CreateDirectorySetting"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/settings/{directorySetting-id}",
+              "operationId": "setting.directorySetting_GetDirectorySetting",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/settings/{directorySetting-id}",
+                "operationId": "setting.directorySetting_GetDirectorySetting"
+              }
+            },
+            {
+              "method": "PATCH",
+              "path": "/settings/{directorySetting-id}",
+              "operationId": "setting.directorySetting_UpdateDirectorySetting",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "PATCH",
+                "path": "/settings/{directorySetting-id}",
+                "operationId": "setting.directorySetting_UpdateDirectorySetting"
+              }
+            },
+            {
+              "method": "DELETE",
+              "path": "/settings/{directorySetting-id}",
+              "operationId": "setting.directorySetting_DeleteDirectorySetting",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/settings/{directorySetting-id}",
+                "operationId": "setting.directorySetting_DeleteDirectorySetting"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 5; exact compatible survivors 5; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         }
       }
     },
@@ -417,89 +732,199 @@
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.administrativeUnit",
-              "operationId": "directory.GetDeletedItems.AsAdministrativeUnit",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.administrativeUnit",
-              "legacyOperationId": "directory_GetDeletedItemAsAdministrativeUnit"
+              "operationId": "directory_GetDeletedItemAsAdministrativeUnit"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.application",
-              "operationId": "directory.GetDeletedItems.AsApplication",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.application",
-              "legacyOperationId": "directory_GetDeletedItemAsApplication"
+              "operationId": "directory_GetDeletedItemAsApplication"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.device",
-              "operationId": "directory.GetDeletedItems.AsDevice",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.device",
-              "legacyOperationId": "directory_GetDeletedItemAsDevice"
+              "operationId": "directory_GetDeletedItemAsDevice"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.group",
-              "operationId": "directory.GetDeletedItems.AsGroup",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.group",
-              "legacyOperationId": "directory_GetDeletedItemAsGroup"
+              "operationId": "directory_GetDeletedItemAsGroup"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.servicePrincipal",
-              "operationId": "directory.GetDeletedItems.AsServicePrincipal",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.servicePrincipal",
-              "legacyOperationId": "directory_GetDeletedItemAsServicePrincipal"
+              "operationId": "directory_GetDeletedItemAsServicePrincipal"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.user",
-              "operationId": "directory.GetDeletedItems.AsUser",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.user",
-              "legacyOperationId": "directory_GetDeletedItemAsUser"
+              "operationId": "directory_GetDeletedItemAsUser"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.administrativeUnit",
-              "operationId": "directory.ListDeletedItems.AsAdministrativeUnit",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.administrativeUnit",
-              "legacyOperationId": "directory_ListDeletedItemAsAdministrativeUnit"
+              "operationId": "directory_ListDeletedItemAsAdministrativeUnit"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.application",
-              "operationId": "directory.ListDeletedItems.AsApplication",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.application",
-              "legacyOperationId": "directory_ListDeletedItemAsApplication"
+              "operationId": "directory_ListDeletedItemAsApplication"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.device",
-              "operationId": "directory.ListDeletedItems.AsDevice",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.device",
-              "legacyOperationId": "directory_ListDeletedItemAsDevice"
+              "operationId": "directory_ListDeletedItemAsDevice"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.group",
-              "operationId": "directory.ListDeletedItems.AsGroup",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.group",
-              "legacyOperationId": "directory_ListDeletedItemAsGroup"
+              "operationId": "directory_ListDeletedItemAsGroup"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.servicePrincipal",
-              "operationId": "directory.ListDeletedItems.AsServicePrincipal",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.servicePrincipal",
-              "legacyOperationId": "directory_ListDeletedItemAsServicePrincipal"
+              "operationId": "directory_ListDeletedItemAsServicePrincipal"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.user",
-              "operationId": "directory.ListDeletedItems.AsUser",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.user",
-              "legacyOperationId": "directory_ListDeletedItemAsUser"
+              "operationId": "directory_ListDeletedItemAsUser"
             }
           ],
-          "notes": "Reviewed 12 actual legacy source operations and 12 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.administrativeUnit",
+              "operationId": "directory_GetDeletedItemAsAdministrativeUnit",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.administrativeUnit",
+                "operationId": "directory_GetDeletedItemAsAdministrativeUnit"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.application",
+              "operationId": "directory_GetDeletedItemAsApplication",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.application",
+                "operationId": "directory_GetDeletedItemAsApplication"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.device",
+              "operationId": "directory_GetDeletedItemAsDevice",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.device",
+                "operationId": "directory_GetDeletedItemAsDevice"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.group",
+              "operationId": "directory_GetDeletedItemAsGroup",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.group",
+                "operationId": "directory_GetDeletedItemAsGroup"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.servicePrincipal",
+              "operationId": "directory_GetDeletedItemAsServicePrincipal",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.servicePrincipal",
+                "operationId": "directory_GetDeletedItemAsServicePrincipal"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.user",
+              "operationId": "directory_GetDeletedItemAsUser",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.user",
+                "operationId": "directory_GetDeletedItemAsUser"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.administrativeUnit",
+              "operationId": "directory_ListDeletedItemAsAdministrativeUnit",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.administrativeUnit",
+                "operationId": "directory_ListDeletedItemAsAdministrativeUnit"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.application",
+              "operationId": "directory_ListDeletedItemAsApplication",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.application",
+                "operationId": "directory_ListDeletedItemAsApplication"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.device",
+              "operationId": "directory_ListDeletedItemAsDevice",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.device",
+                "operationId": "directory_ListDeletedItemAsDevice"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.group",
+              "operationId": "directory_ListDeletedItemAsGroup",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.group",
+                "operationId": "directory_ListDeletedItemAsGroup"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.servicePrincipal",
+              "operationId": "directory_ListDeletedItemAsServicePrincipal",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.servicePrincipal",
+                "operationId": "directory_ListDeletedItemAsServicePrincipal"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.user",
+              "operationId": "directory_ListDeletedItemAsUser",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.user",
+                "operationId": "directory_ListDeletedItemAsUser"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 12; exact compatible survivors 12; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         },
         "beta": {
           "absenceExpected": false,
@@ -507,89 +932,199 @@
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.administrativeUnit",
-              "operationId": "directory.GetDeletedItems.AsAdministrativeUnit",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.administrativeUnit",
-              "legacyOperationId": "directory_GetDeletedItemAsAdministrativeUnit"
+              "operationId": "directory_GetDeletedItemAsAdministrativeUnit"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.application",
-              "operationId": "directory.GetDeletedItems.AsApplication",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.application",
-              "legacyOperationId": "directory_GetDeletedItemAsApplication"
+              "operationId": "directory_GetDeletedItemAsApplication"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.device",
-              "operationId": "directory.GetDeletedItems.AsDevice",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.device",
-              "legacyOperationId": "directory_GetDeletedItemAsDevice"
+              "operationId": "directory_GetDeletedItemAsDevice"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.group",
-              "operationId": "directory.GetDeletedItems.AsGroup",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.group",
-              "legacyOperationId": "directory_GetDeletedItemAsGroup"
+              "operationId": "directory_GetDeletedItemAsGroup"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.servicePrincipal",
-              "operationId": "directory.GetDeletedItems.AsServicePrincipal",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.servicePrincipal",
-              "legacyOperationId": "directory_GetDeletedItemAsServicePrincipal"
+              "operationId": "directory_GetDeletedItemAsServicePrincipal"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.user",
-              "operationId": "directory.GetDeletedItems.AsUser",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.user",
-              "legacyOperationId": "directory_GetDeletedItemAsUser"
+              "operationId": "directory_GetDeletedItemAsUser"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.administrativeUnit",
-              "operationId": "directory.ListDeletedItems.AsAdministrativeUnit",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.administrativeUnit",
-              "legacyOperationId": "directory_ListDeletedItemAsAdministrativeUnit"
+              "operationId": "directory_ListDeletedItemAsAdministrativeUnit"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.application",
-              "operationId": "directory.ListDeletedItems.AsApplication",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.application",
-              "legacyOperationId": "directory_ListDeletedItemAsApplication"
+              "operationId": "directory_ListDeletedItemAsApplication"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.device",
-              "operationId": "directory.ListDeletedItems.AsDevice",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.device",
-              "legacyOperationId": "directory_ListDeletedItemAsDevice"
+              "operationId": "directory_ListDeletedItemAsDevice"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.group",
-              "operationId": "directory.ListDeletedItems.AsGroup",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.group",
-              "legacyOperationId": "directory_ListDeletedItemAsGroup"
+              "operationId": "directory_ListDeletedItemAsGroup"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.servicePrincipal",
-              "operationId": "directory.ListDeletedItems.AsServicePrincipal",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.servicePrincipal",
-              "legacyOperationId": "directory_ListDeletedItemAsServicePrincipal"
+              "operationId": "directory_ListDeletedItemAsServicePrincipal"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.user",
-              "operationId": "directory.ListDeletedItems.AsUser",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.user",
-              "legacyOperationId": "directory_ListDeletedItemAsUser"
+              "operationId": "directory_ListDeletedItemAsUser"
             }
           ],
-          "notes": "Reviewed 12 actual legacy source operations and 12 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.administrativeUnit",
+              "operationId": "directory_GetDeletedItemAsAdministrativeUnit",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.administrativeUnit",
+                "operationId": "directory_GetDeletedItemAsAdministrativeUnit"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.application",
+              "operationId": "directory_GetDeletedItemAsApplication",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.application",
+                "operationId": "directory_GetDeletedItemAsApplication"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.device",
+              "operationId": "directory_GetDeletedItemAsDevice",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.device",
+                "operationId": "directory_GetDeletedItemAsDevice"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.group",
+              "operationId": "directory_GetDeletedItemAsGroup",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.group",
+                "operationId": "directory_GetDeletedItemAsGroup"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.servicePrincipal",
+              "operationId": "directory_GetDeletedItemAsServicePrincipal",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.servicePrincipal",
+                "operationId": "directory_GetDeletedItemAsServicePrincipal"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.user",
+              "operationId": "directory_GetDeletedItemAsUser",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.user",
+                "operationId": "directory_GetDeletedItemAsUser"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.administrativeUnit",
+              "operationId": "directory_ListDeletedItemAsAdministrativeUnit",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.administrativeUnit",
+                "operationId": "directory_ListDeletedItemAsAdministrativeUnit"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.application",
+              "operationId": "directory_ListDeletedItemAsApplication",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.application",
+                "operationId": "directory_ListDeletedItemAsApplication"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.device",
+              "operationId": "directory_ListDeletedItemAsDevice",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.device",
+                "operationId": "directory_ListDeletedItemAsDevice"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.group",
+              "operationId": "directory_ListDeletedItemAsGroup",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.group",
+                "operationId": "directory_ListDeletedItemAsGroup"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.servicePrincipal",
+              "operationId": "directory_ListDeletedItemAsServicePrincipal",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.servicePrincipal",
+                "operationId": "directory_ListDeletedItemAsServicePrincipal"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.user",
+              "operationId": "directory_ListDeletedItemAsUser",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.user",
+                "operationId": "directory_ListDeletedItemAsUser"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 12; exact compatible survivors 12; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         }
       }
     },
@@ -607,89 +1142,199 @@
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.administrativeUnit",
-              "operationId": "directory.GetDeletedItems.AsAdministrativeUnit",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.administrativeUnit",
-              "legacyOperationId": "directory_GetDeletedItemAsAdministrativeUnit"
+              "operationId": "directory_GetDeletedItemAsAdministrativeUnit"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.application",
-              "operationId": "directory.GetDeletedItems.AsApplication",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.application",
-              "legacyOperationId": "directory_GetDeletedItemAsApplication"
+              "operationId": "directory_GetDeletedItemAsApplication"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.device",
-              "operationId": "directory.GetDeletedItems.AsDevice",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.device",
-              "legacyOperationId": "directory_GetDeletedItemAsDevice"
+              "operationId": "directory_GetDeletedItemAsDevice"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.group",
-              "operationId": "directory.GetDeletedItems.AsGroup",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.group",
-              "legacyOperationId": "directory_GetDeletedItemAsGroup"
+              "operationId": "directory_GetDeletedItemAsGroup"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.servicePrincipal",
-              "operationId": "directory.GetDeletedItems.AsServicePrincipal",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.servicePrincipal",
-              "legacyOperationId": "directory_GetDeletedItemAsServicePrincipal"
+              "operationId": "directory_GetDeletedItemAsServicePrincipal"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.user",
-              "operationId": "directory.GetDeletedItems.AsUser",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.user",
-              "legacyOperationId": "directory_GetDeletedItemAsUser"
+              "operationId": "directory_GetDeletedItemAsUser"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.administrativeUnit",
-              "operationId": "directory.ListDeletedItems.AsAdministrativeUnit",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.administrativeUnit",
-              "legacyOperationId": "directory_ListDeletedItemAsAdministrativeUnit"
+              "operationId": "directory_ListDeletedItemAsAdministrativeUnit"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.application",
-              "operationId": "directory.ListDeletedItems.AsApplication",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.application",
-              "legacyOperationId": "directory_ListDeletedItemAsApplication"
+              "operationId": "directory_ListDeletedItemAsApplication"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.device",
-              "operationId": "directory.ListDeletedItems.AsDevice",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.device",
-              "legacyOperationId": "directory_ListDeletedItemAsDevice"
+              "operationId": "directory_ListDeletedItemAsDevice"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.group",
-              "operationId": "directory.ListDeletedItems.AsGroup",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.group",
-              "legacyOperationId": "directory_ListDeletedItemAsGroup"
+              "operationId": "directory_ListDeletedItemAsGroup"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.servicePrincipal",
-              "operationId": "directory.ListDeletedItems.AsServicePrincipal",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.servicePrincipal",
-              "legacyOperationId": "directory_ListDeletedItemAsServicePrincipal"
+              "operationId": "directory_ListDeletedItemAsServicePrincipal"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.user",
-              "operationId": "directory.ListDeletedItems.AsUser",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.user",
-              "legacyOperationId": "directory_ListDeletedItemAsUser"
+              "operationId": "directory_ListDeletedItemAsUser"
             }
           ],
-          "notes": "Reviewed 12 actual legacy source operations and 12 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.administrativeUnit",
+              "operationId": "directory_GetDeletedItemAsAdministrativeUnit",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.administrativeUnit",
+                "operationId": "directory_GetDeletedItemAsAdministrativeUnit"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.application",
+              "operationId": "directory_GetDeletedItemAsApplication",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.application",
+                "operationId": "directory_GetDeletedItemAsApplication"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.device",
+              "operationId": "directory_GetDeletedItemAsDevice",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.device",
+                "operationId": "directory_GetDeletedItemAsDevice"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.group",
+              "operationId": "directory_GetDeletedItemAsGroup",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.group",
+                "operationId": "directory_GetDeletedItemAsGroup"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.servicePrincipal",
+              "operationId": "directory_GetDeletedItemAsServicePrincipal",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.servicePrincipal",
+                "operationId": "directory_GetDeletedItemAsServicePrincipal"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.user",
+              "operationId": "directory_GetDeletedItemAsUser",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.user",
+                "operationId": "directory_GetDeletedItemAsUser"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.administrativeUnit",
+              "operationId": "directory_ListDeletedItemAsAdministrativeUnit",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.administrativeUnit",
+                "operationId": "directory_ListDeletedItemAsAdministrativeUnit"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.application",
+              "operationId": "directory_ListDeletedItemAsApplication",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.application",
+                "operationId": "directory_ListDeletedItemAsApplication"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.device",
+              "operationId": "directory_ListDeletedItemAsDevice",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.device",
+                "operationId": "directory_ListDeletedItemAsDevice"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.group",
+              "operationId": "directory_ListDeletedItemAsGroup",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.group",
+                "operationId": "directory_ListDeletedItemAsGroup"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.servicePrincipal",
+              "operationId": "directory_ListDeletedItemAsServicePrincipal",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.servicePrincipal",
+                "operationId": "directory_ListDeletedItemAsServicePrincipal"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.user",
+              "operationId": "directory_ListDeletedItemAsUser",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.user",
+                "operationId": "directory_ListDeletedItemAsUser"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 12; exact compatible survivors 12; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         },
         "beta": {
           "absenceExpected": false,
@@ -697,89 +1342,199 @@
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.administrativeUnit",
-              "operationId": "directory.GetDeletedItems.AsAdministrativeUnit",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.administrativeUnit",
-              "legacyOperationId": "directory_GetDeletedItemAsAdministrativeUnit"
+              "operationId": "directory_GetDeletedItemAsAdministrativeUnit"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.application",
-              "operationId": "directory.GetDeletedItems.AsApplication",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.application",
-              "legacyOperationId": "directory_GetDeletedItemAsApplication"
+              "operationId": "directory_GetDeletedItemAsApplication"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.device",
-              "operationId": "directory.GetDeletedItems.AsDevice",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.device",
-              "legacyOperationId": "directory_GetDeletedItemAsDevice"
+              "operationId": "directory_GetDeletedItemAsDevice"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.group",
-              "operationId": "directory.GetDeletedItems.AsGroup",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.group",
-              "legacyOperationId": "directory_GetDeletedItemAsGroup"
+              "operationId": "directory_GetDeletedItemAsGroup"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.servicePrincipal",
-              "operationId": "directory.GetDeletedItems.AsServicePrincipal",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.servicePrincipal",
-              "legacyOperationId": "directory_GetDeletedItemAsServicePrincipal"
+              "operationId": "directory_GetDeletedItemAsServicePrincipal"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/{directoryObject-id}/graph.user",
-              "operationId": "directory.GetDeletedItems.AsUser",
-              "legacyPath": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.user",
-              "legacyOperationId": "directory_GetDeletedItemAsUser"
+              "operationId": "directory_GetDeletedItemAsUser"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.administrativeUnit",
-              "operationId": "directory.ListDeletedItems.AsAdministrativeUnit",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.administrativeUnit",
-              "legacyOperationId": "directory_ListDeletedItemAsAdministrativeUnit"
+              "operationId": "directory_ListDeletedItemAsAdministrativeUnit"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.application",
-              "operationId": "directory.ListDeletedItems.AsApplication",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.application",
-              "legacyOperationId": "directory_ListDeletedItemAsApplication"
+              "operationId": "directory_ListDeletedItemAsApplication"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.device",
-              "operationId": "directory.ListDeletedItems.AsDevice",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.device",
-              "legacyOperationId": "directory_ListDeletedItemAsDevice"
+              "operationId": "directory_ListDeletedItemAsDevice"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.group",
-              "operationId": "directory.ListDeletedItems.AsGroup",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.group",
-              "legacyOperationId": "directory_ListDeletedItemAsGroup"
+              "operationId": "directory_ListDeletedItemAsGroup"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.servicePrincipal",
-              "operationId": "directory.ListDeletedItems.AsServicePrincipal",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.servicePrincipal",
-              "legacyOperationId": "directory_ListDeletedItemAsServicePrincipal"
+              "operationId": "directory_ListDeletedItemAsServicePrincipal"
             },
             {
               "method": "GET",
               "path": "/directory/deletedItems/graph.user",
-              "operationId": "directory.ListDeletedItems.AsUser",
-              "legacyPath": "/directory/deletedItems/microsoft.graph.user",
-              "legacyOperationId": "directory_ListDeletedItemAsUser"
+              "operationId": "directory_ListDeletedItemAsUser"
             }
           ],
-          "notes": "Reviewed 12 actual legacy source operations and 12 exact compatible operations; old paths and IDs are retained with each surviving operation."
+          "originalSourceOperations": [
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.administrativeUnit",
+              "operationId": "directory_GetDeletedItemAsAdministrativeUnit",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.administrativeUnit",
+                "operationId": "directory_GetDeletedItemAsAdministrativeUnit"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.application",
+              "operationId": "directory_GetDeletedItemAsApplication",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.application",
+                "operationId": "directory_GetDeletedItemAsApplication"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.device",
+              "operationId": "directory_GetDeletedItemAsDevice",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.device",
+                "operationId": "directory_GetDeletedItemAsDevice"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.group",
+              "operationId": "directory_GetDeletedItemAsGroup",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.group",
+                "operationId": "directory_GetDeletedItemAsGroup"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.servicePrincipal",
+              "operationId": "directory_GetDeletedItemAsServicePrincipal",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.servicePrincipal",
+                "operationId": "directory_GetDeletedItemAsServicePrincipal"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/{directoryObject-id}/microsoft.graph.user",
+              "operationId": "directory_GetDeletedItemAsUser",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/{directoryObject-id}/graph.user",
+                "operationId": "directory_GetDeletedItemAsUser"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.administrativeUnit",
+              "operationId": "directory_ListDeletedItemAsAdministrativeUnit",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.administrativeUnit",
+                "operationId": "directory_ListDeletedItemAsAdministrativeUnit"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.application",
+              "operationId": "directory_ListDeletedItemAsApplication",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.application",
+                "operationId": "directory_ListDeletedItemAsApplication"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.device",
+              "operationId": "directory_ListDeletedItemAsDevice",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.device",
+                "operationId": "directory_ListDeletedItemAsDevice"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.group",
+              "operationId": "directory_ListDeletedItemAsGroup",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.group",
+                "operationId": "directory_ListDeletedItemAsGroup"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.servicePrincipal",
+              "operationId": "directory_ListDeletedItemAsServicePrincipal",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.servicePrincipal",
+                "operationId": "directory_ListDeletedItemAsServicePrincipal"
+              }
+            },
+            {
+              "method": "GET",
+              "path": "/directory/deletedItems/microsoft.graph.user",
+              "operationId": "directory_ListDeletedItemAsUser",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "GET",
+                "path": "/directory/deletedItems/graph.user",
+                "operationId": "directory_ListDeletedItemAsUser"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 12; exact compatible survivors 12; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         }
       }
     },
@@ -797,35 +1552,71 @@
             {
               "method": "DELETE",
               "path": "/devices/{device-id}/registeredOwners/$ref",
-              "operationId": "devices.DeleteRefRegisteredOwners",
-              "legacyPath": "/devices/{device-id}/registeredOwners/$ref",
-              "legacyOperationId": "device_DeleteRegisteredOwnerGraphBPreRef"
+              "operationId": "device_DeleteRegisteredOwnerGraphBPreRef"
             },
             {
               "method": "DELETE",
               "path": "/devices/{device-id}/registeredUsers/$ref",
-              "operationId": "devices.DeleteRefRegisteredUsers",
-              "legacyPath": "/devices/{device-id}/registeredUsers/$ref",
-              "legacyOperationId": "device_DeleteRegisteredUserGraphBPreRef"
+              "operationId": "device_DeleteRegisteredUserGraphBPreRef"
             },
             {
               "method": "DELETE",
               "path": "/directory/administrativeUnits/{administrativeUnit-id}/members/$ref",
-              "operationId": "directory.administrativeUnits.DeleteRefMembers",
-              "legacyPath": "/directory/administrativeUnits/{administrativeUnit-id}/members/$ref",
-              "legacyOperationId": "directory.administrativeUnit_DeleteMemberGraphBPreRef"
+              "operationId": "directory.administrativeUnit_DeleteMemberGraphBPreRef"
             },
             {
               "method": "DELETE",
               "path": "/directoryRoles/{directoryRole-id}/members/$ref",
-              "operationId": "directoryRoles.DeleteRefMembers",
-              "legacyPath": "/directoryRoles/{directoryRole-id}/members/$ref",
-              "legacyOperationId": "directoryRole_DeleteMemberGraphBPreRef"
+              "operationId": "directoryRole_DeleteMemberGraphBPreRef"
             }
           ],
-          "operationIdSource": "Legacy",
-          "notes": "Reviewed the complete actual v1.0 legacy regex match set (4); 4 exact method/path compatible successors; 0 reviewed obsolete source operations. No resource-root or final operation translation.",
-          "removedLegacyOperations": []
+          "originalSourceOperations": [
+            {
+              "method": "DELETE",
+              "path": "/devices/{device-id}/registeredOwners/$ref",
+              "operationId": "device_DeleteRegisteredOwnerGraphBPreRef",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/devices/{device-id}/registeredOwners/$ref",
+                "operationId": "device_DeleteRegisteredOwnerGraphBPreRef"
+              }
+            },
+            {
+              "method": "DELETE",
+              "path": "/devices/{device-id}/registeredUsers/$ref",
+              "operationId": "device_DeleteRegisteredUserGraphBPreRef",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/devices/{device-id}/registeredUsers/$ref",
+                "operationId": "device_DeleteRegisteredUserGraphBPreRef"
+              }
+            },
+            {
+              "method": "DELETE",
+              "path": "/directory/administrativeUnits/{administrativeUnit-id}/members/$ref",
+              "operationId": "directory.administrativeUnit_DeleteMemberGraphBPreRef",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/directory/administrativeUnits/{administrativeUnit-id}/members/$ref",
+                "operationId": "directory.administrativeUnit_DeleteMemberGraphBPreRef"
+              }
+            },
+            {
+              "method": "DELETE",
+              "path": "/directoryRoles/{directoryRole-id}/members/$ref",
+              "operationId": "directoryRole_DeleteMemberGraphBPreRef",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/directoryRoles/{directoryRole-id}/members/$ref",
+                "operationId": "directoryRole_DeleteMemberGraphBPreRef"
+              }
+            }
+          ],
+          "notes": "Actual original source selection 4; exact compatible survivors 4; verified removed source operations 0. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         },
         "beta": {
           "absenceExpected": false,
@@ -833,42 +1624,78 @@
             {
               "method": "DELETE",
               "path": "/devices/{device-id}/registeredOwners/$ref",
-              "operationId": "devices.DeleteRefRegisteredOwners",
-              "legacyPath": "/devices/{device-id}/registeredOwners/$ref",
-              "legacyOperationId": "device_DeleteRegisteredOwnerGraphBPreRef"
+              "operationId": "device_DeleteRegisteredOwnerGraphBPreRef"
             },
             {
               "method": "DELETE",
               "path": "/devices/{device-id}/registeredUsers/$ref",
-              "operationId": "devices.DeleteRefRegisteredUsers",
-              "legacyPath": "/devices/{device-id}/registeredUsers/$ref",
-              "legacyOperationId": "device_DeleteRegisteredUserGraphBPreRef"
+              "operationId": "device_DeleteRegisteredUserGraphBPreRef"
             },
             {
               "method": "DELETE",
               "path": "/directory/administrativeUnits/{administrativeUnit-id}/members/$ref",
-              "operationId": "directory.administrativeUnits.DeleteRefMembers",
-              "legacyPath": "/directory/administrativeUnits/{administrativeUnit-id}/members/$ref",
-              "legacyOperationId": "directory.administrativeUnit_DeleteMemberGraphBPreRef"
+              "operationId": "directory.administrativeUnit_DeleteMemberGraphBPreRef"
             },
             {
               "method": "DELETE",
               "path": "/directoryRoles/{directoryRole-id}/members/$ref",
-              "operationId": "directoryRoles.DeleteRefMembers",
-              "legacyPath": "/directoryRoles/{directoryRole-id}/members/$ref",
-              "legacyOperationId": "directoryRole_DeleteMemberGraphBPreRef"
+              "operationId": "directoryRole_DeleteMemberGraphBPreRef"
             }
           ],
-          "operationIdSource": "Legacy",
-          "notes": "Reviewed the complete actual beta legacy regex match set (5); 4 exact method/path compatible successors; 1 reviewed obsolete source operations. No resource-root or final operation translation.",
-          "removedLegacyOperations": [
+          "originalSourceOperations": [
+            {
+              "method": "DELETE",
+              "path": "/devices/{device-id}/registeredOwners/$ref",
+              "operationId": "device_DeleteRegisteredOwnerGraphBPreRef",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/devices/{device-id}/registeredOwners/$ref",
+                "operationId": "device_DeleteRegisteredOwnerGraphBPreRef"
+              }
+            },
+            {
+              "method": "DELETE",
+              "path": "/devices/{device-id}/registeredUsers/$ref",
+              "operationId": "device_DeleteRegisteredUserGraphBPreRef",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/devices/{device-id}/registeredUsers/$ref",
+                "operationId": "device_DeleteRegisteredUserGraphBPreRef"
+              }
+            },
+            {
+              "method": "DELETE",
+              "path": "/directory/administrativeUnits/{administrativeUnit-id}/members/$ref",
+              "operationId": "directory.administrativeUnit_DeleteMemberGraphBPreRef",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/directory/administrativeUnits/{administrativeUnit-id}/members/$ref",
+                "operationId": "directory.administrativeUnit_DeleteMemberGraphBPreRef"
+              }
+            },
             {
               "method": "GET",
               "path": "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref",
               "operationId": "directory.featureRolloutPolicy_ListAppliesToGraphBPreRef",
-              "notes": "Authorized reviewed removal of the duplicate directory lineage: the entire /directory/featureRolloutPolicies lineage is absent from the compatible Identity.DirectoryManagement beta spec, with 0 same-module/profile compatible counterparts for this exact selected GET path. The /policies/featureRolloutPolicies lineage is independently present in BOTH legacy and compatible Identity.SignIns beta specs (old policy.featureRolloutPolicy_ListAppliesToGraphBPreRef; current policies.featureRolloutPolicies.ListRefAppliesTo); exact neighbor evidence is recorded separately above. It is not an inferred moved successor and is not changed or suppressed by this module migration."
+              "disposition": "RemovedDuplicate",
+              "notes": "Authorized removed duplicate directory lineage, zero same-module compatible counterparts. Independent /policies/featureRolloutPolicies already existed in BOTH old and current Identity.SignIns; see separate exact neighbor evidence. No resource-root translation and no policies change."
+            },
+            {
+              "method": "DELETE",
+              "path": "/directoryRoles/{directoryRole-id}/members/$ref",
+              "operationId": "directoryRole_DeleteMemberGraphBPreRef",
+              "disposition": "Survives",
+              "compatibleOperation": {
+                "method": "DELETE",
+                "path": "/directoryRoles/{directoryRole-id}/members/$ref",
+                "operationId": "directoryRole_DeleteMemberGraphBPreRef"
+              }
             }
-          ]
+          ],
+          "notes": "Actual original source selection 5; exact compatible survivors 4; verified removed source operations 1. Current literal IDs were aligned centrally; no helper-reserved legacy bridge fields or resource-root translations."
         }
       }
     }

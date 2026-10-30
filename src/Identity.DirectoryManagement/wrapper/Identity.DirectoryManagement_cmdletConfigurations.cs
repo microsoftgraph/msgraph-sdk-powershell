@@ -30,6 +30,23 @@ public static partial class CmdletConfigurator
         new(OverrideKind.ReplaceNoun, Method: null, "/settings/{}", PathMatch.Exact, "DirectorySetting",
             Reason: "shared directive: SettingDirectorySetting -> DirectorySetting"),
 
+        // These distinct operations have incompatible bodies/results, not natural-ID variants.
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post, "/directory/impactedresources/addtag", PathMatch.Exact,
+            "DirectoryImpactedResourceAddTagByResourceId",
+            Reason: "collection addTag takes resourceIds[] and returns impactedResources; item addTag returns a recommendationTag"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post, "/directory/impactedresources/removetag", PathMatch.Exact,
+            "DirectoryImpactedResourceRemoveTagByDisplayName",
+            Reason: "collection removeTag takes displayName and resourceIds[]; item removeTag takes tagId"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post, "/directory/recommendations/{}/impactedresources/addtag", PathMatch.Exact,
+            "DirectoryRecommendationImpactedResourceAddTagByResourceId",
+            Reason: "recommendation collection addTag takes resourceIds[] and returns impactedResources"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post, "/directory/recommendations/{}/impactedresources/removetag", PathMatch.Exact,
+            "DirectoryRecommendationImpactedResourceRemoveTagByDisplayName",
+            Reason: "recommendation collection removeTag takes displayName and resourceIds[] rather than an item tagId"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Delete, "/administrativeunits/{}/members/$ref", PathMatch.Exact,
+            "AdministrativeUnitMemberReferenceByUri",
+            Reason: "collection reference delete requires query @id (the delete Uri); item reference delete requires DirectoryObjectId"),
+
         // ---- Naming-parity sweep (2026-08-13): one of the two rules proved safe. ----
         //
         // Both safe rules were measured against the whole corpus first: each fixes real
