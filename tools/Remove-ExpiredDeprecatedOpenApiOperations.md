@@ -9,6 +9,12 @@
 The default buffer is two days. The script updates OpenAPI documents in place and writes a
 `deprecated-removals.json` report next to the processed document or in the processed directory.
 
+Module-specific cmdlet retirement belongs in the module's `*_cmdletConfigurations.cs`,
+not this generic OpenAPI pruner. For example, Bookings' beta-only configuration suppresses
+cmdlets for the retired `/bookingBusinesses` and `/bookingCurrencies` root families.
+Unannotated legacy paths remain in the compatible OpenAPI input and generated Kiota HTTP
+client; the supported `/solutions/...` cmdlets and v1.0 behavior are unaffected.
+
 ## Process one API document
 
 Pass a `.yml` or `.yaml` file to `OpenApiFilesPath`:
@@ -47,10 +53,20 @@ directory must already exist.
 - An invalid `removalDate` stops processing before any OpenAPI document is changed.
 - The JSON report is keyed by module filename and URI and lists removed methods plus whether the
   URI itself was removed.
+- Documents are edited by removing line ranges, not reserializing YAML. Unrelated text,
+  schemas, encoding, and line endings are retained.
 
-The Kiota-compatible refresh invokes this script automatically after downloading a profile:
+Both the bulk Kiota-compatible refresh and standalone download invoke pruning automatically:
 
 ```powershell
 .\tools\UpdateOpenApiKiotaCompat.ps1
 .\tools\UpdateOpenApiKiotaCompat.ps1 -BetaGraphVersion
+.\tools\DownloadOpenApiDocKiotaCompat.ps1 -ModuleName Bookings `
+    -ModuleRegex '^(bookingBusinesses|bookingCurrencies|solutions)\.' `
+    -OpenApiDocOutput .\openApiDocs_KiotaCompat\beta -GraphVersion beta -SingularizeOperationIds
 ```
+
+The bulk refresh defers per-file pruning until after its operation-ID tweaks so it produces
+one complete profile removal report. The standalone downloader prunes immediately after a
+successful download/ID projection and propagates pruning errors. Historical `openApiDocs`
+and module directive markdown are not rewritten.
