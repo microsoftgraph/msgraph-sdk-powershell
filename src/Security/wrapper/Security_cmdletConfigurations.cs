@@ -7,6 +7,38 @@ public static partial class CmdletConfigurator
 {
     private static readonly List<Entry> SecurityCmdletConfigurations =
     [
+        // Bulk actions have an ids request body; item actions are bodyless. They
+        // cannot share natural-ID variants with identical public body contracts.
+        // Multiple preserves the item command and describes the actual bulk body.
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post, "/security/cases/ediscoverycases/{}/custodians/microsoft.graph.security.applyhold", PathMatch.Exact,
+            "SecurityCaseEdiscoveryCaseCustodianApplyHoldMultiple", "Collection action accepts ids; preserve bodyless item action"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post, "/security/cases/ediscoverycases/{}/custodians/microsoft.graph.security.removehold", PathMatch.Exact,
+            "SecurityCaseEdiscoveryCaseCustodianRemoveHoldMultiple", "Collection action accepts ids; preserve bodyless item action"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post, "/security/cases/ediscoverycases/{}/custodians/microsoft.graph.security.updateindex", PathMatch.Exact,
+            "SecurityCaseEdiscoveryCaseCustodianUpdateIndexMultiple", "Collection action accepts ids; preserve bodyless item action"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post, "/security/cases/ediscoverycases/{}/noncustodialdatasources/microsoft.graph.security.applyhold", PathMatch.Exact,
+            "SecurityCaseEdiscoveryCaseNoncustodialDataSourceApplyHoldMultiple", "Collection action accepts ids; preserve bodyless item action"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post, "/security/cases/ediscoverycases/{}/noncustodialdatasources/microsoft.graph.security.removehold", PathMatch.Exact,
+            "SecurityCaseEdiscoveryCaseNoncustodialDataSourceRemoveHoldMultiple", "Collection action accepts ids; preserve bodyless item action"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post, "/security/cases/ediscoverycases/{}/noncustodialdatasources/microsoft.graph.security.updateindex", PathMatch.Exact,
+            "SecurityCaseEdiscoveryCaseNoncustodialDataSourceUpdateIndexMultiple", "Collection action accepts ids; preserve bodyless item action"),
+        // Existing v1 derived suppressions remain authoritative. Shared groups
+        // would include suppressed members there. Give beta alternatives scope
+        // names instead, preserving each published count's original route.
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/security/threatintelligence/articles/{}/indicators/$count", PathMatch.Exact,
+            "SecurityThreatIntelligenceArticleIndicatorCountByArticle", "Article-scoped alternative; published default is articleIndicators/$count"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/security/threatintelligence/hosts/{}/components/$count", PathMatch.Exact,
+            "SecurityThreatIntelligenceHostComponentCountByHost", "Host-scoped alternative; published default is hostComponents/$count"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/security/threatintelligence/hosts/{}/cookies/$count", PathMatch.Exact,
+            "SecurityThreatIntelligenceHostCookieCountByHost", "Host-scoped alternative; published default is hostCookies/$count"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/security/threatintelligence/hosts/{}/hostpairs/$count", PathMatch.Exact,
+            "SecurityThreatIntelligenceHostPairCountByHost", "Host-scoped alternative; published default is hostPairs/$count"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/security/threatintelligence/hosts/{}/ports/$count", PathMatch.Exact,
+            "SecurityThreatIntelligenceHostPortCountByHost", "Host-scoped alternative; published default is hostPorts/$count"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/security/threatintelligence/hostsslcertificates/$count", PathMatch.Exact,
+            "SecurityThreatIntelligenceHostSslCertificateCountAcrossHost", "All-host collection alternative; preserve published hosts/{host-id}/sslCertificates/$count"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/security/threatintelligence/hosttrackers/$count", PathMatch.Exact,
+            "SecurityThreatIntelligenceHostTrackerCountAcrossHost", "All-host collection alternative; preserve published hosts/{host-id}/trackers/$count"),
         // Security.md shared directives 1 and 2. The attackSimulation portion of
         // directive 1 and directive 3 are already covered by the container entry below.
         new(OverrideKind.SuppressOperation, HttpMethod.Get, "/security", PathMatch.Exact, null,

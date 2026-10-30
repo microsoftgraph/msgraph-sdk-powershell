@@ -23,9 +23,11 @@ public sealed class SecurityDirectiveMigrationTests
     private static readonly Lazy<Dictionary<string, OpenApiDocument>> Specs = new(LoadSpecs);
 
     [Theory]
-    [InlineData("v1.0", 6)]
-    [InlineData("beta", 7)]
-    public void OriginalLegacySelectorAccountsForEveryExactSurvivingOperation(string profile, int expectedCount)
+    [InlineData("v1.0", 6, true)]
+    [InlineData("v1.0", 6, false)]
+    [InlineData("beta", 7, true)]
+    [InlineData("beta", 7, false)]
+    public void OriginalLegacySelectorAccountsForEveryExactSurvivingOperation(string profile, int expectedCount, bool useCollisionData)
     {
         var source = File.ReadAllText(Path.Combine(RepoRoot.Value, "src", "Security", "Security.md"));
         var pattern = Regex.Match(source, @"(?m)^\s+- remove-path-by-operation:\s*(.+)$").Groups[1].Value.Trim();
@@ -37,14 +39,15 @@ public sealed class SecurityDirectiveMigrationTests
 
         using var ledger = ReadLedger();
         var mapping = ledger.RootElement.GetProperty("mappings")[0].GetProperty("profiles").GetProperty(profile);
-        Assert.Equal("Legacy", mapping.GetProperty("operationIdSource").GetString());
+        Assert.False(mapping.TryGetProperty("operationIdSource", out _));
         Assert.False(mapping.GetProperty("absenceExpected").GetBoolean());
-        Assert.Equal(0, mapping.GetProperty("removedLegacyOperations").GetArrayLength());
         var reviewed = mapping.GetProperty("operations").EnumerateArray().ToArray();
         Assert.Equal(expectedCount, reviewed.Length);
         Assert.Equal(
-            legacy.Select(o => $"{o.Method} {o.Path} [{o.Operation.OperationId}]").OrderBy(k => k),
-            reviewed.Select(o => $"{o.GetProperty("method").GetString()} {o.GetProperty("legacyPath").GetString()} [{o.GetProperty("legacyOperationId").GetString()}]").OrderBy(k => k));
+            legacy.Select(o => $"{o.Method} {o.Path}").OrderBy(k => k),
+            reviewed.Select(o => $"{o.GetProperty("method").GetString()} {o.GetProperty("path").GetString()}").OrderBy(k => k));
+        var current = Operations(Specs.Value[$"openApiDocs_KiotaCompat|{profile}"]).ToArray();
+        Assert.Equal(6, current.Count(o => selector.IsMatch(o.Operation.OperationId!)));
 
         foreach (var expected in reviewed)
         {
@@ -52,17 +55,25 @@ public sealed class SecurityDirectiveMigrationTests
             var path = expected.GetProperty("path").GetString()!;
             var actual = Assert.Single(Operations(Specs.Value[$"openApiDocs_KiotaCompat|{profile}"]),
                 o => o.Method == method && o.Path == path);
-            Assert.Equal(expected.GetProperty("legacyPath").GetString(), path);
             Assert.Equal(expected.GetProperty("operationId").GetString(), actual.Operation.OperationId);
-            Assert.NotEqual(expected.GetProperty("legacyOperationId").GetString(), actual.Operation.OperationId);
-            Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, Config(profile)));
+            var original = Assert.Single(legacy, o => o.Method == method && o.Path == path);
+            if (path == AggregatedApps)
+            {
+                Assert.Equal("security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail", original.Operation.OperationId);
+                Assert.Equal("security.dataDiscovery.cloudAppDiscovery.uploadedStream.cloudAppDiscoveryReport_aggregatedAppsDetail", actual.Operation.OperationId);
+            }
+            else
+                Assert.Equal(original.Operation.OperationId, actual.Operation.OperationId);
+            Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, Config(useCollisionData), apiVersion: profile));
         }
     }
 
     [Theory]
-    [InlineData("v1.0")]
-    [InlineData("beta")]
-    public void EveryReviewedCurrentOperationExistsAndHasItsDeclaredDisposition(string profile)
+    [InlineData("v1.0", true)]
+    [InlineData("v1.0", false)]
+    [InlineData("beta", true)]
+    [InlineData("beta", false)]
+    public void EveryReviewedCurrentOperationExistsAndHasItsDeclaredDisposition(string profile, bool useCollisionData)
     {
         using var ledger = ReadLedger();
         var mappings = ledger.RootElement.GetProperty("mappings").EnumerateArray().ToArray();
@@ -79,12 +90,12 @@ public sealed class SecurityDirectiveMigrationTests
                     o => o.Method == method && o.Path == path);
                 Assert.Equal(expected.GetProperty("operationId").GetString(), actual.Operation.OperationId);
                 if (index <= 3)
-                    Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, Config(profile)));
+                    Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, Config(useCollisionData), apiVersion: profile));
                 else
-                    Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, Config(profile)));
+                    Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, Config(useCollisionData), apiVersion: profile));
             }
         }
-        var count = Naming.Resolve(new OperationInfo(HttpMethod.Get, "/security/alerts_v2/$count"), Config(profile));
+        var count = Naming.Resolve(new OperationInfo(HttpMethod.Get, "/security/alerts_v2/$count"), Config(useCollisionData), apiVersion: profile);
         Assert.Equal("Get", count.VerbName);
         Assert.Equal("MgSecurityAlertV2Count", count.Noun);
     }
@@ -127,9 +138,11 @@ public sealed class SecurityDirectiveMigrationTests
     }
 
     [Theory]
-    [InlineData("v1.0")]
-    [InlineData("beta")]
-    public void SurvivingNeighborsRemainUnsuppressedAndKeepTheirNames(string profile)
+    [InlineData("v1.0", true)]
+    [InlineData("v1.0", false)]
+    [InlineData("beta", true)]
+    [InlineData("beta", false)]
+    public void SurvivingNeighborsRemainUnsuppressedAndKeepTheirNames(string profile, bool useCollisionData)
     {
         (string Method, string Path, string Noun)[] neighbors =
         [
@@ -144,8 +157,8 @@ public sealed class SecurityDirectiveMigrationTests
         {
             Assert.Single(Operations(Specs.Value[$"openApiDocs_KiotaCompat|{profile}"]),
                 o => o.Method == method && o.Path == path);
-            Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, Config(profile)));
-            Assert.Equal(noun, Naming.Resolve(new OperationInfo(new HttpMethod(method), path), Config(profile)).Noun);
+            Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, Config(useCollisionData), apiVersion: profile));
+            Assert.Equal(noun, Naming.Resolve(new OperationInfo(new HttpMethod(method), path), Config(useCollisionData), apiVersion: profile).Noun);
         }
     }
 
@@ -202,8 +215,8 @@ public sealed class SecurityDirectiveMigrationTests
             Assert.True(bulk.Responses["204"].Content is null || bulk.Responses["204"].Content!.Count == 0);
             Assert.True(item.Parameters is null || item.Parameters.Count == 0);
             Assert.True(bulk.Parameters is null || bulk.Parameters.Count == 0);
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, itemPath, Config("beta")));
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, collectionPath, Config("beta")));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, itemPath, Config(), apiVersion: "beta"));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, collectionPath, Config(), apiVersion: "beta"));
             var published = PublishedDefault(metadata, $"{verb}-MgBetaSecurityCaseEdiscoveryCase{noun}{suffix}");
             Assert.Equal(itemPath.Replace("/microsoft.graph.security.", "/", StringComparison.Ordinal),
                 published.GetProperty("Uri").GetString());
@@ -247,7 +260,7 @@ public sealed class SecurityDirectiveMigrationTests
                 Assert.Equal("text/plain", media.Key);
                 Assert.Equal(JsonSchemaType.Integer, media.Value.Schema!.Type);
                 Assert.Equal("int32", media.Value.Schema.Format);
-                Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, Config("beta")));
+                Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, Config(), apiVersion: "beta"));
             }
             var published = PublishedDefault(metadata, $"Get-MgBetaSecurityThreatIntelligence{noun}Count");
             Assert.Equal(nestedDefault ? nestedPath : topPath, published.GetProperty("Uri").GetString());
@@ -260,7 +273,59 @@ public sealed class SecurityDirectiveMigrationTests
             row => row.GetProperty("ApiVersion").GetString() == "beta" &&
                 row.GetProperty("Command").GetString() == command);
 
-    private static GeneratorConfig Config(string profile) => new("Test.Client", "unused", profile);
+    [Theory]
+    [InlineData("v1.0", true)]
+    [InlineData("v1.0", false)]
+    [InlineData("beta", true)]
+    [InlineData("beta", false)]
+    public void CollisionAlternativesHaveSourceScopedNamesWithoutChangingPublishedCountDefaults(string profile, bool useCollisionData)
+    {
+        var document = Specs.Value[$"openApiDocs_KiotaCompat|{profile}"];
+        foreach (var (top, nested, noun, nestedDefault) in new[]
+        {
+            ("articleIndicators", "articles/{article-id}/indicators", "ArticleIndicator", false),
+            ("hostComponents", "hosts/{host-id}/components", "HostComponent", false),
+            ("hostCookies", "hosts/{host-id}/cookies", "HostCookie", false),
+            ("hostPairs", "hosts/{host-id}/hostPairs", "HostPair", false),
+            ("hostPorts", "hosts/{host-id}/ports", "HostPort", false),
+            ("hostSslCertificates", "hosts/{host-id}/sslCertificates", "HostSslCertificate", true),
+            ("hostTrackers", "hosts/{host-id}/trackers", "HostTracker", true),
+        })
+        {
+            var topPath = $"/security/threatIntelligence/{top}/$count";
+            var nestedPath = $"/security/threatIntelligence/{nested}/$count";
+            var defaultPath = nestedDefault ? nestedPath : topPath;
+            var alternatePath = nestedDefault ? topPath : nestedPath;
+            var publishedNoun = $"MgSecurityThreatIntelligence{noun}Count";
+            var suffix = nestedDefault ? "AcrossHost" : top == "articleIndicators" ? "ByArticle" : "ByHost";
+            Assert.True(document.Paths.ContainsKey(defaultPath));
+            Assert.True(document.Paths.ContainsKey(alternatePath));
+            Assert.Equal(publishedNoun, Naming.Resolve(new OperationInfo(HttpMethod.Get, defaultPath), Config(useCollisionData), profile).Noun);
+            Assert.Equal(publishedNoun + suffix, Naming.Resolve(new OperationInfo(HttpMethod.Get, alternatePath), Config(useCollisionData), profile).Noun);
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, defaultPath, Config(useCollisionData), profile));
+            Assert.Equal(profile == "v1.0" && useCollisionData,
+                CmdletConfigurator.IsSuppressed(HttpMethod.Get, alternatePath, Config(useCollisionData), profile));
+        }
+        foreach (var (collection, noun) in new[] { ("custodians", "Custodian"), ("noncustodialDataSources", "NoncustodialDataSource") })
+        foreach (var action in new[] { "applyHold", "removeHold", "updateIndex" })
+        {
+            var path = $"/security/cases/ediscoveryCases/{{ediscoveryCase-id}}/{collection}/microsoft.graph.security.{action}";
+            if (!document.Paths.ContainsKey(path))
+            {
+                Assert.Equal("v1.0", profile);
+                Assert.Equal("updateIndex", action);
+                continue;
+            }
+            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Post, path, Kind: OperationKind.Action), Config(useCollisionData), profile);
+            var actionNoun = char.ToUpperInvariant(action[0]) + action[1..];
+            Assert.Equal($"MgSecurityCaseEdiscoveryCase{noun}{actionNoun}Multiple", naming.Noun);
+            Assert.Equal("Invoke", naming.VerbName);
+            Assert.Equal(profile == "v1.0" && useCollisionData,
+                CmdletConfigurator.IsSuppressed(HttpMethod.Post, path, Config(useCollisionData), profile));
+        }
+    }
+
+    private static GeneratorConfig Config(bool useCollisionData = true) => new("Test.Client", "unused", UseCollisionData: useCollisionData);
 
     private static JsonDocument ReadLedger() =>
         JsonDocument.Parse(File.ReadAllText(Path.Combine(RepoRoot.Value, "src", "Security", "wrapper", "Security_directiveMigrationMap.json")));

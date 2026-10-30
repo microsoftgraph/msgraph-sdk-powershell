@@ -2,6 +2,29 @@
 
 This directory contains common [AutoREST.PowerShell](https://github.com/Azure/autorest.powershell) configurations for Security v1.0 and/or beta modules.
 
+## Wrapper migration audit
+
+Only the six shared cmdlet directives below are in scope. Global and profile-local
+directives are ignored; parameter aliases/transforms and schema directives remain
+deferred. Both v1.0 and beta are required; neither profile is excluded.
+
+The original operation-ID selector matches six legacy v1.0 and seven legacy beta
+operations. Every selected method/path survives. Six IDs now align with the
+compatible specification; the beta `aggregatedAppsDetails` function still has a
+different ID. Its exact source/current pair is retained in the ledger notes and
+tests. The literal-only inventory gate remains blocked on that source bridge;
+zero literal matches for that function is not API absence.
+
+Full beta generation also exposes six collection/item action collisions and seven
+count collisions. Collection actions have an `ids` body whereas item actions are
+bodyless, so compatible natural-ID grouping is inappropriate. Shared exact noun
+overrides append `Multiple` to the collection action names. Count alternatives use
+`ByArticle`, `ByHost`, or `AcrossHost` according to their actual URL scope, leaving
+the published count name on its existing route. No selectors, authored profile
+filters, response-union restrictions, or new suppressions resolve these collisions.
+Existing v1.0 derived suppressions and curated child-navigation behavior remain
+unchanged. No mutation variant groups are introduced.
+
 ## AutoRest Configuration
 
 > see <https://aka.ms/autorest>
@@ -20,7 +43,10 @@ directive:
 # Remove invalid paths.
 # Wrapper migration: directive 1 bridges the COMPLETE original legacy operation-ID
 # match set (6 v1.0, 7 beta) to exact surviving method/path pairs. The adjacent
-# wrapper/Security_directiveMigrationMap.json records both IDs. The existing
+# wrapper/Security_directiveMigrationMap.json records current IDs and source lineage.
+# Six IDs now align; the seventh beta function still needs reviewed legacy-helper
+# support for the strict inventory gate. It is not absent and is not dropped.
+# The existing
 # attackSimulation container suppression is reused; nested dataSource operations
 # and the beta aggregatedAppsDetails function have exact scoped suppressions.
 # Keep all shared AutoRest directives active until that pipeline is retired.

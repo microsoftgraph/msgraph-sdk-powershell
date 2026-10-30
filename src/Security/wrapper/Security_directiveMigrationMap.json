@@ -6,114 +6,84 @@
       "classification": "OperationIdSuppression",
       "sourceContains": "remove-path-by-operation: ^security(.case.ediscoveryCase.noncustodialDataSource_.*DataSource)$|^security_DeleteAttackSimulation$|^security_UpdateAttackSimulation$|^security_GetAttackSimulation$|^security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail$",
       "implementation": "CmdletConfigurator",
-      "notes": "Evaluate the unchanged regex against actual same-profile openApiDocs first. Every selected operation survives at its exact method/path with a renamed compatible ID. Reuse existing attackSimulation container suppression; scope new dataSource and aggregatedAppsDetails suppressions exactly. No API absence, namespace translation, or route pruning is claimed.",
+      "notes": "Complete original same-profile legacy selection: six v1.0 and seven beta operations, all surviving at exact method/path. Current IDs align for the six shared operations. The beta function legacy ID security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail is now security.dataDiscovery.cloudAppDiscovery.uploadedStream.cloudAppDiscoveryReport_aggregatedAppsDetail; it remains included below, NOT removed or absent. The target's literal-only strict inventory cannot validate this seventh source bridge until the reviewed legacy helper merges. No copied helper fields or passing-gate claim.",
       "profiles": {
         "v1.0": {
-          "operationIdSource": "Legacy",
           "notes": "Complete original legacy regex set: six operations, all six exact method/path successors retained and suppressed.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "GET",
               "path": "/security/attackSimulation",
-              "operationId": "security.GetAttackSimulation",
-              "legacyPath": "/security/attackSimulation",
-              "legacyOperationId": "security_GetAttackSimulation"
+              "operationId": "security_GetAttackSimulation"
             },
             {
               "method": "PATCH",
               "path": "/security/attackSimulation",
-              "operationId": "security.UpdateAttackSimulation",
-              "legacyPath": "/security/attackSimulation",
-              "legacyOperationId": "security_UpdateAttackSimulation"
+              "operationId": "security_UpdateAttackSimulation"
             },
             {
               "method": "DELETE",
               "path": "/security/attackSimulation",
-              "operationId": "security.DeleteAttackSimulation",
-              "legacyPath": "/security/attackSimulation",
-              "legacyOperationId": "security_DeleteAttackSimulation"
+              "operationId": "security_DeleteAttackSimulation"
             },
             {
               "method": "GET",
               "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "operationId": "security.cases.ediscoveryCases.noncustodialDataSources.GetDataSource",
-              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_GetDataSource"
+              "operationId": "security.case.ediscoveryCase.noncustodialDataSource_GetDataSource"
             },
             {
               "method": "PATCH",
               "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "operationId": "security.cases.ediscoveryCases.noncustodialDataSources.UpdateDataSource",
-              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_UpdateDataSource"
+              "operationId": "security.case.ediscoveryCase.noncustodialDataSource_UpdateDataSource"
             },
             {
               "method": "DELETE",
               "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "operationId": "security.cases.ediscoveryCases.noncustodialDataSources.DeleteDataSource",
-              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_DeleteDataSource"
+              "operationId": "security.case.ediscoveryCase.noncustodialDataSource_DeleteDataSource"
             }
-          ],
-          "removedLegacyOperations": []
+          ]
         },
         "beta": {
-          "operationIdSource": "Legacy",
           "notes": "Complete original legacy regex set: seven operations, all seven exact method/path successors retained and suppressed. The additional selected operation is an actual function, not inferred absence from renamed IDs.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "GET",
               "path": "/security/attackSimulation",
-              "operationId": "security.GetAttackSimulation",
-              "legacyPath": "/security/attackSimulation",
-              "legacyOperationId": "security_GetAttackSimulation"
+              "operationId": "security_GetAttackSimulation"
             },
             {
               "method": "PATCH",
               "path": "/security/attackSimulation",
-              "operationId": "security.UpdateAttackSimulation",
-              "legacyPath": "/security/attackSimulation",
-              "legacyOperationId": "security_UpdateAttackSimulation"
+              "operationId": "security_UpdateAttackSimulation"
             },
             {
               "method": "DELETE",
               "path": "/security/attackSimulation",
-              "operationId": "security.DeleteAttackSimulation",
-              "legacyPath": "/security/attackSimulation",
-              "legacyOperationId": "security_DeleteAttackSimulation"
+              "operationId": "security_DeleteAttackSimulation"
             },
             {
               "method": "GET",
               "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "operationId": "security.cases.ediscoveryCases.noncustodialDataSources.GetDataSource",
-              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_GetDataSource"
+              "operationId": "security.case.ediscoveryCase.noncustodialDataSource_GetDataSource"
             },
             {
               "method": "PATCH",
               "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "operationId": "security.cases.ediscoveryCases.noncustodialDataSources.UpdateDataSource",
-              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_UpdateDataSource"
+              "operationId": "security.case.ediscoveryCase.noncustodialDataSource_UpdateDataSource"
             },
             {
               "method": "DELETE",
               "path": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "operationId": "security.cases.ediscoveryCases.noncustodialDataSources.DeleteDataSource",
-              "legacyPath": "/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/{ediscoveryNoncustodialDataSource-id}/dataSource",
-              "legacyOperationId": "security.case.ediscoveryCase.noncustodialDataSource_DeleteDataSource"
+              "operationId": "security.case.ediscoveryCase.noncustodialDataSource_DeleteDataSource"
             },
             {
               "method": "GET",
               "path": "/security/dataDiscovery/cloudAppDiscovery/uploadedStreams/{cloudAppDiscoveryReport-id}/microsoft.graph.security.aggregatedAppsDetails(period={period})",
-              "operationId": "security.dataDiscovery.cloudAppDiscovery.uploadedStreams.cloudAppDiscoveryReport.aggregatedAppsDetails",
-              "legacyPath": "/security/dataDiscovery/cloudAppDiscovery/uploadedStreams/{cloudAppDiscoveryReport-id}/microsoft.graph.security.aggregatedAppsDetails(period={period})",
-              "legacyOperationId": "security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail"
+              "operationId": "security.dataDiscovery.cloudAppDiscovery.uploadedStream.cloudAppDiscoveryReport_aggregatedAppsDetail"
             }
-          ],
-          "removedLegacyOperations": []
+          ]
         }
       }
     },
@@ -128,15 +98,15 @@
         "v1.0": {
           "absenceExpected": false,
           "operations": [
-            { "method": "GET", "path": "/security", "operationId": "security.security.GetSecurity" },
-            { "method": "PATCH", "path": "/security", "operationId": "security.security.UpdateSecurity" }
+            { "method": "GET", "path": "/security", "operationId": "security_GetSecurity" },
+            { "method": "PATCH", "path": "/security", "operationId": "security_UpdateSecurity" }
           ]
         },
         "beta": {
           "absenceExpected": false,
           "operations": [
-            { "method": "GET", "path": "/security", "operationId": "security.security.GetSecurity" },
-            { "method": "PATCH", "path": "/security", "operationId": "security.security.UpdateSecurity" }
+            { "method": "GET", "path": "/security", "operationId": "security_GetSecurity" },
+            { "method": "PATCH", "path": "/security", "operationId": "security_UpdateSecurity" }
           ]
         }
       }
@@ -152,13 +122,13 @@
         "v1.0": {
           "absenceExpected": false,
           "operations": [
-            { "method": "PATCH", "path": "/security/attackSimulation", "operationId": "security.UpdateAttackSimulation" }
+            { "method": "PATCH", "path": "/security/attackSimulation", "operationId": "security_UpdateAttackSimulation" }
           ]
         },
         "beta": {
           "absenceExpected": false,
           "operations": [
-            { "method": "PATCH", "path": "/security/attackSimulation", "operationId": "security.UpdateAttackSimulation" }
+            { "method": "PATCH", "path": "/security/attackSimulation", "operationId": "security_UpdateAttackSimulation" }
           ]
         }
       }
@@ -198,13 +168,13 @@
         "v1.0": {
           "absenceExpected": false,
           "operations": [
-            { "method": "GET", "path": "/security/alerts_v2/$count", "operationId": "security.alerts_v2.GetCount-9522" }
+            { "method": "GET", "path": "/security/alerts_v2/$count", "operationId": "security.alerts_v2_GetCount" }
           ]
         },
         "beta": {
           "absenceExpected": false,
           "operations": [
-            { "method": "GET", "path": "/security/alerts_v2/$count", "operationId": "security.alerts_v2.GetCount-9522" }
+            { "method": "GET", "path": "/security/alerts_v2/$count", "operationId": "security.alerts_v2_GetCount" }
           ]
         }
       }
