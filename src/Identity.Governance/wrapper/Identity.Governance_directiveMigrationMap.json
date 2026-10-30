@@ -22202,5 +22202,386 @@
         }
       }
     }
+  ],
+  "compatibleSurfaceCorrections": [
+    {
+      "disposition": "NaturalMandatoryIdVariants",
+      "defaultFamily": "Standalone",
+      "reason": "shared directives 66 and 69: preserve all four renamed GET routes; PrivilegedRoleId distinguishes the Role parameter sets",
+      "profiles": {
+        "v1.0": {
+          "operations": [],
+          "absenceExpected": true
+        },
+        "beta": {
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/privilegedRoleAssignments",
+              "operationId": "privilegedRoleAssignment_ListPrivilegedRoleAssignment",
+              "family": "Standalone"
+            },
+            {
+              "method": "GET",
+              "path": "/privilegedRoleAssignments/{privilegedRoleAssignment-id}",
+              "operationId": "privilegedRoleAssignment_GetPrivilegedRoleAssignment",
+              "family": "Standalone"
+            },
+            {
+              "method": "GET",
+              "path": "/privilegedRoles/{privilegedRole-id}/assignments",
+              "operationId": "privilegedRole_ListAssignment",
+              "family": "Role"
+            },
+            {
+              "method": "GET",
+              "path": "/privilegedRoles/{privilegedRole-id}/assignments/{privilegedRoleAssignment-id}",
+              "operationId": "privilegedRole_GetAssignment",
+              "family": "Role"
+            }
+          ],
+          "absenceExpected": false
+        }
+      }
+    },
+    {
+      "disposition": "NaturalMandatoryIdVariants",
+      "defaultFamily": "Standalone",
+      "reason": "Preserve both privileged assignment count endpoints using the existing parent role ID",
+      "profiles": {
+        "v1.0": {
+          "operations": [],
+          "absenceExpected": true
+        },
+        "beta": {
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/privilegedRoleAssignments/$count",
+              "operationId": "privilegedRoleAssignment_GetCount",
+              "family": "Standalone"
+            },
+            {
+              "method": "GET",
+              "path": "/privilegedRoles/{privilegedRole-id}/assignments/$count",
+              "operationId": "privilegedRole.assignment_GetCount",
+              "family": "Role"
+            }
+          ],
+          "absenceExpected": false
+        }
+      }
+    },
+    {
+      "disposition": "NaturalMandatoryIdVariants",
+      "defaultFamily": "Standalone",
+      "reason": "Program controls have standalone and program-bound list/item alternatives with identical entity contracts",
+      "profiles": {
+        "v1.0": {
+          "operations": [],
+          "absenceExpected": true
+        },
+        "beta": {
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/programControls",
+              "operationId": "programControl_ListProgramControl",
+              "family": "Standalone"
+            },
+            {
+              "method": "GET",
+              "path": "/programControls/{programControl-id}",
+              "operationId": "programControl_GetProgramControl",
+              "family": "Standalone"
+            },
+            {
+              "method": "GET",
+              "path": "/programs/{program-id}/controls",
+              "operationId": "program_ListControl",
+              "family": "Program"
+            },
+            {
+              "method": "GET",
+              "path": "/programs/{program-id}/controls/{programControl-id}",
+              "operationId": "program_GetControl",
+              "family": "Program"
+            }
+          ],
+          "absenceExpected": false
+        }
+      }
+    },
+    {
+      "disposition": "NaturalMandatoryIdVariants",
+      "defaultFamily": "Standalone",
+      "reason": "Preserve both program-control count endpoints selected by the existing program ID",
+      "profiles": {
+        "v1.0": {
+          "operations": [],
+          "absenceExpected": true
+        },
+        "beta": {
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/programControls/$count",
+              "operationId": "programControl_GetCount",
+              "family": "Standalone"
+            },
+            {
+              "method": "GET",
+              "path": "/programs/{program-id}/controls/$count",
+              "operationId": "program.control_GetCount",
+              "family": "Program"
+            }
+          ],
+          "absenceExpected": false
+        }
+      }
+    },
+    {
+      "disposition": "NaturalMandatoryIdVariants",
+      "defaultFamily": "Standalone",
+      "reason": "Preserve DELETE program-control operations at both roots using the existing program ID",
+      "profiles": {
+        "v1.0": {
+          "operations": [],
+          "absenceExpected": true
+        },
+        "beta": {
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/programControls/{programControl-id}",
+              "operationId": "programControl_DeleteProgramControl",
+              "family": "Standalone"
+            },
+            {
+              "method": "DELETE",
+              "path": "/programs/{program-id}/controls/{programControl-id}",
+              "operationId": "program_DeleteControl",
+              "family": "Program"
+            }
+          ],
+          "absenceExpected": false
+        }
+      }
+    },
+    {
+      "disposition": "NaturalMandatoryIdVariants",
+      "defaultFamily": "Standalone",
+      "reason": "Preserve GET control-program navigation at both roots with the same program contract",
+      "profiles": {
+        "v1.0": {
+          "operations": [],
+          "absenceExpected": true
+        },
+        "beta": {
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/programControls/{programControl-id}/program",
+              "operationId": "programControl_GetProgram",
+              "family": "Standalone"
+            },
+            {
+              "method": "GET",
+              "path": "/programs/{program-id}/controls/{programControl-id}/program",
+              "operationId": "program.control_GetProgram",
+              "family": "Program"
+            }
+          ],
+          "absenceExpected": false
+        }
+      }
+    },
+    {
+      "disposition": "NaturalMandatoryIdVariants",
+      "defaultFamily": "Standalone",
+      "reason": "Preserve PATCH control-program navigation at both roots with the same program contract",
+      "profiles": {
+        "v1.0": {
+          "operations": [],
+          "absenceExpected": true
+        },
+        "beta": {
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/programControls/{programControl-id}/program",
+              "operationId": "programControl_UpdateProgram",
+              "family": "Standalone"
+            },
+            {
+              "method": "PATCH",
+              "path": "/programs/{program-id}/controls/{programControl-id}/program",
+              "operationId": "program.control_UpdateProgram",
+              "family": "Program"
+            }
+          ],
+          "absenceExpected": false
+        }
+      }
+    },
+    {
+      "disposition": "NaturalMandatoryIdVariants",
+      "defaultFamily": "Standalone",
+      "reason": "Preserve DELETE control-program navigation at both roots with the same program contract",
+      "profiles": {
+        "v1.0": {
+          "operations": [],
+          "absenceExpected": true
+        },
+        "beta": {
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/programControls/{programControl-id}/program",
+              "operationId": "programControl_DeleteProgram",
+              "family": "Standalone"
+            },
+            {
+              "method": "DELETE",
+              "path": "/programs/{program-id}/controls/{programControl-id}/program",
+              "operationId": "program.control_DeleteProgram",
+              "family": "Program"
+            }
+          ],
+          "absenceExpected": false
+        }
+      }
+    },
+    {
+      "disposition": "NaturalMandatoryIdVariants",
+      "defaultFamily": "Configuration",
+      "reason": "Preserve role-management alert configuration list, direct item and alert-bound navigation GETs",
+      "profiles": {
+        "v1.0": {
+          "operations": [],
+          "absenceExpected": true
+        },
+        "beta": {
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/identityGovernance/roleManagementAlerts/alertConfigurations",
+              "operationId": "identityGovernance.roleManagementAlert_ListAlertConfiguration",
+              "family": "Configuration"
+            },
+            {
+              "method": "GET",
+              "path": "/identityGovernance/roleManagementAlerts/alertConfigurations/{unifiedRoleManagementAlertConfiguration-id}",
+              "operationId": "identityGovernance.roleManagementAlert_GetAlertConfiguration",
+              "family": "Configuration"
+            },
+            {
+              "method": "GET",
+              "path": "/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert-id}/alertConfiguration",
+              "operationId": "identityGovernance.roleManagementAlert.alert_GetAlertConfiguration",
+              "family": "Alert"
+            }
+          ],
+          "absenceExpected": false
+        }
+      }
+    },
+    {
+      "disposition": "NaturalMandatoryIdVariants",
+      "defaultFamily": "Definition",
+      "reason": "Preserve role-management alert definition list, direct item and alert-bound navigation GETs",
+      "profiles": {
+        "v1.0": {
+          "operations": [],
+          "absenceExpected": true
+        },
+        "beta": {
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/identityGovernance/roleManagementAlerts/alertDefinitions",
+              "operationId": "identityGovernance.roleManagementAlert_ListAlertDefinition",
+              "family": "Definition"
+            },
+            {
+              "method": "GET",
+              "path": "/identityGovernance/roleManagementAlerts/alertDefinitions/{unifiedRoleManagementAlertDefinition-id}",
+              "operationId": "identityGovernance.roleManagementAlert_GetAlertDefinition",
+              "family": "Definition"
+            },
+            {
+              "method": "GET",
+              "path": "/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert-id}/alertDefinition",
+              "operationId": "identityGovernance.roleManagementAlert.alert_GetAlertDefinition",
+              "family": "Alert"
+            }
+          ],
+          "absenceExpected": false
+        }
+      }
+    },
+    {
+      "disposition": "DistinctBodyContractNoun",
+      "noun": "IdentityGovernanceRoleManagementAlertRefreshByScope",
+      "reason": "Actual request body requires scopeType/scopeId; the single-alert refresh action has no body. Preserve both distinct actions.",
+      "profiles": {
+        "v1.0": {
+          "operations": [],
+          "absenceExpected": true
+        },
+        "beta": {
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/identityGovernance/roleManagementAlerts/alerts/refresh",
+              "operationId": "identityGovernance.roleManagementAlert.alert_refresh"
+            }
+          ],
+          "absenceExpected": false
+        }
+      }
+    },
+    {
+      "disposition": "DistinctBodyContractNoun",
+      "noun": "ProgramAssociatedControl",
+      "reason": "The program description says controls associated with the program. The mandatory ProgramId path ID would otherwise conflict with the standalone programId body property.",
+      "profiles": {
+        "v1.0": {
+          "operations": [],
+          "absenceExpected": true
+        },
+        "beta": {
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/programs/{program-id}/controls",
+              "operationId": "program_CreateControl"
+            }
+          ],
+          "absenceExpected": false
+        }
+      }
+    },
+    {
+      "disposition": "DistinctBodyContractNoun",
+      "noun": "ProgramAssociatedControl",
+      "reason": "Preserve program-associated and standalone update contracts separately: ProgramId has path-ID versus expanded-body roles.",
+      "profiles": {
+        "v1.0": {
+          "operations": [],
+          "absenceExpected": true
+        },
+        "beta": {
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/programs/{program-id}/controls/{programControl-id}",
+              "operationId": "program_UpdateControl"
+            }
+          ],
+          "absenceExpected": false
+        }
+      }
+    }
   ]
 }

@@ -525,6 +525,96 @@ public sealed class IdentityGovernanceDirectiveMigrationTests
     }
 
     [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task CompleteCompatibleSurfaceEmitsWithoutLosingCollidingRoutes(string profile)
+    {
+        var output = Path.Combine(Path.GetTempPath(), "governance-directive-tests", Guid.NewGuid().ToString("N"));
+        try
+        {
+            await new PowerShellWrapperGenerationService(await Specs[profile].Value,
+                Config() with { OutputPath = output }, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(TestContext.Current.CancellationToken);
+            Assert.NotEmpty(Directory.GetFiles(output, "*.g.cs"));
+            if (profile == "beta")
+            {
+                foreach (var noun in new[] { "ProgramControl", "ProgramAssociatedControl" })
+                    foreach (var verb in new[] { "New", "Update" })
+                        Assert.True(File.Exists(Path.Combine(output, $"{verb}Mg{noun}.g.cs")));
+                Assert.True(File.Exists(Path.Combine(output, "InvokeMgIdentityGovernanceRoleManagementAlertRefresh.g.cs")));
+                Assert.True(File.Exists(Path.Combine(output, "InvokeMgIdentityGovernanceRoleManagementAlertRefreshByScope.g.cs")));
+                var associatedCreate = File.ReadAllText(Path.Combine(output, "NewMgProgramAssociatedControl.g.cs"));
+                Assert.Contains("ProgramId", associatedCreate, StringComparison.Ordinal);
+                var scopedRefresh = File.ReadAllText(Path.Combine(output, "InvokeMgIdentityGovernanceRoleManagementAlertRefreshByScope.g.cs"));
+                Assert.Contains("ScopeId", scopedRefresh, StringComparison.Ordinal);
+                Assert.Contains("ScopeType", scopedRefresh, StringComparison.Ordinal);
+            }
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Fact]
+    public async Task BodyContractNamesAreGroundedInActualSourceDescriptionsAndParameters()
+    {
+        var spec = await Specs["beta"].Value;
+        var program = spec.Components!.Schemas!["microsoft.graph.program"];
+        Assert.Contains("Controls associated with the program",
+            program.AllOf!.Last().Properties!["controls"].Description!, StringComparison.Ordinal);
+        var control = spec.Components.Schemas["microsoft.graph.programControl"];
+        Assert.Contains("programId", control.AllOf!.Last().Properties!.Keys);
+        var item = spec.Paths["/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert-id}/refresh"]
+            .Operations![HttpMethod.Post];
+        var scoped = spec.Paths["/identityGovernance/roleManagementAlerts/alerts/refresh"].Operations![HttpMethod.Post];
+        Assert.Null(item.RequestBody);
+        Assert.True(scoped.RequestBody!.Required);
+        var properties = scoped.RequestBody.Content!["application/json"].Schema!.Properties!;
+        Assert.Equal(new[] { "scopeId", "scopeType" }, properties.Keys.OrderBy(k => k, StringComparer.Ordinal));
+    }
+
+    [Fact]
+    public async Task EveryAuthoredNaturalIdGroupHasCompatibleActualContracts()
+    {
+        var spec = await Specs["beta"].Value;
+        var errors = new List<string>();
+        foreach (var group in CmdletConfigurator.GetOperationVariantGroups().Where(g =>
+            g.Routes.Any(r => r.Path.StartsWith("/program", StringComparison.Ordinal) ||
+                r.Path.StartsWith("/privilegedRole", StringComparison.Ordinal) ||
+                r.Path.StartsWith("/identityGovernance/roleManagementAlerts", StringComparison.Ordinal))))
+        {
+            var document = new OpenApiDocument { Info = spec.Info, Components = spec.Components, Paths = new OpenApiPaths() };
+            foreach (var route in group.Routes)
+            {
+                if (!document.Paths.TryGetValue(route.Path, out var item))
+                    document.Paths.Add(route.Path, item = new OpenApiPathItem { Operations = new Dictionary<HttpMethod, OpenApiOperation>() });
+                var method = new HttpMethod(route.Method);
+                item.Operations!.Add(method, spec.Paths[route.Path].Operations![method]);
+            }
+            var output = Path.Combine(Path.GetTempPath(), "governance-directive-tests", Guid.NewGuid().ToString("N"));
+            try
+            {
+                await new PowerShellWrapperGenerationService(document, Config() with { OutputPath = output },
+                    NullLogger.Instance, apiVersion: "beta",
+                    configurationEntries: [CmdletConfigurator.GroupVariants(group, "Isolated actual Governance group contract")])
+                    .GenerateAsync(TestContext.Current.CancellationToken);
+            }
+            catch (InvalidOperationException exception)
+            {
+                errors.Add($"{group.Routes[0].Method} {group.Routes[0].Path}: {exception.Message}");
+            }
+            finally
+            {
+                if (Directory.Exists(output))
+                    Directory.Delete(output, recursive: true);
+            }
+        }
+        Assert.True(errors.Count == 0, string.Join(Environment.NewLine, errors));
+    }
+
+    [Theory]
     [InlineData("v1.0", true)]
     [InlineData("v1.0", false)]
     [InlineData("beta", true)]

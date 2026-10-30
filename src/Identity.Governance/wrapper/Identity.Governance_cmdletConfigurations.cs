@@ -1794,5 +1794,71 @@ public static partial class CmdletConfigurator
                 new("GET", "/privilegedRoles/{privilegedRole-id}/assignments/{privilegedRoleAssignment-id}", "Role"),
             ], DefaultFamily: "Standalone"),
             "shared directives 66 and 69: preserve all four renamed GET routes; PrivilegedRoleId distinguishes the Role parameter sets"),
+        // Complete compatible beta natural-ID alternatives. These shared registrations
+        // preserve every endpoint; other ingesting specs without these routes are unaffected.
+        GroupVariants(new OperationVariantGroup(
+            [
+                new("GET", "/privilegedRoleAssignments/$count", "Standalone"),
+                new("GET", "/privilegedRoles/{privilegedRole-id}/assignments/$count", "Role"),
+            ], DefaultFamily: "Standalone"),
+            "Preserve both privileged assignment count endpoints using the existing parent role ID"),
+        GroupVariants(new OperationVariantGroup(
+            [
+                new("GET", "/programControls", "Standalone"),
+                new("GET", "/programControls/{programControl-id}", "Standalone"),
+                new("GET", "/programs/{program-id}/controls", "Program"),
+                new("GET", "/programs/{program-id}/controls/{programControl-id}", "Program"),
+            ], DefaultFamily: "Standalone"),
+            "Program controls have standalone and program-bound list/item alternatives with identical entity contracts"),
+        GroupVariants(new OperationVariantGroup(
+            [
+                new("GET", "/programControls/$count", "Standalone"),
+                new("GET", "/programs/{program-id}/controls/$count", "Program"),
+            ], DefaultFamily: "Standalone"),
+            "Preserve both program-control count endpoints selected by the existing program ID"),
+        GroupVariants(new OperationVariantGroup(
+            [
+                new("DELETE", "/programControls/{programControl-id}", "Standalone"),
+                new("DELETE", "/programs/{program-id}/controls/{programControl-id}", "Program"),
+            ], DefaultFamily: "Standalone"),
+            "Preserve DELETE program-control operations at both roots using the existing program ID"),
+        GroupVariants(new OperationVariantGroup(
+            [
+                new("GET", "/programControls/{programControl-id}/program", "Standalone"),
+                new("GET", "/programs/{program-id}/controls/{programControl-id}/program", "Program"),
+            ], DefaultFamily: "Standalone"),
+            "Preserve GET control-program navigation at both roots with the same program contract"),
+        GroupVariants(new OperationVariantGroup(
+            [
+                new("PATCH", "/programControls/{programControl-id}/program", "Standalone"),
+                new("PATCH", "/programs/{program-id}/controls/{programControl-id}/program", "Program"),
+            ], DefaultFamily: "Standalone"),
+            "Preserve PATCH control-program navigation at both roots with the same program contract"),
+        GroupVariants(new OperationVariantGroup(
+            [
+                new("DELETE", "/programControls/{programControl-id}/program", "Standalone"),
+                new("DELETE", "/programs/{program-id}/controls/{programControl-id}/program", "Program"),
+            ], DefaultFamily: "Standalone"),
+            "Preserve DELETE control-program navigation at both roots with the same program contract"),
+        GroupVariants(new OperationVariantGroup(
+            [
+                new("GET", "/identityGovernance/roleManagementAlerts/alertConfigurations", "Configuration"),
+                new("GET", "/identityGovernance/roleManagementAlerts/alertConfigurations/{unifiedRoleManagementAlertConfiguration-id}", "Configuration"),
+                new("GET", "/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert-id}/alertConfiguration", "Alert"),
+            ], DefaultFamily: "Configuration"),
+            "Preserve role-management alert configuration list, direct item and alert-bound navigation GETs"),
+        GroupVariants(new OperationVariantGroup(
+            [
+                new("GET", "/identityGovernance/roleManagementAlerts/alertDefinitions", "Definition"),
+                new("GET", "/identityGovernance/roleManagementAlerts/alertDefinitions/{unifiedRoleManagementAlertDefinition-id}", "Definition"),
+                new("GET", "/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert-id}/alertDefinition", "Alert"),
+            ], DefaultFamily: "Definition"),
+            "Preserve role-management alert definition list, direct item and alert-bound navigation GETs"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post, "/identitygovernance/rolemanagementalerts/alerts/refresh", Match: PathMatch.Exact, Value: "IdentityGovernanceRoleManagementAlertRefreshByScope",
+            Reason: "The collection refresh action requires scopeType/scopeId; distinguish its scoped body from the bodyless single-alert refresh action"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Post, "/programs/{}/controls", Match: PathMatch.Exact, Value: "ProgramAssociatedControl",
+            Reason: "The program describes controls associated with it; its mandatory ProgramId path ID conflicts with the standalone ProgramId body property, so the two create contracts cannot share parameter sets"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Patch, "/programs/{}/controls/{}", Match: PathMatch.Exact, Value: "ProgramAssociatedControl",
+            Reason: "Preserve the program-associated update and standalone update separately because ProgramId is a path ID in one contract and an expanded body property in the other"),
     ];
 }

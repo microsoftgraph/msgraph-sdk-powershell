@@ -27,6 +27,12 @@ generation still uses the compatible profiles exclusively. Removed legacy
 operations are recorded individually. A surviving namespace-unqualified action
 must not be treated as an absent operation.
 
+Full compatible-profile coverage also preserves colliding program/control and
+role-management alert endpoints through shared mandatory-ID variants. Distinct
+request contracts retain distinct names: the scope-based alert refresh and
+program-associated control writes cannot share their body parameters with their
+neighbors. Exact evidence is in the ledger's `compatibleSurfaceCorrections`.
+
 ``` yaml
 directive:
 #Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0. The affected operation Ids starts from connectedOrganization_DeleteExternalSponsorGraphBPreRef$
