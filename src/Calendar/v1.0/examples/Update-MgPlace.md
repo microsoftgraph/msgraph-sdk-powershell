@@ -5,24 +5,6 @@
 Import-Module Microsoft.Graph.Calendar
 
 $params = @{
-	"@odata.type" = "microsoft.graph.building"
-	tags = @(
-	"most popular building"
-)
-}
-
-Update-MgPlace -PlaceId $placeId -BodyParameter $params
-
-```
-This example shows how to use the Update-MgPlace Cmdlet.
-
-### Example 2: Code snippet
-
-```powershell
-
-Import-Module Microsoft.Graph.Calendar
-
-$params = @{
 	"@odata.type" = "microsoft.graph.floor"
 	isWheelChairAccessible = $true
 	sortOrder = 
@@ -33,7 +15,7 @@ Update-MgPlace -PlaceId $placeId -BodyParameter $params
 ```
 This example shows how to use the Update-MgPlace Cmdlet.
 
-### Example 3: Code snippet
+### Example 2: Code snippet
 
 ```powershell
 
@@ -49,7 +31,7 @@ Update-MgPlace -PlaceId $placeId -BodyParameter $params
 ```
 This example shows how to use the Update-MgPlace Cmdlet.
 
-### Example 4: Code snippet
+### Example 3: Code snippet
 
 ```powershell
 
@@ -67,7 +49,7 @@ Update-MgPlace -PlaceId $placeId -BodyParameter $params
 ```
 This example shows how to use the Update-MgPlace Cmdlet.
 
-### Example 5: Code snippet
+### Example 4: Code snippet
 
 ```powershell
 
@@ -87,7 +69,7 @@ Update-MgPlace -PlaceId $placeId -BodyParameter $params
 ```
 This example shows how to use the Update-MgPlace Cmdlet.
 
-### Example 6: Code snippet
+### Example 5: Code snippet
 
 ```powershell
 
