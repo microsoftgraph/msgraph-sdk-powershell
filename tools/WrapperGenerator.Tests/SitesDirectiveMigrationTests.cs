@@ -34,12 +34,12 @@ public sealed class SitesDirectiveMigrationTests
         foreach (var profile in new[] { "v1.0", "beta" })
         foreach (var useCollisionData in new[] { false, true })
         {
-            var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+            var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
             var kind = path.EndsWith("()", StringComparison.Ordinal) ? OperationKind.Function : OperationKind.Resource;
-            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, path, Kind: kind), config);
+            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, path, Kind: kind), config, apiVersion: profile);
             Assert.Equal("Get", naming.VerbName);
             Assert.Equal(noun, naming.Noun);
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config, apiVersion: profile));
         }
     }
 
@@ -56,11 +56,12 @@ public sealed class SitesDirectiveMigrationTests
     public void SharedDirectivesDoNotChangeNeighboringRoutes(string method, string path, string noun)
     {
         foreach (var profile in new[] { "v1.0", "beta" })
+        foreach (var useCollisionData in new[] { false, true })
         {
-            var config = new GeneratorConfig("Test.Client", "unused", profile);
+            var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
             var httpMethod = new HttpMethod(method);
-            Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, config));
-            Assert.Equal(noun, Naming.Resolve(new OperationInfo(httpMethod, path), config).Noun);
+            Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, config, apiVersion: profile));
+            Assert.Equal(noun, Naming.Resolve(new OperationInfo(httpMethod, path), config, apiVersion: profile).Noun);
         }
     }
 
@@ -68,11 +69,12 @@ public sealed class SitesDirectiveMigrationTests
     public void NewSiteSuppressionDoesNotRemoveReadOrUpdate()
     {
         foreach (var profile in new[] { "v1.0", "beta" })
+        foreach (var useCollisionData in new[] { false, true })
         {
-            var config = new GeneratorConfig("Test.Client", "unused", profile);
-            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/sites", config));
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/sites", config));
-            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/sites/{site-id}", config));
+            var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
+            Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Post, "/sites", config, apiVersion: profile));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/sites", config, apiVersion: profile));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/sites/{site-id}", config, apiVersion: profile));
         }
     }
 
@@ -109,17 +111,42 @@ public sealed class SitesDirectiveMigrationTests
         Assert.Equal(13, mappings.Length);
         var first = mappings.Single(mapping => mapping.GetProperty("directiveIndex").GetInt32() == 1)
             .GetProperty("profiles").GetProperty(profile);
-        Assert.Equal("Legacy", first.GetProperty("operationIdSource").GetString());
-        Assert.Empty(first.GetProperty("removedLegacyOperations").EnumerateArray());
-        var reviewedLegacy = first.GetProperty("operations").EnumerateArray()
-            .Select(row => $"{row.GetProperty("method").GetString()} {row.GetProperty("legacyPath").GetString()} [{row.GetProperty("legacyOperationId").GetString()}]")
+        Assert.False(first.TryGetProperty("operationIdSource", out _));
+        Assert.False(first.TryGetProperty("removedLegacyOperations", out _));
+        var lineage = ledger.RootElement.GetProperty("audit").GetProperty("originalSelectorLineage").GetProperty(profile).EnumerateArray().ToArray();
+        var reviewedLegacy = lineage
+            .Select(row => $"{row.GetProperty("originalMethod").GetString()} {row.GetProperty("originalPath").GetString()} [{row.GetProperty("originalOperationId").GetString()}]")
             .ToHashSet(StringComparer.Ordinal);
         Assert.True(selected.SetEquals(reviewedLegacy), "The complete actual corrected-selector legacy set must be recorded.");
+        var reviewedCurrent = first.GetProperty("operations").EnumerateArray()
+            .Select(row => $"{row.GetProperty("method").GetString()} {row.GetProperty("path").GetString()} [{row.GetProperty("operationId").GetString()}]").ToHashSet(StringComparer.Ordinal);
+        var literal = current.Paths.SelectMany(path => path.Value.Operations!
+            .Where(operation => selector.IsMatch(operation.Value.OperationId!))
+            .Select(operation => $"{operation.Key.Method.ToUpperInvariant()} {path.Key} [{operation.Value.OperationId}]")).ToHashSet(StringComparer.Ordinal);
+        Assert.True(literal.SetEquals(reviewedCurrent));
+        Assert.True(reviewedCurrent.SetEquals(lineage.Select(row =>
+            $"{row.GetProperty("currentMethod").GetString()} {row.GetProperty("currentPath").GetString()} [{row.GetProperty("currentOperationId").GetString()}]")));
+        foreach (var row in lineage)
+        {
+            var oldPath = row.GetProperty("originalPath").GetString()!;
+            var path = row.GetProperty("currentPath").GetString()!;
+            var method = new HttpMethod(row.GetProperty("originalMethod").GetString()!);
+            Assert.Equal(row.GetProperty("originalOperationId").GetString(), legacy.Paths[oldPath].Operations![method].OperationId);
+            Assert.Equal(row.GetProperty("currentOperationId").GetString(), current.Paths[path].Operations![method].OperationId);
+            var exact = NormalizeLineagePath(oldPath);
+            if (exact != NormalizeLineagePath(path))
+            {
+                var oldOperation = legacy.Paths[oldPath].Operations![method];
+                var newOperation = current.Paths[path].Operations![method];
+                Assert.Equal(oldOperation.Extensions!["x-ms-docs-operation-type"].ToString(), newOperation.Extensions!["x-ms-docs-operation-type"].ToString());
+                Assert.Equal(NormalizeLineagePath(Regex.Replace(oldPath, @"/microsoft\.graph\.([^/]+)$", "/$1")), NormalizeLineagePath(path));
+            }
+        }
         var suppressions = mappings.Where(mapping => mapping.GetProperty("directiveIndex").GetInt32() is 1 or 2)
             .SelectMany(mapping => mapping.GetProperty("profiles").GetProperty(profile).GetProperty("operations").EnumerateArray())
             .Select(row => $"{row.GetProperty("method").GetString()} {row.GetProperty("path").GetString()}")
             .ToHashSet(StringComparer.Ordinal);
-        var config = new GeneratorConfig("Test.Client", "unused", profile, UseCollisionData: false);
+        var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: false);
         foreach (var path in current.Paths)
         foreach (var operation in path.Value.Operations!)
         {
@@ -128,7 +155,7 @@ public sealed class SitesDirectiveMigrationTests
                 || normalized.StartsWith("/groups/{}/sites/{}/termstores/{}", StringComparison.Ordinal)
                 || operation.Key == HttpMethod.Get && normalized is "/sites/{}/termstore" or "/groups/{}/sites/{}/termstore";
             var expected = existingCurated || suppressions.Contains($"{operation.Key.Method.ToUpperInvariant()} {path.Key}");
-            Assert.Equal(expected, CmdletConfigurator.IsSuppressed(operation.Key, path.Key, config));
+            Assert.Equal(expected, CmdletConfigurator.IsSuppressed(operation.Key, path.Key, config, apiVersion: profile));
         }
     }
 
@@ -149,18 +176,18 @@ public sealed class SitesDirectiveMigrationTests
             {
                 var method = new HttpMethod(row.GetProperty("method").GetString()!);
                 var path = row.GetProperty("path").GetString()!;
-                var oldPath = row.GetProperty("legacyPath").GetString()!;
                 Assert.Equal(row.GetProperty("operationId").GetString(), current.Paths[path].Operations![method].OperationId);
-                Assert.Equal(row.GetProperty("legacyOperationId").GetString(), legacy.Paths[oldPath].Operations![method].OperationId);
+                Assert.False(row.TryGetProperty("legacyPath", out _));
+                Assert.False(row.TryGetProperty("legacyOperationId", out _));
                 foreach (var useCollisionData in new[] { false, true })
                 {
-                    var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
+                    var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
                     if (index is 1 or 2 or 3)
                     {
-                        Assert.True(CmdletConfigurator.IsSuppressed(method, path, config), $"{profile} directive {index}: {method} {path}");
+                        Assert.True(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile), $"{profile} directive {index}: {method} {path}");
                         continue;
                     }
-                    Assert.False(CmdletConfigurator.IsSuppressed(method, path, config));
+                    Assert.False(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile));
                     var expected = index switch
                     {
                         4 => "MgSubSite",
@@ -174,7 +201,7 @@ public sealed class SitesDirectiveMigrationTests
                         _ => throw new InvalidOperationException($"Unexpected surviving directive {index}."),
                     };
                     var kind = index == 12 ? OperationKind.Function : OperationKind.Resource;
-                    Assert.Equal(expected, Naming.Resolve(new OperationInfo(method, path, Kind: kind), config).Noun);
+                    Assert.Equal(expected, Naming.Resolve(new OperationInfo(method, path, Kind: kind), config, apiVersion: profile).Noun);
                 }
             }
             if (index is 11 or 13)
@@ -187,7 +214,7 @@ public sealed class SitesDirectiveMigrationTests
     }
 
     [Fact]
-    public void BetaRecursiveRouteEvidenceRetainsAllExactUnsuppressedOperations()
+    public void RecursiveRouteEvidenceRetainsAllActualOperationsAndSourceBackedNames()
     {
         var root = FindRepoRoot();
         var legacy = ReadSpec(Path.Combine(root, "openApiDocs", "beta", "Sites.yml"));
@@ -196,7 +223,7 @@ public sealed class SitesDirectiveMigrationTests
         var groups = evidence.RootElement.GetProperty("groups").EnumerateArray().ToArray();
         Assert.Equal(84, groups.Length);
         var exactRoutes = new HashSet<string>(StringComparer.Ordinal);
-        var config = new GeneratorConfig("Test.Client", "unused", "beta");
+        var config = new GeneratorConfig("Test.Client", "unused");
         foreach (var group in groups)
         foreach (var route in group.GetProperty("routes").EnumerateArray())
         {
@@ -206,9 +233,16 @@ public sealed class SitesDirectiveMigrationTests
             Assert.Equal(route.GetProperty("operationId").GetString(), current.Paths[path].Operations![method].OperationId);
             Assert.Equal(route.GetProperty("legacyOperationId").GetString(),
                 legacy.Paths[route.GetProperty("legacyPath").GetString()!].Operations![method].OperationId);
-            Assert.False(CmdletConfigurator.IsSuppressed(method, path, config));
-            var naming = Naming.Resolve(new OperationInfo(method, path), config);
-            Assert.Equal(group.GetProperty("publicCommand").GetString(), $"{naming.VerbName}-{naming.Noun}");
+            foreach (var useCollisionData in new[] { false, true })
+            {
+                var naming = Naming.Resolve(new OperationInfo(method, path), config with { UseCollisionData = useCollisionData }, apiVersion: "beta");
+                Assert.False(CmdletConfigurator.IsSuppressed(method, path, config with { UseCollisionData = useCollisionData }, apiVersion: "beta"));
+                Assert.Equal(route.GetProperty("currentPublicCommand").GetString(), $"{naming.VerbName}-{naming.Noun}");
+                if (route.GetProperty("name").GetString() == "Direct")
+                    Assert.Equal(group.GetProperty("publicCommand").GetString(), $"{naming.VerbName}-{naming.Noun}");
+                else
+                    Assert.Contains("NestedChild", naming.Noun);
+            }
         }
         Assert.Equal(192, exactRoutes.Count);
     }
@@ -281,7 +315,7 @@ public sealed class SitesDirectiveMigrationTests
     }
 
     [Fact]
-    public void OnlySixChildGroupsNeedAnExplicitSelectorForAmbiguousMandatoryIds()
+    public void SixAmbiguousOriginalChildFamiliesHaveDistinctNamesNotUnsupportedSelectors()
     {
         using var evidence = JsonDocument.Parse(File.ReadAllText(Path.Combine(FindRepoRoot(), "src", "Sites", "wrapper", "Sites_multiRouteEvidence.json")));
         var ambiguousGroups = 0;
@@ -296,17 +330,13 @@ public sealed class SitesDirectiveMigrationTests
             if (duplicates.Length == 0)
             {
                 ordinaryGroups++;
-                Assert.Equal(JsonValueKind.Null, group.GetProperty("selectorParameter").ValueKind);
-                Assert.False(group.GetProperty("allowAsymmetricRoutes").GetBoolean());
-                Assert.False(group.GetProperty("allowExplicitRouteSelection").GetBoolean());
-                Assert.False(group.GetProperty("allowPublishedParameterInference").GetBoolean());
                 continue;
             }
             ambiguousGroups++;
-            Assert.Equal("Route", group.GetProperty("selectorParameter").GetString());
-            Assert.True(group.GetProperty("allowAsymmetricRoutes").GetBoolean());
-            Assert.True(group.GetProperty("allowExplicitRouteSelection").GetBoolean());
-            Assert.True(group.GetProperty("allowPublishedParameterInference").GetBoolean());
+            Assert.False(group.TryGetProperty("selectorParameter", out _));
+            Assert.False(group.TryGetProperty("allowAsymmetricRoutes", out _));
+            Assert.False(group.TryGetProperty("allowExplicitRouteSelection", out _));
+            Assert.False(group.TryGetProperty("allowPublishedParameterInference", out _));
             Assert.Equal(4, routes.Length);
             Assert.EndsWith("Child", group.GetProperty("publicCommand").GetString()!);
             var sharedContract = Assert.Single(duplicates).ToArray();
@@ -315,6 +345,7 @@ public sealed class SitesDirectiveMigrationTests
                 && route.GetProperty("path").GetString()!.EndsWith('}'));
             Assert.Contains(sharedContract, route => route.GetProperty("name").GetString() == "Nested"
                 && route.GetProperty("path").GetString()!.EndsWith("/children", StringComparison.Ordinal));
+            Assert.Equal(2, sharedContract.Select(route => route.GetProperty("currentPublicCommand").GetString()).Distinct(StringComparer.Ordinal).Count());
         }
         Assert.Equal(6, ambiguousGroups);
         Assert.Equal(78, ordinaryGroups);
@@ -349,6 +380,9 @@ public sealed class SitesDirectiveMigrationTests
 
     private static string MediaSignature(IDictionary<string, IOpenApiMediaType>? content) =>
         content is null ? "" : string.Join("|", content.OrderBy(pair => pair.Key).Select(pair => $"{pair.Key}:{SchemaSignature(pair.Value.Schema)}"));
+
+    private static string NormalizeLineagePath(string path) =>
+        Regex.Replace(path, @"\{[^}]*\}", "{}").Replace("()", "", StringComparison.Ordinal).ToLowerInvariant();
 
     private static OpenApiDocument ReadSpec(string path)
     {

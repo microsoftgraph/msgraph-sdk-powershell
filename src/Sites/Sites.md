@@ -22,12 +22,14 @@ lives in `wrapper/Sites_directiveMigrationMap.json`; module-specific regressions
 in `tools/WrapperGenerator.Tests/SitesDirectiveMigrationTests.cs`. Original AutoRest
 directives remain active.
 
-`wrapper/Sites_multiRouteEvidence.json` records the 192 exact beta recursive
-termStore operations behind 84 colliding public names. Published defaults are
+`wrapper/Sites_multiRouteEvidence.json` records 192 exact recursive termStore
+operations behind 84 formerly colliding public names. Published defaults are
 independently pinned to Learn's default syntax and unique path-ID contracts, not
 the lossy metadata inventory's first URI. All 84 default contracts use the direct
-tree; both direct and nested URLs must remain reachable through reviewed opt-ins.
-Existing v1.0 and curated termStores/singleton behavior remains unchanged.
+tree. The shared configuration preserves those direct command names and uses
+distinct `NestedChild` nouns for the actual `/children/{id}/children` navigation;
+both URLs remain reachable without endpoint selectors or mutation merges.
+Existing derived v1.0 and curated termStores/singleton behavior remains authoritative.
 
 ``` yaml
 directive:
