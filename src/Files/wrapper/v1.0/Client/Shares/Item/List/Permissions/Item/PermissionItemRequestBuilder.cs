@@ -3,6 +3,7 @@
 using Microsoft.Graph.PowerShell.Files.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Files.Client.Models;
 using Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Permissions.Item.Grant;
+using Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Permissions.Item.RevokeGrants;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Permissions.I
         public global::Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Permissions.Item.Grant.GrantRequestBuilder Grant
         {
             get => new global::Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Permissions.Item.Grant.GrantRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The revokeGrants property</summary>
+        public global::Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder RevokeGrants
+        {
+            get => new global::Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Permissions.Item.PermissionItemRequestBuilder"/> and sets the default values.

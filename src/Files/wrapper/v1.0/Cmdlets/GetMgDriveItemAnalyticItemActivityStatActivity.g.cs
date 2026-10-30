@@ -2,16 +2,19 @@
 
 using System;
 using System.Management.Automation;
-using System.Management.Automation.Runspaces;
+using System.Net.Http;
 using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Files.Client;
 using Microsoft.Graph.PowerShell.Files.Client.Models;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Files
 {
     [GraphRoute("GET", "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities")]
-    [Cmdlet(VerbsCommon.Get, "MgDriveItemAnalyticItemActivityStatActivity", DefaultParameterSetName = "List")]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Files.Client.Models.ItemActivityCollectionResponse), ParameterSetName = new[] { "List" })]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Files.Client.Models.ItemActivity), ParameterSetName = new[] { "Get" })]
+    [Cmdlet(VerbsCommon.Get, "MgDriveItemAnalyticItemActivityStatActivity")]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Files.Client.Models.ItemActivity))]
     public class GetMgDriveItemAnalyticItemActivityStatActivityCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
@@ -20,10 +23,11 @@ namespace Microsoft.Graph.PowerShell.Files
         public string DriveItemId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 2)]
         public string ItemActivityStatId { get; set; } = string.Empty;
-        [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 3)]
-        public string ItemActivityId { get; set; } = string.Empty;
 
 
+
+        [Parameter(Mandatory = false)]
+        public string? Filter { get; set; }
 
         [Parameter(Mandatory = false)]
         [Alias("Select")]
@@ -33,63 +37,108 @@ namespace Microsoft.Graph.PowerShell.Files
         [Alias("Expand")]
         public string[]? ExpandProperty { get; set; }
 
-        [Parameter(Mandatory = false, ParameterSetName = "List")]
-        public string? Filter { get; set; }
-
-        [Parameter(Mandatory = false, ParameterSetName = "List")]
+        [Parameter(Mandatory = false)]
         [Alias("OrderBy")]
         public string[]? Sort { get; set; }
 
-        [Parameter(Mandatory = false, ParameterSetName = "List")]
+        [Parameter(Mandatory = false)]
         public string? Search { get; set; }
 
-        [Parameter(Mandatory = false, ParameterSetName = "List")]
+        [Parameter(Mandatory = false)]
         public int Top { get; set; }
 
-        [Parameter(Mandatory = false, ParameterSetName = "List")]
+        [Parameter(Mandatory = false)]
         public int Skip { get; set; }
 
-        [Parameter(Mandatory = false, ParameterSetName = "List")]
+        [Parameter(Mandatory = false)]
         public SwitchParameter Count { get; set; }
 
-        // Declared here because the binder rejects a parameter the dispatcher does not accept
-        // before ProcessRecord ever runs; once declared, the wholesale BoundParameters splat
-        // forwards it to the list worker with no further plumbing.
-        [Parameter(Mandatory = false, ParameterSetName = "List")]
+        // Follows every @odata.nextLink until the collection is exhausted (a bound -Top caps
+        // the total). Without it only the first page returns, plus a truncation warning when
+        // more pages existed.
+        [Parameter(Mandatory = false)]
         public SwitchParameter All { get; set; }
 
 
 
-
-
-        // Delegates to Get-MgDriveItemAnalyticItemActivityStatActivity_Get or Get-MgDriveItemAnalyticItemActivityStatActivity_List, the two cmdlets
-        // that actually call Graph.
         protected override void ProcessRecord()
         {
-            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgDriveItemAnalyticItemActivityStatActivity_Get" : "Get-MgDriveItemAnalyticItemActivityStatActivity_List";
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.Files.Client.Models.ItemActivityCollectionResponse? result;
             try
             {
-                InvokeCommand.InvokeScript(
-                    "param($BoundParameters, $CmdletName) & $CmdletName @BoundParameters",
-                    false,
-                    PipelineResultTypes.Output | PipelineResultTypes.Error,
-                    null,
-                    MyInvocation.BoundParameters, internalCmdletName);
-            }
-            // The workers signal failure via ThrowTerminatingError, which InvokeScript surfaces
-            // as a RuntimeException carrying the worker's ErrorRecord. Rethrow that record
-            // unchanged so the caller sees the worker's error identity (NoGraphSession,
-            // GraphRequestFailed, ...) instead of every failure collapsing into a generic
-            // dispatcher error. A pipeline stop is a RuntimeException too and must NOT be
-            // rethrown as a terminating error - both filters here let it pass to the engine.
-            catch (RuntimeException rex) when (rex is not PipelineStoppedException && rex.ErrorRecord is not null)
-            {
-                ThrowTerminatingError(rex.ErrorRecord);
-                return;
+                result = client.Drives[DriveId].Items[DriveItemId].Analytics.ItemActivityStats[ItemActivityStatId].Activities.GetAsync(requestConfiguration =>
+                {
+                    if (this.IsParameterBound(nameof(Filter)))
+                        requestConfiguration.QueryParameters.Filter = Filter;
+
+                    if (this.IsParameterBound(nameof(Property)))
+                        requestConfiguration.QueryParameters.Select = Property;
+
+                    if (this.IsParameterBound(nameof(ExpandProperty)))
+                        requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
+                    if (this.IsParameterBound(nameof(Sort)))
+                        requestConfiguration.QueryParameters.Orderby = Sort;
+
+                    if (this.IsParameterBound(nameof(Search)))
+                        requestConfiguration.QueryParameters.Search = Search;
+
+                    if (this.IsParameterBound(nameof(Top)))
+                        requestConfiguration.QueryParameters.Top = Top;
+
+                    if (this.IsParameterBound(nameof(Skip)))
+                        requestConfiguration.QueryParameters.Skip = Skip;
+
+                    if (Count.IsPresent)
+                        requestConfiguration.QueryParameters.Count = true;
+
+
+
+        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+
+                // A collection response and its Value are both nullable on the kiota client; an
+                // empty page writes nothing rather than dereferencing null. Each page streams to
+                // the pipeline before the next request is issued, matching the published SDK.
+                if (result?.Value is { } items)
+                    WriteObject(items, enumerateCollection: true);
+
+                if (All.IsPresent)
+                {
+                    var fetched = result?.Value?.Count ?? 0;
+                    var nextLink = result?.OdataNextLink;
+                    while (!string.IsNullOrEmpty(nextLink) && !Stopping && (!this.IsParameterBound(nameof(Top)) || fetched < Top))
+                    {
+                        // The nextLink already carries the original query state, and a raw-URL
+                        // builder ignores templated query parameters anyway - so the continuation
+                        // re-applies headers only; query bindings here would be dead code.
+                        result = client.Drives[DriveId].Items[DriveItemId].Analytics.ItemActivityStats[ItemActivityStatId].Activities.WithUrl(nextLink).GetAsync(requestConfiguration =>
+                        {
+
+                AddRequestHeaders(requestConfiguration.Headers);
+                        }, StoppingToken).GetAwaiter().GetResult();
+                        if (result?.Value is { } page)
+                        {
+                            WriteObject(page, enumerateCollection: true);
+                            fetched += page.Count;
+                        }
+                        nextLink = result?.OdataNextLink;
+                    }
+                }
+                else if (!string.IsNullOrEmpty(result?.OdataNextLink))
+                {
+                    // Deliberately stronger than the published SDK, which truncates silently;
+                    // approved in the design spec. One line, no extra request.
+                    WriteWarning("More results are available. Use -All to return all pages.");
+                }
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, ParameterSetName == "Get" ? ItemActivityId : ItemActivityStatId);
+                ThrowGraphRequestFailed(ex, ItemActivityStatId);
                 return;
             }
         }
