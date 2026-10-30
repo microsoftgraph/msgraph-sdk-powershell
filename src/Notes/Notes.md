@@ -21,7 +21,8 @@ schema/response directives remain deferred (none occur in this file).
 
 The nested `sectionGroups/{sectionGroup-id}/sectionGroups` collection is distinct
 from the root `sectionGroups/{sectionGroup-id}` item despite requiring the same
-IDs. Its shared path-derived noun is now `*OnenoteSectionGroupNestedSectionGroup`;
+IDs. Its shared path-derived noun is now `*OnenoteSectionGroupNestedSectionGroup`
+(and `*OnenoteSectionGroupNestedSectionGroupCount` for its distinct `$count`);
 ordinary root List/Get defaults remain unchanged. No selector or incompatible
 natural-ID group is introduced. Existing v1.0 oracle-derived data still suppresses
 the three nested collections; this baseline endpoint gap blocks a full-fidelity

@@ -217,6 +217,8 @@ public sealed class NotesDirectiveMigrationTests
             routes.Add(list);
             routes.Add(list + "/{sectionGroup-id}");
             routes.Add(list + "/{sectionGroup-id}/sectionGroups");
+            routes.Add(list + "/$count");
+            routes.Add(list + "/{sectionGroup-id}/sectionGroups/$count");
         }
         foreach (var path in document.Paths.Keys.ToArray())
         {
@@ -235,7 +237,7 @@ public sealed class NotesDirectiveMigrationTests
             await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile)
                 .GenerateAsync(CancellationToken.None);
             var files = Directory.GetFiles(output, "*.g.cs");
-            Assert.Equal(12, files.Length);
+            Assert.Equal(18, files.Length);
             foreach (var subject in new[] { "Group", "Site", "User" })
             {
                 var ordinary = await File.ReadAllTextAsync(Path.Combine(output, $"GetMg{subject}OnenoteSectionGroup.g.cs"),
@@ -244,6 +246,10 @@ public sealed class NotesDirectiveMigrationTests
                 var nested = await File.ReadAllTextAsync(Path.Combine(output,
                     $"GetMg{subject}OnenoteSectionGroupNestedSectionGroup.g.cs"), TestContext.Current.CancellationToken);
                 Assert.Contains("sectionGroups/{sectionGroup-id}/sectionGroups", nested);
+                var nestedCount = await File.ReadAllTextAsync(Path.Combine(output,
+                    $"GetMg{subject}OnenoteSectionGroupNestedSectionGroupCount.g.cs"), TestContext.Current.CancellationToken);
+                Assert.Contains("sectionGroups/{sectionGroup-id}/sectionGroups/$count", nestedCount);
+                Assert.True(File.Exists(Path.Combine(output, $"GetMg{subject}OnenoteSectionGroupCount.g.cs")));
                 Assert.DoesNotContain("ValidateSet(\"Root\"", ordinary + nested);
             }
         }

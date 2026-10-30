@@ -44,6 +44,15 @@ public static partial class CmdletConfigurator
         new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/users/{}/onenote/sectiongroups/{}/sectiongroups",
             PathMatch.Exact, "UserOnenoteSectionGroupNestedSectionGroup",
             "The nested sectionGroups collection is not the root sectionGroup item; preserve both URLs"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/groups/{}/onenote/sectiongroups/{}/sectiongroups/$count",
+            PathMatch.Exact, "GroupOnenoteSectionGroupNestedSectionGroupCount",
+            "Count the distinct nested sectionGroups collection without colliding with the root count"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/sites/{}/onenote/sectiongroups/{}/sectiongroups/$count",
+            PathMatch.Exact, "SiteOnenoteSectionGroupNestedSectionGroupCount",
+            "Count the distinct nested sectionGroups collection without colliding with the root count"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/users/{}/onenote/sectiongroups/{}/sectiongroups/$count",
+            PathMatch.Exact, "UserOnenoteSectionGroupNestedSectionGroupCount",
+            "Count the distinct nested sectionGroups collection without colliding with the root count"),
     ];
 
     // Exact compatible successors of the corrected Notes.md selector, not a
