@@ -11,7 +11,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Get analytics from users
-      operationId: users.GetAnalytics
+      operationId: user_GetAnalytic
       parameters:
         - name: $select
           in: query
@@ -49,7 +49,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Update the navigation property analytics in users
-      operationId: users.UpdateAnalytics
+      operationId: user_UpdateAnalytic
       requestBody:
         description: New navigation property values
         content:
@@ -73,7 +73,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Delete navigation property analytics for users
-      operationId: users.DeleteAnalytics
+      operationId: user_DeleteAnalytic
       parameters:
         - name: If-Match
           in: header
@@ -95,7 +95,7 @@ paths:
         - users.userAnalytics
       summary: Get activityStatistics from users
       description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-      operationId: users.analytics.ListActivityStatistics
+      operationId: user.analytic_ListActivityStatistics
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -147,7 +147,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Create new navigation property to activityStatistics for users
-      operationId: users.analytics.CreateActivityStatistics
+      operationId: user.analytic_CreateActivityStatistics
       requestBody:
         description: New navigation property
         content:
@@ -173,7 +173,7 @@ paths:
         - users.userAnalytics
       summary: Get activityStatistics from users
       description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-      operationId: users.analytics.GetActivityStatistics
+      operationId: user.analytic_GetActivityStatistics
       parameters:
         - name: $select
           in: query
@@ -211,7 +211,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Update the navigation property activityStatistics in users
-      operationId: users.analytics.UpdateActivityStatistics
+      operationId: user.analytic_UpdateActivityStatistics
       requestBody:
         description: New navigation property values
         content:
@@ -235,7 +235,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Delete navigation property activityStatistics for users
-      operationId: users.analytics.DeleteActivityStatistics
+      operationId: user.analytic_DeleteActivityStatistics
       parameters:
         - name: If-Match
           in: header
@@ -256,7 +256,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Get the number of the resource
-      operationId: users.analytics.activityStatistics.GetCount-aacf
+      operationId: user.analytic.activityStatistics_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -273,7 +273,7 @@ paths:
         - users.person
       summary: Get people from users
       description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.'
-      operationId: users.ListPeople
+      operationId: user_ListPerson
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -327,7 +327,7 @@ paths:
         - users.person
       summary: Get people from users
       description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.'
-      operationId: users.GetPeople
+      operationId: user_GetPerson
       parameters:
         - name: $select
           in: query
@@ -366,7 +366,7 @@ paths:
       tags:
         - users.person
       summary: Get the number of the resource
-      operationId: users.people.GetCount-d516
+      operationId: user.person_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -383,7 +383,7 @@ paths:
         - users.profile
       summary: Get profile from users
       description: Represents properties that are descriptive of a user in a tenant.
-      operationId: users.GetProfile
+      operationId: user_GetProfile
       parameters:
         - name: $select
           in: query
@@ -421,7 +421,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property profile in users
-      operationId: users.UpdateProfile
+      operationId: user_UpdateProfile
       requestBody:
         description: New navigation property values
         content:
@@ -445,7 +445,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property profile for users
-      operationId: users.DeleteProfile
+      operationId: user_DeleteProfile
       parameters:
         - name: If-Match
           in: header
@@ -466,7 +466,7 @@ paths:
       tags:
         - users.profile
       summary: Get account from users
-      operationId: users.profile.ListAccount
+      operationId: user.profile_ListAccount
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -518,7 +518,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to account for users
-      operationId: users.profile.CreateAccount
+      operationId: user.profile_CreateAccount
       requestBody:
         description: New navigation property
         content:
@@ -543,7 +543,7 @@ paths:
       tags:
         - users.profile
       summary: Get account from users
-      operationId: users.profile.GetAccount
+      operationId: user.profile_GetAccount
       parameters:
         - name: $select
           in: query
@@ -581,7 +581,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property account in users
-      operationId: users.profile.UpdateAccount
+      operationId: user.profile_UpdateAccount
       requestBody:
         description: New navigation property values
         content:
@@ -605,7 +605,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property account for users
-      operationId: users.profile.DeleteAccount
+      operationId: user.profile_DeleteAccount
       parameters:
         - name: If-Match
           in: header
@@ -626,7 +626,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.account.GetCount-52a0
+      operationId: user.profile.account_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -643,7 +643,7 @@ paths:
         - users.profile
       summary: Get addresses from users
       description: Represents details of addresses associated with the user.
-      operationId: users.profile.ListAddresses
+      operationId: user.profile_ListAddress
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -695,7 +695,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to addresses for users
-      operationId: users.profile.CreateAddresses
+      operationId: user.profile_CreateAddress
       requestBody:
         description: New navigation property
         content:
@@ -721,7 +721,7 @@ paths:
         - users.profile
       summary: Get addresses from users
       description: Represents details of addresses associated with the user.
-      operationId: users.profile.GetAddresses
+      operationId: user.profile_GetAddress
       parameters:
         - name: $select
           in: query
@@ -763,7 +763,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/itemaddress-update?view=graph-rest-beta
-      operationId: users.profile.UpdateAddresses
+      operationId: user.profile_UpdateAddress
       requestBody:
         description: New navigation property values
         content:
@@ -791,7 +791,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/itemaddress-delete?view=graph-rest-beta
-      operationId: users.profile.DeleteAddresses
+      operationId: user.profile_DeleteAddress
       parameters:
         - name: If-Match
           in: header
@@ -812,7 +812,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.addresses.GetCount-5cd1
+      operationId: user.profile.address_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -829,7 +829,7 @@ paths:
         - users.profile
       summary: Get anniversaries from users
       description: Represents the details of meaningful dates associated with a person.
-      operationId: users.profile.ListAnniversaries
+      operationId: user.profile_ListAnniversary
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -881,7 +881,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to anniversaries for users
-      operationId: users.profile.CreateAnniversaries
+      operationId: user.profile_CreateAnniversary
       requestBody:
         description: New navigation property
         content:
@@ -907,7 +907,7 @@ paths:
         - users.profile
       summary: Get anniversaries from users
       description: Represents the details of meaningful dates associated with a person.
-      operationId: users.profile.GetAnniversaries
+      operationId: user.profile_GetAnniversary
       parameters:
         - name: $select
           in: query
@@ -945,7 +945,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property anniversaries in users
-      operationId: users.profile.UpdateAnniversaries
+      operationId: user.profile_UpdateAnniversary
       requestBody:
         description: New navigation property values
         content:
@@ -969,7 +969,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property anniversaries for users
-      operationId: users.profile.DeleteAnniversaries
+      operationId: user.profile_DeleteAnniversary
       parameters:
         - name: If-Match
           in: header
@@ -990,7 +990,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.anniversaries.GetCount-43e0
+      operationId: user.profile.anniversary_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1007,7 +1007,7 @@ paths:
         - users.profile
       summary: Get awards from users
       description: Represents the details of awards or honors associated with a person.
-      operationId: users.profile.ListAwards
+      operationId: user.profile_ListAward
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1059,7 +1059,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to awards for users
-      operationId: users.profile.CreateAwards
+      operationId: user.profile_CreateAward
       requestBody:
         description: New navigation property
         content:
@@ -1085,7 +1085,7 @@ paths:
         - users.profile
       summary: Get awards from users
       description: Represents the details of awards or honors associated with a person.
-      operationId: users.profile.GetAwards
+      operationId: user.profile_GetAward
       parameters:
         - name: $select
           in: query
@@ -1127,7 +1127,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/personaward-update?view=graph-rest-beta
-      operationId: users.profile.UpdateAwards
+      operationId: user.profile_UpdateAward
       requestBody:
         description: New navigation property values
         content:
@@ -1155,7 +1155,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/personaward-delete?view=graph-rest-beta
-      operationId: users.profile.DeleteAwards
+      operationId: user.profile_DeleteAward
       parameters:
         - name: If-Match
           in: header
@@ -1176,7 +1176,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.awards.GetCount-49b9
+      operationId: user.profile.award_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1193,7 +1193,7 @@ paths:
         - users.profile
       summary: Get certifications from users
       description: Represents the details of certifications associated with a person.
-      operationId: users.profile.ListCertifications
+      operationId: user.profile_ListCertification
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1245,7 +1245,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to certifications for users
-      operationId: users.profile.CreateCertifications
+      operationId: user.profile_CreateCertification
       requestBody:
         description: New navigation property
         content:
@@ -1271,7 +1271,7 @@ paths:
         - users.profile
       summary: Get certifications from users
       description: Represents the details of certifications associated with a person.
-      operationId: users.profile.GetCertifications
+      operationId: user.profile_GetCertification
       parameters:
         - name: $select
           in: query
@@ -1313,7 +1313,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/personcertification-update?view=graph-rest-beta
-      operationId: users.profile.UpdateCertifications
+      operationId: user.profile_UpdateCertification
       requestBody:
         description: New navigation property values
         content:
@@ -1341,7 +1341,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/personcertification-delete?view=graph-rest-beta
-      operationId: users.profile.DeleteCertifications
+      operationId: user.profile_DeleteCertification
       parameters:
         - name: If-Match
           in: header
@@ -1362,7 +1362,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.certifications.GetCount-2716
+      operationId: user.profile.certification_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1379,7 +1379,7 @@ paths:
         - users.profile
       summary: Get educationalActivities from users
       description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
-      operationId: users.profile.ListEducationalActivities
+      operationId: user.profile_ListEducationalActivity
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1431,7 +1431,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to educationalActivities for users
-      operationId: users.profile.CreateEducationalActivities
+      operationId: user.profile_CreateEducationalActivity
       requestBody:
         description: New navigation property
         content:
@@ -1457,7 +1457,7 @@ paths:
         - users.profile
       summary: Get educationalActivities from users
       description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
-      operationId: users.profile.GetEducationalActivities
+      operationId: user.profile_GetEducationalActivity
       parameters:
         - name: $select
           in: query
@@ -1495,7 +1495,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property educationalActivities in users
-      operationId: users.profile.UpdateEducationalActivities
+      operationId: user.profile_UpdateEducationalActivity
       requestBody:
         description: New navigation property values
         content:
@@ -1519,7 +1519,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property educationalActivities for users
-      operationId: users.profile.DeleteEducationalActivities
+      operationId: user.profile_DeleteEducationalActivity
       parameters:
         - name: If-Match
           in: header
@@ -1540,7 +1540,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.educationalActivities.GetCount-4032
+      operationId: user.profile.educationalActivity_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1557,7 +1557,7 @@ paths:
         - users.profile
       summary: Get itemEmail
       description: Retrieve the properties and relationships of an itemEmail object in a user's profile.
-      operationId: users.profile.ListEmails
+      operationId: user.profile_ListEmail
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1609,7 +1609,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to emails for users
-      operationId: users.profile.CreateEmails
+      operationId: user.profile_CreateEmail
       requestBody:
         description: New navigation property
         content:
@@ -1638,7 +1638,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/itememail-get?view=graph-rest-beta
-      operationId: users.profile.GetEmails
+      operationId: user.profile_GetEmail
       parameters:
         - name: $select
           in: query
@@ -1680,7 +1680,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/itememail-update?view=graph-rest-beta
-      operationId: users.profile.UpdateEmails
+      operationId: user.profile_UpdateEmail
       requestBody:
         description: New navigation property values
         content:
@@ -1704,7 +1704,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property emails for users
-      operationId: users.profile.DeleteEmails
+      operationId: user.profile_DeleteEmail
       parameters:
         - name: If-Match
           in: header
@@ -1725,7 +1725,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.emails.GetCount-9f95
+      operationId: user.profile.email_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1742,7 +1742,7 @@ paths:
         - users.profile
       summary: Get interests from users
       description: Provides detailed information about interests the user has associated with themselves in various services.
-      operationId: users.profile.ListInterests
+      operationId: user.profile_ListInterest
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1794,7 +1794,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to interests for users
-      operationId: users.profile.CreateInterests
+      operationId: user.profile_CreateInterest
       requestBody:
         description: New navigation property
         content:
@@ -1820,7 +1820,7 @@ paths:
         - users.profile
       summary: Get interests from users
       description: Provides detailed information about interests the user has associated with themselves in various services.
-      operationId: users.profile.GetInterests
+      operationId: user.profile_GetInterest
       parameters:
         - name: $select
           in: query
@@ -1858,7 +1858,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property interests in users
-      operationId: users.profile.UpdateInterests
+      operationId: user.profile_UpdateInterest
       requestBody:
         description: New navigation property values
         content:
@@ -1882,7 +1882,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property interests for users
-      operationId: users.profile.DeleteInterests
+      operationId: user.profile_DeleteInterest
       parameters:
         - name: If-Match
           in: header
@@ -1903,7 +1903,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.interests.GetCount-b11e
+      operationId: user.profile.interest_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1920,7 +1920,7 @@ paths:
         - users.profile
       summary: Get languages from users
       description: Represents detailed information about languages that a user has added to their profile.
-      operationId: users.profile.ListLanguages
+      operationId: user.profile_ListLanguage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1972,7 +1972,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to languages for users
-      operationId: users.profile.CreateLanguages
+      operationId: user.profile_CreateLanguage
       requestBody:
         description: New navigation property
         content:
@@ -1998,7 +1998,7 @@ paths:
         - users.profile
       summary: Get languages from users
       description: Represents detailed information about languages that a user has added to their profile.
-      operationId: users.profile.GetLanguages
+      operationId: user.profile_GetLanguage
       parameters:
         - name: $select
           in: query
@@ -2036,7 +2036,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property languages in users
-      operationId: users.profile.UpdateLanguages
+      operationId: user.profile_UpdateLanguage
       requestBody:
         description: New navigation property values
         content:
@@ -2060,7 +2060,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property languages for users
-      operationId: users.profile.DeleteLanguages
+      operationId: user.profile_DeleteLanguage
       parameters:
         - name: If-Match
           in: header
@@ -2081,7 +2081,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.languages.GetCount-b0b3
+      operationId: user.profile.language_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2098,7 +2098,7 @@ paths:
         - users.profile
       summary: Get names from users
       description: Represents the names a user has added to their profile.
-      operationId: users.profile.ListNames
+      operationId: user.profile_ListName
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2150,7 +2150,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to names for users
-      operationId: users.profile.CreateNames
+      operationId: user.profile_CreateName
       requestBody:
         description: New navigation property
         content:
@@ -2176,7 +2176,7 @@ paths:
         - users.profile
       summary: Get names from users
       description: Represents the names a user has added to their profile.
-      operationId: users.profile.GetNames
+      operationId: user.profile_GetName
       parameters:
         - name: $select
           in: query
@@ -2214,7 +2214,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property names in users
-      operationId: users.profile.UpdateNames
+      operationId: user.profile_UpdateName
       requestBody:
         description: New navigation property values
         content:
@@ -2238,7 +2238,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property names for users
-      operationId: users.profile.DeleteNames
+      operationId: user.profile_DeleteName
       parameters:
         - name: If-Match
           in: header
@@ -2259,7 +2259,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.names.GetCount-4c7e
+      operationId: user.profile.name_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2276,7 +2276,7 @@ paths:
         - users.profile
       summary: Get notes from users
       description: Represents notes that a user has added to their profile.
-      operationId: users.profile.ListNotes
+      operationId: user.profile_ListNote
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2328,7 +2328,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to notes for users
-      operationId: users.profile.CreateNotes
+      operationId: user.profile_CreateNote
       requestBody:
         description: New navigation property
         content:
@@ -2354,7 +2354,7 @@ paths:
         - users.profile
       summary: Get notes from users
       description: Represents notes that a user has added to their profile.
-      operationId: users.profile.GetNotes
+      operationId: user.profile_GetNote
       parameters:
         - name: $select
           in: query
@@ -2396,7 +2396,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/personannotation-update?view=graph-rest-beta
-      operationId: users.profile.UpdateNotes
+      operationId: user.profile_UpdateNote
       requestBody:
         description: New navigation property values
         content:
@@ -2424,7 +2424,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/personannotation-delete?view=graph-rest-beta
-      operationId: users.profile.DeleteNotes
+      operationId: user.profile_DeleteNote
       parameters:
         - name: If-Match
           in: header
@@ -2445,7 +2445,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.notes.GetCount-6a18
+      operationId: user.profile.note_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2462,7 +2462,7 @@ paths:
         - users.profile
       summary: Get patents from users
       description: Represents patents that a user has added to their profile.
-      operationId: users.profile.ListPatents
+      operationId: user.profile_ListPatent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2514,7 +2514,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to patents for users
-      operationId: users.profile.CreatePatents
+      operationId: user.profile_CreatePatent
       requestBody:
         description: New navigation property
         content:
@@ -2540,7 +2540,7 @@ paths:
         - users.profile
       summary: Get patents from users
       description: Represents patents that a user has added to their profile.
-      operationId: users.profile.GetPatents
+      operationId: user.profile_GetPatent
       parameters:
         - name: $select
           in: query
@@ -2582,7 +2582,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/itempatent-update?view=graph-rest-beta
-      operationId: users.profile.UpdatePatents
+      operationId: user.profile_UpdatePatent
       requestBody:
         description: New navigation property values
         content:
@@ -2610,7 +2610,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/itempatent-delete?view=graph-rest-beta
-      operationId: users.profile.DeletePatents
+      operationId: user.profile_DeletePatent
       parameters:
         - name: If-Match
           in: header
@@ -2631,7 +2631,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.patents.GetCount-1421
+      operationId: user.profile.patent_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2648,7 +2648,7 @@ paths:
         - users.profile
       summary: Get phones from users
       description: Represents detailed information about phone numbers associated with a user in various services.
-      operationId: users.profile.ListPhones
+      operationId: user.profile_ListPhone
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2700,7 +2700,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to phones for users
-      operationId: users.profile.CreatePhones
+      operationId: user.profile_CreatePhone
       requestBody:
         description: New navigation property
         content:
@@ -2726,7 +2726,7 @@ paths:
         - users.profile
       summary: Get phones from users
       description: Represents detailed information about phone numbers associated with a user in various services.
-      operationId: users.profile.GetPhones
+      operationId: user.profile_GetPhone
       parameters:
         - name: $select
           in: query
@@ -2768,7 +2768,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/itemphone-update?view=graph-rest-beta
-      operationId: users.profile.UpdatePhones
+      operationId: user.profile_UpdatePhone
       requestBody:
         description: New navigation property values
         content:
@@ -2796,7 +2796,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/itemphone-delete?view=graph-rest-beta
-      operationId: users.profile.DeletePhones
+      operationId: user.profile_DeletePhone
       parameters:
         - name: If-Match
           in: header
@@ -2817,7 +2817,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.phones.GetCount-d807
+      operationId: user.profile.phone_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2834,7 +2834,7 @@ paths:
         - users.profile
       summary: Get positions from users
       description: Represents detailed information about work positions associated with a user's profile.
-      operationId: users.profile.ListPositions
+      operationId: user.profile_ListPosition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2886,7 +2886,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to positions for users
-      operationId: users.profile.CreatePositions
+      operationId: user.profile_CreatePosition
       requestBody:
         description: New navigation property
         content:
@@ -2912,7 +2912,7 @@ paths:
         - users.profile
       summary: Get positions from users
       description: Represents detailed information about work positions associated with a user's profile.
-      operationId: users.profile.GetPositions
+      operationId: user.profile_GetPosition
       parameters:
         - name: $select
           in: query
@@ -2950,7 +2950,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property positions in users
-      operationId: users.profile.UpdatePositions
+      operationId: user.profile_UpdatePosition
       requestBody:
         description: New navigation property values
         content:
@@ -2974,7 +2974,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property positions for users
-      operationId: users.profile.DeletePositions
+      operationId: user.profile_DeletePosition
       parameters:
         - name: If-Match
           in: header
@@ -2995,7 +2995,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.positions.GetCount-dc80
+      operationId: user.profile.position_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3012,7 +3012,7 @@ paths:
         - users.profile
       summary: Get projects from users
       description: Represents detailed information about projects associated with a user.
-      operationId: users.profile.ListProjects
+      operationId: user.profile_ListProject
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3064,7 +3064,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to projects for users
-      operationId: users.profile.CreateProjects
+      operationId: user.profile_CreateProject
       requestBody:
         description: New navigation property
         content:
@@ -3090,7 +3090,7 @@ paths:
         - users.profile
       summary: Get projects from users
       description: Represents detailed information about projects associated with a user.
-      operationId: users.profile.GetProjects
+      operationId: user.profile_GetProject
       parameters:
         - name: $select
           in: query
@@ -3128,7 +3128,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property projects in users
-      operationId: users.profile.UpdateProjects
+      operationId: user.profile_UpdateProject
       requestBody:
         description: New navigation property values
         content:
@@ -3152,7 +3152,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property projects for users
-      operationId: users.profile.DeleteProjects
+      operationId: user.profile_DeleteProject
       parameters:
         - name: If-Match
           in: header
@@ -3173,7 +3173,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.projects.GetCount-6c0d
+      operationId: user.profile.project_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3190,7 +3190,7 @@ paths:
         - users.profile
       summary: Get publications from users
       description: Represents details of any publications a user has added to their profile.
-      operationId: users.profile.ListPublications
+      operationId: user.profile_ListPublication
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3242,7 +3242,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to publications for users
-      operationId: users.profile.CreatePublications
+      operationId: user.profile_CreatePublication
       requestBody:
         description: New navigation property
         content:
@@ -3268,7 +3268,7 @@ paths:
         - users.profile
       summary: Get publications from users
       description: Represents details of any publications a user has added to their profile.
-      operationId: users.profile.GetPublications
+      operationId: user.profile_GetPublication
       parameters:
         - name: $select
           in: query
@@ -3310,7 +3310,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/itempublication-update?view=graph-rest-beta
-      operationId: users.profile.UpdatePublications
+      operationId: user.profile_UpdatePublication
       requestBody:
         description: New navigation property values
         content:
@@ -3334,7 +3334,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property publications for users
-      operationId: users.profile.DeletePublications
+      operationId: user.profile_DeletePublication
       parameters:
         - name: If-Match
           in: header
@@ -3355,7 +3355,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.publications.GetCount-8ce2
+      operationId: user.profile.publication_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3372,7 +3372,7 @@ paths:
         - users.profile
       summary: Get skills from users
       description: Represents detailed information about skills associated with a user in various services.
-      operationId: users.profile.ListSkills
+      operationId: user.profile_ListSkill
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3424,7 +3424,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to skills for users
-      operationId: users.profile.CreateSkills
+      operationId: user.profile_CreateSkill
       requestBody:
         description: New navigation property
         content:
@@ -3450,7 +3450,7 @@ paths:
         - users.profile
       summary: Get skills from users
       description: Represents detailed information about skills associated with a user in various services.
-      operationId: users.profile.GetSkills
+      operationId: user.profile_GetSkill
       parameters:
         - name: $select
           in: query
@@ -3488,7 +3488,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property skills in users
-      operationId: users.profile.UpdateSkills
+      operationId: user.profile_UpdateSkill
       requestBody:
         description: New navigation property values
         content:
@@ -3512,7 +3512,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property skills for users
-      operationId: users.profile.DeleteSkills
+      operationId: user.profile_DeleteSkill
       parameters:
         - name: If-Match
           in: header
@@ -3533,7 +3533,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.skills.GetCount-112f
+      operationId: user.profile.skill_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3550,7 +3550,7 @@ paths:
         - users.profile
       summary: Get webAccounts from users
       description: Represents web accounts the user has indicated they use or has added to their user profile.
-      operationId: users.profile.ListWebAccounts
+      operationId: user.profile_ListWebAccount
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3602,7 +3602,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to webAccounts for users
-      operationId: users.profile.CreateWebAccounts
+      operationId: user.profile_CreateWebAccount
       requestBody:
         description: New navigation property
         content:
@@ -3628,7 +3628,7 @@ paths:
         - users.profile
       summary: Get webAccounts from users
       description: Represents web accounts the user has indicated they use or has added to their user profile.
-      operationId: users.profile.GetWebAccounts
+      operationId: user.profile_GetWebAccount
       parameters:
         - name: $select
           in: query
@@ -3666,7 +3666,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property webAccounts in users
-      operationId: users.profile.UpdateWebAccounts
+      operationId: user.profile_UpdateWebAccount
       requestBody:
         description: New navigation property values
         content:
@@ -3690,7 +3690,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property webAccounts for users
-      operationId: users.profile.DeleteWebAccounts
+      operationId: user.profile_DeleteWebAccount
       parameters:
         - name: If-Match
           in: header
@@ -3711,7 +3711,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.webAccounts.GetCount-e8cd
+      operationId: user.profile.webAccount_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3728,7 +3728,7 @@ paths:
         - users.profile
       summary: Get websites from users
       description: Represents detailed information about websites associated with a user in various services.
-      operationId: users.profile.ListWebsites
+      operationId: user.profile_ListWebsite
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3780,7 +3780,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to websites for users
-      operationId: users.profile.CreateWebsites
+      operationId: user.profile_CreateWebsite
       requestBody:
         description: New navigation property
         content:
@@ -3806,7 +3806,7 @@ paths:
         - users.profile
       summary: Get websites from users
       description: Represents detailed information about websites associated with a user in various services.
-      operationId: users.profile.GetWebsites
+      operationId: user.profile_GetWebsite
       parameters:
         - name: $select
           in: query
@@ -3844,7 +3844,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property websites in users
-      operationId: users.profile.UpdateWebsites
+      operationId: user.profile_UpdateWebsite
       requestBody:
         description: New navigation property values
         content:
@@ -3868,7 +3868,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property websites for users
-      operationId: users.profile.DeleteWebsites
+      operationId: user.profile_DeleteWebsite
       parameters:
         - name: If-Match
           in: header
@@ -3889,7 +3889,7 @@ paths:
       tags:
         - users.profile
       summary: Get the number of the resource
-      operationId: users.profile.websites.GetCount-d4f6
+      operationId: user.profile.website_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5310,6 +5310,7 @@ components:
           '#microsoft.graph.cloudPcServicePlan': '#/components/schemas/microsoft.graph.cloudPcServicePlan'
           '#microsoft.graph.cloudPcSnapshot': '#/components/schemas/microsoft.graph.cloudPcSnapshot'
           '#microsoft.graph.cloudPcSupportedRegion': '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+          '#microsoft.graph.cloudPcUserProfileSnapshot': '#/components/schemas/microsoft.graph.cloudPcUserProfileSnapshot'
           '#microsoft.graph.cloudPcUserSetting': '#/components/schemas/microsoft.graph.cloudPcUserSetting'
           '#microsoft.graph.cloudPcUserSettingAssignment': '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
           '#microsoft.graph.cloudPCUserSettingsPersistenceDetail': '#/components/schemas/microsoft.graph.cloudPCUserSettingsPersistenceDetail'
@@ -5389,6 +5390,9 @@ components:
           '#microsoft.graph.copilotSetting': '#/components/schemas/microsoft.graph.copilotSetting'
           '#microsoft.graph.correlatedIdentity': '#/components/schemas/microsoft.graph.correlatedIdentity'
           '#microsoft.graph.corsConfiguration_v2': '#/components/schemas/microsoft.graph.corsConfiguration_v2'
+          '#microsoft.graph.costManagementAlertSetting': '#/components/schemas/microsoft.graph.costManagementAlertSetting'
+          '#microsoft.graph.costManagementRoot': '#/components/schemas/microsoft.graph.costManagementRoot'
+          '#microsoft.graph.costManagementUserBalance': '#/components/schemas/microsoft.graph.costManagementUserBalance'
           '#microsoft.graph.credentialUsageSummary': '#/components/schemas/microsoft.graph.credentialUsageSummary'
           '#microsoft.graph.credentialUserRegistrationCount': '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
           '#microsoft.graph.credentialUserRegistrationDetails': '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
@@ -5717,6 +5721,7 @@ components:
           '#microsoft.graph.deviceShellScript': '#/components/schemas/microsoft.graph.deviceShellScript'
           '#microsoft.graph.directory': '#/components/schemas/microsoft.graph.directory'
           '#microsoft.graph.directoryAudit': '#/components/schemas/microsoft.graph.directoryAudit'
+          '#microsoft.graph.appManagementAudit': '#/components/schemas/microsoft.graph.appManagementAudit'
           '#microsoft.graph.directoryDefinition': '#/components/schemas/microsoft.graph.directoryDefinition'
           '#microsoft.graph.directoryObject': '#/components/schemas/microsoft.graph.directoryObject'
           '#microsoft.graph.administrativeUnit': '#/components/schemas/microsoft.graph.administrativeUnit'
@@ -5775,6 +5780,7 @@ components:
           '#microsoft.graph.user': '#/components/schemas/microsoft.graph.user'
           '#microsoft.graph.agentUser': '#/components/schemas/microsoft.graph.agentUser'
           '#microsoft.graph.directoryRoleAccessReviewPolicy': '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
+          '#microsoft.graph.directoryRoleManagementDeletedItemContainer': '#/components/schemas/microsoft.graph.directoryRoleManagementDeletedItemContainer'
           '#microsoft.graph.directorySetting': '#/components/schemas/microsoft.graph.directorySetting'
           '#microsoft.graph.distributionListMember': '#/components/schemas/microsoft.graph.distributionListMember'
           '#microsoft.graph.document': '#/components/schemas/microsoft.graph.document'
@@ -6362,9 +6368,22 @@ components:
           '#microsoft.graph.placeOperation': '#/components/schemas/microsoft.graph.placeOperation'
           '#microsoft.graph.planner': '#/components/schemas/microsoft.graph.planner'
           '#microsoft.graph.plannerDelta': '#/components/schemas/microsoft.graph.plannerDelta'
+          '#microsoft.graph.bucket': '#/components/schemas/microsoft.graph.bucket'
+          '#microsoft.graph.categoryDefinition': '#/components/schemas/microsoft.graph.categoryDefinition'
+          '#microsoft.graph.checklistItemV4': '#/components/schemas/microsoft.graph.checklistItemV4'
+          '#microsoft.graph.contentLink': '#/components/schemas/microsoft.graph.contentLink'
+          '#microsoft.graph.customChoiceOption': '#/components/schemas/microsoft.graph.customChoiceOption'
+          '#microsoft.graph.customFieldDefinition': '#/components/schemas/microsoft.graph.customFieldDefinition'
+          '#microsoft.graph.customFieldValue': '#/components/schemas/microsoft.graph.customFieldValue'
+          '#microsoft.graph.dependency': '#/components/schemas/microsoft.graph.dependency'
+          '#microsoft.graph.goal': '#/components/schemas/microsoft.graph.goal'
+          '#microsoft.graph.historyItem': '#/components/schemas/microsoft.graph.historyItem'
+          '#microsoft.graph.plan': '#/components/schemas/microsoft.graph.plan'
+          '#microsoft.graph.planContextLink': '#/components/schemas/microsoft.graph.planContextLink'
           '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
           '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
           '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+          '#microsoft.graph.plannerChatMessage': '#/components/schemas/microsoft.graph.plannerChatMessage'
           '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
           '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
           '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
@@ -6375,6 +6394,8 @@ components:
           '#microsoft.graph.businessScenarioTask': '#/components/schemas/microsoft.graph.businessScenarioTask'
           '#microsoft.graph.plannerTaskDetails': '#/components/schemas/microsoft.graph.plannerTaskDetails'
           '#microsoft.graph.plannerUser': '#/components/schemas/microsoft.graph.plannerUser'
+          '#microsoft.graph.task': '#/components/schemas/microsoft.graph.task'
+          '#microsoft.graph.userAssignment': '#/components/schemas/microsoft.graph.userAssignment'
           '#microsoft.graph.plannerGroup': '#/components/schemas/microsoft.graph.plannerGroup'
           '#microsoft.graph.plannerPlanConfiguration': '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
           '#microsoft.graph.plannerPlanConfigurationLocalization': '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
@@ -6451,6 +6472,7 @@ components:
           '#microsoft.graph.programControlType': '#/components/schemas/microsoft.graph.programControlType'
           '#microsoft.graph.pronounsSettings': '#/components/schemas/microsoft.graph.pronounsSettings'
           '#microsoft.graph.protectionPolicyBase': '#/components/schemas/microsoft.graph.protectionPolicyBase'
+          '#microsoft.graph.entraProtectionPolicy': '#/components/schemas/microsoft.graph.entraProtectionPolicy'
           '#microsoft.graph.exchangeProtectionPolicy': '#/components/schemas/microsoft.graph.exchangeProtectionPolicy'
           '#microsoft.graph.oneDriveForBusinessProtectionPolicy': '#/components/schemas/microsoft.graph.oneDriveForBusinessProtectionPolicy'
           '#microsoft.graph.sharePointProtectionPolicy': '#/components/schemas/microsoft.graph.sharePointProtectionPolicy'
@@ -6608,6 +6630,9 @@ components:
           '#microsoft.graph.singleValueLegacyExtendedProperty': '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
           '#microsoft.graph.softwareUpdateStatusSummary': '#/components/schemas/microsoft.graph.softwareUpdateStatusSummary'
           '#microsoft.graph.speakerAssignmentSubmission': '#/components/schemas/microsoft.graph.speakerAssignmentSubmission'
+          '#microsoft.graph.spendingPolicy': '#/components/schemas/microsoft.graph.spendingPolicy'
+          '#microsoft.graph.allUsersSpendingPolicy': '#/components/schemas/microsoft.graph.allUsersSpendingPolicy'
+          '#microsoft.graph.selectedGroupsSpendingPolicy': '#/components/schemas/microsoft.graph.selectedGroupsSpendingPolicy'
           '#microsoft.graph.storageQuotaBreakdown': '#/components/schemas/microsoft.graph.storageQuotaBreakdown'
           '#microsoft.graph.serviceStorageQuotaBreakdown': '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
           '#microsoft.graph.storageSettings': '#/components/schemas/microsoft.graph.storageSettings'
@@ -6647,6 +6672,7 @@ components:
           '#microsoft.graph.teamTemplateDefinition': '#/components/schemas/microsoft.graph.teamTemplateDefinition'
           '#microsoft.graph.teamwork': '#/components/schemas/microsoft.graph.teamwork'
           '#microsoft.graph.teamworkBot': '#/components/schemas/microsoft.graph.teamworkBot'
+          '#microsoft.graph.teamworkCustomEmoji': '#/components/schemas/microsoft.graph.teamworkCustomEmoji'
           '#microsoft.graph.teamworkDevice': '#/components/schemas/microsoft.graph.teamworkDevice'
           '#microsoft.graph.teamworkDeviceActivity': '#/components/schemas/microsoft.graph.teamworkDeviceActivity'
           '#microsoft.graph.teamworkDeviceConfiguration': '#/components/schemas/microsoft.graph.teamworkDeviceConfiguration'
@@ -6982,8 +7008,26 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
+          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
+          '#microsoft.graph.identityGovernance.userIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.userIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
+          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.guestLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.guestLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyReport'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+          '#microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule': '#/components/schemas/microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule'
+          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+          '#microsoft.graph.identityGovernance.invitationRedemptionRule': '#/components/schemas/microsoft.graph.identityGovernance.invitationRedemptionRule'
+          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
+          '#microsoft.graph.identityGovernance.lifecyclePolicySubjectReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectReport'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -7113,7 +7157,9 @@ components:
           '#microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement'
           '#microsoft.graph.partner.security.responseTimeSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.responseTimeSecurityRequirement'
           '#microsoft.graph.partner.security.securityScoreHistory': '#/components/schemas/microsoft.graph.partner.security.securityScoreHistory'
+          '#microsoft.graph.partners.billing.azureAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.azureAggregatedUsage'
           '#microsoft.graph.partners.billing.azureUsage': '#/components/schemas/microsoft.graph.partners.billing.azureUsage'
+          '#microsoft.graph.partners.billing.billedAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedAggregatedUsage'
           '#microsoft.graph.partners.billing.billedReconciliation': '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
           '#microsoft.graph.partners.billing.billedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedUsage'
           '#microsoft.graph.partners.billing.billing': '#/components/schemas/microsoft.graph.partners.billing.billing'
@@ -7247,6 +7293,7 @@ components:
           '#microsoft.graph.security.whoisBaseRecord': '#/components/schemas/microsoft.graph.security.whoisBaseRecord'
           '#microsoft.graph.security.whoisHistoryRecord': '#/components/schemas/microsoft.graph.security.whoisHistoryRecord'
           '#microsoft.graph.security.whoisRecord': '#/components/schemas/microsoft.graph.security.whoisRecord'
+          '#microsoft.graph.security.workbook': '#/components/schemas/microsoft.graph.security.workbook'
           '#microsoft.graph.security.zone': '#/components/schemas/microsoft.graph.security.zone'
           '#microsoft.graph.security.caseManagement.caseManagementEntity': '#/components/schemas/microsoft.graph.security.caseManagement.caseManagementEntity'
           '#microsoft.graph.security.caseManagement.activity': '#/components/schemas/microsoft.graph.security.caseManagement.activity'
@@ -7844,6 +7891,10 @@ components:
             - type: object
               nullable: true
           description: 'The possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.'
+        relationshipLabel:
+          type: string
+          description: 'Information (free-text) describing the relationship between the user and the related person. This property provides additional context beyond the predefined relationship values and can be used by clients, including AI-powered experiences, to better understand and reason about the relationship.'
+          nullable: true
         userId:
           type: string
           description: The user's directory object ID (Microsoft Entra ID or CID).
@@ -8523,6 +8574,7 @@ components:
       discriminator:
         propertyName: '@odata.type'
         mapping:
+          '#microsoft.graph.applicationIdentity': '#/components/schemas/microsoft.graph.applicationIdentity'
           '#microsoft.graph.azureCommunicationServicesUserIdentity': '#/components/schemas/microsoft.graph.azureCommunicationServicesUserIdentity'
           '#microsoft.graph.communicationsApplicationIdentity': '#/components/schemas/microsoft.graph.communicationsApplicationIdentity'
           '#microsoft.graph.communicationsApplicationInstanceIdentity': '#/components/schemas/microsoft.graph.communicationsApplicationInstanceIdentity'

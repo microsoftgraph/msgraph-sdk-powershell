@@ -12,7 +12,7 @@ paths:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Get androidDeviceOwnerEnrollmentProfiles from deviceManagement
       description: Android device owner enrollment profile entities.
-      operationId: deviceManagement.ListAndroidDeviceOwnerEnrollmentProfiles
+      operationId: deviceManagement_ListAndroidDeviceOwnerEnrollmentProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -64,7 +64,7 @@ paths:
       tags:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Create new navigation property to androidDeviceOwnerEnrollmentProfiles for deviceManagement
-      operationId: deviceManagement.CreateAndroidDeviceOwnerEnrollmentProfiles
+      operationId: deviceManagement_CreateAndroidDeviceOwnerEnrollmentProfile
       requestBody:
         description: New navigation property
         content:
@@ -90,7 +90,7 @@ paths:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Get androidDeviceOwnerEnrollmentProfiles from deviceManagement
       description: Android device owner enrollment profile entities.
-      operationId: deviceManagement.GetAndroidDeviceOwnerEnrollmentProfiles
+      operationId: deviceManagement_GetAndroidDeviceOwnerEnrollmentProfile
       parameters:
         - name: $select
           in: query
@@ -128,7 +128,7 @@ paths:
       tags:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Update the navigation property androidDeviceOwnerEnrollmentProfiles in deviceManagement
-      operationId: deviceManagement.UpdateAndroidDeviceOwnerEnrollmentProfiles
+      operationId: deviceManagement_UpdateAndroidDeviceOwnerEnrollmentProfile
       requestBody:
         description: New navigation property values
         content:
@@ -152,7 +152,7 @@ paths:
       tags:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Delete navigation property androidDeviceOwnerEnrollmentProfiles for deviceManagement
-      operationId: deviceManagement.DeleteAndroidDeviceOwnerEnrollmentProfiles
+      operationId: deviceManagement_DeleteAndroidDeviceOwnerEnrollmentProfile
       parameters:
         - name: If-Match
           in: header
@@ -173,7 +173,7 @@ paths:
       tags:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Invoke action clearEnrollmentTimeDeviceMembershipTarget
-      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles.androidDeviceOwnerEnrollmentProfile.clearEnrollmentTimeDeviceMembershipTarget
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfile_clearEnrollmentTimeDeviceMembershipTarget
       responses:
         '204':
           description: Success
@@ -187,7 +187,7 @@ paths:
       tags:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Invoke action createToken
-      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles.androidDeviceOwnerEnrollmentProfile.createToken
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfile_createToken
       requestBody:
         description: Action parameters
         content:
@@ -214,7 +214,7 @@ paths:
       tags:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Invoke action retrieveEnrollmentTimeDeviceMembershipTarget
-      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles.androidDeviceOwnerEnrollmentProfile.retrieveEnrollmentTimeDeviceMembershipTarget
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfile_retrieveEnrollmentTimeDeviceMembershipTarget
       responses:
         2XX:
           description: Success
@@ -235,7 +235,7 @@ paths:
       tags:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Invoke action revokeToken
-      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles.androidDeviceOwnerEnrollmentProfile.revokeToken
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfile_revokeToken
       responses:
         '204':
           description: Success
@@ -249,7 +249,7 @@ paths:
       tags:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Invoke action setEnrollmentTimeDeviceMembershipTarget
-      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles.androidDeviceOwnerEnrollmentProfile.setEnrollmentTimeDeviceMembershipTarget
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfile_setEnrollmentTimeDeviceMembershipTarget
       requestBody:
         description: Action parameters
         content:
@@ -282,7 +282,7 @@ paths:
       tags:
         - deviceManagement.androidDeviceOwnerEnrollmentProfile
       summary: Get the number of the resource
-      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles.GetCount-8294
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfile_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -299,7 +299,7 @@ paths:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Get androidForWorkEnrollmentProfiles from deviceManagement
       description: Android for Work enrollment profile entities.
-      operationId: deviceManagement.ListAndroidForWorkEnrollmentProfiles
+      operationId: deviceManagement_ListAndroidGraphFPreWorkEnrollmentProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -351,7 +351,7 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Create new navigation property to androidForWorkEnrollmentProfiles for deviceManagement
-      operationId: deviceManagement.CreateAndroidForWorkEnrollmentProfiles
+      operationId: deviceManagement_CreateAndroidGraphFPreWorkEnrollmentProfile
       requestBody:
         description: New navigation property
         content:
@@ -377,7 +377,7 @@ paths:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Get androidForWorkEnrollmentProfiles from deviceManagement
       description: Android for Work enrollment profile entities.
-      operationId: deviceManagement.GetAndroidForWorkEnrollmentProfiles
+      operationId: deviceManagement_GetAndroidGraphFPreWorkEnrollmentProfile
       parameters:
         - name: $select
           in: query
@@ -415,7 +415,7 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Update the navigation property androidForWorkEnrollmentProfiles in deviceManagement
-      operationId: deviceManagement.UpdateAndroidForWorkEnrollmentProfiles
+      operationId: deviceManagement_UpdateAndroidGraphFPreWorkEnrollmentProfile
       requestBody:
         description: New navigation property values
         content:
@@ -439,7 +439,7 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Delete navigation property androidForWorkEnrollmentProfiles for deviceManagement
-      operationId: deviceManagement.DeleteAndroidForWorkEnrollmentProfiles
+      operationId: deviceManagement_DeleteAndroidGraphFPreWorkEnrollmentProfile
       parameters:
         - name: If-Match
           in: header
@@ -460,7 +460,7 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Invoke action createToken
-      operationId: deviceManagement.androidForWorkEnrollmentProfiles.androidForWorkEnrollmentProfile.createToken
+      operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfile_createToken
       requestBody:
         description: Action parameters
         content:
@@ -487,7 +487,7 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Invoke action revokeToken
-      operationId: deviceManagement.androidForWorkEnrollmentProfiles.androidForWorkEnrollmentProfile.revokeToken
+      operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfile_revokeToken
       responses:
         '204':
           description: Success
@@ -501,7 +501,7 @@ paths:
       tags:
         - deviceManagement.androidForWorkEnrollmentProfile
       summary: Get the number of the resource
-      operationId: deviceManagement.androidForWorkEnrollmentProfiles.GetCount-07c7
+      operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfile_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -518,7 +518,7 @@ paths:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get appleUserInitiatedEnrollmentProfiles from deviceManagement
       description: Apple user initiated enrollment profiles
-      operationId: deviceManagement.ListAppleUserInitiatedEnrollmentProfiles
+      operationId: deviceManagement_ListAppleUserInitiatedEnrollmentProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -570,7 +570,7 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Create new navigation property to appleUserInitiatedEnrollmentProfiles for deviceManagement
-      operationId: deviceManagement.CreateAppleUserInitiatedEnrollmentProfiles
+      operationId: deviceManagement_CreateAppleUserInitiatedEnrollmentProfile
       requestBody:
         description: New navigation property
         content:
@@ -596,7 +596,7 @@ paths:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get appleUserInitiatedEnrollmentProfiles from deviceManagement
       description: Apple user initiated enrollment profiles
-      operationId: deviceManagement.GetAppleUserInitiatedEnrollmentProfiles
+      operationId: deviceManagement_GetAppleUserInitiatedEnrollmentProfile
       parameters:
         - name: $select
           in: query
@@ -634,7 +634,7 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Update the navigation property appleUserInitiatedEnrollmentProfiles in deviceManagement
-      operationId: deviceManagement.UpdateAppleUserInitiatedEnrollmentProfiles
+      operationId: deviceManagement_UpdateAppleUserInitiatedEnrollmentProfile
       requestBody:
         description: New navigation property values
         content:
@@ -658,7 +658,7 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Delete navigation property appleUserInitiatedEnrollmentProfiles for deviceManagement
-      operationId: deviceManagement.DeleteAppleUserInitiatedEnrollmentProfiles
+      operationId: deviceManagement_DeleteAppleUserInitiatedEnrollmentProfile
       parameters:
         - name: If-Match
           in: header
@@ -680,7 +680,7 @@ paths:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get assignments from deviceManagement
       description: The list of assignments for this profile.
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles.ListAssignments
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -732,7 +732,7 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles.CreateAssignments
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -758,7 +758,7 @@ paths:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get assignments from deviceManagement
       description: The list of assignments for this profile.
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles.GetAssignments
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_GetAssignment
       parameters:
         - name: $select
           in: query
@@ -796,7 +796,7 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles.UpdateAssignments
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_UpdateAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -820,7 +820,7 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles.DeleteAssignments
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_DeleteAssignment
       parameters:
         - name: If-Match
           in: header
@@ -841,7 +841,7 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get the number of the resource
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles.assignments.GetCount-1339
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile.assignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -857,7 +857,7 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Invoke action setPriority
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles.appleUserInitiatedEnrollmentProfile.setPriority
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_setPriority
       requestBody:
         description: Action parameters
         content:
@@ -884,7 +884,7 @@ paths:
       tags:
         - deviceManagement.appleUserInitiatedEnrollmentProfile
       summary: Get the number of the resource
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles.GetCount-53c5
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -901,7 +901,7 @@ paths:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Get autopilotEvents from deviceManagement
       description: The list of autopilot events for the tenant.
-      operationId: deviceManagement.ListAutopilotEvents
+      operationId: deviceManagement_ListAutopilotEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -953,7 +953,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Create new navigation property to autopilotEvents for deviceManagement
-      operationId: deviceManagement.CreateAutopilotEvents
+      operationId: deviceManagement_CreateAutopilotEvent
       requestBody:
         description: New navigation property
         content:
@@ -979,7 +979,7 @@ paths:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Get autopilotEvents from deviceManagement
       description: The list of autopilot events for the tenant.
-      operationId: deviceManagement.GetAutopilotEvents
+      operationId: deviceManagement_GetAutopilotEvent
       parameters:
         - name: $select
           in: query
@@ -1017,7 +1017,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Update the navigation property autopilotEvents in deviceManagement
-      operationId: deviceManagement.UpdateAutopilotEvents
+      operationId: deviceManagement_UpdateAutopilotEvent
       requestBody:
         description: New navigation property values
         content:
@@ -1041,7 +1041,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Delete navigation property autopilotEvents for deviceManagement
-      operationId: deviceManagement.DeleteAutopilotEvents
+      operationId: deviceManagement_DeleteAutopilotEvent
       parameters:
         - name: If-Match
           in: header
@@ -1062,7 +1062,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementAutopilotEvent
       summary: Get the number of the resource
-      operationId: deviceManagement.autopilotEvents.GetCount-48ac
+      operationId: deviceManagement.autopilotEvent_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1079,7 +1079,7 @@ paths:
         - deviceManagement.onPremisesConditionalAccessSettings
       summary: Get conditionalAccessSettings from deviceManagement
       description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-      operationId: deviceManagement.GetConditionalAccessSettings
+      operationId: deviceManagement_GetConditionalAccessSetting
       parameters:
         - name: $select
           in: query
@@ -1117,7 +1117,7 @@ paths:
       tags:
         - deviceManagement.onPremisesConditionalAccessSettings
       summary: Update the navigation property conditionalAccessSettings in deviceManagement
-      operationId: deviceManagement.UpdateConditionalAccessSettings
+      operationId: deviceManagement_UpdateConditionalAccessSetting
       requestBody:
         description: New navigation property values
         content:
@@ -1141,7 +1141,7 @@ paths:
       tags:
         - deviceManagement.onPremisesConditionalAccessSettings
       summary: Delete navigation property conditionalAccessSettings for deviceManagement
-      operationId: deviceManagement.DeleteConditionalAccessSettings
+      operationId: deviceManagement_DeleteConditionalAccessSetting
       parameters:
         - name: If-Match
           in: header
@@ -1163,7 +1163,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get depOnboardingSettings from deviceManagement
       description: This collections of multiple DEP tokens per-tenant.
-      operationId: deviceManagement.ListDepOnboardingSettings
+      operationId: deviceManagement_ListDepOnboardingSetting
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1215,7 +1215,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Create new navigation property to depOnboardingSettings for deviceManagement
-      operationId: deviceManagement.CreateDepOnboardingSettings
+      operationId: deviceManagement_CreateDepOnboardingSetting
       requestBody:
         description: New navigation property
         content:
@@ -1241,7 +1241,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get depOnboardingSettings from deviceManagement
       description: This collections of multiple DEP tokens per-tenant.
-      operationId: deviceManagement.GetDepOnboardingSettings
+      operationId: deviceManagement_GetDepOnboardingSetting
       parameters:
         - name: $select
           in: query
@@ -1279,7 +1279,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Update the navigation property depOnboardingSettings in deviceManagement
-      operationId: deviceManagement.UpdateDepOnboardingSettings
+      operationId: deviceManagement_UpdateDepOnboardingSetting
       requestBody:
         description: New navigation property values
         content:
@@ -1303,7 +1303,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Delete navigation property depOnboardingSettings for deviceManagement
-      operationId: deviceManagement.DeleteDepOnboardingSettings
+      operationId: deviceManagement_DeleteDepOnboardingSetting
       parameters:
         - name: If-Match
           in: header
@@ -1325,7 +1325,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get defaultIosEnrollmentProfile from deviceManagement
       description: Default iOS Enrollment Profile
-      operationId: deviceManagement.depOnboardingSettings.GetDefaultIosEnrollmentProfile
+      operationId: deviceManagement.depOnboardingSetting_GetDefaultIosEnrollmentProfile
       parameters:
         - name: $select
           in: query
@@ -1365,7 +1365,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get defaultMacOsEnrollmentProfile from deviceManagement
       description: Default MacOs Enrollment Profile
-      operationId: deviceManagement.depOnboardingSettings.GetDefaultMacOsEnrollmentProfile
+      operationId: deviceManagement.depOnboardingSetting_GetDefaultMacOsEnrollmentProfile
       parameters:
         - name: $select
           in: query
@@ -1405,7 +1405,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get defaultTvOSEnrollmentProfile from deviceManagement
       description: Default TvOS Enrollment Profile
-      operationId: deviceManagement.depOnboardingSettings.GetDefaultTvOSEnrollmentProfile
+      operationId: deviceManagement.depOnboardingSetting_GetDefaultTvOSEnrollmentProfile
       parameters:
         - name: $select
           in: query
@@ -1445,7 +1445,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get defaultVisionOSEnrollmentProfile from deviceManagement
       description: Default VisionOS Enrollment Profile
-      operationId: deviceManagement.depOnboardingSettings.GetDefaultVisionOSEnrollmentProfile
+      operationId: deviceManagement.depOnboardingSetting_GetDefaultVisionOSEnrollmentProfile
       parameters:
         - name: $select
           in: query
@@ -1485,7 +1485,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get enrollmentProfiles from deviceManagement
       description: The enrollment profiles.
-      operationId: deviceManagement.depOnboardingSettings.ListEnrollmentProfiles
+      operationId: deviceManagement.depOnboardingSetting_ListEnrollmentProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1537,7 +1537,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Create new navigation property to enrollmentProfiles for deviceManagement
-      operationId: deviceManagement.depOnboardingSettings.CreateEnrollmentProfiles
+      operationId: deviceManagement.depOnboardingSetting_CreateEnrollmentProfile
       requestBody:
         description: New navigation property
         content:
@@ -1563,7 +1563,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get enrollmentProfiles from deviceManagement
       description: The enrollment profiles.
-      operationId: deviceManagement.depOnboardingSettings.GetEnrollmentProfiles
+      operationId: deviceManagement.depOnboardingSetting_GetEnrollmentProfile
       parameters:
         - name: $select
           in: query
@@ -1601,7 +1601,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Update the navigation property enrollmentProfiles in deviceManagement
-      operationId: deviceManagement.depOnboardingSettings.UpdateEnrollmentProfiles
+      operationId: deviceManagement.depOnboardingSetting_UpdateEnrollmentProfile
       requestBody:
         description: New navigation property values
         content:
@@ -1625,7 +1625,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Delete navigation property enrollmentProfiles for deviceManagement
-      operationId: deviceManagement.depOnboardingSettings.DeleteEnrollmentProfiles
+      operationId: deviceManagement.depOnboardingSetting_DeleteEnrollmentProfile
       parameters:
         - name: If-Match
           in: header
@@ -1647,7 +1647,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Invoke function exportMobileConfig
       description: Exports the mobile configuration
-      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.enrollmentProfiles.enrollmentProfile.exportMobileConfig
+      operationId: deviceManagement.depOnboardingSetting.enrollmentProfile_exportMobileConfig
       responses:
         2XX:
           description: Success
@@ -1669,7 +1669,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Invoke action setDefaultProfile
-      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.enrollmentProfiles.enrollmentProfile.setDefaultProfile
+      operationId: deviceManagement.depOnboardingSetting.enrollmentProfile_setDefaultProfile
       responses:
         '204':
           description: Success
@@ -1683,7 +1683,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Invoke action updateDeviceProfileAssignment
-      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.enrollmentProfiles.enrollmentProfile.updateDeviceProfileAssignment
+      operationId: deviceManagement.depOnboardingSetting.enrollmentProfile_updateDeviceProfileAssignment
       requestBody:
         description: Action parameters
         content:
@@ -1710,7 +1710,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get the number of the resource
-      operationId: deviceManagement.depOnboardingSettings.enrollmentProfiles.GetCount-0710
+      operationId: deviceManagement.depOnboardingSetting.enrollmentProfile_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1727,7 +1727,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get importedAppleDeviceIdentities from deviceManagement
       description: The imported Apple device identities.
-      operationId: deviceManagement.depOnboardingSettings.ListImportedAppleDeviceIdentities
+      operationId: deviceManagement.depOnboardingSetting_ListImportedAppleDeviceIdentity
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1779,7 +1779,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Create new navigation property to importedAppleDeviceIdentities for deviceManagement
-      operationId: deviceManagement.depOnboardingSettings.CreateImportedAppleDeviceIdentities
+      operationId: deviceManagement.depOnboardingSetting_CreateImportedAppleDeviceIdentity
       requestBody:
         description: New navigation property
         content:
@@ -1805,7 +1805,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get importedAppleDeviceIdentities from deviceManagement
       description: The imported Apple device identities.
-      operationId: deviceManagement.depOnboardingSettings.GetImportedAppleDeviceIdentities
+      operationId: deviceManagement.depOnboardingSetting_GetImportedAppleDeviceIdentity
       parameters:
         - name: $select
           in: query
@@ -1843,7 +1843,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Update the navigation property importedAppleDeviceIdentities in deviceManagement
-      operationId: deviceManagement.depOnboardingSettings.UpdateImportedAppleDeviceIdentities
+      operationId: deviceManagement.depOnboardingSetting_UpdateImportedAppleDeviceIdentity
       requestBody:
         description: New navigation property values
         content:
@@ -1867,7 +1867,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Delete navigation property importedAppleDeviceIdentities for deviceManagement
-      operationId: deviceManagement.depOnboardingSettings.DeleteImportedAppleDeviceIdentities
+      operationId: deviceManagement.depOnboardingSetting_DeleteImportedAppleDeviceIdentity
       parameters:
         - name: If-Match
           in: header
@@ -1888,7 +1888,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get the number of the resource
-      operationId: deviceManagement.depOnboardingSettings.importedAppleDeviceIdentities.GetCount-1a85
+      operationId: deviceManagement.depOnboardingSetting.importedAppleDeviceIdentity_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1904,7 +1904,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Invoke action importAppleDeviceIdentityList
-      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.importedAppleDeviceIdentities.importAppleDeviceIdentityList
+      operationId: deviceManagement.depOnboardingSetting.importedAppleDeviceIdentity_importAppleDeviceIdentityList
       requestBody:
         description: Action parameters
         content:
@@ -1950,7 +1950,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Invoke action generateEncryptionPublicKey
       description: Generate a public key to use to encrypt the Apple device enrollment program token
-      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.generateEncryptionPublicKey
+      operationId: deviceManagement.depOnboardingSetting_generateEncryptionPublicKey
       responses:
         2XX:
           description: Success
@@ -1973,7 +1973,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Invoke function getEncryptionPublicKey
       description: Get a public key to use to encrypt the Apple device enrollment program token
-      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.getEncryptionPublicKey
+      operationId: deviceManagement.depOnboardingSetting_getEncryptionPublicKey
       responses:
         2XX:
           description: Success
@@ -1995,7 +1995,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Invoke action releaseAppleDevices
-      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.releaseAppleDevices
+      operationId: deviceManagement.depOnboardingSetting_releaseAppleDevice
       requestBody:
         description: Action parameters
         content:
@@ -2025,7 +2025,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Invoke action shareForSchoolDataSyncService
-      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.shareForSchoolDataSyncService
+      operationId: deviceManagement.depOnboardingSetting_shareGraphFPreSchoolDataSyncService
       responses:
         '204':
           description: Success
@@ -2040,7 +2040,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Invoke action syncWithAppleDeviceEnrollmentProgram
       description: Synchronizes between Apple Device Enrollment Program and Intune
-      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.syncWithAppleDeviceEnrollmentProgram
+      operationId: deviceManagement.depOnboardingSetting_syncGraphWPreAppleDeviceEnrollmentProgram
       responses:
         '204':
           description: Success
@@ -2054,7 +2054,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Invoke action unshareForSchoolDataSyncService
-      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.unshareForSchoolDataSyncService
+      operationId: deviceManagement.depOnboardingSetting_unshareGraphFPreSchoolDataSyncService
       responses:
         '204':
           description: Success
@@ -2069,7 +2069,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Invoke action uploadDepToken
       description: Uploads a new Device Enrollment Program token
-      operationId: deviceManagement.depOnboardingSettings.depOnboardingSetting.uploadDepToken
+      operationId: deviceManagement.depOnboardingSetting_uploadDepToken
       requestBody:
         description: Action parameters
         content:
@@ -2097,7 +2097,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Get the number of the resource
-      operationId: deviceManagement.depOnboardingSettings.GetCount-7c8b
+      operationId: deviceManagement.depOnboardingSetting_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2113,7 +2113,7 @@ paths:
       tags:
         - deviceManagement.depOnboardingSetting
       summary: Invoke function getExpiringVppTokenCount
-      operationId: deviceManagement.depOnboardingSettings.getExpiringVppTokenCount
+      operationId: deviceManagement.depOnboardingSetting_getExpiringVppTokenCount
       responses:
         2XX:
           description: Success
@@ -2138,7 +2138,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
       description: The list of device enrollment configurations
-      operationId: deviceManagement.ListDeviceEnrollmentConfigurations
+      operationId: deviceManagement_ListDeviceEnrollmentConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2190,7 +2190,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Create new navigation property to deviceEnrollmentConfigurations for deviceManagement
-      operationId: deviceManagement.CreateDeviceEnrollmentConfigurations
+      operationId: deviceManagement_CreateDeviceEnrollmentConfiguration
       requestBody:
         description: New navigation property
         content:
@@ -2216,7 +2216,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
       description: The list of device enrollment configurations
-      operationId: deviceManagement.GetDeviceEnrollmentConfigurations
+      operationId: deviceManagement_GetDeviceEnrollmentConfiguration
       parameters:
         - name: $select
           in: query
@@ -2254,7 +2254,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Update the navigation property deviceEnrollmentConfigurations in deviceManagement
-      operationId: deviceManagement.UpdateDeviceEnrollmentConfigurations
+      operationId: deviceManagement_UpdateDeviceEnrollmentConfiguration
       requestBody:
         description: New navigation property values
         content:
@@ -2278,7 +2278,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Delete navigation property deviceEnrollmentConfigurations for deviceManagement
-      operationId: deviceManagement.DeleteDeviceEnrollmentConfigurations
+      operationId: deviceManagement_DeleteDeviceEnrollmentConfiguration
       parameters:
         - name: If-Match
           in: header
@@ -2300,7 +2300,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the device configuration profile
-      operationId: deviceManagement.deviceEnrollmentConfigurations.ListAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2352,7 +2352,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfigurations.CreateAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -2378,7 +2378,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the device configuration profile
-      operationId: deviceManagement.deviceEnrollmentConfigurations.GetAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_GetAssignment
       parameters:
         - name: $select
           in: query
@@ -2416,7 +2416,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfigurations.UpdateAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_UpdateAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -2440,7 +2440,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfigurations.DeleteAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_DeleteAssignment
       parameters:
         - name: If-Match
           in: header
@@ -2461,7 +2461,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceEnrollmentConfigurations.assignments.GetCount-f0d7
+      operationId: deviceManagement.deviceEnrollmentConfiguration.assignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2477,7 +2477,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Invoke action assign
-      operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.assign
+      operationId: deviceManagement.deviceEnrollmentConfiguration_assign
       requestBody:
         description: Action parameters
         content:
@@ -2503,7 +2503,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Invoke action setPriority
-      operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.setPriority
+      operationId: deviceManagement.deviceEnrollmentConfiguration_setPriority
       requestBody:
         description: Action parameters
         content:
@@ -2530,7 +2530,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceEnrollmentConfigurations.GetCount-69e5
+      operationId: deviceManagement.deviceEnrollmentConfiguration_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2546,7 +2546,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Invoke action createEnrollmentNotificationConfiguration
-      operationId: deviceManagement.deviceEnrollmentConfigurations.createEnrollmentNotificationConfiguration
+      operationId: deviceManagement.deviceEnrollmentConfiguration_createEnrollmentNotificationConfiguration
       requestBody:
         description: Action parameters
         content:
@@ -2572,7 +2572,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Invoke action hasPayloadLinks
-      operationId: deviceManagement.deviceEnrollmentConfigurations.hasPayloadLinks
+      operationId: deviceManagement.deviceEnrollmentConfiguration_hasPayloadLink
       requestBody:
         description: Action parameters
         content:
@@ -2615,7 +2615,7 @@ paths:
         - deviceManagement.importedDeviceIdentity
       summary: Get importedDeviceIdentities from deviceManagement
       description: The imported device identities.
-      operationId: deviceManagement.ListImportedDeviceIdentities
+      operationId: deviceManagement_ListImportedDeviceIdentity
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2667,7 +2667,7 @@ paths:
       tags:
         - deviceManagement.importedDeviceIdentity
       summary: Create new navigation property to importedDeviceIdentities for deviceManagement
-      operationId: deviceManagement.CreateImportedDeviceIdentities
+      operationId: deviceManagement_CreateImportedDeviceIdentity
       requestBody:
         description: New navigation property
         content:
@@ -2693,7 +2693,7 @@ paths:
         - deviceManagement.importedDeviceIdentity
       summary: Get importedDeviceIdentities from deviceManagement
       description: The imported device identities.
-      operationId: deviceManagement.GetImportedDeviceIdentities
+      operationId: deviceManagement_GetImportedDeviceIdentity
       parameters:
         - name: $select
           in: query
@@ -2731,7 +2731,7 @@ paths:
       tags:
         - deviceManagement.importedDeviceIdentity
       summary: Update the navigation property importedDeviceIdentities in deviceManagement
-      operationId: deviceManagement.UpdateImportedDeviceIdentities
+      operationId: deviceManagement_UpdateImportedDeviceIdentity
       requestBody:
         description: New navigation property values
         content:
@@ -2755,7 +2755,7 @@ paths:
       tags:
         - deviceManagement.importedDeviceIdentity
       summary: Delete navigation property importedDeviceIdentities for deviceManagement
-      operationId: deviceManagement.DeleteImportedDeviceIdentities
+      operationId: deviceManagement_DeleteImportedDeviceIdentity
       parameters:
         - name: If-Match
           in: header
@@ -2776,7 +2776,7 @@ paths:
       tags:
         - deviceManagement.importedDeviceIdentity
       summary: Get the number of the resource
-      operationId: deviceManagement.importedDeviceIdentities.GetCount-d89f
+      operationId: deviceManagement.importedDeviceIdentity_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2792,7 +2792,7 @@ paths:
       tags:
         - deviceManagement.importedDeviceIdentity
       summary: Invoke action importDeviceIdentityList
-      operationId: deviceManagement.importedDeviceIdentities.importDeviceIdentityList
+      operationId: deviceManagement.importedDeviceIdentity_importDeviceIdentityList
       requestBody:
         description: Action parameters
         content:
@@ -2837,7 +2837,7 @@ paths:
       tags:
         - deviceManagement.importedDeviceIdentity
       summary: Invoke action searchExistingIdentities
-      operationId: deviceManagement.importedDeviceIdentities.searchExistingIdentities
+      operationId: deviceManagement.importedDeviceIdentity_searchExistingIdentity
       requestBody:
         description: Action parameters
         content:
@@ -2880,7 +2880,7 @@ paths:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
       description: Collection of imported Windows autopilot devices.
-      operationId: deviceManagement.ListImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_ListImportedWindowsAutopilotDeviceIdentity
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2932,7 +2932,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
-      operationId: deviceManagement.CreateImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_CreateImportedWindowsAutopilotDeviceIdentity
       requestBody:
         description: New navigation property
         content:
@@ -2958,7 +2958,7 @@ paths:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
       description: Collection of imported Windows autopilot devices.
-      operationId: deviceManagement.GetImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_GetImportedWindowsAutopilotDeviceIdentity
       parameters:
         - name: $select
           in: query
@@ -2996,7 +2996,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Update the navigation property importedWindowsAutopilotDeviceIdentities in deviceManagement
-      operationId: deviceManagement.UpdateImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_UpdateImportedWindowsAutopilotDeviceIdentity
       requestBody:
         description: New navigation property values
         content:
@@ -3020,7 +3020,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Delete navigation property importedWindowsAutopilotDeviceIdentities for deviceManagement
-      operationId: deviceManagement.DeleteImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_DeleteImportedWindowsAutopilotDeviceIdentity
       parameters:
         - name: If-Match
           in: header
@@ -3041,7 +3041,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get the number of the resource
-      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentities.GetCount-36aa
+      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentity_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3057,7 +3057,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Invoke action import
-      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentities.import
+      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentity_import
       requestBody:
         description: Action parameters
         content:
@@ -3100,7 +3100,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
       summary: Get userExperienceAnalyticsNotAutopilotReadyDevice from deviceManagement
       description: User experience analytics devices not Windows Autopilot ready.
-      operationId: deviceManagement.ListUserExperienceAnalyticsNotAutopilotReadyDevice
+      operationId: deviceManagement_ListUserExperienceAnalyticsNotAutopilotReadyDevice
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3152,7 +3152,7 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
       summary: Create new navigation property to userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
-      operationId: deviceManagement.CreateUserExperienceAnalyticsNotAutopilotReadyDevice
+      operationId: deviceManagement_CreateUserExperienceAnalyticsNotAutopilotReadyDevice
       requestBody:
         description: New navigation property
         content:
@@ -3178,7 +3178,7 @@ paths:
         - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
       summary: Get userExperienceAnalyticsNotAutopilotReadyDevice from deviceManagement
       description: User experience analytics devices not Windows Autopilot ready.
-      operationId: deviceManagement.GetUserExperienceAnalyticsNotAutopilotReadyDevice
+      operationId: deviceManagement_GetUserExperienceAnalyticsNotAutopilotReadyDevice
       parameters:
         - name: $select
           in: query
@@ -3216,7 +3216,7 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
       summary: Update the navigation property userExperienceAnalyticsNotAutopilotReadyDevice in deviceManagement
-      operationId: deviceManagement.UpdateUserExperienceAnalyticsNotAutopilotReadyDevice
+      operationId: deviceManagement_UpdateUserExperienceAnalyticsNotAutopilotReadyDevice
       requestBody:
         description: New navigation property values
         content:
@@ -3240,7 +3240,7 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
       summary: Delete navigation property userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
-      operationId: deviceManagement.DeleteUserExperienceAnalyticsNotAutopilotReadyDevice
+      operationId: deviceManagement_DeleteUserExperienceAnalyticsNotAutopilotReadyDevice
       parameters:
         - name: If-Match
           in: header
@@ -3261,7 +3261,7 @@ paths:
       tags:
         - deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice
       summary: Get the number of the resource
-      operationId: deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice.GetCount-106d
+      operationId: deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3278,7 +3278,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get windowsAutopilotDeploymentProfiles from deviceManagement
       description: Windows auto pilot deployment profiles
-      operationId: deviceManagement.ListWindowsAutopilotDeploymentProfiles
+      operationId: deviceManagement_ListWindowsAutopilotDeploymentProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3330,7 +3330,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Create new navigation property to windowsAutopilotDeploymentProfiles for deviceManagement
-      operationId: deviceManagement.CreateWindowsAutopilotDeploymentProfiles
+      operationId: deviceManagement_CreateWindowsAutopilotDeploymentProfile
       requestBody:
         description: New navigation property
         content:
@@ -3356,7 +3356,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get windowsAutopilotDeploymentProfiles from deviceManagement
       description: Windows auto pilot deployment profiles
-      operationId: deviceManagement.GetWindowsAutopilotDeploymentProfiles
+      operationId: deviceManagement_GetWindowsAutopilotDeploymentProfile
       parameters:
         - name: $select
           in: query
@@ -3394,7 +3394,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Update the navigation property windowsAutopilotDeploymentProfiles in deviceManagement
-      operationId: deviceManagement.UpdateWindowsAutopilotDeploymentProfiles
+      operationId: deviceManagement_UpdateWindowsAutopilotDeploymentProfile
       requestBody:
         description: New navigation property values
         content:
@@ -3418,7 +3418,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Delete navigation property windowsAutopilotDeploymentProfiles for deviceManagement
-      operationId: deviceManagement.DeleteWindowsAutopilotDeploymentProfiles
+      operationId: deviceManagement_DeleteWindowsAutopilotDeploymentProfile
       parameters:
         - name: If-Match
           in: header
@@ -3440,7 +3440,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignedDevices from deviceManagement
       description: The list of assigned devices for the profile.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.ListAssignedDevices
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_ListAssignedDevice
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3492,7 +3492,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Create new navigation property to assignedDevices for deviceManagement
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.CreateAssignedDevices
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_CreateAssignedDevice
       requestBody:
         description: New navigation property
         content:
@@ -3518,7 +3518,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignedDevices from deviceManagement
       description: The list of assigned devices for the profile.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.GetAssignedDevices
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_GetAssignedDevice
       parameters:
         - name: $select
           in: query
@@ -3556,7 +3556,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Update the navigation property assignedDevices in deviceManagement
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.UpdateAssignedDevices
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_UpdateAssignedDevice
       requestBody:
         description: New navigation property values
         content:
@@ -3580,7 +3580,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Delete navigation property assignedDevices for deviceManagement
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.DeleteAssignedDevices
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_DeleteAssignedDevice
       parameters:
         - name: If-Match
           in: header
@@ -3602,7 +3602,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get deploymentProfile from deviceManagement
       description: Deployment profile currently assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices.GetDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_GetDeploymentProfile
       parameters:
         - name: $select
           in: query
@@ -3642,7 +3642,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get intendedDeploymentProfile from deviceManagement
       description: Deployment profile intended to be assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices.GetIntendedDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_GetIntendedDeploymentProfile
       parameters:
         - name: $select
           in: query
@@ -3682,7 +3682,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Invoke action allowNextEnrollment
       description: Unblocks next autopilot enrollment.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity.allowNextEnrollment
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice.windowsAutopilotDeviceIdentity_allowNextEnrollment
       responses:
         '204':
           description: Success
@@ -3697,7 +3697,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Invoke action assignResourceAccountToDevice
       description: Assigns resource account to Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity.assignResourceAccountToDevice
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice.windowsAutopilotDeviceIdentity_assignResourceAccountToDevice
       requestBody:
         description: Action parameters
         content:
@@ -3729,7 +3729,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Invoke action assignUserToDevice
       description: Assigns user to Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity.assignUserToDevice
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice.windowsAutopilotDeviceIdentity_assignUserToDevice
       requestBody:
         description: Action parameters
         content:
@@ -3758,7 +3758,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Invoke action unassignResourceAccountFromDevice
       description: Unassigns the resource account from an Autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity.unassignResourceAccountFromDevice
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice.windowsAutopilotDeviceIdentity_unassignResourceAccountFromDevice
       responses:
         '204':
           description: Success
@@ -3773,7 +3773,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Invoke action unassignUserFromDevice
       description: Unassigns the user from an Autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity.unassignUserFromDevice
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice.windowsAutopilotDeviceIdentity_unassignUserFromDevice
       responses:
         '204':
           description: Success
@@ -3788,7 +3788,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Invoke action updateDeviceProperties
       description: Updates properties on Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assignedDevices.windowsAutopilotDeviceIdentity.updateDeviceProperties
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice.windowsAutopilotDeviceIdentity_updateDeviceProperty
       requestBody:
         description: Action parameters
         content:
@@ -3831,7 +3831,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get the number of the resource
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices.GetCount-3346
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3848,7 +3848,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the profile.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.ListAssignments
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3900,7 +3900,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.CreateAssignments
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -3926,7 +3926,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the profile.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.GetAssignments
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_GetAssignment
       parameters:
         - name: $select
           in: query
@@ -3964,7 +3964,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.UpdateAssignments
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_UpdateAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -3988,7 +3988,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.DeleteAssignments
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_DeleteAssignment
       parameters:
         - name: If-Match
           in: header
@@ -4009,7 +4009,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get the number of the resource
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignments.GetCount-418f
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4025,7 +4025,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Invoke action assign
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.windowsAutopilotDeploymentProfile.assign
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_assign
       requestBody:
         description: Action parameters
         content:
@@ -4052,7 +4052,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get the number of the resource
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.GetCount-4b46
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4068,7 +4068,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Invoke action hasPayloadLinks
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.hasPayloadLinks
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_hasPayloadLink
       requestBody:
         description: Action parameters
         content:
@@ -4111,7 +4111,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
       description: The Windows autopilot device identities contained collection.
-      operationId: deviceManagement.ListWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_ListWindowsAutopilotDeviceIdentity
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4163,7 +4163,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Create new navigation property to windowsAutopilotDeviceIdentities for deviceManagement
-      operationId: deviceManagement.CreateWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_CreateWindowsAutopilotDeviceIdentity
       requestBody:
         description: New navigation property
         content:
@@ -4189,7 +4189,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
       description: The Windows autopilot device identities contained collection.
-      operationId: deviceManagement.GetWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_GetWindowsAutopilotDeviceIdentity
       parameters:
         - name: $select
           in: query
@@ -4227,7 +4227,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Update the navigation property windowsAutopilotDeviceIdentities in deviceManagement
-      operationId: deviceManagement.UpdateWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_UpdateWindowsAutopilotDeviceIdentity
       requestBody:
         description: New navigation property values
         content:
@@ -4251,7 +4251,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
-      operationId: deviceManagement.DeleteWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_DeleteWindowsAutopilotDeviceIdentity
       parameters:
         - name: If-Match
           in: header
@@ -4273,7 +4273,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get deploymentProfile from deviceManagement
       description: Deployment profile currently assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.GetDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_GetDeploymentProfile
       parameters:
         - name: $select
           in: query
@@ -4313,7 +4313,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get intendedDeploymentProfile from deviceManagement
       description: Deployment profile intended to be assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.GetIntendedDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_GetIntendedDeploymentProfile
       parameters:
         - name: $select
           in: query
@@ -4353,7 +4353,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Invoke action allowNextEnrollment
       description: Unblocks next autopilot enrollment.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.allowNextEnrollment
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_allowNextEnrollment
       responses:
         '204':
           description: Success
@@ -4368,7 +4368,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Invoke action assignResourceAccountToDevice
       description: Assigns resource account to Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.assignResourceAccountToDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_assignResourceAccountToDevice
       requestBody:
         description: Action parameters
         content:
@@ -4400,7 +4400,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Invoke action assignUserToDevice
       description: Assigns user to Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.assignUserToDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_assignUserToDevice
       requestBody:
         description: Action parameters
         content:
@@ -4429,7 +4429,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Invoke action unassignResourceAccountFromDevice
       description: Unassigns the resource account from an Autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.unassignResourceAccountFromDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_unassignResourceAccountFromDevice
       responses:
         '204':
           description: Success
@@ -4444,7 +4444,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Invoke action unassignUserFromDevice
       description: Unassigns the user from an Autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.unassignUserFromDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_unassignUserFromDevice
       responses:
         '204':
           description: Success
@@ -4459,7 +4459,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Invoke action updateDeviceProperties
       description: Updates properties on Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.updateDeviceProperties
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_updateDeviceProperty
       requestBody:
         description: Action parameters
         content:
@@ -4502,7 +4502,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get the number of the resource
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.GetCount-0841
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4519,7 +4519,7 @@ paths:
         - deviceManagement.windowsAutopilotSettings
       summary: Get windowsAutopilotSettings from deviceManagement
       description: The Windows autopilot account settings.
-      operationId: deviceManagement.GetWindowsAutopilotSettings
+      operationId: deviceManagement_GetWindowsAutopilotSetting
       parameters:
         - name: $select
           in: query
@@ -4557,7 +4557,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotSettings
       summary: Update the navigation property windowsAutopilotSettings in deviceManagement
-      operationId: deviceManagement.UpdateWindowsAutopilotSettings
+      operationId: deviceManagement_UpdateWindowsAutopilotSetting
       requestBody:
         description: New navigation property values
         content:
@@ -4581,7 +4581,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotSettings
       summary: Delete navigation property windowsAutopilotSettings for deviceManagement
-      operationId: deviceManagement.DeleteWindowsAutopilotSettings
+      operationId: deviceManagement_DeleteWindowsAutopilotSetting
       parameters:
         - name: If-Match
           in: header
@@ -4603,7 +4603,7 @@ paths:
         - deviceManagement.windowsAutopilotSettings
       summary: Invoke action sync
       description: 'Initiates a sync of all AutoPilot registered devices from Store for Business and other portals. If the sync successful, this action returns a 204 No Content response code. If a sync is already in progress, the action returns a 409 Conflict response code.  If this sync action is called within 10 minutes of the previous sync, the action returns a 429 Too Many Requests response code.'
-      operationId: deviceManagement.windowsAutopilotSettings.sync
+      operationId: deviceManagement.windowsAutopilotSetting_sync
       responses:
         '204':
           description: Success
@@ -4618,7 +4618,7 @@ paths:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get windowsFeatureUpdateProfiles from deviceManagement
       description: A collection of windows feature update profiles
-      operationId: deviceManagement.ListWindowsFeatureUpdateProfiles
+      operationId: deviceManagement_ListWindowsFeatureUpdateProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4670,7 +4670,7 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Create new navigation property to windowsFeatureUpdateProfiles for deviceManagement
-      operationId: deviceManagement.CreateWindowsFeatureUpdateProfiles
+      operationId: deviceManagement_CreateWindowsFeatureUpdateProfile
       requestBody:
         description: New navigation property
         content:
@@ -4696,7 +4696,7 @@ paths:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get windowsFeatureUpdateProfiles from deviceManagement
       description: A collection of windows feature update profiles
-      operationId: deviceManagement.GetWindowsFeatureUpdateProfiles
+      operationId: deviceManagement_GetWindowsFeatureUpdateProfile
       parameters:
         - name: $select
           in: query
@@ -4734,7 +4734,7 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Update the navigation property windowsFeatureUpdateProfiles in deviceManagement
-      operationId: deviceManagement.UpdateWindowsFeatureUpdateProfiles
+      operationId: deviceManagement_UpdateWindowsFeatureUpdateProfile
       requestBody:
         description: New navigation property values
         content:
@@ -4758,7 +4758,7 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Delete navigation property windowsFeatureUpdateProfiles for deviceManagement
-      operationId: deviceManagement.DeleteWindowsFeatureUpdateProfiles
+      operationId: deviceManagement_DeleteWindowsFeatureUpdateProfile
       parameters:
         - name: If-Match
           in: header
@@ -4780,7 +4780,7 @@ paths:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get assignments from deviceManagement
       description: The list of group assignments of the profile.
-      operationId: deviceManagement.windowsFeatureUpdateProfiles.ListAssignments
+      operationId: deviceManagement.windowsFeatureUpdateProfile_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4832,7 +4832,7 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.windowsFeatureUpdateProfiles.CreateAssignments
+      operationId: deviceManagement.windowsFeatureUpdateProfile_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -4858,7 +4858,7 @@ paths:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get assignments from deviceManagement
       description: The list of group assignments of the profile.
-      operationId: deviceManagement.windowsFeatureUpdateProfiles.GetAssignments
+      operationId: deviceManagement.windowsFeatureUpdateProfile_GetAssignment
       parameters:
         - name: $select
           in: query
@@ -4896,7 +4896,7 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.windowsFeatureUpdateProfiles.UpdateAssignments
+      operationId: deviceManagement.windowsFeatureUpdateProfile_UpdateAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -4920,7 +4920,7 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.windowsFeatureUpdateProfiles.DeleteAssignments
+      operationId: deviceManagement.windowsFeatureUpdateProfile_DeleteAssignment
       parameters:
         - name: If-Match
           in: header
@@ -4941,7 +4941,7 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get the number of the resource
-      operationId: deviceManagement.windowsFeatureUpdateProfiles.assignments.GetCount-7b29
+      operationId: deviceManagement.windowsFeatureUpdateProfile.assignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4957,7 +4957,7 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Invoke action assign
-      operationId: deviceManagement.windowsFeatureUpdateProfiles.windowsFeatureUpdateProfile.assign
+      operationId: deviceManagement.windowsFeatureUpdateProfile_assign
       requestBody:
         description: Action parameters
         content:
@@ -4983,7 +4983,7 @@ paths:
       tags:
         - deviceManagement.windowsFeatureUpdateProfile
       summary: Get the number of the resource
-      operationId: deviceManagement.windowsFeatureUpdateProfiles.GetCount-dba3
+      operationId: deviceManagement.windowsFeatureUpdateProfile_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4999,7 +4999,7 @@ paths:
       tags:
         - roleManagement.roleManagement
       summary: Get roleManagement
-      operationId: roleManagement.roleManagement.GetRoleManagement
+      operationId: roleManagement_GetRoleManagement
       parameters:
         - name: $select
           in: query
@@ -5037,7 +5037,7 @@ paths:
       tags:
         - roleManagement.roleManagement
       summary: Update roleManagement
-      operationId: roleManagement.roleManagement.UpdateRoleManagement
+      operationId: roleManagement_UpdateRoleManagement
       requestBody:
         description: New property values
         content:
@@ -5062,7 +5062,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get cloudPC from roleManagement
-      operationId: roleManagement.GetCloudPC
+      operationId: roleManagement_GetCloudPC
       parameters:
         - name: $select
           in: query
@@ -5100,7 +5100,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property cloudPC in roleManagement
-      operationId: roleManagement.UpdateCloudPC
+      operationId: roleManagement_UpdateCloudPC
       requestBody:
         description: New navigation property values
         content:
@@ -5124,7 +5124,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property cloudPC for roleManagement
-      operationId: roleManagement.DeleteCloudPC
+      operationId: roleManagement_DeleteCloudPC
       parameters:
         - name: If-Match
           in: header
@@ -5145,7 +5145,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceNamespaces from roleManagement
-      operationId: roleManagement.cloudPC.ListResourceNamespaces
+      operationId: roleManagement.cloudPC_ListResourceNamespace
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5197,7 +5197,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to resourceNamespaces for roleManagement
-      operationId: roleManagement.cloudPC.CreateResourceNamespaces
+      operationId: roleManagement.cloudPC_CreateResourceNamespace
       requestBody:
         description: New navigation property
         content:
@@ -5222,7 +5222,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceNamespaces from roleManagement
-      operationId: roleManagement.cloudPC.GetResourceNamespaces
+      operationId: roleManagement.cloudPC_GetResourceNamespace
       parameters:
         - name: $select
           in: query
@@ -5260,7 +5260,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property resourceNamespaces in roleManagement
-      operationId: roleManagement.cloudPC.UpdateResourceNamespaces
+      operationId: roleManagement.cloudPC_UpdateResourceNamespace
       requestBody:
         description: New navigation property values
         content:
@@ -5284,7 +5284,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property resourceNamespaces for roleManagement
-      operationId: roleManagement.cloudPC.DeleteResourceNamespaces
+      operationId: roleManagement.cloudPC_DeleteResourceNamespace
       parameters:
         - name: If-Match
           in: header
@@ -5305,7 +5305,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Invoke action importResourceActions
-      operationId: roleManagement.cloudPC.resourceNamespaces.unifiedRbacResourceNamespace.importResourceActions
+      operationId: roleManagement.cloudPC.resourceNamespace.unifiedRbacResourceNamespace_importResourceAction
       requestBody:
         description: Action parameters
         content:
@@ -5342,7 +5342,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
       description: Operations that an authorized principal is allowed to perform.
-      operationId: roleManagement.cloudPC.resourceNamespaces.ListResourceActions
+      operationId: roleManagement.cloudPC.resourceNamespace_ListResourceAction
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5394,7 +5394,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to resourceActions for roleManagement
-      operationId: roleManagement.cloudPC.resourceNamespaces.CreateResourceActions
+      operationId: roleManagement.cloudPC.resourceNamespace_CreateResourceAction
       requestBody:
         description: New navigation property
         content:
@@ -5420,7 +5420,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
       description: Operations that an authorized principal is allowed to perform.
-      operationId: roleManagement.cloudPC.resourceNamespaces.GetResourceActions
+      operationId: roleManagement.cloudPC.resourceNamespace_GetResourceAction
       parameters:
         - name: $select
           in: query
@@ -5458,7 +5458,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property resourceActions in roleManagement
-      operationId: roleManagement.cloudPC.resourceNamespaces.UpdateResourceActions
+      operationId: roleManagement.cloudPC.resourceNamespace_UpdateResourceAction
       requestBody:
         description: New navigation property values
         content:
@@ -5482,7 +5482,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property resourceActions for roleManagement
-      operationId: roleManagement.cloudPC.resourceNamespaces.DeleteResourceActions
+      operationId: roleManagement.cloudPC.resourceNamespace_DeleteResourceAction
       parameters:
         - name: If-Match
           in: header
@@ -5503,7 +5503,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get authenticationContext from roleManagement
-      operationId: roleManagement.cloudPC.resourceNamespaces.resourceActions.GetAuthenticationContext
+      operationId: roleManagement.cloudPC.resourceNamespace.resourceAction_GetAuthenticationContext
       parameters:
         - name: $select
           in: query
@@ -5542,7 +5542,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceScope from roleManagement
-      operationId: roleManagement.cloudPC.resourceNamespaces.resourceActions.GetResourceScope
+      operationId: roleManagement.cloudPC.resourceNamespace.resourceAction_GetResourceScope
       parameters:
         - name: $select
           in: query
@@ -5580,7 +5580,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property resourceScope in roleManagement
-      operationId: roleManagement.cloudPC.resourceNamespaces.resourceActions.UpdateResourceScope
+      operationId: roleManagement.cloudPC.resourceNamespace.resourceAction_UpdateResourceScope
       requestBody:
         description: New navigation property values
         content:
@@ -5604,7 +5604,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property resourceScope for roleManagement
-      operationId: roleManagement.cloudPC.resourceNamespaces.resourceActions.DeleteResourceScope
+      operationId: roleManagement.cloudPC.resourceNamespace.resourceAction_DeleteResourceScope
       parameters:
         - name: If-Match
           in: header
@@ -5625,7 +5625,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.cloudPC.resourceNamespaces.resourceActions.GetCount-c7ea
+      operationId: roleManagement.cloudPC.resourceNamespace.resourceAction_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5641,7 +5641,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.cloudPC.resourceNamespaces.GetCount-ce1b
+      operationId: roleManagement.cloudPC.resourceNamespace_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5658,7 +5658,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleAssignmentMultiple
       description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment."
-      operationId: roleManagement.cloudPC.ListRoleAssignments
+      operationId: roleManagement.cloudPC_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5714,7 +5714,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-beta
-      operationId: roleManagement.cloudPC.CreateRoleAssignments
+      operationId: roleManagement.cloudPC_CreateRoleAssignment
       requestBody:
         description: New navigation property
         content:
@@ -5743,7 +5743,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta
-      operationId: roleManagement.cloudPC.GetRoleAssignments
+      operationId: roleManagement.cloudPC_GetRoleAssignment
       parameters:
         - name: $select
           in: query
@@ -5785,7 +5785,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-beta
-      operationId: roleManagement.cloudPC.UpdateRoleAssignments
+      operationId: roleManagement.cloudPC_UpdateRoleAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -5813,7 +5813,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-beta
-      operationId: roleManagement.cloudPC.DeleteRoleAssignments
+      operationId: roleManagement.cloudPC_DeleteRoleAssignment
       parameters:
         - name: If-Match
           in: header
@@ -5835,7 +5835,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
       description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
-      operationId: roleManagement.cloudPC.roleAssignments.ListAppScopes
+      operationId: roleManagement.cloudPC.roleAssignment_ListAppScope
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5887,7 +5887,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to appScopes for roleManagement
-      operationId: roleManagement.cloudPC.roleAssignments.CreateAppScopes
+      operationId: roleManagement.cloudPC.roleAssignment_CreateAppScope
       requestBody:
         description: New navigation property
         content:
@@ -5913,7 +5913,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
       description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
-      operationId: roleManagement.cloudPC.roleAssignments.GetAppScopes
+      operationId: roleManagement.cloudPC.roleAssignment_GetAppScope
       parameters:
         - name: $select
           in: query
@@ -5951,7 +5951,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property appScopes in roleManagement
-      operationId: roleManagement.cloudPC.roleAssignments.UpdateAppScopes
+      operationId: roleManagement.cloudPC.roleAssignment_UpdateAppScope
       requestBody:
         description: New navigation property values
         content:
@@ -5975,7 +5975,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property appScopes for roleManagement
-      operationId: roleManagement.cloudPC.roleAssignments.DeleteAppScopes
+      operationId: roleManagement.cloudPC.roleAssignment_DeleteAppScope
       parameters:
         - name: If-Match
           in: header
@@ -5996,7 +5996,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.cloudPC.roleAssignments.appScopes.GetCount-f810
+      operationId: roleManagement.cloudPC.roleAssignment.appScope_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6013,7 +6013,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
       description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.cloudPC.roleAssignments.ListDirectoryScopes
+      operationId: roleManagement.cloudPC.roleAssignment_ListDirectoryScope
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6067,7 +6067,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
       description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.cloudPC.roleAssignments.GetDirectoryScopes
+      operationId: roleManagement.cloudPC.roleAssignment_GetDirectoryScope
       parameters:
         - name: $select
           in: query
@@ -6106,7 +6106,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.cloudPC.roleAssignments.directoryScopes.GetCount-2dc2
+      operationId: roleManagement.cloudPC.roleAssignment.directoryScope_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6123,7 +6123,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
       description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.cloudPC.roleAssignments.ListPrincipals
+      operationId: roleManagement.cloudPC.roleAssignment_ListPrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6177,7 +6177,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
       description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.cloudPC.roleAssignments.GetPrincipals
+      operationId: roleManagement.cloudPC.roleAssignment_GetPrincipal
       parameters:
         - name: $select
           in: query
@@ -6216,7 +6216,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.cloudPC.roleAssignments.principals.GetCount-aa5e
+      operationId: roleManagement.cloudPC.roleAssignment.principal_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6233,7 +6233,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get roleDefinition from roleManagement
       description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
-      operationId: roleManagement.cloudPC.roleAssignments.GetRoleDefinition
+      operationId: roleManagement.cloudPC.roleAssignment_GetRoleDefinition
       parameters:
         - name: $select
           in: query
@@ -6272,7 +6272,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.cloudPC.roleAssignments.GetCount-f9ed
+      operationId: roleManagement.cloudPC.roleAssignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6292,7 +6292,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta
-      operationId: roleManagement.cloudPC.ListRoleDefinitions
+      operationId: roleManagement.cloudPC_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6348,7 +6348,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-beta
-      operationId: roleManagement.cloudPC.CreateRoleDefinitions
+      operationId: roleManagement.cloudPC_CreateRoleDefinition
       requestBody:
         description: New navigation property
         content:
@@ -6373,11 +6373,11 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra directory roles)\r\n- entitlement management (Microsoft Entra entitlement management)\r\n- Exchange Online (Except China operated by 21Vianet)"
+      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider. For the directory provider, you can also get a soft-deleted custom role definition from the deleted-items collection. The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra directory roles)\r\n- entitlement management (Microsoft Entra entitlement management)\r\n- Exchange Online (Except China operated by 21Vianet)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta
-      operationId: roleManagement.cloudPC.GetRoleDefinitions
+      operationId: roleManagement.cloudPC_GetRoleDefinition
       parameters:
         - name: $select
           in: query
@@ -6419,7 +6419,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-beta
-      operationId: roleManagement.cloudPC.UpdateRoleDefinitions
+      operationId: roleManagement.cloudPC_UpdateRoleDefinition
       requestBody:
         description: New navigation property values
         content:
@@ -6443,11 +6443,11 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete unifiedRoleDefinition
-      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\r\n- Cloud PC\r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra ID) "
+      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. For the directory provider, deleting an active custom role definition soft-deletes it. You can then restore the role or permanently delete it from the deleted-items collection. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\r\n- Cloud PC\r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra ID) "
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-beta
-      operationId: roleManagement.cloudPC.DeleteRoleDefinitions
+      operationId: roleManagement.cloudPC_DeleteRoleDefinition
       parameters:
         - name: If-Match
           in: header
@@ -6469,7 +6469,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
-      operationId: roleManagement.cloudPC.roleDefinitions.ListInheritsPermissionsFrom
+      operationId: roleManagement.cloudPC.roleDefinition_ListInheritsPermissionsFrom
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6521,7 +6521,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.cloudPC.roleDefinitions.CreateInheritsPermissionsFrom
+      operationId: roleManagement.cloudPC.roleDefinition_CreateInheritsPermissionsFrom
       requestBody:
         description: New navigation property
         content:
@@ -6547,7 +6547,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
-      operationId: roleManagement.cloudPC.roleDefinitions.GetInheritsPermissionsFrom
+      operationId: roleManagement.cloudPC.roleDefinition_GetInheritsPermissionsFrom
       parameters:
         - name: $select
           in: query
@@ -6585,7 +6585,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property inheritsPermissionsFrom in roleManagement
-      operationId: roleManagement.cloudPC.roleDefinitions.UpdateInheritsPermissionsFrom
+      operationId: roleManagement.cloudPC.roleDefinition_UpdateInheritsPermissionsFrom
       requestBody:
         description: New navigation property values
         content:
@@ -6609,7 +6609,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.cloudPC.roleDefinitions.DeleteInheritsPermissionsFrom
+      operationId: roleManagement.cloudPC.roleDefinition_DeleteInheritsPermissionsFrom
       parameters:
         - name: If-Match
           in: header
@@ -6634,7 +6634,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
-      operationId: roleManagement.cloudPC.roleDefinitions.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition.assignedPrincipals
+      operationId: roleManagement.cloudPC.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_assignedPrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6695,12 +6695,37 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/restore':
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke action restore
+      description: Restore a soft-deleted custom unifiedRoleDefinition object to the active role definitions collection for Microsoft Entra directory role management.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-restore?view=graph-rest-beta
+      operationId: roleManagement.cloudPC.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_restore
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count':
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.cloudPC.roleDefinitions.inheritsPermissionsFrom.GetCount-643c
+      operationId: roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6720,7 +6745,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
-      operationId: roleManagement.cloudPC.roleDefinitions.unifiedRoleDefinition.assignedPrincipals
+      operationId: roleManagement.cloudPC.roleDefinition.unifiedRoleDefinition_assignedPrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6781,12 +6806,37 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/restore':
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke action restore
+      description: Restore a soft-deleted custom unifiedRoleDefinition object to the active role definitions collection for Microsoft Entra directory role management.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-restore?view=graph-rest-beta
+      operationId: roleManagement.cloudPC.roleDefinition.unifiedRoleDefinition_restore
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /roleManagement/cloudPC/roleDefinitions/$count:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.cloudPC.roleDefinitions.GetCount-c3d7
+      operationId: roleManagement.cloudPC.roleDefinition_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6803,7 +6853,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get deviceManagement from roleManagement
       description: The RbacApplication for Device Management
-      operationId: roleManagement.GetDeviceManagement
+      operationId: roleManagement_GetDeviceManagement
       parameters:
         - name: $select
           in: query
@@ -6841,7 +6891,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property deviceManagement in roleManagement
-      operationId: roleManagement.UpdateDeviceManagement
+      operationId: roleManagement_UpdateDeviceManagement
       requestBody:
         description: New navigation property values
         content:
@@ -6865,7 +6915,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property deviceManagement for roleManagement
-      operationId: roleManagement.DeleteDeviceManagement
+      operationId: roleManagement_DeleteDeviceManagement
       parameters:
         - name: If-Match
           in: header
@@ -6886,7 +6936,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceNamespaces from roleManagement
-      operationId: roleManagement.deviceManagement.ListResourceNamespaces
+      operationId: roleManagement.deviceManagement_ListResourceNamespace
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6938,7 +6988,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to resourceNamespaces for roleManagement
-      operationId: roleManagement.deviceManagement.CreateResourceNamespaces
+      operationId: roleManagement.deviceManagement_CreateResourceNamespace
       requestBody:
         description: New navigation property
         content:
@@ -6963,7 +7013,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceNamespaces from roleManagement
-      operationId: roleManagement.deviceManagement.GetResourceNamespaces
+      operationId: roleManagement.deviceManagement_GetResourceNamespace
       parameters:
         - name: $select
           in: query
@@ -7001,7 +7051,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property resourceNamespaces in roleManagement
-      operationId: roleManagement.deviceManagement.UpdateResourceNamespaces
+      operationId: roleManagement.deviceManagement_UpdateResourceNamespace
       requestBody:
         description: New navigation property values
         content:
@@ -7025,7 +7075,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property resourceNamespaces for roleManagement
-      operationId: roleManagement.deviceManagement.DeleteResourceNamespaces
+      operationId: roleManagement.deviceManagement_DeleteResourceNamespace
       parameters:
         - name: If-Match
           in: header
@@ -7046,7 +7096,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Invoke action importResourceActions
-      operationId: roleManagement.deviceManagement.resourceNamespaces.unifiedRbacResourceNamespace.importResourceActions
+      operationId: roleManagement.deviceManagement.resourceNamespace.unifiedRbacResourceNamespace_importResourceAction
       requestBody:
         description: Action parameters
         content:
@@ -7083,7 +7133,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
       description: Operations that an authorized principal is allowed to perform.
-      operationId: roleManagement.deviceManagement.resourceNamespaces.ListResourceActions
+      operationId: roleManagement.deviceManagement.resourceNamespace_ListResourceAction
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7135,7 +7185,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to resourceActions for roleManagement
-      operationId: roleManagement.deviceManagement.resourceNamespaces.CreateResourceActions
+      operationId: roleManagement.deviceManagement.resourceNamespace_CreateResourceAction
       requestBody:
         description: New navigation property
         content:
@@ -7161,7 +7211,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
       description: Operations that an authorized principal is allowed to perform.
-      operationId: roleManagement.deviceManagement.resourceNamespaces.GetResourceActions
+      operationId: roleManagement.deviceManagement.resourceNamespace_GetResourceAction
       parameters:
         - name: $select
           in: query
@@ -7199,7 +7249,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property resourceActions in roleManagement
-      operationId: roleManagement.deviceManagement.resourceNamespaces.UpdateResourceActions
+      operationId: roleManagement.deviceManagement.resourceNamespace_UpdateResourceAction
       requestBody:
         description: New navigation property values
         content:
@@ -7223,7 +7273,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property resourceActions for roleManagement
-      operationId: roleManagement.deviceManagement.resourceNamespaces.DeleteResourceActions
+      operationId: roleManagement.deviceManagement.resourceNamespace_DeleteResourceAction
       parameters:
         - name: If-Match
           in: header
@@ -7244,7 +7294,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get authenticationContext from roleManagement
-      operationId: roleManagement.deviceManagement.resourceNamespaces.resourceActions.GetAuthenticationContext
+      operationId: roleManagement.deviceManagement.resourceNamespace.resourceAction_GetAuthenticationContext
       parameters:
         - name: $select
           in: query
@@ -7283,7 +7333,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceScope from roleManagement
-      operationId: roleManagement.deviceManagement.resourceNamespaces.resourceActions.GetResourceScope
+      operationId: roleManagement.deviceManagement.resourceNamespace.resourceAction_GetResourceScope
       parameters:
         - name: $select
           in: query
@@ -7321,7 +7371,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property resourceScope in roleManagement
-      operationId: roleManagement.deviceManagement.resourceNamespaces.resourceActions.UpdateResourceScope
+      operationId: roleManagement.deviceManagement.resourceNamespace.resourceAction_UpdateResourceScope
       requestBody:
         description: New navigation property values
         content:
@@ -7345,7 +7395,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property resourceScope for roleManagement
-      operationId: roleManagement.deviceManagement.resourceNamespaces.resourceActions.DeleteResourceScope
+      operationId: roleManagement.deviceManagement.resourceNamespace.resourceAction_DeleteResourceScope
       parameters:
         - name: If-Match
           in: header
@@ -7366,7 +7416,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.deviceManagement.resourceNamespaces.resourceActions.GetCount-80dc
+      operationId: roleManagement.deviceManagement.resourceNamespace.resourceAction_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7382,7 +7432,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.deviceManagement.resourceNamespaces.GetCount-c626
+      operationId: roleManagement.deviceManagement.resourceNamespace_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7402,7 +7452,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-beta
-      operationId: roleManagement.deviceManagement.ListRoleAssignments
+      operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7458,7 +7508,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-beta
-      operationId: roleManagement.deviceManagement.CreateRoleAssignments
+      operationId: roleManagement.deviceManagement_CreateRoleAssignment
       requestBody:
         description: New navigation property
         content:
@@ -7487,7 +7537,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta
-      operationId: roleManagement.deviceManagement.GetRoleAssignments
+      operationId: roleManagement.deviceManagement_GetRoleAssignment
       parameters:
         - name: $select
           in: query
@@ -7529,7 +7579,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-beta
-      operationId: roleManagement.deviceManagement.UpdateRoleAssignments
+      operationId: roleManagement.deviceManagement_UpdateRoleAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -7557,7 +7607,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-beta
-      operationId: roleManagement.deviceManagement.DeleteRoleAssignments
+      operationId: roleManagement.deviceManagement_DeleteRoleAssignment
       parameters:
         - name: If-Match
           in: header
@@ -7579,7 +7629,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
       description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
-      operationId: roleManagement.deviceManagement.roleAssignments.ListAppScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_ListAppScope
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7631,7 +7681,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to appScopes for roleManagement
-      operationId: roleManagement.deviceManagement.roleAssignments.CreateAppScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_CreateAppScope
       requestBody:
         description: New navigation property
         content:
@@ -7657,7 +7707,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get appScopes from roleManagement
       description: Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
-      operationId: roleManagement.deviceManagement.roleAssignments.GetAppScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_GetAppScope
       parameters:
         - name: $select
           in: query
@@ -7695,7 +7745,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property appScopes in roleManagement
-      operationId: roleManagement.deviceManagement.roleAssignments.UpdateAppScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_UpdateAppScope
       requestBody:
         description: New navigation property values
         content:
@@ -7719,7 +7769,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property appScopes for roleManagement
-      operationId: roleManagement.deviceManagement.roleAssignments.DeleteAppScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_DeleteAppScope
       parameters:
         - name: If-Match
           in: header
@@ -7740,7 +7790,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.deviceManagement.roleAssignments.appScopes.GetCount-b6cd
+      operationId: roleManagement.deviceManagement.roleAssignment.appScope_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7757,7 +7807,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
       description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.deviceManagement.roleAssignments.ListDirectoryScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_ListDirectoryScope
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7811,7 +7861,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
       description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.deviceManagement.roleAssignments.GetDirectoryScopes
+      operationId: roleManagement.deviceManagement.roleAssignment_GetDirectoryScope
       parameters:
         - name: $select
           in: query
@@ -7850,7 +7900,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.deviceManagement.roleAssignments.directoryScopes.GetCount-8d97
+      operationId: roleManagement.deviceManagement.roleAssignment.directoryScope_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7867,7 +7917,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
       description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.deviceManagement.roleAssignments.ListPrincipals
+      operationId: roleManagement.deviceManagement.roleAssignment_ListPrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7921,7 +7971,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
       description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.deviceManagement.roleAssignments.GetPrincipals
+      operationId: roleManagement.deviceManagement.roleAssignment_GetPrincipal
       parameters:
         - name: $select
           in: query
@@ -7960,7 +8010,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.deviceManagement.roleAssignments.principals.GetCount-f624
+      operationId: roleManagement.deviceManagement.roleAssignment.principal_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7977,7 +8027,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get roleDefinition from roleManagement
       description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
-      operationId: roleManagement.deviceManagement.roleAssignments.GetRoleDefinition
+      operationId: roleManagement.deviceManagement.roleAssignment_GetRoleDefinition
       parameters:
         - name: $select
           in: query
@@ -8016,7 +8066,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.deviceManagement.roleAssignments.GetCount-fe89
+      operationId: roleManagement.deviceManagement.roleAssignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8032,7 +8082,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get roleDefinitions from roleManagement
-      operationId: roleManagement.deviceManagement.ListRoleDefinitions
+      operationId: roleManagement.deviceManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8084,7 +8134,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to roleDefinitions for roleManagement
-      operationId: roleManagement.deviceManagement.CreateRoleDefinitions
+      operationId: roleManagement.deviceManagement_CreateRoleDefinition
       requestBody:
         description: New navigation property
         content:
@@ -8109,7 +8159,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get roleDefinitions from roleManagement
-      operationId: roleManagement.deviceManagement.GetRoleDefinitions
+      operationId: roleManagement.deviceManagement_GetRoleDefinition
       parameters:
         - name: $select
           in: query
@@ -8147,7 +8197,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property roleDefinitions in roleManagement
-      operationId: roleManagement.deviceManagement.UpdateRoleDefinitions
+      operationId: roleManagement.deviceManagement_UpdateRoleDefinition
       requestBody:
         description: New navigation property values
         content:
@@ -8171,7 +8221,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property roleDefinitions for roleManagement
-      operationId: roleManagement.deviceManagement.DeleteRoleDefinitions
+      operationId: roleManagement.deviceManagement_DeleteRoleDefinition
       parameters:
         - name: If-Match
           in: header
@@ -8193,7 +8243,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
-      operationId: roleManagement.deviceManagement.roleDefinitions.ListInheritsPermissionsFrom
+      operationId: roleManagement.deviceManagement.roleDefinition_ListInheritsPermissionsFrom
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8245,7 +8295,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.deviceManagement.roleDefinitions.CreateInheritsPermissionsFrom
+      operationId: roleManagement.deviceManagement.roleDefinition_CreateInheritsPermissionsFrom
       requestBody:
         description: New navigation property
         content:
@@ -8271,7 +8321,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
-      operationId: roleManagement.deviceManagement.roleDefinitions.GetInheritsPermissionsFrom
+      operationId: roleManagement.deviceManagement.roleDefinition_GetInheritsPermissionsFrom
       parameters:
         - name: $select
           in: query
@@ -8309,7 +8359,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property inheritsPermissionsFrom in roleManagement
-      operationId: roleManagement.deviceManagement.roleDefinitions.UpdateInheritsPermissionsFrom
+      operationId: roleManagement.deviceManagement.roleDefinition_UpdateInheritsPermissionsFrom
       requestBody:
         description: New navigation property values
         content:
@@ -8333,7 +8383,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.deviceManagement.roleDefinitions.DeleteInheritsPermissionsFrom
+      operationId: roleManagement.deviceManagement.roleDefinition_DeleteInheritsPermissionsFrom
       parameters:
         - name: If-Match
           in: header
@@ -8358,7 +8408,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
-      operationId: roleManagement.deviceManagement.roleDefinitions.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition.assignedPrincipals
+      operationId: roleManagement.deviceManagement.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_assignedPrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8419,12 +8469,37 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/restore':
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke action restore
+      description: Restore a soft-deleted custom unifiedRoleDefinition object to the active role definitions collection for Microsoft Entra directory role management.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-restore?view=graph-rest-beta
+      operationId: roleManagement.deviceManagement.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_restore
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count':
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.deviceManagement.roleDefinitions.inheritsPermissionsFrom.GetCount-fb75
+      operationId: roleManagement.deviceManagement.roleDefinition.inheritsPermissionsFrom_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8444,7 +8519,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
-      operationId: roleManagement.deviceManagement.roleDefinitions.unifiedRoleDefinition.assignedPrincipals
+      operationId: roleManagement.deviceManagement.roleDefinition.unifiedRoleDefinition_assignedPrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8505,12 +8580,37 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/restore':
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Invoke action restore
+      description: Restore a soft-deleted custom unifiedRoleDefinition object to the active role definitions collection for Microsoft Entra directory role management.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-restore?view=graph-rest-beta
+      operationId: roleManagement.deviceManagement.roleDefinition.unifiedRoleDefinition_restore
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /roleManagement/deviceManagement/roleDefinitions/$count:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get the number of the resource
-      operationId: roleManagement.deviceManagement.roleDefinitions.GetCount-e40e
+      operationId: roleManagement.deviceManagement.roleDefinition_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8526,7 +8626,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get exchange from roleManagement
-      operationId: roleManagement.GetExchange
+      operationId: roleManagement_GetExchange
       parameters:
         - name: $select
           in: query
@@ -8564,7 +8664,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Update the navigation property exchange in roleManagement
-      operationId: roleManagement.UpdateExchange
+      operationId: roleManagement_UpdateExchange
       requestBody:
         description: New navigation property values
         content:
@@ -8588,7 +8688,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Delete navigation property exchange for roleManagement
-      operationId: roleManagement.DeleteExchange
+      operationId: roleManagement_DeleteExchange
       parameters:
         - name: If-Match
           in: header
@@ -8613,7 +8713,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedrbacapplication-list-customappscopes?view=graph-rest-beta
-      operationId: roleManagement.exchange.ListCustomAppScopes
+      operationId: roleManagement.exchange_ListCustomAppScope
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8669,7 +8769,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedrbacapplication-post-customappscope?view=graph-rest-beta
-      operationId: roleManagement.exchange.CreateCustomAppScopes
+      operationId: roleManagement.exchange_CreateCustomAppScope
       requestBody:
         description: New navigation property
         content:
@@ -8698,7 +8798,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/customappscope-get?view=graph-rest-beta
-      operationId: roleManagement.exchange.GetCustomAppScopes
+      operationId: roleManagement.exchange_GetCustomAppScope
       parameters:
         - name: $select
           in: query
@@ -8740,7 +8840,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/customappscope-update?view=graph-rest-beta
-      operationId: roleManagement.exchange.UpdateCustomAppScopes
+      operationId: roleManagement.exchange_UpdateCustomAppScope
       requestBody:
         description: New navigation property values
         content:
@@ -8768,7 +8868,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/customappscope-delete?view=graph-rest-beta
-      operationId: roleManagement.exchange.DeleteCustomAppScopes
+      operationId: roleManagement.exchange_DeleteCustomAppScope
       parameters:
         - name: If-Match
           in: header
@@ -8789,7 +8889,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get the number of the resource
-      operationId: roleManagement.exchange.customAppScopes.GetCount-fbdd
+      operationId: roleManagement.exchange.customAppScope_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8806,7 +8906,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get resourceNamespaces from roleManagement
       description: Resource that represents a collection of related actions.
-      operationId: roleManagement.exchange.ListResourceNamespaces
+      operationId: roleManagement.exchange_ListResourceNamespace
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8858,7 +8958,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Create new navigation property to resourceNamespaces for roleManagement
-      operationId: roleManagement.exchange.CreateResourceNamespaces
+      operationId: roleManagement.exchange_CreateResourceNamespace
       requestBody:
         description: New navigation property
         content:
@@ -8884,7 +8984,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get resourceNamespaces from roleManagement
       description: Resource that represents a collection of related actions.
-      operationId: roleManagement.exchange.GetResourceNamespaces
+      operationId: roleManagement.exchange_GetResourceNamespace
       parameters:
         - name: $select
           in: query
@@ -8922,7 +9022,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Update the navigation property resourceNamespaces in roleManagement
-      operationId: roleManagement.exchange.UpdateResourceNamespaces
+      operationId: roleManagement.exchange_UpdateResourceNamespace
       requestBody:
         description: New navigation property values
         content:
@@ -8946,7 +9046,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Delete navigation property resourceNamespaces for roleManagement
-      operationId: roleManagement.exchange.DeleteResourceNamespaces
+      operationId: roleManagement.exchange_DeleteResourceNamespace
       parameters:
         - name: If-Match
           in: header
@@ -8967,7 +9067,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Invoke action importResourceActions
-      operationId: roleManagement.exchange.resourceNamespaces.unifiedRbacResourceNamespace.importResourceActions
+      operationId: roleManagement.exchange.resourceNamespace.unifiedRbacResourceNamespace_importResourceAction
       requestBody:
         description: Action parameters
         content:
@@ -9004,7 +9104,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get resourceActions from roleManagement
       description: Operations that an authorized principal is allowed to perform.
-      operationId: roleManagement.exchange.resourceNamespaces.ListResourceActions
+      operationId: roleManagement.exchange.resourceNamespace_ListResourceAction
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9056,7 +9156,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Create new navigation property to resourceActions for roleManagement
-      operationId: roleManagement.exchange.resourceNamespaces.CreateResourceActions
+      operationId: roleManagement.exchange.resourceNamespace_CreateResourceAction
       requestBody:
         description: New navigation property
         content:
@@ -9082,7 +9182,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get resourceActions from roleManagement
       description: Operations that an authorized principal is allowed to perform.
-      operationId: roleManagement.exchange.resourceNamespaces.GetResourceActions
+      operationId: roleManagement.exchange.resourceNamespace_GetResourceAction
       parameters:
         - name: $select
           in: query
@@ -9120,7 +9220,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Update the navigation property resourceActions in roleManagement
-      operationId: roleManagement.exchange.resourceNamespaces.UpdateResourceActions
+      operationId: roleManagement.exchange.resourceNamespace_UpdateResourceAction
       requestBody:
         description: New navigation property values
         content:
@@ -9144,7 +9244,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Delete navigation property resourceActions for roleManagement
-      operationId: roleManagement.exchange.resourceNamespaces.DeleteResourceActions
+      operationId: roleManagement.exchange.resourceNamespace_DeleteResourceAction
       parameters:
         - name: If-Match
           in: header
@@ -9165,7 +9265,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get authenticationContext from roleManagement
-      operationId: roleManagement.exchange.resourceNamespaces.resourceActions.GetAuthenticationContext
+      operationId: roleManagement.exchange.resourceNamespace.resourceAction_GetAuthenticationContext
       parameters:
         - name: $select
           in: query
@@ -9204,7 +9304,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get resourceScope from roleManagement
-      operationId: roleManagement.exchange.resourceNamespaces.resourceActions.GetResourceScope
+      operationId: roleManagement.exchange.resourceNamespace.resourceAction_GetResourceScope
       parameters:
         - name: $select
           in: query
@@ -9242,7 +9342,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Update the navigation property resourceScope in roleManagement
-      operationId: roleManagement.exchange.resourceNamespaces.resourceActions.UpdateResourceScope
+      operationId: roleManagement.exchange.resourceNamespace.resourceAction_UpdateResourceScope
       requestBody:
         description: New navigation property values
         content:
@@ -9266,7 +9366,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Delete navigation property resourceScope for roleManagement
-      operationId: roleManagement.exchange.resourceNamespaces.resourceActions.DeleteResourceScope
+      operationId: roleManagement.exchange.resourceNamespace.resourceAction_DeleteResourceScope
       parameters:
         - name: If-Match
           in: header
@@ -9287,7 +9387,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get the number of the resource
-      operationId: roleManagement.exchange.resourceNamespaces.resourceActions.GetCount-abc6
+      operationId: roleManagement.exchange.resourceNamespace.resourceAction_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9303,7 +9403,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get the number of the resource
-      operationId: roleManagement.exchange.resourceNamespaces.GetCount-30ea
+      operationId: roleManagement.exchange.resourceNamespace_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9323,7 +9423,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-beta
-      operationId: roleManagement.exchange.ListRoleAssignments
+      operationId: roleManagement.exchange_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9379,7 +9479,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-beta
-      operationId: roleManagement.exchange.CreateRoleAssignments
+      operationId: roleManagement.exchange_CreateRoleAssignment
       requestBody:
         description: New navigation property
         content:
@@ -9408,7 +9508,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-beta
-      operationId: roleManagement.exchange.GetRoleAssignments
+      operationId: roleManagement.exchange_GetRoleAssignment
       parameters:
         - name: $select
           in: query
@@ -9446,7 +9546,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Update the navigation property roleAssignments in roleManagement
-      operationId: roleManagement.exchange.UpdateRoleAssignments
+      operationId: roleManagement.exchange_UpdateRoleAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -9474,7 +9574,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignment-delete?view=graph-rest-beta
-      operationId: roleManagement.exchange.DeleteRoleAssignments
+      operationId: roleManagement.exchange_DeleteRoleAssignment
       parameters:
         - name: If-Match
           in: header
@@ -9496,7 +9596,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get appScope from roleManagement
       description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
-      operationId: roleManagement.exchange.roleAssignments.GetAppScope
+      operationId: roleManagement.exchange.roleAssignment_GetAppScope
       parameters:
         - name: $select
           in: query
@@ -9534,7 +9634,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Update the navigation property appScope in roleManagement
-      operationId: roleManagement.exchange.roleAssignments.UpdateAppScope
+      operationId: roleManagement.exchange.roleAssignment_UpdateAppScope
       requestBody:
         description: New navigation property values
         content:
@@ -9558,7 +9658,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Delete navigation property appScope for roleManagement
-      operationId: roleManagement.exchange.roleAssignments.DeleteAppScope
+      operationId: roleManagement.exchange.roleAssignment_DeleteAppScope
       parameters:
         - name: If-Match
           in: header
@@ -9580,7 +9680,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get directoryScope from roleManagement
       description: The directory object that is the scope of the assignment. Read-only. Supports $expand for the directory provider.
-      operationId: roleManagement.exchange.roleAssignments.GetDirectoryScope
+      operationId: roleManagement.exchange.roleAssignment_GetDirectoryScope
       parameters:
         - name: $select
           in: query
@@ -9620,7 +9720,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get principal from roleManagement
       description: Referencing the assigned principal. Read-only. Supports $expand except for the Exchange provider.
-      operationId: roleManagement.exchange.roleAssignments.GetPrincipal
+      operationId: roleManagement.exchange.roleAssignment_GetPrincipal
       parameters:
         - name: $select
           in: query
@@ -9660,7 +9760,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get roleDefinition from roleManagement
       description: The roleDefinition the assignment is for. Supports $expand.
-      operationId: roleManagement.exchange.roleAssignments.GetRoleDefinition
+      operationId: roleManagement.exchange.roleAssignment_GetRoleDefinition
       parameters:
         - name: $select
           in: query
@@ -9699,7 +9799,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get the number of the resource
-      operationId: roleManagement.exchange.roleAssignments.GetCount-fec3
+      operationId: roleManagement.exchange.roleAssignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9719,7 +9819,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-beta
-      operationId: roleManagement.exchange.ListRoleDefinitions
+      operationId: roleManagement.exchange_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9771,7 +9871,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Create new navigation property to roleDefinitions for roleManagement
-      operationId: roleManagement.exchange.CreateRoleDefinitions
+      operationId: roleManagement.exchange_CreateRoleDefinition
       requestBody:
         description: New navigation property
         content:
@@ -9796,11 +9896,11 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra directory roles)\r\n- entitlement management (Microsoft Entra entitlement management)\r\n- Exchange Online (Except China operated by 21Vianet)"
+      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider. For the directory provider, you can also get a soft-deleted custom role definition from the deleted-items collection. The following RBAC providers are currently supported:\r\n- Cloud PC \r\n- device management (Intune)\r\n- Defender (Microsoft Defender XDR Unified RBAC)\r\n- directory (Microsoft Entra directory roles)\r\n- entitlement management (Microsoft Entra entitlement management)\r\n- Exchange Online (Except China operated by 21Vianet)"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta
-      operationId: roleManagement.exchange.GetRoleDefinitions
+      operationId: roleManagement.exchange_GetRoleDefinition
       parameters:
         - name: $select
           in: query
@@ -9838,7 +9938,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Update the navigation property roleDefinitions in roleManagement
-      operationId: roleManagement.exchange.UpdateRoleDefinitions
+      operationId: roleManagement.exchange_UpdateRoleDefinition
       requestBody:
         description: New navigation property values
         content:
@@ -9862,7 +9962,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Delete navigation property roleDefinitions for roleManagement
-      operationId: roleManagement.exchange.DeleteRoleDefinitions
+      operationId: roleManagement.exchange_DeleteRoleDefinition
       parameters:
         - name: If-Match
           in: header
@@ -9884,7 +9984,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
-      operationId: roleManagement.exchange.roleDefinitions.ListInheritsPermissionsFrom
+      operationId: roleManagement.exchange.roleDefinition_ListInheritsPermissionsFrom
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9936,7 +10036,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.exchange.roleDefinitions.CreateInheritsPermissionsFrom
+      operationId: roleManagement.exchange.roleDefinition_CreateInheritsPermissionsFrom
       requestBody:
         description: New navigation property
         content:
@@ -9962,7 +10062,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
       description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
-      operationId: roleManagement.exchange.roleDefinitions.GetInheritsPermissionsFrom
+      operationId: roleManagement.exchange.roleDefinition_GetInheritsPermissionsFrom
       parameters:
         - name: $select
           in: query
@@ -10000,7 +10100,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Update the navigation property inheritsPermissionsFrom in roleManagement
-      operationId: roleManagement.exchange.roleDefinitions.UpdateInheritsPermissionsFrom
+      operationId: roleManagement.exchange.roleDefinition_UpdateInheritsPermissionsFrom
       requestBody:
         description: New navigation property values
         content:
@@ -10024,7 +10124,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Delete navigation property inheritsPermissionsFrom for roleManagement
-      operationId: roleManagement.exchange.roleDefinitions.DeleteInheritsPermissionsFrom
+      operationId: roleManagement.exchange.roleDefinition_DeleteInheritsPermissionsFrom
       parameters:
         - name: If-Match
           in: header
@@ -10049,7 +10149,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
-      operationId: roleManagement.exchange.roleDefinitions.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition.assignedPrincipals
+      operationId: roleManagement.exchange.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_assignedPrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10110,12 +10210,37 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/restore':
+    post:
+      tags:
+        - roleManagement.unifiedRbacApplication
+      summary: Invoke action restore
+      description: Restore a soft-deleted custom unifiedRoleDefinition object to the active role definitions collection for Microsoft Entra directory role management.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-restore?view=graph-rest-beta
+      operationId: roleManagement.exchange.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_restore
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count':
     get:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get the number of the resource
-      operationId: roleManagement.exchange.roleDefinitions.inheritsPermissionsFrom.GetCount-63fc
+      operationId: roleManagement.exchange.roleDefinition.inheritsPermissionsFrom_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10135,7 +10260,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
-      operationId: roleManagement.exchange.roleDefinitions.unifiedRoleDefinition.assignedPrincipals
+      operationId: roleManagement.exchange.roleDefinition.unifiedRoleDefinition_assignedPrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10196,12 +10321,37 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/restore':
+    post:
+      tags:
+        - roleManagement.unifiedRbacApplication
+      summary: Invoke action restore
+      description: Restore a soft-deleted custom unifiedRoleDefinition object to the active role definitions collection for Microsoft Entra directory role management.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-restore?view=graph-rest-beta
+      operationId: roleManagement.exchange.roleDefinition.unifiedRoleDefinition_restore
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+                  - type: object
+                    nullable: true
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /roleManagement/exchange/roleDefinitions/$count:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get the number of the resource
-      operationId: roleManagement.exchange.roleDefinitions.GetCount-907a
+      operationId: roleManagement.exchange.roleDefinition_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -10218,7 +10368,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get transitiveRoleAssignments from roleManagement
       description: Resource to grant access to users or groups that are transitive.
-      operationId: roleManagement.exchange.ListTransitiveRoleAssignments
+      operationId: roleManagement.exchange_ListTransitiveRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10270,7 +10420,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Create new navigation property to transitiveRoleAssignments for roleManagement
-      operationId: roleManagement.exchange.CreateTransitiveRoleAssignments
+      operationId: roleManagement.exchange_CreateTransitiveRoleAssignment
       requestBody:
         description: New navigation property
         content:
@@ -10296,7 +10446,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get transitiveRoleAssignments from roleManagement
       description: Resource to grant access to users or groups that are transitive.
-      operationId: roleManagement.exchange.GetTransitiveRoleAssignments
+      operationId: roleManagement.exchange_GetTransitiveRoleAssignment
       parameters:
         - name: $select
           in: query
@@ -10334,7 +10484,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Update the navigation property transitiveRoleAssignments in roleManagement
-      operationId: roleManagement.exchange.UpdateTransitiveRoleAssignments
+      operationId: roleManagement.exchange_UpdateTransitiveRoleAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -10358,7 +10508,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Delete navigation property transitiveRoleAssignments for roleManagement
-      operationId: roleManagement.exchange.DeleteTransitiveRoleAssignments
+      operationId: roleManagement.exchange_DeleteTransitiveRoleAssignment
       parameters:
         - name: If-Match
           in: header
@@ -10380,7 +10530,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get appScope from roleManagement
       description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
-      operationId: roleManagement.exchange.transitiveRoleAssignments.GetAppScope
+      operationId: roleManagement.exchange.transitiveRoleAssignment_GetAppScope
       parameters:
         - name: $select
           in: query
@@ -10418,7 +10568,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Update the navigation property appScope in roleManagement
-      operationId: roleManagement.exchange.transitiveRoleAssignments.UpdateAppScope
+      operationId: roleManagement.exchange.transitiveRoleAssignment_UpdateAppScope
       requestBody:
         description: New navigation property values
         content:
@@ -10442,7 +10592,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Delete navigation property appScope for roleManagement
-      operationId: roleManagement.exchange.transitiveRoleAssignments.DeleteAppScope
+      operationId: roleManagement.exchange.transitiveRoleAssignment_DeleteAppScope
       parameters:
         - name: If-Match
           in: header
@@ -10464,7 +10614,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get directoryScope from roleManagement
       description: The directory object that is the scope of the assignment. Read-only. Supports $expand for the directory provider.
-      operationId: roleManagement.exchange.transitiveRoleAssignments.GetDirectoryScope
+      operationId: roleManagement.exchange.transitiveRoleAssignment_GetDirectoryScope
       parameters:
         - name: $select
           in: query
@@ -10504,7 +10654,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get principal from roleManagement
       description: Referencing the assigned principal. Read-only. Supports $expand except for the Exchange provider.
-      operationId: roleManagement.exchange.transitiveRoleAssignments.GetPrincipal
+      operationId: roleManagement.exchange.transitiveRoleAssignment_GetPrincipal
       parameters:
         - name: $select
           in: query
@@ -10544,7 +10694,7 @@ paths:
         - roleManagement.unifiedRbacApplication
       summary: Get roleDefinition from roleManagement
       description: The roleDefinition the assignment is for. Supports $expand.
-      operationId: roleManagement.exchange.transitiveRoleAssignments.GetRoleDefinition
+      operationId: roleManagement.exchange.transitiveRoleAssignment_GetRoleDefinition
       parameters:
         - name: $select
           in: query
@@ -10583,7 +10733,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get the number of the resource
-      operationId: roleManagement.exchange.transitiveRoleAssignments.GetCount-c52f
+      operationId: roleManagement.exchange.transitiveRoleAssignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -13010,6 +13160,7 @@ components:
           '#microsoft.graph.cloudPcServicePlan': '#/components/schemas/microsoft.graph.cloudPcServicePlan'
           '#microsoft.graph.cloudPcSnapshot': '#/components/schemas/microsoft.graph.cloudPcSnapshot'
           '#microsoft.graph.cloudPcSupportedRegion': '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+          '#microsoft.graph.cloudPcUserProfileSnapshot': '#/components/schemas/microsoft.graph.cloudPcUserProfileSnapshot'
           '#microsoft.graph.cloudPcUserSetting': '#/components/schemas/microsoft.graph.cloudPcUserSetting'
           '#microsoft.graph.cloudPcUserSettingAssignment': '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
           '#microsoft.graph.cloudPCUserSettingsPersistenceDetail': '#/components/schemas/microsoft.graph.cloudPCUserSettingsPersistenceDetail'
@@ -13089,6 +13240,9 @@ components:
           '#microsoft.graph.copilotSetting': '#/components/schemas/microsoft.graph.copilotSetting'
           '#microsoft.graph.correlatedIdentity': '#/components/schemas/microsoft.graph.correlatedIdentity'
           '#microsoft.graph.corsConfiguration_v2': '#/components/schemas/microsoft.graph.corsConfiguration_v2'
+          '#microsoft.graph.costManagementAlertSetting': '#/components/schemas/microsoft.graph.costManagementAlertSetting'
+          '#microsoft.graph.costManagementRoot': '#/components/schemas/microsoft.graph.costManagementRoot'
+          '#microsoft.graph.costManagementUserBalance': '#/components/schemas/microsoft.graph.costManagementUserBalance'
           '#microsoft.graph.credentialUsageSummary': '#/components/schemas/microsoft.graph.credentialUsageSummary'
           '#microsoft.graph.credentialUserRegistrationCount': '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
           '#microsoft.graph.credentialUserRegistrationDetails': '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
@@ -13417,6 +13571,7 @@ components:
           '#microsoft.graph.deviceShellScript': '#/components/schemas/microsoft.graph.deviceShellScript'
           '#microsoft.graph.directory': '#/components/schemas/microsoft.graph.directory'
           '#microsoft.graph.directoryAudit': '#/components/schemas/microsoft.graph.directoryAudit'
+          '#microsoft.graph.appManagementAudit': '#/components/schemas/microsoft.graph.appManagementAudit'
           '#microsoft.graph.directoryDefinition': '#/components/schemas/microsoft.graph.directoryDefinition'
           '#microsoft.graph.directoryObject': '#/components/schemas/microsoft.graph.directoryObject'
           '#microsoft.graph.administrativeUnit': '#/components/schemas/microsoft.graph.administrativeUnit'
@@ -13475,6 +13630,7 @@ components:
           '#microsoft.graph.user': '#/components/schemas/microsoft.graph.user'
           '#microsoft.graph.agentUser': '#/components/schemas/microsoft.graph.agentUser'
           '#microsoft.graph.directoryRoleAccessReviewPolicy': '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
+          '#microsoft.graph.directoryRoleManagementDeletedItemContainer': '#/components/schemas/microsoft.graph.directoryRoleManagementDeletedItemContainer'
           '#microsoft.graph.directorySetting': '#/components/schemas/microsoft.graph.directorySetting'
           '#microsoft.graph.distributionListMember': '#/components/schemas/microsoft.graph.distributionListMember'
           '#microsoft.graph.document': '#/components/schemas/microsoft.graph.document'
@@ -14062,9 +14218,22 @@ components:
           '#microsoft.graph.placeOperation': '#/components/schemas/microsoft.graph.placeOperation'
           '#microsoft.graph.planner': '#/components/schemas/microsoft.graph.planner'
           '#microsoft.graph.plannerDelta': '#/components/schemas/microsoft.graph.plannerDelta'
+          '#microsoft.graph.bucket': '#/components/schemas/microsoft.graph.bucket'
+          '#microsoft.graph.categoryDefinition': '#/components/schemas/microsoft.graph.categoryDefinition'
+          '#microsoft.graph.checklistItemV4': '#/components/schemas/microsoft.graph.checklistItemV4'
+          '#microsoft.graph.contentLink': '#/components/schemas/microsoft.graph.contentLink'
+          '#microsoft.graph.customChoiceOption': '#/components/schemas/microsoft.graph.customChoiceOption'
+          '#microsoft.graph.customFieldDefinition': '#/components/schemas/microsoft.graph.customFieldDefinition'
+          '#microsoft.graph.customFieldValue': '#/components/schemas/microsoft.graph.customFieldValue'
+          '#microsoft.graph.dependency': '#/components/schemas/microsoft.graph.dependency'
+          '#microsoft.graph.goal': '#/components/schemas/microsoft.graph.goal'
+          '#microsoft.graph.historyItem': '#/components/schemas/microsoft.graph.historyItem'
+          '#microsoft.graph.plan': '#/components/schemas/microsoft.graph.plan'
+          '#microsoft.graph.planContextLink': '#/components/schemas/microsoft.graph.planContextLink'
           '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
           '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
           '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+          '#microsoft.graph.plannerChatMessage': '#/components/schemas/microsoft.graph.plannerChatMessage'
           '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
           '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
           '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
@@ -14075,6 +14244,8 @@ components:
           '#microsoft.graph.businessScenarioTask': '#/components/schemas/microsoft.graph.businessScenarioTask'
           '#microsoft.graph.plannerTaskDetails': '#/components/schemas/microsoft.graph.plannerTaskDetails'
           '#microsoft.graph.plannerUser': '#/components/schemas/microsoft.graph.plannerUser'
+          '#microsoft.graph.task': '#/components/schemas/microsoft.graph.task'
+          '#microsoft.graph.userAssignment': '#/components/schemas/microsoft.graph.userAssignment'
           '#microsoft.graph.plannerGroup': '#/components/schemas/microsoft.graph.plannerGroup'
           '#microsoft.graph.plannerPlanConfiguration': '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
           '#microsoft.graph.plannerPlanConfigurationLocalization': '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
@@ -14151,6 +14322,7 @@ components:
           '#microsoft.graph.programControlType': '#/components/schemas/microsoft.graph.programControlType'
           '#microsoft.graph.pronounsSettings': '#/components/schemas/microsoft.graph.pronounsSettings'
           '#microsoft.graph.protectionPolicyBase': '#/components/schemas/microsoft.graph.protectionPolicyBase'
+          '#microsoft.graph.entraProtectionPolicy': '#/components/schemas/microsoft.graph.entraProtectionPolicy'
           '#microsoft.graph.exchangeProtectionPolicy': '#/components/schemas/microsoft.graph.exchangeProtectionPolicy'
           '#microsoft.graph.oneDriveForBusinessProtectionPolicy': '#/components/schemas/microsoft.graph.oneDriveForBusinessProtectionPolicy'
           '#microsoft.graph.sharePointProtectionPolicy': '#/components/schemas/microsoft.graph.sharePointProtectionPolicy'
@@ -14308,6 +14480,9 @@ components:
           '#microsoft.graph.singleValueLegacyExtendedProperty': '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
           '#microsoft.graph.softwareUpdateStatusSummary': '#/components/schemas/microsoft.graph.softwareUpdateStatusSummary'
           '#microsoft.graph.speakerAssignmentSubmission': '#/components/schemas/microsoft.graph.speakerAssignmentSubmission'
+          '#microsoft.graph.spendingPolicy': '#/components/schemas/microsoft.graph.spendingPolicy'
+          '#microsoft.graph.allUsersSpendingPolicy': '#/components/schemas/microsoft.graph.allUsersSpendingPolicy'
+          '#microsoft.graph.selectedGroupsSpendingPolicy': '#/components/schemas/microsoft.graph.selectedGroupsSpendingPolicy'
           '#microsoft.graph.storageQuotaBreakdown': '#/components/schemas/microsoft.graph.storageQuotaBreakdown'
           '#microsoft.graph.serviceStorageQuotaBreakdown': '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
           '#microsoft.graph.storageSettings': '#/components/schemas/microsoft.graph.storageSettings'
@@ -14347,6 +14522,7 @@ components:
           '#microsoft.graph.teamTemplateDefinition': '#/components/schemas/microsoft.graph.teamTemplateDefinition'
           '#microsoft.graph.teamwork': '#/components/schemas/microsoft.graph.teamwork'
           '#microsoft.graph.teamworkBot': '#/components/schemas/microsoft.graph.teamworkBot'
+          '#microsoft.graph.teamworkCustomEmoji': '#/components/schemas/microsoft.graph.teamworkCustomEmoji'
           '#microsoft.graph.teamworkDevice': '#/components/schemas/microsoft.graph.teamworkDevice'
           '#microsoft.graph.teamworkDeviceActivity': '#/components/schemas/microsoft.graph.teamworkDeviceActivity'
           '#microsoft.graph.teamworkDeviceConfiguration': '#/components/schemas/microsoft.graph.teamworkDeviceConfiguration'
@@ -14682,8 +14858,26 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
+          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
+          '#microsoft.graph.identityGovernance.userIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.userIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
+          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.guestLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.guestLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyReport'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+          '#microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule': '#/components/schemas/microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule'
+          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+          '#microsoft.graph.identityGovernance.invitationRedemptionRule': '#/components/schemas/microsoft.graph.identityGovernance.invitationRedemptionRule'
+          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
+          '#microsoft.graph.identityGovernance.lifecyclePolicySubjectReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectReport'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -14813,7 +15007,9 @@ components:
           '#microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement'
           '#microsoft.graph.partner.security.responseTimeSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.responseTimeSecurityRequirement'
           '#microsoft.graph.partner.security.securityScoreHistory': '#/components/schemas/microsoft.graph.partner.security.securityScoreHistory'
+          '#microsoft.graph.partners.billing.azureAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.azureAggregatedUsage'
           '#microsoft.graph.partners.billing.azureUsage': '#/components/schemas/microsoft.graph.partners.billing.azureUsage'
+          '#microsoft.graph.partners.billing.billedAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedAggregatedUsage'
           '#microsoft.graph.partners.billing.billedReconciliation': '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
           '#microsoft.graph.partners.billing.billedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedUsage'
           '#microsoft.graph.partners.billing.billing': '#/components/schemas/microsoft.graph.partners.billing.billing'
@@ -14947,6 +15143,7 @@ components:
           '#microsoft.graph.security.whoisBaseRecord': '#/components/schemas/microsoft.graph.security.whoisBaseRecord'
           '#microsoft.graph.security.whoisHistoryRecord': '#/components/schemas/microsoft.graph.security.whoisHistoryRecord'
           '#microsoft.graph.security.whoisRecord': '#/components/schemas/microsoft.graph.security.whoisRecord'
+          '#microsoft.graph.security.workbook': '#/components/schemas/microsoft.graph.security.workbook'
           '#microsoft.graph.security.zone': '#/components/schemas/microsoft.graph.security.zone'
           '#microsoft.graph.security.caseManagement.caseManagementEntity': '#/components/schemas/microsoft.graph.security.caseManagement.caseManagementEntity'
           '#microsoft.graph.security.caseManagement.activity': '#/components/schemas/microsoft.graph.security.caseManagement.activity'
@@ -16035,6 +16232,13 @@ components:
             - '@odata.type'
           type: object
           properties:
+            deletedItems:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.directoryRoleManagementDeletedItemContainer'
+                - type: object
+                  nullable: true
+              description: Container for soft-deleted directory role management resources.
+              x-ms-navigationProperty: true
             resourceNamespaces:
               type: array
               items:
@@ -16598,6 +16802,23 @@ components:
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
+    microsoft.graph.directoryRoleManagementDeletedItemContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryRoleManagementDeletedItemContainer
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            roleDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+              description: The soft-deleted custom role definitions in the directory.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+      x-ms-discriminator-value: '#microsoft.graph.directoryRoleManagementDeletedItemContainer'
     microsoft.graph.approval:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16955,6 +17176,7 @@ components:
           '#microsoft.graph.wafAllowedHeadersDictionary': '#/components/schemas/microsoft.graph.wafAllowedHeadersDictionary'
           '#microsoft.graph.networkaccess.extendedProperties': '#/components/schemas/microsoft.graph.networkaccess.extendedProperties'
           '#microsoft.graph.partner.security.additionalDataDictionary': '#/components/schemas/microsoft.graph.partner.security.additionalDataDictionary'
+          '#microsoft.graph.security.workbookContent': '#/components/schemas/microsoft.graph.security.workbookContent'
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -17308,6 +17530,7 @@ components:
       discriminator:
         propertyName: '@odata.type'
         mapping:
+          '#microsoft.graph.applicationIdentity': '#/components/schemas/microsoft.graph.applicationIdentity'
           '#microsoft.graph.azureCommunicationServicesUserIdentity': '#/components/schemas/microsoft.graph.azureCommunicationServicesUserIdentity'
           '#microsoft.graph.communicationsApplicationIdentity': '#/components/schemas/microsoft.graph.communicationsApplicationIdentity'
           '#microsoft.graph.communicationsApplicationInstanceIdentity': '#/components/schemas/microsoft.graph.communicationsApplicationInstanceIdentity'
