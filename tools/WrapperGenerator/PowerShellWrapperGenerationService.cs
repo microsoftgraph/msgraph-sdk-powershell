@@ -359,6 +359,13 @@ public sealed partial class PowerShellWrapperGenerationService
                     : null;
                 var collectionValueSchema = responseSchema is not null && !HasRootUnion(responseSchema)
                     ? FindProperty(responseSchema, "value") : null;
+                if (responseSchema is not null && responseSchema.GetReferenceId() is null
+                    && collectionValueSchema?.Items is { } collectionItemSchema && HasRootUnion(collectionItemSchema))
+                {
+                    LogSkippedUnsupportedOperation(httpMethod.Method, pathTemplate,
+                        "union collection items require a named response envelope");
+                    continue;
+                }
 
                 if (httpMethod == HttpMethod.Get && responseSchema is null)
                 {
