@@ -1,0 +1,94 @@
+#nullable enable
+
+using System;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Calendar.Client;
+using Microsoft.Graph.PowerShell.Calendar.Client.Models;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Calendar
+{
+    [GraphRoute("PATCH", "/users/{user-id}/calendarGroups/{calendarGroup-id}")]
+    [Cmdlet(VerbsData.Update, "MgUserCalendarGroup", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Calendar.Client.Models.CalendarGroup))]
+    public class UpdateMgUserCalendarGroupCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string UserId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string CalendarGroupId { get; set; } = string.Empty;
+
+        [Parameter(Mandatory = false)]
+        public string? ChangeKey { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public global::System.Guid? ClassId { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? Name { get; set; }
+
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(CalendarGroupId, "Update"))
+                return;
+
+            var body = new Microsoft.Graph.PowerShell.Calendar.Client.Models.CalendarGroup();
+
+    if (this.IsParameterBound(nameof(ChangeKey)))
+        body.ChangeKey = ChangeKey;
+
+    if (this.IsParameterBound(nameof(ClassId)))
+        body.ClassId = ClassId;
+
+    if (this.IsParameterBound(nameof(Name)))
+        body.Name = Name;
+
+
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.Calendar.Client.Models.CalendarGroup? result;
+            try
+            {
+                result = client.Users[UserId].CalendarGroups[CalendarGroupId].PatchAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, CalendarGroupId);
+                return;
+            }
+
+
+            if (result is null)
+            {
+                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
+                try
+                {
+                    result = client.Users[UserId].CalendarGroups[CalendarGroupId].GetAsync().GetAwaiter().GetResult();
+                }
+                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+                {
+                    ThrowGraphRequestFailed(ex, CalendarGroupId);
+                    return;
+                }
+            }
+            if (result is not null)
+                WriteObject(result);
+        }
+    }
+}

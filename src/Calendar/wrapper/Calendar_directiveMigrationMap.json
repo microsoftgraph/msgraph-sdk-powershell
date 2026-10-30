@@ -1,0 +1,1666 @@
+{
+  "scope": "Only src/Calendar/Calendar.md; global and profile-local directives are excluded. Parameter aliases/transforms and schema/response directives remain deferred.",
+  "prerequisite": "Reviewed inventory #3837, verb support #3838 and natural-ID operation variant framework #3849 are merged. Current powershell-v3 target 08e409a6aa8fd48736b8f9a9199559f46fc0d1ad retains aligned operation IDs #3861 and refreshed compatible specs #3863: the existing literal inventory schema validates the complete 136/137-operation source set without unmerged #3847 or reserved Legacy translation fields. Module tests use the three-setting GeneratorConfig and separate profile context for derived data, including beta with collision data enabled and disabled. No Calendar variant grouping is introduced; independent legacy proof remains in notes, source blob hashes and tests.",
+  "specBlobs": {
+    "v1.0": "9371766a3e422aec32ba2b68d096e2fd4d115042",
+    "beta": "5baa13cd8fe2804cea0ecf4a59f7815728b55a67"
+  },
+  "collisionReconciliation": {
+    "source": "tools/WrapperGenerator/data/collision-suppressions.v1.0.json",
+    "notes": "The first real full beta build exposed five collisions because existing derived collision data is v1.0-only. Reconcile its six exact suppressed routes in module configuration, rather than broadening the original operation-ID regex. The published MgCommandMetadata.json oracle contains no exact method/path row for any of these routes in either profile. Both profiles retain GET /groups/{group-id}/calendar/calendarView (Get-Mg[Beta]GroupCalendarView), GET /users/{user-id}/calendar/calendarView (Get-Mg[Beta]UserCalendarView), and POST /users/{user-id}/calendar/permanentDelete (Remove-Mg[Beta]UserCalendarPermanent). Neither profile publishes a user calendar event count route. The default-calendar permanentDelete beta verb/noun remains a pre-existing structural parity difference outside the shared rename directive; it is not suppressed. Regression coverage checks real spec IDs, oracle absence, existing derived provenance, exact suppression, retained neighbors and successful subset emission.",
+    "profiles": {
+      "v1.0": {
+        "operations": [
+          {
+            "method": "GET",
+            "path": "/groups/{group-id}/calendarView",
+            "operationId": "group_ListCalendarView"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/calendarView",
+            "operationId": "user_ListCalendarView"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/calendars/{calendar-id}/calendarView",
+            "operationId": "user.calendar_ListCalendarView"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/calendar/events/$count",
+            "operationId": "user.calendar.event_GetCount"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/calendars/{calendar-id}/events/$count",
+            "operationId": "user.calendar.event_GetCount"
+          },
+          {
+            "method": "POST",
+            "path": "/users/{user-id}/calendars/{calendar-id}/permanentDelete",
+            "operationId": "user.calendar_permanentDelete"
+          }
+        ]
+      },
+      "beta": {
+        "operations": [
+          {
+            "method": "GET",
+            "path": "/groups/{group-id}/calendarView",
+            "operationId": "group_ListCalendarView"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/calendarView",
+            "operationId": "user_ListCalendarView"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/calendars/{calendar-id}/calendarView",
+            "operationId": "user.calendar_ListCalendarView"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/calendar/events/$count",
+            "operationId": "user.calendar.event_GetCount"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/calendars/{calendar-id}/events/$count",
+            "operationId": "user.calendar.event_GetCount"
+          },
+          {
+            "method": "POST",
+            "path": "/users/{user-id}/calendars/{calendar-id}/permanentDelete",
+            "operationId": "user.calendar_permanentDelete"
+          }
+        ]
+      }
+    }
+  },
+  "mappings": [
+    {
+      "module": "Calendar",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: (user|group)_(Update|Delete)Calendar$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Evaluate the unchanged case-sensitive selector against both actual legacy and current compatible specs. All 136 v1.0 and 137 beta legacy matches survive and now also match the aligned current IDs literally; the current method/path set exactly equals every prior reviewed survivor. In each profile 83 paths are identical after normalization, while 53 v1.0 and 54 beta pairs differ only in the final microsoft.graph.-qualified action/function segment with matching actual operation types and HTTP methods. Module tests independently prove complete unique old/current correspondence; no Legacy-only schema fields or removed-operation claims are needed. Preserve the exact suppressions that corrected the earlier two v1.0 and 63 beta leaks, including unaffected collections and item neighbors.",
+      "profiles": {
+        "v1.0": {
+          "notes": "Current literal selector matches all 136 surviving legacy-selected operations, exactly the prior reviewed route set. Tests independently bridge 83 identical normalized routes and 53 final qualified action/function paths using matching actual operation types. No missing or removed survivors.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/calendarView/delta()",
+              "operationId": "group.calendar.calendarView_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/attachments",
+              "operationId": "group.calendar.event_ListAttachment"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/attachments",
+              "operationId": "group.calendar.event_CreateAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "group.calendar.event_GetAttachment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "group.calendar.event_DeleteAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/attachments/$count",
+              "operationId": "group.calendar.event.attachment_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/attachments/createUploadSession",
+              "operationId": "group.calendar.event.attachment_createUploadSession"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/calendar",
+              "operationId": "group.calendar.event_GetCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/extensions",
+              "operationId": "group.calendar.event_ListExtension"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/extensions",
+              "operationId": "group.calendar.event_CreateExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/extensions/{extension-id}",
+              "operationId": "group.calendar.event_GetExtension"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/extensions/{extension-id}",
+              "operationId": "group.calendar.event_UpdateExtension"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/extensions/{extension-id}",
+              "operationId": "group.calendar.event_DeleteExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/extensions/$count",
+              "operationId": "group.calendar.event.extension_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/instances",
+              "operationId": "group.calendar.event_ListInstance"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/instances/delta()",
+              "operationId": "group.calendar.event.instance_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/accept",
+              "operationId": "group.calendar.event_accept"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/cancel",
+              "operationId": "group.calendar.event_cancel"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/decline",
+              "operationId": "group.calendar.event_decline"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/dismissReminder",
+              "operationId": "group.calendar.event_dismissReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/forward",
+              "operationId": "group.calendar.event_forward"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/permanentDelete",
+              "operationId": "group.calendar.event_permanentDelete"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/snoozeReminder",
+              "operationId": "group.calendar.event_snoozeReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/tentativelyAccept",
+              "operationId": "group.calendar.event_tentativelyAccept"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/$count",
+              "operationId": "group.calendar.event_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/delta()",
+              "operationId": "group.calendar.event_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendarView",
+              "operationId": "group_ListCalendarView"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendarView/delta()",
+              "operationId": "group.calendarView_delta"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendar",
+              "operationId": "user_UpdateCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/calendarView/delta()",
+              "operationId": "user.calendar.calendarView_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}",
+              "operationId": "user.calendar_GetEvent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendar/events/{event-id}",
+              "operationId": "user.calendar_UpdateEvent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendar/events/{event-id}",
+              "operationId": "user.calendar_DeleteEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/attachments",
+              "operationId": "user.calendar.event_ListAttachment"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/attachments",
+              "operationId": "user.calendar.event_CreateAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "user.calendar.event_GetAttachment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendar/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "user.calendar.event_DeleteAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/attachments/$count",
+              "operationId": "user.calendar.event.attachment_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/attachments/createUploadSession",
+              "operationId": "user.calendar.event.attachment_createUploadSession"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/calendar",
+              "operationId": "user.calendar.event_GetCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/extensions",
+              "operationId": "user.calendar.event_ListExtension"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/extensions",
+              "operationId": "user.calendar.event_CreateExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendar.event_GetExtension"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendar/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendar.event_UpdateExtension"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendar/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendar.event_DeleteExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/extensions/$count",
+              "operationId": "user.calendar.event.extension_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/instances",
+              "operationId": "user.calendar.event_ListInstance"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/instances/delta()",
+              "operationId": "user.calendar.event.instance_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/accept",
+              "operationId": "user.calendar.event_accept"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/cancel",
+              "operationId": "user.calendar.event_cancel"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/decline",
+              "operationId": "user.calendar.event_decline"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/dismissReminder",
+              "operationId": "user.calendar.event_dismissReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/forward",
+              "operationId": "user.calendar.event_forward"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/permanentDelete",
+              "operationId": "user.calendar.event_permanentDelete"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/snoozeReminder",
+              "operationId": "user.calendar.event_snoozeReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/tentativelyAccept",
+              "operationId": "user.calendar.event_tentativelyAccept"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/$count",
+              "operationId": "user.calendar.event_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/delta()",
+              "operationId": "user.calendar.event_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}",
+              "operationId": "user.calendarGroup_GetCalendar"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}",
+              "operationId": "user.calendarGroup_UpdateCalendar"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}",
+              "operationId": "user.calendarGroup_DeleteCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions",
+              "operationId": "user.calendarGroup.calendar_ListCalendarPermission"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions",
+              "operationId": "user.calendarGroup.calendar_CreateCalendarPermission"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions/{calendarPermission-id}",
+              "operationId": "user.calendarGroup.calendar_GetCalendarPermission"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions/{calendarPermission-id}",
+              "operationId": "user.calendarGroup.calendar_UpdateCalendarPermission"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions/{calendarPermission-id}",
+              "operationId": "user.calendarGroup.calendar_DeleteCalendarPermission"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions/$count",
+              "operationId": "user.calendarGroup.calendar.calendarPermission_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView",
+              "operationId": "user.calendarGroup.calendar_ListCalendarView"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/delta()",
+              "operationId": "user.calendarGroup.calendar.calendarView_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events",
+              "operationId": "user.calendarGroup.calendar_ListEvent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events",
+              "operationId": "user.calendarGroup.calendar_CreateEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}",
+              "operationId": "user.calendarGroup.calendar_GetEvent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}",
+              "operationId": "user.calendarGroup.calendar_UpdateEvent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}",
+              "operationId": "user.calendarGroup.calendar_DeleteEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments",
+              "operationId": "user.calendarGroup.calendar.event_ListAttachment"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments",
+              "operationId": "user.calendarGroup.calendar.event_CreateAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "user.calendarGroup.calendar.event_GetAttachment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "user.calendarGroup.calendar.event_DeleteAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/$count",
+              "operationId": "user.calendarGroup.calendar.event.attachment_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/createUploadSession",
+              "operationId": "user.calendarGroup.calendar.event.attachment_createUploadSession"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/calendar",
+              "operationId": "user.calendarGroup.calendar.event_GetCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions",
+              "operationId": "user.calendarGroup.calendar.event_ListExtension"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions",
+              "operationId": "user.calendarGroup.calendar.event_CreateExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendarGroup.calendar.event_GetExtension"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendarGroup.calendar.event_UpdateExtension"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendarGroup.calendar.event_DeleteExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions/$count",
+              "operationId": "user.calendarGroup.calendar.event.extension_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances",
+              "operationId": "user.calendarGroup.calendar.event_ListInstance"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/delta()",
+              "operationId": "user.calendarGroup.calendar.event.instance_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/accept",
+              "operationId": "user.calendarGroup.calendar.event_accept"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/cancel",
+              "operationId": "user.calendarGroup.calendar.event_cancel"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/decline",
+              "operationId": "user.calendarGroup.calendar.event_decline"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/dismissReminder",
+              "operationId": "user.calendarGroup.calendar.event_dismissReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/forward",
+              "operationId": "user.calendarGroup.calendar.event_forward"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/permanentDelete",
+              "operationId": "user.calendarGroup.calendar.event_permanentDelete"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/snoozeReminder",
+              "operationId": "user.calendarGroup.calendar.event_snoozeReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/tentativelyAccept",
+              "operationId": "user.calendarGroup.calendar.event_tentativelyAccept"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/$count",
+              "operationId": "user.calendarGroup.calendar.event_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/delta()",
+              "operationId": "user.calendarGroup.calendar.event_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/allowedCalendarSharingRoles(User='{User}')",
+              "operationId": "user.calendarGroup.calendar_allowedCalendarSharingRole"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/getSchedule",
+              "operationId": "user.calendarGroup.calendar_getSchedule"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/permanentDelete",
+              "operationId": "user.calendarGroup.calendar_permanentDelete"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/$count",
+              "operationId": "user.calendarGroup.calendar_GetCount"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendars/{calendar-id}",
+              "operationId": "user_UpdateCalendar"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendars/{calendar-id}",
+              "operationId": "user_DeleteCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/calendarView/delta()",
+              "operationId": "user.calendar.calendarView_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}",
+              "operationId": "user.calendar_GetEvent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}",
+              "operationId": "user.calendar_UpdateEvent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}",
+              "operationId": "user.calendar_DeleteEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments",
+              "operationId": "user.calendar.event_ListAttachment"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments",
+              "operationId": "user.calendar.event_CreateAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "user.calendar.event_GetAttachment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "user.calendar.event_DeleteAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/$count",
+              "operationId": "user.calendar.event.attachment_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/createUploadSession",
+              "operationId": "user.calendar.event.attachment_createUploadSession"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/calendar",
+              "operationId": "user.calendar.event_GetCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions",
+              "operationId": "user.calendar.event_ListExtension"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions",
+              "operationId": "user.calendar.event_CreateExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendar.event_GetExtension"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendar.event_UpdateExtension"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendar.event_DeleteExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions/$count",
+              "operationId": "user.calendar.event.extension_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances",
+              "operationId": "user.calendar.event_ListInstance"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/delta()",
+              "operationId": "user.calendar.event.instance_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/accept",
+              "operationId": "user.calendar.event_accept"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/cancel",
+              "operationId": "user.calendar.event_cancel"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/decline",
+              "operationId": "user.calendar.event_decline"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/dismissReminder",
+              "operationId": "user.calendar.event_dismissReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/forward",
+              "operationId": "user.calendar.event_forward"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/permanentDelete",
+              "operationId": "user.calendar.event_permanentDelete"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/snoozeReminder",
+              "operationId": "user.calendar.event_snoozeReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/tentativelyAccept",
+              "operationId": "user.calendar.event_tentativelyAccept"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/$count",
+              "operationId": "user.calendar.event_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/delta()",
+              "operationId": "user.calendar.event_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarView",
+              "operationId": "user_ListCalendarView"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarView/delta()",
+              "operationId": "user.calendarView_delta"
+            }
+          ]
+        },
+        "beta": {
+          "notes": "Current literal selector matches all 137 surviving legacy-selected operations, exactly the prior reviewed route set. Tests independently bridge 83 identical normalized routes and 54 final qualified action/function paths using matching actual operation types. No missing or removed survivors.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/calendarView/delta()",
+              "operationId": "group.calendar.calendarView_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/attachments",
+              "operationId": "group.calendar.event_ListAttachment"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/attachments",
+              "operationId": "group.calendar.event_CreateAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "group.calendar.event_GetAttachment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "group.calendar.event_DeleteAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/attachments/$count",
+              "operationId": "group.calendar.event.attachment_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/attachments/createUploadSession",
+              "operationId": "group.calendar.event.attachment_createUploadSession"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/calendar",
+              "operationId": "group.calendar.event_GetCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/extensions",
+              "operationId": "group.calendar.event_ListExtension"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/extensions",
+              "operationId": "group.calendar.event_CreateExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/extensions/{extension-id}",
+              "operationId": "group.calendar.event_GetExtension"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/extensions/{extension-id}",
+              "operationId": "group.calendar.event_UpdateExtension"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/extensions/{extension-id}",
+              "operationId": "group.calendar.event_DeleteExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/extensions/$count",
+              "operationId": "group.calendar.event.extension_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/instances",
+              "operationId": "group.calendar.event_ListInstance"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/instances/delta()",
+              "operationId": "group.calendar.event.instance_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/accept",
+              "operationId": "group.calendar.event_accept"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/cancel",
+              "operationId": "group.calendar.event_cancel"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/decline",
+              "operationId": "group.calendar.event_decline"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/dismissReminder",
+              "operationId": "group.calendar.event_dismissReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/forward",
+              "operationId": "group.calendar.event_forward"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/permanentDelete",
+              "operationId": "group.calendar.event_permanentDelete"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/snoozeReminder",
+              "operationId": "group.calendar.event_snoozeReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/calendar/events/{event-id}/tentativelyAccept",
+              "operationId": "group.calendar.event_tentativelyAccept"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/$count",
+              "operationId": "group.calendar.event_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendar/events/delta()",
+              "operationId": "group.calendar.event_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendarView",
+              "operationId": "group_ListCalendarView"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/calendarView/delta()",
+              "operationId": "group.calendarView_delta"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendar",
+              "operationId": "user_UpdateCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/calendarView/delta()",
+              "operationId": "user.calendar.calendarView_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}",
+              "operationId": "user.calendar_GetEvent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendar/events/{event-id}",
+              "operationId": "user.calendar_UpdateEvent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendar/events/{event-id}",
+              "operationId": "user.calendar_DeleteEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/attachments",
+              "operationId": "user.calendar.event_ListAttachment"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/attachments",
+              "operationId": "user.calendar.event_CreateAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "user.calendar.event_GetAttachment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendar/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "user.calendar.event_DeleteAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/attachments/$count",
+              "operationId": "user.calendar.event.attachment_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/attachments/createUploadSession",
+              "operationId": "user.calendar.event.attachment_createUploadSession"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/calendar",
+              "operationId": "user.calendar.event_GetCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/extensions",
+              "operationId": "user.calendar.event_ListExtension"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/extensions",
+              "operationId": "user.calendar.event_CreateExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendar.event_GetExtension"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendar/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendar.event_UpdateExtension"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendar/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendar.event_DeleteExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/extensions/$count",
+              "operationId": "user.calendar.event.extension_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/instances",
+              "operationId": "user.calendar.event_ListInstance"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/{event-id}/instances/delta()",
+              "operationId": "user.calendar.event.instance_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/accept",
+              "operationId": "user.calendar.event_accept"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/cancel",
+              "operationId": "user.calendar.event_cancel"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/decline",
+              "operationId": "user.calendar.event_decline"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/dismissReminder",
+              "operationId": "user.calendar.event_dismissReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/forward",
+              "operationId": "user.calendar.event_forward"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/permanentDelete",
+              "operationId": "user.calendar.event_permanentDelete"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/snoozeReminder",
+              "operationId": "user.calendar.event_snoozeReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/tentativelyAccept",
+              "operationId": "user.calendar.event_tentativelyAccept"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/$count",
+              "operationId": "user.calendar.event_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/delta()",
+              "operationId": "user.calendar.event_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}",
+              "operationId": "user.calendarGroup_GetCalendar"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}",
+              "operationId": "user.calendarGroup_UpdateCalendar"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}",
+              "operationId": "user.calendarGroup_DeleteCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions",
+              "operationId": "user.calendarGroup.calendar_ListCalendarPermission"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions",
+              "operationId": "user.calendarGroup.calendar_CreateCalendarPermission"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions/{calendarPermission-id}",
+              "operationId": "user.calendarGroup.calendar_GetCalendarPermission"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions/{calendarPermission-id}",
+              "operationId": "user.calendarGroup.calendar_UpdateCalendarPermission"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions/{calendarPermission-id}",
+              "operationId": "user.calendarGroup.calendar_DeleteCalendarPermission"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions/$count",
+              "operationId": "user.calendarGroup.calendar.calendarPermission_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView",
+              "operationId": "user.calendarGroup.calendar_ListCalendarView"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/delta()",
+              "operationId": "user.calendarGroup.calendar.calendarView_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events",
+              "operationId": "user.calendarGroup.calendar_ListEvent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events",
+              "operationId": "user.calendarGroup.calendar_CreateEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}",
+              "operationId": "user.calendarGroup.calendar_GetEvent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}",
+              "operationId": "user.calendarGroup.calendar_UpdateEvent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}",
+              "operationId": "user.calendarGroup.calendar_DeleteEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments",
+              "operationId": "user.calendarGroup.calendar.event_ListAttachment"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments",
+              "operationId": "user.calendarGroup.calendar.event_CreateAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "user.calendarGroup.calendar.event_GetAttachment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "user.calendarGroup.calendar.event_DeleteAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/$count",
+              "operationId": "user.calendarGroup.calendar.event.attachment_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/createUploadSession",
+              "operationId": "user.calendarGroup.calendar.event.attachment_createUploadSession"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/calendar",
+              "operationId": "user.calendarGroup.calendar.event_GetCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions",
+              "operationId": "user.calendarGroup.calendar.event_ListExtension"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions",
+              "operationId": "user.calendarGroup.calendar.event_CreateExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendarGroup.calendar.event_GetExtension"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendarGroup.calendar.event_UpdateExtension"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendarGroup.calendar.event_DeleteExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions/$count",
+              "operationId": "user.calendarGroup.calendar.event.extension_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances",
+              "operationId": "user.calendarGroup.calendar.event_ListInstance"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/delta()",
+              "operationId": "user.calendarGroup.calendar.event.instance_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/accept",
+              "operationId": "user.calendarGroup.calendar.event_accept"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/cancel",
+              "operationId": "user.calendarGroup.calendar.event_cancel"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/decline",
+              "operationId": "user.calendarGroup.calendar.event_decline"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/dismissReminder",
+              "operationId": "user.calendarGroup.calendar.event_dismissReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/forward",
+              "operationId": "user.calendarGroup.calendar.event_forward"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/permanentDelete",
+              "operationId": "user.calendarGroup.calendar.event_permanentDelete"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/snoozeReminder",
+              "operationId": "user.calendarGroup.calendar.event_snoozeReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/tentativelyAccept",
+              "operationId": "user.calendarGroup.calendar.event_tentativelyAccept"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/$count",
+              "operationId": "user.calendarGroup.calendar.event_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/delta()",
+              "operationId": "user.calendarGroup.calendar.event_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/allowedCalendarSharingRoles(User='{User}')",
+              "operationId": "user.calendarGroup.calendar_allowedCalendarSharingRole"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/getSchedule",
+              "operationId": "user.calendarGroup.calendar_getSchedule"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/permanentDelete",
+              "operationId": "user.calendarGroup.calendar_permanentDelete"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/$count",
+              "operationId": "user.calendarGroup.calendar_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/delta()",
+              "operationId": "user.calendarGroup.calendar_delta"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendars/{calendar-id}",
+              "operationId": "user_UpdateCalendar"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendars/{calendar-id}",
+              "operationId": "user_DeleteCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/calendarView/delta()",
+              "operationId": "user.calendar.calendarView_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}",
+              "operationId": "user.calendar_GetEvent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}",
+              "operationId": "user.calendar_UpdateEvent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}",
+              "operationId": "user.calendar_DeleteEvent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments",
+              "operationId": "user.calendar.event_ListAttachment"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments",
+              "operationId": "user.calendar.event_CreateAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "user.calendar.event_GetAttachment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/{attachment-id}",
+              "operationId": "user.calendar.event_DeleteAttachment"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/$count",
+              "operationId": "user.calendar.event.attachment_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments/createUploadSession",
+              "operationId": "user.calendar.event.attachment_createUploadSession"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/calendar",
+              "operationId": "user.calendar.event_GetCalendar"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions",
+              "operationId": "user.calendar.event_ListExtension"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions",
+              "operationId": "user.calendar.event_CreateExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendar.event_GetExtension"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendar.event_UpdateExtension"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}",
+              "operationId": "user.calendar.event_DeleteExtension"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions/$count",
+              "operationId": "user.calendar.event.extension_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances",
+              "operationId": "user.calendar.event_ListInstance"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/delta()",
+              "operationId": "user.calendar.event.instance_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/accept",
+              "operationId": "user.calendar.event_accept"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/cancel",
+              "operationId": "user.calendar.event_cancel"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/decline",
+              "operationId": "user.calendar.event_decline"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/dismissReminder",
+              "operationId": "user.calendar.event_dismissReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/forward",
+              "operationId": "user.calendar.event_forward"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/permanentDelete",
+              "operationId": "user.calendar.event_permanentDelete"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/snoozeReminder",
+              "operationId": "user.calendar.event_snoozeReminder"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/tentativelyAccept",
+              "operationId": "user.calendar.event_tentativelyAccept"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/$count",
+              "operationId": "user.calendar.event_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/delta()",
+              "operationId": "user.calendar.event_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarView",
+              "operationId": "user_ListCalendarView"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendarView/delta()",
+              "operationId": "user.calendarView_delta"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Calendar",
+      "directiveIndex": 2,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(CalendarUserEventCalendar|CalendarUserCalendar)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The default-calendar function maps to Invoke-CalendarUserCalendarAllowedCalendarSharingRoles. The v1.0 derived rename already supplies that noun and Invoke; separate exact curated noun/verb fallbacks preserve the same shared disposition in beta and without derived data. Curated ReplaceVerb requires the central shared-framework follow-up, not a module-local engine patch. The CalendarUserEventCalendar alternative is absent in both present profiles: no /users/{id}/events/{id}/calendar/allowedCalendarSharingRoles function exists. Named-calendar functions are not guessed into this selector. The pre-existing shared Mg-versus-MgBeta prefix discrepancy remains outside this module change.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/allowedCalendarSharingRoles(User='{User}')",
+              "operationId": "user.calendar_allowedCalendarSharingRole"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/allowedCalendarSharingRoles(User='{User}')",
+              "operationId": "user.calendar_allowedCalendarSharingRole"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Calendar",
+      "directiveIndex": 3,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(User)(Calendar)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Existing exact GET /users/{id}/calendar noun override implements both legacy Get and GetViaIdentity variants as UserDefaultCalendar. Collection and named-calendar item nouns remain UserCalendar.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar",
+              "operationId": "user_GetCalendar"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar",
+              "operationId": "user_GetCalendar"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Calendar",
+      "directiveIndex": 4,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(User)(CalendarEvent)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Existing exact collection override implements List/Create variants as UserDefaultCalendarEvent. The present Cancel operation is already removed by directive 1 and the existing user event-item prefix; suppression wins, so do not add a redundant rename or revive it. Expanded/identity variants share their underlying HTTP operation.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events",
+              "operationId": "user.calendar_ListEvent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events",
+              "operationId": "user.calendar_CreateEvent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/cancel",
+              "operationId": "user.calendar.event_cancel"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events",
+              "operationId": "user.calendar_ListEvent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events",
+              "operationId": "user.calendar_CreateEvent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/events/{event-id}/cancel",
+              "operationId": "user.calendar.event_cancel"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Calendar",
+      "directiveIndex": 5,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^(UserCalendarSchedule)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The legacy Get verb is an action name, not HTTP GET. Both default and named-calendar POST getSchedule routes collapse to the UserCalendarSchedule subject; v1.0 derived collision suppressions already cover both. Exact method/path entries extend that reviewed coverage to beta. Group scheduling and calendar-group scheduling are not this subject.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/getSchedule",
+              "operationId": "user.calendar_getSchedule"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/getSchedule",
+              "operationId": "user.calendar_getSchedule"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendar/getSchedule",
+              "operationId": "user.calendar_getSchedule"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/calendars/{calendar-id}/getSchedule",
+              "operationId": "user.calendar_getSchedule"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Calendar",
+      "directiveIndex": 6,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^UserCalendarEventDelta$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress the default- and named-calendar event delta GET functions, including the default route also selected by directive 1. v1.0 derived suppressions already cover both; exact rules preserve the same shared disposition in beta. The /users/{id}/events/delta() neighbor remains available.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/delta()",
+              "operationId": "user.calendar.event_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/delta()",
+              "operationId": "user.calendar.event_delta"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendar/events/delta()",
+              "operationId": "user.calendar.event_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/calendars/{calendar-id}/events/delta()",
+              "operationId": "user.calendar.event_delta"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "legacySpecBlobs": {
+    "v1.0": "7103e6e3a02ff3a5b63e577910ea0863516b468c",
+    "beta": "8b01cbfc54946d1e5f49a760c43eb2b1663811dc"
+  },
+  "reviewedTargetCommit": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad"
+}
