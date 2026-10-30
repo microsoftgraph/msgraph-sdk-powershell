@@ -292,11 +292,11 @@ public sealed class EmitterTests
 
         var withGet = CmdletEmitter.EmitUpdate(naming, ctx, "Place", props, [], [], reFetchAfterUpdate: true);
         Assert.Contains("re-fetching the updated resource", withGet);
-        Assert.Contains(".GetAsync()", withGet);
+        Assert.Contains(".GetAsync(requestConfiguration =>", withGet);
 
         var withoutGet = CmdletEmitter.EmitUpdate(naming, ctx, "Place", props, [], [], reFetchAfterUpdate: false);
         Assert.DoesNotContain("re-fetching the updated resource", withoutGet);
-        Assert.DoesNotContain(".GetAsync()", withoutGet);
+        Assert.DoesNotContain(".GetAsync(", withoutGet);
         Assert.Contains("if (result is not null)", withoutGet);
     }
 
