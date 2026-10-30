@@ -12,6 +12,14 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models
     public partial class RbacApplication : global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Container for soft-deleted directory role management resources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.DirectoryRoleManagementDeletedItemContainer? DeletedItems { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.DirectoryRoleManagementDeletedItemContainer DeletedItems { get; set; }
+#endif
         /// <summary>The resourceNamespaces property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +126,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "deletedItems", n => { DeletedItems = n.GetObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.DirectoryRoleManagementDeletedItemContainer>(global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.DirectoryRoleManagementDeletedItemContainer.CreateFromDiscriminatorValue); } },
                 { "resourceNamespaces", n => { ResourceNamespaces = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.UnifiedRbacResourceNamespace>(global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roleAssignmentApprovals", n => { RoleAssignmentApprovals = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.Approval>(global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.Approval.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roleAssignmentScheduleInstances", n => { RoleAssignmentScheduleInstances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.UnifiedRoleAssignmentScheduleInstance>(global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -139,6 +148,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.DirectoryRoleManagementDeletedItemContainer>("deletedItems", DeletedItems);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.UnifiedRbacResourceNamespace>("resourceNamespaces", ResourceNamespaces);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.Approval>("roleAssignmentApprovals", RoleAssignmentApprovals);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.UnifiedRoleAssignment>("roleAssignments", RoleAssignments);

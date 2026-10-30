@@ -4,6 +4,7 @@ using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.OData
 using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models;
 using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.CloudPC.RoleDefinitions.Item.AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId;
 using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.CloudPC.RoleDefinitions.Item.InheritsPermissionsFrom;
+using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.CloudPC.RoleDefinitions.Item.Restore;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleMana
         {
             get => new global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.CloudPC.RoleDefinitions.Item.InheritsPermissionsFrom.InheritsPermissionsFromRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The restore property</summary>
+        public global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.CloudPC.RoleDefinitions.Item.Restore.RestoreRequestBuilder Restore
+        {
+            get => new global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.CloudPC.RoleDefinitions.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.CloudPC.RoleDefinitions.Item.UnifiedRoleDefinitionItemRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -47,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleMana
         {
         }
         /// <summary>
-        /// Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra ID) 
+        /// Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. For the directory provider, deleting an active custom role definition soft-deletes it. You can then restore the role or permanently delete it from the deleted-items collection. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra ID) 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleMana
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
+        /// Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider. For the directory provider, you can also get a soft-deleted custom role definition from the deleted-items collection. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.UnifiedRoleDefinition"/></returns>
@@ -120,7 +126,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleMana
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.UnifiedRoleDefinition>(requestInfo, global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra ID) 
+        /// Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. For the directory provider, deleting an active custom role definition soft-deletes it. You can then restore the role or permanently delete it from the deleted-items collection. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra ID) 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +145,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleMana
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
+        /// Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider. For the directory provider, you can also get a soft-deleted custom role definition from the deleted-items collection. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +203,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleMana
         {
         }
         /// <summary>
-        /// Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
+        /// Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider. For the directory provider, you can also get a soft-deleted custom role definition from the deleted-items collection. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UnifiedRoleDefinitionItemRequestBuilderGetQueryParameters 
