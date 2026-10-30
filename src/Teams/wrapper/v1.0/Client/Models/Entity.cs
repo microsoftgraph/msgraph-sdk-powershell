@@ -190,6 +190,7 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Models
                 "#microsoft.graph.printTaskDefinition" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.PrintTaskDefinition(),
                 "#microsoft.graph.printTaskTrigger" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.PrintTaskTrigger(),
                 "#microsoft.graph.profilePhoto" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.ProfilePhoto(),
+                "#microsoft.graph.resourceAccountKeyAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.ResourceAccountKeyAuthenticationMethod(),
                 "#microsoft.graph.resourceSpecificPermissionGrant" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.ResourceSpecificPermissionGrant(),
                 "#microsoft.graph.richLongRunningOperation" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.RichLongRunningOperation(),
                 "#microsoft.graph.schedule" => new global::Microsoft.Graph.PowerShell.Teams.Client.Models.Schedule(),
