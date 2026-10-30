@@ -12,7 +12,7 @@ paths:
         - deviceManagement.onPremisesConditionalAccessSettings
       summary: Get conditionalAccessSettings from deviceManagement
       description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-      operationId: deviceManagement.GetConditionalAccessSettings
+      operationId: deviceManagement_GetConditionalAccessSetting
       parameters:
         - name: $select
           in: query
@@ -50,7 +50,7 @@ paths:
       tags:
         - deviceManagement.onPremisesConditionalAccessSettings
       summary: Update the navigation property conditionalAccessSettings in deviceManagement
-      operationId: deviceManagement.UpdateConditionalAccessSettings
+      operationId: deviceManagement_UpdateConditionalAccessSetting
       requestBody:
         description: New navigation property values
         content:
@@ -74,7 +74,7 @@ paths:
       tags:
         - deviceManagement.onPremisesConditionalAccessSettings
       summary: Delete navigation property conditionalAccessSettings for deviceManagement
-      operationId: deviceManagement.DeleteConditionalAccessSettings
+      operationId: deviceManagement_DeleteConditionalAccessSetting
       parameters:
         - name: If-Match
           in: header
@@ -96,7 +96,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
       description: The list of device enrollment configurations
-      operationId: deviceManagement.ListDeviceEnrollmentConfigurations
+      operationId: deviceManagement_ListDeviceEnrollmentConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -148,7 +148,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Create new navigation property to deviceEnrollmentConfigurations for deviceManagement
-      operationId: deviceManagement.CreateDeviceEnrollmentConfigurations
+      operationId: deviceManagement_CreateDeviceEnrollmentConfiguration
       requestBody:
         description: New navigation property
         content:
@@ -174,7 +174,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get deviceEnrollmentConfigurations from deviceManagement
       description: The list of device enrollment configurations
-      operationId: deviceManagement.GetDeviceEnrollmentConfigurations
+      operationId: deviceManagement_GetDeviceEnrollmentConfiguration
       parameters:
         - name: $select
           in: query
@@ -212,7 +212,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Update the navigation property deviceEnrollmentConfigurations in deviceManagement
-      operationId: deviceManagement.UpdateDeviceEnrollmentConfigurations
+      operationId: deviceManagement_UpdateDeviceEnrollmentConfiguration
       requestBody:
         description: New navigation property values
         content:
@@ -236,7 +236,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Delete navigation property deviceEnrollmentConfigurations for deviceManagement
-      operationId: deviceManagement.DeleteDeviceEnrollmentConfigurations
+      operationId: deviceManagement_DeleteDeviceEnrollmentConfiguration
       parameters:
         - name: If-Match
           in: header
@@ -258,7 +258,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the device configuration profile
-      operationId: deviceManagement.deviceEnrollmentConfigurations.ListAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -310,7 +310,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfigurations.CreateAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -336,7 +336,7 @@ paths:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get assignments from deviceManagement
       description: The list of group assignments for the device configuration profile
-      operationId: deviceManagement.deviceEnrollmentConfigurations.GetAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_GetAssignment
       parameters:
         - name: $select
           in: query
@@ -374,7 +374,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfigurations.UpdateAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_UpdateAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -398,7 +398,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.deviceEnrollmentConfigurations.DeleteAssignments
+      operationId: deviceManagement.deviceEnrollmentConfiguration_DeleteAssignment
       parameters:
         - name: If-Match
           in: header
@@ -419,7 +419,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceEnrollmentConfigurations.assignments.GetCount-f0d7
+      operationId: deviceManagement.deviceEnrollmentConfiguration.assignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -435,7 +435,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Invoke action assign
-      operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.assign
+      operationId: deviceManagement.deviceEnrollmentConfiguration_assign
       requestBody:
         description: Action parameters
         content:
@@ -461,7 +461,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Invoke action setPriority
-      operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.setPriority
+      operationId: deviceManagement.deviceEnrollmentConfiguration_setPriority
       requestBody:
         description: Action parameters
         content:
@@ -488,7 +488,7 @@ paths:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceEnrollmentConfigurations.GetCount-69e5
+      operationId: deviceManagement.deviceEnrollmentConfiguration_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -505,7 +505,7 @@ paths:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
       description: Collection of imported Windows autopilot devices.
-      operationId: deviceManagement.ListImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_ListImportedWindowsAutopilotDeviceIdentity
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -557,7 +557,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
-      operationId: deviceManagement.CreateImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_CreateImportedWindowsAutopilotDeviceIdentity
       requestBody:
         description: New navigation property
         content:
@@ -583,7 +583,7 @@ paths:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
       description: Collection of imported Windows autopilot devices.
-      operationId: deviceManagement.GetImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_GetImportedWindowsAutopilotDeviceIdentity
       parameters:
         - name: $select
           in: query
@@ -621,7 +621,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Update the navigation property importedWindowsAutopilotDeviceIdentities in deviceManagement
-      operationId: deviceManagement.UpdateImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_UpdateImportedWindowsAutopilotDeviceIdentity
       requestBody:
         description: New navigation property values
         content:
@@ -645,7 +645,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Delete navigation property importedWindowsAutopilotDeviceIdentities for deviceManagement
-      operationId: deviceManagement.DeleteImportedWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_DeleteImportedWindowsAutopilotDeviceIdentity
       parameters:
         - name: If-Match
           in: header
@@ -666,7 +666,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Get the number of the resource
-      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentities.GetCount-36aa
+      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentity_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -682,7 +682,7 @@ paths:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
       summary: Invoke action import
-      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentities.import
+      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentity_import
       requestBody:
         description: Action parameters
         content:
@@ -725,7 +725,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
       description: The Windows autopilot device identities contained collection.
-      operationId: deviceManagement.ListWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_ListWindowsAutopilotDeviceIdentity
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -777,7 +777,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Create new navigation property to windowsAutopilotDeviceIdentities for deviceManagement
-      operationId: deviceManagement.CreateWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_CreateWindowsAutopilotDeviceIdentity
       requestBody:
         description: New navigation property
         content:
@@ -803,7 +803,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get windowsAutopilotDeviceIdentities from deviceManagement
       description: The Windows autopilot device identities contained collection.
-      operationId: deviceManagement.GetWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_GetWindowsAutopilotDeviceIdentity
       parameters:
         - name: $select
           in: query
@@ -841,7 +841,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Update the navigation property windowsAutopilotDeviceIdentities in deviceManagement
-      operationId: deviceManagement.UpdateWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_UpdateWindowsAutopilotDeviceIdentity
       requestBody:
         description: New navigation property values
         content:
@@ -865,7 +865,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
-      operationId: deviceManagement.DeleteWindowsAutopilotDeviceIdentities
+      operationId: deviceManagement_DeleteWindowsAutopilotDeviceIdentity
       parameters:
         - name: If-Match
           in: header
@@ -887,7 +887,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Invoke action assignUserToDevice
       description: Assigns user to Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.assignUserToDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_assignUserToDevice
       requestBody:
         description: Action parameters
         content:
@@ -916,7 +916,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Invoke action unassignUserFromDevice
       description: Unassigns the user from an Autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.unassignUserFromDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_unassignUserFromDevice
       responses:
         '204':
           description: Success
@@ -931,7 +931,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Invoke action updateDeviceProperties
       description: Updates properties on Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.updateDeviceProperties
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_updateDeviceProperty
       requestBody:
         description: Action parameters
         content:
@@ -965,7 +965,7 @@ paths:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get the number of the resource
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities.GetCount-0841
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -981,7 +981,7 @@ paths:
       tags:
         - roleManagement.roleManagement
       summary: Get roleManagement
-      operationId: roleManagement.roleManagement.GetRoleManagement
+      operationId: roleManagement_GetRoleManagement
       parameters:
         - name: $select
           in: query
@@ -1019,7 +1019,7 @@ paths:
       tags:
         - roleManagement.roleManagement
       summary: Update roleManagement
-      operationId: roleManagement.roleManagement.UpdateRoleManagement
+      operationId: roleManagement_UpdateRoleManagement
       requestBody:
         description: New property values
         content:
@@ -1405,6 +1405,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -1592,6 +1593,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -1860,6 +1862,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -2218,6 +2223,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
