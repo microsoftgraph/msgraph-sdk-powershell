@@ -104,20 +104,23 @@ public sealed class DevicesServiceAnnouncementDirectiveTests
                 candidate.Method == operation.Method && BridgePath(candidate.Path) == BridgePath(operation.Path));
             foreach (var useDerived in new[] { false, true })
             {
-                var config = new GeneratorConfig("Test.Client", "unused", profile, useDerived);
-                Assert.Equal(expected, CmdletConfigurator.IsSuppressed(operation.Method, operation.Path, config));
+                var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: useDerived);
+                Assert.Equal(expected, CmdletConfigurator.IsSuppressed(operation.Method, operation.Path, config, apiVersion: profile));
             }
         }
     }
 
     [Theory]
-    [InlineData("v1.0")]
-    [InlineData("beta")]
-    public async Task SurvivingRoutesDropOnlyAdminAndKeepDerivedNames(string profile)
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task SurvivingRoutesDropOnlyAdminAndKeepDerivedNames(string profile, bool useDerived)
     {
         var operations = Operations(await LoadSpec("openApiDocs_KiotaCompat", profile)).ToList();
-        var config = new GeneratorConfig("Test.Client", "unused", profile);
-        var surviving = operations.Where(operation => !CmdletConfigurator.IsSuppressed(operation.Method, operation.Path, config)).ToList();
+        var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: useDerived);
+        var surviving = operations.Where(operation =>
+            !CmdletConfigurator.IsSuppressed(operation.Method, operation.Path, config, apiVersion: profile)).ToList();
         Assert.Equal(25, surviving.Count);
         using var ledger = JsonDocument.Parse(File.ReadAllText(Path.Combine(FindRepoRoot(), "src",
             "Devices.ServiceAnnouncement", "wrapper", "Devices.ServiceAnnouncement_directiveMigrationMap.json")));
@@ -130,15 +133,15 @@ public sealed class DevicesServiceAnnouncementDirectiveTests
                 evidence.GetProperty("method").GetString() == operation.Method.Method &&
                 evidence.GetProperty("path").GetString() == operation.Path &&
                 evidence.GetProperty("operationId").GetString() == operation.Id);
-            var naming = Naming.Resolve(new OperationInfo(operation.Method, operation.Path, Kind: operation.Kind), config);
+            var naming = Naming.Resolve(new OperationInfo(operation.Method, operation.Path, Kind: operation.Kind), config, apiVersion: profile);
             Assert.Contains("ServiceAnnouncement", naming.Noun);
             Assert.DoesNotContain("Admin", naming.Noun);
         }
-        var message = Naming.Resolve(new OperationInfo(HttpMethod.Get, "/admin/serviceAnnouncement/messages/{message-id}"), config);
+        var message = Naming.Resolve(new OperationInfo(HttpMethod.Get, "/admin/serviceAnnouncement/messages/{message-id}"), config, apiVersion: profile);
         Assert.Equal("MgServiceAnnouncementMessage", message.Noun);
         var archive = Naming.Resolve(new OperationInfo(HttpMethod.Post, "/admin/serviceAnnouncement/messages/archive",
-            Kind: OperationKind.Action), config);
-        Assert.Equal(profile == "v1.0" ? "MgArchiveServiceAnnouncementMessage" : "MgServiceAnnouncementMessageArchive", archive.Noun);
+            Kind: OperationKind.Action), config, apiVersion: profile);
+        Assert.Equal(profile == "v1.0" && useDerived ? "MgArchiveServiceAnnouncementMessage" : "MgServiceAnnouncementMessageArchive", archive.Noun);
         Assert.Equal("Invoke", archive.VerbName);
     }
 
@@ -153,10 +156,13 @@ public sealed class DevicesServiceAnnouncementDirectiveTests
     {
         foreach (var profile in new[] { "v1.0", "beta" })
         {
-            var config = new GeneratorConfig("Test.Client", "unused", profile);
-            var httpMethod = new HttpMethod(method);
-            Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, config));
-            Assert.Equal(noun, Naming.Resolve(new OperationInfo(httpMethod, path), config).Noun);
+            foreach (var useDerived in new[] { false, true })
+            {
+                var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: useDerived);
+                var httpMethod = new HttpMethod(method);
+                Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, config, apiVersion: profile));
+                Assert.Equal(noun, Naming.Resolve(new OperationInfo(httpMethod, path), config, apiVersion: profile).Noun);
+            }
         }
     }
 }
