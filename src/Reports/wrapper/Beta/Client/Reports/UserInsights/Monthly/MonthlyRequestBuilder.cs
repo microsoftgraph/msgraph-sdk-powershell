@@ -5,7 +5,6 @@ using Microsoft.Graph.PowerShell.Reports.Client.Models;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Monthly.ActiveUsers;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Monthly.Authentications;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Monthly.InactiveUsers;
-using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Monthly.InactiveUsersByApplication;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Monthly.MfaCompletions;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Monthly.MfaRegisteredUsers;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Monthly.Requests;
@@ -41,11 +40,6 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Monthly
         public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Monthly.InactiveUsers.InactiveUsersRequestBuilder InactiveUsers
         {
             get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Monthly.InactiveUsers.InactiveUsersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The inactiveUsersByApplication property</summary>
-        public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Monthly.InactiveUsersByApplication.InactiveUsersByApplicationRequestBuilder InactiveUsersByApplication
-        {
-            get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Monthly.InactiveUsersByApplication.InactiveUsersByApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mfaCompletions property</summary>
         public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Monthly.MfaCompletions.MfaCompletionsRequestBuilder MfaCompletions

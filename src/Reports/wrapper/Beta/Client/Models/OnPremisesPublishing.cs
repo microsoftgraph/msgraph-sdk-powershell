@@ -62,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Models
         public bool? IsBackendCertificateValidationEnabled { get; set; }
         /// <summary>Indicates whether continuous access evaluation is enabled for Application Proxy application. For all Application Proxy apps, the property is set to true by default.</summary>
         public bool? IsContinuousAccessEvaluationEnabled { get; set; }
-        /// <summary>The isDeviceAccessEnabled property</summary>
+        /// <summary>Indicates whether the Microsoft Entra Private Access application is accessible or available in device access mode. false by default.</summary>
         public bool? IsDeviceAccessEnabled { get; set; }
         /// <summary>Indicates Microsoft Entra Private Access should handle DNS resolution. false by default.</summary>
         public bool? IsDnsResolutionEnabled { get; set; }

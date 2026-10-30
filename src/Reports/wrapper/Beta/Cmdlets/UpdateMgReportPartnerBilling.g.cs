@@ -21,6 +21,9 @@ namespace Microsoft.Graph.PowerShell.Reports
 
 
         [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.AzureAggregatedUsage? AggregatedUsage { get; set; }
+
+        [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.BillingReconciliation? Reconciliation { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -38,6 +41,9 @@ namespace Microsoft.Graph.PowerShell.Reports
 
             var body = new Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.Billing();
 
+
+    if (this.IsParameterBound(nameof(AggregatedUsage)))
+        body.AggregatedUsage = AggregatedUsage;
 
     if (this.IsParameterBound(nameof(Reconciliation)))
         body.Reconciliation = Reconciliation;

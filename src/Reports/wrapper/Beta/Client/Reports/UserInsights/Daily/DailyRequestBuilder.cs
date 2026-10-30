@@ -5,7 +5,6 @@ using Microsoft.Graph.PowerShell.Reports.Client.Models;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Daily.ActiveUsers;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Daily.Authentications;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Daily.InactiveUsers;
-using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Daily.InactiveUsersByApplication;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Daily.MfaCompletions;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Daily.MfaTelecomFraud;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Daily.SignUps;
@@ -41,11 +40,6 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Daily
         public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Daily.InactiveUsers.InactiveUsersRequestBuilder InactiveUsers
         {
             get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Daily.InactiveUsers.InactiveUsersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The inactiveUsersByApplication property</summary>
-        public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Daily.InactiveUsersByApplication.InactiveUsersByApplicationRequestBuilder InactiveUsersByApplication
-        {
-            get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Daily.InactiveUsersByApplication.InactiveUsersByApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mfaCompletions property</summary>
         public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.Daily.MfaCompletions.MfaCompletionsRequestBuilder MfaCompletions

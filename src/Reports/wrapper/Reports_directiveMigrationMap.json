@@ -1,0 +1,878 @@
+{
+  "scope": {
+    "source": "src\\Reports\\Reports.md",
+    "requiredProfiles": [
+      "v1.0",
+      "beta"
+    ],
+    "excludedProfiles": [],
+    "ignoredSources": [
+      "src\\readme.graph.md",
+      "src\\Reports\\v1.0\\readme.md",
+      "src\\Reports\\beta\\readme.md"
+    ],
+    "deferred": "Directive 1 Period parameter completer remains active and DeferredParameter. No parameter/schema directives are implemented.",
+    "ownership": "Only Reports shared directives are migrated. DeviceManagement.Actions is retired and excluded; Reports-owned POST report actions remain unless independently matched by a Reports directive.",
+    "evidence": [
+      "same-profile openApiDocs Reports.yml for source selector identity only; never used for generation",
+      "openApiDocs_KiotaCompat Reports.yml exact current method/path/operationId",
+      "frozen MgCommandMetadata.json Reports/Beta.Reports command, route and variant evidence"
+    ],
+    "compatibleSpecBlobs": {
+      "v1.0": "1f907bf7691c3a13779b7ea6786e3764cb61d5a1",
+      "beta": "169859b86fc51330fd53c8a948dfa8ef595f36fd"
+    },
+    "reviewedTarget": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad",
+    "regressionTests": "tools\\WrapperGenerator.Tests\\ReportsDirectiveMigrationTests.cs",
+    "sourceReviewTests": "tools\\WrapperGenerator.Tests\\ReportsDirectiveSourceReview.json"
+  },
+  "mappings": [
+    {
+      "module": "Reports",
+      "directiveIndex": 2,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: auditLog\\.auditLogRoot.*|report.reportRoot.*|(auditLog|report)_(Create|Delete|Update).*",
+      "implementation": "CmdletConfigurator",
+      "notes": "Baseline-supported literal-compatible ledger after #3861 ID alignment. Preserve every original source-selected survivor and explicit removal proof in the ReportsDirectiveSourceReview.json test fixture. Include all 17 genuinely additional beta CRUD routes now literally selected by the unchanged root-mutation regex, with exact prior/current identities and per-family rationale. No action/function expansion, guessed semantic successor, or broad prefix suppression. Original 84 beta matches remain accounted as 66 survivors plus 18 removed; current 83 are the 66 survivors plus 17 additional matches. Nested authentication registration and nonmatching descendants remain.",
+      "profiles": {
+        "v1.0": {
+          "notes": "Literal current-compatible regex policy on target 08e409a6aa: 34 candidates. Complete original legacy regex set 34 is preserved as 34 exact surviving method/path/IDs plus 0 explicitly pruned source operations. 0 separately reviewed additional current CRUD matches are included by the unchanged root-mutation regex, not relabeled as legacy survivors.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/auditLogs",
+              "operationId": "auditLog.auditLogRoot_GetAuditLogRoot"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs",
+              "operationId": "auditLog.auditLogRoot_UpdateAuditLogRoot"
+            },
+            {
+              "method": "POST",
+              "path": "/auditLogs/directoryAudits",
+              "operationId": "auditLog_CreateDirectoryAudit"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs/directoryAudits/{directoryAudit-id}",
+              "operationId": "auditLog_UpdateDirectoryAudit"
+            },
+            {
+              "method": "DELETE",
+              "path": "/auditLogs/directoryAudits/{directoryAudit-id}",
+              "operationId": "auditLog_DeleteDirectoryAudit"
+            },
+            {
+              "method": "POST",
+              "path": "/auditLogs/provisioning",
+              "operationId": "auditLog_CreateProvisioning"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs/provisioning/{provisioningObjectSummary-id}",
+              "operationId": "auditLog_UpdateProvisioning"
+            },
+            {
+              "method": "DELETE",
+              "path": "/auditLogs/provisioning/{provisioningObjectSummary-id}",
+              "operationId": "auditLog_DeleteProvisioning"
+            },
+            {
+              "method": "POST",
+              "path": "/auditLogs/signIns",
+              "operationId": "auditLog_CreateSignIn"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs/signIns/{signIn-id}",
+              "operationId": "auditLog_UpdateSignIn"
+            },
+            {
+              "method": "DELETE",
+              "path": "/auditLogs/signIns/{signIn-id}",
+              "operationId": "auditLog_DeleteSignIn"
+            },
+            {
+              "method": "POST",
+              "path": "/deviceManagement/reports/exportJobs",
+              "operationId": "deviceManagement.report_CreateExportJob"
+            },
+            {
+              "method": "PATCH",
+              "path": "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}",
+              "operationId": "deviceManagement.report_UpdateExportJob"
+            },
+            {
+              "method": "DELETE",
+              "path": "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}",
+              "operationId": "deviceManagement.report_DeleteExportJob"
+            },
+            {
+              "method": "GET",
+              "path": "/reports",
+              "operationId": "report.reportRoot_GetReportRoot"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports",
+              "operationId": "report.reportRoot_UpdateReportRoot"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/authenticationMethods",
+              "operationId": "report_UpdateAuthenticationMethod"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/authenticationMethods",
+              "operationId": "report_DeleteAuthenticationMethod"
+            },
+            {
+              "method": "POST",
+              "path": "/reports/dailyPrintUsageByPrinter",
+              "operationId": "report_CreateDailyPrintUsageGraphBPrePrinter"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}",
+              "operationId": "report_UpdateDailyPrintUsageGraphBPrePrinter"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}",
+              "operationId": "report_DeleteDailyPrintUsageGraphBPrePrinter"
+            },
+            {
+              "method": "POST",
+              "path": "/reports/dailyPrintUsageByUser",
+              "operationId": "report_CreateDailyPrintUsageGraphBPreUser"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/dailyPrintUsageByUser/{printUsageByUser-id}",
+              "operationId": "report_UpdateDailyPrintUsageGraphBPreUser"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/dailyPrintUsageByUser/{printUsageByUser-id}",
+              "operationId": "report_DeleteDailyPrintUsageGraphBPreUser"
+            },
+            {
+              "method": "POST",
+              "path": "/reports/monthlyPrintUsageByPrinter",
+              "operationId": "report_CreateMonthlyPrintUsageGraphBPrePrinter"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}",
+              "operationId": "report_UpdateMonthlyPrintUsageGraphBPrePrinter"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}",
+              "operationId": "report_DeleteMonthlyPrintUsageGraphBPrePrinter"
+            },
+            {
+              "method": "POST",
+              "path": "/reports/monthlyPrintUsageByUser",
+              "operationId": "report_CreateMonthlyPrintUsageGraphBPreUser"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}",
+              "operationId": "report_UpdateMonthlyPrintUsageGraphBPreUser"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}",
+              "operationId": "report_DeleteMonthlyPrintUsageGraphBPreUser"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/partners",
+              "operationId": "report_UpdatePartner"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/partners",
+              "operationId": "report_DeletePartner"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/security",
+              "operationId": "report_UpdateSecurity"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/security",
+              "operationId": "report_DeleteSecurity"
+            }
+          ]
+        },
+        "beta": {
+          "notes": "Literal current-compatible regex policy on target 08e409a6aa: 83 candidates. Complete original legacy regex set 84 is preserved as 66 exact surviving method/path/IDs plus 18 explicitly pruned source operations. 17 separately reviewed additional current CRUD matches are included by the unchanged root-mutation regex, not relabeled as legacy survivors.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/auditLogs",
+              "operationId": "auditLog.auditLogRoot_GetAuditLogRoot"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs",
+              "operationId": "auditLog.auditLogRoot_UpdateAuditLogRoot"
+            },
+            {
+              "method": "POST",
+              "path": "/auditLogs/auditActivityTypes",
+              "operationId": "auditLog_CreateAuditActivityType"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs/auditActivityTypes/{auditActivityType-id}",
+              "operationId": "auditLog_UpdateAuditActivityType"
+            },
+            {
+              "method": "DELETE",
+              "path": "/auditLogs/auditActivityTypes/{auditActivityType-id}",
+              "operationId": "auditLog_DeleteAuditActivityType"
+            },
+            {
+              "method": "POST",
+              "path": "/auditLogs/customSecurityAttributeAudits",
+              "operationId": "auditLog_CreateCustomSecurityAttributeAudit"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit-id}",
+              "operationId": "auditLog_UpdateCustomSecurityAttributeAudit"
+            },
+            {
+              "method": "DELETE",
+              "path": "/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit-id}",
+              "operationId": "auditLog_DeleteCustomSecurityAttributeAudit"
+            },
+            {
+              "method": "POST",
+              "path": "/auditLogs/directoryAudits",
+              "operationId": "auditLog_CreateDirectoryAudit"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs/directoryAudits/{directoryAudit-id}",
+              "operationId": "auditLog_UpdateDirectoryAudit"
+            },
+            {
+              "method": "DELETE",
+              "path": "/auditLogs/directoryAudits/{directoryAudit-id}",
+              "operationId": "auditLog_DeleteDirectoryAudit"
+            },
+            {
+              "method": "POST",
+              "path": "/auditLogs/directoryProvisioning",
+              "operationId": "auditLog_CreateDirectoryProvisioning"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs/directoryProvisioning/{provisioningObjectSummary-id}",
+              "operationId": "auditLog_UpdateDirectoryProvisioning"
+            },
+            {
+              "method": "DELETE",
+              "path": "/auditLogs/directoryProvisioning/{provisioningObjectSummary-id}",
+              "operationId": "auditLog_DeleteDirectoryProvisioning"
+            },
+            {
+              "method": "POST",
+              "path": "/auditLogs/provisioning",
+              "operationId": "auditLog_CreateProvisioning"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs/provisioning/{provisioningObjectSummary-id}",
+              "operationId": "auditLog_UpdateProvisioning"
+            },
+            {
+              "method": "DELETE",
+              "path": "/auditLogs/provisioning/{provisioningObjectSummary-id}",
+              "operationId": "auditLog_DeleteProvisioning"
+            },
+            {
+              "method": "POST",
+              "path": "/auditLogs/signInEventsAppSummary",
+              "operationId": "auditLog_CreateSignInEventsAppSummary"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs/signInEventsAppSummary/{signInEventsAppActivity-appId}",
+              "operationId": "auditLog_UpdateSignInEventsAppSummary"
+            },
+            {
+              "method": "DELETE",
+              "path": "/auditLogs/signInEventsAppSummary/{signInEventsAppActivity-appId}",
+              "operationId": "auditLog_DeleteSignInEventsAppSummary"
+            },
+            {
+              "method": "POST",
+              "path": "/auditLogs/signInEventsSummary",
+              "operationId": "auditLog_CreateSignInEventsSummary"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs/signInEventsSummary/{signInEventsActivity-id}",
+              "operationId": "auditLog_UpdateSignInEventsSummary"
+            },
+            {
+              "method": "DELETE",
+              "path": "/auditLogs/signInEventsSummary/{signInEventsActivity-id}",
+              "operationId": "auditLog_DeleteSignInEventsSummary"
+            },
+            {
+              "method": "POST",
+              "path": "/auditLogs/signIns",
+              "operationId": "auditLog_CreateSignIn"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs/signIns/{signIn-id}",
+              "operationId": "auditLog_UpdateSignIn"
+            },
+            {
+              "method": "DELETE",
+              "path": "/auditLogs/signIns/{signIn-id}",
+              "operationId": "auditLog_DeleteSignIn"
+            },
+            {
+              "method": "POST",
+              "path": "/auditLogs/signUps",
+              "operationId": "auditLog_CreateSignUp"
+            },
+            {
+              "method": "PATCH",
+              "path": "/auditLogs/signUps/{selfServiceSignUp-id}",
+              "operationId": "auditLog_UpdateSignUp"
+            },
+            {
+              "method": "DELETE",
+              "path": "/auditLogs/signUps/{selfServiceSignUp-id}",
+              "operationId": "auditLog_DeleteSignUp"
+            },
+            {
+              "method": "POST",
+              "path": "/deviceManagement/reports/cachedReportConfigurations",
+              "operationId": "deviceManagement.report_CreateCachedReportConfiguration"
+            },
+            {
+              "method": "PATCH",
+              "path": "/deviceManagement/reports/cachedReportConfigurations/{deviceManagementCachedReportConfiguration-id}",
+              "operationId": "deviceManagement.report_UpdateCachedReportConfiguration"
+            },
+            {
+              "method": "DELETE",
+              "path": "/deviceManagement/reports/cachedReportConfigurations/{deviceManagementCachedReportConfiguration-id}",
+              "operationId": "deviceManagement.report_DeleteCachedReportConfiguration"
+            },
+            {
+              "method": "POST",
+              "path": "/deviceManagement/reports/exportJobs",
+              "operationId": "deviceManagement.report_CreateExportJob"
+            },
+            {
+              "method": "PATCH",
+              "path": "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}",
+              "operationId": "deviceManagement.report_UpdateExportJob"
+            },
+            {
+              "method": "DELETE",
+              "path": "/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}",
+              "operationId": "deviceManagement.report_DeleteExportJob"
+            },
+            {
+              "method": "GET",
+              "path": "/reports",
+              "operationId": "report.reportRoot_GetReportRoot"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports",
+              "operationId": "report.reportRoot_UpdateReportRoot"
+            },
+            {
+              "method": "POST",
+              "path": "/reports/appCredentialSignInActivities",
+              "operationId": "report_CreateAppCredentialSignInActivity"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/appCredentialSignInActivities/{appCredentialSignInActivity-id}",
+              "operationId": "report_UpdateAppCredentialSignInActivity"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/appCredentialSignInActivities/{appCredentialSignInActivity-id}",
+              "operationId": "report_DeleteAppCredentialSignInActivity"
+            },
+            {
+              "method": "POST",
+              "path": "/reports/applicationSignInDetailedSummary",
+              "operationId": "report_CreateApplicationSignInDetailedSummary"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary-id}",
+              "operationId": "report_UpdateApplicationSignInDetailedSummary"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary-id}",
+              "operationId": "report_DeleteApplicationSignInDetailedSummary"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/authenticationMethods",
+              "operationId": "report_UpdateAuthenticationMethod"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/authenticationMethods",
+              "operationId": "report_DeleteAuthenticationMethod"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/azureADPremiumLicenseInsight",
+              "operationId": "report_UpdateAzureADPremiumLicenseInsight"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/azureADPremiumLicenseInsight",
+              "operationId": "report_DeleteAzureADPremiumLicenseInsight"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/correlations/{identityCorrelation-id}",
+              "operationId": "report_UpdateCorrelation"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/correlations/{identityCorrelation-id}",
+              "operationId": "report_DeleteCorrelation"
+            },
+            {
+              "method": "POST",
+              "path": "/reports/dailyPrintUsage",
+              "operationId": "report_CreateDailyPrintUsage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/dailyPrintUsage/{printUsage-id}",
+              "operationId": "report_UpdateDailyPrintUsage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/dailyPrintUsage/{printUsage-id}",
+              "operationId": "report_DeleteDailyPrintUsage"
+            },
+            {
+              "method": "POST",
+              "path": "/reports/dailyPrintUsageByPrinter",
+              "operationId": "report_CreateDailyPrintUsageGraphBPrePrinter"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}",
+              "operationId": "report_UpdateDailyPrintUsageGraphBPrePrinter"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}",
+              "operationId": "report_DeleteDailyPrintUsageGraphBPrePrinter"
+            },
+            {
+              "method": "POST",
+              "path": "/reports/dailyPrintUsageByUser",
+              "operationId": "report_CreateDailyPrintUsageGraphBPreUser"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/dailyPrintUsageByUser/{printUsageByUser-id}",
+              "operationId": "report_UpdateDailyPrintUsageGraphBPreUser"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/dailyPrintUsageByUser/{printUsageByUser-id}",
+              "operationId": "report_DeleteDailyPrintUsageGraphBPreUser"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/healthMonitoring",
+              "operationId": "report_UpdateHealthMonitoring"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/healthMonitoring",
+              "operationId": "report_DeleteHealthMonitoring"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/identityAnalytics",
+              "operationId": "report_UpdateIdentityAnalytic"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/identityAnalytics",
+              "operationId": "report_DeleteIdentityAnalytic"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/microsoftAppsFileStorageContainerUsageSummary",
+              "operationId": "report_UpdateMicrosoftAppsFileStorageContainerUsageSummary"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/microsoftAppsFileStorageContainerUsageSummary",
+              "operationId": "report_DeleteMicrosoftAppsFileStorageContainerUsageSummary"
+            },
+            {
+              "method": "POST",
+              "path": "/reports/monthlyPrintUsageByPrinter",
+              "operationId": "report_CreateMonthlyPrintUsageGraphBPrePrinter"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}",
+              "operationId": "report_UpdateMonthlyPrintUsageGraphBPrePrinter"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}",
+              "operationId": "report_DeleteMonthlyPrintUsageGraphBPrePrinter"
+            },
+            {
+              "method": "POST",
+              "path": "/reports/monthlyPrintUsageByUser",
+              "operationId": "report_CreateMonthlyPrintUsageGraphBPreUser"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}",
+              "operationId": "report_UpdateMonthlyPrintUsageGraphBPreUser"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/monthlyPrintUsageByUser/{printUsageByUser-id}",
+              "operationId": "report_DeleteMonthlyPrintUsageGraphBPreUser"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/partners",
+              "operationId": "report_UpdatePartner"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/partners",
+              "operationId": "report_DeletePartner"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/security",
+              "operationId": "report_UpdateSecurity"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/security",
+              "operationId": "report_DeleteSecurity"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/serviceActivity",
+              "operationId": "report_UpdateServiceActivity"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/serviceActivity",
+              "operationId": "report_DeleteServiceActivity"
+            },
+            {
+              "method": "POST",
+              "path": "/reports/servicePrincipalSignInActivities",
+              "operationId": "report_CreateServicePrincipalSignInActivity"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/servicePrincipalSignInActivities/{servicePrincipalSignInActivity-id}",
+              "operationId": "report_UpdateServicePrincipalSignInActivity"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/servicePrincipalSignInActivities/{servicePrincipalSignInActivity-id}",
+              "operationId": "report_DeleteServicePrincipalSignInActivity"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/sla",
+              "operationId": "report_UpdateSla"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/sla",
+              "operationId": "report_DeleteSla"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/userInsights",
+              "operationId": "report_UpdateUserInsight"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/userInsights",
+              "operationId": "report_DeleteUserInsight"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Reports",
+      "directiveIndex": 3,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^ReportTenantSecureScore$|^DeviceManagementReportCertificateReport$",
+      "implementation": "ReviewedAbsence",
+      "notes": "Neither GET subject has an operation in either same-profile legacy or compatible Reports spec. Do not guess a successor from schema names. POST /deviceManagement/reports/getCertificatesReport is a distinct Reports-owned action and is retained; DeviceManagement.Actions is retired and excluded.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Reports",
+      "directiveIndex": 4,
+      "classification": "SubjectAndVerbRename",
+      "sourceContains": "subject: ^TopReport$",
+      "implementation": "CmdletConfigurator",
+      "notes": "MgCommandMetadata.json records Top/Top1/TopViaIdentity on this function. Functions already use Get. Preserve singular TopFailure and distinguish the real period overload with WithPeriod in both profiles. The checked-in v1.0 derived overload suppression row retains named placeholders and does not match the normalized route; do not add a suppression or modify global derived data to hide this distinct operation.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/reports/managedDeviceEnrollmentTopFailures()",
+              "operationId": "report_managedDeviceEnrollmentTopFailure"
+            },
+            {
+              "method": "GET",
+              "path": "/reports/managedDeviceEnrollmentTopFailures(period='{period}')",
+              "operationId": "report_managedDeviceEnrollmentTopFailure"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/reports/managedDeviceEnrollmentTopFailures()",
+              "operationId": "report_managedDeviceEnrollmentTopFailure"
+            },
+            {
+              "method": "GET",
+              "path": "/reports/managedDeviceEnrollmentTopFailures(period='{period}')",
+              "operationId": "report_managedDeviceEnrollmentTopFailure"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Reports",
+      "directiveIndex": 5,
+      "classification": "SubjectAndVerbRename",
+      "sourceContains": "subject: ^(Device)Report(.*)$",
+      "implementation": "StructuralNaming",
+      "notes": "The published Device variants map to report_deviceConfigurationDeviceActivity and report_deviceConfigurationUserActivity. Their compatible function routes structurally supply Get and ReportDeviceConfiguration*Activity in both profiles; no override is required.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/reports/deviceConfigurationDeviceActivity()",
+              "operationId": "report_deviceConfigurationDeviceActivity"
+            },
+            {
+              "method": "GET",
+              "path": "/reports/deviceConfigurationUserActivity()",
+              "operationId": "report_deviceConfigurationUserActivity"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/reports/deviceConfigurationDeviceActivity()",
+              "operationId": "report_deviceConfigurationDeviceActivity"
+            },
+            {
+              "method": "GET",
+              "path": "/reports/deviceConfigurationUserActivity()",
+              "operationId": "report_deviceConfigurationUserActivity"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Reports",
+      "directiveIndex": 6,
+      "classification": "SubjectAndVerbRename",
+      "sourceContains": "subject: ^(Detail)Report(.*)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Published Detail/Detail1 variants identify failure details in both profiles and abandonment details in beta. Same-module legacy function IDs and routes verify ownership. Functions already use Get; curate singular Detail nouns. Keep the distinct parameterized failure-details route named WithSkipWithTopWithFilterWithSkipToken in both profiles. The checked-in v1.0 derived suppression row retains named placeholders and does not match the normalized route; it is not a reason to suppress this operation.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/reports/managedDeviceEnrollmentFailureDetails()",
+              "operationId": "report_managedDeviceEnrollmentFailureDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/reports/managedDeviceEnrollmentFailureDetails(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')",
+              "operationId": "report_managedDeviceEnrollmentFailureDetail"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/reports/managedDeviceEnrollmentAbandonmentDetails(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')",
+              "operationId": "report_managedDeviceEnrollmentAbandonmentDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/reports/managedDeviceEnrollmentFailureDetails()",
+              "operationId": "report_managedDeviceEnrollmentFailureDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/reports/managedDeviceEnrollmentFailureDetails(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')",
+              "operationId": "report_managedDeviceEnrollmentFailureDetail"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Reports",
+      "directiveIndex": 7,
+      "classification": "SubjectAndVerbRename",
+      "sourceContains": "subject: ^(Managed)Report(.*)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Published Managed/ManagedViaIdentity variants identify beta abandonment summary and failure trends; same-module legacy IDs confirm these are Reports functions. Functions already use Get. Retain the singular FailureTrend and exact AbandonmentSummary nouns; v1.0 has neither operation.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/reports/managedDeviceEnrollmentAbandonmentSummary(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')",
+              "operationId": "report_managedDeviceEnrollmentAbandonmentSummary"
+            },
+            {
+              "method": "GET",
+              "path": "/reports/managedDeviceEnrollmentFailureTrends()",
+              "operationId": "report_managedDeviceEnrollmentFailureTrend"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Reports",
+      "directiveIndex": 8,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(ReportApplicationSign)$",
+      "implementation": "StructuralNaming",
+      "notes": "The beta collection/item applicationSignInDetailedSummary routes already retain InDetailedSummary structurally. GET list/item remain; POST/PATCH/DELETE are covered by shared directive 2, not silently restored by this rename. The separate Count neighbor is unaffected. All five resource operations are absent in v1.0.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/reports/applicationSignInDetailedSummary",
+              "operationId": "report_ListApplicationSignInDetailedSummary"
+            },
+            {
+              "method": "POST",
+              "path": "/reports/applicationSignInDetailedSummary",
+              "operationId": "report_CreateApplicationSignInDetailedSummary"
+            },
+            {
+              "method": "GET",
+              "path": "/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary-id}",
+              "operationId": "report_GetApplicationSignInDetailedSummary"
+            },
+            {
+              "method": "PATCH",
+              "path": "/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary-id}",
+              "operationId": "report_UpdateApplicationSignInDetailedSummary"
+            },
+            {
+              "method": "DELETE",
+              "path": "/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary-id}",
+              "operationId": "report_DeleteApplicationSignInDetailedSummary"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Reports",
+      "directiveIndex": 9,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(ReportAzureAdApplicationSign)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Same-module legacy report_getAzureADApplicationSignInSummary and the published GET route identify the sole beta function exactly. Restore the full shared ReportAzureAdApplicationSignInSummary noun and casing; no redundant argument suffix is needed because no other overload exists. No v1.0 operation matches.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/reports/getAzureADApplicationSignInSummary(period='{period}')",
+              "operationId": "report_getAzureADApplicationSignInSummary"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
