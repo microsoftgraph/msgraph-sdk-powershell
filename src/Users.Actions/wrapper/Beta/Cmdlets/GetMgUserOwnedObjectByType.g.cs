@@ -15,9 +15,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Users.Actions
 {
     [GraphRoute("POST", "/users/getUserOwnedObjects")]
-    [Cmdlet(VerbsLifecycle.Invoke, "MgUserGetUserOwnedObjects", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [Cmdlet(VerbsCommon.Get, "MgUserOwnedObjectByType", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Users.Actions.Client.Models.DirectoryObject))]
-    public class InvokeMgUserGetUserOwnedObjectsCommand : GraphClientCmdlet
+    public class GetMgUserOwnedObjectByTypeCommand : GraphClientCmdlet
     {
 
 
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(null, "Invoke"))
+            if (!ShouldProcess(null, "Get"))
                 return;
 
             var body = new global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.GetUserOwnedObjects.GetUserOwnedObjectsPostRequestBody();

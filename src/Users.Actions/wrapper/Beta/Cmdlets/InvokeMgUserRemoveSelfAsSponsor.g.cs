@@ -14,19 +14,14 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Users.Actions
 {
-    [GraphRoute("POST", "/users/{user-id}/changePassword")]
-    [Cmdlet(VerbsLifecycle.Invoke, "MgUserChangePassword", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [GraphRoute("POST", "/users/{user-id}/microsoft.graph.identityGovernance.removeSelfAsSponsor")]
+    [Cmdlet(VerbsLifecycle.Invoke, "MgUserRemoveSelfAsSponsor", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
 
-    public class InvokeMgUserChangePasswordCommand : GraphClientCmdlet
+    public class InvokeMgUserRemoveSelfAsSponsorCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
 
-        [Parameter(Mandatory = false)]
-        public string? CurrentPassword { get; set; }
-
-        [Parameter(Mandatory = false)]
-        public string? NewPassword { get; set; }
 
 
 
@@ -39,13 +34,6 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
             if (!ShouldProcess(UserId, "Invoke"))
                 return;
 
-            var body = new global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.ChangePassword.ChangePasswordPostRequestBody();
-
-    if (this.IsParameterBound(nameof(CurrentPassword)))
-        body.CurrentPassword = CurrentPassword;
-
-    if (this.IsParameterBound(nameof(NewPassword)))
-        body.NewPassword = NewPassword;
 
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
@@ -53,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
 
             try
             {
-                client.Users[UserId].ChangePassword.PostAsync(body, requestConfiguration =>
+                client.Users[UserId].MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsor.PostAsync(requestConfiguration =>
                 {
 
                         AddRequestHeaders(requestConfiguration.Headers);

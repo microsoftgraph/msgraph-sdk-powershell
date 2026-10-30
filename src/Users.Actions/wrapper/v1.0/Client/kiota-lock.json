@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "4513C170B5C2DF2F61628CA8D7BA524D9B7CD1A931D10D742F1EE2C29F462568D21C92DFAA106EC7D46192825ED3092F3BFA3C8384A75B6D69B0EA1F00825DA9",
+  "descriptionHash": "5ECC8583FC9BBAC57F54CFABB5AB12EE0DE838D62470FC7A2717E798C3F3DB50B54A5242C59643D7952655FBE1D6B5B71801E1C8E3B8A2E73F3AB75836E3A7DA",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Users.Actions.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Users.Actions.Client",

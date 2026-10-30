@@ -14,10 +14,10 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Users.Actions
 {
-    [GraphRoute("POST", "/users/{user-id}/invalidateAllRefreshTokens")]
-    [Cmdlet(VerbsLifecycle.Invoke, "MgUserInvalidateAllRefreshTokens", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
-    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse))]
-    public class InvokeMgUserInvalidateAllRefreshTokensCommand : GraphClientCmdlet
+    [GraphRoute("POST", "/users/{user-id}/removeAllDevicesFromManagement")]
+    [Cmdlet(VerbsCommon.Remove, "MgAllUserDeviceFromManagement", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+
+    public class RemoveMgAllUserDeviceFromManagementCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
@@ -31,21 +31,22 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(UserId, "Invoke"))
+            if (!ShouldProcess(UserId, "Remove"))
                 return;
 
 
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
-            global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse? result;
+
             try
             {
-                result = client.Users[UserId].InvalidateAllRefreshTokens.PostAsInvalidateAllRefreshTokensPostResponseAsync(requestConfiguration =>
+                client.Users[UserId].RemoveAllDevicesFromManagement.PostAsync(requestConfiguration =>
                 {
 
                         AddRequestHeaders(requestConfiguration.Headers);
-                }).GetAwaiter().GetResult();
+                })
+                    .GetAwaiter().GetResult();
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
@@ -53,7 +54,6 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
                 return;
             }
 
-            WriteObject(result);
         }
     }
 }

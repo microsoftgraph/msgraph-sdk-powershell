@@ -14,10 +14,10 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Users.Actions
 {
-    [GraphRoute("POST", "/users/{user-id}/removeAllDevicesFromManagement")]
-    [Cmdlet(VerbsLifecycle.Invoke, "MgUserRemoveAllDevicesFromManagement", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
-
-    public class InvokeMgUserRemoveAllDevicesFromManagementCommand : GraphClientCmdlet
+    [GraphRoute("POST", "/users/{user-id}/invalidateAllRefreshTokens")]
+    [Cmdlet(VerbsLifecycle.Invoke, "MgInvalidateAllUserRefreshToken", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse))]
+    public class InvokeMgInvalidateAllUserRefreshTokenCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
@@ -38,15 +38,14 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
         var requestAdapter = GetRequestAdapter();
         var client = new ApiClient(requestAdapter);
 
-
+            global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse? result;
             try
             {
-                client.Users[UserId].RemoveAllDevicesFromManagement.PostAsync(requestConfiguration =>
+                result = client.Users[UserId].InvalidateAllRefreshTokens.PostAsInvalidateAllRefreshTokensPostResponseAsync(requestConfiguration =>
                 {
 
                         AddRequestHeaders(requestConfiguration.Headers);
-                })
-                    .GetAwaiter().GetResult();
+                }).GetAwaiter().GetResult();
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
@@ -54,6 +53,7 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
                 return;
             }
 
+            WriteObject(result);
         }
     }
 }
