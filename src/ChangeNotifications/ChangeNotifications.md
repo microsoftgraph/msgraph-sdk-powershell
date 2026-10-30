@@ -29,21 +29,25 @@ and both profile-local `readme.md` files; their directives are not migrated.
 `wrapper/ChangeNotifications_directiveMigrationMap.json` therefore has an empty
 `mappings` array, not invented directive-to-operation mappings. Its separate audit
 records exact HTTP method/path/operation-ID evidence from both required
-`openApiDocs_KiotaCompat` specifications: six operations in v1.0 and seven in beta.
-Neither profile is excluded. The absence of `getVapidPublicKey()` in v1.0 is an
-operation-level difference, not an unsupported profile.
+`openApiDocs_KiotaCompat` specifications: seven operations in each profile.
+Neither profile is excluded. Revalidation against the merged #3849 target also
+refreshes the aligned `subscription_*` operation IDs and spec hashes. The current
+compatible v1.0 spec now includes `getVapidPublicKey()`, unlike the original
+six-operation audit; that spec refresh is not a shared-directive change.
 
 `ChangeNotifications_cmdletConfigurations.cs` intentionally remains empty.
 Structural naming supplies subscription CRUD names and the action/function
 names. Existing v1.0 parity data renames the structural
 `Invoke-MgSubscriptionReauthorize` to `Invoke-MgReauthorizeSubscription`; beta
 currently retains the structural name. Beta's structural
-`Get-MgSubscriptionGetVapidPublicKey` also differs from the legacy published noun
+`Get-MgSubscriptionGetVapidPublicKey` also differs from the legacy beta published noun
 `Get-MgBetaSubscriptionVapidPublicKey`. These baseline naming differences are not
 shared directives and do not justify new overrides in this audit.
 
 `tools/WrapperGenerator.Tests/ChangeNotificationsDirectiveMigrationTests.cs`
 checks the empty audit and pins every compatible operation's identity,
 classification, unsuppressed status, structural name, and data-aware name in both
-profiles. Full generation/build evidence is a separate gate; existing tracked
+profiles with derived data enabled and disabled. The profile is separate runtime
+context on naming/suppression calls, not authored `GeneratorConfig` state.
+Full generation/build evidence is a separate gate; existing tracked
 output directories are `wrapper/v1.0` and `wrapper/Beta`.

@@ -49,9 +49,11 @@ public sealed class ChangeNotificationsDirectiveMigrationTests
     }
 
     [Theory]
-    [InlineData("v1.0", 6)]
-    [InlineData("beta", 7)]
-    public async Task CompatibleOperationsKeepTheirIdentityAndNaming(string profile, int expectedCount)
+    [InlineData("v1.0", true)]
+    [InlineData("v1.0", false)]
+    [InlineData("beta", true)]
+    [InlineData("beta", false)]
+    public async Task CompatibleOperationsKeepTheirIdentityAndNaming(string profile, bool useCollisionData)
     {
         var root = FindRepoRoot();
         using var ledger = ReadAudit(root);
@@ -65,6 +67,7 @@ public sealed class ChangeNotificationsDirectiveMigrationTests
         var result = await OpenApiDocument.LoadAsync(stream, settings: settings,
             cancellationToken: CancellationToken.None);
         var document = Assert.IsType<OpenApiDocument>(result.Document);
+        const int expectedCount = 7;
         Assert.Equal(expectedCount, document.Paths.Sum(path => path.Value.Operations!.Count));
         var operations = evidence.GetProperty("operations").EnumerateArray().ToArray();
         Assert.Equal(expectedCount, operations.Length);
@@ -74,15 +77,16 @@ public sealed class ChangeNotificationsDirectiveMigrationTests
 
         var structuralNames = new Dictionary<string, (string Command, OperationKind Kind)>(StringComparer.Ordinal)
         {
-            ["subscriptions.subscription.ListSubscription"] = ("Get-MgSubscription", OperationKind.Resource),
-            ["subscriptions.subscription.CreateSubscription"] = ("New-MgSubscription", OperationKind.Resource),
-            ["subscriptions.subscription.GetSubscription"] = ("Get-MgSubscription", OperationKind.Resource),
-            ["subscriptions.subscription.UpdateSubscription"] = ("Update-MgSubscription", OperationKind.Resource),
-            ["subscriptions.subscription.DeleteSubscription"] = ("Remove-MgSubscription", OperationKind.Resource),
-            ["subscriptions.subscription.reauthorize"] = ("Invoke-MgSubscriptionReauthorize", OperationKind.Action),
-            ["subscriptions.getVapidPublicKey"] = ("Get-MgSubscriptionGetVapidPublicKey", OperationKind.Function),
+            ["subscription_ListSubscription"] = ("Get-MgSubscription", OperationKind.Resource),
+            ["subscription_CreateSubscription"] = ("New-MgSubscription", OperationKind.Resource),
+            ["subscription_GetSubscription"] = ("Get-MgSubscription", OperationKind.Resource),
+            ["subscription_UpdateSubscription"] = ("Update-MgSubscription", OperationKind.Resource),
+            ["subscription_DeleteSubscription"] = ("Remove-MgSubscription", OperationKind.Resource),
+            ["subscription_reauthorize"] = ("Invoke-MgSubscriptionReauthorize", OperationKind.Action),
+            ["subscription_getVapidPublicKey"] = ("Get-MgSubscriptionGetVapidPublicKey", OperationKind.Function),
         };
-        var config = new GeneratorConfig("Microsoft.Graph.PowerShell.Test.Client", Path.GetTempPath(), profile);
+        var config = new GeneratorConfig("Microsoft.Graph.PowerShell.Test.Client", Path.GetTempPath(),
+            UseCollisionData: useCollisionData);
         foreach (var operation in operations)
         {
             var method = new HttpMethod(operation.GetProperty("method").GetString()!);
@@ -102,13 +106,13 @@ public sealed class ChangeNotificationsDirectiveMigrationTests
                 _ => "operation",
             }, extension.Node!.ToString().Trim('"'));
 
-            Assert.False(CmdletConfigurator.IsSuppressed(method, path));
-            Assert.False(CmdletConfigurator.IsSuppressed(method, path, config));
+            Assert.False(CmdletConfigurator.IsSuppressed(method, path, apiVersion: profile));
+            Assert.False(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile));
             var operationInfo = new OperationInfo(method, path, Kind: expected.Kind);
-            var structural = Naming.Resolve(operationInfo);
+            var structural = Naming.Resolve(operationInfo, apiVersion: profile);
             Assert.Equal(expected.Command, $"{structural.VerbName}-{structural.Noun}");
-            var configured = Naming.Resolve(operationInfo, config);
-            var configuredName = profile == "v1.0" && expected.Kind == OperationKind.Action
+            var configured = Naming.Resolve(operationInfo, config, apiVersion: profile);
+            var configuredName = useCollisionData && profile == "v1.0" && expected.Kind == OperationKind.Action
                 ? "Invoke-MgReauthorizeSubscription"
                 : expected.Command;
             Assert.Equal(configuredName, $"{configured.VerbName}-{configured.Noun}");
