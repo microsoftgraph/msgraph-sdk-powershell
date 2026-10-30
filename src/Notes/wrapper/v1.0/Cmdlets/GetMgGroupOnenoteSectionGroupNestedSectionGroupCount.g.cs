@@ -12,9 +12,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Notes
 {
     [GraphRoute("GET", "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/$count")]
-    [Cmdlet(VerbsCommon.Get, "MgGroupOnenoteSectionGroupCount")]
+    [Cmdlet(VerbsCommon.Get, "MgGroupOnenoteSectionGroupNestedSectionGroupCount")]
     [OutputType(typeof(int))]
-    public class GetMgGroupOnenoteSectionGroupCountCommand : GraphClientCmdlet
+    public class GetMgGroupOnenoteSectionGroupNestedSectionGroupCountCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string GroupId { get; set; } = string.Empty;

@@ -11,13 +11,13 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Notes
 {
-    [GraphRoute("GET", "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/$count")]
-    [Cmdlet(VerbsCommon.Get, "MgSiteOnenoteSectionGroupCount")]
+    [GraphRoute("GET", "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/$count")]
+    [Cmdlet(VerbsCommon.Get, "MgUserOnenoteSectionGroupNestedSectionGroupCount")]
     [OutputType(typeof(int))]
-    public class GetMgSiteOnenoteSectionGroupCountCommand : GraphClientCmdlet
+    public class GetMgUserOnenoteSectionGroupNestedSectionGroupCountCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
-        public string SiteId { get; set; } = string.Empty;
+        public string UserId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 1)]
         public string SectionGroupId { get; set; } = string.Empty;
 
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Notes
             int? result;
             try
             {
-                result = client.Sites[SiteId].Onenote.SectionGroups[SectionGroupId].SectionGroups.Count.GetAsync(requestConfiguration =>
+                result = client.Users[UserId].Onenote.SectionGroups[SectionGroupId].SectionGroups.Count.GetAsync(requestConfiguration =>
                 {
                     if (this.IsParameterBound(nameof(Filter)))
                         requestConfiguration.QueryParameters.Filter = Filter;
