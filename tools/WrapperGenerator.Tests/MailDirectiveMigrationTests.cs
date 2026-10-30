@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
@@ -17,9 +18,11 @@ public sealed class MailDirectiveMigrationTests
     private const string Message = "/users/{user-id}/messages/{message-id}";
     private const string FolderMessage = "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}";
     private const string ChildFolderMessage = "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}";
-    private static readonly GeneratorConfig V1 = new("Test.Client", "unused", ApiVersion: "v1.0");
+    private const string Profile = "v1.0";
+    private static readonly GeneratorConfig Config = new("Test.Client", "unused");
     private static readonly Lazy<string> RepoRoot = new(FindRepoRoot);
-    private static readonly Lazy<OpenApiDocument> Spec = new(ReadSpec);
+    private static readonly Lazy<OpenApiDocument> Spec = new(() => ReadSpec("openApiDocs_KiotaCompat"));
+    private static readonly Lazy<OpenApiDocument> SourceSpec = new(() => ReadSpec("openApiDocs"));
 
     [Fact]
     public void ReviewedLedgerMatchesEverySelectedCompatibleOperation()
@@ -60,6 +63,40 @@ public sealed class MailDirectiveMigrationTests
         }
     }
 
+    [Theory]
+    [InlineData(1, "^user\\.mailFolder_GetMessagesContent$", "/$value",
+        "user.mailFolder_GetMessagesContent")]
+    [InlineData(2, "^user(?:\\.mailFolder(?:\\.childFolder)?)?\\.message_replyAll$", "/replyAll",
+        "user.mailFolder.childFolder.message_replyAll|user.mailFolder.message_replyAll|user.message_replyAll")]
+    [InlineData(3, "^user(?:\\.mailFolder(?:\\.childFolder)?)?\\.message_createReplyAll$", "/createReplyAll",
+        "user.mailFolder.childFolder.message_createReplyAll|user.mailFolder.message_createReplyAll|user.message_createReplyAll")]
+    public void CompleteOriginalSelectionEqualsLedgerAndCurrentSurvivors(
+        int directiveIndex, string sourcePattern, string suffix, string sourceIds)
+    {
+        var source = SourceSpec.Value.Paths.SelectMany(path => path.Value.Operations!
+            .Where(operation => Regex.IsMatch(operation.Value.OperationId ?? "", sourcePattern))
+            .Select(operation => (Method: operation.Key.Method,
+                Path: path.Key.Replace("/microsoft.graph.", "/", StringComparison.Ordinal),
+                Id: operation.Value.OperationId!))).ToArray();
+        Assert.Equal(sourceIds.Split('|').OrderBy(id => id), source.Select(operation => operation.Id).OrderBy(id => id));
+        using var ledger = JsonDocument.Parse(File.ReadAllText(Path.Combine(
+            RepoRoot.Value, "src", "Mail", "wrapper", "Mail_directiveMigrationMap.json")));
+        var mapped = ledger.RootElement.GetProperty("mappings")[directiveIndex - 1]
+            .GetProperty("profiles").GetProperty(Profile).GetProperty("operations").EnumerateArray()
+            .Select(operation => $"{operation.GetProperty("method").GetString()} {operation.GetProperty("path").GetString()}")
+            .OrderBy(route => route).ToArray();
+        Assert.Equal(mapped, source.Select(operation => $"{operation.Method} {operation.Path}").OrderBy(route => route));
+
+        var current = Spec.Value.Paths.Where(path => path.Key.EndsWith(suffix, StringComparison.Ordinal))
+            .SelectMany(path => path.Value.Operations!
+                .Where(operation => directiveIndex == 1
+                    ? operation.Key == HttpMethod.Get && path.Key == FolderMessage + suffix
+                    : operation.Key == HttpMethod.Post)
+                .Select(operation => $"{operation.Key.Method} {path.Key}"))
+            .OrderBy(route => route).ToArray();
+        Assert.Equal(mapped, current);
+    }
+
     [Fact]
     public void BetaIsExplicitlyExcludedForMissingCompatibleInputNotOperationAbsence()
     {
@@ -81,13 +118,13 @@ public sealed class MailDirectiveMigrationTests
     public void FolderContentSuppressionUsesExistingExactGetParityEntry()
     {
         const string path = FolderMessage + "/$value";
-        Assert.Equal("users.mailFolders.GetMessagesContent", SpecOperation("GET", path).OperationId);
-        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, V1));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path));
+        Assert.Equal("user.mailFolder_GetMessagesContent", SpecOperation("GET", path).OperationId);
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, Config, apiVersion: Profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, apiVersion: Profile));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path,
-            V1 with { UseCollisionData = false }));
+            Config with { UseCollisionData = false }, apiVersion: Profile));
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
-            "/users/{id}/mailFolders/{folder}/messages/{message}/$value", V1));
+            "/users/{id}/mailFolders/{folder}/messages/{message}/$value", Config, apiVersion: Profile));
     }
 
     [Theory]
@@ -100,8 +137,8 @@ public sealed class MailDirectiveMigrationTests
     {
         SpecOperation(method, path);
         var httpMethod = new HttpMethod(method);
-        Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, V1));
-        Assert.Equal(noun, Naming.Resolve(new OperationInfo(httpMethod, path), V1).Noun);
+        Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, Config, apiVersion: Profile));
+        Assert.Equal(noun, Naming.Resolve(new OperationInfo(httpMethod, path), Config, apiVersion: Profile).Noun);
     }
 
     public static IEnumerable<object[]> ReplyActions()
@@ -127,15 +164,15 @@ public sealed class MailDirectiveMigrationTests
     {
         var operation = SpecOperation("POST", path);
         Assert.EndsWith(path[(path.LastIndexOf('/') + 1)..], operation.OperationId);
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, path, V1));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, path, Config, apiVersion: Profile));
         var info = new OperationInfo(HttpMethod.Post, path, Kind: OperationKind.Action);
-        var naming = Naming.Resolve(info, V1);
+        var naming = Naming.Resolve(info, Config, apiVersion: Profile);
         Assert.Equal(verb, naming.VerbName);
         Assert.Equal(noun, naming.Noun);
         if (migrated)
         {
             // These names require the existing derived data, not new curated overrides.
-            Assert.NotEqual(noun, Naming.Resolve(info, V1 with { UseCollisionData = false }).Noun);
+            Assert.NotEqual(noun, Naming.Resolve(info, Config with { UseCollisionData = false }, apiVersion: Profile).Noun);
         }
     }
 
@@ -143,8 +180,8 @@ public sealed class MailDirectiveMigrationTests
     public void ExistingCuratedReplyToSuppressionRemainsIntact()
     {
         const string path = "/replies/{id}/replyTo";
-        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, V1));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path + "/other", V1));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, Config, apiVersion: Profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path + "/other", Config, apiVersion: Profile));
     }
 
     private static OpenApiOperation SpecOperation(string method, string path)
@@ -156,14 +193,14 @@ public sealed class MailDirectiveMigrationTests
         return operation;
     }
 
-    private static OpenApiDocument ReadSpec()
+    private static OpenApiDocument ReadSpec(string specRoot)
     {
         var settings = new OpenApiReaderSettings();
         settings.AddYamlReader();
-        using var stream = File.OpenRead(Path.Combine(RepoRoot.Value, "openApiDocs_KiotaCompat", "v1.0", "Mail.yml"));
+        using var stream = File.OpenRead(Path.Combine(RepoRoot.Value, specRoot, Profile, "Mail.yml"));
         var result = OpenApiDocument.LoadAsync(stream, settings: settings, cancellationToken: CancellationToken.None)
             .GetAwaiter().GetResult();
-        return result.Document ?? throw new InvalidDataException("Could not parse the compatible Mail v1.0 spec.");
+        return result.Document ?? throw new InvalidDataException($"Could not parse {specRoot} Mail {Profile} spec.");
     }
 
     private static string FindRepoRoot()

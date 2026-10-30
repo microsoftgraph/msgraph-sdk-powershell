@@ -23,8 +23,17 @@ are outside this review; parameter and schema/response migrations remain deferre
 
 `wrapper\Mail_directiveMigrationMap.json` records exact v1.0 operation evidence.
 Its beta declarations are explicitly marked `excluded: true`, not
-`absenceExpected: true`. The current inventory cannot validate profile exclusions;
-that strict check depends on the shared prerequisite's exclusion support.
+`absenceExpected: true`. The strict inventory validates the missing compatible
+input without claiming that the beta API operations are absent.
+
+The v1.0 revalidation after the target update includes the complete original
+`openApiDocs\v1.0\Mail.yml` selection: one folder-message content GET and three
+each of the `replyAll` and `createReplyAll` actions. All seven survive in the
+compatible spec. Action paths lose only the `microsoft.graph.` qualifier; the
+child-folder action operation IDs also retain a repeated `mailFolder` segment
+in the compatible document. The adjacent ledger uses current literal IDs, while
+`MailDirectiveMigrationTests` checks both full source selections and their
+compatible route sets. No source-selected operation was removed.
 
 ``` yaml
 # Directives go here!

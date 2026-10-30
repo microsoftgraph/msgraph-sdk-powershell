@@ -5,9 +5,13 @@
   },
   "reviewedSpec": {
     "path": "openApiDocs_KiotaCompat\\v1.0\\Mail.yml",
-    "blobHash": "060600b783c8909e6cada593ed5313fa4793a67e"
+    "blobHash": "42f7093190db0aefecdd6c079ab37123f96d5d4c"
   },
-  "notes": "Only the three shared cmdlet directives in src\\Mail\\Mail.md are reviewed. src\\readme.graph.md and profile-specific directives are ignored; parameter/schema directives remain deferred. All outcomes already exist in derived v1.0 parity data loaded by CmdletConfigurator when UseCollisionData is enabled (the full builder default); no redundant curated overrides were added. The current inventory requires v1.0/beta declarations but cannot validate excluded profiles: the strict check depends on the shared prerequisite's exclusion support. Beta is explicitly excluded, never marked absenceExpected.",
+  "reviewedSourceSpec": {
+    "path": "openApiDocs\\v1.0\\Mail.yml",
+    "blobHash": "e1a19a44755a1c5a2f61ef2c8ebe88cc0949551b"
+  },
+  "notes": "Only the three shared cmdlet directives in src\\Mail\\Mail.md are reviewed. src\\readme.graph.md and profile-specific directives are ignored; parameter/schema directives remain deferred. All outcomes already exist in derived v1.0 parity data loaded by CmdletConfigurator when UseCollisionData is enabled (the full builder default); no redundant curated overrides were added. The strict inventory validates explicit beta exclusion for its missing compatible input, never absenceExpected. MailDirectiveMigrationTests checks the complete original same-profile selections against all current compatible survivors; all seven selected operations survive and literal ledger entries need no unmerged source-translation helper.",
   "mappings": [
     {
       "module": "Mail",
@@ -15,7 +19,7 @@
       "classification": "CmdletSuppression",
       "sourceContains": "subject: ^UserMailFolderMessageContent$",
       "implementation": "DerivedParityData",
-      "notes": "Existing tools\\WrapperGenerator\\data\\parity-suppressions.v1.0.json suppresses only GET on the exact folder-message content route. Other methods and the direct/child-folder message content routes are retained. MailDirectiveMigrationTests pins the outcome. Beta is excluded for missing compatible input, not proven absent.",
+      "notes": "Original v1.0 selects only user.mailFolder_GetMessagesContent at GET /users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/$value; that exact operation survives unchanged. Existing tools\\WrapperGenerator\\data\\parity-suppressions.v1.0.json suppresses only this GET. Other methods and direct/child-folder message content routes are retained. MailDirectiveMigrationTests pins the complete source set and outcome. Beta is excluded for missing compatible input, not proven absent.",
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
@@ -23,7 +27,7 @@
             {
               "method": "GET",
               "path": "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/$value",
-              "operationId": "users.mailFolders.GetMessagesContent"
+              "operationId": "user.mailFolder_GetMessagesContent"
             }
           ]
         },
@@ -40,7 +44,7 @@
       "classification": "SubjectRename",
       "sourceContains": "variant: ^Reply1$|^ReplyExpanded1$|^ReplyViaIdentity1$|^ReplyViaIdentityExpanded1$",
       "implementation": "DerivedParityData",
-      "notes": "The three exact POST replyAll operations already receive Invoke-MgReplyAllUserMessage, Invoke-MgReplyAllUserMailFolderMessage and Invoke-MgReplyAllUserMailFolderChildFolderMessage from parity-renames.v1.0.json. Plain reply actions keep their distinct names. No structural-only or duplicate curated rename is claimed. Beta is excluded for missing compatible input, not proven absent.",
+      "notes": "The complete original v1.0 selection is user.message_replyAll, user.mailFolder.message_replyAll and user.mailFolder.childFolder.message_replyAll, all POST actions under /microsoft.graph.replyAll. All three survive with only that path qualifier removed; the compatible child-folder operation ID also repeats mailFolder. MailDirectiveMigrationTests checks full source/survivor route-set equality. These actions already receive Invoke-MgReplyAllUserMessage, Invoke-MgReplyAllUserMailFolderMessage and Invoke-MgReplyAllUserMailFolderChildFolderMessage from parity-renames.v1.0.json. Plain reply actions retain distinct names; no duplicate override is needed. Beta is excluded for missing compatible input, not proven absent.",
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
@@ -48,17 +52,17 @@
             {
               "method": "POST",
               "path": "/users/{user-id}/messages/{message-id}/replyAll",
-              "operationId": "users.user.messages.message.replyAll"
+              "operationId": "user.message_replyAll"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/replyAll",
-              "operationId": "users.user.mailFolders.mailFolder.messages.message.replyAll"
+              "operationId": "user.mailFolder.message_replyAll"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/replyAll",
-              "operationId": "users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.replyAll"
+              "operationId": "user.mailFolder.childFolder.mailFolder.message_replyAll"
             }
           ]
         },
@@ -75,7 +79,7 @@
       "classification": "SubjectRename",
       "sourceContains": "variant: ^Create1$|^CreateExpanded1$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$",
       "implementation": "DerivedParityData",
-      "notes": "The three exact POST createReplyAll operations already receive New-MgUserMessageReplyAll, New-MgUserMailFolderMessageReplyAll and New-MgUserMailFolderChildFolderMessageReplyAll from parity-renames.v1.0.json, including the New verb. Plain createReply actions keep their distinct names. No duplicate curated rename is needed. Beta is excluded for missing compatible input, not proven absent.",
+      "notes": "The complete original v1.0 selection is user.message_createReplyAll, user.mailFolder.message_createReplyAll and user.mailFolder.childFolder.message_createReplyAll, all POST actions under /microsoft.graph.createReplyAll. All three survive with only that path qualifier removed; the compatible child-folder operation ID also repeats mailFolder. MailDirectiveMigrationTests checks full source/survivor route-set equality. These actions already receive New-MgUserMessageReplyAll, New-MgUserMailFolderMessageReplyAll and New-MgUserMailFolderChildFolderMessageReplyAll from parity-renames.v1.0.json, including New verbs. Plain createReply actions retain distinct names; no duplicate override is needed. Beta is excluded for missing compatible input, not proven absent.",
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
@@ -83,17 +87,17 @@
             {
               "method": "POST",
               "path": "/users/{user-id}/messages/{message-id}/createReplyAll",
-              "operationId": "users.user.messages.message.createReplyAll"
+              "operationId": "user.message_createReplyAll"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/createReplyAll",
-              "operationId": "users.user.mailFolders.mailFolder.messages.message.createReplyAll"
+              "operationId": "user.mailFolder.message_createReplyAll"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/createReplyAll",
-              "operationId": "users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.createReplyAll"
+              "operationId": "user.mailFolder.childFolder.mailFolder.message_createReplyAll"
             }
           ]
         },
