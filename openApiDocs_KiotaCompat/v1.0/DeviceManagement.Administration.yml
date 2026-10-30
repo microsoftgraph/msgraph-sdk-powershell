@@ -12,7 +12,7 @@ paths:
         - deviceManagement.applePushNotificationCertificate
       summary: Get applePushNotificationCertificate from deviceManagement
       description: Apple push notification certificate.
-      operationId: deviceManagement.GetApplePushNotificationCertificate
+      operationId: deviceManagement_GetApplePushNotificationCertificate
       parameters:
         - name: $select
           in: query
@@ -50,7 +50,7 @@ paths:
       tags:
         - deviceManagement.applePushNotificationCertificate
       summary: Update the navigation property applePushNotificationCertificate in deviceManagement
-      operationId: deviceManagement.UpdateApplePushNotificationCertificate
+      operationId: deviceManagement_UpdateApplePushNotificationCertificate
       requestBody:
         description: New navigation property values
         content:
@@ -74,7 +74,7 @@ paths:
       tags:
         - deviceManagement.applePushNotificationCertificate
       summary: Delete navigation property applePushNotificationCertificate for deviceManagement
-      operationId: deviceManagement.DeleteApplePushNotificationCertificate
+      operationId: deviceManagement_DeleteApplePushNotificationCertificate
       parameters:
         - name: If-Match
           in: header
@@ -96,7 +96,7 @@ paths:
         - deviceManagement.applePushNotificationCertificate
       summary: Invoke function downloadApplePushNotificationCertificateSigningRequest
       description: Download Apple push notification certificate signing request
-      operationId: deviceManagement.applePushNotificationCertificate.downloadApplePushNotificationCertificateSigningRequest
+      operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
       responses:
         2XX:
           description: Success
@@ -119,7 +119,7 @@ paths:
         - deviceManagement.auditEvent
       summary: Get auditEvents from deviceManagement
       description: The Audit Events
-      operationId: deviceManagement.ListAuditEvents
+      operationId: deviceManagement_ListAuditEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -171,7 +171,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Create new navigation property to auditEvents for deviceManagement
-      operationId: deviceManagement.CreateAuditEvents
+      operationId: deviceManagement_CreateAuditEvent
       requestBody:
         description: New navigation property
         content:
@@ -197,7 +197,7 @@ paths:
         - deviceManagement.auditEvent
       summary: Get auditEvents from deviceManagement
       description: The Audit Events
-      operationId: deviceManagement.GetAuditEvents
+      operationId: deviceManagement_GetAuditEvent
       parameters:
         - name: $select
           in: query
@@ -235,7 +235,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Update the navigation property auditEvents in deviceManagement
-      operationId: deviceManagement.UpdateAuditEvents
+      operationId: deviceManagement_UpdateAuditEvent
       requestBody:
         description: New navigation property values
         content:
@@ -259,7 +259,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Delete navigation property auditEvents for deviceManagement
-      operationId: deviceManagement.DeleteAuditEvents
+      operationId: deviceManagement_DeleteAuditEvent
       parameters:
         - name: If-Match
           in: header
@@ -280,7 +280,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Get the number of the resource
-      operationId: deviceManagement.auditEvents.GetCount-7cd0
+      operationId: deviceManagement.auditEvent_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -296,7 +296,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Invoke function getAuditActivityTypes
-      operationId: deviceManagement.auditEvents.getAuditActivityTypes
+      operationId: deviceManagement.auditEvent_getAuditActivityType
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -332,7 +332,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Invoke function getAuditCategories
-      operationId: deviceManagement.auditEvents.getAuditCategories
+      operationId: deviceManagement.auditEvent_getAuditCategory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -369,7 +369,7 @@ paths:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
       description: The list of Compliance Management Partners configured by the tenant.
-      operationId: deviceManagement.ListComplianceManagementPartners
+      operationId: deviceManagement_ListComplianceManagementPartner
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -421,7 +421,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Create new navigation property to complianceManagementPartners for deviceManagement
-      operationId: deviceManagement.CreateComplianceManagementPartners
+      operationId: deviceManagement_CreateComplianceManagementPartner
       requestBody:
         description: New navigation property
         content:
@@ -447,7 +447,7 @@ paths:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
       description: The list of Compliance Management Partners configured by the tenant.
-      operationId: deviceManagement.GetComplianceManagementPartners
+      operationId: deviceManagement_GetComplianceManagementPartner
       parameters:
         - name: $select
           in: query
@@ -485,7 +485,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Update the navigation property complianceManagementPartners in deviceManagement
-      operationId: deviceManagement.UpdateComplianceManagementPartners
+      operationId: deviceManagement_UpdateComplianceManagementPartner
       requestBody:
         description: New navigation property values
         content:
@@ -509,7 +509,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Delete navigation property complianceManagementPartners for deviceManagement
-      operationId: deviceManagement.DeleteComplianceManagementPartners
+      operationId: deviceManagement_DeleteComplianceManagementPartner
       parameters:
         - name: If-Match
           in: header
@@ -530,7 +530,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Get the number of the resource
-      operationId: deviceManagement.complianceManagementPartners.GetCount-eeb1
+      operationId: deviceManagement.complianceManagementPartner_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -547,7 +547,7 @@ paths:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
       description: The list of Device Management Partners configured by the tenant.
-      operationId: deviceManagement.ListDeviceManagementPartners
+      operationId: deviceManagement_ListDeviceManagementPartner
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -599,7 +599,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Create new navigation property to deviceManagementPartners for deviceManagement
-      operationId: deviceManagement.CreateDeviceManagementPartners
+      operationId: deviceManagement_CreateDeviceManagementPartner
       requestBody:
         description: New navigation property
         content:
@@ -625,7 +625,7 @@ paths:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
       description: The list of Device Management Partners configured by the tenant.
-      operationId: deviceManagement.GetDeviceManagementPartners
+      operationId: deviceManagement_GetDeviceManagementPartner
       parameters:
         - name: $select
           in: query
@@ -663,7 +663,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Update the navigation property deviceManagementPartners in deviceManagement
-      operationId: deviceManagement.UpdateDeviceManagementPartners
+      operationId: deviceManagement_UpdateDeviceManagementPartner
       requestBody:
         description: New navigation property values
         content:
@@ -687,7 +687,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Delete navigation property deviceManagementPartners for deviceManagement
-      operationId: deviceManagement.DeleteDeviceManagementPartners
+      operationId: deviceManagement_DeleteDeviceManagementPartner
       parameters:
         - name: If-Match
           in: header
@@ -708,7 +708,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Invoke action terminate
-      operationId: deviceManagement.deviceManagementPartners.deviceManagementPartner.terminate
+      operationId: deviceManagement.deviceManagementPartner_terminate
       responses:
         '204':
           description: Success
@@ -722,7 +722,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Get the number of the resource
-      operationId: deviceManagement.deviceManagementPartners.GetCount-6f25
+      operationId: deviceManagement.deviceManagementPartner_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -739,7 +739,7 @@ paths:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
       description: The list of Exchange Connectors configured by the tenant.
-      operationId: deviceManagement.ListExchangeConnectors
+      operationId: deviceManagement_ListExchangeConnector
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -791,7 +791,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Create new navigation property to exchangeConnectors for deviceManagement
-      operationId: deviceManagement.CreateExchangeConnectors
+      operationId: deviceManagement_CreateExchangeConnector
       requestBody:
         description: New navigation property
         content:
@@ -817,7 +817,7 @@ paths:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
       description: The list of Exchange Connectors configured by the tenant.
-      operationId: deviceManagement.GetExchangeConnectors
+      operationId: deviceManagement_GetExchangeConnector
       parameters:
         - name: $select
           in: query
@@ -855,7 +855,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Update the navigation property exchangeConnectors in deviceManagement
-      operationId: deviceManagement.UpdateExchangeConnectors
+      operationId: deviceManagement_UpdateExchangeConnector
       requestBody:
         description: New navigation property values
         content:
@@ -879,7 +879,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Delete navigation property exchangeConnectors for deviceManagement
-      operationId: deviceManagement.DeleteExchangeConnectors
+      operationId: deviceManagement_DeleteExchangeConnector
       parameters:
         - name: If-Match
           in: header
@@ -900,7 +900,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Invoke action sync
-      operationId: deviceManagement.exchangeConnectors.deviceManagementExchangeConnector.sync
+      operationId: deviceManagement.exchangeConnector.deviceManagementExchangeConnector_sync
       requestBody:
         description: Action parameters
         content:
@@ -924,7 +924,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get the number of the resource
-      operationId: deviceManagement.exchangeConnectors.GetCount-7e43
+      operationId: deviceManagement.exchangeConnector_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -941,7 +941,7 @@ paths:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
       description: The IOS software update installation statuses for this account.
-      operationId: deviceManagement.ListIosUpdateStatuses
+      operationId: deviceManagement_ListIosUpdateStatus
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -993,7 +993,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Create new navigation property to iosUpdateStatuses for deviceManagement
-      operationId: deviceManagement.CreateIosUpdateStatuses
+      operationId: deviceManagement_CreateIosUpdateStatus
       requestBody:
         description: New navigation property
         content:
@@ -1019,7 +1019,7 @@ paths:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
       description: The IOS software update installation statuses for this account.
-      operationId: deviceManagement.GetIosUpdateStatuses
+      operationId: deviceManagement_GetIosUpdateStatus
       parameters:
         - name: $select
           in: query
@@ -1057,7 +1057,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Update the navigation property iosUpdateStatuses in deviceManagement
-      operationId: deviceManagement.UpdateIosUpdateStatuses
+      operationId: deviceManagement_UpdateIosUpdateStatus
       requestBody:
         description: New navigation property values
         content:
@@ -1081,7 +1081,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Delete navigation property iosUpdateStatuses for deviceManagement
-      operationId: deviceManagement.DeleteIosUpdateStatuses
+      operationId: deviceManagement_DeleteIosUpdateStatus
       parameters:
         - name: If-Match
           in: header
@@ -1102,7 +1102,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get the number of the resource
-      operationId: deviceManagement.iosUpdateStatuses.GetCount-c734
+      operationId: deviceManagement.iosUpdateStatus_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1119,7 +1119,7 @@ paths:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
       description: The list of Mobile threat Defense connectors configured by the tenant.
-      operationId: deviceManagement.ListMobileThreatDefenseConnectors
+      operationId: deviceManagement_ListMobileThreatDefenseConnector
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1171,7 +1171,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Create new navigation property to mobileThreatDefenseConnectors for deviceManagement
-      operationId: deviceManagement.CreateMobileThreatDefenseConnectors
+      operationId: deviceManagement_CreateMobileThreatDefenseConnector
       requestBody:
         description: New navigation property
         content:
@@ -1197,7 +1197,7 @@ paths:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
       description: The list of Mobile threat Defense connectors configured by the tenant.
-      operationId: deviceManagement.GetMobileThreatDefenseConnectors
+      operationId: deviceManagement_GetMobileThreatDefenseConnector
       parameters:
         - name: $select
           in: query
@@ -1235,7 +1235,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Update the navigation property mobileThreatDefenseConnectors in deviceManagement
-      operationId: deviceManagement.UpdateMobileThreatDefenseConnectors
+      operationId: deviceManagement_UpdateMobileThreatDefenseConnector
       requestBody:
         description: New navigation property values
         content:
@@ -1259,7 +1259,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Delete navigation property mobileThreatDefenseConnectors for deviceManagement
-      operationId: deviceManagement.DeleteMobileThreatDefenseConnectors
+      operationId: deviceManagement_DeleteMobileThreatDefenseConnector
       parameters:
         - name: If-Match
           in: header
@@ -1280,7 +1280,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get the number of the resource
-      operationId: deviceManagement.mobileThreatDefenseConnectors.GetCount-7a2a
+      operationId: deviceManagement.mobileThreatDefenseConnector_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1300,7 +1300,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-list?view=graph-rest-1.0
-      operationId: deviceManagement.ListRemoteAssistancePartners
+      operationId: deviceManagement_ListRemoteAssistancePartner
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1356,7 +1356,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-create?view=graph-rest-1.0
-      operationId: deviceManagement.CreateRemoteAssistancePartners
+      operationId: deviceManagement_CreateRemoteAssistancePartner
       requestBody:
         description: New navigation property
         content:
@@ -1385,7 +1385,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-get?view=graph-rest-1.0
-      operationId: deviceManagement.GetRemoteAssistancePartners
+      operationId: deviceManagement_GetRemoteAssistancePartner
       parameters:
         - name: $select
           in: query
@@ -1427,7 +1427,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-update?view=graph-rest-1.0
-      operationId: deviceManagement.UpdateRemoteAssistancePartners
+      operationId: deviceManagement_UpdateRemoteAssistancePartner
       requestBody:
         description: New navigation property values
         content:
@@ -1455,7 +1455,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-delete?view=graph-rest-1.0
-      operationId: deviceManagement.DeleteRemoteAssistancePartners
+      operationId: deviceManagement_DeleteRemoteAssistancePartner
       parameters:
         - name: If-Match
           in: header
@@ -1480,7 +1480,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-beginonboarding?view=graph-rest-1.0
-      operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner.beginOnboarding
+      operationId: deviceManagement.remoteAssistancePartner_beginOnboarding
       responses:
         '204':
           description: Success
@@ -1498,7 +1498,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-disconnect?view=graph-rest-1.0
-      operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner.disconnect
+      operationId: deviceManagement.remoteAssistancePartner_disconnect
       responses:
         '204':
           description: Success
@@ -1512,7 +1512,7 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Get the number of the resource
-      operationId: deviceManagement.remoteAssistancePartners.GetCount-427d
+      operationId: deviceManagement.remoteAssistancePartner_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1529,7 +1529,7 @@ paths:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
       description: The Resource Operations.
-      operationId: deviceManagement.ListResourceOperations
+      operationId: deviceManagement_ListResourceOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1581,7 +1581,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Create new navigation property to resourceOperations for deviceManagement
-      operationId: deviceManagement.CreateResourceOperations
+      operationId: deviceManagement_CreateResourceOperation
       requestBody:
         description: New navigation property
         content:
@@ -1607,7 +1607,7 @@ paths:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
       description: The Resource Operations.
-      operationId: deviceManagement.GetResourceOperations
+      operationId: deviceManagement_GetResourceOperation
       parameters:
         - name: $select
           in: query
@@ -1645,7 +1645,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Update the navigation property resourceOperations in deviceManagement
-      operationId: deviceManagement.UpdateResourceOperations
+      operationId: deviceManagement_UpdateResourceOperation
       requestBody:
         description: New navigation property values
         content:
@@ -1669,7 +1669,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Delete navigation property resourceOperations for deviceManagement
-      operationId: deviceManagement.DeleteResourceOperations
+      operationId: deviceManagement_DeleteResourceOperation
       parameters:
         - name: If-Match
           in: header
@@ -1690,7 +1690,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Get the number of the resource
-      operationId: deviceManagement.resourceOperations.GetCount-db11
+      operationId: deviceManagement.resourceOperation_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1707,7 +1707,7 @@ paths:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
       description: The Role Assignments.
-      operationId: deviceManagement.ListRoleAssignments
+      operationId: deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1759,7 +1759,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Create new navigation property to roleAssignments for deviceManagement
-      operationId: deviceManagement.CreateRoleAssignments
+      operationId: deviceManagement_CreateRoleAssignment
       requestBody:
         description: New navigation property
         content:
@@ -1785,7 +1785,7 @@ paths:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
       description: The Role Assignments.
-      operationId: deviceManagement.GetRoleAssignments
+      operationId: deviceManagement_GetRoleAssignment
       parameters:
         - name: $select
           in: query
@@ -1823,7 +1823,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Update the navigation property roleAssignments in deviceManagement
-      operationId: deviceManagement.UpdateRoleAssignments
+      operationId: deviceManagement_UpdateRoleAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -1847,7 +1847,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Delete navigation property roleAssignments for deviceManagement
-      operationId: deviceManagement.DeleteRoleAssignments
+      operationId: deviceManagement_DeleteRoleAssignment
       parameters:
         - name: If-Match
           in: header
@@ -1869,7 +1869,7 @@ paths:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleDefinition from deviceManagement
       description: Indicates the role definition for this role assignment.
-      operationId: deviceManagement.roleAssignments.GetRoleDefinition
+      operationId: deviceManagement.roleAssignment_GetRoleDefinition
       parameters:
         - name: $select
           in: query
@@ -1908,7 +1908,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get the number of the resource
-      operationId: deviceManagement.roleAssignments.GetCount-13e6
+      operationId: deviceManagement.roleAssignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1925,7 +1925,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
       description: The Role Definitions.
-      operationId: deviceManagement.ListRoleDefinitions
+      operationId: deviceManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1977,7 +1977,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Create new navigation property to roleDefinitions for deviceManagement
-      operationId: deviceManagement.CreateRoleDefinitions
+      operationId: deviceManagement_CreateRoleDefinition
       requestBody:
         description: New navigation property
         content:
@@ -2003,7 +2003,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
       description: The Role Definitions.
-      operationId: deviceManagement.GetRoleDefinitions
+      operationId: deviceManagement_GetRoleDefinition
       parameters:
         - name: $select
           in: query
@@ -2041,7 +2041,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Update the navigation property roleDefinitions in deviceManagement
-      operationId: deviceManagement.UpdateRoleDefinitions
+      operationId: deviceManagement_UpdateRoleDefinition
       requestBody:
         description: New navigation property values
         content:
@@ -2065,7 +2065,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Delete navigation property roleDefinitions for deviceManagement
-      operationId: deviceManagement.DeleteRoleDefinitions
+      operationId: deviceManagement_DeleteRoleDefinition
       parameters:
         - name: If-Match
           in: header
@@ -2087,7 +2087,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
       description: List of Role assignments for this role definition.
-      operationId: deviceManagement.roleDefinitions.ListRoleAssignments
+      operationId: deviceManagement.roleDefinition_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2139,7 +2139,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Create new navigation property to roleAssignments for deviceManagement
-      operationId: deviceManagement.roleDefinitions.CreateRoleAssignments
+      operationId: deviceManagement.roleDefinition_CreateRoleAssignment
       requestBody:
         description: New navigation property
         content:
@@ -2165,7 +2165,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
       description: List of Role assignments for this role definition.
-      operationId: deviceManagement.roleDefinitions.GetRoleAssignments
+      operationId: deviceManagement.roleDefinition_GetRoleAssignment
       parameters:
         - name: $select
           in: query
@@ -2203,7 +2203,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Update the navigation property roleAssignments in deviceManagement
-      operationId: deviceManagement.roleDefinitions.UpdateRoleAssignments
+      operationId: deviceManagement.roleDefinition_UpdateRoleAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -2227,7 +2227,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Delete navigation property roleAssignments for deviceManagement
-      operationId: deviceManagement.roleDefinitions.DeleteRoleAssignments
+      operationId: deviceManagement.roleDefinition_DeleteRoleAssignment
       parameters:
         - name: If-Match
           in: header
@@ -2249,7 +2249,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get roleDefinition from deviceManagement
       description: Indicates the role definition for this role assignment.
-      operationId: deviceManagement.roleDefinitions.roleAssignments.GetRoleDefinition
+      operationId: deviceManagement.roleDefinition.roleAssignment_GetRoleDefinition
       parameters:
         - name: $select
           in: query
@@ -2288,7 +2288,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get the number of the resource
-      operationId: deviceManagement.roleDefinitions.roleAssignments.GetCount-3dca
+      operationId: deviceManagement.roleDefinition.roleAssignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2304,7 +2304,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get the number of the resource
-      operationId: deviceManagement.roleDefinitions.GetCount-031b
+      operationId: deviceManagement.roleDefinition_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2321,7 +2321,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
       description: The terms and conditions associated with device management of the company.
-      operationId: deviceManagement.ListTermsAndConditions
+      operationId: deviceManagement_ListTermsAndCondition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2373,7 +2373,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Create new navigation property to termsAndConditions for deviceManagement
-      operationId: deviceManagement.CreateTermsAndConditions
+      operationId: deviceManagement_CreateTermsAndCondition
       requestBody:
         description: New navigation property
         content:
@@ -2399,7 +2399,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
       description: The terms and conditions associated with device management of the company.
-      operationId: deviceManagement.GetTermsAndConditions
+      operationId: deviceManagement_GetTermsAndCondition
       parameters:
         - name: $select
           in: query
@@ -2437,7 +2437,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Update the navigation property termsAndConditions in deviceManagement
-      operationId: deviceManagement.UpdateTermsAndConditions
+      operationId: deviceManagement_UpdateTermsAndCondition
       requestBody:
         description: New navigation property values
         content:
@@ -2461,7 +2461,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Delete navigation property termsAndConditions for deviceManagement
-      operationId: deviceManagement.DeleteTermsAndConditions
+      operationId: deviceManagement_DeleteTermsAndCondition
       parameters:
         - name: If-Match
           in: header
@@ -2483,7 +2483,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
       description: The list of acceptance statuses for this T&C policy.
-      operationId: deviceManagement.termsAndConditions.ListAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_ListAcceptanceStatus
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2535,7 +2535,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Create new navigation property to acceptanceStatuses for deviceManagement
-      operationId: deviceManagement.termsAndConditions.CreateAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_CreateAcceptanceStatus
       requestBody:
         description: New navigation property
         content:
@@ -2561,7 +2561,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
       description: The list of acceptance statuses for this T&C policy.
-      operationId: deviceManagement.termsAndConditions.GetAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_GetAcceptanceStatus
       parameters:
         - name: $select
           in: query
@@ -2599,7 +2599,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Update the navigation property acceptanceStatuses in deviceManagement
-      operationId: deviceManagement.termsAndConditions.UpdateAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_UpdateAcceptanceStatus
       requestBody:
         description: New navigation property values
         content:
@@ -2623,7 +2623,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Delete navigation property acceptanceStatuses for deviceManagement
-      operationId: deviceManagement.termsAndConditions.DeleteAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_DeleteAcceptanceStatus
       parameters:
         - name: If-Match
           in: header
@@ -2645,7 +2645,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses.GetTermsAndConditions
+      operationId: deviceManagement.termsAndCondition.acceptanceStatus_GetTermsAndCondition
       parameters:
         - name: $select
           in: query
@@ -2684,7 +2684,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get the number of the resource
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses.GetCount-d4f9
+      operationId: deviceManagement.termsAndCondition.acceptanceStatus_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2701,7 +2701,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
       description: The list of assignments for this T&C policy.
-      operationId: deviceManagement.termsAndConditions.ListAssignments
+      operationId: deviceManagement.termsAndCondition_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2753,7 +2753,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.termsAndConditions.CreateAssignments
+      operationId: deviceManagement.termsAndCondition_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -2779,7 +2779,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
       description: The list of assignments for this T&C policy.
-      operationId: deviceManagement.termsAndConditions.GetAssignments
+      operationId: deviceManagement.termsAndCondition_GetAssignment
       parameters:
         - name: $select
           in: query
@@ -2817,7 +2817,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.termsAndConditions.UpdateAssignments
+      operationId: deviceManagement.termsAndCondition_UpdateAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -2841,7 +2841,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.termsAndConditions.DeleteAssignments
+      operationId: deviceManagement.termsAndCondition_DeleteAssignment
       parameters:
         - name: If-Match
           in: header
@@ -2862,7 +2862,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get the number of the resource
-      operationId: deviceManagement.termsAndConditions.assignments.GetCount-0a20
+      operationId: deviceManagement.termsAndCondition.assignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2878,7 +2878,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get the number of the resource
-      operationId: deviceManagement.termsAndConditions.GetCount-b2c0
+      operationId: deviceManagement.termsAndCondition_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2894,7 +2894,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get virtualEndpoint from deviceManagement
-      operationId: deviceManagement.GetVirtualEndpoint
+      operationId: deviceManagement_GetVirtualEndpoint
       parameters:
         - name: $select
           in: query
@@ -2932,7 +2932,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property virtualEndpoint in deviceManagement
-      operationId: deviceManagement.UpdateVirtualEndpoint
+      operationId: deviceManagement_UpdateVirtualEndpoint
       requestBody:
         description: New navigation property values
         content:
@@ -2956,7 +2956,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property virtualEndpoint for deviceManagement
-      operationId: deviceManagement.DeleteVirtualEndpoint
+      operationId: deviceManagement_DeleteVirtualEndpoint
       parameters:
         - name: If-Match
           in: header
@@ -2981,7 +2981,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.ListAuditEvents
+      operationId: deviceManagement.virtualEndpoint_ListAuditEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3033,7 +3033,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to auditEvents for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.CreateAuditEvents
+      operationId: deviceManagement.virtualEndpoint_CreateAuditEvent
       requestBody:
         description: New navigation property
         content:
@@ -3062,7 +3062,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcauditevent-get?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.GetAuditEvents
+      operationId: deviceManagement.virtualEndpoint_GetAuditEvent
       parameters:
         - name: $select
           in: query
@@ -3100,7 +3100,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property auditEvents in deviceManagement
-      operationId: deviceManagement.virtualEndpoint.UpdateAuditEvents
+      operationId: deviceManagement.virtualEndpoint_UpdateAuditEvent
       requestBody:
         description: New navigation property values
         content:
@@ -3124,7 +3124,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property auditEvents for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.DeleteAuditEvents
+      operationId: deviceManagement.virtualEndpoint_DeleteAuditEvent
       parameters:
         - name: If-Match
           in: header
@@ -3145,7 +3145,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get the number of the resource
-      operationId: deviceManagement.virtualEndpoint.auditEvents.GetCount-dc99
+      operationId: deviceManagement.virtualEndpoint.auditEvent_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3165,7 +3165,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.auditEvents.getAuditActivityTypes
+      operationId: deviceManagement.virtualEndpoint.auditEvent_getAuditActivityType
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3205,7 +3205,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-cloudpcs?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.ListCloudPCs
+      operationId: deviceManagement.virtualEndpoint_ListCloudPC
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3257,7 +3257,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to cloudPCs for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.CreateCloudPCs
+      operationId: deviceManagement.virtualEndpoint_CreateCloudPC
       requestBody:
         description: New navigation property
         content:
@@ -3286,7 +3286,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpc-get?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.GetCloudPCs
+      operationId: deviceManagement.virtualEndpoint_GetCloudPC
       parameters:
         - name: $select
           in: query
@@ -3324,7 +3324,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property cloudPCs in deviceManagement
-      operationId: deviceManagement.virtualEndpoint.UpdateCloudPCs
+      operationId: deviceManagement.virtualEndpoint_UpdateCloudPC
       requestBody:
         description: New navigation property values
         content:
@@ -3348,7 +3348,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property cloudPCs for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.DeleteCloudPCs
+      operationId: deviceManagement.virtualEndpoint_DeleteCloudPC
       parameters:
         - name: If-Match
           in: header
@@ -3373,7 +3373,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.endGracePeriod
+      operationId: deviceManagement.virtualEndpoint.cloudPC_endGracePeriod
       responses:
         '204':
           description: Success
@@ -3391,7 +3391,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.reboot
+      operationId: deviceManagement.virtualEndpoint.cloudPC_reboot
       responses:
         '204':
           description: Success
@@ -3409,7 +3409,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.rename
+      operationId: deviceManagement.virtualEndpoint.cloudPC_rename
       requestBody:
         description: Action parameters
         content:
@@ -3438,7 +3438,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.reprovision
+      operationId: deviceManagement.virtualEndpoint.cloudPC_reprovision
       requestBody:
         description: Action parameters
         content:
@@ -3474,7 +3474,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpc-resize?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.resize
+      operationId: deviceManagement.virtualEndpoint.cloudPC_resize
       requestBody:
         description: Action parameters
         content:
@@ -3503,7 +3503,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.restore
+      operationId: deviceManagement.virtualEndpoint.cloudPC_restore
       requestBody:
         description: Action parameters
         content:
@@ -3532,7 +3532,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpc-retrievecloudpclaunchdetail?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.retrieveCloudPcLaunchDetail
+      operationId: deviceManagement.virtualEndpoint.cloudPC_retrieveCloudPcLaunchDetail
       responses:
         2XX:
           description: Success
@@ -3557,7 +3557,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.troubleshoot
+      operationId: deviceManagement.virtualEndpoint.cloudPC_troubleshoot
       responses:
         '204':
           description: Success
@@ -3571,7 +3571,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get the number of the resource
-      operationId: deviceManagement.virtualEndpoint.cloudPCs.GetCount-07ce
+      operationId: deviceManagement.virtualEndpoint.cloudPC_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3591,7 +3591,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.ListDeviceImages
+      operationId: deviceManagement.virtualEndpoint_ListDeviceImage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3647,7 +3647,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.CreateDeviceImages
+      operationId: deviceManagement.virtualEndpoint_CreateDeviceImage
       requestBody:
         description: New navigation property
         content:
@@ -3676,7 +3676,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-get?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.GetDeviceImages
+      operationId: deviceManagement.virtualEndpoint_GetDeviceImage
       parameters:
         - name: $select
           in: query
@@ -3714,7 +3714,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property deviceImages in deviceManagement
-      operationId: deviceManagement.virtualEndpoint.UpdateDeviceImages
+      operationId: deviceManagement.virtualEndpoint_UpdateDeviceImage
       requestBody:
         description: New navigation property values
         content:
@@ -3742,7 +3742,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-delete?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.DeleteDeviceImages
+      operationId: deviceManagement.virtualEndpoint_DeleteDeviceImage
       parameters:
         - name: If-Match
           in: header
@@ -3763,7 +3763,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get the number of the resource
-      operationId: deviceManagement.virtualEndpoint.deviceImages.GetCount-e128
+      operationId: deviceManagement.virtualEndpoint.deviceImage_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3783,7 +3783,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.deviceImages.getSourceImages
+      operationId: deviceManagement.virtualEndpoint.deviceImage_getSourceImage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3822,7 +3822,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.ListGalleryImages
+      operationId: deviceManagement.virtualEndpoint_ListGalleryImage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3874,7 +3874,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to galleryImages for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.CreateGalleryImages
+      operationId: deviceManagement.virtualEndpoint_CreateGalleryImage
       requestBody:
         description: New navigation property
         content:
@@ -3903,7 +3903,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcgalleryimage-get?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.GetGalleryImages
+      operationId: deviceManagement.virtualEndpoint_GetGalleryImage
       parameters:
         - name: $select
           in: query
@@ -3941,7 +3941,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property galleryImages in deviceManagement
-      operationId: deviceManagement.virtualEndpoint.UpdateGalleryImages
+      operationId: deviceManagement.virtualEndpoint_UpdateGalleryImage
       requestBody:
         description: New navigation property values
         content:
@@ -3965,7 +3965,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property galleryImages for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.DeleteGalleryImages
+      operationId: deviceManagement.virtualEndpoint_DeleteGalleryImage
       parameters:
         - name: If-Match
           in: header
@@ -3986,7 +3986,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get the number of the resource
-      operationId: deviceManagement.virtualEndpoint.galleryImages.GetCount-be1a
+      operationId: deviceManagement.virtualEndpoint.galleryImage_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4006,7 +4006,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.ListOnPremisesConnections
+      operationId: deviceManagement.virtualEndpoint_ListOnPremisesConnection
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4062,7 +4062,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.CreateOnPremisesConnections
+      operationId: deviceManagement.virtualEndpoint_CreateOnPremisesConnection
       requestBody:
         description: New navigation property
         content:
@@ -4091,7 +4091,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-get?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.GetOnPremisesConnections
+      operationId: deviceManagement.virtualEndpoint_GetOnPremisesConnection
       parameters:
         - name: $select
           in: query
@@ -4133,7 +4133,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-update?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.UpdateOnPremisesConnections
+      operationId: deviceManagement.virtualEndpoint_UpdateOnPremisesConnection
       requestBody:
         description: New navigation property values
         content:
@@ -4161,7 +4161,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-delete?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.DeleteOnPremisesConnections
+      operationId: deviceManagement.virtualEndpoint_DeleteOnPremisesConnection
       parameters:
         - name: If-Match
           in: header
@@ -4186,7 +4186,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.onPremisesConnections.cloudPcOnPremisesConnection.runHealthChecks
+      operationId: deviceManagement.virtualEndpoint.onPremisesConnection.cloudPcOnPremisesConnection_runHealthCheck
       responses:
         '204':
           description: Success
@@ -4204,7 +4204,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-updateaddomainpassword?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.onPremisesConnections.cloudPcOnPremisesConnection.updateAdDomainPassword
+      operationId: deviceManagement.virtualEndpoint.onPremisesConnection.cloudPcOnPremisesConnection_updateAdDomainPassword
       requestBody:
         description: Action parameters
         content:
@@ -4229,7 +4229,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get the number of the resource
-      operationId: deviceManagement.virtualEndpoint.onPremisesConnections.GetCount-f373
+      operationId: deviceManagement.virtualEndpoint.onPremisesConnection_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4249,7 +4249,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.ListProvisioningPolicies
+      operationId: deviceManagement.virtualEndpoint_ListProvisioningPolicy
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4305,7 +4305,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.CreateProvisioningPolicies
+      operationId: deviceManagement.virtualEndpoint_CreateProvisioningPolicy
       requestBody:
         description: New navigation property
         content:
@@ -4334,7 +4334,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-get?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.GetProvisioningPolicies
+      operationId: deviceManagement.virtualEndpoint_GetProvisioningPolicy
       parameters:
         - name: $select
           in: query
@@ -4376,7 +4376,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-update?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.UpdateProvisioningPolicies
+      operationId: deviceManagement.virtualEndpoint_UpdateProvisioningPolicy
       requestBody:
         description: New navigation property values
         content:
@@ -4404,7 +4404,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-delete?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.DeleteProvisioningPolicies
+      operationId: deviceManagement.virtualEndpoint_DeleteProvisioningPolicy
       parameters:
         - name: If-Match
           in: header
@@ -4426,7 +4426,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
       description: 'A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.'
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.ListAssignments
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4478,7 +4478,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.CreateAssignments
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -4504,7 +4504,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
       description: 'A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.'
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.GetAssignments
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_GetAssignment
       parameters:
         - name: $select
           in: query
@@ -4542,7 +4542,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.UpdateAssignments
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_UpdateAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -4566,7 +4566,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.DeleteAssignments
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_DeleteAssignment
       parameters:
         - name: If-Match
           in: header
@@ -4588,7 +4588,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get assignedUsers from deviceManagement
       description: 'The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. Read-only. Supports$expand.'
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.assignments.ListAssignedUsers
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment_ListAssignedUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4642,7 +4642,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get assignedUsers from deviceManagement
       description: 'The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. Read-only. Supports$expand.'
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.assignments.GetAssignedUsers
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment_GetAssignedUser
       parameters:
         - name: $select
           in: query
@@ -4682,7 +4682,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get mailboxSettings property value
       description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Requires $select to retrieve.'
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.assignments.assignedUsers.GetMailboxSettings
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment.assignedUser_GetMailboxSetting
       parameters:
         - name: $select
           in: query
@@ -4719,7 +4719,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update property mailboxSettings value.
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.assignments.assignedUsers.UpdateMailboxSettings
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment.assignedUser_UpdateMailboxSetting
       requestBody:
         description: New property values
         content:
@@ -4744,7 +4744,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get serviceProvisioningErrors property value
       description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.assignments.assignedUsers.ListServiceProvisioningErrors
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment.assignedUser_ListServiceProvisioningError
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4796,7 +4796,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get the number of the resource
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.assignments.assignedUsers.ServiceProvisioningErrors.GetCount-115a
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment.assignedUser.ServiceProvisioningError_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4813,7 +4813,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get assignedUsers from deviceManagement
       description: 'The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. Read-only. Supports$expand.'
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.assignments.assignedUsers.GetByUserPrincipalName
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment.assignedUser_GetGraphBPreUserPrincipalName
       parameters:
         - name: $select
           in: query
@@ -4852,7 +4852,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get the number of the resource
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.assignments.assignedUsers.GetCount-0cc7
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment.assignedUser_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4868,7 +4868,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get the number of the resource
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.assignments.GetCount-69f3
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.assignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4888,7 +4888,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.cloudPcProvisioningPolicy.assign
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy.cloudPcProvisioningPolicy_assign
       requestBody:
         description: Action parameters
         content:
@@ -4914,7 +4914,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get the number of the resource
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies.GetCount-08c5
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4931,7 +4931,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get report from deviceManagement
       description: Cloud PC-related reports. Read-only.
-      operationId: deviceManagement.virtualEndpoint.GetReport
+      operationId: deviceManagement.virtualEndpoint_GetReport
       parameters:
         - name: $select
           in: query
@@ -4969,7 +4969,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property report in deviceManagement
-      operationId: deviceManagement.virtualEndpoint.UpdateReport
+      operationId: deviceManagement.virtualEndpoint_UpdateReport
       requestBody:
         description: New navigation property values
         content:
@@ -4993,7 +4993,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property report for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.DeleteReport
+      operationId: deviceManagement.virtualEndpoint_DeleteReport
       parameters:
         - name: If-Match
           in: header
@@ -5018,7 +5018,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcreport-retrievecloudpcrecommendationreports?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.report.retrieveCloudPcRecommendationReports
+      operationId: deviceManagement.virtualEndpoint.report_retrieveCloudPcRecommendationReport
       requestBody:
         description: Action parameters
         content:
@@ -5091,7 +5091,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-serviceplans?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.ListServicePlans
+      operationId: deviceManagement.virtualEndpoint_ListServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5145,7 +5145,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get servicePlans from deviceManagement
       description: A collection of Cloud PC service plans.
-      operationId: deviceManagement.virtualEndpoint.GetServicePlans
+      operationId: deviceManagement.virtualEndpoint_GetServicePlan
       parameters:
         - name: $select
           in: query
@@ -5184,7 +5184,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get the number of the resource
-      operationId: deviceManagement.virtualEndpoint.servicePlans.GetCount-3a18
+      operationId: deviceManagement.virtualEndpoint.servicePlan_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5204,7 +5204,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.ListUserSettings
+      operationId: deviceManagement.virtualEndpoint_ListUserSetting
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5260,7 +5260,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.CreateUserSettings
+      operationId: deviceManagement.virtualEndpoint_CreateUserSetting
       requestBody:
         description: New navigation property
         content:
@@ -5289,7 +5289,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcusersetting-get?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.GetUserSettings
+      operationId: deviceManagement.virtualEndpoint_GetUserSetting
       parameters:
         - name: $select
           in: query
@@ -5331,7 +5331,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcusersetting-update?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.UpdateUserSettings
+      operationId: deviceManagement.virtualEndpoint_UpdateUserSetting
       requestBody:
         description: New navigation property values
         content:
@@ -5359,7 +5359,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcusersetting-delete?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.DeleteUserSettings
+      operationId: deviceManagement.virtualEndpoint_DeleteUserSetting
       parameters:
         - name: If-Match
           in: header
@@ -5381,7 +5381,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
       description: 'Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSetting.'
-      operationId: deviceManagement.virtualEndpoint.userSettings.ListAssignments
+      operationId: deviceManagement.virtualEndpoint.userSetting_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5433,7 +5433,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.userSettings.CreateAssignments
+      operationId: deviceManagement.virtualEndpoint.userSetting_CreateAssignment
       requestBody:
         description: New navigation property
         content:
@@ -5459,7 +5459,7 @@ paths:
         - deviceManagement.virtualEndpoint
       summary: Get assignments from deviceManagement
       description: 'Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSetting.'
-      operationId: deviceManagement.virtualEndpoint.userSettings.GetAssignments
+      operationId: deviceManagement.virtualEndpoint.userSetting_GetAssignment
       parameters:
         - name: $select
           in: query
@@ -5497,7 +5497,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.virtualEndpoint.userSettings.UpdateAssignments
+      operationId: deviceManagement.virtualEndpoint.userSetting_UpdateAssignment
       requestBody:
         description: New navigation property values
         content:
@@ -5521,7 +5521,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.virtualEndpoint.userSettings.DeleteAssignments
+      operationId: deviceManagement.virtualEndpoint.userSetting_DeleteAssignment
       parameters:
         - name: If-Match
           in: header
@@ -5542,7 +5542,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get the number of the resource
-      operationId: deviceManagement.virtualEndpoint.userSettings.assignments.GetCount-e245
+      operationId: deviceManagement.virtualEndpoint.userSetting.assignment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5562,7 +5562,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.userSettings.cloudPcUserSetting.assign
+      operationId: deviceManagement.virtualEndpoint.userSetting.cloudPcUserSetting_assign
       requestBody:
         description: Action parameters
         content:
@@ -5588,7 +5588,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get the number of the resource
-      operationId: deviceManagement.virtualEndpoint.userSettings.GetCount-4aa3
+      operationId: deviceManagement.virtualEndpoint.userSetting_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7840,6 +7840,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -8027,6 +8028,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -8295,6 +8297,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -8653,6 +8658,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
@@ -10220,6 +10226,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               description: Represents a platform credential instance registered to a user on Mac OS.
+              x-ms-navigationProperty: true
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
               x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
@@ -12575,11 +12587,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Offline, OutOfOffice, PresenceUnknown.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.'
+              description: 'The base presence information for a user. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Focusing, InACall, InAMeeting, Offline, Presenting, PresenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               anyOf:
@@ -13688,6 +13700,7 @@ components:
               '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+              '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
               '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
               '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
               '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -13844,6 +13857,29 @@ components:
               type: string
               default: '#microsoft.graph.platformCredentialAuthenticationMethod'
       x-ms-discriminator-value: '#microsoft.graph.platformCredentialAuthenticationMethod'
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
+            device:
+              anyOf:
+                - $ref: '#/components/schemas/microsoft.graph.device'
+                - type: object
+                  nullable: true
+              description: The registered device on which this resource account key resides. Supports $expand.
+              x-ms-navigationProperty: true
+            '@odata.type':
+              type: string
+              default: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
+      x-ms-discriminator-value: '#microsoft.graph.resourceAccountKeyAuthenticationMethod'
     microsoft.graph.softwareOathAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -16273,7 +16309,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. To learn more about managing this property for Microsoft 365 vs. cloud security groups, see Key differences from Microsoft 365 group labeling.'
             assignedLicenses:
               type: array
               items:
@@ -21253,6 +21289,18 @@ components:
             resource:
               type: string
               description: Required. Specifies the resource that is monitored for changes. Don't include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+            vapidPublicKey:
+              type: string
+              description: 'Optional. The application server''s VAPID public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained by calling the getVapidPublicKey function on the subscription collection. The browser passes this value to PushManager.subscribe({ applicationServerKey: vapidPublicKey }) to bind the push subscription to this server identity. Required when notificationUrl targets a known Web Push service origin (for example, *.push.apple.com, fcm.googleapis.com, updates.push.services.mozilla.com); rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8292.'
+              nullable: true
+            webPushEncryptionP256dhPublicKey:
+              type: string
+              description: 'Optional. The subscriber''s ECDH public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''p256dh''). Used as the peer public key during ECDH key agreement to derive the per-message content encryption key for RFC 8291 payload encryption. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
+            webPushEncryptionSecret:
+              type: string
+              description: 'Optional. The subscriber''s auth secret, base64url-encoded (16 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''auth''). Used as the HMAC-SHA-256 salt for the HKDF combine step that derives key material for RFC 8291 payload encryption. Write-only: this value is never returned in GET responses (returned as null). Treat as a secret. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
             '@odata.type':
               type: string
       x-ms-discriminator-value: '#microsoft.graph.subscription'

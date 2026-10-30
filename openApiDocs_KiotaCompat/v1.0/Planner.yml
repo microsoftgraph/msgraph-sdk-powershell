@@ -12,7 +12,7 @@ paths:
         - groups.plannerGroup
       summary: Get planner from groups
       description: Entry-point to Planner resource that might exist for a Unified Group.
-      operationId: groups.GetPlanner
+      operationId: group_GetPlanner
       parameters:
         - name: $select
           in: query
@@ -50,7 +50,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property planner in groups
-      operationId: groups.UpdatePlanner
+      operationId: group_UpdatePlanner
       parameters:
         - name: If-Match
           in: header
@@ -82,7 +82,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property planner for groups
-      operationId: groups.DeletePlanner
+      operationId: group_DeletePlanner
       parameters:
         - name: If-Match
           in: header
@@ -107,7 +107,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannergroup-list-plans?view=graph-rest-1.0
-      operationId: groups.planner.ListPlans
+      operationId: group.planner_ListPlan
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -159,7 +159,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to plans for groups
-      operationId: groups.planner.CreatePlans
+      operationId: group.planner_CreatePlan
       requestBody:
         description: New navigation property
         content:
@@ -185,7 +185,7 @@ paths:
         - groups.plannerGroup
       summary: Get plans from groups
       description: Read-only. Nullable. Returns the plannerPlans owned by the group.
-      operationId: groups.planner.GetPlans
+      operationId: group.planner_GetPlan
       parameters:
         - name: $select
           in: query
@@ -223,7 +223,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property plans in groups
-      operationId: groups.planner.UpdatePlans
+      operationId: group.planner_UpdatePlan
       requestBody:
         description: New navigation property values
         content:
@@ -247,7 +247,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property plans for groups
-      operationId: groups.planner.DeletePlans
+      operationId: group.planner_DeletePlan
       parameters:
         - name: If-Match
           in: header
@@ -269,7 +269,7 @@ paths:
         - groups.plannerGroup
       summary: Get buckets from groups
       description: Read-only. Nullable. Collection of buckets in the plan.
-      operationId: groups.planner.plans.ListBuckets
+      operationId: group.planner.plan_ListBucket
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -321,7 +321,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to buckets for groups
-      operationId: groups.planner.plans.CreateBuckets
+      operationId: group.planner.plan_CreateBucket
       requestBody:
         description: New navigation property
         content:
@@ -347,7 +347,7 @@ paths:
         - groups.plannerGroup
       summary: Get buckets from groups
       description: Read-only. Nullable. Collection of buckets in the plan.
-      operationId: groups.planner.plans.GetBuckets
+      operationId: group.planner.plan_GetBucket
       parameters:
         - name: $select
           in: query
@@ -385,7 +385,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property buckets in groups
-      operationId: groups.planner.plans.UpdateBuckets
+      operationId: group.planner.plan_UpdateBucket
       requestBody:
         description: New navigation property values
         content:
@@ -409,7 +409,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property buckets for groups
-      operationId: groups.planner.plans.DeleteBuckets
+      operationId: group.planner.plan_DeleteBucket
       parameters:
         - name: If-Match
           in: header
@@ -431,7 +431,7 @@ paths:
         - groups.plannerGroup
       summary: Get tasks from groups
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: groups.planner.plans.buckets.ListTasks
+      operationId: group.planner.plan.bucket_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -483,7 +483,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to tasks for groups
-      operationId: groups.planner.plans.buckets.CreateTasks
+      operationId: group.planner.plan.bucket_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -509,7 +509,7 @@ paths:
         - groups.plannerGroup
       summary: Get tasks from groups
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: groups.planner.plans.buckets.GetTasks
+      operationId: group.planner.plan.bucket_GetTask
       parameters:
         - name: $select
           in: query
@@ -547,7 +547,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property tasks in groups
-      operationId: groups.planner.plans.buckets.UpdateTasks
+      operationId: group.planner.plan.bucket_UpdateTask
       requestBody:
         description: New navigation property values
         content:
@@ -571,7 +571,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property tasks for groups
-      operationId: groups.planner.plans.buckets.DeleteTasks
+      operationId: group.planner.plan.bucket_DeleteTask
       parameters:
         - name: If-Match
           in: header
@@ -593,7 +593,7 @@ paths:
         - groups.plannerGroup
       summary: Get assignedToTaskBoardFormat from groups
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-      operationId: groups.planner.plans.buckets.tasks.GetAssignedToTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -631,7 +631,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property assignedToTaskBoardFormat in groups
-      operationId: groups.planner.plans.buckets.tasks.UpdateAssignedToTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -663,7 +663,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property assignedToTaskBoardFormat for groups
-      operationId: groups.planner.plans.buckets.tasks.DeleteAssignedToTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -685,7 +685,7 @@ paths:
         - groups.plannerGroup
       summary: Get bucketTaskBoardFormat from groups
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-      operationId: groups.planner.plans.buckets.tasks.GetBucketTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_GetBucketTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -723,7 +723,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property bucketTaskBoardFormat in groups
-      operationId: groups.planner.plans.buckets.tasks.UpdateBucketTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -755,7 +755,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property bucketTaskBoardFormat for groups
-      operationId: groups.planner.plans.buckets.tasks.DeleteBucketTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -777,7 +777,7 @@ paths:
         - groups.plannerGroup
       summary: Get details from groups
       description: Read-only. Nullable. More details about the task.
-      operationId: groups.planner.plans.buckets.tasks.GetDetails
+      operationId: group.planner.plan.bucket.task_GetDetail
       parameters:
         - name: $select
           in: query
@@ -815,7 +815,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property details in groups
-      operationId: groups.planner.plans.buckets.tasks.UpdateDetails
+      operationId: group.planner.plan.bucket.task_UpdateDetail
       parameters:
         - name: If-Match
           in: header
@@ -847,7 +847,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property details for groups
-      operationId: groups.planner.plans.buckets.tasks.DeleteDetails
+      operationId: group.planner.plan.bucket.task_DeleteDetail
       parameters:
         - name: If-Match
           in: header
@@ -869,7 +869,7 @@ paths:
         - groups.plannerGroup
       summary: Get progressTaskBoardFormat from groups
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-      operationId: groups.planner.plans.buckets.tasks.GetProgressTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_GetProgressTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -907,7 +907,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property progressTaskBoardFormat in groups
-      operationId: groups.planner.plans.buckets.tasks.UpdateProgressTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -939,7 +939,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property progressTaskBoardFormat for groups
-      operationId: groups.planner.plans.buckets.tasks.DeleteProgressTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -960,7 +960,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get the number of the resource
-      operationId: groups.planner.plans.buckets.tasks.GetCount-384e
+      operationId: group.planner.plan.bucket.task_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -976,7 +976,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get the number of the resource
-      operationId: groups.planner.plans.buckets.GetCount-66eb
+      operationId: group.planner.plan.bucket_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -993,7 +993,7 @@ paths:
         - groups.plannerGroup
       summary: Get details from groups
       description: Read-only. Nullable. Extra details about the plan.
-      operationId: groups.planner.plans.GetDetails
+      operationId: group.planner.plan_GetDetail
       parameters:
         - name: $select
           in: query
@@ -1031,7 +1031,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property details in groups
-      operationId: groups.planner.plans.UpdateDetails
+      operationId: group.planner.plan_UpdateDetail
       parameters:
         - name: If-Match
           in: header
@@ -1063,7 +1063,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property details for groups
-      operationId: groups.planner.plans.DeleteDetails
+      operationId: group.planner.plan_DeleteDetail
       parameters:
         - name: If-Match
           in: header
@@ -1085,7 +1085,7 @@ paths:
         - groups.plannerGroup
       summary: Get tasks from groups
       description: Read-only. Nullable. Collection of tasks in the plan.
-      operationId: groups.planner.plans.ListTasks
+      operationId: group.planner.plan_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1137,7 +1137,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to tasks for groups
-      operationId: groups.planner.plans.CreateTasks
+      operationId: group.planner.plan_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -1163,7 +1163,7 @@ paths:
         - groups.plannerGroup
       summary: Get tasks from groups
       description: Read-only. Nullable. Collection of tasks in the plan.
-      operationId: groups.planner.plans.GetTasks
+      operationId: group.planner.plan_GetTask
       parameters:
         - name: $select
           in: query
@@ -1201,7 +1201,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property tasks in groups
-      operationId: groups.planner.plans.UpdateTasks
+      operationId: group.planner.plan_UpdateTask
       requestBody:
         description: New navigation property values
         content:
@@ -1225,7 +1225,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property tasks for groups
-      operationId: groups.planner.plans.DeleteTasks
+      operationId: group.planner.plan_DeleteTask
       parameters:
         - name: If-Match
           in: header
@@ -1247,7 +1247,7 @@ paths:
         - groups.plannerGroup
       summary: Get assignedToTaskBoardFormat from groups
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-      operationId: groups.planner.plans.tasks.GetAssignedToTaskBoardFormat
+      operationId: group.planner.plan.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -1285,7 +1285,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property assignedToTaskBoardFormat in groups
-      operationId: groups.planner.plans.tasks.UpdateAssignedToTaskBoardFormat
+      operationId: group.planner.plan.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -1317,7 +1317,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property assignedToTaskBoardFormat for groups
-      operationId: groups.planner.plans.tasks.DeleteAssignedToTaskBoardFormat
+      operationId: group.planner.plan.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -1339,7 +1339,7 @@ paths:
         - groups.plannerGroup
       summary: Get bucketTaskBoardFormat from groups
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-      operationId: groups.planner.plans.tasks.GetBucketTaskBoardFormat
+      operationId: group.planner.plan.task_GetBucketTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -1377,7 +1377,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property bucketTaskBoardFormat in groups
-      operationId: groups.planner.plans.tasks.UpdateBucketTaskBoardFormat
+      operationId: group.planner.plan.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -1409,7 +1409,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property bucketTaskBoardFormat for groups
-      operationId: groups.planner.plans.tasks.DeleteBucketTaskBoardFormat
+      operationId: group.planner.plan.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -1431,7 +1431,7 @@ paths:
         - groups.plannerGroup
       summary: Get details from groups
       description: Read-only. Nullable. More details about the task.
-      operationId: groups.planner.plans.tasks.GetDetails
+      operationId: group.planner.plan.task_GetDetail
       parameters:
         - name: $select
           in: query
@@ -1469,7 +1469,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property details in groups
-      operationId: groups.planner.plans.tasks.UpdateDetails
+      operationId: group.planner.plan.task_UpdateDetail
       parameters:
         - name: If-Match
           in: header
@@ -1501,7 +1501,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property details for groups
-      operationId: groups.planner.plans.tasks.DeleteDetails
+      operationId: group.planner.plan.task_DeleteDetail
       parameters:
         - name: If-Match
           in: header
@@ -1523,7 +1523,7 @@ paths:
         - groups.plannerGroup
       summary: Get progressTaskBoardFormat from groups
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-      operationId: groups.planner.plans.tasks.GetProgressTaskBoardFormat
+      operationId: group.planner.plan.task_GetProgressTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -1561,7 +1561,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property progressTaskBoardFormat in groups
-      operationId: groups.planner.plans.tasks.UpdateProgressTaskBoardFormat
+      operationId: group.planner.plan.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -1593,7 +1593,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property progressTaskBoardFormat for groups
-      operationId: groups.planner.plans.tasks.DeleteProgressTaskBoardFormat
+      operationId: group.planner.plan.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -1614,7 +1614,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get the number of the resource
-      operationId: groups.planner.plans.tasks.GetCount-d84b
+      operationId: group.planner.plan.task_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1630,7 +1630,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get the number of the resource
-      operationId: groups.planner.plans.GetCount-dff1
+      operationId: group.planner.plan_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1646,7 +1646,7 @@ paths:
       tags:
         - planner.planner
       summary: Get planner
-      operationId: planner.planner.GetPlanner
+      operationId: planner_GetPlanner
       parameters:
         - name: $select
           in: query
@@ -1684,7 +1684,7 @@ paths:
       tags:
         - planner.planner
       summary: Update planner
-      operationId: planner.planner.UpdatePlanner
+      operationId: planner_UpdatePlanner
       requestBody:
         description: New property values
         content:
@@ -1713,7 +1713,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planner-list-buckets?view=graph-rest-1.0
-      operationId: planner.ListBuckets
+      operationId: planner_ListBucket
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1769,7 +1769,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planner-post-buckets?view=graph-rest-1.0
-      operationId: planner.CreateBuckets
+      operationId: planner_CreateBucket
       requestBody:
         description: New navigation property
         content:
@@ -1798,7 +1798,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbucket-get?view=graph-rest-1.0
-      operationId: planner.GetBuckets
+      operationId: planner_GetBucket
       parameters:
         - name: $select
           in: query
@@ -1840,7 +1840,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbucket-update?view=graph-rest-1.0
-      operationId: planner.UpdateBuckets
+      operationId: planner_UpdateBucket
       parameters:
         - name: If-Match
           in: header
@@ -1876,7 +1876,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbucket-delete?view=graph-rest-1.0
-      operationId: planner.DeleteBuckets
+      operationId: planner_DeleteBucket
       parameters:
         - name: If-Match
           in: header
@@ -1901,7 +1901,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
-      operationId: planner.buckets.ListTasks
+      operationId: planner.bucket_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1953,7 +1953,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Create new navigation property to tasks for planner
-      operationId: planner.buckets.CreateTasks
+      operationId: planner.bucket_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -1979,7 +1979,7 @@ paths:
         - planner.plannerBucket
       summary: Get tasks from planner
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: planner.buckets.GetTasks
+      operationId: planner.bucket_GetTask
       parameters:
         - name: $select
           in: query
@@ -2017,7 +2017,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property tasks in planner
-      operationId: planner.buckets.UpdateTasks
+      operationId: planner.bucket_UpdateTask
       requestBody:
         description: New navigation property values
         content:
@@ -2041,7 +2041,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property tasks for planner
-      operationId: planner.buckets.DeleteTasks
+      operationId: planner.bucket_DeleteTask
       parameters:
         - name: If-Match
           in: header
@@ -2063,7 +2063,7 @@ paths:
         - planner.plannerBucket
       summary: Get assignedToTaskBoardFormat from planner
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-      operationId: planner.buckets.tasks.GetAssignedToTaskBoardFormat
+      operationId: planner.bucket.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -2101,7 +2101,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property assignedToTaskBoardFormat in planner
-      operationId: planner.buckets.tasks.UpdateAssignedToTaskBoardFormat
+      operationId: planner.bucket.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -2133,7 +2133,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property assignedToTaskBoardFormat for planner
-      operationId: planner.buckets.tasks.DeleteAssignedToTaskBoardFormat
+      operationId: planner.bucket.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -2155,7 +2155,7 @@ paths:
         - planner.plannerBucket
       summary: Get bucketTaskBoardFormat from planner
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-      operationId: planner.buckets.tasks.GetBucketTaskBoardFormat
+      operationId: planner.bucket.task_GetBucketTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -2193,7 +2193,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property bucketTaskBoardFormat in planner
-      operationId: planner.buckets.tasks.UpdateBucketTaskBoardFormat
+      operationId: planner.bucket.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -2225,7 +2225,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property bucketTaskBoardFormat for planner
-      operationId: planner.buckets.tasks.DeleteBucketTaskBoardFormat
+      operationId: planner.bucket.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -2247,7 +2247,7 @@ paths:
         - planner.plannerBucket
       summary: Get details from planner
       description: Read-only. Nullable. More details about the task.
-      operationId: planner.buckets.tasks.GetDetails
+      operationId: planner.bucket.task_GetDetail
       parameters:
         - name: $select
           in: query
@@ -2285,7 +2285,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property details in planner
-      operationId: planner.buckets.tasks.UpdateDetails
+      operationId: planner.bucket.task_UpdateDetail
       parameters:
         - name: If-Match
           in: header
@@ -2317,7 +2317,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property details for planner
-      operationId: planner.buckets.tasks.DeleteDetails
+      operationId: planner.bucket.task_DeleteDetail
       parameters:
         - name: If-Match
           in: header
@@ -2339,7 +2339,7 @@ paths:
         - planner.plannerBucket
       summary: Get progressTaskBoardFormat from planner
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-      operationId: planner.buckets.tasks.GetProgressTaskBoardFormat
+      operationId: planner.bucket.task_GetProgressTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -2377,7 +2377,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property progressTaskBoardFormat in planner
-      operationId: planner.buckets.tasks.UpdateProgressTaskBoardFormat
+      operationId: planner.bucket.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -2409,7 +2409,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property progressTaskBoardFormat for planner
-      operationId: planner.buckets.tasks.DeleteProgressTaskBoardFormat
+      operationId: planner.bucket.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -2430,7 +2430,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get the number of the resource
-      operationId: planner.buckets.tasks.GetCount-145a
+      operationId: planner.bucket.task_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2446,7 +2446,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get the number of the resource
-      operationId: planner.buckets.GetCount-9ddb
+      operationId: planner.bucket_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -2466,7 +2466,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planner-list-plans?view=graph-rest-1.0
-      operationId: planner.ListPlans
+      operationId: planner_ListPlan
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2522,7 +2522,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planner-post-plans?view=graph-rest-1.0
-      operationId: planner.CreatePlans
+      operationId: planner_CreatePlan
       requestBody:
         description: New navigation property
         content:
@@ -2551,7 +2551,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-get?view=graph-rest-1.0
-      operationId: planner.GetPlans
+      operationId: planner_GetPlan
       parameters:
         - name: $select
           in: query
@@ -2593,7 +2593,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-update?view=graph-rest-1.0
-      operationId: planner.UpdatePlans
+      operationId: planner_UpdatePlan
       requestBody:
         description: New navigation property values
         content:
@@ -2621,7 +2621,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-delete?view=graph-rest-1.0
-      operationId: planner.DeletePlans
+      operationId: planner_DeletePlan
       parameters:
         - name: If-Match
           in: header
@@ -2646,7 +2646,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0
-      operationId: planner.plans.ListBuckets
+      operationId: planner.plan_ListBucket
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2698,7 +2698,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to buckets for planner
-      operationId: planner.plans.CreateBuckets
+      operationId: planner.plan_CreateBucket
       requestBody:
         description: New navigation property
         content:
@@ -2724,7 +2724,7 @@ paths:
         - planner.plannerPlan
       summary: Get buckets from planner
       description: Read-only. Nullable. Collection of buckets in the plan.
-      operationId: planner.plans.GetBuckets
+      operationId: planner.plan_GetBucket
       parameters:
         - name: $select
           in: query
@@ -2762,7 +2762,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property buckets in planner
-      operationId: planner.plans.UpdateBuckets
+      operationId: planner.plan_UpdateBucket
       requestBody:
         description: New navigation property values
         content:
@@ -2786,7 +2786,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property buckets for planner
-      operationId: planner.plans.DeleteBuckets
+      operationId: planner.plan_DeleteBucket
       parameters:
         - name: If-Match
           in: header
@@ -2808,7 +2808,7 @@ paths:
         - planner.plannerPlan
       summary: Get tasks from planner
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: planner.plans.buckets.ListTasks
+      operationId: planner.plan.bucket_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2860,7 +2860,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to tasks for planner
-      operationId: planner.plans.buckets.CreateTasks
+      operationId: planner.plan.bucket_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -2886,7 +2886,7 @@ paths:
         - planner.plannerPlan
       summary: Get tasks from planner
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: planner.plans.buckets.GetTasks
+      operationId: planner.plan.bucket_GetTask
       parameters:
         - name: $select
           in: query
@@ -2924,7 +2924,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property tasks in planner
-      operationId: planner.plans.buckets.UpdateTasks
+      operationId: planner.plan.bucket_UpdateTask
       requestBody:
         description: New navigation property values
         content:
@@ -2948,7 +2948,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property tasks for planner
-      operationId: planner.plans.buckets.DeleteTasks
+      operationId: planner.plan.bucket_DeleteTask
       parameters:
         - name: If-Match
           in: header
@@ -2970,7 +2970,7 @@ paths:
         - planner.plannerPlan
       summary: Get assignedToTaskBoardFormat from planner
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-      operationId: planner.plans.buckets.tasks.GetAssignedToTaskBoardFormat
+      operationId: planner.plan.bucket.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -3008,7 +3008,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property assignedToTaskBoardFormat in planner
-      operationId: planner.plans.buckets.tasks.UpdateAssignedToTaskBoardFormat
+      operationId: planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -3040,7 +3040,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property assignedToTaskBoardFormat for planner
-      operationId: planner.plans.buckets.tasks.DeleteAssignedToTaskBoardFormat
+      operationId: planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -3062,7 +3062,7 @@ paths:
         - planner.plannerPlan
       summary: Get bucketTaskBoardFormat from planner
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-      operationId: planner.plans.buckets.tasks.GetBucketTaskBoardFormat
+      operationId: planner.plan.bucket.task_GetBucketTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -3100,7 +3100,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property bucketTaskBoardFormat in planner
-      operationId: planner.plans.buckets.tasks.UpdateBucketTaskBoardFormat
+      operationId: planner.plan.bucket.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -3132,7 +3132,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property bucketTaskBoardFormat for planner
-      operationId: planner.plans.buckets.tasks.DeleteBucketTaskBoardFormat
+      operationId: planner.plan.bucket.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -3154,7 +3154,7 @@ paths:
         - planner.plannerPlan
       summary: Get details from planner
       description: Read-only. Nullable. More details about the task.
-      operationId: planner.plans.buckets.tasks.GetDetails
+      operationId: planner.plan.bucket.task_GetDetail
       parameters:
         - name: $select
           in: query
@@ -3192,7 +3192,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property details in planner
-      operationId: planner.plans.buckets.tasks.UpdateDetails
+      operationId: planner.plan.bucket.task_UpdateDetail
       parameters:
         - name: If-Match
           in: header
@@ -3224,7 +3224,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property details for planner
-      operationId: planner.plans.buckets.tasks.DeleteDetails
+      operationId: planner.plan.bucket.task_DeleteDetail
       parameters:
         - name: If-Match
           in: header
@@ -3246,7 +3246,7 @@ paths:
         - planner.plannerPlan
       summary: Get progressTaskBoardFormat from planner
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-      operationId: planner.plans.buckets.tasks.GetProgressTaskBoardFormat
+      operationId: planner.plan.bucket.task_GetProgressTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -3284,7 +3284,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property progressTaskBoardFormat in planner
-      operationId: planner.plans.buckets.tasks.UpdateProgressTaskBoardFormat
+      operationId: planner.plan.bucket.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -3316,7 +3316,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property progressTaskBoardFormat for planner
-      operationId: planner.plans.buckets.tasks.DeleteProgressTaskBoardFormat
+      operationId: planner.plan.bucket.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -3337,7 +3337,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get the number of the resource
-      operationId: planner.plans.buckets.tasks.GetCount-8a6a
+      operationId: planner.plan.bucket.task_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3353,7 +3353,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get the number of the resource
-      operationId: planner.plans.buckets.GetCount-240a
+      operationId: planner.plan.bucket_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -3373,7 +3373,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
-      operationId: planner.plans.GetDetails
+      operationId: planner.plan_GetDetail
       parameters:
         - name: $select
           in: query
@@ -3415,7 +3415,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplandetails-update?view=graph-rest-1.0
-      operationId: planner.plans.UpdateDetails
+      operationId: planner.plan_UpdateDetail
       parameters:
         - name: If-Match
           in: header
@@ -3447,7 +3447,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property details for planner
-      operationId: planner.plans.DeleteDetails
+      operationId: planner.plan_DeleteDetail
       parameters:
         - name: If-Match
           in: header
@@ -3472,7 +3472,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-1.0
-      operationId: planner.plans.ListTasks
+      operationId: planner.plan_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3524,7 +3524,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to tasks for planner
-      operationId: planner.plans.CreateTasks
+      operationId: planner.plan_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -3550,7 +3550,7 @@ paths:
         - planner.plannerPlan
       summary: Get tasks from planner
       description: Read-only. Nullable. Collection of tasks in the plan.
-      operationId: planner.plans.GetTasks
+      operationId: planner.plan_GetTask
       parameters:
         - name: $select
           in: query
@@ -3588,7 +3588,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property tasks in planner
-      operationId: planner.plans.UpdateTasks
+      operationId: planner.plan_UpdateTask
       requestBody:
         description: New navigation property values
         content:
@@ -3612,7 +3612,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property tasks for planner
-      operationId: planner.plans.DeleteTasks
+      operationId: planner.plan_DeleteTask
       parameters:
         - name: If-Match
           in: header
@@ -3634,7 +3634,7 @@ paths:
         - planner.plannerPlan
       summary: Get assignedToTaskBoardFormat from planner
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-      operationId: planner.plans.tasks.GetAssignedToTaskBoardFormat
+      operationId: planner.plan.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -3672,7 +3672,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property assignedToTaskBoardFormat in planner
-      operationId: planner.plans.tasks.UpdateAssignedToTaskBoardFormat
+      operationId: planner.plan.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -3704,7 +3704,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property assignedToTaskBoardFormat for planner
-      operationId: planner.plans.tasks.DeleteAssignedToTaskBoardFormat
+      operationId: planner.plan.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -3726,7 +3726,7 @@ paths:
         - planner.plannerPlan
       summary: Get bucketTaskBoardFormat from planner
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-      operationId: planner.plans.tasks.GetBucketTaskBoardFormat
+      operationId: planner.plan.task_GetBucketTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -3764,7 +3764,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property bucketTaskBoardFormat in planner
-      operationId: planner.plans.tasks.UpdateBucketTaskBoardFormat
+      operationId: planner.plan.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -3796,7 +3796,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property bucketTaskBoardFormat for planner
-      operationId: planner.plans.tasks.DeleteBucketTaskBoardFormat
+      operationId: planner.plan.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -3818,7 +3818,7 @@ paths:
         - planner.plannerPlan
       summary: Get details from planner
       description: Read-only. Nullable. More details about the task.
-      operationId: planner.plans.tasks.GetDetails
+      operationId: planner.plan.task_GetDetail
       parameters:
         - name: $select
           in: query
@@ -3856,7 +3856,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property details in planner
-      operationId: planner.plans.tasks.UpdateDetails
+      operationId: planner.plan.task_UpdateDetail
       parameters:
         - name: If-Match
           in: header
@@ -3888,7 +3888,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property details for planner
-      operationId: planner.plans.tasks.DeleteDetails
+      operationId: planner.plan.task_DeleteDetail
       parameters:
         - name: If-Match
           in: header
@@ -3910,7 +3910,7 @@ paths:
         - planner.plannerPlan
       summary: Get progressTaskBoardFormat from planner
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-      operationId: planner.plans.tasks.GetProgressTaskBoardFormat
+      operationId: planner.plan.task_GetProgressTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -3948,7 +3948,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property progressTaskBoardFormat in planner
-      operationId: planner.plans.tasks.UpdateProgressTaskBoardFormat
+      operationId: planner.plan.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -3980,7 +3980,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property progressTaskBoardFormat for planner
-      operationId: planner.plans.tasks.DeleteProgressTaskBoardFormat
+      operationId: planner.plan.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -4001,7 +4001,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get the number of the resource
-      operationId: planner.plans.tasks.GetCount-09d1
+      operationId: planner.plan.task_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4017,7 +4017,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get the number of the resource
-      operationId: planner.plans.GetCount-e322
+      operationId: planner.plan_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4037,7 +4037,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planner-list-tasks?view=graph-rest-1.0
-      operationId: planner.ListTasks
+      operationId: planner_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4093,7 +4093,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planner-post-tasks?view=graph-rest-1.0
-      operationId: planner.CreateTasks
+      operationId: planner_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -4122,7 +4122,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertask-get?view=graph-rest-1.0
-      operationId: planner.GetTasks
+      operationId: planner_GetTask
       parameters:
         - name: $select
           in: query
@@ -4164,7 +4164,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertask-update?view=graph-rest-1.0
-      operationId: planner.UpdateTasks
+      operationId: planner_UpdateTask
       parameters:
         - name: If-Match
           in: header
@@ -4200,7 +4200,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertask-delete?view=graph-rest-1.0
-      operationId: planner.DeleteTasks
+      operationId: planner_DeleteTask
       parameters:
         - name: If-Match
           in: header
@@ -4225,7 +4225,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.tasks.GetAssignedToTaskBoardFormat
+      operationId: planner.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -4267,7 +4267,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.tasks.UpdateAssignedToTaskBoardFormat
+      operationId: planner.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -4299,7 +4299,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property assignedToTaskBoardFormat for planner
-      operationId: planner.tasks.DeleteAssignedToTaskBoardFormat
+      operationId: planner.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -4324,7 +4324,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.tasks.GetBucketTaskBoardFormat
+      operationId: planner.task_GetBucketTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -4366,7 +4366,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.tasks.UpdateBucketTaskBoardFormat
+      operationId: planner.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -4398,7 +4398,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property bucketTaskBoardFormat for planner
-      operationId: planner.tasks.DeleteBucketTaskBoardFormat
+      operationId: planner.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -4423,7 +4423,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: planner.tasks.GetDetails
+      operationId: planner.task_GetDetail
       parameters:
         - name: $select
           in: query
@@ -4465,7 +4465,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: planner.tasks.UpdateDetails
+      operationId: planner.task_UpdateDetail
       parameters:
         - name: If-Match
           in: header
@@ -4497,7 +4497,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property details for planner
-      operationId: planner.tasks.DeleteDetails
+      operationId: planner.task_DeleteDetail
       parameters:
         - name: If-Match
           in: header
@@ -4522,7 +4522,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.tasks.GetProgressTaskBoardFormat
+      operationId: planner.task_GetProgressTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -4564,7 +4564,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.tasks.UpdateProgressTaskBoardFormat
+      operationId: planner.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -4596,7 +4596,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property progressTaskBoardFormat for planner
-      operationId: planner.tasks.DeleteProgressTaskBoardFormat
+      operationId: planner.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -4617,7 +4617,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get the number of the resource
-      operationId: planner.tasks.GetCount-bfd2
+      operationId: planner.task_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4634,7 +4634,7 @@ paths:
         - users.plannerUser
       summary: Get planner from users
       description: Entry-point to the Planner resource that might exist for a user. Read-only.
-      operationId: users.GetPlanner
+      operationId: user_GetPlanner
       parameters:
         - name: $select
           in: query
@@ -4672,7 +4672,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property planner in users
-      operationId: users.UpdatePlanner
+      operationId: user_UpdatePlanner
       parameters:
         - name: If-Match
           in: header
@@ -4704,7 +4704,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property planner for users
-      operationId: users.DeletePlanner
+      operationId: user_DeletePlanner
       parameters:
         - name: If-Match
           in: header
@@ -4726,7 +4726,7 @@ paths:
         - users.plannerUser
       summary: Get plans from users
       description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
-      operationId: users.planner.ListPlans
+      operationId: user.planner_ListPlan
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4778,7 +4778,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to plans for users
-      operationId: users.planner.CreatePlans
+      operationId: user.planner_CreatePlan
       requestBody:
         description: New navigation property
         content:
@@ -4804,7 +4804,7 @@ paths:
         - users.plannerUser
       summary: Get plans from users
       description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
-      operationId: users.planner.GetPlans
+      operationId: user.planner_GetPlan
       parameters:
         - name: $select
           in: query
@@ -4842,7 +4842,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property plans in users
-      operationId: users.planner.UpdatePlans
+      operationId: user.planner_UpdatePlan
       requestBody:
         description: New navigation property values
         content:
@@ -4866,7 +4866,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property plans for users
-      operationId: users.planner.DeletePlans
+      operationId: user.planner_DeletePlan
       parameters:
         - name: If-Match
           in: header
@@ -4888,7 +4888,7 @@ paths:
         - users.plannerUser
       summary: Get buckets from users
       description: Read-only. Nullable. Collection of buckets in the plan.
-      operationId: users.planner.plans.ListBuckets
+      operationId: user.planner.plan_ListBucket
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4940,7 +4940,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to buckets for users
-      operationId: users.planner.plans.CreateBuckets
+      operationId: user.planner.plan_CreateBucket
       requestBody:
         description: New navigation property
         content:
@@ -4966,7 +4966,7 @@ paths:
         - users.plannerUser
       summary: Get buckets from users
       description: Read-only. Nullable. Collection of buckets in the plan.
-      operationId: users.planner.plans.GetBuckets
+      operationId: user.planner.plan_GetBucket
       parameters:
         - name: $select
           in: query
@@ -5004,7 +5004,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property buckets in users
-      operationId: users.planner.plans.UpdateBuckets
+      operationId: user.planner.plan_UpdateBucket
       requestBody:
         description: New navigation property values
         content:
@@ -5028,7 +5028,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property buckets for users
-      operationId: users.planner.plans.DeleteBuckets
+      operationId: user.planner.plan_DeleteBucket
       parameters:
         - name: If-Match
           in: header
@@ -5050,7 +5050,7 @@ paths:
         - users.plannerUser
       summary: Get tasks from users
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: users.planner.plans.buckets.ListTasks
+      operationId: user.planner.plan.bucket_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5102,7 +5102,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      operationId: users.planner.plans.buckets.CreateTasks
+      operationId: user.planner.plan.bucket_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -5128,7 +5128,7 @@ paths:
         - users.plannerUser
       summary: Get tasks from users
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: users.planner.plans.buckets.GetTasks
+      operationId: user.planner.plan.bucket_GetTask
       parameters:
         - name: $select
           in: query
@@ -5166,7 +5166,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      operationId: users.planner.plans.buckets.UpdateTasks
+      operationId: user.planner.plan.bucket_UpdateTask
       requestBody:
         description: New navigation property values
         content:
@@ -5190,7 +5190,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      operationId: users.planner.plans.buckets.DeleteTasks
+      operationId: user.planner.plan.bucket_DeleteTask
       parameters:
         - name: If-Match
           in: header
@@ -5212,7 +5212,7 @@ paths:
         - users.plannerUser
       summary: Get assignedToTaskBoardFormat from users
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-      operationId: users.planner.plans.buckets.tasks.GetAssignedToTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -5250,7 +5250,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property assignedToTaskBoardFormat in users
-      operationId: users.planner.plans.buckets.tasks.UpdateAssignedToTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -5282,7 +5282,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property assignedToTaskBoardFormat for users
-      operationId: users.planner.plans.buckets.tasks.DeleteAssignedToTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -5304,7 +5304,7 @@ paths:
         - users.plannerUser
       summary: Get bucketTaskBoardFormat from users
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-      operationId: users.planner.plans.buckets.tasks.GetBucketTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_GetBucketTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -5342,7 +5342,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property bucketTaskBoardFormat in users
-      operationId: users.planner.plans.buckets.tasks.UpdateBucketTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -5374,7 +5374,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property bucketTaskBoardFormat for users
-      operationId: users.planner.plans.buckets.tasks.DeleteBucketTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -5396,7 +5396,7 @@ paths:
         - users.plannerUser
       summary: Get details from users
       description: Read-only. Nullable. More details about the task.
-      operationId: users.planner.plans.buckets.tasks.GetDetails
+      operationId: user.planner.plan.bucket.task_GetDetail
       parameters:
         - name: $select
           in: query
@@ -5434,7 +5434,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property details in users
-      operationId: users.planner.plans.buckets.tasks.UpdateDetails
+      operationId: user.planner.plan.bucket.task_UpdateDetail
       parameters:
         - name: If-Match
           in: header
@@ -5466,7 +5466,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      operationId: users.planner.plans.buckets.tasks.DeleteDetails
+      operationId: user.planner.plan.bucket.task_DeleteDetail
       parameters:
         - name: If-Match
           in: header
@@ -5488,7 +5488,7 @@ paths:
         - users.plannerUser
       summary: Get progressTaskBoardFormat from users
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-      operationId: users.planner.plans.buckets.tasks.GetProgressTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_GetProgressTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -5526,7 +5526,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property progressTaskBoardFormat in users
-      operationId: users.planner.plans.buckets.tasks.UpdateProgressTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -5558,7 +5558,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property progressTaskBoardFormat for users
-      operationId: users.planner.plans.buckets.tasks.DeleteProgressTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -5579,7 +5579,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get the number of the resource
-      operationId: users.planner.plans.buckets.tasks.GetCount-de1b
+      operationId: user.planner.plan.bucket.task_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5595,7 +5595,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get the number of the resource
-      operationId: users.planner.plans.buckets.GetCount-f7f0
+      operationId: user.planner.plan.bucket_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5612,7 +5612,7 @@ paths:
         - users.plannerUser
       summary: Get details from users
       description: Read-only. Nullable. Extra details about the plan.
-      operationId: users.planner.plans.GetDetails
+      operationId: user.planner.plan_GetDetail
       parameters:
         - name: $select
           in: query
@@ -5650,7 +5650,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property details in users
-      operationId: users.planner.plans.UpdateDetails
+      operationId: user.planner.plan_UpdateDetail
       parameters:
         - name: If-Match
           in: header
@@ -5682,7 +5682,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      operationId: users.planner.plans.DeleteDetails
+      operationId: user.planner.plan_DeleteDetail
       parameters:
         - name: If-Match
           in: header
@@ -5704,7 +5704,7 @@ paths:
         - users.plannerUser
       summary: Get tasks from users
       description: Read-only. Nullable. Collection of tasks in the plan.
-      operationId: users.planner.plans.ListTasks
+      operationId: user.planner.plan_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5756,7 +5756,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      operationId: users.planner.plans.CreateTasks
+      operationId: user.planner.plan_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -5782,7 +5782,7 @@ paths:
         - users.plannerUser
       summary: Get tasks from users
       description: Read-only. Nullable. Collection of tasks in the plan.
-      operationId: users.planner.plans.GetTasks
+      operationId: user.planner.plan_GetTask
       parameters:
         - name: $select
           in: query
@@ -5820,7 +5820,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      operationId: users.planner.plans.UpdateTasks
+      operationId: user.planner.plan_UpdateTask
       requestBody:
         description: New navigation property values
         content:
@@ -5844,7 +5844,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      operationId: users.planner.plans.DeleteTasks
+      operationId: user.planner.plan_DeleteTask
       parameters:
         - name: If-Match
           in: header
@@ -5866,7 +5866,7 @@ paths:
         - users.plannerUser
       summary: Get assignedToTaskBoardFormat from users
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-      operationId: users.planner.plans.tasks.GetAssignedToTaskBoardFormat
+      operationId: user.planner.plan.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -5904,7 +5904,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property assignedToTaskBoardFormat in users
-      operationId: users.planner.plans.tasks.UpdateAssignedToTaskBoardFormat
+      operationId: user.planner.plan.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -5936,7 +5936,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property assignedToTaskBoardFormat for users
-      operationId: users.planner.plans.tasks.DeleteAssignedToTaskBoardFormat
+      operationId: user.planner.plan.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -5958,7 +5958,7 @@ paths:
         - users.plannerUser
       summary: Get bucketTaskBoardFormat from users
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-      operationId: users.planner.plans.tasks.GetBucketTaskBoardFormat
+      operationId: user.planner.plan.task_GetBucketTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -5996,7 +5996,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property bucketTaskBoardFormat in users
-      operationId: users.planner.plans.tasks.UpdateBucketTaskBoardFormat
+      operationId: user.planner.plan.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -6028,7 +6028,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property bucketTaskBoardFormat for users
-      operationId: users.planner.plans.tasks.DeleteBucketTaskBoardFormat
+      operationId: user.planner.plan.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -6050,7 +6050,7 @@ paths:
         - users.plannerUser
       summary: Get details from users
       description: Read-only. Nullable. More details about the task.
-      operationId: users.planner.plans.tasks.GetDetails
+      operationId: user.planner.plan.task_GetDetail
       parameters:
         - name: $select
           in: query
@@ -6088,7 +6088,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property details in users
-      operationId: users.planner.plans.tasks.UpdateDetails
+      operationId: user.planner.plan.task_UpdateDetail
       parameters:
         - name: If-Match
           in: header
@@ -6120,7 +6120,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      operationId: users.planner.plans.tasks.DeleteDetails
+      operationId: user.planner.plan.task_DeleteDetail
       parameters:
         - name: If-Match
           in: header
@@ -6142,7 +6142,7 @@ paths:
         - users.plannerUser
       summary: Get progressTaskBoardFormat from users
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-      operationId: users.planner.plans.tasks.GetProgressTaskBoardFormat
+      operationId: user.planner.plan.task_GetProgressTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -6180,7 +6180,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property progressTaskBoardFormat in users
-      operationId: users.planner.plans.tasks.UpdateProgressTaskBoardFormat
+      operationId: user.planner.plan.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -6212,7 +6212,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property progressTaskBoardFormat for users
-      operationId: users.planner.plans.tasks.DeleteProgressTaskBoardFormat
+      operationId: user.planner.plan.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -6233,7 +6233,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get the number of the resource
-      operationId: users.planner.plans.tasks.GetCount-082b
+      operationId: user.planner.plan.task_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6249,7 +6249,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get the number of the resource
-      operationId: users.planner.plans.GetCount-b724
+      operationId: user.planner.plan_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -6266,7 +6266,7 @@ paths:
         - users.plannerUser
       summary: Get tasks from users
       description: Read-only. Nullable. Returns the plannerPlans shared with the user.
-      operationId: users.planner.ListTasks
+      operationId: user.planner_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6318,7 +6318,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      operationId: users.planner.CreateTasks
+      operationId: user.planner_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -6344,7 +6344,7 @@ paths:
         - users.plannerUser
       summary: Get tasks from users
       description: Read-only. Nullable. Returns the plannerPlans shared with the user.
-      operationId: users.planner.GetTasks
+      operationId: user.planner_GetTask
       parameters:
         - name: $select
           in: query
@@ -6382,7 +6382,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      operationId: users.planner.UpdateTasks
+      operationId: user.planner_UpdateTask
       requestBody:
         description: New navigation property values
         content:
@@ -6406,7 +6406,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      operationId: users.planner.DeleteTasks
+      operationId: user.planner_DeleteTask
       parameters:
         - name: If-Match
           in: header
@@ -6428,7 +6428,7 @@ paths:
         - users.plannerUser
       summary: Get assignedToTaskBoardFormat from users
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
-      operationId: users.planner.tasks.GetAssignedToTaskBoardFormat
+      operationId: user.planner.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -6466,7 +6466,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property assignedToTaskBoardFormat in users
-      operationId: users.planner.tasks.UpdateAssignedToTaskBoardFormat
+      operationId: user.planner.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -6498,7 +6498,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property assignedToTaskBoardFormat for users
-      operationId: users.planner.tasks.DeleteAssignedToTaskBoardFormat
+      operationId: user.planner.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -6520,7 +6520,7 @@ paths:
         - users.plannerUser
       summary: Get bucketTaskBoardFormat from users
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
-      operationId: users.planner.tasks.GetBucketTaskBoardFormat
+      operationId: user.planner.task_GetBucketTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -6558,7 +6558,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property bucketTaskBoardFormat in users
-      operationId: users.planner.tasks.UpdateBucketTaskBoardFormat
+      operationId: user.planner.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -6590,7 +6590,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property bucketTaskBoardFormat for users
-      operationId: users.planner.tasks.DeleteBucketTaskBoardFormat
+      operationId: user.planner.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -6612,7 +6612,7 @@ paths:
         - users.plannerUser
       summary: Get details from users
       description: Read-only. Nullable. More details about the task.
-      operationId: users.planner.tasks.GetDetails
+      operationId: user.planner.task_GetDetail
       parameters:
         - name: $select
           in: query
@@ -6650,7 +6650,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property details in users
-      operationId: users.planner.tasks.UpdateDetails
+      operationId: user.planner.task_UpdateDetail
       parameters:
         - name: If-Match
           in: header
@@ -6682,7 +6682,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      operationId: users.planner.tasks.DeleteDetails
+      operationId: user.planner.task_DeleteDetail
       parameters:
         - name: If-Match
           in: header
@@ -6704,7 +6704,7 @@ paths:
         - users.plannerUser
       summary: Get progressTaskBoardFormat from users
       description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
-      operationId: users.planner.tasks.GetProgressTaskBoardFormat
+      operationId: user.planner.task_GetProgressTaskBoardFormat
       parameters:
         - name: $select
           in: query
@@ -6742,7 +6742,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property progressTaskBoardFormat in users
-      operationId: users.planner.tasks.UpdateProgressTaskBoardFormat
+      operationId: user.planner.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -6774,7 +6774,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property progressTaskBoardFormat for users
-      operationId: users.planner.tasks.DeleteProgressTaskBoardFormat
+      operationId: user.planner.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: If-Match
           in: header
@@ -6795,7 +6795,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get the number of the resource
-      operationId: users.planner.tasks.GetCount-8740
+      operationId: user.planner.task_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -7332,6 +7332,7 @@ components:
           '#microsoft.graph.phoneAuthenticationMethod': '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
           '#microsoft.graph.platformCredentialAuthenticationMethod': '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
           '#microsoft.graph.qrCodePinAuthenticationMethod': '#/components/schemas/microsoft.graph.qrCodePinAuthenticationMethod'
+          '#microsoft.graph.resourceAccountKeyAuthenticationMethod': '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
           '#microsoft.graph.softwareOathAuthenticationMethod': '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
           '#microsoft.graph.temporaryAccessPassAuthenticationMethod': '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
           '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
@@ -7519,6 +7520,7 @@ components:
           '#microsoft.graph.onPasswordSubmitCustomExtension': '#/components/schemas/microsoft.graph.onPasswordSubmitCustomExtension'
           '#microsoft.graph.onTokenIssuanceStartCustomExtension': '#/components/schemas/microsoft.graph.onTokenIssuanceStartCustomExtension'
           '#microsoft.graph.onVerifiedIdClaimValidationCustomExtension': '#/components/schemas/microsoft.graph.onVerifiedIdClaimValidationCustomExtension'
+          '#microsoft.graph.roleManagementCustomCalloutExtension': '#/components/schemas/microsoft.graph.roleManagementCustomCalloutExtension'
           '#microsoft.graph.identityGovernance.customTaskExtension': '#/components/schemas/microsoft.graph.identityGovernance.customTaskExtension'
           '#microsoft.graph.customDataProvidedResourceFile': '#/components/schemas/microsoft.graph.customDataProvidedResourceFile'
           '#microsoft.graph.customDataProvidedResourceUploadSession': '#/components/schemas/microsoft.graph.customDataProvidedResourceUploadSession'
@@ -7787,6 +7789,9 @@ components:
           '#microsoft.graph.richLongRunningOperation': '#/components/schemas/microsoft.graph.richLongRunningOperation'
           '#microsoft.graph.m365AppsInstallationOptions': '#/components/schemas/microsoft.graph.m365AppsInstallationOptions'
           '#microsoft.graph.m365CapabilityBase': '#/components/schemas/microsoft.graph.m365CapabilityBase'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyDetail'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusyReviewer'
+          '#microsoft.graph.anonymousCalendarSharingFreeBusySimple': '#/components/schemas/microsoft.graph.anonymousCalendarSharingFreeBusySimple'
           '#microsoft.graph.crossTenantCalendarAvailabilityBasic': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityBasic'
           '#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails': '#/components/schemas/microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails'
           '#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail': '#/components/schemas/microsoft.graph.crossTenantCalendarSharingFreeBusyDetail'
@@ -8145,6 +8150,7 @@ components:
           '#microsoft.graph.unifiedRoleManagementPolicyRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyRule'
           '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyApprovalRule'
           '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule'
+          '#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule'
           '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyEnablementRule'
           '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
           '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyNotificationRule'

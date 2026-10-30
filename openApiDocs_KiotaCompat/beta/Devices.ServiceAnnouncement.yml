@@ -12,7 +12,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get serviceAnnouncement from admin
       description: A container for service communications resources. Read-only.
-      operationId: admin.GetServiceAnnouncement
+      operationId: admin_GetServiceAnnouncement
       parameters:
         - name: $select
           in: query
@@ -50,7 +50,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property serviceAnnouncement in admin
-      operationId: admin.UpdateServiceAnnouncement
+      operationId: admin_UpdateServiceAnnouncement
       requestBody:
         description: New navigation property values
         content:
@@ -74,7 +74,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property serviceAnnouncement for admin
-      operationId: admin.DeleteServiceAnnouncement
+      operationId: admin_DeleteServiceAnnouncement
       parameters:
         - name: If-Match
           in: header
@@ -99,7 +99,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-healthoverviews?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.ListHealthOverviews
+      operationId: admin.serviceAnnouncement_ListHealthOverview
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -151,7 +151,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to healthOverviews for admin
-      operationId: admin.serviceAnnouncement.CreateHealthOverviews
+      operationId: admin.serviceAnnouncement_CreateHealthOverview
       requestBody:
         description: New navigation property
         content:
@@ -180,7 +180,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealth-get?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.GetHealthOverviews
+      operationId: admin.serviceAnnouncement_GetHealthOverview
       parameters:
         - name: $select
           in: query
@@ -218,7 +218,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property healthOverviews in admin
-      operationId: admin.serviceAnnouncement.UpdateHealthOverviews
+      operationId: admin.serviceAnnouncement_UpdateHealthOverview
       requestBody:
         description: New navigation property values
         content:
@@ -242,7 +242,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property healthOverviews for admin
-      operationId: admin.serviceAnnouncement.DeleteHealthOverviews
+      operationId: admin.serviceAnnouncement_DeleteHealthOverview
       parameters:
         - name: If-Match
           in: header
@@ -264,7 +264,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get issues from admin
       description: 'A collection of issues that happened on the service, with detailed information for each issue.'
-      operationId: admin.serviceAnnouncement.healthOverviews.ListIssues
+      operationId: admin.serviceAnnouncement.healthOverview_ListIssue
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -316,7 +316,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to issues for admin
-      operationId: admin.serviceAnnouncement.healthOverviews.CreateIssues
+      operationId: admin.serviceAnnouncement.healthOverview_CreateIssue
       requestBody:
         description: New navigation property
         content:
@@ -342,7 +342,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Get issues from admin
       description: 'A collection of issues that happened on the service, with detailed information for each issue.'
-      operationId: admin.serviceAnnouncement.healthOverviews.GetIssues
+      operationId: admin.serviceAnnouncement.healthOverview_GetIssue
       parameters:
         - name: $select
           in: query
@@ -380,7 +380,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property issues in admin
-      operationId: admin.serviceAnnouncement.healthOverviews.UpdateIssues
+      operationId: admin.serviceAnnouncement.healthOverview_UpdateIssue
       requestBody:
         description: New navigation property values
         content:
@@ -404,7 +404,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property issues for admin
-      operationId: admin.serviceAnnouncement.healthOverviews.DeleteIssues
+      operationId: admin.serviceAnnouncement.healthOverview_DeleteIssue
       parameters:
         - name: If-Match
           in: header
@@ -429,7 +429,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.healthOverviews.serviceHealth.issues.serviceHealthIssue.incidentReport
+      operationId: admin.serviceAnnouncement.healthOverview.serviceHealth.issue.serviceHealthIssue_incidentReport
       responses:
         2XX:
           description: Success
@@ -452,7 +452,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get the number of the resource
-      operationId: admin.serviceAnnouncement.healthOverviews.issues.GetCount-fd80
+      operationId: admin.serviceAnnouncement.healthOverview.issue_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -468,7 +468,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get the number of the resource
-      operationId: admin.serviceAnnouncement.healthOverviews.GetCount-51c2
+      operationId: admin.serviceAnnouncement.healthOverview_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -488,7 +488,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.ListIssues
+      operationId: admin.serviceAnnouncement_ListIssue
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -540,7 +540,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to issues for admin
-      operationId: admin.serviceAnnouncement.CreateIssues
+      operationId: admin.serviceAnnouncement_CreateIssue
       requestBody:
         description: New navigation property
         content:
@@ -569,7 +569,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.GetIssues
+      operationId: admin.serviceAnnouncement_GetIssue
       parameters:
         - name: $select
           in: query
@@ -607,7 +607,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property issues in admin
-      operationId: admin.serviceAnnouncement.UpdateIssues
+      operationId: admin.serviceAnnouncement_UpdateIssue
       requestBody:
         description: New navigation property values
         content:
@@ -631,7 +631,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property issues for admin
-      operationId: admin.serviceAnnouncement.DeleteIssues
+      operationId: admin.serviceAnnouncement_DeleteIssue
       parameters:
         - name: If-Match
           in: header
@@ -656,7 +656,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.issues.serviceHealthIssue.incidentReport
+      operationId: admin.serviceAnnouncement.issue.serviceHealthIssue_incidentReport
       responses:
         2XX:
           description: Success
@@ -679,7 +679,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get the number of the resource
-      operationId: admin.serviceAnnouncement.issues.GetCount-e140
+      operationId: admin.serviceAnnouncement.issue_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -699,7 +699,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.ListMessages
+      operationId: admin.serviceAnnouncement_ListMessage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -751,7 +751,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to messages for admin
-      operationId: admin.serviceAnnouncement.CreateMessages
+      operationId: admin.serviceAnnouncement_CreateMessage
       requestBody:
         description: New navigation property
         content:
@@ -780,7 +780,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-get?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.GetMessages
+      operationId: admin.serviceAnnouncement_GetMessage
       parameters:
         - name: $select
           in: query
@@ -818,7 +818,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property messages in admin
-      operationId: admin.serviceAnnouncement.UpdateMessages
+      operationId: admin.serviceAnnouncement_UpdateMessage
       requestBody:
         description: New navigation property values
         content:
@@ -842,7 +842,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property messages for admin
-      operationId: admin.serviceAnnouncement.DeleteMessages
+      operationId: admin.serviceAnnouncement_DeleteMessage
       parameters:
         - name: If-Match
           in: header
@@ -867,7 +867,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.messages.ListAttachments
+      operationId: admin.serviceAnnouncement.message_ListAttachment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -919,7 +919,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Create new navigation property to attachments for admin
-      operationId: admin.serviceAnnouncement.messages.CreateAttachments
+      operationId: admin.serviceAnnouncement.message_CreateAttachment
       requestBody:
         description: New navigation property
         content:
@@ -948,7 +948,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.messages.GetAttachments
+      operationId: admin.serviceAnnouncement.message_GetAttachment
       parameters:
         - name: $select
           in: query
@@ -986,7 +986,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update the navigation property attachments in admin
-      operationId: admin.serviceAnnouncement.messages.UpdateAttachments
+      operationId: admin.serviceAnnouncement.message_UpdateAttachment
       requestBody:
         description: New navigation property values
         content:
@@ -1010,7 +1010,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Delete navigation property attachments for admin
-      operationId: admin.serviceAnnouncement.messages.DeleteAttachments
+      operationId: admin.serviceAnnouncement.message_DeleteAttachment
       parameters:
         - name: If-Match
           in: header
@@ -1035,7 +1035,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.messages.GetAttachmentsContent
+      operationId: admin.serviceAnnouncement.message_GetAttachmentsContent
       responses:
         2XX:
           description: Retrieved media content
@@ -1053,7 +1053,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Update content for the navigation property attachments in admin
       description: The attachment content.
-      operationId: admin.serviceAnnouncement.messages.UpdateAttachmentsContent
+      operationId: admin.serviceAnnouncement.message_SetAttachmentsContent
       requestBody:
         description: New media content.
         content:
@@ -1078,7 +1078,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Delete content for the navigation property attachments in admin
       description: The attachment content.
-      operationId: admin.serviceAnnouncement.messages.DeleteAttachmentsContent
+      operationId: admin.serviceAnnouncement.message_DeleteAttachmentsContent
       parameters:
         - name: If-Match
           in: header
@@ -1098,7 +1098,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get the number of the resource
-      operationId: admin.serviceAnnouncement.messages.attachments.GetCount-e0ef
+      operationId: admin.serviceAnnouncement.message.attachment_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1118,7 +1118,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.GetMessagesAttachmentsArchive
+      operationId: admin.serviceAnnouncement_GetMessagesAttachmentsArchive
       responses:
         2XX:
           description: Retrieved media content
@@ -1136,7 +1136,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Update attachmentsArchive for the navigation property messages in admin
       description: The zip file of all attachments for a message.
-      operationId: admin.serviceAnnouncement.UpdateMessagesAttachmentsArchive
+      operationId: admin.serviceAnnouncement_SetMessagesAttachmentsArchive
       requestBody:
         description: New media content.
         content:
@@ -1157,7 +1157,7 @@ paths:
         - admin.serviceAnnouncement
       summary: Delete attachmentsArchive for the navigation property messages in admin
       description: The zip file of all attachments for a message.
-      operationId: admin.serviceAnnouncement.DeleteMessagesAttachmentsArchive
+      operationId: admin.serviceAnnouncement_DeleteMessagesAttachmentsArchive
       parameters:
         - name: If-Match
           in: header
@@ -1177,7 +1177,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get the number of the resource
-      operationId: admin.serviceAnnouncement.messages.GetCount-0cc9
+      operationId: admin.serviceAnnouncement.message_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -1197,7 +1197,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.messages.archive
+      operationId: admin.serviceAnnouncement.message_archive
       requestBody:
         description: Action parameters
         content:
@@ -1237,7 +1237,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.messages.favorite
+      operationId: admin.serviceAnnouncement.message_favorite
       requestBody:
         description: Action parameters
         content:
@@ -1277,7 +1277,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.messages.markRead
+      operationId: admin.serviceAnnouncement.message_markRead
       requestBody:
         description: Action parameters
         content:
@@ -1317,7 +1317,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.messages.markUnread
+      operationId: admin.serviceAnnouncement.message_markUnread
       requestBody:
         description: Action parameters
         content:
@@ -1357,7 +1357,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.messages.unarchive
+      operationId: admin.serviceAnnouncement.message_unarchive
       requestBody:
         description: Action parameters
         content:
@@ -1397,7 +1397,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-beta
-      operationId: admin.serviceAnnouncement.messages.unfavorite
+      operationId: admin.serviceAnnouncement.message_unfavorite
       requestBody:
         description: Action parameters
         content:
@@ -1437,7 +1437,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
-      operationId: administrativeUnits.administrativeUnit.checkMemberGroups
+      operationId: administrativeUnit_checkMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -1478,7 +1478,7 @@ paths:
       tags:
         - administrativeUnits.administrativeUnit.Actions
       summary: Invoke action checkMemberObjects
-      operationId: administrativeUnits.administrativeUnit.checkMemberObjects
+      operationId: administrativeUnit_checkMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -1523,7 +1523,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta
-      operationId: administrativeUnits.administrativeUnit.getMemberGroups
+      operationId: administrativeUnit_getMemberGroup
       requestBody:
         description: Action parameters
         content:
@@ -1564,7 +1564,7 @@ paths:
       tags:
         - administrativeUnits.administrativeUnit.Actions
       summary: Invoke action getMemberObjects
-      operationId: administrativeUnits.administrativeUnit.getMemberObjects
+      operationId: administrativeUnit_getMemberObject
       requestBody:
         description: Action parameters
         content:
@@ -1609,7 +1609,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-beta
-      operationId: administrativeUnits.administrativeUnit.restore
+      operationId: administrativeUnit_restore
       responses:
         2XX:
           description: Success
@@ -1634,7 +1634,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/administrativeunit-delta?view=graph-rest-beta
-      operationId: administrativeUnits.delta
+      operationId: administrativeUnit_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1704,7 +1704,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-beta
-      operationId: administrativeUnits.getByIds
+      operationId: administrativeUnit_getGraphBPreId
       requestBody:
         description: Action parameters
         content:
@@ -1755,7 +1755,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-beta
-      operationId: administrativeUnits.getUserOwnedObjects
+      operationId: administrativeUnit_getUserOwnedObject
       requestBody:
         description: Action parameters
         content:
@@ -1794,7 +1794,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-beta
-      operationId: administrativeUnits.validateProperties
+      operationId: administrativeUnit_validateProperty
       requestBody:
         description: Action parameters
         content:
@@ -2555,6 +2555,7 @@ components:
           '#microsoft.graph.cloudPcServicePlan': '#/components/schemas/microsoft.graph.cloudPcServicePlan'
           '#microsoft.graph.cloudPcSnapshot': '#/components/schemas/microsoft.graph.cloudPcSnapshot'
           '#microsoft.graph.cloudPcSupportedRegion': '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+          '#microsoft.graph.cloudPcUserProfileSnapshot': '#/components/schemas/microsoft.graph.cloudPcUserProfileSnapshot'
           '#microsoft.graph.cloudPcUserSetting': '#/components/schemas/microsoft.graph.cloudPcUserSetting'
           '#microsoft.graph.cloudPcUserSettingAssignment': '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
           '#microsoft.graph.cloudPCUserSettingsPersistenceDetail': '#/components/schemas/microsoft.graph.cloudPCUserSettingsPersistenceDetail'
@@ -2634,6 +2635,9 @@ components:
           '#microsoft.graph.copilotSetting': '#/components/schemas/microsoft.graph.copilotSetting'
           '#microsoft.graph.correlatedIdentity': '#/components/schemas/microsoft.graph.correlatedIdentity'
           '#microsoft.graph.corsConfiguration_v2': '#/components/schemas/microsoft.graph.corsConfiguration_v2'
+          '#microsoft.graph.costManagementAlertSetting': '#/components/schemas/microsoft.graph.costManagementAlertSetting'
+          '#microsoft.graph.costManagementRoot': '#/components/schemas/microsoft.graph.costManagementRoot'
+          '#microsoft.graph.costManagementUserBalance': '#/components/schemas/microsoft.graph.costManagementUserBalance'
           '#microsoft.graph.credentialUsageSummary': '#/components/schemas/microsoft.graph.credentialUsageSummary'
           '#microsoft.graph.credentialUserRegistrationCount': '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
           '#microsoft.graph.credentialUserRegistrationDetails': '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
@@ -2962,6 +2966,7 @@ components:
           '#microsoft.graph.deviceShellScript': '#/components/schemas/microsoft.graph.deviceShellScript'
           '#microsoft.graph.directory': '#/components/schemas/microsoft.graph.directory'
           '#microsoft.graph.directoryAudit': '#/components/schemas/microsoft.graph.directoryAudit'
+          '#microsoft.graph.appManagementAudit': '#/components/schemas/microsoft.graph.appManagementAudit'
           '#microsoft.graph.directoryDefinition': '#/components/schemas/microsoft.graph.directoryDefinition'
           '#microsoft.graph.directoryObject': '#/components/schemas/microsoft.graph.directoryObject'
           '#microsoft.graph.administrativeUnit': '#/components/schemas/microsoft.graph.administrativeUnit'
@@ -3020,6 +3025,7 @@ components:
           '#microsoft.graph.user': '#/components/schemas/microsoft.graph.user'
           '#microsoft.graph.agentUser': '#/components/schemas/microsoft.graph.agentUser'
           '#microsoft.graph.directoryRoleAccessReviewPolicy': '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
+          '#microsoft.graph.directoryRoleManagementDeletedItemContainer': '#/components/schemas/microsoft.graph.directoryRoleManagementDeletedItemContainer'
           '#microsoft.graph.directorySetting': '#/components/schemas/microsoft.graph.directorySetting'
           '#microsoft.graph.distributionListMember': '#/components/schemas/microsoft.graph.distributionListMember'
           '#microsoft.graph.document': '#/components/schemas/microsoft.graph.document'
@@ -3607,9 +3613,22 @@ components:
           '#microsoft.graph.placeOperation': '#/components/schemas/microsoft.graph.placeOperation'
           '#microsoft.graph.planner': '#/components/schemas/microsoft.graph.planner'
           '#microsoft.graph.plannerDelta': '#/components/schemas/microsoft.graph.plannerDelta'
+          '#microsoft.graph.bucket': '#/components/schemas/microsoft.graph.bucket'
+          '#microsoft.graph.categoryDefinition': '#/components/schemas/microsoft.graph.categoryDefinition'
+          '#microsoft.graph.checklistItemV4': '#/components/schemas/microsoft.graph.checklistItemV4'
+          '#microsoft.graph.contentLink': '#/components/schemas/microsoft.graph.contentLink'
+          '#microsoft.graph.customChoiceOption': '#/components/schemas/microsoft.graph.customChoiceOption'
+          '#microsoft.graph.customFieldDefinition': '#/components/schemas/microsoft.graph.customFieldDefinition'
+          '#microsoft.graph.customFieldValue': '#/components/schemas/microsoft.graph.customFieldValue'
+          '#microsoft.graph.dependency': '#/components/schemas/microsoft.graph.dependency'
+          '#microsoft.graph.goal': '#/components/schemas/microsoft.graph.goal'
+          '#microsoft.graph.historyItem': '#/components/schemas/microsoft.graph.historyItem'
+          '#microsoft.graph.plan': '#/components/schemas/microsoft.graph.plan'
+          '#microsoft.graph.planContextLink': '#/components/schemas/microsoft.graph.planContextLink'
           '#microsoft.graph.plannerAssignedToTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
           '#microsoft.graph.plannerBucket': '#/components/schemas/microsoft.graph.plannerBucket'
           '#microsoft.graph.plannerBucketTaskBoardTaskFormat': '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+          '#microsoft.graph.plannerChatMessage': '#/components/schemas/microsoft.graph.plannerChatMessage'
           '#microsoft.graph.plannerGoal': '#/components/schemas/microsoft.graph.plannerGoal'
           '#microsoft.graph.plannerHistoryItem': '#/components/schemas/microsoft.graph.plannerHistoryItem'
           '#microsoft.graph.taskHistoryItem': '#/components/schemas/microsoft.graph.taskHistoryItem'
@@ -3620,6 +3639,8 @@ components:
           '#microsoft.graph.businessScenarioTask': '#/components/schemas/microsoft.graph.businessScenarioTask'
           '#microsoft.graph.plannerTaskDetails': '#/components/schemas/microsoft.graph.plannerTaskDetails'
           '#microsoft.graph.plannerUser': '#/components/schemas/microsoft.graph.plannerUser'
+          '#microsoft.graph.task': '#/components/schemas/microsoft.graph.task'
+          '#microsoft.graph.userAssignment': '#/components/schemas/microsoft.graph.userAssignment'
           '#microsoft.graph.plannerGroup': '#/components/schemas/microsoft.graph.plannerGroup'
           '#microsoft.graph.plannerPlanConfiguration': '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
           '#microsoft.graph.plannerPlanConfigurationLocalization': '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
@@ -3696,6 +3717,7 @@ components:
           '#microsoft.graph.programControlType': '#/components/schemas/microsoft.graph.programControlType'
           '#microsoft.graph.pronounsSettings': '#/components/schemas/microsoft.graph.pronounsSettings'
           '#microsoft.graph.protectionPolicyBase': '#/components/schemas/microsoft.graph.protectionPolicyBase'
+          '#microsoft.graph.entraProtectionPolicy': '#/components/schemas/microsoft.graph.entraProtectionPolicy'
           '#microsoft.graph.exchangeProtectionPolicy': '#/components/schemas/microsoft.graph.exchangeProtectionPolicy'
           '#microsoft.graph.oneDriveForBusinessProtectionPolicy': '#/components/schemas/microsoft.graph.oneDriveForBusinessProtectionPolicy'
           '#microsoft.graph.sharePointProtectionPolicy': '#/components/schemas/microsoft.graph.sharePointProtectionPolicy'
@@ -3853,6 +3875,9 @@ components:
           '#microsoft.graph.singleValueLegacyExtendedProperty': '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
           '#microsoft.graph.softwareUpdateStatusSummary': '#/components/schemas/microsoft.graph.softwareUpdateStatusSummary'
           '#microsoft.graph.speakerAssignmentSubmission': '#/components/schemas/microsoft.graph.speakerAssignmentSubmission'
+          '#microsoft.graph.spendingPolicy': '#/components/schemas/microsoft.graph.spendingPolicy'
+          '#microsoft.graph.allUsersSpendingPolicy': '#/components/schemas/microsoft.graph.allUsersSpendingPolicy'
+          '#microsoft.graph.selectedGroupsSpendingPolicy': '#/components/schemas/microsoft.graph.selectedGroupsSpendingPolicy'
           '#microsoft.graph.storageQuotaBreakdown': '#/components/schemas/microsoft.graph.storageQuotaBreakdown'
           '#microsoft.graph.serviceStorageQuotaBreakdown': '#/components/schemas/microsoft.graph.serviceStorageQuotaBreakdown'
           '#microsoft.graph.storageSettings': '#/components/schemas/microsoft.graph.storageSettings'
@@ -3892,6 +3917,7 @@ components:
           '#microsoft.graph.teamTemplateDefinition': '#/components/schemas/microsoft.graph.teamTemplateDefinition'
           '#microsoft.graph.teamwork': '#/components/schemas/microsoft.graph.teamwork'
           '#microsoft.graph.teamworkBot': '#/components/schemas/microsoft.graph.teamworkBot'
+          '#microsoft.graph.teamworkCustomEmoji': '#/components/schemas/microsoft.graph.teamworkCustomEmoji'
           '#microsoft.graph.teamworkDevice': '#/components/schemas/microsoft.graph.teamworkDevice'
           '#microsoft.graph.teamworkDeviceActivity': '#/components/schemas/microsoft.graph.teamworkDeviceActivity'
           '#microsoft.graph.teamworkDeviceConfiguration': '#/components/schemas/microsoft.graph.teamworkDeviceConfiguration'
@@ -4227,8 +4253,26 @@ components:
           '#microsoft.graph.healthMonitoring.alert': '#/components/schemas/microsoft.graph.healthMonitoring.alert'
           '#microsoft.graph.healthMonitoring.alertConfiguration': '#/components/schemas/microsoft.graph.healthMonitoring.alertConfiguration'
           '#microsoft.graph.healthMonitoring.healthMonitoringRoot': '#/components/schemas/microsoft.graph.healthMonitoring.healthMonitoringRoot'
+          '#microsoft.graph.identityGovernance.complianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+          '#microsoft.graph.identityGovernance.attestationComplianceIssue': '#/components/schemas/microsoft.graph.identityGovernance.attestationComplianceIssue'
+          '#microsoft.graph.identityGovernance.identityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecycle'
+          '#microsoft.graph.identityGovernance.userIdentityLifecycle': '#/components/schemas/microsoft.graph.identityGovernance.userIdentityLifecycle'
           '#microsoft.graph.identityGovernance.insights': '#/components/schemas/microsoft.graph.identityGovernance.insights'
           '#microsoft.graph.identityGovernance.lifecycleManagementSettings': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleManagementSettings'
+          '#microsoft.graph.identityGovernance.lifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          '#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.guestLifecyclePolicy': '#/components/schemas/microsoft.graph.identityGovernance.guestLifecyclePolicy'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyImpactSummary'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyPriorityConfiguration'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyReport'
+          '#microsoft.graph.identityGovernance.lifecyclePolicyRule': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+          '#microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule': '#/components/schemas/microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule'
+          '#microsoft.graph.identityGovernance.inactivityRule': '#/components/schemas/microsoft.graph.identityGovernance.inactivityRule'
+          '#microsoft.graph.identityGovernance.invitationRedemptionRule': '#/components/schemas/microsoft.graph.identityGovernance.invitationRedemptionRule'
+          '#microsoft.graph.identityGovernance.periodicAttestationRule': '#/components/schemas/microsoft.graph.identityGovernance.periodicAttestationRule'
+          '#microsoft.graph.identityGovernance.sponsorPresenceRule': '#/components/schemas/microsoft.graph.identityGovernance.sponsorPresenceRule'
+          '#microsoft.graph.identityGovernance.lifecyclePolicySubjectReport': '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectReport'
           '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer': '#/components/schemas/microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'
           '#microsoft.graph.identityGovernance.run': '#/components/schemas/microsoft.graph.identityGovernance.run'
           '#microsoft.graph.identityGovernance.subjectProcessingResult': '#/components/schemas/microsoft.graph.identityGovernance.subjectProcessingResult'
@@ -4358,7 +4402,9 @@ components:
           '#microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement'
           '#microsoft.graph.partner.security.responseTimeSecurityRequirement': '#/components/schemas/microsoft.graph.partner.security.responseTimeSecurityRequirement'
           '#microsoft.graph.partner.security.securityScoreHistory': '#/components/schemas/microsoft.graph.partner.security.securityScoreHistory'
+          '#microsoft.graph.partners.billing.azureAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.azureAggregatedUsage'
           '#microsoft.graph.partners.billing.azureUsage': '#/components/schemas/microsoft.graph.partners.billing.azureUsage'
+          '#microsoft.graph.partners.billing.billedAggregatedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedAggregatedUsage'
           '#microsoft.graph.partners.billing.billedReconciliation': '#/components/schemas/microsoft.graph.partners.billing.billedReconciliation'
           '#microsoft.graph.partners.billing.billedUsage': '#/components/schemas/microsoft.graph.partners.billing.billedUsage'
           '#microsoft.graph.partners.billing.billing': '#/components/schemas/microsoft.graph.partners.billing.billing'
@@ -4492,6 +4538,7 @@ components:
           '#microsoft.graph.security.whoisBaseRecord': '#/components/schemas/microsoft.graph.security.whoisBaseRecord'
           '#microsoft.graph.security.whoisHistoryRecord': '#/components/schemas/microsoft.graph.security.whoisHistoryRecord'
           '#microsoft.graph.security.whoisRecord': '#/components/schemas/microsoft.graph.security.whoisRecord'
+          '#microsoft.graph.security.workbook': '#/components/schemas/microsoft.graph.security.workbook'
           '#microsoft.graph.security.zone': '#/components/schemas/microsoft.graph.security.zone'
           '#microsoft.graph.security.caseManagement.caseManagementEntity': '#/components/schemas/microsoft.graph.security.caseManagement.caseManagementEntity'
           '#microsoft.graph.security.caseManagement.activity': '#/components/schemas/microsoft.graph.security.caseManagement.activity'
@@ -4855,6 +4902,7 @@ components:
       discriminator:
         propertyName: '@odata.type'
         mapping:
+          '#microsoft.graph.applicationIdentity': '#/components/schemas/microsoft.graph.applicationIdentity'
           '#microsoft.graph.azureCommunicationServicesUserIdentity': '#/components/schemas/microsoft.graph.azureCommunicationServicesUserIdentity'
           '#microsoft.graph.communicationsApplicationIdentity': '#/components/schemas/microsoft.graph.communicationsApplicationIdentity'
           '#microsoft.graph.communicationsApplicationInstanceIdentity': '#/components/schemas/microsoft.graph.communicationsApplicationInstanceIdentity'
