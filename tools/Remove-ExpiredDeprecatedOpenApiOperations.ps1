@@ -49,6 +49,7 @@ function Read-TextFile {
 function Get-RemovalDate {
     param(
         [Parameter(Mandatory = $true)]
+        [AllowEmptyString()]
         [string[]] $Lines,
 
         [Parameter(Mandatory = $true)]
@@ -121,6 +122,7 @@ function Get-RemovalDate {
 function Remove-LineRanges {
     param(
         [Parameter(Mandatory = $true)]
+        [AllowEmptyString()]
         [string[]] $Lines,
 
         [Parameter(Mandatory = $true)]
