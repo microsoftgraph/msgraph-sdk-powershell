@@ -22,7 +22,7 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses, file metadata for files, and content activity metadata for enforcement result status entries. Required.</summary>
+        /// <summary>A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. For the ContentActivity API only, use content activity metadata for DLP enforcement results or evaluation incomplete activity metadata when policy evaluation couldn&apos;t be completed. The ContentActivity-specific types aren&apos;t supported by the processContent or processContentAsync APIs. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Teams.Client.Models.ProcessContentMetadataBase>? ContentEntries { get; set; }

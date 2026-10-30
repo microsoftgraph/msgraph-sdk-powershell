@@ -36,13 +36,13 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The unique identifier of the distribution list in the mailbox. Read-only.</summary>
+        /// <summary>The personId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonIdentifier { get; set; }
+        public string? PersonId { get; set; }
 #nullable restore
 #else
-        public string PersonIdentifier { get; set; }
+        public string PersonId { get; set; }
 #endif
         /// <summary>The collection of single-value extended properties defined for the distribution list. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Teams.Client.Models.DistributionListMember>(global::Microsoft.Graph.PowerShell.Teams.Client.Models.DistributionListMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
-                { "personIdentifier", n => { PersonIdentifier = n.GetStringValue(); } },
+                { "personId", n => { PersonId = n.GetStringValue(); } },
                 { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Teams.Client.Models.SingleValueLegacyExtendedProperty>(global::Microsoft.Graph.PowerShell.Teams.Client.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Teams.Client.Models.DistributionListMember>("members", Members);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteStringValue("personIdentifier", PersonIdentifier);
+            writer.WriteStringValue("personId", PersonId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Teams.Client.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
         }
     }

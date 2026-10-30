@@ -10,12 +10,12 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Teams
 {
-    [GraphRoute("DELETE", "/teamwork/messaging/customEmojis/{teamworkCustomEmoji-displayName}")]
+    [GraphRoute("DELETE", "/teamwork/messaging/customEmojis/{teamworkCustomEmoji-id}")]
     [Cmdlet(VerbsCommon.Remove, "MgTeamworkMessagingCustomEmojis", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     public class RemoveMgTeamworkMessagingCustomEmojisCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
-        public string TeamworkCustomEmojiDisplayName { get; set; } = string.Empty;
+        public string TeamworkCustomEmojiId { get; set; } = string.Empty;
 
 
         [Parameter(Mandatory = false,
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.PowerShell.Teams
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(TeamworkCustomEmojiDisplayName, "Remove"))
+            if (!ShouldProcess(TeamworkCustomEmojiId, "Remove"))
                 return;
 
         var requestAdapter = GetRequestAdapter();
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.Teams
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                client.Teamwork.Messaging.CustomEmojis[TeamworkCustomEmojiDisplayName].DeleteAsync(requestConfiguration =>
+                client.Teamwork.Messaging.CustomEmojis[TeamworkCustomEmojiId].DeleteAsync(requestConfiguration =>
                 {
 
                         if (this.IsParameterBound(nameof(IfMatch)))
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.PowerShell.Teams
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, TeamworkCustomEmojiDisplayName);
+                ThrowGraphRequestFailed(ex, TeamworkCustomEmojiId);
                 return;
             }
         }

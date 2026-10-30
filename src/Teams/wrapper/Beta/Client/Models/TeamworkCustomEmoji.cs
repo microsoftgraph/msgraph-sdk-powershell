@@ -9,11 +9,9 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TeamworkCustomEmoji : IAdditionalDataHolder, IParsable
+    public partial class TeamworkCustomEmoji : global::Microsoft.Graph.PowerShell.Teams.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The base64-encoded image content of the emoji. Supported formats include PNG and GIF.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,27 +38,12 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Models
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The OdataType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OdataType { get; set; }
-#nullable restore
-#else
-        public string OdataType { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkCustomEmoji"/> and sets the default values.
-        /// </summary>
-        public TeamworkCustomEmoji()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkCustomEmoji"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkCustomEmoji CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkCustomEmoji CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkCustomEmoji();
@@ -69,30 +52,28 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "contentBytes", n => { ContentBytes = n.GetStringValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.PowerShell.Teams.Client.Models.CustomEmojiFromIdentitySet>(global::Microsoft.Graph.PowerShell.Teams.Client.Models.CustomEmojiFromIdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
             writer.WriteStringValue("contentBytes", ContentBytes);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.Teams.Client.Models.CustomEmojiFromIdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
