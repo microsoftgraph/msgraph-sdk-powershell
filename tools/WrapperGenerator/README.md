@@ -380,6 +380,23 @@ The generated cmdlets **are** compiled: `Build-WrapperModule.ps1` builds each mo
 
 ## Migrate module AutoRest directives
 
+Curated entries in `src/<Module>/wrapper/<Module>_cmdletConfigurations.cs` apply to whichever
+module/profile ingests them. Neither `GeneratorConfig`, curated entries nor variant groups
+take an API version; do not duplicate a shared definition for v1.0 and beta. Rules act only
+on matching input operations. The run's `--api-version` still selects the correct embedded
+oracle-derived data through the generation service, independently of authored rules.
+`SuppressOperation` prevents cmdlet emission, not Kiota HTTP client generation or OpenAPI
+input retention; Bookings uses shared exact-path rules for its retired root-level routes
+while preserving `/solutions/...` cmdlets.
+
+`CmdletConfigurator` owns the variant records and registrations. For compatible parameter-set
+variants, use `GroupVariants(new OperationVariantGroup(...))` in the module's configuration
+array; do not pass operation groups through `GeneratorConfig`, which holds only run settings.
+[`OperationVariant` parameter documentation and examples](docs/edge-cases/crosspath-merge-edge-cases.md#exact-reviewed-configuration)
+explain exact methods/paths, maintainer-chosen `FamilyName` labels, and `DefaultFamily`.
+One shared list/item/parent definition can produce `Get-MgWidget`, `Get-MgWidget -WidgetId`
+and `Get-MgWidget -ParentId` without a route selector.
+
 Cmdlet removals and renames in the shared `src/<Module>/<Module>.md` file are migrated one
 module at a time. Profile-specific directives (including `src/<Module>/beta/readme.md` and
 `src/<Module>/v1.0/readme.md`) and all directives in `src/readme.graph.md` are explicitly out
