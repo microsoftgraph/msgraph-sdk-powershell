@@ -60,13 +60,17 @@ public sealed class PeopleDirectiveMigrationTests
                 op.GetProperty("path").GetString() == old.Path);
             Assert.Equal(old.Id, original.GetProperty("operationId").GetString());
             Assert.Equal(current.Id, original.GetProperty("compatibleOperationId").GetString());
-            Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(current.Method), current.Path, Config(profile)));
+            foreach (var useCollisionData in new[] { false, true })
+                Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(current.Method), current.Path,
+                    Config(useCollisionData), apiVersion: profile));
         }
 
         Assert.All(literal, current =>
             Assert.Single(selected, old => old.Method == current.Method && old.Path == current.Path));
-        Assert.Equal(count, compatible.Count(op =>
-            CmdletConfigurator.IsSuppressed(new HttpMethod(op.Method), op.Path, Config(profile))));
+        foreach (var useCollisionData in new[] { false, true })
+            Assert.Equal(count, compatible.Count(op =>
+                CmdletConfigurator.IsSuppressed(new HttpMethod(op.Method), op.Path,
+                    Config(useCollisionData), apiVersion: profile)));
     }
 
     [Theory]
@@ -91,9 +95,9 @@ public sealed class PeopleDirectiveMigrationTests
         Assert.Equal(current.Id, reviewed.GetProperty("operationId").GetString());
         foreach (var useCollisionData in new[] { false, true })
         {
-            var config = new GeneratorConfig("Test.Client", "unused", "beta", useCollisionData);
-            Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, config));
-            var naming = Naming.Resolve(new OperationInfo(new HttpMethod(method), path), config);
+            var config = Config(useCollisionData);
+            Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, config, apiVersion: "beta"));
+            var naming = Naming.Resolve(new OperationInfo(new HttpMethod(method), path), config, apiVersion: "beta");
             Assert.Equal("MgUserActivityStatistics", naming.Noun);
             Assert.Equal(verb, naming.VerbName);
             Assert.Equal(path, naming.SourcePath);
@@ -116,12 +120,15 @@ public sealed class PeopleDirectiveMigrationTests
     {
         Assert.Single(ReadOperations("openApiDocs_KiotaCompat", profile),
             op => op.Method == method && op.Path == path);
-        var config = Config(profile);
-        Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, config));
-        var naming = Naming.Resolve(new OperationInfo(new HttpMethod(method), path), config);
-        Assert.Equal(noun, naming.Noun);
-        Assert.Equal(path, naming.SourcePath);
-        Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(new HttpMethod(method), path, config));
+        foreach (var useCollisionData in new[] { false, true })
+        {
+            var config = Config(useCollisionData);
+            Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, config, apiVersion: profile));
+            var naming = Naming.Resolve(new OperationInfo(new HttpMethod(method), path), config, apiVersion: profile);
+            Assert.Equal(noun, naming.Noun);
+            Assert.Equal(path, naming.SourcePath);
+            Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(new HttpMethod(method), path, config, apiVersion: profile));
+        }
     }
 
     [Theory]
@@ -142,15 +149,19 @@ public sealed class PeopleDirectiveMigrationTests
     [Fact]
     public void ExactOverridesDoNotBroadenToOtherMethodsOrDescendants()
     {
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, Analytics, Config("beta")));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, Statistics + "/child", Config("beta")));
-        Assert.Equal("Original", CmdletConfigurator.ApplyNounOverrides(
-            HttpMethod.Get, Statistics + "/$count", "Original", Config("beta")));
-        Assert.Equal("Original", CmdletConfigurator.ApplyNounOverrides(
-            HttpMethod.Put, StatisticsItem, "Original", Config("beta")));
+        foreach (var useCollisionData in new[] { false, true })
+        {
+            var config = Config(useCollisionData);
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, Analytics, config, apiVersion: "beta"));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, Statistics + "/child", config, apiVersion: "beta"));
+            Assert.Equal("Original", CmdletConfigurator.ApplyNounOverrides(
+                HttpMethod.Get, Statistics + "/$count", "Original", config, apiVersion: "beta"));
+            Assert.Equal("Original", CmdletConfigurator.ApplyNounOverrides(
+                HttpMethod.Put, StatisticsItem, "Original", config, apiVersion: "beta"));
+        }
     }
 
-    private static GeneratorConfig Config(string profile) => new("Test.Client", "unused", profile);
+    private static GeneratorConfig Config(bool useCollisionData) => new("Test.Client", "unused", useCollisionData);
 
     private static JsonDocument ReadLedger() => JsonDocument.Parse(File.ReadAllText(
         Path.Combine(RepoRoot, "src", "People", "wrapper", "People_directiveMigrationMap.json")));

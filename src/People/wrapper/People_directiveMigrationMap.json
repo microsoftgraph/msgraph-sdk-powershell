@@ -11,7 +11,7 @@
         "notes": "Preserve the active AutoRest source-file-csharp Client/ServiceClient transform without porting it. Parameter aliases/transforms and schema/response directives are deferred."
       }
     ],
-    "targetCommit": "abab9dac88dd1e1d15e8e43fa766ab9be7cba34d",
+    "targetCommit": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad",
     "specBlobs": {
       "v1.0": "1d05e8dbb2ad71ad4ecb5d9144291cc290516894",
       "beta": "fd224e37fbba7d97a0c8b6697c0d19e1c1830192"
