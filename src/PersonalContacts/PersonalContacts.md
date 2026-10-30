@@ -33,8 +33,8 @@ Both required Kiota-compatible profiles were reviewed without using the legacy
 
 | Profile | Compatible spec Git blob | Paths | Operations |
 | --- | --- | --- | --- |
-| v1.0 | `5b942089e99eec53a5166e11b5e67208dfa61bf3` | 40 | 73 |
-| beta | `c745cc1ca4bc6e3c32dc55b35c481fcc6b9cd556` | 40 | 73 |
+| v1.0 | `d7a60e304e2116012e806bc33ef578ba2c9cda85` | 40 | 73 |
+| beta | `ad65c527d83a7af23877005de6435d49e92b9662` | 40 | 73 |
 
 The inputs are `openApiDocs_KiotaCompat/<profile>/PersonalContacts.yml`; neither
 profile is excluded. `PersonalContactsDirectiveMigrationTests` reads these real
@@ -43,6 +43,13 @@ curated and derived configuration, and pins exact method/path/operation-ID and
 naming evidence for contact CRUD and neighboring folder, nested-contact,
 extension, count, and photo-content routes. No existing curated or derived
 configuration is removed or replaced by this audit.
+
+After integrating the natural-ID variant framework, the tests pass each profile
+separately to naming and suppression, with derived data enabled and disabled.
+Exact operation IDs reflect the target's aligned compatible specs. The existing
+permanent-delete action names also guard against accidentally applying v1.0
+derived naming to beta. No authored variant groups are needed for this empty
+shared configuration.
 
 All directives in `v1.0/readme.md`, `beta/readme.md`, and `src/readme.graph.md`
 are explicitly outside this shared-file audit and remain untouched. Parameter
