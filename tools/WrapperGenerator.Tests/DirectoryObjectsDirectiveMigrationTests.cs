@@ -131,17 +131,18 @@ public sealed class DirectoryObjectsDirectiveMigrationTests
     [InlineData("beta", true)]
     public void LiveCompatibleNeighborsRetainExistingSuppressionAndResourceNames(string profile, bool useDerivedData)
     {
-        var config = new GeneratorConfig("Test.Client", "unused", profile, useDerivedData);
+        var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: useDerivedData);
         foreach (var operation in ReadOperations("openApiDocs_KiotaCompat", profile))
         {
             var method = new HttpMethod(operation.Method);
             var existingRestoreSuppression = useDerivedData && profile == "v1.0" &&
                 operation.Method == "POST" && operation.Path == "/directoryObjects/{directoryObject-id}/restore";
-            Assert.Equal(existingRestoreSuppression, CmdletConfigurator.IsSuppressed(method, operation.Path, config));
+            Assert.Equal(existingRestoreSuppression,
+                CmdletConfigurator.IsSuppressed(method, operation.Path, config, apiVersion: profile));
 
             if (operation.Path is "/directoryObjects" or "/directoryObjects/{directoryObject-id}" or "/directoryObjects/$count")
             {
-                var naming = Naming.Resolve(new OperationInfo(method, operation.Path), config);
+                var naming = Naming.Resolve(new OperationInfo(method, operation.Path), config, apiVersion: profile);
                 Assert.Equal(operation.Method switch
                 {
                     "GET" => "Get",
@@ -167,11 +168,42 @@ public sealed class DirectoryObjectsDirectiveMigrationTests
     public void ExistingDerivedActionRenamesRemainAuthoritative(string path, string verb, string noun)
     {
         var operation = new OperationInfo(HttpMethod.Post, path, Kind: OperationKind.Action);
-        var naming = Naming.Resolve(operation, new GeneratorConfig("Test.Client", "unused", "v1.0"));
+        var config = new GeneratorConfig("Test.Client", "unused");
+        var naming = Naming.Resolve(operation, config, apiVersion: "v1.0");
         Assert.Equal(verb, naming.VerbName);
         Assert.Equal("Mg" + noun, naming.Noun);
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, path,
-            new GeneratorConfig("Test.Client", "unused", "v1.0")));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, path, config, apiVersion: "v1.0"));
+    }
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public void BetaActionNeighborsNeverConsumeV1OracleRenames(bool useDerivedData)
+    {
+        (string Path, string Noun)[] actions =
+        [
+            ("/directoryObjects/{directoryObject-id}/checkMemberGroups", "DirectoryObjectCheckMemberGroups"),
+            ("/directoryObjects/{directoryObject-id}/checkMemberObjects", "DirectoryObjectCheckMemberObjects"),
+            ("/directoryObjects/{directoryObject-id}/getMemberGroups", "DirectoryObjectGetMemberGroups"),
+            ("/directoryObjects/{directoryObject-id}/getMemberObjects", "DirectoryObjectGetMemberObjects"),
+            ("/directoryObjects/{directoryObject-id}/restore", "DirectoryObjectRestore"),
+            ("/directoryObjects/getByIds", "DirectoryObjectGetByIds"),
+            ("/directoryObjects/getUserOwnedObjects", "DirectoryObjectGetUserOwnedObjects"),
+            ("/directoryObjects/validateProperties", "DirectoryObjectValidateProperties"),
+        ];
+        var operations = ReadOperations("openApiDocs_KiotaCompat", "beta");
+        var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: useDerivedData);
+        foreach (var (path, noun) in actions)
+        {
+            Assert.Contains(operations, operation => operation.Method == "POST" && operation.Path == path);
+            var naming = Naming.Resolve(new OperationInfo(HttpMethod.Post, path, Kind: OperationKind.Action),
+                config, apiVersion: "beta");
+            Assert.Equal("Invoke", naming.VerbName);
+            Assert.Equal("Mg" + noun, naming.Noun);
+            Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(HttpMethod.Post, path, config, apiVersion: "beta"));
+            Assert.Equal(noun, CmdletConfigurator.ApplyNounOverrides(HttpMethod.Post, path, noun, config, apiVersion: "beta"));
+            Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, path, config, apiVersion: "beta"));
+        }
     }
 
     private sealed record Operation(string Method, string Path, string OperationId);

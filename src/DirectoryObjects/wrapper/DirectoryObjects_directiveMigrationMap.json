@@ -10,12 +10,12 @@
     "deferredClasses": ["DeferredParameter", "DeferredSchema"],
     "deferredGroups": 0,
     "coverage": "No curated DirectoryObjects overrides exist. Preserve all seven live v1.0 derived action renames and the existing v1.0 restore suppression; neither is introduced by these shared directives. The derived v1.0 upload rename names an absent route and is left unchanged; no derived entry restores PKI paths. No additional compatible operation requires suppression for this migration.",
-    "evidence": "Every original verb and anchored subject is retained, with no variant restriction. Literal Mg/MgBeta prefixes are not stripped. Legacy evidence is module audit metadata, not operationIdSource:Legacy translation: these are where/subject directives, not operation-ID regex selectors.",
+    "evidence": "Every original verb and anchored subject is retained, with no variant restriction. Literal Mg/MgBeta prefixes are not stripped. Legacy evidence is module audit metadata, not Legacy operation-ID translation: these are where/subject directives, not operation-ID regex selectors. Revalidated after the normal powershell-v3 merge including #3849; compatible IDs were aligned by #3861/#3863, while the actual PKI absence and all original selector dispositions are unchanged. Oracle profile is passed separately from shared GeneratorConfig in tests and generation.",
     "specs": [
       { "path": "openApiDocs/v1.0/DirectoryObjects.yml", "operations": 15, "pkiOperations": 0 },
       { "path": "openApiDocs/beta/DirectoryObjects.yml", "operations": 31, "pkiOperations": 16 },
-      { "path": "openApiDocs_KiotaCompat/v1.0/DirectoryObjects.yml", "blob": "aaa86bd4f4b05528584e72147c0939f6e6b93a4f", "operations": 15, "pkiOperations": 0 },
-      { "path": "openApiDocs_KiotaCompat/beta/DirectoryObjects.yml", "blob": "e741181824f9153f8f359f3c3153e58b8f190fc0", "operations": 15, "pkiOperations": 0 }
+      { "path": "openApiDocs_KiotaCompat/v1.0/DirectoryObjects.yml", "blob": "6d237252fa7ac6b410321be9e84e6eefeb675909", "operations": 15, "pkiOperations": 0 },
+      { "path": "openApiDocs_KiotaCompat/beta/DirectoryObjects.yml", "blob": "25d21d2e462cd6cba6d27f0938af0f11540018d6", "operations": 15, "pkiOperations": 0 }
     ]
   },
   "mappings": [
