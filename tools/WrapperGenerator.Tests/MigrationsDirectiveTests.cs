@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.MicrosoftExtensions;
 using Microsoft.OpenApi.Reader;
@@ -37,8 +38,10 @@ public sealed class MigrationsDirectiveTests
     [InlineData("PATCH", User)]
     public void SuppressesOnlyReviewedOperations(string method, string path)
     {
-        Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path));
-        Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, Beta()));
+        Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, apiVersion: "beta"));
+        foreach (var useCollisionData in new[] { false, true })
+            Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path,
+                RunSettings(useCollisionData), apiVersion: "beta"));
     }
 
     [Theory]
@@ -58,9 +61,9 @@ public sealed class MigrationsDirectiveTests
     {
         foreach (var useCollisionData in new[] { false, true })
         {
-            var config = Beta(useCollisionData);
-            Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, config));
-            var naming = Naming.Resolve(new OperationInfo(new HttpMethod(method), path, Kind: kind), config);
+            var config = RunSettings(useCollisionData);
+            Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path, config, apiVersion: "beta"));
+            var naming = Naming.Resolve(new OperationInfo(new HttpMethod(method), path, Kind: kind), config, apiVersion: "beta");
             Assert.Equal(verb, naming.VerbName);
             Assert.Equal(noun, naming.Noun);
         }
@@ -75,9 +78,13 @@ public sealed class MigrationsDirectiveTests
     public void LeavesNeighboringRoutesUnchanged(string method, string path)
     {
         var httpMethod = new HttpMethod(method);
-        Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, Beta()));
-        Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(httpMethod, path, Beta()));
-        Assert.Equal("Neighbor", CmdletConfigurator.ApplyNounOverrides(httpMethod, path, "Neighbor", Beta()));
+        foreach (var useCollisionData in new[] { false, true })
+        {
+            var config = RunSettings(useCollisionData);
+            Assert.False(CmdletConfigurator.IsSuppressed(httpMethod, path, config, apiVersion: "beta"));
+            Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(httpMethod, path, config, apiVersion: "beta"));
+            Assert.Equal("Neighbor", CmdletConfigurator.ApplyNounOverrides(httpMethod, path, "Neighbor", config, apiVersion: "beta"));
+        }
     }
 
     [Fact]
@@ -113,6 +120,8 @@ public sealed class MigrationsDirectiveTests
         Assert.Equal(25, lineage.Select(row => (row.GetProperty("method").GetString(),
             row.GetProperty("path").GetString())).Distinct().Count());
         var convertedActions = 0;
+        var alignedIds = 0;
+        var correctedIds = 0;
         foreach (var row in lineage)
         {
             var path = row.GetProperty("path").GetString()!;
@@ -131,11 +140,21 @@ public sealed class MigrationsDirectiveTests
             var current = Assert.Single(operations, operation =>
                 operation.Path == translatedPath && operation.Method == method).Operation;
             if (translatedPath != path) AssertAction(current);
-            Assert.NotEqual(old.OperationId, current.OperationId);
+            if (old.OperationId == current.OperationId)
+                alignedIds++;
+            else
+            {
+                Assert.Equal(User + "/microsoft.graph.cancel", path);
+                Assert.Equal("solution.migration.crossTenantMigrationJob.user_cancel", old.OperationId);
+                Assert.Equal("solution.migration.crossTenantMigrationJob.user.crossTenantMigrationTask_cancel", current.OperationId);
+                correctedIds++;
+            }
         }
         Assert.Equal(7, convertedActions);
+        Assert.Equal(24, alignedIds);
+        Assert.Equal(1, correctedIds);
         var suppressed = operations.Where(operation =>
-            CmdletConfigurator.IsSuppressed(operation.Method, operation.Path, Beta())).ToArray();
+            CmdletConfigurator.IsSuppressed(operation.Method, operation.Path, RunSettings(), apiVersion: "beta")).ToArray();
         Assert.Equal(14, suppressed.Length);
         var removals = mappings.Skip(1).SelectMany(mapping => mapping.GetProperty("profiles")
             .GetProperty("beta").GetProperty("operations").EnumerateArray()).ToArray();
@@ -145,8 +164,50 @@ public sealed class MigrationsDirectiveTests
             row.GetProperty("method").GetString() == operation.Method.Method));
     }
 
-    private static GeneratorConfig Beta(bool useCollisionData = true) =>
-        new("Microsoft.Graph.PowerShell.Migrations.Client", "unused", "beta", useCollisionData);
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task GeneratesCompleteBetaSurfaceWithSeparateProfileContext(bool useCollisionData)
+    {
+        var document = await ReadSpec(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", "beta", "Migrations.yml"));
+        var output = Path.Combine(Path.GetTempPath(), "migrations-directive-tests", Guid.NewGuid().ToString("N"));
+        try
+        {
+            var service = new PowerShellWrapperGenerationService(document,
+                RunSettings(useCollisionData) with { OutputPath = output }, NullLogger.Instance, apiVersion: "beta");
+            await service.GenerateAsync(TestContext.Current.CancellationToken);
+            var files = Directory.GetFiles(output, "*.g.cs");
+            string[] expected =
+            [
+                "GetMgCrossTenantMigrationJob.g.cs",
+                "GetMgCrossTenantMigrationJob_Get.g.cs",
+                "GetMgCrossTenantMigrationJob_List.g.cs",
+                "GetMgCrossTenantMigrationJobUser.g.cs",
+                "GetMgCrossTenantMigrationJobUser_Get.g.cs",
+                "GetMgCrossTenantMigrationJobUser_List.g.cs",
+                "MoveMgCrossTenantMigrationJob.g.cs",
+                "NewMgCrossTenantMigrationJob.g.cs",
+                "RemoveMgCrossTenantMigrationJob.g.cs",
+                "StopMgCrossTenantMigrationJob.g.cs",
+                "StopMgCrossTenantMigrationJobUser.g.cs",
+                "TestMgCrossTenantMigrationJob.g.cs",
+                "UpdateMgCrossTenantMigrationJob.g.cs",
+            ];
+            Assert.Equal(expected.OrderBy(name => name), files.Select(Path.GetFileName).OrderBy(name => name));
+            Assert.All(files, file => Assert.Contains("[GraphRoute(", File.ReadAllText(file)));
+            Assert.Contains("DefaultParameterSetName = \"List\"", File.ReadAllText(
+                Path.Combine(output, "GetMgCrossTenantMigrationJob.g.cs")));
+            Assert.Contains("DefaultParameterSetName = \"List\"", File.ReadAllText(
+                Path.Combine(output, "GetMgCrossTenantMigrationJobUser.g.cs")));
+        }
+        finally
+        {
+            if (Directory.Exists(output)) Directory.Delete(output, recursive: true);
+        }
+    }
+
+    private static GeneratorConfig RunSettings(bool useCollisionData = true) =>
+        new("Microsoft.Graph.PowerShell.Migrations.Client", "unused", useCollisionData);
 
     private static async Task<OpenApiDocument> ReadSpec(string path)
     {

@@ -6,8 +6,9 @@
     "ignoredSources": ["src/readme.graph.md", "all profile-local readmes"],
     "deferredClasses": ["parameter aliases/transforms", "schema/response directives"],
     "legacySpecBlob": "85b5fb01c8a2d204767ed3c04ec0b6979194d16d",
-    "compatibleSpecBlob": "cf2d8647bfd02a9be159b064304c62e938bdea24",
-    "review": "Four subject selectors, no operation-ID regex selectors. All 25 actual beta legacy operations survive: 18 exact unique method/path pairs and seven final microsoft.graph action-segment conversions guarded by POST and action metadata on both operations. All IDs changed. The separately labeled legacyOperations audit records actual source lineage, not selectors guessed from compatible IDs. Directive 1 covers all 22 job-family operations before subsequent removals. Directive 2 removes 11 operations, directive 3 one, directive 4 two; 11 operations remain. DisplayName identifies the alternate-key route family including its actions. No absenceExpected claim substitutes for a renamed ID.",
+    "compatibleSpecBlob": "c4be453290a9f3c9f264607fbf594676343b9587",
+    "review": "Four subject selectors, no operation-ID regex selectors. All 25 actual beta legacy operations survive: 18 exact unique method/path pairs and seven final microsoft.graph action-segment conversions guarded by POST and action metadata on both operations. Current compatible specs align 24 legacy IDs; only the user cancel ID differs, corrected to solution.migration.crossTenantMigrationJob.user.crossTenantMigrationTask_cancel. The separately labeled legacyOperations audit records actual source lineage, not selectors guessed from compatible IDs. Directive 1 covers all 22 job-family operations before subsequent removals. Directive 2 removes 11 operations, directive 3 one, directive 4 two; 11 operations remain. DisplayName identifies the alternate-key route family including its actions. No absenceExpected claim substitutes for a renamed ID.",
+    "revalidation": "Normally merged powershell-v3 including #3849 at 08e409a6aa8fd48736b8f9a9199559f46fc0d1ad. GeneratorConfig contains only three run settings; module naming, suppression, override, and generation-service tests explicitly pass separate beta context with derived data enabled and disabled. No operation-variant grouping or new helper schema is required; authored restrictions and v1.0 exclusion are unchanged.",
     "naming": "Reuse the existing Solution strip, then strip Migration only on the job collection and its descendants. Four exact beta.Migrations oracle action routes additionally retain the published Stop/Move/Test verbs and job/user nouns; no redundant CRUD overrides. The oracle contains both collection and item GET rows, and both are retained.",
     "boundaries": "Only the shared module directives are migrated. No generator/runtime/helper changes, API-profile fallback, route pruning based on missing oracle rows, or v1.0 API-absence assertion.",
     "legacyOperations": [
@@ -51,28 +52,28 @@
         "beta": {
           "absenceExpected": false,
           "operations": [
-            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs", "operationId": "solutions.migrations.ListCrossTenantMigrationJobs" },
-            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs", "operationId": "solutions.migrations.CreateCrossTenantMigrationJobs" },
-            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}", "operationId": "solutions.migrations.GetCrossTenantMigrationJobs" },
-            { "method": "PATCH", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}", "operationId": "solutions.migrations.UpdateCrossTenantMigrationJobs" },
-            { "method": "DELETE", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}", "operationId": "solutions.migrations.DeleteCrossTenantMigrationJobs" },
-            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/cancel", "operationId": "solutions.migrations.crossTenantMigrationJobs.crossTenantMigrationJob.cancel" },
-            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/migrate", "operationId": "solutions.migrations.crossTenantMigrationJobs.crossTenantMigrationJob.migrate" },
-            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/validate", "operationId": "solutions.migrations.crossTenantMigrationJobs.crossTenantMigrationJob.validate" },
-            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users", "operationId": "solutions.migrations.crossTenantMigrationJobs.ListUsers" },
-            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users", "operationId": "solutions.migrations.crossTenantMigrationJobs.CreateUsers" },
-            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}", "operationId": "solutions.migrations.crossTenantMigrationJobs.GetUsers" },
-            { "method": "PATCH", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}", "operationId": "solutions.migrations.crossTenantMigrationJobs.UpdateUsers" },
-            { "method": "DELETE", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}", "operationId": "solutions.migrations.crossTenantMigrationJobs.DeleteUsers" },
-            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}/cancel", "operationId": "solutions.migrations.crossTenantMigrationJobs.crossTenantMigrationJob.users.crossTenantMigrationTask.cancel" },
-            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/$count", "operationId": "solutions.migrations.crossTenantMigrationJobs.users.GetCount-f918" },
-            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", "operationId": "solutions.migrations.crossTenantMigrationJobs.GetByDisplayName" },
-            { "method": "PATCH", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", "operationId": "solutions.migrations.crossTenantMigrationJobs.UpdateByDisplayName" },
-            { "method": "DELETE", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", "operationId": "solutions.migrations.crossTenantMigrationJobs.DeleteByDisplayName" },
-            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')/cancel", "operationId": "solutions.migrations.crossTenantMigrationJobs.displayName.cancel" },
-            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')/migrate", "operationId": "solutions.migrations.crossTenantMigrationJobs.displayName.migrate" },
-            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')/validate", "operationId": "solutions.migrations.crossTenantMigrationJobs.displayName.validate" },
-            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/$count", "operationId": "solutions.migrations.crossTenantMigrationJobs.GetCount-63b8" }
+            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs", "operationId": "solution.migration_ListCrossTenantMigrationJob" },
+            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs", "operationId": "solution.migration_CreateCrossTenantMigrationJob" },
+            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}", "operationId": "solution.migration_GetCrossTenantMigrationJob" },
+            { "method": "PATCH", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}", "operationId": "solution.migration_UpdateCrossTenantMigrationJob" },
+            { "method": "DELETE", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}", "operationId": "solution.migration_DeleteCrossTenantMigrationJob" },
+            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/cancel", "operationId": "solution.migration.crossTenantMigrationJob_cancel" },
+            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/migrate", "operationId": "solution.migration.crossTenantMigrationJob_migrate" },
+            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/validate", "operationId": "solution.migration.crossTenantMigrationJob_validate" },
+            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users", "operationId": "solution.migration.crossTenantMigrationJob_ListUser" },
+            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users", "operationId": "solution.migration.crossTenantMigrationJob_CreateUser" },
+            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}", "operationId": "solution.migration.crossTenantMigrationJob_GetUser" },
+            { "method": "PATCH", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}", "operationId": "solution.migration.crossTenantMigrationJob_UpdateUser" },
+            { "method": "DELETE", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}", "operationId": "solution.migration.crossTenantMigrationJob_DeleteUser" },
+            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}/cancel", "operationId": "solution.migration.crossTenantMigrationJob.user.crossTenantMigrationTask_cancel" },
+            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/$count", "operationId": "solution.migration.crossTenantMigrationJob.user_GetCount" },
+            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", "operationId": "solution.migration.crossTenantMigrationJob_GetGraphBPreDisplayName" },
+            { "method": "PATCH", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", "operationId": "solution.migration.crossTenantMigrationJob_UpdateGraphBPreDisplayName" },
+            { "method": "DELETE", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", "operationId": "solution.migration.crossTenantMigrationJob_DeleteGraphBPreDisplayName" },
+            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')/cancel", "operationId": "solution.migration.crossTenantMigrationJob.displayName_cancel" },
+            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')/migrate", "operationId": "solution.migration.crossTenantMigrationJob.displayName_migrate" },
+            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')/validate", "operationId": "solution.migration.crossTenantMigrationJob.displayName_validate" },
+            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/$count", "operationId": "solution.migration.crossTenantMigrationJob_GetCount" }
           ]
         }
       }
@@ -89,17 +90,17 @@
         "beta": {
           "absenceExpected": false,
           "operations": [
-            { "method": "GET", "path": "/solutions/migrations", "operationId": "solutions.GetMigrations" },
-            { "method": "PATCH", "path": "/solutions/migrations", "operationId": "solutions.UpdateMigrations" },
-            { "method": "DELETE", "path": "/solutions/migrations", "operationId": "solutions.DeleteMigrations" },
-            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", "operationId": "solutions.migrations.crossTenantMigrationJobs.GetByDisplayName" },
-            { "method": "PATCH", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", "operationId": "solutions.migrations.crossTenantMigrationJobs.UpdateByDisplayName" },
-            { "method": "DELETE", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", "operationId": "solutions.migrations.crossTenantMigrationJobs.DeleteByDisplayName" },
-            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')/cancel", "operationId": "solutions.migrations.crossTenantMigrationJobs.displayName.cancel" },
-            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')/migrate", "operationId": "solutions.migrations.crossTenantMigrationJobs.displayName.migrate" },
-            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')/validate", "operationId": "solutions.migrations.crossTenantMigrationJobs.displayName.validate" },
-            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/$count", "operationId": "solutions.migrations.crossTenantMigrationJobs.GetCount-63b8" },
-            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/$count", "operationId": "solutions.migrations.crossTenantMigrationJobs.users.GetCount-f918" }
+            { "method": "GET", "path": "/solutions/migrations", "operationId": "solution_GetMigration" },
+            { "method": "PATCH", "path": "/solutions/migrations", "operationId": "solution_UpdateMigration" },
+            { "method": "DELETE", "path": "/solutions/migrations", "operationId": "solution_DeleteMigration" },
+            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", "operationId": "solution.migration.crossTenantMigrationJob_GetGraphBPreDisplayName" },
+            { "method": "PATCH", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", "operationId": "solution.migration.crossTenantMigrationJob_UpdateGraphBPreDisplayName" },
+            { "method": "DELETE", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", "operationId": "solution.migration.crossTenantMigrationJob_DeleteGraphBPreDisplayName" },
+            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')/cancel", "operationId": "solution.migration.crossTenantMigrationJob.displayName_cancel" },
+            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')/migrate", "operationId": "solution.migration.crossTenantMigrationJob.displayName_migrate" },
+            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')/validate", "operationId": "solution.migration.crossTenantMigrationJob.displayName_validate" },
+            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/$count", "operationId": "solution.migration.crossTenantMigrationJob_GetCount" },
+            { "method": "GET", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/$count", "operationId": "solution.migration.crossTenantMigrationJob.user_GetCount" }
           ]
         }
       }
@@ -116,7 +117,7 @@
         "beta": {
           "absenceExpected": false,
           "operations": [
-            { "method": "DELETE", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}", "operationId": "solutions.migrations.crossTenantMigrationJobs.DeleteUsers" }
+            { "method": "DELETE", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}", "operationId": "solution.migration.crossTenantMigrationJob_DeleteUser" }
           ]
         }
       }
@@ -133,8 +134,8 @@
         "beta": {
           "absenceExpected": false,
           "operations": [
-            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users", "operationId": "solutions.migrations.crossTenantMigrationJobs.CreateUsers" },
-            { "method": "PATCH", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}", "operationId": "solutions.migrations.crossTenantMigrationJobs.UpdateUsers" }
+            { "method": "POST", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users", "operationId": "solution.migration.crossTenantMigrationJob_CreateUser" },
+            { "method": "PATCH", "path": "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}", "operationId": "solution.migration.crossTenantMigrationJob_UpdateUser" }
           ]
         }
       }
