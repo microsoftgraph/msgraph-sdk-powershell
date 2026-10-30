@@ -1,0 +1,92 @@
+#nullable enable
+
+using System;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Security.Client;
+using Microsoft.Graph.PowerShell.Security.Client.Models;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Security
+{
+    [GraphRoute("POST", "/security/identities/identityAccounts")]
+    [Cmdlet(VerbsCommon.New, "MgSecurityIdentityAccount", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Security.Client.Models.Security.IdentityAccounts))]
+    public class NewMgSecurityIdentityAccountCommand : GraphClientCmdlet
+    {
+
+
+        [Parameter(Mandatory = false)]
+        public string? CloudSecurityIdentifier { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? DisplayName { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? Domain { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public bool? IsEnabled { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? OnPremisesSecurityIdentifier { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Security.Client.Models.Security.Account[]? Accounts { get; set; }
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(null, "New"))
+                return;
+
+            var body = new Microsoft.Graph.PowerShell.Security.Client.Models.Security.IdentityAccounts();
+
+    if (this.IsParameterBound(nameof(CloudSecurityIdentifier)))
+        body.CloudSecurityIdentifier = CloudSecurityIdentifier;
+
+    if (this.IsParameterBound(nameof(DisplayName)))
+        body.DisplayName = DisplayName;
+
+    if (this.IsParameterBound(nameof(Domain)))
+        body.Domain = Domain;
+
+    if (this.IsParameterBound(nameof(IsEnabled)))
+        body.IsEnabled = IsEnabled;
+
+    if (this.IsParameterBound(nameof(OnPremisesSecurityIdentifier)))
+        body.OnPremisesSecurityIdentifier = OnPremisesSecurityIdentifier;
+
+    if (this.IsParameterBound(nameof(Accounts)))
+        body.Accounts = Accounts!.ToList();
+
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.Security.Client.Models.Security.IdentityAccounts? result;
+            try
+            {
+                result = client.Security.Identities.IdentityAccounts.PostAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, body);
+                return;
+            }
+
+            WriteObject(result);
+        }
+    }
+}
