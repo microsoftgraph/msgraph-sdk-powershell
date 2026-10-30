@@ -28,6 +28,30 @@ Describe 'Remove-ExpiredDeprecatedOpenApiOperations' {
         $null = New-Item -Path $casePath -ItemType Directory
     }
 
+    It 'accepts empty lines and a final newline when pruning a tweaked document' {
+        $openApiPath = Join-Path $casePath 'WithNewlines.yml'
+        $content = @'
+openapi: 3.0.1
+paths:
+  /expired:
+    get:
+      operationId: expired_Get
+
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2020-01-01'
+  /retained:
+    get:
+      operationId: retained_Get
+'@
+        Write-TestOpenApi -Path $openApiPath -Content ($content + "`r`n")
+        & $scriptPath -OpenApiFilesPath $openApiPath -ReferenceDateUtc $referenceDate
+        $updatedContent = [System.IO.File]::ReadAllText($openApiPath)
+        $updatedContent | Should -Not -Match 'expired_Get'
+        $updatedContent | Should -Match 'retained_Get'
+        $updatedContent | Should -Match "`r`n$"
+    }
+
     It 'removes expired operations and empty paths and writes the removal report' {
         $openApiPath = Join-Path $casePath 'ModuleA.yml'
         Write-TestOpenApi -Path $openApiPath -Content @'
