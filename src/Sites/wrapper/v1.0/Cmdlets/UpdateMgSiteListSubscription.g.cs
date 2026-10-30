@@ -66,6 +66,15 @@ namespace Microsoft.Graph.PowerShell.Sites
         [Parameter(Mandatory = false)]
         public string? Resource { get; set; }
 
+        [Parameter(Mandatory = false)]
+        public string? VapidPublicKey { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? WebPushEncryptionP256dhPublicKey { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? WebPushEncryptionSecret { get; set; }
+
 
 
 
@@ -120,6 +129,15 @@ namespace Microsoft.Graph.PowerShell.Sites
 
     if (this.IsParameterBound(nameof(Resource)))
         body.Resource = Resource;
+
+    if (this.IsParameterBound(nameof(VapidPublicKey)))
+        body.VapidPublicKey = VapidPublicKey;
+
+    if (this.IsParameterBound(nameof(WebPushEncryptionP256dhPublicKey)))
+        body.WebPushEncryptionP256dhPublicKey = WebPushEncryptionP256dhPublicKey;
+
+    if (this.IsParameterBound(nameof(WebPushEncryptionSecret)))
+        body.WebPushEncryptionSecret = WebPushEncryptionSecret;
 
 
 

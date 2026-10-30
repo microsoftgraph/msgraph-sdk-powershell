@@ -32,7 +32,7 @@ namespace Microsoft.Graph.PowerShell.Sites.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Sites.Client.Models.AppRoleAssignment> AppRoleAssignments { get; set; }
 #endif
-        /// <summary>The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it&apos;s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.</summary>
+        /// <summary>The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it&apos;s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. To learn more about managing this property for Microsoft 365 vs. cloud security groups, see Key differences from Microsoft 365 group labeling.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Sites.Client.Models.AssignedLabel>? AssignedLabels { get; set; }
