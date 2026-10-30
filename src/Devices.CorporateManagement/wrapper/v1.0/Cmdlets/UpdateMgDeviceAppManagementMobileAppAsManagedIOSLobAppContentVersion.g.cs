@@ -13,9 +13,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("PATCH", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.managedIOSLobApp/contentVersions/{mobileAppContent-id}")]
-    [Cmdlet(VerbsData.Update, "MgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersion", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [Cmdlet(VerbsData.Update, "MgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppContent))]
-    public class UpdateMgDeviceAppManagementMobileAppAsManagedIOSLobAppContentVersionCommand : GraphClientCmdlet
+    public class UpdateMgDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;

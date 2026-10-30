@@ -9,10 +9,10 @@ using Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("GET", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.iosLobApp/contentVersions")]
-    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsIosLobAppContentVersion", DefaultParameterSetName = "List")]
+    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppContentCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppContent), ParameterSetName = new[] { "Get" })]
-    public class GetMgDeviceAppManagementMobileAppAsIosLobAppContentVersionCommand : GraphClientCmdlet
+    public class GetMgDeviceAppManagementMobileAppAsiOSLobAppContentVersionCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;
@@ -58,11 +58,11 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 
 
 
-        // Delegates to Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersion_Get or Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersion_List, the two cmdlets
+        // Delegates to Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion_Get or Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
         {
-            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersion_Get" : "Get-MgDeviceAppManagementMobileAppAsIosLobAppContentVersion_List";
+            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion_Get" : "Get-MgDeviceAppManagementMobileAppAsiOSLobAppContentVersion_List";
             try
             {
                 InvokeCommand.InvokeScript(

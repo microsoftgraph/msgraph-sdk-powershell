@@ -9,10 +9,10 @@ using Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("GET", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.managedIOSLobApp/assignments")]
-    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignment", DefaultParameterSetName = "List")]
+    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignment", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppAssignmentCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppAssignment), ParameterSetName = new[] { "Get" })]
-    public class GetMgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignmentCommand : GraphClientCmdlet
+    public class GetMgDeviceAppManagementMobileAppAsManagediOSLobAppAssignmentCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;
@@ -58,11 +58,11 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 
 
 
-        // Delegates to Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignment_Get or Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignment_List, the two cmdlets
+        // Delegates to Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignment_Get or Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignment_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
         {
-            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignment_Get" : "Get-MgDeviceAppManagementMobileAppAsManagedIOSLobAppAssignment_List";
+            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignment_Get" : "Get-MgDeviceAppManagementMobileAppAsManagediOSLobAppAssignment_List";
             try
             {
                 InvokeCommand.InvokeScript(

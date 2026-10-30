@@ -15,9 +15,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("POST", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.iosLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/renewUpload")]
-    [Cmdlet(VerbsLifecycle.Invoke, "MgDeviceAppManagementMobileAppAsIosLobAppContentVersionFileRenewUpload", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [Cmdlet(VerbsLifecycle.Invoke, "MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFileRenewUpload", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
 
-    public class InvokeMgDeviceAppManagementMobileAppAsIosLobAppContentVersionFileRenewUploadCommand : GraphClientCmdlet
+    public class InvokeMgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFileRenewUploadCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;

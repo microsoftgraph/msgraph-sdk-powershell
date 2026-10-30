@@ -9,10 +9,10 @@ using Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("GET", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.iosLobApp/assignments")]
-    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsIosLobAppAssignment", DefaultParameterSetName = "List")]
+    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsiOSLobAppAssignment", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppAssignmentCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppAssignment), ParameterSetName = new[] { "Get" })]
-    public class GetMgDeviceAppManagementMobileAppAsIosLobAppAssignmentCommand : GraphClientCmdlet
+    public class GetMgDeviceAppManagementMobileAppAsiOSLobAppAssignmentCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;
@@ -58,11 +58,11 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 
 
 
-        // Delegates to Get-MgDeviceAppManagementMobileAppAsIosLobAppAssignment_Get or Get-MgDeviceAppManagementMobileAppAsIosLobAppAssignment_List, the two cmdlets
+        // Delegates to Get-MgDeviceAppManagementMobileAppAsiOSLobAppAssignment_Get or Get-MgDeviceAppManagementMobileAppAsiOSLobAppAssignment_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
         {
-            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgDeviceAppManagementMobileAppAsIosLobAppAssignment_Get" : "Get-MgDeviceAppManagementMobileAppAsIosLobAppAssignment_List";
+            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgDeviceAppManagementMobileAppAsiOSLobAppAssignment_Get" : "Get-MgDeviceAppManagementMobileAppAsiOSLobAppAssignment_List";
             try
             {
                 InvokeCommand.InvokeScript(
