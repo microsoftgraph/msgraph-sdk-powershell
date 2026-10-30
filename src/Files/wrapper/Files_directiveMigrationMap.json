@@ -9,2056 +9,344 @@
       "notes": "Exact method/path suppressions cover the complete surviving original legacy selector in both profiles. Existing v1.0 parity data already covers nine of ten surviving operations; shared curated entries also enforce beta and no-collision-data generation. Collection GET ListActivity operations do not match the original selector and remain available. Profile-local directives and global readmes are explicitly ignored; parameter/schema directives are deferred (none occur in this shared file). FilesDirectiveMigrationTests pins all mapped suppressions and neighboring routes.",
       "profiles": {
         "v1.0": {
-          "operationIdSource": "Legacy",
-          "notes": "Reviewed all 56 original regex matches in openApiDocs/v1.0/Files.yml: 10 surviving operations and 46 pruned legacy operations. createLink uses matching POST action-kind evidence and only final microsoft.graph namespace unqualification; parameter-name normalization does not change resource ancestry.",
+          "notes": "Reproved all 56 original regex matches in actual openApiDocs/v1.0/Files.yml against the integrated compatible spec: 10 survivors and 46 pruned legacy operations. Complete original-survivor and current literal selector sets are equal after target operation-ID alignment; FilesDirectiveMigrationTests recomputes both sets and verified removals. createLink has matching POST action kinds with only final microsoft.graph namespace unqualification. No root/resource/cast alias translation. Legacy blob: d1a813b9612d179b014843a5a4ba9bae81a28e25; compatible blob: ff503644e20100f9ee599a8782f35564a8b34912.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "POST",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "operationId": "drives.items.analytics.itemActivityStats.CreateActivities",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat_CreateActivity"
+              "operationId": "drive.item.analytic.itemActivityStat_CreateActivity"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "drives.items.analytics.itemActivityStats.GetActivities",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat_GetActivity"
+              "operationId": "drive.item.analytic.itemActivityStat_GetActivity"
             },
             {
               "method": "PATCH",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "drives.items.analytics.itemActivityStats.UpdateActivities",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat_UpdateActivity"
+              "operationId": "drive.item.analytic.itemActivityStat_UpdateActivity"
             },
             {
               "method": "DELETE",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "drives.items.analytics.itemActivityStats.DeleteActivities",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat_DeleteActivity"
+              "operationId": "drive.item.analytic.itemActivityStat_DeleteActivity"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "operationId": "drives.items.analytics.itemActivityStats.activities.GetDriveItem",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItem"
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItem"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "drives.items.analytics.itemActivityStats.activities.GetDriveItemContent",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItemContent"
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItemContent"
             },
             {
               "method": "PUT",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "drives.items.analytics.itemActivityStats.activities.UpdateDriveItemContent",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat.activity_SetDriveItemContent"
+              "operationId": "drive.item.analytic.itemActivityStat.activity_SetDriveItemContent"
             },
             {
               "method": "DELETE",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "drives.items.analytics.itemActivityStats.activities.DeleteDriveItemContent",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContent"
+              "operationId": "drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContent"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "operationId": "drives.items.analytics.itemActivityStats.activities.GetCount-7511",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat.activity_GetCount"
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetCount"
             },
             {
               "method": "POST",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/createLink",
-              "operationId": "shares.sharedDriveItem.list.items.listItem.createLink",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/microsoft.graph.createLink",
-              "legacyOperationId": "share.list.item_createLink",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
-            }
-          ],
-          "removedLegacyOperations": [
-            {
-              "method": "POST",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "operationId": "drive.root.analytic.itemActivityStat_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "drive.root.analytic.itemActivityStat_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "drive.root.analytic.itemActivityStat_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "drive.root.analytic.itemActivityStat_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "operationId": "drive.root.analytic.itemActivityStat.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "drive.root.analytic.itemActivityStat.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "drive.root.analytic.itemActivityStat.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "drive.root.analytic.itemActivityStat.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "operationId": "drive.root.analytic.itemActivityStat.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "operationId": "group.drive.item.analytic.itemActivityStat_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "group.drive.item.analytic.itemActivityStat_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "group.drive.item.analytic.itemActivityStat_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "group.drive.item.analytic.itemActivityStat_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "operationId": "group.drive.item.analytic.itemActivityStat.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "group.drive.item.analytic.itemActivityStat.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "group.drive.item.analytic.itemActivityStat.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "group.drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "operationId": "group.drive.item.analytic.itemActivityStat.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "operationId": "group.drive.root.analytic.itemActivityStat_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "group.drive.root.analytic.itemActivityStat_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "group.drive.root.analytic.itemActivityStat_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "group.drive.root.analytic.itemActivityStat_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "operationId": "group.drive.root.analytic.itemActivityStat.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "group.drive.root.analytic.itemActivityStat.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "group.drive.root.analytic.itemActivityStat.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "group.drive.root.analytic.itemActivityStat.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "operationId": "group.drive.root.analytic.itemActivityStat.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/shares/{sharedDriveItem-id}/listItem/microsoft.graph.createLink",
-              "operationId": "share.listItem_createLink",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "operationId": "user.drive.item.analytic.itemActivityStat_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "user.drive.item.analytic.itemActivityStat_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "user.drive.item.analytic.itemActivityStat_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "user.drive.item.analytic.itemActivityStat_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "operationId": "user.drive.item.analytic.itemActivityStat.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "user.drive.item.analytic.itemActivityStat.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "user.drive.item.analytic.itemActivityStat.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "user.drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "operationId": "user.drive.item.analytic.itemActivityStat.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "operationId": "user.drive.root.analytic.itemActivityStat_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "user.drive.root.analytic.itemActivityStat_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "user.drive.root.analytic.itemActivityStat_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "user.drive.root.analytic.itemActivityStat_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "operationId": "user.drive.root.analytic.itemActivityStat.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "user.drive.root.analytic.itemActivityStat.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "user.drive.root.analytic.itemActivityStat.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "user.drive.root.analytic.itemActivityStat.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "operationId": "user.drive.root.analytic.itemActivityStat.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
+              "operationId": "share.sharedDriveItem.list.item.listItem_createLink"
             }
           ]
         },
         "beta": {
-          "operationIdSource": "Legacy",
-          "notes": "Reviewed all 272 original regex matches in openApiDocs/beta/Files.yml: 56 surviving operations and 216 pruned legacy operations. createLink uses matching POST action-kind evidence and only final microsoft.graph namespace unqualification; parameter-name normalization does not change resource ancestry.",
+          "notes": "Reproved all 272 original regex matches in actual openApiDocs/beta/Files.yml against the integrated compatible spec: 56 survivors and 216 pruned legacy operations. Complete original-survivor and current literal selector sets are equal after target operation-ID alignment; FilesDirectiveMigrationTests recomputes both sets and verified removals. createLink has matching POST action kinds with only final microsoft.graph namespace unqualification. No root/resource/cast alias translation. Legacy blob: 52b742f842ed746dbb80c5ca9914343f621e45ac; compatible blob: ba515d47b69731abb531fb5f1c43ff06460e7601.",
           "absenceExpected": false,
           "operations": [
             {
               "method": "POST",
               "path": "/drives/{drive-id}/activities",
-              "operationId": "drives.CreateActivities",
-              "legacyPath": "/drives/{drive-id}/activities",
-              "legacyOperationId": "drive_CreateActivity"
+              "operationId": "drive_CreateActivity"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}",
-              "operationId": "drives.GetActivities",
-              "legacyPath": "/drives/{drive-id}/activities/{itemActivityOLD-id}",
-              "legacyOperationId": "drive_GetActivity"
+              "operationId": "drive_GetActivity"
             },
             {
               "method": "PATCH",
               "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}",
-              "operationId": "drives.UpdateActivities",
-              "legacyPath": "/drives/{drive-id}/activities/{itemActivityOLD-id}",
-              "legacyOperationId": "drive_UpdateActivity"
+              "operationId": "drive_UpdateActivity"
             },
             {
               "method": "DELETE",
               "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}",
-              "operationId": "drives.DeleteActivities",
-              "legacyPath": "/drives/{drive-id}/activities/{itemActivityOLD-id}",
-              "legacyOperationId": "drive_DeleteActivity"
+              "operationId": "drive_DeleteActivity"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "drives.activities.GetDriveItem",
-              "legacyPath": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem",
-              "legacyOperationId": "drive.activity_GetDriveItem"
+              "operationId": "drive.activity_GetDriveItem"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "drives.activities.GetDriveItemContent",
-              "legacyPath": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "legacyOperationId": "drive.activity_GetDriveItemContent"
+              "operationId": "drive.activity_GetDriveItemContent"
             },
             {
               "method": "PUT",
               "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "drives.activities.UpdateDriveItemContent",
-              "legacyPath": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "legacyOperationId": "drive.activity_SetDriveItemContent"
+              "operationId": "drive.activity_SetDriveItemContent"
             },
             {
               "method": "DELETE",
               "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "drives.activities.DeleteDriveItemContent",
-              "legacyPath": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "legacyOperationId": "drive.activity_DeleteDriveItemContent"
+              "operationId": "drive.activity_DeleteDriveItemContent"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "drives.activities.GetDriveItemContentStream",
-              "legacyPath": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "legacyOperationId": "drive.activity_GetDriveItemContentStream"
+              "operationId": "drive.activity_GetDriveItemContentStream"
             },
             {
               "method": "PUT",
               "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "drives.activities.UpdateDriveItemContentStream",
-              "legacyPath": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "legacyOperationId": "drive.activity_SetDriveItemContentStream"
+              "operationId": "drive.activity_SetDriveItemContentStream"
             },
             {
               "method": "DELETE",
               "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "drives.activities.DeleteDriveItemContentStream",
-              "legacyPath": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "legacyOperationId": "drive.activity_DeleteDriveItemContentStream"
+              "operationId": "drive.activity_DeleteDriveItemContentStream"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "drives.activities.GetListItem",
-              "legacyPath": "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem",
-              "legacyOperationId": "drive.activity_GetListItem"
+              "operationId": "drive.activity_GetListItem"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/activities/$count",
-              "operationId": "drives.activities.GetCount-7687",
-              "legacyPath": "/drives/{drive-id}/activities/$count",
-              "legacyOperationId": "drive.activity_GetCount"
+              "operationId": "drive.activity_GetCount"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/items/{driveItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "drives.items.GetActivities",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/activities/{itemActivityOLD-id}",
-              "legacyOperationId": "drive.item_GetActivity"
+              "operationId": "drive.item_GetActivity"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/items/{driveItem-id}/activities/$count",
-              "operationId": "drives.items.activities.GetCount-5027",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/activities/$count",
-              "legacyOperationId": "drive.item.activity_GetCount"
+              "operationId": "drive.item.activity_GetCount"
             },
             {
               "method": "POST",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "operationId": "drives.items.analytics.itemActivityStats.CreateActivities",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat_CreateActivity"
+              "operationId": "drive.item.analytic.itemActivityStat_CreateActivity"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "drives.items.analytics.itemActivityStats.GetActivities",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat_GetActivity"
+              "operationId": "drive.item.analytic.itemActivityStat_GetActivity"
             },
             {
               "method": "PATCH",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "drives.items.analytics.itemActivityStats.UpdateActivities",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat_UpdateActivity"
+              "operationId": "drive.item.analytic.itemActivityStat_UpdateActivity"
             },
             {
               "method": "DELETE",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "drives.items.analytics.itemActivityStats.DeleteActivities",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat_DeleteActivity"
+              "operationId": "drive.item.analytic.itemActivityStat_DeleteActivity"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "operationId": "drives.items.analytics.itemActivityStats.activities.GetDriveItem",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItem"
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItem"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "drives.items.analytics.itemActivityStats.activities.GetDriveItemContent",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItemContent"
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItemContent"
             },
             {
               "method": "PUT",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "drives.items.analytics.itemActivityStats.activities.UpdateDriveItemContent",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat.activity_SetDriveItemContent"
+              "operationId": "drive.item.analytic.itemActivityStat.activity_SetDriveItemContent"
             },
             {
               "method": "DELETE",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "drives.items.analytics.itemActivityStats.activities.DeleteDriveItemContent",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContent"
+              "operationId": "drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContent"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "drives.items.analytics.itemActivityStats.activities.GetDriveItemContentStream",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItemContentStream"
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItemContentStream"
             },
             {
               "method": "PUT",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "drives.items.analytics.itemActivityStats.activities.UpdateDriveItemContentStream",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat.activity_SetDriveItemContentStream"
+              "operationId": "drive.item.analytic.itemActivityStat.activity_SetDriveItemContentStream"
             },
             {
               "method": "DELETE",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "drives.items.analytics.itemActivityStats.activities.DeleteDriveItemContentStream",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContentStream"
+              "operationId": "drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContentStream"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "operationId": "drives.items.analytics.itemActivityStats.activities.GetCount-7511",
-              "legacyPath": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "legacyOperationId": "drive.item.analytic.itemActivityStat.activity_GetCount"
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetCount"
             },
             {
               "method": "POST",
               "path": "/drives/{drive-id}/list/activities",
-              "operationId": "drives.list.CreateActivities",
-              "legacyPath": "/drives/{drive-id}/list/activities",
-              "legacyOperationId": "drive.list_CreateActivity"
+              "operationId": "drive.list_CreateActivity"
             },
             {
               "method": "POST",
               "path": "/drives/{drive-id}/list/items/{listItem-id}/activities",
-              "operationId": "drives.list.items.CreateActivities",
-              "legacyPath": "/drives/{drive-id}/list/items/{listItem-id}/activities",
-              "legacyOperationId": "drive.list.item_CreateActivity"
+              "operationId": "drive.list.item_CreateActivity"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "drives.list.items.GetActivities",
-              "legacyPath": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "legacyOperationId": "drive.list.item_GetActivity"
+              "operationId": "drive.list.item_GetActivity"
             },
             {
               "method": "PATCH",
               "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "drives.list.items.UpdateActivities",
-              "legacyPath": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "legacyOperationId": "drive.list.item_UpdateActivity"
+              "operationId": "drive.list.item_UpdateActivity"
             },
             {
               "method": "DELETE",
               "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "drives.list.items.DeleteActivities",
-              "legacyPath": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "legacyOperationId": "drive.list.item_DeleteActivity"
+              "operationId": "drive.list.item_DeleteActivity"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "drives.list.items.activities.GetDriveItem",
-              "legacyPath": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem",
-              "legacyOperationId": "drive.list.item.activity_GetDriveItem"
+              "operationId": "drive.list.item.activity_GetDriveItem"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "drives.list.items.activities.GetDriveItemContent",
-              "legacyPath": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "legacyOperationId": "drive.list.item.activity_GetDriveItemContent"
+              "operationId": "drive.list.item.activity_GetDriveItemContent"
             },
             {
               "method": "PUT",
               "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "drives.list.items.activities.UpdateDriveItemContent",
-              "legacyPath": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "legacyOperationId": "drive.list.item.activity_SetDriveItemContent"
+              "operationId": "drive.list.item.activity_SetDriveItemContent"
             },
             {
               "method": "DELETE",
               "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "drives.list.items.activities.DeleteDriveItemContent",
-              "legacyPath": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "legacyOperationId": "drive.list.item.activity_DeleteDriveItemContent"
+              "operationId": "drive.list.item.activity_DeleteDriveItemContent"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "drives.list.items.activities.GetDriveItemContentStream",
-              "legacyPath": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "legacyOperationId": "drive.list.item.activity_GetDriveItemContentStream"
+              "operationId": "drive.list.item.activity_GetDriveItemContentStream"
             },
             {
               "method": "PUT",
               "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "drives.list.items.activities.UpdateDriveItemContentStream",
-              "legacyPath": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "legacyOperationId": "drive.list.item.activity_SetDriveItemContentStream"
+              "operationId": "drive.list.item.activity_SetDriveItemContentStream"
             },
             {
               "method": "DELETE",
               "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "drives.list.items.activities.DeleteDriveItemContentStream",
-              "legacyPath": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "legacyOperationId": "drive.list.item.activity_DeleteDriveItemContentStream"
+              "operationId": "drive.list.item.activity_DeleteDriveItemContentStream"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "drives.list.items.activities.GetListItem",
-              "legacyPath": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem",
-              "legacyOperationId": "drive.list.item.activity_GetListItem"
+              "operationId": "drive.list.item.activity_GetListItem"
             },
             {
               "method": "GET",
               "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/$count",
-              "operationId": "drives.list.items.activities.GetCount-6bc9",
-              "legacyPath": "/drives/{drive-id}/list/items/{listItem-id}/activities/$count",
-              "legacyOperationId": "drive.list.item.activity_GetCount"
+              "operationId": "drive.list.item.activity_GetCount"
             },
             {
               "method": "POST",
               "path": "/shares/{sharedDriveItem-id}/list/activities",
-              "operationId": "shares.list.CreateActivities",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/activities",
-              "legacyOperationId": "share.list_CreateActivity"
+              "operationId": "share.list_CreateActivity"
             },
             {
               "method": "POST",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities",
-              "operationId": "shares.list.items.CreateActivities",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities",
-              "legacyOperationId": "share.list.item_CreateActivity"
+              "operationId": "share.list.item_CreateActivity"
             },
             {
               "method": "GET",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "shares.list.items.GetActivities",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "legacyOperationId": "share.list.item_GetActivity"
+              "operationId": "share.list.item_GetActivity"
             },
             {
               "method": "PATCH",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "shares.list.items.UpdateActivities",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "legacyOperationId": "share.list.item_UpdateActivity"
+              "operationId": "share.list.item_UpdateActivity"
             },
             {
               "method": "DELETE",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "shares.list.items.DeleteActivities",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "legacyOperationId": "share.list.item_DeleteActivity"
+              "operationId": "share.list.item_DeleteActivity"
             },
             {
               "method": "GET",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "shares.list.items.activities.GetDriveItem",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem",
-              "legacyOperationId": "share.list.item.activity_GetDriveItem"
+              "operationId": "share.list.item.activity_GetDriveItem"
             },
             {
               "method": "GET",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "shares.list.items.activities.GetDriveItemContent",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "legacyOperationId": "share.list.item.activity_GetDriveItemContent"
+              "operationId": "share.list.item.activity_GetDriveItemContent"
             },
             {
               "method": "PUT",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "shares.list.items.activities.UpdateDriveItemContent",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "legacyOperationId": "share.list.item.activity_SetDriveItemContent"
+              "operationId": "share.list.item.activity_SetDriveItemContent"
             },
             {
               "method": "DELETE",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "shares.list.items.activities.DeleteDriveItemContent",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "legacyOperationId": "share.list.item.activity_DeleteDriveItemContent"
+              "operationId": "share.list.item.activity_DeleteDriveItemContent"
             },
             {
               "method": "GET",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "shares.list.items.activities.GetDriveItemContentStream",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "legacyOperationId": "share.list.item.activity_GetDriveItemContentStream"
+              "operationId": "share.list.item.activity_GetDriveItemContentStream"
             },
             {
               "method": "PUT",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "shares.list.items.activities.UpdateDriveItemContentStream",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "legacyOperationId": "share.list.item.activity_SetDriveItemContentStream"
+              "operationId": "share.list.item.activity_SetDriveItemContentStream"
             },
             {
               "method": "DELETE",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "shares.list.items.activities.DeleteDriveItemContentStream",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "legacyOperationId": "share.list.item.activity_DeleteDriveItemContentStream"
+              "operationId": "share.list.item.activity_DeleteDriveItemContentStream"
             },
             {
               "method": "GET",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "shares.list.items.activities.GetListItem",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem",
-              "legacyOperationId": "share.list.item.activity_GetListItem"
+              "operationId": "share.list.item.activity_GetListItem"
             },
             {
               "method": "GET",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/$count",
-              "operationId": "shares.list.items.activities.GetCount-ff10",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/$count",
-              "legacyOperationId": "share.list.item.activity_GetCount"
+              "operationId": "share.list.item.activity_GetCount"
             },
             {
               "method": "POST",
               "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/createLink",
-              "operationId": "shares.sharedDriveItem.list.items.listItem.createLink",
-              "legacyPath": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/microsoft.graph.createLink",
-              "legacyOperationId": "share.list.item_createLink",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
-            }
-          ],
-          "removedLegacyOperations": [
-            {
-              "method": "POST",
-              "path": "/drives/{drive-id}/items/{driveItem-id}/listItem/activities",
-              "operationId": "drive.item.listItem_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "drive.item.listItem_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "drive.item.listItem_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "drive.item.listItem_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "drive.item.listItem.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "drive.item.listItem.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "drive.item.listItem.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "drive.item.listItem.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "drive.item.listItem.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "drive.item.listItem.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "drive.item.listItem.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "drive.item.listItem.activity_GetListItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/items/{driveItem-id}/listItem/activities/$count",
-              "operationId": "drive.item.listItem.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/activities/{itemActivityOLD-id}",
-              "operationId": "drive.root_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/activities/$count",
-              "operationId": "drive.root.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "operationId": "drive.root.analytic.itemActivityStat_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "drive.root.analytic.itemActivityStat_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "drive.root.analytic.itemActivityStat_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "drive.root.analytic.itemActivityStat_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "operationId": "drive.root.analytic.itemActivityStat.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "drive.root.analytic.itemActivityStat.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "drive.root.analytic.itemActivityStat.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "drive.root.analytic.itemActivityStat.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "drive.root.analytic.itemActivityStat.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "drive.root.analytic.itemActivityStat.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "drive.root.analytic.itemActivityStat.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "operationId": "drive.root.analytic.itemActivityStat.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/drives/{drive-id}/root/listItem/activities",
-              "operationId": "drive.root.listItem_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "drive.root.listItem_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "drive.root.listItem_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "drive.root.listItem_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "drive.root.listItem.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "drive.root.listItem.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "drive.root.listItem.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "drive.root.listItem.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "drive.root.listItem.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "drive.root.listItem.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "drive.root.listItem.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "drive.root.listItem.activity_GetListItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/drives/{drive-id}/root/listItem/activities/$count",
-              "operationId": "drive.root.listItem.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/groups/{group-id}/drives/{drive-id}/activities",
-              "operationId": "group.drive_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/groups/{group-id}/drives/{drive-id}/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "group.drive.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "group.drive.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "group.drive.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "group.drive.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "group.drive.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "group.drive.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "group.drive.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "group.drive.activity_GetListItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/activities/$count",
-              "operationId": "group.drive.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive.item_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/activities/$count",
-              "operationId": "group.drive.item.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "operationId": "group.drive.item.analytic.itemActivityStat_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "group.drive.item.analytic.itemActivityStat_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "group.drive.item.analytic.itemActivityStat_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "group.drive.item.analytic.itemActivityStat_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "operationId": "group.drive.item.analytic.itemActivityStat.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "group.drive.item.analytic.itemActivityStat.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "group.drive.item.analytic.itemActivityStat.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "group.drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "group.drive.item.analytic.itemActivityStat.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "group.drive.item.analytic.itemActivityStat.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "group.drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "operationId": "group.drive.item.analytic.itemActivityStat.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities",
-              "operationId": "group.drive.item.listItem_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive.item.listItem_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive.item.listItem_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive.item.listItem_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "group.drive.item.listItem.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "group.drive.item.listItem.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "group.drive.item.listItem.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "group.drive.item.listItem.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "group.drive.item.listItem.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "group.drive.item.listItem.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "group.drive.item.listItem.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "group.drive.item.listItem.activity_GetListItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/$count",
-              "operationId": "group.drive.item.listItem.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/activities",
-              "operationId": "group.drive.list_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/activities",
-              "operationId": "group.drive.list.item_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive.list.item_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive.list.item_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive.list.item_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "group.drive.list.item.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "group.drive.list.item.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "group.drive.list.item.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "group.drive.list.item.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "group.drive.list.item.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "group.drive.list.item.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "group.drive.list.item.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "group.drive.list.item.activity_GetListItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/activities/$count",
-              "operationId": "group.drive.list.item.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive.root_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/activities/$count",
-              "operationId": "group.drive.root.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "operationId": "group.drive.root.analytic.itemActivityStat_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "group.drive.root.analytic.itemActivityStat_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "group.drive.root.analytic.itemActivityStat_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "group.drive.root.analytic.itemActivityStat_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "operationId": "group.drive.root.analytic.itemActivityStat.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "group.drive.root.analytic.itemActivityStat.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "group.drive.root.analytic.itemActivityStat.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "group.drive.root.analytic.itemActivityStat.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "group.drive.root.analytic.itemActivityStat.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "group.drive.root.analytic.itemActivityStat.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "group.drive.root.analytic.itemActivityStat.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "operationId": "group.drive.root.analytic.itemActivityStat.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/listItem/activities",
-              "operationId": "group.drive.root.listItem_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive.root.listItem_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive.root.listItem_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "group.drive.root.listItem_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "group.drive.root.listItem.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "group.drive.root.listItem.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "group.drive.root.listItem.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "group.drive.root.listItem.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "group.drive.root.listItem.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "group.drive.root.listItem.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "group.drive.root.listItem.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "group.drive.root.listItem.activity_GetListItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/groups/{group-id}/drives/{drive-id}/root/listItem/activities/$count",
-              "operationId": "group.drive.root.listItem.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/shares/{sharedDriveItem-id}/listItem/activities",
-              "operationId": "share.listItem_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "share.listItem_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "share.listItem_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "share.listItem_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "share.listItem.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "share.listItem.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "share.listItem.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "share.listItem.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "share.listItem.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "share.listItem.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "share.listItem.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "share.listItem.activity_GetListItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/shares/{sharedDriveItem-id}/listItem/activities/$count",
-              "operationId": "share.listItem.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/shares/{sharedDriveItem-id}/listItem/microsoft.graph.createLink",
-              "operationId": "share.listItem_createLink",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/users/{user-id}/drives/{drive-id}/activities",
-              "operationId": "user.drive_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/users/{user-id}/drives/{drive-id}/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "user.drive.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "user.drive.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "user.drive.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "user.drive.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "user.drive.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "user.drive.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "user.drive.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "user.drive.activity_GetListItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/activities/$count",
-              "operationId": "user.drive.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive.item_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/activities/$count",
-              "operationId": "user.drive.item.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "operationId": "user.drive.item.analytic.itemActivityStat_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "user.drive.item.analytic.itemActivityStat_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "user.drive.item.analytic.itemActivityStat_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "user.drive.item.analytic.itemActivityStat_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "operationId": "user.drive.item.analytic.itemActivityStat.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "user.drive.item.analytic.itemActivityStat.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "user.drive.item.analytic.itemActivityStat.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "user.drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "user.drive.item.analytic.itemActivityStat.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "user.drive.item.analytic.itemActivityStat.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "user.drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "operationId": "user.drive.item.analytic.itemActivityStat.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities",
-              "operationId": "user.drive.item.listItem_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive.item.listItem_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive.item.listItem_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive.item.listItem_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "user.drive.item.listItem.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "user.drive.item.listItem.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "user.drive.item.listItem.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "user.drive.item.listItem.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "user.drive.item.listItem.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "user.drive.item.listItem.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "user.drive.item.listItem.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "user.drive.item.listItem.activity_GetListItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/activities/$count",
-              "operationId": "user.drive.item.listItem.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/users/{user-id}/drives/{drive-id}/list/activities",
-              "operationId": "user.drive.list_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/activities",
-              "operationId": "user.drive.list.item_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive.list.item_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive.list.item_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive.list.item_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "user.drive.list.item.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "user.drive.list.item.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "user.drive.list.item.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "user.drive.list.item.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "user.drive.list.item.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "user.drive.list.item.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "user.drive.list.item.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "user.drive.list.item.activity_GetListItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/activities/$count",
-              "operationId": "user.drive.list.item.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive.root_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/activities/$count",
-              "operationId": "user.drive.root.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities",
-              "operationId": "user.drive.root.analytic.itemActivityStat_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "user.drive.root.analytic.itemActivityStat_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "user.drive.root.analytic.itemActivityStat_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
-              "operationId": "user.drive.root.analytic.itemActivityStat_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
-              "operationId": "user.drive.root.analytic.itemActivityStat.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "user.drive.root.analytic.itemActivityStat.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "user.drive.root.analytic.itemActivityStat.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
-              "operationId": "user.drive.root.analytic.itemActivityStat.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "user.drive.root.analytic.itemActivityStat.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "user.drive.root.analytic.itemActivityStat.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
-              "operationId": "user.drive.root.analytic.itemActivityStat.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
-              "operationId": "user.drive.root.analytic.itemActivityStat.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "POST",
-              "path": "/users/{user-id}/drives/{drive-id}/root/listItem/activities",
-              "operationId": "user.drive.root.listItem_CreateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive.root.listItem_GetActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PATCH",
-              "path": "/users/{user-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive.root.listItem_UpdateActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}",
-              "operationId": "user.drive.root.listItem_DeleteActivity",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem",
-              "operationId": "user.drive.root.listItem.activity_GetDriveItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "user.drive.root.listItem.activity_GetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "user.drive.root.listItem.activity_SetDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/content",
-              "operationId": "user.drive.root.listItem.activity_DeleteDriveItemContent",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "user.drive.root.listItem.activity_GetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "PUT",
-              "path": "/users/{user-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "user.drive.root.listItem.activity_SetDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "DELETE",
-              "path": "/users/{user-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/driveItem/contentStream",
-              "operationId": "user.drive.root.listItem.activity_DeleteDriveItemContentStream",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/listItem/activities/{itemActivityOLD-id}/listItem",
-              "operationId": "user.drive.root.listItem.activity_GetListItem",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
-            },
-            {
-              "method": "GET",
-              "path": "/users/{user-id}/drives/{drive-id}/root/listItem/activities/$count",
-              "operationId": "user.drive.root.listItem.activity_GetCount",
-              "notes": "The compatible Files spec has no same-method normalized route; this legacy navigation branch was pruned. No root, resource, or cast alias translation is claimed."
+              "operationId": "share.sharedDriveItem.list.item.listItem_createLink"
             }
           ]
         }
@@ -2078,16 +366,12 @@
             {
               "method": "GET",
               "path": "/groups/{group-id}/drive",
-              "operationId": "groups.GetDrive",
-              "legacyPath": "/groups/{group-id}/drive",
-              "legacyOperationId": "group_GetDrive"
+              "operationId": "group_GetDrive"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/drive",
-              "operationId": "users.GetDrive",
-              "legacyPath": "/users/{user-id}/drive",
-              "legacyOperationId": "user_GetDrive"
+              "operationId": "user_GetDrive"
             }
           ]
         },
@@ -2097,16 +381,12 @@
             {
               "method": "GET",
               "path": "/groups/{group-id}/drive",
-              "operationId": "groups.GetDrive",
-              "legacyPath": "/groups/{group-id}/drive",
-              "legacyOperationId": "group_GetDrive"
+              "operationId": "group_GetDrive"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/drive",
-              "operationId": "users.GetDrive",
-              "legacyPath": "/users/{user-id}/drive",
-              "legacyOperationId": "user_GetDrive"
+              "operationId": "user_GetDrive"
             }
           ]
         }

@@ -20,6 +20,8 @@ directive:
 # Wrapper migration: exact surviving legacy operation-ID selections are suppressed
 # in wrapper/Files_cmdletConfigurations.cs; Files_directiveMigrationMap.json
 # accounts for all 56 v1.0 and 272 beta legacy matches, including pruned routes.
+# Current aligned operation IDs select exactly the complete original survivor sets;
+# the tests reprove lineage and the current strict inventory validates literal IDs.
 # Collection ListActivity GETs are not selected. FilesDirectiveMigrationTests pins
 # both profiles and neighboring routes. Keep this AutoRest directive active.
   - remove-path-by-operation: .*_(Create|Get|Update|Set|Delete)Activity$|.*\.activity.*$|share\..*_createLink
@@ -27,6 +29,9 @@ directive:
 # already implement this rename; the adjacent ledger records exact spec evidence.
 # Keep this AutoRest directive active. Profile-local/global readmes are ignored;
 # parameter/schema migration remains deferred (none occur in this shared file).
+# Separately, ambiguous shared-list GETs retain distinct descriptive nouns: the
+# underlying listItem keeps ShareListItem and items contained in the list use
+# ShareListContainedItem. Existing v1.0 derived suppression remains unchanged.
   - where:
       verb: Get
       subject: ^(Group|User)(Drive)$

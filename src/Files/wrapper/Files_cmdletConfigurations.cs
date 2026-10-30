@@ -18,6 +18,9 @@ public static partial class CmdletConfigurator
             Reason: "oracle ships Get-MgSiteDefaultDrive for the site default-drive singleton"),
         new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/groups/{}/sites/{}/drive", Match: PathMatch.Exact, Value: "GroupSiteDefaultDrive",
             Reason: "oracle ships Get-MgGroupSiteDefaultDrive"),
+        new(OverrideKind.ReplaceNoun, HttpMethod.Get, "/shares/{}/list/items", Match: PathMatch.Exact, Value: "ShareListContainedItem",
+            Reason: "Spec description: All items contained in the list. This collection and the underlying /listItem singleton " +
+            "have identical SharedDriveItemId requirements, so natural-ID grouping is ambiguous. Keep the singleton name and collection List behavior"),
         new(OverrideKind.SuppressOperation, HttpMethod.Get, "/shares/{}/list/items/{}", Match: PathMatch.Exact, Value: null,
             Reason: "oracle: the bare shared-list item GET ships nothing; its descendants ship"),
         new(OverrideKind.SuppressOperation, HttpMethod.Post, "/drives/{}/activities", Match: PathMatch.Exact, Value: null,
