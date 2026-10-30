@@ -44,6 +44,23 @@ v1.0 derived suppressions and names remain authoritative. Required `@id` query
 binding on collection reference deletions is a separately owned generator prerequisite,
 not something this module config implements or bypasses.
 
+Known generator limitations are not directive suppressions. The four beta
+`GET .../rights` operations below return a `usageRightsIncluded` entity whose
+`value` property is a scalar `usageRights` enum. The existing GET classifier treats
+any `value` property as a collection and leaves these operations client-only. The
+shared configuration deliberately leaves them unsuppressed:
+
+- `/informationProtection/sensitivityLabels/{sensitivityLabel-id}/rights`
+- `/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/{sensitivityLabel-id1}/rights`
+- `/users/{user-id}/informationProtection/sensitivityLabels/{sensitivityLabel-id}/rights`
+- `/users/{user-id}/informationProtection/sensitivityLabels/{sensitivityLabel-id}/sublabels/{sensitivityLabel-id1}/rights`
+
+Full compiled route/export checks are distinct from HTTP runtime checks. A build
+and `-WhatIf` alone do not prove required `@id` query forwarding or typed action
+body serialization. Those checks must run with the complete original official
+Authentication module and normally integrated central runtime/query fixes, not
+module-local dependency copies or authored query flags.
+
 ``` yaml
 directive:
 # Wrapper migration 1: the original regex is evaluated against each actual legacy
