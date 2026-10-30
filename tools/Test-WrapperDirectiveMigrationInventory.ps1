@@ -358,6 +358,35 @@ paths:
     if ($literal[0].Status -ne 'Unresolved') {
         throw 'Legacy specs must never cause automatic compatible regex resolution or inferred successors.'
     }
+    $alignedSpec = $currentSpec.Replace('widgets.GetWidget', 'legacy_GetWidget').
+        Replace('widgets.UpdateWidget', 'legacy_UpdateWidget')
+    Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' $alignedSpec
+    $alignedMapping = $legacyMapping | ConvertFrom-Json
+    foreach ($operation in $alignedMapping.mappings[0].profiles.'v1.0'.operations) {
+        $operation.operationId = $operation.legacyOperationId
+    }
+    $alignedMapping | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+    $aligned = @(& $fixtureTool -Module LegacyBridge -MappingPath $testMapping -FailOnUnresolved)
+    if ($aligned[0].Status -ne 'Mapped' -or $aligned[0].V1Operations.Count -ne 2) {
+        throw 'Reviewed Legacy source coverage must remain valid when compatible operation IDs are aligned.'
+    }
+    $alignedMapping.mappings[0].profiles.'v1.0'.PSObject.Properties.Remove('operationIdSource')
+    $alignedMapping.mappings[0].profiles.'v1.0'.PSObject.Properties.Remove('removedLegacyOperations')
+    foreach ($operation in $alignedMapping.mappings[0].profiles.'v1.0'.operations) {
+        $operation.PSObject.Properties.Remove('legacyPath')
+        $operation.PSObject.Properties.Remove('legacyOperationId')
+    }
+    $alignedMapping | ConvertTo-Json -Depth 10 | Set-Content $testMapping
+    $literalReviewed = @(& $fixtureTool -Module LegacyBridge -MappingPath $testMapping -FailOnUnresolved)
+    if ($literalReviewed[0].Status -ne 'Mapped' -or $literalReviewed[0].V1Operations.Count -ne 2) {
+        throw 'Aligned literal selectors must not require Legacy translation for their complete current match set.'
+    }
+    $alignedCandidate = @(& $fixtureTool -Module LegacyBridge)
+    if ($alignedCandidate[0].Status -ne 'Resolved' -or $alignedCandidate[0].Implementation -ne 'Candidate') {
+        throw 'Aligned operation IDs alone must not count as reviewed completion.'
+    }
+    Assert-Failure { & $fixtureTool -Module LegacyBridge -FailOnUnresolved } 'lack reviewed mappings'
+    Write-FixtureFile 'openApiDocs_KiotaCompat\v1.0\LegacyBridge.yml' $currentSpec
     $bridgeCases = @(
         @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.PSObject.Properties.Remove('operationIdSource') }; Pattern = 'requires explicit operationIdSource' }
         @{ Mutate = { param($d) $d.mappings[0].profiles.'v1.0'.operationIdSource = 'legacy' }; Pattern = "operationIdSource must be 'Legacy'" }

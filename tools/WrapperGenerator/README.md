@@ -456,30 +456,43 @@ the shared-directive-only scope. A spec added later invalidates the exclusion un
 Quoted YAML function keys are decoded before exact path comparison, so doubled single quotes
 in a key such as `User=''{User}''` become the literal `User='{User}'` in ledger evidence.
 
-### Reviewed legacy operation-ID conversion
+### Reviewed legacy source coverage after operation-ID alignment
 
-Literal operation-ID matching against compatible specifications remains the default. Some
-shared suppression regexes instead name old operation IDs that actually exist in the
-same module/profile under `openApiDocs`. Opt into a reviewed translation for that profile,
-not an inferred alias or a rewritten regex:
+Literal operation-ID matching against compatible specifications remains the default.
+Compatible downloads now project the singularized PowerShell operation IDs while retaining
+the Plain schemas (`tools/Utilities/Set-OpenApiOperationIds.ps1`). An older dotted compatible
+ID is no longer valid ledger evidence merely because it was correct before alignment.
+Use current exact method/path/ID evidence; ordinary aligned selectors need no Legacy opt-in.
+
+Alignment does not guarantee that the original shared regex selects every surviving route.
+For example, the beta Enrollment selector matches eight compatible IDs but eleven actual
+legacy operations; Planner beta matches 182 compatible IDs but 206 legacy operations.
+The remaining three and 24 routes have reviewed final-operation path conversions and
+different operation-ID ancestry. Explicit complete-source validation is still required
+for those cases. Opt into the same module/profile's actual `openApiDocs` source set,
+not an inferred alias, a rewritten regex, or a union with literal compatible matches:
 
 ```json
-"v1.0": {
+"beta": {
   "operationIdSource": "Legacy",
   "notes": "Reviewed the complete original legacy regex match set against compatible routes.",
   "absenceExpected": false,
   "operations": [
     {
-      "method": "PATCH",
-      "path": "/auditLogs",
-      "operationId": "auditLogs.auditLogRoot.UpdateAuditLogRoot",
-      "legacyPath": "/auditLogs",
-      "legacyOperationId": "auditLog.auditLogRoot_UpdateAuditLogRoot"
+      "method": "GET",
+      "path": "/planner/buckets/{plannerBucket-id}/tasks/delta()",
+      "operationId": "planner.bucket.plannerBucket.task_delta",
+      "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/microsoft.graph.delta()",
+      "legacyOperationId": "planner.bucket.task_delta",
+      "legacyPathTranslation": "UnqualifyFinalOperation"
     }
   ],
   "removedLegacyOperations": []
 }
 ```
+
+This is one real beta Planner bridge, not its complete suppression ledger; all selected
+source operations must be included before the completion gate can pass.
 
 This disposition is supported only for `OperationIdSuppression`. Both actual
 `openApiDocs/<profile>/<Module>.yml` and compatible specifications must exist. The original
