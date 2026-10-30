@@ -27,12 +27,15 @@ if (-not $FixtureRoot) {
 }
 # The child releases imported binaries before the parent removes the fixture on Windows.
 if (-not $Probe) {
+    if (Test-Path -LiteralPath $FixtureRoot) {
+        throw "FixtureRoot must be a new directory: $FixtureRoot"
+    }
     try {
         & pwsh -NoProfile -NonInteractive -File $PSCommandPath -GeneratorAssembly $GeneratorAssembly `
             -RuntimeAssembly $RuntimeAssembly -FixtureRoot $FixtureRoot -Probe
         if ($LASTEXITCODE -ne 0) { throw "Dispatcher probe exited $LASTEXITCODE." }
     }
-    finally { Remove-Item $FixtureRoot -Recurse -Force -ErrorAction SilentlyContinue }
+    finally { Remove-Item -LiteralPath $FixtureRoot -Recurse -Force -ErrorAction SilentlyContinue }
     exit 0
 }
 
