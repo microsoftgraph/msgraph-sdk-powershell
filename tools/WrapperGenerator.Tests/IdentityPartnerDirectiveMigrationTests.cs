@@ -17,25 +17,27 @@ public sealed class IdentityPartnerDirectiveMigrationTests
         string Resource, string CountSuffix, string Noun)[] Routes =
     [
         ("/tenantRelationships/delegatedAdminCustomers", "delegatedAdminCustomer-id",
-            "tenantRelationships.", "DelegatedAdminCustomers", "delegatedAdminCustomers.GetCount-e293",
+            "tenantRelationship_", "DelegatedAdminCustomer", "tenantRelationship.delegatedAdminCustomer_GetCount",
             "TenantRelationshipDelegatedAdminCustomer"),
         ("/tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer-id}/serviceManagementDetails",
-            "delegatedAdminServiceManagementDetail-id", "tenantRelationships.delegatedAdminCustomers.",
-            "ServiceManagementDetails", "serviceManagementDetails.GetCount-d662",
+            "delegatedAdminServiceManagementDetail-id", "tenantRelationship.delegatedAdminCustomer_",
+            "ServiceManagementDetail", "tenantRelationship.delegatedAdminCustomer.serviceManagementDetail_GetCount",
             "TenantRelationshipDelegatedAdminCustomerServiceManagementDetail"),
         ("/tenantRelationships/delegatedAdminRelationships", "delegatedAdminRelationship-id",
-            "tenantRelationships.", "DelegatedAdminRelationships", "delegatedAdminRelationships.GetCount-9d12",
+            "tenantRelationship_", "DelegatedAdminRelationship", "tenantRelationship.delegatedAdminRelationship_GetCount",
             "TenantRelationshipDelegatedAdminRelationship"),
         ("/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/accessAssignments",
-            "delegatedAdminAccessAssignment-id", "tenantRelationships.delegatedAdminRelationships.",
-            "AccessAssignments", "accessAssignments.GetCount-8cbf",
+            "delegatedAdminAccessAssignment-id", "tenantRelationship.delegatedAdminRelationship_",
+            "AccessAssignment", "tenantRelationship.delegatedAdminRelationship.accessAssignment_GetCount",
             "TenantRelationshipDelegatedAdminRelationshipAccessAssignment"),
         ("/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/operations",
-            "delegatedAdminRelationshipOperation-id", "tenantRelationships.delegatedAdminRelationships.",
-            "Operations", "operations.GetCount-3beb", "TenantRelationshipDelegatedAdminRelationshipOperation"),
+            "delegatedAdminRelationshipOperation-id", "tenantRelationship.delegatedAdminRelationship_",
+            "Operation", "tenantRelationship.delegatedAdminRelationship.operation_GetCount",
+            "TenantRelationshipDelegatedAdminRelationshipOperation"),
         ("/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/requests",
-            "delegatedAdminRelationshipRequest-id", "tenantRelationships.delegatedAdminRelationships.",
-            "Requests", "requests.GetCount-f3a6", "TenantRelationshipDelegatedAdminRelationshipRequest"),
+            "delegatedAdminRelationshipRequest-id", "tenantRelationship.delegatedAdminRelationship_",
+            "Request", "tenantRelationship.delegatedAdminRelationship.request_GetCount",
+            "TenantRelationshipDelegatedAdminRelationshipRequest"),
     ];
 
     [Fact]
@@ -76,24 +78,28 @@ public sealed class IdentityPartnerDirectiveMigrationTests
             AssertOperation(HttpMethod.Get, itemPath, "Get" + route.Resource, "Get", route.Noun);
             AssertOperation(HttpMethod.Patch, itemPath, "Update" + route.Resource, "Update", route.Noun);
             AssertOperation(HttpMethod.Delete, itemPath, "Delete" + route.Resource, "Remove", route.Noun);
-            AssertOperation(HttpMethod.Get, route.Collection + "/$count", route.CountSuffix, "Get", route.Noun + "Count");
+            AssertOperation(HttpMethod.Get, route.Collection + "/$count", route.CountSuffix, "Get", route.Noun + "Count",
+                fullOperationId: true);
 
-            void AssertOperation(HttpMethod method, string path, string operationSuffix, string verb, string noun)
+            void AssertOperation(HttpMethod method, string path, string operationSuffix, string verb, string noun,
+                bool fullOperationId = false)
             {
                 Assert.True(document.Paths.TryGetValue(path, out var pathItem), $"Missing {profile} path: {path}");
                 Assert.NotNull(pathItem.Operations);
                 Assert.True(pathItem.Operations.TryGetValue(method, out var operation),
                     $"Missing {profile} operation: {method} {path}");
-                Assert.Equal(route.OperationPrefix + operationSuffix, operation.OperationId);
+                Assert.Equal(fullOperationId ? operationSuffix : route.OperationPrefix + operationSuffix,
+                    operation.OperationId);
 
                 foreach (var useCollisionData in new[] { false, true })
                 {
-                    var config = new GeneratorConfig("Test.Client", "unused", profile, useCollisionData);
-                    Assert.False(CmdletConfigurator.IsSuppressed(method, path, config),
+                    var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
+                    Assert.False(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile),
                         $"Unexpected {profile} suppression: {method} {path}");
-                    Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(method, path, config));
-                    Assert.Equal(noun, CmdletConfigurator.ApplyNounOverrides(method, path, noun, config));
-                    var naming = Naming.Resolve(new OperationInfo(method, path), config);
+                    Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(method, path, config, apiVersion: profile));
+                    Assert.Equal(noun, CmdletConfigurator.ApplyNounOverrides(method, path, noun, config,
+                        apiVersion: profile));
+                    var naming = Naming.Resolve(new OperationInfo(method, path), config, apiVersion: profile);
                     Assert.Equal(verb, naming.VerbName);
                     Assert.Equal("Mg" + noun, naming.Noun);
                 }

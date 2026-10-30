@@ -34,12 +34,13 @@ this migration; this include adds no module directive entries or v3 overrides.
 
 Both required profiles are present; neither is excluded. Only the
 `openApiDocs_KiotaCompat` specifications were used, without a legacy fallback.
-The coordinator's generation-manifest pins match these Git blobs:
+After normally merging `powershell-v3` at `08e409a6aa` (merged #3849),
+the current compatible specifications have these Git blobs:
 
 | Profile | Compatible specification | Git blob | Paths | Operations |
 | --- | --- | --- | --- | --- |
-| v1.0 | `openApiDocs_KiotaCompat\v1.0\Identity.Partner.yml` | `dfd2f6ce01e4834a667c80af1052423e765c1eb8` | 18 | 36 |
-| beta | `openApiDocs_KiotaCompat\beta\Identity.Partner.yml` | `bde85e06a46e09328344c9fda3728b513d29c298` | 18 | 36 |
+| v1.0 | `openApiDocs_KiotaCompat\v1.0\Identity.Partner.yml` | `f967cae62269bd5421dc94f296c72de301c1df24` | 18 | 36 |
+| beta | `openApiDocs_KiotaCompat\beta\Identity.Partner.yml` | `2079834335f9781a8043cbf068a3b83065fa39fd` | 18 | 36 |
 
 The six collection/item/count route families below exist in both compatible
 profiles. Each collection has GET/List and POST/Create; each item has GET/Get,
@@ -49,15 +50,15 @@ regression tests.
 
 | Collection path | Operation-ID prefix | Resource suffix | Count operation-ID suffix |
 | --- | --- | --- | --- |
-| `/tenantRelationships/delegatedAdminCustomers` | `tenantRelationships.` | `DelegatedAdminCustomers` | `delegatedAdminCustomers.GetCount-e293` |
-| `/tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer-id}/serviceManagementDetails` | `tenantRelationships.delegatedAdminCustomers.` | `ServiceManagementDetails` | `serviceManagementDetails.GetCount-d662` |
-| `/tenantRelationships/delegatedAdminRelationships` | `tenantRelationships.` | `DelegatedAdminRelationships` | `delegatedAdminRelationships.GetCount-9d12` |
-| `/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/accessAssignments` | `tenantRelationships.delegatedAdminRelationships.` | `AccessAssignments` | `accessAssignments.GetCount-8cbf` |
-| `/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/operations` | `tenantRelationships.delegatedAdminRelationships.` | `Operations` | `operations.GetCount-3beb` |
-| `/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/requests` | `tenantRelationships.delegatedAdminRelationships.` | `Requests` | `requests.GetCount-f3a6` |
+| `/tenantRelationships/delegatedAdminCustomers` | `tenantRelationship_` | `DelegatedAdminCustomer` | `tenantRelationship.delegatedAdminCustomer_GetCount` |
+| `/tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer-id}/serviceManagementDetails` | `tenantRelationship.delegatedAdminCustomer_` | `ServiceManagementDetail` | `tenantRelationship.delegatedAdminCustomer.serviceManagementDetail_GetCount` |
+| `/tenantRelationships/delegatedAdminRelationships` | `tenantRelationship_` | `DelegatedAdminRelationship` | `tenantRelationship.delegatedAdminRelationship_GetCount` |
+| `/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/accessAssignments` | `tenantRelationship.delegatedAdminRelationship_` | `AccessAssignment` | `tenantRelationship.delegatedAdminRelationship.accessAssignment_GetCount` |
+| `/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/operations` | `tenantRelationship.delegatedAdminRelationship_` | `Operation` | `tenantRelationship.delegatedAdminRelationship.operation_GetCount` |
+| `/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship-id}/requests` | `tenantRelationship.delegatedAdminRelationship_` | `Request` | `tenantRelationship.delegatedAdminRelationship.request_GetCount` |
 
 For example, GET `/tenantRelationships/delegatedAdminRelationships` is
-`tenantRelationships.ListDelegatedAdminRelationships` and retains the
+`tenantRelationship_ListDelegatedAdminRelationship` and retains the
 structural name `Get-MgTenantRelationshipDelegatedAdminRelationship`.
 PATCH and DELETE on its item route retain `Update-` and `Remove-`.
 Neighboring customer, service-management-detail, access-assignment, operation,
@@ -78,7 +79,9 @@ excluded readmes.
 both real compatible specifications. It pins all 36 method/path/operation-ID
 triples per profile, their structural CRUD/count names, and the absence of
 suppression, noun overrides, and verb overrides with curated-only and normal
-derived configuration. It also checks that this audit has no directive block
+derived configuration, passing the actual profile separately to every naming
+and suppression API. Authored configuration remains shared; `GeneratorConfig`
+contains only run settings. It also checks that this audit has no directive block
 and the reviewed mapping ledger is empty.
 
 The strict shared-directive inventory must return zero rows with
