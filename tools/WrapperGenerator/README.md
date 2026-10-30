@@ -211,6 +211,16 @@ rather than optional; and the manifest GUID is derived from the module name — 
 4122 UUID, identical on every build — so `Update-Module` keeps its identity across handouts
 instead of seeing a new module each time.
 
+The module carries only its wrapper assemblies and three standalone dependencies absent from
+Authentication: `Std.UriTemplate`, `Microsoft.Kiota.Serialization.Multipart`, and
+`Microsoft.IO.RecyclableMemoryStream`. Their versions come from the existing NuGet restore graph,
+not extra version pins. The manifest preloads UriTemplate and RecyclableMemoryStream because their
+requesters (Kiota.Abstractions and Kiota.Serialization.Json) run inside Authentication's isolated
+context; module-directory probing alone cannot satisfy them. Without RecyclableMemoryStream,
+imports and GETs can pass while typed POST/PATCH serialization fails before sending HTTP.
+Do not copy the shared Kiota/Authentication closure: it must retain Authentication's type identities
+and shared GraphSession.
+
 **Check it** — the smoke test reads the **package**, not `bin/`, in a fresh pwsh process per
 module. Importing build output proves the compiler ran; it does not prove the artifact a user
 installs carries the assembly, its dependencies and a manifest that agrees with them. So pack
@@ -220,6 +230,20 @@ first:
 .\tools\Build-WrapperModule.ps1 -Module Mail -Pack
 .\tools\Test-WrapperModule.ps1 -Module Mail
 ```
+
+For the offline serialization regression, build and pack `SchemaExtensions` for each profile,
+then run the following in a **fresh process** with the intended official Authentication module
+on `PSModulePath` (also supported by Windows PowerShell when its assembly identities are compatible):
+
+```powershell
+pwsh -NoProfile -File .\tools\Test-WrapperSerialization.ps1 -ManifestPath <unpacked-package-manifest> -ApiVersion v1.0
+```
+
+The gate imports the normal manifest and uses actual compiled GET/POST/PATCH/DELETE cmdlets with
+an in-memory session HTTP handler. It checks typed nested JSON bodies, escaped URLs, PATCH refetch,
+WhatIf/declined-confirmation no-send behavior, and assembly sources/contexts without contacting Graph.
+The package smoke gate also requires all three standalone DLLs, the manifest preloads, and no
+duplicated shared dependency closure.
 
 It refuses a package packed before any of its compile inputs under `src` — a green run cannot be
 a stale one — and reports `n/a` rather than a pass for a shape the module never binds. The full
