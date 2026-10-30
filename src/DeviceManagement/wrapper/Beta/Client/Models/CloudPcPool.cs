@@ -20,14 +20,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcPoolAssignment> Assignments { get; set; }
 #endif
-        /// <summary>The capabilities property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcPoolCapabilityConfiguration? Capabilities { get; set; }
-#nullable restore
-#else
-        public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcPoolCapabilityConfiguration Capabilities { get; set; }
-#endif
         /// <summary>The cloudPcConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,7 +75,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcPoolAssignment>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcPoolAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcPoolCapabilityConfiguration>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcPoolCapabilityConfiguration.CreateFromDiscriminatorValue); } },
                 { "cloudPcConfiguration", n => { CloudPcConfiguration = n.GetObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcConfiguration>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcConfiguration.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -101,7 +92,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcPoolAssignment>("assignments", Assignments);
-            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcPoolCapabilityConfiguration>("capabilities", Capabilities);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcConfiguration>("cloudPcConfiguration", CloudPcConfiguration);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);

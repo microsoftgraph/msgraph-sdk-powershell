@@ -49,7 +49,6 @@ using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.Comana
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.RotateFileVaultKey;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.RotateLocalAdminPassword;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.RotateRecoveryLockPasscode;
-using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.SendCustomNotificationToCompanyPortal;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.SetDeviceName;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.ShutDown;
@@ -325,11 +324,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.Co
         public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.RotateRecoveryLockPasscode.RotateRecoveryLockPasscodeRequestBuilder RotateRecoveryLockPasscode
         {
             get => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.RotateRecoveryLockPasscode.RotateRecoveryLockPasscodeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The securityBaselineStates property</summary>
-        public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.SecurityBaselineStatesRequestBuilder SecurityBaselineStates
-        {
-            get => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.SecurityBaselineStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sendCustomNotificationToCompanyPortal property</summary>
         public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.SendCustomNotificationToCompanyPortal.SendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal

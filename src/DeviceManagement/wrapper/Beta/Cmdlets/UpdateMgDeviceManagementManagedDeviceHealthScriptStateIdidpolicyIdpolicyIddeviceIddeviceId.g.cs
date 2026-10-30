@@ -19,12 +19,18 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string ManagedDeviceId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string Id { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 2)]
+        public string PolicyId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 3)]
+        public string DeviceId { get; set; } = string.Empty;
 
         [Parameter(Mandatory = false)]
         public string[]? AssignmentFilterIds { get; set; }
 
         [Parameter(Mandatory = false)]
-        public string? DeviceId { get; set; }
+        public string? DeviceId1 { get; set; }
 
         [Parameter(Mandatory = false)]
         public string? DeviceName { get; set; }
@@ -42,7 +48,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         public string? OsVersion { get; set; }
 
         [Parameter(Mandatory = false)]
-        public string? PolicyId { get; set; }
+        public string? PolicyId1 { get; set; }
 
         [Parameter(Mandatory = false)]
         public string? PolicyName { get; set; }
@@ -78,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(ManagedDeviceId, "Update"))
+            if (!ShouldProcess(DeviceId, "Update"))
                 return;
 
             var body = new Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceHealthScriptPolicyState();
@@ -86,8 +92,8 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     if (this.IsParameterBound(nameof(AssignmentFilterIds)))
         body.AssignmentFilterIds = AssignmentFilterIds!.ToList();
 
-    if (this.IsParameterBound(nameof(DeviceId)))
-        body.DeviceId = DeviceId;
+    if (this.IsParameterBound(nameof(DeviceId1)))
+        body.DeviceId = DeviceId1;
 
     if (this.IsParameterBound(nameof(DeviceName)))
         body.DeviceName = DeviceName;
@@ -104,8 +110,8 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     if (this.IsParameterBound(nameof(OsVersion)))
         body.OsVersion = OsVersion;
 
-    if (this.IsParameterBound(nameof(PolicyId)))
-        body.PolicyId = PolicyId;
+    if (this.IsParameterBound(nameof(PolicyId1)))
+        body.PolicyId = PolicyId1;
 
     if (this.IsParameterBound(nameof(PolicyName)))
         body.PolicyName = PolicyName;
@@ -141,7 +147,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceHealthScriptPolicyState? result;
             try
             {
-                result = client.DeviceManagement.ManagedDevices[ManagedDeviceId].DeviceHealthScriptStates.Id='{id}',policyId='{policyId}',deviceId='{deviceId}'.PatchAsync(body, requestConfiguration =>
+                result = new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ManagedDevices.Item.DeviceHealthScriptStates.WithIdWithPolicyIdWithDeviceId.WithIdWithPolicyIdWithDeviceIdRequestBuilder(new global::System.Collections.Generic.Dictionary<string, object> { { "baseurl", requestAdapter.BaseUrl! }, { "managedDevice%2Did", ManagedDeviceId }, { "id", Id }, { "policyId", PolicyId }, { "deviceId", DeviceId }, }, requestAdapter).PatchAsync(body, requestConfiguration =>
                 {
 
                         AddRequestHeaders(requestConfiguration.Headers);
@@ -149,7 +155,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, ManagedDeviceId);
+                ThrowGraphRequestFailed(ex, DeviceId);
                 return;
             }
 
@@ -159,11 +165,11 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
                 WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
                 try
                 {
-                    result = client.DeviceManagement.ManagedDevices[ManagedDeviceId].DeviceHealthScriptStates.Id='{id}',policyId='{policyId}',deviceId='{deviceId}'.GetAsync().GetAwaiter().GetResult();
+                    result = new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ManagedDevices.Item.DeviceHealthScriptStates.WithIdWithPolicyIdWithDeviceId.WithIdWithPolicyIdWithDeviceIdRequestBuilder(new global::System.Collections.Generic.Dictionary<string, object> { { "baseurl", requestAdapter.BaseUrl! }, { "managedDevice%2Did", ManagedDeviceId }, { "id", Id }, { "policyId", PolicyId }, { "deviceId", DeviceId }, }, requestAdapter).GetAsync().GetAwaiter().GetResult();
                 }
                 catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
-                    ThrowGraphRequestFailed(ex, ManagedDeviceId);
+                    ThrowGraphRequestFailed(ex, DeviceId);
                     return;
                 }
             }

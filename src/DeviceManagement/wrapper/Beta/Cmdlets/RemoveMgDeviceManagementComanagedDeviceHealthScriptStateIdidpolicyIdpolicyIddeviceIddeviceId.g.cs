@@ -16,6 +16,12 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string ManagedDeviceId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string Id { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 2)]
+        public string PolicyId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 3)]
+        public string DeviceId { get; set; } = string.Empty;
 
 
         [Parameter(Mandatory = false,
@@ -27,7 +33,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(ManagedDeviceId, "Remove"))
+            if (!ShouldProcess(DeviceId, "Remove"))
                 return;
 
         var requestAdapter = GetRequestAdapter();
@@ -36,7 +42,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                client.DeviceManagement.ComanagedDevices[ManagedDeviceId].DeviceHealthScriptStates.Id='{id}',policyId='{policyId}',deviceId='{deviceId}'.DeleteAsync(requestConfiguration =>
+                new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ComanagedDevices.Item.DeviceHealthScriptStates.WithIdWithPolicyIdWithDeviceId.WithIdWithPolicyIdWithDeviceIdRequestBuilder(new global::System.Collections.Generic.Dictionary<string, object> { { "baseurl", requestAdapter.BaseUrl! }, { "managedDevice%2Did", ManagedDeviceId }, { "id", Id }, { "policyId", PolicyId }, { "deviceId", DeviceId }, }, requestAdapter).DeleteAsync(requestConfiguration =>
                 {
 
                         if (this.IsParameterBound(nameof(IfMatch)))
@@ -48,7 +54,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, ManagedDeviceId);
+                ThrowGraphRequestFailed(ex, DeviceId);
                 return;
             }
         }

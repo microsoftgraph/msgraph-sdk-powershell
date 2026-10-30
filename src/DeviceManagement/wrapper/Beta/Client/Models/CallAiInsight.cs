@@ -48,6 +48,14 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.MeetingNote> MeetingNotes { get; set; }
 #endif
+        /// <summary>The recapUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RecapUrl { get; set; }
+#nullable restore
+#else
+        public string RecapUrl { get; set; }
+#endif
         /// <summary>The viewpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +88,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "meetingNotes", n => { MeetingNotes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.MeetingNote>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.MeetingNote.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "recapUrl", n => { RecapUrl = n.GetStringValue(); } },
                 { "viewpoint", n => { Viewpoint = n.GetObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CallAiInsightViewPoint>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CallAiInsightViewPoint.CreateFromDiscriminatorValue); } },
             };
         }
@@ -97,6 +106,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.MeetingNote>("meetingNotes", MeetingNotes);
+            writer.WriteStringValue("recapUrl", RecapUrl);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CallAiInsightViewPoint>("viewpoint", Viewpoint);
         }
     }

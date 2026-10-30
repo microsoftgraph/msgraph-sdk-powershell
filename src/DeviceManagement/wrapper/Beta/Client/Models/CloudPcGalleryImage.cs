@@ -25,7 +25,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
         public Date? EndDate { get; set; }
         /// <summary>The date when the image is no longer available. Users are unable to provision new Cloud PCs if the current time is later than expirationDate. The value is usually endDate plus six months. For example, if the startDate is 2025-10-14, the expirationDate is usually 2026-04-14. Read-only.</summary>
         public Date? ExpirationDate { get; set; }
-        /// <summary>The offer name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The offer property is deprecated and will stop returning data on January 31, 2024. Going forward, use the offerName property.</summary>
+        /// <summary>The offer name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The offer property is deprecated and will stop returning data on December 7, 2026. Going forward, use the offerName property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Offer { get; set; }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
 #else
         public string Offer { get; set; }
 #endif
-        /// <summary>The official display offer name of this gallery image. For example, Windows 11 Enterprise. The offerDisplayName property is deprecated and will stop returning data on January 31, 2024.</summary>
+        /// <summary>The official display offer name of this gallery image. For example, Windows 11 Enterprise + Microsoft 365 Apps. The offerDisplayName property is deprecated and will stop returning data on December 7, 2026. Going forward, use the displayName property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OfferDisplayName { get; set; }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
 #else
         public string OsVersionNumber { get; set; }
 #endif
-        /// <summary>The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The publisher property is deprecated and will stop returning data on January 31, 2024. Going forward, use the publisherName property.</summary>
+        /// <summary>The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The publisher property is deprecated and will stop returning data on December 7, 2026. Going forward, use the publisherName property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Publisher { get; set; }
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
 #else
         public string PublisherName { get; set; }
 #endif
-        /// <summary>The recommended Cloud PC SKU for this gallery image. Read-only. The recommendedSku property is deprecated and will stop returning data on January 31, 2024.</summary>
+        /// <summary>The recommended Cloud PC SKU for this gallery image. Read-only. The recommendedSku property is deprecated and will stop returning data on December 7, 2026. No replacement is planned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecommendedSku { get; set; }
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
 #endif
         /// <summary>Indicates the size of this image in gigabytes. For example, 64. Read-only.</summary>
         public int? SizeInGB { get; set; }
-        /// <summary>The SKU name of this image that is passed to ARM to retrieve the image resource. Read-only. The sku property is deprecated and will stop returning data on January 31, 2024. Going forward, use the skuName property.</summary>
+        /// <summary>The SKU name of this image that is passed to ARM to retrieve the image resource. Read-only. The sku property is deprecated and will stop returning data on December 7, 2026. Going forward, use the skuName property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sku { get; set; }
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
 #else
         public string Sku { get; set; }
 #endif
-        /// <summary>The official display SKU name of this gallery image. For example, 2004. Read-only. The skuDisplayName property is deprecated and will stop returning data on January 31, 2024.</summary>
+        /// <summary>The official display SKU name of this gallery image. For example, 22H2. Read-only. The skuDisplayName property is deprecated and will stop returning data on December 7, 2026. Going forward, use the displayName property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkuDisplayName { get; set; }

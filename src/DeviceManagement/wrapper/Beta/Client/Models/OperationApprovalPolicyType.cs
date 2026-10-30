@@ -34,5 +34,8 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
         /// <summary>Indicates that the configured policy type is for Tenant Configuration operations.</summary>
         [EnumMember(Value = "tenantConfiguration")]
         TenantConfiguration,
+        /// <summary>Indicates that the configured policy type is for a Device Deprovision Action.</summary>
+        [EnumMember(Value = "deviceDeprovision")]
+        DeviceDeprovision,
     }
 }
