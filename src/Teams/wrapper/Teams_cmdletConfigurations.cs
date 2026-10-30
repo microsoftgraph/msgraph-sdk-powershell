@@ -61,7 +61,7 @@ public static partial class CmdletConfigurator
             ("/groups/{}/team/allchannels/$count", "AllGroupTeamChannelCount"),
             ("/users/{}/chats/{}/messages", "AllUserChatMessage"),
             ("/users/{}/chats/{}/messages/{}", "AllUserChatMessage"),
-            ("/users/{}/chats/getallmessages", "AllUserChatMessage"),
+            ("/users/{}/chats/getallmessages", "AllUserChatMessageAcrossChat"),
         })
             entries.Add(new(OverrideKind.ReplaceNoun, HttpMethod.Get, path, PathMatch.Exact, noun,
                 "Teams.md directives 6-9: All subject renames; v1.0 derived names remain authoritative, beta needs curated coverage"));

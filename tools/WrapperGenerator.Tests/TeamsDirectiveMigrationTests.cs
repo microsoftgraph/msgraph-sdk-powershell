@@ -38,20 +38,25 @@ public sealed class TeamsDirectiveMigrationTests
 
         Assert.Equal(expectedCount, originalMatches.Length);
         Assert.Equal(expectedCount, operations.Length);
-        Assert.Equal("Legacy", evidence.GetProperty("operationIdSource").GetString());
-        Assert.Empty(evidence.GetProperty("removedLegacyOperations").EnumerateArray());
-        Assert.Equal(expectedTranslations, operations.Count(operation => operation.TryGetProperty("legacyPathTranslation", out _)));
+        Assert.False(evidence.TryGetProperty("operationIdSource", out _));
+        Assert.False(evidence.TryGetProperty("removedLegacyOperations", out _));
+        Assert.Equal(expectedTranslations, operations.Count(operation => operation.GetProperty("sourceLineage").TryGetProperty("reviewedTranslation", out _)));
+        var literalMatches = compatible.Paths.SelectMany(path => path.Value.Operations!
+            .Where(operation => Regex.IsMatch(operation.Value.OperationId!, OriginalSelector))
+            .Select(operation => $"{operation.Key}|{path.Key}|{operation.Value.OperationId}")).ToHashSet(StringComparer.Ordinal);
+        Assert.True(literalMatches.SetEquals(operations.Select(operation =>
+            $"{operation.GetProperty("method").GetString()}|{operation.GetProperty("path").GetString()}|{operation.GetProperty("operationId").GetString()}")));
 
         foreach (var old in originalMatches)
         {
             var bridge = Assert.Single(operations, operation =>
-                operation.GetProperty("legacyOperationId").GetString() == old.Operation.OperationId
-                && operation.GetProperty("legacyPath").GetString() == old.Path
+                operation.GetProperty("sourceLineage").GetProperty("operationId").GetString() == old.Operation.OperationId
+                && operation.GetProperty("sourceLineage").GetProperty("path").GetString() == old.Path
                 && operation.GetProperty("method").GetString() == old.Method.Method);
             var path = bridge.GetProperty("path").GetString()!;
             var modern = compatible.Paths[path].Operations![old.Method];
             Assert.Equal(bridge.GetProperty("operationId").GetString(), modern.OperationId);
-            if (bridge.TryGetProperty("legacyPathTranslation", out var translation))
+            if (bridge.GetProperty("sourceLineage").TryGetProperty("reviewedTranslation", out var translation))
             {
                 Assert.Equal("UnqualifyFinalOperation", translation.GetString());
                 var kind = Kind(old.Operation);
@@ -96,12 +101,12 @@ public sealed class TeamsDirectiveMigrationTests
                 Assert.Equal(evidence.GetProperty("operationId").GetString(), operation.OperationId);
                 foreach (var useDerivedData in new[] { false, true })
                 {
-                    var config = new GeneratorConfig("Test.Client", "unused", profile, useDerivedData);
+                    var config = new GeneratorConfig("Test.Client", "unused", useDerivedData);
                     if (index <= 5)
-                        Assert.True(CmdletConfigurator.IsSuppressed(method, path, config), $"{profile} directive {index}: {method} {path}");
+                        Assert.True(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile), $"{profile} directive {index}: {method} {path}");
                     else
                     {
-                        var name = Naming.Resolve(new OperationInfo(method, path, Kind: Kind(operation)), config);
+                        var name = Naming.Resolve(new OperationInfo(method, path, Kind: Kind(operation)), config, apiVersion: profile);
                         Assert.Equal("Get", name.VerbName);
                         Assert.Equal("Mg" + evidence.GetProperty("expectedNoun").GetString(), name.Noun);
                     }
@@ -131,7 +136,7 @@ public sealed class TeamsDirectiveMigrationTests
                 continue;
             observedProfiles++;
             Assert.False(CmdletConfigurator.IsSuppressed(new HttpMethod(method), path,
-                new GeneratorConfig("Test.Client", "unused", profile, UseCollisionData: false)));
+                new GeneratorConfig("Test.Client", "unused", UseCollisionData: false), apiVersion: profile));
         }
         Assert.True(observedProfiles > 0, $"Neighbor is missing from both required compatible specs: {method} {path}");
     }
@@ -149,7 +154,7 @@ public sealed class TeamsDirectiveMigrationTests
             Assert.True(Document("openApiDocs_KiotaCompat", profile).Paths[path].Operations!.ContainsKey(new HttpMethod(method)));
             foreach (var useDerivedData in new[] { false, true })
                 Assert.Equal(expectedNoun, Naming.Resolve(new OperationInfo(new HttpMethod(method), path),
-                    new GeneratorConfig("Test.Client", "unused", profile, useDerivedData)).Noun);
+                    new GeneratorConfig("Test.Client", "unused", useDerivedData), apiVersion: profile).Noun);
         }
     }
 
@@ -167,7 +172,8 @@ public sealed class TeamsDirectiveMigrationTests
         var actual = Document("openApiDocs_KiotaCompat", profile).Paths[aggregate.GetProperty("path").GetString()!].Operations![HttpMethod.Get];
         Assert.Equal(OperationKind.Function, Kind(actual));
         Assert.Contains(actual.Parameters!, parameter => parameter.Name == "model" && parameter.In == ParameterLocation.Query);
-        Assert.Equal("users.user.chats.getAllMessages", actual.OperationId);
+        Assert.Equal("user.chat_getAllMessage", actual.OperationId);
+        Assert.Equal("AllUserChatMessageAcrossChat", aggregate.GetProperty("expectedNoun").GetString());
         Assert.DoesNotContain(Document("openApiDocs_KiotaCompat", profile).Paths.Keys,
             path => path.StartsWith("/users/", StringComparison.Ordinal) && path.Contains("/onlineMeetings", StringComparison.Ordinal));
     }
@@ -193,7 +199,7 @@ public sealed class TeamsDirectiveMigrationTests
         try
         {
             var service = new PowerShellWrapperGenerationService(selected,
-                new GeneratorConfig("Microsoft.Graph.PowerShell.Teams.Client", output, profile), NullLogger.Instance);
+                new GeneratorConfig("Microsoft.Graph.PowerShell.Teams.Client", output), NullLogger.Instance, apiVersion: profile);
             await service.GenerateAsync(CancellationToken.None);
             var sources = Directory.GetFiles(output, "*.g.cs").ToDictionary(file => new FileInfo(file).Name, File.ReadAllText);
             Assert.Contains("GetMgUserJoinedTeam.g.cs", sources.Keys);
@@ -229,6 +235,57 @@ public sealed class TeamsDirectiveMigrationTests
                 selected.Paths.Add(path, item);
             }
             item.Operations![method] = original.Paths[path].Operations![method];
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task AggregateReadKeepsDistinctSourceBackedNameAndDocumentsFrozenV1Suppression(string profile, bool useDerivedData)
+    {
+        var original = Document("openApiDocs_KiotaCompat", profile);
+        var selected = new OpenApiDocument { Components = original.Components, Paths = new OpenApiPaths() };
+        using var ledger = ReadLedger();
+        foreach (var evidence in ledger.RootElement.GetProperty("mappings")[8].GetProperty("profiles").GetProperty(profile)
+            .GetProperty("operations").EnumerateArray())
+        {
+            var path = evidence.GetProperty("path").GetString()!;
+            selected.Paths.Add(path, new OpenApiPathItem
+            {
+                Operations = new Dictionary<HttpMethod, OpenApiOperation> { [HttpMethod.Get] = original.Paths[path].Operations![HttpMethod.Get] },
+            });
+        }
+
+        var output = Path.Combine(Path.GetTempPath(), "teams-aggregate-tests", Guid.NewGuid().ToString("N"));
+        try
+        {
+            var config = new GeneratorConfig("Microsoft.Graph.PowerShell.Teams.Client", output, useDerivedData);
+            await new PowerShellWrapperGenerationService(selected, config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(CancellationToken.None);
+            var publicSource = File.ReadAllText(Path.Combine(output, "GetMgAllUserChatMessage.g.cs"));
+            Assert.Contains("DefaultParameterSetName = \"List\"", publicSource);
+            Assert.DoesNotContain("public string Route", publicSource);
+            Assert.DoesNotContain("public string? Model", publicSource);
+            var aggregateFile = Path.Combine(output, "GetMgAllUserChatMessageAcrossChat.g.cs");
+            var frozenSuppression = profile == "v1.0" && useDerivedData;
+            Assert.Equal(frozenSuppression, CmdletConfigurator.IsSuppressed(HttpMethod.Get,
+                "/users/{user-id}/chats/getAllMessages()", config, apiVersion: profile));
+            Assert.Equal(!frozenSuppression, File.Exists(aggregateFile));
+            if (!frozenSuppression)
+            {
+                var aggregateSource = File.ReadAllText(aggregateFile);
+                Assert.Contains("[GraphRoute(\"GET\", \"/users/{user-id}/chats/getAllMessages()\")]", aggregateSource);
+                Assert.Contains("public string UserId", aggregateSource);
+                Assert.DoesNotContain("public string ChatId", aggregateSource);
+                Assert.Contains("client.Users[UserId].Chats.GetAllMessages", aggregateSource);
+            }
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
         }
     }
 

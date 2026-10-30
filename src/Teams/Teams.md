@@ -20,8 +20,9 @@ directive:
 # Remove invalid paths.
 # Wrapper migration: directive 1 is bridged from the COMPLETE original legacy
 # regex set (v1.0: 337; beta: 9), not from renamed compatible operation IDs.
-# Teams_directiveMigrationMap.json records every surviving exact operation and
-# kind-guarded final action/function unqualification; no removals are claimed.
+# Teams_directiveMigrationMap.json records every surviving exact operation.
+# Compatible IDs now align with the original complete selector sets; tests retain
+# kind-guarded final action/function source lineage. No removals are claimed.
 # Teams_cmdletConfigurations.cs preserves joinedTeams list and unrelated roots;
 # user.joinedTeam_GetCount matches the original regex and is suppressed.
   - remove-path-by-operation: ^(team_GetGroup|user\.joinedTeam.*|user_(Get|Update|Delete|Create)JoinedTeam|.*_UpdateInstalledApp)$
@@ -51,7 +52,11 @@ directive:
 # the adjacent ledger. Curated fallbacks cover beta; existing v1.0 derived names
 # remain authoritative. Ordinary channels and non-GET message operations keep names.
 # Directive 9 includes the distinct getAllMessages() URL as well as list/item GET.
-# Lossless compiled routing is a separate required gate, not an oracle-first-URI prune.
+# The function has a different request/response contract and is not a compatible
+# natural-ID variant. Its explicit noun is AllUserChatMessageAcrossChat, from
+# the source description "all messages from all chats"; ordinary List/Get remains.
+# Frozen v1 derived suppression still omits that function; no module rule prunes it.
+# This baseline limitation is not a faithful three-route/default or raw parity pass.
 # No OnlineMeetingTranscript/Recording subjects occur in either Teams spec.
 # Keep all shared AutoRest directives active. Profile-local readmes and
 # src/readme.graph.md are ignored; parameter/schema aliases/transforms are deferred.
