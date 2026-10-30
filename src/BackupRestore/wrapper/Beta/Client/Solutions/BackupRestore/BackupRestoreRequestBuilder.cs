@@ -11,6 +11,7 @@ using Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.Dr
 using Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.DriveProtectionUnitsBulkAdditionJobs;
 using Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.EmailNotificationsSetting;
 using Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.Enable;
+using Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.EntraProtectionPolicies;
 using Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.ExchangeProtectionPolicies;
 using Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.ExchangeRestoreSessions;
 using Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.ExclusionUnits;
@@ -96,6 +97,11 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestor
         public global::Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.Enable.EnableRequestBuilder Enable
         {
             get => new global::Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.Enable.EnableRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The entraProtectionPolicies property</summary>
+        public global::Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.EntraProtectionPolicies.EntraProtectionPoliciesRequestBuilder EntraProtectionPolicies
+        {
+            get => new global::Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.EntraProtectionPolicies.EntraProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The exchangeProtectionPolicies property</summary>
         public global::Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.ExchangeProtectionPolicies.ExchangeProtectionPoliciesRequestBuilder ExchangeProtectionPolicies

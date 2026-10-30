@@ -50,9 +50,9 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Models
 #endif
         /// <summary>Timestamp of the last modification of this protection unit.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
-        /// <summary>The time when protection unit offboard was requested.</summary>
+        /// <summary>The time when protection unit offboard was requested. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? OffboardRequestedDateTime { get; set; }
-        /// <summary>The pendingRetentionPeriodChange property</summary>
+        /// <summary>The retention period change to be applied to the protection unit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.RetentionPeriodChange? PendingRetentionPeriodChange { get; private set; }

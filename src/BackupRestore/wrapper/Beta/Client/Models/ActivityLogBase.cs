@@ -14,7 +14,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Models
     {
         /// <summary>The activityType property</summary>
         public global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ActivityLogOperationType? ActivityType { get; set; }
-        /// <summary>The error property</summary>
+        /// <summary>Contains error details if an error occurred while processing this activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.PublicError? Error { get; set; }
@@ -22,9 +22,9 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Models
 #else
         public global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.PublicError Error { get; set; }
 #endif
-        /// <summary>The eventDateTime property</summary>
+        /// <summary>Timestamp of activity completion.</summary>
         public DateTimeOffset? EventDateTime { get; set; }
-        /// <summary>The performedBy property</summary>
+        /// <summary>The identity of the person who performed the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PerformedBy { get; set; }

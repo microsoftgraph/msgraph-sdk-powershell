@@ -60,6 +60,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Models
                 "#microsoft.graph.driveRestoreArtifact" => new global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.DriveRestoreArtifact(),
                 "#microsoft.graph.driveRestoreArtifactsBulkAdditionRequest" => new global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.DriveRestoreArtifactsBulkAdditionRequest(),
                 "#microsoft.graph.emailNotificationsSetting" => new global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.EmailNotificationsSetting(),
+                "#microsoft.graph.entraProtectionPolicy" => new global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.EntraProtectionPolicy(),
                 "#microsoft.graph.exchangeProtectionPolicy" => new global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExchangeProtectionPolicy(),
                 "#microsoft.graph.exchangeRestoreSession" => new global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExchangeRestoreSession(),
                 "#microsoft.graph.exclusionUnitBase" => new global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExclusionUnitBase(),
