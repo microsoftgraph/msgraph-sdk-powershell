@@ -27,6 +27,10 @@ directive:
 # all 12 beta operations recorded in wrapper/DeviceManagement_directiveMigrationMap.json.
 # Exact method/path suppressions in DeviceManagement_cmdletConfigurations.cs cover
 # all successors; five final action namespaces are explicitly translated, not absent.
+# After compatible-ID alignment, the literal current selector matches only 11 of
+# those 12 beta survivors. The intent_updateSetting action still has a qualified
+# current ID; retain its suppression and complete evidence. The literal-only
+# inventory remains blocked on reviewed legacy translation (#3847), not API absence.
   - remove-path-by-operation: ^deviceManagement.(deviceManagementScript.userRunState.deviceRunState_.*|groupPolicyConfiguration.definitionValue.presentationValue_.*|deviceShellScript.userRunState.deviceRunState_.*|deviceConfiguration_assignedAccessMultiModeProfile|deviceConfiguration_windowsPrivacyAccessControl|microsoftTunnelSite.microsoftTunnelServer_createServerLogCollectionRequest|groupPolicyConfiguration_updateDefinitionValue|intent_updateSetting)$
 
 # Remove cmdlets.
