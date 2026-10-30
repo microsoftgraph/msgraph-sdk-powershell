@@ -1,0 +1,91 @@
+#nullable enable
+
+using System;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Users.Client;
+using Microsoft.Graph.PowerShell.Users.Client.Models;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Users
+{
+    [GraphRoute("PUT", "/users/{user-id}/settings/workHoursAndLocations/recurrences/{workPlanRecurrence-id}")]
+    [Cmdlet(VerbsCommon.Set, "MgUserSettingWorkHourAndLocationRecurrence", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Users.Client.Models.WorkPlanRecurrence))]
+    public class SetMgUserSettingWorkHourAndLocationRecurrenceCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string UserId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string WorkPlanRecurrenceId { get; set; } = string.Empty;
+
+        [Parameter(Mandatory = false)]
+        public string? PlaceId { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Users.Client.Models.DateTimeTimeZone? End { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Users.Client.Models.PatternedRecurrence? Recurrence { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Users.Client.Models.DateTimeTimeZone? Start { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Users.Client.Models.WorkLocationType? WorkLocationType { get; set; }
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(WorkPlanRecurrenceId, "Set"))
+                return;
+
+            var body = new Microsoft.Graph.PowerShell.Users.Client.Models.WorkPlanRecurrence();
+
+    if (this.IsParameterBound(nameof(PlaceId)))
+        body.PlaceId = PlaceId;
+
+    if (this.IsParameterBound(nameof(End)))
+        body.End = End;
+
+    if (this.IsParameterBound(nameof(Recurrence)))
+        body.Recurrence = Recurrence;
+
+    if (this.IsParameterBound(nameof(Start)))
+        body.Start = Start;
+
+    if (this.IsParameterBound(nameof(WorkLocationType)))
+        body.WorkLocationType = WorkLocationType;
+
+
+        var requestAdapter = GetRequestAdapter();
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.Users.Client.Models.WorkPlanRecurrence? result;
+            try
+            {
+                result = client.Users[UserId].Settings.WorkHoursAndLocations.Recurrences[WorkPlanRecurrenceId].PutAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, WorkPlanRecurrenceId);
+                return;
+            }
+
+
+            if (result is not null)
+                WriteObject(result);
+        }
+    }
+}
