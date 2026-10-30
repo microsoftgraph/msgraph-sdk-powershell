@@ -100,3 +100,28 @@ Raw oracle parity is reported unchanged, without normalizing the beta command
 prefix or hiding unmatched/client-only operations. The qualified external-item
 `addActivities` action and beta structural search-query name are existing
 baseline naming differences, not migrations of ignored profile-local directives.
+
+Current-target results after the two final shared naming entries:
+
+| Gate | v1.0 | beta |
+| --- | --- | --- |
+| Full queued compatible-spec Release build | Exit 0, `OK`, 17.40 seconds | Exit 0, `OK`, 30.50 seconds |
+| Fresh full-module exports | 72 | 166 |
+| `tools/Test-SearchDirectiveMigration.ps1 -ApiVersion <profile>` | 34 assertions, 5 stub-HTTP requests | 76 assertions, 10 stub-HTTP requests |
+| Exact distinct compiled operations | All 63; zero client-only | All 145; zero client-only |
+| Raw `Compare-WrapperCmdletNames.ps1` | Exit 1: 71 matched, 1 mismatch | Exit 1: 164 mismatches, 2 no-oracle |
+
+The compiled gate exercises the real complete module with original Authentication
+`2.38.1`. It verifies both function requests and Kiota results, List/Get inference,
+the distinct flow model, mandatory-ID/unknown-selector binder rejection before
+transport, unaffected neighbors, and the existing update neighbor's WhatIf gate.
+It is a deterministic HTTP-stub test, not live tenant/service validation or proof
+of mutation serialization. No mutation variants are introduced.
+
+`dotnet test tools/WrapperGenerator.Tests/WrapperGenerator.Tests.csproj --no-restore
+--filter 'FullyQualifiedName~SearchDirectiveMigrationTests|FullyQualifiedName~CmdletConfiguratorTests|FullyQualifiedName~NamingTests'`
+passes 94 tests, including both complete specs with derived data on/off.
+The strict Search inventory passes with zero rows and an empty ledger.
+Beta's two no-oracle routes are the retained collection-bound statistics function
+and nested activity flow. Missing published URI records do not remove either
+endpoint. No beta prefix normalization or broad naming correction is applied.

@@ -46,6 +46,32 @@ function Assert-Mandatory([string]$Name, [string]$Parameter) {
 }
 
 Assert-Search ($module.ExportedCmdlets.Count -gt 0) 'Compiled Search module has no exports.'
+$specOperations = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
+$currentPath = $null
+$currentMethod = $null
+foreach ($line in Get-Content (Join-Path $repoRoot "openApiDocs_KiotaCompat\$ApiVersion\Search.yml")) {
+    if ($line -match "^  (?:'(?<quoted>/.*)'|(?<plain>/.*)):\s*$") {
+        $currentPath = if ($Matches.quoted) { $Matches.quoted.Replace("''", "'") } else { $Matches.plain }
+        $currentMethod = $null
+    }
+    elseif ($currentPath -and $line -match '^    (?<method>get|post|patch|put|delete|head|options|trace):\s*$') {
+        $currentMethod = $Matches.method.ToUpperInvariant()
+    }
+    elseif ($currentMethod -and $line -match '^      operationId:') {
+        $null = $specOperations.Add("$currentMethod $currentPath")
+        $currentMethod = $null
+    }
+}
+$compiledOperations = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
+foreach ($command in $module.ExportedCmdlets.Values) {
+    foreach ($attribute in $command.ImplementingType.GetCustomAttributes($true)) {
+        if ($attribute.GetType().Name -eq 'GraphRouteAttribute') {
+            $null = $compiledOperations.Add("$($attribute.Method) $($attribute.Path)")
+        }
+    }
+}
+Assert-Search ($specOperations.Count -eq $(if ($ApiVersion -eq 'v1.0') { 63 } else { 145 })) 'Unexpected compatible operation inventory.'
+Assert-Search ($specOperations.SetEquals($compiledOperations)) "Compiled route coverage differs from the compatible spec: $(Compare-Object @($specOperations) @($compiledOperations) | Out-String)"
 Assert-Route 'Get-MgExternalConnection_List' 'GET' '/external/connections'
 Assert-Route 'Get-MgExternalConnection_Get' 'GET' '/external/connections/{externalConnection-id}'
 Assert-Route 'Get-MgSearchBookmark_List' 'GET' '/search/bookmarks'
@@ -88,6 +114,14 @@ function Assert-Request([string]$Path) {
     Assert-Search ($handler.Responses.Count -eq 0) "Command did not consume its expected response: $Path"
     Assert-Search ($handler.Requests[$handler.Requests.Count - 1] -ceq "GET /$ApiVersion$Path") "Wrong actual HTTP operation: $($handler.Requests[$handler.Requests.Count - 1])"
 }
+function Assert-Rejected([scriptblock]$Action) {
+    $before = $handler.Requests.Count
+    $rejected = $false
+    try { & $Action }
+    catch [System.Management.Automation.ParameterBindingException] { $rejected = $true }
+    Assert-Search $rejected 'Expected real PowerShell parameter binding rejection.'
+    Assert-Search ($handler.Requests.Count -eq $before) 'Invalid binding issued an HTTP request.'
+}
 try {
     $handler.Responses.Enqueue('{"value":[{"id":"connection-1"}]}')
     $items = @(Get-MgExternalConnection)
@@ -125,11 +159,13 @@ try {
             Assert-Search (-not $module.ExportedCmdlets[$name].Parameters.ContainsKey('Route')) "Unexpected endpoint selector: $name"
         }
         $handler.Responses.Enqueue('{"runId":"run-1"}')
-        $null = Get-MgExternalIndustryDataRunStatistics -IndustryDataRunId 'run-1'
+        $statistics = Get-MgExternalIndustryDataRunStatistics -IndustryDataRunId 'run-1'
         Assert-Request '/external/industryData/runs/run-1/microsoft.graph.industryData.getStatistics()'
+        Assert-Search ($statistics.RunId -eq 'run-1') 'Kiota statistics response was not preserved.'
         $handler.Responses.Enqueue('{"runId":"run-collection"}')
-        $null = Get-MgExternalIndustryDataRunGetStatistics
+        $collectionStatistics = Get-MgExternalIndustryDataRunGetStatistics
         Assert-Request '/external/industryData/runs/microsoft.graph.industryData.getStatistics()'
+        Assert-Search ($collectionStatistics.RunId -eq 'run-collection' -and $collectionStatistics.GetType() -eq $statistics.GetType()) 'Collection function changed the actual Kiota statistics result.'
         $handler.Responses.Enqueue('{"value":[{"id":"activity-1","@odata.type":"#microsoft.graph.industryData.inboundFlowActivity"}]}')
         $items = @(Get-MgExternalIndustryDataRunActivity -IndustryDataRunId 'run-1')
         Assert-Request '/external/industryData/runs/run-1/activities'
@@ -142,6 +178,9 @@ try {
         $flow = Get-MgExternalIndustryDataRunActivityFlow -IndustryDataRunId 'run-1' -IndustryDataRunActivityId 'activity-1'
         Assert-Request '/external/industryData/runs/run-1/activities/activity-1/activity'
         Assert-Search ($flow.Id -eq 'flow-1' -and $flow.GetType() -ne $item.GetType()) 'Nested flow response was confused with the run activity model.'
+        Assert-Rejected { Get-MgExternalIndustryDataRunStatistics -IndustryDataRunId '' }
+        Assert-Rejected { Get-MgExternalIndustryDataRunActivityFlow -IndustryDataRunId 'run-1' -IndustryDataRunActivityId '' }
+        Assert-Rejected { Get-MgExternalIndustryDataRunActivity -IndustryDataRunId 'run-1' -Route 'Activity' }
     }
     else {
         Assert-Search (@($module.ExportedCmdlets.Keys | Where-Object { $_ -like '*ExternalIndustryData*' }).Count -eq 0) 'Beta-only operations leaked into v1.0.'
@@ -154,6 +193,8 @@ try {
         Exports = $module.ExportedCmdlets.Count
         Assertions = $script:checks
         HttpRequests = $handler.Requests.Count
+        CoveredOperations = $compiledOperations.Count
+        ClientOnlyOperations = @($specOperations | Where-Object { -not $compiledOperations.Contains($_) }).Count
         AuthVersion = (Get-Module Microsoft.Graph.Authentication).Version.ToString()
         ModulePath = $module.Path
     } | ConvertTo-Json
