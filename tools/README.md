@@ -112,6 +112,20 @@ requests a second view of the same Kiota source with `style=Powershell`,
 path and HTTP method; none of its schemas, parameters or responses are used. Missing or
 ambiguous operation-ID mappings fail the refresh rather than silently leaving mixed naming.
 
+The existing ID projection also applies the finite exact module/profile/method/path
+corrections in `tools\Utilities\RequiredPathOperationIds.json`. These restore 67 required
+bound-operation IDs to the spelling used by their shared directives. They do not change
+paths, action/function kinds, schemas, parameters, responses, or other IDs. Normal downloads
+use them automatically with `-SingularizeOperationIds`; there is no migration integration
+flag, runtime legacy-spec lookup, or change to the ordinary literal directive inventory.
+
+ID alignment does not resolve Identity.Governance's separate broad-selector overmatch:
+88 v1.0 and 182 beta literal matches are new routes absent from the legacy module specs.
+Their IDs and routes are intentionally unchanged; narrowing that directive requires a
+separate source review rather than relabeling unrelated operations. The normal target also
+still contains Notes' malformed shared regex; its approved source repair belongs to the
+owning module, not this ID projection.
+
 `TweakOpenApi.ps1 -OperationIdsOnly` then applies the existing preposition and word corrections.
 This mode does not rewrite success response codes or mark navigation properties read-only.
 For example, `auditLogs.auditLogRoot.UpdateAuditLogRoot` becomes
