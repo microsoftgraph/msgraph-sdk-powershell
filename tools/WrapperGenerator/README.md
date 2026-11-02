@@ -232,8 +232,8 @@ first:
 ```
 
 For the offline serialization regression, build and pack `SchemaExtensions` for each profile,
-then run the following in a **fresh process** with the intended official Authentication module
-on `PSModulePath` (also supported by Windows PowerShell when its assembly identities are compatible):
+then run the following in a **fresh PowerShell 7 process** with the intended official Authentication
+module on `PSModulePath`. PowerShell 5.1 is outside the v3 support and validation scope:
 
 ```powershell
 pwsh -NoProfile -File .\tools\Test-WrapperSerialization.ps1 -ManifestPath <unpacked-package-manifest> -ApiVersion v1.0
