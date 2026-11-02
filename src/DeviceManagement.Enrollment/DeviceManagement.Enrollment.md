@@ -23,11 +23,15 @@ are present in this shared file. Reviewed evidence lives in
 pinned by `DeviceManagementEnrollmentDirectiveMigrationTests`.
 
 Current compatible spec Git blobs: v1.0 `e9cde3860c4d6be4cc2aa2ddb02830f0865a3edd`;
-beta `7ca6c5e3f4dacfff0a7b1c26fae09d011befed94`. The original
+beta `7a9b70f01dbfc02a3875149273e2d0835f60cdf3`. The original
 same-profile source blobs are v1.0 `de23b3a431fe51f0f0c272fe8d1d18ebbae84af2`
 and beta `78729506beadbdcd85c40eeb61e3ed4b65b11c0e`. Current literal
-selector matches are zero and eight, respectively; the reviewed beta bridge must
-still cover all eleven original operations, including the three actual functions.
+selector matches are zero and eleven, respectively, matching the complete
+original selected sets after required-path ID alignment. The ordinary reviewed
+ledger contains no source-translation declarations; tests retain the finite
+historical audit of the three inherited functions' final namespace qualifier.
+The three direct assignedPrincipals functions remain unsuppressed but client-only:
+the existing wrapper emitter does not support their OData parameter aliases.
 
 ``` yaml
 directive:

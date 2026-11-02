@@ -50,10 +50,9 @@ public sealed class DeviceManagementEnrollmentDirectiveMigrationTests
     }
 
     [Theory]
-    [InlineData("v1.0", 0, 0)]
-    [InlineData("beta", 11, 8)]
-    public async Task LegacySelectorEvidenceCoversTheCompleteActualSourceSet(
-        string profile, int expectedCount, int expectedCurrentLiteralCount)
+    [InlineData("v1.0", 0)]
+    [InlineData("beta", 11)]
+    public async Task LiteralSelectorEvidenceCoversTheCompleteOriginalSourceSet(string profile, int expectedCount)
     {
         var legacy = await ReadSpecAsync("openApiDocs", profile);
         var compatible = await ReadSpecAsync("openApiDocs_KiotaCompat", profile);
@@ -67,43 +66,42 @@ public sealed class DeviceManagementEnrollmentDirectiveMigrationTests
             .Where(operation => selector.IsMatch(operation.Id!))
             .OrderBy(operation => operation.Path, StringComparer.Ordinal).ThenBy(operation => operation.Method)
             .ToArray();
+        var currentSelected = compatible.Paths!
+            .SelectMany(path => path.Value.Operations!.Select(operation =>
+                (Method: operation.Key.Method, Path: path.Key, Id: operation.Value.OperationId!)))
+            .Where(operation => selector.IsMatch(operation.Id))
+            .OrderBy(operation => operation.Path, StringComparer.Ordinal).ThenBy(operation => operation.Method)
+            .ToArray();
         var reviewed = mapping.GetProperty("operations").EnumerateArray()
             .Select(operation => (
                 Method: operation.GetProperty("method").GetString()!,
-                Path: operation.GetProperty("legacyPath").GetString()!,
-                Id: operation.GetProperty("legacyOperationId").GetString()!))
+                Path: operation.GetProperty("path").GetString()!,
+                Id: operation.GetProperty("operationId").GetString()!))
             .OrderBy(operation => operation.Path, StringComparer.Ordinal).ThenBy(operation => operation.Method)
             .ToArray();
 
         Assert.Equal(expectedCount, selected.Length);
-        Assert.Equal(selected, reviewed);
-        Assert.Equal(expectedCurrentLiteralCount, compatible.Paths!
-            .Sum(path => path.Value.Operations!.Count(operation => selector.IsMatch(operation.Value.OperationId!))));
-        if (expectedCount == 0)
-        {
-            Assert.False(mapping.TryGetProperty("operationIdSource", out _));
-            Assert.False(mapping.TryGetProperty("removedLegacyOperations", out _));
-            return;
-        }
+        Assert.Equal(expectedCount, currentSelected.Length);
+        Assert.Equal(currentSelected, reviewed);
+        Assert.Equal(selected.Select(operation => (operation.Method, operation.Id)).OrderBy(operation => operation.Id),
+            currentSelected.Select(operation => (operation.Method, operation.Id)).OrderBy(operation => operation.Id));
 
-        Assert.Equal("Legacy", mapping.GetProperty("operationIdSource").GetString());
-        Assert.Empty(mapping.GetProperty("removedLegacyOperations").EnumerateArray());
         var translated = 0;
-        foreach (var operation in mapping.GetProperty("operations").EnumerateArray())
+        foreach (var original in selected)
         {
-            var method = new HttpMethod(operation.GetProperty("method").GetString()!);
-            var oldPath = operation.GetProperty("legacyPath").GetString()!;
-            var path = operation.GetProperty("path").GetString()!;
+            var matched = Assert.Single(currentSelected,
+                operation => operation.Method == original.Method && operation.Id == original.Id);
+            var method = new HttpMethod(original.Method);
+            var oldPath = original.Path;
+            var path = matched.Path;
             var source = legacy.Paths![oldPath].Operations![method];
             var successor = compatible.Paths![path].Operations![method];
-            Assert.Equal(operation.GetProperty("legacyOperationId").GetString(), source.OperationId);
-            Assert.Equal(operation.GetProperty("operationId").GetString(), successor.OperationId);
-            Assert.Single(compatible.Paths, candidate =>
-                CmdletConfigurator.NormalizePathTemplate(candidate.Key) ==
-                CmdletConfigurator.NormalizePathTemplate(path) && candidate.Value.Operations!.ContainsKey(method));
+            Assert.Equal(source.OperationId, successor.OperationId);
             if (oldPath != path)
             {
-                Assert.Equal("UnqualifyFinalOperation", operation.GetProperty("legacyPathTranslation").GetString());
+                var inheritedFunctions = new[] { "cloudPC", "deviceManagement", "exchange" }
+                    .Select(root => $"/roleManagement/{root}/roleDefinitions/{{unifiedRoleDefinition-id}}/inheritsPermissionsFrom/{{unifiedRoleDefinition-id1}}/{Function}");
+                Assert.Contains(path, inheritedFunctions);
                 Assert.Equal(HttpMethod.Get, method);
                 Assert.Equal("function", Assert.IsType<JsonNodeExtension>(
                     source.Extensions!["x-ms-docs-operation-type"]).Node!.ToString());
@@ -116,7 +114,27 @@ public sealed class DeviceManagementEnrollmentDirectiveMigrationTests
                 translated++;
             }
         }
-        Assert.Equal(3, translated);
+        Assert.Equal(profile == "beta" ? 3 : 0, translated);
+    }
+
+    [Fact]
+    public void OrdinaryLedgerDoesNotDeclareSourceTranslation()
+    {
+        using var ledger = ReadLedger();
+        foreach (var mapping in ledger.RootElement.GetProperty("mappings").EnumerateArray())
+        {
+            foreach (var profile in mapping.GetProperty("profiles").EnumerateObject())
+            {
+                Assert.False(profile.Value.TryGetProperty("operationIdSource", out _));
+                Assert.False(profile.Value.TryGetProperty("removedLegacyOperations", out _));
+                foreach (var operation in profile.Value.GetProperty("operations").EnumerateArray())
+                {
+                    Assert.False(operation.TryGetProperty("legacyPath", out _));
+                    Assert.False(operation.TryGetProperty("legacyOperationId", out _));
+                    Assert.False(operation.TryGetProperty("legacyPathTranslation", out _));
+                }
+            }
+        }
     }
 
     [Theory]
