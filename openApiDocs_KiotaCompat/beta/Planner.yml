@@ -1158,7 +1158,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-setreaction?view=graph-rest-beta
-      operationId: group.planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_setReaction
+      operationId: group.planner.plan.bucket.task.message_setReaction
       requestBody:
         description: Action parameters
         content:
@@ -1186,7 +1186,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-unsetreaction?view=graph-rest-beta
-      operationId: group.planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_unsetReaction
+      operationId: group.planner.plan.bucket.task.message_unsetReaction
       requestBody:
         description: Action parameters
         content:
@@ -1338,7 +1338,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
-      operationId: group.planner.plan.plannerPlan.bucket.plannerBucket.task_delta
+      operationId: group.planner.plan.bucket.task_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1424,7 +1424,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbucket-delta?view=graph-rest-beta
-      operationId: group.planner.plan.plannerPlan.bucket_delta
+      operationId: group.planner.plan.bucket_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2495,7 +2495,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-setreaction?view=graph-rest-beta
-      operationId: group.planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_setReaction
+      operationId: group.planner.plan.task.message_setReaction
       requestBody:
         description: Action parameters
         content:
@@ -2523,7 +2523,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-unsetreaction?view=graph-rest-beta
-      operationId: group.planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_unsetReaction
+      operationId: group.planner.plan.task.message_unsetReaction
       requestBody:
         description: Action parameters
         content:
@@ -2675,7 +2675,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
-      operationId: group.planner.plan.plannerPlan.task_delta
+      operationId: group.planner.plan.task_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3693,7 +3693,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-setreaction?view=graph-rest-beta
-      operationId: planner.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_setReaction
+      operationId: planner.bucket.task.message_setReaction
       requestBody:
         description: Action parameters
         content:
@@ -3721,7 +3721,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-unsetreaction?view=graph-rest-beta
-      operationId: planner.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_unsetReaction
+      operationId: planner.bucket.task.message_unsetReaction
       requestBody:
         description: Action parameters
         content:
@@ -3873,7 +3873,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
-      operationId: planner.bucket.plannerBucket.task_delta
+      operationId: planner.bucket.task_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6254,7 +6254,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-setreaction?view=graph-rest-beta
-      operationId: planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_setReaction
+      operationId: planner.plan.bucket.task.message_setReaction
       requestBody:
         description: Action parameters
         content:
@@ -6282,7 +6282,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-unsetreaction?view=graph-rest-beta
-      operationId: planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_unsetReaction
+      operationId: planner.plan.bucket.task.message_unsetReaction
       requestBody:
         description: Action parameters
         content:
@@ -6434,7 +6434,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
-      operationId: planner.plan.plannerPlan.bucket.plannerBucket.task_delta
+      operationId: planner.plan.bucket.task_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6520,7 +6520,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbucket-delta?view=graph-rest-beta
-      operationId: planner.plan.plannerPlan.bucket_delta
+      operationId: planner.plan.bucket_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7601,7 +7601,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-setreaction?view=graph-rest-beta
-      operationId: planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_setReaction
+      operationId: planner.plan.task.message_setReaction
       requestBody:
         description: Action parameters
         content:
@@ -7629,7 +7629,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-unsetreaction?view=graph-rest-beta
-      operationId: planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_unsetReaction
+      operationId: planner.plan.task.message_unsetReaction
       requestBody:
         description: Action parameters
         content:
@@ -7781,7 +7781,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
-      operationId: planner.plan.plannerPlan.task_delta
+      operationId: planner.plan.task_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12070,7 +12070,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-setreaction?view=graph-rest-beta
-      operationId: user.planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_setReaction
+      operationId: user.planner.plan.bucket.task.message_setReaction
       requestBody:
         description: Action parameters
         content:
@@ -12098,7 +12098,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-unsetreaction?view=graph-rest-beta
-      operationId: user.planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_unsetReaction
+      operationId: user.planner.plan.bucket.task.message_unsetReaction
       requestBody:
         description: Action parameters
         content:
@@ -12250,7 +12250,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
-      operationId: user.planner.plan.plannerPlan.bucket.plannerBucket.task_delta
+      operationId: user.planner.plan.bucket.task_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12336,7 +12336,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbucket-delta?view=graph-rest-beta
-      operationId: user.planner.plan.plannerPlan.bucket_delta
+      operationId: user.planner.plan.bucket_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -13407,7 +13407,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-setreaction?view=graph-rest-beta
-      operationId: user.planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_setReaction
+      operationId: user.planner.plan.task.message_setReaction
       requestBody:
         description: Action parameters
         content:
@@ -13435,7 +13435,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskchatmessage-unsetreaction?view=graph-rest-beta
-      operationId: user.planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_unsetReaction
+      operationId: user.planner.plan.task.message_unsetReaction
       requestBody:
         description: Action parameters
         content:
@@ -13587,7 +13587,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
-      operationId: user.planner.plan.plannerPlan.task_delta
+      operationId: user.planner.plan.task_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'

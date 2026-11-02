@@ -1,0 +1,471 @@
+[
+  {
+    "module": "DeviceManagement",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/deviceManagement/intents/{deviceManagementIntent-id}/updateSettings",
+    "operationId": "deviceManagement.intent_updateSetting"
+  },
+  {
+    "module": "DeviceManagement.Enrollment",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
+    "operationId": "roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_assignedPrincipal"
+  },
+  {
+    "module": "DeviceManagement.Enrollment",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
+    "operationId": "roleManagement.deviceManagement.roleDefinition.inheritsPermissionsFrom_assignedPrincipal"
+  },
+  {
+    "module": "DeviceManagement.Enrollment",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
+    "operationId": "roleManagement.exchange.roleDefinition.inheritsPermissionsFrom_assignedPrincipal"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/acceptRecommendations",
+    "operationId": "identityGovernance.accessReview.definition.instance.decision.instance_acceptRecommendation"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/applyDecisions",
+    "operationId": "identityGovernance.accessReview.definition.instance.decision.instance_applyDecision"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/batchRecordDecisions",
+    "operationId": "identityGovernance.accessReview.definition.instance.decision.instance_batchRecordDecision"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/resetDecisions",
+    "operationId": "identityGovernance.accessReview.definition.instance.decision.instance_resetDecision"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/sendReminder",
+    "operationId": "identityGovernance.accessReview.definition.instance.decision.instance_sendReminder"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/stages/{accessReviewStage-id}/decisions/filterByCurrentUser(on='{on}')",
+    "operationId": "identityGovernance.accessReview.definition.instance.decision.instance.stage.decision_filterGraphBPreCurrentUser"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/stages/{accessReviewStage-id}/decisions/recordAllDecisions",
+    "operationId": "identityGovernance.accessReview.definition.instance.decision.instance.stage.decision_recordAllDecision"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/stages/{accessReviewStage-id}/stop",
+    "operationId": "identityGovernance.accessReview.definition.instance.decision.instance.stage_stop"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/stages/filterByCurrentUser(on='{on}')",
+    "operationId": "identityGovernance.accessReview.definition.instance.decision.instance.stage_filterGraphBPreCurrentUser"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/stop",
+    "operationId": "identityGovernance.accessReview.definition.instance.decision.instance_stop"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/stopApplyDecisions",
+    "operationId": "identityGovernance.accessReview.definition.instance.decision.instance_stopApplyDecision"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/acceptRecommendations",
+    "operationId": "identityGovernance.accessReview.definition.instance.stage.decision.instance_acceptRecommendation"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/applyDecisions",
+    "operationId": "identityGovernance.accessReview.definition.instance.stage.decision.instance_applyDecision"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/batchRecordDecisions",
+    "operationId": "identityGovernance.accessReview.definition.instance.stage.decision.instance_batchRecordDecision"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/decisions/filterByCurrentUser(on='{on}')",
+    "operationId": "identityGovernance.accessReview.definition.instance.stage.decision.instance.decision_filterGraphBPreCurrentUser"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/decisions/recordAllDecisions",
+    "operationId": "identityGovernance.accessReview.definition.instance.stage.decision.instance.decision_recordAllDecision"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/resetDecisions",
+    "operationId": "identityGovernance.accessReview.definition.instance.stage.decision.instance_resetDecision"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/sendReminder",
+    "operationId": "identityGovernance.accessReview.definition.instance.stage.decision.instance_sendReminder"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/stop",
+    "operationId": "identityGovernance.accessReview.definition.instance.stage.decision.instance_stop"
+  },
+  {
+    "module": "Identity.Governance",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/stopApplyDecisions",
+    "operationId": "identityGovernance.accessReview.definition.instance.stage.decision.instance_stopApplyDecision"
+  },
+  {
+    "module": "Notes",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+    "operationId": "group.onenote.section.page_copyToSection"
+  },
+  {
+    "module": "Notes",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+    "operationId": "group.onenote.section.page_onenotePatchContent"
+  },
+  {
+    "module": "Notes",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+    "operationId": "group.onenote.section.page_preview"
+  },
+  {
+    "module": "Notes",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+    "operationId": "site.onenote.section.page_copyToSection"
+  },
+  {
+    "module": "Notes",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+    "operationId": "site.onenote.section.page_onenotePatchContent"
+  },
+  {
+    "module": "Notes",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+    "operationId": "site.onenote.section.page_preview"
+  },
+  {
+    "module": "Notes",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+    "operationId": "user.onenote.section.page_copyToSection"
+  },
+  {
+    "module": "Notes",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+    "operationId": "user.onenote.section.page_onenotePatchContent"
+  },
+  {
+    "module": "Notes",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+    "operationId": "user.onenote.section.page_preview"
+  },
+  {
+    "module": "Notes",
+    "profile": "v1.0",
+    "method": "POST",
+    "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+    "operationId": "group.onenote.section.page_copyToSection"
+  },
+  {
+    "module": "Notes",
+    "profile": "v1.0",
+    "method": "POST",
+    "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+    "operationId": "group.onenote.section.page_onenotePatchContent"
+  },
+  {
+    "module": "Notes",
+    "profile": "v1.0",
+    "method": "GET",
+    "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+    "operationId": "group.onenote.section.page_preview"
+  },
+  {
+    "module": "Notes",
+    "profile": "v1.0",
+    "method": "POST",
+    "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+    "operationId": "site.onenote.section.page_copyToSection"
+  },
+  {
+    "module": "Notes",
+    "profile": "v1.0",
+    "method": "POST",
+    "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+    "operationId": "site.onenote.section.page_onenotePatchContent"
+  },
+  {
+    "module": "Notes",
+    "profile": "v1.0",
+    "method": "GET",
+    "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+    "operationId": "site.onenote.section.page_preview"
+  },
+  {
+    "module": "Notes",
+    "profile": "v1.0",
+    "method": "POST",
+    "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+    "operationId": "user.onenote.section.page_copyToSection"
+  },
+  {
+    "module": "Notes",
+    "profile": "v1.0",
+    "method": "POST",
+    "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+    "operationId": "user.onenote.section.page_onenotePatchContent"
+  },
+  {
+    "module": "Notes",
+    "profile": "v1.0",
+    "method": "GET",
+    "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+    "operationId": "user.onenote.section.page_preview"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+    "operationId": "group.planner.plan.bucket.task.message_setReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+    "operationId": "group.planner.plan.bucket.task.message_unsetReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/delta()",
+    "operationId": "group.planner.plan.bucket.task_delta"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/delta()",
+    "operationId": "group.planner.plan.bucket_delta"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+    "operationId": "group.planner.plan.task.message_setReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+    "operationId": "group.planner.plan.task.message_unsetReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/delta()",
+    "operationId": "group.planner.plan.task_delta"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+    "operationId": "planner.bucket.task.message_setReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+    "operationId": "planner.bucket.task.message_unsetReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/planner/buckets/{plannerBucket-id}/tasks/delta()",
+    "operationId": "planner.bucket.task_delta"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+    "operationId": "planner.plan.bucket.task.message_setReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+    "operationId": "planner.plan.bucket.task.message_unsetReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/delta()",
+    "operationId": "planner.plan.bucket.task_delta"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/planner/plans/{plannerPlan-id}/buckets/delta()",
+    "operationId": "planner.plan.bucket_delta"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+    "operationId": "planner.plan.task.message_setReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+    "operationId": "planner.plan.task.message_unsetReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/planner/plans/{plannerPlan-id}/tasks/delta()",
+    "operationId": "planner.plan.task_delta"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+    "operationId": "user.planner.plan.bucket.task.message_setReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+    "operationId": "user.planner.plan.bucket.task.message_unsetReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/delta()",
+    "operationId": "user.planner.plan.bucket.task_delta"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/delta()",
+    "operationId": "user.planner.plan.bucket_delta"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+    "operationId": "user.planner.plan.task.message_setReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "POST",
+    "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+    "operationId": "user.planner.plan.task.message_unsetReaction"
+  },
+  {
+    "module": "Planner",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/delta()",
+    "operationId": "user.planner.plan.task_delta"
+  },
+  {
+    "module": "Security",
+    "profile": "beta",
+    "method": "GET",
+    "path": "/security/dataDiscovery/cloudAppDiscovery/uploadedStreams/{cloudAppDiscoveryReport-id}/microsoft.graph.security.aggregatedAppsDetails(period={period})",
+    "operationId": "security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail"
+  }
+]
