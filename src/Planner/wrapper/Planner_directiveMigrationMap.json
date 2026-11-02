@@ -6,7 +6,7 @@
       "classification": "OperationIdSuppression",
       "sourceContains": "remove-path-by-operation: ^user.planner_(Create|Update|Delete)All|planner.bucket_(Get|Create|Update|Delete)Task|planner.bucket.task.*|planner.plan_(Get|Create|Update|Delete)Bucket|planner.plan.bucket.*|planner.plan_(Get|Create|Update|Delete)Task|planner.plan.task.*$",
       "implementation": "CmdletConfigurator",
-      "notes": "Complete original unmodified regex evaluated on the same-profile legacy spec. Its unanchored alternatives also match group/user planner prefixes. All legacy matches survive; beta actions/functions require actual-kind-guarded final namespace qualification only.",
+      "notes": "The unchanged original selector selects 137 v1.0 and 206 beta historical surviving routes. Normally merged required-path operation-ID alignment makes current literal selection complete in both profiles. The module tests preserve the historical 24 beta final action/function route audit without an integration schema or runtime bridge.",
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
@@ -697,7 +697,7 @@
               "operationId": "user.planner.plan.task_GetCount"
             }
           ],
-          "notes": "Complete original legacy set and current literal set agree for all 137 surviving method/path/ID identities; supported default literal evidence, no reserved Legacy fields. Actual source blobs: legacy dd3e46fdb6f30eb2c530119979654f2876dca775; compatible 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent. Complete original and current literal populations: 137 surviving selected routes; no fabricated absences. Historical qualified final action/function paths are audited only in module tests."
         },
         "beta": {
           "absenceExpected": false,
@@ -705,1473 +705,1035 @@
             {
               "method": "POST",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets",
-              "operationId": "group.planner.plan_CreateBucket",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets",
-              "legacyOperationId": "group.planner.plan_CreateBucket"
+              "operationId": "group.planner.plan_CreateBucket"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "operationId": "group.planner.plan_GetBucket",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "legacyOperationId": "group.planner.plan_GetBucket"
+              "operationId": "group.planner.plan_GetBucket"
             },
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "operationId": "group.planner.plan_UpdateBucket",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "legacyOperationId": "group.planner.plan_UpdateBucket"
+              "operationId": "group.planner.plan_UpdateBucket"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "operationId": "group.planner.plan_DeleteBucket",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "legacyOperationId": "group.planner.plan_DeleteBucket"
+              "operationId": "group.planner.plan_DeleteBucket"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
-              "operationId": "group.planner.plan.bucket_ListTask",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
-              "legacyOperationId": "group.planner.plan.bucket_ListTask"
+              "operationId": "group.planner.plan.bucket_ListTask"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
-              "operationId": "group.planner.plan.bucket_CreateTask",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
-              "legacyOperationId": "group.planner.plan.bucket_CreateTask"
+              "operationId": "group.planner.plan.bucket_CreateTask"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "operationId": "group.planner.plan.bucket_GetTask",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "group.planner.plan.bucket_GetTask"
+              "operationId": "group.planner.plan.bucket_GetTask"
             },
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "operationId": "group.planner.plan.bucket_UpdateTask",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "group.planner.plan.bucket_UpdateTask"
+              "operationId": "group.planner.plan.bucket_UpdateTask"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "operationId": "group.planner.plan.bucket_DeleteTask",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "group.planner.plan.bucket_DeleteTask"
+              "operationId": "group.planner.plan.bucket_DeleteTask"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "group.planner.plan.bucket.task_GetAssignedToTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
+              "operationId": "group.planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "group.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
+              "operationId": "group.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "group.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
+              "operationId": "group.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "group.planner.plan.bucket.task_GetBucketTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.bucket.task_GetBucketTaskBoardFormat"
+              "operationId": "group.planner.plan.bucket.task_GetBucketTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "group.planner.plan.bucket.task_UpdateBucketTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
+              "operationId": "group.planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "group.planner.plan.bucket.task_DeleteBucketTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
+              "operationId": "group.planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "operationId": "group.planner.plan.bucket.task_GetDetail",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "group.planner.plan.bucket.task_GetDetail"
+              "operationId": "group.planner.plan.bucket.task_GetDetail"
             },
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "operationId": "group.planner.plan.bucket.task_UpdateDetail",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "group.planner.plan.bucket.task_UpdateDetail"
+              "operationId": "group.planner.plan.bucket.task_UpdateDetail"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "operationId": "group.planner.plan.bucket.task_DeleteDetail",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "group.planner.plan.bucket.task_DeleteDetail"
+              "operationId": "group.planner.plan.bucket.task_DeleteDetail"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "group.planner.plan.bucket.task_ListMessage",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "group.planner.plan.bucket.task_ListMessage"
+              "operationId": "group.planner.plan.bucket.task_ListMessage"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "group.planner.plan.bucket.task_CreateMessage",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "group.planner.plan.bucket.task_CreateMessage"
+              "operationId": "group.planner.plan.bucket.task_CreateMessage"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "group.planner.plan.bucket.task_GetMessage",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "group.planner.plan.bucket.task_GetMessage"
+              "operationId": "group.planner.plan.bucket.task_GetMessage"
             },
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "group.planner.plan.bucket.task_UpdateMessage",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "group.planner.plan.bucket.task_UpdateMessage"
+              "operationId": "group.planner.plan.bucket.task_UpdateMessage"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "group.planner.plan.bucket.task_DeleteMessage",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "group.planner.plan.bucket.task_DeleteMessage"
+              "operationId": "group.planner.plan.bucket.task_DeleteMessage"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
-              "operationId": "group.planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_setReaction",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.setReaction",
-              "legacyOperationId": "group.planner.plan.bucket.task.message_setReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "group.planner.plan.bucket.task.message_setReaction"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
-              "operationId": "group.planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_unsetReaction",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.unsetReaction",
-              "legacyOperationId": "group.planner.plan.bucket.task.message_unsetReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "group.planner.plan.bucket.task.message_unsetReaction"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
-              "operationId": "group.planner.plan.bucket.task.message_GetCount",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
-              "legacyOperationId": "group.planner.plan.bucket.task.message_GetCount"
+              "operationId": "group.planner.plan.bucket.task.message_GetCount"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "group.planner.plan.bucket.task_GetProgressTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.bucket.task_GetProgressTaskBoardFormat"
+              "operationId": "group.planner.plan.bucket.task_GetProgressTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "group.planner.plan.bucket.task_UpdateProgressTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
+              "operationId": "group.planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "group.planner.plan.bucket.task_DeleteProgressTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
+              "operationId": "group.planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
-              "operationId": "group.planner.plan.bucket.task_GetCount",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
-              "legacyOperationId": "group.planner.plan.bucket.task_GetCount"
+              "operationId": "group.planner.plan.bucket.task_GetCount"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/delta()",
-              "operationId": "group.planner.plan.plannerPlan.bucket.plannerBucket.task_delta",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/microsoft.graph.delta()",
-              "legacyOperationId": "group.planner.plan.bucket.task_delta",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "group.planner.plan.bucket.task_delta"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/$count",
-              "operationId": "group.planner.plan.bucket_GetCount",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/$count",
-              "legacyOperationId": "group.planner.plan.bucket_GetCount"
+              "operationId": "group.planner.plan.bucket_GetCount"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/delta()",
-              "operationId": "group.planner.plan.plannerPlan.bucket_delta",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/microsoft.graph.delta()",
-              "legacyOperationId": "group.planner.plan.bucket_delta",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "group.planner.plan.bucket_delta"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks",
-              "operationId": "group.planner.plan_CreateTask",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks",
-              "legacyOperationId": "group.planner.plan_CreateTask"
+              "operationId": "group.planner.plan_CreateTask"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "operationId": "group.planner.plan_GetTask",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "group.planner.plan_GetTask"
+              "operationId": "group.planner.plan_GetTask"
             },
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "operationId": "group.planner.plan_UpdateTask",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "group.planner.plan_UpdateTask"
+              "operationId": "group.planner.plan_UpdateTask"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "operationId": "group.planner.plan_DeleteTask",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "group.planner.plan_DeleteTask"
+              "operationId": "group.planner.plan_DeleteTask"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "group.planner.plan.task_GetAssignedToTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.task_GetAssignedToTaskBoardFormat"
+              "operationId": "group.planner.plan.task_GetAssignedToTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "group.planner.plan.task_UpdateAssignedToTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.task_UpdateAssignedToTaskBoardFormat"
+              "operationId": "group.planner.plan.task_UpdateAssignedToTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "group.planner.plan.task_DeleteAssignedToTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.task_DeleteAssignedToTaskBoardFormat"
+              "operationId": "group.planner.plan.task_DeleteAssignedToTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "group.planner.plan.task_GetBucketTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.task_GetBucketTaskBoardFormat"
+              "operationId": "group.planner.plan.task_GetBucketTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "group.planner.plan.task_UpdateBucketTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.task_UpdateBucketTaskBoardFormat"
+              "operationId": "group.planner.plan.task_UpdateBucketTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "group.planner.plan.task_DeleteBucketTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.task_DeleteBucketTaskBoardFormat"
+              "operationId": "group.planner.plan.task_DeleteBucketTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "operationId": "group.planner.plan.task_GetDetail",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "group.planner.plan.task_GetDetail"
+              "operationId": "group.planner.plan.task_GetDetail"
             },
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "operationId": "group.planner.plan.task_UpdateDetail",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "group.planner.plan.task_UpdateDetail"
+              "operationId": "group.planner.plan.task_UpdateDetail"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "operationId": "group.planner.plan.task_DeleteDetail",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "group.planner.plan.task_DeleteDetail"
+              "operationId": "group.planner.plan.task_DeleteDetail"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "group.planner.plan.task_ListMessage",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "group.planner.plan.task_ListMessage"
+              "operationId": "group.planner.plan.task_ListMessage"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "group.planner.plan.task_CreateMessage",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "group.planner.plan.task_CreateMessage"
+              "operationId": "group.planner.plan.task_CreateMessage"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "group.planner.plan.task_GetMessage",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "group.planner.plan.task_GetMessage"
+              "operationId": "group.planner.plan.task_GetMessage"
             },
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "group.planner.plan.task_UpdateMessage",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "group.planner.plan.task_UpdateMessage"
+              "operationId": "group.planner.plan.task_UpdateMessage"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "group.planner.plan.task_DeleteMessage",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "group.planner.plan.task_DeleteMessage"
+              "operationId": "group.planner.plan.task_DeleteMessage"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
-              "operationId": "group.planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_setReaction",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.setReaction",
-              "legacyOperationId": "group.planner.plan.task.message_setReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "group.planner.plan.task.message_setReaction"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
-              "operationId": "group.planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_unsetReaction",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.unsetReaction",
-              "legacyOperationId": "group.planner.plan.task.message_unsetReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "group.planner.plan.task.message_unsetReaction"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/$count",
-              "operationId": "group.planner.plan.task.message_GetCount",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/$count",
-              "legacyOperationId": "group.planner.plan.task.message_GetCount"
+              "operationId": "group.planner.plan.task.message_GetCount"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "group.planner.plan.task_GetProgressTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.task_GetProgressTaskBoardFormat"
+              "operationId": "group.planner.plan.task_GetProgressTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "group.planner.plan.task_UpdateProgressTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.task_UpdateProgressTaskBoardFormat"
+              "operationId": "group.planner.plan.task_UpdateProgressTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "group.planner.plan.task_DeleteProgressTaskBoardFormat",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "group.planner.plan.task_DeleteProgressTaskBoardFormat"
+              "operationId": "group.planner.plan.task_DeleteProgressTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/$count",
-              "operationId": "group.planner.plan.task_GetCount",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/$count",
-              "legacyOperationId": "group.planner.plan.task_GetCount"
+              "operationId": "group.planner.plan.task_GetCount"
             },
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/delta()",
-              "operationId": "group.planner.plan.plannerPlan.task_delta",
-              "legacyPath": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/microsoft.graph.delta()",
-              "legacyOperationId": "group.planner.plan.task_delta",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "group.planner.plan.task_delta"
             },
             {
               "method": "POST",
               "path": "/planner/buckets/{plannerBucket-id}/tasks",
-              "operationId": "planner.bucket_CreateTask",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks",
-              "legacyOperationId": "planner.bucket_CreateTask"
+              "operationId": "planner.bucket_CreateTask"
             },
             {
               "method": "GET",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "operationId": "planner.bucket_GetTask",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "planner.bucket_GetTask"
+              "operationId": "planner.bucket_GetTask"
             },
             {
               "method": "PATCH",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "operationId": "planner.bucket_UpdateTask",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "planner.bucket_UpdateTask"
+              "operationId": "planner.bucket_UpdateTask"
             },
             {
               "method": "DELETE",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "operationId": "planner.bucket_DeleteTask",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "planner.bucket_DeleteTask"
+              "operationId": "planner.bucket_DeleteTask"
             },
             {
               "method": "GET",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "planner.bucket.task_GetAssignedToTaskBoardFormat",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "planner.bucket.task_GetAssignedToTaskBoardFormat"
+              "operationId": "planner.bucket.task_GetAssignedToTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "planner.bucket.task_UpdateAssignedToTaskBoardFormat",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "planner.bucket.task_UpdateAssignedToTaskBoardFormat"
+              "operationId": "planner.bucket.task_UpdateAssignedToTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "planner.bucket.task_DeleteAssignedToTaskBoardFormat",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "planner.bucket.task_DeleteAssignedToTaskBoardFormat"
+              "operationId": "planner.bucket.task_DeleteAssignedToTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "planner.bucket.task_GetBucketTaskBoardFormat",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "planner.bucket.task_GetBucketTaskBoardFormat"
+              "operationId": "planner.bucket.task_GetBucketTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "planner.bucket.task_UpdateBucketTaskBoardFormat",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "planner.bucket.task_UpdateBucketTaskBoardFormat"
+              "operationId": "planner.bucket.task_UpdateBucketTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "planner.bucket.task_DeleteBucketTaskBoardFormat",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "planner.bucket.task_DeleteBucketTaskBoardFormat"
+              "operationId": "planner.bucket.task_DeleteBucketTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "operationId": "planner.bucket.task_GetDetail",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "planner.bucket.task_GetDetail"
+              "operationId": "planner.bucket.task_GetDetail"
             },
             {
               "method": "PATCH",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "operationId": "planner.bucket.task_UpdateDetail",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "planner.bucket.task_UpdateDetail"
+              "operationId": "planner.bucket.task_UpdateDetail"
             },
             {
               "method": "DELETE",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "operationId": "planner.bucket.task_DeleteDetail",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "planner.bucket.task_DeleteDetail"
+              "operationId": "planner.bucket.task_DeleteDetail"
             },
             {
               "method": "GET",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "planner.bucket.task_ListMessage",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "planner.bucket.task_ListMessage"
+              "operationId": "planner.bucket.task_ListMessage"
             },
             {
               "method": "POST",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "planner.bucket.task_CreateMessage",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "planner.bucket.task_CreateMessage"
+              "operationId": "planner.bucket.task_CreateMessage"
             },
             {
               "method": "GET",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "planner.bucket.task_GetMessage",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "planner.bucket.task_GetMessage"
+              "operationId": "planner.bucket.task_GetMessage"
             },
             {
               "method": "PATCH",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "planner.bucket.task_UpdateMessage",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "planner.bucket.task_UpdateMessage"
+              "operationId": "planner.bucket.task_UpdateMessage"
             },
             {
               "method": "DELETE",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "planner.bucket.task_DeleteMessage",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "planner.bucket.task_DeleteMessage"
+              "operationId": "planner.bucket.task_DeleteMessage"
             },
             {
               "method": "POST",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
-              "operationId": "planner.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_setReaction",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.setReaction",
-              "legacyOperationId": "planner.bucket.task.message_setReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "planner.bucket.task.message_setReaction"
             },
             {
               "method": "POST",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
-              "operationId": "planner.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_unsetReaction",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.unsetReaction",
-              "legacyOperationId": "planner.bucket.task.message_unsetReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "planner.bucket.task.message_unsetReaction"
             },
             {
               "method": "GET",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
-              "operationId": "planner.bucket.task.message_GetCount",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
-              "legacyOperationId": "planner.bucket.task.message_GetCount"
+              "operationId": "planner.bucket.task.message_GetCount"
             },
             {
               "method": "GET",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "planner.bucket.task_GetProgressTaskBoardFormat",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "planner.bucket.task_GetProgressTaskBoardFormat"
+              "operationId": "planner.bucket.task_GetProgressTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "planner.bucket.task_UpdateProgressTaskBoardFormat",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "planner.bucket.task_UpdateProgressTaskBoardFormat"
+              "operationId": "planner.bucket.task_UpdateProgressTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "planner.bucket.task_DeleteProgressTaskBoardFormat",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "planner.bucket.task_DeleteProgressTaskBoardFormat"
+              "operationId": "planner.bucket.task_DeleteProgressTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/$count",
-              "operationId": "planner.bucket.task_GetCount",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/$count",
-              "legacyOperationId": "planner.bucket.task_GetCount"
+              "operationId": "planner.bucket.task_GetCount"
             },
             {
               "method": "GET",
               "path": "/planner/buckets/{plannerBucket-id}/tasks/delta()",
-              "operationId": "planner.bucket.plannerBucket.task_delta",
-              "legacyPath": "/planner/buckets/{plannerBucket-id}/tasks/microsoft.graph.delta()",
-              "legacyOperationId": "planner.bucket.task_delta",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "planner.bucket.task_delta"
             },
             {
               "method": "POST",
               "path": "/planner/plans/{plannerPlan-id}/buckets",
-              "operationId": "planner.plan_CreateBucket",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets",
-              "legacyOperationId": "planner.plan_CreateBucket"
+              "operationId": "planner.plan_CreateBucket"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "operationId": "planner.plan_GetBucket",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "legacyOperationId": "planner.plan_GetBucket"
+              "operationId": "planner.plan_GetBucket"
             },
             {
               "method": "PATCH",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "operationId": "planner.plan_UpdateBucket",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "legacyOperationId": "planner.plan_UpdateBucket"
+              "operationId": "planner.plan_UpdateBucket"
             },
             {
               "method": "DELETE",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "operationId": "planner.plan_DeleteBucket",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "legacyOperationId": "planner.plan_DeleteBucket"
+              "operationId": "planner.plan_DeleteBucket"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
-              "operationId": "planner.plan.bucket_ListTask",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
-              "legacyOperationId": "planner.plan.bucket_ListTask"
+              "operationId": "planner.plan.bucket_ListTask"
             },
             {
               "method": "POST",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
-              "operationId": "planner.plan.bucket_CreateTask",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
-              "legacyOperationId": "planner.plan.bucket_CreateTask"
+              "operationId": "planner.plan.bucket_CreateTask"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "operationId": "planner.plan.bucket_GetTask",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "planner.plan.bucket_GetTask"
+              "operationId": "planner.plan.bucket_GetTask"
             },
             {
               "method": "PATCH",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "operationId": "planner.plan.bucket_UpdateTask",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "planner.plan.bucket_UpdateTask"
+              "operationId": "planner.plan.bucket_UpdateTask"
             },
             {
               "method": "DELETE",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "operationId": "planner.plan.bucket_DeleteTask",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "planner.plan.bucket_DeleteTask"
+              "operationId": "planner.plan.bucket_DeleteTask"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "planner.plan.bucket.task_GetAssignedToTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
+              "operationId": "planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
+              "operationId": "planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
+              "operationId": "planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "planner.plan.bucket.task_GetBucketTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "planner.plan.bucket.task_GetBucketTaskBoardFormat"
+              "operationId": "planner.plan.bucket.task_GetBucketTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "planner.plan.bucket.task_UpdateBucketTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
+              "operationId": "planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "planner.plan.bucket.task_DeleteBucketTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
+              "operationId": "planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "operationId": "planner.plan.bucket.task_GetDetail",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "planner.plan.bucket.task_GetDetail"
+              "operationId": "planner.plan.bucket.task_GetDetail"
             },
             {
               "method": "PATCH",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "operationId": "planner.plan.bucket.task_UpdateDetail",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "planner.plan.bucket.task_UpdateDetail"
+              "operationId": "planner.plan.bucket.task_UpdateDetail"
             },
             {
               "method": "DELETE",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "operationId": "planner.plan.bucket.task_DeleteDetail",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "planner.plan.bucket.task_DeleteDetail"
+              "operationId": "planner.plan.bucket.task_DeleteDetail"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "planner.plan.bucket.task_ListMessage",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "planner.plan.bucket.task_ListMessage"
+              "operationId": "planner.plan.bucket.task_ListMessage"
             },
             {
               "method": "POST",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "planner.plan.bucket.task_CreateMessage",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "planner.plan.bucket.task_CreateMessage"
+              "operationId": "planner.plan.bucket.task_CreateMessage"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "planner.plan.bucket.task_GetMessage",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "planner.plan.bucket.task_GetMessage"
+              "operationId": "planner.plan.bucket.task_GetMessage"
             },
             {
               "method": "PATCH",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "planner.plan.bucket.task_UpdateMessage",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "planner.plan.bucket.task_UpdateMessage"
+              "operationId": "planner.plan.bucket.task_UpdateMessage"
             },
             {
               "method": "DELETE",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "planner.plan.bucket.task_DeleteMessage",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "planner.plan.bucket.task_DeleteMessage"
+              "operationId": "planner.plan.bucket.task_DeleteMessage"
             },
             {
               "method": "POST",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
-              "operationId": "planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_setReaction",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.setReaction",
-              "legacyOperationId": "planner.plan.bucket.task.message_setReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "planner.plan.bucket.task.message_setReaction"
             },
             {
               "method": "POST",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
-              "operationId": "planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_unsetReaction",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.unsetReaction",
-              "legacyOperationId": "planner.plan.bucket.task.message_unsetReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "planner.plan.bucket.task.message_unsetReaction"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
-              "operationId": "planner.plan.bucket.task.message_GetCount",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
-              "legacyOperationId": "planner.plan.bucket.task.message_GetCount"
+              "operationId": "planner.plan.bucket.task.message_GetCount"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "planner.plan.bucket.task_GetProgressTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "planner.plan.bucket.task_GetProgressTaskBoardFormat"
+              "operationId": "planner.plan.bucket.task_GetProgressTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "planner.plan.bucket.task_UpdateProgressTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
+              "operationId": "planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "planner.plan.bucket.task_DeleteProgressTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
+              "operationId": "planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
-              "operationId": "planner.plan.bucket.task_GetCount",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
-              "legacyOperationId": "planner.plan.bucket.task_GetCount"
+              "operationId": "planner.plan.bucket.task_GetCount"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/delta()",
-              "operationId": "planner.plan.plannerPlan.bucket.plannerBucket.task_delta",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/microsoft.graph.delta()",
-              "legacyOperationId": "planner.plan.bucket.task_delta",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "planner.plan.bucket.task_delta"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/$count",
-              "operationId": "planner.plan.bucket_GetCount",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/$count",
-              "legacyOperationId": "planner.plan.bucket_GetCount"
+              "operationId": "planner.plan.bucket_GetCount"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/buckets/delta()",
-              "operationId": "planner.plan.plannerPlan.bucket_delta",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/buckets/microsoft.graph.delta()",
-              "legacyOperationId": "planner.plan.bucket_delta",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "planner.plan.bucket_delta"
             },
             {
               "method": "POST",
               "path": "/planner/plans/{plannerPlan-id}/tasks",
-              "operationId": "planner.plan_CreateTask",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks",
-              "legacyOperationId": "planner.plan_CreateTask"
+              "operationId": "planner.plan_CreateTask"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "operationId": "planner.plan_GetTask",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "planner.plan_GetTask"
+              "operationId": "planner.plan_GetTask"
             },
             {
               "method": "PATCH",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "operationId": "planner.plan_UpdateTask",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "planner.plan_UpdateTask"
+              "operationId": "planner.plan_UpdateTask"
             },
             {
               "method": "DELETE",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "operationId": "planner.plan_DeleteTask",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "planner.plan_DeleteTask"
+              "operationId": "planner.plan_DeleteTask"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "planner.plan.task_GetAssignedToTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "planner.plan.task_GetAssignedToTaskBoardFormat"
+              "operationId": "planner.plan.task_GetAssignedToTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "planner.plan.task_UpdateAssignedToTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "planner.plan.task_UpdateAssignedToTaskBoardFormat"
+              "operationId": "planner.plan.task_UpdateAssignedToTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "planner.plan.task_DeleteAssignedToTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "planner.plan.task_DeleteAssignedToTaskBoardFormat"
+              "operationId": "planner.plan.task_DeleteAssignedToTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "planner.plan.task_GetBucketTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "planner.plan.task_GetBucketTaskBoardFormat"
+              "operationId": "planner.plan.task_GetBucketTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "planner.plan.task_UpdateBucketTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "planner.plan.task_UpdateBucketTaskBoardFormat"
+              "operationId": "planner.plan.task_UpdateBucketTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "planner.plan.task_DeleteBucketTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "planner.plan.task_DeleteBucketTaskBoardFormat"
+              "operationId": "planner.plan.task_DeleteBucketTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "operationId": "planner.plan.task_GetDetail",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "planner.plan.task_GetDetail"
+              "operationId": "planner.plan.task_GetDetail"
             },
             {
               "method": "PATCH",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "operationId": "planner.plan.task_UpdateDetail",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "planner.plan.task_UpdateDetail"
+              "operationId": "planner.plan.task_UpdateDetail"
             },
             {
               "method": "DELETE",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "operationId": "planner.plan.task_DeleteDetail",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "planner.plan.task_DeleteDetail"
+              "operationId": "planner.plan.task_DeleteDetail"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "planner.plan.task_ListMessage",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "planner.plan.task_ListMessage"
+              "operationId": "planner.plan.task_ListMessage"
             },
             {
               "method": "POST",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "planner.plan.task_CreateMessage",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "planner.plan.task_CreateMessage"
+              "operationId": "planner.plan.task_CreateMessage"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "planner.plan.task_GetMessage",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "planner.plan.task_GetMessage"
+              "operationId": "planner.plan.task_GetMessage"
             },
             {
               "method": "PATCH",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "planner.plan.task_UpdateMessage",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "planner.plan.task_UpdateMessage"
+              "operationId": "planner.plan.task_UpdateMessage"
             },
             {
               "method": "DELETE",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "planner.plan.task_DeleteMessage",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "planner.plan.task_DeleteMessage"
+              "operationId": "planner.plan.task_DeleteMessage"
             },
             {
               "method": "POST",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
-              "operationId": "planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_setReaction",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.setReaction",
-              "legacyOperationId": "planner.plan.task.message_setReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "planner.plan.task.message_setReaction"
             },
             {
               "method": "POST",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
-              "operationId": "planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_unsetReaction",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.unsetReaction",
-              "legacyOperationId": "planner.plan.task.message_unsetReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "planner.plan.task.message_unsetReaction"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/$count",
-              "operationId": "planner.plan.task.message_GetCount",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/$count",
-              "legacyOperationId": "planner.plan.task.message_GetCount"
+              "operationId": "planner.plan.task.message_GetCount"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "planner.plan.task_GetProgressTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "planner.plan.task_GetProgressTaskBoardFormat"
+              "operationId": "planner.plan.task_GetProgressTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "planner.plan.task_UpdateProgressTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "planner.plan.task_UpdateProgressTaskBoardFormat"
+              "operationId": "planner.plan.task_UpdateProgressTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "planner.plan.task_DeleteProgressTaskBoardFormat",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "planner.plan.task_DeleteProgressTaskBoardFormat"
+              "operationId": "planner.plan.task_DeleteProgressTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/tasks/$count",
-              "operationId": "planner.plan.task_GetCount",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/$count",
-              "legacyOperationId": "planner.plan.task_GetCount"
+              "operationId": "planner.plan.task_GetCount"
             },
             {
               "method": "GET",
               "path": "/planner/plans/{plannerPlan-id}/tasks/delta()",
-              "operationId": "planner.plan.plannerPlan.task_delta",
-              "legacyPath": "/planner/plans/{plannerPlan-id}/tasks/microsoft.graph.delta()",
-              "legacyOperationId": "planner.plan.task_delta",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "planner.plan.task_delta"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/all",
-              "operationId": "user.planner_CreateAll",
-              "legacyPath": "/users/{user-id}/planner/all",
-              "legacyOperationId": "user.planner_CreateAll"
+              "operationId": "user.planner_CreateAll"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/all/{plannerDelta-id}",
-              "operationId": "user.planner_UpdateAll",
-              "legacyPath": "/users/{user-id}/planner/all/{plannerDelta-id}",
-              "legacyOperationId": "user.planner_UpdateAll"
+              "operationId": "user.planner_UpdateAll"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/all/{plannerDelta-id}",
-              "operationId": "user.planner_DeleteAll",
-              "legacyPath": "/users/{user-id}/planner/all/{plannerDelta-id}",
-              "legacyOperationId": "user.planner_DeleteAll"
+              "operationId": "user.planner_DeleteAll"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets",
-              "operationId": "user.planner.plan_CreateBucket",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets",
-              "legacyOperationId": "user.planner.plan_CreateBucket"
+              "operationId": "user.planner.plan_CreateBucket"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "operationId": "user.planner.plan_GetBucket",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "legacyOperationId": "user.planner.plan_GetBucket"
+              "operationId": "user.planner.plan_GetBucket"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "operationId": "user.planner.plan_UpdateBucket",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "legacyOperationId": "user.planner.plan_UpdateBucket"
+              "operationId": "user.planner.plan_UpdateBucket"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "operationId": "user.planner.plan_DeleteBucket",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
-              "legacyOperationId": "user.planner.plan_DeleteBucket"
+              "operationId": "user.planner.plan_DeleteBucket"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
-              "operationId": "user.planner.plan.bucket_ListTask",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
-              "legacyOperationId": "user.planner.plan.bucket_ListTask"
+              "operationId": "user.planner.plan.bucket_ListTask"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
-              "operationId": "user.planner.plan.bucket_CreateTask",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
-              "legacyOperationId": "user.planner.plan.bucket_CreateTask"
+              "operationId": "user.planner.plan.bucket_CreateTask"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "operationId": "user.planner.plan.bucket_GetTask",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "user.planner.plan.bucket_GetTask"
+              "operationId": "user.planner.plan.bucket_GetTask"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "operationId": "user.planner.plan.bucket_UpdateTask",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "user.planner.plan.bucket_UpdateTask"
+              "operationId": "user.planner.plan.bucket_UpdateTask"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "operationId": "user.planner.plan.bucket_DeleteTask",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "user.planner.plan.bucket_DeleteTask"
+              "operationId": "user.planner.plan.bucket_DeleteTask"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "user.planner.plan.bucket.task_GetAssignedToTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
+              "operationId": "user.planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "user.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
+              "operationId": "user.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "user.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
+              "operationId": "user.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "user.planner.plan.bucket.task_GetBucketTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.bucket.task_GetBucketTaskBoardFormat"
+              "operationId": "user.planner.plan.bucket.task_GetBucketTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "user.planner.plan.bucket.task_UpdateBucketTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
+              "operationId": "user.planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "user.planner.plan.bucket.task_DeleteBucketTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
+              "operationId": "user.planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "operationId": "user.planner.plan.bucket.task_GetDetail",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "user.planner.plan.bucket.task_GetDetail"
+              "operationId": "user.planner.plan.bucket.task_GetDetail"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "operationId": "user.planner.plan.bucket.task_UpdateDetail",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "user.planner.plan.bucket.task_UpdateDetail"
+              "operationId": "user.planner.plan.bucket.task_UpdateDetail"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "operationId": "user.planner.plan.bucket.task_DeleteDetail",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "user.planner.plan.bucket.task_DeleteDetail"
+              "operationId": "user.planner.plan.bucket.task_DeleteDetail"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "user.planner.plan.bucket.task_ListMessage",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "user.planner.plan.bucket.task_ListMessage"
+              "operationId": "user.planner.plan.bucket.task_ListMessage"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "user.planner.plan.bucket.task_CreateMessage",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "user.planner.plan.bucket.task_CreateMessage"
+              "operationId": "user.planner.plan.bucket.task_CreateMessage"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "user.planner.plan.bucket.task_GetMessage",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "user.planner.plan.bucket.task_GetMessage"
+              "operationId": "user.planner.plan.bucket.task_GetMessage"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "user.planner.plan.bucket.task_UpdateMessage",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "user.planner.plan.bucket.task_UpdateMessage"
+              "operationId": "user.planner.plan.bucket.task_UpdateMessage"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "user.planner.plan.bucket.task_DeleteMessage",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "user.planner.plan.bucket.task_DeleteMessage"
+              "operationId": "user.planner.plan.bucket.task_DeleteMessage"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
-              "operationId": "user.planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_setReaction",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.setReaction",
-              "legacyOperationId": "user.planner.plan.bucket.task.message_setReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "user.planner.plan.bucket.task.message_setReaction"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
-              "operationId": "user.planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_unsetReaction",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.unsetReaction",
-              "legacyOperationId": "user.planner.plan.bucket.task.message_unsetReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "user.planner.plan.bucket.task.message_unsetReaction"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
-              "operationId": "user.planner.plan.bucket.task.message_GetCount",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
-              "legacyOperationId": "user.planner.plan.bucket.task.message_GetCount"
+              "operationId": "user.planner.plan.bucket.task.message_GetCount"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "user.planner.plan.bucket.task_GetProgressTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.bucket.task_GetProgressTaskBoardFormat"
+              "operationId": "user.planner.plan.bucket.task_GetProgressTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "user.planner.plan.bucket.task_UpdateProgressTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
+              "operationId": "user.planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "user.planner.plan.bucket.task_DeleteProgressTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
+              "operationId": "user.planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
-              "operationId": "user.planner.plan.bucket.task_GetCount",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
-              "legacyOperationId": "user.planner.plan.bucket.task_GetCount"
+              "operationId": "user.planner.plan.bucket.task_GetCount"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/delta()",
-              "operationId": "user.planner.plan.plannerPlan.bucket.plannerBucket.task_delta",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/microsoft.graph.delta()",
-              "legacyOperationId": "user.planner.plan.bucket.task_delta",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "user.planner.plan.bucket.task_delta"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/$count",
-              "operationId": "user.planner.plan.bucket_GetCount",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/$count",
-              "legacyOperationId": "user.planner.plan.bucket_GetCount"
+              "operationId": "user.planner.plan.bucket_GetCount"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/delta()",
-              "operationId": "user.planner.plan.plannerPlan.bucket_delta",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/microsoft.graph.delta()",
-              "legacyOperationId": "user.planner.plan.bucket_delta",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "user.planner.plan.bucket_delta"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks",
-              "operationId": "user.planner.plan_CreateTask",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks",
-              "legacyOperationId": "user.planner.plan_CreateTask"
+              "operationId": "user.planner.plan_CreateTask"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "operationId": "user.planner.plan_GetTask",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "user.planner.plan_GetTask"
+              "operationId": "user.planner.plan_GetTask"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "operationId": "user.planner.plan_UpdateTask",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "user.planner.plan_UpdateTask"
+              "operationId": "user.planner.plan_UpdateTask"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "operationId": "user.planner.plan_DeleteTask",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
-              "legacyOperationId": "user.planner.plan_DeleteTask"
+              "operationId": "user.planner.plan_DeleteTask"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "user.planner.plan.task_GetAssignedToTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.task_GetAssignedToTaskBoardFormat"
+              "operationId": "user.planner.plan.task_GetAssignedToTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "user.planner.plan.task_UpdateAssignedToTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.task_UpdateAssignedToTaskBoardFormat"
+              "operationId": "user.planner.plan.task_UpdateAssignedToTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "operationId": "user.planner.plan.task_DeleteAssignedToTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.task_DeleteAssignedToTaskBoardFormat"
+              "operationId": "user.planner.plan.task_DeleteAssignedToTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "user.planner.plan.task_GetBucketTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.task_GetBucketTaskBoardFormat"
+              "operationId": "user.planner.plan.task_GetBucketTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "user.planner.plan.task_UpdateBucketTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.task_UpdateBucketTaskBoardFormat"
+              "operationId": "user.planner.plan.task_UpdateBucketTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "operationId": "user.planner.plan.task_DeleteBucketTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.task_DeleteBucketTaskBoardFormat"
+              "operationId": "user.planner.plan.task_DeleteBucketTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "operationId": "user.planner.plan.task_GetDetail",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "user.planner.plan.task_GetDetail"
+              "operationId": "user.planner.plan.task_GetDetail"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "operationId": "user.planner.plan.task_UpdateDetail",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "user.planner.plan.task_UpdateDetail"
+              "operationId": "user.planner.plan.task_UpdateDetail"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "operationId": "user.planner.plan.task_DeleteDetail",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
-              "legacyOperationId": "user.planner.plan.task_DeleteDetail"
+              "operationId": "user.planner.plan.task_DeleteDetail"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "user.planner.plan.task_ListMessage",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "user.planner.plan.task_ListMessage"
+              "operationId": "user.planner.plan.task_ListMessage"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
-              "operationId": "user.planner.plan.task_CreateMessage",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
-              "legacyOperationId": "user.planner.plan.task_CreateMessage"
+              "operationId": "user.planner.plan.task_CreateMessage"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "user.planner.plan.task_GetMessage",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "user.planner.plan.task_GetMessage"
+              "operationId": "user.planner.plan.task_GetMessage"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "user.planner.plan.task_UpdateMessage",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "user.planner.plan.task_UpdateMessage"
+              "operationId": "user.planner.plan.task_UpdateMessage"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "operationId": "user.planner.plan.task_DeleteMessage",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
-              "legacyOperationId": "user.planner.plan.task_DeleteMessage"
+              "operationId": "user.planner.plan.task_DeleteMessage"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
-              "operationId": "user.planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_setReaction",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.setReaction",
-              "legacyOperationId": "user.planner.plan.task.message_setReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "user.planner.plan.task.message_setReaction"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
-              "operationId": "user.planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_unsetReaction",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/microsoft.graph.unsetReaction",
-              "legacyOperationId": "user.planner.plan.task.message_unsetReaction",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "user.planner.plan.task.message_unsetReaction"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/$count",
-              "operationId": "user.planner.plan.task.message_GetCount",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/$count",
-              "legacyOperationId": "user.planner.plan.task.message_GetCount"
+              "operationId": "user.planner.plan.task.message_GetCount"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "user.planner.plan.task_GetProgressTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.task_GetProgressTaskBoardFormat"
+              "operationId": "user.planner.plan.task_GetProgressTaskBoardFormat"
             },
             {
               "method": "PATCH",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "user.planner.plan.task_UpdateProgressTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.task_UpdateProgressTaskBoardFormat"
+              "operationId": "user.planner.plan.task_UpdateProgressTaskBoardFormat"
             },
             {
               "method": "DELETE",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "operationId": "user.planner.plan.task_DeleteProgressTaskBoardFormat",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
-              "legacyOperationId": "user.planner.plan.task_DeleteProgressTaskBoardFormat"
+              "operationId": "user.planner.plan.task_DeleteProgressTaskBoardFormat"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/$count",
-              "operationId": "user.planner.plan.task_GetCount",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/$count",
-              "legacyOperationId": "user.planner.plan.task_GetCount"
+              "operationId": "user.planner.plan.task_GetCount"
             },
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/delta()",
-              "operationId": "user.planner.plan.plannerPlan.task_delta",
-              "legacyPath": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/microsoft.graph.delta()",
-              "legacyOperationId": "user.planner.plan.task_delta",
-              "legacyPathTranslation": "UnqualifyFinalOperation"
+              "operationId": "user.planner.plan.task_delta"
             }
           ],
-          "operationIdSource": "Legacy",
-          "notes": "Reviewed all 206 actual original regex matches: 182 current literal matches and 24 unique actual-kind-guarded final action/function namespace conversions, no removals. Normal #3847 merge is required; the current helper must report Invalid rather than waive this incomplete literal set. Actual source blobs: legacy ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d; compatible 1017c06265b69d9ceab2760fde8535ded19e0224.",
-          "removedLegacyOperations": []
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent. Complete original and current literal populations: 206 surviving selected routes; no fabricated absences. Historical qualified final action/function paths are audited only in module tests."
         }
       }
     },
@@ -2197,7 +1759,7 @@
               "operationId": "user_DeletePlanner"
             }
           ],
-          "notes": "Actual source blobs: legacy dd3e46fdb6f30eb2c530119979654f2876dca775; compatible 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
         },
         "beta": {
           "absenceExpected": false,
@@ -2213,7 +1775,7 @@
               "operationId": "user_DeletePlanner"
             }
           ],
-          "notes": "Actual source blobs: legacy ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d; compatible 1017c06265b69d9ceab2760fde8535ded19e0224."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
         }
       }
     },
@@ -2274,7 +1836,7 @@
               "operationId": "user.planner_DeleteTask"
             }
           ],
-          "notes": "Actual source blobs: legacy dd3e46fdb6f30eb2c530119979654f2876dca775; compatible 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
         },
         "beta": {
           "absenceExpected": false,
@@ -2325,7 +1887,7 @@
               "operationId": "user.planner_DeleteTask"
             }
           ],
-          "notes": "Actual source blobs: legacy ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d; compatible 1017c06265b69d9ceab2760fde8535ded19e0224."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
         }
       }
     },
@@ -2351,7 +1913,7 @@
               "operationId": "planner.task_DeleteDetail"
             }
           ],
-          "notes": "Actual source blobs: legacy dd3e46fdb6f30eb2c530119979654f2876dca775; compatible 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
         },
         "beta": {
           "absenceExpected": false,
@@ -2367,7 +1929,7 @@
               "operationId": "planner.task_DeleteDetail"
             }
           ],
-          "notes": "Actual source blobs: legacy ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d; compatible 1017c06265b69d9ceab2760fde8535ded19e0224."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
         }
       }
     },
@@ -2393,7 +1955,7 @@
               "operationId": "user.planner_GetTask"
             }
           ],
-          "notes": "Actual source blobs: legacy dd3e46fdb6f30eb2c530119979654f2876dca775; compatible 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
         },
         "beta": {
           "absenceExpected": false,
@@ -2409,7 +1971,7 @@
               "operationId": "user.planner_GetTask"
             }
           ],
-          "notes": "Actual source blobs: legacy ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d; compatible 1017c06265b69d9ceab2760fde8535ded19e0224."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
         }
       }
     },
@@ -2430,7 +1992,7 @@
               "operationId": "user.planner.plan_GetTask"
             }
           ],
-          "notes": "Actual source blobs: legacy dd3e46fdb6f30eb2c530119979654f2876dca775; compatible 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
         },
         "beta": {
           "absenceExpected": false,
@@ -2441,7 +2003,7 @@
               "operationId": "user.planner.plan_GetTask"
             }
           ],
-          "notes": "Actual source blobs: legacy ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d; compatible 1017c06265b69d9ceab2760fde8535ded19e0224."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
         }
       }
     },
@@ -2752,7 +2314,7 @@
               "operationId": "user.planner.task_GetCount"
             }
           ],
-          "notes": "Actual source blobs: legacy dd3e46fdb6f30eb2c530119979654f2876dca775; compatible 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
         },
         "beta": {
           "absenceExpected": false,
@@ -2880,12 +2442,12 @@
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
-              "operationId": "user.planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_setReaction"
+              "operationId": "user.planner.plan.bucket.task.message_setReaction"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
-              "operationId": "user.planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_unsetReaction"
+              "operationId": "user.planner.plan.bucket.task.message_unsetReaction"
             },
             {
               "method": "GET",
@@ -2915,7 +2477,7 @@
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/delta()",
-              "operationId": "user.planner.plan.plannerPlan.bucket.plannerBucket.task_delta"
+              "operationId": "user.planner.plan.bucket.task_delta"
             },
             {
               "method": "GET",
@@ -2925,7 +2487,7 @@
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/delta()",
-              "operationId": "user.planner.plan.plannerPlan.bucket_delta"
+              "operationId": "user.planner.plan.bucket_delta"
             },
             {
               "method": "GET",
@@ -3070,12 +2632,12 @@
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
-              "operationId": "user.planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_setReaction"
+              "operationId": "user.planner.plan.task.message_setReaction"
             },
             {
               "method": "POST",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
-              "operationId": "user.planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_unsetReaction"
+              "operationId": "user.planner.plan.task.message_unsetReaction"
             },
             {
               "method": "GET",
@@ -3105,7 +2667,7 @@
             {
               "method": "GET",
               "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/delta()",
-              "operationId": "user.planner.plan.plannerPlan.task_delta"
+              "operationId": "user.planner.plan.task_delta"
             },
             {
               "method": "GET",
@@ -3218,7 +2780,7 @@
               "operationId": "user.planner.task_GetCount"
             }
           ],
-          "notes": "Actual source blobs: legacy ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d; compatible 1017c06265b69d9ceab2760fde8535ded19e0224."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
         }
       }
     },
@@ -3394,7 +2956,7 @@
               "operationId": "group.planner.plan.task_GetCount"
             }
           ],
-          "notes": "Actual source blobs: legacy dd3e46fdb6f30eb2c530119979654f2876dca775; compatible 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
         },
         "beta": {
           "absenceExpected": false,
@@ -3497,12 +3059,12 @@
             {
               "method": "POST",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
-              "operationId": "group.planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_setReaction"
+              "operationId": "group.planner.plan.bucket.task.message_setReaction"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
-              "operationId": "group.planner.plan.plannerPlan.bucket.plannerBucket.task.plannerTask.message.plannerTaskChatMessage_unsetReaction"
+              "operationId": "group.planner.plan.bucket.task.message_unsetReaction"
             },
             {
               "method": "GET",
@@ -3532,7 +3094,7 @@
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/delta()",
-              "operationId": "group.planner.plan.plannerPlan.bucket.plannerBucket.task_delta"
+              "operationId": "group.planner.plan.bucket.task_delta"
             },
             {
               "method": "GET",
@@ -3542,7 +3104,7 @@
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/delta()",
-              "operationId": "group.planner.plan.plannerPlan.bucket_delta"
+              "operationId": "group.planner.plan.bucket_delta"
             },
             {
               "method": "GET",
@@ -3617,12 +3179,12 @@
             {
               "method": "POST",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
-              "operationId": "group.planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_setReaction"
+              "operationId": "group.planner.plan.task.message_setReaction"
             },
             {
               "method": "POST",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
-              "operationId": "group.planner.plan.plannerPlan.task.plannerTask.message.plannerTaskChatMessage_unsetReaction"
+              "operationId": "group.planner.plan.task.message_unsetReaction"
             },
             {
               "method": "GET",
@@ -3652,10 +3214,10 @@
             {
               "method": "GET",
               "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/delta()",
-              "operationId": "group.planner.plan.plannerPlan.task_delta"
+              "operationId": "group.planner.plan.task_delta"
             }
           ],
-          "notes": "Actual source blobs: legacy ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d; compatible 1017c06265b69d9ceab2760fde8535ded19e0224."
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
         }
       }
     }

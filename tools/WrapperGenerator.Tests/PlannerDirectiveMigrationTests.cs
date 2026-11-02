@@ -41,79 +41,70 @@ public sealed class PlannerDirectiveMigrationTests
         method + " " + CmdletConfigurator.NormalizePathTemplate(path);
 
     [Theory]
-    [InlineData("v1.0", 137, 137, 0)]
-    [InlineData("beta", 206, 182, 24)]
-    public void OriginalLegacySelectorIsCompletelyAccountedFor(
-        string profile, int expectedCount, int expectedLiteralCount, int expectedTranslations)
+    [InlineData("v1.0", 137)]
+    [InlineData("beta", 206)]
+    public void OrdinaryLiteralLedgerAccountsForTheCompleteCurrentSelector(string profile, int expectedCount)
+    {
+        var source = File.ReadAllText(Path.Combine(RepoRoot, "src", "Planner", "Planner.md"));
+        var selector = Regex.Match(source, @"remove-path-by-operation: ([^\r\n]+)").Groups[1].Value;
+        var compatible = ReadSpec("openApiDocs_KiotaCompat", profile);
+        using var ledger = JsonDocument.Parse(File.ReadAllText(Path.Combine(RepoRoot, "src", "Planner", "wrapper", "Planner_directiveMigrationMap.json")));
+        var evidence = ledger.RootElement.GetProperty("mappings")[0].GetProperty("profiles").GetProperty(profile);
+        var operations = evidence.GetProperty("operations").EnumerateArray().ToArray();
+        Assert.Equal(expectedCount, operations.Length);
+        var literalMatches = compatible.Paths.SelectMany(path => path.Value.Operations!
+            .Where(operation => Regex.IsMatch(operation.Value.OperationId!, selector))
+            .Select(operation => Key(operation.Key.Method, path.Key) + " " + operation.Value.OperationId))
+            .ToHashSet(StringComparer.Ordinal);
+        Assert.Equal(expectedCount, literalMatches.Count);
+        Assert.True(literalMatches.SetEquals(operations.Select(operation =>
+            Key(operation.GetProperty("method").GetString()!, operation.GetProperty("path").GetString()!) +
+            " " + operation.GetProperty("operationId").GetString())));
+        foreach (var mapping in ledger.RootElement.GetProperty("mappings").EnumerateArray())
+            AssertOrdinaryFields(mapping.GetProperty("profiles").GetProperty(profile));
+    }
+
+    [Theory]
+    [InlineData("v1.0", 137, 0, 0)]
+    [InlineData("beta", 206, 14, 10)]
+    public void HistoricalSourceAuditPreservesEveryOriginalSelectedRoute(
+        string profile, int expectedCount, int expectedActions, int expectedFunctions)
     {
         var source = File.ReadAllText(Path.Combine(RepoRoot, "src", "Planner", "Planner.md"));
         var selector = Regex.Match(source, @"remove-path-by-operation: ([^\r\n]+)").Groups[1].Value;
         var legacy = ReadSpec("openApiDocs", profile);
         var compatible = ReadSpec("openApiDocs_KiotaCompat", profile);
-        var matches = legacy.Paths.SelectMany(path => path.Value.Operations!
+        var currentSelected = compatible.Paths.SelectMany(path => path.Value.Operations!
             .Where(operation => Regex.IsMatch(operation.Value.OperationId!, selector))
-            .Select(operation => Key(operation.Key.Method, path.Key) + " " + operation.Value.OperationId))
-            .ToHashSet(StringComparer.Ordinal);
-        Assert.Equal(expectedCount, matches.Count);
-
-        using var ledger = JsonDocument.Parse(File.ReadAllText(Path.Combine(RepoRoot, "src", "Planner", "wrapper", "Planner_directiveMigrationMap.json")));
-        var evidence = ledger.RootElement.GetProperty("mappings")[0].GetProperty("profiles").GetProperty(profile);
-        var operations = evidence.GetProperty("operations").EnumerateArray().ToArray();
-        Assert.Equal(expectedCount, operations.Length);
-        Assert.Equal(expectedTranslations, operations.Count(operation => operation.TryGetProperty("legacyPathTranslation", out _)));
-        var literalMatches = compatible.Paths.SelectMany(path => path.Value.Operations!
-            .Where(operation => Regex.IsMatch(operation.Value.OperationId!, selector))
-            .Select(operation => Key(operation.Key.Method, path.Key) + " " + operation.Value.OperationId))
-            .ToHashSet(StringComparer.Ordinal);
-        Assert.Equal(expectedLiteralCount, literalMatches.Count);
-        if (expectedTranslations == 0)
+            .Select(operation => Key(operation.Key.Method, path.Key))).ToHashSet(StringComparer.Ordinal);
+        var originalSelected = new HashSet<string>(StringComparer.Ordinal);
+        var actions = 0;
+        var functions = 0;
+        foreach (var path in legacy.Paths)
         {
-            Assert.False(evidence.TryGetProperty("operationIdSource", out _));
-            Assert.False(evidence.TryGetProperty("removedLegacyOperations", out _));
-            foreach (var operation in operations)
+            foreach (var operation in path.Value.Operations!)
             {
-                Assert.False(operation.TryGetProperty("legacyPath", out _));
-                Assert.False(operation.TryGetProperty("legacyOperationId", out _));
+                if (!Regex.IsMatch(operation.Value.OperationId!, selector))
+                    continue;
+                var auditedPath = path.Key;
+                if (!compatible.Paths.ContainsKey(auditedPath))
+                {
+                    var kind = KindOf(operation.Value, operation.Key);
+                    Assert.NotEqual(OperationKind.Resource, kind);
+                    Assert.Contains("/microsoft.graph.", auditedPath);
+                    auditedPath = Regex.Replace(auditedPath, @"/microsoft\.graph\.([^/]+)$", "/$1");
+                    var currentOperation = compatible.Paths[auditedPath].Operations![operation.Key];
+                    Assert.Equal(kind, KindOf(currentOperation, operation.Key));
+                    if (kind == OperationKind.Action) actions++;
+                    else functions++;
+                }
+                Assert.True(originalSelected.Add(Key(operation.Key.Method, auditedPath)));
             }
-            Assert.True(matches.SetEquals(literalMatches));
-            Assert.True(literalMatches.SetEquals(operations.Select(operation =>
-                Key(operation.GetProperty("method").GetString()!, operation.GetProperty("path").GetString()!) +
-                " " + operation.GetProperty("operationId").GetString())));
-            return;
         }
-
-        Assert.Equal("Legacy", evidence.GetProperty("operationIdSource").GetString());
-        Assert.Empty(evidence.GetProperty("removedLegacyOperations").EnumerateArray());
-        Assert.True(matches.SetEquals(operations.Select(operation =>
-            Key(operation.GetProperty("method").GetString()!, operation.GetProperty("legacyPath").GetString()!) +
-            " " + operation.GetProperty("legacyOperationId").GetString())));
-        foreach (var operation in operations)
-        {
-            var method = new HttpMethod(operation.GetProperty("method").GetString()!);
-            var oldPath = operation.GetProperty("legacyPath").GetString()!;
-            var newPath = operation.GetProperty("path").GetString()!;
-            var oldOperation = legacy.Paths[oldPath].Operations![method];
-            var currentOperation = compatible.Paths[newPath].Operations![method];
-            Assert.Equal(operation.GetProperty("legacyOperationId").GetString(), oldOperation.OperationId);
-            Assert.Equal(operation.GetProperty("operationId").GetString(), currentOperation.OperationId);
-            if (!operation.TryGetProperty("legacyPathTranslation", out var translation))
-            {
-                Assert.Equal(oldPath, newPath);
-                continue;
-            }
-            Assert.Equal("UnqualifyFinalOperation", translation.GetString());
-            var kind = KindOf(oldOperation, method);
-            Assert.NotEqual(OperationKind.Resource, kind);
-            Assert.Equal(kind, KindOf(currentOperation, method));
-            Assert.Equal(CmdletConfigurator.NormalizePathTemplate(oldPath[..oldPath.LastIndexOf('/')]),
-                CmdletConfigurator.NormalizePathTemplate(newPath[..newPath.LastIndexOf('/')]));
-            Assert.Equal("microsoft.graph." + newPath[(newPath.LastIndexOf('/') + 1)..].Replace("()", "", StringComparison.Ordinal),
-                oldPath[(oldPath.LastIndexOf('/') + 1)..].Replace("()", "", StringComparison.Ordinal));
-        }
-        Assert.Equal(14, operations.Count(operation => operation.TryGetProperty("legacyPathTranslation", out _) &&
-            operation.GetProperty("method").GetString() == "POST"));
-        Assert.Equal(10, operations.Count(operation => operation.TryGetProperty("legacyPathTranslation", out _) &&
-            operation.GetProperty("method").GetString() == "GET"));
+        Assert.Equal(expectedCount, originalSelected.Count);
+        Assert.Equal(expectedActions, actions);
+        Assert.Equal(expectedFunctions, functions);
+        Assert.True(originalSelected.SetEquals(currentSelected));
     }
 
     [Theory]
@@ -261,5 +252,26 @@ public sealed class PlannerDirectiveMigrationTests
             "function" when method == HttpMethod.Get => OperationKind.Function,
             _ => OperationKind.Resource,
         };
+    }
+
+    private static void AssertOrdinaryFields(JsonElement element)
+    {
+        if (element.ValueKind == JsonValueKind.Object)
+        {
+            foreach (var property in element.EnumerateObject())
+            {
+                Assert.DoesNotContain(property.Name, new[]
+                {
+                    "operationIdSource", "legacyPath", "legacyOperationId",
+                    "legacyPathTranslation", "removedLegacyOperations",
+                });
+                AssertOrdinaryFields(property.Value);
+            }
+        }
+        else if (element.ValueKind == JsonValueKind.Array)
+        {
+            foreach (var item in element.EnumerateArray())
+                AssertOrdinaryFields(item);
+        }
     }
 }
