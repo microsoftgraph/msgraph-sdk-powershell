@@ -91,56 +91,65 @@ public sealed class NotesDirectiveMigrationTests
             .Where(op => regex.IsMatch(op.Operation.OperationId!)).ToArray();
         Assert.Equal(298, sourceMatches.Length);
         var profileMap = first.GetProperty("profiles").GetProperty(profile);
-        Assert.Equal("Legacy", profileMap.GetProperty("operationIdSource").GetString());
         Assert.False(profileMap.GetProperty("absenceExpected").GetBoolean());
-        Assert.Empty(profileMap.GetProperty("removedLegacyOperations").EnumerateArray());
+        Assert.False(profileMap.TryGetProperty("operationIdSource", out _));
+        Assert.False(profileMap.TryGetProperty("removedLegacyOperations", out _));
         var operations = profileMap.GetProperty("operations").EnumerateArray().ToArray();
         Assert.Equal(298, operations.Length);
-        var actualSourceKeys = sourceMatches.Select(op => $"{op.Method} {op.Path} [{op.Operation.OperationId}]").ToHashSet();
-        var reviewedSourceKeys = operations.Select(op =>
-            $"{op.GetProperty("method").GetString()} {op.GetProperty("legacyPath").GetString()} [{op.GetProperty("legacyOperationId").GetString()}]").ToHashSet();
-        Assert.True(actualSourceKeys.SetEquals(reviewedSourceKeys));
-        Assert.Equal(54, operations.Count(op => op.TryGetProperty("legacyPathTranslation", out _)));
 
         var suppressionKeys = new HashSet<string>(StringComparer.Ordinal);
         foreach (var operation in operations)
         {
+            Assert.Equal(new[] { "method", "operationId", "path" },
+                operation.EnumerateObject().Select(property => property.Name).OrderBy(name => name));
             var method = new HttpMethod(operation.GetProperty("method").GetString()!);
             var path = operation.GetProperty("path").GetString()!;
-            var oldPath = operation.GetProperty("legacyPath").GetString()!;
             var current = compatible.Paths[path].Operations![method];
             Assert.Equal(operation.GetProperty("operationId").GetString(), current.OperationId);
-            var bridgePath = oldPath;
-            if (operation.TryGetProperty("legacyPathTranslation", out var translation))
+            Assert.Matches(regex, current.OperationId!);
+            Assert.True(suppressionKeys.Add($"{method} {path}"));
+        }
+
+        // Historical source comparison only: no runtime legacy lookup or mapping integration.
+        var survivingSourceKeys = new HashSet<string>(StringComparer.Ordinal);
+        var qualifiedSourcePaths = 0;
+        foreach (var original in sourceMatches)
+        {
+            var sourcePath = original.Path;
+            if (!compatible.Paths.TryGetValue(sourcePath, out var pathItem))
             {
-                Assert.Equal("UnqualifyFinalOperation", translation.GetString());
-                var old = legacy.Paths[oldPath].Operations![method];
-                var oldKind = Assert.IsType<JsonNodeExtension>(old.Extensions!["x-ms-docs-operation-type"]).Node!.ToString();
+                var oldKind = Assert.IsType<JsonNodeExtension>(
+                    original.Operation.Extensions!["x-ms-docs-operation-type"]).Node!.ToString();
+                Assert.Contains(oldKind, new[] { "action", "function" });
+                Assert.Equal(oldKind == "action" ? HttpMethod.Post : HttpMethod.Get, original.Method);
+                sourcePath = Regex.Replace(sourcePath, @"/microsoft\.graph\.([^/]+)$", "/$1");
+                var normalizedSourcePath = CmdletConfigurator.NormalizePathTemplate(sourcePath);
+                var successor = Assert.Single(compatible.Paths, candidate =>
+                    CmdletConfigurator.NormalizePathTemplate(candidate.Key) == normalizedSourcePath &&
+                    candidate.Value.Operations!.ContainsKey(original.Method));
+                sourcePath = successor.Key;
+                pathItem = successor.Value;
+                var current = pathItem.Operations![original.Method];
                 var newKind = Assert.IsType<JsonNodeExtension>(current.Extensions!["x-ms-docs-operation-type"]).Node!.ToString();
                 Assert.Equal(oldKind, newKind);
-                Assert.Contains(oldKind, new[] { "action", "function" });
-                Assert.Equal(oldKind == "action" ? HttpMethod.Post : HttpMethod.Get, method);
-                bridgePath = Regex.Replace(oldPath, @"/microsoft\.graph\.([^/]+)$", "/$1");
+                qualifiedSourcePaths++;
             }
-            var normalized = CmdletConfigurator.NormalizePathTemplate(bridgePath);
-            Assert.Equal(normalized, CmdletConfigurator.NormalizePathTemplate(path));
-            Assert.Single(compatible.Paths, candidate =>
-                CmdletConfigurator.NormalizePathTemplate(candidate.Key) == normalized &&
-                candidate.Value.Operations!.ContainsKey(method));
-            suppressionKeys.Add($"{method} {path}");
+            Assert.Matches(regex, pathItem.Operations![original.Method].OperationId!);
+            Assert.True(survivingSourceKeys.Add($"{original.Method} {sourcePath}"));
         }
-        foreach (var operation in ledger.RootElement.GetProperty("mappings")[1]
-            .GetProperty("profiles").GetProperty(profile).GetProperty("operations").EnumerateArray())
-            suppressionKeys.Add($"{operation.GetProperty("method").GetString()} {operation.GetProperty("path").GetString()}");
-        Assert.Equal(301, suppressionKeys.Count);
-
+        Assert.Equal(54, qualifiedSourcePaths);
+        Assert.True(survivingSourceKeys.SetEquals(suppressionKeys));
         var literalKeys = compatible.Paths.SelectMany(path => path.Value.Operations!.Select(op =>
                 (Path: path.Key, Method: op.Key, Operation: op.Value)))
             .Where(op => regex.IsMatch(op.Operation.OperationId!))
             .Select(op => $"{op.Method} {op.Path}").ToHashSet();
-        Assert.Equal(289, literalKeys.Count);
-        Assert.True(literalKeys.IsSubsetOf(suppressionKeys));
-        Assert.Equal(9, operations.Count(op => !regex.IsMatch(op.GetProperty("operationId").GetString()!)));
+        Assert.Equal(298, literalKeys.Count);
+        Assert.True(literalKeys.SetEquals(survivingSourceKeys));
+
+        foreach (var operation in ledger.RootElement.GetProperty("mappings")[1]
+            .GetProperty("profiles").GetProperty(profile).GetProperty("operations").EnumerateArray())
+            suppressionKeys.Add($"{operation.GetProperty("method").GetString()} {operation.GetProperty("path").GetString()}");
+        Assert.Equal(301, suppressionKeys.Count);
 
         var config = new GeneratorConfig("Notes", "", UseCollisionData: false);
         foreach (var path in compatible.Paths)

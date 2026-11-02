@@ -29,11 +29,16 @@ the three nested collections and the three root collection counts. These baselin
 endpoint gaps block a full-fidelity claim and are not repaired by silently changing
 global data in this module.
 
-The current compatible IDs align with 289 of the corrected selector's 298 actual
-same-profile legacy selections. Nine section/page action/function IDs gained type
-segments; all nine real successors remain suppressed and retain reviewed Legacy
-evidence. The strict target helper must gain that bridge through the normal
-prerequisite merge before this migration can be published.
+The compatible IDs now align with all 298 of the corrected selector's actual
+same-profile legacy selections. The finite required-path ID corrections in
+the normally merged prerequisite restore nine section/page action/function IDs.
+The ledger uses ordinary literal method/path/ID evidence, without a runtime
+legacy lookup or bridge schema. A one-time historical source comparison in the
+module tests verifies all surviving routes and the final action/function
+qualification changes; no selected API is classified as removed.
+
+Validation targets PowerShell 7/Core only; explicit PowerShell 5.1 support is
+outside the v3 scope.
 
 ``` yaml
 directive:
@@ -43,7 +48,8 @@ directive:
 # set. The exact invalid original and parse error are retained in the adjacent
 # Notes_directiveMigrationMap.json sourceCorrection audit and regression tests.
 # Only the corrected active selector below selects 298 actual legacy operations
-# per profile: 244 direct bridges and 54 kind-guarded action/function bridges.
+# per profile: historical comparison found 244 exact paths and 54 final
+# action/function qualification changes. Current literal IDs cover all 298.
 # All have real compatible successors; none are claimed removed. Exact
 # suppressions live in Notes_cmdletConfigurations.cs. Keep the directive active.
   - remove-path-by-operation: ^(user|group|site)_.*Onenote$|.*\.onenote\..*parent.*|.*\.notebook_(Get|Update|Delete)Section.*|.*\.notebook\.section.*|.*\.sectionGroup_(Get|Update|Delete)Section.*|.*\.sectionGroup\.section.*|.*\.section_(Get|Update|Delete)Page|.*\.section.page.*|.*\.onenote_(List|Create|Update|Delete)(Operation|Resource)|group\.site_.*Onenote$|group\.site\.onenote.*$|.*\.onenote\..*\.parent.*|.*\.notebook\.section.*|.*\.sectionGroup\.section.*|.*\.section\.page.*|site\..*_(Create|Get|Update|Delete)Activity$|site\..*\.activity.*|^site_(remove|add)$|^.*site\.(.*_.*SourceColumn|contentType_.*(Base|BaseType|ColumnPosition)|.*_(Get|Create|Update|Delete)Activity|.*\.activity.*)
