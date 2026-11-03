@@ -36,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.UnifiedRbacApplication? result;

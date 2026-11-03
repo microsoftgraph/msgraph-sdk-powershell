@@ -44,7 +44,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
     if (this.IsParameterBound(nameof(ImportedDeviceIdentities)))
         body.ImportedDeviceIdentities = ImportedDeviceIdentities!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList.ImportDeviceIdentityListPostResponse? result;

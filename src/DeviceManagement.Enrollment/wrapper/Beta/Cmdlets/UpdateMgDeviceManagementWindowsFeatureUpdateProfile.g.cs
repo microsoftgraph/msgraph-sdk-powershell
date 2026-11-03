@@ -99,7 +99,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
         body.RolloutSettings = RolloutSettings;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.WindowsFeatureUpdateProfile? result;
