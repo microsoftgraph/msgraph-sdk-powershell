@@ -119,7 +119,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
         body.Tags = Tags;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BackupRestore.Client.Models.DriveRestoreArtifactsBulkAdditionRequest? result;
