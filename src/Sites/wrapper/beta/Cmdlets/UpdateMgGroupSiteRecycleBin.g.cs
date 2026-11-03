@@ -95,7 +95,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         body.Settings = Settings;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.RecycleBin? result;

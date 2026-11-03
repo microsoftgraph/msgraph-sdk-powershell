@@ -121,7 +121,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         body.Order = Order;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.ContentType? result;

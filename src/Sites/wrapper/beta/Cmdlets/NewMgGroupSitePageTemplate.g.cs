@@ -113,7 +113,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         body.TitleArea = TitleArea;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.PageTemplate? result;

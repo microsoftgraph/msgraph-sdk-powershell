@@ -65,7 +65,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         body.Scope = Scope;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.TermStore.Group? result;

@@ -49,7 +49,7 @@ namespace Microsoft.Graph.PowerShell.Sites
     if (this.IsParameterBound(nameof(Recipients)))
         body.Recipients = Recipients!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Permissions.Item.Grant.GrantPostResponse? result;

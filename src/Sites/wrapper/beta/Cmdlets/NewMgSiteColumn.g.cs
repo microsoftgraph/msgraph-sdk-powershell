@@ -225,7 +225,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         body.Validation = Validation;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.ColumnDefinition? result;

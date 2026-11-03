@@ -89,7 +89,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         body.Items = Items!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.DocumentSetVersion? result;

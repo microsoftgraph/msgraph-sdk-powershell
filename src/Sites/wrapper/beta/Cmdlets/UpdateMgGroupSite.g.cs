@@ -161,7 +161,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         body.Template = Template;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.Site? result;
