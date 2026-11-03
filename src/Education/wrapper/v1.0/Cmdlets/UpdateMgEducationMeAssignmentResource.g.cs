@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Education
         body.Resource = Resource;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Education.Client.Models.EducationAssignmentResource? result;

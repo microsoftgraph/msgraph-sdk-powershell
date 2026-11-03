@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Education
         body.LastModifiedBy = LastModifiedBy;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Education.Client.Models.EducationOutcome? result;

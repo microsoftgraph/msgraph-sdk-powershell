@@ -105,7 +105,7 @@ namespace Microsoft.Graph.PowerShell.Education
         body.Term = Term;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Education.Client.Models.EducationClass? result;
