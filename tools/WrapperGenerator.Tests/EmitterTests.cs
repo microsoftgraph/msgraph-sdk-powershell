@@ -8,6 +8,18 @@ namespace WrapperGenerator.Tests;
 
 public sealed class EmitterTests
 {
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public void WorkerAcquiresTheProfileSpecificSessionAdapter(string apiVersion)
+    {
+        var naming = Naming.WithSuffix(Naming.Resolve(new OperationInfo(HttpMethod.Get, "/users")), "_List");
+        var source = CmdletEmitter.EmitListGet(naming, new EmitContext("Test.Client", apiVersion),
+            "User", "UserCollectionResponse", new HashSet<string>());
+
+        Assert.Contains($"GetRequestAdapter(\"{apiVersion}\")", source);
+    }
+
     // A worker's terminating error (e.g. NoGraphSession) surfaces from InvokeScript as a
     // RuntimeException; the dispatcher must rethrow the original ErrorRecord, not re-wrap it
     // as its own GraphRequestFailed — otherwise every failure loses its identity and the

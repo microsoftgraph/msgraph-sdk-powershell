@@ -214,6 +214,12 @@ rather than optional; and the manifest GUID is derived from the module name — 
 4122 UUID, identical on every build — so `Update-Module` keeps its identity across handouts
 instead of seeing a new module each time.
 
+Authentication 2.41.2 owns the complete Kiota dependency closure and bridges its typed contracts
+to the generated modules. Wrapper packages must carry only their own assemblies, not copies or
+preloads of Authentication/Kiota dependencies. `tools/Test-WrapperAuthentication.ps1` verifies
+normally unpacked SchemaExtensions packages in both profiles using real offline Connect sessions,
+authenticated HTTP capture, typed JSON, session invalidation, and assembly-identity checks.
+
 **Check it** — the smoke test reads the **package**, not `bin/`, in a fresh pwsh process per
 module. Importing build output proves the compiler ran; it does not prove the artifact a user
 installs carries the assembly, its dependencies and a manifest that agrees with them. So pack
