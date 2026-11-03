@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
         body.ServiceStatus = ServiceStatus;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BackupRestore.Client.Models.BackupRestoreRoot? result;
