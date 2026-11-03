@@ -1,7 +1,10 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -70,6 +73,37 @@ public sealed class BusinessScenarioDirectiveMigrationTests
             }
         }
         Assert.Equal(51, operationCount);
+    }
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task RealBetaGenerationUsesExplicitTransportProfile(bool useCollisionData)
+    {
+        var output = Path.Combine(Path.GetTempPath(), $"BusinessScenario-beta-{Guid.NewGuid():N}");
+        try
+        {
+            var config = new GeneratorConfig("Test.Client", output, useCollisionData);
+            await new PowerShellWrapperGenerationService(BetaDocument.Value, config, NullLogger.Instance,
+                apiVersion: "beta").GenerateAsync(CancellationToken.None);
+
+            var sources = Directory.GetFiles(output, "*.g.cs")
+                .Where(path => Path.GetFileName(path) != "Shared.g.cs")
+                .Select(File.ReadAllText).ToArray();
+            Assert.Equal(52, sources.Length);
+            Assert.Equal(48, sources.Count(source => source.Contains("GetRequestAdapter(\"beta\")")));
+            Assert.Equal(4, sources.Count(source => source.Contains("InvokeCommand.InvokeScript")));
+            Assert.All(sources, source =>
+            {
+                Assert.DoesNotContain("GetRequestAdapter()", source);
+                Assert.DoesNotContain("GetRequestAdapter(\"v1.0\")", source);
+            });
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
     }
 
     private static OpenApiDocument LoadBetaDocument()

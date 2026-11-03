@@ -67,6 +67,16 @@ reflect the integrated compatible spec's operation-ID alignment.
 These names describe existing wrapper behavior,
 not newly implemented parity with profile-local AutoRest directives.
 
+After normal integration of Authentication #3891 at
+`844672d7c2238f6b29a208f9ba73fe28e9e29cef`, the real-beta generation tests also
+pass the separate beta profile to `PowerShellWrapperGenerationService` with
+derived data on and off. All 48 emitted HTTP workers must acquire
+`GetRequestAdapter("beta")`; the four existing list/item dispatchers retain
+their worker delegation. No emitted worker may default to the v1.0 adapter.
+Runtime acceptance uses the normally packaged adapted Authentication 2.41.2,
+fresh full beta generation and normal-manifest imports, not earlier 2.38.1 proof.
+The v1.0 compatible-spec exclusion and all shared-source scope remain unchanged.
+
 ### Scope and deferred classes
 
 All profile-local readmes, including `beta\readme.md` and any
