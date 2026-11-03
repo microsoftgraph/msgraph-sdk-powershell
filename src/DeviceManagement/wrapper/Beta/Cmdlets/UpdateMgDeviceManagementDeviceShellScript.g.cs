@@ -87,7 +87,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.RunAsAccount = RunAsAccount;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceShellScript? result;

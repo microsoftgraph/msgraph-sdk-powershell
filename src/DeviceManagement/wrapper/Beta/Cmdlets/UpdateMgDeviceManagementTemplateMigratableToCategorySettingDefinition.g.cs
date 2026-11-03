@@ -105,7 +105,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.ValueType = ValueType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceManagementSettingDefinition? result;

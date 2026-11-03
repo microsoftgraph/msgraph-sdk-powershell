@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.Target = Target;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.GroupPolicyConfigurationAssignment? result;

@@ -159,7 +159,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.ProductStatus = ProductStatus;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.WindowsProtectionState? result;

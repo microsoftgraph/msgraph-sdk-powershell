@@ -101,7 +101,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.RemediationState = RemediationState;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceHealthScriptDeviceState? result;

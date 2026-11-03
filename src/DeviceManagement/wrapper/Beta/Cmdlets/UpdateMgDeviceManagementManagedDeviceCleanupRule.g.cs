@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.DeviceCleanupRulePlatformType = DeviceCleanupRulePlatformType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.ManagedDeviceCleanupRule? result;
