@@ -153,6 +153,13 @@ public sealed class SearchDirectiveMigrationTests
         {
             var service = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile);
             await service.GenerateAsync(CancellationToken.None);
+            foreach (var file in Directory.GetFiles(output, "*.g.cs"))
+            {
+                var source = File.ReadAllText(file);
+                Assert.DoesNotContain("GetRequestAdapter()", source);
+                if (source.Contains("GetRequestAdapter(", StringComparison.Ordinal))
+                    Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+            }
 
             AssertEmitted(output, "GetMgExternalConnection_List.g.cs", "GET", "/external/connections");
             AssertEmitted(output, "GetMgExternalConnection_Get.g.cs", "GET", ConnectionPath);
