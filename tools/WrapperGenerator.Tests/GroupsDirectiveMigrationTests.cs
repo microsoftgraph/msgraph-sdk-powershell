@@ -5,6 +5,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -20,6 +23,44 @@ public sealed class GroupsDirectiveMigrationTests
     private static readonly Lazy<OpenApiDocument> LegacyV1Spec = new(() => ReadSpec("v1.0", compatible: false));
     private static readonly Lazy<OpenApiDocument> LegacyBetaSpec = new(() => ReadSpec("beta", compatible: false));
     private static readonly Lazy<Dictionary<string, string[]>> PublishedCommands = new(ReadPublishedCommands);
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task CompiledRouteInputsEmitTheirExplicitTransportProfile(string profile)
+    {
+        var source = Spec(profile);
+        var paths = new OpenApiPaths
+        {
+            ["/groups/{group-id}"] = source.Paths["/groups/{group-id}"],
+            ["/groupLifecyclePolicies/{groupLifecyclePolicy-id}/addGroup"] =
+                source.Paths["/groupLifecyclePolicies/{groupLifecyclePolicy-id}/addGroup"],
+        };
+        if (profile == "beta")
+            paths["/groups/evaluateDynamicMembership"] = source.Paths["/groups/evaluateDynamicMembership"];
+        var document = new OpenApiDocument { Info = source.Info, Components = source.Components, Paths = paths };
+        var output = Path.Combine(Path.GetTempPath(), "groups-profile-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            var config = new GeneratorConfig("Test.Client", output, UseCollisionData: false);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(CancellationToken.None);
+            foreach (var file in new[] { "GetMgGroup.g.cs", "UpdateMgGroup.g.cs", "AddMgGroupToLifecyclePolicy.g.cs" })
+            {
+                var text = File.ReadAllText(Path.Combine(output, file));
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", text, StringComparison.Ordinal);
+                Assert.DoesNotContain("GetRequestAdapter()", text, StringComparison.Ordinal);
+            }
+            if (profile == "beta")
+                Assert.Contains("GetRequestAdapter(\"beta\")",
+                    File.ReadAllText(Path.Combine(output, "TestMgGroupDynamicMembershipRule.g.cs")), StringComparison.Ordinal);
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
 
     [Theory]
     [InlineData("v1.0")]
