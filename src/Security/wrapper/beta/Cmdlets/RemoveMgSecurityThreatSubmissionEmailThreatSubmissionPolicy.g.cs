@@ -30,7 +30,7 @@ namespace Microsoft.Graph.PowerShell.Security
             if (!ShouldProcess(EmailThreatSubmissionPolicyId, "Remove"))
                 return;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             // DeleteAsync returns a plain Task: a standard delete response has no body.

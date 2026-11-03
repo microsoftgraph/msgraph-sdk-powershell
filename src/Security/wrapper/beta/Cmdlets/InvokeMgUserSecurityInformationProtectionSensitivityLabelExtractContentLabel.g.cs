@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Security
     if (this.IsParameterBound(nameof(ContentInfo)))
         body.ContentInfo = ContentInfo;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.Security.ContentLabel? result;

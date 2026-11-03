@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Security
     if (this.IsParameterBound(nameof(IdentityProvider)))
         body.IdentityProvider = IdentityProvider;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.Security.InvokeActionResult? result;

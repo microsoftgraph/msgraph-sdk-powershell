@@ -77,7 +77,7 @@ namespace Microsoft.Graph.PowerShell.Security
     if (this.IsParameterBound(nameof(DocumentVersion)))
         body.DocumentVersion = DocumentVersion;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

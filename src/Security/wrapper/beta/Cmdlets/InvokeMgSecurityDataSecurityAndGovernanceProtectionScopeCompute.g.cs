@@ -70,7 +70,7 @@ namespace Microsoft.Graph.PowerShell.Security
     if (this.IsParameterBound(nameof(EvaluationScope)))
         body.EvaluationScope = EvaluationScope;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Security.Client.Security.DataSecurityAndGovernance.ProtectionScopes.Compute.ComputePostResponse? result;

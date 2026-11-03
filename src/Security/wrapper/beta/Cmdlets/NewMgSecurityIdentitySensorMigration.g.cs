@@ -80,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Security
         body.ServiceStatus = ServiceStatus;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.Security.SensorMigration? result;

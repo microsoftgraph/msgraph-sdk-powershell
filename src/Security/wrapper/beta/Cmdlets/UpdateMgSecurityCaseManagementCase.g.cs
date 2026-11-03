@@ -75,7 +75,7 @@ namespace Microsoft.Graph.PowerShell.Security
         body.CustomFields = CustomFields;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.Security.CaseManagement.Case? result;

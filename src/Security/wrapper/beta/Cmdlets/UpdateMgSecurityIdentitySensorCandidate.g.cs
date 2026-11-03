@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.Security
         body.SensorTypes = SensorTypes!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.Security.SensorCandidate? result;

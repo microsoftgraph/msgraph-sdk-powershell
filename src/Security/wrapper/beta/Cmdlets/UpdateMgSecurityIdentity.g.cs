@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Security
         body.SensorCandidateActivationConfiguration = SensorCandidateActivationConfiguration;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.Security.IdentityContainer? result;

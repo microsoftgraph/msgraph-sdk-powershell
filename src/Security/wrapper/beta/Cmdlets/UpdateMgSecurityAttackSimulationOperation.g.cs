@@ -81,7 +81,7 @@ namespace Microsoft.Graph.PowerShell.Security
         body.Type = Type;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.AttackSimulationOperation? result;

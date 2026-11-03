@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Security
             if (!ShouldProcess(AttachmentId, "Set"))
                 return;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.Security.CaseManagement.Attachment? result;

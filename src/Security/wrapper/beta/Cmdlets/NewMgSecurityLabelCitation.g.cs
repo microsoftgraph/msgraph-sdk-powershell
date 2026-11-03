@@ -62,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.Security
         body.CreatedBy = CreatedBy;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.Security.CitationTemplate? result;

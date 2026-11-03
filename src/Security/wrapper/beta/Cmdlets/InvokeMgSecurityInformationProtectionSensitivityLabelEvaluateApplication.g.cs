@@ -46,7 +46,7 @@ namespace Microsoft.Graph.PowerShell.Security
     if (this.IsParameterBound(nameof(LabelingOptions)))
         body.LabelingOptions = LabelingOptions;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Security.Client.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateApplication.EvaluateApplicationPostResponse? result;
