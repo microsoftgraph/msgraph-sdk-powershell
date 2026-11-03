@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
     if (this.IsParameterBound(nameof(SecurityEnabledOnly)))
         body.SecurityEnabledOnly = SecurityEnabledOnly;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.GetMemberGroups.GetMemberGroupsPostResponse? result;

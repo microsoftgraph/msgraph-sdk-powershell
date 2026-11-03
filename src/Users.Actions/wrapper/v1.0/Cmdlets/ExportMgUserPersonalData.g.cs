@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
     if (this.IsParameterBound(nameof(StorageLocation)))
         body.StorageLocation = StorageLocation;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 
