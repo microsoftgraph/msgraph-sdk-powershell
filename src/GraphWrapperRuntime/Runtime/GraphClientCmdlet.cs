@@ -37,12 +37,21 @@ namespace Microsoft.Graph.Wrapper.Runtime
         // auth handler pipeline) with the session-keyed cached adapter. No active session is a
         // terminating error, same id and message the generated cmdlets have always produced.
         protected IRequestAdapter GetRequestAdapter()
+            => GetRequestAdapter("v1.0");
+
+        protected IRequestAdapter GetRequestAdapter(string apiVersion)
         {
+            if (apiVersion != "v1.0" && apiVersion != "beta")
+                throw new ArgumentException("The Graph API version must be v1.0 or beta.", nameof(apiVersion));
+
             if (IsParameterBound(nameof(AccessToken)))
             {
                 return new HttpClientRequestAdapter(
                     new StaticBearerTokenAuthenticationProvider(AccessToken!),
-                    httpClient: TokenClient.Value);
+                    httpClient: TokenClient.Value)
+                {
+                    BaseUrl = $"https://graph.microsoft.com/{apiVersion}"
+                };
             }
 
             WriteVerbose("No -AccessToken supplied, using the active Connect-MgGraph session.");
@@ -60,7 +69,7 @@ namespace Microsoft.Graph.Wrapper.Runtime
                 throw; // unreachable; ThrowTerminatingError does not return
             }
 
-            return SessionAdapterCache.GetOrCreate(sessionClient);
+            return SessionAdapterCache.GetOrCreate(sessionClient, HttpHelpers.GetGraphServiceRoot(apiVersion));
         }
 
         // Copies -Headers onto one outgoing request. Called inside the request-configuration
