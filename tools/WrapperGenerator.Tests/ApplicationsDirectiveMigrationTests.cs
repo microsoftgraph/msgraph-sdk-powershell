@@ -301,10 +301,50 @@ public sealed class ApplicationsDirectiveMigrationTests
                 Assert.Contains("ParameterSetName = \"AgentList\"", resource);
                 Assert.Contains("ParameterSetName = \"AgentScalar\"", count);
                 Assert.DoesNotContain("public string Route", resource + count);
+                foreach (var worker in files.Where(p => p.Contains("_Route", StringComparison.Ordinal)))
+                {
+                    var source = File.ReadAllText(worker);
+                    Assert.Contains("GetRequestAdapter(\"beta\")", source);
+                    Assert.DoesNotContain("GetRequestAdapter()", source);
+                }
                 foreach (var path in selectedPaths)
                     Assert.Equal(2, files.Select(File.ReadAllText)
                         .Count(text => text.Contains($"[GraphRoute(\"GET\", \"{path}\"", StringComparison.Ordinal)));
             }
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task OrdinaryApplicationGetUsesItsGeneratedServiceProfile(string profile)
+    {
+        var settings = new OpenApiReaderSettings();
+        settings.AddYamlReader();
+        using var stream = File.OpenRead(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, "Applications.yml"));
+        var parsed = await OpenApiDocument.LoadAsync(stream, settings: settings,
+            cancellationToken: TestContext.Current.CancellationToken);
+        var document = Assert.IsType<OpenApiDocument>(parsed.Document);
+        const string itemPath = "/applications/{application-id}";
+        foreach (var path in document.Paths.Keys.Where(p => p != itemPath).ToArray())
+            document.Paths.Remove(path);
+        var item = document.Paths[itemPath];
+        foreach (var method in item.Operations!.Keys.Where(m => m != HttpMethod.Get).ToArray())
+            item.Operations.Remove(method);
+        var output = Path.Combine(Path.GetTempPath(), "applications-profile-tests", Guid.NewGuid().ToString("N"));
+        try
+        {
+            await new PowerShellWrapperGenerationService(document,
+                new GeneratorConfig("Microsoft.Graph.PowerShell.Applications.Client", output),
+                NullLogger.Instance, apiVersion: profile).GenerateAsync(TestContext.Current.CancellationToken);
+            var source = File.ReadAllText(Assert.Single(Directory.GetFiles(output, "*.g.cs")));
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+            Assert.DoesNotContain("GetRequestAdapter()", source);
         }
         finally
         {
