@@ -10868,7 +10868,7 @@ paths:
       tags:
         - security.dataDiscoveryRoot
       summary: Invoke function aggregatedAppsDetails
-      operationId: security.dataDiscovery.cloudAppDiscovery.uploadedStream.cloudAppDiscoveryReport_aggregatedAppsDetail
+      operationId: security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'

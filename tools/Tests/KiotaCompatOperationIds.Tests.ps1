@@ -146,6 +146,140 @@ Describe 'Kiota-compatible operation ID projection' {
     }
 }
 
+Describe 'Required-path operation ID alignment' {
+    BeforeAll {
+        $requiredIds = Get-Content (Join-Path $toolsPath 'Utilities\RequiredPathOperationIds.json') -Raw | ConvertFrom-Json
+        $repoRoot = Split-Path $toolsPath -Parent
+        $requiredContent = @'
+openapi: 3.0.4
+info:
+  title: DeviceManagement.Enrollment
+  version: beta
+paths:
+  "/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')":
+    get:
+      operationId: roleManagement.cloudPC.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_assignedPrincipal
+      x-ms-docs-operation-type: function
+      responses:
+        2XX:
+          description: Success
+    post:
+      operationId: unrelated_Post
+  /unrelated:
+    get:
+      operationId: unrelated_Get
+components:
+  schemas:
+    result:
+      anyOf:
+        - type: string
+        - type: integer
+'@
+        $expectedContent = $requiredContent.Replace(
+            'roleManagement.cloudPC.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_assignedPrincipal',
+            'roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_assignedPrincipal')
+    }
+
+    BeforeEach {
+        $casePath = Join-Path $TestDrive ([guid]::NewGuid().ToString())
+        $null = New-Item $casePath -ItemType Directory
+        $specPath = Join-Path $casePath 'DeviceManagement.Enrollment.yml'
+        [System.IO.File]::WriteAllText($specPath, $requiredContent)
+        $reference = ConvertFrom-Yaml -Yaml $requiredContent -Ordered
+    }
+
+    It 'aligns the exact required method/path ID without changing kinds, schemas or other IDs' {
+        & $setIdsPath -OpenApiFilePath $specPath -OperationIdDocument $reference
+        [System.IO.File]::ReadAllText($specPath) | Should -BeExactly $expectedContent
+        & $setIdsPath -OpenApiFilePath $specPath -OperationIdDocument $reference
+        [System.IO.File]::ReadAllText($specPath) | Should -BeExactly $expectedContent
+    }
+
+    It 'restores the original literal selector without adding an inventory bridge' {
+        $selector = [regex]::new('^roleManagement\..*\.roleDefinition\.inheritsPermissionsFrom.*$')
+        $path = @($reference.paths.Keys | Where-Object { $_ -like '/roleManagement/*' })[0]
+        $selector.IsMatch($reference.paths[$path].get.operationId) | Should -BeFalse
+        & $setIdsPath -OpenApiFilePath $specPath -OperationIdDocument $reference
+        $actual = ConvertFrom-Yaml -Yaml ([System.IO.File]::ReadAllText($specPath)) -Ordered
+        $selector.IsMatch($actual.paths[$path].get.operationId) | Should -BeTrue
+        $actual.paths[$path].post.operationId | Should -BeExactly 'unrelated_Post'
+        $actual.paths['/unrelated'].get.operationId | Should -BeExactly 'unrelated_Get'
+    }
+
+    It 'does not align a different module or profile' -TestCases @(
+        @{ Module = 'OtherModule'; Profile = 'beta' }
+        @{ Module = 'DeviceManagement.Enrollment'; Profile = 'v1.0' }
+    ) {
+        param($Module, $Profile)
+        $content = $requiredContent.Replace('version: beta', "version: $Profile")
+        $path = Join-Path $casePath "$Module.yml"
+        [System.IO.File]::WriteAllText($path, $content)
+        $ref = ConvertFrom-Yaml -Yaml $content -Ordered
+        & $setIdsPath -OpenApiFilePath $path -OperationIdDocument $ref
+        [System.IO.File]::ReadAllText($path) | Should -BeExactly $content
+    }
+
+    It 'preserves line endings and a missing final newline for required IDs' {
+        $content = $requiredContent.Replace("`r`n", "`n").Replace("`n", "`r`n").TrimEnd("`r", "`n")
+        [System.IO.File]::WriteAllText($specPath, $content)
+        & $setIdsPath -OpenApiFilePath $specPath -OperationIdDocument $reference
+        [System.IO.File]::ReadAllText($specPath) |
+            Should -BeExactly $expectedContent.Replace("`r`n", "`n").Replace("`n", "`r`n").TrimEnd("`r", "`n")
+    }
+
+    It 'still requires formatted reference evidence before applying a required-path ID' {
+        $path = @($reference.paths.Keys | Where-Object { $_ -like '/roleManagement/*' })[0]
+        $reference.paths[$path].Remove('get')
+        { & $setIdsPath -OpenApiFilePath $specPath -OperationIdDocument $reference } |
+            Should -Throw '*Missing formatted operation ID*'
+        [System.IO.File]::ReadAllText($specPath) | Should -BeExactly $requiredContent
+    }
+
+    It 'applies required IDs during the existing singularized download without another flag' {
+        Mock Invoke-WebRequest {
+            param($Uri, $OutFile)
+            if ($OutFile) { [System.IO.File]::WriteAllText($OutFile, $requiredContent) }
+            else { @{ Content = ($reference | ConvertTo-Json -Depth 20) } }
+        }
+        & $downloadPath -ModuleName DeviceManagement.Enrollment -ModuleRegex '^roleManagement\.' `
+            -GraphVersion beta -OpenApiDocOutput $casePath -SingularizeOperationIds -DeferPruning
+        [System.IO.File]::ReadAllText($specPath) | Should -BeExactly $expectedContent
+        Should -Invoke Invoke-WebRequest -Times 2 -Exactly
+    }
+
+    It 'keeps the finite alignment list unique and limited to the audited 67 operations' {
+        $requiredIds.Count | Should -Be 67
+        @($requiredIds | Group-Object module, profile, method, path | Where-Object Count -gt 1).Count | Should -Be 0
+        @($requiredIds | Where-Object { $_.profile -eq 'v1.0' -and $_.module -ne 'Notes' }).Count | Should -Be 0
+        @($requiredIds | Where-Object { $_.method -notin @('GET', 'POST') }).Count | Should -Be 0
+    }
+
+    It 'reproduces each checked-in required-path ID through ordinary projection' -TestCases @(
+        @{ Module = 'DeviceManagement'; Profile = 'beta'; Count = 1 }
+        @{ Module = 'DeviceManagement.Enrollment'; Profile = 'beta'; Count = 3 }
+        @{ Module = 'Planner'; Profile = 'beta'; Count = 24 }
+        @{ Module = 'Identity.Governance'; Profile = 'beta'; Count = 20 }
+        @{ Module = 'Notes'; Profile = 'v1.0'; Count = 9 }
+        @{ Module = 'Notes'; Profile = 'beta'; Count = 9 }
+        @{ Module = 'Security'; Profile = 'beta'; Count = 1 }
+    ) {
+        param($Module, $Profile, $Count)
+        $path = Join-Path $repoRoot "openApiDocs_KiotaCompat\$Profile\$Module.yml"
+        $content = [System.IO.File]::ReadAllText($path)
+        $ref = ConvertFrom-Yaml -Yaml $content -Ordered
+        $entries = @($requiredIds | Where-Object { $_.module -ceq $Module -and $_.profile -ceq $Profile })
+        $entries.Count | Should -Be $Count
+        foreach ($entry in $entries) {
+            $ref.paths[$entry.path][$entry.method.ToLowerInvariant()].operationId | Should -BeExactly $entry.operationId
+            $ref.paths[$entry.path][$entry.method.ToLowerInvariant()].operationId = "fixture_$([guid]::NewGuid().ToString('N'))"
+        }
+        $output = Join-Path $casePath "$Module.yml"
+        [System.IO.File]::WriteAllText($output, $content)
+        & $setIdsPath -OpenApiFilePath $output -OperationIdDocument $ref
+        [System.IO.File]::ReadAllText($output) | Should -BeExactly $content
+    }
+}
+
 Describe 'Operation-ID-only OpenAPI tweaks' {
     BeforeEach {
         $casePath = Join-Path $TestDrive ([guid]::NewGuid().ToString())
