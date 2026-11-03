@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
     if (this.IsParameterBound(nameof(TargetDisposition)))
         body.TargetDisposition = TargetDisposition;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

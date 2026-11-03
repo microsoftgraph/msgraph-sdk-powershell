@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.ContentSharingSession? result;

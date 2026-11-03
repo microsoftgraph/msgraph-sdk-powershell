@@ -75,7 +75,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
         body.OnlineMeeting = OnlineMeeting;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.OnlineMeetingEngagementConversation? result;

@@ -188,7 +188,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
         body.Transcription = Transcription;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.Call? result;

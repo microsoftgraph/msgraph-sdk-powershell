@@ -107,7 +107,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
         body.SyntheticMediaDetection = SyntheticMediaDetection;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.Participant? result;

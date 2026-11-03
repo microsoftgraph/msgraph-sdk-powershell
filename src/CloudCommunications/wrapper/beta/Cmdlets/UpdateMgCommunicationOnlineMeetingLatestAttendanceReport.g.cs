@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
         body.ExternalEventInformation = ExternalEventInformation!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.MeetingAttendanceReport? result;

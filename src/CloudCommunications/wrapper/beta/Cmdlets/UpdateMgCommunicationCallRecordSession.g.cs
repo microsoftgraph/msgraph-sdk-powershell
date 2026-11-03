@@ -77,7 +77,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
         body.Modalities = Modalities!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.CallRecords.Session? result;

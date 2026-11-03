@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
             if (!ShouldProcess(CallRecordingId, "Set"))
                 return;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.CallRecording? result;
