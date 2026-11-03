@@ -1,10 +1,9 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-
 using Microsoft.Graph.Authentication;
-using Microsoft.Graph.PowerShell.Authentication.Extensions;
+using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +14,12 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.Graph.PowerShell.Authentication.Handlers
+namespace Microsoft.Graph.PowerShell.Authentication.Core.Http
 {
+    /// <summary>
+    /// A <see cref="DelegatingHandler"/> that authenticates outgoing requests and retries once on 401 with CAE claims.
+    /// This type lives in Authentication.Core so that Microsoft.Graph.Core / Azure.Identity types never leak into the cmdlet assembly.
+    /// </summary>
     internal class AuthenticationHandler : DelegatingHandler
     {
         private const string ClaimsKey = "claims";
