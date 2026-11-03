@@ -93,7 +93,7 @@ namespace Microsoft.Graph.PowerShell.Reports
         body.Blobs = Blobs!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.Manifest? result;

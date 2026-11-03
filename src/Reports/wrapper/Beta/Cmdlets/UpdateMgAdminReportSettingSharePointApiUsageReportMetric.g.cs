@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Reports
         body.OnboardingStatus = OnboardingStatus;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Reports.Client.Models.ApiUsageReportEnablementStatus? result;

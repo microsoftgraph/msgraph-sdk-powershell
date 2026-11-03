@@ -98,7 +98,7 @@ namespace Microsoft.Graph.PowerShell.Reports
     if (this.IsParameterBound(nameof(SkipToken)))
         body.SkipToken = SkipToken;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             System.IO.Stream? result;

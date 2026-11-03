@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Reports
     if (this.IsParameterBound(nameof(InvoiceId)))
         body.InvoiceId = InvoiceId;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.Operation? result;
