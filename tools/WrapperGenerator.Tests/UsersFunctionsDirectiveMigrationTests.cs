@@ -157,6 +157,11 @@ public sealed class UsersFunctionsDirectiveMigrationTests
             var files = Directory.GetFiles(output, "*.g.cs");
             Assert.Equal(count, files.Length);
             var sources = files.Select(File.ReadAllText).ToArray();
+            Assert.All(sources, text =>
+            {
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", text, StringComparison.Ordinal);
+                Assert.DoesNotContain("GetRequestAdapter()", text, StringComparison.Ordinal);
+            });
             foreach (var path in document.Paths.Keys)
                 Assert.Single(sources, text => text.Contains($"[GraphRoute(\"GET\", \"{path}\")]", StringComparison.Ordinal));
             var neighbor = useCollisionData && profile == "v1.0"
