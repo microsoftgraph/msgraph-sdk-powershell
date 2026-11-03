@@ -114,6 +114,8 @@ public sealed class FilesDirectiveMigrationTests
                 NullLogger.Instance, apiVersion: profile).GenerateAsync(CancellationToken.None);
             var singleton = File.ReadAllText(Path.Combine(output, "GetMgShareListItem.g.cs"));
             Assert.Contains($"[GraphRoute(\"GET\", \"{SharedListSingleton}\")]", singleton);
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", singleton);
+            Assert.DoesNotContain("GetRequestAdapter()", singleton);
             Assert.DoesNotContain("public string Route", singleton);
             var collectionPath = Path.Combine(output, "GetMgShareListContainedItem.g.cs");
             if (profile == "v1.0" && useCollisionData)
@@ -122,6 +124,7 @@ public sealed class FilesDirectiveMigrationTests
             {
                 var collection = File.ReadAllText(collectionPath);
                 Assert.Contains($"[GraphRoute(\"GET\", \"{SharedListCollection}\")]", collection);
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", collection);
                 Assert.Contains("public string SharedDriveItemId", collection);
                 Assert.Contains("public SwitchParameter All", collection);
                 Assert.Contains("public string? Filter", collection);
