@@ -99,10 +99,11 @@ the gate and the derivation cannot drift apart. Without `-CaptureInput` it requi
 
 The refresh keeps `fileName=openapi` and `style=Plain` as the source of the documents.
 Discriminators, `anyOf`/`oneOf`, navigation properties and response codes remain available
-for Kiota client generation. Expired deprecated operations and the explicitly
-[retired root-level Bookings beta URI families](Remove-ExpiredDeprecatedOpenApiOperations.md)
-are pruned. The same pruning runs on standalone `DownloadOpenApiDocKiotaCompat.ps1` calls,
-so missing upstream deprecation annotations cannot reintroduce the retired routes.
+for Kiota client generation. [Expired deprecated operations](Remove-ExpiredDeprecatedOpenApiOperations.md)
+are pruned, including on standalone `DownloadOpenApiDocKiotaCompat.ps1` calls.
+Retired root-level Bookings beta cmdlets are instead suppressed by
+`src/Bookings/wrapper/Bookings_cmdletConfigurations.cs`; their OpenAPI and Kiota HTTP
+client routes remain present when not annotated as expired.
 
 Operation IDs follow the existing PowerShell OpenAPI naming so operation-ID-based directives
 are easier to migrate. DevX ignores `singularizeOperationIds` for `style=Plain`, so the downloader
@@ -110,6 +111,20 @@ requests a second view of the same Kiota source with `style=Powershell`,
 `singularizeOperationIds=true` and `format=json`. Only its operation IDs are copied, matched by
 path and HTTP method; none of its schemas, parameters or responses are used. Missing or
 ambiguous operation-ID mappings fail the refresh rather than silently leaving mixed naming.
+
+The existing ID projection also applies the finite exact module/profile/method/path
+corrections in `tools\Utilities\RequiredPathOperationIds.json`. These restore 67 required
+bound-operation IDs to the spelling used by their shared directives. They do not change
+paths, action/function kinds, schemas, parameters, responses, or other IDs. Normal downloads
+use them automatically with `-SingularizeOperationIds`; there is no migration integration
+flag, runtime legacy-spec lookup, or change to the ordinary literal directive inventory.
+
+ID alignment does not resolve Identity.Governance's separate broad-selector overmatch:
+88 v1.0 and 182 beta literal matches are new routes absent from the legacy module specs.
+Their IDs and routes are intentionally unchanged; narrowing that directive requires a
+separate source review rather than relabeling unrelated operations. The normal target also
+still contains Notes' malformed shared regex; its approved source repair belongs to the
+owning module, not this ID projection.
 
 `TweakOpenApi.ps1 -OperationIdsOnly` then applies the existing preposition and word corrections.
 This mode does not rewrite success response codes or mark navigation properties read-only.

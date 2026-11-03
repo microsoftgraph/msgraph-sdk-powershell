@@ -211,6 +211,12 @@ rather than optional; and the manifest GUID is derived from the module name — 
 4122 UUID, identical on every build — so `Update-Module` keeps its identity across handouts
 instead of seeing a new module each time.
 
+Authentication 2.41.2 owns the complete Kiota dependency closure and bridges its typed contracts
+to the generated modules. Wrapper packages must carry only their own assemblies, not copies or
+preloads of Authentication/Kiota dependencies. `tools/Test-WrapperAuthentication.ps1` verifies
+normally unpacked SchemaExtensions packages in both profiles using real offline Connect sessions,
+authenticated HTTP capture, typed JSON, session invalidation, and assembly-identity checks.
+
 **Check it** — the smoke test reads the **package**, not `bin/`, in a fresh pwsh process per
 module. Importing build output proves the compiler ran; it does not prove the artifact a user
 installs carries the assembly, its dependencies and a manifest that agrees with them. So pack
@@ -379,6 +385,23 @@ The generated cmdlets **are** compiled: `Build-WrapperModule.ps1` builds each mo
 - **Only v1.0 output is committed.** The beta docs exist (`openApiDocs_KiotaCompat/beta`) but no beta output is generated or checked in yet; the layout already accommodates it at `src/{Module}/wrapper/beta/`.
 
 ## Migrate module AutoRest directives
+
+Curated entries in `src/<Module>/wrapper/<Module>_cmdletConfigurations.cs` apply to whichever
+module/profile ingests them. Neither `GeneratorConfig`, curated entries nor variant groups
+take an API version; do not duplicate a shared definition for v1.0 and beta. Rules act only
+on matching input operations. The run's `--api-version` still selects the correct embedded
+oracle-derived data through the generation service, independently of authored rules.
+`SuppressOperation` prevents cmdlet emission, not Kiota HTTP client generation or OpenAPI
+input retention; Bookings uses shared exact-path rules for its retired root-level routes
+while preserving `/solutions/...` cmdlets.
+
+`CmdletConfigurator` owns the variant records and registrations. For compatible parameter-set
+variants, use `GroupVariants(new OperationVariantGroup(...))` in the module's configuration
+array; do not pass operation groups through `GeneratorConfig`, which holds only run settings.
+[`OperationVariant` parameter documentation and examples](docs/edge-cases/crosspath-merge-edge-cases.md#exact-reviewed-configuration)
+explain exact methods/paths, maintainer-chosen `FamilyName` labels, and `DefaultFamily`.
+One shared list/item/parent definition can produce `Get-MgWidget`, `Get-MgWidget -WidgetId`
+and `Get-MgWidget -ParentId` without a route selector.
 
 Cmdlet removals and renames in the shared `src/<Module>/<Module>.md` file are migrated one
 module at a time. Profile-specific directives (including `src/<Module>/beta/readme.md` and

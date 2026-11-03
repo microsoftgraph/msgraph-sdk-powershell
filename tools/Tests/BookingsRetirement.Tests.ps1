@@ -54,27 +54,36 @@ components:
             - $ref: '#/components/schemas/bookingBusiness'
             - type: string
 '@ + "`n"
-    $fixture = $header + $retired + $retained
+    $expired = @'
+  /expired:
+    delete:
+      operationId: expired_Delete
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2020-01-01'
+'@ + "`n"
+    $unannotatedFixture = $header + $retired + $retained
+    $fixture = $header + $retired + $expired + $retained
     function Write-BookingsFixture([string]$Path, [string]$Text) {
         [System.IO.File]::WriteAllText($Path, $Text, [System.Text.UTF8Encoding]::new($false))
     }
 }
 
-Describe 'Reviewed Bookings beta retirement policy' {
+Describe 'Bookings uses generic annotated deprecation pruning only' {
     BeforeEach {
         $casePath = Join-Path $TestDrive ([guid]::NewGuid().ToString())
         $null = New-Item $casePath -ItemType Directory
         $spec = Join-Path $casePath 'Bookings.yml'
     }
 
-    It 'prunes unannotated roots and quoted/case-insensitive descendants while preserving every unrelated byte (<Ending>, BOM=<Bom>)' -TestCases @(
+    It 'prunes only annotated expired operations while preserving every unrelated byte (<Ending>, BOM=<Bom>)' -TestCases @(
         @{ Ending = "`n"; Bom = $false }
         @{ Ending = "`r`n"; Bom = $false }
         @{ Ending = "`r`n"; Bom = $true }
     ) {
         param($Ending, $Bom)
         $text = $fixture.Replace("`r`n", "`n").Replace("`n", $Ending).TrimEnd("`r", "`n")
-        $expected = ($header + $retained).Replace("`r`n", "`n").Replace("`n", $Ending).TrimEnd("`r", "`n")
+        $expected = $unannotatedFixture.Replace("`r`n", "`n").Replace("`n", $Ending).TrimEnd("`r", "`n")
         [System.IO.File]::WriteAllText($spec, $text, [System.Text.UTF8Encoding]::new($Bom))
         & $pruner -OpenApiFilesPath $spec -ReferenceDateUtc $referenceDate
         $bytes = [System.IO.File]::ReadAllBytes($spec)
@@ -83,13 +92,11 @@ Describe 'Reviewed Bookings beta retirement policy' {
         [Convert]::ToBase64String($bytes) | Should -BeExactly ([Convert]::ToBase64String($expectedBytes))
         $report = Get-Content (Join-Path $casePath 'deprecated-removals.json') -Raw | ConvertFrom-Json
         $entries = @($report.modules.Bookings.PSObject.Properties)
-        $entries.Count | Should -Be 4
-        @($entries.Value.operationsRemoved).Count | Should -Be 5
-        foreach ($entry in $entries) {
-            $entry.Value.uriRemoved | Should -BeTrue
-            $entry.Value.retirement.removalDate | Should -Be '2024-04-30'
-            $entry.Value.retirement.source | Should -BeLike '*breaking-changes-in-microsoft-bookings-graph-apis-beta/'
-        }
+        $entries.Count | Should -Be 1
+        $entries[0].Name | Should -Be '/expired'
+        @($entries[0].Value.operationsRemoved) | Should -Be @('delete')
+        $entries[0].Value.uriRemoved | Should -BeTrue
+        @($entries[0].Value.PSObject.Properties.Name) | Should -Not -Contain 'retirement'
         & $pruner -OpenApiFilesPath $spec -ReferenceDateUtc $referenceDate
         [Convert]::ToBase64String([System.IO.File]::ReadAllBytes($spec)) |
             Should -BeExactly ([Convert]::ToBase64String($bytes))
@@ -97,84 +104,77 @@ Describe 'Reviewed Bookings beta retirement policy' {
         @($secondReport.modules.PSObject.Properties).Count | Should -Be 0
     }
 
-    It 'does not apply beta retirement to v1.0 or an unrelated module' {
-        Write-BookingsFixture $spec ($fixture.Replace('version: beta', 'version: v1.0'))
-        & $pruner -OpenApiFilesPath $spec -ReferenceDateUtc $referenceDate
-        [System.IO.File]::ReadAllText($spec) | Should -BeExactly ($fixture.Replace('version: beta', 'version: v1.0'))
-        $other = Join-Path $casePath 'Other.yml'
-        Write-BookingsFixture $other $fixture
-        & $pruner -OpenApiFilesPath $other -GraphVersion beta -ReferenceDateUtc $referenceDate
-        [System.IO.File]::ReadAllText($other) | Should -BeExactly $fixture
-    }
-
-    It 'requires an identifiable profile and accepts an explicit profile when info is missing' {
-        $text = $fixture.Replace("info:`n  title: Bookings`n  version: beta`n", '')
+    It 'preserves unannotated legacy roots regardless of profile (<Profile>)' -TestCases @(
+        @{ Profile = 'beta' }
+        @{ Profile = 'v1.0' }
+    ) {
+        param($Profile)
+        $text = $unannotatedFixture.Replace('version: beta', "version: $Profile")
         Write-BookingsFixture $spec $text
-        { & $pruner -OpenApiFilesPath $spec -ReferenceDateUtc $referenceDate } |
-            Should -Throw '*Cannot determine GraphVersion*'
+        & $pruner -OpenApiFilesPath $spec -ReferenceDateUtc $referenceDate
         [System.IO.File]::ReadAllText($spec) | Should -BeExactly $text
-        & $pruner -OpenApiFilesPath $spec -GraphVersion beta -ReferenceDateUtc $referenceDate
-        [System.IO.File]::ReadAllText($spec) | Should -BeExactly $text.Replace($retired, '')
+        $other = Join-Path $casePath 'Other.yml'
+        Write-BookingsFixture $other $text
+        & $pruner -OpenApiFilesPath $other -ReferenceDateUtc $referenceDate
+        [System.IO.File]::ReadAllText($other) | Should -BeExactly $text
     }
 
-    It 'respects the retirement date and configured buffer' {
-        Write-BookingsFixture $spec $fixture
-        & $pruner -OpenApiFilesPath $spec -ReferenceDateUtc ([datetime]'2024-05-01T00:00:00Z')
-        [System.IO.File]::ReadAllText($spec) | Should -BeExactly $fixture
-        & $pruner -OpenApiFilesPath $spec -ReferenceDateUtc ([datetime]'2024-05-02T00:00:00Z')
-        [System.IO.File]::ReadAllText($spec) | Should -BeExactly ($header + $retained)
+    It 'does not require a profile for unannotated Bookings routes' {
+        $text = $unannotatedFixture.Replace("info:`n  title: Bookings`n  version: beta`n", '')
+        Write-BookingsFixture $spec $text
+        & $pruner -OpenApiFilesPath $spec -ReferenceDateUtc $referenceDate
+        [System.IO.File]::ReadAllText($spec) | Should -BeExactly $text
     }
 
-    It 'removes retired path objects even when they have only path-level parameters' {
-        Write-BookingsFixture $spec ($header + @'
+    It 'preserves unannotated paths with only path-level parameters' {
+        $text = $header + @'
   '/bookingBusinesses/{business-id}':
     parameters:
       - name: business-id
         in: path
 components:
   schemas: {}
-'@)
+'@
+        Write-BookingsFixture $spec $text
         & $pruner -OpenApiFilesPath $spec -ReferenceDateUtc $referenceDate
-        Get-Content $spec -Raw | Should -Match '(?m)^paths: \{\}'
-        Get-Content $spec -Raw | Should -Not -Match 'business-id'
+        [System.IO.File]::ReadAllText($spec) | Should -BeExactly $text
         $report = Get-Content (Join-Path $casePath 'deprecated-removals.json') -Raw | ConvertFrom-Json
-        $entry = $report.modules.Bookings.PSObject.Properties['/bookingBusinesses/{business-id}'].Value
-        @($entry.operationsRemoved).Count | Should -Be 0
-        $entry.uriRemoved | Should -BeTrue
+        @($report.modules.PSObject.Properties).Count | Should -Be 0
     }
 
-    It 'removes all 29 historical source paths and 53 operations without changing retained source text' {
+    It 'does not hard-code retirement of the 29 historical Bookings root paths' {
         $original = [System.IO.File]::ReadAllText((Join-Path $repo 'openApiDocs\beta\Bookings.yml'))
         Write-BookingsFixture $spec $original
-        & $pruner -OpenApiFilesPath $spec -GraphVersion beta -ReferenceDateUtc $referenceDate
-        $report = Get-Content (Join-Path $casePath 'deprecated-removals.json') -Raw | ConvertFrom-Json
-        $retirements = @($report.modules.Bookings.PSObject.Properties |
-            Where-Object { $_.Value.PSObject.Properties['retirement'] })
-        $retirements.Count | Should -Be 29
-        @($retirements.Value.operationsRemoved).Count | Should -Be 53
+        & $pruner -OpenApiFilesPath $spec -ReferenceDateUtc $referenceDate
         $actual = [System.IO.File]::ReadAllText($spec)
-        $actual.Substring($actual.IndexOf("`ncomponents:")) |
-            Should -BeExactly $original.Substring($original.IndexOf("`ncomponents:"))
-        $actual | Should -Not -Match '(?im)^  [''"]?/(bookingBusinesses|bookingCurrencies)(?:/|[''"]?:)'
+        $actual | Should -BeExactly $original
+        [regex]::Matches($actual, '(?im)^  [''"]?/(bookingBusinesses|bookingCurrencies)(?:/[^:]*|[''"]?):').Count |
+            Should -Be 29
         $actual | Should -Match '(?m)^  /solutions/bookingBusinesses:'
         $actual | Should -Match '(?m)^  /solutions/bookingCurrencies:'
     }
 
-    It 'keeps the active <Profile> compatible spec free of retired roots without further rewriting' -TestCases @(
+    It 'retains the active <Profile> compatible spec without module-specific pruning' -TestCases @(
         @{ Profile = 'v1.0' }
         @{ Profile = 'beta' }
     ) {
         param($Profile)
         $current = [System.IO.File]::ReadAllText((Join-Path $repo "openApiDocs_KiotaCompat\$Profile\Bookings.yml"))
-        $current | Should -Not -Match '(?im)^  [''"]?/(bookingBusinesses|bookingCurrencies)(?:/|[''"]?:)'
+        if ($Profile -eq 'beta') {
+            $current | Should -Match '(?m)^  /bookingBusinesses:'
+            $current | Should -Match '(?m)^  /bookingCurrencies:'
+        }
+        else {
+            $current | Should -Not -Match '(?im)^  [''"]?/(bookingBusinesses|bookingCurrencies)(?:/|[''"]?:)'
+        }
         Write-BookingsFixture $spec $current
-        & $pruner -OpenApiFilesPath $spec -GraphVersion $Profile -ReferenceDateUtc $referenceDate
+        & $pruner -OpenApiFilesPath $spec -ReferenceDateUtc $referenceDate
         [System.IO.File]::ReadAllText($spec) | Should -BeExactly $current
         $current | Should -Match '(?m)^  /solutions/bookingBusinesses:'
     }
 }
 
-Describe 'Bookings retirement refresh entrypoints' {
+Describe 'Bookings refresh entrypoints retain legacy routes and prune annotated operations' {
     BeforeEach {
         $casePath = Join-Path $TestDrive ([guid]::NewGuid().ToString())
         $null = New-Item $casePath -ItemType Directory
@@ -195,9 +195,10 @@ Describe 'Bookings retirement refresh entrypoints' {
         & $download -ModuleName Bookings -ModuleRegex '^bookingBusinesses\.' -GraphVersion beta `
             -OpenApiDocOutput $casePath -SingularizeOperationIds:$Projection
         [System.IO.File]::ReadAllText((Join-Path $casePath 'Bookings.yml')) |
-            Should -BeExactly ($header + $retained)
+            Should -BeExactly $unannotatedFixture
         $report = Get-Content (Join-Path $casePath 'deprecated-removals.json') -Raw | ConvertFrom-Json
-        @($report.modules.Bookings.PSObject.Properties).Count | Should -Be 4
+        @($report.modules.Bookings.PSObject.Properties).Count | Should -Be 1
+        $report.modules.Bookings.PSObject.Properties.Name | Should -Be '/expired'
         Should -Invoke Invoke-WebRequest -Times $(if ($Projection) { 2 } else { 1 }) -Exactly
     }
 
@@ -206,10 +207,11 @@ Describe 'Bookings retirement refresh entrypoints' {
         Write-BookingsFixture $mapping '{"Bookings":"^bookingBusinesses\\."}'
         & $update -ModuleMappingConfigPath $mapping -OpenApiDocOutput $casePath -BetaGraphVersion -SkipForceRefresh
         [System.IO.File]::ReadAllText((Join-Path $casePath 'beta\Bookings.yml')) |
-            Should -BeExactly ($header + $retained)
+            Should -BeExactly $unannotatedFixture
         $report = Get-Content (Join-Path $casePath 'beta\deprecated-removals.json') -Raw | ConvertFrom-Json
-        @($report.modules.Bookings.PSObject.Properties).Count | Should -Be 4
-        @($report.modules.Bookings.PSObject.Properties.Value.operationsRemoved).Count | Should -Be 5
+        @($report.modules.Bookings.PSObject.Properties).Count | Should -Be 1
+        $report.modules.Bookings.PSObject.Properties.Name | Should -Be '/expired'
+        @($report.modules.Bookings.PSObject.Properties.Value.operationsRemoved) | Should -Be @('delete')
         Should -Invoke Invoke-WebRequest -Times 2 -Exactly
     }
 

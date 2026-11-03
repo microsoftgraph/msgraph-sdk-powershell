@@ -119,9 +119,9 @@ public sealed record CmdletNaming(
     // namespace-qualified operation: the builder and namespace keep the qualifier
     // (MicrosoftGraphSecurityMoveAlerts) while the types drop it (MoveAlertsPostRequestBody).
     string OperationTypeName = "",
-    // The {id} segments as the URL template spells them ("user-id"), parallel to
-    // PathParamNames. A parameterized function is built by populating kiota's path-parameter
-    // dictionary, which is keyed by these template names, not by the cmdlet parameter names.
+    // The path placeholders as the URL template spells them ("user-id"), parallel to
+    // PathParamNames, including bare composite keys. Function and composite-key constructors
+    // populate Kiota's dictionary using these names, not the cmdlet parameter names.
     IReadOnlyList<string>? PathParamTemplateNames = null,
     // The operation's route, normalized the way CmdletConfigurator keys its data. Diagnostics
     // report it rather than leaving the route to be reconstructed from the builder expression:
@@ -136,7 +136,10 @@ public sealed record CmdletNaming(
     // [GraphRoute] attribute so verification tooling reads the operation's identity out of the
     // compiled assembly instead of reconstructing it from the builder expression.
     string SourcePath = "",
-    string SourceMethod = "")
+    string SourceMethod = "",
+    // Composite-key accessors can be zero-argument methods. Their typed constructor takes the
+    // complete path dictionary instead; this is its namespace relative to ClientNamespace.
+    string CompositeKeyBuilderNamespace = "")
 {
     public IReadOnlyList<FunctionParam> FunctionParameters => FunctionParams ?? [];
 
@@ -156,7 +159,7 @@ public static class Naming
         [HttpMethod.Delete] = PsVerb.Remove,
     };
 
-    public static CmdletNaming Resolve(OperationInfo operation, GeneratorConfig? config = null)
+    public static CmdletNaming Resolve(OperationInfo operation, GeneratorConfig? config = null, string apiVersion = "v1.0")
     {
         ArgumentNullException.ThrowIfNull(operation);
         // An action is a call, not a create, so POST does not mean New here. A function is a
@@ -172,14 +175,14 @@ public static class Naming
 
         // Published per-operation verbs, from derived data or a curated shared directive,
         // replace the structural default through the same approved-verb validation.
-        if (CmdletConfigurator.TryGetOverriddenVerb(operation.HttpMethod, operation.Path, config) is { } publishedVerb)
+        if (CmdletConfigurator.TryGetOverriddenVerb(operation.HttpMethod, operation.Path, config, apiVersion) is { } publishedVerb)
             verb = PsVerb.FromApprovedName(publishedVerb);
 
         // The noun comes from the URL path, not the operationId. OperationIds keep whatever
         // plurality the spec author chose, while the published SDK names follow the path:
         // GET /users/{id}/messages is Get-MgUserMessage. The few hand-tuned exceptions the
         // published SDK carries are mirrored as data in CmdletConfigurator, never as code here.
-        var noun = GeneratorConstants.NounPrefix + CmdletConfigurator.ApplyNounOverrides(operation.HttpMethod, operation.Path, BuildNounFromPath(operation.Path, operation.Kind), config);
+        var noun = GeneratorConstants.NounPrefix + CmdletConfigurator.ApplyNounOverrides(operation.HttpMethod, operation.Path, BuildNounFromPath(operation.Path, operation.Kind), config, apiVersion);
 
         // A list GET (/users/{id}/messages) and its item GET (/users/{id}/messages/{message-id})
         // get the same noun on purpose. PowerShellWrapperGenerationService pairs them into one
@@ -193,7 +196,9 @@ public static class Naming
         var className = $"{verb.Name}{noun}Command";
 
         var pathParamNames = ExtractPathParamNames(operation.Path);
-        var builderExpression = BuildBuilderExpression(operation.Path, pathParamNames);
+        var builderExpression = BuildBuilderExpression(operation.Path, pathParamNames, out var hasCompositeKey);
+        if (hasCompositeKey && pathParamNames.Distinct(StringComparer.OrdinalIgnoreCase).Count() != pathParamNames.Count)
+            throw new NotSupportedException($"Composite-key route '{operation.Path}' has conflicting PowerShell path parameter names.");
         var headerParams = (operation.HeaderParams ?? [])
             .Select(raw => new HeaderParam(raw, raw.ToPascalCase('-')))
             .ToList();
@@ -201,7 +206,9 @@ public static class Naming
         var normalizedPath = CmdletConfigurator.NormalizePathTemplate(operation.Path);
         if (operation.Kind == OperationKind.Resource)
             return new CmdletNaming(verb.AttributeClass, verb.Name, noun, className, pathParamNames, builderExpression, headerParams,
-                NormalizedPath: normalizedPath, SourcePath: operation.Path, SourceMethod: operation.HttpMethod.Method);
+                PathParamTemplateNames: hasCompositeKey ? ExtractPathParamTemplateNames(operation.Path) : null,
+                NormalizedPath: normalizedPath, SourcePath: operation.Path, SourceMethod: operation.HttpMethod.Method,
+                CompositeKeyBuilderNamespace: hasCompositeKey ? BuildOperationTypeNamespace(operation.Path) : "");
 
         var call = ParseOperationSegment(LastFixedSegment(operation.Path));
         return new CmdletNaming(verb.AttributeClass, verb.Name, noun, className, pathParamNames, builderExpression, headerParams,
@@ -216,7 +223,7 @@ public static class Naming
             operation.HttpMethod.Method);
     }
 
-    // The raw "{user-id}" names, in path order and parallel to ExtractPathParamNames.
+    // Raw path placeholder names, including composite keys, parallel to ExtractPathParamNames.
     private static List<string> ExtractPathParamTemplateNames(string path)
     {
         var names = new List<string>();
@@ -224,6 +231,8 @@ public static class Naming
         {
             if (segment.StartsWith('{') && segment.EndsWith('}'))
                 names.Add(segment[1..^1]);
+            else if (ParseCompositeKeySegment(segment) is { } parameters)
+                names.AddRange(parameters.Select(p => p.TemplateName));
         }
         return names;
     }
@@ -238,7 +247,9 @@ public static class Naming
         var parts = path.Split('/', StringSplitOptions.RemoveEmptyEntries)
             .Select(segment => segment.StartsWith('{') && segment.EndsWith('}')
                 ? "Item"
-                : AvoidReservedNamespace(ParseOperationSegment(segment).MemberName));
+                : AvoidReservedNamespace(ParseCompositeKeySegment(segment) is { } parameters
+                    ? CompositeKeyMemberName(parameters)
+                    : ParseOperationSegment(segment).MemberName));
         return string.Join('.', parts);
     }
 
@@ -438,32 +449,54 @@ public static class Naming
             : "As" + Singularizer.SingularizeSegment(castType.ToFirstCharacterUpperCase());
     }
 
-    // The cmdlet parameter names for a path's {parameter} segments, in path order. Each raw
-    // name is PascalCased on its hyphens: "{user-id}" -> "UserId", "{bookingBusiness-id}" ->
-    // "BookingBusinessId". These become the cmdlet's mandatory positional parameters and the
-    // indexer arguments in the builder expression.
-    private static List<string> ExtractPathParamNames(string path)
+    // Path placeholders become mandatory positional parameters, PascalCased on their hyphens:
+    // "{user-id}" -> "UserId". Composite keys bind the dictionary rather than an indexer.
+    private static List<string> ExtractPathParamNames(string path) =>
+        ExtractPathParamTemplateNames(path).Select(name => name.ToPascalCase('-')).ToList();
+
+    // Bare key assignments are URI segments, not named functions. Reject literals and malformed
+    // placeholders rather than emitting an invalid member or silently leaving a key unbound.
+    private static IReadOnlyList<FunctionParam>? ParseCompositeKeySegment(string segment)
     {
-        var names = new List<string>();
-        foreach (var segment in path.Split('/', StringSplitOptions.RemoveEmptyEntries))
+        var open = segment.IndexOf('(');
+        if (open >= 0 && segment[..open].IndexOfAny(['=', ',', '{', '}']) < 0)
+            return null; // A named function, not a bare composite-key segment.
+        if (segment.IndexOfAny(['=', ',', '{', '}']) < 0)
+            return null;
+
+        var arguments = segment.Split(',');
+        var parameters = new List<FunctionParam>();
+        var keys = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var argument in arguments)
         {
-            if (segment.StartsWith('{') && segment.EndsWith('}'))
-                names.Add(segment[1..^1].ToPascalCase('-'));
+            var match = System.Text.RegularExpressions.Regex.Match(argument,
+                @"\A(?<key>[A-Za-z_][A-Za-z0-9_]*)=(?:'\{(?<name>[A-Za-z_][A-Za-z0-9_-]*)\}'|\{(?<name>[A-Za-z_][A-Za-z0-9_-]*)\})\z");
+            if (arguments.Length < 2 || !match.Success || !keys.Add(match.Groups["key"].Value))
+                throw new NotSupportedException(
+                    $"Unsupported composite-key segment '{segment}'. Expected distinct key={{parameter}} or key='{{parameter}}' assignments separated by commas.");
+            var name = match.Groups["name"].Value;
+            parameters.Add(new FunctionParam(name, name.ToPascalCase('-')));
         }
-        return names;
+        return parameters;
     }
+
+    private static string CompositeKeyMemberName(IReadOnlyList<FunctionParam> parameters) =>
+        string.Concat(parameters.Select(p => "With" + p.PsName));
 
     // The Kiota request-builder chain for a path, returned as C# source text ready to append
     // after "client.": one property per fixed segment, one indexer per path parameter, e.g.
     // "/users/{user-id}/messages/{message-id}" -> "Users[UserId].Messages[MessageId]".
-    private static string BuildBuilderExpression(string path, List<string> pathParamNames)
+    private static string BuildBuilderExpression(string path, List<string> pathParamNames, out bool hasCompositeKey)
     {
         var expression = new System.Text.StringBuilder();
         var paramIndex = 0;
         var first = true;
+        hasCompositeKey = false;
 
         foreach (var segment in path.Split('/', StringSplitOptions.RemoveEmptyEntries))
         {
+            if (hasCompositeKey)
+                throw new NotSupportedException($"Composite-key segment must terminate the resource route '{path}'.");
             if (segment.StartsWith('{') && segment.EndsWith('}'))
             {
                 expression.Append('[').Append(pathParamNames[paramIndex++]).Append(']');
@@ -472,7 +505,14 @@ public static class Naming
             {
                 if (!first)
                     expression.Append('.');
-                expression.Append(ToCastAwareBuilderMemberName(segment));
+                if (ParseCompositeKeySegment(segment) is { } parameters)
+                {
+                    expression.Append(CompositeKeyMemberName(parameters)).Append("()");
+                    paramIndex += parameters.Count;
+                    hasCompositeKey = true;
+                }
+                else
+                    expression.Append(ToCastAwareBuilderMemberName(segment));
             }
             first = false;
         }

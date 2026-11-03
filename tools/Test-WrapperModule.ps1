@@ -16,7 +16,7 @@ already loaded. Checks, per module:
                                                 a module built before the change under test
   1. Import-Module <psd1> succeeds            - the user's first experience
   2. exported cmdlet count == manifest count  - nothing silently dropped at load
-  3. no orphan workers                        - every *_Get/*_List worker has its public
+  3. no orphan workers                        - every *_Get/*_List or *_RouteN worker has its public
                                                 dispatcher exported alongside it
   4. one dispatcher invoked with dummy ids and no Graph session:
        PASS = NoGraphSession error (the call flowed dispatcher -> worker -> auth path)
@@ -36,7 +36,7 @@ already loaded. Checks, per module:
                  an unsupported type. The helper is emitted into every module, so a missing
                  helper is a failure, never n/a
 
-Modules with no paired list+item GETs have no dispatcher; check 4 reports n/a for them.
+Modules with no paired or multi-route GET dispatchers report n/a for check 4.
 A shape a module never binds reports n/a for that part of check 5, except untyped.
 
 .PARAMETER Module
@@ -90,6 +90,19 @@ function Expand-ModulePackage {
         }
     }
     finally { $zip.Dispose() }
+}
+
+function Get-WrapperDispatchInventory {
+    param([object[]]$Commands)
+
+    $workerSuffix = '(_Route\d+(_(Get|List))?|_(Get|List))$'
+    $workers = @($Commands | Where-Object Name -match $workerSuffix)
+    $orphans = @($workers | Where-Object { $Commands.Name -notcontains ($_.Name -replace $workerSuffix, '') })
+    $publicNames = @($workers | ForEach-Object { $_.Name -replace $workerSuffix, '' } | Sort-Object -Unique)
+    $dispatchers = @($Commands | Where-Object { $publicNames -contains $_.Name })
+    $dispatcher = $dispatchers | Where-Object Name -like 'Get-*' | Select-Object -First 1
+    if (-not $dispatcher) { $dispatcher = $dispatchers | Select-Object -First 1 }
+    [pscustomobject]@{ Workers = $workers; Orphans = $orphans; Dispatcher = $dispatcher }
 }
 
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
@@ -191,9 +204,12 @@ function Test-OnePackage {
 `$ErrorActionPreference = 'Stop'
 Import-Module '$psd1'
 `$cmds = Get-Command -Module '$moduleName'
-`$workers = @(`$cmds | Where-Object Name -match '_(Get|List)$')
-`$orphans = @(`$workers | Where-Object { `$cmds.Name -notcontains (`$_.Name -replace '_(Get|List)$', '') })
-`$dispatcher = `$cmds | Where-Object { `$_.Name -like 'Get-*' -and `$cmds.Name -contains "`$(`$_.Name)_List" } | Select-Object -First 1
+function Get-WrapperDispatchInventory {
+${function:Get-WrapperDispatchInventory}
+}
+`$dispatchInventory = Get-WrapperDispatchInventory -Commands `$cmds
+`$orphans = `$dispatchInventory.Orphans
+`$dispatcher = `$dispatchInventory.Dispatcher
 `$errorId = 'N/A'
 if (`$dispatcher) {
     `$defaultSet = `$dispatcher.ParameterSets | Where-Object IsDefault | Select-Object -First 1
@@ -201,6 +217,7 @@ if (`$dispatcher) {
     foreach (`$p in (`$defaultSet.Parameters | Where-Object { `$_.IsMandatory -and `$_.ParameterType -eq [string] })) {
         `$splat[`$p.Name] = 'smoke-test'
     }
+    if (`$dispatcher.Parameters.ContainsKey('Confirm')) { `$splat['Confirm'] = `$false }
     try {
         & `$dispatcher @splat -ErrorAction Stop | Out-Null
         `$errorId = 'NO-ERROR'

@@ -6,8 +6,9 @@ Captures, and compares, the set of operations the generator turns into cmdlets.
 A change meant to affect only cmdlet PARAMETERS must not change which OPERATIONS generate.
 Comparing filenames alone cannot show that: two operations could exchange ownership of a
 cmdlet name and leave the same set of files behind. This records the full identity of each
-emitted cmdlet - module, verb, noun, request path (the kiota builder chain, which is the
-operation's path) and file - and diffs two snapshots on that tuple.
+emitted cmdlet route - module, verb, noun, HTTP method, request path and file - and diffs two
+snapshots on that tuple. Every [GraphRoute] is retained, including dispatcher alternatives;
+old sources without route metadata fall back to the kiota builder chain.
 
 Use -Baseline to record the current state before a change, then -Compare afterwards. The
 generator that produced a baseline is stamped beside it, because a baseline captured from the
@@ -66,6 +67,7 @@ function Get-GeneratorStamp {
 
 $cmdletAttrPattern = '\[Cmdlet\(Verbs\w+\.(\w+),\s*"((?:\\.|[^"\\])*)"'
 $builderPattern = 'client\.([A-Za-z0-9_\[\]\.]+?)\.(?:Get|Post|Patch|Delete|Put)Async'
+$routePattern = '\[GraphRoute\("((?:\\.|[^"\\])*)",\s*"((?:\\.|[^"\\])*)"(?:,\s*ParameterSetName\s*=\s*"((?:\\.|[^"\\])*)")?\)\]'
 
 # Finds every Cmdlets folder under the root at any depth and takes the module name from the first
 # segment below it, so -Path src yields <Module> from src/<Module>/wrapper/<ApiVersion>/Cmdlets and
@@ -84,16 +86,22 @@ function Get-Inventory([string]$root) {
             $m = [regex]::Match($text, $cmdletAttrPattern)
             if (-not $m.Success) { continue }
             $b = [regex]::Match($text, $builderPattern)
-            $rows.Add([pscustomobject]@{
-                    Module      = $module
-                    Cmdlet      = "$($m.Groups[1].Value)-$([regex]::Unescape($m.Groups[2].Value))"
-                    Verb        = $m.Groups[1].Value
-                    RequestPath = if ($b.Success) { $b.Groups[1].Value } else { '(dispatcher)' }
-                    File        = $file.Name
-                })
+            $routes = @([regex]::Matches($text, $routePattern))
+            if ($routes.Count -eq 0) { $routes = @($null) }
+            foreach ($route in $routes) {
+                $rows.Add([pscustomobject]@{
+                        Module      = $module
+                        Cmdlet      = "$($m.Groups[1].Value)-$([regex]::Unescape($m.Groups[2].Value))"
+                        Verb        = $m.Groups[1].Value
+                        Method      = if ($route) { [regex]::Unescape($route.Groups[1].Value) } else { '' }
+                        RequestPath = if ($route) { [regex]::Unescape($route.Groups[2].Value) } elseif ($b.Success) { $b.Groups[1].Value } else { '(dispatcher)' }
+                        ParameterSetName = if ($route) { [regex]::Unescape($route.Groups[3].Value) } else { '' }
+                        File        = $file.Name
+                    })
+            }
         }
     }
-    return $rows | Sort-Object Module, File
+    return $rows | Sort-Object Module, File, Method, RequestPath, ParameterSetName
 }
 
 $inventory = Get-Inventory $Path
@@ -138,7 +146,7 @@ else {
 
 # Identity is the whole tuple, so an operation swapping which cmdlet/file it owns shows up as
 # one removal plus one addition rather than as no change at all.
-function Key($r) { "{0}|{1}|{2}|{3}" -f $r.Module, $r.Cmdlet, $r.RequestPath, $r.File }
+function Key($r) { "{0}|{1}|{2}|{3}|{4}|{5}" -f $r.Module, $r.Cmdlet, $r.Method, $r.RequestPath, $r.ParameterSetName, $r.File }
 # Filled by Add, and built inline rather than in a helper function, for two separate reasons:
 # the HashSet(IEnumerable<string>) constructor is ambiguous against
 # HashSet(IEqualityComparer<string>) when a side is empty, and returning a set FROM a function

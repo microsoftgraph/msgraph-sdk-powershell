@@ -9,19 +9,11 @@
 The default buffer is two days. The script updates OpenAPI documents in place and writes a
 `deprecated-removals.json` report next to the processed document or in the processed directory.
 
-It also enforces a reviewed retirement policy for `Bookings.yml` in **beta**:
-`/bookingBusinesses` and `/bookingCurrencies`, including every descendant path, were retired
-on **2024-04-30** according to Microsoft's
-[2024-02-21 announcement](https://devblogs.microsoft.com/microsoft365dev/breaking-changes-in-microsoft-bookings-graph-apis-beta/).
-These paths are removed even if upstream omits `deprecated` or `x-ms-deprecation.removalDate`.
-The match is case-insensitive and bounded by complete root segments; `/solutions/...`,
-lookalike roots, all schemas, and other module/profile documents are preserved. The report
-records the policy reason, date, and source for each removed URI.
-
-`-GraphVersion beta` selects the policy explicitly. When omitted, the script reads
-`info.version`; a Bookings document with matching roots but no identifiable profile fails
-before writing instead of silently retaining retired routes. The reference date and buffer
-apply to this retirement date as well as annotated removal dates.
+Module-specific cmdlet retirement belongs in the module's `*_cmdletConfigurations.cs`,
+not this generic OpenAPI pruner. For example, Bookings' beta-only configuration suppresses
+cmdlets for the retired `/bookingBusinesses` and `/bookingCurrencies` root families.
+Unannotated legacy paths remain in the compatible OpenAPI input and generated Kiota HTTP
+client; the supported `/solutions/...` cmdlets and v1.0 behavior are unaffected.
 
 ## Process one API document
 
@@ -57,8 +49,7 @@ directory must already exist.
 
 - Expired operations are removed individually.
 - A URI path is removed only when no HTTP operations remain.
-- Deprecated operations without `removalDate` are retained unless covered by the explicit
-  reviewed Bookings retirement policy.
+- Deprecated operations without `removalDate` are retained.
 - An invalid `removalDate` stops processing before any OpenAPI document is changed.
 - The JSON report is keyed by module filename and URI and lists removed methods plus whether the
   URI itself was removed.

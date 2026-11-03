@@ -30,12 +30,15 @@ deferred; none occur in these three shared groups. Keep the AutoRest directives
 active until the service-module pipeline is retired.
 
 Microsoft [retired the root-level Bookings beta routes on 2024-04-30](https://devblogs.microsoft.com/microsoft365dev/breaking-changes-in-microsoft-bookings-graph-apis-beta/).
-The active compatible beta input removes `/bookingBusinesses`, `/bookingCurrencies`,
-and their descendants; the existing pruner enforces this policy on both bulk refresh
-and standalone download even without upstream deprecation annotations. Their
-`/solutions/...` successors remain active. Historical source specs and directives
-remain intact. Historical command metadata is not evidence that a retired route
-is still supported; the prepared legacy-default multi-route policy is withdrawn.
+`wrapper/Bookings_cmdletConfigurations.cs` suppresses cmdlet generation for
+`/bookingBusinesses`, `/bookingCurrencies`, and their descendants in beta only,
+even without upstream deprecation annotations. Their `/solutions/...` successors
+remain active, and v1.0 behavior is unchanged. This is a cmdlet policy, not an
+OpenAPI filter: the compatible beta input and generated Kiota HTTP client retain
+the legacy routes. The generic pruner removes only annotated expired operations.
+Historical source specs and directives remain intact. Historical command metadata
+is not evidence that a retired route is still supported; no legacy cmdlet route
+selector is exposed.
 
 ``` yaml
 directive:

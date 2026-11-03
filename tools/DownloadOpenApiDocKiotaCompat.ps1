@@ -99,5 +99,5 @@ while (-not $Completed) {
 
 if ($Downloaded -and -not $DeferPruning) {
     & (Join-Path $PSScriptRoot 'Remove-ExpiredDeprecatedOpenApiOperations.ps1') `
-        -OpenApiFilesPath $outputPath -GraphVersion $GraphVersion
+        -OpenApiFilesPath $outputPath
 }

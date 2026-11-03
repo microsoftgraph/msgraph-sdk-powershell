@@ -22,8 +22,8 @@ they compile against.
 The module is named Microsoft.Graph.Wrapper.<Module> so it imports side by side with an
 installed official Microsoft.Graph.<Module> without collision.
 
-The manifest exports EVERY cmdlet, including the internal *_Get/*_List workers: the public
-Get-* dispatchers forward to the workers by name via InvokeCommand.InvokeScript, so a
+The manifest exports EVERY cmdlet, including the internal *_Get/*_List and *_RouteN workers:
+public dispatchers forward to the workers by name via InvokeCommand.InvokeScript, so a
 manifest that hides the workers breaks dispatch ("term not recognized"). Worker visibility
 needs its own dispatch design and is tracked in the module-wiring issue.
 
@@ -234,7 +234,7 @@ function Get-CompiledCmdletNames {
     # and so assemblies from one module cannot contaminate or lock the next module's build.
     # Microsoft.Graph.Authentication comes first for the same reason it is in RequiredModules:
     # the module folder deliberately carries no shared dependencies (PruneModuleBin), so kiota
-    # assemblies resolve through Authentication's AssemblyResolve hook. Import-Module forces
+    # contracts resolve through Authentication's loader bridge. Import-Module forces
     # some of those loads immediately - a cmdlet property typed as the Date/Time structs from
     # Microsoft.Kiota.Abstractions is a value-type field, which the loader resolves eagerly at
     # class load, before any cmdlet runs.
@@ -441,16 +441,8 @@ function Build-Module {
             AliasesToExport   = @()
             VariablesToExport = @()
         }
-        # Std.UriTemplate is requested by Microsoft.Kiota.Abstractions (measured: the AssemblyRef
-        # lives there, not in the HTTP library). That requester sits in Authentication's isolated
-        # load context, so its directory probing can never reach this module folder - and
-        # Authentication cannot serve the request either, because its Dependencies folder does
-        # not ship the assembly. Preloading it here puts it in the default context, where the
-        # isolated context's fallback resolution unifies with it. The Multipart serializer needs
-        # no entry: its requester is the client assembly in this folder, so normal
-        # module-directory probing finds it. Proven live by tools/Test-WrapperLive.ps1 on the
-        # session path.
-        $manifestArgs.RequiredAssemblies = @('Std.UriTemplate.dll')
+        # Authentication owns the full Kiota closure, including UriTemplate and the serializers.
+        # Its loader must initialize before any of those contracts are requested by this module.
         New-ModuleManifest @manifestArgs
 
         if ($Pack) {
