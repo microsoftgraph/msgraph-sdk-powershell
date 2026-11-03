@@ -4757,7 +4757,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: group.onenote.section.onenoteSection.page.onenotePage_copyToSection
+      operationId: group.onenote.section.page_copyToSection
       requestBody:
         description: Action parameters
         content:
@@ -4798,7 +4798,7 @@ paths:
       tags:
         - groups.onenote
       summary: Invoke action onenotePatchContent
-      operationId: group.onenote.section.onenoteSection.page.onenotePage_onenotePatchContent
+      operationId: group.onenote.section.page_onenotePatchContent
       requestBody:
         description: Action parameters
         content:
@@ -4824,7 +4824,7 @@ paths:
       tags:
         - groups.onenote
       summary: Invoke function preview
-      operationId: group.onenote.section.onenoteSection.page.onenotePage_preview
+      operationId: group.onenote.section.page_preview
       responses:
         2XX:
           description: Success
@@ -9748,7 +9748,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: site.onenote.section.onenoteSection.page.onenotePage_copyToSection
+      operationId: site.onenote.section.page_copyToSection
       requestBody:
         description: Action parameters
         content:
@@ -9789,7 +9789,7 @@ paths:
       tags:
         - sites.onenote
       summary: Invoke action onenotePatchContent
-      operationId: site.onenote.section.onenoteSection.page.onenotePage_onenotePatchContent
+      operationId: site.onenote.section.page_onenotePatchContent
       requestBody:
         description: Action parameters
         content:
@@ -9815,7 +9815,7 @@ paths:
       tags:
         - sites.onenote
       summary: Invoke function preview
-      operationId: site.onenote.section.onenoteSection.page.onenotePage_preview
+      operationId: site.onenote.section.page_preview
       responses:
         2XX:
           description: Success
@@ -14774,7 +14774,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
-      operationId: user.onenote.section.onenoteSection.page.onenotePage_copyToSection
+      operationId: user.onenote.section.page_copyToSection
       requestBody:
         description: Action parameters
         content:
@@ -14815,7 +14815,7 @@ paths:
       tags:
         - users.onenote
       summary: Invoke action onenotePatchContent
-      operationId: user.onenote.section.onenoteSection.page.onenotePage_onenotePatchContent
+      operationId: user.onenote.section.page_onenotePatchContent
       requestBody:
         description: Action parameters
         content:
@@ -14841,7 +14841,7 @@ paths:
       tags:
         - users.onenote
       summary: Invoke function preview
-      operationId: user.onenote.section.onenoteSection.page.onenotePage_preview
+      operationId: user.onenote.section.page_preview
       responses:
         2XX:
           description: Success
