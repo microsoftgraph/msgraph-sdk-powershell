@@ -56,7 +56,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
         body.OnboardingStatus = OnboardingStatus;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.RemoteAssistancePartner? result;

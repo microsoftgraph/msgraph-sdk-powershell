@@ -91,7 +91,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
         body.WorkingHours = WorkingHours;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.MailboxSettings? result;
