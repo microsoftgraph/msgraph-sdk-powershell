@@ -195,6 +195,15 @@ public sealed class MigrationsDirectiveTests
             ];
             Assert.Equal(expected.OrderBy(name => name), files.Select(Path.GetFileName).OrderBy(name => name));
             Assert.All(files, file => Assert.Contains("[GraphRoute(", File.ReadAllText(file)));
+            var directCalls = files.Where(file => File.ReadAllText(file).Contains("GetRequestAdapter(")).ToArray();
+            Assert.Equal(11, directCalls.Length);
+            Assert.All(directCalls, file =>
+            {
+                var source = File.ReadAllText(file);
+                Assert.Contains("GetRequestAdapter(\"beta\")", source);
+                Assert.DoesNotContain("GetRequestAdapter()", source);
+                Assert.DoesNotContain("GetRequestAdapter(\"v1.0\")", source);
+            });
             Assert.Contains("DefaultParameterSetName = \"List\"", File.ReadAllText(
                 Path.Combine(output, "GetMgCrossTenantMigrationJob.g.cs")));
             Assert.Contains("DefaultParameterSetName = \"List\"", File.ReadAllText(
