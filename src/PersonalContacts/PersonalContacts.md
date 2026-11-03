@@ -51,6 +51,14 @@ permanent-delete action names also guard against accidentally applying v1.0
 derived naming to beta. No authored variant groups are needed for this empty
 shared configuration.
 
+Revalidation after the Authentication sync uses the normally packaged adapted
+Authentication 2.41.2 from the merged shipping source. Fresh wrapper generation
+must require that module, carry only the three owned wrapper DLLs, and avoid
+dependency preloads or copied Authentication/Kiota assemblies. Runtime acceptance
+checks the emitted profile's actual service root through the authenticated
+factory pipeline, not just naming or a marker client. Historical Authentication
+2.38.1 build evidence does not establish acceptance on this target.
+
 All directives in `v1.0/readme.md`, `beta/readme.md`, and `src/readme.graph.md`
 are explicitly outside this shared-file audit and remain untouched. Parameter
 aliases/transforms and schema/response directives are deferred classes, not
