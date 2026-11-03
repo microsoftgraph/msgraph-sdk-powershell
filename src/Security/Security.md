@@ -9,14 +9,12 @@ directives are ignored; parameter aliases/transforms and schema directives remai
 deferred. Both v1.0 and beta are required; neither profile is excluded.
 
 The original operation-ID selector matches six legacy v1.0 and seven legacy beta
-operations. Every selected method/path survives. Six IDs now align with the
-compatible specification; the beta `aggregatedAppsDetails` function still has a
-different ID. Its exact source/current pair is retained in the ledger notes and
-tests. Beta explicitly declares `operationIdSource: Legacy` and exact old/current
-evidence for all seven operations; v1.0 keeps its six literal mappings. This is
-source-evidence preparation, not a copied helper or an assertion of normal-target
-strict success. The literal-only inventory gate remains blocked on that source bridge;
-zero literal matches for that function is not API absence.
+operations. Every selected method/path survives. Normal operation-ID alignment
+in #3847 makes the complete compatible selected sets equal to the original
+same-profile source sets: six v1.0 and seven beta exact method/path/ID triples.
+The ledger uses ordinary literal evidence in both profiles, including the
+surviving beta `aggregatedAppsDetails` function. Historical source-bridge proofs
+remain separate audit evidence; no rejected Legacy integration metadata is needed.
 
 Full beta generation also exposes six collection/item action collisions and seven
 count collisions. Collection actions have an `ids` body whereas item actions are
@@ -28,14 +26,13 @@ filters, response-union restrictions, or new suppressions resolve these collisio
 Existing v1.0 derived suppressions and curated child-navigation behavior remain
 unchanged. No mutation variant groups are introduced.
 
-On the integrated framework, full Release generation/build succeeds for both
-profiles (662 v1.0 exports; 1,003 beta exports). Fresh compiled route, naming,
-mandatory-ID and `WhatIf` checks are separate from transport validation. An actual
-beta bulk-action invocation using the compiled module and official Authentication
-2.38.1 fails on the shared missing `Microsoft.IO.RecyclableMemoryStream` 3.0.1
-dependency before a request is sent. No dependency shim is included here.
-Publication remains blocked on that shared packaging fix and the strict source
-bridge above; build success alone is not a body/HTTP or service-validity claim.
+The normally merged Authentication 2.41.2 package owns the complete Kiota
+dependency closure. Wrapper bins contain only their module, client, and runtime
+assemblies, without dependency copies or preloads. Final validation uses fresh
+compiled module imports, exact migrated and neighboring routes, typed mutation
+serialization and request URLs, scalar count results and queries, mandatory-ID
+binding, and `WhatIf`/declined-confirmation safety. Offline transport proof is not
+a claim of live service validity.
 
 ## AutoRest Configuration
 
@@ -56,10 +53,9 @@ directive:
 # Wrapper migration: directive 1 bridges the COMPLETE original legacy operation-ID
 # match set (6 v1.0, 7 beta) to exact surviving method/path pairs. The adjacent
 # wrapper/Security_directiveMigrationMap.json records current IDs and source lineage.
-# Six IDs now align; the seventh beta function still needs reviewed legacy-helper
-# support for the strict inventory gate. It is not absent and is not dropped.
-# The existing
-# attackSimulation container suppression is reused; nested dataSource operations
+# All IDs align after normal #3847; ordinary literal evidence covers the full
+# same-profile source sets. The function is not absent and is not dropped.
+# The existing attackSimulation container suppression is reused; nested dataSource operations
 # and the beta aggregatedAppsDetails function have exact scoped suppressions.
 # Keep all shared AutoRest directives active until that pipeline is retired.
   - remove-path-by-operation: ^security(.case.ediscoveryCase.noncustodialDataSource_.*DataSource)$|^security_DeleteAttackSimulation$|^security_UpdateAttackSimulation$|^security_GetAttackSimulation$|^security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail$

@@ -39,10 +39,7 @@ public sealed class SecurityDirectiveMigrationTests
 
         using var ledger = ReadLedger();
         var mapping = ledger.RootElement.GetProperty("mappings")[0].GetProperty("profiles").GetProperty(profile);
-        if (profile == "beta")
-            Assert.Equal("Legacy", mapping.GetProperty("operationIdSource").GetString());
-        else
-            Assert.False(mapping.TryGetProperty("operationIdSource", out _));
+        Assert.False(mapping.TryGetProperty("operationIdSource", out _));
         Assert.False(mapping.TryGetProperty("removedLegacyOperations", out _));
         Assert.False(mapping.GetProperty("absenceExpected").GetBoolean());
         var reviewed = mapping.GetProperty("operations").EnumerateArray().ToArray();
@@ -51,7 +48,11 @@ public sealed class SecurityDirectiveMigrationTests
             legacy.Select(o => $"{o.Method} {o.Path}").OrderBy(k => k),
             reviewed.Select(o => $"{o.GetProperty("method").GetString()} {o.GetProperty("path").GetString()}").OrderBy(k => k));
         var current = Operations(Specs.Value[$"openApiDocs_KiotaCompat|{profile}"]).ToArray();
-        Assert.Equal(6, current.Count(o => selector.IsMatch(o.Operation.OperationId!)));
+        Assert.Equal(expectedCount, current.Count(o => selector.IsMatch(o.Operation.OperationId!)));
+        Assert.Equal(
+            legacy.Select(o => $"{o.Method} {o.Path} [{o.Operation.OperationId}]").OrderBy(k => k),
+            current.Where(o => selector.IsMatch(o.Operation.OperationId!))
+                .Select(o => $"{o.Method} {o.Path} [{o.Operation.OperationId}]").OrderBy(k => k));
 
         foreach (var expected in reviewed)
         {
@@ -61,21 +62,13 @@ public sealed class SecurityDirectiveMigrationTests
                 o => o.Method == method && o.Path == path);
             Assert.Equal(expected.GetProperty("operationId").GetString(), actual.Operation.OperationId);
             var original = Assert.Single(legacy, o => o.Method == method && o.Path == path);
-            if (profile == "beta")
-            {
-                Assert.Equal(original.Path, expected.GetProperty("legacyPath").GetString());
-                Assert.Equal(original.Operation.OperationId, expected.GetProperty("legacyOperationId").GetString());
-            }
-            else
-            {
-                Assert.False(expected.TryGetProperty("legacyPath", out _));
-                Assert.False(expected.TryGetProperty("legacyOperationId", out _));
-            }
+            Assert.False(expected.TryGetProperty("legacyPath", out _));
+            Assert.False(expected.TryGetProperty("legacyOperationId", out _));
             Assert.False(expected.TryGetProperty("legacyPathTranslation", out _));
             if (path == AggregatedApps)
             {
                 Assert.Equal("security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail", original.Operation.OperationId);
-                Assert.Equal("security.dataDiscovery.cloudAppDiscovery.uploadedStream.cloudAppDiscoveryReport_aggregatedAppsDetail", actual.Operation.OperationId);
+                Assert.Equal("security.dataDiscovery.cloudAppDiscovery.uploadedStream_aggregatedAppsDetail", actual.Operation.OperationId);
             }
             else
                 Assert.Equal(original.Operation.OperationId, actual.Operation.OperationId);
