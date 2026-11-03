@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -74,6 +75,29 @@ public sealed class ConfigurationManagementDirectiveMigrationTests
             var naming = Naming.Resolve(new OperationInfo(method, path), config, apiVersion: profile);
             Assert.Equal(operation.Verb, naming.VerbName);
             Assert.Equal(NounPrefix + operation.Noun, naming.Noun);
+        }
+
+        var output = Path.Combine(Path.GetTempPath(), "configurationmanagement-profile-tests", Guid.NewGuid().ToString("N"));
+        try
+        {
+            var service = new PowerShellWrapperGenerationService(document,
+                config with { OutputPath = output }, NullLogger.Instance, apiVersion: profile);
+            await service.GenerateAsync(TestContext.Current.CancellationToken);
+            var files = Directory.GetFiles(output, "*.g.cs");
+            Assert.Equal(23, files.Length);
+            var transportSources = files.Select(File.ReadAllText)
+                .Where(source => source.Contains("GetRequestAdapter(", StringComparison.Ordinal)).ToArray();
+            Assert.Equal(18, transportSources.Length);
+            foreach (var source in transportSources)
+            {
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+                Assert.DoesNotContain("GetRequestAdapter()", source);
+            }
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
         }
     }
 

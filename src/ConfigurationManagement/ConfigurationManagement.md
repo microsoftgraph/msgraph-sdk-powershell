@@ -29,7 +29,7 @@ renames or suppressions for the reviewed operations; structural naming is retain
 
 Both required profiles are available; no profile is excluded and no legacy
 `openApiDocs` fallback is used. The evidence below is refreshed against merged
-`powershell-v3` target `08e409a6aa8fd48736b8f9a9199559f46fc0d1ad`.
+`powershell-v3` target `844672d7c2238f6b29a208f9ba73fe28e9e29cef`.
 
 | Profile | Compatible spec | Git blob |
 | --- | --- | --- |
@@ -44,7 +44,11 @@ pins that complete operation inventory using the current PowerShell-aligned IDs,
 and checks unchanged names and absence of suppression with derived collision data
 both enabled and disabled. Each naming and configuration lookup receives its
 profile explicitly as separate oracle context, not as an authored configuration
-filter or a `GeneratorConfig` property. These are
+filter or a `GeneratorConfig` property. The same real-spec test also generates
+all 23 cmdlet sources per profile and requires all 18 transport implementations
+to call `GetRequestAdapter` with that explicit profile, never the bare v1.0
+default. Normal manifests use Authentication 2.41.2 for the complete Kiota
+dependency closure. These are
 unaffected-operation assertions, not claims of migrated suppressions or renames.
 
 ### Scope and deferred classes
