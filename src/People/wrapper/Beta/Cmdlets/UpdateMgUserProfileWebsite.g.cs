@@ -119,7 +119,7 @@ namespace Microsoft.Graph.PowerShell.People
         body.Sources = Sources!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.People.Client.Models.PersonWebsite? result;

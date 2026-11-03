@@ -119,7 +119,7 @@ namespace Microsoft.Graph.PowerShell.People
         body.Program = Program;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.People.Client.Models.EducationalActivity? result;
