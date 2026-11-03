@@ -30,7 +30,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
             if (!ShouldProcess(MobileAppRelationshipId, "Remove"))
                 return;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             // DeleteAsync returns a plain Task: a standard delete response has no body.

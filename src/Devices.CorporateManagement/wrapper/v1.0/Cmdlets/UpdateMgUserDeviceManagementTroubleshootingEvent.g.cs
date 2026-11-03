@@ -49,7 +49,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.DeviceManagementTroubleshootingEvent? result;

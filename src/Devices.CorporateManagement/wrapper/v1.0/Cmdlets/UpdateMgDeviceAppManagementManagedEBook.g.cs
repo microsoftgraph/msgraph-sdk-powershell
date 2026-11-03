@@ -87,7 +87,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
         body.LargeCover = LargeCover;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.ManagedEBook? result;
