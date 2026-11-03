@@ -190,7 +190,14 @@ public sealed class UsersActionsDirectiveMigrationTests
             var config = new GeneratorConfig("Test.Client", output, derived);
             await new PowerShellWrapperGenerationService(LoadSpec("openApiDocs_KiotaCompat", profile),
                 config, NullLogger.Instance, apiVersion: profile).GenerateAsync(CancellationToken.None);
-            Assert.Equal(count, Directory.GetFiles(output, "*.g.cs").Length);
+            var files = Directory.GetFiles(output, "*.g.cs");
+            Assert.Equal(count, files.Length);
+            foreach (var file in files)
+            {
+                var source = File.ReadAllText(file);
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source, StringComparison.Ordinal);
+                Assert.DoesNotContain("GetRequestAdapter()", source, StringComparison.Ordinal);
+            }
             foreach (var (stem, path) in new[]
             {
                 ("RemoveMgAllUserDeviceFromManagement", "/users/{user-id}/removeAllDevicesFromManagement"),
