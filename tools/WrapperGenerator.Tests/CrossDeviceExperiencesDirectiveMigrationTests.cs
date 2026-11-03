@@ -183,6 +183,14 @@ public sealed class CrossDeviceExperiencesDirectiveMigrationTests
             var files = Directory.GetFiles(output, "*.g.cs");
             Assert.Equal(expectedCount, files.Length);
             var sources = files.Select(File.ReadAllText).ToArray();
+            var adapterSources = sources.Where(source =>
+                source.Contains("GetRequestAdapter(", StringComparison.Ordinal)).ToArray();
+            Assert.NotEmpty(adapterSources);
+            foreach (var source in adapterSources)
+            {
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+                Assert.DoesNotContain("GetRequestAdapter()", source);
+            }
             using var ledger = ReadLedger();
             var mapping = Assert.Single(ledger.RootElement.GetProperty("mappings").EnumerateArray());
             var profileMap = mapping.GetProperty("profiles").GetProperty(profile);
