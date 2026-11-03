@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -182,6 +184,35 @@ public sealed class MailDirectiveMigrationTests
         const string path = "/replies/{id}/replyTo";
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, Config, apiVersion: Profile));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path + "/other", Config, apiVersion: Profile));
+    }
+
+    [Fact]
+    public async Task GeneratedMailCommandsPassExplicitRuntimeProfileToAuthentication()
+    {
+        var output = Path.Combine(Path.GetTempPath(), "mail-directive-tests", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(output);
+        try
+        {
+            var service = new PowerShellWrapperGenerationService(
+                Spec.Value, Config with { OutputPath = output }, NullLogger.Instance, apiVersion: Profile);
+            await service.GenerateAsync(CancellationToken.None);
+
+            foreach (var (path, verb, noun) in ReplyActions()
+                .Select(row => ((string)row[0], (string)row[1], (string)row[2])))
+            {
+                var source = File.ReadAllText(Path.Combine(output, $"{verb}{noun}.g.cs"));
+                Assert.Contains($"[GraphRoute(\"POST\", \"{path}\")]", source);
+                Assert.Contains("GetRequestAdapter(\"v1.0\")", source);
+                Assert.DoesNotContain("GetRequestAdapter()", source);
+            }
+            var item = File.ReadAllText(Path.Combine(output, "GetMgUserMessage_Get.g.cs"));
+            Assert.Contains("GetRequestAdapter(\"v1.0\")", item);
+            Assert.False(File.Exists(Path.Combine(output, "GetMgUserMailFolderMessageContent.g.cs")));
+        }
+        finally
+        {
+            Directory.Delete(output, recursive: true);
+        }
     }
 
     private static OpenApiOperation SpecOperation(string method, string path)
