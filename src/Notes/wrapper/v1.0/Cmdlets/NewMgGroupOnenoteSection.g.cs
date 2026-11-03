@@ -87,7 +87,7 @@ namespace Microsoft.Graph.PowerShell.Notes
         body.Links = Links;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Notes.Client.Models.OnenoteSection? result;
