@@ -26,11 +26,10 @@ directive:
 # Wrapper migration: directive 1 selects zero actual legacy v1.0 operations and
 # all 12 beta operations recorded in wrapper/DeviceManagement_directiveMigrationMap.json.
 # Exact method/path suppressions in DeviceManagement_cmdletConfigurations.cs cover
-# all successors; five final action namespaces are explicitly translated, not absent.
-# After compatible-ID alignment, the literal current selector matches only 11 of
-# those 12 beta survivors. The intent_updateSetting action still has a qualified
-# current ID; retain its suppression and complete evidence. The literal-only
-# inventory remains blocked on reviewed legacy translation (#3847), not API absence.
+# all successors, including five actions with an unqualified compatible final path.
+# Normal #3847 finite-path ID alignment makes the current literal selector match
+# all 12 beta survivors. Ordinary exact-operation evidence is used; independent
+# tests preserve the complete original legacy selection without integration flags.
   - remove-path-by-operation: ^deviceManagement.(deviceManagementScript.userRunState.deviceRunState_.*|groupPolicyConfiguration.definitionValue.presentationValue_.*|deviceShellScript.userRunState.deviceRunState_.*|deviceConfiguration_assignedAccessMultiModeProfile|deviceConfiguration_windowsPrivacyAccessControl|microsoftTunnelSite.microsoftTunnelServer_createServerLogCollectionRequest|groupPolicyConfiguration_updateDefinitionValue|intent_updateSetting)$
 
 # Remove cmdlets.

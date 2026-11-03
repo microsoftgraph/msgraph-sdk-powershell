@@ -105,7 +105,7 @@ public sealed class DeviceManagementDirectiveMigrationTests
 
     [Theory]
     [InlineData("v1.0", 265, 265, 0, 0)]
-    [InlineData("beta", 1090, 1071, 12, 11)]
+    [InlineData("beta", 1090, 1071, 12, 12)]
     public async Task CompleteOriginalSelectionsAndAllCurrentSurvivorsRemainReviewed(
         string profile, int legacyCount, int currentCount, int selectedCount, int literalCount)
     {
@@ -123,6 +123,7 @@ public sealed class DeviceManagementDirectiveMigrationTests
             Assert.Contains(mapping.GetProperty("sourceContains").GetString()!, source);
             foreach (var evidence in ReadEvidence(mapping, profile))
                 Assert.Single(current, operation => EvidenceKey(operation) == evidence);
+            AssertNoLegacyIntegrationFields(mapping);
         }
 
         var selector = mappings[0].GetProperty("sourceContains").GetString()!
@@ -135,57 +136,23 @@ public sealed class DeviceManagementDirectiveMigrationTests
             candidate.Kind == operation.Kind)).ToArray();
         Assert.Equal(ReadEvidence(mappings[0], profile).Order(StringComparer.Ordinal),
             survivors.Select(EvidenceKey).Order(StringComparer.Ordinal));
-        var profileEvidence = mappings[0].GetProperty("profiles").GetProperty(profile);
-        if (profile == "beta")
-        {
-            Assert.Equal("Legacy", profileEvidence.GetProperty("operationIdSource").GetString());
-            var bridges = profileEvidence.GetProperty("operations").EnumerateArray().ToArray();
-            var reviewedLegacy = bridges.Select(bridge => Assert.Single(original, operation =>
-                operation.Method == bridge.GetProperty("method").GetString() &&
-                operation.Path == bridge.GetProperty("legacyPath").GetString() &&
-                operation.OperationId == bridge.GetProperty("legacyOperationId").GetString())).ToArray();
-            Assert.Equal(original.Select(EvidenceKey).Order(StringComparer.Ordinal),
-                reviewedLegacy.Select(EvidenceKey).Order(StringComparer.Ordinal));
-            Assert.Equal(12, reviewedLegacy.Select(EvidenceKey).Distinct(StringComparer.Ordinal).Count());
-            Assert.Equal(5, bridges.Count(bridge => bridge.TryGetProperty("legacyPathTranslation", out _)));
-            foreach (var bridge in bridges)
-            {
-                var previous = Assert.Single(reviewedLegacy, operation =>
-                    operation.Method == bridge.GetProperty("method").GetString() &&
-                    operation.Path == bridge.GetProperty("legacyPath").GetString());
-                var successor = Assert.Single(current, operation =>
-                    operation.Method == previous.Method &&
-                    operation.Path == bridge.GetProperty("path").GetString() &&
-                    operation.OperationId == bridge.GetProperty("operationId").GetString());
-                Assert.Equal(previous.Kind, successor.Kind);
-                if (bridge.TryGetProperty("legacyPathTranslation", out var translation))
-                {
-                    Assert.Equal("UnqualifyFinalOperation", translation.GetString());
-                    Assert.Equal("POST", previous.Method);
-                    Assert.Equal(OperationKind.Action, previous.Kind);
-                    Assert.Equal(CompatiblePath(previous), successor.Path);
-                    Assert.NotEqual(previous.Path, successor.Path);
-                }
-                else
-                    Assert.Equal(previous.Path, successor.Path);
-            }
-        }
-        else
-            Assert.False(profileEvidence.TryGetProperty("operationIdSource", out _));
+        Assert.Equal(original.Select(operation => $"{operation.Method} {CompatiblePath(operation)} [{operation.OperationId}]")
+            .Order(StringComparer.Ordinal), survivors.Select(EvidenceKey).Order(StringComparer.Ordinal));
+        Assert.Equal(ReadEvidence(mappings[0], profile).Order(StringComparer.Ordinal),
+            current.Where(operation => regex.IsMatch(operation.OperationId)).Select(EvidenceKey).Order(StringComparer.Ordinal));
         Assert.Equal(literalCount, current.Count(operation => regex.IsMatch(operation.OperationId)));
-        var unmatched = survivors.Where(operation => !regex.IsMatch(operation.OperationId)).ToArray();
+        Assert.DoesNotContain(survivors, operation => !regex.IsMatch(operation.OperationId));
         if (profile == "beta")
         {
-            var intent = Assert.Single(unmatched);
+            var intent = Assert.Single(survivors, operation =>
+                operation.Path == "/deviceManagement/intents/{deviceManagementIntent-id}/updateSettings");
             Assert.Equal(new ReviewedOperation("POST",
                 "/deviceManagement/intents/{deviceManagementIntent-id}/updateSettings",
-                "deviceManagement.intent.deviceManagementIntent_updateSetting", OperationKind.Action), intent);
+                "deviceManagement.intent_updateSetting", OperationKind.Action), intent);
             Assert.Contains(original, operation => operation.OperationId == "deviceManagement.intent_updateSetting");
             Assert.False(mappings[0].GetProperty("profiles").GetProperty(profile).GetProperty("absenceExpected").GetBoolean());
             Assert.Equal(5, original.Count(operation => operation.Kind == OperationKind.Action));
         }
-        else
-            Assert.Empty(unmatched);
 
         var logRequests = legacy.Where(operation => operation.OperationId is
             "deviceManagement.managedDevice_CreateLogCollectionRequest" or
@@ -240,7 +207,7 @@ public sealed class DeviceManagementDirectiveMigrationTests
                     {
                         Operations = new() { [HttpMethod.Post] = new OpenApiOperation
                         {
-                            OperationId = "deviceManagement.intent.deviceManagementIntent_updateSetting",
+                            OperationId = "deviceManagement.intent_updateSetting",
                             Responses = new OpenApiResponses { ["204"] = new OpenApiResponse() },
                         } },
                     },
@@ -285,6 +252,7 @@ public sealed class DeviceManagementDirectiveMigrationTests
             Assert.Contains(generated, source => source.Contains($"[GraphRoute(\"POST\", \"{controlPath}\")]",
                 StringComparison.Ordinal));
             Assert.All(generated, source => Assert.DoesNotContain(suppressedPath, source));
+            Assert.All(generated, source => Assert.Contains($"GetRequestAdapter(\"{profile}\")", source));
         }
         finally
         {
@@ -300,6 +268,26 @@ public sealed class DeviceManagementDirectiveMigrationTests
 
     private static string EvidenceKey(ReviewedOperation operation) =>
         $"{operation.Method} {operation.Path} [{operation.OperationId}]";
+
+    private static void AssertNoLegacyIntegrationFields(JsonElement element)
+    {
+        if (element.ValueKind == JsonValueKind.Object)
+        {
+            foreach (var property in element.EnumerateObject())
+            {
+                Assert.DoesNotContain(property.Name, new[]
+                {
+                    "operationIdSource", "legacyPath", "legacyOperationId", "legacyPathTranslation", "removedLegacyOperations",
+                });
+                AssertNoLegacyIntegrationFields(property.Value);
+            }
+        }
+        else if (element.ValueKind == JsonValueKind.Array)
+        {
+            foreach (var item in element.EnumerateArray())
+                AssertNoLegacyIntegrationFields(item);
+        }
+    }
 
     private static string[] ReadEvidence(JsonElement mapping, string profile) =>
         mapping.GetProperty("profiles").GetProperty(profile).GetProperty("operations").EnumerateArray()
