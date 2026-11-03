@@ -68,7 +68,7 @@ namespace Microsoft.Graph.PowerShell.NetworkAccess
         body.Action = Action;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.NetworkAccess.Client.Models.Networkaccess.FilteringPolicy? result;

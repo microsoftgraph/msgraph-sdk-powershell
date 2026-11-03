@@ -219,7 +219,7 @@ namespace Microsoft.Graph.PowerShell.NetworkAccess
         body.TransportProtocol = TransportProtocol;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.NetworkAccess.Client.Models.Networkaccess.Connection? result;

@@ -92,7 +92,7 @@ namespace Microsoft.Graph.PowerShell.NetworkAccess
         body.ServicePrincipal = ServicePrincipal;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.NetworkAccess.Client.Models.Networkaccess.ForwardingProfile? result;

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.NetworkAccess
         body.PeerConfiguration = PeerConfiguration;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.NetworkAccess.Client.Models.Networkaccess.ConnectivityConfigurationLink? result;

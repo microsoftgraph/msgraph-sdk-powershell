@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.NetworkAccess
     if (this.IsParameterBound(nameof(Rules)))
         body.Rules = Rules!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 
