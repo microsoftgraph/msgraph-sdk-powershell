@@ -251,6 +251,8 @@ public sealed class ReportsDirectiveMigrationTests
             {
                 var code = File.ReadAllText(Path.Combine(output, "GetMg" + item.Noun + ".g.cs"));
                 Assert.Contains(item.Path, code, StringComparison.Ordinal);
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", code, StringComparison.Ordinal);
+                Assert.DoesNotContain("GetRequestAdapter()", code, StringComparison.Ordinal);
             }
         }
         finally

@@ -22,7 +22,7 @@
       "v1.0": "1f907bf7691c3a13779b7ea6786e3764cb61d5a1",
       "beta": "169859b86fc51330fd53c8a948dfa8ef595f36fd"
     },
-    "reviewedTarget": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad",
+    "reviewedTarget": "844672d7c2238f6b29a208f9ba73fe28e9e29cef",
     "regressionTests": "tools\\WrapperGenerator.Tests\\ReportsDirectiveMigrationTests.cs",
     "sourceReviewTests": "tools\\WrapperGenerator.Tests\\ReportsDirectiveSourceReview.json"
   },
@@ -36,7 +36,7 @@
       "notes": "Baseline-supported literal-compatible ledger after #3861 ID alignment. Preserve every original source-selected survivor and explicit removal proof in the ReportsDirectiveSourceReview.json test fixture. Include all 17 genuinely additional beta CRUD routes now literally selected by the unchanged root-mutation regex, with exact prior/current identities and per-family rationale. No action/function expansion, guessed semantic successor, or broad prefix suppression. Original 84 beta matches remain accounted as 66 survivors plus 18 removed; current 83 are the 66 survivors plus 17 additional matches. Nested authentication registration and nonmatching descendants remain.",
       "profiles": {
         "v1.0": {
-          "notes": "Literal current-compatible regex policy on target 08e409a6aa: 34 candidates. Complete original legacy regex set 34 is preserved as 34 exact surviving method/path/IDs plus 0 explicitly pruned source operations. 0 separately reviewed additional current CRUD matches are included by the unchanged root-mutation regex, not relabeled as legacy survivors.",
+          "notes": "Literal current-compatible regex policy on target 844672d7c2: 34 candidates. Complete original legacy regex set 34 is preserved as 34 exact surviving method/path/IDs plus 0 explicitly pruned source operations. 0 separately reviewed additional current CRUD matches are included by the unchanged root-mutation regex, not relabeled as legacy survivors.",
           "absenceExpected": false,
           "operations": [
             {
@@ -212,7 +212,7 @@
           ]
         },
         "beta": {
-          "notes": "Literal current-compatible regex policy on target 08e409a6aa: 83 candidates. Complete original legacy regex set 84 is preserved as 66 exact surviving method/path/IDs plus 18 explicitly pruned source operations. 17 separately reviewed additional current CRUD matches are included by the unchanged root-mutation regex, not relabeled as legacy survivors.",
+          "notes": "Literal current-compatible regex policy on target 844672d7c2: 83 candidates. Complete original legacy regex set 84 is preserved as 66 exact surviving method/path/IDs plus 18 explicitly pruned source operations. 17 separately reviewed additional current CRUD matches are included by the unchanged root-mutation regex, not relabeled as legacy survivors.",
           "absenceExpected": false,
           "operations": [
             {
