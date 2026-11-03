@@ -87,6 +87,7 @@ public sealed class ReservedNavigationTests
             var source = await File.ReadAllTextAsync(file, cancellationToken);
             Assert.Contains($".{collection[..1].ToUpperInvariant() + collection[1..]}[{id.ToPascalCase('-')}].PostPath.PostAsync(requestConfiguration", source, StringComparison.Ordinal);
             Assert.Contains($"[GraphRoute(\"POST\", \"{path}\")]", source, StringComparison.Ordinal);
+            Assert.Contains("GetRequestAdapter(\"beta\")", source, StringComparison.Ordinal);
             Assert.Contains("SupportsShouldProcess = true", source, StringComparison.Ordinal);
             Assert.DoesNotContain("var body = new", source, StringComparison.Ordinal);
             Assert.DoesNotContain("PostPathPostRequestBody", source, StringComparison.Ordinal);
