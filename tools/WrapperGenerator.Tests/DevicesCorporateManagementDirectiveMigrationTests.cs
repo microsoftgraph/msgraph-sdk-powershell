@@ -258,6 +258,8 @@ public sealed class DevicesCorporateManagementDirectiveMigrationTests
                 new GeneratorConfig("Test.Client", output, useCollisionData), NullLogger.Instance, apiVersion: profile);
             await service.GenerateAsync(TestContext.Current.CancellationToken);
             var files = Directory.GetFiles(output, "*.g.cs").ToDictionary(path => new FileInfo(path).Name, File.ReadAllText);
+            foreach (var worker in files.Values.Where(source => source.Contains("GetRequestAdapter(", StringComparison.Ordinal)))
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", worker);
             var relationship = files["GetMgDeviceAppManagementMobileAppRelationship.g.cs"];
             Assert.Contains("DefaultParameterSetName = \"List\"", relationship);
             Assert.DoesNotContain("public string Route", relationship);
