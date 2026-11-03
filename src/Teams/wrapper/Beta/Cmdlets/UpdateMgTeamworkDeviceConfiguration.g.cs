@@ -105,7 +105,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.TeamsClientConfiguration = TeamsClientConfiguration;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkDeviceConfiguration? result;

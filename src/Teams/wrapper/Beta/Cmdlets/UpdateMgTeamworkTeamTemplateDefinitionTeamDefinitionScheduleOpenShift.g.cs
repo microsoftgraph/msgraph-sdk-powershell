@@ -67,7 +67,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.SharedOpenShift = SharedOpenShift;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.OpenShift? result;

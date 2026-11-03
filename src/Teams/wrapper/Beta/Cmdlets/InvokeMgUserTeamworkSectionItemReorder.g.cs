@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Teams
     if (this.IsParameterBound(nameof(ItemsOrder)))
         body.ItemsOrder = ItemsOrder!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Teamwork.Sections.Item.Items.Reorder.ReorderPostResponse? result;

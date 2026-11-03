@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.Configuration = Configuration;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.TeamsTab? result;
