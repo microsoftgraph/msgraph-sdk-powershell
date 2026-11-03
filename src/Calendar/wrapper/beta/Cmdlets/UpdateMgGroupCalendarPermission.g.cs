@@ -65,7 +65,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
         body.Role = Role;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Calendar.Client.Models.CalendarPermission? result;

@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Calendar.Client.Models.CalendarGroup? result;

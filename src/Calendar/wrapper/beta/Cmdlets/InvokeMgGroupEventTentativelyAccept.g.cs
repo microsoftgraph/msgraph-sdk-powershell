@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
     if (this.IsParameterBound(nameof(ProposedNewTime)))
         body.ProposedNewTime = ProposedNewTime;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
             if (!ShouldProcess(CheckInClaimCalendarEventId, "Remove"))
                 return;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             // DeleteAsync returns a plain Task: a standard delete response has no body.

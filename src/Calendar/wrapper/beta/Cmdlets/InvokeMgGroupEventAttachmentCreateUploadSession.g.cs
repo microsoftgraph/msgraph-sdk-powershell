@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
     if (this.IsParameterBound(nameof(AttachmentItem)))
         body.AttachmentItem = AttachmentItem;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Calendar.Client.Models.UploadSession? result;

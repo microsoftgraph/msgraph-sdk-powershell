@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
     if (this.IsParameterBound(nameof(ToRecipients)))
         body.ToRecipients = ToRecipients!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

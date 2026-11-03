@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
         body.CheckInMethod = CheckInMethod;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Calendar.Client.Models.CheckInClaim? result;
