@@ -49,7 +49,7 @@ namespace Microsoft.Graph.PowerShell.WindowsUpdates
     if (this.IsParameterBound(nameof(MemberEntityType)))
         body.MemberEntityType = MemberEntityType;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

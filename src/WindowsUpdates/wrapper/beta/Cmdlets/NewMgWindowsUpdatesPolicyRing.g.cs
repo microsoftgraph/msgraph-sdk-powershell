@@ -81,7 +81,7 @@ namespace Microsoft.Graph.PowerShell.WindowsUpdates
         body.IncludedGroupAssignment = IncludedGroupAssignment;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.WindowsUpdates.Client.Models.WindowsUpdates.Ring? result;

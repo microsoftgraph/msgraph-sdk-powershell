@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.WindowsUpdates
     if (this.IsParameterBound(nameof(RemoveExclusions)))
         body.RemoveExclusions = RemoveExclusions!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.WindowsUpdates
         body.ApprovalRules = ApprovalRules!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.WindowsUpdates.Client.Models.WindowsUpdates.Policy? result;

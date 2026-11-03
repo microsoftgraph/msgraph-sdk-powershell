@@ -50,7 +50,7 @@ namespace Microsoft.Graph.PowerShell.WindowsUpdates
         body.DeploymentSettings = DeploymentSettings;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.WindowsUpdates.Client.Models.WindowsUpdates.UpdatePolicy? result;

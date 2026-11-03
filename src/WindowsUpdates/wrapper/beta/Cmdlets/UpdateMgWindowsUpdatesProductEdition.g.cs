@@ -77,7 +77,7 @@ namespace Microsoft.Graph.PowerShell.WindowsUpdates
         body.ServicingPeriods = ServicingPeriods!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.WindowsUpdates.Client.Models.WindowsUpdates.Edition? result;

@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.WindowsUpdates
         body.State = State;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.WindowsUpdates.Client.Models.WindowsUpdates.ResourceConnection? result;
