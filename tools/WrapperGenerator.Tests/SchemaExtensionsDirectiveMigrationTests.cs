@@ -71,8 +71,13 @@ public sealed class SchemaExtensionsDirectiveMigrationTests
             Assert.Equal(expectedFiles.OrderBy(name => name, StringComparer.Ordinal),
                 Directory.GetFiles(output, "*.g.cs").Select(Path.GetFileName).OrderBy(name => name, StringComparer.Ordinal));
             foreach (var (method, path, _, _, _, file) in expectedOperations)
+            {
+                var source = File.ReadAllText(Path.Combine(output, file));
                 Assert.Contains($"[GraphRoute(\"{method.Method}\", \"{path}\")]",
-                    File.ReadAllText(Path.Combine(output, file)));
+                    source);
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+                Assert.DoesNotContain("GetRequestAdapter()", source);
+            }
         }
         finally
         {
