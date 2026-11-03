@@ -99,6 +99,9 @@ public sealed class NetworkAccessDirectiveMigrationTests
             var sources = Directory.GetFiles(output, "*.g.cs").Select(File.ReadAllText).ToArray();
             Assert.DoesNotContain(sources, source => source.Contains($"[GraphRoute(\"PATCH\", \"{Rule}\")]"));
             Assert.Contains(sources, source => source.Contains($"[GraphRoute(\"PATCH\", \"{Policy}\")]"));
+            Assert.DoesNotContain(sources, source => source.Contains("GetRequestAdapter()"));
+            Assert.Contains("GetRequestAdapter(\"beta\")",
+                File.ReadAllText(Path.Combine(output, "UpdateMgNetworkAccessForwardingPolicy.g.cs")));
         }
         finally
         {
@@ -160,6 +163,7 @@ public sealed class NetworkAccessDirectiveMigrationTests
                 Assert.Contains($"[GraphRoute(\"GET\", \"{path}/{{policyLink-id}}\")]", File.ReadAllText(Path.Combine(output, $"Get{noun}_Get.g.cs")));
                 var navigation = File.ReadAllText(Path.Combine(output, $"Get{noun}LinkPolicy.g.cs"));
                 Assert.Contains($"[GraphRoute(\"GET\", \"{path}/{{policyLink-id}}/policy\")]", navigation);
+                Assert.Contains("GetRequestAdapter(\"beta\")", navigation);
                 Assert.Contains(".Policy.GetAsync(", navigation);
             }
         }
