@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.DirectoryObjects
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DirectoryObjects.Client.Models.DirectoryObject? result;

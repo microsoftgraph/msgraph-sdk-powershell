@@ -46,7 +46,7 @@ namespace Microsoft.Graph.PowerShell.DirectoryObjects
     if (this.IsParameterBound(nameof(Type)))
         body.Type = Type;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DirectoryObjects.Client.Models.DirectoryObject? result;
