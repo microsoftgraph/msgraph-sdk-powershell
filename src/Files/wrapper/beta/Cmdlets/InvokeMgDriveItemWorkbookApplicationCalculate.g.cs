@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Files
     if (this.IsParameterBound(nameof(CalculationType)))
         body.CalculationType = CalculationType;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

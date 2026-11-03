@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Files
     if (this.IsParameterBound(nameof(Oper)))
         body.Oper = Oper;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

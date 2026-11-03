@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Files
     if (this.IsParameterBound(nameof(SourceFile)))
         body.SourceFile = SourceFile;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

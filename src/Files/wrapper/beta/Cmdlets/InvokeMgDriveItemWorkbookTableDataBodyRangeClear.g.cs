@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Files
     if (this.IsParameterBound(nameof(ApplyTo)))
         body.ApplyTo = ApplyTo;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

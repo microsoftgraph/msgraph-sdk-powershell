@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.Files
             body.Inumber2 = untypedInumber2;
     }
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Files.Client.Models.WorkbookFunctionResult? result;

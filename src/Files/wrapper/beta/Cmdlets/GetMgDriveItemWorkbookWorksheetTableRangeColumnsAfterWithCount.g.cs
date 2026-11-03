@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Files
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
         var pathParameters = new Dictionary<string, object>

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Files
             body.SourceData = untypedSourceData;
     }
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Files.Client.Models.WorkbookChart? result;

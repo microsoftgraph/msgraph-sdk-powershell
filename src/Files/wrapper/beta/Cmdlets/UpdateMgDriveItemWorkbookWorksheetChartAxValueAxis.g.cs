@@ -81,7 +81,7 @@ namespace Microsoft.Graph.PowerShell.Files
             body.MinorUnit = untypedMinorUnit;
     }
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Files.Client.Models.WorkbookChartAxis? result;

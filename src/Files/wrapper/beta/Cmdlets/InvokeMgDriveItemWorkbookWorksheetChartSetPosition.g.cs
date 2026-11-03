@@ -61,7 +61,7 @@ namespace Microsoft.Graph.PowerShell.Files
             body.EndCell = untypedEndCell;
     }
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

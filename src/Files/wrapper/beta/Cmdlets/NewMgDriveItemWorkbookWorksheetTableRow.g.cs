@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Files
             body.Values = untypedValues;
     }
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Files.Client.Models.WorkbookTableRow? result;

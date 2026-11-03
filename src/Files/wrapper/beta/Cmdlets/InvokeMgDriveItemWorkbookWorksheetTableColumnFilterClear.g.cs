@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Files
                 return;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

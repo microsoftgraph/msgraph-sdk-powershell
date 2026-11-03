@@ -61,7 +61,7 @@ namespace Microsoft.Graph.PowerShell.Files
         body.Source = Source;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Files.Client.Models.ThumbnailSet? result;

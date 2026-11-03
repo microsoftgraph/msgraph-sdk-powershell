@@ -101,7 +101,7 @@ namespace Microsoft.Graph.PowerShell.Files
         body.Link = Link;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Files.Client.Models.Permission? result;
