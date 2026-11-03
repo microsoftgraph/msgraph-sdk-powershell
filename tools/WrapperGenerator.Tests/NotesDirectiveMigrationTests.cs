@@ -255,6 +255,8 @@ public sealed class NotesDirectiveMigrationTests
                 var nested = await File.ReadAllTextAsync(Path.Combine(output,
                     $"GetMg{subject}OnenoteSectionGroupNestedSectionGroup.g.cs"), TestContext.Current.CancellationToken);
                 Assert.Contains("sectionGroups/{sectionGroup-id}/sectionGroups", nested);
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", nested);
+                Assert.DoesNotContain("GetRequestAdapter()", nested);
                 var nestedCount = await File.ReadAllTextAsync(Path.Combine(output,
                     $"GetMg{subject}OnenoteSectionGroupNestedSectionGroupCount.g.cs"), TestContext.Current.CancellationToken);
                 Assert.Contains("sectionGroups/{sectionGroup-id}/sectionGroups/$count", nestedCount);
