@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         body.Publication = Publication;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.ListItemVersion? result;

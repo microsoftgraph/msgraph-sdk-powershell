@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Sites
     if (this.IsParameterBound(nameof(SourceFile)))
         body.SourceFile = SourceFile;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

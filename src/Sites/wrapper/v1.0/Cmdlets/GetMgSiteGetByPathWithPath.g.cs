@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
         var pathParameters = new Dictionary<string, object>
