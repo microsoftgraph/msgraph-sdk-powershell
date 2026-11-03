@@ -21,10 +21,11 @@ namespace PatchRefetchTransport
         public string Marker;
         public string Multiple;
         public string IfMatch;
+        public string Authorization;
         public int ResponseStatus;
     }
 
-    public sealed class CaptureHandler : HttpMessageHandler
+    public sealed class CaptureHandler : DelegatingHandler
     {
         public readonly List<CapturedRequest> Requests = new List<CapturedRequest>();
         public bool ReturnPatchBody;
@@ -39,7 +40,8 @@ namespace PatchRefetchTransport
                 Method = request.Method.Method, Uri = request.RequestUri.AbsoluteUri,
                 Body = request.Content == null ? "" : await request.Content.ReadAsStringAsync(),
                 Marker = Header(request, "X-Refetch-Proof"), Multiple = Header(request, "X-Multiple"),
-                IfMatch = Header(request, "If-Match")
+                IfMatch = Header(request, "If-Match"),
+                Authorization = request.Headers.Authorization == null ? "" : request.Headers.Authorization.ToString()
             };
             Requests.Add(captured);
             if (request.Method == HttpMethod.Put || (request.Method.Method == "PATCH" && !ReturnPatchBody)) {

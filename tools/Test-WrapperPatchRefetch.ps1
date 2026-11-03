@@ -3,33 +3,37 @@
 Generates real Kiota clients and wrappers, then proves PATCH refetch headers offline.
 
 .DESCRIPTION
-Requires built WrapperGenerator.Tests, the Kiota CLI and original official Authentication
-2.38.1 on PSModulePath. Builds an isolated fixture using repository project templates.
-Probe imports only its normal manifest in a fresh process; no live Graph, credentials,
-manual dependency injection or Authentication changes. FixtureRoot must be new and is kept
-for reproducible evidence. PackagingTemplateRoot explicitly identifies a packaging candidate
-when the normal target cannot yet serialize bodies; it never changes the generator source.
+Requires built WrapperGenerator.Tests, the Kiota CLI and the normally built Authentication
+package on PSModulePath. Builds and packs an isolated fixture using repository templates.
+Probe imports the unpacked normal manifest in a fresh PowerShell 7 process. An offline
+terminal handler follows the real Authentication factory/token pipeline. No live Graph,
+OAuth, dependency injection, packaging overlays or Authentication changes are used.
+FixtureRoot must be new and is kept for reproducible evidence.
 
 .EXAMPLE
 dotnet build .\tools\WrapperGenerator.Tests --nologo
-pwsh -NoProfile -File .\tools\Test-WrapperPatchRefetch.ps1 -FixtureRoot <new-directory> -KiotaPath <kiota.exe>
+pwsh -NoProfile -File .\tools\Test-WrapperPatchRefetch.ps1 -FixtureRoot <new-directory> -KiotaPath <kiota.exe> -AuthenticationModulePath <built-Authentication.psd1>
 #>
 [CmdletBinding()]
 param(
     [Parameter(Mandatory)][string]$FixtureRoot,
     [string]$KiotaPath = 'kiota',
     [ValidateSet('v1.0', 'beta')][string]$ApiVersion = 'v1.0',
-    [string]$PackagingTemplateRoot = "$PSScriptRoot\Templates",
+    [Parameter(Mandatory)][string]$AuthenticationModulePath,
     [string]$TestAssembly = "$PSScriptRoot\WrapperGenerator.Tests\bin\Debug\net10.0\WrapperGenerator.Tests.dll",
     [Parameter(DontShow)][switch]$Probe
 )
 
 $ErrorActionPreference = 'Stop'
+if ($PSEdition -ne 'Core') { throw 'This gate requires PowerShell 7.' }
 $repoRoot = (Resolve-Path "$PSScriptRoot\..").Path
+$AuthenticationModulePath = (Resolve-Path -LiteralPath $AuthenticationModulePath).Path
+$expectedAuthBase = Split-Path $AuthenticationModulePath
+$authProject = "$repoRoot\src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj"
+$authVersion = ([xml](Get-Content $authProject -Raw)).Project.PropertyGroup.Version | Where-Object { $_ } | Select-Object -First 1
 if (-not $Probe) {
     if (Test-Path -LiteralPath $FixtureRoot) { throw "FixtureRoot must be a new directory: $FixtureRoot" }
     $TestAssembly = (Resolve-Path -LiteralPath $TestAssembly).Path
-    $PackagingTemplateRoot = (Resolve-Path -LiteralPath $PackagingTemplateRoot).Path
     $null = [Reflection.Assembly]::LoadFrom($TestAssembly)
     $null = [WrapperGenerator.Tests.PatchRefetchFixture]::GenerateAsync($FixtureRoot, $ApiVersion).GetAwaiter().GetResult()
     $env:KIOTA_Generation__MaxDegreeOfParallelism = '1'
@@ -38,11 +42,11 @@ if (-not $Probe) {
     if ($LASTEXITCODE -ne 0) { throw "Kiota exited $LASTEXITCODE." }
     $client = Get-Content "$PSScriptRoot\Templates\WrapperClient.csproj.template" -Raw
     Set-Content "$FixtureRoot\Client\Client.csproj" $client.Replace('{ClientAssemblyName}', 'Microsoft.Graph.Wrapper.RefetchProbe.Client')
-    $project = Get-Content "$PackagingTemplateRoot\WrapperModule.csproj.template" -Raw
+    $project = Get-Content "$PSScriptRoot\Templates\WrapperModule.csproj.template" -Raw
     $replacements = @{
         ModuleAssemblyName = 'Microsoft.Graph.Wrapper.RefetchProbe'
         ClientProjectPath = 'Client\Client.csproj'
-        AuthenticationProjectPath = "$repoRoot\src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj"
+        AuthenticationProjectPath = $authProject
         RuntimeProjectPath = "$repoRoot\src\GraphWrapperRuntime\Runtime\Microsoft.Graph.Wrapper.Runtime.csproj"
     }
     foreach ($entry in $replacements.GetEnumerator()) { $project = $project.Replace("{$($entry.Key)}", $entry.Value) }
@@ -50,39 +54,80 @@ if (-not $Probe) {
     & dotnet build "$FixtureRoot\RefetchProbe.csproj" -c Release --nologo -v quiet
     if ($LASTEXITCODE -ne 0) { throw "Fixture build exited $LASTEXITCODE." }
     $bin = "$FixtureRoot\bin\Release\netstandard2.0"
-    $assemblies = @('Std.UriTemplate.dll')
-    # This is artifact-candidate packaging, never a hidden source overlay or manual DLL load.
-    if (Test-Path "$bin\Microsoft.IO.RecyclableMemoryStream.dll") { $assemblies += 'Microsoft.IO.RecyclableMemoryStream.dll' }
+    $expectedDlls = @('Microsoft.Graph.Wrapper.RefetchProbe.dll', 'Microsoft.Graph.Wrapper.RefetchProbe.Client.dll', 'Microsoft.Graph.Wrapper.Runtime.dll')
+    $dlls = @(Get-ChildItem $bin -Filter '*.dll' -File | Select-Object -ExpandProperty Name)
+    if (Compare-Object $expectedDlls $dlls) { throw 'Fixture bin must contain only its three wrapper DLLs.' }
     New-ModuleManifest -Path "$bin\Microsoft.Graph.Wrapper.RefetchProbe.psd1" `
         -RootModule 'Microsoft.Graph.Wrapper.RefetchProbe.dll' -ModuleVersion '0.0.1' `
-        -RequiredModules @(@{ ModuleName = 'Microsoft.Graph.Authentication'; RequiredVersion = '2.38.1' }) `
-        -RequiredAssemblies $assemblies -CmdletsToExport '*' -FunctionsToExport @() -AliasesToExport @()
+        -RequiredModules @(@{ ModuleName = 'Microsoft.Graph.Authentication'; ModuleVersion = $authVersion }) `
+        -CmdletsToExport '*' -FunctionsToExport @() -AliasesToExport @()
+    $nuspec = "$FixtureRoot\RefetchProbe.nuspec"
+    @"
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.Graph.Wrapper.RefetchProbe</id>
+    <version>0.0.1</version>
+    <authors>Microsoft Graph</authors>
+    <description>Offline PATCH refetch regression fixture.</description>
+    <dependencies><dependency id="Microsoft.Graph.Authentication" version="$authVersion" /></dependencies>
+  </metadata>
+  <files>
+    <file src="Microsoft.Graph.Wrapper.RefetchProbe.psd1" />
+    <file src="*.dll" />
+    <file src="*.deps.json" />
+  </files>
+</package>
+"@ | Set-Content $nuspec
+    & dotnet pack "$FixtureRoot\RefetchProbe.csproj" -c Release --no-build --no-restore --nologo -v quiet `
+        "-p:NuspecFile=$nuspec" "-p:NuspecBasePath=$bin" -p:Version=0.0.1 -p:NoPackageAnalysis=true -o "$FixtureRoot\package"
+    if ($LASTEXITCODE -ne 0) { throw "Fixture pack exited $LASTEXITCODE." }
+    $package = "$FixtureRoot\package\Microsoft.Graph.Wrapper.RefetchProbe.0.0.1.nupkg"
+    [IO.Compression.ZipFile]::ExtractToDirectory($package, "$FixtureRoot\unpacked")
     @{
         GeneratorTestAssembly = $TestAssembly
         GeneratorHash = (Get-FileHash (Join-Path (Split-Path $TestAssembly) 'WrapperGenerator.dll')).Hash
-        PackagingTemplate = "$PackagingTemplateRoot\WrapperModule.csproj.template"
-        PackagingTemplateHash = (Get-FileHash "$PackagingTemplateRoot\WrapperModule.csproj.template").Hash
-        PackagingCandidate = $PackagingTemplateRoot -ne (Resolve-Path "$PSScriptRoot\Templates").Path
-        RequiredAssemblies = $assemblies
+        PackagingTemplate = "$PSScriptRoot\Templates\WrapperModule.csproj.template"
+        PackagingTemplateHash = (Get-FileHash "$PSScriptRoot\Templates\WrapperModule.csproj.template").Hash
+        PackagingCandidate = $false
+        Package = $package
+        PackageHash = (Get-FileHash $package).Hash
+        AuthenticationModulePath = $AuthenticationModulePath
+        AuthenticationVersion = $authVersion
         Profile = $ApiVersion
     } | ConvertTo-Json | Set-Content "$FixtureRoot\provenance.json"
-    & pwsh -NoProfile -NonInteractive -File $PSCommandPath -FixtureRoot $FixtureRoot -ApiVersion $ApiVersion -Probe
+    & pwsh -NoProfile -NonInteractive -File $PSCommandPath -FixtureRoot $FixtureRoot -ApiVersion $ApiVersion `
+        -AuthenticationModulePath $AuthenticationModulePath -Probe
     if ($LASTEXITCODE -ne 0) { throw "Fresh manifest transport probe exited $LASTEXITCODE." }
     exit 0
 }
 
 if (Get-Module Microsoft.Graph.Authentication) { throw 'Probe requires a fresh process.' }
-$manifest = "$FixtureRoot\bin\Release\netstandard2.0\Microsoft.Graph.Wrapper.RefetchProbe.psd1"
+$manifest = "$FixtureRoot\unpacked\Microsoft.Graph.Wrapper.RefetchProbe.psd1"
+$manifestData = Import-PowerShellDataFile $manifest
+$requiredAssemblies = @($manifestData.RequiredAssemblies | Where-Object { $_ })
+if ($requiredAssemblies.Count) { throw 'Wrapper manifest must not preload Authentication-owned dependencies.' }
+$packageDlls = @(Get-ChildItem (Split-Path $manifest) -Recurse -Filter '*.dll' -File | Select-Object -ExpandProperty Name)
+if (Compare-Object @('Microsoft.Graph.Wrapper.RefetchProbe.dll', 'Microsoft.Graph.Wrapper.RefetchProbe.Client.dll', 'Microsoft.Graph.Wrapper.Runtime.dll') $packageDlls) {
+    throw 'Unpacked wrapper must contain only its three own DLLs.'
+}
 $module = Import-Module $manifest -PassThru
 $auth = Get-Module Microsoft.Graph.Authentication
-if ($auth.Version -ne [version]'2.38.1') { throw 'Original official Authentication 2.38.1 is required.' }
+if ($auth.Version -ne [version]$authVersion -or $auth.ModuleBase -cne $expectedAuthBase) {
+    throw 'Manifest imported the wrong Authentication package version or source.'
+}
 Add-Type -Path "$PSScriptRoot\WrapperGenerator.Tests\Fixtures\PatchRefetchTransport.cs"
 $null = Get-MgContext
 $handler = [PatchRefetchTransport.CaptureHandler]::new()
-$client = [Net.Http.HttpClient]::new($handler)
-$session = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance
-$savedClient = $session.GraphHttpClient
-$session.GraphHttpClient = $client
+$core = @([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object { $_.GetName().Name -eq 'Microsoft.Graph.Authentication.Core' })
+if ($core.Count -ne 1) { throw 'Expected one normally loaded Authentication.Core assembly.' }
+$session = $core[0].GetType('Microsoft.Graph.PowerShell.Authentication.GraphSession', $true).GetProperty('Instance').GetValue($null)
+. "$repoRoot\src\Authentication\Authentication\test\TypeHelpers.ps1"
+Set-MgTestDataStore
+$factory = $core[0].GetType('Microsoft.Graph.PowerShell.Authentication.Core.Http.GraphHttpClientFactory', $true)
+$client = $null
+$token = 'offline-refetch-token'
+$cacheAdapter = $null
 $hostProbe = [PatchRefetchTransport.ConfirmationHost]::new()
 $runspace = [runspacefactory]::CreateRunspace($hostProbe)
 $runspace.Open()
@@ -132,6 +177,7 @@ function Assert-Requests($Case, [int]$Before, [bool]$PatchBody, [bool]$GenericCo
         if ($request.Method -cne $expectedMethod -or $request.Uri -cne "$baseUri$($Case.Path)") {
             throw "Wrong selected typed route/method: $($request.Method) $($request.Uri)"
         }
+        if ($request.Authorization -cne "Bearer $token") { throw 'Request bypassed the real Authentication token handler.' }
         $status = if ($i -eq 0 -and -not $PatchBody) { 204 } else { 200 }
         if ($request.ResponseStatus -ne $status) { throw "Incorrect fixture response status: $expectedMethod $($Case.Path)" }
         if ($request.Marker -cne 'refetch-proof' -or $request.Multiple -cne 'one,two') {
@@ -161,12 +207,25 @@ function Assert-Result($Result, [string]$ExpectedId) {
 }
 
 try {
+    Connect-MgGraph -AccessToken (ConvertTo-SecureString $token -AsPlainText -Force) -NoWelcome
+    $client = $factory.GetMethod('Create').Invoke($null, @(
+        $session.AuthContext, $session.RequestContext, [Net.Http.DelegatingHandler[]]@($handler), $null, $false
+    ))
+    if ($client.BaseAddress.AbsoluteUri.TrimEnd('/') -cne 'https://graph.microsoft.com/v1.0') {
+        throw 'The Authentication factory did not retain its normal default v1.0 BaseAddress.'
+    }
+    $baseAddress = $client.BaseAddress
+    $session.GraphHttpClient = $client
     $null = $engine.AddCommand('Import-Module').AddParameter('Name', $manifest).AddParameter('ErrorAction', 'Stop').Invoke()
     if ($engine.HadErrors) { throw ($engine.Streams.Error | Out-String) }
     $engine.Commands.Clear()
     if (-not [object]::ReferenceEquals($client, [Microsoft.Graph.PowerShell.Authentication.Helpers.HttpHelpers]::GetGraphHttpClient())) {
-        throw 'Official Authentication lost the shared terminal HttpClient.'
+        throw 'Authentication lost the shared authenticated terminal HttpClient.'
     }
+    $runtime = @([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object { $_.GetName().Name -eq 'Microsoft.Graph.Wrapper.Runtime' })
+    if ($runtime.Count -ne 1) { throw 'Expected one wrapper runtime.' }
+    $cache = $runtime[0].GetType('Microsoft.Graph.Wrapper.Runtime.SessionAdapterCache', $true).
+        GetField('_adapter', [Reflection.BindingFlags]'NonPublic,Static')
     foreach ($case in $cases) {
         $command = $module.ExportedCmdlets[$case.Name]
         if (-not $command) { throw "Missing compiled fixture command: $($case.Name)" }
@@ -182,6 +241,7 @@ try {
         if ($handler.Requests.Count -ne $before -or $hostProbe.PromptCount -ne $prompts) { throw 'WhatIf sent HTTP or prompted.' }
         $null = Invoke-Confirmed $case.Name $arguments $false
         if ($handler.Requests.Count -ne $before) { throw 'Genuinely declined Confirm sent HTTP.' }
+        if (-not [object]::ReferenceEquals($cacheAdapter, $cache.GetValue($null))) { throw 'WhatIf or declined Confirm acquired transport.' }
         $result = Invoke-Confirmed $case.Name $arguments $true
         Assert-Requests $case $before $false
         Assert-Result $result $(if ($case.Refetch) { 'refetched' } else { '' })
@@ -204,21 +264,37 @@ try {
             Assert-Result $result 'refetched'
             $checks.Add(@{ Command = $case.Name; Path = $case.Path; Check = 'Explicit generic conditional header remains caller-controlled on PATCH and GET'; Requests = 2 })
         }
+        $adapter = $cache.GetValue($null)
+        if ($null -eq $adapter -or $adapter.BaseUrl -cne $baseUri) { throw 'Cached adapter lost the generated profile service root.' }
+        if ($null -ne $cacheAdapter -and -not [object]::ReferenceEquals($cacheAdapter, $adapter)) { throw 'Same-session profile adapter was not reused.' }
+        $cacheAdapter = $adapter
+        if (-not [object]::ReferenceEquals($client, $session.GraphHttpClient) -or -not [object]::Equals($baseAddress, $client.BaseAddress)) {
+            throw 'Profile-specific requests changed the shared Authentication client or default BaseAddress.'
+        }
+    }
+    foreach ($name in 'Microsoft.Graph.Wrapper.Runtime', 'Microsoft.Graph.Wrapper.RefetchProbe', 'Microsoft.Graph.Wrapper.RefetchProbe.Client') {
+        $assemblies = @([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object { $_.GetName().Name -eq $name })
+        if ($assemblies.Count -ne 1 -or $assemblies[0].Location -cne "$(Split-Path $manifest)\$name.dll" -or
+            [Runtime.Loader.AssemblyLoadContext]::GetLoadContext($assemblies[0]).Name -cne 'Default') {
+            throw "Wrapper assembly did not load once from its unpacked normal package: $name"
+        }
     }
     $sources = @([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {
         $_.GetName().Name -like 'Microsoft.Graph.Authentication*' -or $_.GetName().Name -like 'Microsoft.Kiota.*' -or
         $_.GetName().Name -in @('Microsoft.IO.RecyclableMemoryStream', 'Std.UriTemplate')
     } | ForEach-Object {
         $name = $_.GetName().Name
-        $local = $name -in @('Microsoft.IO.RecyclableMemoryStream', 'Std.UriTemplate', 'Microsoft.Kiota.Serialization.Multipart')
-        $expectedRoot = if ($local) { Split-Path $manifest } else { $auth.ModuleBase }
-        if (-not $_.Location.StartsWith("$expectedRoot\", [StringComparison]::OrdinalIgnoreCase)) { throw "Wrong assembly source: $name" }
+        if (-not $_.Location.StartsWith("$($auth.ModuleBase)\", [StringComparison]::OrdinalIgnoreCase)) { throw "Wrong Authentication-owned assembly source: $name" }
         $context = [Runtime.Loader.AssemblyLoadContext]::GetLoadContext($_).Name
-        $expectedContext = if ($local -or $name -like 'Microsoft.Graph.Authentication*') { 'Default' } else { 'msgraph-load-context' }
+        $expectedContext = if ($name -in 'Microsoft.Graph.Authentication', 'Microsoft.Graph.Authentication.Loader') { 'Default' } else { 'Microsoft.Graph.Authentication' }
         if ($context -cne $expectedContext) { throw "Wrong assembly context: $name $context" }
         @{ Name = $name; Path = $_.Location; Context = $context }
     })
     if (@($sources | Group-Object Name | Where-Object Count -ne 1).Count) { throw 'Duplicate shared assembly identities.' }
+    foreach ($required in 'Microsoft.Graph.Authentication.Loader', 'Microsoft.Graph.Authentication.Core', 'Microsoft.IO.RecyclableMemoryStream',
+        'Std.UriTemplate', 'Microsoft.Kiota.Serialization.Multipart', 'Microsoft.Kiota.Serialization.Json') {
+        if (@($sources | Where-Object Name -eq $required).Count -ne 1) { throw "Missing Authentication-owned identity: $required" }
+    }
     if ($module.ExportedCmdlets.Count -ne 15 -or $checks.Count -ne 19 -or $hostProbe.PromptCount -ne 18 -or $handler.Requests.Count -ne 27) {
         throw "Incomplete proof: checks=$($checks.Count), prompts=$($hostProbe.PromptCount), HTTP=$($handler.Requests.Count)"
     }
@@ -226,13 +302,16 @@ try {
         Profile = $ApiVersion; Authentication = "$($auth.Version)"; AuthenticationPath = $auth.ModuleBase
         Provenance = Get-Content "$FixtureRoot\provenance.json" -Raw | ConvertFrom-Json
         ExportedCmdlets = $module.ExportedCmdlets.Count; Checks = $checks; ActualPrompts = $hostProbe.PromptCount
+        Manifest = $manifest; WrapperDlls = $packageDlls; RequiredAssemblies = $requiredAssemblies
+        FactoryDefaultBaseAddress = $baseAddress.AbsoluteUri; CachedAdapterBaseUrl = $cacheAdapter.BaseUrl; SessionAdapterReused = $true
         Requests = $handler.Requests; Assemblies = $sources; Failures = $failures; LiveGraphRequests = 0
     } | ConvertTo-Json -Depth 8 | Tee-Object -FilePath "$FixtureRoot\transport-result.json"
     if ($failures.Count) { throw "$($failures.Count) real compiled request header assertions failed." }
 }
 finally {
-    $session.GraphHttpClient = $savedClient
+    Disconnect-MgGraph -ErrorAction Stop | Out-Null
+    $session.GraphHttpClient = $null
     $engine.Dispose()
     $runspace.Dispose()
-    $client.Dispose()
+    if ($null -ne $client) { $client.Dispose() }
 }

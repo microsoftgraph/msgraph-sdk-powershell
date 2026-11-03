@@ -33,6 +33,7 @@ public sealed class PatchRefetchTests
                 var refetch = source[source.IndexOf("if (result is null)", StringComparison.Ordinal)..];
                 Assert.Contains(".GetAsync(requestConfiguration =>", refetch);
                 Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", refetch);
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
                 Assert.DoesNotContain("IfMatch", refetch);
                 Assert.DoesNotContain("QueryParameters", refetch);
                 Assert.DoesNotContain("body.", refetch);

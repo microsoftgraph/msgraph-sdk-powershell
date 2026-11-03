@@ -21,40 +21,56 @@ for an empty response, and PUT never gains a fallback read.
 `PatchRefetchTests` generates both profiles through the normal generation service,
 including the isolated group-registration seam already used by generator tests.
 Existing `EmitterTests` and `MutationRouteTests` continue to pin GET availability.
+`CompositeKeyTests` requires the same typed constructor and complete parent/key
+dictionary on the generic-header refetch, retaining distinct body/path parameters.
 
 ```powershell
 dotnet test .\tools\WrapperGenerator.Tests\WrapperGenerator.Tests.csproj `
-  --filter 'FullyQualifiedName~PatchRefetchTests|FullyQualifiedName~EmitterTests|FullyQualifiedName~MutationRouteTests'
+  --filter 'FullyQualifiedName~PatchRefetchTests|FullyQualifiedName~EmitterTests|FullyQualifiedName~MutationRouteTests|FullyQualifiedName~CompositeKeyTests'
 ```
 
 The compiled transport gate requires Kiota, the .NET SDK, PowerShell 7 on .NET 10,
-and the original official `Microsoft.Graph.Authentication` 2.38.1 on process-local
-`PSModulePath`. Run once per profile, with a different new artifact directory:
+and the normally built `Microsoft.Graph.Authentication` package from the current
+source (2.41.2 after #3891) on process-local `PSModulePath`. Identify its exact manifest
+to reject a different package with the same version. Run once per profile, with a
+different new artifact directory:
 
 ```powershell
 dotnet build .\tools\WrapperGenerator.Tests\WrapperGenerator.Tests.csproj
 pwsh -NoProfile -File .\tools\Test-WrapperPatchRefetch.ps1 `
-  -FixtureRoot <new-artifact-directory> -ApiVersion v1.0 -KiotaPath <kiota.exe>
+  -FixtureRoot <new-artifact-directory> -ApiVersion v1.0 -KiotaPath <kiota.exe> `
+  -AuthenticationModulePath <built-Authentication.psd1>
 ```
 
 The gate generates an actual Kiota C# client, compiles ordinary/grouped wrappers
-against the real shared runtime, and imports the normal manifest in a fresh child.
-It substitutes only the shared GraphSession HttpClient with an offline terminal
-capture handler. It checks exact escaped routes, typed JSON and models, generic
+against the real shared runtime, packs using the repository's normal template and
+NuGet file/dependency conventions, and imports its unpacked manifest in a fresh
+child. The wrapper package carries only its three own DLLs and no dependency
+preloads. Authentication owns the complete Kiota closure, including
+RecyclableMemoryStream, UriTemplate and Multipart.
+
+The gate connects with a synthetic offline token and an in-memory test data store.
+Its terminal capture handler is inserted after the real Authentication factory's
+token handler, so every captured PATCH/GET must be authenticated. It preserves the
+factory's default v1.0 HttpClient BaseAddress while generated beta requests use the
+beta service root through the normal session adapter cache. The adapter is reused
+and the shared client/BaseAddress remains unchanged. It checks exact escaped routes,
+typed JSON and models, generic
 headers on PATCH/GET, typed IfMatch on PATCH only, explicit generic conditional
 headers, non-null PATCH results, mixed GET/no-GET groups, ordinary/grouped PUT,
 WhatIf, genuinely declined confirmation, and exactly one accepted prompt even when
 PATCH causes a GET. Each profile must complete 19 checks, 18 actual prompts and 27
 captured requests with zero live Graph requests.
 
-`FixtureRoot` retains the spec, generated client/wrappers, build outputs,
-`provenance.json` and `transport-result.json`. No generated module files are added
-to the source tree. No assembly injection or Authentication modification is used.
+`FixtureRoot` retains the spec, generated client/wrappers, build outputs, NuGet
+package, unpacked module, `provenance.json` and `transport-result.json`. It asserts
+one Authentication/Kiota assembly identity from the expected package directory
+and loader context. No generated module files are added to the source tree.
+No dependency assembly injection or Authentication modification is used.
 
-On a target that cannot yet serialize bodies with official Authentication, this is
-not a normal-source runtime PASS. `-PackagingTemplateRoot <candidate-tools\Templates>`
-can explicitly select a separately reviewed module-packaging candidate for artifact
-proof. Its template path/hash, generator hash and candidate status are recorded in
-provenance. The normal client template, generator, Authentication and shared runtime
-still come from this source. This does not overlay or stack packaging source into the
-branch, and the emitter fix has no packaging dependency.
+Historical proof before #3891 used Authentication 2.38.1 and an explicitly isolated
+#3878 packaging candidate; the then-normal template failed body serialization for
+missing RecyclableMemoryStream. Those artifacts remain historical evidence, not
+the current support contract or a current blocker. The current gate has no
+packaging-overlay option: templates, Authentication and runtime must follow the
+normally merged source.
