@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Security
     if (this.IsParameterBound(nameof(ProcessContentRequests)))
         body.ProcessContentRequests = ProcessContentRequests!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Security.Client.Security.DataSecurityAndGovernance.ProcessContentAsync.ProcessContentAsyncPostResponse? result;
