@@ -225,6 +225,9 @@ public sealed class PlannerDirectiveMigrationTests
             var files = Directory.GetFiles(output, "*.g.cs");
             Assert.NotEmpty(files);
             var source = string.Join("\n", files.Select(File.ReadAllText));
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+            Assert.DoesNotContain("GetRequestAdapter()", source);
+            Assert.DoesNotContain($"GetRequestAdapter(\"{(profile == "beta" ? "v1.0" : "beta")}\")", source);
             Assert.Contains("[GraphRoute(\"GET\", \"/users/{user-id}/planner/plans\")]", source);
             Assert.Contains("[GraphRoute(\"GET\", \"/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets\")]", source);
             Assert.DoesNotContain("[GraphRoute(\"GET\", \"/users/{user-id}/planner/plans/$count\")]", source);
