@@ -37,7 +37,7 @@ namespace Microsoft.Graph.PowerShell.BusinessScenario
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BusinessScenario.Client.Models.BusinessScenarioPlanner? result;

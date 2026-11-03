@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.BusinessScenario
         body.LastModifiedBy = LastModifiedBy;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BusinessScenario.Client.Models.PlannerPlanConfiguration? result;

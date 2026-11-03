@@ -87,7 +87,7 @@ namespace Microsoft.Graph.PowerShell.BusinessScenario
         body.References = References;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BusinessScenario.Client.Models.PlannerTaskDetails? result;

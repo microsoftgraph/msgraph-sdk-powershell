@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.BusinessScenario
         body.EditPolicy = EditPolicy;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BusinessScenario.Client.Models.PlannerTaskConfiguration? result;
