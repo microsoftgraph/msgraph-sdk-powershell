@@ -37,7 +37,7 @@ The beta name for that route remains
 `Get-MgDeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices`.
 
 Both compatible profiles are required; neither is excluded. The reviewed inputs
-after normally integrating `powershell-v3` at `08e409a6aa` are:
+after normally integrating `powershell-v3` at `844672d7c2` are:
 
 | Profile | Compatible specification | Git blob | GET function operations |
 | --- | --- | --- | --- |
@@ -48,7 +48,9 @@ after normally integrating `powershell-v3` at `08e409a6aa` are:
 specifications and pins their exact GET paths, operation IDs, function markers,
 and unchanged naming/suppression decisions with derived data both enabled and
 disabled. Generation, naming, and suppression calls pass the oracle profile
-separately from the shared `GeneratorConfig` run settings. In particular, route
+separately from the shared `GeneratorConfig` run settings. Each emitted function
+also passes that profile to `GetRequestAdapter` so beta requests retain their
+beta service root through the authenticated session transport. In particular, route
 identity distinguishes the beta parameterless
 `/deviceManagement/getEffectivePermissions()` operation from its scoped overload
 `/deviceManagement/getEffectivePermissions(scope='{scope}')`
@@ -60,7 +62,9 @@ role-scope, and analytics functions are covered without adding overrides.
 These operation counts and naming assertions are not claims that every response
 shape compiles or exports successfully. Full fresh Kiota/client and wrapper
 Release builds and nonzero exported cmdlets remain separate gates for each
-profile. Preserve the committed `wrapper/Beta` output casing.
+profile. The current manifests require the normally packaged Authentication
+2.41.2, which owns the Kiota dependency closure; wrapper output must not preload
+or copy that closure. Preserve the committed `wrapper/Beta` output casing.
 
 All profile-local readmes and `src/readme.graph.md` are outside this audit and
 are not read, migrated, annotated, or edited. The required common include above

@@ -131,6 +131,12 @@ public sealed class DeviceManagementFunctionsDirectiveMigrationTests
             var actual = Directory.GetFiles(output, "*.g.cs").Select(Path.GetFileName)
                 .OrderBy(name => name, StringComparer.Ordinal).ToArray();
             Assert.Equal(expected, actual);
+            foreach (var file in Directory.GetFiles(output, "*.g.cs"))
+            {
+                var source = File.ReadAllText(file);
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source, StringComparison.Ordinal);
+                Assert.DoesNotContain("GetRequestAdapter()", source, StringComparison.Ordinal);
+            }
         }
         finally
         {
