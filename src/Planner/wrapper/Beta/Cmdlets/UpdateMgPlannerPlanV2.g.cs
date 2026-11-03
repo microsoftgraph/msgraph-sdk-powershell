@@ -105,7 +105,7 @@ namespace Microsoft.Graph.PowerShell.Planner
         body.SharedWithContainers = SharedWithContainers!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Planner.Client.Models.Plan? result;

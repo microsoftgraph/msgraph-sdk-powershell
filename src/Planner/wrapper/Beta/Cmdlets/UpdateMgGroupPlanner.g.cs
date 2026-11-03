@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Planner
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerGroup? result;

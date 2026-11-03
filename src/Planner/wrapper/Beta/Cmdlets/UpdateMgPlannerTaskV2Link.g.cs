@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.Planner
         body.LinkType = LinkType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Planner.Client.Models.ContentLink? result;

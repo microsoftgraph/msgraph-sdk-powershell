@@ -49,7 +49,7 @@ namespace Microsoft.Graph.PowerShell.Planner
         body.OrderHintsByAssignee = OrderHintsByAssignee;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerAssignedToTaskBoardTaskFormat? result;
