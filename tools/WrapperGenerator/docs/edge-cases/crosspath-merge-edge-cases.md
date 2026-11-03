@@ -40,25 +40,41 @@ reviewed distinct command names rather than being grouped by the new query argum
 explicit unsupported-contract failures, unchanged no-query neighbors and grouped-query
 rejection. `tools/Test-WrapperRequiredDeleteQuery.ps1` generates actual Kiota 1.36.1
 builders, compiles wrappers with the unchanged production project templates and imports
-normal manifests against the installed Authentication module. Its in-memory GraphSession
-transport verifies exact encoded/decoded DELETE URIs, reserved/Unicode escaping, ETags,
-custom headers and absent bodies. It exercises missing/null/empty binding, WhatIf, and
+normal manifests against the locally packaged Authentication 2.41.2-or-newer module.
+The real offline `Connect-MgGraph` session uses Authentication's `GraphHttpClientFactory`,
+with a terminal capture handler after authentication. It verifies exact encoded/decoded
+DELETE URIs, reserved/Unicode escaping, ETags, custom headers and absent HTTP content/bodies.
+It exercises missing/null/empty and foreign item-path parameter binding, WhatIf, and
 genuine Yes/No confirmation hosts (one prompt and at most one DELETE per invocation).
 The inherited-query fixture and item/no-query neighbors run through the same gate.
-Neither RMS nor a live Graph connection is required.
+`-ApiVersion` selects the emitter's runtime profile: beta DELETEs must use `/beta` even
+though the authenticated session factory's base address is `/v1.0`. The shared session
+client/base address must remain unchanged. A foreign-host URI supplied as the native
+string query value stays encoded query data; it does not redirect the authenticated request.
+This does not add URI validation or change the OpenAPI string contract.
+
+Authentication owns the complete Kiota dependency closure. The proof requires each
+wrapper bin to contain only its three owned DLLs, with no dependency manifest preloads,
+and verifies single packaged Authentication/Kiota identities and their load contexts.
+No wrapper-retained RMS, dependency injection or live Graph/OAuth connection is used.
+Test-only `MockDataStore` keeps the synthetic session off the credential store.
 
 ```powershell
 dotnet build .\tools\WrapperGenerator\WrapperGenerator.csproj --no-restore
 dotnet test .\tools\WrapperGenerator.Tests\WrapperGenerator.Tests.csproj --no-restore `
     --filter 'FullyQualifiedName~RequiredDeleteQueryTests|FullyQualifiedName~EmitterTests|FullyQualifiedName~MutationRouteTests|FullyQualifiedName~GenerationServiceRegressionTests'
 pwsh -NoProfile -NonInteractive -File .\tools\Test-WrapperRequiredDeleteQuery.ps1 `
-    -KiotaPath <kiota-1.36.1-executable> -ArtifactRoot <new-artifact-directory>
+    -KiotaPath <kiota-1.36.1-executable> -ArtifactRoot <new-artifact-directory> -ApiVersion beta
 ```
 
 The optional `-BaselineCmdletsDirectory` compiles an independently captured pre-fix
 ordinary wrapper against the same real client and demonstrates its absent `-Id` and
-empty `?@id=` request. Generated proof sources/binaries and `evidence.json` stay under
-`ArtifactRoot`; they are not module migration output or committed generated trees.
+empty `?@id=` request. Capture that baseline from the same target and runtime profile;
+an old bare `GetRequestAdapter()` baseline is not current beta-profile evidence.
+Generated proof sources/binaries, per-command logs/results, input/package/output hashes,
+assembly contexts and `evidence.json` stay under `ArtifactRoot`; they are not module
+migration output or committed generated trees. Use fresh processes/directories for
+each profile and leave historical evidence untouched.
 
 ## Exact reviewed configuration
 

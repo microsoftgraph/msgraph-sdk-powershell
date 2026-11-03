@@ -18,10 +18,12 @@ namespace DeleteQueryProbe
         public string Uri { get; set; }
         public string DecodedUri { get; set; }
         public string Body { get; set; }
+        public bool HasContent { get; set; }
+        public string Authorization { get; set; }
         public Dictionary<string, string> Headers { get; } = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
     }
 
-    public sealed class CaptureHandler : HttpMessageHandler
+    public sealed class CaptureHandler : DelegatingHandler
     {
         public List<CapturedRequest> Requests { get; } = new List<CapturedRequest>();
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken token)
@@ -31,7 +33,9 @@ namespace DeleteQueryProbe
                 Method = request.Method.Method,
                 Uri = request.RequestUri.AbsoluteUri,
                 DecodedUri = System.Uri.UnescapeDataString(request.RequestUri.AbsoluteUri),
-                Body = request.Content == null ? null : await request.Content.ReadAsStringAsync()
+                Body = request.Content == null ? null : await request.Content.ReadAsStringAsync(),
+                HasContent = request.Content != null,
+                Authorization = request.Headers.Authorization?.ToString()
             };
             foreach (var header in request.Headers)
                 captured.Headers.Add(header.Key, string.Join(",", header.Value));

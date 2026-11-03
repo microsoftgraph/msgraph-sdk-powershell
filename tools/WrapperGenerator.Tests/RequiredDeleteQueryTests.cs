@@ -47,7 +47,7 @@ public sealed class RequiredDeleteQueryTests
         Assert.Contains("ConfirmImpact = ConfirmImpact.High", source);
         Assert.Single(System.Text.RegularExpressions.Regex.Matches(source, @"ShouldProcess\("));
         Assert.Contains($"[GraphRoute(\"DELETE\", \"{Route}\")]", source);
-        Assert.Contains("GetRequestAdapter()", source);
+        Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
         Assert.DoesNotContain("new Uri", source);
         Assert.DoesNotContain("body", source.Replace("no body", "", StringComparison.Ordinal));
         Assert.DoesNotContain("Route {", source);
@@ -136,7 +136,7 @@ public sealed class RequiredDeleteQueryTests
         var naming = Naming.Resolve(new OperationInfo(HttpMethod.Delete, route,
             (operation.Parameters ?? []).Where(p => p.In == ParameterLocation.Header).Select(p => p.Name!).ToArray()),
             new GeneratorConfig(Client, ".", UseCollisionData: false));
-        Assert.Equal(CmdletEmitter.EmitRemove(naming, new EmitContext(Client)),
+        Assert.Equal(CmdletEmitter.EmitRemove(naming, new EmitContext(Client, ApiVersion: "beta")),
             Assert.Single((await Generate(document)).Values));
     }
 
