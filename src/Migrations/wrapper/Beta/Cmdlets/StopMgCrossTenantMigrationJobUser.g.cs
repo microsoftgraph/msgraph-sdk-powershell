@@ -37,7 +37,7 @@ namespace Microsoft.Graph.PowerShell.Migrations
                 return;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationCancelResponse? result;
