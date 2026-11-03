@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Devices.ServiceAnnouncement
     if (this.IsParameterBound(nameof(MessageIds)))
         body.MessageIds = MessageIds!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Devices.ServiceAnnouncement.Client.Admin.ServiceAnnouncement.Messages.Favorite.FavoritePostResponse? result;
