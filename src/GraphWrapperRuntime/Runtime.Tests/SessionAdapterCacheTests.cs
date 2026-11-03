@@ -48,4 +48,35 @@ public sealed class SessionAdapterCacheTests
 
         Assert.NotSame(adapterA1, adapterA2);
     }
+
+    [Fact]
+    public void SameClientAndRootReuseAdapterWithoutChangingClientBaseAddress()
+    {
+        using var client = new HttpClient { BaseAddress = new System.Uri("https://graph.microsoft.com/v1.0") };
+        const string root = "https://graph.microsoft.us/beta";
+        var first = SessionAdapterCache.GetOrCreate(client, root);
+        var second = SessionAdapterCache.GetOrCreate(client, root);
+
+        Assert.Same(first, second);
+        Assert.Equal(root, first.BaseUrl);
+        Assert.Equal("https://graph.microsoft.com/v1.0", client.BaseAddress.AbsoluteUri);
+    }
+
+    [Fact]
+    public void AlternatingProfilesNeverChangeAnExistingAdaptersRoot()
+    {
+        using var client = new HttpClient();
+        const string v1 = "https://graph.microsoft.us/v1.0";
+        const string beta = "https://graph.microsoft.us/beta";
+        var first = SessionAdapterCache.GetOrCreate(client, v1);
+        var second = SessionAdapterCache.GetOrCreate(client, beta);
+        var third = SessionAdapterCache.GetOrCreate(client, v1);
+
+        Assert.NotSame(first, second);
+        Assert.NotSame(second, third);
+        Assert.Equal(v1, first.BaseUrl);
+        Assert.Equal(beta, second.BaseUrl);
+        Assert.Equal(v1, third.BaseUrl);
+        Assert.Null(client.BaseAddress);
+    }
 }
