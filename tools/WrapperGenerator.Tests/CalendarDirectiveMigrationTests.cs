@@ -315,6 +315,17 @@ public sealed class CalendarDirectiveMigrationTests
             Assert.DoesNotContain(files, f => f!.Contains("CalendarGetSchedule", StringComparison.Ordinal));
             Assert.DoesNotContain(files, f => f!.Contains("CalendarEventCancel", StringComparison.Ordinal));
             Assert.Contains("InvokeMgCalendarUserCalendarAllowedCalendarSharingRoles.g.cs", files);
+            foreach (var file in files)
+            {
+                var emitted = File.ReadAllText(Path.Combine(output, file!));
+                if (emitted.Contains("GetRequestAdapter(", StringComparison.Ordinal))
+                {
+                    Assert.Contains($"GetRequestAdapter(\"{profile}\")", emitted);
+                    Assert.DoesNotContain("GetRequestAdapter()", emitted);
+                }
+            }
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")",
+                File.ReadAllText(Path.Combine(output, "GetMgUserDefaultCalendar.g.cs")));
         }
         finally
         {
