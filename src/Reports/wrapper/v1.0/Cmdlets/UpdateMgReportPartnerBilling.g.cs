@@ -46,7 +46,7 @@ namespace Microsoft.Graph.PowerShell.Reports
         body.Usage = Usage;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.Billing? result;
