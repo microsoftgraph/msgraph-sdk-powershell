@@ -273,7 +273,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
         body.ExtensionAttributes = ExtensionAttributes;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models.Device? result;

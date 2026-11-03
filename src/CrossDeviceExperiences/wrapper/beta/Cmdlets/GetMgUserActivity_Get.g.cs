@@ -36,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models.UserActivity? result;

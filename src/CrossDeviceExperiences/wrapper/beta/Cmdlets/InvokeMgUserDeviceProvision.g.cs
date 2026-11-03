@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
     if (this.IsParameterBound(nameof(ProvisioningBlob)))
         body.ProvisioningBlob = ProvisioningBlob;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models.ProvisionResponse? result;

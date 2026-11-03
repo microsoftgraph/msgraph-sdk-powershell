@@ -115,7 +115,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
             body.ContentInfo = untypedContentInfo;
     }
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models.UserActivity? result;
