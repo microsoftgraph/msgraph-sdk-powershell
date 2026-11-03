@@ -101,7 +101,7 @@ prefix or hiding unmatched/client-only operations. The qualified external-item
 `addActivities` action and beta structural search-query name are existing
 baseline naming differences, not migrations of ignored profile-local directives.
 
-Current-target results after the two final shared naming entries:
+Historical `08e409a6aa` results after the two final shared naming entries:
 
 | Gate | v1.0 | beta |
 | --- | --- | --- |
@@ -125,3 +125,62 @@ The strict Search inventory passes with zero rows and an empty ledger.
 Beta's two no-oracle routes are the retained collection-bound statistics function
 and nested activity flow. Missing published URI records do not remove either
 endpoint. No beta prefix normalization or broad naming correction is applied.
+
+#### Normal Authentication refresh at `844672d7c2`
+
+The existing branch normally merges `powershell-v3` including Authentication
+change #3891. The shared directives, exact naming entries, complete route
+selection and frozen parity limitations above are unchanged. Historical
+Authentication `2.38.1` results are not evidence for this target.
+
+Fresh full generation uses the unchanged four-mutex queue, v1.0 then beta,
+isolated Kiota `1.36.1` with parallelism 1, and the normally packaged adapted
+Authentication `2.41.2` from the exact merged shipping source. All 64 package
+file SHA256s match its producer manifest; the Authentication nupkg SHA256 is
+`2FC09BFE6B70D313BC56DF8ADCCFB1976FB4E90A1898BF8A916B4B8B792898EB`.
+No gallery substitution, dependency injection, global environment edit,
+unmerged overlay, or authored naming/schema expansion is used.
+
+| Current gate | v1.0 | beta |
+| --- | --- | --- |
+| Full queued Release generation | Exit 0, `OK`, 35.20 seconds | Exit 0, `OK`, 59.00 seconds |
+| Fresh normal-manifest exports | 72 | 166 |
+| Distinct compiled compatible operations | All 63; zero client-only | All 145; zero client-only |
+| Global offline factory checks | 137 assertions, 16 HTTP requests, 4 declined prompts | 196 assertions, 22 HTTP requests, 5 declined prompts |
+| USGov offline factory checks | Same counts as Global | Same counts as Global |
+| Complete runtime gate outcome, each cloud | **Exit 1: generic-header refetch failure** | **Exit 1: generic-header refetch failure** |
+
+`Test-SearchDirectiveMigration.ps1 -ApiVersion <profile> -Environment <Global|USGov>
+-OutputPath <artifact.json>` imports the normal module manifest (Authentication
+minimum `2.41.2`, no dependency preloads). Each bin contains exactly its own
+wrapper, typed client and runtime DLLs. Real `Connect-MgGraph`, the existing
+in-memory MockDataStore, and the actual `GraphHttpClientFactory` token pipeline
+terminate in an offline handler. The factory's original global `/v1.0/`
+BaseAddress is retained: generated beta calls actually send `/beta`, and USGov
+calls retain `graph.microsoft.us`. Alternating profiles, cache reuse,
+request-context invalidation, reconnect and disconnected zero-HTTP behavior
+pass without changing the shared HttpClient BaseAddress.
+
+Every loaded Authentication/Kiota/RMS/UriTemplate identity is unique and comes
+from the adapted Authentication package in its expected load context. Typed
+connection POST/PATCH bodies/results, search-action nested JSON, bodyless DELETE,
+the beta bodyless start action, WhatIf, real declined Confirm and invalid binder
+zero-HTTP checks pass. The original migration still introduces no mutations or
+operation groups. No live OAuth, Graph or credentials store is used.
+
+The expanded test deliberately retains an actual normal-target failure:
+`Update-MgExternalConnection -Headers @{ 'x-search-marker' = 'bound-mutation' }`
+sends the header on PATCH, but its selected-route 204 follow-up GET drops it.
+Both clouds and profiles reproduce #3886, so **all-runtime PASS is not claimed**.
+The typed body, selected GET URL and typed result succeed; no unmerged fix is
+copied in or the header assertion suppressed. This module has no reference-delete
+route or migrated required-DELETE-query surface requiring #3882.
+
+The combined Search/configurator/naming command above passes 94/94 with a
+nonzero TRX on the new target, and ordinary strict Search inventory still passes
+zero rows/empty mappings. Raw current parity remains exit 1: v1.0 71 matched/1
+mismatch; beta 164 mismatches/2 no-oracle, without prefix normalization.
+Detailed new logs, TRX, captures, hash manifests and failed-attempt diagnostics
+are retained separately under the session's `search-844672-revalidation` evidence
+folder; earlier target evidence is untouched. The refresh is prepared, with the
+header-loss runtime blocker explicit rather than certified green.

@@ -15,7 +15,8 @@ param(
     [string]$ApiVersion,
     [string]$Configuration = 'Release',
     [ValidateSet('Global', 'USGov')]
-    [string]$Environment = 'Global'
+    [string]$Environment = 'Global',
+    [string]$OutputPath
 )
 
 $ErrorActionPreference = 'Stop'
@@ -51,10 +52,10 @@ function Assert-Mandatory([string]$Name, [string]$Parameter) {
 
 Assert-Search ($module.ExportedCmdlets.Count -gt 0) 'Compiled Search module has no exports.'
 $manifestData = Import-PowerShellDataFile $manifest
-Assert-Search (@($manifestData.RequiredAssemblies).Count -eq 0) 'Wrapper manifest must not preload Authentication-owned dependencies.'
+Assert-Search (@($manifestData.RequiredAssemblies | Where-Object { $_ }).Count -eq 0) 'Wrapper manifest must not preload Authentication-owned dependencies.'
 Assert-Search ($manifestData.RequiredModules[0].ModuleVersion -eq '2.41.2') 'Wrapper manifest requires stale Authentication.'
 $dllNames = @((Get-ChildItem (Split-Path $manifest) -File -Filter '*.dll').Name | Sort-Object)
-Assert-Search (($dllNames -join ',') -ceq 'Microsoft.Graph.PowerShell.Search.Client.dll,Microsoft.Graph.Wrapper.Runtime.dll,Microsoft.Graph.Wrapper.Search.dll') 'Wrapper bin must contain exactly its three owned DLLs.'
+Assert-Search (($dllNames -join ',') -ceq 'Microsoft.Graph.Wrapper.Runtime.dll,Microsoft.Graph.Wrapper.Search.Client.dll,Microsoft.Graph.Wrapper.Search.dll') 'Wrapper bin must contain exactly its three owned DLLs.'
 $specOperations = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
 $currentPath = $null
 $currentMethod = $null
@@ -407,7 +408,7 @@ try {
     foreach ($required in @('Microsoft.IO.RecyclableMemoryStream', 'Std.UriTemplate', 'Microsoft.Kiota.Serialization.Multipart', 'Microsoft.Kiota.Serialization.Json', 'Microsoft.Graph.Authentication.Core')) {
         Assert-Search (@($sources | Where-Object Name -eq $required).Count -eq 1) "Missing required Auth-owned dependency: $required"
     }
-    [pscustomobject]@{
+    $report = [pscustomobject]@{
         ApiVersion = $ApiVersion
         Environment = $Environment
         Exports = $module.ExportedCmdlets.Count
@@ -424,7 +425,10 @@ try {
         Failures = @($failures)
         LiveGraphRequests = 0
         ModulePath = $module.Path
-    } | ConvertTo-Json -Depth 7
+    }
+    $json = $report | ConvertTo-Json -Depth 7
+    if ($OutputPath) { Set-Content -LiteralPath $OutputPath -Value $json }
+    Write-Output $json
     if ($failures.Count) { throw ($failures -join [Environment]::NewLine) }
 }
 finally {
