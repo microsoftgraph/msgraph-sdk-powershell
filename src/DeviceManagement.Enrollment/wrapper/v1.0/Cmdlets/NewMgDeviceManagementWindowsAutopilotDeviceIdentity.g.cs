@@ -128,7 +128,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
         body.EnrollmentState = EnrollmentState;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.WindowsAutopilotDeviceIdentity? result;

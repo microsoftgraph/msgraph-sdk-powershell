@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
     if (this.IsParameterBound(nameof(DisplayName)))
         body.DisplayName = DisplayName;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 
