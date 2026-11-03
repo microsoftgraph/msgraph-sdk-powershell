@@ -89,7 +89,7 @@ namespace Microsoft.Graph.PowerShell.Files
         body.WorkingHours = WorkingHours;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Files.Client.Models.MailboxSettings? result;
