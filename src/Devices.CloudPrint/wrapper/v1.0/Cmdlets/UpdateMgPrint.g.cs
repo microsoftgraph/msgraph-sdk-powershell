@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
         body.Settings = Settings;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.Print? result;
