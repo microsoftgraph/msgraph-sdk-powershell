@@ -95,6 +95,11 @@ public sealed class CloudCommunicationsDirectiveMigrationTests
             await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile)
                 .GenerateAsync(CancellationToken.None);
             var files = Directory.GetFiles(output, "*.g.cs").ToDictionary(path => Path.GetFileName(path)!, File.ReadAllText);
+            Assert.All(files.Values.Where(source => source.Contains("GetRequestAdapter(", StringComparison.Ordinal)), source =>
+            {
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source, StringComparison.Ordinal);
+                Assert.DoesNotContain("GetRequestAdapter()", source, StringComparison.Ordinal);
+            });
             foreach (var (parent, scope) in new[]
             {
                 ("/communications/onlineMeetings/{onlineMeeting-id}", "Communication"),
