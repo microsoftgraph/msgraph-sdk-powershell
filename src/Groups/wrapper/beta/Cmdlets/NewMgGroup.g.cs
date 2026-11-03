@@ -374,7 +374,7 @@ namespace Microsoft.Graph.PowerShell.Groups
         body.WritebackConfiguration = WritebackConfiguration;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Groups.Client.Models.Group? result;

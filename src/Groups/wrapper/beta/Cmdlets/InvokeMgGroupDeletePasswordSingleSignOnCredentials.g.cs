@@ -37,7 +37,7 @@ namespace Microsoft.Graph.PowerShell.Groups
             var body = new global::Microsoft.Graph.PowerShell.Groups.Client.Groups.Item.DeletePasswordSingleSignOnCredentials.DeletePasswordSingleSignOnCredentialsPostRequestBody();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Groups
                 return;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

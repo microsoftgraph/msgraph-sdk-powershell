@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Groups
     if (this.IsParameterBound(nameof(GroupIds)))
         body.GroupIds = GroupIds!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Groups.Client.Groups.Item.CheckMemberGroups.CheckMemberGroupsPostResponse? result;

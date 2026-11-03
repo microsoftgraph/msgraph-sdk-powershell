@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Groups
         body.ToRecipients = ToRecipients!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Groups.Client.Models.ConversationThread? result;

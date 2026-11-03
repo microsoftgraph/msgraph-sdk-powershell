@@ -87,7 +87,7 @@ namespace Microsoft.Graph.PowerShell.Groups
         body.Mentioned = Mentioned;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Groups.Client.Models.Mention? result;

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Groups
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Groups.Client.Models.GroupLifecyclePolicy? result;

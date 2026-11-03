@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Groups
                 return;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Groups.Client.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppPostResponse? result;

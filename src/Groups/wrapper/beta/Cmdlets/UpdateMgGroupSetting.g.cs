@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Groups
         body.Values = Values!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Groups.Client.Models.DirectorySetting? result;
