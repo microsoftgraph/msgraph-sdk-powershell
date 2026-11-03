@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -140,6 +141,37 @@ public sealed class BackupRestoreDirectiveMigrationTests
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, itemPath, config, apiVersion: profile));
         Assert.Equal("MgSolutionBackupRestoreBrowseSession",
             Naming.Resolve(new OperationInfo(HttpMethod.Get, itemPath), config, apiVersion: profile).Noun);
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task RealSpecEmissionRetainsExplicitTransportProfile(string profile)
+    {
+        var document = await LoadSpecAsync(profile);
+        var output = Path.Combine(Path.GetTempPath(), "wrapper-generator-tests", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(output);
+        try
+        {
+            var config = new GeneratorConfig("Microsoft.Graph.PowerShell.BackupRestore.Client", output);
+            var service = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance,
+                apiVersion: profile);
+            await service.GenerateAsync(CancellationToken.None);
+
+            var sources = Directory.GetFiles(output, "*.g.cs").Select(File.ReadAllText).ToArray();
+            Assert.NotEmpty(sources);
+            var transportSources = sources.Where(source => source.Contains("GetRequestAdapter(")).ToArray();
+            Assert.NotEmpty(transportSources);
+            foreach (var source in transportSources)
+            {
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+                Assert.DoesNotContain("GetRequestAdapter()", source);
+            }
+        }
+        finally
+        {
+            Directory.Delete(output, recursive: true);
+        }
     }
 
     private static void AssertOperation(OpenApiDocument document, HttpMethod method, string path, string operationId)

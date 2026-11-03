@@ -42,8 +42,9 @@ profile is excluded, and legacy `openApiDocs` is not a fallback.
 | v1.0 | `openApiDocs_KiotaCompat\v1.0\BackupRestore.yml` | `ee37fc867b82b35bb31d0c94a8c251d03059d383` | 150 | 247 | `wrapper\v1.0` |
 | beta | `openApiDocs_KiotaCompat\beta\BackupRestore.yml` | `4b2f3dcc294720dfae40768403fcbccfeb69c1b3` | 197 | 320 | `wrapper\Beta` |
 
-These are the current blobs after normally merging `powershell-v3` at
-`08e409a6aa8fd48736b8f9a9199559f46fc0d1ad` (including #3849). The earlier
+These blobs remain unchanged after normally merging `powershell-v3` at
+`844672d7c2238f6b29a208f9ba73fe28e9e29cef` (including #3891). They were first
+reviewed at `08e409a6aa8fd48736b8f9a9199559f46fc0d1ad` (including #3849). The earlier
 reviewed blobs were `3748b0da077fe8f73e90bebc3f232411cacb49b2` and
 `631fb0e595bbfa8efb43de570ab10adfe1d2954a`, respectively. Compatible operation
 IDs now use the aligned legacy identities; the tests pin those exact current
@@ -84,10 +85,26 @@ action and function identities pin unaffected naming and suppression boundaries.
 The generation profile is passed separately to naming and configurator calls,
 not stored in `GeneratorConfig`; derived data is checked both on and off for
 each profile, including the v1.0-only action rename.
+Real-spec generation also checks that every emitted transport call receives
+its separate `v1.0` or `beta` context. This is not an authored profile filter.
 The strict reviewed inventory must return zero directive rows for this module.
 
-This is a code-only audit, not end-to-end generation or compiled-module evidence.
+Source tests alone are not end-to-end generation or compiled-module evidence.
 Both full Release builds remain required before publication, followed by
 separate v1.0 and beta commits each combining its newly generated Kiota client,
 cmdlets, projects and lock files. A passing empty directive inventory alone does
 not satisfy those gates.
+
+After #3891, acceptance uses the normally packaged adapted Authentication 2.41.2
+from the integrated shipping source. Authentication owns the complete Kiota
+closure; wrapper manifests require it without dependency preloads, and wrapper
+bins contain only their three owned DLLs. Fresh offline requests must use the
+normal authenticated factory pipeline and verify the emitted profile's service
+root without changing the shared client's BaseAddress. Earlier Authentication
+2.38.1 build/import logs remain historical evidence, not current acceptance.
+
+This audit does not fix the unmerged #3886 generic-header PATCH refetch change.
+The current service-app PATCH can refetch the selected item after a 204 response,
+but generic `-Headers` are not replayed on that GET. Transport evidence must
+report that limitation rather than equating source or WhatIf success with
+header/body/HTTP correctness.
