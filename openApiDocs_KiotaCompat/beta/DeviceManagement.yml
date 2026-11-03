@@ -19701,7 +19701,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementIntent
       summary: Invoke action updateSettings
-      operationId: deviceManagement.intent.deviceManagementIntent_updateSetting
+      operationId: deviceManagement.intent_updateSetting
       requestBody:
         description: Action parameters
         content:
