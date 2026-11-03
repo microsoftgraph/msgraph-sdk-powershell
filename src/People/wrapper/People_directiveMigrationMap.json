@@ -11,7 +11,7 @@
         "notes": "Preserve the active AutoRest source-file-csharp Client/ServiceClient transform without porting it. Parameter aliases/transforms and schema/response directives are deferred."
       }
     ],
-    "targetCommit": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad",
+    "targetCommit": "844672d7c2238f6b29a208f9ba73fe28e9e29cef",
     "specBlobs": {
       "v1.0": "1d05e8dbb2ad71ad4ecb5d9144291cc290516894",
       "beta": "fd224e37fbba7d97a0c8b6697c0d19e1c1830192"
@@ -20,7 +20,7 @@
       "v1.0": "1ab390cf83317405e3563c0f85121eca7c3209cd",
       "beta": "71381c77637c49c0e029f725e569629e7f9b4341"
     },
-    "selectorReview": "The original operation-ID regex was evaluated case-sensitively against every actual same-profile openApiDocs operation: v1.0 0/3, beta 3/129. After the normal powershell-v3 operation-ID alignment and spec refresh, the current literal compatible selector matches exactly the same complete sets: v1.0 0/3, beta 3/129. Each original match survives at one exact unique unchanged method/path with the same aligned ID; there are no missing survivors, additional literal matches or removals. The supported literal mapping is therefore sufficient without the unmerged Legacy helper. The singular ActivityStatistic alternative does not match the plural legacy ActivityStatistics IDs; do not broaden the suppression.",
+    "selectorReview": "The original operation-ID regex was evaluated case-sensitively against every actual same-profile openApiDocs operation: v1.0 0/3, beta 3/129. After the normal powershell-v3 operation-ID alignment and spec refresh, the current literal compatible selector matches exactly the same complete sets: v1.0 0/3, beta 3/129. Each original match survives at one exact unique unchanged method/path with the same aligned ID; there are no missing survivors, additional literal matches or removals. The supported literal mapping remains sufficient after the normally merged ID alignment and Authentication sync; both People spec blobs are unchanged and no Legacy helper is needed. The singular ActivityStatistic alternative does not match the plural legacy ActivityStatistics IDs; do not broaden the suppression.",
     "subjectReview": "Directive 3 selects the five beta collection/item ActivityStatistics operations, not the separately suffixed Count subject. Directives 4 and 5 have no insight routes in either actual legacy or compatible People specification. These are reviewed selector absences, not claims based on zero literal compatible operation-ID matches.",
     "existingCoverage": "People had no curated entries. v1.0 derived data does not implement these beta-only routes, and no beta derived data is present. Exact noun overrides are needed only for directive 3; ordinary people/profile/project/count neighbors retain structural naming.",
     "legacySuppressionLineage": [
