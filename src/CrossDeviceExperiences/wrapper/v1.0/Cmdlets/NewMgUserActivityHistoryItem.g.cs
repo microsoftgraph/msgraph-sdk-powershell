@@ -89,7 +89,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
         body.Activity = Activity;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CrossDeviceExperiences.Client.Models.ActivityHistoryItem? result;
