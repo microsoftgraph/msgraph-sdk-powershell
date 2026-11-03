@@ -5,6 +5,8 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -157,6 +159,44 @@ public sealed class DevicesCloudPrintDirectiveMigrationTests
         if (profile == "v1.0" && useCollisionData)
         {
             Assert.True(DerivedCollisionResolutions.IsSuppressed(profile, HttpMethod.Post, "/print/printers"));
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0", "NewMgPrintPrinter.g.cs")]
+    [InlineData("beta", "InvokeMgPrinterCreate.g.cs")]
+    public async Task GeneratedTransportCarriesExplicitProfileWithoutChangingTheSharedClient(
+        string profile, string actionFile)
+    {
+        var output = Path.Combine(Path.GetTempPath(), $"cloudprint-profile-{Guid.NewGuid():N}");
+        try
+        {
+            var config = new GeneratorConfig("Test.Client", output);
+            await new PowerShellWrapperGenerationService(
+                LoadSpec(profile), config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(CancellationToken.None);
+            var sources = Directory.GetFiles(output, "*.g.cs");
+            Assert.NotEmpty(sources);
+            var transportSources = sources.Select(File.ReadAllText)
+                .Where(source => source.Contains("GetRequestAdapter(", StringComparison.Ordinal)).ToArray();
+            Assert.NotEmpty(transportSources);
+            foreach (var source in transportSources)
+            {
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+                Assert.DoesNotContain("GetRequestAdapter()", source);
+                Assert.DoesNotContain(".BaseAddress =", source);
+            }
+            var action = File.ReadAllText(Path.Combine(output, actionFile));
+            Assert.Contains("[GraphRoute(\"POST\", \"/print/printers/create\")]", action);
+            Assert.Contains("SupportsShouldProcess = true", action);
+            Assert.Contains("CreatePostRequestBody", action);
+            Assert.True(action.IndexOf("ShouldProcess(", StringComparison.Ordinal) <
+                action.IndexOf("GetRequestAdapter(", StringComparison.Ordinal));
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
         }
     }
 
