@@ -69,10 +69,14 @@ public sealed class ComplianceDirectiveMigrationTests
             await service.GenerateAsync(CancellationToken.None);
             Assert.Equal(new[] { "GetMgCompliance.g.cs", "UpdateMgCompliance.g.cs" },
                 Directory.GetFiles(output, "*.g.cs").Select(Path.GetFileName).OrderBy(name => name).ToArray());
-            Assert.Contains("[GraphRoute(\"GET\", \"/compliance\")]",
-                File.ReadAllText(Path.Combine(output, "GetMgCompliance.g.cs")));
+            var retrieval = File.ReadAllText(Path.Combine(output, "GetMgCompliance.g.cs"));
+            Assert.Contains("[GraphRoute(\"GET\", \"/compliance\")]", retrieval);
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", retrieval);
             var mutation = File.ReadAllText(Path.Combine(output, "UpdateMgCompliance.g.cs"));
             Assert.Contains("[GraphRoute(\"PATCH\", \"/compliance\")]", mutation);
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", mutation);
+            Assert.DoesNotContain("GetRequestAdapter()", retrieval);
+            Assert.DoesNotContain("GetRequestAdapter()", mutation);
             Assert.Contains("SupportsShouldProcess = true", mutation);
         }
         finally

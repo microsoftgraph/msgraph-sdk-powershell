@@ -1,6 +1,6 @@
 {
   "review": {
-    "baseCommit": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad",
+    "baseCommit": "844672d7c2238f6b29a208f9ba73fe28e9e29cef",
     "scope": "Only src/Compliance/Compliance.md; global and profile-specific readme directives excluded. Parameter/schema directives remain deferred; none occur in this shared file.",
     "compatibleSpecs": {
       "v1.0": {
@@ -63,7 +63,7 @@
         "survivingOperations": []
       }
     },
-    "evidence": "Reviewed after normally integrating #3849. The original beta shared subject/variant selectors cover exactly the nested dataSource PATCH/DELETE (directive 1) and GET (directive 2); the parent item GET/PATCH/DELETE are distinct neighboring operations, not the numbered variants. Each selected beta operation is deprecated with x-ms-deprecation removalDate 2023-02-01 and explicitly directs callers to /security instead. The original v1.0 spec has no eDiscovery selection. All selected source operations have zero same-profile compatible survivors: both complete compatible path inventories contain only /compliance. Current operation IDs reflect #3861/#3863 alignment. Source lineage is audit evidence only, not current API mappings or a translation-helper declaration. Retain dormant exact suppressions and structural naming without restoring expired APIs or overriding neighbors."
+    "evidence": "Revalidated after normally integrating Authentication #3891, following the #3849 framework review. The original beta shared subject/variant selectors cover exactly the nested dataSource PATCH/DELETE (directive 1) and GET (directive 2); the parent item GET/PATCH/DELETE are distinct neighboring operations, not the numbered variants. Each selected beta operation is deprecated with x-ms-deprecation removalDate 2023-02-01 and explicitly directs callers to /security instead. The original v1.0 spec has no eDiscovery selection. All selected source operations have zero same-profile compatible survivors: both complete compatible path inventories contain only /compliance. Current operation IDs reflect #3861/#3863 alignment; these published module specs are unchanged by the revised #3847 ID alignment. Source lineage is audit evidence only, not current API mappings or a translation-helper declaration. Retain dormant exact suppressions and structural naming without restoring expired APIs or overriding neighbors."
   },
   "mappings": [
     {
