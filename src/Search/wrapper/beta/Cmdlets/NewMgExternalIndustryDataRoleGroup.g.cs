@@ -44,7 +44,7 @@ namespace Microsoft.Graph.PowerShell.Search
         body.Roles = Roles!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Search.Client.Models.IndustryData.RoleGroup? result;

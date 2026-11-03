@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Search
         body.Entitlements = Entitlements;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Search.Client.Models.DataCollectionInfo? result;

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Search
         body.Properties = Properties;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItem? result;

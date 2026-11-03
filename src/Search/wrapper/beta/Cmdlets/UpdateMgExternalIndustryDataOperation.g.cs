@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.Search
         body.Status = Status;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Search.Client.Models.LongRunningOperation? result;
