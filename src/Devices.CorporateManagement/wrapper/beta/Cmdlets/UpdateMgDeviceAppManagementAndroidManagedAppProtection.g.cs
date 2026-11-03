@@ -639,7 +639,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
         body.RequiredAndroidSafetyNetEvaluationType = RequiredAndroidSafetyNetEvaluationType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.AndroidManagedAppProtection? result;

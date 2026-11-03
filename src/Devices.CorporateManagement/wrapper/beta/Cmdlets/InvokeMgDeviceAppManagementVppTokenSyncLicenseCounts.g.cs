@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
                 return;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

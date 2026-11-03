@@ -85,7 +85,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
         body.State = State;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.ManagedDeviceMobileAppConfigurationState? result;

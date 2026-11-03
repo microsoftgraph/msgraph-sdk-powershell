@@ -44,7 +44,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
         body.TargetType = TargetType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppRelationship? result;

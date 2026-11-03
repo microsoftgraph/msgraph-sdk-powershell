@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
     if (this.IsParameterBound(nameof(DeviceEnrollmentNotificationConfigurations)))
         body.DeviceEnrollmentNotificationConfigurations = DeviceEnrollmentNotificationConfigurations!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

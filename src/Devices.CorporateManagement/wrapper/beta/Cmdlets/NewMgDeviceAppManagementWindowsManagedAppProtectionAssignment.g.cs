@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
         body.Target = Target;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.TargetedManagedAppPolicyAssignment? result;

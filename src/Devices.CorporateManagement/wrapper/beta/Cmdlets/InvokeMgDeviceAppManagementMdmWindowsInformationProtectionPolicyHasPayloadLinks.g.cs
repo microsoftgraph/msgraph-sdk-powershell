@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
     if (this.IsParameterBound(nameof(PayloadIds)))
         body.PayloadIds = PayloadIds!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.HasPayloadLinks.HasPayloadLinksPostResponse? result;

@@ -212,7 +212,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
         body.MobileThreatDefenseRemediationAction = MobileThreatDefenseRemediationAction;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.WindowsManagedAppProtection? result;

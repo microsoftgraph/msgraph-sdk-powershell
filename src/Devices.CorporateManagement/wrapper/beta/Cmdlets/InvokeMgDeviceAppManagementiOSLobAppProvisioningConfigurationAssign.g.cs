@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
     if (this.IsParameterBound(nameof(IOSLobAppProvisioningConfigAssignments)))
         body.IOSLobAppProvisioningConfigAssignments = IOSLobAppProvisioningConfigAssignments!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

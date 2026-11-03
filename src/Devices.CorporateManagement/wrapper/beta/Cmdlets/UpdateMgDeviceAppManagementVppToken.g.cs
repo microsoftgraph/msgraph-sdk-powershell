@@ -141,7 +141,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
         body.VppTokenAccountType = VppTokenAccountType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.VppToken? result;

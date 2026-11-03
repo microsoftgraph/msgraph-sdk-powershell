@@ -95,7 +95,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
         body.History = History!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.MobileAppTroubleshootingEvent? result;

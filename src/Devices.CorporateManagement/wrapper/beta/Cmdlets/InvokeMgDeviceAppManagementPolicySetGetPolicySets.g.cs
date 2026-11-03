@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
     if (this.IsParameterBound(nameof(PolicySetIds)))
         body.PolicySetIds = PolicySetIds!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.DeviceAppManagement.PolicySets.GetPolicySets.GetPolicySetsPostResponse? result;
