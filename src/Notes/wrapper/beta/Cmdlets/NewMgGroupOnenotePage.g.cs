@@ -99,7 +99,7 @@ namespace Microsoft.Graph.PowerShell.Notes
         body.Links = Links;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Notes.Client.Models.OnenotePage? result;

@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Notes
     if (this.IsParameterBound(nameof(Commands)))
         body.Commands = Commands!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 
