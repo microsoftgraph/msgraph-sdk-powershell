@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -103,6 +104,30 @@ public sealed class IdentityPartnerDirectiveMigrationTests
                     Assert.Equal(verb, naming.VerbName);
                     Assert.Equal("Mg" + noun, naming.Noun);
                 }
+            }
+
+            var output = Path.Combine(Path.GetTempPath(), "IdentityPartnerProfile-" + Guid.NewGuid().ToString("N"));
+            try
+            {
+                var config = new GeneratorConfig("Test.Client", output);
+                var service = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance,
+                    apiVersion: profile);
+                await service.GenerateAsync(TestContext.Current.CancellationToken);
+                var sources = Directory.GetFiles(output, "*.g.cs").Select(File.ReadAllText).ToArray();
+                Assert.Equal(42, sources.Length);
+                var transportSources = sources.Where(source => source.Contains("GetRequestAdapter(", StringComparison.Ordinal))
+                    .ToArray();
+                Assert.Equal(36, transportSources.Length);
+                Assert.All(transportSources, source =>
+                {
+                    Assert.Contains($"GetRequestAdapter(\"{profile}\")", source, StringComparison.Ordinal);
+                    Assert.DoesNotContain("GetRequestAdapter()", source, StringComparison.Ordinal);
+                });
+            }
+            finally
+            {
+                if (Directory.Exists(output))
+                    Directory.Delete(output, recursive: true);
             }
         }
     }

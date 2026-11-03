@@ -34,7 +34,7 @@ this migration; this include adds no module directive entries or v3 overrides.
 
 Both required profiles are present; neither is excluded. Only the
 `openApiDocs_KiotaCompat` specifications were used, without a legacy fallback.
-After normally merging `powershell-v3` at `08e409a6aa` (merged #3849),
+After normally merging `powershell-v3` at `844672d7c2` (merged #3891),
 the current compatible specifications have these Git blobs:
 
 | Profile | Compatible specification | Git blob | Paths | Operations |
@@ -82,7 +82,10 @@ suppression, noun overrides, and verb overrides with curated-only and normal
 derived configuration, passing the actual profile separately to every naming
 and suppression API. Authored configuration remains shared; `GeneratorConfig`
 contains only run settings. It also checks that this audit has no directive block
-and the reviewed mapping ledger is empty.
+and the reviewed mapping ledger is empty. Real-spec generation asserts all 42
+cmdlet sources and the explicit actual profile in all 36 transport workers:
+`GetRequestAdapter("v1.0")` or `GetRequestAdapter("beta")`, never the implicit
+v1.0 overload.
 
 The strict shared-directive inventory must return zero rows with
 `-Module Identity.Partner -FailOnUnresolved`. This is a no-directive audit, not a
@@ -91,3 +94,9 @@ claim of renamed or suppressed operations.
 This audit does not claim fresh generation or Release-build completion. Those
 are separate gated steps for both profiles. Subsequent generation must preserve
 the committed output directory casing: `wrapper\v1.0` and `wrapper\Beta`.
+Current-target acceptance uses normally packaged adapted Authentication 2.41.2,
+which owns the complete Kiota dependency closure. Wrapper manifests require it
+without dependency preloads, and wrapper output contains only the module,
+client, and runtime DLLs. Fresh compiled transport evidence must distinguish
+typed-body/URL/safety checks from any generic-header PATCH-refetch failure; the
+empty shared audit does not authorize a framework fix or waive that contract.
