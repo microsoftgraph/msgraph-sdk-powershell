@@ -36,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.Compliance
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Compliance.Client.Models.Compliance? result;
