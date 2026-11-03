@@ -14,6 +14,16 @@ $content = [System.IO.File]::ReadAllText($OpenApiFilePath)
 $document = ConvertFrom-Yaml -Yaml $content -Ordered
 $operationIds = [System.Collections.Generic.Dictionary[string, string]]::new([System.StringComparer]::Ordinal)
 $methods = @('get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace')
+$moduleName = [System.IO.Path]::GetFileNameWithoutExtension($OpenApiFilePath)
+$requiredIds = [System.Collections.Generic.Dictionary[string, string]]::new([System.StringComparer]::Ordinal)
+# These exact required paths have bound-operation IDs whose ancestry differs from the
+# shared directive's original ID. Apply finite corrections, not regex or legacy lookup.
+$alignments = Get-Content (Join-Path $PSScriptRoot 'RequiredPathOperationIds.json') -Raw | ConvertFrom-Json
+foreach ($alignment in $alignments) {
+    if ($alignment.module -ceq $moduleName -and $alignment.profile -ceq $document.info.version) {
+        $requiredIds.Add("$($alignment.method) $($alignment.path)", $alignment.operationId)
+    }
+}
 
 foreach ($path in $document.paths.GetEnumerator()) {
     foreach ($method in $methods) {
@@ -30,6 +40,10 @@ foreach ($path in $document.paths.GetEnumerator()) {
 
         $oldId = $operation.operationId
         $newId = $OperationIdDocument.paths[$path.Key][$method].operationId
+        $requiredKey = "$($method.ToUpperInvariant()) $($path.Key)"
+        if ($requiredIds.ContainsKey($requiredKey)) {
+            $newId = $requiredIds[$requiredKey]
+        }
         if ($operationIds.ContainsKey($oldId) -and $operationIds[$oldId] -cne $newId) {
             throw "Ambiguous operation ID '$oldId' in '$OpenApiFilePath'."
         }
