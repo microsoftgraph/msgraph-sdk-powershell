@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -32,11 +34,18 @@ public sealed class IdentityGovernanceDirectiveMigrationTests
         ["v1.0"] = new(() => LoadSpecAsync("v1.0")),
         ["beta"] = new(() => LoadSpecAsync("beta")),
     };
-    private static readonly Dictionary<string, Lazy<Task<OpenApiDocument>>> LegacySpecs = new()
+    private static readonly Dictionary<string, Lazy<Task<OpenApiDocument>>> OriginalSourceSpecs = new()
     {
         ["v1.0"] = new(() => LoadSpecAsync("v1.0", legacyEvidence: true)),
         ["beta"] = new(() => LoadSpecAsync("beta", legacyEvidence: true)),
     };
+    private static readonly string[] SelectorExclusions =
+    [
+        @"(?!identityGovernance\.entitlementManagement\.accessPackage\.resourceRoleScope.*(?:[Uu]ploadSession|ExternalOriginResourceConnector))",
+        @"(?!.*\.uploadSession_(?:ListFile|GetFile|GetFilesContent|SetFilesContent|DeleteFilesContent)$)",
+        @"(?!.*\.uploadSession\.file_GetCount$)",
+        @"(?!.*[Ss]ubjectProcessingResult)",
+    ];
 
     [Fact]
     public void AccountsForAllSeventyActiveSharedGroupsAndExplicitDeferrals()
@@ -88,104 +97,103 @@ public sealed class IdentityGovernanceDirectiveMigrationTests
     }
 
     [Theory]
-    [InlineData("v1.0", 237)]
-    [InlineData("beta", 1061)]
-    public async Task OriginalOperationIdSuppressionAccountsForEveryActualLegacyMatch(string profile, int count)
+    [InlineData("v1.0", 237, 237)]
+    [InlineData("beta", 1061, 808)]
+    public async Task LiteralSelectorPreservesEveryOriginalMatchAndReviewedCurrentOperation(
+        string profile, int originalCount, int currentCount)
     {
         var mapping = Ledger.Value.RootElement.GetProperty("mappings")[0];
-        var source = mapping.GetProperty("sourceContains").GetString()!;
-        var regex = new Regex(source["remove-path-by-operation: ".Length..]);
-        var profileMap = mapping.GetProperty("profiles").GetProperty(profile);
-        Assert.Equal("Legacy", profileMap.GetProperty("operationIdSource").GetString());
-        var legacy = await LegacySpecs[profile].Value;
-        var current = Operations(await Specs[profile].Value).ToArray();
-        var actual = Operations(legacy)
-            .Where(o => regex.IsMatch(o.Operation.OperationId!))
+        var (original, reviewed) = Selectors();
+        var source = Operations(await OriginalSourceSpecs[profile].Value).ToArray();
+        var originalMatches = source.Where(o => original.IsMatch(o.Operation.OperationId!))
             .Select(o => $"{o.Method} {o.Path} [{o.Operation.OperationId}]").ToHashSet(StringComparer.Ordinal);
-        var reviewed = new HashSet<string>(StringComparer.Ordinal);
-        foreach (var evidence in profileMap.GetProperty("operations").EnumerateArray())
+        var reviewedSourceMatches = source.Where(o => reviewed.IsMatch(o.Operation.OperationId!))
+            .Select(o => $"{o.Method} {o.Path} [{o.Operation.OperationId}]").ToHashSet(StringComparer.Ordinal);
+        Assert.Equal(originalCount, originalMatches.Count);
+        Assert.True(originalMatches.SetEquals(reviewedSourceMatches), "The reviewed exclusions changed original source intent.");
+        var currentMatches = Operations(await Specs[profile].Value).Where(o => reviewed.IsMatch(o.Operation.OperationId!))
+            .Select(o => $"{o.Method} {o.Path} [{o.Operation.OperationId}]").ToHashSet(StringComparer.Ordinal);
+        var evidence = mapping.GetProperty("profiles").GetProperty(profile).GetProperty("operations").EnumerateArray()
+            .Select(o => $"{o.GetProperty("method").GetString()} {o.GetProperty("path").GetString()} [{o.GetProperty("operationId").GetString()}]")
+            .ToHashSet(StringComparer.Ordinal);
+        Assert.Equal(currentCount, currentMatches.Count);
+        Assert.True(currentMatches.SetEquals(evidence), "The literal ledger must cover exactly the surviving current operations.");
+    }
+
+    [Theory]
+    [InlineData("v1.0", 0, 56)]
+    [InlineData("beta", 0, 0)]
+    [InlineData("v1.0", 1, 20)]
+    [InlineData("beta", 1, 125)]
+    [InlineData("v1.0", 2, 4)]
+    [InlineData("beta", 2, 25)]
+    [InlineData("v1.0", 3, 32)]
+    [InlineData("beta", 3, 32)]
+    public async Task EachExclusionMatchesNoOriginalSourceOrIntendedCurrentOperation(
+        string profile, int exclusionIndex, int excludedCount)
+    {
+        var (original, _) = Selectors();
+        var lookahead = SelectorExclusions[exclusionIndex];
+        var excluded = new Regex("^" + lookahead[3..^1]);
+        Assert.DoesNotContain(Operations(await OriginalSourceSpecs[profile].Value),
+            o => original.IsMatch(o.Operation.OperationId!) && excluded.IsMatch(o.Operation.OperationId!));
+        Assert.DoesNotContain(Ledger.Value.RootElement.GetProperty("mappings")[0].GetProperty("profiles")
+            .GetProperty(profile).GetProperty("operations").EnumerateArray(),
+            o => excluded.IsMatch(o.GetProperty("operationId").GetString()!));
+        Assert.Equal(excludedCount, Operations(await Specs[profile].Value)
+            .Count(o => original.IsMatch(o.Operation.OperationId!) && excluded.IsMatch(o.Operation.OperationId!)));
+    }
+
+    [Theory]
+    [InlineData("v1.0", 88, 56)]
+    [InlineData("beta", 182, 150)]
+    public async Task OnlyUnrelatedNewApisAreExcludedAndExistingPrefixNamingIsUnchanged(
+        string profile, int excludedCount, int existingPrefixCount)
+    {
+        var (original, reviewed) = Selectors();
+        var source = Operations(await OriginalSourceSpecs[profile].Value).ToArray();
+        var excluded = Operations(await Specs[profile].Value)
+            .Where(o => original.IsMatch(o.Operation.OperationId!) && !reviewed.IsMatch(o.Operation.OperationId!)).ToArray();
+        Assert.Equal(excludedCount, excluded.Length);
+        var prefixCount = 0;
+        foreach (var op in excluded)
         {
-            var method = new HttpMethod(evidence.GetProperty("method").GetString()!);
-            var path = evidence.GetProperty("path").GetString()!;
-            var oldPath = evidence.GetProperty("legacyPath").GetString()!;
-            var oldId = evidence.GetProperty("legacyOperationId").GetString()!;
-            Assert.Equal(oldId, legacy.Paths[oldPath].Operations![method].OperationId);
-            Assert.Matches(regex, oldId);
-            var selectorPath = oldPath;
-            if (evidence.TryGetProperty("legacyPathTranslation", out var translation))
+            Assert.DoesNotContain(source, old => old.Method == op.Method &&
+                NormalizeSourcePath(old.Path) == NormalizeSourcePath(op.Path));
+            Assert.DoesNotContain(source, old => original.IsMatch(old.Operation.OperationId!) &&
+                old.Operation.OperationId == op.Operation.OperationId);
+            Assert.False(CmdletConfigurator.IsSuppressed(op.Method, op.Path, Config(useCollisionData: false),
+                apiVersion: profile), "The reviewed scope correction must not add authored suppression of a new API.");
+            if (op.Path.StartsWith(EntitlementManagement + "/", StringComparison.Ordinal))
             {
-                Assert.Equal("UnqualifyFinalOperation", translation.GetString());
-                selectorPath = Regex.Replace(oldPath, @"/microsoft\.graph\.([^/]+)$", "/$1");
-                Assert.NotEqual(oldPath, selectorPath);
-                var kind = GraphOperationType(legacy.Paths[oldPath].Operations![method]);
-                Assert.Contains(kind, new[] { "action", "function" });
-                Assert.Equal(kind, GraphOperationType(current.Single(o => o.Method == method && o.Path == path).Operation));
-                Assert.Equal(kind == "action" ? HttpMethod.Post : HttpMethod.Get, method);
+                Assert.Equal("EntitlementManagementProbe", CmdletConfigurator.ApplyNounOverrides(op.Method, op.Path,
+                    "IdentityGovernanceEntitlementManagementProbe", Config(useCollisionData: false), apiVersion: profile));
+                prefixCount++;
             }
-            Assert.Equal(NormalizeLegacyPath(selectorPath), NormalizeLegacyPath(path));
-            Assert.Single(current, o => o.Method == method && NormalizeLegacyPath(o.Path) == NormalizeLegacyPath(selectorPath));
-            Assert.True(reviewed.Add($"{method} {oldPath} [{oldId}]"));
         }
-        foreach (var evidence in profileMap.GetProperty("removedLegacyOperations").EnumerateArray())
-        {
-            var method = new HttpMethod(evidence.GetProperty("method").GetString()!);
-            var path = evidence.GetProperty("path").GetString()!;
-            var id = evidence.GetProperty("operationId").GetString()!;
-            Assert.Equal(id, legacy.Paths[path].Operations![method].OperationId);
-            Assert.Matches(regex, id);
-            Assert.DoesNotContain(current, o => o.Method == method && NormalizeLegacyPath(o.Path) == NormalizeLegacyPath(path));
-            Assert.False(string.IsNullOrWhiteSpace(evidence.GetProperty("notes").GetString()));
-            Assert.True(reviewed.Add($"{method} {path} [{id}]"));
-        }
-        Assert.Equal(count, actual.Count);
-        Assert.True(actual.SetEquals(reviewed), $"{profile} legacy source regex matches are not fully accounted.");
+        Assert.Equal(existingPrefixCount, prefixCount);
     }
 
-    [Theory]
-    [InlineData("v1.0")]
-    [InlineData("beta")]
-    public async Task SurvivingUnqualifiedActionsAreNotMisreportedAsRemovedLegacyOperations(string profile)
+    [Fact]
+    public void OrdinaryLedgerDoesNotUseRejectedLegacyValidationSchema()
     {
-        var current = Operations(await Specs[profile].Value).ToArray();
-        var removed = Ledger.Value.RootElement.GetProperty("mappings")[0]
-            .GetProperty("profiles").GetProperty(profile).GetProperty("removedLegacyOperations");
-        foreach (var evidence in removed.EnumerateArray())
-        {
-            var method = new HttpMethod(evidence.GetProperty("method").GetString()!);
-            var path = evidence.GetProperty("path").GetString()!;
-            var unqualified = Regex.Replace(path, @"/microsoft\.graph\.([^/]+)$", "/$1");
-            Assert.DoesNotContain(current, o => o.Method == method &&
-                NormalizeLegacyPath(o.Path) == NormalizeLegacyPath(unqualified));
-        }
+        var text = Ledger.Value.RootElement.GetRawText();
+        foreach (var name in new[] { "operationIdSource", "legacyPath", "legacyOperationId",
+            "legacyPathTranslation", "removedLegacyOperations" })
+            Assert.DoesNotMatch($@"""{name}""\s*:", text);
     }
 
-    [Theory]
-    [InlineData("v1.0", 4)]
-    [InlineData("beta", 74)]
-    public async Task QualifiedOperationSuccessorsHaveActualActionOrFunctionMetadataOnBothSides(string profile, int expectedCount)
+    private static (Regex Original, Regex Reviewed) Selectors()
     {
-        var mapping = Ledger.Value.RootElement.GetProperty("mappings")[0];
-        var source = mapping.GetProperty("sourceContains").GetString()!;
-        var regex = new Regex(source["remove-path-by-operation: ".Length..]);
-        var current = Operations(await Specs[profile].Value).ToArray();
-        var count = 0;
-        foreach (var old in Operations(await LegacySpecs[profile].Value).Where(o => regex.IsMatch(o.Operation.OperationId!)))
-        {
-            var unqualified = Regex.Replace(old.Path, @"/microsoft\.graph\.([^/]+)$", "/$1");
-            if (unqualified == old.Path)
-                continue;
-            var successors = current.Where(o => o.Method == old.Method &&
-                NormalizeLegacyPath(o.Path) == NormalizeLegacyPath(unqualified)).ToArray();
-            if (successors.Length == 0)
-                continue;
-            var successor = Assert.Single(successors);
-            var kind = GraphOperationType(old.Operation);
-            Assert.Contains(kind, new[] { "action", "function" });
-            Assert.Equal(kind, GraphOperationType(successor.Operation));
-            Assert.Equal(kind == "action" ? HttpMethod.Post : HttpMethod.Get, old.Method);
-            count++;
-        }
-        Assert.Equal(expectedCount, count);
+        var text = Ledger.Value.RootElement.GetProperty("mappings")[0].GetProperty("sourceContains").GetString()!;
+        var reviewed = text["remove-path-by-operation: ".Length..];
+        var prefix = "^" + string.Join("", SelectorExclusions) + "(?:";
+        Assert.StartsWith(prefix, reviewed, StringComparison.Ordinal);
+        Assert.EndsWith(")", reviewed, StringComparison.Ordinal);
+        var original = reviewed[prefix.Length..^1];
+        Assert.Equal("C8B5558B6C9B5842734B1BDC9B60E91CD7B53022A1D61D98A7E1DF421E699DC4",
+            Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(original))));
+        return (new Regex(original), new Regex(reviewed));
     }
 
     [Theory]
@@ -324,7 +332,7 @@ public sealed class IdentityGovernanceDirectiveMigrationTests
         var mapping = Ledger.Value.RootElement.GetProperty("mappings")[0];
         Assert.Contains(mapping.GetProperty("profiles").GetProperty("beta").GetProperty("operations").EnumerateArray(),
             o => o.GetProperty("method").GetString() == method && o.GetProperty("path").GetString() == EntitlementManagement + tail &&
-                o.GetProperty("legacyOperationId").GetString() == legacyOperationId);
+                o.GetProperty("operationId").GetString() == legacyOperationId);
         Assert.True(CmdletConfigurator.IsSuppressed(new HttpMethod(method), EntitlementManagement + tail, Config(), apiVersion: "beta"));
     }
 
@@ -662,13 +670,8 @@ public sealed class IdentityGovernanceDirectiveMigrationTests
     private static IEnumerable<(string Path, HttpMethod Method, OpenApiOperation Operation)> Operations(OpenApiDocument document) =>
         document.Paths.SelectMany(p => p.Value.Operations!.Select(o => (p.Key, o.Key, o.Value)));
 
-    private static string NormalizeLegacyPath(string path) =>
+    private static string NormalizeSourcePath(string path) =>
         Regex.Replace(path, @"\{[^}]+\}", "{}").TrimEnd('/').ToLowerInvariant();
-
-    private static string? GraphOperationType(OpenApiOperation operation) =>
-        operation.Extensions is not null &&
-        operation.Extensions.TryGetValue("x-ms-docs-operation-type", out var extension) &&
-        extension is JsonNodeExtension node ? node.Node?.ToString()?.Trim('"') : null;
 
     private static async Task<OpenApiDocument> LoadSpecAsync(string profile, bool legacyEvidence = false)
     {

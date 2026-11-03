@@ -22,10 +22,10 @@ transforms, and schema/response directives remain deferred; this shared file has
 no groups in those deferred classes. Numbered AutoRest variants are not grounds
 to suppress a unique compatible operation.
 
-Legacy OpenAPI documents supply original operation-ID selector evidence only;
-generation still uses the compatible profiles exclusively. Removed legacy
-operations are recorded individually. A surviving namespace-unqualified action
-must not be treated as an absent operation.
+The one-time source audit retains original operation-ID selector and removal
+evidence. The ordinary migration ledger uses exact current compatible triples,
+without a legacy validation mode. Its source-specific exclusions preserve the
+original selection while leaving unrelated newer APIs outside this suppression.
 
 Full compatible-profile coverage also preserves colliding program/control and
 role-management alert endpoints through shared mandatory-ID variants. Distinct
@@ -44,10 +44,10 @@ directive:
 #Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0. The affected operation Ids starts from connectedOrganization_DeleteExternalSponsorGraphBPreRef$
 # Wrapper migration 1: CmdletConfigurator; exact profile evidence and
 # reviewed scope are in wrapper/Identity.Governance_directiveMigrationMap.json.
-# Original operation-ID matches are reconciled through explicit legacy/current
-# route evidence; obsolete IDs are not guessed against renamed compatible IDs.
-# Reviewed namespace-unqualified action bridges require the shared validation API.
-  - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScope|\.accessPackageResourceRoleScope.*|\.accessPackageAssignmentPolicy\..*|\.accessPackageAssignmentRequest\..*|\.accessPackageAssignmentResourceRole\..*|\.accessPackageAssignment\..*|\.accessPackageCatalog\..*|\.accessPackageResourceRequest\..*|\.accessPackageResource\..*|\.accessPackage\..*)|^identityGovernance\.accessReview\.definition\.instance\.decision\.instance(\.|_).*|^identityGovernance\.accessReview\.definition\.instance\.stage\.decision\..*$|^privilegedAccess.roleAssignmentRequest.(resource|roleDefinition).*$|^privilegedAccess.roleAssignment.(resource|roleDefinition).*$|^privilegedAccess.roleDefinition.(resource|roleSetting).*$|^privilegedAccess.roleSetting.(resource|roleDefinition).*$|^identityGovernance_.*LifecycleWorkflow|^identityGovernance\.lifecycleWorkflow\.deletedItem\.(workflow|run|userProcessingResult)\..*|^identityGovernance\.lifecycleWorkflow\.workflow\.run\.userProcessingResult\.taskProcessingResult.*|^identityGovernance\.lifecycleWorkflow\.workflow\.userProcessingResult\.taskProcessingResult.*|^identityGovernance_.*RoleManagementAlert$|^identityGovernance\.roleManagementAlert_refresh$|^identityGovernance\.entitlementManagement\.resourceRoleScope_.*Scope$|^identityGovernance.entitlementManagement.connectedOrganization_DeleteExternalSponsorGraphBPreRef$|^identityGovernance.entitlementManagement.connectedOrganization_DeleteInternalSponsorGraphBPreRef$
+# Four reviewed exclusions leave all original source matches unchanged and omit
+# only the 88 v1.0 / 182 beta newer routes absent from the original module specs.
+# Existing subject-prefix naming in directive 70 remains unchanged.
+  - remove-path-by-operation: ^(?!identityGovernance\.entitlementManagement\.accessPackage\.resourceRoleScope.*(?:[Uu]ploadSession|ExternalOriginResourceConnector))(?!.*\.uploadSession_(?:ListFile|GetFile|GetFilesContent|SetFilesContent|DeleteFilesContent)$)(?!.*\.uploadSession\.file_GetCount$)(?!.*[Ss]ubjectProcessingResult)(?:^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScope|\.accessPackageResourceRoleScope.*|\.accessPackageAssignmentPolicy\..*|\.accessPackageAssignmentRequest\..*|\.accessPackageAssignmentResourceRole\..*|\.accessPackageAssignment\..*|\.accessPackageCatalog\..*|\.accessPackageResourceRequest\..*|\.accessPackageResource\..*|\.accessPackage\..*)|^identityGovernance\.accessReview\.definition\.instance\.decision\.instance(\.|_).*|^identityGovernance\.accessReview\.definition\.instance\.stage\.decision\..*$|^privilegedAccess.roleAssignmentRequest.(resource|roleDefinition).*$|^privilegedAccess.roleAssignment.(resource|roleDefinition).*$|^privilegedAccess.roleDefinition.(resource|roleSetting).*$|^privilegedAccess.roleSetting.(resource|roleDefinition).*$|^identityGovernance_.*LifecycleWorkflow|^identityGovernance\.lifecycleWorkflow\.deletedItem\.(workflow|run|userProcessingResult)\..*|^identityGovernance\.lifecycleWorkflow\.workflow\.run\.userProcessingResult\.taskProcessingResult.*|^identityGovernance\.lifecycleWorkflow\.workflow\.userProcessingResult\.taskProcessingResult.*|^identityGovernance_.*RoleManagementAlert$|^identityGovernance\.roleManagementAlert_refresh$|^identityGovernance\.entitlementManagement\.resourceRoleScope_.*Scope$|^identityGovernance.entitlementManagement.connectedOrganization_DeleteExternalSponsorGraphBPreRef$|^identityGovernance.entitlementManagement.connectedOrganization_DeleteInternalSponsorGraphBPreRef$)
 # Remove cmdlets
 # Wrapper migration 2: NoCompatibleOperation; exact profile evidence and
 # reviewed scope are in wrapper/Identity.Governance_directiveMigrationMap.json.
