@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Applications
         body.SynchronizationRules = SynchronizationRules!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Applications.Client.Models.SynchronizationSchema? result;
