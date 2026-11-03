@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.Status = Status;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceComplianceUserStatus? result;
