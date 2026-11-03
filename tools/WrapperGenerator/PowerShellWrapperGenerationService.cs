@@ -146,7 +146,7 @@ public sealed partial class PowerShellWrapperGenerationService
     {
         cancellationToken.ThrowIfCancellationRequested();
 
-        var ctx = new EmitContext(ClientNamespace: config.ClientNamespaceName);
+        var ctx = new EmitContext(ClientNamespace: config.ClientNamespaceName, ApiVersion: apiVersion);
         var routeGroups = PrepareRouteGroups(ctx, cancellationToken);
         await ValidateRouteOutputNamesAsync(routeGroups, cancellationToken).ConfigureAwait(false);
 

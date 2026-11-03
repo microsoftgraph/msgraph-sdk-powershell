@@ -13,9 +13,9 @@ public static partial class CmdletEmitter
     // Transport acquisition lives on GraphClientCmdlet in Microsoft.Graph.Wrapper.Runtime: the
     // session path reuses one adapter keyed to the session HttpClient's identity, the token
     // path shares one HttpClient with per-request auth. Only the client construction is emitted.
-    private const string AuthBlock = """
+    private static string AuthBlock(EmitContext ctx) => $$"""
 
-                var requestAdapter = GetRequestAdapter();
+                var requestAdapter = GetRequestAdapter("{{EscapeLiteral(ctx.ApiVersion)}}");
                 var client = new ApiClient(requestAdapter);
         """;
 
@@ -336,7 +336,7 @@ namespace {{ctx.CmdletNamespace}}
             if (!ShouldProcess({{TargetId(naming)}}, "{{naming.VerbName}}"))
                 return;
 {{bodyConstruction}}
-{{AuthBlock}}
+{{AuthBlock(ctx)}}
 
 {{(call.ReturnTypeName is null ? "" : $"            {call.ReturnTypeName}? result;")}}
             try
@@ -401,7 +401,7 @@ namespace {{ctx.CmdletNamespace}}
 
         protected override void ProcessRecord()
         {
-{{AuthBlock}}
+{{AuthBlock(ctx)}}
 {{builderConstruction}}
 
             {{call.ReturnTypeName}}? result;
@@ -500,7 +500,7 @@ namespace {{ctx.CmdletNamespace}}
 
         protected override void ProcessRecord()
         {
-{{AuthBlock}}
+{{AuthBlock(ctx)}}
 
             // Cleared before the request so a failed or interrupted run cannot leave the previous
             // run's link readable, which would silently resume from the wrong point.
@@ -605,7 +605,7 @@ namespace {{ctx.CmdletNamespace}}
 
         protected override void ProcessRecord()
         {
-{{AuthBlock}}
+{{AuthBlock(ctx)}}
 
             {{returnTypeName}}? result;
             try
@@ -664,7 +664,7 @@ namespace {{ctx.CmdletNamespace}}
         {
             if (!ShouldProcess({{TargetId(naming)}}, "{{naming.VerbName}}"))
                 return;
-{{AuthBlock}}
+{{AuthBlock(ctx)}}
 
             {{returnTypeName}}? result;
             try
@@ -728,7 +728,7 @@ namespace {{ctx.CmdletNamespace}}
 
         protected override void ProcessRecord()
         {
-{{AuthBlock}}
+{{AuthBlock(ctx)}}
 
             {{clrType}}? result;
             try
@@ -791,7 +791,7 @@ namespace {{ctx.CmdletNamespace}}
 
         protected override void ProcessRecord()
         {
-{{AuthBlock}}
+{{AuthBlock(ctx)}}
 
             {{entityType}}? result;
             try
@@ -905,7 +905,7 @@ namespace {{ctx.CmdletNamespace}}
 
         protected override void ProcessRecord()
         {
-{{AuthBlock}}
+{{AuthBlock(ctx)}}
 
             {{collectionResponseType}}? result;
             try
@@ -1145,7 +1145,7 @@ namespace {{ctx.CmdletNamespace}}
 {{EmitPropertyAssignments(properties)}}
 {{EmitComplexAssignments(complexProperties)}}
 {{EmitUntypedAssignments(untypedProperties)}}
-{{AuthBlock}}
+{{AuthBlock(ctx)}}
 
             {{entityType}}? result;
             try
@@ -1207,7 +1207,7 @@ namespace {{ctx.CmdletNamespace}}
 {{EmitPropertyAssignments(properties)}}
 {{EmitComplexAssignments(complexProperties)}}
 {{EmitUntypedAssignments(untypedProperties)}}
-{{AuthBlock}}
+{{AuthBlock(ctx)}}
 
             {{entityType}}? result;
             try
@@ -1267,7 +1267,7 @@ namespace {{ctx.CmdletNamespace}}
         {
             if (!ShouldProcess({{TargetId(naming)}}, "{{naming.VerbName}}"))
                 return;
-{{AuthBlock}}
+{{AuthBlock(ctx)}}
 
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
