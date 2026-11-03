@@ -105,7 +105,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
         body.ViewPoint = ViewPoint;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.PrinterShare? result;

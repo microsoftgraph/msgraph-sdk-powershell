@@ -95,7 +95,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
         body.WorkingHours = WorkingHours;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.MailboxSettings? result;

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
         body.Definition = Definition;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.PrintTaskTrigger? result;

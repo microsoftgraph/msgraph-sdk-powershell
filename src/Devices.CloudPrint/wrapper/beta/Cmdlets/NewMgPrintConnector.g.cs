@@ -80,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
         body.Location = Location;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.PrintConnector? result;
