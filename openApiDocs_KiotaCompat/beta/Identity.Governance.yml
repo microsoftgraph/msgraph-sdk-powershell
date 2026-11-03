@@ -6447,7 +6447,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-acceptrecommendations?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.decision.accessReviewInstanceDecisionItem.instance_acceptRecommendation
+      operationId: identityGovernance.accessReview.definition.instance.decision.instance_acceptRecommendation
       responses:
         '204':
           description: Success
@@ -6465,7 +6465,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-applydecisions?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.decision.accessReviewInstanceDecisionItem.instance_applyDecision
+      operationId: identityGovernance.accessReview.definition.instance.decision.instance_applyDecision
       responses:
         '204':
           description: Success
@@ -6516,7 +6516,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-batchrecorddecisions?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.decision.accessReviewInstanceDecisionItem.instance_batchRecordDecision
+      operationId: identityGovernance.accessReview.definition.instance.decision.instance_batchRecordDecision
       requestBody:
         description: Action parameters
         content:
@@ -6554,7 +6554,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-resetdecisions?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.decision.accessReviewInstanceDecisionItem.instance_resetDecision
+      operationId: identityGovernance.accessReview.definition.instance.decision.instance_resetDecision
       responses:
         '204':
           description: Success
@@ -6572,7 +6572,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-sendreminder?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.decision.accessReviewInstanceDecisionItem.instance_sendReminder
+      operationId: identityGovernance.accessReview.definition.instance.decision.instance_sendReminder
       responses:
         '204':
           description: Success
@@ -6590,7 +6590,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-stop?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.decision.accessReviewInstanceDecisionItem.instance_stop
+      operationId: identityGovernance.accessReview.definition.instance.decision.instance_stop
       responses:
         '204':
           description: Success
@@ -6604,7 +6604,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Invoke action stopApplyDecisions
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.decision.accessReviewInstanceDecisionItem.instance_stopApplyDecision
+      operationId: identityGovernance.accessReview.definition.instance.decision.instance_stopApplyDecision
       responses:
         '204':
           description: Success
@@ -7140,7 +7140,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-list-decisions?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.decision.accessReviewInstanceDecisionItem.instance.stage.accessReviewStage.decision_filterGraphBPreCurrentUser
+      operationId: identityGovernance.accessReview.definition.instance.decision.instance.stage.decision_filterGraphBPreCurrentUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7210,7 +7210,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-recordalldecisions?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.decision.accessReviewInstanceDecisionItem.instance.stage.accessReviewStage.decision_recordAllDecision
+      operationId: identityGovernance.accessReview.definition.instance.decision.instance.stage.decision_recordAllDecision
       requestBody:
         description: Action parameters
         content:
@@ -7304,7 +7304,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewstage-stop?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.decision.accessReviewInstanceDecisionItem.instance.stage.accessReviewStage_stop
+      operationId: identityGovernance.accessReview.definition.instance.decision.instance.stage_stop
       responses:
         '204':
           description: Success
@@ -7338,7 +7338,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewstage-filterbycurrentuser?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.decision.accessReviewInstanceDecisionItem.instance.stage_filterGraphBPreCurrentUser
+      operationId: identityGovernance.accessReview.definition.instance.decision.instance.stage_filterGraphBPreCurrentUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8887,7 +8887,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-list-decisions?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.stage.accessReviewStage.decision.accessReviewInstanceDecisionItem.instance.decision_filterGraphBPreCurrentUser
+      operationId: identityGovernance.accessReview.definition.instance.stage.decision.instance.decision_filterGraphBPreCurrentUser
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8957,7 +8957,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-recordalldecisions?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.stage.accessReviewStage.decision.accessReviewInstanceDecisionItem.instance.decision_recordAllDecision
+      operationId: identityGovernance.accessReview.definition.instance.stage.decision.instance.decision_recordAllDecision
       requestBody:
         description: Action parameters
         content:
@@ -9035,7 +9035,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-acceptrecommendations?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.stage.accessReviewStage.decision.accessReviewInstanceDecisionItem.instance_acceptRecommendation
+      operationId: identityGovernance.accessReview.definition.instance.stage.decision.instance_acceptRecommendation
       responses:
         '204':
           description: Success
@@ -9053,7 +9053,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-applydecisions?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.stage.accessReviewStage.decision.accessReviewInstanceDecisionItem.instance_applyDecision
+      operationId: identityGovernance.accessReview.definition.instance.stage.decision.instance_applyDecision
       responses:
         '204':
           description: Success
@@ -9104,7 +9104,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-batchrecorddecisions?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.stage.accessReviewStage.decision.accessReviewInstanceDecisionItem.instance_batchRecordDecision
+      operationId: identityGovernance.accessReview.definition.instance.stage.decision.instance_batchRecordDecision
       requestBody:
         description: Action parameters
         content:
@@ -9142,7 +9142,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-resetdecisions?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.stage.accessReviewStage.decision.accessReviewInstanceDecisionItem.instance_resetDecision
+      operationId: identityGovernance.accessReview.definition.instance.stage.decision.instance_resetDecision
       responses:
         '204':
           description: Success
@@ -9160,7 +9160,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-sendreminder?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.stage.accessReviewStage.decision.accessReviewInstanceDecisionItem.instance_sendReminder
+      operationId: identityGovernance.accessReview.definition.instance.stage.decision.instance_sendReminder
       responses:
         '204':
           description: Success
@@ -9178,7 +9178,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accessreviewinstance-stop?view=graph-rest-beta
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.stage.accessReviewStage.decision.accessReviewInstanceDecisionItem.instance_stop
+      operationId: identityGovernance.accessReview.definition.instance.stage.decision.instance_stop
       responses:
         '204':
           description: Success
@@ -9192,7 +9192,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Invoke action stopApplyDecisions
-      operationId: identityGovernance.accessReview.definition.accessReviewScheduleDefinition.instance.accessReviewInstance.stage.accessReviewStage.decision.accessReviewInstanceDecisionItem.instance_stopApplyDecision
+      operationId: identityGovernance.accessReview.definition.instance.stage.decision.instance_stopApplyDecision
       responses:
         '204':
           description: Success
