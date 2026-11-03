@@ -196,6 +196,9 @@ public sealed class EducationDirectiveMigrationTests
             Assert.Equal(3, files.Length);
             Assert.True(File.Exists(Path.Combine(output, $"Remove{expectedNoun}.g.cs")));
             var sources = files.Select(File.ReadAllText).ToArray();
+            Assert.All(sources, source =>
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source, StringComparison.Ordinal));
+            Assert.DoesNotContain(sources, source => source.Contains("GetRequestAdapter()", StringComparison.Ordinal));
             Assert.DoesNotContain(sources, source => source.Contains($"[GraphRoute(\"DELETE\", \"{collectionPath}\")", StringComparison.Ordinal));
             Assert.Contains(sources, source => source.Contains($"[GraphRoute(\"GET\", \"{collectionPath}\")", StringComparison.Ordinal));
             Assert.Contains(sources, source => source.Contains($"[GraphRoute(\"POST\", \"{collectionPath}\")", StringComparison.Ordinal));
