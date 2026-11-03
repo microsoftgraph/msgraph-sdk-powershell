@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Education
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Education.Client.Models.EducationGradingCategory? result;

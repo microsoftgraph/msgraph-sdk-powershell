@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Education
         body.Recipient = Recipient;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Education.Client.Models.EducationSubmission? result;

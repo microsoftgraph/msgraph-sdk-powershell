@@ -122,7 +122,7 @@ namespace Microsoft.Graph.PowerShell.Education
         body.CreatedBy = CreatedBy;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Education.Client.Models.EducationSchool? result;
