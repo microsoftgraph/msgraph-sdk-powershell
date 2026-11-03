@@ -1,7 +1,6 @@
 $OutputFolder = (Join-Path $PSScriptRoot "../docs/")
-# Install PlatyPS
 if (!(Get-Module -Name PlatyPS -ListAvailable)) {
-    Install-Module PlatyPS -Force
+    throw 'platyPS is required to build Authentication help. Save the module to a build-local directory and add it to PSModulePath.'
 }
 Import-Module PlatyPS -Force -Scope Global
 $parameters = @{
