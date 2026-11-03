@@ -155,7 +155,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.BookingCurrencies
         /// Get entities from bookingCurrencies
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BookingCurrenciesRequestBuilderGetQueryParameters
+        public partial class BookingCurrenciesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

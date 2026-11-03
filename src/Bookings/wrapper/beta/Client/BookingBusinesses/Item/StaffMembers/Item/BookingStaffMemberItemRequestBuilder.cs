@@ -185,7 +185,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.BookingBusinesses.Item.Staf
         /// All the staff members that provide services in this business. Read-only. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BookingStaffMemberItemRequestBuilderGetQueryParameters
+        public partial class BookingStaffMemberItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
