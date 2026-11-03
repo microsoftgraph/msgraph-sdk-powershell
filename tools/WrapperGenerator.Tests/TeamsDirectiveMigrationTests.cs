@@ -205,6 +205,8 @@ public sealed class TeamsDirectiveMigrationTests
             Assert.Contains("GetMgUserJoinedTeam.g.cs", sources.Keys);
             Assert.Contains("GetMgTeamChannel.g.cs", sources.Keys);
             Assert.Contains("UpdateMgChatMessage.g.cs", sources.Keys);
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", sources["UpdateMgChatMessage.g.cs"]);
+            Assert.DoesNotContain("GetRequestAdapter()", sources["UpdateMgChatMessage.g.cs"]);
 
             foreach (var mapping in mappings)
             foreach (var evidence in mapping.GetProperty("profiles").GetProperty(profile).GetProperty("operations").EnumerateArray())
@@ -280,6 +282,8 @@ public sealed class TeamsDirectiveMigrationTests
                 Assert.Contains("public string UserId", aggregateSource);
                 Assert.DoesNotContain("public string ChatId", aggregateSource);
                 Assert.Contains("client.Users[UserId].Chats.GetAllMessages", aggregateSource);
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", aggregateSource);
+                Assert.DoesNotContain("GetRequestAdapter()", aggregateSource);
             }
         }
         finally
