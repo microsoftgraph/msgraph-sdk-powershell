@@ -60,7 +60,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Partner.Client.Models.DelegatedAdminServiceManagementDetailCollectionResponse? result;
