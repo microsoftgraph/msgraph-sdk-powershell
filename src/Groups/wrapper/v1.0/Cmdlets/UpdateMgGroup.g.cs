@@ -345,7 +345,7 @@ namespace Microsoft.Graph.PowerShell.Groups
         body.ServiceProvisioningErrors = ServiceProvisioningErrors!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Groups.Client.Models.Group? result;
