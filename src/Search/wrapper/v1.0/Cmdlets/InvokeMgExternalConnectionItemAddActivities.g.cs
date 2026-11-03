@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Search
     if (this.IsParameterBound(nameof(Activities)))
         body.Activities = Activities!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Search.Client.External.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesPostResponse? result;

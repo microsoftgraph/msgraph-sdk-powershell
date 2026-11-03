@@ -36,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.Search
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Search.Client.Models.SearchEntity? result;
