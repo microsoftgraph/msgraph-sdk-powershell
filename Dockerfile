@@ -4,7 +4,7 @@
 # current LTS PowerShell and is rebuilt by the .NET team with patched OS layers, so the scheduled
 # rebuild (.azure-pipelines/docker-image-refresh.yml) produces a patched digest.
 # Override at build time with --build-arg BASE_IMAGE=<image>.
-ARG BASE_IMAGE=mcr.microsoft.com/dotnet/sdk:10.0-noble
+ARG BASE_IMAGE=mcr.microsoft.com/dotnet/sdk:8.0-jammy
 FROM ${BASE_IMAGE}
 
 ARG VERSION=latest
