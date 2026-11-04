@@ -1,9 +1,10 @@
 # The PowerShell team no longer publishes mcr.microsoft.com/powershell images (frozen since
 # 2025-01-30; see https://github.com/PowerShell/Announcements/issues/75), so rebuilding on them
-# cannot pick up Ubuntu/USN or PowerShell fixes. Use the .NET SDK image instead: it ships the
-# current LTS PowerShell and is rebuilt by the .NET team with patched OS layers, so the scheduled
-# rebuild (.azure-pipelines/docker-image-refresh.yml) produces a patched digest.
-# Override at build time with --build-arg BASE_IMAGE=<image>.
+# cannot pick up Ubuntu/USN or PowerShell fixes. Use the .NET 8 SDK image on Ubuntu 22.04 instead:
+# it ships PowerShell 7.4 and is rebuilt by the .NET team with each 8.0.x patch and patched OS
+# layers, so the scheduled rebuild (.azure-pipelines/docker-image-refresh.yml) produces a patched
+# digest. .NET 8 and PowerShell 7.4 reach end of support on 2026-11-10; move to a newer SDK tag
+# (e.g. 10.0-noble) before then. Override at build time with --build-arg BASE_IMAGE=<image>.
 ARG BASE_IMAGE=mcr.microsoft.com/dotnet/sdk:8.0-jammy
 FROM ${BASE_IMAGE}
 
