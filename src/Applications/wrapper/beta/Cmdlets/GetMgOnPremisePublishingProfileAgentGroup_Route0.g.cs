@@ -94,6 +94,7 @@ namespace Microsoft.Graph.PowerShell.Applications
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
 

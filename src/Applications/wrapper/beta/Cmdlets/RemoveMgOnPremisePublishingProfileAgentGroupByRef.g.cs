@@ -18,6 +18,10 @@ namespace Microsoft.Graph.PowerShell.Applications
         public string OnPremisesPublishingProfileId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 1)]
         public string OnPremisesAgentId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 2,
+            HelpMessage = "Value for the '@id' query parameter.")]
+        [ValidateNotNullOrEmpty]
+        public string QueryId { get; set; } = string.Empty;
 
 
         [Parameter(Mandatory = false,
@@ -45,6 +49,7 @@ namespace Microsoft.Graph.PowerShell.Applications
                             requestConfiguration.Headers.Add("If-Match", IfMatch!);
 
                         AddRequestHeaders(requestConfiguration.Headers);
+                        requestConfiguration.QueryParameters.Id = QueryId;
                 })
                     .GetAwaiter().GetResult();
             }

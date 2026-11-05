@@ -55,6 +55,7 @@ namespace Microsoft.Graph.PowerShell.Applications
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
 
 
+
         if (this.IsParameterBound(nameof(ConsistencyLevel)))
             requestConfiguration.Headers.Add("ConsistencyLevel", ConsistencyLevel!);
 

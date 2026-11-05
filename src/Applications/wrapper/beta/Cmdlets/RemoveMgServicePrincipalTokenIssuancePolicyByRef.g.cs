@@ -16,6 +16,10 @@ namespace Microsoft.Graph.PowerShell.Applications
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string ServicePrincipalId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1,
+            HelpMessage = "Value for the '@id' query parameter.")]
+        [ValidateNotNullOrEmpty]
+        public string QueryId { get; set; } = string.Empty;
 
 
         [Parameter(Mandatory = false,
@@ -43,6 +47,7 @@ namespace Microsoft.Graph.PowerShell.Applications
                             requestConfiguration.Headers.Add("If-Match", IfMatch!);
 
                         AddRequestHeaders(requestConfiguration.Headers);
+                        requestConfiguration.QueryParameters.Id = QueryId;
                 })
                     .GetAwaiter().GetResult();
             }
