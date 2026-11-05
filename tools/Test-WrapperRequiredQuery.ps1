@@ -110,7 +110,7 @@ $client = $factory.GetMethod('Create').Invoke($null, @(
 $session.GraphHttpClient = $client
 $baseAddress = $client.BaseAddress
 $endpoint = (Get-MgEnvironment -Name $Environment).GraphEndpoint.TrimEnd('/')
-Assert-Probe ($baseAddress.AbsoluteUri -ceq "$endpoint/v1.0/") 'The real factory must retain its v1.0 default.'
+Assert-Probe ($baseAddress.AbsoluteUri -ceq 'https://graph.microsoft.com/v1.0/') 'The real factory must retain its global v1.0 default; the adapter selects the cloud/profile.'
 $choiceHost = [DeleteQueryProbe.ChoiceHost]::new()
 $runspace = [runspacefactory]::CreateRunspace($choiceHost)
 $runspace.Open()
