@@ -5,6 +5,7 @@ using Xunit.Abstractions;
 using Microsoft.Graph.PowerShell.Authentication;
 
 using System;
+using Azure.Core;
 
 using Xunit;
 
@@ -98,6 +99,26 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
 
             Assert.NotNull(GraphSession.Instance.OutputWriter);
             Assert.NotNull(GraphSession.Instance.OutputWriter.WriteObject);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public void AccessTokenCacheShouldBeEmptyAndUsableAfterInitialization()
+        {
+            GraphSession.Initialize(() => new GraphSession());
+
+            Assert.NotNull(GraphSession.Instance.AccessTokenCache);
+            Assert.Empty(GraphSession.Instance.AccessTokenCache);
+
+            var cacheKey = "User.Read";
+            var accessToken = new AccessToken("dummy-token", DateTimeOffset.UtcNow.AddHours(1));
+            GraphSession.Instance.AccessTokenCache[cacheKey] = accessToken;
+
+            Assert.True(GraphSession.Instance.AccessTokenCache.TryGetValue(cacheKey, out var cachedToken));
+            Assert.Equal(accessToken.Token, cachedToken.Token);
+            Assert.Equal(accessToken.ExpiresOn, cachedToken.ExpiresOn);
 
             // reset static instance.
             GraphSession.Reset();
