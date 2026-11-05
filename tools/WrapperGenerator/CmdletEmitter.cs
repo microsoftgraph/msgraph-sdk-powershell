@@ -29,13 +29,14 @@ public static partial class CmdletEmitter
     // parameterSetName scopes the ids to one set. Only the delta shape needs it: resuming from a
     // link must not demand path ids the link already carries, and which the raw-URL builder
     // discards. Everywhere else the ids belong to every set, which is what null produces.
-    private static string PathParams(CmdletNaming naming, string? parameterSetName = null)
+    private static string PathParams(CmdletNaming naming, EmitContext ctx, string? parameterSetName = null,
+        IEnumerable<string>? otherNames = null)
     {
         var setAttr = parameterSetName is null ? "" : $", ParameterSetName = \"{parameterSetName}\"";
         return string.Join("\n", naming.PathParamNames.Select((name, i) => $$"""
                 [Parameter(Mandatory = true, Position = {{i}}{{setAttr}})]
                 public string {{name}} { get; set; } = string.Empty;
-        """));
+        """)) + RequiredQueryDeclarations(naming, ctx, parameterSetName, otherNames);
     }
 
     private static string TargetId(CmdletNaming naming) =>
@@ -122,6 +123,7 @@ public static partial class CmdletEmitter
         var call = $"{ResourceCallReceiver(naming, ctx)}.{method}(";
         var args = bodyArg is null ? "" : bodyArg + ", ";
         var bindings = HeaderBindingsFor(naming.HeaderParams, extraIndent: "                ") + GenericHeadersBinding("                ");
+        bindings += RequiredQueryBindings(ctx.RequiredQueries, "                        ");
         return $"{call}{args}requestConfiguration =>\n                {{{bindings}\n                }})";
     }
 
@@ -256,11 +258,13 @@ public static partial class CmdletEmitter
     // queryBindings, when present, is emitted inside the same requestConfiguration lambda as the
     // header bindings, so a call has exactly one configuration block however many kinds of
     // option it binds.
-    private static string EmitCallOn(string receiver, CmdletNaming naming, string method, string? bodyArg, string queryBindings = "")
+    private static string EmitCallOn(string receiver, CmdletNaming naming, string method, string? bodyArg, string queryBindings = "",
+        EmitContext? ctx = null)
     {
         var args = bodyArg is null ? "" : bodyArg + ", ";
         var query = queryBindings.Length == 0 ? "" : "\n" + queryBindings;
-        var bindings = query + HeaderBindingsFor(naming.HeaderParams, extraIndent: "                ") + GenericHeadersBinding("                ");
+        var bindings = query + RequiredQueryBindings(ctx?.RequiredQueries ?? [])
+            + HeaderBindingsFor(naming.HeaderParams, extraIndent: "                ") + GenericHeadersBinding("                ");
         return $"{receiver}.{method}({args}requestConfiguration =>\n                {{{bindings}\n                }})";
     }
 
@@ -285,7 +289,7 @@ public static partial class CmdletEmitter
                 + EmitComplexAssignments(complexProperties)
                 + EmitUntypedAssignments(untypedProperties)
             : "";
-        var callExpression = EmitCallOn(CallReceiver(naming), naming, call.MethodName, hasBody ? "body" : null);
+        var callExpression = EmitCallOn(CallReceiver(naming), naming, call.MethodName, hasBody ? "body" : null, ctx: ctx);
         var invocation = call.ReturnTypeName is null
             ? $$"""
                             {{callExpression}}
@@ -317,7 +321,7 @@ namespace {{ctx.CmdletNamespace}}
 {{(call.ReturnTypeName is null ? "" : $"    [OutputType(typeof({(call.ReturnsStream ? "byte[]" : call.ReturnTypeName)}))]")}}
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming)}}
+{{PathParams(naming, ctx, otherNames: BodyParameterNames(properties, complexProperties, untypedProperties))}}
 {{EmitPropertyParameters(properties)}}
 {{EmitComplexParameters(complexProperties)}}
 {{EmitUntypedParameters(untypedProperties)}}
@@ -384,7 +388,7 @@ namespace {{ctx.CmdletNamespace}}
     [OutputType(typeof({{(call.ReturnsStream ? "byte[]" : call.ReturnTypeName)}}))]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming)}}
+{{PathParams(naming, ctx)}}
 {{FunctionParamDecls(naming)}}
 
 {{AccessTokenParamDecl()}}
@@ -402,7 +406,7 @@ namespace {{ctx.CmdletNamespace}}
             {{call.ReturnTypeName}}? result;
             try
             {
-                result = {{EmitCallOn(CallReceiver(naming), naming, call.MethodName, null, queryBindings)}}.GetAwaiter().GetResult();
+                result = {{EmitCallOn(CallReceiver(naming), naming, call.MethodName, null, queryBindings, ctx)}}.GetAwaiter().GetResult();
             }
 {{CatchBlock(TargetId(naming))}}
 {{(call.ReturnsStream ? StreamOutputBlock : "\n            WriteObject(result);")}}
@@ -438,11 +442,13 @@ namespace {{ctx.CmdletNamespace}}
 
         // -Top caps the total at whole-page granularity, as it does for list cmdlets; the counter
         // exists only when the operation declares $top.
-        var hasTop = queryParamNames.Contains("$top");
+        var requiredTop = RequiredTopParameter(naming, ctx);
+        var hasTop = queryParamNames.Contains("$top") || requiredTop is not null;
         var fetchedDecl = hasTop ? "\n                var fetched = 0;" : "";
         var fetchedAdd = hasTop ? "\n                        fetched += items.Count;" : "";
         var capGuard = hasTop
-            ? "\n                    if (this.IsParameterBound(nameof(Top)) && fetched >= Top) break;"
+            ? requiredTop is null ? "\n                    if (this.IsParameterBound(nameof(Top)) && fetched >= Top) break;"
+                : $"\n                    if (fetched >= {requiredTop.ParameterName}) break;"
             : "";
         var receiver = $"client.{naming.BuilderExpression}";
         var continuationConfig = HeaderBindingsFor(naming.HeaderParams, extraIndent: "        ") + GenericHeadersBinding("        ");
@@ -468,7 +474,7 @@ namespace {{ctx.CmdletNamespace}}
     [OutputType(typeof({{itemTypeName ?? call.ReturnTypeName}}))]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming, "DeltaSync")}}
+{{PathParams(naming, ctx, "DeltaSync", ["DeltaLink", "All", "DeltaLinkVariable", "DLV"])}}
 
 {{AccessTokenParamDecl()}}
 
@@ -509,7 +515,7 @@ namespace {{ctx.CmdletNamespace}}
                     ? {{receiver}}.WithUrl(ValidateContinuationUrl(DeltaLink!, requestAdapter, nameof(DeltaLink))).{{call.MethodName}}(requestConfiguration =>
                         {{{continuationConfig}}
                         }).GetAwaiter().GetResult()
-                    : {{EmitCallOn(receiver, naming, call.MethodName, null, queryBindings)}}.GetAwaiter().GetResult();
+                    : {{EmitCallOn(receiver, naming, call.MethodName, null, queryBindings, ctx)}}.GetAwaiter().GetResult();
 {{fetchedDecl}}
                 while (true)
                 {
@@ -591,7 +597,7 @@ namespace {{ctx.CmdletNamespace}}
     [OutputType(typeof({{(returnsStream ? "byte[]" : returnTypeName)}}))]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming)}}
+{{PathParams(naming, ctx, otherNames: ["OutFile"])}}
 
 {{AccessTokenParamDecl()}}
 {{HeaderParamDecls(naming)}}
@@ -605,7 +611,7 @@ namespace {{ctx.CmdletNamespace}}
             {{returnTypeName}}? result;
             try
             {
-                result = {{EmitCallOn($"client.{naming.BuilderExpression}", naming, "GetAsync", null)}}.GetAwaiter().GetResult();
+                result = {{EmitCallOn($"client.{naming.BuilderExpression}", naming, "GetAsync", null, ctx: ctx)}}.GetAwaiter().GetResult();
             }
 {{CatchBlock(TargetId(naming))}}
 {{(returnsStream ? StreamOutputBlock : "\n            WriteObject(result);")}}
@@ -644,7 +650,7 @@ namespace {{ctx.CmdletNamespace}}
     [OutputType(typeof({{(returnsStream ? "byte[]" : returnTypeName)}}))]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming)}}
+{{PathParams(naming, ctx, otherNames: ["InFile", "OutFile"])}}
 
                 [Parameter(Mandatory = true,
                     HelpMessage = "Path to the file whose contents are uploaded.")]
@@ -665,7 +671,7 @@ namespace {{ctx.CmdletNamespace}}
             try
             {
                 using var content = System.IO.File.OpenRead(InFile);
-                result = {{EmitCallOn($"client.{naming.BuilderExpression}", naming, "PutAsync", "content")}}.GetAwaiter().GetResult();
+                result = {{EmitCallOn($"client.{naming.BuilderExpression}", naming, "PutAsync", "content", ctx: ctx)}}.GetAwaiter().GetResult();
             }
 {{CatchBlock(TargetId(naming))}}
 {{(returnsStream ? StreamOutputBlock : "\n            WriteObject(result);")}}
@@ -713,7 +719,7 @@ namespace {{ctx.CmdletNamespace}}
     [OutputType(typeof({{clrType}}))]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming)}}
+{{PathParams(naming, ctx)}}
 
 {{AccessTokenParamDecl()}}
 
@@ -728,7 +734,7 @@ namespace {{ctx.CmdletNamespace}}
             {{clrType}}? result;
             try
             {
-                result = {{EmitCallOn($"client.{naming.BuilderExpression}", naming, "GetAsync", null, queryBindings)}}.GetAwaiter().GetResult();
+                result = {{EmitCallOn($"client.{naming.BuilderExpression}", naming, "GetAsync", null, queryBindings, ctx)}}.GetAwaiter().GetResult();
             }
 {{CatchBlock(TargetId(naming))}}
 
@@ -776,7 +782,7 @@ namespace {{ctx.CmdletNamespace}}
     [OutputType(typeof({{entityType}}))]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming)}}
+{{PathParams(naming, ctx)}}
 
 {{AccessTokenParamDecl()}}
 
@@ -794,6 +800,7 @@ namespace {{ctx.CmdletNamespace}}
                 result = {{ResourceCallReceiver(naming, ctx)}}.GetAsync(requestConfiguration =>
                 {
 {{queryBindings}}
+{{RequiredQueryBindings(ctx.RequiredQueries)}}
 {{HeaderBindings(naming)}}
 {{GenericHeadersBinding()}}
                 }).GetAwaiter().GetResult();
@@ -858,9 +865,11 @@ namespace {{ctx.CmdletNamespace}}
         // injection directive anchors on a callback name autorest no longer emits; evidence in
         // docs/pagination.md). The counter exists only when the operation declares $top; without
         // it the loop is uncapped and only nextLink exhaustion or a pipeline stop ends it.
-        var hasTop = queryParamNames.Contains("$top");
+        var requiredTop = RequiredTopParameter(naming, ctx);
+        var hasTop = queryParamNames.Contains("$top") || requiredTop is not null;
         var fetchedInit = hasTop ? "\n                    var fetched = result?.Value?.Count ?? 0;" : "";
-        var capCondition = hasTop ? " && (!this.IsParameterBound(nameof(Top)) || fetched < Top)" : "";
+        var capCondition = requiredTop is not null ? $" && fetched < {requiredTop.ParameterName}"
+            : hasTop ? " && (!this.IsParameterBound(nameof(Top)) || fetched < Top)" : "";
         var fetchedAdd = hasTop ? "\n                            fetched += page.Count;" : "";
         var continuationHeaders = HeaderBindingsFor(naming.HeaderParams, extraIndent: "        ") + GenericHeadersBinding("        ");
 
@@ -884,7 +893,7 @@ namespace {{ctx.CmdletNamespace}}
     [OutputType(typeof({{entityType}}))]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming)}}
+{{PathParams(naming, ctx, otherNames: ["All"])}}
 
 {{AccessTokenParamDecl()}}
 
@@ -908,6 +917,7 @@ namespace {{ctx.CmdletNamespace}}
                 result = client.{{naming.BuilderExpression}}.GetAsync(requestConfiguration =>
                 {
 {{bindings}}
+{{RequiredQueryBindings(ctx.RequiredQueries)}}
 {{HeaderBindings(naming)}}
 {{GenericHeadersBinding()}}
                 }).GetAwaiter().GetResult();
@@ -990,7 +1000,8 @@ namespace {{ctx.CmdletNamespace}}
     // call shares the caller's session, including an active Connect-MgGraph.
     public static string EmitGetDispatcher(CmdletNaming listNaming, CmdletNaming itemNaming,
         CmdletNaming internalListNaming, CmdletNaming internalItemNaming, EmitContext ctx,
-        string entityType, string collectionResponseType, IReadOnlySet<string> listQueryParamNames, IReadOnlySet<string> itemQueryParamNames)
+        string entityType, string collectionResponseType, IReadOnlySet<string> listQueryParamNames, IReadOnlySet<string> itemQueryParamNames,
+        IReadOnlyList<CmdletProperty>? listRequiredQueries = null, IReadOnlyList<CmdletProperty>? itemRequiredQueries = null)
     {
         ArgumentNullException.ThrowIfNull(listNaming);
         ArgumentNullException.ThrowIfNull(itemNaming);
@@ -1045,6 +1056,7 @@ namespace {{ctx.CmdletNamespace}}
     public class {{listNaming.ClassName}} : GraphClientCmdlet
     {
 {{PairedPathParams(sharedPathParams, getOnlyPathParams)}}
+{{PairedRequiredQueryDeclarations(listNaming, itemNaming, ctx, listRequiredQueries ?? [], itemRequiredQueries ?? [])}}
 
 {{AccessTokenParamDecl()}}
 
@@ -1122,7 +1134,7 @@ namespace {{ctx.CmdletNamespace}}
     [OutputType(typeof({{entityType}}))]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming)}}
+{{PathParams(naming, ctx, otherNames: BodyParameterNames(properties, complexProperties, untypedProperties))}}
 {{EmitPropertyParameters(properties)}}
 {{EmitComplexParameters(complexProperties)}}
 {{EmitUntypedParameters(untypedProperties)}}
@@ -1184,7 +1196,7 @@ namespace {{ctx.CmdletNamespace}}
     [OutputType(typeof({{entityType}}))]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming)}}
+{{PathParams(naming, ctx, otherNames: BodyParameterNames(properties, complexProperties, untypedProperties))}}
 {{EmitPropertyParameters(properties)}}
 {{EmitComplexParameters(complexProperties)}}
 {{EmitUntypedParameters(untypedProperties)}}
@@ -1242,7 +1254,7 @@ namespace {{ctx.CmdletNamespace}}
     [Cmdlet({{naming.VerbsClass}}.{{naming.VerbName}}, "{{EscapeLiteral(naming.Noun)}}", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     public class {{naming.ClassName}} : GraphClientCmdlet
     {
-{{PathParams(naming)}}
+{{PathParams(naming, ctx)}}
 {{HeaderParamDecls(naming)}}
 {{GenericHeadersParamDecl()}}
 
@@ -1273,21 +1285,22 @@ namespace {{ctx.CmdletNamespace}}
     // only when the path actually has a GET (PATCH-only resources like /places/{id} have no
     // GetAsync on their builder; found by compiling the Calendar module).
     // Keep caller -Headers, not mutation-only typed headers such as the pre-update If-Match.
-    private static string ReFetchBlock(CmdletNaming naming, EmitContext ctx) => $$"""
+    private static string ReFetchBlock(CmdletNaming naming, EmitContext ctx)
+    {
+        var configuration = $"requestConfiguration =>\n                    {{{RequiredQueryBindings(ctx.RefetchRequiredQueries, "                        ")}{GenericHeadersBinding("                    ")}\n                    }}";
+        return $$"""
 
             if (result is null)
             {
                 WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
                 try
                 {
-                    result = {{ResourceCallReceiver(naming, ctx)}}.GetAsync(requestConfiguration =>
-                    {
-{{GenericHeadersBinding("                    ")}}
-                    }).GetAwaiter().GetResult();
+                    result = {{ResourceCallReceiver(naming, ctx)}}.GetAsync({{configuration}}).GetAwaiter().GetResult();
                 }
 {{CatchBlock(TargetId(naming), "    ")}}
             }
 """;
+    }
 
     // ParameterName (not PascalName) names the parameter: it carries the "1" suffix when a
     // body property collides with a path id. The body assignment keeps PascalName — the
