@@ -6438,6 +6438,10 @@ components:
           nullable: true
         relationship:
           $ref: '#/components/schemas/microsoft.graph.personRelationship'
+        relationshipLabel:
+          type: string
+          description: 'Information (free-text) describing the relationship between the user and the related person. This property provides additional context beyond the predefined relationship values and can be used by clients, including AI-powered experiences, to better understand and reason about the relationship.'
+          nullable: true
         userId:
           type: string
           description: The user's directory object ID (Microsoft Entra ID or CID).
