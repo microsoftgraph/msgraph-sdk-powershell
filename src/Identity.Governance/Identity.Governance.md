@@ -39,6 +39,13 @@ responses and three call segments not classified as operations; beta reports 25
 unsupported content responses, eight such call segments, and 22 OData parameter
 aliases. These diagnostics are not API-absence evidence.
 
+Surviving reference collection DELETEs require the typed `QueryId` input for the
+native `@id` query (two surviving routes in each profile). The specs declare
+four v1.0 and six beta routes; existing shared suppressions continue to exclude
+the other two and four respectively. Path IDs do not satisfy the query, and
+item-reference neighbors do not acquire it. Shared natural-ID groups remain
+path-only.
+
 ``` yaml
 directive:
 #Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0. The affected operation Ids starts from connectedOrganization_DeleteExternalSponsorGraphBPreRef$
