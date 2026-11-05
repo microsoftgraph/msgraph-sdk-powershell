@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -243,6 +244,73 @@ public sealed class CalendarDirectiveMigrationTests
     [Theory]
     [InlineData("v1.0")]
     [InlineData("beta")]
+    public async Task EverySurvivingRequiredRangeContractUsesMandatoryNativeQueryInputs(string profile)
+    {
+        var source = Spec(profile);
+        var config = new GeneratorConfig("Test.Client", "");
+        var required = source.Paths.SelectMany(p => p.Value.Operations!.Select(o => (
+            Path: p.Key, Item: p.Value, Method: o.Key, Operation: o.Value,
+            Queries: EffectiveQueries(p.Value, o.Value).Where(q => q.Required).ToArray())))
+            .Where(o => o.Queries.Length > 0).ToArray();
+        Assert.Equal(30, required.Length);
+        Assert.Equal(60, required.Sum(o => o.Queries.Length));
+        var surviving = required.Where(o => !CmdletConfigurator.IsSuppressed(o.Method, o.Path, config, apiVersion: profile)).ToArray();
+        Assert.Equal(8, surviving.Length);
+        Assert.Equal(16, surviving.Sum(o => o.Queries.Length));
+        foreach (var operation in surviving)
+        {
+            Assert.Equal(HttpMethod.Get, operation.Method);
+            Assert.Equal(["endDateTime", "startDateTime"], operation.Queries.Select(q => q.Name).OrderBy(n => n).ToArray());
+            Assert.All(operation.Queries, query =>
+            {
+                Assert.Equal(JsonSchemaType.String, query.Schema!.Type);
+                Assert.True(string.IsNullOrEmpty(query.Schema.Format));
+            });
+        }
+
+        var subset = new OpenApiDocument { Info = source.Info, Components = source.Components, Paths = new OpenApiPaths() };
+        foreach (var operation in required)
+            if (!subset.Paths.ContainsKey(operation.Path))
+                subset.Paths.Add(operation.Path, operation.Item);
+        var output = Path.Combine(Path.GetTempPath(), "calendar-required-query-tests", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(output);
+        try
+        {
+            await new PowerShellWrapperGenerationService(subset, config with { OutputPath = output },
+                NullLogger.Instance, apiVersion: profile).GenerateAsync(CancellationToken.None);
+            var emitted = Directory.GetFiles(output, "*.g.cs").ToDictionary(p => Path.GetFileName(p)!, File.ReadAllText);
+            foreach (var operation in surviving)
+            {
+                var kind = OperationType(operation.Operation) == "function" ? OperationKind.Function : OperationKind.Resource;
+                var naming = Naming.Resolve(new OperationInfo(operation.Method, operation.Path, Kind: kind), config, apiVersion: profile);
+                var text = emitted[$"{naming.VerbName}{naming.Noun}.g.cs"];
+                foreach (var name in new[] { "StartDateTime", "EndDateTime" })
+                {
+                    Assert.Contains($"public string Query{name} ", text);
+                    Assert.Contains($"QueryParameters.{name} = Query{name};", text);
+                    Assert.Matches($@"\[Parameter\(Mandatory = true,[^\]]*\)\]\s*\[ValidateNotNullOrEmpty\]\s*public string Query{name}", text);
+                    Assert.DoesNotContain($"public string {name} ", text);
+                }
+                Assert.Contains("public string[]? Property ", text);
+                Assert.Contains("QueryParameters.Select = Property", text);
+                if (kind == OperationKind.Function)
+                {
+                    Assert.Contains("ParameterSetName = \"DeltaSync\"", text);
+                    var continuation = text[text.IndexOf("while (true)", StringComparison.Ordinal)..];
+                    Assert.DoesNotContain("QueryParameters.StartDateTime", continuation);
+                    Assert.DoesNotContain("QueryParameters.EndDateTime", continuation);
+                }
+            }
+        }
+        finally
+        {
+            Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
     public async Task TargetedGenerationUsesRealProfileOperationsAndPreservesNeighbors(string profile)
     {
         var source = Spec(profile);
@@ -340,6 +408,15 @@ public sealed class CalendarDirectiveMigrationTests
     private static OpenApiDocument Spec(string profile) => profile == "v1.0" ? V1.Value : Beta.Value;
 
     private static OpenApiDocument LegacySpec(string profile) => profile == "v1.0" ? LegacyV1.Value : LegacyBeta.Value;
+
+    private static IEnumerable<IOpenApiParameter> EffectiveQueries(IOpenApiPathItem item, OpenApiOperation operation)
+    {
+        var parameters = new Dictionary<(string?, ParameterLocation?), IOpenApiParameter>();
+        foreach (var level in new[] { item.Parameters, operation.Parameters })
+            foreach (var parameter in level ?? [])
+                parameters[(parameter.Name, parameter.In)] = parameter;
+        return parameters.Values.Where(p => p.In == ParameterLocation.Query);
+    }
 
     private static string? OperationType(OpenApiOperation operation) =>
         operation.Extensions is not null
