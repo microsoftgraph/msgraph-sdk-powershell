@@ -1,7 +1,7 @@
 {
   "audit": {
     "source": "src/Users/Users.md",
-    "baseline": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad",
+    "baseline": "4eb3ca3e1e21ca163337f59ebbcfb9d1820a920d",
     "requiredProfiles": ["v1.0", "beta"],
     "excludedProfiles": [],
     "ignored": ["src/Users/v1.0/readme.md", "src/Users/beta/readme.md", "src/readme.graph.md"],
@@ -36,7 +36,7 @@
       "publishedHelp": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.users/remove-mgbetausersponsordirectoryobjectbyref?view=graph-powershell-beta",
       "publishedHelpCommit": "07b0cf8f6305213f3c3830c301fca69a3e82ed17",
       "requiredParameters": ["UserId", "DirectoryObjectId"],
-      "rootNeighbor": "DELETE /users/{user-id}/sponsors/$ref remains separately named SponsorByRef. Both current specs require query @id:string and published help requires Id. Native required DELETE-query binding requires normal integration of shared prerequisite #3882; no module authoring flags, copied repair, one-member group or false query-fidelity pass.",
+      "rootNeighbor": "DELETE /users/{user-id}/sponsors/$ref remains separately named SponsorByRef. This is the only effective required query operation in each current module spec: @id:string. Normally merged #3882 supplies mandatory QueryId (no legacy Id alias), assigning the typed Kiota Id member and preserving the native @id wire name. The separately published item route still uses only UserId/DirectoryObjectId. No module authoring flags, copied repair or one-member group.",
       "rootPublishedHelp": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.users/remove-mgbetausersponsorbyref?view=graph-powershell-beta"
     }
   },

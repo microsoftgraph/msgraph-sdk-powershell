@@ -263,15 +263,42 @@ public sealed class UsersDirectiveMigrationTests
         var output = await GenerateActualProfile(profile);
         var root = output["RemoveMgUserSponsorByRef.g.cs"];
         Assert.Contains("client.Users[UserId].Sponsors.Ref.DeleteAsync", root, StringComparison.Ordinal);
+        Assert.Contains("public string QueryId", root, StringComparison.Ordinal);
+        Assert.Contains("[ValidateNotNullOrEmpty]", root, StringComparison.Ordinal);
+        Assert.Contains("requestConfiguration.QueryParameters.Id = QueryId;", root, StringComparison.Ordinal);
+        Assert.DoesNotContain("public string Id", root, StringComparison.Ordinal);
+        Assert.DoesNotContain("[Alias(\"Id\")]", root, StringComparison.Ordinal);
         Assert.DoesNotContain("public string DirectoryObjectId", root, StringComparison.Ordinal);
         Assert.Contains("public string DirectoryObjectId",
             output["RemoveMgUserSponsorDirectoryObjectByRef.g.cs"], StringComparison.Ordinal);
+        Assert.DoesNotContain("QueryId", output["RemoveMgUserSponsorDirectoryObjectByRef.g.cs"], StringComparison.Ordinal);
         foreach (var suppressed in new[]
         {
             "GetMgUserTodo.g.cs", "UpdateMgUserTodo.g.cs", "RemoveMgUserTodo.g.cs",
             "NewMgUserLicenseDetail.g.cs", "UpdateMgUserPhoto.g.cs",
         })
             Assert.False(output.ContainsKey(suppressed), $"Suppressed command was generated: {suppressed}");
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task RequiredQueryInventoryIsCompleteAndSeparateFromPathIds(string profile)
+    {
+        var document = await ReadSpec("openApiDocs_KiotaCompat", profile);
+        var required = document.Paths.SelectMany(path => path.Value.Operations!.SelectMany(operation =>
+            (path.Value.Parameters ?? []).Concat(operation.Value.Parameters ?? [])
+                .GroupBy(parameter => (parameter.Name, parameter.In))
+                .Select(group => group.Last())
+                .Where(parameter => parameter.In == ParameterLocation.Query && parameter.Required)
+                .Select(parameter => (Path: path.Key, Method: operation.Key, Parameter: parameter)))).ToArray();
+        var query = Assert.Single(required);
+        Assert.Equal("/users/{user-id}/sponsors/$ref", query.Path);
+        Assert.Equal(HttpMethod.Delete, query.Method);
+        Assert.Equal("@id", query.Parameter.Name);
+        Assert.Equal(JsonSchemaType.String, query.Parameter.Schema!.Type);
+        Assert.False(CmdletConfigurator.IsSuppressed(query.Method, query.Path,
+            new GeneratorConfig("Test.Client", "unused"), apiVersion: profile));
     }
 
     [Fact]
