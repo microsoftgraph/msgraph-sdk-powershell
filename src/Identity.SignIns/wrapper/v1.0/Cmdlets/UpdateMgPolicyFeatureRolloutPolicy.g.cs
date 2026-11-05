@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.Feature = Feature;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.FeatureRolloutPolicy? result;

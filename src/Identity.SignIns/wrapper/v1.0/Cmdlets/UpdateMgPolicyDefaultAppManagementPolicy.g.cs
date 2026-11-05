@@ -68,7 +68,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.ServicePrincipalRestrictions = ServicePrincipalRestrictions;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.TenantAppManagementPolicy? result;

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.SmsSignInState = SmsSignInState;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.PhoneAuthenticationMethod? result;

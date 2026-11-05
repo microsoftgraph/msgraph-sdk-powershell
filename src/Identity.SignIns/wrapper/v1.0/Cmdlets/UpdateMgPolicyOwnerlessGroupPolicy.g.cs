@@ -74,7 +74,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.TargetOwners = TargetOwners;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.OwnerlessGroupPolicy? result;
