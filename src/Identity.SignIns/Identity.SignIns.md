@@ -41,8 +41,9 @@ distinct `Test-MgIdentityCustomAuthenticationExtensionEndpointAuthenticationConf
 name from the bodyless existing-extension test. These are ordinary distinct commands,
 not grouped variants or a migration of excluded profile-local directives. Existing
 v1.0 derived suppressions and names remain authoritative. Required `@id` query
-binding on collection reference deletions is a separately owned generator prerequisite,
-not something this module config implements or bypasses.
+binding on collection reference deletions uses the normally integrated native
+mandatory `-QueryId` parameter; path IDs do not satisfy that query and no old
+`-Id` alias is provided. This module config does not implement query flags.
 
 Known generator limitations are not directive suppressions. The four beta
 `GET .../rights` operations below return a `usageRightsIncluded` entity whose
@@ -57,9 +58,11 @@ shared configuration deliberately leaves them unsuppressed:
 
 Full compiled route/export checks are distinct from HTTP runtime checks. A build
 and `-WhatIf` alone do not prove required `@id` query forwarding or typed action
-body serialization. Those checks must run with the complete original official
-Authentication module and normally integrated central runtime/query fixes, not
-module-local dependency copies or authored query flags.
+body serialization. Those checks use the normally packaged adapted Authentication
+2.41.2 module and the real session HTTP factory in Global and USGov, not stock
+Gallery 2.41.2, old 2.38.1, dependency preloads, module-local copies, or authored
+query flags. Required-query success does not waive the separate generic `-Headers`
+contract on a PATCH 204 GET refetch.
 
 ``` yaml
 directive:

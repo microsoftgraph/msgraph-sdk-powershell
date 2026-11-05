@@ -5,6 +5,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -309,6 +312,70 @@ public sealed class IdentitySignInsDirectiveMigrationTests
         Assert.Equal(profile == "v1.0" && useCollisionData,
             CmdletConfigurator.IsSuppressed(HttpMethod.Post, collectionAction, config, apiVersion: profile));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, itemAction, config, apiVersion: profile));
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task EverySurvivingNativeRequiredQueryUsesTheCurrentPublicContract(string profile, bool useCollisionData)
+    {
+        var document = ReadSpec("openApiDocs_KiotaCompat", profile);
+        var config = new GeneratorConfig("Test.Client", Path.Combine(Path.GetTempPath(), "signins-required-query-" + Guid.NewGuid().ToString("N")), useCollisionData);
+        var selected = new List<(HttpMethod Method, string Path, IOpenApiParameter[] Queries)>();
+        foreach (var (path, item) in document.Paths.ToArray())
+        {
+            foreach (var (method, operation) in (item.Operations ?? []).ToArray())
+            {
+                var effective = new Dictionary<(string?, ParameterLocation?), IOpenApiParameter>();
+                foreach (var parameter in (item.Parameters ?? []).Concat(operation.Parameters ?? []))
+                    effective[(parameter.Name, parameter.In)] = parameter;
+                var required = effective.Values.Where(p => p.In == ParameterLocation.Query && p.Required).ToArray();
+                if (required.Length == 0 || CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile))
+                    item.Operations!.Remove(method);
+                else
+                    selected.Add((method, path, required));
+            }
+            if (item.Operations?.Count is not > 0)
+                document.Paths.Remove(path);
+        }
+        if (profile == "v1.0" && useCollisionData)
+            Assert.Empty(selected);
+        else
+            Assert.NotEmpty(selected);
+        try
+        {
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(CancellationToken.None);
+            var files = Directory.GetFiles(config.OutputPath, "*.g.cs").Select(File.ReadAllText).ToArray();
+            foreach (var (method, path, queries) in selected)
+            {
+                var source = Assert.Single(files, text => text.Contains($"[GraphRoute(\"{method.Method}\", \"{path}\")]", StringComparison.Ordinal));
+                foreach (var query in queries)
+                {
+                    Assert.True(SchemaProperties.TryMapQueryInputType(query.Schema!, out var type, out var array));
+                    var member = query.Name!.TrimStart('@', '$').ToPascalCase('-', '.', '_');
+                    var publicName = "Query" + member;
+                    Assert.Contains($"public {type}{(array ? "[]" : "")} {publicName} ", source);
+                    Assert.Contains($"requestConfiguration.QueryParameters.{member} = {publicName};", source);
+                    Assert.Contains("[Parameter(Mandatory = true", source);
+                    if (query.Name == "@id")
+                    {
+                        Assert.Equal("string", type);
+                        Assert.Contains("[ValidateNotNullOrEmpty]", source);
+                        Assert.DoesNotContain("public string Id ", source);
+                        Assert.DoesNotContain("[Alias(\"Id\")]", source);
+                    }
+                }
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+            }
+        }
+        finally
+        {
+            if (Directory.Exists(config.OutputPath))
+                Directory.Delete(config.OutputPath, recursive: true);
+        }
     }
 
     private sealed record SourceOperation(HttpMethod Method, string Path, OpenApiOperation Operation);
