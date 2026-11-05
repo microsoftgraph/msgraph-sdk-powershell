@@ -52,6 +52,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
