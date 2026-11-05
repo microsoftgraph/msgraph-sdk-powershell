@@ -22,6 +22,14 @@ parameter aliases/transforms or schema/response directives. The empty `mappings`
 array in `wrapper/Financials_directiveMigrationMap.json` records that review.
 There is no selector to translate or legacy match set to migrate.
 
+Separately, the user explicitly excluded cmdlet generation for the three exact
+beta URI paths ending in the literal segment `/post`: journal, purchase-invoice,
+and sales-invoice item actions. These are path-specific exclusions, **not** a
+blanket exclusion of HTTP POST operations. All 47 other POST operations,
+including collection creation and `/postAndSend`, remain enabled. The OpenAPI
+inputs and Kiota client routes are unchanged. This new user decision is recorded
+as audit context, not fabricated as an original shared-directive mapping.
+
 Separately, `Financials_cmdletConfigurations.cs` preserves the published
 multi-route surface using nine shared, profile-neutral natural-ID groups (23
 operations). Root list defaults remain unchanged; nested alternatives use

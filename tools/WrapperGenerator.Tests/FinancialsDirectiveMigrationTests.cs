@@ -15,11 +15,17 @@ namespace WrapperGenerator.Tests;
 public sealed class FinancialsDirectiveMigrationTests
 {
     private static readonly Lazy<OpenApiDocument> BetaDocument = new(LoadBetaDocument);
+    private static readonly string[] ExcludedPostPaths =
+    [
+        "/financials/companies/{company-id}/journals/{journal-id}/post",
+        "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/post",
+        "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/post",
+    ];
 
     [Theory]
     [InlineData(true)]
     [InlineData(false)]
-    public void EmptySharedAuditLeavesEveryRealBetaOperationUnsuppressedAndOnlyRepairsTwoWriteNames(bool useCollisionData)
+    public void OnlyUserExcludedTerminalPostPathsAreSuppressedAndOnlyTwoWriteNamesAreRepaired(bool useCollisionData)
     {
         var config = new GeneratorConfig("Microsoft.Graph.PowerShell.Financials.Client", "", UseCollisionData: useCollisionData);
         var operations = BetaDocument.Value.Paths
@@ -27,10 +33,16 @@ public sealed class FinancialsDirectiveMigrationTests
             .ToArray();
 
         Assert.Equal(648, operations.Length);
+        Assert.Equal(ExcludedPostPaths.OrderBy(path => path, StringComparer.Ordinal),
+            BetaDocument.Value.Paths.Keys.Where(path => path.EndsWith("/post", StringComparison.Ordinal))
+                .OrderBy(path => path, StringComparer.Ordinal));
+        Assert.Equal(3, operations.Count(operation => ExcludedPostPaths.Contains(operation.Path)));
+        Assert.Equal(47, operations.Count(operation => operation.Method == HttpMethod.Post
+            && !ExcludedPostPaths.Contains(operation.Path)));
         foreach (var operation in operations)
         {
-            Assert.False(CmdletConfigurator.IsSuppressed(operation.Method, operation.Path, config, apiVersion: "beta"),
-                $"Unexpected suppression: {operation.Method} {operation.Path}");
+            Assert.Equal(ExcludedPostPaths.Contains(operation.Path),
+                CmdletConfigurator.IsSuppressed(operation.Method, operation.Path, config, apiVersion: "beta"));
             var itemNavigationWrite = operation.Path == "/financials/companies/{company-id}/items/{item-id}/itemCategory"
                 && (operation.Method == HttpMethod.Patch || operation.Method == HttpMethod.Delete);
             Assert.Equal(itemNavigationWrite ? "FinancialCompanyItemCategoryByItem" : "FinancialsAuditSentinel",
@@ -105,8 +117,6 @@ public sealed class FinancialsDirectiveMigrationTests
     }
 
     [Theory]
-    [InlineData("/financials/companies/{company-id}/journals/{journal-id}/post",
-        "financial.company.journal_post", "InvokeMgFinancialCompanyJournalPost.g.cs")]
     [InlineData("/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/postAndSend",
         "financial.company.salesInvoice_postAndSend", "InvokeMgFinancialCompanySaleInvoicePostAndSend.g.cs")]
     public async Task RealBetaActionsRemainDistinctAndAreNotInventedCrudOverrides(
@@ -170,6 +180,37 @@ public sealed class FinancialsDirectiveMigrationTests
                 Assert.Contains("public string ItemCategoryId", root, StringComparison.Ordinal);
                 Assert.Contains("public string ItemId", nested, StringComparison.Ordinal);
             }
+        }, useCollisionData);
+    }
+
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public async Task TerminalPostExclusionKeepsSpecAndAllOtherPostCmdletRoutes(bool useCollisionData)
+    {
+        var excludedIds = new[]
+        {
+            "financial.company.journal_post",
+            "financial.company.purchaseInvoice_post",
+            "financial.company.salesInvoice_post",
+        };
+        for (var index = 0; index < ExcludedPostPaths.Length; index++)
+            Assert.Equal(excludedIds[index], BetaDocument.Value.Paths[ExcludedPostPaths[index]].Operations![HttpMethod.Post].OperationId);
+
+        await WithGeneratedSources(BetaDocument.Value, output =>
+        {
+            var sources = Directory.GetFiles(output, "*.g.cs").Select(File.ReadAllText).ToArray();
+            foreach (var path in ExcludedPostPaths)
+                Assert.DoesNotContain(sources, source => source.Contains($"[GraphRoute(\"POST\", \"{path}\"", StringComparison.Ordinal));
+            foreach (var name in new[] { "JournalPost", "PurchaseInvoicePost", "SaleInvoicePost" })
+                Assert.False(File.Exists(Path.Combine(output, $"InvokeMgFinancialCompany{name}.g.cs")));
+            var retained = BetaDocument.Value.Paths
+                .Where(path => path.Value.Operations!.ContainsKey(HttpMethod.Post) && !ExcludedPostPaths.Contains(path.Key))
+                .Select(path => path.Key).ToArray();
+            Assert.Equal(47, retained.Length);
+            foreach (var path in retained)
+                Assert.Contains(sources, source => source.Contains($"[GraphRoute(\"POST\", \"{path}\"", StringComparison.Ordinal));
+            Assert.Contains(sources, source => source.Contains("GetRequestAdapter(\"beta\")", StringComparison.Ordinal));
         }, useCollisionData);
     }
 

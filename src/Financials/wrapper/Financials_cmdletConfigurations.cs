@@ -8,6 +8,14 @@ public static partial class CmdletConfigurator
     // definitions prove the additional DimensionId, JournalId and alternative ItemId sets.
     private static readonly List<Entry> FinancialsCmdletConfigurations =
     [
+        // Explicit user exclusion of these terminal /post URIs, not POST operations.
+        // Keep the specification and Kiota client routes available.
+        new(OverrideKind.SuppressOperation, Method: null, "/financials/companies/{}/journals/{}/post",
+            Match: PathMatch.Exact, Value: null, Reason: "User-directed terminal /post URI cmdlet exclusion; not a shared legacy directive."),
+        new(OverrideKind.SuppressOperation, Method: null, "/financials/companies/{}/purchaseinvoices/{}/post",
+            Match: PathMatch.Exact, Value: null, Reason: "User-directed terminal /post URI cmdlet exclusion; not a shared legacy directive."),
+        new(OverrideKind.SuppressOperation, Method: null, "/financials/companies/{}/salesinvoices/{}/post",
+            Match: PathMatch.Exact, Value: null, Reason: "User-directed terminal /post URI cmdlet exclusion; not a shared legacy directive."),
         GroupVariants(new OperationVariantGroup(
         [
             new("GET", "/financials/companies/{company-id}/dimensionValues", "Root"),
