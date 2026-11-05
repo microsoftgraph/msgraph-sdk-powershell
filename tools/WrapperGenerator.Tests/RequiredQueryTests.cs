@@ -64,7 +64,7 @@ public sealed class RequiredQueryTests
         KeepRoute(document, Route);
         var item = (OpenApiPathItem)document.Paths[Route];
         var operation = item.Operations![HttpMethod.Delete];
-        item.Parameters = [Query("@id", required: !required, type: JsonSchemaType.Integer)];
+        item.Parameters = [Query("@id", required: !required, type: required ? JsonSchemaType.String : JsonSchemaType.Integer)];
         operation.Parameters = [Query("@id", required)];
         var source = Assert.Single((await Generate(document)).Values);
         Assert.Equal(required, source.Contains("public string QueryId ", StringComparison.Ordinal));
@@ -221,7 +221,7 @@ public sealed class RequiredQueryTests
         var item = (OpenApiPathItem)document.Paths[route];
         var operation = item.Operations![new HttpMethod(method)];
         item.Operations = new Dictionary<HttpMethod, OpenApiOperation> { [new HttpMethod(method)] = operation };
-        item.Parameters = [Query("scope"), Query("overridden", type: JsonSchemaType.Object)];
+        item.Parameters = [Query("scope"), Query("overridden", required: false, type: JsonSchemaType.Integer)];
         operation.Parameters = (operation.Parameters ?? []).Concat([Query("overridden", type: JsonSchemaType.Integer)]).ToList();
         var source = Assert.Single((await Generate(document)).Values);
         Assert.Contains("public string QueryScope ", source);
@@ -343,10 +343,29 @@ public sealed class RequiredQueryTests
         var item = (OpenApiPathItem)document.Paths[route];
         var operation = item.Operations![HttpMethod.Get];
         item.Operations = new Dictionary<HttpMethod, OpenApiOperation> { [HttpMethod.Get] = operation };
+        item.Parameters = (item.Parameters ?? []).Where(p => p.Name != "$top").ToList();
         operation.Parameters = [Query("$top", type: JsonSchemaType.Boolean)];
         var failure = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document));
         Assert.Contains("Required query '$top' must be an integer", failure.Message);
         Assert.Contains(route, failure.Message);
+    }
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task IncompatibleRequiredOverridesFailBeforeEmittingAgainstKiotasInheritedMember(bool serialization)
+    {
+        var document = await LoadFixture();
+        KeepRoute(document, Route);
+        var item = (OpenApiPathItem)document.Paths[Route];
+        var inherited = Query("@id", required: false);
+        var operation = Query("@id", type: serialization ? JsonSchemaType.String : JsonSchemaType.Integer);
+        if (serialization) { operation.Explode = true; }
+        item.Parameters = [inherited];
+        item.Operations![HttpMethod.Delete].Parameters = [operation];
+        var failure = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document));
+        Assert.Contains("Unsupported required query override '@id'", failure.Message);
+        Assert.Contains(Route, failure.Message);
     }
 
     [Theory]

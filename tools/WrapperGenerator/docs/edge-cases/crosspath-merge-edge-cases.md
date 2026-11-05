@@ -26,6 +26,9 @@ their optional OData options.
 
 All supported operation families inherit path-item parameters, with operation-level
 declarations overriding the same exact `(name, location)`, including referenced parameters.
+Kiota 1.36.1 keeps the inherited query member when it reports a duplicate operation
+declaration. Required overrides with incompatible CLR types or serialization contracts
+therefore fail explicitly instead of emitting a wrapper against the wrong typed member.
 Only required queries gain this new surface. Existing optional OData behavior stays
 unchanged; a required standard option is removed from the optional option table so there
 is one declaration/binding, e.g. mandatory boolean `QueryCount`, not an optional `Count`

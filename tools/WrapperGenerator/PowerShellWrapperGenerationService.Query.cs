@@ -21,6 +21,18 @@ public sealed partial class PowerShellWrapperGenerationService
                 var key = (parameter.Name, parameter.In);
                 if (!seen.Add(key))
                     throw new InvalidOperationException($"Duplicate parameter '{parameter.Name}': {path}.");
+                // Kiota 1.36.1 keeps the inherited query member when reporting a duplicate
+                // operation declaration. A type/serialization override cannot bind safely.
+                if (parameter.In == ParameterLocation.Query && parameter.Required
+                    && effective.TryGetValue(key, out var inherited)
+                    && (inherited.Schema is null || parameter.Schema is null
+                        || !SchemaProperties.TryMapQueryInputType(inherited.Schema, out var inheritedType, out _)
+                        || !SchemaProperties.TryMapQueryInputType(parameter.Schema, out var operationType, out _)
+                        || inheritedType != operationType
+                        || (inherited.Style ?? ParameterStyle.Form) != (parameter.Style ?? ParameterStyle.Form)
+                        || inherited.Explode != parameter.Explode || inherited.AllowReserved != parameter.AllowReserved))
+                    throw new InvalidOperationException(
+                        $"Unsupported required query override '{parameter.Name}': Kiota retains an incompatible inherited type or serialization contract: {path}.");
                 effective[key] = parameter;
             }
         }
