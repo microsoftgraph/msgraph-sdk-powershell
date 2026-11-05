@@ -87,7 +87,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.State = State;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.ConditionalAccessPolicy? result;

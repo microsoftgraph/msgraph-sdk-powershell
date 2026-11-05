@@ -16,6 +16,10 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileDeviceManagementPolicyId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1,
+            HelpMessage = "Value for the '@id' query parameter.")]
+        [ValidateNotNullOrEmpty]
+        public string QueryId { get; set; } = string.Empty;
 
 
         [Parameter(Mandatory = false,
@@ -30,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
             if (!ShouldProcess(MobileDeviceManagementPolicyId, "Remove"))
                 return;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             // DeleteAsync returns a plain Task: a standard delete response has no body.
@@ -43,6 +47,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                             requestConfiguration.Headers.Add("If-Match", IfMatch!);
 
                         AddRequestHeaders(requestConfiguration.Headers);
+                        requestConfiguration.QueryParameters.Id = QueryId;
                 })
                     .GetAwaiter().GetResult();
             }

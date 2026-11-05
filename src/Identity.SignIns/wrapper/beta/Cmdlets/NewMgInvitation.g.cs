@@ -86,7 +86,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.InvitedUserMessageInfo = InvitedUserMessageInfo;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.Invitation? result;

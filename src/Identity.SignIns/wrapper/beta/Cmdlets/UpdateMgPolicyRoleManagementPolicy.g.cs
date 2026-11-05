@@ -75,7 +75,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.LastModifiedBy = LastModifiedBy;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.UnifiedRoleManagementPolicy? result;

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
     if (this.IsParameterBound(nameof(ProtectedContents)))
         body.ProtectedContents = ProtectedContents!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.ComputeRightsAndInheritanceResult? result;

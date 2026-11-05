@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.BehaviorOnError = BehaviorOnError;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CustomAuthenticationExtension? result;

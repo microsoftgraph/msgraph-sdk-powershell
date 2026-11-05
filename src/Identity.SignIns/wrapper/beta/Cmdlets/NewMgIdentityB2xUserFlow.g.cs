@@ -50,7 +50,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.ApiConnectorConfiguration = ApiConnectorConfiguration;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.B2xIdentityUserFlow? result;

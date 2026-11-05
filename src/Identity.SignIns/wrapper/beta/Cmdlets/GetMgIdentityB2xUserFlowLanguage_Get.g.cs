@@ -36,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.UserFlowLanguageConfiguration? result;
@@ -49,6 +49,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 

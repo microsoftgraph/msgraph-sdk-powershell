@@ -93,7 +93,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.ScopeSensitivityLabels = ScopeSensitivityLabels;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.PermissionGrantConditionSet? result;

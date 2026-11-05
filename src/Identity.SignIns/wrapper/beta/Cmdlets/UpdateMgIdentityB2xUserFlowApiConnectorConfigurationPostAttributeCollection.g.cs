@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.AuthenticationConfiguration = AuthenticationConfiguration;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.IdentityApiConnector? result;

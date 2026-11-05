@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.CertificateAuthorities = CertificateAuthorities!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CertificateBasedAuthConfiguration? result;

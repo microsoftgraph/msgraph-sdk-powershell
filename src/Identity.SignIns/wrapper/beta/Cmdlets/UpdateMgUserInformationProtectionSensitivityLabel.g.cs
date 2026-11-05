@@ -131,7 +131,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.ApplicationMode = ApplicationMode;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.SensitivityLabel? result;
