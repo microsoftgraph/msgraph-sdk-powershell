@@ -6634,7 +6634,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
-      operationId: roleManagement.cloudPC.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_assignedPrincipal
+      operationId: roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_assignedPrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8408,7 +8408,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
-      operationId: roleManagement.deviceManagement.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_assignedPrincipal
+      operationId: roleManagement.deviceManagement.roleDefinition.inheritsPermissionsFrom_assignedPrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10149,7 +10149,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-assignedprincipals?view=graph-rest-beta
-      operationId: roleManagement.exchange.roleDefinition.unifiedRoleDefinition.inheritsPermissionsFrom.unifiedRoleDefinition_assignedPrincipal
+      operationId: roleManagement.exchange.roleDefinition.inheritsPermissionsFrom_assignedPrincipal
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'

@@ -36,6 +36,9 @@ public sealed partial class PowerShellWrapperGenerationService
             throw new InvalidOperationException($"Operation groups require ordinary distinct path IDs: {path}.");
 
         var internalNaming = Naming.WithSuffix(naming, $"_Route{index}");
+        if (method == HttpMethod.Patch && pathItem.Operations?.TryGetValue(HttpMethod.Get, out var refetch) == true
+            && RequiredQueries(EffectiveParameters(pathItem, refetch, path), "GET", path).Count > 0)
+            throw new InvalidOperationException($"Required query inputs on a mutation group's refetch are unsupported: GET {path}.");
         var outputType = MutationResponseType(operation, ctx, path);
         var bodySchema = TryGetRequestJsonSchema(operation);
         string? bodyType = null;
