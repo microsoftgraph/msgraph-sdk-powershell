@@ -93,6 +93,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
 

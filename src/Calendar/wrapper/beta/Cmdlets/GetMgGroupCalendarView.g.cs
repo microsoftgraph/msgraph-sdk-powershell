@@ -19,6 +19,14 @@ namespace Microsoft.Graph.PowerShell.Calendar
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string GroupId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1,
+            HelpMessage = "Value for the 'startDateTime' query parameter.")]
+        [ValidateNotNullOrEmpty]
+        public string QueryStartDateTime { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 2,
+            HelpMessage = "Value for the 'endDateTime' query parameter.")]
+        [ValidateNotNullOrEmpty]
+        public string QueryEndDateTime { get; set; } = string.Empty;
 
 
 
@@ -91,6 +99,9 @@ namespace Microsoft.Graph.PowerShell.Calendar
 
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
+
+                    requestConfiguration.QueryParameters.StartDateTime = QueryStartDateTime;
+                    requestConfiguration.QueryParameters.EndDateTime = QueryEndDateTime;
 
 
 
