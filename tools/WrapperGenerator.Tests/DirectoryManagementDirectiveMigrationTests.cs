@@ -237,6 +237,71 @@ public sealed class DirectoryManagementDirectiveMigrationTests
             Naming.Resolve(new OperationInfo(HttpMethod.Delete, item), config, apiVersion: "beta").Noun);
     }
 
+    [Theory]
+    [InlineData("v1.0", true)]
+    [InlineData("v1.0", false)]
+    [InlineData("beta", true)]
+    [InlineData("beta", false)]
+    public async Task EverySurvivingRequiredNativeQueryHasMandatoryPrefixedInputAndTypedBinding(string profile, bool derived)
+    {
+        var document = await ReadSpec(RepoRoot(), "openApiDocs_KiotaCompat", profile);
+        var config = new GeneratorConfig("Test.Client", "unused", derived);
+        var expected = new List<(string Method, string Path, string PublicName, string Member, string Type)>();
+        foreach (var path in document.Paths.Keys.ToArray())
+        {
+            var pathItem = document.Paths[path];
+            foreach (var method in pathItem.Operations!.Keys.ToArray())
+            {
+                var operation = pathItem.Operations[method];
+                var effective = new Dictionary<(string?, ParameterLocation?), IOpenApiParameter>();
+                foreach (var parameter in (pathItem.Parameters ?? []).Concat(operation.Parameters ?? []))
+                    effective[(parameter.Name, parameter.In)] = parameter;
+                var required = effective.Values.Where(p => p.In == ParameterLocation.Query && p.Required).ToArray();
+                if (required.Length == 0 || CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile))
+                {
+                    pathItem.Operations.Remove(method);
+                    continue;
+                }
+                foreach (var query in required)
+                {
+                    Assert.True(SchemaProperties.TryMapQueryInputType(query.Schema!, out var type, out _),
+                        $"Unsupported actual required input {method} {path}: {query.Name}");
+                    var member = query.Name!.TrimStart('@', '$').ToPascalCase('-', '.', '_');
+                    expected.Add((method.Method, path, "Query" + member, member, type));
+                }
+            }
+            if (pathItem.Operations.Count == 0)
+                document.Paths.Remove(path);
+        }
+        var output = Path.Combine(Path.GetTempPath(), "directory-management-required-queries-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            await new PowerShellWrapperGenerationService(document, config with { OutputPath = output },
+                NullLogger.Instance, apiVersion: profile).GenerateAsync(CancellationToken.None);
+            var sources = Directory.GetFiles(output, "*.g.cs").Select(File.ReadAllText).ToArray();
+            foreach (var query in expected)
+            {
+                var source = Assert.Single(sources, s =>
+                    s.Contains($"[GraphRoute(\"{query.Method}\", \"{query.Path}\")]", StringComparison.Ordinal));
+                Assert.Contains($"public {query.Type} {query.PublicName} ", source);
+                Assert.Contains($"requestConfiguration.QueryParameters.{query.Member} = {query.PublicName};", source);
+                Assert.Matches(@"(?s)\[Parameter\(Mandatory = true,[^\]]*\)\]\s*\[ValidateNotNull(?:OrEmpty)?\]\s*public "
+                    + System.Text.RegularExpressions.Regex.Escape(query.Type + " " + query.PublicName) + @"\b", source);
+                Assert.DoesNotContain($"public {query.Type} {query.Member} ", source);
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+            }
+            if (profile == "beta")
+                Assert.NotEmpty(expected);
+            else
+                Assert.Empty(expected);
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
     private static string RepoRoot()
     {
         var root = new DirectoryInfo(AppContext.BaseDirectory);
