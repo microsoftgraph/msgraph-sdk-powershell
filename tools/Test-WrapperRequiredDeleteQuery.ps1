@@ -109,12 +109,12 @@ function Assert-DeleteRequest($Request, $Case, $Parameters) {
         $path = $path.Replace("{$placeholder}", [uri]::EscapeDataString($entry.Value))
     }
     $expected = "$endpoint/$ApiVersion" + $path
-    if ($Case.Query) { $expected += '?@id=' + [uri]::EscapeDataString($Parameters.Id) }
+    if ($Case.Query) { $expected += '?@id=' + [uri]::EscapeDataString($Parameters.QueryId) }
     if ($Case.Label -eq 'Before') { $expected += '?@id=' }
     Assert-Probe ($Request.Method -ceq 'DELETE' -and $Request.Uri -ceq $expected) "Exact encoded DELETE mismatch: $($Request.Uri) expected $expected"
     Assert-Probe ($Request.DecodedUri -ceq [uri]::UnescapeDataString($expected)) 'Decoded URI round trip failed.'
     if ($Case.Query) {
-        Assert-Probe ([uri]::UnescapeDataString(([uri]$Request.Uri).Query.Substring(5)) -ceq $Parameters.Id) 'The full nonempty query value did not round-trip independently.'
+        Assert-Probe ([uri]::UnescapeDataString(([uri]$Request.Uri).Query.Substring(5)) -ceq $Parameters.QueryId) 'The full nonempty query value did not round-trip independently.'
     }
     Assert-Probe (-not $Request.HasContent -and $null -eq $Request.Body) 'DELETE introduced content/body serialization.'
     Assert-Probe ($Request.Authorization -ceq "Bearer $token") 'DELETE bypassed the real session authentication handler.'
@@ -172,15 +172,16 @@ try {
         if ($case.Label -ne 'Neighbor') { $parameters.IfMatch = 'W/"etag-probe"' }
         $parameters.Headers = @{ 'x-delete-query-probe' = 'custom-value' }
         if ($case.Query) {
-            Assert-Probe ($command.Parameters.ContainsKey('Id')) 'Required native string query has no compiled -Id.'
-            $attributes = $command.Parameters['Id'].Attributes
-            Assert-Probe (@($attributes | Where-Object { $_ -is [System.Management.Automation.ParameterAttribute] -and $_.Mandatory }).Count -eq 1) '-Id is not mandatory.'
+            Assert-Probe ($command.Parameters.ContainsKey('QueryId')) 'Required native string query has no compiled -QueryId.'
+            Assert-Probe (-not $command.Parameters.ContainsKey('Id')) 'The obsolete unprefixed query parameter was retained.'
+            $attributes = $command.Parameters['QueryId'].Attributes
+            Assert-Probe (@($attributes | Where-Object { $_ -is [System.Management.Automation.ParameterAttribute] -and $_.Mandatory }).Count -eq 1) '-QueryId is not mandatory.'
             foreach ($invalid in 'missing', 'empty', 'null', 'foreign-path-parameter') {
                 $bad = $parameters.Clone()
-                if ($invalid -eq 'empty') { $bad.Id = '' }
-                if ($invalid -eq 'null') { $bad.Id = $null }
+                if ($invalid -eq 'empty') { $bad.QueryId = '' }
+                if ($invalid -eq 'null') { $bad.QueryId = $null }
                 if ($invalid -eq 'foreign-path-parameter') {
-                    $bad.Id = "$endpoint/$ApiVersion/directoryObjects/member"
+                    $bad.QueryId = "$endpoint/$ApiVersion/directoryObjects/member"
                     $bad.DirectoryObjectId = 'item-only-input'
                 }
                 $before = $handler.Requests.Count
@@ -191,7 +192,7 @@ try {
                 Assert-Probe ($handler.Requests.Count -eq $before) "Invalid $invalid input reached transport."
                 $results.Add([pscustomobject]@{ Case = $case.Label; Check = $invalid; ErrorId = $failure.FullyQualifiedErrorId; Requests = 0 })
             }
-            $parameters.Id = "$endpoint/$ApiVersion/directoryObjects/member"
+            $parameters.QueryId = "$endpoint/$ApiVersion/directoryObjects/member"
         }
         else { Assert-Probe (-not $command.Parameters.ContainsKey('Id')) 'No-query neighbor acquired a query parameter.' }
         $before = $handler.Requests.Count
@@ -221,12 +222,12 @@ try {
             })
         }
         $queryValues = if ($case.Query) {
-            @($parameters.Id, "$endpoint/$ApiVersion/directoryObjects/member /%?#&=+'`"",
+            @($parameters.QueryId, "$endpoint/$ApiVersion/directoryObjects/member /%?#&=+'`"",
                 "$endpoint/$ApiVersion/directoryObjects/$([char]0xE9)?x=%2F&y=+",
                 'https://foreign.invalid/directoryObjects/member?x=%2F&y=+')
         } else { @('') }
         foreach ($value in $queryValues) {
-            if ($case.Query) { $parameters.Id = $value }
+            if ($case.Query) { $parameters.QueryId = $value }
             $before = $handler.Requests.Count
             & $name @parameters -Confirm:$false -ErrorAction Stop
             Assert-Probe ($handler.Requests.Count -eq $before + 1) 'Expected exactly one DELETE.'
@@ -259,7 +260,7 @@ try {
         (Join-Path $PSScriptRoot 'Templates\WrapperClient.csproj.template'),
         (Join-Path $PSScriptRoot 'Templates\WrapperModule.csproj.template'),
         (Join-Path $PSScriptRoot 'WrapperGenerator\CmdletEmitter.cs'),
-        (Join-Path $PSScriptRoot 'WrapperGenerator\PowerShellWrapperGenerationService.Delete.cs'),
+        (Join-Path $PSScriptRoot 'WrapperGenerator\PowerShellWrapperGenerationService.Query.cs'),
         (Join-Path $repo 'src\GraphWrapperRuntime\Runtime\GraphClientCmdlet.cs'),
         (Join-Path $repo 'src\GraphWrapperRuntime\Runtime\SessionAdapterCache.cs'))
     if ($BaselineCmdletsDirectory) { $inputs += @(Get-ChildItem -LiteralPath $BaselineCmdletsDirectory -Filter '*.g.cs' -File | Select-Object -ExpandProperty FullName) }

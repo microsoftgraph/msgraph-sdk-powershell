@@ -7,6 +7,7 @@ using System.Management.Automation.Host;
 using System.Net;
 using System.Net.Http;
 using System.Security;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -41,6 +42,49 @@ namespace DeleteQueryProbe
                 captured.Headers.Add(header.Key, string.Join(",", header.Value));
             Requests.Add(captured);
             return new HttpResponseMessage(HttpStatusCode.NoContent);
+        }
+    }
+
+    public sealed class FamilyCaptureHandler : DelegatingHandler
+    {
+        public List<CapturedRequest> Requests { get; } = new List<CapturedRequest>();
+        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken token)
+        {
+            var captured = new CapturedRequest
+            {
+                Method = request.Method.Method, Uri = request.RequestUri.AbsoluteUri,
+                DecodedUri = System.Uri.UnescapeDataString(request.RequestUri.AbsoluteUri),
+                HasContent = request.Content != null,
+                Body = request.Content == null ? null : await request.Content.ReadAsStringAsync(),
+                Authorization = request.Headers.Authorization?.ToString()
+            };
+            foreach (var header in request.Headers)
+                captured.Headers.Add(header.Key, string.Join(",", header.Value));
+            Requests.Add(captured);
+            var path = request.RequestUri.AbsolutePath;
+            if (request.Method == HttpMethod.Delete || request.Method.Method == "PATCH"
+                || path.EndsWith("/promote", StringComparison.Ordinal)
+                || (path.EndsWith("/$ref", StringComparison.Ordinal) && request.Method != HttpMethod.Get))
+                return new HttpResponseMessage(HttpStatusCode.NoContent);
+            if (path.EndsWith("/$count", StringComparison.Ordinal))
+                return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent("2", Encoding.UTF8, "text/plain") };
+            if (path.EndsWith("/content", StringComparison.Ordinal))
+                return new HttpResponseMessage(HttpStatusCode.OK) { Content = new ByteArrayContent(new byte[] { 1, 2, 3 }) };
+            if (path.EndsWith("/owner/$ref", StringComparison.Ordinal))
+                return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent("\"https://graph.microsoft.com/directoryObjects/owner\"", Encoding.UTF8, "application/json") };
+            var collection = path.EndsWith("/widgets", StringComparison.Ordinal) && request.Method == HttpMethod.Get
+                || path.EndsWith("/calendarView", StringComparison.Ordinal)
+                || path.EndsWith("/selectedWidgets", StringComparison.Ordinal);
+            var delta = path.EndsWith("/delta()", StringComparison.Ordinal);
+            var body = collection || delta ? "{\"value\":[{\"id\":\"offline-proof\"}]}" : "{\"id\":\"offline-proof\",\"displayName\":\"returned\"}";
+            if (delta)
+                body = "{\"value\":[{\"id\":\"offline-proof\"}],\"@odata.deltaLink\":\""
+                    + request.RequestUri.GetLeftPart(UriPartial.Path) + "?serverState=next\"}";
+            if (collection && path.EndsWith("/widgets", StringComparison.Ordinal) && request.RequestUri.Query.Contains("pages")
+                && !request.RequestUri.Query.Contains("continued"))
+                body = "{\"value\":[{\"id\":\"offline-proof\"}],\"@odata.nextLink\":\""
+                    + request.RequestUri.GetLeftPart(UriPartial.Path) + "?continued=1\"}";
+            return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent(body, Encoding.UTF8, "application/json") };
         }
     }
 

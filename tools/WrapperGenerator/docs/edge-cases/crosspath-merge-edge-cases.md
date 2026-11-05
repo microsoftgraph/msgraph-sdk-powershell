@@ -6,75 +6,97 @@ retain natural PowerShell parameter sets. Ambiguous or genuinely different opera
 instead need manual review of a distinguishing cmdlet naming pattern. This feature does
 not add a route switch, infer new public nouns, or make a retired endpoint supported.
 
-## Native required DELETE queries are ordinary inputs, not variant selectors
+## Required queries are mandatory inputs, not variant selectors
 
-The beta Identity.DirectoryManagement spec declares
-`DELETE /administrativeUnits/{administrativeUnit-id}/members/$ref` as an ordinary
-operation with required query `@id`, an unformatted string, and optional `If-Match`.
-This is native OpenAPI input, not a legacy directive transform. Kiota 1.36.1 generates
-`RefRequestBuilderDeleteQueryParameters.Id` with `[QueryParameter("%40id")]`.
-Without a binding, its URL template sends `?@id=` with an empty value.
+Required OpenAPI query inputs become mandatory PowerShell parameters named
+`Query` plus the normalized PascalCase query name: `@id` -> `-QueryId`,
+`tenantId` -> `-QueryTenantId`, `$filter` -> `-QueryFilter`.
+The prefix applies across HTTP methods, not just reference deletion. It distinguishes
+queries from path IDs, inline function arguments, headers and expanded body properties.
+No unprefixed query alias is added.
 
-Ordinary bodyless DELETE emission exposes this as mandatory `-Id`, rejects missing,
-null and empty arguments before transport, and assigns the strongly typed member in
-the existing request-configuration lambda. Kiota retains ownership of the wire name
-and URI encoding. Path IDs, `-IfMatch`, custom `-Headers`, GraphSession acquisition,
-route metadata and the single High-ConfirmImpact `ShouldProcess` gate are unchanged.
-No body serialization or URL construction is introduced.
+The public name is **not** the Kiota member name: `QueryId` assigns
+`requestConfiguration.QueryParameters.Id`, retaining `[QueryParameter("%40id")]`.
+Kiota alone owns wire names and URI encoding; the wrapper does not concatenate URLs,
+reflectively populate requests or stringify unsupported types. For example, the
+Identity.DirectoryManagement member-reference DELETE previously sent `?@id=` with
+an empty value. Required `QueryId` now supplies the full encoded URI as query data.
+Bookings calendarView GETs likewise require `QueryStart` and `QueryEnd`, retaining
+their optional OData options.
 
-DELETE parameters inherit from the path item, with operation-level declarations overriding
-the same exact `(name, location)`. The bounded query support accepts required plain,
-non-nullable, unformatted scalar strings with form serialization and identifier-shaped
-names (an optional leading `@`, followed by an ASCII letter and ASCII letters/digits).
-Unsupported required types, names, serialization contracts and parameter/member collisions
-fail generation with the parameter and route identified. Optional query expansion is not
-part of this feature, and no query-authoring registration is added.
+All supported operation families inherit path-item parameters, with operation-level
+declarations overriding the same exact `(name, location)`, including referenced parameters.
+Only required queries gain this new surface. Existing optional OData behavior stays
+unchanged; a required standard option is removed from the optional option table so there
+is one declaration/binding, e.g. mandatory boolean `QueryCount`, not an optional `Count`
+switch beside it. Required booleans accept explicit `$false`; numeric zero is valid.
+Required strings and arrays reject null/empty values using PowerShell validation, while
+value types retain their typed binder and null validation.
 
-This does **not** make a query-dependent DELETE eligible for an operation variant group.
-Mutation groups still reject query inputs, including inherited ones; only existing
-mandatory **path** IDs discriminate natural variants. Collection reference deletion
-by URI and deletion through `/members/{directoryObject-id}/$ref` must retain their
-reviewed distinct command names rather than being grouped by the new query argument.
+| Contract | Representation |
+|---|---|
+| Plain string, boolean, int32/int64, float/double/decimal | Reuses the existing scalar type mapper; mandatory typed `Query<Name>`. |
+| String formats uuid, date-time, date, time | `Guid`, `DateTimeOffset`, Kiota `Date`, Kiota `Time`, verified against actual Kiota 1.36.1 members and transport. |
+| One-dimensional primitive string/bool/numeric arrays | Assigns the matching typed query array directly, preserving Kiota's form/explode behavior. |
+| Supported query symbols | Optional leading `@`/`$`, ASCII alphanumeric segments separated by `-`, `.`, `_`; e.g. `tenant-name` -> public `QueryTenantName` and typed `TenantName`. |
+| Unsupported contracts | Objects, enums, schema references/unions/composition, nested/formatted arrays, unknown formats, non-form or allowReserved serialization, unsupported symbols and collisions fail generation explicitly. |
 
-`RequiredDeleteQueryTests` pins production-shaped metadata, inheritance/overrides,
-explicit unsupported-contract failures, unchanged no-query neighbors and grouped-query
-rejection. `tools/Test-WrapperRequiredDeleteQuery.ps1` generates actual Kiota 1.36.1
-builders, compiles wrappers with the unchanged production project templates and imports
-normal manifests against the locally packaged Authentication 2.41.2-or-newer module.
-The real offline `Connect-MgGraph` session uses Authentication's `GraphHttpClientFactory`,
-with a terminal capture handler after authentication. It verifies exact encoded/decoded
-DELETE URIs, reserved/Unicode escaping, ETags, custom headers and absent HTTP content/bodies.
-It exercises missing/null/empty and foreign item-path parameter binding, WhatIf, and
-genuine Yes/No confirmation hosts (one prompt and at most one DELETE per invocation).
-The inherited-query fixture and item/no-query neighbors run through the same gate.
-`-ApiVersion` selects the emitter's runtime profile: beta DELETEs must use `/beta` even
-though the authenticated session factory's base address is `/v1.0`. The shared session
-client/base address must remain unchanged. A foreign-host URI supplied as the native
-string query value stays encoded query data; it does not redirect the authenticated request.
-This does not add URI validation or change the OpenAPI string contract.
+Although binary/base64url/uint8 and duration map to JSON-body scalars, native Kiota
+URI-template expansion rejects `Byte`/`TimeSpan` substitutions. Required queries with
+those contracts fail generation rather than compile into commands that fail only when
+invoked. No conversion fallback is introduced. Public `Query<Name>` conflicts are checked
+independently from typed Kiota member collisions and against path/body/header/inline/common
+and reserved members, case-insensitively. Conflicting PATCH/refetch or paired-GET contracts
+also fail explicitly.
 
-Authentication owns the complete Kiota dependency closure. The proof requires each
-wrapper bin to contain only its three owned DLLs, with no dependency manifest preloads,
-and verifies single packaged Authentication/Kiota identities and their load contexts.
-No wrapper-retained RMS, dependency injection or live Graph/OAuth connection is used.
-Test-only `MockDataStore` keeps the synthetic session off the credential store.
+The bindings apply to ordinary GET/list/item/POST/PATCH/PUT/bodyless DELETE, actions,
+functions with inline arguments, reference reads/writes, scalar/count and media emitters.
+Existing list/item dispatchers declare requirements per parameter set and forward them
+unchanged. Queries are never natural-ID variant **selectors**: explicitly authored groups
+retain their existing path-ID-only contracts and reject required-query members instead
+of inventing a discriminator. Their mutation refetch GET also rejects an unsupported
+required-query contract. No public query-authoring registration is added.
+
+PATCH inputs belong to PATCH only. Its potential 204 GET is analyzed separately: the
+command requires the union of the inputs needed for those two operations, with shared
+compatible inputs declared once, but each request binds only its own required queries.
+This does not fix or overlay the independent generic-refetch-header prerequisite.
+Delta sync requires its queries only in `DeltaSync`; resume/nextLink requests already
+encode their query state and do not replay initial inputs. A token-form delta operation
+with its own required query is rejected explicitly instead of dropping that contract.
+
+`RequiredQueryTests` covers the source contracts and error boundaries.
+`tools/Test-WrapperRequiredQuery.ps1` compiles real Kiota 1.36.1 operation fixtures plus
+two **actual production-spec** Bookings GETs, using unchanged project templates and
+normal manifests. Its terminal handler runs after the real offline
+`Connect-MgGraph`/`GraphHttpClientFactory` authentication pipeline. It verifies query/body/
+header/result separation, scalar/array types, missing/empty/invalid binding, WhatIf, and
+genuine No/Yes prompts. The retained `Test-WrapperRequiredDeleteQuery.ps1` additionally
+proves old empty `@id` requests versus `QueryId`, escaping and unaffected DELETE neighbors.
+Use fresh `-ApiVersion v1.0` and `beta` processes; `-Environment USGov` on the broader
+proof verifies the selected cloud host. The real session factory's `/v1.0` base address
+and shared client must remain unchanged even when compiled beta cmdlets use `/beta`.
+
+Authentication 2.41.2 owns the complete Kiota closure: each proof wrapper contains only
+its three owned DLLs, with no dependency manifest preloads. Single packaged identities
+and load contexts are verified. No dependency injection, wrapper-retained RMS or live
+Graph/OAuth is used; test-only `MockDataStore` avoids the credential store. A foreign-host
+URI supplied as a native string query value stays encoded data, never the request destination.
 
 ```powershell
 dotnet build .\tools\WrapperGenerator\WrapperGenerator.csproj --no-restore
 dotnet test .\tools\WrapperGenerator.Tests\WrapperGenerator.Tests.csproj --no-restore `
-    --filter 'FullyQualifiedName~RequiredDeleteQueryTests|FullyQualifiedName~EmitterTests|FullyQualifiedName~MutationRouteTests|FullyQualifiedName~GenerationServiceRegressionTests'
-pwsh -NoProfile -NonInteractive -File .\tools\Test-WrapperRequiredDeleteQuery.ps1 `
+    --filter 'FullyQualifiedName~RequiredQueryTests|FullyQualifiedName~EmitterTests|FullyQualifiedName~ActionFunctionTests|FullyQualifiedName~MutationRouteTests|FullyQualifiedName~GenerationServiceRegressionTests|FullyQualifiedName~MultiRouteTests|FullyQualifiedName~CompositeKeyTests'
+pwsh -NoProfile -NonInteractive -File .\tools\Test-WrapperRequiredQuery.ps1 `
     -KiotaPath <kiota-1.36.1-executable> -ArtifactRoot <new-artifact-directory> -ApiVersion beta
 ```
 
-The optional `-BaselineCmdletsDirectory` compiles an independently captured pre-fix
-ordinary wrapper against the same real client and demonstrates its absent `-Id` and
-empty `?@id=` request. Capture that baseline from the same target and runtime profile;
-an old bare `GetRequestAdapter()` baseline is not current beta-profile evidence.
-Generated proof sources/binaries, per-command logs/results, input/package/output hashes,
-assembly contexts and `evidence.json` stay under `ArtifactRoot`; they are not module
-migration output or committed generated trees. Use fresh processes/directories for
-each profile and leave historical evidence untouched.
+The DELETE proof's optional `-BaselineCmdletsDirectory` compiles independently captured
+pre-fix sources against the same real client. Capture those from the same target/profile;
+an old bare `GetRequestAdapter()` baseline is not current beta evidence. New proof
+sources/binaries/logs/hashes/contexts and `evidence.json` stay under `ArtifactRoot`, not
+in committed generated trees. Historical DELETE-only `-Id` proofs remain historical,
+not acceptance of the user-directed `Query<Name>` naming or cross-method scope.
 
 ## Exact reviewed configuration
 
