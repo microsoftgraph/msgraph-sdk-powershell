@@ -114,12 +114,14 @@ public sealed partial class PowerShellWrapperGenerationService
     // list/item partner. CollectionValueSchema is the response's "value" array property when
     // the response is a collection, null for a single entity. It is resolved once here so
     // later steps never re-walk the schema.
-    private sealed record GetOperationRecord(CmdletNaming Naming, IOpenApiSchema ResponseSchema, IOpenApiSchema? CollectionValueSchema, IReadOnlyList<string> QueryParams)
+    private sealed record GetOperationRecord(CmdletNaming Naming, IOpenApiSchema ResponseSchema, IOpenApiSchema? CollectionValueSchema,
+        IReadOnlyList<string> QueryParams, IReadOnlyList<CmdletProperty> RequiredQueries)
     {
         public bool IsCollection => CollectionValueSchema is not null;
     }
 
-    private sealed record DeltaOperationRecord(CmdletNaming Naming, OpenApiOperation Operation, IReadOnlyList<string> QueryParams, string PathTemplate)
+    private sealed record DeltaOperationRecord(CmdletNaming Naming, OpenApiOperation Operation, IReadOnlyList<string> QueryParams,
+        string PathTemplate, IReadOnlyList<CmdletProperty> RequiredQueries)
     {
         // The parameterless form is the canonical command; the argument form is its resume path.
         public bool IsResumeForm => !LastSegment(PathTemplate).Equals("delta()", StringComparison.Ordinal);
@@ -250,8 +252,14 @@ public sealed partial class PowerShellWrapperGenerationService
                     continue;
                 }
 
-                var queryParams = (operation.Parameters ?? []).Where(p => p.In == ParameterLocation.Query).Select(p => p.Name!).ToList();
-                var headerParams = (operation.Parameters ?? []).Where(p => p.In == ParameterLocation.Header).Select(p => p.Name!).ToList();
+                var parameters = EffectiveParameters(pathItem, operation, pathTemplate);
+                var queryParams = OptionalQueryNames(parameters);
+                var headerParams = parameters.Where(p => p.In == ParameterLocation.Header).Select(p => p.Name!).ToList();
+                ctx = ctx with
+                {
+                    RequiredQueries = RequiredQueries(parameters, httpMethod.Method, pathTemplate),
+                    RefetchRequiredQueries = [],
+                };
 
                 // Only GET responses need inspecting: the list/item pairing is decided by the
                 // response shape, and DELETE returns 204 with no body.
@@ -278,7 +286,7 @@ public sealed partial class PowerShellWrapperGenerationService
                 {
                     if (operationKind == OperationKind.Function && IsDeltaCall(pathTemplate))
                     {
-                        deltaOperations.Add(new DeltaOperationRecord(cmdletNaming, operation, queryParams, pathTemplate));
+                        deltaOperations.Add(new DeltaOperationRecord(cmdletNaming, operation, queryParams, pathTemplate, ctx.RequiredQueries));
                         continue;
                     }
 
@@ -376,10 +384,15 @@ public sealed partial class PowerShellWrapperGenerationService
                 // GETs are held back: pairing is decided per noun, so it needs every GET first.
                 if (httpMethod == HttpMethod.Get)
                 {
-                    getOperations.Add(new GetOperationRecord(cmdletNaming, responseSchema!, collectionValueSchema, queryParams));
+                    getOperations.Add(new GetOperationRecord(cmdletNaming, responseSchema!, collectionValueSchema, queryParams, ctx.RequiredQueries));
                     continue;
                 }
 
+                if (httpMethod == HttpMethod.Patch && pathItem.Operations?.TryGetValue(HttpMethod.Get, out var refetch) == true)
+                    ctx = ctx with { RefetchRequiredQueries = RequiredQueries(
+                        EffectiveParameters(pathItem, refetch, pathTemplate), "GET", pathTemplate) };
+                if (httpMethod == HttpMethod.Delete && operation.RequestBody is not null && ctx.RequiredQueries.Count > 0)
+                    throw new InvalidOperationException($"Required queries on a DELETE with a body are unsupported: {pathTemplate}.");
                 string? source = httpMethod switch
                 {
                     _ when httpMethod == HttpMethod.Delete => CmdletEmitter.EmitRemove(cmdletNaming, ctx),
@@ -464,7 +477,9 @@ public sealed partial class PowerShellWrapperGenerationService
                 deltaItemType = resolvedItemType;
             }
 
-            var source = CmdletEmitter.EmitDelta(op.Naming, ctx,
+            if (resume.Any(r => r.RequiredQueries.Count > 0))
+                throw new InvalidOperationException($"Required query inputs on a delta resume operation are unsupported; use the complete DeltaLink: {resume[0].PathTemplate}.");
+            var source = CmdletEmitter.EmitDelta(op.Naming, ctx with { RequiredQueries = op.RequiredQueries, RefetchRequiredQueries = [] },
                 new CmdletEmitter.CallPlan(methodName, returnType, BodyTypeName: null, returnsStream),
                 op.QueryParams.ToHashSet(), deltaItemType);
             written += await writeCmdlet(op.Naming, source, cancellationToken).ConfigureAwait(false);
@@ -508,13 +523,15 @@ public sealed partial class PowerShellWrapperGenerationService
             // from (and reusing) the standalone shapes used for unpaired GETs.
             var internalListNaming = Naming.WithSuffix(listOp.Naming, "_List");
             var internalItemNaming = Naming.WithSuffix(itemOp.Naming, "_Get");
-            var internalListSource = CmdletEmitter.EmitListGet(internalListNaming, ctx, listEntityType, collectionResponseType, listOp.QueryParams.ToHashSet());
-            var internalItemSource = CmdletEmitter.EmitItemGet(internalItemNaming, ctx, entityType, itemOp.QueryParams.ToHashSet());
+            var listCtx = ctx with { RequiredQueries = listOp.RequiredQueries, RefetchRequiredQueries = [] };
+            var itemCtx = ctx with { RequiredQueries = itemOp.RequiredQueries, RefetchRequiredQueries = [] };
+            var internalListSource = CmdletEmitter.EmitListGet(internalListNaming, listCtx, listEntityType, collectionResponseType, listOp.QueryParams.ToHashSet());
+            var internalItemSource = CmdletEmitter.EmitItemGet(internalItemNaming, itemCtx, entityType, itemOp.QueryParams.ToHashSet());
 
             // The thin public dispatcher on top, presenting the merged Get-MgX surface.
             var dispatcherSource = CmdletEmitter.EmitGetDispatcher(listOp.Naming, itemOp.Naming,
                 internalListNaming, internalItemNaming, ctx, entityType, collectionResponseType,
-                listOp.QueryParams.ToHashSet(), itemOp.QueryParams.ToHashSet());
+                listOp.QueryParams.ToHashSet(), itemOp.QueryParams.ToHashSet(), listOp.RequiredQueries, itemOp.RequiredQueries);
 
             written += await writeCmdlet(internalListNaming, internalListSource, cancellationToken).ConfigureAwait(false);
             written += await writeCmdlet(internalItemNaming, internalItemSource, cancellationToken).ConfigureAwait(false);
@@ -527,6 +544,7 @@ public sealed partial class PowerShellWrapperGenerationService
         {
             if (consumed.Contains(op))
                 continue;
+            ctx = ctx with { RequiredQueries = op.RequiredQueries, RefetchRequiredQueries = [] };
 
             string? source;
             if (op.IsCollection)
