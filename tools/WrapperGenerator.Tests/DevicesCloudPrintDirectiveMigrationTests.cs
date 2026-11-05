@@ -192,11 +192,64 @@ public sealed class DevicesCloudPrintDirectiveMigrationTests
             Assert.Contains("CreatePostRequestBody", action);
             Assert.True(action.IndexOf("ShouldProcess(", StringComparison.Ordinal) <
                 action.IndexOf("GetRequestAdapter(", StringComparison.Ordinal));
+            foreach (var noun in new[] { "Group", "User" })
+            {
+                var deletion = File.ReadAllText(Path.Combine(output, $"RemoveMgPrintShareAllowed{noun}ByRef.g.cs"));
+                Assert.Contains("[Parameter(Mandatory = true, Position = 1,", deletion);
+                Assert.Contains("[ValidateNotNullOrEmpty]", deletion);
+                Assert.Contains("public string QueryId { get; set; }", deletion);
+                Assert.Contains("requestConfiguration.QueryParameters.Id = QueryId;", deletion);
+                Assert.DoesNotContain("public string Id ", deletion);
+                Assert.DoesNotContain("QueryParameters.QueryId", deletion);
+                Assert.DoesNotContain("[Alias(\"Id\")]", deletion);
+                Assert.DoesNotContain("BodyParameter", deletion);
+                Assert.Contains("requestConfiguration.Headers.Add(\"If-Match\", IfMatch!)", deletion);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", deletion);
+                Assert.Single(Regex.Matches(deletion, @"ShouldProcess\("));
+            }
+            foreach (var source in transportSources.Where(source =>
+                !source.Contains("AllowedGroupByRefCommand", StringComparison.Ordinal) &&
+                !source.Contains("AllowedUserByRefCommand", StringComparison.Ordinal)))
+            {
+                Assert.DoesNotContain("QueryId", source);
+            }
         }
         finally
         {
             if (Directory.Exists(output))
                 Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public void SurvivingRequiredQueriesAreExactlyTheTwoReferenceDeleteIds(string profile)
+    {
+        var document = LoadSpec(profile);
+        var config = new GeneratorConfig("Test.Client", "unused");
+        var required = document.Paths.SelectMany(path => path.Value.Operations!
+            .Where(operation => !CmdletConfigurator.IsSuppressed(
+                operation.Key, path.Key, config, apiVersion: profile))
+            .SelectMany(operation => (path.Value.Parameters ?? []).Concat(operation.Value.Parameters ?? [])
+                .GroupBy(parameter => (parameter.Name, parameter.In))
+                .Select(group => group.Last())
+                .Where(parameter => parameter.In == ParameterLocation.Query && parameter.Required)
+                .Select(parameter => (Method: operation.Key.Method, Path: path.Key, Parameter: parameter))))
+            .ToArray();
+        Assert.Equal(
+            [
+                "DELETE /print/shares/{printerShare-id}/allowedGroups/$ref [@id]",
+                "DELETE /print/shares/{printerShare-id}/allowedUsers/$ref [@id]",
+            ],
+            required.Select(query => $"{query.Method} {query.Path} [{query.Parameter.Name}]")
+                .OrderBy(value => value, StringComparer.Ordinal).ToArray());
+        foreach (var query in required)
+        {
+            Assert.NotNull(query.Parameter.Schema);
+            Assert.Equal(JsonSchemaType.String, query.Parameter.Schema.Type);
+            Assert.True(query.Parameter.Style is null or ParameterStyle.Form);
+            Assert.False(query.Parameter.AllowReserved);
         }
     }
 
