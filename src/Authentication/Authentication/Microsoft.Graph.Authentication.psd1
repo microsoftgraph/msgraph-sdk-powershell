@@ -75,8 +75,7 @@ FunctionsToExport = 'Find-MgGraphCommand', 'Find-MgGraphPermission'
 CmdletsToExport = 'Connect-MgGraph', 'Disconnect-MgGraph', 'Get-MgContext', 
                'Invoke-MgGraphRequest', 'Add-MgEnvironment', 'Get-MgEnvironment', 
                'Remove-MgEnvironment', 'Set-MgEnvironment', 'Get-MgRequestContext', 
-               'Set-MgRequestContext', 'Set-MgGraphOption', 'Get-MgGraphOption',
-               'Get-MgAccessToken'
+               'Set-MgRequestContext', 'Set-MgGraphOption', 'Get-MgGraphOption'
 
 # Variables to export from this module
 VariablesToExport = '*'

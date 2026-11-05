@@ -1,1 +1,0 @@
-Gets an access token for the current Connect-MgGraph session. The token is cached and is only refreshed when it has less than 5 minutes of remaining lifetime or when -ForceRefresh is specified. -Scopes and -ForceRefresh are not supported when Connect-MgGraph was called with -AccessToken.
