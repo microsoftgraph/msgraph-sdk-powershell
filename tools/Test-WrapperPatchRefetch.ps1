@@ -117,9 +117,9 @@ $auth = Get-Module Microsoft.Graph.Authentication
 if ($auth.Version -ne [version]$authVersion -or $auth.ModuleBase -cne $expectedAuthBase) {
     throw 'Manifest imported the wrong Authentication package version or source.'
 }
-Add-Type -Path "$PSScriptRoot\WrapperGenerator.Tests\Fixtures\PatchRefetchTransport.cs"
+Add-Type -Path "$PSScriptRoot\WrapperGenerator.Tests\Fixtures\PatchOperationTransport.cs"
 $null = Get-MgContext
-$handler = [PatchRefetchTransport.CaptureHandler]::new()
+$handler = [PatchOperationTransport.CaptureHandler]::new()
 $core = @([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object { $_.GetName().Name -eq 'Microsoft.Graph.Authentication.Core' })
 if ($core.Count -ne 1) { throw 'Expected one normally loaded Authentication.Core assembly.' }
 $session = $core[0].GetType('Microsoft.Graph.PowerShell.Authentication.GraphSession', $true).GetProperty('Instance').GetValue($null)
@@ -129,7 +129,7 @@ $factory = $core[0].GetType('Microsoft.Graph.PowerShell.Authentication.Core.Http
 $client = $null
 $token = 'offline-refetch-token'
 $cacheAdapter = $null
-$hostProbe = [PatchRefetchTransport.ConfirmationHost]::new()
+$hostProbe = [PatchOperationTransport.ConfirmationHost]::new()
 $runspace = [runspacefactory]::CreateRunspace($hostProbe)
 $runspace.Open()
 $engine = [powershell]::Create()

@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace PatchRefetchTransport
+namespace PatchOperationTransport
 {
     public sealed class CapturedRequest
     {
