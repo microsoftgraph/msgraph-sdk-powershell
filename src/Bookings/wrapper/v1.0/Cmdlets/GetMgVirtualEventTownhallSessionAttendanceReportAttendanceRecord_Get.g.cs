@@ -56,6 +56,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
