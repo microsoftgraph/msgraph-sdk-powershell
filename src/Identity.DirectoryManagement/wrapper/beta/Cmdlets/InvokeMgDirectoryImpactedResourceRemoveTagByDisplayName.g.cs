@@ -46,7 +46,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
     if (this.IsParameterBound(nameof(DisplayName)))
         body.DisplayName = DisplayName;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.ImpactedResources.RemoveTag.RemoveTagPostResponse? result;

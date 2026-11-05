@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
     if (this.IsParameterBound(nameof(DismissReason)))
         body.DismissReason = DismissReason;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Recommendation? result;

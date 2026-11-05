@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
         body.Localizations = Localizations!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.ProfileSource? result;

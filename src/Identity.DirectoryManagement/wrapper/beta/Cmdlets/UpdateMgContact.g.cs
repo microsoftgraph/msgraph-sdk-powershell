@@ -129,7 +129,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
         body.ServiceProvisioningErrors = ServiceProvisioningErrors!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.OrgContact? result;

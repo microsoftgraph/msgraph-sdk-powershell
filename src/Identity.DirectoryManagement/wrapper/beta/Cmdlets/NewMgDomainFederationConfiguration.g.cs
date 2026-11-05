@@ -135,7 +135,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
         body.SigningCertificateUpdateStatus = SigningCertificateUpdateStatus;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.InternalDomainFederation? result;

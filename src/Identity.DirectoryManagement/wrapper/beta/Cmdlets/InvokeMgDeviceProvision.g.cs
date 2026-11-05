@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
     if (this.IsParameterBound(nameof(ProvisioningBlob)))
         body.ProvisioningBlob = ProvisioningBlob;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.ProvisionResponse? result;

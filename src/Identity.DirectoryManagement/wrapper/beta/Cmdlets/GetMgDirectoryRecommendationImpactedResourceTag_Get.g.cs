@@ -38,7 +38,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RecommendationTag? result;
@@ -51,6 +51,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 

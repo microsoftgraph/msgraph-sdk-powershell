@@ -64,7 +64,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Contract? result;

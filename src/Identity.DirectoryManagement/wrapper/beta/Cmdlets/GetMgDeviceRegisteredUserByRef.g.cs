@@ -56,7 +56,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.StringCollectionResponse? result;
@@ -81,6 +81,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
 
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
+
 
 
         if (this.IsParameterBound(nameof(ConsistencyLevel)))

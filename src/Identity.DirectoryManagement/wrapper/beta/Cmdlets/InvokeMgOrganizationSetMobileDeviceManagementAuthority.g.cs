@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
                 return;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityPostResponse? result;

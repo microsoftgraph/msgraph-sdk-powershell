@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
     if (this.IsParameterBound(nameof(GroupIds)))
         body.GroupIds = GroupIds!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Contacts.Item.CheckMemberGroups.CheckMemberGroupsPostResponse? result;
