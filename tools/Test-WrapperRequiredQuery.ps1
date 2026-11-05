@@ -139,10 +139,8 @@ function Assert-Request($Request, [string]$Method, [string]$Path, [hashtable]$Qu
         }
     }
     Assert-Probe ($Request.Authorization -ceq "Bearer $token") 'Authentication was lost.'
-    if ($Refetch) {
-        Assert-Probe (-not $Request.Headers.ContainsKey('x-query-probe') -and -not $Request.Headers.ContainsKey('If-Match')) 'Required queries changed the existing independent refetch header behavior.'
-    }
-    else { Assert-Probe ($Request.Headers['x-query-probe'] -ceq 'custom-value') 'Generic headers were lost.' }
+    Assert-Probe ($Request.Headers['x-query-probe'] -ceq 'custom-value') 'Generic headers were lost on the selected request.'
+    if ($Refetch) { Assert-Probe (-not $Request.Headers.ContainsKey('If-Match')) 'Typed mutation IfMatch was replayed on GET.' }
     if ($Body) {
         Assert-Probe $Request.HasContent 'Typed body was not sent.'
         $actual = $Request.Body | ConvertFrom-Json
@@ -221,9 +219,13 @@ try {
     $post = @{ QueryInherited = 'path-default'; QueryTenantId = $adversarial; QueryAttempt = [long]0; QueryForce = $false; DisplayName = 'typed-name'; Enabled = $false; Detail = @{ Description = 'nested' } }
     Invoke-Case 'New-MgWidget' $post POST '/widgets' @{ inherited = 'path-default'; tenantId = $adversarial; attempt = '0'; force = 'false' } $body $null
     $patch = @{ WidgetId = $widget; QueryTenantId = $adversarial; QueryView = 'get-only'; DisplayName = 'typed-name'; IfMatch = 'W/"query-proof"' }
-    # Generic headers on PATCH refetch remain the separate existing refetch-header prerequisite.
-    # Assert refetch's query isolation without requiring that unrelated missing header behavior.
     Invoke-Case 'Update-MgWidget' $patch PATCH $widgetPath @{ tenantId = $adversarial } @{ displayName = 'typed-name' } @{ view = 'get-only' }
+    foreach ($missing in 'QueryTenantId', 'QueryView') {
+        $arguments = $patch.Clone()
+        $arguments.Remove($missing)
+        $arguments.Confirm = $false
+        Assert-Binder 'Update-MgWidget' $arguments "missing-independent-$missing"
+    }
     Invoke-Case 'Set-MgWidget' @{ WidgetId = $widget; QueryTenantId = $adversarial; DisplayName = 'typed-name' } PUT $widgetPath @{ tenantId = $adversarial } @{ displayName = 'typed-name' } $null
     Invoke-Case 'Get-MgWidget' @{ QueryTop = 0; QueryEnabled = $false; QueryCount = $false; Select = @('id'); Filter = 'active' } GET '/widgets' @{ '$top' = '0'; enabled = 'false'; '$count' = 'false'; inherited = ''; '$select' = 'id'; '$filter' = 'active' } $null $null
     Invoke-Case 'Get-MgWidget' @{ WidgetId = $widget; QueryView = $adversarial; Select = @('id') } GET $widgetPath @{ view = $adversarial; '$select' = 'id' } $null $null

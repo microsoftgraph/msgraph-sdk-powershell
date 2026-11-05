@@ -27,7 +27,7 @@ public sealed class PatchRefetchTests
             var files = Directory.GetFiles(Path.Combine(root, "Cmdlets"), "*.g.cs")
                 .ToDictionary(path => Path.GetFileName(path)!, File.ReadAllText);
             foreach (var name in new[] { "UpdateMgAgreement", "UpdateMgProfileWidget_Route0", "UpdateMgProfileWidget_Route1",
-                "UpdateMgProfileOrphanWidget_Route0" })
+                "UpdateMgProfileOrphanWidget_Route0", "UpdateMgDeviceManagementManagedDeviceHealthScriptStateIdidpolicyIdpolicyIddeviceIddeviceId" })
             {
                 var source = files[name + ".g.cs"];
                 var refetch = source[source.IndexOf("if (result is null)", StringComparison.Ordinal)..];
@@ -35,7 +35,19 @@ public sealed class PatchRefetchTests
                 Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", refetch);
                 Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
                 Assert.DoesNotContain("IfMatch", refetch);
-                Assert.DoesNotContain("QueryParameters", refetch);
+                var requiredQueries = name == "UpdateMgAgreement" || name.Contains("HealthScriptState", StringComparison.Ordinal);
+                if (requiredQueries)
+                {
+                    var mutation = source[..source.IndexOf("if (result is null)", StringComparison.Ordinal)];
+                    Assert.Contains("public string QueryTenantId ", mutation);
+                    Assert.Contains("public string QueryView ", mutation);
+                    Assert.Contains("QueryParameters.TenantId = QueryTenantId;", mutation);
+                    Assert.DoesNotContain("QueryParameters.View", mutation);
+                    Assert.Contains("QueryParameters.View = QueryView;", refetch);
+                    Assert.DoesNotContain("QueryTenantId", refetch);
+                }
+                else
+                    Assert.DoesNotContain("QueryParameters", refetch);
                 Assert.DoesNotContain("body.", refetch);
                 Assert.DoesNotContain("WithUrl", refetch);
                 Assert.Contains("requestConfiguration.Headers.Add(\"If-Match\", IfMatch!)", source);
@@ -78,6 +90,13 @@ public static class PatchRefetchFixture
                 .Select(s => Parameter(s[1..^1], "path", true)).ToList();
             if (method != "get")
                 parameters.Add(Parameter("If-Match", "header"));
+            if (path.StartsWith("/agreements/", StringComparison.Ordinal) || path.StartsWith("/deviceManagement/", StringComparison.Ordinal))
+            {
+                if (method == "get")
+                    parameters.Add(Parameter("view", "query", true));
+                else if (method == "patch")
+                    parameters.Add(Parameter("tenantId", "query", true));
+            }
             var response = new { description = "Success", content = new Dictionary<string, object>
                 { ["application/json"] = new { schema = Reference() } } };
             var responses = new Dictionary<string, object> { ["200"] = response };
@@ -105,6 +124,7 @@ public static class PatchRefetchFixture
         Add(widgets + "/{widget-id}/widgets/{childWidget-id}", "get", "patch", "put");
         Add(orphans + "/{orphanWidget-id}", "get", "patch");
         Add(orphans + "/{orphanWidget-id}/orphanWidgets/{childWidget-id}", "patch");
+        Add("/deviceManagement/managedDevices/{managedDevice-id}/deviceHealthScriptStates/id='{id}',policyId='{policyId}',deviceId='{deviceId}'", "get", "patch");
         var schema = new
         {
             type = "object",
@@ -113,6 +133,8 @@ public static class PatchRefetchFixture
                 ["id"] = new { type = "string" },
                 ["displayName"] = new { type = "string" },
                 ["profileId"] = new { type = "string" },
+                ["policyId"] = new { type = "string" },
+                ["deviceId"] = new { type = "string" },
             },
         };
         var spec = new

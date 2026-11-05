@@ -188,6 +188,7 @@ public sealed class RequiredQueryTests
         Assert.Contains("QueryParameters.TenantId = QueryTenantId;", patch);
         Assert.DoesNotContain("QueryTenantId", refetch);
         Assert.Contains("QueryParameters.View = QueryView;", refetch);
+        Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", refetch);
         Assert.DoesNotContain("IfMatch", refetch);
         var delta = Assert.Single(files, f => f.Key.Contains("Delta", StringComparison.Ordinal)).Value;
         Assert.Contains("Position = 0, ParameterSetName = \"DeltaSync\"", delta);

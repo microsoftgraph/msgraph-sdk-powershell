@@ -19,6 +19,7 @@ param(
     [Parameter(Mandatory)][string]$FixtureRoot,
     [string]$KiotaPath = 'kiota',
     [ValidateSet('v1.0', 'beta')][string]$ApiVersion = 'v1.0',
+    [ValidateSet('Global', 'USGov')][string]$Environment = 'Global',
     [Parameter(Mandatory)][string]$AuthenticationModulePath,
     [string]$TestAssembly = "$PSScriptRoot\WrapperGenerator.Tests\bin\Debug\net10.0\WrapperGenerator.Tests.dll",
     [Parameter(DontShow)][switch]$Probe
@@ -97,7 +98,7 @@ if (-not $Probe) {
         Profile = $ApiVersion
     } | ConvertTo-Json | Set-Content "$FixtureRoot\provenance.json"
     & pwsh -NoProfile -NonInteractive -File $PSCommandPath -FixtureRoot $FixtureRoot -ApiVersion $ApiVersion `
-        -AuthenticationModulePath $AuthenticationModulePath -Probe
+        -AuthenticationModulePath $AuthenticationModulePath -Environment $Environment -Probe
     if ($LASTEXITCODE -ne 0) { throw "Fresh manifest transport probe exited $LASTEXITCODE." }
     exit 0
 }
@@ -135,7 +136,11 @@ $engine = [powershell]::Create()
 $engine.Runspace = $runspace
 $checks = [Collections.Generic.List[object]]::new()
 $failures = [Collections.Generic.List[string]]::new()
-$baseUri = "https://graph.microsoft.com/$ApiVersion"
+$endpoint = (Get-MgEnvironment -Name $Environment).GraphEndpoint.TrimEnd('/')
+$baseUri = "$endpoint/$ApiVersion"
+$queryTenantId = "tenant /%?#&=+'"
+$queryView = "view /%?#&=+'"
+$binderChecks = 0
 $id = 'resource /% space'
 $profileId = 'path profile /% space'
 $parentId = 'parent /% space'
@@ -143,7 +148,7 @@ $escapedId = [uri]::EscapeDataString($id)
 $widgetPath = "/profiles/$([uri]::EscapeDataString($profileId))/widgets"
 $orphanPath = "/profiles/$([uri]::EscapeDataString($profileId))/orphanWidgets"
 $cases = @(
-    @{ Name = 'Update-MgAgreement'; Args = @{ AgreementId = $id }; Path = "/agreements/$escapedId"; Refetch = $true },
+    @{ Name = 'Update-MgAgreement'; Args = @{ AgreementId = $id }; Path = "/agreements/$escapedId"; Refetch = $true; RequiredQueries = $true },
     @{ Name = 'Update-MgProfileWidget'; Args = @{ ProfileId = $profileId; WidgetId = $id }; Path = "$widgetPath/$escapedId"; Refetch = $true },
     @{ Name = 'Update-MgProfileWidget'; Args = @{ ProfileId = $profileId; WidgetId = $parentId; ChildWidgetId = $id }; Path = "$widgetPath/$([uri]::EscapeDataString($parentId))/widgets/$escapedId"; Refetch = $true },
     @{ Name = 'Update-MgProfileOrphanWidget'; Args = @{ ProfileId = $profileId; OrphanWidgetId = $id }; Path = "$orphanPath/$escapedId"; Refetch = $true },
@@ -151,7 +156,11 @@ $cases = @(
     @{ Name = 'Update-MgPlace'; Args = @{ PlaceId = $id }; Path = "/places/$escapedId"; Refetch = $false },
     @{ Name = 'Set-MgAgreement'; Args = @{ AgreementId = $id }; Path = "/agreements/$escapedId"; Refetch = $false },
     @{ Name = 'Set-MgProfileWidget'; Args = @{ ProfileId = $profileId; WidgetId = $id }; Path = "$widgetPath/$escapedId"; Refetch = $false },
-    @{ Name = 'Set-MgProfileWidget'; Args = @{ ProfileId = $profileId; WidgetId = $parentId; ChildWidgetId = $id }; Path = "$widgetPath/$([uri]::EscapeDataString($parentId))/widgets/$escapedId"; Refetch = $false }
+    @{ Name = 'Set-MgProfileWidget'; Args = @{ ProfileId = $profileId; WidgetId = $parentId; ChildWidgetId = $id }; Path = "$widgetPath/$([uri]::EscapeDataString($parentId))/widgets/$escapedId"; Refetch = $false },
+    @{ Name = 'Update-MgDeviceManagementManagedDeviceHealthScriptStateIdidpolicyIdpolicyIddeviceIddeviceId'
+       Args = @{ ManagedDeviceId = $parentId; Id = $id; PolicyId = 'path policy /%'; DeviceId = 'path device /%' }
+       Path = "/deviceManagement/managedDevices/$([uri]::EscapeDataString($parentId))/deviceHealthScriptStates/id='$escapedId',policyId='$([uri]::EscapeDataString('path policy /%'))',deviceId='$([uri]::EscapeDataString('path device /%'))'"
+       Refetch = $true; RequiredQueries = $true; Composite = $true }
 )
 
 function Invoke-Confirmed([string]$Name, [hashtable]$Arguments, [bool]$Accept) {
@@ -174,7 +183,11 @@ function Assert-Requests($Case, [int]$Before, [bool]$PatchBody, [bool]$GenericCo
     for ($i = 0; $i -lt $count; $i++) {
         $request = $handler.Requests[$Before + $i]
         $expectedMethod = if ($i -eq 0) { $method } else { 'GET' }
-        if ($request.Method -cne $expectedMethod -or $request.Uri -cne "$baseUri$($Case.Path)") {
+        $expectedUri = "$baseUri$($Case.Path)"
+        if ($Case.RequiredQueries) {
+            $expectedUri += if ($i -eq 0) { '?tenantId=' + [uri]::EscapeDataString($queryTenantId) } else { '?view=' + [uri]::EscapeDataString($queryView) }
+        }
+        if ($request.Method -cne $expectedMethod -or $request.Uri -cne $expectedUri) {
             throw "Wrong selected typed route/method: $($request.Method) $($request.Uri)"
         }
         if ($request.Authorization -cne "Bearer $token") { throw 'Request bypassed the real Authentication token handler.' }
@@ -193,6 +206,9 @@ function Assert-Requests($Case, [int]$Before, [bool]$PatchBody, [bool]$GenericCo
             if ($body.displayName -cne 'typed body proof' -or $body.profileId -cne 'body-profile-not-path') {
                 throw "Incorrect typed JSON or path/body collision: $($Case.Name)"
             }
+            if ($Case.Composite -and ($body.policyId -cne 'body-policy-not-path' -or $body.deviceId -cne 'body-device-not-path')) {
+                throw 'Composite refetch lost distinct PolicyId1/DeviceId1 body bindings.'
+            }
         } elseif ($request.Body) { throw 'Refetch unexpectedly copied the mutation body.' }
     }
 }
@@ -207,7 +223,7 @@ function Assert-Result($Result, [string]$ExpectedId) {
 }
 
 try {
-    Connect-MgGraph -AccessToken (ConvertTo-SecureString $token -AsPlainText -Force) -NoWelcome
+    Connect-MgGraph -AccessToken (ConvertTo-SecureString $token -AsPlainText -Force) -Environment $Environment -NoWelcome
     $client = $factory.GetMethod('Create').Invoke($null, @(
         $session.AuthContext, $session.RequestContext, [Net.Http.DelegatingHandler[]]@($handler), $null, $false
     ))
@@ -234,6 +250,31 @@ try {
         $arguments.IfMatch = '"old-etag"'
         $arguments.DisplayName = 'typed body proof'
         $arguments[$(if ($arguments.ContainsKey('ProfileId')) { 'ProfileId1' } else { 'ProfileId' })] = 'body-profile-not-path'
+        if ($case.Composite) {
+            $arguments.PolicyId1 = 'body-policy-not-path'
+            $arguments.DeviceId1 = 'body-device-not-path'
+        }
+        if ($case.RequiredQueries) {
+            $arguments.QueryTenantId = $queryTenantId
+            $arguments.QueryView = $queryView
+            foreach ($query in 'QueryTenantId', 'QueryView') {
+                if (-not @($command.Parameters[$query].Attributes | Where-Object { $_ -is [Management.Automation.ParameterAttribute] -and $_.Mandatory }).Count) {
+                    throw "Independent required query is not mandatory: $($case.Name) $query"
+                }
+                foreach ($invalid in 'missing', 'empty', 'null') {
+                    $bad = $arguments.Clone()
+                    if ($invalid -eq 'missing') { $bad.Remove($query) }
+                    elseif ($invalid -eq 'empty') { $bad[$query] = '' }
+                    else { $bad[$query] = $null }
+                    $beforeBinder = $handler.Requests.Count
+                    $failure = $null
+                    try { $null = & $case.Name @bad -Confirm:$false -ErrorAction Stop } catch { $failure = $_ }
+                    if (-not $failure -or $failure.Exception -isnot [Management.Automation.ParameterBindingException] -or
+                        $handler.Requests.Count -ne $beforeBinder) { throw "Required-query binder gate failed: $query $invalid" }
+                    $binderChecks++
+                }
+            }
+        }
         $handler.ReturnPatchBody = $false
         $before = $handler.Requests.Count
         $prompts = $hostProbe.PromptCount
@@ -295,15 +336,17 @@ try {
         'Std.UriTemplate', 'Microsoft.Kiota.Serialization.Multipart', 'Microsoft.Kiota.Serialization.Json') {
         if (@($sources | Where-Object Name -eq $required).Count -ne 1) { throw "Missing Authentication-owned identity: $required" }
     }
-    if ($module.ExportedCmdlets.Count -ne 15 -or $checks.Count -ne 19 -or $hostProbe.PromptCount -ne 18 -or $handler.Requests.Count -ne 27) {
+    if ($module.ExportedCmdlets.Count -ne 17 -or $checks.Count -ne 22 -or $hostProbe.PromptCount -ne 20 -or
+        $handler.Requests.Count -ne 32 -or $binderChecks -ne 12) {
         throw "Incomplete proof: checks=$($checks.Count), prompts=$($hostProbe.PromptCount), HTTP=$($handler.Requests.Count)"
     }
     @{
-        Profile = $ApiVersion; Authentication = "$($auth.Version)"; AuthenticationPath = $auth.ModuleBase
+        Profile = $ApiVersion; Environment = $Environment; Authentication = "$($auth.Version)"; AuthenticationPath = $auth.ModuleBase
         Provenance = Get-Content "$FixtureRoot\provenance.json" -Raw | ConvertFrom-Json
         ExportedCmdlets = $module.ExportedCmdlets.Count; Checks = $checks; ActualPrompts = $hostProbe.PromptCount
         Manifest = $manifest; WrapperDlls = $packageDlls; RequiredAssemblies = $requiredAssemblies
         FactoryDefaultBaseAddress = $baseAddress.AbsoluteUri; CachedAdapterBaseUrl = $cacheAdapter.BaseUrl; SessionAdapterReused = $true
+        MissingEmptyNullQueryBinderChecks = $binderChecks
         Requests = $handler.Requests; Assemblies = $sources; Failures = $failures; LiveGraphRequests = 0
     } | ConvertTo-Json -Depth 8 | Tee-Object -FilePath "$FixtureRoot\transport-result.json"
     if ($failures.Count) { throw "$($failures.Count) real compiled request header assertions failed." }
