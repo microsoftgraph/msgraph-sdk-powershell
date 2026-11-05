@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Users
         body.SettingType = SettingType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Users.Client.Models.WindowsSetting? result;

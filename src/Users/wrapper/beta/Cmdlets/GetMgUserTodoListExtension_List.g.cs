@@ -62,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.Users
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Users.Client.Models.ExtensionCollectionResponse? result;
@@ -93,6 +93,7 @@ namespace Microsoft.Graph.PowerShell.Users
 
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
+
 
 
 
