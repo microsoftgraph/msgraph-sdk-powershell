@@ -1,0 +1,77 @@
+#nullable enable
+
+using System;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Financials.Client;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Financials
+{
+    [GraphRoute("GET", "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture/{picture-id}/content")]
+    [Cmdlet(VerbsCommon.Get, "MgFinancialCompanyPurchaseInvoicePurchaseInvoiceLineItemPictureContent")]
+    [OutputType(typeof(byte[]))]
+    public class GetMgFinancialCompanyPurchaseInvoicePurchaseInvoiceLineItemPictureContentCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string CompanyId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string PurchaseInvoiceId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 2)]
+        public string PurchaseInvoiceLineId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 3)]
+        public string PictureId { get; set; } = string.Empty;
+
+
+
+
+
+
+        [Parameter(Mandatory = false,
+            HelpMessage = "Writes the response content to this path instead of returning it as bytes.")]
+        public string? OutFile { get; set; }
+
+        protected override void ProcessRecord()
+        {
+
+        var requestAdapter = GetRequestAdapter("beta");
+        var client = new ApiClient(requestAdapter);
+
+            System.IO.Stream? result;
+            try
+            {
+                result = client.Financials.Companies[CompanyId].PurchaseInvoices[PurchaseInvoiceId].PurchaseInvoiceLines[PurchaseInvoiceLineId].Item.Picture[PictureId].Content.GetAsync(requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, PictureId);
+                return;
+            }
+
+        if (result is not null)
+        {
+            using (result)
+            {
+                if (this.IsParameterBound(nameof(OutFile)))
+                {
+                    using var file = System.IO.File.Create(OutFile!);
+                    result.CopyTo(file);
+                }
+                else
+                {
+                    using var buffer = new System.IO.MemoryStream();
+                    result.CopyTo(buffer);
+                    WriteObject(buffer.ToArray());
+                }
+            }
+        }
+        }
+    }
+}
