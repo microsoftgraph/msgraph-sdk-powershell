@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
     if (this.IsParameterBound(nameof(ApplyResult)))
         body.ApplyResult = ApplyResult;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

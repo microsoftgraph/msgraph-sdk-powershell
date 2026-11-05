@@ -81,7 +81,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         body.ConnectorType = ConnectorType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ExternalOriginResourceConnector? result;

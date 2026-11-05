@@ -86,7 +86,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         body.ApprovalState = ApprovalState;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedApproval? result;

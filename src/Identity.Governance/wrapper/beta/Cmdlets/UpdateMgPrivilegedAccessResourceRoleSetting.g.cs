@@ -91,7 +91,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         body.UserMemberSettings = UserMemberSettings!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.GovernanceRoleSetting? result;

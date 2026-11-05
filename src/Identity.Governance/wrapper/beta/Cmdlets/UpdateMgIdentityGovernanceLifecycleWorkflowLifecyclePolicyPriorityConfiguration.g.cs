@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         body.SubjectType = SubjectType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.LifecyclePolicyPriorityConfiguration? result;

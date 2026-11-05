@@ -62,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         body.StatusDetail = StatusDetail;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PermissionsRequestChange? result;

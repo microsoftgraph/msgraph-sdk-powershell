@@ -52,7 +52,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         body.Gcp = Gcp;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PermissionsAnalyticsAggregation? result;

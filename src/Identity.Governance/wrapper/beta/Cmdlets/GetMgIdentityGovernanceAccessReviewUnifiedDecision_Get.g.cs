@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewInstanceDecisionItem? result;
@@ -47,6 +47,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 

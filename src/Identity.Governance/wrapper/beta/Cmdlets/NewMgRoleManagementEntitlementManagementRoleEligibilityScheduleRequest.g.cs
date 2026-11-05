@@ -128,7 +128,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         body.TicketInfo = TicketInfo;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.UnifiedRoleEligibilityScheduleRequest? result;
