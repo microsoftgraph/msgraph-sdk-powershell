@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -345,6 +346,100 @@ public sealed class ApplicationsDirectiveMigrationTests
             var source = File.ReadAllText(Assert.Single(Directory.GetFiles(output, "*.g.cs")));
             Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
             Assert.DoesNotContain("GetRequestAdapter()", source);
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task EverySurvivingRequiredQueryBindsQueryIdAndPreservesInheritedContract(string profile, bool inherited)
+    {
+        var settings = new OpenApiReaderSettings();
+        settings.AddYamlReader();
+        using var stream = File.OpenRead(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, "Applications.yml"));
+        var parsed = await OpenApiDocument.LoadAsync(stream, settings: settings,
+            cancellationToken: TestContext.Current.CancellationToken);
+        var document = Assert.IsType<OpenApiDocument>(parsed.Document);
+        var config = new GeneratorConfig("Microsoft.Graph.PowerShell.Applications.Client", "unused");
+        var selected = new HashSet<string>(StringComparer.Ordinal);
+        var allRequired = 0;
+        var inheritedRequired = 0;
+        foreach (var (path, item) in document.Paths)
+        {
+            foreach (var (method, operation) in item.Operations!)
+            {
+                var effective = (item.Parameters ?? []).Concat(operation.Parameters ?? [])
+                    .GroupBy(p => (p.Name, p.In)).Select(g => g.Last()).ToArray();
+                var required = effective.Where(p => p.In == ParameterLocation.Query && p.Required).ToArray();
+                if (required.Length == 0)
+                    continue;
+                allRequired++;
+                inheritedRequired += (item.Parameters ?? []).Count(p => p.In == ParameterLocation.Query && p.Required);
+                var query = Assert.Single(required);
+                Assert.Equal("@id", query.Name);
+                Assert.Equal(JsonSchemaType.String, query.Schema!.Type);
+                Assert.Equal(HttpMethod.Delete, method);
+                if (CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile))
+                    continue;
+                selected.Add(path);
+                if (inherited)
+                {
+                    var concrete = Assert.IsType<OpenApiPathItem>(item);
+                    concrete.Parameters ??= [];
+                    concrete.Parameters.Add(query);
+                    operation.Parameters!.Remove(query);
+                }
+            }
+        }
+        Assert.Equal(profile == "beta" ? 15 : 9, allRequired);
+        Assert.Equal(0, inheritedRequired);
+        var expected = new HashSet<string>(StringComparer.Ordinal)
+        {
+            "/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/$ref",
+            "/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/$ref",
+        };
+        if (profile == "beta")
+        {
+            expected.Add("/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/$ref");
+            expected.Add("/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors/{connector-id}/memberOf/$ref");
+        }
+        Assert.True(expected.SetEquals(selected));
+        foreach (var path in document.Paths.Keys.Where(p => !selected.Contains(p)).ToArray())
+            document.Paths.Remove(path);
+        foreach (var item in document.Paths.Values)
+        {
+            foreach (var method in item.Operations!.Keys.Where(m => m != HttpMethod.Delete).ToArray())
+                item.Operations.Remove(method);
+        }
+        var output = Path.Combine(Path.GetTempPath(), "applications-query-tests", Guid.NewGuid().ToString("N"));
+        try
+        {
+            await new PowerShellWrapperGenerationService(document, config with { OutputPath = output },
+                NullLogger.Instance, apiVersion: profile).GenerateAsync(TestContext.Current.CancellationToken);
+            var files = Directory.GetFiles(output, "*.g.cs");
+            Assert.Equal(expected.Count, files.Length);
+            foreach (var file in files)
+            {
+                var source = File.ReadAllText(file);
+                Assert.Contains("public string QueryId { get; set; }", source);
+                Assert.Contains("[ValidateNotNullOrEmpty]", source);
+                Assert.Contains("[Parameter(Mandatory = true, Position =", source);
+                Assert.Contains("requestConfiguration.QueryParameters.Id = QueryId;", source);
+                Assert.DoesNotContain("public string Id ", source);
+                Assert.DoesNotContain("[Alias(\"Id\")]", source);
+                Assert.Contains("ConfirmImpact = ConfirmImpact.High", source);
+                Assert.Single(Regex.Matches(source, @"ShouldProcess\("));
+                Assert.Contains("requestConfiguration.Headers.Add(\"If-Match\", IfMatch!)", source);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", source);
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+            }
         }
         finally
         {
