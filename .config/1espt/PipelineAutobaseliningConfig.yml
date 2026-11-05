@@ -57,7 +57,7 @@ pipelines:
         credscan:
           lastModifiedDate: 2024-10-18
         spotbugs:
-          lastModifiedDate: 2024-10-18
+          lastModifiedDate: 2026-11-05
     usedNonDefaultBranch: true
   658:
     retail:
