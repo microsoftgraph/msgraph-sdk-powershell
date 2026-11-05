@@ -291,25 +291,20 @@ public sealed class EmitterTests
         Assert.DoesNotContain("new PasswordProfile", source);
     }
 
-    // PATCH-only resources (/places/{id}) have no GetAsync on their kiota builder, so the
-    // 204 re-fetch must be emitted only when the path has a GET (found by compiling the
-    // Calendar module). Without the re-fetch, a bodiless 204 writes nothing — same as the
-    // published SDK's Update behavior.
     [Fact]
-    public void UpdateEmitsReFetchOnlyWhenPathHasGet()
+    public void UpdateReturnsOnlyTheMutationResultWithoutReadBack()
     {
         var naming = Naming.Resolve(new OperationInfo(HttpMethod.Patch, "/places/{place-id}"));
         var props = new[] { new CmdletProperty("displayName", "DisplayName", "string", IsArray: false) };
         var ctx = new EmitContext("Test.Client");
 
-        var withGet = CmdletEmitter.EmitUpdate(naming, ctx, "Place", props, [], [], reFetchAfterUpdate: true);
-        Assert.Contains("re-fetching the updated resource", withGet);
-        Assert.Contains(".GetAsync(requestConfiguration =>", withGet);
-
-        var withoutGet = CmdletEmitter.EmitUpdate(naming, ctx, "Place", props, [], [], reFetchAfterUpdate: false);
-        Assert.DoesNotContain("re-fetching the updated resource", withoutGet);
-        Assert.DoesNotContain(".GetAsync(", withoutGet);
-        Assert.Contains("if (result is not null)", withoutGet);
+        var source = CmdletEmitter.EmitUpdate(naming, ctx, "Place", props, [], []);
+        Assert.Contains("client.Places[PlaceId].PatchAsync(body,", source);
+        Assert.Contains("if (result is not null)\n                WriteObject(result);", source.ReplaceLineEndings("\n"));
+        Assert.DoesNotContain(".GetAsync(", source);
+        Assert.DoesNotContain("if (result is null)", source);
+        Assert.DoesNotContain("re-fetching", source);
+        Assert.DoesNotContain("PassThru", source);
     }
 
     // A spec-derived noun or header name containing a double quote must be escaped where it is

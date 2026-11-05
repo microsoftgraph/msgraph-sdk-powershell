@@ -184,12 +184,12 @@ public sealed class RequiredQueryTests
         Assert.Contains("ParameterSetName = \"List\"", dispatcher);
         Assert.Contains("ParameterSetName = \"Get\"", dispatcher);
         var patch = files["UpdateMgWidget.g.cs"];
-        var refetch = patch[patch.IndexOf("if (result is null)", StringComparison.Ordinal)..];
         Assert.Contains("QueryParameters.TenantId = QueryTenantId;", patch);
-        Assert.DoesNotContain("QueryTenantId", refetch);
-        Assert.Contains("QueryParameters.View = QueryView;", refetch);
-        Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", refetch);
-        Assert.DoesNotContain("IfMatch", refetch);
+        Assert.DoesNotContain("QueryView", patch);
+        Assert.DoesNotContain(".GetAsync(", patch);
+        Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", patch);
+        Assert.Contains("requestConfiguration.Headers.Add(\"If-Match\", IfMatch!)", patch);
+        Assert.Contains("public string QueryView ", files["GetMgWidget_Get.g.cs"]);
         var delta = Assert.Single(files, f => f.Key.Contains("Delta", StringComparison.Ordinal)).Value;
         Assert.Contains("Position = 0, ParameterSetName = \"DeltaSync\"", delta);
         Assert.Contains("QueryParameters.TenantId = QueryTenantId;", delta);
@@ -234,7 +234,7 @@ public sealed class RequiredQueryTests
     [Theory]
     [InlineData(false)]
     [InlineData(true)]
-    public async Task RefetchRequiredQueriesHaveAnIndependentContract(bool conflicting)
+    public async Task PatchAndGetRequiredQueriesAreIndependentEvenWhenTypesDiffer(bool conflicting)
     {
         const string route = "/widgets/{widget-id}";
         var document = await LoadFixture("required-queries.yml");
@@ -242,17 +242,27 @@ public sealed class RequiredQueryTests
         var item = (OpenApiPathItem)document.Paths[route];
         item.Operations!.Remove(HttpMethod.Put);
         item.Operations[HttpMethod.Get].Parameters = [Query("tenantId", type: conflicting ? JsonSchemaType.Integer : JsonSchemaType.String)];
-        if (conflicting)
-        {
-            var failure = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document));
-            Assert.Contains("mutation/refetch required query", failure.Message);
-        }
-        else
-        {
-            var patch = (await Generate(document))["UpdateMgWidget.g.cs"];
-            Assert.Single(System.Text.RegularExpressions.Regex.Matches(patch, "public string QueryTenantId "));
-            Assert.Equal(2, System.Text.RegularExpressions.Regex.Matches(patch, "QueryParameters.TenantId = QueryTenantId;").Count);
-        }
+        var files = await Generate(document);
+        var patch = files["UpdateMgWidget.g.cs"];
+        Assert.Single(System.Text.RegularExpressions.Regex.Matches(patch, "public string QueryTenantId "));
+        Assert.Single(System.Text.RegularExpressions.Regex.Matches(patch, "QueryParameters.TenantId = QueryTenantId;"));
+        Assert.DoesNotContain(".GetAsync(", patch);
+        Assert.Contains($"public {(conflicting ? "int" : "string")} QueryTenantId ", files["GetMgWidget.g.cs"]);
+    }
+
+    [Fact]
+    public async Task PatchSelectionDoesNotValidateAnUnsupportedUnselectedGetQuery()
+    {
+        var document = await LoadFixture("required-queries.yml");
+        const string route = "/widgets/{widget-id}";
+        KeepRoute(document, route);
+        document.Paths[route].Operations![HttpMethod.Get].Parameters =
+            [Query("view", type: JsonSchemaType.Object)];
+        IncludePathFilter.Apply(document, [route + "#PATCH"]);
+        var patch = Assert.Single((await Generate(document)).Values);
+        Assert.Contains("public string QueryTenantId ", patch);
+        Assert.DoesNotContain("QueryView", patch);
+        Assert.DoesNotContain(".GetAsync(", patch);
     }
 
     [Fact]

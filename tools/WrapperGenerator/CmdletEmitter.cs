@@ -88,7 +88,7 @@ public static partial class CmdletEmitter
     private static string AccessTokenParamDecl() => "";
 
     // The shared try/catch tail around every Graph call. Only the ErrorRecord's target object
-    // varies, and sometimes the nesting depth (EmitUpdate's re-fetch sits one block deeper).
+    // varies, and sometimes the nesting depth.
     // The error surface itself (id, category) lives on GraphClientCmdlet. A pipeline stop
     // (downstream Select-Object -First, Ctrl+C) passes through untouched: it is the engine's
     // stop signal, not a Graph failure. The filter is load-bearing only where WriteObject runs
@@ -1169,7 +1169,7 @@ namespace {{ctx.CmdletNamespace}}
 """;
     }
 
-    public static string EmitUpdate(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlyList<CmdletProperty> properties, IReadOnlyList<ComplexParameter> complexProperties, IReadOnlyList<UntypedParameter> untypedProperties, bool reFetchAfterUpdate = true, string httpMethodName = "PatchAsync")
+    public static string EmitUpdate(CmdletNaming naming, EmitContext ctx, string entityType, IReadOnlyList<CmdletProperty> properties, IReadOnlyList<ComplexParameter> complexProperties, IReadOnlyList<UntypedParameter> untypedProperties, string httpMethodName = "PatchAsync")
     {
         ArgumentNullException.ThrowIfNull(naming);
         ArgumentNullException.ThrowIfNull(ctx);
@@ -1223,7 +1223,6 @@ namespace {{ctx.CmdletNamespace}}
             }
 {{CatchBlock(TargetId(naming))}}
 
-{{(reFetchAfterUpdate ? ReFetchBlock(naming, ctx) : "")}}
             if (result is not null)
                 WriteObject(result);
         }
@@ -1277,28 +1276,6 @@ namespace {{ctx.CmdletNamespace}}
     }
 }
 
-""";
-    }
-
-    // Graph often answers a successful PATCH with 204 and no body (seen live on
-    // schemaExtension update), so Update re-fetches to return the updated resource — but
-    // only when the path actually has a GET (PATCH-only resources like /places/{id} have no
-    // GetAsync on their builder; found by compiling the Calendar module).
-    // Keep caller -Headers, not mutation-only typed headers such as the pre-update If-Match.
-    private static string ReFetchBlock(CmdletNaming naming, EmitContext ctx)
-    {
-        var configuration = $"requestConfiguration =>\n                    {{{RequiredQueryBindings(ctx.RefetchRequiredQueries, "                        ")}{GenericHeadersBinding("                    ")}\n                    }}";
-        return $$"""
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = {{ResourceCallReceiver(naming, ctx)}}.GetAsync({{configuration}}).GetAwaiter().GetResult();
-                }
-{{CatchBlock(TargetId(naming), "    ")}}
-            }
 """;
     }
 

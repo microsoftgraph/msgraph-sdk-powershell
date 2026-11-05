@@ -116,7 +116,7 @@ $runspace = [runspacefactory]::CreateRunspace($choiceHost)
 $runspace.Open()
 $engine = [powershell]::Create()
 $engine.Runspace = $runspace
-function Assert-Request($Request, [string]$Method, [string]$Path, [hashtable]$Query, [hashtable]$Body, [switch]$Refetch) {
+function Assert-Request($Request, [string]$Method, [string]$Path, [hashtable]$Query, [hashtable]$Body) {
     $uri = [uri]$Request.Uri
     Assert-Probe ($Request.Method -ceq $Method -and $uri.GetLeftPart([UriPartial]::Authority) -ceq $endpoint `
         -and $uri.AbsolutePath -ceq "/$ApiVersion$Path") "Wrong request destination/method: $($Request.Uri)"
@@ -140,7 +140,6 @@ function Assert-Request($Request, [string]$Method, [string]$Path, [hashtable]$Qu
     }
     Assert-Probe ($Request.Authorization -ceq "Bearer $token") 'Authentication was lost.'
     Assert-Probe ($Request.Headers['x-query-probe'] -ceq 'custom-value') 'Generic headers were lost on the selected request.'
-    if ($Refetch) { Assert-Probe (-not $Request.Headers.ContainsKey('If-Match')) 'Typed mutation IfMatch was replayed on GET.' }
     if ($Body) {
         Assert-Probe $Request.HasContent 'Typed body was not sent.'
         $actual = $Request.Body | ConvertFrom-Json
@@ -162,7 +161,8 @@ function Assert-Binder([string]$Name, [hashtable]$Arguments, [string]$Descriptio
     $checks.Add([pscustomobject]@{ Command = $Name; Check = $Description; ErrorId = $failure.FullyQualifiedErrorId; Requests = 0 })
 }
 function Assert-Output([object[]]$Output, [string]$Name, [string]$Method, [string]$Path, [hashtable]$Body) {
-    if ($Path.EndsWith('/$count')) { Assert-Probe ($Output.Count -eq 1 -and $Output[0] -eq 2) 'Count result changed.' }
+    if ($Method -eq 'PATCH') { Assert-Probe ($Output.Count -eq 0) 'Successful PATCH204 must not read back or produce output.' }
+    elseif ($Path.EndsWith('/$count')) { Assert-Probe ($Output.Count -eq 1 -and $Output[0] -eq 2) 'Count result changed.' }
     elseif ($Path.EndsWith('/content')) { Assert-Probe ($Output.Count -eq 1 -and ($Output[0] -join ',') -ceq '1,2,3') 'Stream result changed.' }
     elseif ($Method -eq 'GET' -and $Path.EndsWith('/owner/$ref')) { Assert-Probe ($Output.Count -eq 1 -and $Output[0] -eq 'https://graph.microsoft.com/directoryObjects/owner') 'Scalar reference result changed.' }
     elseif ($Method -eq 'GET' -or ($Body -and -not $Path.EndsWith('/$ref') -and -not $Path.EndsWith('/promote'))) {
@@ -171,11 +171,11 @@ function Assert-Output([object[]]$Output, [string]$Name, [string]$Method, [strin
     else { Assert-Probe ($Output.Count -eq 0) "Void operation acquired output: $Name" }
 }
 function Invoke-Case([string]$Name, [hashtable]$Arguments, [string]$Method, [string]$Path,
-    [hashtable]$Query, [hashtable]$Body, [hashtable]$RefetchQuery) {
+    [hashtable]$Query, [hashtable]$Body) {
     $arguments = $Arguments.Clone()
     $arguments.Headers = @{ 'x-query-probe' = 'custom-value' }
     $mutation = $Method -ne 'GET'
-    $expectedCount = if ($RefetchQuery) { 2 } else { 1 }
+    $expectedCount = 1
     if ($mutation) {
         $before = $handler.Requests.Count
         & $Name @arguments -WhatIf -ErrorAction Stop | Out-Null
@@ -193,7 +193,6 @@ function Invoke-Case([string]$Name, [hashtable]$Arguments, [string]$Method, [str
             Assert-Probe ($choiceHost.PromptCount -eq $prompts + 1 -and $handler.Requests.Count -eq $before + $(if ($accept) { $expectedCount } else { 0 })) 'Confirmation count/request contract failed.'
             if ($accept) {
                 Assert-Request $handler.Requests[$before] $Method $Path $Query $Body
-                if ($RefetchQuery) { Assert-Request $handler.Requests[$before + 1] 'GET' $Path $RefetchQuery $null -Refetch }
                 Assert-Output $confirmedOutput $Name $Method $Path $Body
             }
             $checks.Add([pscustomobject]@{ Command = $Name; Check = $(if ($accept) { 'accepted' } else { 'declined' }); Prompts = 1; Requests = $handler.Requests.Count - $before })
@@ -205,7 +204,6 @@ function Invoke-Case([string]$Name, [hashtable]$Arguments, [string]$Method, [str
     Assert-Probe ($handler.Requests.Count -eq $before + $expectedCount) "Unexpected HTTP count for $Name"
     Assert-Request $handler.Requests[$before] $Method $Path $Query $Body
     if ($arguments.ContainsKey('IfMatch')) { Assert-Probe ($handler.Requests[$before].Headers['If-Match'] -ceq $arguments.IfMatch) 'Mutation ETag was lost.' }
-    if ($RefetchQuery) { Assert-Request $handler.Requests[$before + 1] 'GET' $Path $RefetchQuery $null -Refetch }
     Assert-Output $output $Name $Method $Path $Body
     $checks.Add([pscustomobject]@{ Command = $Name; Check = 'transport'; Requests = $expectedCount; OutputCount = $output.Count })
 }
@@ -217,48 +215,54 @@ try {
     $widgetPath = '/widgets/' + [uri]::EscapeDataString($widget)
     $body = @{ displayName = 'typed-name'; enabled = $false; detail = @{ description = 'nested' } }
     $post = @{ QueryInherited = 'path-default'; QueryTenantId = $adversarial; QueryAttempt = [long]0; QueryForce = $false; DisplayName = 'typed-name'; Enabled = $false; Detail = @{ Description = 'nested' } }
-    Invoke-Case 'New-MgWidget' $post POST '/widgets' @{ inherited = 'path-default'; tenantId = $adversarial; attempt = '0'; force = 'false' } $body $null
-    $patch = @{ WidgetId = $widget; QueryTenantId = $adversarial; QueryView = 'get-only'; DisplayName = 'typed-name'; IfMatch = 'W/"query-proof"' }
-    Invoke-Case 'Update-MgWidget' $patch PATCH $widgetPath @{ tenantId = $adversarial } @{ displayName = 'typed-name' } @{ view = 'get-only' }
-    foreach ($missing in 'QueryTenantId', 'QueryView') {
+    Invoke-Case 'New-MgWidget' $post POST '/widgets' @{ inherited = 'path-default'; tenantId = $adversarial; attempt = '0'; force = 'false' } $body
+    $patch = @{ WidgetId = $widget; QueryTenantId = $adversarial; DisplayName = 'typed-name'; IfMatch = 'W/"query-proof"' }
+    Assert-Probe (-not (Get-Command Update-MgWidget).Parameters.ContainsKey('QueryView')) 'PATCH acquired a GET-only required parameter.'
+    Invoke-Case 'Update-MgWidget' $patch PATCH $widgetPath @{ tenantId = $adversarial } @{ displayName = 'typed-name' }
+    foreach ($missing in 'QueryTenantId') {
         $arguments = $patch.Clone()
         $arguments.Remove($missing)
         $arguments.Confirm = $false
         Assert-Binder 'Update-MgWidget' $arguments "missing-independent-$missing"
     }
-    Invoke-Case 'Set-MgWidget' @{ WidgetId = $widget; QueryTenantId = $adversarial; DisplayName = 'typed-name' } PUT $widgetPath @{ tenantId = $adversarial } @{ displayName = 'typed-name' } $null
-    Invoke-Case 'Get-MgWidget' @{ QueryTop = 0; QueryEnabled = $false; QueryCount = $false; Select = @('id'); Filter = 'active' } GET '/widgets' @{ '$top' = '0'; enabled = 'false'; '$count' = 'false'; inherited = ''; '$select' = 'id'; '$filter' = 'active' } $null $null
-    Invoke-Case 'Get-MgWidget' @{ WidgetId = $widget; QueryView = $adversarial; Select = @('id') } GET $widgetPath @{ view = $adversarial; '$select' = 'id' } $null $null
+    $getOnly = $patch.Clone()
+    $getOnly.QueryView = 'not-a-mutation-parameter'
+    $getOnly.Confirm = $false
+    Assert-Binder 'Update-MgWidget' $getOnly 'GET-only-query-not-on-PATCH'
+    Assert-Binder 'Get-MgWidget' @{ WidgetId = $widget } 'missing-explicit-GET-view'
+    Invoke-Case 'Set-MgWidget' @{ WidgetId = $widget; QueryTenantId = $adversarial; DisplayName = 'typed-name' } PUT $widgetPath @{ tenantId = $adversarial } @{ displayName = 'typed-name' }
+    Invoke-Case 'Get-MgWidget' @{ QueryTop = 0; QueryEnabled = $false; QueryCount = $false; Select = @('id'); Filter = 'active' } GET '/widgets' @{ '$top' = '0'; enabled = 'false'; '$count' = 'false'; inherited = ''; '$select' = 'id'; '$filter' = 'active' } $null
+    Invoke-Case 'Get-MgWidget' @{ WidgetId = $widget; QueryView = $adversarial; Select = @('id') } GET $widgetPath @{ view = $adversarial; '$select' = 'id' } $null
     $before = $handler.Requests.Count
     $pages = @(Get-MgWidget -QueryTop 10 -QueryEnabled:$false -QueryCount:$false -Filter pages -All -Headers @{ 'x-query-probe' = 'custom-value' } -ErrorAction Stop)
     Assert-Probe ($handler.Requests.Count -eq $before + 2 -and $pages.Count -eq 2) 'Required-query list paging failed.'
     Assert-Request $handler.Requests[$before] GET '/widgets' @{ '$top' = '10'; enabled = 'false'; '$count' = 'false'; inherited = ''; '$filter' = 'pages' } $null
     Assert-Request $handler.Requests[$before + 1] GET '/widgets' @{ continued = '1' } $null
     $checks.Add([pscustomobject]@{ Command = 'Get-MgWidget'; Check = 'continuation-query-isolation'; Requests = 2; OutputCount = $pages.Count })
-    Invoke-Case 'Get-MgWidgetCount' @{ QueryFilter = $adversarial } GET '/widgets/$count' @{ '$filter' = $adversarial } $null $null
-    Invoke-Case 'Invoke-MgWidgetPromote' @{ WidgetId = $widget; QueryThreshold = [double]0; Title = 'promote' } POST "$widgetPath/promote" @{ threshold = '0' } @{ title = 'promote' } $null
+    Invoke-Case 'Get-MgWidgetCount' @{ QueryFilter = $adversarial } GET '/widgets/$count' @{ '$filter' = $adversarial } $null
+    Invoke-Case 'Invoke-MgWidgetPromote' @{ WidgetId = $widget; QueryThreshold = [double]0; Title = 'promote' } POST "$widgetPath/promote" @{ threshold = '0' } @{ title = 'promote' }
     $code = 'inline /% space'
-    Invoke-Case 'Get-MgWidgetLookupWithCode' @{ WidgetId = $widget; Code = $code; QueryLocale = $adversarial } GET "$widgetPath/lookup(code='$([uri]::EscapeDataString($code))')" @{ locale = $adversarial } $null $null
+    Invoke-Case 'Get-MgWidgetLookupWithCode' @{ WidgetId = $widget; Code = $code; QueryLocale = $adversarial } GET "$widgetPath/lookup(code='$([uri]::EscapeDataString($code))')" @{ locale = $adversarial } $null
     $reference = 'https://foreign.invalid/directoryObjects/member?x=%2F&y=+'
-    Invoke-Case 'Remove-MgWidgetMemberByRef' @{ WidgetId = $widget; QueryId = $reference; IfMatch = 'W/"query-proof"' } DELETE "$widgetPath/members/`$ref" @{ '@id' = $reference } $null $null
+    Invoke-Case 'Remove-MgWidgetMemberByRef' @{ WidgetId = $widget; QueryId = $reference; IfMatch = 'W/"query-proof"' } DELETE "$widgetPath/members/`$ref" @{ '@id' = $reference } $null
     foreach ($verb in 'New', 'Set') {
-        Invoke-Case "$verb-MgWidgetMemberByRef" @{ WidgetId = $widget; QueryId = $reference; OdataId = 'https://graph.microsoft.com/directoryObjects/body-target' } $(if ($verb -eq 'New') { 'POST' } else { 'PUT' }) "$widgetPath/members/`$ref" @{ '@id' = $reference } @{ '@odata.id' = 'https://graph.microsoft.com/directoryObjects/body-target' } $null
+        Invoke-Case "$verb-MgWidgetMemberByRef" @{ WidgetId = $widget; QueryId = $reference; OdataId = 'https://graph.microsoft.com/directoryObjects/body-target' } $(if ($verb -eq 'New') { 'POST' } else { 'PUT' }) "$widgetPath/members/`$ref" @{ '@id' = $reference } @{ '@odata.id' = 'https://graph.microsoft.com/directoryObjects/body-target' }
     }
-    Invoke-Case 'Get-MgWidgetOwnerByRef' @{ WidgetId = $widget; QueryTenantId = $adversarial } GET "$widgetPath/owner/`$ref" @{ tenantId = $adversarial } $null $null
-    Invoke-Case 'Get-MgWidgetContent' @{ WidgetId = $widget; QueryRevision = 0 } GET "$widgetPath/content" @{ revision = '0' } $null $null
+    Invoke-Case 'Get-MgWidgetOwnerByRef' @{ WidgetId = $widget; QueryTenantId = $adversarial } GET "$widgetPath/owner/`$ref" @{ tenantId = $adversarial } $null
+    Invoke-Case 'Get-MgWidgetContent' @{ WidgetId = $widget; QueryRevision = 0 } GET "$widgetPath/content" @{ revision = '0' } $null
     $upload = Join-Path $ArtifactRoot 'upload.txt'
     [IO.File]::WriteAllText($upload, 'typed-upload')
-    Invoke-Case 'Set-MgWidgetContent' @{ WidgetId = $widget; QueryRevision = 0; InFile = $upload } PUT "$widgetPath/content" @{ revision = '0' } $null $null
+    Invoke-Case 'Set-MgWidgetContent' @{ WidgetId = $widget; QueryRevision = 0; InFile = $upload } PUT "$widgetPath/content" @{ revision = '0' } $null
     Assert-Probe ($handler.Requests[$handler.Requests.Count - 1].Body -ceq 'typed-upload') 'Media query binding changed uploaded content.'
-    Invoke-Case 'Get-MgWidgetDelta' @{ QueryTenantId = $adversarial; Top = 2 } GET '/widgets/delta()' @{ tenantId = $adversarial; '$top' = '2' } $null $null
-    Invoke-Case 'Get-MgWidgetDelta' @{ DeltaLink = "$endpoint/$ApiVersion/widgets/delta()?serverState=next" } GET '/widgets/delta()' @{ serverState = 'next' } $null $null
-    Invoke-Case 'Get-MgSelectedWidget' @{ QuerySelect = @('id', 'displayName') } GET '/selectedWidgets' @{ '$select' = @{ Encoded = 'id,displayName' } } $null $null
+    Invoke-Case 'Get-MgWidgetDelta' @{ QueryTenantId = $adversarial; Top = 2 } GET '/widgets/delta()' @{ tenantId = $adversarial; '$top' = '2' } $null
+    Invoke-Case 'Get-MgWidgetDelta' @{ DeltaLink = "$endpoint/$ApiVersion/widgets/delta()?serverState=next" } GET '/widgets/delta()' @{ serverState = 'next' } $null
+    Invoke-Case 'Get-MgSelectedWidget' @{ QuerySelect = @('id', 'displayName') } GET '/selectedWidgets' @{ '$select' = @{ Encoded = 'id,displayName' } } $null
 
     $typeCommand = Get-Command Get-MgQueryType
     $day = [Activator]::CreateInstance($typeCommand.Parameters['QueryDay'].ParameterType, [object[]]@([int]2026, [int]11, [int]4))
     $clock = [Activator]::CreateInstance($typeCommand.Parameters['QueryClock'].ParameterType, [object[]]@([int]1, [int]2, [int]3))
     $types = @{ QueryTenantId = $adversarial; QueryTenantName = 'dot'; QueryUnderscoreName = 'underscore'; QueryEnabled = $false; QueryIndex = 0; QuerySize = [long]0; QueryRatio = [double]0; QuerySingle = [float]0; QueryAmount = [decimal]0; QueryGuid = [guid]'00000000-0000-0000-0000-000000000001'; QueryTimestamp = [datetimeoffset]'2026-11-04T00:00:00Z'; QueryDay = $day; QueryClock = $clock; QueryNames = @('one /%', 'two'); QueryCounts = @(0, 2) }
-    Invoke-Case 'Get-MgQueryType' $types GET '/queryTypes' @{ 'tenant-id' = $adversarial; 'tenant.name' = 'dot'; underscore_name = 'underscore'; enabled = 'false'; index = '0'; size = '0'; ratio = '0'; single = '0'; amount = '0'; guid = '00000000-0000-0000-0000-000000000001'; timestamp = '2026-11-04T00:00:00.0000000+00:00'; day = '2026-11-04'; clock = '01:02:03'; names = @('one /%', 'two'); counts = @('0', '2') } $null $null
+    Invoke-Case 'Get-MgQueryType' $types GET '/queryTypes' @{ 'tenant-id' = $adversarial; 'tenant.name' = 'dot'; underscore_name = 'underscore'; enabled = 'false'; index = '0'; size = '0'; ratio = '0'; single = '0'; amount = '0'; guid = '00000000-0000-0000-0000-000000000001'; timestamp = '2026-11-04T00:00:00.0000000+00:00'; day = '2026-11-04'; clock = '01:02:03'; names = @('one /%', 'two'); counts = @('0', '2') } $null
     foreach ($bad in 'missing', 'empty', 'null', 'invalid-type', 'legacy-Id') {
         $arguments = @{ WidgetId = $widget; QueryId = $reference; Confirm = $false }
         if ($bad -eq 'missing') { $arguments.Remove('QueryId') }
@@ -293,10 +297,10 @@ try {
     $bookingName = @($bookings.ExportedCmdlets.Values | Where-Object { $_.Name -notmatch '_(List|Get)$' })[0].Name
     $range = @{ BookingBusinessId = 'business /% space'; QueryStart = '2026-11-04T00:00:00+00:00'; QueryEnd = '2026-11-05T00:00:00+00:00'; Select = @('id'); Top = 1 }
     $bookingPath = '/solutions/bookingBusinesses/' + [uri]::EscapeDataString($range.BookingBusinessId) + '/calendarView'
-    Invoke-Case $bookingName $range GET $bookingPath @{ start = $range.QueryStart; end = $range.QueryEnd; '$select' = 'id'; '$top' = '1' } $null $null
+    Invoke-Case $bookingName $range GET $bookingPath @{ start = $range.QueryStart; end = $range.QueryEnd; '$select' = 'id'; '$top' = '1' } $null
     $range.Remove('Top')
     $range.BookingAppointmentId = 'appointment'
-    Invoke-Case $bookingName $range GET "$bookingPath/appointment" @{ start = $range.QueryStart; end = $range.QueryEnd; '$select' = 'id' } $null $null
+    Invoke-Case $bookingName $range GET "$bookingPath/appointment" @{ start = $range.QueryStart; end = $range.QueryEnd; '$select' = 'id' } $null
     $range.Remove('QueryEnd')
     Assert-Binder $bookingName $range 'production-Bookings-missing-end'
     $assemblies = @([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {

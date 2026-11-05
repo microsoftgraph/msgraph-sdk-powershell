@@ -118,10 +118,10 @@ Whatever the shape, a generated cmdlet has the same skeleton:
   an ordinary PowerShell value (`-Maximum 100`, `-ContentInfo @{ … }`) and is converted on
   assignment. Navigation properties, `id`, `additionalData` and `readOnly` properties are
   deliberately excluded: they are relationships or serializer infrastructure, not body fields.
-  `Update` also re-fetches after a `204 No Content` when the selected path has a GET, so it
-  still returns the updated object. That GET preserves caller `-Headers`, but not typed
-  mutation-only headers such as the old `-IfMatch` ETag. See [PATCH refetch](docs/patch-refetch.md)
-  for the ordinary/grouped offline transport regression gate.
+  `Update` returns a model only when PATCH supplies one. A successful `204 No Content`
+  returns no object and never triggers an automatic GET. Retrieve the updated resource
+  with a separate explicit `Get-Mg...` command if needed. See
+  [PATCH result semantics](docs/patch-refetch.md) for the offline regression gate.
   See [docs/body-property-binding.md](docs/body-property-binding.md) for the full mapping, the
   `date`/`time` input contract, and what remains unbound.
 - **`New`/`Update`/`Remove`** are gated by `ShouldProcess`, so `-WhatIf` and `-Confirm` work.

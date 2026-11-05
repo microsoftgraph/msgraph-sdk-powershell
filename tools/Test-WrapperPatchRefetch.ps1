@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Generates real Kiota clients and wrappers, then proves PATCH refetch headers offline.
+Generates real Kiota clients and wrappers, then proves PATCH never reads back implicitly.
 
 .DESCRIPTION
 Requires built WrapperGenerator.Tests, the Kiota CLI and the normally built Authentication
@@ -70,7 +70,7 @@ if (-not $Probe) {
     <id>Microsoft.Graph.Wrapper.RefetchProbe</id>
     <version>0.0.1</version>
     <authors>Microsoft Graph</authors>
-    <description>Offline PATCH refetch regression fixture.</description>
+    <description>Offline PATCH operation semantics regression fixture.</description>
     <dependencies><dependency id="Microsoft.Graph.Authentication" version="$authVersion" /></dependencies>
   </metadata>
   <files>
@@ -148,19 +148,19 @@ $escapedId = [uri]::EscapeDataString($id)
 $widgetPath = "/profiles/$([uri]::EscapeDataString($profileId))/widgets"
 $orphanPath = "/profiles/$([uri]::EscapeDataString($profileId))/orphanWidgets"
 $cases = @(
-    @{ Name = 'Update-MgAgreement'; Args = @{ AgreementId = $id }; Path = "/agreements/$escapedId"; Refetch = $true; RequiredQueries = $true },
-    @{ Name = 'Update-MgProfileWidget'; Args = @{ ProfileId = $profileId; WidgetId = $id }; Path = "$widgetPath/$escapedId"; Refetch = $true },
-    @{ Name = 'Update-MgProfileWidget'; Args = @{ ProfileId = $profileId; WidgetId = $parentId; ChildWidgetId = $id }; Path = "$widgetPath/$([uri]::EscapeDataString($parentId))/widgets/$escapedId"; Refetch = $true },
-    @{ Name = 'Update-MgProfileOrphanWidget'; Args = @{ ProfileId = $profileId; OrphanWidgetId = $id }; Path = "$orphanPath/$escapedId"; Refetch = $true },
-    @{ Name = 'Update-MgProfileOrphanWidget'; Args = @{ ProfileId = $profileId; OrphanWidgetId = $parentId; ChildWidgetId = $id }; Path = "$orphanPath/$([uri]::EscapeDataString($parentId))/orphanWidgets/$escapedId"; Refetch = $false },
-    @{ Name = 'Update-MgPlace'; Args = @{ PlaceId = $id }; Path = "/places/$escapedId"; Refetch = $false },
-    @{ Name = 'Set-MgAgreement'; Args = @{ AgreementId = $id }; Path = "/agreements/$escapedId"; Refetch = $false },
-    @{ Name = 'Set-MgProfileWidget'; Args = @{ ProfileId = $profileId; WidgetId = $id }; Path = "$widgetPath/$escapedId"; Refetch = $false },
-    @{ Name = 'Set-MgProfileWidget'; Args = @{ ProfileId = $profileId; WidgetId = $parentId; ChildWidgetId = $id }; Path = "$widgetPath/$([uri]::EscapeDataString($parentId))/widgets/$escapedId"; Refetch = $false },
+    @{ Name = 'Update-MgAgreement'; Args = @{ AgreementId = $id }; Path = "/agreements/$escapedId"; GenericConditional = $true; RequiredQueries = $true },
+    @{ Name = 'Update-MgProfileWidget'; Args = @{ ProfileId = $profileId; WidgetId = $id }; Path = "$widgetPath/$escapedId"; GenericConditional = $true },
+    @{ Name = 'Update-MgProfileWidget'; Args = @{ ProfileId = $profileId; WidgetId = $parentId; ChildWidgetId = $id }; Path = "$widgetPath/$([uri]::EscapeDataString($parentId))/widgets/$escapedId"; GenericConditional = $true },
+    @{ Name = 'Update-MgProfileOrphanWidget'; Args = @{ ProfileId = $profileId; OrphanWidgetId = $id }; Path = "$orphanPath/$escapedId"; GenericConditional = $true },
+    @{ Name = 'Update-MgProfileOrphanWidget'; Args = @{ ProfileId = $profileId; OrphanWidgetId = $parentId; ChildWidgetId = $id }; Path = "$orphanPath/$([uri]::EscapeDataString($parentId))/orphanWidgets/$escapedId" },
+    @{ Name = 'Update-MgPlace'; Args = @{ PlaceId = $id }; Path = "/places/$escapedId" },
+    @{ Name = 'Set-MgAgreement'; Args = @{ AgreementId = $id }; Path = "/agreements/$escapedId" },
+    @{ Name = 'Set-MgProfileWidget'; Args = @{ ProfileId = $profileId; WidgetId = $id }; Path = "$widgetPath/$escapedId" },
+    @{ Name = 'Set-MgProfileWidget'; Args = @{ ProfileId = $profileId; WidgetId = $parentId; ChildWidgetId = $id }; Path = "$widgetPath/$([uri]::EscapeDataString($parentId))/widgets/$escapedId" },
     @{ Name = 'Update-MgDeviceManagementManagedDeviceHealthScriptStateIdidpolicyIdpolicyIddeviceIddeviceId'
        Args = @{ ManagedDeviceId = $parentId; Id = $id; PolicyId = 'path policy /%'; DeviceId = 'path device /%' }
        Path = "/deviceManagement/managedDevices/$([uri]::EscapeDataString($parentId))/deviceHealthScriptStates/id='$escapedId',policyId='$([uri]::EscapeDataString('path policy /%'))',deviceId='$([uri]::EscapeDataString('path device /%'))'"
-       Refetch = $true; RequiredQueries = $true; Composite = $true }
+       GenericConditional = $true; RequiredQueries = $true; Composite = $true }
 )
 
 function Invoke-Confirmed([string]$Name, [hashtable]$Arguments, [bool]$Accept) {
@@ -177,15 +177,14 @@ function Invoke-Confirmed([string]$Name, [hashtable]$Arguments, [bool]$Accept) {
 
 function Assert-Requests($Case, [int]$Before, [bool]$PatchBody, [bool]$GenericConditional = $false) {
     $method = if ($Case.Name.StartsWith('Set-')) { 'PUT' } else { 'PATCH' }
-    $refetch = $Case.Refetch -and -not $PatchBody
-    $count = if ($refetch) { 2 } else { 1 }
+    $count = 1
     if ($handler.Requests.Count -ne $Before + $count) { throw "Incorrect request count: $($Case.Name) $($Case.Path)" }
     for ($i = 0; $i -lt $count; $i++) {
         $request = $handler.Requests[$Before + $i]
-        $expectedMethod = if ($i -eq 0) { $method } else { 'GET' }
+        $expectedMethod = $method
         $expectedUri = "$baseUri$($Case.Path)"
         if ($Case.RequiredQueries) {
-            $expectedUri += if ($i -eq 0) { '?tenantId=' + [uri]::EscapeDataString($queryTenantId) } else { '?view=' + [uri]::EscapeDataString($queryView) }
+            $expectedUri += '?tenantId=' + [uri]::EscapeDataString($queryTenantId)
         }
         if ($request.Method -cne $expectedMethod -or $request.Uri -cne $expectedUri) {
             throw "Wrong selected typed route/method: $($request.Method) $($request.Uri)"
@@ -207,9 +206,9 @@ function Assert-Requests($Case, [int]$Before, [bool]$PatchBody, [bool]$GenericCo
                 throw "Incorrect typed JSON or path/body collision: $($Case.Name)"
             }
             if ($Case.Composite -and ($body.policyId -cne 'body-policy-not-path' -or $body.deviceId -cne 'body-device-not-path')) {
-                throw 'Composite refetch lost distinct PolicyId1/DeviceId1 body bindings.'
+                throw 'Composite PATCH lost distinct PolicyId1/DeviceId1 body bindings.'
             }
-        } elseif ($request.Body) { throw 'Refetch unexpectedly copied the mutation body.' }
+        }
     }
 }
 
@@ -245,6 +244,9 @@ try {
     foreach ($case in $cases) {
         $command = $module.ExportedCmdlets[$case.Name]
         if (-not $command) { throw "Missing compiled fixture command: $($case.Name)" }
+        foreach ($unexpected in 'ReadBack', 'PassThru', 'Refetch') {
+            if ($command.Parameters.ContainsKey($unexpected)) { throw "Mutation acquired a retrieval switch: $unexpected" }
+        }
         $arguments = $case.Args.Clone()
         $arguments.Headers = @{ 'X-Refetch-Proof' = 'refetch-proof'; 'X-Multiple' = 'one,two' }
         $arguments.IfMatch = '"old-etag"'
@@ -256,8 +258,8 @@ try {
         }
         if ($case.RequiredQueries) {
             $arguments.QueryTenantId = $queryTenantId
-            $arguments.QueryView = $queryView
-            foreach ($query in 'QueryTenantId', 'QueryView') {
+            if ($command.Parameters.ContainsKey('QueryView')) { throw 'Mutation acquired an unrelated GET query input.' }
+            foreach ($query in 'QueryTenantId') {
                 if (-not @($command.Parameters[$query].Attributes | Where-Object { $_ -is [Management.Automation.ParameterAttribute] -and $_.Mandatory }).Count) {
                     throw "Independent required query is not mandatory: $($case.Name) $query"
                 }
@@ -276,6 +278,7 @@ try {
             }
         }
         $handler.ReturnPatchBody = $false
+        $handler.RejectGet = $true
         $before = $handler.Requests.Count
         $prompts = $hostProbe.PromptCount
         $null = & $case.Name @arguments -WhatIf
@@ -285,25 +288,25 @@ try {
         if (-not [object]::ReferenceEquals($cacheAdapter, $cache.GetValue($null))) { throw 'WhatIf or declined Confirm acquired transport.' }
         $result = Invoke-Confirmed $case.Name $arguments $true
         Assert-Requests $case $before $false
-        Assert-Result $result $(if ($case.Refetch) { 'refetched' } else { '' })
-        $checks.Add(@{ Command = $case.Name; Path = $case.Path; Check = '204; typed headers PATCH-only; generic headers; WhatIf; declined/accepted single prompt'; Requests = $handler.Requests.Count - $before })
+        Assert-Result $result ''
+        $checks.Add(@{ Command = $case.Name; Path = $case.Path; Check = '204 success without output or GET, even when GET would fail; headers; WhatIf; declined/accepted single prompt'; Requests = $handler.Requests.Count - $before })
         if ($case.Name.StartsWith('Update-')) {
             $handler.ReturnPatchBody = $true
             $before = $handler.Requests.Count
             $result = & $case.Name @arguments -Confirm:$false
             Assert-Requests $case $before $true
             Assert-Result $result 'patch-body'
-            $checks.Add(@{ Command = $case.Name; Path = $case.Path; Check = 'Non-null PATCH body suppresses GET'; Requests = 1 })
+            $checks.Add(@{ Command = $case.Name; Path = $case.Path; Check = '200 PATCH returns its typed result with one request'; Requests = 1 })
         }
-        if ($case.Refetch) {
+        if ($case.GenericConditional) {
             $handler.ReturnPatchBody = $false
             $arguments.Remove('IfMatch')
             $arguments.Headers['If-Match'] = '"generic-etag"'
             $before = $handler.Requests.Count
             $result = & $case.Name @arguments -Confirm:$false
             Assert-Requests $case $before $false $true
-            Assert-Result $result 'refetched'
-            $checks.Add(@{ Command = $case.Name; Path = $case.Path; Check = 'Explicit generic conditional header remains caller-controlled on PATCH and GET'; Requests = 2 })
+            Assert-Result $result ''
+            $checks.Add(@{ Command = $case.Name; Path = $case.Path; Check = 'Explicit generic conditional header applies to PATCH without causing read-back'; Requests = 1 })
         }
         $adapter = $cache.GetValue($null)
         if ($null -eq $adapter -or $adapter.BaseUrl -cne $baseUri) { throw 'Cached adapter lost the generated profile service root.' }
@@ -313,6 +316,50 @@ try {
             throw 'Profile-specific requests changed the shared Authentication client or default BaseAddress.'
         }
     }
+    foreach ($case in $cases | Where-Object RequiredQueries) {
+        $name = $case.Name.Replace('Update-', 'Get-')
+        $command = $module.ExportedCmdlets[$name]
+        $arguments = $case.Args.Clone()
+        $arguments.QueryView = $queryView
+        $arguments.Headers = @{ 'X-Refetch-Proof' = 'explicit-get-proof'; 'X-Multiple' = 'one,two'; 'If-Match' = '"caller-get-etag"' }
+        if (-not $command -or $command.Parameters.ContainsKey('QueryTenantId') -or
+            -not @($command.Parameters['QueryView'].Attributes | Where-Object { $_ -is [Management.Automation.ParameterAttribute] -and $_.Mandatory }).Count) {
+            throw 'Explicit GET did not retain its own independent required query.'
+        }
+        foreach ($invalid in 'missing', 'empty', 'null') {
+            $bad = $arguments.Clone()
+            if ($invalid -eq 'missing') { $bad.Remove('QueryView') }
+            elseif ($invalid -eq 'empty') { $bad.QueryView = '' }
+            else { $bad.QueryView = $null }
+            $before = $handler.Requests.Count
+            $failure = $null
+            try { $null = & $name @bad -ErrorAction Stop } catch { $failure = $_ }
+            if (-not $failure -or $failure.Exception -isnot [Management.Automation.ParameterBindingException] -or
+                $handler.Requests.Count -ne $before) { throw 'Explicit GET required query binder failed.' }
+            $binderChecks++
+        }
+        $handler.RejectGet = $false
+        $before = $handler.Requests.Count
+        $result = & $name @arguments -ErrorAction Stop
+        Assert-Result $result 'read-by-caller'
+        $request = $handler.Requests[$before]
+        if ($handler.Requests.Count -ne $before + 1 -or $request.Method -cne 'GET' -or $request.ResponseStatus -ne 200 -or
+            $request.Uri -cne "$baseUri$($case.Path)?view=$([uri]::EscapeDataString($queryView))" -or
+            $request.Marker -cne 'explicit-get-proof' -or $request.Multiple -cne 'one,two' -or $request.IfMatch -cne '"caller-get-etag"' -or
+            $request.Authorization -cne $handler.Requests[0].Authorization) {
+            throw 'Caller-requested explicit GET changed route/query/header/authentication semantics.'
+        }
+        $checks.Add(@{ Command = $name; Path = $case.Path; Check = 'Caller explicitly retrieves with independent GET query and headers'; Requests = 1 })
+    }
+    $handler.RejectGet = $true
+    $before = $handler.Requests.Count
+    $failure = $null
+    try { $null = Get-MgAgreement -AgreementId $id -QueryView $queryView -ErrorAction Stop } catch { $failure = $_ }
+    if (-not $failure -or $failure.FullyQualifiedErrorId -notlike 'GraphRequestFailed,*' -or
+        $handler.Requests.Count -ne $before + 1 -or $handler.Requests[$before].ResponseStatus -ne 403) {
+        throw 'Explicit GET rejection did not remain a separate retrieval error.'
+    }
+    $checks.Add(@{ Command = 'Get-MgAgreement'; Check = 'Rejected explicit retrieval is independent of earlier successful PATCH204'; Requests = 1 })
     foreach ($name in 'Microsoft.Graph.Wrapper.Runtime', 'Microsoft.Graph.Wrapper.RefetchProbe', 'Microsoft.Graph.Wrapper.RefetchProbe.Client') {
         $assemblies = @([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object { $_.GetName().Name -eq $name })
         if ($assemblies.Count -ne 1 -or $assemblies[0].Location -cne "$(Split-Path $manifest)\$name.dll" -or
@@ -336,8 +383,8 @@ try {
         'Std.UriTemplate', 'Microsoft.Kiota.Serialization.Multipart', 'Microsoft.Kiota.Serialization.Json') {
         if (@($sources | Where-Object Name -eq $required).Count -ne 1) { throw "Missing Authentication-owned identity: $required" }
     }
-    if ($module.ExportedCmdlets.Count -ne 17 -or $checks.Count -ne 22 -or $hostProbe.PromptCount -ne 20 -or
-        $handler.Requests.Count -ne 32 -or $binderChecks -ne 12) {
+    if ($module.ExportedCmdlets.Count -ne 17 -or $checks.Count -ne 25 -or $hostProbe.PromptCount -ne 20 -or
+        $handler.Requests.Count -ne 25 -or $binderChecks -ne 12) {
         throw "Incomplete proof: checks=$($checks.Count), prompts=$($hostProbe.PromptCount), HTTP=$($handler.Requests.Count)"
     }
     @{

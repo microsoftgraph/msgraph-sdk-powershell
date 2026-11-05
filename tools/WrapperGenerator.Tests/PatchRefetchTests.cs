@@ -18,7 +18,7 @@ public sealed class PatchRefetchTests
     [Theory]
     [InlineData("v1.0")]
     [InlineData("beta")]
-    public async Task OrdinaryAndGroupedRefetchBindOnlyGenericHeadersOnTheSelectedTypedBuilder(string profile)
+    public async Task MutationsReturnOnlyTheirOwnResultAndGetInputsStayIndependent(string profile)
     {
         var root = Path.Combine(Path.GetTempPath(), "wrapper-refetch-" + Guid.NewGuid().ToString("N"));
         try
@@ -30,32 +30,35 @@ public sealed class PatchRefetchTests
                 "UpdateMgProfileOrphanWidget_Route0", "UpdateMgDeviceManagementManagedDeviceHealthScriptStateIdidpolicyIdpolicyIddeviceIddeviceId" })
             {
                 var source = files[name + ".g.cs"];
-                var refetch = source[source.IndexOf("if (result is null)", StringComparison.Ordinal)..];
-                Assert.Contains(".GetAsync(requestConfiguration =>", refetch);
-                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", refetch);
+                Assert.DoesNotContain(".GetAsync(", source);
+                Assert.DoesNotContain("if (result is null)", source);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", source);
                 Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
-                Assert.DoesNotContain("IfMatch", refetch);
                 var requiredQueries = name == "UpdateMgAgreement" || name.Contains("HealthScriptState", StringComparison.Ordinal);
                 if (requiredQueries)
                 {
-                    var mutation = source[..source.IndexOf("if (result is null)", StringComparison.Ordinal)];
-                    Assert.Contains("public string QueryTenantId ", mutation);
-                    Assert.Contains("public string QueryView ", mutation);
-                    Assert.Contains("QueryParameters.TenantId = QueryTenantId;", mutation);
-                    Assert.DoesNotContain("QueryParameters.View", mutation);
-                    Assert.Contains("QueryParameters.View = QueryView;", refetch);
-                    Assert.DoesNotContain("QueryTenantId", refetch);
+                    Assert.Contains("public string QueryTenantId ", source);
+                    Assert.Contains("QueryParameters.TenantId = QueryTenantId;", source);
                 }
                 else
-                    Assert.DoesNotContain("QueryParameters", refetch);
-                Assert.DoesNotContain("body.", refetch);
-                Assert.DoesNotContain("WithUrl", refetch);
+                    Assert.DoesNotContain("QueryParameters", source);
+                Assert.DoesNotContain("QueryView", source);
+                Assert.DoesNotContain("WithUrl", source);
                 Assert.Contains("requestConfiguration.Headers.Add(\"If-Match\", IfMatch!)", source);
+                Assert.Contains("if (result is not null)", source);
+                Assert.Contains("[OutputType(typeof(" + PatchRefetchFixture.ClientNamespace + ".Models.Widget))]", source);
+                Assert.DoesNotContain("PassThru", source);
                 Assert.Equal(1, source.Split("ShouldProcess(", StringSplitOptions.None).Length - 1);
                 Assert.True(source.IndexOf("ShouldProcess(", StringComparison.Ordinal) < source.IndexOf("var body", StringComparison.Ordinal));
             }
-            Assert.Contains("client.Profiles[ProfileId].Widgets[WidgetId].Widgets[ChildWidgetId].GetAsync(",
+            Assert.Contains("client.Profiles[ProfileId].Widgets[WidgetId].Widgets[ChildWidgetId].PatchAsync(",
                 files["UpdateMgProfileWidget_Route1.g.cs"]);
+            foreach (var name in new[] { "GetMgAgreement", "GetMgDeviceManagementManagedDeviceHealthScriptStateIdidpolicyIdpolicyIddeviceIddeviceId" })
+            {
+                Assert.Contains("public string QueryView ", files[name + ".g.cs"]);
+                Assert.Contains("QueryParameters.View = QueryView;", files[name + ".g.cs"]);
+                Assert.DoesNotContain("QueryTenantId", files[name + ".g.cs"]);
+            }
             foreach (var name in new[] { "UpdateMgPlace", "UpdateMgProfileOrphanWidget_Route1",
                 "SetMgAgreement", "SetMgProfileWidget_Route0", "SetMgProfileWidget_Route1" })
                 Assert.DoesNotContain(".GetAsync(", files[name + ".g.cs"]);
@@ -140,7 +143,7 @@ public static class PatchRefetchFixture
         var spec = new
         {
             openapi = "3.0.1",
-            info = new { title = "PATCH refetch transport regression", version = "1.0" },
+            info = new { title = "PATCH without implicit read-back regression", version = "1.0" },
             servers = new[] { new { url = "https://graph.microsoft.com/" + profile } },
             paths,
             components = new { schemas = new Dictionary<string, object> { ["microsoft.graph.widget"] = schema } },
@@ -160,7 +163,7 @@ public static class PatchRefetchFixture
             new OperationVariantGroup([new("PATCH", orphans + "/{orphanWidget-id}", "Root"),
                 new("PATCH", orphans + "/{orphanWidget-id}/orphanWidgets/{childWidget-id}", "Parent")], "Root"),
         };
-        var entries = groups.Select(group => GroupVariants(group, "Isolated PATCH refetch regression")).ToArray();
+        var entries = groups.Select(group => GroupVariants(group, "Isolated PATCH operation semantics regression")).ToArray();
         await new PowerShellWrapperGenerationService(document,
             new GeneratorConfig(ClientNamespace, Path.Combine(root, "Cmdlets"), UseCollisionData: false),
             NullLogger.Instance, profile, entries).GenerateAsync(CancellationToken.None);

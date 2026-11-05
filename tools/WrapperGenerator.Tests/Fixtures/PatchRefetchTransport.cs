@@ -29,6 +29,7 @@ namespace PatchRefetchTransport
     {
         public readonly List<CapturedRequest> Requests = new List<CapturedRequest>();
         public bool ReturnPatchBody;
+        public bool RejectGet;
         private static string Header(HttpRequestMessage request, string name)
         {
             IEnumerable<string> values;
@@ -44,6 +45,10 @@ namespace PatchRefetchTransport
                 Authorization = request.Headers.Authorization == null ? "" : request.Headers.Authorization.ToString()
             };
             Requests.Add(captured);
+            if (request.Method == HttpMethod.Get && RejectGet) {
+                captured.ResponseStatus = 403;
+                return new HttpResponseMessage(HttpStatusCode.Forbidden);
+            }
             if (request.Method == HttpMethod.Put || (request.Method.Method == "PATCH" && !ReturnPatchBody)) {
                 captured.ResponseStatus = 204;
                 return new HttpResponseMessage(HttpStatusCode.NoContent);
@@ -51,7 +56,7 @@ namespace PatchRefetchTransport
             captured.ResponseStatus = 200;
             return new HttpResponseMessage(HttpStatusCode.OK) {
                 Content = new StringContent(request.Method.Method == "PATCH"
-                    ? "{\"id\":\"patch-body\"}" : "{\"id\":\"refetched\"}", Encoding.UTF8, "application/json")
+                    ? "{\"id\":\"patch-body\"}" : "{\"id\":\"read-by-caller\"}", Encoding.UTF8, "application/json")
             };
         }
     }
