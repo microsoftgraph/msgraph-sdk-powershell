@@ -21,6 +21,14 @@ namespace Microsoft.Graph.PowerShell.Bookings
         public string BookingBusinessId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 1)]
         public string BookingAppointmentId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 2,
+            HelpMessage = "Value for the 'start' query parameter.")]
+        [ValidateNotNullOrEmpty]
+        public string QueryStart { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 3,
+            HelpMessage = "Value for the 'end' query parameter.")]
+        [ValidateNotNullOrEmpty]
+        public string QueryEnd { get; set; } = string.Empty;
 
         [Parameter(Mandatory = false)]
         public string? AdditionalInformation { get; set; }
@@ -287,7 +295,11 @@ namespace Microsoft.Graph.PowerShell.Bookings
                 WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
                 try
                 {
-                    result = client.Solutions.BookingBusinesses[BookingBusinessId].CalendarView[BookingAppointmentId].GetAsync().GetAwaiter().GetResult();
+                    result = client.Solutions.BookingBusinesses[BookingBusinessId].CalendarView[BookingAppointmentId].GetAsync(requestConfiguration =>
+                    {
+                        requestConfiguration.QueryParameters.Start = QueryStart;
+                        requestConfiguration.QueryParameters.End = QueryEnd;
+                    }).GetAwaiter().GetResult();
                 }
                 catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
                 {
