@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace WrapperGenerator;
 
-// The per-module values CmdletEmitter's templates need, so the emitter stays module-agnostic.
+// The module and resolved operation values CmdletEmitter's templates need.
 // ClientNamespace is whatever --namespace-name the module was generated with, for example
 // "Microsoft.Graph.PowerShell.Mail.Client".
-public sealed record EmitContext(string ClientNamespace)
+public sealed record EmitContext(string ClientNamespace, string ApiVersion = "v1.0")
 {
+    // Resolved per-operation inputs, not authored generator configuration.
+    internal IReadOnlyList<CmdletProperty> RequiredQueries { get; init; } = [];
+    internal IReadOnlyList<CmdletProperty> RefetchRequiredQueries { get; init; } = [];
+
     public string ModelsNamespace => $"{ClientNamespace}.Models";
 
     // The emitted cmdlets' own namespace: the client namespace with its trailing ".Client"
