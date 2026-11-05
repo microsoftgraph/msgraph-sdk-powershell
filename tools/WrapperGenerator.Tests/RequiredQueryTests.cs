@@ -340,8 +340,9 @@ public sealed class RequiredQueryTests
     {
         var document = await LoadFixture("required-queries.yml");
         KeepRoute(document, route);
-        var operation = document.Paths[route].Operations![HttpMethod.Get];
-        document.Paths[route].Operations = new Dictionary<HttpMethod, OpenApiOperation> { [HttpMethod.Get] = operation };
+        var item = (OpenApiPathItem)document.Paths[route];
+        var operation = item.Operations![HttpMethod.Get];
+        item.Operations = new Dictionary<HttpMethod, OpenApiOperation> { [HttpMethod.Get] = operation };
         operation.Parameters = [Query("$top", type: JsonSchemaType.Boolean)];
         var failure = await Assert.ThrowsAsync<InvalidOperationException>(() => Generate(document));
         Assert.Contains("Required query '$top' must be an integer", failure.Message);
