@@ -82,3 +82,11 @@ See the official
 [agent relationships](https://learn.microsoft.com/graph/api/resources/onpremisesagent?view=graph-rest-beta),
 [published command](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications/get-mgbetaonpremisepublishingprofileagentgroup?view=graph-powershell-beta),
 and [published count command](https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications/get-mgbetaonpremisepublishingprofileagentgroupcount?view=graph-powershell-beta).
+
+### PATCH results
+
+`Update-MgApplication` returns only the PATCH response: HTTP 204 succeeds without
+an object or automatic GET; HTTP 200 with a model returns that typed model without
+another request. Run `Get-MgApplication` explicitly when read-back is needed.
+GET permissions, headers and query inputs are independent of PATCH, and no new
+read-back switch is added. See the [wrapper PATCH contract](../../tools/WrapperGenerator/docs/patch-results.md).

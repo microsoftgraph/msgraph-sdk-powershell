@@ -449,6 +449,54 @@ public sealed class ApplicationsDirectiveMigrationTests
     }
 
     [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task ApplicationPatchReturnsOnlyItsOwnResultWithoutDependingOnSiblingGet(string profile, bool siblingGetPresent)
+    {
+        var settings = new OpenApiReaderSettings();
+        settings.AddYamlReader();
+        using var stream = File.OpenRead(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, "Applications.yml"));
+        var parsed = await OpenApiDocument.LoadAsync(stream, settings: settings,
+            cancellationToken: TestContext.Current.CancellationToken);
+        var document = Assert.IsType<OpenApiDocument>(parsed.Document);
+        const string path = "/applications/{application-id}";
+        foreach (var candidate in document.Paths.Keys.Where(p => p != path).ToArray())
+            document.Paths.Remove(candidate);
+        var item = document.Paths[path];
+        foreach (var method in item.Operations!.Keys.Where(m => m != HttpMethod.Patch &&
+            (!siblingGetPresent || m != HttpMethod.Get)).ToArray())
+            item.Operations.Remove(method);
+        var output = Path.Combine(Path.GetTempPath(), "applications-patch-tests", Guid.NewGuid().ToString("N"));
+        try
+        {
+            await new PowerShellWrapperGenerationService(document,
+                new GeneratorConfig("Microsoft.Graph.PowerShell.Applications.Client", output),
+                NullLogger.Instance, apiVersion: profile).GenerateAsync(TestContext.Current.CancellationToken);
+            var source = File.ReadAllText(Path.Combine(output, "UpdateMgApplication.g.cs"));
+            Assert.Contains("client.Applications[ApplicationId].PatchAsync(", source);
+            Assert.DoesNotContain(".GetAsync(", source);
+            Assert.DoesNotContain("if (result is null)", source);
+            Assert.Contains("if (result is not null)", source);
+            Assert.Contains("WriteObject(result)", source);
+            Assert.Contains("Models.Application))]", source);
+            Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", source);
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+            Assert.Contains("body.DisplayName = DisplayName", source);
+            Assert.Contains("body.Web = Web", source);
+            Assert.Single(Regex.Matches(source, @"ShouldProcess\("));
+            foreach (var unrequested in new[] { "PassThru", "ReadBack", "Refetch", "QueryId" })
+                Assert.DoesNotContain(unrequested, source);
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Theory]
     [InlineData("v1.0", "Test", "MgApplicationSynchronizationJobCredential")]
     [InlineData("beta", "Invoke", "MgApplicationSynchronizationJobValidateCredentials")]
     public void DerivedNamingUsesSeparateProfileContext(string profile, string verb, string noun)
