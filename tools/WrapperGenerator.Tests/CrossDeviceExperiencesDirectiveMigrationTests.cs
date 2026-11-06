@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -191,6 +192,24 @@ public sealed class CrossDeviceExperiencesDirectiveMigrationTests
                 Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
                 Assert.DoesNotContain("GetRequestAdapter()", source);
             }
+            var patches = sources.Where(source =>
+                source.Contains("[GraphRoute(\"PATCH\",", StringComparison.Ordinal)).ToArray();
+            Assert.NotEmpty(patches);
+            foreach (var source in patches)
+            {
+                Assert.DoesNotContain(".GetAsync(", source);
+                Assert.DoesNotContain("if (result is null)", source);
+                Assert.DoesNotContain("PassThru", source);
+                Assert.DoesNotContain("ReadBack", source);
+                Assert.DoesNotContain("Refetch", source);
+                Assert.Contains("if (result is not null)", source);
+                Assert.Contains("WriteObject(result);", source);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", source);
+                Assert.Single(Regex.Matches(source, @"\.PatchAsync\("));
+                Assert.Single(Regex.Matches(source, @"ShouldProcess\("));
+                Assert.True(source.IndexOf("ShouldProcess(", StringComparison.Ordinal)
+                    < source.IndexOf("var body", StringComparison.Ordinal));
+            }
             using var ledger = ReadLedger();
             var mapping = Assert.Single(ledger.RootElement.GetProperty("mappings").EnumerateArray());
             var profileMap = mapping.GetProperty("profiles").GetProperty(profile);
@@ -214,6 +233,43 @@ public sealed class CrossDeviceExperiencesDirectiveMigrationTests
         {
             if (Directory.Exists(output))
                 Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0", 0)]
+    [InlineData("beta", 2)]
+    public async Task RequiredQuerySelectionDoesNotReviveSuppressedCollectionDeletes(
+        string profile, int expectedRequiredQueries)
+    {
+        var document = await ReadSpecAsync(profile);
+        var required = new List<(HttpMethod Method, string Path, IOpenApiParameter Parameter)>();
+        foreach (var path in document.Paths)
+        {
+            foreach (var operation in path.Value.Operations!)
+            {
+                var effective = new Dictionary<(string?, ParameterLocation?), IOpenApiParameter>();
+                foreach (var parameter in path.Value.Parameters ?? [])
+                    effective[(parameter.Name, parameter.In)] = parameter;
+                foreach (var parameter in operation.Value.Parameters ?? [])
+                    effective[(parameter.Name, parameter.In)] = parameter;
+                foreach (var parameter in effective.Values.Where(parameter =>
+                    parameter.In == ParameterLocation.Query && parameter.Required))
+                    required.Add((operation.Key, path.Key, parameter));
+            }
+        }
+        Assert.Equal(expectedRequiredQueries, required.Count);
+        foreach (var query in required)
+        {
+            Assert.Equal(HttpMethod.Delete, query.Method);
+            Assert.Equal("@id", query.Parameter.Name);
+            Assert.Contains(query.Path, new[]
+            {
+                "/users/{user-id}/devices/{device-id}/registeredOwners/$ref",
+                "/users/{user-id}/devices/{device-id}/registeredUsers/$ref",
+            });
+            Assert.True(CmdletConfigurator.IsSuppressed(query.Method, query.Path,
+                new GeneratorConfig("Test.Client", "unused"), apiVersion: profile));
         }
     }
 
