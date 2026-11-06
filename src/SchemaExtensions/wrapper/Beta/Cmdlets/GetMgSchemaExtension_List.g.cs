@@ -93,6 +93,7 @@ namespace Microsoft.Graph.PowerShell.SchemaExtensions
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
 
