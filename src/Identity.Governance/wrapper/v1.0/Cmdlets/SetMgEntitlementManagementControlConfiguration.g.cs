@@ -83,7 +83,6 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 return;
             }
 
-
             if (result is not null)
                 WriteObject(result);
         }

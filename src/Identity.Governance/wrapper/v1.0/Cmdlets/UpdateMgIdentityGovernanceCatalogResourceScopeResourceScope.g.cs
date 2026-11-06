@@ -87,20 +87,6 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.IdentityGovernance.Catalogs[AccessPackageCatalogId].ResourceScopes[AccessPackageResourceScopeId].Resource.Scopes[AccessPackageResourceScopeId1].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, AccessPackageResourceScopeId1);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

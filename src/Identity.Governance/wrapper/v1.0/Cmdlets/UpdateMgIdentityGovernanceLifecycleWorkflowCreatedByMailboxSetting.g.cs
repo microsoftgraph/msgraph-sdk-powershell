@@ -105,20 +105,6 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.IdentityGovernance.LifecycleWorkflows.Workflows[WorkflowId].CreatedBy.MailboxSettings.GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, WorkflowId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
