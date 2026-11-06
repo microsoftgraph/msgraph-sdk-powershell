@@ -1,6 +1,6 @@
 {
   "scope": "Only src/Calendar/Calendar.md; global and profile-local directives are excluded. Parameter aliases/transforms and schema/response directives remain deferred.",
-  "prerequisite": "Reviewed inventory, curated verbs, natural-ID variants, required-path ID alignment, adapted Authentication #3891 and mandatory native query support #3882 are normally merged in powershell-v3 target 4eb3ca3e1e21ca163337f59ebbcfb9d1820a920d. The existing literal inventory schema still validates the complete 136/137-operation source set with unchanged Calendar specs and no reserved Legacy fields. Module tests preserve separate profile context and audit actual effective required-query contracts: each profile declares 60 required queries on 30 operations, of which eight surviving GET operations require the 16 string QueryStartDateTime/QueryEndDateTime inputs; the other 22 operations remain suppressed by reviewed source/derived configuration. No Calendar variant grouping or selector change is introduced. Fresh acceptance uses normally packaged adapted Authentication 2.41.2 and retains complete legacy proof.",
+  "prerequisite": "Reviewed inventory, curated verbs, natural-ID variants, required-path ID alignment, adapted Authentication #3891, mandatory query support #3882 and one-operation PATCH behavior #3886 are normally merged in powershell-v3 target 6475f3f5beb4908d39ea356db32bf1e0fd3273cb. Complete 136/137-operation source fidelity, all existing suppressions/names and the eight surviving required-range GET operations per profile remain unchanged. Module tests preserve separate profile context and mandate one typed PATCH call with no automatic GET or new readback switch: PATCH204 returns no object and PATCH200 returns only its actual typed model. Required GET inputs remain independent; no Calendar variant grouping or selector change is introduced. Fresh acceptance uses normally packaged adapted Authentication 2.41.2, retains full legacy proof and tests required-query, service-root and mutation safety contracts.",
   "specBlobs": {
     "v1.0": "9371766a3e422aec32ba2b68d096e2fd4d115042",
     "beta": "5baa13cd8fe2804cea0ecf4a59f7815728b55a67"
@@ -1662,5 +1662,5 @@
     "v1.0": "7103e6e3a02ff3a5b63e577910ea0863516b468c",
     "beta": "8b01cbfc54946d1e5f49a760c43eb2b1663811dc"
   },
-  "reviewedTargetCommit": "4eb3ca3e1e21ca163337f59ebbcfb9d1820a920d"
+  "reviewedTargetCommit": "6475f3f5beb4908d39ea356db32bf1e0fd3273cb"
 }

@@ -311,6 +311,55 @@ public sealed class CalendarDirectiveMigrationTests
     [Theory]
     [InlineData("v1.0")]
     [InlineData("beta")]
+    public async Task OrdinaryPatchKeepsItsTypedMutationWithoutAutomaticReadback(string profile)
+    {
+        var source = Spec(profile);
+        var subset = new OpenApiDocument { Info = source.Info, Components = source.Components, Paths = new OpenApiPaths() };
+        foreach (var path in new[] { "/users/{user-id}/events/{event-id}", "/groups/{group-id}/calendar/events/{event-id}" })
+        {
+            var original = source.Paths[path];
+            subset.Paths.Add(path, new OpenApiPathItem
+            {
+                Parameters = original.Parameters,
+                Operations = new Dictionary<HttpMethod, OpenApiOperation>
+                {
+                    [HttpMethod.Patch] = original.Operations![HttpMethod.Patch],
+                },
+            });
+        }
+        var output = Path.Combine(Path.GetTempPath(), "calendar-patch-contract-tests", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(output);
+        try
+        {
+            await new PowerShellWrapperGenerationService(subset, new GeneratorConfig("Test.Client", output),
+                NullLogger.Instance, apiVersion: profile).GenerateAsync(CancellationToken.None);
+            var files = Directory.GetFiles(output, "*.g.cs");
+            Assert.Equal(2, files.Length);
+            foreach (var file in files)
+            {
+                var text = File.ReadAllText(file);
+                Assert.Single(Regex.Matches(text, @"\.PatchAsync\("));
+                Assert.DoesNotContain(".GetAsync(", text);
+                Assert.DoesNotContain("re-fetch", text);
+                Assert.DoesNotContain("QueryStartDateTime", text);
+                Assert.DoesNotContain("QueryEndDateTime", text);
+                Assert.DoesNotContain("PassThru", text);
+                Assert.DoesNotContain("ReadBack", text);
+                Assert.Contains("SupportsShouldProcess = true", text);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", text);
+                Assert.Contains("if (result is not null)", text);
+                Assert.Contains("WriteObject(result)", text);
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", text);
+                Assert.Contains("body.Subject = Subject", text);
+                Assert.Contains("[OutputType(typeof(Test.Client.Models.Event))]", text);
+            }
+        }
+        finally { Directory.Delete(output, recursive: true); }
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
     public async Task TargetedGenerationUsesRealProfileOperationsAndPreservesNeighbors(string profile)
     {
         var source = Spec(profile);
