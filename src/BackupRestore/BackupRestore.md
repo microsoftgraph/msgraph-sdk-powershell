@@ -43,7 +43,8 @@ profile is excluded, and legacy `openApiDocs` is not a fallback.
 | beta | `openApiDocs_KiotaCompat\beta\BackupRestore.yml` | `4b2f3dcc294720dfae40768403fcbccfeb69c1b3` | 197 | 320 | `wrapper\Beta` |
 
 These blobs remain unchanged after normally merging `powershell-v3` at
-`844672d7c2238f6b29a208f9ba73fe28e9e29cef` (including #3891). They were first
+`6475f3f5beb4908d39ea356db32bf1e0fd3273cb` (including #3886). They were also
+unchanged at `844672d7c2238f6b29a208f9ba73fe28e9e29cef` (including #3891) and first
 reviewed at `08e409a6aa8fd48736b8f9a9199559f46fc0d1ad` (including #3849). The earlier
 reviewed blobs were `3748b0da077fe8f73e90bebc3f232411cacb49b2` and
 `631fb0e595bbfa8efb43de570ab10adfe1d2954a`, respectively. Compatible operation
@@ -87,6 +88,9 @@ not stored in `GeneratorConfig`; derived data is checked both on and off for
 each profile, including the v1.0-only action rename.
 Real-spec generation also checks that every emitted transport call receives
 its separate `v1.0` or `beta` context. This is not an authored profile filter.
+Every emitted PATCH is checked to issue only its mutation and never read back.
+Both real specifications have zero required query inputs; optional native
+OData inputs remain unchanged and GET-only inputs are not added to PATCH.
 The strict reviewed inventory must return zero directive rows for this module.
 
 Source tests alone are not end-to-end generation or compiled-module evidence.
@@ -103,8 +107,11 @@ normal authenticated factory pipeline and verify the emitted profile's service
 root without changing the shared client's BaseAddress. Earlier Authentication
 2.38.1 build/import logs remain historical evidence, not current acceptance.
 
-This audit does not fix the unmerged #3886 generic-header PATCH refetch change.
-The current service-app PATCH can refetch the selected item after a 204 response,
-but generic `-Headers` are not replayed on that GET. Transport evidence must
-report that limitation rather than equating source or WhatIf success with
-header/body/HTTP correctness.
+After the normally merged #3886 change, PATCH 204 succeeds without output after
+exactly one PATCH request and no automatic GET. A PATCH 200 model response is
+returned as its actual typed model, also without another request. Retrieval is
+a separate caller-explicit GET with independent headers, queries and errors;
+no PassThru, ReadBack or Refetch switch is introduced. Earlier refetch/header-loss
+reports remain historical, user-superseded evidence, not current failures.
+Fresh offline proof must configure GET to fail while verifying successful
+PATCH 204 and PATCH 200, and separately exercise caller-explicit retrieval.

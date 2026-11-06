@@ -167,10 +167,39 @@ public sealed class BackupRestoreDirectiveMigrationTests
                 Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
                 Assert.DoesNotContain("GetRequestAdapter()", source);
             }
+
+            var patches = sources.Where(source => source.Contains("[GraphRoute(\"PATCH\",")).ToArray();
+            Assert.NotEmpty(patches);
+            foreach (var source in patches)
+            {
+                Assert.Contains(".PatchAsync(", source);
+                Assert.DoesNotContain(".GetAsync(", source);
+                Assert.DoesNotContain("if (result is null)", source);
+                Assert.Contains("if (result is not null)", source);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", source);
+                Assert.DoesNotContain("PassThru", source);
+                Assert.DoesNotContain("Refetch", source);
+            }
         }
         finally
         {
             Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task RealSpecsHaveNoRequiredQueryInputs(string profile)
+    {
+        var document = await LoadSpecAsync(profile);
+        foreach (var path in document.Paths.Values)
+        {
+            Assert.DoesNotContain(path.Parameters ?? [],
+                parameter => parameter.In == ParameterLocation.Query && parameter.Required);
+            foreach (var operation in path.Operations!.Values)
+                Assert.DoesNotContain(operation.Parameters ?? [],
+                    parameter => parameter.In == ParameterLocation.Query && parameter.Required);
         }
     }
 
