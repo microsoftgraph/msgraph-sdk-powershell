@@ -149,20 +149,6 @@ namespace Microsoft.Graph.PowerShell.People
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Users[UserId].Profile.Languages[LanguageProficiencyId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, LanguageProficiencyId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

@@ -125,20 +125,6 @@ namespace Microsoft.Graph.PowerShell.People
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Users[UserId].Profile.Addresses[ItemAddressId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, ItemAddressId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
