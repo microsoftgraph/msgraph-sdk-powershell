@@ -1,0 +1,309 @@
+openapi: 3.0.4
+info:
+  title: Required query operation families
+  version: 1.0.0
+servers:
+  - url: https://graph.microsoft.com/beta
+paths:
+  /widgets:
+    parameters:
+      - { name: '$top', in: query, required: false, schema: { type: integer, format: int32 } }
+      - name: inherited
+        in: query
+        required: true
+        schema:
+          type: string
+    get:
+      operationId: widgets_list
+      parameters:
+        - { name: inherited, in: query, required: false, schema: { type: integer } }
+        - { name: '$top', in: query, required: true, schema: { type: integer, format: int32 } }
+        - { name: enabled, in: query, required: true, schema: { type: boolean } }
+        - { name: '$count', in: query, required: true, schema: { type: boolean } }
+        - { name: '$select', in: query, schema: { type: array, items: { type: string } } }
+        - { name: '$filter', in: query, schema: { type: string } }
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.widgetCollectionResponse'
+    post:
+      operationId: widgets_create
+      parameters:
+        - { name: tenantId, in: query, required: true, schema: { type: string } }
+        - { name: attempt, in: query, required: true, schema: { type: integer, format: int64 } }
+        - { name: force, in: query, required: true, schema: { type: boolean } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.widget'
+      responses:
+        '201':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.widget'
+  /widgets/{widget-id}:
+    get:
+      operationId: widgets_get
+      parameters:
+        - { name: view, in: query, required: true, schema: { type: string } }
+        - { name: '$select', in: query, schema: { type: array, items: { type: string } } }
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.widget'
+    patch:
+      operationId: widgets_update
+      parameters:
+        - { name: tenantId, in: query, required: true, schema: { type: string } }
+        - { name: If-Match, in: header, schema: { type: string } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.widget'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.widget'
+        '204':
+          description: Success
+    put:
+      operationId: widgets_replace
+      parameters:
+        - { name: tenantId, in: query, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.widget'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.widget'
+  /widgets/$count:
+    get:
+      operationId: widgets_count
+      parameters:
+        - { name: '$filter', in: query, required: true, schema: { type: string } }
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+  /widgets/{widget-id}/promote:
+    post:
+      operationId: widgets_promote
+      x-ms-docs-operation-type: action
+      parameters:
+        - { name: threshold, in: query, required: true, schema: { type: number, format: double } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+      responses:
+        '204':
+          description: Success
+  /widgets/{widget-id}/lookup(code='{code}'):
+    get:
+      operationId: widgets_lookup
+      x-ms-docs-operation-type: function
+      parameters:
+        - { name: locale, in: query, required: true, schema: { type: string } }
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.widget'
+  /widgets/{widget-id}/members/$ref:
+    parameters:
+      - { name: '@id', in: query, required: true, schema: { type: string } }
+      - { name: If-Match, in: header, schema: { type: string } }
+    delete:
+      operationId: widgets_delete_reference
+      responses:
+        '204':
+          description: Success
+    post:
+      operationId: widgets_add_reference
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.referenceCreate'
+      responses:
+        '204':
+          description: Success
+    put:
+      operationId: widgets_set_reference
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.referenceCreate'
+      responses:
+        '204':
+          description: Success
+  /widgets/{widget-id}/owner/$ref:
+    get:
+      operationId: widgets_get_owner_reference
+      parameters:
+        - { name: tenantId, in: query, required: true, schema: { type: string } }
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+  /widgets/{widget-id}/content:
+    parameters:
+      - { name: revision, in: query, required: true, schema: { type: integer } }
+    get:
+      operationId: widgets_content_get
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+    put:
+      operationId: widgets_content_set
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+  /widgets/delta():
+    get:
+      operationId: widgets_delta
+      x-ms-docs-operation-type: function
+      parameters:
+        - { name: tenantId, in: query, required: true, schema: { type: string } }
+        - { name: '$top', in: query, schema: { type: integer } }
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.widget'
+                  '@odata.nextLink':
+                    type: string
+                  '@odata.deltaLink':
+                    type: string
+  /queryTypes:
+    get:
+      operationId: queryTypes_get
+      parameters:
+        - { name: tenant-id, in: query, required: true, schema: { type: string } }
+        - { name: tenant.name, in: query, required: true, schema: { type: string } }
+        - { name: underscore_name, in: query, required: true, schema: { type: string } }
+        - { name: enabled, in: query, required: true, schema: { type: boolean } }
+        - { name: index, in: query, required: true, schema: { type: integer } }
+        - { name: size, in: query, required: true, schema: { type: integer, format: int64 } }
+        - { name: ratio, in: query, required: true, schema: { type: number } }
+        - { name: single, in: query, required: true, schema: { type: number, format: float } }
+        - { name: amount, in: query, required: true, schema: { type: number, format: decimal } }
+        - { name: guid, in: query, required: true, schema: { type: string, format: uuid } }
+        - { name: timestamp, in: query, required: true, schema: { type: string, format: date-time } }
+        - { name: day, in: query, required: true, schema: { type: string, format: date } }
+        - { name: clock, in: query, required: true, schema: { type: string, format: time } }
+        - { name: names, in: query, required: true, schema: { type: array, items: { type: string } } }
+        - { name: counts, in: query, required: true, schema: { type: array, items: { type: integer } } }
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.widget'
+  /selectedWidgets:
+    get:
+      operationId: selectedWidgets_get
+      parameters:
+        - { name: '$select', in: query, required: true, explode: false, schema: { type: array, items: { type: string } } }
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.widgetCollectionResponse'
+components:
+  schemas:
+    microsoft.graph.widget:
+      type: object
+      properties:
+        id:
+          type: string
+        displayName:
+          type: string
+        enabled:
+          type: boolean
+        detail:
+          $ref: '#/components/schemas/microsoft.graph.detail'
+    microsoft.graph.detail:
+      type: object
+      properties:
+        description:
+          type: string
+    microsoft.graph.widgetCollectionResponse:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.widget'
+        '@odata.nextLink':
+          type: string
+    microsoft.graph.referenceCreate:
+      type: object
+      properties:
+        '@odata.id':
+          type: string

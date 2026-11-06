@@ -105,7 +105,10 @@ public sealed class CompositeKeyTests
                     Assert.DoesNotContain("body.PolicyId = PolicyId;", source);
                     Assert.DoesNotContain("body.DeviceId = DeviceId;", source);
                     Assert.Contains("}, requestAdapter).PatchAsync(body,", source);
-                    Assert.Contains("}, requestAdapter).GetAsync()", source); // Re-fetch binds the same keys.
+                    Assert.DoesNotContain(".GetAsync(", source);
+                    Assert.DoesNotContain("if (result is null)", source);
+                    Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", source);
+                    Assert.Contains("if (result is not null)", source);
                 }
                 else
                     Assert.Contains(method == "GET" ? "}, requestAdapter).GetAsync(" : "}, requestAdapter).DeleteAsync(", source);

@@ -254,7 +254,7 @@ public sealed class MultiRouteTests
     }
 
     [Fact]
-    public async Task SharedVariantsEmitIdenticalSourcesWhenOnlyTheRunProfileChanges()
+    public async Task SharedVariantsKeepTheirContractAndUseTheRequestedRuntimeProfile()
     {
         var (document, group) = Widgets();
 
@@ -263,7 +263,8 @@ public sealed class MultiRouteTests
 
         Assert.Equal(v1.Keys.Order(), beta.Keys.Order());
         foreach (var file in v1)
-            Assert.Equal(file.Value, beta[file.Key]);
+            Assert.Equal(file.Value.Replace("GetRequestAdapter(\"v1.0\")", "GetRequestAdapter(\"beta\")",
+                StringComparison.Ordinal), beta[file.Key]);
     }
 
     [Theory]
