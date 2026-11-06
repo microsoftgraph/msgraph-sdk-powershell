@@ -258,7 +258,6 @@ public sealed partial class PowerShellWrapperGenerationService
                 ctx = ctx with
                 {
                     RequiredQueries = RequiredQueries(parameters, httpMethod.Method, pathTemplate),
-                    RefetchRequiredQueries = [],
                 };
 
                 // Only GET responses need inspecting: the list/item pairing is decided by the
@@ -388,17 +387,13 @@ public sealed partial class PowerShellWrapperGenerationService
                     continue;
                 }
 
-                if (httpMethod == HttpMethod.Patch && pathItem.Operations?.TryGetValue(HttpMethod.Get, out var refetch) == true)
-                    ctx = ctx with { RefetchRequiredQueries = RequiredQueries(
-                        EffectiveParameters(pathItem, refetch, pathTemplate), "GET", pathTemplate) };
                 if (httpMethod == HttpMethod.Delete && operation.RequestBody is not null && ctx.RequiredQueries.Count > 0)
                     throw new InvalidOperationException($"Required queries on a DELETE with a body are unsupported: {pathTemplate}.");
                 string? source = httpMethod switch
                 {
                     _ when httpMethod == HttpMethod.Delete => CmdletEmitter.EmitRemove(cmdletNaming, ctx),
                     _ when httpMethod == HttpMethod.Post => EmitNewFor(cmdletNaming, ctx, operation),
-                    _ when httpMethod == HttpMethod.Patch => EmitUpdateFor(cmdletNaming, ctx, operation,
-                        canReFetch: pathItem.Operations?.ContainsKey(HttpMethod.Get) == true),
+                    _ when httpMethod == HttpMethod.Patch => EmitUpdateFor(cmdletNaming, ctx, operation),
                     _ when httpMethod == HttpMethod.Put => EmitSetFor(cmdletNaming, ctx, operation),
                     _ => null,
                 };
@@ -479,7 +474,7 @@ public sealed partial class PowerShellWrapperGenerationService
 
             if (resume.Any(r => r.RequiredQueries.Count > 0))
                 throw new InvalidOperationException($"Required query inputs on a delta resume operation are unsupported; use the complete DeltaLink: {resume[0].PathTemplate}.");
-            var source = CmdletEmitter.EmitDelta(op.Naming, ctx with { RequiredQueries = op.RequiredQueries, RefetchRequiredQueries = [] },
+            var source = CmdletEmitter.EmitDelta(op.Naming, ctx with { RequiredQueries = op.RequiredQueries },
                 new CmdletEmitter.CallPlan(methodName, returnType, BodyTypeName: null, returnsStream),
                 op.QueryParams.ToHashSet(), deltaItemType);
             written += await writeCmdlet(op.Naming, source, cancellationToken).ConfigureAwait(false);
@@ -523,8 +518,8 @@ public sealed partial class PowerShellWrapperGenerationService
             // from (and reusing) the standalone shapes used for unpaired GETs.
             var internalListNaming = Naming.WithSuffix(listOp.Naming, "_List");
             var internalItemNaming = Naming.WithSuffix(itemOp.Naming, "_Get");
-            var listCtx = ctx with { RequiredQueries = listOp.RequiredQueries, RefetchRequiredQueries = [] };
-            var itemCtx = ctx with { RequiredQueries = itemOp.RequiredQueries, RefetchRequiredQueries = [] };
+            var listCtx = ctx with { RequiredQueries = listOp.RequiredQueries };
+            var itemCtx = ctx with { RequiredQueries = itemOp.RequiredQueries };
             var internalListSource = CmdletEmitter.EmitListGet(internalListNaming, listCtx, listEntityType, collectionResponseType, listOp.QueryParams.ToHashSet());
             var internalItemSource = CmdletEmitter.EmitItemGet(internalItemNaming, itemCtx, entityType, itemOp.QueryParams.ToHashSet());
 
@@ -544,7 +539,7 @@ public sealed partial class PowerShellWrapperGenerationService
         {
             if (consumed.Contains(op))
                 continue;
-            ctx = ctx with { RequiredQueries = op.RequiredQueries, RefetchRequiredQueries = [] };
+            ctx = ctx with { RequiredQueries = op.RequiredQueries };
 
             string? source;
             if (op.IsCollection)
@@ -876,7 +871,7 @@ public sealed partial class PowerShellWrapperGenerationService
 
     // PUT replaces a resource outright. Two shapes occur: a JSON body naming an entity (the
     // synchronization and secrets endpoints), which is the PATCH shape with PutAsync in place of
-    // PatchAsync and no re-fetch, and a binary body (logos, uploaded content), which kiota types
+    // PatchAsync, and a binary body (logos, uploaded content), which kiota types
     // as Stream and which takes -InFile like any other content write.
     private string? EmitSetFor(CmdletNaming naming, EmitContext ctx, OpenApiOperation operation)
     {
@@ -895,7 +890,7 @@ public sealed partial class PowerShellWrapperGenerationService
             return null;
         var (properties, complex, untyped) = BindBodyProperties(bodySchema, ctx, naming, entityType);
         return CmdletEmitter.EmitUpdate(naming, ctx, entityType, properties, complex, untyped,
-            reFetchAfterUpdate: false, httpMethodName: "PutAsync");
+            httpMethodName: "PutAsync");
     }
 
     // True when the request body is declared only as a non-JSON media type, which kiota types as
@@ -924,7 +919,7 @@ public sealed partial class PowerShellWrapperGenerationService
         return CmdletEmitter.EmitNew(naming, ctx, entityType, properties, complex, untyped);
     }
 
-    private string? EmitUpdateFor(CmdletNaming naming, EmitContext ctx, OpenApiOperation operation, bool canReFetch)
+    private string? EmitUpdateFor(CmdletNaming naming, EmitContext ctx, OpenApiOperation operation)
     {
         // "application/json" is an intentional, Graph-scoped assumption (see EmitNewFor).
         var bodySchema = TryGetRequestJsonSchema(operation);
@@ -933,7 +928,7 @@ public sealed partial class PowerShellWrapperGenerationService
         if (!TryResolveEntityTypeName(bodySchema, ctx.ModelsNamespace, out var entityType))
             return null;
         var (properties, complex, untyped) = BindBodyProperties(bodySchema, ctx, naming, entityType);
-        return CmdletEmitter.EmitUpdate(naming, ctx, entityType, properties, complex, untyped, canReFetch);
+        return CmdletEmitter.EmitUpdate(naming, ctx, entityType, properties, complex, untyped);
     }
 
     // Classifies a request body and resolves each complex property's component-schema key to

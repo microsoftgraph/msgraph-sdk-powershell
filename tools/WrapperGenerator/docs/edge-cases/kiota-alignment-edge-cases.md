@@ -113,12 +113,13 @@ others exist.
 - **Migration impact:** content-download cmdlets (`Get-...Content`) are not generated yet;
   tracked with the operation-shapes work.
 
-## PATCH-only resources have no GetAsync to re-fetch
+## PATCH result handling does not depend on GetAsync
 
 - **Class:** kiota-builder-shape
 - **Status:** handled (pinned test)
-- **Evidence:** Update cmdlets re-fetch after a bodiless 204; `/places/{place-id}` has no
-  GET, so the builder has no `GetAsync` and `Update-MgPlace` did not compile (Calendar).
-- **Decision:** emit the re-fetch only when the path declares a GET; otherwise a bodiless
-  204 returns nothing — matching the published SDK's Update behavior.
+- **Evidence:** The former automatic read-back required a sibling GET; PATCH-only
+  `/places/{place-id}` has no `GetAsync`, so that earlier implementation could not compile.
+- **Decision:** never issue an automatic GET after PATCH. A 204 success returns no
+  object, and a non-null PATCH response model is returned unchanged. A caller can issue
+  a separate explicit GET when desired, independent of mutation query/response handling.
 - **Migration impact:** none vs the published SDK.
