@@ -93,6 +93,7 @@ namespace Microsoft.Graph.PowerShell.ChangeNotifications
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
 
