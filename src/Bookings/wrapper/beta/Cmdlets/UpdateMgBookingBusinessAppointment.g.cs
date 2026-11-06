@@ -263,7 +263,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
         body.Start = Start;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Bookings.Client.Models.BookingAppointment? result;
@@ -281,20 +281,6 @@ namespace Microsoft.Graph.PowerShell.Bookings
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Solutions.BookingBusinesses[BookingBusinessId].Appointments[BookingAppointmentId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, BookingAppointmentId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

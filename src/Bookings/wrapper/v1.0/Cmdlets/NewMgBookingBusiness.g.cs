@@ -110,7 +110,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
         body.SchedulingPolicy = SchedulingPolicy;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Bookings.Client.Models.BookingBusiness? result;

@@ -261,7 +261,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
         body.StartDateTime = StartDateTime;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventSession? result;
