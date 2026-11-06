@@ -4,8 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -27,6 +29,17 @@ public sealed class ChangeNotificationsDirectiveMigrationTests
     private static JsonDocument ReadAudit(string root) =>
         JsonDocument.Parse(File.ReadAllText(Path.Combine(root, "src", "ChangeNotifications", "wrapper",
             "ChangeNotifications_directiveMigrationMap.json")));
+
+    private static async Task<OpenApiDocument> ReadCompatibleSpecAsync(string root, string profile)
+    {
+        var settings = new OpenApiReaderSettings();
+        settings.AddYamlReader();
+        using var stream = File.OpenRead(Path.Combine(root, "openApiDocs_KiotaCompat", profile,
+            "ChangeNotifications.yml"));
+        var result = await OpenApiDocument.LoadAsync(stream, settings: settings,
+            cancellationToken: CancellationToken.None);
+        return Assert.IsType<OpenApiDocument>(result.Document);
+    }
 
     [Fact]
     public void EmptySharedSourceHasAnHonestAuditWithoutOverrides()
@@ -60,13 +73,7 @@ public sealed class ChangeNotificationsDirectiveMigrationTests
         var evidence = ledger.RootElement.GetProperty("audit").GetProperty("profiles").GetProperty(profile);
         Assert.Equal($"openApiDocs_KiotaCompat/{profile}/ChangeNotifications.yml",
             evidence.GetProperty("spec").GetString());
-        var settings = new OpenApiReaderSettings();
-        settings.AddYamlReader();
-        using var stream = File.OpenRead(Path.Combine(root, "openApiDocs_KiotaCompat", profile,
-            "ChangeNotifications.yml"));
-        var result = await OpenApiDocument.LoadAsync(stream, settings: settings,
-            cancellationToken: CancellationToken.None);
-        var document = Assert.IsType<OpenApiDocument>(result.Document);
+        var document = await ReadCompatibleSpecAsync(root, profile);
         const int expectedCount = 7;
         Assert.Equal(expectedCount, document.Paths.Sum(path => path.Value.Operations!.Count));
         var operations = evidence.GetProperty("operations").EnumerateArray().ToArray();
@@ -116,6 +123,57 @@ public sealed class ChangeNotificationsDirectiveMigrationTests
                 ? "Invoke-MgReauthorizeSubscription"
                 : expected.Command;
             Assert.Equal(configuredName, $"{configured.VerbName}-{configured.Noun}");
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0", true)]
+    [InlineData("v1.0", false)]
+    [InlineData("beta", true)]
+    [InlineData("beta", false)]
+    public async Task SubscriptionPatchEmitsOneMutationAndOnlyItsOwnInputs(string profile, bool useCollisionData)
+    {
+        var document = await ReadCompatibleSpecAsync(FindRepoRoot(), profile);
+        const string itemPath = "/subscriptions/{subscription-id}";
+        var item = document.Paths[itemPath];
+        Assert.Contains(HttpMethod.Get, item.Operations!.Keys);
+        Assert.Contains(HttpMethod.Patch, item.Operations.Keys);
+        Assert.DoesNotContain(item.Operations[HttpMethod.Patch].Parameters ?? [],
+            parameter => parameter.In == ParameterLocation.Query);
+
+        var output = Path.Combine(Path.GetTempPath(), $"changenotifications-patch-{Guid.NewGuid():N}");
+        try
+        {
+            var config = new GeneratorConfig("Microsoft.Graph.PowerShell.Test.Client", output,
+                UseCollisionData: useCollisionData);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance,
+                apiVersion: profile).GenerateAsync(TestContext.Current.CancellationToken);
+
+            var source = await File.ReadAllTextAsync(Path.Combine(output, "UpdateMgSubscription.g.cs"),
+                TestContext.Current.CancellationToken);
+            Assert.Single(Regex.Matches(source, @"\.PatchAsync\("));
+            Assert.DoesNotContain(".GetAsync(", source);
+            Assert.DoesNotContain("re-fetch", source, StringComparison.OrdinalIgnoreCase);
+            Assert.DoesNotContain("if (result is null)", source);
+            Assert.Contains("if (result is not null)", source);
+            Assert.Contains("WriteObject(result)", source);
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+            Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", source);
+            Assert.Contains("SupportsShouldProcess = true", source);
+            Assert.Contains("ShouldProcess(SubscriptionId, \"Update\")", source);
+            Assert.Contains("body.ClientState = ClientState", source);
+            Assert.Contains("Models.Subscription", source);
+            Assert.DoesNotContain("public string[]? Property", source);
+            Assert.DoesNotContain("public int Top", source);
+            Assert.DoesNotContain("QueryId", source);
+            Assert.DoesNotContain("PassThru", source);
+            Assert.DoesNotContain("ReadBack", source);
+            Assert.DoesNotContain("Refetch", source);
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
         }
     }
 }

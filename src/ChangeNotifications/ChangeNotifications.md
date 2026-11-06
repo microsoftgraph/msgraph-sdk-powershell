@@ -51,3 +51,10 @@ profiles with derived data enabled and disabled. The profile is separate runtime
 context on naming/suppression calls, not authored `GeneratorConfig` state.
 Full generation/build evidence is a separate gate; existing tracked
 output directories are `wrapper/v1.0` and `wrapper/Beta`.
+
+The module-specific mutation regression also pins the merged #3886 contract:
+`Update-MgSubscription` sends one PATCH and does not read the subscription back.
+A 204 response produces no object; a model-bearing 200 returns that model.
+Callers may explicitly use `Get-MgSubscription` for an independent read. The
+PATCH operation has no native query inputs, so GET-only parameters are not
+added to Update and no readback switch or selector is introduced.
