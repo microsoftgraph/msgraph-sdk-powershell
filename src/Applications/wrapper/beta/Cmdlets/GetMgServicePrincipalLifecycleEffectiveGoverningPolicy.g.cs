@@ -1,0 +1,66 @@
+#nullable enable
+
+using System;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Applications.Client;
+using Microsoft.Graph.PowerShell.Applications.Client.Models;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Applications
+{
+    [GraphRoute("GET", "/servicePrincipals/{servicePrincipal-id}/lifecycle/effectiveGoverningPolicy")]
+    [Cmdlet(VerbsCommon.Get, "MgServicePrincipalLifecycleEffectiveGoverningPolicy")]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.IdentityGovernance.LifecyclePolicy))]
+    public class GetMgServicePrincipalLifecycleEffectiveGoverningPolicyCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string ServicePrincipalId { get; set; } = string.Empty;
+
+
+
+        [Parameter(Mandatory = false)]
+        [Alias("Select")]
+        public string[]? Property { get; set; }
+        [Parameter(Mandatory = false)]
+        [Alias("Expand")]
+        public string[]? ExpandProperty { get; set; }
+
+
+
+        protected override void ProcessRecord()
+        {
+
+        var requestAdapter = GetRequestAdapter("beta");
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.Applications.Client.Models.IdentityGovernance.LifecyclePolicy? result;
+            try
+            {
+                result = client.ServicePrincipals[ServicePrincipalId].Lifecycle.EffectiveGoverningPolicy.GetAsync(requestConfiguration =>
+                {
+                    if (this.IsParameterBound(nameof(Property)))
+                        requestConfiguration.QueryParameters.Select = Property;
+
+                    if (this.IsParameterBound(nameof(ExpandProperty)))
+                        requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
+
+
+
+        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, ServicePrincipalId);
+                return;
+            }
+
+            WriteObject(result);
+        }
+    }
+}

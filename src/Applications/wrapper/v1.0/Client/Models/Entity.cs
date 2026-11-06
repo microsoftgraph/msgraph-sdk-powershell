@@ -206,6 +206,7 @@ namespace Microsoft.Graph.PowerShell.Applications.Client.Models
                 "#microsoft.graph.printTaskTrigger" => new global::Microsoft.Graph.PowerShell.Applications.Client.Models.PrintTaskTrigger(),
                 "#microsoft.graph.profilePhoto" => new global::Microsoft.Graph.PowerShell.Applications.Client.Models.ProfilePhoto(),
                 "#microsoft.graph.remoteDesktopSecurityConfiguration" => new global::Microsoft.Graph.PowerShell.Applications.Client.Models.RemoteDesktopSecurityConfiguration(),
+                "#microsoft.graph.resourceAccountKeyAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Applications.Client.Models.ResourceAccountKeyAuthenticationMethod(),
                 "#microsoft.graph.resourceSpecificPermissionGrant" => new global::Microsoft.Graph.PowerShell.Applications.Client.Models.ResourceSpecificPermissionGrant(),
                 "#microsoft.graph.richLongRunningOperation" => new global::Microsoft.Graph.PowerShell.Applications.Client.Models.RichLongRunningOperation(),
                 "#microsoft.graph.schedule" => new global::Microsoft.Graph.PowerShell.Applications.Client.Models.Schedule(),

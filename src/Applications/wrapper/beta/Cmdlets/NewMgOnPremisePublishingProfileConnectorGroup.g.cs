@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.Applications
         body.Region = Region;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Applications.Client.Models.ConnectorGroup? result;

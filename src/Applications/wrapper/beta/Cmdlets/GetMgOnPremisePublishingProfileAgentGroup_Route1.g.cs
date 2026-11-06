@@ -12,15 +12,15 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Applications
 {
-    [GraphRoute("GET", "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}")]
-    [Cmdlet(VerbsCommon.Get, "MgServicePrincipalFederatedIdentityCredential_Get")]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.FederatedIdentityCredential))]
-    public class GetMgServicePrincipalFederatedIdentityCredential_GetCommand : GraphClientCmdlet
+    [GraphRoute("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}")]
+    [Cmdlet(VerbsCommon.Get, "MgOnPremisePublishingProfileAgentGroup_Route1")]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Applications.Client.Models.OnPremisesAgentGroup))]
+    public class GetMgOnPremisePublishingProfileAgentGroup_Route1Command : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
-        public string ServicePrincipalId { get; set; } = string.Empty;
+        public string OnPremisesPublishingProfileId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 1)]
-        public string FederatedIdentityCredentialId { get; set; } = string.Empty;
+        public string OnPremisesAgentGroupId { get; set; } = string.Empty;
 
 
 
@@ -36,13 +36,13 @@ namespace Microsoft.Graph.PowerShell.Applications
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
-            Microsoft.Graph.PowerShell.Applications.Client.Models.FederatedIdentityCredential? result;
+            Microsoft.Graph.PowerShell.Applications.Client.Models.OnPremisesAgentGroup? result;
             try
             {
-                result = client.ServicePrincipals[ServicePrincipalId].FederatedIdentityCredentials[FederatedIdentityCredentialId].GetAsync(requestConfiguration =>
+                result = client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].AgentGroups[OnPremisesAgentGroupId].GetAsync(requestConfiguration =>
                 {
                     if (this.IsParameterBound(nameof(Property)))
                         requestConfiguration.QueryParameters.Select = Property;
@@ -52,12 +52,13 @@ namespace Microsoft.Graph.PowerShell.Applications
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, FederatedIdentityCredentialId);
+                ThrowGraphRequestFailed(ex, OnPremisesAgentGroupId);
                 return;
             }
 

@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Applications
         body.PublishingType = PublishingType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Applications.Client.Models.PublishedResource? result;
@@ -73,20 +73,6 @@ namespace Microsoft.Graph.PowerShell.Applications
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].AgentGroups[OnPremisesAgentGroupId].PublishedResources[PublishedResourceId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, PublishedResourceId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
