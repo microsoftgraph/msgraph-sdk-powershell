@@ -77,6 +77,18 @@ Runtime acceptance uses the normally packaged adapted Authentication 2.41.2,
 fresh full beta generation and normal-manifest imports, not earlier 2.38.1 proof.
 The v1.0 compatible-spec exclusion and all shared-source scope remain unchanged.
 
+After normal integration of #3886 at
+`6475f3f5beb4908d39ea356db32bf1e0fd3273cb`, all 11 supported PATCH workers
+return only their own response: 204 succeeds with no output and no automatic
+GET; a returned model is emitted without readback. Retrieval remains a separate
+caller-explicit GET, without a new switch. The real-beta tests pin this emitted
+contract, retained headers/output metadata/ShouldProcess, and all actual query
+declarations (including inherited parameters): only optional standard OData
+queries on GET operations. No required query or PATCH-native query exists in
+this compatible spec, and GET-only inputs must not appear on PATCH.
+Earlier refetch-model/header-loss proofs are historical and superseded, not
+remaining acceptance failures for the new contract.
+
 ### Scope and deferred classes
 
 All profile-local readmes, including `beta\readme.md` and any

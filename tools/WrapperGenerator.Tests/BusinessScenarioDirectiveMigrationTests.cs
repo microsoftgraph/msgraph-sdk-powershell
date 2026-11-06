@@ -98,12 +98,48 @@ public sealed class BusinessScenarioDirectiveMigrationTests
                 Assert.DoesNotContain("GetRequestAdapter()", source);
                 Assert.DoesNotContain("GetRequestAdapter(\"v1.0\")", source);
             });
+
+            var patches = sources.Where(source => source.Contains(".PatchAsync(")).ToArray();
+            Assert.Equal(11, patches.Length);
+            Assert.All(patches, source =>
+            {
+                Assert.DoesNotContain(".GetAsync(", source);
+                Assert.DoesNotContain("if (result is null)", source);
+                Assert.DoesNotContain("QueryParameters", source);
+                Assert.DoesNotContain("PassThru", source);
+                Assert.DoesNotContain("ReadBack", source);
+                Assert.DoesNotContain("Refetch", source);
+                Assert.Contains("if (result is not null)", source);
+                Assert.Contains("WriteObject(result);", source);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", source);
+                Assert.Contains("SupportsShouldProcess = true", source);
+                Assert.Contains("[OutputType(typeof(", source);
+            });
         }
         finally
         {
             if (Directory.Exists(output))
                 Directory.Delete(output, recursive: true);
         }
+    }
+
+    [Fact]
+    public void NativeQueryContractsRemainOptionalAndGetOnly()
+    {
+        var queries = BetaDocument.Value.Paths.Values
+            .SelectMany(item => item.Operations!.SelectMany(operation =>
+                (item.Parameters ?? []).Concat(operation.Value.Parameters ?? [])
+                    .Where(parameter => parameter.In == ParameterLocation.Query)
+                    .Select(parameter => (Method: operation.Key, Parameter: parameter))))
+            .ToArray();
+        Assert.NotEmpty(queries);
+        Assert.All(queries, query =>
+        {
+            Assert.Equal(HttpMethod.Get, query.Method);
+            Assert.False(query.Parameter.Required);
+        });
+        Assert.Equal(new[] { "$count", "$expand", "$filter", "$orderby", "$search", "$select", "$skip", "$top" },
+            queries.Select(query => query.Parameter.Name!).Distinct().OrderBy(name => name, StringComparer.Ordinal));
     }
 
     private static OpenApiDocument LoadBetaDocument()
