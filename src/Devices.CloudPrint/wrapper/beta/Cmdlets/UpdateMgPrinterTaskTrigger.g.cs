@@ -67,20 +67,6 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Print.Printers[PrinterId].TaskTriggers[PrintTaskTriggerId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, PrintTaskTriggerId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
