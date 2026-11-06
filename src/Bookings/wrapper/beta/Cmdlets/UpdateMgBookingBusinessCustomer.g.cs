@@ -89,20 +89,6 @@ namespace Microsoft.Graph.PowerShell.Bookings
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Solutions.BookingBusinesses[BookingBusinessId].Customers[BookingCustomerId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, BookingCustomerId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
