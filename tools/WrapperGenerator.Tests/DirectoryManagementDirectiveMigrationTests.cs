@@ -302,6 +302,52 @@ public sealed class DirectoryManagementDirectiveMigrationTests
         }
     }
 
+    [Theory]
+    [InlineData("v1.0", true)]
+    [InlineData("v1.0", false)]
+    [InlineData("beta", true)]
+    [InlineData("beta", false)]
+    public async Task ActualContactAndSettingPatchSourcesNeverAddImplicitReadback(string profile, bool derived)
+    {
+        var document = await ReadSpec(RepoRoot(), "openApiDocs_KiotaCompat", profile);
+        var selected = new[] { "/contacts/{orgContact-id}", "/settings/{directorySetting-id}" }
+            .Where(document.Paths.ContainsKey).ToArray();
+        Assert.Equal(profile == "beta" ? 2 : 1, selected.Length);
+        foreach (var path in document.Paths.Keys.Except(selected).ToArray())
+            document.Paths.Remove(path);
+        foreach (var path in selected)
+            foreach (var method in document.Paths[path].Operations!.Keys.Where(m => m != HttpMethod.Patch).ToArray())
+                document.Paths[path].Operations!.Remove(method);
+        var output = Path.Combine(Path.GetTempPath(), "directory-management-patch-results-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            var config = new GeneratorConfig("Test.Client", output, derived);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(CancellationToken.None);
+            Assert.Equal(selected.Length, Directory.GetFiles(output, "*.g.cs").Length);
+            foreach (var path in selected)
+            {
+                var naming = Naming.Resolve(new OperationInfo(HttpMethod.Patch, path), config, apiVersion: profile);
+                var source = File.ReadAllText(Path.Combine(output, naming.ClassName[..^"Command".Length] + ".g.cs"));
+                Assert.Contains($"[GraphRoute(\"PATCH\", \"{path}\")]", source);
+                Assert.Contains(".PatchAsync(body,", source);
+                Assert.DoesNotContain(".GetAsync(", source);
+                Assert.DoesNotContain("public SwitchParameter PassThru", source);
+                Assert.DoesNotContain("public SwitchParameter ReadBack", source);
+                Assert.DoesNotContain("public SwitchParameter Refetch", source);
+                Assert.Contains("if (result is not null)", source);
+                Assert.Contains("WriteObject(result);", source);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", source);
+                Assert.Contains("body.DisplayName = DisplayName", source);
+            }
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
     private static string RepoRoot()
     {
         var root = new DirectoryInfo(AppContext.BaseDirectory);
