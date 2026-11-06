@@ -214,3 +214,23 @@ four-mutex full build queue, isolated Kiota `1.36.1`/parallelism 1 and exact
 physical adapted Auth `2.41.2` package whose 64 hashes and nupkg SHA match above.
 No unmerged #3881 fix, optional-query expansion or other-owner changes are
 included. This is offline behavior proof, not tenant/service certification.
+
+Final current-target outcomes (Global and USGov each run in a fresh process):
+
+| Gate | v1.0 | beta |
+| --- | --- | --- |
+| Full clean, queued Release generation | Exit 0, `OK`, 324.60 seconds | Exit 0, `OK`, 121.00 seconds |
+| Normal exports / exact distinct routes | 72 / all 63 | 166 / all 145 |
+| Real factory acceptance per cloud | Exit 0, `PASS`, 147 assertions, 19 HTTP requests | Exit 0, `PASS`, 206 assertions, 25 HTTP requests |
+| Genuine declined confirmations per cloud | 5 prompts, zero mutation HTTP | 6 prompts, zero mutation HTTP |
+| Raw unnormalized oracle parity | Exit 1, 71 matched / 1 mismatch | Exit 1, 164 mismatches / 2 no-oracle |
+
+The final combined test command adds `RequiredQueryTests` and
+`PatchOperationTests` to the Search/configurator/naming filter and passes
+164/164 actual executed TRX tests, with zero failed or not executed. Ordinary
+strict inventory still returns zero rows and empty mappings. The v1.0 and beta
+combined generation commits retain byte-identical clients/projects/locks;
+normal generated GET query metadata and PATCH no-readback sources account for
+the actual deltas. There is no remaining implicit-GET header blocker under
+the new contract. Original failures and earlier target reports remain historical,
+not relabeled as this fresh positive proof.
