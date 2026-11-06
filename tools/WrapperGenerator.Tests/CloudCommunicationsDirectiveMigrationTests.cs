@@ -100,6 +100,15 @@ public sealed class CloudCommunicationsDirectiveMigrationTests
                 Assert.Contains($"GetRequestAdapter(\"{profile}\")", source, StringComparison.Ordinal);
                 Assert.DoesNotContain("GetRequestAdapter()", source, StringComparison.Ordinal);
             });
+            Assert.All(files.Values.Where(source => source.Contains("[GraphRoute(\"PATCH\",", StringComparison.Ordinal)), source =>
+            {
+                Assert.DoesNotContain(".GetAsync(", source, StringComparison.Ordinal);
+                Assert.DoesNotContain("if (result is null)", source, StringComparison.Ordinal);
+                Assert.DoesNotContain("ReadBack", source, StringComparison.Ordinal);
+                Assert.DoesNotContain("Refetch", source, StringComparison.Ordinal);
+                if (source.Contains("? result;", StringComparison.Ordinal))
+                    Assert.Contains("if (result is not null)", source, StringComparison.Ordinal);
+            });
             foreach (var (parent, scope) in new[]
             {
                 ("/communications/onlineMeetings/{onlineMeeting-id}", "Communication"),

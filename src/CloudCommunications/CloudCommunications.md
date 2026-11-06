@@ -52,6 +52,11 @@ The existing emitter still skips the two binary `/recording` PUT operations with
 bodyless success responses. Their typed client routes remain generated; this
 migration neither suppresses them nor claims new upload-cmdlet support.
 
+PATCH commands now return only their own operation result: a successful 204
+produces no object and never triggers an automatic GET; a 200 model response is
+returned directly. Call the corresponding GET explicitly when a read is wanted.
+PATCH query inputs belong only to that mutation, not its neighboring GET.
+
 ``` yaml
 directive:
 # Remove invalid paths.
