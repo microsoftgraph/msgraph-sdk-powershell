@@ -65,7 +65,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.UserInputType = UserInputType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.IdentityUserFlowAttributeAssignment? result;
@@ -83,20 +83,6 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Identity.B2xUserFlows[B2xIdentityUserFlowId].UserAttributeAssignments[IdentityUserFlowAttributeAssignmentId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, IdentityUserFlowAttributeAssignmentId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
