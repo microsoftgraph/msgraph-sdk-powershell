@@ -177,6 +177,27 @@ public sealed class UsersActionsDirectiveMigrationTests
     }
 
     [Theory]
+    [InlineData("v1.0", 20)]
+    [InlineData("beta", 33)]
+    public void WholeModuleContainsOnlyPostActionsAndNoPatchOrQueryInputs(string profile, int operationCount)
+    {
+        var document = LoadSpec("openApiDocs_KiotaCompat", profile);
+        Assert.Equal(operationCount, document.Paths.Sum(p => p.Value.Operations!.Count));
+        foreach (var item in document.Paths.Values)
+        {
+            foreach (var parameter in item.Parameters ?? [])
+                Assert.Equal(ParameterLocation.Path, parameter.In);
+            foreach (var (method, operation) in item.Operations!)
+            {
+                Assert.Equal(HttpMethod.Post, method);
+                AssertAction(operation);
+                foreach (var parameter in operation.Parameters ?? [])
+                    Assert.Equal(ParameterLocation.Path, parameter.In);
+            }
+        }
+    }
+
+    [Theory]
     [InlineData("v1.0", true, 17)]
     [InlineData("v1.0", false, 20)]
     [InlineData("beta", true, 33)]
