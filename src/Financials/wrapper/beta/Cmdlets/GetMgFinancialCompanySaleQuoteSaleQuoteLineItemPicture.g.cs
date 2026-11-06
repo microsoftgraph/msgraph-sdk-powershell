@@ -25,6 +25,7 @@ namespace Microsoft.Graph.PowerShell.Financials
 
 
 
+
         [Parameter(Mandatory = false)]
         [Alias("Select")]
         public string[]? Property { get; set; }
