@@ -21,6 +21,53 @@ public sealed class FilesDirectiveMigrationTests
     private const string SharedListCollection = "/shares/{sharedDriveItem-id}/list/items";
 
     [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task ActualFilesPatchDoesNotRequireSiblingGetOrEmitReadback(string profile)
+    {
+        var settings = new OpenApiReaderSettings();
+        settings.AddYamlReader();
+        using var stream = File.OpenRead(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, "Files.yml"));
+        var loaded = await OpenApiDocument.LoadAsync(stream, settings: settings, cancellationToken: CancellationToken.None);
+        var document = Assert.IsType<OpenApiDocument>(loaded.Document);
+        const string route = "/drives/{drive-id}/items/{driveItem-id}";
+        var requiredQueries = document.Paths.SelectMany(path =>
+            (path.Value.Operations ?? new Dictionary<HttpMethod, OpenApiOperation>()).SelectMany(operation =>
+                (path.Value.Parameters ?? []).Concat(operation.Value.Parameters ?? [])
+                    .Where(parameter => parameter.In == ParameterLocation.Query && parameter.Required)
+                    .Select(parameter => $"{operation.Key} {path.Key} {parameter.Name}"))).ToArray();
+        Assert.Empty(requiredQueries);
+        foreach (var path in document.Paths.Keys.ToArray())
+            if (path != route)
+                document.Paths.Remove(path);
+        var operations = document.Paths[route].Operations ?? throw new InvalidOperationException("Expected actual Files item operations.");
+        foreach (var method in operations.Keys.ToArray())
+            if (method != HttpMethod.Patch)
+                operations.Remove(method);
+        var output = Path.Combine(Path.GetTempPath(), "files-patch-contract-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            await new PowerShellWrapperGenerationService(document,
+                new GeneratorConfig("Microsoft.Graph.PowerShell.Files.Client", output),
+                NullLogger.Instance, apiVersion: profile).GenerateAsync(CancellationToken.None);
+            var source = File.ReadAllText(Path.Combine(output, "UpdateMgDriveItem.g.cs"));
+            Assert.Contains("PatchAsync(body", source);
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+            Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", source);
+            Assert.Contains("if (result is not null)", source);
+            Assert.DoesNotContain("GetAsync", source);
+            Assert.DoesNotContain("re-fetch", source);
+            Assert.DoesNotContain("ReadBack", source);
+            Assert.DoesNotContain("QueryStart", source);
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Theory]
     [InlineData("v1.0", 10, 46)]
     [InlineData("beta", 56, 216)]
     public void OriginalLegacySelectorSurvivorsEqualCurrentLiteralSelection(string profile, int survivors, int removals)
