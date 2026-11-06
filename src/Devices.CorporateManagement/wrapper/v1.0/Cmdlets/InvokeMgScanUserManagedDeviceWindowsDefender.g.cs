@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
     if (this.IsParameterBound(nameof(QuickScan)))
         body.QuickScan = QuickScan;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

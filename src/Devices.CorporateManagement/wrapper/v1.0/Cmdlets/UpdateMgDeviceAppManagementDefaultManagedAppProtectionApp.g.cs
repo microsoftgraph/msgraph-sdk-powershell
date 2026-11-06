@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
         body.MobileAppIdentifier = MobileAppIdentifier;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.ManagedMobileApp? result;
@@ -65,20 +65,6 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.DeviceAppManagement.DefaultManagedAppProtections[DefaultManagedAppProtectionId].Apps[ManagedMobileAppId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, ManagedMobileAppId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
