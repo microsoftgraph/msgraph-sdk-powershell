@@ -49,6 +49,7 @@ namespace Microsoft.Graph.PowerShell.Reports
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
