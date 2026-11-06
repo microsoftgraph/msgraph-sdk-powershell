@@ -255,20 +255,6 @@ namespace Microsoft.Graph.PowerShell.Reports
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Reports.IdentityAnalytics.Groups[GroupAnalyticsId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, GroupAnalyticsId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
