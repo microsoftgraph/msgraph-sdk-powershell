@@ -1,0 +1,396 @@
+{
+  "mappings": [
+    {
+      "module": "Files",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: .*_(Create|Get|Update|Set|Delete)Activity$|.*\\.activity.*$|share\\..*_createLink",
+      "implementation": "CmdletConfigurator",
+      "notes": "Exact method/path suppressions cover the complete surviving original legacy selector in both profiles. Existing v1.0 parity data already covers nine of ten surviving operations; shared curated entries also enforce beta and no-collision-data generation. Collection GET ListActivity operations do not match the original selector and remain available. Profile-local directives and global readmes are explicitly ignored; parameter/schema directives are deferred (none occur in this shared file). FilesDirectiveMigrationTests pins all mapped suppressions and neighboring routes.",
+      "profiles": {
+        "v1.0": {
+          "notes": "Reproved all 56 original regex matches in actual openApiDocs/v1.0/Files.yml against the integrated compatible spec: 10 survivors and 46 pruned legacy operations. Complete original-survivor and current literal selector sets are equal after target operation-ID alignment; FilesDirectiveMigrationTests recomputes both sets and verified removals. createLink has matching POST action kinds with only final microsoft.graph namespace unqualification. No root/resource/cast alias translation. Legacy blob: d1a813b9612d179b014843a5a4ba9bae81a28e25; compatible blob: ff503644e20100f9ee599a8782f35564a8b34912.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities",
+              "operationId": "drive.item.analytic.itemActivityStat_CreateActivity"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
+              "operationId": "drive.item.analytic.itemActivityStat_GetActivity"
+            },
+            {
+              "method": "PATCH",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
+              "operationId": "drive.item.analytic.itemActivityStat_UpdateActivity"
+            },
+            {
+              "method": "DELETE",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
+              "operationId": "drive.item.analytic.itemActivityStat_DeleteActivity"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItem"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItemContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
+              "operationId": "drive.item.analytic.itemActivityStat.activity_SetDriveItemContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
+              "operationId": "drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContent"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/createLink",
+              "operationId": "share.sharedDriveItem.list.item.listItem_createLink"
+            }
+          ]
+        },
+        "beta": {
+          "notes": "Reproved all 272 original regex matches in actual openApiDocs/beta/Files.yml against the integrated compatible spec: 56 survivors and 216 pruned legacy operations. Complete original-survivor and current literal selector sets are equal after target operation-ID alignment; FilesDirectiveMigrationTests recomputes both sets and verified removals. createLink has matching POST action kinds with only final microsoft.graph namespace unqualification. No root/resource/cast alias translation. Legacy blob: 52b742f842ed746dbb80c5ca9914343f621e45ac; compatible blob: ba515d47b69731abb531fb5f1c43ff06460e7601.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/drives/{drive-id}/activities",
+              "operationId": "drive_CreateActivity"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}",
+              "operationId": "drive_GetActivity"
+            },
+            {
+              "method": "PATCH",
+              "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}",
+              "operationId": "drive_UpdateActivity"
+            },
+            {
+              "method": "DELETE",
+              "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}",
+              "operationId": "drive_DeleteActivity"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem",
+              "operationId": "drive.activity_GetDriveItem"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
+              "operationId": "drive.activity_GetDriveItemContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
+              "operationId": "drive.activity_SetDriveItemContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content",
+              "operationId": "drive.activity_DeleteDriveItemContent"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
+              "operationId": "drive.activity_GetDriveItemContentStream"
+            },
+            {
+              "method": "PUT",
+              "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
+              "operationId": "drive.activity_SetDriveItemContentStream"
+            },
+            {
+              "method": "DELETE",
+              "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
+              "operationId": "drive.activity_DeleteDriveItemContentStream"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem",
+              "operationId": "drive.activity_GetListItem"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/activities/$count",
+              "operationId": "drive.activity_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/activities/{itemActivityOLD-id}",
+              "operationId": "drive.item_GetActivity"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/activities/$count",
+              "operationId": "drive.item.activity_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities",
+              "operationId": "drive.item.analytic.itemActivityStat_CreateActivity"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
+              "operationId": "drive.item.analytic.itemActivityStat_GetActivity"
+            },
+            {
+              "method": "PATCH",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
+              "operationId": "drive.item.analytic.itemActivityStat_UpdateActivity"
+            },
+            {
+              "method": "DELETE",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}",
+              "operationId": "drive.item.analytic.itemActivityStat_DeleteActivity"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem",
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItem"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItemContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
+              "operationId": "drive.item.analytic.itemActivityStat.activity_SetDriveItemContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/content",
+              "operationId": "drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContent"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetDriveItemContentStream"
+            },
+            {
+              "method": "PUT",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
+              "operationId": "drive.item.analytic.itemActivityStat.activity_SetDriveItemContentStream"
+            },
+            {
+              "method": "DELETE",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/{itemActivity-id}/driveItem/contentStream",
+              "operationId": "drive.item.analytic.itemActivityStat.activity_DeleteDriveItemContentStream"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count",
+              "operationId": "drive.item.analytic.itemActivityStat.activity_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/drives/{drive-id}/list/activities",
+              "operationId": "drive.list_CreateActivity"
+            },
+            {
+              "method": "POST",
+              "path": "/drives/{drive-id}/list/items/{listItem-id}/activities",
+              "operationId": "drive.list.item_CreateActivity"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
+              "operationId": "drive.list.item_GetActivity"
+            },
+            {
+              "method": "PATCH",
+              "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
+              "operationId": "drive.list.item_UpdateActivity"
+            },
+            {
+              "method": "DELETE",
+              "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
+              "operationId": "drive.list.item_DeleteActivity"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem",
+              "operationId": "drive.list.item.activity_GetDriveItem"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
+              "operationId": "drive.list.item.activity_GetDriveItemContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
+              "operationId": "drive.list.item.activity_SetDriveItemContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
+              "operationId": "drive.list.item.activity_DeleteDriveItemContent"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
+              "operationId": "drive.list.item.activity_GetDriveItemContentStream"
+            },
+            {
+              "method": "PUT",
+              "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
+              "operationId": "drive.list.item.activity_SetDriveItemContentStream"
+            },
+            {
+              "method": "DELETE",
+              "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
+              "operationId": "drive.list.item.activity_DeleteDriveItemContentStream"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem",
+              "operationId": "drive.list.item.activity_GetListItem"
+            },
+            {
+              "method": "GET",
+              "path": "/drives/{drive-id}/list/items/{listItem-id}/activities/$count",
+              "operationId": "drive.list.item.activity_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/shares/{sharedDriveItem-id}/list/activities",
+              "operationId": "share.list_CreateActivity"
+            },
+            {
+              "method": "POST",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities",
+              "operationId": "share.list.item_CreateActivity"
+            },
+            {
+              "method": "GET",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
+              "operationId": "share.list.item_GetActivity"
+            },
+            {
+              "method": "PATCH",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
+              "operationId": "share.list.item_UpdateActivity"
+            },
+            {
+              "method": "DELETE",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}",
+              "operationId": "share.list.item_DeleteActivity"
+            },
+            {
+              "method": "GET",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem",
+              "operationId": "share.list.item.activity_GetDriveItem"
+            },
+            {
+              "method": "GET",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
+              "operationId": "share.list.item.activity_GetDriveItemContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
+              "operationId": "share.list.item.activity_SetDriveItemContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content",
+              "operationId": "share.list.item.activity_DeleteDriveItemContent"
+            },
+            {
+              "method": "GET",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
+              "operationId": "share.list.item.activity_GetDriveItemContentStream"
+            },
+            {
+              "method": "PUT",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
+              "operationId": "share.list.item.activity_SetDriveItemContentStream"
+            },
+            {
+              "method": "DELETE",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/contentStream",
+              "operationId": "share.list.item.activity_DeleteDriveItemContentStream"
+            },
+            {
+              "method": "GET",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem",
+              "operationId": "share.list.item.activity_GetListItem"
+            },
+            {
+              "method": "GET",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/$count",
+              "operationId": "share.list.item.activity_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/shares/{sharedDriveItem-id}/list/items/{listItem-id}/createLink",
+              "operationId": "share.sharedDriveItem.list.item.listItem_createLink"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Files",
+      "directiveIndex": 2,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(Group|User)(Drive)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Get/GetViaIdentity select the GroupDrive and UserDrive singleton GETs, not drive collection List variants or mutations. Existing exact GET noun overrides already emit GroupDefaultDrive/UserDefaultDrive, so no redundant rename is added. Existing SiteDefaultDrive, GroupSiteDefaultDrive and bare shared-list item suppression remain unchanged; no profile-local directives are reconciled. FilesDirectiveMigrationTests covers both profiles with and without derived data.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/drive",
+              "operationId": "group_GetDrive"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/drive",
+              "operationId": "user_GetDrive"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/drive",
+              "operationId": "group_GetDrive"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/drive",
+              "operationId": "user_GetDrive"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

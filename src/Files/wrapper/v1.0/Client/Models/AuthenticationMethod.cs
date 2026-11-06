@@ -32,6 +32,7 @@ namespace Microsoft.Graph.PowerShell.Files.Client.Models
                 "#microsoft.graph.passwordAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Files.Client.Models.PasswordAuthenticationMethod(),
                 "#microsoft.graph.phoneAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Files.Client.Models.PhoneAuthenticationMethod(),
                 "#microsoft.graph.platformCredentialAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Files.Client.Models.PlatformCredentialAuthenticationMethod(),
+                "#microsoft.graph.resourceAccountKeyAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Files.Client.Models.ResourceAccountKeyAuthenticationMethod(),
                 "#microsoft.graph.softwareOathAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Files.Client.Models.SoftwareOathAuthenticationMethod(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Files.Client.Models.TemporaryAccessPassAuthenticationMethod(),
                 "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Files.Client.Models.WindowsHelloForBusinessAuthenticationMethod(),

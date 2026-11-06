@@ -3,6 +3,7 @@
 using Microsoft.Graph.PowerShell.Files.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Files.Client.Models;
 using Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Subscriptions.Count;
+using Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Subscriptions.GetVapidPublicKey;
 using Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Subscriptions.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Subscriptions
         public global::Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Subscriptions.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Subscriptions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getVapidPublicKey property</summary>
+        public global::Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Subscriptions.GetVapidPublicKey.GetVapidPublicKeyRequestBuilder GetVapidPublicKey
+        {
+            get => new global::Microsoft.Graph.PowerShell.Files.Client.Shares.Item.List.Subscriptions.GetVapidPublicKey.GetVapidPublicKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.PowerShell.Files.Client.shares.item.list.subscriptions.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

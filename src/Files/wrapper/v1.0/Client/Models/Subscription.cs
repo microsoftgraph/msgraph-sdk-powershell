@@ -112,6 +112,30 @@ namespace Microsoft.Graph.PowerShell.Files.Client.Models
 #else
         public string Resource { get; set; }
 #endif
+        /// <summary>Optional. The application server&apos;s VAPID public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained by calling the getVapidPublicKey function on the subscription collection. The browser passes this value to PushManager.subscribe({ applicationServerKey: vapidPublicKey }) to bind the push subscription to this server identity. Required when notificationUrl targets a known Web Push service origin (for example, *.push.apple.com, fcm.googleapis.com, updates.push.services.mozilla.com); rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8292.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VapidPublicKey { get; set; }
+#nullable restore
+#else
+        public string VapidPublicKey { get; set; }
+#endif
+        /// <summary>Optional. The subscriber&apos;s ECDH public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(&apos;p256dh&apos;). Used as the peer public key during ECDH key agreement to derive the per-message content encryption key for RFC 8291 payload encryption. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebPushEncryptionP256dhPublicKey { get; set; }
+#nullable restore
+#else
+        public string WebPushEncryptionP256dhPublicKey { get; set; }
+#endif
+        /// <summary>Optional. The subscriber&apos;s auth secret, base64url-encoded (16 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(&apos;auth&apos;). Used as the HMAC-SHA-256 salt for the HKDF combine step that derives key material for RFC 8291 payload encryption. Write-only: this value is never returned in GET responses (returned as null). Treat as a secret. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebPushEncryptionSecret { get; set; }
+#nullable restore
+#else
+        public string WebPushEncryptionSecret { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -144,6 +168,9 @@ namespace Microsoft.Graph.PowerShell.Files.Client.Models
                 { "notificationUrl", n => { NotificationUrl = n.GetStringValue(); } },
                 { "notificationUrlAppId", n => { NotificationUrlAppId = n.GetStringValue(); } },
                 { "resource", n => { Resource = n.GetStringValue(); } },
+                { "vapidPublicKey", n => { VapidPublicKey = n.GetStringValue(); } },
+                { "webPushEncryptionP256dhPublicKey", n => { WebPushEncryptionP256dhPublicKey = n.GetStringValue(); } },
+                { "webPushEncryptionSecret", n => { WebPushEncryptionSecret = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -168,6 +195,9 @@ namespace Microsoft.Graph.PowerShell.Files.Client.Models
             writer.WriteStringValue("notificationUrl", NotificationUrl);
             writer.WriteStringValue("notificationUrlAppId", NotificationUrlAppId);
             writer.WriteStringValue("resource", Resource);
+            writer.WriteStringValue("vapidPublicKey", VapidPublicKey);
+            writer.WriteStringValue("webPushEncryptionP256dhPublicKey", WebPushEncryptionP256dhPublicKey);
+            writer.WriteStringValue("webPushEncryptionSecret", WebPushEncryptionSecret);
         }
     }
 }
