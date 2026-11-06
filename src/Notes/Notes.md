@@ -40,6 +40,12 @@ qualification changes; no selected API is classified as removed.
 Validation targets PowerShell 7/Core only; explicit PowerShell 5.1 support is
 outside the v3 scope.
 
+Resource PATCH commands return only their own response: a 204 produces no
+object and no automatic GET, while a 200 model is returned as typed output.
+Call the corresponding GET explicitly when needed; its permissions, headers
+and query inputs remain independent of the mutation. This supersedes the
+historical implicit-readback validation, without adding a readback switch.
+
 ``` yaml
 directive:
 # Remove paths that are not valid.

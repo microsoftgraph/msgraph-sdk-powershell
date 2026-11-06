@@ -47,14 +47,14 @@ public sealed class NotesDirectiveMigrationTests
         Assert.Equal(9, mappings.GetArrayLength());
         var expectedCounts = new[] { 298, 15, 15, 1, 1, 1, 1, 1, 1 };
         for (var index = 0; index < mappings.GetArrayLength(); index++)
-        foreach (var profile in new[] { "v1.0", "beta" })
-        {
-            var declaration = mappings[index].GetProperty("profiles").GetProperty(profile);
-            Assert.False(declaration.GetProperty("absenceExpected").GetBoolean());
-            var operations = declaration.GetProperty("operations");
-            Assert.Equal(JsonValueKind.Array, operations.ValueKind);
-            Assert.Equal(expectedCounts[index], operations.GetArrayLength());
-        }
+            foreach (var profile in new[] { "v1.0", "beta" })
+            {
+                var declaration = mappings[index].GetProperty("profiles").GetProperty(profile);
+                Assert.False(declaration.GetProperty("absenceExpected").GetBoolean());
+                var operations = declaration.GetProperty("operations");
+                Assert.Equal(JsonValueKind.Array, operations.ValueKind);
+                Assert.Equal(expectedCounts[index], operations.GetArrayLength());
+            }
     }
 
     [Fact]
@@ -153,9 +153,9 @@ public sealed class NotesDirectiveMigrationTests
 
         var config = new GeneratorConfig("Notes", "", UseCollisionData: false);
         foreach (var path in compatible.Paths)
-        foreach (var operation in path.Value.Operations!)
-            Assert.Equal(suppressionKeys.Contains($"{operation.Key} {path.Key}"),
-                CmdletConfigurator.IsSuppressed(operation.Key, path.Key, config, apiVersion: profile));
+            foreach (var operation in path.Value.Operations!)
+                Assert.Equal(suppressionKeys.Contains($"{operation.Key} {path.Key}"),
+                    CmdletConfigurator.IsSuppressed(operation.Key, path.Key, config, apiVersion: profile));
     }
 
     [Theory]
@@ -281,6 +281,66 @@ public sealed class NotesDirectiveMigrationTests
             Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config, apiVersion: "v1.0"));
             Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config, apiVersion: "beta"));
         }
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task RenamedSitePatchUsesOnlyItsOwnOperationAndKeepsCallerGetIndependent(string profile, bool derived)
+    {
+        var document = await ReadSpec("openApiDocs_KiotaCompat", profile);
+        const string path = "/sites/{site-id}/onenote/notebooks/{notebook-id}";
+        var operation = document.Paths[path].Operations![HttpMethod.Patch];
+        Assert.Empty((operation.Parameters ?? []).Where(parameter => parameter.In == ParameterLocation.Query));
+        foreach (var other in document.Paths.Keys.Where(key => key != path).ToArray())
+            document.Paths.Remove(other);
+        var output = Path.Combine(Path.GetTempPath(), "notes-single-patch-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            var config = new GeneratorConfig("Notes.Client", output, UseCollisionData: derived);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(TestContext.Current.CancellationToken);
+            var patch = await File.ReadAllTextAsync(Path.Combine(output, "UpdateMgSiteOnenoteNotebookContent.g.cs"),
+                TestContext.Current.CancellationToken);
+            Assert.Contains(".PatchAsync(", patch);
+            Assert.DoesNotContain(".GetAsync(", patch);
+            Assert.DoesNotContain("if (result is null)", patch);
+            Assert.Contains("if (result is not null)", patch);
+            Assert.Contains("[OutputType(typeof(Notes.Client.Models.Notebook))]", patch);
+            Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", patch);
+            Assert.DoesNotContain("QueryParameters", patch);
+            Assert.DoesNotContain("PassThru", patch);
+            Assert.DoesNotContain("ReadBack", patch);
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", patch);
+            Assert.Equal(1, Regex.Matches(patch, @"ShouldProcess\(").Count);
+            Assert.True(patch.IndexOf("ShouldProcess(", StringComparison.Ordinal) <
+                patch.IndexOf("var body", StringComparison.Ordinal));
+            var get = await File.ReadAllTextAsync(Path.Combine(output, "GetMgSiteOnenoteNotebook.g.cs"),
+                TestContext.Current.CancellationToken);
+            Assert.Contains(".GetAsync(", get);
+            Assert.Contains("QueryParameters.Select", get);
+            Assert.DoesNotContain(".PatchAsync(", get);
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task NotesHasNoNativeRequiredQueryInputsToBorrowFromSiblingOperations(string profile)
+    {
+        var document = await ReadSpec("openApiDocs_KiotaCompat", profile);
+        foreach (var path in document.Paths)
+        foreach (var operation in path.Value.Operations!)
+            Assert.Empty((path.Value.Parameters ?? []).Concat(operation.Value.Parameters ?? [])
+                .Where(parameter => parameter.In == ParameterLocation.Query && parameter.Required));
     }
 
     [Theory]
