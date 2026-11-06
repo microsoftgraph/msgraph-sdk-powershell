@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.WorkHoursA
         {
         }
         /// <summary>
-        /// Update your work location for the current day or current active segment. This action allows you to quickly update your work location without modifying individual occurrences.
+        /// Update a user&apos;s work location for the current day or current active segment. This action quickly updates the user&apos;s work location without modifying individual occurrences.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workplanoccurrence-setcurrentlocation?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.WorkHoursA
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update your work location for the current day or current active segment. This action allows you to quickly update your work location without modifying individual occurrences.
+        /// Update a user&apos;s work location for the current day or current active segment. This action quickly updates the user&apos;s work location without modifying individual occurrences.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
