@@ -41,6 +41,12 @@ ID set with `itemCategories/{itemCategory-id}`. They therefore use the explicit
 adding a selector parameter. These two intentional names differ from the
 published command's numbered parameter sets; other names are unchanged.
 
+PATCH commands issue only their selected mutation. A successful 204 response
+returns no object and does not trigger a GET; a 200 response returns its actual
+typed model without another request. Callers can explicitly invoke the
+corresponding GET with its own headers and queries when they need a read.
+There is no readback switch or GET-derived input on PATCH.
+
 Only `openApiDocs_KiotaCompat/beta/Financials.yml` is compatible with this migration.
 v1.0 is excluded because it has no compatible specification; the legacy OpenAPI
 directory is not a fallback. `src/readme.graph.md` and all profile-local readme
@@ -48,7 +54,7 @@ directives are explicitly outside this audit and remain unchanged.
 
 `FinancialsDirectiveMigrationTests` pins real beta operation identities, legacy
 lineage for every configured route, derived-data-on/off behavior, all grouped
-alternatives and unaffected neighboring routes. These
+alternatives, single-operation PATCH generation and unaffected neighboring routes. These
 targeted tests do not establish full Kiota generation, module build, or nonzero
 compiled exports; those remain a separate beta generation gate.
 

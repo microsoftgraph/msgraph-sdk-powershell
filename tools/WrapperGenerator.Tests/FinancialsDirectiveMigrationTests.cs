@@ -214,6 +214,34 @@ public sealed class FinancialsDirectiveMigrationTests
         }, useCollisionData);
     }
 
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public async Task EveryBetaPatchEmitsOnlyItsOwnOperationWithoutImplicitReadback(bool useCollisionData)
+    {
+        await WithGeneratedSources(BetaDocument.Value, output =>
+        {
+            var sources = Directory.GetFiles(output, "*.g.cs").Select(File.ReadAllText).ToArray();
+            var paths = BetaDocument.Value.Paths.Where(path => path.Value.Operations!.ContainsKey(HttpMethod.Patch))
+                .Select(path => path.Key).ToArray();
+            Assert.Equal(131, paths.Length);
+            foreach (var path in paths)
+            {
+                var source = Assert.Single(sources, source =>
+                    source.Contains($"[GraphRoute(\"PATCH\", \"{path}\")]", StringComparison.Ordinal));
+                Assert.Contains(".PatchAsync(", source, StringComparison.Ordinal);
+                Assert.Contains("GetRequestAdapter(\"beta\")", source, StringComparison.Ordinal);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", source, StringComparison.Ordinal);
+                Assert.DoesNotContain(".GetAsync(", source, StringComparison.Ordinal);
+                Assert.DoesNotContain("if (result is null)", source, StringComparison.Ordinal);
+                Assert.DoesNotContain("PassThru", source, StringComparison.Ordinal);
+                Assert.DoesNotContain("ReadBack", source, StringComparison.Ordinal);
+                Assert.DoesNotContain("Refetch", source, StringComparison.Ordinal);
+                Assert.Contains("if (result is not null)", source, StringComparison.Ordinal);
+            }
+        }, useCollisionData);
+    }
+
     private static async Task WithGeneratedSources(OpenApiDocument document, Action<string> assertSources, bool useCollisionData = true)
     {
         var output = Path.Combine(Path.GetTempPath(), "financials-directive-tests", Guid.NewGuid().ToString("N"));
