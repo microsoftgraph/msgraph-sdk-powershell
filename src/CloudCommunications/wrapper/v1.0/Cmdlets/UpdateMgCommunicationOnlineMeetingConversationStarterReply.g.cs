@@ -65,7 +65,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
         body.Conversation = Conversation;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.EngagementConversationMessage? result;
@@ -83,20 +83,6 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Communications.OnlineMeetingConversations[OnlineMeetingEngagementConversationId].Starter.Replies[EngagementConversationMessageId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, EngagementConversationMessageId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
