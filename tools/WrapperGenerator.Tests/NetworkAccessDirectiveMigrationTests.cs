@@ -102,6 +102,65 @@ public sealed class NetworkAccessDirectiveMigrationTests
             Assert.DoesNotContain(sources, source => source.Contains("GetRequestAdapter()"));
             Assert.Contains("GetRequestAdapter(\"beta\")",
                 File.ReadAllText(Path.Combine(output, "UpdateMgNetworkAccessForwardingPolicy.g.cs")));
+            var patch = File.ReadAllText(Path.Combine(output, "UpdateMgNetworkAccessForwardingPolicy.g.cs"));
+            Assert.Contains(".PatchAsync(body, requestConfiguration =>", patch);
+            Assert.Contains("if (result is not null)", patch);
+            Assert.Contains("WriteObject(result);", patch);
+            Assert.DoesNotContain(".GetAsync(", patch);
+            Assert.DoesNotContain("QueryProperty", patch);
+            Assert.DoesNotContain("QueryExpand", patch);
+            Assert.DoesNotContain("PassThru", patch);
+        }
+        finally
+        {
+            Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public async Task EverySurvivingBetaPatchEmitsOnlyItsOwnMutationAndNativeRequiredInputs(bool useCollisionData)
+    {
+        var document = LoadSpec("openApiDocs_KiotaCompat");
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
+        var paths = new OpenApiPaths();
+        foreach (var (path, item) in document.Paths)
+        {
+            if (item.Operations!.TryGetValue(HttpMethod.Patch, out var operation) &&
+                !CmdletConfigurator.IsSuppressed(HttpMethod.Patch, path, config, apiVersion: "beta"))
+            {
+                var requiredQueries = (item.Parameters ?? []).Concat(operation.Parameters ?? [])
+                    .Where(parameter => parameter.In == ParameterLocation.Query && parameter.Required);
+                Assert.Empty(requiredQueries);
+                paths.Add(path, new OpenApiPathItem
+                {
+                    Operations = new() { [HttpMethod.Patch] = operation },
+                    Parameters = item.Parameters,
+                });
+            }
+        }
+        Assert.NotEmpty(paths);
+        document.Paths = paths;
+        var output = Path.Combine(Path.GetTempPath(), "networkaccess-directives", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(output);
+        try
+        {
+            await new PowerShellWrapperGenerationService(document, config with { OutputPath = output },
+                NullLogger.Instance, apiVersion: "beta").GenerateAsync(CancellationToken.None);
+            var files = Directory.GetFiles(output, "*.g.cs");
+            Assert.Equal(paths.Count, files.Length);
+            foreach (var file in files)
+            {
+                var source = File.ReadAllText(file);
+                Assert.Contains("[GraphRoute(\"PATCH\",", source);
+                Assert.Contains("GetRequestAdapter(\"beta\")", source);
+                Assert.Contains(".PatchAsync(", source);
+                Assert.DoesNotContain(".GetAsync(", source);
+                Assert.DoesNotContain("re-fetch", source);
+                Assert.DoesNotContain("QueryParameters.", source);
+                Assert.DoesNotContain("PassThru", source);
+            }
         }
         finally
         {
