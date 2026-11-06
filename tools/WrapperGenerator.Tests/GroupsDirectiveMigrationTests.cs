@@ -51,6 +51,15 @@ public sealed class GroupsDirectiveMigrationTests
                 Assert.Contains($"GetRequestAdapter(\"{profile}\")", text, StringComparison.Ordinal);
                 Assert.DoesNotContain("GetRequestAdapter()", text, StringComparison.Ordinal);
             }
+            var patch = File.ReadAllText(Path.Combine(output, "UpdateMgGroup.g.cs"));
+            Assert.Contains("client.Groups[GroupId].PatchAsync", patch, StringComparison.Ordinal);
+            Assert.Contains("if (result is not null)", patch, StringComparison.Ordinal);
+            Assert.DoesNotContain(".GetAsync(", patch, StringComparison.Ordinal);
+            Assert.DoesNotContain("PassThru", patch, StringComparison.Ordinal);
+            Assert.DoesNotContain("ReadBack", patch, StringComparison.Ordinal);
+            Assert.DoesNotContain("Refetch", patch, StringComparison.Ordinal);
+            Assert.DoesNotContain("public string[]? Property", patch, StringComparison.Ordinal);
+            Assert.DoesNotContain("public int Top", patch, StringComparison.Ordinal);
             if (profile == "beta")
                 Assert.Contains("GetRequestAdapter(\"beta\")",
                     File.ReadAllText(Path.Combine(output, "TestMgGroupDynamicMembershipRule.g.cs")), StringComparison.Ordinal);
@@ -60,6 +69,35 @@ public sealed class GroupsDirectiveMigrationTests
             if (Directory.Exists(output))
                 Directory.Delete(output, recursive: true);
         }
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public void RequiredDeleteQueriesStayWithinOriginalSharedSuppression(string profile, bool useCollisionData)
+    {
+        var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
+        var required = Spec(profile).Paths.SelectMany(path => path.Value.Operations!.SelectMany(operation =>
+            (path.Value.Parameters ?? []).Concat(operation.Value.Parameters ?? [])
+                .GroupBy(parameter => (parameter.Name, parameter.In)).Select(group => group.Last())
+                .Where(parameter => parameter.In == ParameterLocation.Query && parameter.Required)
+                .Select(parameter => (Path: path.Key, Method: operation.Key, Name: parameter.Name)))).ToArray();
+        Assert.Equal(4, required.Length);
+        foreach (var query in required)
+        {
+            Assert.Equal(HttpMethod.Delete, query.Method);
+            Assert.Equal("@id", query.Name);
+            Assert.Contains(query.Path, new[]
+            {
+                "/groups/{group-id}/acceptedSenders/$ref", "/groups/{group-id}/members/$ref",
+                "/groups/{group-id}/owners/$ref", "/groups/{group-id}/rejectedSenders/$ref",
+            });
+            Assert.True(CmdletConfigurator.IsSuppressed(query.Method, query.Path, config, apiVersion: profile));
+        }
+        Assert.DoesNotContain(required, query =>
+            !CmdletConfigurator.IsSuppressed(query.Method, query.Path, config, apiVersion: profile));
     }
 
     [Theory]
