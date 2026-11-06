@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Calendar.Client.Models.LevelMap? result;

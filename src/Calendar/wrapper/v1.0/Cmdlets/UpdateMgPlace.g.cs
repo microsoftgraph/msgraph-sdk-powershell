@@ -87,7 +87,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
         body.GeoCoordinates = GeoCoordinates;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Calendar.Client.Models.Place? result;
@@ -104,7 +104,6 @@ namespace Microsoft.Graph.PowerShell.Calendar
                 ThrowGraphRequestFailed(ex, PlaceId);
                 return;
             }
-
 
             if (result is not null)
                 WriteObject(result);
