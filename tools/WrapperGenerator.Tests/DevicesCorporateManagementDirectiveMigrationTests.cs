@@ -260,6 +260,16 @@ public sealed class DevicesCorporateManagementDirectiveMigrationTests
             var files = Directory.GetFiles(output, "*.g.cs").ToDictionary(path => new FileInfo(path).Name, File.ReadAllText);
             foreach (var worker in files.Values.Where(source => source.Contains("GetRequestAdapter(", StringComparison.Ordinal)))
                 Assert.Contains($"GetRequestAdapter(\"{profile}\")", worker);
+            foreach (var worker in files.Values.Where(source => source.Contains("[GraphRoute(\"PATCH\"", StringComparison.Ordinal)))
+            {
+                Assert.Single(Regex.Matches(worker, @"\.PatchAsync\("));
+                Assert.DoesNotContain(".GetAsync(", worker);
+                Assert.DoesNotContain("if (result is null)", worker);
+                Assert.DoesNotContain("PassThru", worker);
+                Assert.DoesNotContain("Query", worker);
+                Assert.Contains("if (result is not null)", worker);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", worker);
+            }
             var relationship = files["GetMgDeviceAppManagementMobileAppRelationship.g.cs"];
             Assert.Contains("DefaultParameterSetName = \"List\"", relationship);
             Assert.DoesNotContain("public string Route", relationship);
@@ -300,5 +310,25 @@ public sealed class DevicesCorporateManagementDirectiveMigrationTests
             if (Directory.Exists(output))
                 Directory.Delete(output, recursive: true);
         }
+
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task RequiredNativeQueryPopulationRemainsExplicitlyReviewed(string profile)
+    {
+        var settings = new OpenApiReaderSettings();
+        settings.AddYamlReader();
+        using var stream = File.OpenRead(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, Module + ".yml"));
+        var document = (await OpenApiDocument.LoadAsync(stream, settings: settings,
+            cancellationToken: TestContext.Current.CancellationToken)).Document!;
+        var requiredQueries = document.Paths.SelectMany(path => path.Value.Operations!.SelectMany(operation =>
+            (path.Value.Parameters ?? []).Concat(operation.Value.Parameters ?? [])
+                .GroupBy(parameter => (parameter.In, parameter.Name))
+                .Select(parameters => parameters.Last())
+                .Where(parameter => parameter.In == ParameterLocation.Query && parameter.Required)
+                .Select(parameter => $"{operation.Key} {path.Key} [{parameter.Name}]"))).ToArray();
+        Assert.Empty(requiredQueries);
     }
 }
