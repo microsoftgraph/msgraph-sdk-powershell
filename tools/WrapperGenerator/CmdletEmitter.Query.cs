@@ -6,19 +6,10 @@ namespace WrapperGenerator;
 
 public static partial class CmdletEmitter
 {
-    private static IReadOnlyList<CmdletProperty> DeclaredQueries(CmdletNaming naming, EmitContext ctx)
-    {
-        var queries = ctx.RequiredQueries.Concat(ctx.RefetchRequiredQueries).ToArray();
-        foreach (var group in queries.GroupBy(p => p.ParameterName, StringComparer.OrdinalIgnoreCase))
-            if (group.Any(p => p.OpenApiName != group.First().OpenApiName || p.PsTypeName != group.First().PsTypeName))
-                throw new InvalidOperationException($"Incompatible mutation/refetch required query '{group.Key}': {naming.SourceMethod} {naming.SourcePath}.");
-        return queries.DistinctBy(p => p.ParameterName, StringComparer.OrdinalIgnoreCase).ToArray();
-    }
-
     private static string RequiredQueryDeclarations(CmdletNaming naming, EmitContext ctx,
         string? parameterSetName = null, IEnumerable<string>? otherNames = null)
     {
-        var queries = DeclaredQueries(naming, ctx);
+        var queries = ctx.RequiredQueries;
         if (queries.Count == 0)
             return "";
         var taken = naming.PathParamNames.Concat(naming.FunctionParameters.Select(p => p.PsName))
@@ -54,8 +45,8 @@ public static partial class CmdletEmitter
     {
         var otherNames = list.PathParamNames.Concat(item.PathParamNames)
             .Concat(list.HeaderParams.Select(h => h.PsName)).Concat(item.HeaderParams.Select(h => h.PsName)).Append("All");
-        _ = RequiredQueryDeclarations(list, ctx with { RequiredQueries = listQueries, RefetchRequiredQueries = [] }, "List", otherNames);
-        _ = RequiredQueryDeclarations(item, ctx with { RequiredQueries = itemQueries, RefetchRequiredQueries = [] }, "Get", otherNames);
+        _ = RequiredQueryDeclarations(list, ctx with { RequiredQueries = listQueries }, "List", otherNames);
+        _ = RequiredQueryDeclarations(item, ctx with { RequiredQueries = itemQueries }, "Get", otherNames);
         var declarations = new List<string>();
         foreach (var group in listQueries.Select((p, i) => (Parameter: p, Naming: list, Set: "List", Index: i))
             .Concat(itemQueries.Select((p, i) => (Parameter: p, Naming: item, Set: "Get", Index: i)))
