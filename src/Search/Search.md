@@ -21,8 +21,8 @@ require:
 
 ### v3 shared-directive migration audit
 
-Revalidated on the normally merged `powershell-v3` target `08e409a6aa`
-(operation-variant support). The shared file contains only the placeholder
+The original audit used `powershell-v3` target `08e409a6aa`; final revalidation
+uses normally merged target `6475f3f5be` (PATCH result contract). The shared file contains only the placeholder
 above: there are no cmdlet suppression/rename directives, parameter
 aliases/transforms, or schema/response directives to migrate or defer.
 The AutoRest requirement and placeholder remain unchanged.
@@ -91,7 +91,8 @@ this empty shared-directive inventory.
 
 Full generation and Release compilation are separate required gates for each
 profile through the shared queue, using Kiota `1.36.1` (model parallelism 1)
-and the complete official Authentication `2.38.1`. Historical pre-integration
+and the normally packaged adapted Authentication `2.41.2`. The original `08e409a6aa`
+run used official Authentication `2.38.1`. Historical pre-integration
 builds are not current-target validation. Fresh compiled full-module checks
 must verify exports, exact repaired and neighboring routes, List/Get defaults,
 mandatory IDs and actual stub-HTTP requests without a tenant connection.
@@ -126,7 +127,7 @@ Beta's two no-oracle routes are the retained collection-bound statistics functio
 and nested activity flow. Missing published URI records do not remove either
 endpoint. No beta prefix normalization or broad naming correction is applied.
 
-#### Normal Authentication refresh at `844672d7c2`
+#### Historical normal Authentication refresh at `844672d7c2`
 
 The existing branch normally merges `powershell-v3` including Authentication
 change #3891. The shared directives, exact naming entries, complete route
@@ -141,7 +142,7 @@ file SHA256s match its producer manifest; the Authentication nupkg SHA256 is
 No gallery substitution, dependency injection, global environment edit,
 unmerged overlay, or authored naming/schema expansion is used.
 
-| Current gate | v1.0 | beta |
+| Historical gate | v1.0 | beta |
 | --- | --- | --- |
 | Full queued Release generation | Exit 0, `OK`, 35.20 seconds | Exit 0, `OK`, 59.00 seconds |
 | Fresh normal-manifest exports | 72 | 166 |
@@ -182,5 +183,34 @@ zero rows/empty mappings. Raw current parity remains exit 1: v1.0 71 matched/1
 mismatch; beta 164 mismatches/2 no-oracle, without prefix normalization.
 Detailed new logs, TRX, captures, hash manifests and failed-attempt diagnostics
 are retained separately under the session's `search-844672-revalidation` evidence
-folder; earlier target evidence is untouched. The refresh is prepared, with the
-header-loss runtime blocker explicit rather than certified green.
+folder; earlier target evidence is untouched. That refresh retained the
+header-loss runtime blocker rather than certifying it green.
+
+#### Final PATCH contract on normal target `6475f3f5be`
+
+The subsequent user-directed #3886 change supersedes automatic PATCH readback.
+A successful 204 PATCH now returns no object and issues exactly one PATCH,
+without a GET even if reading the resource would return 403. A 200 PATCH returns
+the actual typed response from that single operation. Callers explicitly invoke
+the ordinary GET command if desired; GET owns its own query/header inputs,
+result and error. No PassThru, ReadBack, Refetch or other option is added.
+
+The coupled Search acceptance probe now asserts both positive PATCH outcomes.
+Its terminal handler rejects any hidden GET during each PATCH. Separate
+caller-directed GETs prove independent native `$select`, bound generic headers,
+typed results and a 403 error without replaying the mutation. This replaces the
+old implicit-GET expectation; historical failed captures remain unchanged.
+The probe also retains normal Auth ownership, real factory Global/USGov
+profile/cache/identity checks, typed POST/PUT/search-action JSON, bodyless DELETE
+and beta start action, real declined Confirm/WhatIf zero-HTTP gates and binder
+rejections. All 63/145 routes, the two exact noun repairs, empty directive
+ledger, ordinary List defaults and raw oracle limitations remain unchanged.
+The real Search specifications have no mandatory query operations; synthetic
+required-query tests are included in the targeted selection without inventing
+new module queries or reference-delete routes.
+
+Final evidence is kept separately in `post3886-6475-final`, using the same
+four-mutex full build queue, isolated Kiota `1.36.1`/parallelism 1 and exact
+physical adapted Auth `2.41.2` package whose 64 hashes and nupkg SHA match above.
+No unmerged #3881 fix, optional-query expansion or other-owner changes are
+included. This is offline behavior proof, not tenant/service certification.

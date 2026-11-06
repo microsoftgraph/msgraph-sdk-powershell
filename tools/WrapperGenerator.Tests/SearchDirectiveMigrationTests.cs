@@ -105,6 +105,14 @@ public sealed class SearchDirectiveMigrationTests
         Assert.NotNull(result.Document);
         var document = result.Document;
         Assert.Equal(operationCount, document.Paths.Sum(path => path.Value.Operations?.Count ?? 0));
+        foreach (var (_, pathItem) in document.Paths)
+        {
+            var parameters = (pathItem.Parameters ?? []).Concat(
+                (pathItem.Operations is { } operations ? operations.Values.AsEnumerable() : Enumerable.Empty<OpenApiOperation>())
+                    .SelectMany(operation => operation.Parameters ?? []));
+            Assert.DoesNotContain(parameters,
+                parameter => parameter.In == ParameterLocation.Query && parameter.Required);
+        }
 
         var output = Path.Combine(Path.GetTempPath(), "search-directive-tests", Guid.NewGuid().ToString("N"));
         var config = new GeneratorConfig("Microsoft.Graph.PowerShell.Search.Client", output, useCollisionData);
@@ -159,6 +167,16 @@ public sealed class SearchDirectiveMigrationTests
                 Assert.DoesNotContain("GetRequestAdapter()", source);
                 if (source.Contains("GetRequestAdapter(", StringComparison.Ordinal))
                     Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+                if (source.Contains("[GraphRoute(\"PATCH\",", StringComparison.Ordinal))
+                {
+                    Assert.DoesNotContain(".GetAsync(", source);
+                    Assert.DoesNotContain("if (result is null)", source);
+                    Assert.Contains("if (result is not null)", source);
+                    Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", source);
+                    Assert.DoesNotContain("PassThru", source);
+                    Assert.DoesNotContain("ReadBack", source);
+                    Assert.DoesNotContain("Refetch", source);
+                }
             }
 
             AssertEmitted(output, "GetMgExternalConnection_List.g.cs", "GET", "/external/connections");

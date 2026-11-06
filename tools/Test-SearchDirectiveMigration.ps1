@@ -30,7 +30,7 @@ if ($auth.Version -ne [version]'2.41.2') {
     throw 'This gate requires the normally packaged adapted Authentication 2.41.2 module.'
 }
 $script:checks = 0
-$failures = [System.Collections.Generic.List[string]]::new()
+$runtimeCases = [System.Collections.Generic.List[string]]::new()
 function Assert-Search([bool]$Condition, [string]$Message) {
     if (-not $Condition) { throw $Message }
     $script:checks++
@@ -108,26 +108,34 @@ using System.Threading.Tasks;
 public sealed class SearchMigrationRequest
 {
     public string Method, Uri, Body, Marker, Authorization;
+    public int Status;
 }
 public sealed class SearchMigrationTransport : DelegatingHandler
 {
     public readonly Queue<string> Responses = new Queue<string>();
     public readonly List<string> Requests = new List<string>();
     public readonly List<SearchMigrationRequest> Captures = new List<SearchMigrationRequest>();
+    public bool RejectGets;
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken token)
     {
-        if (Responses.Count == 0)
-            throw new InvalidOperationException("Unexpected Search request: " + request.Method + " " + request.RequestUri);
         Requests.Add(request.Method + " " + Uri.UnescapeDataString(request.RequestUri.AbsolutePath));
         IEnumerable<string> values;
-        Captures.Add(new SearchMigrationRequest {
+        var capture = new SearchMigrationRequest {
             Method = request.Method.Method, Uri = request.RequestUri.AbsoluteUri,
             Body = request.Content == null ? "" : await request.Content.ReadAsStringAsync(),
             Marker = request.Headers.TryGetValues("x-search-marker", out values) ? string.Join(",", values) : "",
             Authorization = request.Headers.Authorization == null ? "" : request.Headers.Authorization.Scheme
-        });
+        };
+        Captures.Add(capture);
+        if (RejectGets && request.Method == HttpMethod.Get) {
+            capture.Status = 403;
+            return new HttpResponseMessage(HttpStatusCode.Forbidden);
+        }
+        if (Responses.Count == 0)
+            throw new InvalidOperationException("Unexpected Search request: " + request.Method + " " + request.RequestUri);
         var response = Responses.Dequeue();
-        return response == "204" ? new HttpResponseMessage(HttpStatusCode.NoContent)
+        capture.Status = response == "204" ? 204 : response == "403" ? 403 : 200;
+        return capture.Status != 200 ? new HttpResponseMessage((HttpStatusCode)capture.Status)
             : new HttpResponseMessage(HttpStatusCode.OK) {
                 Content = new StringContent(response, Encoding.UTF8, "application/json")
             };
@@ -299,6 +307,7 @@ try {
             @{ Name = 'New-MgExternalConnection'; Arguments = @{ Name = 'offline-new'; Description = 'typed Search body' }; Method = 'POST'; Path = '/external/connections'; Response = '{"id":"created","name":"offline-new"}' },
             @{ Name = 'Update-MgExternalConnection'; Arguments = @{ ExternalConnectionId = 'connection-1'; Name = 'offline-update'; Description = 'typed Search body' }; Method = 'PATCH'; Path = '/external/connections/connection-1'; Response = '204' },
             @{ Name = 'Remove-MgExternalConnection'; Arguments = @{ ExternalConnectionId = 'connection-1' }; Method = 'DELETE'; Path = '/external/connections/connection-1'; Response = '204' },
+            @{ Name = 'Set-MgExternalConnectionItem'; Arguments = @{ ExternalConnectionId = 'connection-1'; ExternalItemId = 'item-1'; Content = @{ Value = 'typed offline content'; Type = 'text' } }; Method = 'PUT'; Path = '/external/connections/connection-1/items/item-1'; Response = '{"id":"item-1"}' },
             @{ Name = $queryName; Arguments = @{ Requests = @(@{ EntityTypes = @('externalItem'); Query = @{ QueryString = 'offline search' } }) }; Method = 'POST'; Path = '/search/query'; Response = '{"value":[]}' }
         )
         if ($ApiVersion -eq 'beta') {
@@ -319,17 +328,30 @@ try {
             Assert-Search ($declineHost.PromptCount -eq $prompts + 1) "$name did not present exactly one genuine declined confirmation."
             Assert-Search ($handler.Requests.Count -eq $before) "$name declined confirmation issued HTTP."
             $handler.Responses.Enqueue($mutation.Response)
-            if ($mutation.Method -eq 'PATCH') { $handler.Responses.Enqueue('{"id":"connection-1","name":"offline-update"}') }
-            $result = & $name @arguments -Headers @{ 'x-search-marker' = 'bound-mutation' } -Confirm:$false
-            $expectedCount = if ($mutation.Method -eq 'PATCH') { 2 } else { 1 }
-            Assert-Search ($handler.Requests.Count -eq $before + $expectedCount) "$name issued an unexpected number of requests."
+            $handler.RejectGets = $mutation.Method -eq 'PATCH'
+            try {
+                $result = & $name @arguments -Headers @{ 'x-search-marker' = 'bound-mutation' } -Confirm:$false
+            }
+            finally { $handler.RejectGets = $false }
+            Assert-Search ($handler.Requests.Count -eq $before + 1 -and $handler.Responses.Count -eq 0) "$name must perform exactly its one HTTP operation."
             $capture = $handler.Captures[$before]
             Assert-Search ($capture.Method -ceq $mutation.Method -and $capture.Uri -ceq "$endpoint/$ApiVersion$($mutation.Path)") "$name selected the wrong real HTTP method/cloud/profile/path."
             Assert-Search ($capture.Authorization -ceq 'Bearer' -and $capture.Marker -ceq 'bound-mutation') "$name lost authentication or the bound generic mutation header."
             if ($name -in @('New-MgExternalConnection', 'Update-MgExternalConnection')) {
                 $body = $capture.Body | ConvertFrom-Json
                 Assert-Search ($body.name -ceq $arguments.Name -and $body.description -ceq $arguments.Description) "$name did not serialize its actual typed JSON body."
-                Assert-Search ($null -ne $result -and $result.GetType().FullName -eq 'Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalConnection') "$name did not return the actual typed result."
+                if ($mutation.Method -eq 'PATCH') {
+                    Assert-Search ($null -eq $result -and $capture.Status -eq 204) '204 PATCH must succeed without an object or automatic GET, even when GET would return 403.'
+                    $runtimeCases.Add('PATCH204: one PATCH, no output; GET403 guard not reached')
+                }
+                else {
+                    Assert-Search ($null -ne $result -and $result.GetType().FullName -eq 'Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalConnection') "$name did not return the actual typed result."
+                }
+            }
+            elseif ($mutation.Method -eq 'PUT') {
+                $body = $capture.Body | ConvertFrom-Json
+                Assert-Search ($body.content.value -ceq 'typed offline content' -and $body.content.type -ceq 'text') 'PUT did not preserve its typed content JSON.'
+                Assert-Search ($result.Id -ceq 'item-1' -and $result.GetType().FullName -eq 'Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItem') 'PUT did not return its actual typed external-item result.'
             }
             elseif ($name -eq $queryName) {
                 $body = $capture.Body | ConvertFrom-Json
@@ -340,13 +362,40 @@ try {
                 Assert-Search ([string]::IsNullOrEmpty($capture.Body) -and $null -eq $result) "$name must be a bodyless request without result."
             }
             if ($mutation.Method -eq 'PATCH') {
-                Assert-Request '/external/connections/connection-1'
-                Assert-Search ($result.Id -ceq 'connection-1' -and $result.Name -ceq 'offline-update') '204 PATCH did not re-fetch the selected connection.'
-                if ($handler.Captures[$before + 1].Marker -cne 'bound-mutation') {
-                    $failures.Add('FAIL #3886: selected PATCH carries bound x-search-marker, but its 204 follow-up GET drops that generic header.')
+                $before200 = $handler.Requests.Count
+                $handler.Responses.Enqueue('{"id":"connection-1","name":"offline-update"}')
+                $handler.RejectGets = $true
+                try {
+                    $updated = & $name @arguments -Headers @{ 'x-search-marker' = 'bound-200' } -Confirm:$false
                 }
-                else { $script:checks++ }
+                finally { $handler.RejectGets = $false }
+                $patch200 = $handler.Captures[$before200]
+                $body200 = $patch200.Body | ConvertFrom-Json
+                Assert-Search ($handler.Requests.Count -eq $before200 + 1 -and $handler.Responses.Count -eq 0 -and $patch200.Method -ceq 'PATCH' -and $patch200.Status -eq 200) '200 PATCH must perform one PATCH without readback.'
+                Assert-Search ($patch200.Uri -ceq "$endpoint/$ApiVersion/external/connections/connection-1" -and $patch200.Marker -ceq 'bound-200' -and $body200.name -ceq 'offline-update') '200 PATCH lost its selected path, typed body or bound generic header.'
+                Assert-Search ($updated.Id -ceq 'connection-1' -and $updated.Name -ceq 'offline-update' -and $updated.GetType().FullName -ceq 'Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalConnection') '200 PATCH did not preserve its actual typed response.'
+                $runtimeCases.Add('PATCH200: one PATCH, actual typed response; GET403 guard not reached')
+
+                $getBefore = $handler.Requests.Count
+                $handler.Responses.Enqueue('{"id":"connection-1","name":"explicit-read"}')
+                $read = Get-MgExternalConnection -ExternalConnectionId 'connection-1' -Property @('id', 'name') -Headers @{ 'x-search-marker' = 'caller-get' }
+                $getCapture = $handler.Captures[$getBefore]
+                Assert-Search ($handler.Requests.Count -eq $getBefore + 1 -and $getCapture.Method -ceq 'GET' -and $getCapture.Status -eq 200) 'Caller-directed GET must be an independent operation.'
+                Assert-Search ($read.Id -ceq 'connection-1' -and $read.Name -ceq 'explicit-read' -and $getCapture.Marker -ceq 'caller-get') 'Explicit GET lost its own result or header.'
+                $decodedQuery = [uri]::UnescapeDataString(([uri]$getCapture.Uri).Query)
+                Assert-Search ($decodedQuery.Contains('$select=id,name') -and $getCapture.Uri.StartsWith("$endpoint/$ApiVersion/external/connections/connection-1?", [StringComparison]::Ordinal)) 'Explicit GET lost its independent native query.'
+                $handler.Responses.Enqueue('403')
+                $errorBefore = $handler.Requests.Count
+                $getFailed = $false
+                try { Get-MgExternalConnection -ExternalConnectionId 'connection-1' -Headers @{ 'x-search-marker' = 'caller-denied' } | Out-Null }
+                catch {
+                    if ($_.FullyQualifiedErrorId -notlike 'GraphRequestFailed,*') { throw }
+                    $getFailed = $true
+                }
+                Assert-Search ($getFailed -and $handler.Requests.Count -eq $errorBefore + 1 -and $handler.Captures[$errorBefore].Status -eq 403 -and $handler.Responses.Count -eq 0) 'Caller-directed GET403 must surface its own error without replaying PATCH.'
+                $runtimeCases.Add('Explicit GET: own header/query/result, independent 403 error, no mutation replay')
             }
+            $runtimeCases.Add("$($mutation.Method) $name typed/bodyless request, bound headers, WhatIf and genuine No zero HTTP")
         }
         Assert-Rejected { Get-MgExternalConnection -ExternalConnectionId '' }
     }
@@ -422,14 +471,14 @@ try {
         FactoryBaseAddress = $baseAddress.AbsoluteUri
         Captures = @($handlers | ForEach-Object { $_.Captures } | ForEach-Object { $_ })
         Assemblies = @($sources)
-        Failures = @($failures)
+        RuntimeCases = @($runtimeCases)
+        Overall = 'PASS'
         LiveGraphRequests = 0
         ModulePath = $module.Path
     }
     $json = $report | ConvertTo-Json -Depth 7
     if ($OutputPath) { Set-Content -LiteralPath $OutputPath -Value $json }
     Write-Output $json
-    if ($failures.Count) { throw ($failures -join [Environment]::NewLine) }
 }
 finally {
     $session.GraphHttpClient = $null
