@@ -161,12 +161,36 @@ public sealed class PeopleDirectiveMigrationTests
         }
     }
 
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public void WholeModuleHasNoRequiredQueryParametersInEitherActualSource(string profile)
+    {
+        foreach (var root in new[] { "openApiDocs", "openApiDocs_KiotaCompat" })
+        {
+            var document = ReadDocument(root, profile);
+            Assert.NotEmpty(document.Paths);
+            foreach (var path in document.Paths.Values)
+            {
+                Assert.DoesNotContain(path.Parameters ?? [],
+                    parameter => parameter.In == ParameterLocation.Query && parameter.Required);
+                foreach (var operation in path.Operations!.Values)
+                    Assert.DoesNotContain(operation.Parameters ?? [],
+                        parameter => parameter.In == ParameterLocation.Query && parameter.Required);
+            }
+        }
+    }
+
     private static GeneratorConfig Config(bool useCollisionData) => new("Test.Client", "unused", useCollisionData);
 
     private static JsonDocument ReadLedger() => JsonDocument.Parse(File.ReadAllText(
         Path.Combine(RepoRoot, "src", "People", "wrapper", "People_directiveMigrationMap.json")));
 
-    private static IReadOnlyList<(string Method, string Path, string Id)> ReadOperations(string root, string profile)
+    private static IReadOnlyList<(string Method, string Path, string Id)> ReadOperations(string root, string profile) =>
+        ReadDocument(root, profile).Paths.SelectMany(path => path.Value.Operations!
+            .Select(op => (op.Key.Method, path.Key, op.Value.OperationId!))).ToArray();
+
+    private static OpenApiDocument ReadDocument(string root, string profile)
     {
         var settings = new OpenApiReaderSettings();
         settings.AddYamlReader();
@@ -174,8 +198,7 @@ public sealed class PeopleDirectiveMigrationTests
         var result = OpenApiDocument.LoadAsync(stream, settings: settings, cancellationToken: CancellationToken.None)
             .GetAwaiter().GetResult();
         Assert.NotNull(result.Document);
-        return result.Document.Paths.SelectMany(path => path.Value.Operations!
-            .Select(op => (op.Key.Method, path.Key, op.Value.OperationId!))).ToArray();
+        return result.Document;
     }
 
     private static string FindRepoRoot()
