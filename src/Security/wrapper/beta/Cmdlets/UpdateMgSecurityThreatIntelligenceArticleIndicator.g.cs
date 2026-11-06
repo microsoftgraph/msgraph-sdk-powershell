@@ -65,20 +65,6 @@ namespace Microsoft.Graph.PowerShell.Security
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Security.ThreatIntelligence.ArticleIndicators[ArticleIndicatorId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, ArticleIndicatorId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

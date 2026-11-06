@@ -85,20 +85,6 @@ namespace Microsoft.Graph.PowerShell.Security
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Security.Cases.EdiscoveryCases[EdiscoveryCaseId].LegalHolds[EdiscoveryHoldPolicyId].SiteSources[SiteSourceId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, SiteSourceId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

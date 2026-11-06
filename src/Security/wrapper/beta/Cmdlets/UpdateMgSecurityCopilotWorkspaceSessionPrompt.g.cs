@@ -97,20 +97,6 @@ namespace Microsoft.Graph.PowerShell.Security
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Security.SecurityCopilot.Workspaces[WorkspaceId].Sessions[SessionId].Prompts[PromptId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, PromptId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
