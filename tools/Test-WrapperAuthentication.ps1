@@ -213,7 +213,7 @@ try {
         catch {
             throw "$name failed after $($handler.Requests.Count - $before) additional HTTP requests: $($_.Exception)"
         }
-        $expectedCount = if ($verb -eq 'Update') { 2 } else { 1 }
+        $expectedCount = 1
         if ($handler.Requests.Count -ne $before + $expectedCount) { throw "Unexpected request count: $name" }
         $method = switch ($verb) { New { 'POST' } Update { 'PATCH' } Remove { 'DELETE' } }
         $uri = if ($verb -eq 'New') { $collectionUri } else { $itemUri }
@@ -222,11 +222,12 @@ try {
             $body = $handler.Requests[$before].Body | ConvertFrom-Json
             if ($body.description -cne $arguments.Description -or ($body.targetTypes -join ',') -cne 'User,Group' -or
                 @($body.properties).Count -ne 1 -or $body.properties[0].name -cne 'testProperty' -or
-                $body.properties[0].type -cne 'String' -or $result.Id -cne 'offline-proof') {
+                $body.properties[0].type -cne 'String' -or
+                ($verb -eq 'New' -and $result.Id -cne 'offline-proof')) {
                 throw "Incorrect typed body/result: $($handler.Requests[$before].Body)"
             }
         }
-        if ($verb -eq 'Update') { Assert-Request $handler ($before + 1) 'GET' $itemUri }
+        if ($verb -eq 'Update' -and $null -ne $result) { throw 'PATCH204 must return no object and must not read back.' }
         $checks.Add("$method typed JSON, URL, mutation/result")
     }
     if ($declineHost.PromptCount -ne 3) { throw 'Expected three genuine declined prompts.' }
