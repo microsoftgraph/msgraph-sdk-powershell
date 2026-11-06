@@ -1,6 +1,6 @@
 {
   "review": {
-    "baseCommit": "844672d7c2238f6b29a208f9ba73fe28e9e29cef",
+    "baseCommit": "6475f3f5beb4908d39ea356db32bf1e0fd3273cb",
     "scope": "Only src/Compliance/Compliance.md; global and profile-specific readme directives excluded. Parameter/schema directives remain deferred; none occur in this shared file.",
     "compatibleSpecs": {
       "v1.0": {

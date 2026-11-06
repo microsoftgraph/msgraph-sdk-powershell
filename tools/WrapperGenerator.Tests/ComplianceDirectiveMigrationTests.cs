@@ -78,6 +78,17 @@ public sealed class ComplianceDirectiveMigrationTests
             Assert.DoesNotContain("GetRequestAdapter()", retrieval);
             Assert.DoesNotContain("GetRequestAdapter()", mutation);
             Assert.Contains("SupportsShouldProcess = true", mutation);
+            Assert.Contains("client.Compliance.PatchAsync(body", mutation);
+            Assert.DoesNotContain(".GetAsync(", mutation);
+            Assert.DoesNotContain("re-fetch", mutation);
+            Assert.Contains("if (result is not null)", mutation);
+            Assert.Contains("[OutputType(typeof(Test.Client.Models.Compliance))]", mutation);
+            Assert.DoesNotContain("public string Query", mutation);
+            Assert.DoesNotContain("ExpandProperty", mutation);
+            Assert.DoesNotContain("public string[]? Property", mutation);
+            Assert.Empty(operations[HttpMethod.Patch].Parameters ?? []);
+            Assert.DoesNotContain(operations[HttpMethod.Get].Parameters ?? [], parameter =>
+                parameter.In == ParameterLocation.Query && parameter.Required);
         }
         finally
         {
