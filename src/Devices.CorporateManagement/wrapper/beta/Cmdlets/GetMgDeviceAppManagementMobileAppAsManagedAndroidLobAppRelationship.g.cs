@@ -21,6 +21,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 
 
 
+
         [Parameter(Mandatory = false)]
         [Alias("Select")]
         public string[]? Property { get; set; }
