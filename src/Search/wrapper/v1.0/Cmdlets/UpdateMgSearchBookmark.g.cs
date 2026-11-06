@@ -129,7 +129,7 @@ namespace Microsoft.Graph.PowerShell.Search
         body.TargetedVariations = TargetedVariations!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Search.Client.Models.Search.Bookmark? result;
@@ -147,20 +147,6 @@ namespace Microsoft.Graph.PowerShell.Search
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Search.Bookmarks[BookmarkId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, BookmarkId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

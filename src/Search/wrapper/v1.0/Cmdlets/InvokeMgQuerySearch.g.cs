@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Search
     if (this.IsParameterBound(nameof(Requests)))
         body.Requests = Requests!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Search.Client.Search.Query.QueryPostResponse? result;
