@@ -59,7 +59,6 @@ namespace Microsoft.Graph.PowerShell.Applications
                 return;
             }
 
-
             if (result is not null)
                 WriteObject(result);
         }
