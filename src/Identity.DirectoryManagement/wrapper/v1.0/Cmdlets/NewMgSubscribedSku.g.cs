@@ -92,7 +92,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
         body.ServicePlans = ServicePlans!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.SubscribedSku? result;

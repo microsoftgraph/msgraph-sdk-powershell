@@ -57,7 +57,8 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get governanceRelationships from directory
+        /// Read the properties of a governanceRelationship object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancerelationship-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceRelationship"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceRelationship>(requestInfo, global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property governanceRelationships in directory
+        /// Update the status property of a governanceRelationship to initiate the termination process. There are two models for termination:1) Initiated by the governing tenant: After the governing tenant updates the status to terminationRequestedByGoverningTenant, the governed tenant may subsequently update the status to terminated.1) Directly terminated by the governed tenant: The governed tenant updates the status to terminated to immediately terminate the relationship. When the governed tenant updates the status to terminated in either model, the resources that were provisioned in the governed tenant upon relationship creation are deleted.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancerelationship-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceRelationship"/></returns>
         /// <param name="body">The request body</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             return requestInfo;
         }
         /// <summary>
-        /// Get governanceRelationships from directory
+        /// Read the properties of a governanceRelationship object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +145,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property governanceRelationships in directory
+        /// Update the status property of a governanceRelationship to initiate the termination process. There are two models for termination:1) Initiated by the governing tenant: After the governing tenant updates the status to terminationRequestedByGoverningTenant, the governed tenant may subsequently update the status to terminated.1) Directly terminated by the governed tenant: The governed tenant updates the status to terminated to immediately terminate the relationship. When the governed tenant updates the status to terminated in either model, the resources that were provisioned in the governed tenant upon relationship creation are deleted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -182,7 +184,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
         {
         }
         /// <summary>
-        /// Get governanceRelationships from directory
+        /// Read the properties of a governanceRelationship object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GovernanceRelationshipItemRequestBuilderGetQueryParameters 

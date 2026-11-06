@@ -12,17 +12,17 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     public partial class BillingMetricsBase : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The foreignAssociatedTenantBillingManagementActiveCount property</summary>
+        /// <summary>The number of foreign associated tenants with active billing management.</summary>
         public decimal? ForeignAssociatedTenantBillingManagementActiveCount { get; set; }
-        /// <summary>The foreignAssociatedTenantCount property</summary>
+        /// <summary>The total number of foreign associated tenants.</summary>
         public decimal? ForeignAssociatedTenantCount { get; set; }
-        /// <summary>The foreignAssociatedTenantProvisioningActiveCount property</summary>
+        /// <summary>The number of foreign associated tenants with active provisioning.</summary>
         public decimal? ForeignAssociatedTenantProvisioningActiveCount { get; set; }
-        /// <summary>The localAssociatedTenantBillingManagementActiveCount property</summary>
+        /// <summary>The number of local associated tenants with active billing management.</summary>
         public decimal? LocalAssociatedTenantBillingManagementActiveCount { get; set; }
-        /// <summary>The localAssociatedTenantCount property</summary>
+        /// <summary>The total number of local associated tenants.</summary>
         public decimal? LocalAssociatedTenantCount { get; set; }
-        /// <summary>The localAssociatedTenantIds property</summary>
+        /// <summary>The list of local associated tenant IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? LocalAssociatedTenantIds { get; set; }
@@ -30,9 +30,9 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public List<string> LocalAssociatedTenantIds { get; set; }
 #endif
-        /// <summary>The localAssociatedTenantProvisioningActiveCount property</summary>
+        /// <summary>The number of local associated tenants with active provisioning.</summary>
         public decimal? LocalAssociatedTenantProvisioningActiveCount { get; set; }
-        /// <summary>The watermarkDateTime property</summary>
+        /// <summary>The date and time when the metrics snapshot was taken.</summary>
         public DateTimeOffset? WatermarkDateTime { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

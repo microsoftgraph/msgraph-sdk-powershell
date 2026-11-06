@@ -3,6 +3,7 @@
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.TenantGovernance.RelatedTenants.Count;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.TenantGovernance.RelatedTenants.Item;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh;
+using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh.RefreshRequestBuilder Refresh
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh.RefreshRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The refreshStatus property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.RefreshStatusRequestBuilder RefreshStatus
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.RefreshStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.directory.tenantGovernance.relatedTenants.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -60,7 +66,8 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
         {
         }
         /// <summary>
-        /// Get relatedTenants from directory
+        /// Get a list of relatedTenant objects and their properties, including relationship metrics.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-relatedtenants?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RelatedTenantCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +115,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RelatedTenant>(requestInfo, global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RelatedTenant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get relatedTenants from directory
+        /// Get a list of relatedTenant objects and their properties, including relationship metrics.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +165,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             return new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.TenantGovernance.RelatedTenants.RelatedTenantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get relatedTenants from directory
+        /// Get a list of relatedTenant objects and their properties, including relationship metrics.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RelatedTenantsRequestBuilderGetQueryParameters 

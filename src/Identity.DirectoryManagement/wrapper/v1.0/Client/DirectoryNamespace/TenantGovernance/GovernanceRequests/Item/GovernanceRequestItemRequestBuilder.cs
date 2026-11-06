@@ -63,7 +63,8 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get governanceRequests from directory
+        /// Read the properties of a governanceRequest object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancerequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +87,8 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceRequest>(requestInfo, global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property governanceRequests in directory
+        /// Update the status property of a governanceRequest to accept or reject the governance request. Only the governed tenant can update the request status.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancerequest-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -130,7 +132,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             return requestInfo;
         }
         /// <summary>
-        /// Get governanceRequests from directory
+        /// Read the properties of a governanceRequest object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property governanceRequests in directory
+        /// Update the status property of a governanceRequest to accept or reject the governance request. Only the governed tenant can update the request status.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +190,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
         {
         }
         /// <summary>
-        /// Get governanceRequests from directory
+        /// Read the properties of a governanceRequest object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GovernanceRequestItemRequestBuilderGetQueryParameters 

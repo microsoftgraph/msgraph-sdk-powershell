@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     public partial class TenantGovernance : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The governanceInvitations property</summary>
+        /// <summary>Collection of governance invitations associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceInvitation>? GovernanceInvitations { get; set; }
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceInvitation> GovernanceInvitations { get; set; }
 #endif
-        /// <summary>The governancePolicyTemplates property</summary>
+        /// <summary>Collection of governance policy templates associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernancePolicyTemplate>? GovernancePolicyTemplates { get; set; }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernancePolicyTemplate> GovernancePolicyTemplates { get; set; }
 #endif
-        /// <summary>The governanceRelationships property</summary>
+        /// <summary>Collection of governance relationships associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceRelationship>? GovernanceRelationships { get; set; }
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceRelationship> GovernanceRelationships { get; set; }
 #endif
-        /// <summary>The governanceRequests property</summary>
+        /// <summary>Collection of governance requests associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceRequest>? GovernanceRequests { get; set; }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.GovernanceRequest> GovernanceRequests { get; set; }
 #endif
-        /// <summary>The relatedTenants property</summary>
+        /// <summary>Collection of related tenants associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RelatedTenant>? RelatedTenants { get; set; }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RelatedTenant> RelatedTenants { get; set; }
 #endif
-        /// <summary>The settings property</summary>
+        /// <summary>Settings for the tenant governance container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernanceSetting? Settings { get; set; }
