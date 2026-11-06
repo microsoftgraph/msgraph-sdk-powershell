@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -382,6 +384,41 @@ public sealed class SitesDirectiveMigrationTests
     private static string SchemaSignature(IOpenApiSchema? schema) =>
         schema is OpenApiSchemaReference reference ? $"ref:{reference.Reference?.Id}"
             : schema is null ? "none" : $"{schema.Type}:{schema.Format}:{SchemaSignature(schema.Items)}";
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task ActualSitesPatchSourcesReturnOnlyTheirOwnResult(string profile)
+    {
+            var root = FindRepoRoot();
+            var document = ReadSpec(Path.Combine(root, "openApiDocs_KiotaCompat", profile, "Sites.yml"));
+            var output = Path.Combine(Path.GetTempPath(), "sites-patch-contract-" + Guid.NewGuid().ToString("N"));
+            try
+            {
+                await new PowerShellWrapperGenerationService(document,
+                    new GeneratorConfig("Microsoft.Graph.PowerShell.Sites.Client", output),
+                    NullLogger<PowerShellWrapperGenerationService>.Instance, apiVersion: profile).GenerateAsync(CancellationToken.None);
+                var sources = Directory.GetFiles(output, "Update*.g.cs").Select(File.ReadAllText)
+                    .Where(text => text.Contains("[GraphRoute(\"PATCH\"", StringComparison.Ordinal)).ToArray();
+                Assert.NotEmpty(sources);
+                foreach (var source in sources)
+                {
+                    Assert.DoesNotContain(".GetAsync(", source);
+                    Assert.DoesNotContain("if (result is null)", source);
+                    Assert.DoesNotContain("PassThru", source);
+                    Assert.DoesNotContain("ReadBack", source);
+                    Assert.Contains("if (result is not null)", source);
+                    Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", source);
+                    Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+                    Assert.Equal(1, source.Split("ShouldProcess(", StringSplitOptions.None).Length - 1);
+                }
+            }
+            finally
+            {
+                if (Directory.Exists(output))
+                    Directory.Delete(output, recursive: true);
+            }
+    }
 
     private static string MediaSignature(IDictionary<string, IOpenApiMediaType>? content) =>
         content is null ? "" : string.Join("|", content.OrderBy(pair => pair.Key).Select(pair => $"{pair.Key}:{SchemaSignature(pair.Value.Schema)}"));

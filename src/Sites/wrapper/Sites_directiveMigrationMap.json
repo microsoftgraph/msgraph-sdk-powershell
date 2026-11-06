@@ -28,7 +28,7 @@
       }
     ],
     "evidence": "Operations extracted from actual same-profile committed legacy and compatible YAML; published naming/variants corroborated with MgCommandMetadata.json. The oracle is not an operation-completeness or absence oracle.",
-    "frameworkTarget": "844672d7c2238f6b29a208f9ba73fe28e9e29cef",
+    "frameworkTarget": "6475f3f5beb4908d39ea356db32bf1e0fd3273cb",
     "originalSelectorLineage": {
       "v1.0": [
         {

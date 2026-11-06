@@ -31,6 +31,10 @@ distinct `NestedChild` nouns for the actual `/children/{id}/children` navigation
 both URLs remain reachable without endpoint selectors or mutation merges.
 Existing derived v1.0 and curated termStores/singleton behavior remains authoritative.
 
+PATCH commands return only the mutation response. A successful 204 returns no
+object and does not issue a GET; callers can invoke the corresponding GET command
+explicitly with its independent permissions, headers, and query inputs.
+
 ``` yaml
 directive:
 # Remove invalid paths.
