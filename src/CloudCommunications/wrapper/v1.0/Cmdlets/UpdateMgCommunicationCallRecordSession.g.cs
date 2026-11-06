@@ -95,20 +95,6 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Communications.CallRecords[CallRecordId].Sessions[SessionId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, SessionId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
