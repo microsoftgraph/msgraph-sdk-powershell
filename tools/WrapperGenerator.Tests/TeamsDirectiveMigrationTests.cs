@@ -207,6 +207,12 @@ public sealed class TeamsDirectiveMigrationTests
             Assert.Contains("UpdateMgChatMessage.g.cs", sources.Keys);
             Assert.Contains($"GetRequestAdapter(\"{profile}\")", sources["UpdateMgChatMessage.g.cs"]);
             Assert.DoesNotContain("GetRequestAdapter()", sources["UpdateMgChatMessage.g.cs"]);
+            var patchSource = sources["UpdateMgChatMessage.g.cs"];
+            Assert.Contains(".PatchAsync(body", patchSource);
+            Assert.DoesNotContain(".GetAsync(", patchSource);
+            Assert.DoesNotContain("re-fetch", patchSource);
+            Assert.DoesNotContain("public string? Property", patchSource);
+            Assert.DoesNotContain("PassThru", patchSource);
 
             foreach (var mapping in mappings)
             foreach (var evidence in mapping.GetProperty("profiles").GetProperty(profile).GetProperty("operations").EnumerateArray())
@@ -238,6 +244,20 @@ public sealed class TeamsDirectiveMigrationTests
             }
             item.Operations![method] = original.Paths[path].Operations![method];
         }
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public void ActualTeamsSpecificationsHaveNoNativeRequiredQueryParameters(string profile)
+    {
+        var document = Document("openApiDocs_KiotaCompat", profile);
+        var required = document.Paths.SelectMany(path => path.Value.Operations!
+            .SelectMany(operation => (path.Value.Parameters ?? []).Concat(operation.Value.Parameters ?? [])
+                .Where(parameter => parameter.In == ParameterLocation.Query && parameter.Required)
+                .Select(parameter => $"{operation.Key} {path.Key} [{parameter.Name}]"))).ToArray();
+        Assert.NotEmpty(document.Paths);
+        Assert.Empty(required);
     }
 
     [Theory]
