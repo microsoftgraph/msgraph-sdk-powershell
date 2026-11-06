@@ -46,6 +46,11 @@ the other two and four respectively. Path IDs do not satisfy the query, and
 item-reference neighbors do not acquire it. Shared natural-ID groups remain
 path-only.
 
+PATCH is one operation: a successful 204 returns no object and does not issue
+an automatic GET; a 200 model response returns that typed model without another
+request. Call the corresponding GET explicitly when a separate read is wanted.
+There is no readback or pass-through switch.
+
 ``` yaml
 directive:
 #Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0. The affected operation Ids starts from connectedOrganization_DeleteExternalSponsorGraphBPreRef$

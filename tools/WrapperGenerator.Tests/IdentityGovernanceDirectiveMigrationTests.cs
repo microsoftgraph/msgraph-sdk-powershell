@@ -548,6 +548,20 @@ public sealed class IdentityGovernanceDirectiveMigrationTests
             Assert.NotEmpty(Directory.GetFiles(output, "*.g.cs"));
             foreach (var warning in logger.Warnings)
                 TestContext.Current.TestOutputHelper!.WriteLine($"{profile}: {warning}");
+            var patchWorkers = Directory.GetFiles(output, "Update*.g.cs")
+                .Select(File.ReadAllText)
+                .Where(source => source.Contains(".PatchAsync(", StringComparison.Ordinal)).ToArray();
+            Assert.NotEmpty(patchWorkers);
+            foreach (var source in patchWorkers)
+            {
+                Assert.DoesNotContain(".GetAsync(", source, StringComparison.Ordinal);
+                Assert.DoesNotContain("re-fetching", source, StringComparison.Ordinal);
+                Assert.Contains("if (result is not null)", source, StringComparison.Ordinal);
+                Assert.Contains("WriteObject(result)", source, StringComparison.Ordinal);
+                Assert.Single(Regex.Matches(source, @"ShouldProcess\("));
+                Assert.DoesNotMatch(@"public\s+(?:bool|SwitchParameter)\s+(?:PassThru|ReadBack|Refetch)\b", source);
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source, StringComparison.Ordinal);
+            }
             if (profile == "beta")
             {
                 foreach (var noun in new[] { "ProgramControl", "ProgramAssociatedControl" })
