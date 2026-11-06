@@ -93,6 +93,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
 
