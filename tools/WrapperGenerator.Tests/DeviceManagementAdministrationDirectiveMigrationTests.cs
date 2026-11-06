@@ -3,6 +3,9 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -157,6 +160,57 @@ public sealed class DeviceManagementAdministrationDirectiveMigrationTests
             var naming = Naming.Resolve(new OperationInfo(HttpMethod.Get, path), config, apiVersion: Profile);
             Assert.Equal("Get", naming.VerbName);
             Assert.Equal(noun, naming.Noun);
+        }
+    }
+
+    [Fact]
+    public void ActualModuleHasNoRequiredNativeQueryInputs()
+    {
+        var document = Compatible.Value;
+        var operations = document.Paths.Values.SelectMany(path => path.Operations!.Values).ToArray();
+        Assert.NotEmpty(operations);
+        Assert.Contains(operations.SelectMany(operation => operation.Parameters ?? []),
+            parameter => parameter.In == ParameterLocation.Query);
+        Assert.DoesNotContain(document.Paths.Values.SelectMany(path => path.Parameters ?? [])
+            .Concat(operations.SelectMany(operation => operation.Parameters ?? [])),
+            parameter => parameter.In == ParameterLocation.Query && parameter.Required);
+    }
+
+    [Fact]
+    public async Task ActualDeviceImagePatchUsesOnlyItsOwnOperationAndLeavesGetIndependent()
+    {
+        const string path = Root + "/deviceImages/{cloudPcDeviceImage-id}";
+        var document = Load("openApiDocs_KiotaCompat");
+        foreach (var otherPath in document.Paths.Keys.Where(candidate => candidate != path).ToArray())
+            document.Paths.Remove(otherPath);
+        Assert.True(document.Paths[path].Operations!.ContainsKey(HttpMethod.Patch));
+        Assert.True(document.Paths[path].Operations!.ContainsKey(HttpMethod.Get));
+        var output = Path.Combine(Path.GetTempPath(), "administration-patch-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            var service = new PowerShellWrapperGenerationService(document,
+                new GeneratorConfig("Test.Client", output), NullLogger.Instance, apiVersion: Profile);
+            await service.GenerateAsync(CancellationToken.None);
+            var source = File.ReadAllText(Path.Combine(output, "UpdateMgDeviceManagementVirtualEndpointDeviceImage.g.cs"));
+            Assert.Contains(".PatchAsync(body,", source);
+            Assert.DoesNotContain(".GetAsync(", source);
+            Assert.DoesNotContain("if (result is null)", source);
+            Assert.DoesNotContain("QueryParameters", source);
+            Assert.DoesNotContain("PassThru", source);
+            Assert.Contains("if (result is not null)", source);
+            Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", source);
+            Assert.Contains("GetRequestAdapter(\"v1.0\")", source);
+            Assert.Contains("[OutputType(typeof(Test.Client.Models.CloudPcDeviceImage))]", source);
+            Assert.Contains("public string CloudPcDeviceImageId", source);
+            Assert.Contains("body.DisplayName = DisplayName;", source);
+            Assert.Single(source.Split("ShouldProcess(", StringSplitOptions.None).Skip(1));
+            Assert.True(source.IndexOf("ShouldProcess(", StringComparison.Ordinal)
+                < source.IndexOf("var body", StringComparison.Ordinal));
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
         }
     }
 
