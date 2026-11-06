@@ -125,20 +125,6 @@ namespace Microsoft.Graph.PowerShell.Notes
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Groups[GroupId].Onenote.Notebooks[NotebookId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, NotebookId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
