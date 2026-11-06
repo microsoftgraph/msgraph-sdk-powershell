@@ -135,20 +135,6 @@ namespace Microsoft.Graph.PowerShell.Files
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Shares[SharedDriveItemId].List.GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, SharedDriveItemId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
