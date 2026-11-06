@@ -71,20 +71,6 @@ namespace Microsoft.Graph.PowerShell.WindowsUpdates
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Admin.Windows.Updates.Products[ProductId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, ProductId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
