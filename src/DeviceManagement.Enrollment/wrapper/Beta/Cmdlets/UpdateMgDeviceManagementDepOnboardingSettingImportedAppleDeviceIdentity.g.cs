@@ -101,7 +101,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
         body.Platform = Platform;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.ImportedAppleDeviceIdentity? result;
@@ -119,20 +119,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.DeviceManagement.DepOnboardingSettings[DepOnboardingSettingId].ImportedAppleDeviceIdentities[ImportedAppleDeviceIdentityId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, ImportedAppleDeviceIdentityId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

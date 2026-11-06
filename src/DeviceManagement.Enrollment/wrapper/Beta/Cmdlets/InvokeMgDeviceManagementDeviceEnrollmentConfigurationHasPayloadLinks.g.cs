@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
     if (this.IsParameterBound(nameof(PayloadIds)))
         body.PayloadIds = PayloadIds!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.DeviceManagement.DeviceEnrollmentConfigurations.HasPayloadLinks.HasPayloadLinksPostResponse? result;

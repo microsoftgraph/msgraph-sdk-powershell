@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.UnifiedRbacResourceNamespace? result;
@@ -59,20 +59,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.RoleManagement.Exchange.ResourceNamespaces[UnifiedRbacResourceNamespaceId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, UnifiedRbacResourceNamespaceId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
