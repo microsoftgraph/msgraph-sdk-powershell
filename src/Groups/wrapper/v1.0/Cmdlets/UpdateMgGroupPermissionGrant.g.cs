@@ -73,7 +73,7 @@ namespace Microsoft.Graph.PowerShell.Groups
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Groups.Client.Models.ResourceSpecificPermissionGrant? result;
@@ -91,20 +91,6 @@ namespace Microsoft.Graph.PowerShell.Groups
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Groups[GroupId].PermissionGrants[ResourceSpecificPermissionGrantId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, ResourceSpecificPermissionGrantId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

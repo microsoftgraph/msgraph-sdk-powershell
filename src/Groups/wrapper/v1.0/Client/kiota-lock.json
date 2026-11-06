@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "356A142ADDC374AE0A3ED1F0065CB22B9C8BFC00D712CCD35BFA0E765C7FBEA26ACB01E03FAB420A40CEF4CD051D84130555ACB31870AFB5FBFDA6C5FF613744",
+  "descriptionHash": "6BD85E473AC8F4EA064D2CA2ACC7E873675AF7E5CFE4CAB3B4B09326C935DC2CF63FBD12864A6250AAC337A3A0F5BB1C94FB46557881C68AA7052383E7BC52CB",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Groups.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Groups.Client",

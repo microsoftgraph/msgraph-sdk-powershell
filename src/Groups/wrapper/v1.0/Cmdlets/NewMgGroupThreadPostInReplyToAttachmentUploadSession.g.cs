@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Groups
     if (this.IsParameterBound(nameof(AttachmentItem)))
         body.AttachmentItem = AttachmentItem;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Groups.Client.Models.UploadSession? result;
