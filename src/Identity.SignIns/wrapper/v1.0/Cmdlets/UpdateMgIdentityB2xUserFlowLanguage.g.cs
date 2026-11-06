@@ -67,20 +67,6 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Identity.B2xUserFlows[B2xIdentityUserFlowId].Languages[UserFlowLanguageConfigurationId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, UserFlowLanguageConfigurationId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

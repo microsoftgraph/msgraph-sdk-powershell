@@ -69,7 +69,6 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                 return;
             }
 
-
             if (result is not null)
                 WriteObject(result);
         }
