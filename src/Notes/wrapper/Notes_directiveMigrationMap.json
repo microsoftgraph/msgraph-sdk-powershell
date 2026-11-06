@@ -1,0 +1,3566 @@
+{
+  "scope": {
+    "source": "src/Notes/Notes.md",
+    "requiredProfiles": [
+      "v1.0",
+      "beta"
+    ],
+    "excludedProfiles": [],
+    "ignored": [
+      "src/readme.graph.md",
+      "all profile-local readme directives"
+    ],
+    "deferred": [
+      "parameter aliases and transforms",
+      "schema and response transforms"
+    ],
+    "deferredDirectivesPresent": 0,
+    "compatibleSpecBlobs": {
+      "v1.0": "cffaf201c6e5c1e61e792be47e820e6eadd42e3d",
+      "beta": "fc79835fd611ab275d1e13c8cf6f740e2000647b"
+    },
+    "legacySpecBlobs": {
+      "v1.0": "d95f0fa9431657647f6fab06531e135b8c273500",
+      "beta": "aeb4a3ddb187f0d837189546db955c38b753307f"
+    },
+    "sourceReview": {
+      "actualSourceMatchesPerProfile": 298,
+      "literalCurrentMatchesPerProfile": 298,
+      "actualSurvivingOperationsPerProfile": 298,
+      "removedOperationsPerProfile": 0,
+      "review": "One-time module-owned historical comparison: 244 exact paths and 54 actual-kind final action/function qualification changes. Current mapping uses ordinary literal IDs only after normal required-path alignment."
+    }
+  },
+  "sourceCorrection": {
+    "status": "Authorized intentional source repair",
+    "directiveIndex": 1,
+    "originalDirective": "- remove-path-by-operation: ^(user|group|site)_.*Onenote$|.*\\.onenote\\..*parent.*|.*\\.notebook_(Get|Update|Delete)Section.*|.*\\.notebook\\.section.*|.*\\.sectionGroup_(Get|Update|Delete)Section.*|.*\\.sectionGroup\\.section.*|.*\\.section_(Get|Update|Delete)Page|.*\\.section.page.*|.*\\.onenote_(List|Create|Update|Delete)(Operation|Resource)|group\\.site_.*Onenote$|group\\.site\\.onenote.*$|.*\\.onenote\\..*\\.parent.*|.*\\.notebook\\.section.*|.*\\.sectionGroup\\.section.*|.*\\.section\\.page.*|site\\..*_(Create|Get|Update|Delete)Activity$|site\\..*\\.activity.*|^site_(remove|add)$|^.*site\\.(.*_.*SourceColumn|contentType_.*(Base|BaseType|ColumnPosition)|.*_(Get|Create|Update|Delete)Activity|.*\\.activity.*",
+    "originalParseError": "Invalid pattern '^(user|group|site)_.*Onenote$|.*\\.onenote\\..*parent.*|.*\\.notebook_(Get|Update|Delete)Section.*|.*\\.notebook\\.section.*|.*\\.sectionGroup_(Get|Update|Delete)Section.*|.*\\.sectionGroup\\.section.*|.*\\.section_(Get|Update|Delete)Page|.*\\.section.page.*|.*\\.onenote_(List|Create|Update|Delete)(Operation|Resource)|group\\.site_.*Onenote$|group\\.site\\.onenote.*$|.*\\.onenote\\..*\\.parent.*|.*\\.notebook\\.section.*|.*\\.sectionGroup\\.section.*|.*\\.section\\.page.*|site\\..*_(Create|Get|Update|Delete)Activity$|site\\..*\\.activity.*|^site_(remove|add)$|^.*site\\.(.*_.*SourceColumn|contentType_.*(Base|BaseType|ColumnPosition)|.*_(Get|Create|Update|Delete)Activity|.*\\.activity.*' at offset 665. Not enough )'s.",
+    "correctedDirective": "- remove-path-by-operation: ^(user|group|site)_.*Onenote$|.*\\.onenote\\..*parent.*|.*\\.notebook_(Get|Update|Delete)Section.*|.*\\.notebook\\.section.*|.*\\.sectionGroup_(Get|Update|Delete)Section.*|.*\\.sectionGroup\\.section.*|.*\\.section_(Get|Update|Delete)Page|.*\\.section.page.*|.*\\.onenote_(List|Create|Update|Delete)(Operation|Resource)|group\\.site_.*Onenote$|group\\.site\\.onenote.*$|.*\\.onenote\\..*\\.parent.*|.*\\.notebook\\.section.*|.*\\.sectionGroup\\.section.*|.*\\.section\\.page.*|site\\..*_(Create|Get|Update|Delete)Activity$|site\\..*\\.activity.*|^site_(remove|add)$|^.*site\\.(.*_.*SourceColumn|contentType_.*(Base|BaseType|ColumnPosition)|.*_(Get|Create|Update|Delete)Activity|.*\\.activity.*)",
+    "change": "Append exactly one terminal ')' to balance the final site branch. Original regex cannot execute and has no claimed match set."
+  },
+  "mappings": [
+    {
+      "module": "Notes",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "- remove-path-by-operation: ^(user|group|site)_.*Onenote$|.*\\.onenote\\..*parent.*|.*\\.notebook_(Get|Update|Delete)Section.*|.*\\.notebook\\.section.*|.*\\.sectionGroup_(Get|Update|Delete)Section.*|.*\\.sectionGroup\\.section.*|.*\\.section_(Get|Update|Delete)Page|.*\\.section.page.*|.*\\.onenote_(List|Create|Update|Delete)(Operation|Resource)|group\\.site_.*Onenote$|group\\.site\\.onenote.*$|.*\\.onenote\\..*\\.parent.*|.*\\.notebook\\.section.*|.*\\.sectionGroup\\.section.*|.*\\.section\\.page.*|site\\..*_(Create|Get|Update|Delete)Activity$|site\\..*\\.activity.*|^site_(remove|add)$|^.*site\\.(.*_.*SourceColumn|contentType_.*(Base|BaseType|ColumnPosition)|.*_(Get|Create|Update|Delete)Activity|.*\\.activity.*)",
+      "implementation": "CmdletConfigurator",
+      "notes": "Intentional approved source repair: append exactly one missing terminal parenthesis, retaining the invalid original and parse error. The invalid original could not execute and has no claimed match set. The corrected active selector selects 298 actual historical operations per profile; all survive and now match literally in the current compatible specs. No API removal, runtime legacy lookup, or bridge schema is used.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote",
+              "operationId": "group_GetOnenote"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote",
+              "operationId": "group_UpdateOnenote"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote",
+              "operationId": "group_DeleteOnenote"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "group.onenote.notebook_GetSectionGroup"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "group.onenote.notebook_UpdateSectionGroup"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "group.onenote.notebook_DeleteSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook",
+              "operationId": "group.onenote.notebook.sectionGroup_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentSectionGroup",
+              "operationId": "group.onenote.notebook.sectionGroup_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups",
+              "operationId": "group.onenote.notebook.sectionGroup_ListSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}",
+              "operationId": "group.onenote.notebook.sectionGroup_GetSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/$count",
+              "operationId": "group.onenote.notebook.sectionGroup_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections",
+              "operationId": "group.onenote.notebook.sectionGroup_ListSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections",
+              "operationId": "group.onenote.notebook.sectionGroup_CreateSection"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.notebook.sectionGroup_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.notebook.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.notebook.sectionGroup_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "group.onenote.notebook.sectionGroup.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "group.onenote.notebook.sectionGroup.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "group.onenote.notebook.sectionGroup.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "group.onenote.notebook.sectionGroup.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.sectionGroup.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.sectionGroup.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.notebook.sectionGroup.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.notebook.sectionGroup.section_SetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.notebook.sectionGroup.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "group.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "group.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "group.onenote.notebook.sectionGroup.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "group.onenote.notebook.sectionGroup.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "group.onenote.notebook.sectionGroup.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "group.onenote.notebook.sectionGroup.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "group.onenote.notebook.sectionGroup.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/$count",
+              "operationId": "group.onenote.notebook.sectionGroup.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/$count",
+              "operationId": "group.onenote.notebook.sectionGroup_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.notebook_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.notebook_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.notebook_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "group.onenote.notebook.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "group.onenote.notebook.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "group.onenote.notebook.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "group.onenote.notebook.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.notebook.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.notebook.section_SetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.notebook.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "group.onenote.notebook.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.notebook.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "group.onenote.notebook.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "group.onenote.notebook.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "group.onenote.notebook.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "group.onenote.notebook.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "group.onenote.notebook.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "group.onenote.notebook.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/$count",
+              "operationId": "group.onenote.notebook.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/operations",
+              "operationId": "group.onenote_ListOperation"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/operations",
+              "operationId": "group.onenote_CreateOperation"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "group.onenote_UpdateOperation"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "group.onenote_DeleteOperation"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/resources",
+              "operationId": "group.onenote_ListResource"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/resources",
+              "operationId": "group.onenote_CreateResource"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "group.onenote_UpdateResource"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "group.onenote_DeleteResource"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/resources/{onenoteResource-id}/content",
+              "operationId": "group.onenote_DeleteResourcesContent"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}",
+              "operationId": "group.onenote.sectionGroup_GetSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.sectionGroup_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.sectionGroup_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "group.onenote.sectionGroup.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "group.onenote.sectionGroup.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "group.onenote.sectionGroup.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "group.onenote.sectionGroup.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.sectionGroup.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.sectionGroup.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.sectionGroup.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.sectionGroup.section_SetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.sectionGroup.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "group.onenote.sectionGroup.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "group.onenote.sectionGroup.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "group.onenote.sectionGroup.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "group.onenote.sectionGroup.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "group.onenote.sectionGroup.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "group.onenote.sectionGroup.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "group.onenote.sectionGroup.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/$count",
+              "operationId": "group.onenote.sectionGroup.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.section_GetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "group.onenote.section.page_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.section.page_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "group.onenote.section.page_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "group.onenote.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "group.onenote.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "group.onenote.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote",
+              "operationId": "site_GetOnenote"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote",
+              "operationId": "site_UpdateOnenote"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote",
+              "operationId": "site_DeleteOnenote"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "site.onenote.notebook_GetSectionGroup"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "site.onenote.notebook_UpdateSectionGroup"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "site.onenote.notebook_DeleteSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook",
+              "operationId": "site.onenote.notebook.sectionGroup_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentSectionGroup",
+              "operationId": "site.onenote.notebook.sectionGroup_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups",
+              "operationId": "site.onenote.notebook.sectionGroup_ListSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}",
+              "operationId": "site.onenote.notebook.sectionGroup_GetSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/$count",
+              "operationId": "site.onenote.notebook.sectionGroup_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections",
+              "operationId": "site.onenote.notebook.sectionGroup_ListSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections",
+              "operationId": "site.onenote.notebook.sectionGroup_CreateSection"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook.sectionGroup_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook.sectionGroup_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "site.onenote.notebook.sectionGroup.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "site.onenote.notebook.sectionGroup.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "site.onenote.notebook.sectionGroup.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "site.onenote.notebook.sectionGroup.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.sectionGroup.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.sectionGroup.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.notebook.sectionGroup.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.notebook.sectionGroup.section_SetPagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "site.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "site.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "site.onenote.notebook.sectionGroup.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "site.onenote.notebook.sectionGroup.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "site.onenote.notebook.sectionGroup.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "site.onenote.notebook.sectionGroup.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "site.onenote.notebook.sectionGroup.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/$count",
+              "operationId": "site.onenote.notebook.sectionGroup.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/$count",
+              "operationId": "site.onenote.notebook.sectionGroup_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "site.onenote.notebook.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "site.onenote.notebook.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "site.onenote.notebook.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "site.onenote.notebook.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.notebook.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.notebook.section_SetPagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "site.onenote.notebook.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.notebook.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "site.onenote.notebook.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "site.onenote.notebook.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "site.onenote.notebook.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "site.onenote.notebook.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "site.onenote.notebook.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "site.onenote.notebook.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/$count",
+              "operationId": "site.onenote.notebook.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/operations",
+              "operationId": "site.onenote_ListOperation"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/operations",
+              "operationId": "site.onenote_CreateOperation"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "site.onenote_UpdateOperation"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "site.onenote_DeleteOperation"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/resources",
+              "operationId": "site.onenote_ListResource"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/resources",
+              "operationId": "site.onenote_CreateResource"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "site.onenote_UpdateResource"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "site.onenote_DeleteResource"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}",
+              "operationId": "site.onenote.sectionGroup_GetSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.sectionGroup_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.sectionGroup_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "site.onenote.sectionGroup.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "site.onenote.sectionGroup.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "site.onenote.sectionGroup.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "site.onenote.sectionGroup.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.sectionGroup.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.sectionGroup.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.sectionGroup.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.sectionGroup.section_SetPagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "site.onenote.sectionGroup.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "site.onenote.sectionGroup.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "site.onenote.sectionGroup.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "site.onenote.sectionGroup.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "site.onenote.sectionGroup.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "site.onenote.sectionGroup.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "site.onenote.sectionGroup.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/$count",
+              "operationId": "site.onenote.sectionGroup.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.section_GetPagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "site.onenote.section.page_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.section.page_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "site.onenote.section.page_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "site.onenote.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "site.onenote.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "site.onenote.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote",
+              "operationId": "user_GetOnenote"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote",
+              "operationId": "user_UpdateOnenote"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote",
+              "operationId": "user_DeleteOnenote"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "user.onenote.notebook_GetSectionGroup"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "user.onenote.notebook_UpdateSectionGroup"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "user.onenote.notebook_DeleteSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook",
+              "operationId": "user.onenote.notebook.sectionGroup_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentSectionGroup",
+              "operationId": "user.onenote.notebook.sectionGroup_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups",
+              "operationId": "user.onenote.notebook.sectionGroup_ListSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}",
+              "operationId": "user.onenote.notebook.sectionGroup_GetSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/$count",
+              "operationId": "user.onenote.notebook.sectionGroup_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections",
+              "operationId": "user.onenote.notebook.sectionGroup_ListSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections",
+              "operationId": "user.onenote.notebook.sectionGroup_CreateSection"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.notebook.sectionGroup_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.notebook.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.notebook.sectionGroup_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "user.onenote.notebook.sectionGroup.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "user.onenote.notebook.sectionGroup.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "user.onenote.notebook.sectionGroup.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "user.onenote.notebook.sectionGroup.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.sectionGroup.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.sectionGroup.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.notebook.sectionGroup.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.notebook.sectionGroup.section_SetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.notebook.sectionGroup.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "user.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "user.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "user.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "user.onenote.notebook.sectionGroup.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "user.onenote.notebook.sectionGroup.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "user.onenote.notebook.sectionGroup.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "user.onenote.notebook.sectionGroup.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "user.onenote.notebook.sectionGroup.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/$count",
+              "operationId": "user.onenote.notebook.sectionGroup.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/$count",
+              "operationId": "user.onenote.notebook.sectionGroup_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.notebook_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.notebook_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.notebook_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "user.onenote.notebook.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "user.onenote.notebook.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "user.onenote.notebook.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "user.onenote.notebook.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.notebook.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.notebook.section_SetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.notebook.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "user.onenote.notebook.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "user.onenote.notebook.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "user.onenote.notebook.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "user.onenote.notebook.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "user.onenote.notebook.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "user.onenote.notebook.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "user.onenote.notebook.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "user.onenote.notebook.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/$count",
+              "operationId": "user.onenote.notebook.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/operations",
+              "operationId": "user.onenote_ListOperation"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/operations",
+              "operationId": "user.onenote_CreateOperation"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "user.onenote_UpdateOperation"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "user.onenote_DeleteOperation"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/resources",
+              "operationId": "user.onenote_ListResource"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/resources",
+              "operationId": "user.onenote_CreateResource"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "user.onenote_UpdateResource"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "user.onenote_DeleteResource"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/resources/{onenoteResource-id}/content",
+              "operationId": "user.onenote_DeleteResourcesContent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}",
+              "operationId": "user.onenote.sectionGroup_GetSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.sectionGroup_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.sectionGroup_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "user.onenote.sectionGroup.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "user.onenote.sectionGroup.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "user.onenote.sectionGroup.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "user.onenote.sectionGroup.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.sectionGroup.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.sectionGroup.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.sectionGroup.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.sectionGroup.section_SetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.sectionGroup.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "user.onenote.sectionGroup.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "user.onenote.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "user.onenote.sectionGroup.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "user.onenote.sectionGroup.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "user.onenote.sectionGroup.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "user.onenote.sectionGroup.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "user.onenote.sectionGroup.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "user.onenote.sectionGroup.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/$count",
+              "operationId": "user.onenote.sectionGroup.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.section_GetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "user.onenote.section.page_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "user.onenote.section.page_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "user.onenote.section.page_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "user.onenote.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "user.onenote.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "user.onenote.section.page_GetCount"
+            }
+          ],
+          "notes": "All 298 current literal matches equal the complete actual same-profile historical selector survivors. The finite required-path ID alignment restored nine IDs; no runtime source-bridge integration or API-absence assertion is used."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote",
+              "operationId": "group_GetOnenote"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote",
+              "operationId": "group_UpdateOnenote"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote",
+              "operationId": "group_DeleteOnenote"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "group.onenote.notebook_GetSectionGroup"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "group.onenote.notebook_UpdateSectionGroup"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "group.onenote.notebook_DeleteSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook",
+              "operationId": "group.onenote.notebook.sectionGroup_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentSectionGroup",
+              "operationId": "group.onenote.notebook.sectionGroup_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups",
+              "operationId": "group.onenote.notebook.sectionGroup_ListSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}",
+              "operationId": "group.onenote.notebook.sectionGroup_GetSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/$count",
+              "operationId": "group.onenote.notebook.sectionGroup_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections",
+              "operationId": "group.onenote.notebook.sectionGroup_ListSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections",
+              "operationId": "group.onenote.notebook.sectionGroup_CreateSection"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.notebook.sectionGroup_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.notebook.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.notebook.sectionGroup_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "group.onenote.notebook.sectionGroup.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "group.onenote.notebook.sectionGroup.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "group.onenote.notebook.sectionGroup.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "group.onenote.notebook.sectionGroup.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.sectionGroup.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.sectionGroup.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.notebook.sectionGroup.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.notebook.sectionGroup.section_SetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.notebook.sectionGroup.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "group.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "group.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "group.onenote.notebook.sectionGroup.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "group.onenote.notebook.sectionGroup.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "group.onenote.notebook.sectionGroup.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "group.onenote.notebook.sectionGroup.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "group.onenote.notebook.sectionGroup.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/$count",
+              "operationId": "group.onenote.notebook.sectionGroup.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/$count",
+              "operationId": "group.onenote.notebook.sectionGroup_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.notebook_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.notebook_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.notebook_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "group.onenote.notebook.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "group.onenote.notebook.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "group.onenote.notebook.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "group.onenote.notebook.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.notebook.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.notebook.section_SetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.notebook.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "group.onenote.notebook.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.notebook.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "group.onenote.notebook.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "group.onenote.notebook.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "group.onenote.notebook.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "group.onenote.notebook.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "group.onenote.notebook.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "group.onenote.notebook.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/$count",
+              "operationId": "group.onenote.notebook.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/operations",
+              "operationId": "group.onenote_ListOperation"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/operations",
+              "operationId": "group.onenote_CreateOperation"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "group.onenote_UpdateOperation"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "group.onenote_DeleteOperation"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/resources",
+              "operationId": "group.onenote_ListResource"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/resources",
+              "operationId": "group.onenote_CreateResource"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "group.onenote_UpdateResource"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "group.onenote_DeleteResource"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/resources/{onenoteResource-id}/content",
+              "operationId": "group.onenote_DeleteResourcesContent"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}",
+              "operationId": "group.onenote.sectionGroup_GetSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.sectionGroup_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "group.onenote.sectionGroup_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "group.onenote.sectionGroup.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "group.onenote.sectionGroup.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "group.onenote.sectionGroup.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "group.onenote.sectionGroup.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.sectionGroup.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.sectionGroup.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.sectionGroup.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.sectionGroup.section_SetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.sectionGroup.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "group.onenote.sectionGroup.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "group.onenote.sectionGroup.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "group.onenote.sectionGroup.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "group.onenote.sectionGroup.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "group.onenote.sectionGroup.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "group.onenote.sectionGroup.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "group.onenote.sectionGroup.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/$count",
+              "operationId": "group.onenote.sectionGroup.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.section_GetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "group.onenote.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "group.onenote.section.page_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.section.page_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "group.onenote.section.page_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "group.onenote.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "group.onenote.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "group.onenote.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote",
+              "operationId": "site_GetOnenote"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote",
+              "operationId": "site_UpdateOnenote"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote",
+              "operationId": "site_DeleteOnenote"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "site.onenote.notebook_GetSectionGroup"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "site.onenote.notebook_UpdateSectionGroup"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "site.onenote.notebook_DeleteSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook",
+              "operationId": "site.onenote.notebook.sectionGroup_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentSectionGroup",
+              "operationId": "site.onenote.notebook.sectionGroup_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups",
+              "operationId": "site.onenote.notebook.sectionGroup_ListSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}",
+              "operationId": "site.onenote.notebook.sectionGroup_GetSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/$count",
+              "operationId": "site.onenote.notebook.sectionGroup_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections",
+              "operationId": "site.onenote.notebook.sectionGroup_ListSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections",
+              "operationId": "site.onenote.notebook.sectionGroup_CreateSection"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook.sectionGroup_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook.sectionGroup_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "site.onenote.notebook.sectionGroup.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "site.onenote.notebook.sectionGroup.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "site.onenote.notebook.sectionGroup.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "site.onenote.notebook.sectionGroup.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.sectionGroup.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.sectionGroup.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.notebook.sectionGroup.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.notebook.sectionGroup.section_SetPagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "site.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "site.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "site.onenote.notebook.sectionGroup.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "site.onenote.notebook.sectionGroup.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "site.onenote.notebook.sectionGroup.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "site.onenote.notebook.sectionGroup.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "site.onenote.notebook.sectionGroup.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/$count",
+              "operationId": "site.onenote.notebook.sectionGroup.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/$count",
+              "operationId": "site.onenote.notebook.sectionGroup_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "site.onenote.notebook.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "site.onenote.notebook.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "site.onenote.notebook.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "site.onenote.notebook.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.notebook.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.notebook.section_SetPagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "site.onenote.notebook.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.notebook.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "site.onenote.notebook.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "site.onenote.notebook.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "site.onenote.notebook.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "site.onenote.notebook.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "site.onenote.notebook.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "site.onenote.notebook.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/$count",
+              "operationId": "site.onenote.notebook.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/operations",
+              "operationId": "site.onenote_ListOperation"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/operations",
+              "operationId": "site.onenote_CreateOperation"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "site.onenote_UpdateOperation"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "site.onenote_DeleteOperation"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/resources",
+              "operationId": "site.onenote_ListResource"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/resources",
+              "operationId": "site.onenote_CreateResource"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "site.onenote_UpdateResource"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "site.onenote_DeleteResource"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}",
+              "operationId": "site.onenote.sectionGroup_GetSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.sectionGroup_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.sectionGroup_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "site.onenote.sectionGroup.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "site.onenote.sectionGroup.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "site.onenote.sectionGroup.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "site.onenote.sectionGroup.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.sectionGroup.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.sectionGroup.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.sectionGroup.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.sectionGroup.section_SetPagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "site.onenote.sectionGroup.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "site.onenote.sectionGroup.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "site.onenote.sectionGroup.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "site.onenote.sectionGroup.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "site.onenote.sectionGroup.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "site.onenote.sectionGroup.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "site.onenote.sectionGroup.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/$count",
+              "operationId": "site.onenote.sectionGroup.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "site.onenote.section_GetPagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "site.onenote.section.page_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.section.page_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "site.onenote.section.page_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "site.onenote.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "site.onenote.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "site.onenote.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote",
+              "operationId": "user_GetOnenote"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote",
+              "operationId": "user_UpdateOnenote"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote",
+              "operationId": "user_DeleteOnenote"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "user.onenote.notebook_GetSectionGroup"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "user.onenote.notebook_UpdateSectionGroup"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "user.onenote.notebook_DeleteSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook",
+              "operationId": "user.onenote.notebook.sectionGroup_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentSectionGroup",
+              "operationId": "user.onenote.notebook.sectionGroup_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups",
+              "operationId": "user.onenote.notebook.sectionGroup_ListSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}",
+              "operationId": "user.onenote.notebook.sectionGroup_GetSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/$count",
+              "operationId": "user.onenote.notebook.sectionGroup_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections",
+              "operationId": "user.onenote.notebook.sectionGroup_ListSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections",
+              "operationId": "user.onenote.notebook.sectionGroup_CreateSection"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.notebook.sectionGroup_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.notebook.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.notebook.sectionGroup_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "user.onenote.notebook.sectionGroup.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "user.onenote.notebook.sectionGroup.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "user.onenote.notebook.sectionGroup.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "user.onenote.notebook.sectionGroup.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.sectionGroup.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.sectionGroup.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.notebook.sectionGroup.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.notebook.sectionGroup.section_SetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.notebook.sectionGroup.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "user.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "user.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "user.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "user.onenote.notebook.sectionGroup.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "user.onenote.notebook.sectionGroup.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "user.onenote.notebook.sectionGroup.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "user.onenote.notebook.sectionGroup.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "user.onenote.notebook.sectionGroup.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/$count",
+              "operationId": "user.onenote.notebook.sectionGroup.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/$count",
+              "operationId": "user.onenote.notebook.sectionGroup_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.notebook_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.notebook_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.notebook_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "user.onenote.notebook.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "user.onenote.notebook.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "user.onenote.notebook.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "user.onenote.notebook.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.notebook.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.notebook.section_SetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.notebook.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "user.onenote.notebook.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "user.onenote.notebook.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "user.onenote.notebook.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "user.onenote.notebook.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "user.onenote.notebook.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "user.onenote.notebook.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "user.onenote.notebook.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "user.onenote.notebook.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/$count",
+              "operationId": "user.onenote.notebook.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/operations",
+              "operationId": "user.onenote_ListOperation"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/operations",
+              "operationId": "user.onenote_CreateOperation"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "user.onenote_UpdateOperation"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "user.onenote_DeleteOperation"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/resources",
+              "operationId": "user.onenote_ListResource"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/resources",
+              "operationId": "user.onenote_CreateResource"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "user.onenote_UpdateResource"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "user.onenote_DeleteResource"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/resources/{onenoteResource-id}/content",
+              "operationId": "user.onenote_DeleteResourcesContent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/{sectionGroup-id1}",
+              "operationId": "user.onenote.sectionGroup_GetSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.sectionGroup_GetSection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "user.onenote.sectionGroup_DeleteSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToNotebook",
+              "operationId": "user.onenote.sectionGroup.section.onenoteSection_copyToNotebook"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/copyToSectionGroup",
+              "operationId": "user.onenote.sectionGroup.section.onenoteSection_copyToSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "user.onenote.sectionGroup.section_ListPage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages",
+              "operationId": "user.onenote.sectionGroup.section_CreatePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.sectionGroup.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.sectionGroup.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.sectionGroup.section_GetPagesContent"
+            },
+            {
+              "method": "PUT",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.sectionGroup.section_SetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.sectionGroup.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "user.onenote.sectionGroup.section.onenoteSection.page.onenotePage_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "user.onenote.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "user.onenote.sectionGroup.section.onenoteSection.page.onenotePage_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "user.onenote.sectionGroup.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "user.onenote.sectionGroup.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "user.onenote.sectionGroup.section.page_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook",
+              "operationId": "user.onenote.sectionGroup.section_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup",
+              "operationId": "user.onenote.sectionGroup.section_GetParentSectionGroup"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/$count",
+              "operationId": "user.onenote.sectionGroup.section_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.section_GetPage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.section_UpdatePage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.section_DeletePage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.section_GetPagesContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content",
+              "operationId": "user.onenote.section_DeletePagesContent"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/copyToSection",
+              "operationId": "user.onenote.section.page_copyToSection"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "user.onenote.section.page_onenotePatchContent"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()",
+              "operationId": "user.onenote.section.page_preview"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook",
+              "operationId": "user.onenote.section.page_GetParentNotebook"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection",
+              "operationId": "user.onenote.section.page_GetParentSection"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/$count",
+              "operationId": "user.onenote.section.page_GetCount"
+            }
+          ],
+          "notes": "All 298 current literal matches equal the complete actual same-profile historical selector survivors. The finite required-path ID alignment restored nine IDs; no runtime source-bridge integration or API-absence assertion is used."
+        }
+      }
+    },
+    {
+      "module": "Notes",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^GroupOnenoteNotebookSectionGroupSectionPage$|^GroupOnenoteNotebookSectionPage$|^GroupOnenotePage$|^GroupOnenoteSectionGroupSectionPage$|^GroupOnenoteSectionPage$|^SiteOnenoteNotebookSectionGroupSectionPage$|^SiteOnenoteNotebookSectionPage$|^SiteOnenotePage$|^SiteOnenoteSectionGroupSectionPage$|^SiteOnenoteSectionPage$|^UserOnenoteNotebookSectionGroupSectionPage$|^UserOnenoteNotebookSectionPage$|^UserOnenotePage$|^UserOnenoteSectionGroupSectionPage$|^UserOnenoteSectionPage$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Resource PATCH Page Update variants only, never the POST onenotePatchContent action. All 15 exact page routes exist per profile; 12 are also selected by directive 1 and three direct page PATCH routes need additional suppression.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/pages/{onenotePage-id}",
+              "operationId": "group.onenote_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/pages/{onenotePage-id}",
+              "operationId": "site.onenote_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/pages/{onenotePage-id}",
+              "operationId": "user.onenote_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.section_UpdatePage"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.notebook.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/pages/{onenotePage-id}",
+              "operationId": "group.onenote_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "group.onenote.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.notebook.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/pages/{onenotePage-id}",
+              "operationId": "site.onenote_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "site.onenote.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.notebook.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/pages/{onenotePage-id}",
+              "operationId": "user.onenote_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.sectionGroup.section_UpdatePage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}",
+              "operationId": "user.onenote.section_UpdatePage"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Notes",
+      "directiveIndex": 3,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: (^SiteOnenote.*)",
+      "implementation": "CmdletConfigurator",
+      "notes": "The broad Site Update rename applies to remaining resource PATCH subjects as well as onenotePatchContent. Of 15 method/path candidates per profile, 11 are suppressed by directive 1 and four remain: notebook, sectionGroup and section PATCH, and direct PageContent POST. Existing v1.0 derived names remain authoritative; shared fallback covers beta.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote",
+              "operationId": "site_UpdateOnenote"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}",
+              "operationId": "site.onenote_UpdateNotebook"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "site.onenote.notebook_UpdateSectionGroup"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook_UpdateSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.notebook.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "site.onenote_UpdateOperation"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "site.onenote_UpdateResource"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}",
+              "operationId": "site.onenote_UpdateSectionGroup"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}",
+              "operationId": "site.onenote_UpdateSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.section.page_onenotePatchContent"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote",
+              "operationId": "site_UpdateOnenote"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}",
+              "operationId": "site.onenote_UpdateNotebook"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}",
+              "operationId": "site.onenote.notebook_UpdateSectionGroup"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.notebook_UpdateSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.notebook.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/operations/{onenoteOperation-id}",
+              "operationId": "site.onenote_UpdateOperation"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/resources/{onenoteResource-id}",
+              "operationId": "site.onenote_UpdateResource"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}",
+              "operationId": "site.onenote_UpdateSectionGroup"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}",
+              "operationId": "site.onenote.sectionGroup_UpdateSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}",
+              "operationId": "site.onenote_UpdateSection"
+            },
+            {
+              "method": "POST",
+              "path": "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "site.onenote.section.page_onenotePatchContent"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Notes",
+      "directiveIndex": 4,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(GroupOnenote)Notebook(RecentNotebook)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Group getRecentNotebooks retains Get and drops redundant Notebook from its subject. Existing v1.0 derived rename is authoritative; the shared exact fallback is necessary for beta.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})",
+              "operationId": "group.onenote.notebook_getRecentNotebook"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})",
+              "operationId": "group.onenote.notebook_getRecentNotebook"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Notes",
+      "directiveIndex": 5,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(GroupOnenotePage)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Direct Group PageContent POST keeps the published Update verb and appended Content subject. The PATCH resource variant is separately suppressed. Existing v1.0 derived name is authoritative; shared fallback covers beta.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.page.onenotePage_onenotePatchContent"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.page.onenotePage_onenotePatchContent"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Notes",
+      "directiveIndex": 6,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(GroupOnenoteSectionPage)$",
+      "implementation": "SupersededByEarlierSuppression",
+      "notes": "Earlier directive 1 suppresses this exact nested SectionPage onenotePatchContent action. Retain the active source rename and its real compatible successor as ordered-source evidence; do not add an unreachable redundant rename.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.section.page_onenotePatchContent"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.section.page_onenotePatchContent"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Notes",
+      "directiveIndex": 7,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(GroupOnenoteNotebookSectionPage)$",
+      "implementation": "SupersededByEarlierSuppression",
+      "notes": "Earlier directive 1 suppresses this exact nested NotebookSectionPage onenotePatchContent action. Retain the active source rename and its real compatible successor as ordered-source evidence; do not add an unreachable redundant rename.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.notebook.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.notebook.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Notes",
+      "directiveIndex": 8,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(GroupOnenoteSectionGroupSectionPage)$",
+      "implementation": "SupersededByEarlierSuppression",
+      "notes": "Earlier directive 1 suppresses this exact nested SectionGroupSectionPage onenotePatchContent action. Retain the active source rename and its real compatible successor as ordered-source evidence; do not add an unreachable redundant rename.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Notes",
+      "directiveIndex": 9,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(GroupOnenoteNotebookSectionGroupSectionPage)$",
+      "implementation": "SupersededByEarlierSuppression",
+      "notes": "Earlier directive 1 suppresses this exact nested NotebookSectionGroupSectionPage onenotePatchContent action. Retain the active source rename and its real compatible successor as ordered-source evidence; do not add an unreachable redundant rename.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent",
+              "operationId": "group.onenote.notebook.sectionGroup.section.onenoteSection.page.onenotePage_onenotePatchContent"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
