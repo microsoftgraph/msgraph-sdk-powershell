@@ -113,6 +113,22 @@ public sealed class DeviceManagementFunctionsDirectiveMigrationTests
     }
 
     [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public void ActualFunctionSpecsHaveNoPatchOrRequiredQueryOperations(string profile)
+    {
+        var document = LoadSpec(profile);
+        foreach (var item in document.Paths.Values)
+        {
+            Assert.DoesNotContain(HttpMethod.Patch, item.Operations!.Keys);
+            var operation = Assert.Single(item.Operations);
+            Assert.Equal(HttpMethod.Get, operation.Key);
+            var parameters = (item.Parameters ?? []).Concat(operation.Value.Parameters ?? []);
+            Assert.DoesNotContain(parameters, parameter => parameter.In == ParameterLocation.Query && parameter.Required);
+        }
+    }
+
+    [Theory]
     [InlineData("v1.0", false)]
     [InlineData("v1.0", true)]
     [InlineData("beta", false)]

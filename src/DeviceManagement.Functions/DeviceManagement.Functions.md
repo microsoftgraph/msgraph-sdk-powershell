@@ -37,7 +37,7 @@ The beta name for that route remains
 `Get-MgDeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices`.
 
 Both compatible profiles are required; neither is excluded. The reviewed inputs
-after normally integrating `powershell-v3` at `844672d7c2` are:
+after normally integrating `powershell-v3` at `6475f3f5be` are:
 
 | Profile | Compatible specification | Git blob | GET function operations |
 | --- | --- | --- | --- |
@@ -65,6 +65,13 @@ Release builds and nonzero exported cmdlets remain separate gates for each
 profile. The current manifests require the normally packaged Authentication
 2.41.2, which owns the Kiota dependency closure; wrapper output must not preload
 or copy that closure. Preserve the committed `wrapper/Beta` output casing.
+
+The actual compatible module specifications contain only GET functions and no
+required query parameters, including inherited declarations. Inline function
+arguments remain mandatory path inputs; optional OData query parameters keep
+their existing names and aliases. The post-3886 PATCH one-operation policy is
+not applicable to this module: no mutation, implicit readback, or forced RMS
+load is invented for this GET-only audit.
 
 All profile-local readmes and `src/readme.graph.md` are outside this audit and
 are not read, migrated, annotated, or edited. The required common include above
