@@ -29,7 +29,7 @@ renames or suppressions for the reviewed operations; structural naming is retain
 
 Both required profiles are available; no profile is excluded and no legacy
 `openApiDocs` fallback is used. The evidence below is refreshed against merged
-`powershell-v3` target `844672d7c2238f6b29a208f9ba73fe28e9e29cef`.
+`powershell-v3` target `6475f3f5beb4908d39ea356db32bf1e0fd3273cb`.
 
 | Profile | Compatible spec | Git blob |
 | --- | --- | --- |
@@ -50,6 +50,13 @@ to call `GetRequestAdapter` with that explicit profile, never the bare v1.0
 default. Normal manifests use Authentication 2.41.2 for the complete Kiota
 dependency closure. These are
 unaffected-operation assertions, not claims of migrated suppressions or renames.
+
+The native monitor PATCH has no query inputs, and neither compatible profile
+contains a required query parameter. GET-only query options are not added to
+PATCH. A successful PATCH 204 returns no object and never triggers an automatic
+GET; PATCH 200 returns its actual typed model in the same single request. Callers
+may run the existing GET independently for readback. The real-spec regression
+pins this one-operation source contract without adding switches or aliases.
 
 ### Scope and deferred classes
 

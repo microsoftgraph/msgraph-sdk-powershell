@@ -64,6 +64,17 @@ public sealed class ConfigurationManagementDirectiveMigrationTests
         Assert.Equal(expectedOperations.OrderBy(value => value, StringComparer.Ordinal),
             actualOperations.OrderBy(value => value, StringComparer.Ordinal));
 
+        foreach (var path in document.Paths.Values)
+        {
+            var parameters = (path.Parameters ?? []).Concat(
+                path.Operations!.Values.SelectMany(operation => operation.Parameters ?? []));
+            Assert.DoesNotContain(parameters, parameter =>
+                parameter.In == ParameterLocation.Query && parameter.Required);
+        }
+        var patch = document.Paths[Root + "configurationMonitors/{configurationMonitor-id}"]
+            .Operations![HttpMethod.Patch];
+        Assert.DoesNotContain(patch.Parameters ?? [], parameter => parameter.In == ParameterLocation.Query);
+
         var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: useCollisionData);
         foreach (var operation in Operations)
         {
@@ -93,6 +104,15 @@ public sealed class ConfigurationManagementDirectiveMigrationTests
                 Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
                 Assert.DoesNotContain("GetRequestAdapter()", source);
             }
+            var update = File.ReadAllText(Path.Combine(output,
+                "UpdateMgAdminConfigurationManagementConfigurationMonitor.g.cs"));
+            Assert.Contains(".PatchAsync(", update);
+            Assert.DoesNotContain(".GetAsync(", update);
+            Assert.Contains("if (result is not null)", update);
+            Assert.Contains("WriteObject(result)", update);
+            Assert.DoesNotContain("QueryParameters.", update);
+            Assert.DoesNotContain("PassThru", update);
+            Assert.DoesNotContain("Refetch", update);
         }
         finally
         {
