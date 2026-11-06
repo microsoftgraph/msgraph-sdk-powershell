@@ -224,7 +224,7 @@ namespace Microsoft.Graph.PowerShell.Education
         body.Teacher = Teacher;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Education.Client.Models.EducationUser? result;
@@ -242,20 +242,6 @@ namespace Microsoft.Graph.PowerShell.Education
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Education.Me.GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, null);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

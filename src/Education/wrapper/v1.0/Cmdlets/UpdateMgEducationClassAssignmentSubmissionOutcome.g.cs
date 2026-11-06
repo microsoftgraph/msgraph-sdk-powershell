@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Education
         body.LastModifiedBy = LastModifiedBy;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Education.Client.Models.EducationOutcome? result;
@@ -69,20 +69,6 @@ namespace Microsoft.Graph.PowerShell.Education
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Education.Classes[EducationClassId].Assignments[EducationAssignmentId].Submissions[EducationSubmissionId].Outcomes[EducationOutcomeId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, EducationOutcomeId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
