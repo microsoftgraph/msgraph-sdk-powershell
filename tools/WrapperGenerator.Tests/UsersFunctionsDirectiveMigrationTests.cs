@@ -184,6 +184,22 @@ public sealed class UsersFunctionsDirectiveMigrationTests
         Assert.Equal("function", Assert.IsType<JsonNodeExtension>(extension).Node?.ToString().Trim('"'));
     }
 
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public void FunctionInlineArgumentsDoNotInventRequiredQueryInputs(string profile)
+    {
+        var operations = ReadOperations("openApiDocs_KiotaCompat", profile);
+        Assert.NotEmpty(operations);
+        Assert.All(operations, operation =>
+        {
+            AssertActualFunction(operation);
+            Assert.Empty((operation.Definition.Parameters ?? [])
+                .Where(parameter => parameter.In == ParameterLocation.Query && parameter.Required));
+        });
+        Assert.Contains(operations, operation => operation.Path.EndsWith("(skip={skip},top={top})", StringComparison.Ordinal));
+    }
+
     private static Operation[] ReadOperations(string root, string profile)
     {
         var document = ReadDocument(root, profile);
