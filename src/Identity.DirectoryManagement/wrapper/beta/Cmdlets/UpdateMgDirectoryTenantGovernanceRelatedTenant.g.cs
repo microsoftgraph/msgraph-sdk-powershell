@@ -59,20 +59,6 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Directory.TenantGovernance.RelatedTenants[RelatedTenantId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, RelatedTenantId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
