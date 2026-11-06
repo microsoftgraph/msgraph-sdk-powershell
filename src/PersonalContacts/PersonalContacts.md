@@ -59,6 +59,16 @@ checks the emitted profile's actual service root through the authenticated
 factory pipeline, not just naming or a marker client. Historical Authentication
 2.38.1 build evidence does not establish acceptance on this target.
 
+After the single-operation PATCH change, all 11 PATCH operations per profile
+return only their own response: a 204 produces no output or automatic GET, and
+a 200 returns the actual typed model. Callers explicitly invoke `Get-Mg...` for
+an independent read, with that GET's own headers and query parameters. Neither
+compatible profile has required query parameters; PATCH does not inherit
+GET-only query inputs or gain a read-back switch. The real-spec tests pin these
+contracts without changing the existing IDs, paths, or naming. Historical
+implicit-refetch header failures remain preserved evidence of superseded
+behavior, not a current unresolved gate.
+
 All directives in `v1.0/readme.md`, `beta/readme.md`, and `src/readme.graph.md`
 are explicitly outside this shared-file audit and remain untouched. Parameter
 aliases/transforms and schema/response directives are deferred classes, not

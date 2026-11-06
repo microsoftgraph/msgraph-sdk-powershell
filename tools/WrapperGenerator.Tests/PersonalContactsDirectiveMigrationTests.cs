@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -89,9 +90,13 @@ public sealed class PersonalContactsDirectiveMigrationTests
         foreach (var (path, item) in document.Paths)
         {
             Assert.NotNull(item.Operations);
+            Assert.DoesNotContain(item.Parameters ?? [],
+                parameter => parameter.In == ParameterLocation.Query && parameter.Required);
             foreach (var (method, operation) in item.Operations)
             {
                 Assert.False(string.IsNullOrWhiteSpace(operation.OperationId));
+                Assert.DoesNotContain(operation.Parameters ?? [],
+                    parameter => parameter.In == ParameterLocation.Query && parameter.Required);
                 Assert.False(CmdletConfigurator.IsSuppressed(method, path, config, apiVersion: profile),
                     $"{profile}: unexpected suppression of {method} {path} ({operation.OperationId}).");
             }
@@ -126,6 +131,39 @@ public sealed class PersonalContactsDirectiveMigrationTests
         Assert.Equal(usesPublishedName ? "Remove" : "Invoke", actionName.VerbName);
         Assert.Equal(usesPublishedName ? "MgUserContactPermanent" : "MgUserContactPermanentDelete",
             actionName.Noun);
+
+        if (useCollisionData)
+        {
+            var output = Path.Combine(Path.GetTempPath(), "personalcontacts-patch-" + Guid.NewGuid().ToString("N"));
+            try
+            {
+                var generationConfig = config with { OutputPath = output };
+                var service = new PowerShellWrapperGenerationService(
+                    document, generationConfig, NullLogger.Instance, apiVersion: profile);
+                await service.GenerateAsync(TestContext.Current.CancellationToken);
+                var patches = Directory.GetFiles(output, "Update*.g.cs");
+                Assert.Equal(11, patches.Length);
+                foreach (var patch in patches)
+                {
+                    var source = await File.ReadAllTextAsync(patch, TestContext.Current.CancellationToken);
+                    Assert.Contains(".PatchAsync(", source);
+                    Assert.DoesNotContain(".GetAsync(", source);
+                    Assert.DoesNotContain("if (result is null)", source);
+                    Assert.Contains("if (result is not null)", source);
+                    Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+                    Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", source);
+                    Assert.DoesNotContain("QueryParameters.", source);
+                    Assert.DoesNotContain("PassThru", source);
+                    Assert.DoesNotContain("ReadBack", source);
+                    Assert.DoesNotContain("Refetch", source);
+                }
+            }
+            finally
+            {
+                if (Directory.Exists(output))
+                    Directory.Delete(output, recursive: true);
+            }
+        }
     }
 
     private static string FindRepoRoot()
