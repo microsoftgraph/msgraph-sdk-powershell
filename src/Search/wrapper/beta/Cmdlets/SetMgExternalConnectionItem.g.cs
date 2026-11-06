@@ -79,7 +79,6 @@ namespace Microsoft.Graph.PowerShell.Search
                 return;
             }
 
-
             if (result is not null)
                 WriteObject(result);
         }
