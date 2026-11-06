@@ -96,6 +96,7 @@ namespace Microsoft.Graph.PowerShell.Groups
                         requestConfiguration.QueryParameters.Count = true;
 
 
+
         if (this.IsParameterBound(nameof(ConsistencyLevel)))
             requestConfiguration.Headers.Add("ConsistencyLevel", ConsistencyLevel!);
 
