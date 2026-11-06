@@ -19,7 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Fixtures\PatchOperationTransport.cs" />
     <ProjectReference Include="..\WrapperGenerator\WrapperGenerator.csproj" />
+    <None Update="Fixtures\required-delete-query.yml" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Fixtures\required-queries.yml" CopyToOutputDirectory="PreserveNewest" />
+    <Compile Remove="Fixtures\DeleteQueryProbeHost.cs" />
   </ItemGroup>
 
 </Project>

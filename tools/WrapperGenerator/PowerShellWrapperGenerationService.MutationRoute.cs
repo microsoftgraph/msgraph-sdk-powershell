@@ -89,7 +89,6 @@ public sealed partial class PowerShellWrapperGenerationService
             source = method == HttpMethod.Post
                 ? CmdletEmitter.EmitNew(internalNaming, ctx, bodyType, scalars, complex, untyped)
                 : CmdletEmitter.EmitUpdate(internalNaming, ctx, bodyType, scalars, complex, untyped,
-                    reFetchAfterUpdate: method == HttpMethod.Patch && pathItem.Operations?.ContainsKey(HttpMethod.Get) == true,
                     httpMethodName: method == HttpMethod.Patch ? "PatchAsync" : "PutAsync");
         }
         return (new(naming, internalNaming, family, shape, parameters, outputType), source);
