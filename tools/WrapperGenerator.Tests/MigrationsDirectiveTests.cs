@@ -170,6 +170,14 @@ public sealed class MigrationsDirectiveTests
     public async Task GeneratesCompleteBetaSurfaceWithSeparateProfileContext(bool useCollisionData)
     {
         var document = await ReadSpec(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", "beta", "Migrations.yml"));
+        Assert.All(document.Paths.Values, path =>
+        {
+            Assert.DoesNotContain(path.Parameters ?? [], parameter =>
+                parameter.In == ParameterLocation.Query && parameter.Required);
+            Assert.All(path.Operations!.Values, operation =>
+                Assert.DoesNotContain(operation.Parameters ?? [], parameter =>
+                    parameter.In == ParameterLocation.Query && parameter.Required));
+        });
         var output = Path.Combine(Path.GetTempPath(), "migrations-directive-tests", Guid.NewGuid().ToString("N"));
         try
         {
@@ -204,6 +212,17 @@ public sealed class MigrationsDirectiveTests
                 Assert.DoesNotContain("GetRequestAdapter()", source);
                 Assert.DoesNotContain("GetRequestAdapter(\"v1.0\")", source);
             });
+            var update = File.ReadAllText(Path.Combine(output, "UpdateMgCrossTenantMigrationJob.g.cs"));
+            Assert.Single(System.Text.RegularExpressions.Regex.Matches(update, @"\.PatchAsync\("));
+            Assert.DoesNotContain(".GetAsync(", update);
+            Assert.DoesNotContain("GetRequestBuilder", update);
+            Assert.Contains("if (result is not null)", update);
+            Assert.Contains("WriteObject(result)", update);
+            Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", update);
+            Assert.DoesNotContain("public string[]? Property", update);
+            Assert.DoesNotContain("ReadBack", update);
+            Assert.DoesNotContain("PassThru", update);
+            Assert.DoesNotContain("Refetch", update);
             Assert.Contains("DefaultParameterSetName = \"List\"", File.ReadAllText(
                 Path.Combine(output, "GetMgCrossTenantMigrationJob.g.cs")));
             Assert.Contains("DefaultParameterSetName = \"List\"", File.ReadAllText(
