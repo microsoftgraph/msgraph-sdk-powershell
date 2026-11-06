@@ -85,20 +85,6 @@ namespace Microsoft.Graph.PowerShell.Teams
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Teamwork.TeamTemplates[TeamTemplateId].Definitions[TeamTemplateDefinitionId].TeamDefinition.Schedule.TimeOffReasons[TimeOffReasonId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, TimeOffReasonId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

@@ -135,7 +135,6 @@ namespace Microsoft.Graph.PowerShell.Teams
                 return;
             }
 
-
             if (result is not null)
                 WriteObject(result);
         }

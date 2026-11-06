@@ -94,6 +94,7 @@ namespace Microsoft.Graph.PowerShell.Teams
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
 
