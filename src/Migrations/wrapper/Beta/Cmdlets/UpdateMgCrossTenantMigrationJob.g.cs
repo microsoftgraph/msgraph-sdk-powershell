@@ -13,9 +13,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Migrations
 {
     [GraphRoute("PATCH", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}")]
-    [Cmdlet(VerbsData.Update, "MgMigrationCrossTenantMigrationJob", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [Cmdlet(VerbsData.Update, "MgCrossTenantMigrationJob", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob))]
-    public class UpdateMgMigrationCrossTenantMigrationJobCommand : GraphClientCmdlet
+    public class UpdateMgCrossTenantMigrationJobCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string CrossTenantMigrationJobId { get; set; } = string.Empty;
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.PowerShell.Migrations
         body.Status = Status;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob? result;
@@ -135,20 +135,6 @@ namespace Microsoft.Graph.PowerShell.Migrations
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, CrossTenantMigrationJobId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

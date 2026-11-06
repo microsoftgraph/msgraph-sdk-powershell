@@ -13,9 +13,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Migrations
 {
     [GraphRoute("POST", "/solutions/migrations/crossTenantMigrationJobs")]
-    [Cmdlet(VerbsCommon.New, "MgMigrationCrossTenantMigrationJob", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [Cmdlet(VerbsCommon.New, "MgCrossTenantMigrationJob", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob))]
-    public class NewMgMigrationCrossTenantMigrationJobCommand : GraphClientCmdlet
+    public class NewMgCrossTenantMigrationJobCommand : GraphClientCmdlet
     {
 
 
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.PowerShell.Migrations
         body.Status = Status;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob? result;
