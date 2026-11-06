@@ -142,7 +142,7 @@ public sealed class MutationRouteTests
     [InlineData("Set", true, false)]
     [InlineData("Set", false, true)]
     [InlineData("Set", true, true)]
-    public async Task PatchRefetchUsesOnlyTheSelectedRoutesGetAndPutNeverFallsBack(
+    public async Task MutationsNeverReadBackRegardlessOfSelectedRoutesGetAvailability(
         string family, bool rootGet, bool parentGet)
     {
         var fixture = Create(family);
@@ -154,12 +154,32 @@ public sealed class MutationRouteTests
         for (var i = 0; i < 2; i++)
         {
             var source = files[$"{fixture.Stem}_Route{i}.g.cs"];
-            var expected = family == "Update" && (i == 0 ? rootGet : parentGet);
-            Assert.Equal(expected, source.Contains(".GetAsync()", StringComparison.Ordinal));
-            Assert.Equal(expected, source.Contains("re-fetching the updated resource", StringComparison.Ordinal));
+            Assert.DoesNotContain(".GetAsync(", source);
+            Assert.DoesNotContain("if (result is null)", source);
+            Assert.DoesNotContain("re-fetching", source);
             Assert.Contains("." + MethodCall(family) + "(body,", source);
+            Assert.Contains("if (result is not null)", source);
         }
         Assert.DoesNotContain(".GetAsync(", files[fixture.Stem + ".g.cs"]);
+    }
+
+    [Fact]
+    public async Task GroupedPatchDoesNotDependOnItsSiblingsRequiredGetQuery()
+    {
+        var fixture = Create("Update");
+        Add(fixture.Document, "GET", fixture.Group.Routes[0].Path, new OpenApiOperation
+        {
+            Parameters = [Parameter("view", ParameterLocation.Query, required: true)],
+            Responses = JsonResponse(Reference(fixture.Document)),
+        });
+        var files = await Generate(fixture.Document, [fixture.Group]);
+        foreach (var name in new[] { fixture.Stem, fixture.Stem + "_Route0", fixture.Stem + "_Route1" })
+        {
+            Assert.DoesNotContain("QueryView", files[name + ".g.cs"]);
+            Assert.DoesNotContain(".GetAsync(", files[name + ".g.cs"]);
+        }
+        Assert.Contains(files.Values, source => source.Contains("public string QueryView ", StringComparison.Ordinal)
+            && source.Contains(".GetAsync(", StringComparison.Ordinal));
     }
 
     [Theory]
