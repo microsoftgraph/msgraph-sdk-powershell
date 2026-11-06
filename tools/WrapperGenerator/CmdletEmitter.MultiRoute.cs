@@ -22,6 +22,8 @@ public static partial class CmdletEmitter
          "vb", "db", "ea", "wa", "infa", "proga", "ev", "wv", "iv", "ov", "ob", "pv", "wi", "cf"],
         StringComparer.OrdinalIgnoreCase);
 
+    internal static bool IsReservedParameterName(string name) => ReservedDispatchParameterNames.Contains(name);
+
     public static IReadOnlyList<DispatchParameter> GetDispatchParameters(
         CmdletNaming naming, string shape, IReadOnlySet<string> queryParams)
     {
