@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
     if (this.IsParameterBound(nameof(AddLicenses)))
         body.AddLicenses = AddLicenses!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Users.Actions.Client.Models.User? result;
