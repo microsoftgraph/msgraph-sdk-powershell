@@ -1,7 +1,7 @@
 {
   "audit": {
     "source": "src/Users/Users.md",
-    "baseline": "4eb3ca3e1e21ca163337f59ebbcfb9d1820a920d",
+    "baseline": "6475f3f5beb4908d39ea356db32bf1e0fd3273cb",
     "requiredProfiles": ["v1.0", "beta"],
     "excludedProfiles": [],
     "ignored": ["src/Users/v1.0/readme.md", "src/Users/beta/readme.md", "src/readme.graph.md"],
@@ -16,6 +16,7 @@
     },
     "lineage": "The original case-sensitive regex selects exactly root todo GET/PATCH/DELETE in each actual same-profile legacy spec. All three survive at identical exact method/path with aligned user_GetTodo/user_UpdateTodo/user_DeleteTodo IDs in the current compatible specs. The complete original-survivor and literal-current selected sets are equal (3/3 in each profile). user_GetOutlook does not match lowercase outlook. No removals, namespace translations or reserved legacy-ledger fields are needed.",
     "coverage": "Exact module entries preserve v1.0 derived suppressions while supplying the missing beta coverage. Existing curated /photos suppressions remain unchanged. The unreachable UserTodo List rename is subsumed, not implemented as a new public noun.",
+    "patchContract": "Normally merged #3886 makes Update User perform only its PATCH. A 204 succeeds with no returned object and no implicit GET; a 200 returns the actual typed model in one request. Caller-explicit Get User retains independent headers, queries and error behavior. No readback flag or GET-only query requirement is added.",
     "photoMediaContract": {
       "defaultPath": "/users/{user-id}/photo/$value",
       "additionalPath": "/users/{user-id}/photos/{profilePhoto-id}/$value",

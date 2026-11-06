@@ -272,6 +272,12 @@ public sealed class UsersDirectiveMigrationTests
         Assert.Contains("public string DirectoryObjectId",
             output["RemoveMgUserSponsorDirectoryObjectByRef.g.cs"], StringComparison.Ordinal);
         Assert.DoesNotContain("QueryId", output["RemoveMgUserSponsorDirectoryObjectByRef.g.cs"], StringComparison.Ordinal);
+        var patch = output["UpdateMgUser.g.cs"];
+        Assert.Contains("client.Users[UserId].PatchAsync", patch, StringComparison.Ordinal);
+        Assert.DoesNotContain("client.Users[UserId].GetAsync", patch, StringComparison.Ordinal);
+        Assert.DoesNotContain("QueryId", patch, StringComparison.Ordinal);
+        Assert.Contains("if (result is not null)", patch, StringComparison.Ordinal);
+        Assert.Contains("WriteObject(result)", patch, StringComparison.Ordinal);
         foreach (var suppressed in new[]
         {
             "GetMgUserTodo.g.cs", "UpdateMgUserTodo.g.cs", "RemoveMgUserTodo.g.cs",
