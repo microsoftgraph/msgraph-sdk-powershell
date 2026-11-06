@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.TunnelServerHealthStatus = TunnelServerHealthStatus;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.MicrosoftTunnelServer? result;
@@ -89,20 +89,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.DeviceManagement.MicrosoftTunnelSites[MicrosoftTunnelSiteId].MicrosoftTunnelServers[MicrosoftTunnelServerId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, MicrosoftTunnelServerId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

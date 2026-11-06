@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.SchemaItems = SchemaItems!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.AndroidForWorkAppConfigurationSchema? result;
@@ -63,20 +63,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.DeviceManagement.AndroidForWorkAppConfigurationSchemas[AndroidForWorkAppConfigurationSchemaId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, AndroidForWorkAppConfigurationSchemaId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

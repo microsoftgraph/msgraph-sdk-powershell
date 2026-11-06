@@ -80,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.ExpeditedUpdateSettings = ExpeditedUpdateSettings;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.WindowsQualityUpdateProfile? result;
