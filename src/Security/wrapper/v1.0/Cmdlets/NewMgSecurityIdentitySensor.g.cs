@@ -92,7 +92,7 @@ namespace Microsoft.Graph.PowerShell.Security
         body.Settings = Settings;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.Security.Sensor? result;
