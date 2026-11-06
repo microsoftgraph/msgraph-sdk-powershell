@@ -208,6 +208,26 @@ public sealed class MailDirectiveMigrationTests
             var item = File.ReadAllText(Path.Combine(output, "GetMgUserMessage_Get.g.cs"));
             Assert.Contains("GetRequestAdapter(\"v1.0\")", item);
             Assert.False(File.Exists(Path.Combine(output, "GetMgUserMailFolderMessageContent.g.cs")));
+
+            var patches = Spec.Value.Paths
+                .Where(path => path.Value.Operations!.ContainsKey(HttpMethod.Patch)).ToArray();
+            Assert.Equal(12, patches.Length);
+            foreach (var patch in patches)
+            {
+                var name = Naming.Resolve(new OperationInfo(HttpMethod.Patch, patch.Key), Config, apiVersion: Profile);
+                var source = File.ReadAllText(Path.Combine(output, $"{name.VerbName}{name.Noun}.g.cs"));
+                Assert.Contains($"[GraphRoute(\"PATCH\", \"{patch.Key}\")]", source);
+                Assert.Contains(".PatchAsync(", source);
+                Assert.DoesNotContain(".GetAsync(", source);
+                Assert.DoesNotContain("re-fetching", source);
+                Assert.DoesNotContain("if (result is null)", source);
+                Assert.Contains("if (result is not null)", source);
+            }
+            var requiredQueries = Spec.Value.Paths.SelectMany(path =>
+                (path.Value.Parameters ?? []).Concat(path.Value.Operations!.Values
+                    .SelectMany(operation => operation.Parameters ?? [])))
+                .Where(parameter => parameter.In == ParameterLocation.Query && parameter.Required);
+            Assert.Empty(requiredQueries);
         }
         finally
         {
