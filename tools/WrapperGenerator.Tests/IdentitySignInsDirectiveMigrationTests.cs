@@ -378,6 +378,51 @@ public sealed class IdentitySignInsDirectiveMigrationTests
         }
     }
 
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task ProviderPatchReturnsOnlyItsOwnResponseWithoutImplicitReadback(string profile, bool useCollisionData)
+    {
+        const string path = "/identity/identityProviders/{identityProviderBase-id}";
+        var document = ReadSpec("openApiDocs_KiotaCompat", profile);
+        var provider = document.Paths[path];
+        Assert.True(provider.Operations!.ContainsKey(HttpMethod.Get));
+        Assert.True(provider.Operations.ContainsKey(HttpMethod.Patch));
+        foreach (var other in document.Paths.Keys.Where(key => key != path).ToArray())
+            document.Paths.Remove(other);
+        var output = Path.Combine(Path.GetTempPath(), "signins-patch-result-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            await new PowerShellWrapperGenerationService(document,
+                new GeneratorConfig("Test.Client", output, useCollisionData), NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(CancellationToken.None);
+            var source = File.ReadAllText(Path.Combine(output, "UpdateMgIdentityProvider.g.cs"));
+            Assert.Contains($"[GraphRoute(\"PATCH\", \"{path}\")]", source);
+            Assert.Contains("[OutputType(typeof(Test.Client.Models.IdentityProviderBase))]", source);
+            Assert.Contains("public string IdentityProviderBaseId ", source);
+            Assert.Contains("body.DisplayName = DisplayName;", source);
+            Assert.Contains("client.Identity.IdentityProviders[IdentityProviderBaseId].PatchAsync(", source);
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+            Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", source);
+            Assert.Contains("if (result is not null)", source);
+            Assert.Contains("WriteObject(result);", source);
+            Assert.Single(Regex.Matches(source, @"ShouldProcess\("));
+            Assert.DoesNotContain(".GetAsync(", source);
+            Assert.DoesNotContain("if (result is null)", source);
+            Assert.DoesNotContain("PassThru", source);
+            Assert.DoesNotContain("ReadBack", source);
+            Assert.DoesNotContain("Refetch", source);
+            Assert.DoesNotContain("public string Query", source);
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
     private sealed record SourceOperation(HttpMethod Method, string Path, OpenApiOperation Operation);
 
     private static IEnumerable<SourceOperation> Operations(OpenApiDocument document) =>

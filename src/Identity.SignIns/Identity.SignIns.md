@@ -61,8 +61,10 @@ and `-WhatIf` alone do not prove required `@id` query forwarding or typed action
 body serialization. Those checks use the normally packaged adapted Authentication
 2.41.2 module and the real session HTTP factory in Global and USGov, not stock
 Gallery 2.41.2, old 2.38.1, dependency preloads, module-local copies, or authored
-query flags. Required-query success does not waive the separate generic `-Headers`
-contract on a PATCH 204 GET refetch.
+query flags. A successful PATCH 204 returns no object and issues no automatic GET;
+a PATCH 200 returns its actual typed response without a second request. The caller
+can explicitly invoke the corresponding Get command with its own inputs and
+headers. No read-back switch is introduced.
 
 ``` yaml
 directive:
