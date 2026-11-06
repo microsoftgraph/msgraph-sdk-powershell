@@ -81,20 +81,6 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.IdentityGovernance.PermissionsAnalytics.Gcp.PermissionsCreepIndexDistributions[PermissionsCreepIndexDistributionId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, PermissionsCreepIndexDistributionId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
