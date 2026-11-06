@@ -52,6 +52,7 @@ namespace Microsoft.Graph.PowerShell.Education
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }

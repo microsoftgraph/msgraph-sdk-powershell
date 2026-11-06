@@ -69,20 +69,6 @@ namespace Microsoft.Graph.PowerShell.Education
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Education.Users[EducationUserId].Assignments[EducationAssignmentId].Submissions[EducationSubmissionId].Outcomes[EducationOutcomeId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, EducationOutcomeId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
