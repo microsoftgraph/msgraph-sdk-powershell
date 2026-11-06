@@ -261,6 +261,91 @@ public sealed class DeviceManagementDirectiveMigrationTests
         }
     }
 
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task ActualOrdinaryAndCompositePatchWorkersDoNotReadBack(string profile, bool useCollisionData)
+    {
+        var settings = new OpenApiReaderSettings();
+        settings.AddYamlReader();
+        using var stream = File.OpenRead(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, "DeviceManagement.yml"));
+        var document = (await OpenApiDocument.LoadAsync(stream, settings: settings,
+            cancellationToken: CancellationToken.None)).Document!;
+        const string ordinary = "/deviceManagement/managedDevices/{managedDevice-id}";
+        const string keys = "id='{id}',policyId='{policyId}',deviceId='{deviceId}'";
+        var selectedPaths = new[]
+        {
+            ordinary,
+            "/deviceManagement/managedDevices/{managedDevice-id}/deviceHealthScriptStates/" + keys,
+            "/deviceManagement/comanagedDevices/{managedDevice-id}/deviceHealthScriptStates/" + keys,
+        };
+        var selected = new OpenApiPaths();
+        foreach (var path in selectedPaths.Where(document.Paths.ContainsKey))
+            selected[path] = document.Paths[path];
+        document.Paths = selected;
+        var output = Path.Combine(Path.GetTempPath(), "device-management-patch", Guid.NewGuid().ToString("N"));
+        try
+        {
+            await new PowerShellWrapperGenerationService(document,
+                new GeneratorConfig("Regression.Client", output, useCollisionData),
+                NullLogger.Instance, apiVersion: profile).GenerateAsync(CancellationToken.None);
+            var sources = Directory.GetFiles(output, "*.g.cs").Select(File.ReadAllText).ToArray();
+            var patches = sources.Where(source => source.Contains("[GraphRoute(\"PATCH\",", StringComparison.Ordinal)).ToArray();
+            Assert.Equal(profile == "beta" ? 3 : 1, patches.Length);
+            foreach (var patch in patches)
+            {
+                Assert.DoesNotContain(".GetAsync(", patch);
+                Assert.DoesNotContain("if (result is null)", patch);
+                Assert.DoesNotContain("PassThru", patch);
+                Assert.Contains("if (result is not null)", patch);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", patch);
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", patch);
+                Assert.Contains("ShouldProcess(", patch);
+            }
+            if (profile == "beta")
+            {
+                foreach (var parent in new[] { "Managed", "Comanaged" })
+                {
+                    var composite = Assert.Single(patches, source =>
+                        source.Contains($"class UpdateMgDeviceManagement{parent}DeviceHealthScriptState", StringComparison.Ordinal));
+                    Assert.Contains("public string PolicyId ", composite);
+                    Assert.Contains("public string DeviceId ", composite);
+                    Assert.Contains("public string? PolicyId1 ", composite);
+                    Assert.Contains("public string? DeviceId1 ", composite);
+                    Assert.Contains("body.PolicyId = PolicyId1", composite);
+                    Assert.Contains("body.DeviceId = DeviceId1", composite);
+                    Assert.DoesNotContain("body.PolicyId = PolicyId;", composite);
+                    Assert.DoesNotContain("body.DeviceId = DeviceId;", composite);
+                }
+            }
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task ActualSpecsHaveNoRequiredNativeQueryInputs(string profile)
+    {
+        var settings = new OpenApiReaderSettings();
+        settings.AddYamlReader();
+        using var stream = File.OpenRead(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, "DeviceManagement.yml"));
+        var document = (await OpenApiDocument.LoadAsync(stream, settings: settings,
+            cancellationToken: CancellationToken.None)).Document!;
+        foreach (var path in document.Paths.Values)
+        {
+            Assert.DoesNotContain(path.Parameters ?? [], parameter => parameter.In == ParameterLocation.Query && parameter.Required);
+            foreach (var operation in path.Operations!.Values)
+                Assert.DoesNotContain(operation.Parameters ?? [], parameter => parameter.In == ParameterLocation.Query && parameter.Required);
+        }
+    }
+
     private static string CompatiblePath(ReviewedOperation operation) =>
         operation.Kind == OperationKind.Action
             ? Regex.Replace(operation.Path, @"/microsoft\.graph\.([^/]+)$", "/$1")
