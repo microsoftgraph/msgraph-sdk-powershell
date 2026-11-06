@@ -7,18 +7,12 @@ using Microsoft.Graph.PowerShell.Reports.Client.Reports.ApplicationSignInDetaile
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.AuthenticationMethods;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.AzureADPremiumLicenseInsight;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.Correlations;
-using Microsoft.Graph.PowerShell.Reports.Client.Reports.CredentialUserRegistrationDetails;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.DailyPrintUsage;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.DailyPrintUsageByPrinter;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.DailyPrintUsageByUser;
-using Microsoft.Graph.PowerShell.Reports.Client.Reports.DailyPrintUsageSummariesByPrinter;
-using Microsoft.Graph.PowerShell.Reports.Client.Reports.DailyPrintUsageSummariesByUser;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.DeviceConfigurationDeviceActivity;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.DeviceConfigurationUserActivity;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId;
-using Microsoft.Graph.PowerShell.Reports.Client.Reports.GetAttackSimulationRepeatOffenders;
-using Microsoft.Graph.PowerShell.Reports.Client.Reports.GetAttackSimulationSimulationUserCoverage;
-using Microsoft.Graph.PowerShell.Reports.Client.Reports.GetAttackSimulationTrainingUserCoverage;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.GetAzureADApplicationSignInSummaryWithPeriod;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.GetBrowserDistributionUserCountsWithPeriod;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.GetBrowserUserCountsWithPeriod;
@@ -151,14 +145,11 @@ using Microsoft.Graph.PowerShell.Reports.Client.Reports.ManagedDeviceEnrollmentT
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.MicrosoftAppsFileStorageContainerUsageSummary;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.MonthlyPrintUsageByPrinter;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.MonthlyPrintUsageByUser;
-using Microsoft.Graph.PowerShell.Reports.Client.Reports.MonthlyPrintUsageSummariesByPrinter;
-using Microsoft.Graph.PowerShell.Reports.Client.Reports.MonthlyPrintUsageSummariesByUser;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.Partners;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.Security;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.ServiceActivity;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.ServicePrincipalSignInActivities;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.Sla;
-using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserCredentialUsageDetails;
 using Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -201,11 +192,6 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Reports
         {
             get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.Correlations.CorrelationsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The credentialUserRegistrationDetails property</summary>
-        public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder CredentialUserRegistrationDetails
-        {
-            get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.CredentialUserRegistrationDetails.CredentialUserRegistrationDetailsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The dailyPrintUsage property</summary>
         public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.DailyPrintUsage.DailyPrintUsageRequestBuilder DailyPrintUsage
         {
@@ -221,16 +207,6 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Reports
         {
             get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.DailyPrintUsageByUser.DailyPrintUsageByUserRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The dailyPrintUsageSummariesByPrinter property</summary>
-        public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.DailyPrintUsageSummariesByPrinter.DailyPrintUsageSummariesByPrinterRequestBuilder DailyPrintUsageSummariesByPrinter
-        {
-            get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.DailyPrintUsageSummariesByPrinter.DailyPrintUsageSummariesByPrinterRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The dailyPrintUsageSummariesByUser property</summary>
-        public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.DailyPrintUsageSummariesByUser.DailyPrintUsageSummariesByUserRequestBuilder DailyPrintUsageSummariesByUser
-        {
-            get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.DailyPrintUsageSummariesByUser.DailyPrintUsageSummariesByUserRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The deviceConfigurationDeviceActivity property</summary>
         public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.DeviceConfigurationDeviceActivity.DeviceConfigurationDeviceActivityRequestBuilder DeviceConfigurationDeviceActivity
         {
@@ -245,21 +221,6 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Reports
         public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilder GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId
         {
             get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId.GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The getAttackSimulationRepeatOffenders property</summary>
-        public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder GetAttackSimulationRepeatOffenders
-        {
-            get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.GetAttackSimulationRepeatOffenders.GetAttackSimulationRepeatOffendersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The getAttackSimulationSimulationUserCoverage property</summary>
-        public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.GetAttackSimulationSimulationUserCoverage.GetAttackSimulationSimulationUserCoverageRequestBuilder GetAttackSimulationSimulationUserCoverage
-        {
-            get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.GetAttackSimulationSimulationUserCoverage.GetAttackSimulationSimulationUserCoverageRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The getAttackSimulationTrainingUserCoverage property</summary>
-        public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder GetAttackSimulationTrainingUserCoverage
-        {
-            get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.GetAttackSimulationTrainingUserCoverage.GetAttackSimulationTrainingUserCoverageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getCredentialUserRegistrationCount property</summary>
         public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.GetCredentialUserRegistrationCount.GetCredentialUserRegistrationCountRequestBuilder GetCredentialUserRegistrationCount
@@ -321,16 +282,6 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Reports
         {
             get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The monthlyPrintUsageSummariesByPrinter property</summary>
-        public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.MonthlyPrintUsageSummariesByPrinter.MonthlyPrintUsageSummariesByPrinterRequestBuilder MonthlyPrintUsageSummariesByPrinter
-        {
-            get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.MonthlyPrintUsageSummariesByPrinter.MonthlyPrintUsageSummariesByPrinterRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The monthlyPrintUsageSummariesByUser property</summary>
-        public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.MonthlyPrintUsageSummariesByUser.MonthlyPrintUsageSummariesByUserRequestBuilder MonthlyPrintUsageSummariesByUser
-        {
-            get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.MonthlyPrintUsageSummariesByUser.MonthlyPrintUsageSummariesByUserRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The partners property</summary>
         public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.Partners.PartnersRequestBuilder Partners
         {
@@ -355,11 +306,6 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Reports
         public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.Sla.SlaRequestBuilder Sla
         {
             get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.Sla.SlaRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The userCredentialUsageDetails property</summary>
-        public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder UserCredentialUsageDetails
-        {
-            get => new global::Microsoft.Graph.PowerShell.Reports.Client.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The userInsights property</summary>
         public global::Microsoft.Graph.PowerShell.Reports.Client.Reports.UserInsights.UserInsightsRequestBuilder UserInsights

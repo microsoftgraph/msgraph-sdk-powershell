@@ -236,7 +236,7 @@ namespace Microsoft.Graph.PowerShell.Reports
         body.GroupType = GroupType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Reports.Client.Models.GroupAnalytics? result;

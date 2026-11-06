@@ -21,6 +21,9 @@ namespace Microsoft.Graph.PowerShell.Reports
 
 
         [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.AzureAggregatedUsage? AggregatedUsage { get; set; }
+
+        [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.BillingReconciliation? Reconciliation { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -39,6 +42,9 @@ namespace Microsoft.Graph.PowerShell.Reports
             var body = new Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.Billing();
 
 
+    if (this.IsParameterBound(nameof(AggregatedUsage)))
+        body.AggregatedUsage = AggregatedUsage;
+
     if (this.IsParameterBound(nameof(Reconciliation)))
         body.Reconciliation = Reconciliation;
 
@@ -46,7 +52,7 @@ namespace Microsoft.Graph.PowerShell.Reports
         body.Usage = Usage;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.Billing? result;
@@ -64,20 +70,6 @@ namespace Microsoft.Graph.PowerShell.Reports
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Reports.Partners.Billing.GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, null);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
