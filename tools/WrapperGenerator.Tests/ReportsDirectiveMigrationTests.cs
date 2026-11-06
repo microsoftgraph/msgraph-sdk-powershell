@@ -307,6 +307,55 @@ public sealed class ReportsDirectiveMigrationTests
         }
     }
 
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public void ReportsSpecsHaveNoRequiredNativeQueryInputs(string profile)
+    {
+        var required = Specs[profile].Value.Paths.SelectMany(path => path.Value.Operations!
+            .SelectMany(operation => (path.Value.Parameters ?? []).Concat(operation.Value.Parameters ?? [])
+                .Where(parameter => parameter.In == ParameterLocation.Query && parameter.Required)
+                .Select(parameter => $"{operation.Key} {path.Key} [{parameter.Name}]")));
+        Assert.Empty(required);
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task RetainedRegistrationPatchUsesOnlyItsOwnOperation(string profile, bool useCollisionData)
+    {
+        const string path = "/reports/authenticationMethods/userRegistrationDetails/{userRegistrationDetails-id}";
+        var source = Specs[profile].Value;
+        var target = new OpenApiDocument { Paths = new OpenApiPaths(), Components = source.Components };
+        target.Paths.Add(path, source.Paths[path]);
+        var output = Path.Combine(Path.GetTempPath(), "reports-patch-tests", Guid.NewGuid().ToString("N"));
+        try
+        {
+            var config = new GeneratorConfig("Test.Client", output, useCollisionData);
+            await new PowerShellWrapperGenerationService(target, config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(CancellationToken.None);
+            var code = File.ReadAllText(Path.Combine(output, "UpdateMgReportAuthenticationMethodUserRegistrationDetail.g.cs"));
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", code, StringComparison.Ordinal);
+            Assert.Contains("[GraphRoute(\"PATCH\", \"" + path + "\")]", code, StringComparison.Ordinal);
+            Assert.Contains("SupportsShouldProcess = true", code, StringComparison.Ordinal);
+            Assert.Contains("body.IsAdmin = IsAdmin", code, StringComparison.Ordinal);
+            Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", code, StringComparison.Ordinal);
+            Assert.Single(Regex.Matches(code, @"\.PatchAsync\(").Cast<Match>());
+            Assert.DoesNotContain(".GetAsync(", code, StringComparison.Ordinal);
+            Assert.DoesNotContain("re-fetch", code, StringComparison.Ordinal);
+            Assert.DoesNotContain("PassThru", code, StringComparison.Ordinal);
+            Assert.DoesNotContain("ReadBack", code, StringComparison.Ordinal);
+            Assert.DoesNotContain("Refetch", code, StringComparison.Ordinal);
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
     private static IEnumerable<FunctionCase> FunctionCases(string profile)
     {
         yield return new("/reports/deviceConfigurationDeviceActivity()", "report_deviceConfigurationDeviceActivity", "ReportDeviceConfigurationDeviceActivity");
