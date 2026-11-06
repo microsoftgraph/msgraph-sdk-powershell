@@ -232,6 +232,18 @@ public sealed class PlannerDirectiveMigrationTests
             Assert.Contains("[GraphRoute(\"GET\", \"/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets\")]", source);
             Assert.DoesNotContain("[GraphRoute(\"GET\", \"/users/{user-id}/planner/plans/$count\")]", source);
             Assert.DoesNotContain("[GraphRoute(\"GET\", \"/users/{user-id}/planner/tasks/$count\")]", source);
+            var patchSources = files.Select(File.ReadAllText).Where(text => text.Contains(".PatchAsync(", StringComparison.Ordinal)).ToArray();
+            Assert.NotEmpty(patchSources);
+            foreach (var patchSource in patchSources)
+            {
+                Assert.Equal(1, patchSource.Split(".PatchAsync(", StringSplitOptions.None).Length - 1);
+                Assert.DoesNotContain(".GetAsync(", patchSource);
+                Assert.DoesNotContain("if (result is null)", patchSource);
+                Assert.Contains("if (result is not null)", patchSource);
+                Assert.DoesNotContain("PassThru", patchSource);
+                Assert.Contains("ShouldProcess(", patchSource);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", patchSource);
+            }
             if (profile == "beta")
             {
                 Assert.Contains("[GraphRoute(\"GET\", \"/users/{user-id}/planner/plans/delta()\")]", source);
@@ -242,6 +254,23 @@ public sealed class PlannerDirectiveMigrationTests
         finally
         {
             Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public void PlannerHasNoRequiredNativeQueryInputsToMigrate(string profile)
+    {
+        var document = ReadSpec("openApiDocs_KiotaCompat", profile);
+        Assert.NotEmpty(document.Paths);
+        foreach (var path in document.Paths)
+        {
+            Assert.DoesNotContain(path.Value.Parameters ?? [], parameter =>
+                parameter.In == ParameterLocation.Query && parameter.Required);
+            foreach (var operation in path.Value.Operations!)
+                Assert.DoesNotContain(operation.Value.Parameters ?? [], parameter =>
+                    parameter.In == ParameterLocation.Query && parameter.Required);
         }
     }
 
