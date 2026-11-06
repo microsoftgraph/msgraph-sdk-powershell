@@ -49,21 +49,22 @@ URI-template expansion rejects `Byte`/`TimeSpan` substitutions. Required queries
 those contracts fail generation rather than compile into commands that fail only when
 invoked. No conversion fallback is introduced. Public `Query<Name>` conflicts are checked
 independently from typed Kiota member collisions and against path/body/header/inline/common
-and reserved members, case-insensitively. Conflicting PATCH/refetch or paired-GET contracts
-also fail explicitly.
+and reserved members, case-insensitively. Conflicting paired-GET contracts also fail
+explicitly; PATCH and GET requirements are independent operations.
 
 The bindings apply to ordinary GET/list/item/POST/PATCH/PUT/bodyless DELETE, actions,
 functions with inline arguments, reference reads/writes, scalar/count and media emitters.
 Existing list/item dispatchers declare requirements per parameter set and forward them
 unchanged. Queries are never natural-ID variant **selectors**: explicitly authored groups
 retain their existing path-ID-only contracts and reject required-query members instead
-of inventing a discriminator. Their mutation refetch GET also rejects an unsupported
-required-query contract. No public query-authoring registration is added.
+of inventing a discriminator. GET-sibling query requirements do not constrain mutation
+groups, because mutations never issue an implicit GET. No public query-authoring
+registration is added.
 
-PATCH inputs belong to PATCH only. Its potential 204 GET is analyzed separately: the
-command requires the union of the inputs needed for those two operations, with shared
-compatible inputs declared once, but each request binds only its own required queries.
-This does not fix or overlay the independent generic-refetch-header prerequisite.
+PATCH inputs belong to PATCH only. A successful 204 returns no object and does not
+issue a GET or require a union of PATCH/GET inputs. Call a separate explicit GET with
+its own required queries and headers when retrieval is wanted; retrieval failures
+cannot change the result of the earlier PATCH.
 Delta sync requires its queries only in `DeltaSync`; resume/nextLink requests already
 encode their query state and do not replay initial inputs. A token-form delta operation
 with its own required query is rejected explicitly instead of dropping that contract.
@@ -300,9 +301,9 @@ does **not** call `ShouldProcess`: exactly the selected ordinary worker performs
 gate, before constructing its body, acquiring transport or issuing requests.
 `WhatIf`, `Confirm`, explicit `Confirm:$false` and ambient preference handling remain
 the PowerShell engine's responsibility. The full bound-parameter splat is unchanged.
-PATCH's existing no-body-result re-fetch uses only the selected typed route, and only
-when that path declares GET; PUT never acquires a re-fetch. No operation tries another
-URL on failure.
+PATCH and PUT return only their own response model when present. A no-body success
+writes no object; neither mutation implicitly reads any route. No operation tries
+another URL on failure.
 
 Preflight validates **all** configured groups before creating/clearing the output directory,
 writing the CLI's `kiota-lock.json` marker or writing any command. Grouped dispatcher and
