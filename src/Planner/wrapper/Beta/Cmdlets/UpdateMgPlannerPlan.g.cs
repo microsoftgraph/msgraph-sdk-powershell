@@ -117,20 +117,6 @@ namespace Microsoft.Graph.PowerShell.Planner
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Planner.Plans[PlannerPlanId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, PlannerPlanId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
