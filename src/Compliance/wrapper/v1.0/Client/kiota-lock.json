@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "08E47B4E16D12013B78BEBC105491505E15B128E6EE69E6872C900771159BCE8801046DAA6F3A5DB2FBB3E60533FC04644ECFD660C62F0AE83BEFE32D1FBF378",
+  "descriptionHash": "CEC7E34D5DD67BAEB02C93692B2DCB2A4B5C428CD20540B86D891EB00FB08A0AD47222C1DCA406FAA79F47084C3530031A461A13224BA867A7D16FEBD2B3F213",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Compliance.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Compliance.Client",
