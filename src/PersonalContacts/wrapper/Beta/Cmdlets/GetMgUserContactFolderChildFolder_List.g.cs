@@ -96,6 +96,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
 
