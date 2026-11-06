@@ -99,6 +99,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
                         requestConfiguration.QueryParameters.Count = true;
 
 
+
         if (this.IsParameterBound(nameof(ConsistencyLevel)))
             requestConfiguration.Headers.Add("ConsistencyLevel", ConsistencyLevel!);
 

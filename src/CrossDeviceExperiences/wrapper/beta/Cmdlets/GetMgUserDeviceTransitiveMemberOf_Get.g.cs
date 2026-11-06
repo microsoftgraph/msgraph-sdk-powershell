@@ -57,6 +57,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
 
 
+
         if (this.IsParameterBound(nameof(ConsistencyLevel)))
             requestConfiguration.Headers.Add("ConsistencyLevel", ConsistencyLevel!);
 
