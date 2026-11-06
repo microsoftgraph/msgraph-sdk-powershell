@@ -213,6 +213,21 @@ public sealed class DevicesCloudPrintDirectiveMigrationTests
             {
                 Assert.DoesNotContain("QueryId", source);
             }
+            var patches = sources.Select(File.ReadAllText)
+                .Where(source => source.Contains("[GraphRoute(\"PATCH\",", StringComparison.Ordinal)).ToArray();
+            Assert.NotEmpty(patches);
+            foreach (var patch in patches)
+            {
+                Assert.Contains(".PatchAsync(", patch);
+                Assert.DoesNotContain(".GetAsync(", patch);
+                Assert.DoesNotContain("if (result is null)", patch);
+                Assert.DoesNotContain("QueryId", patch);
+                Assert.DoesNotContain("PassThru", patch);
+                Assert.DoesNotContain("ReadBack", patch);
+                Assert.Contains("if (result is not null)", patch);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", patch);
+                Assert.Single(Regex.Matches(patch, @"ShouldProcess\("));
+            }
         }
         finally
         {
