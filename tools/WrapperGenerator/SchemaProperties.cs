@@ -427,6 +427,30 @@ public static class SchemaProperties
         : scalar.IsValueType ? scalar.Name + "?[]"
         : scalar.Name + "[]";
 
+    internal static bool TryMapQueryInputType(IOpenApiSchema schema, out string type, out bool isArray)
+    {
+        type = "";
+        isArray = (schema.Type & ~JsonSchemaType.Null) == JsonSchemaType.Array;
+        var leaf = isArray ? schema.Items : schema;
+        if (leaf is null || schema.GetReferenceId() is not null || leaf.GetReferenceId() is not null
+            || new[] { schema, leaf }.Any(s => s.AnyOf?.Count > 0 || s.OneOf?.Count > 0
+                || s.AllOf?.Count > 0 || s.Enum?.Count > 0 || s.Properties?.Count > 0
+                || s.AdditionalProperties is not null)
+            || !TryMapScalar(leaf, out var scalar, out _))
+            return false;
+        // These JSON-body scalars are not accepted by Kiota's URI-template substitution.
+        // Do not stringify them into an unverified query contract.
+        if (scalar.Name is "byte" or "byte[]" or "global::System.TimeSpan")
+            return false;
+        if (isArray && scalar.Name is not ("string" or "bool" or "int" or "long" or "float" or "double" or "decimal"))
+            return false;
+        if ((leaf.Type & ~JsonSchemaType.Null) is JsonSchemaType.Integer or JsonSchemaType.Number
+            && leaf.Format is not (null or "" or "int32" or "int64" or "float" or "double" or "decimal" or "uint8"))
+            return false;
+        type = ArrayAware(scalar, isArray);
+        return true;
+    }
+
     // Maps a scalar schema to its CLR type. badFormat distinguishes "not a scalar at all" from
     // "a scalar whose format has no verified mapping" — the latter must be reported rather than
     // silently bound as string, which would compile against the wrong kiota member type.
