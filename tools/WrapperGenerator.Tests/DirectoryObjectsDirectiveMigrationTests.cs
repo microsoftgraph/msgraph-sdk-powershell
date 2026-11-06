@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -206,6 +208,50 @@ public sealed class DirectoryObjectsDirectiveMigrationTests
         }
     }
 
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public async Task RealProfilePatchKeepsOneMutationWithoutReadbackOrGetOnlyBindings(string profile)
+    {
+        var document = await ReadDocumentAsync("openApiDocs_KiotaCompat", profile);
+        foreach (var path in document.Paths!)
+        {
+            Assert.DoesNotContain(path.Value.Parameters ?? [],
+                parameter => parameter.In == ParameterLocation.Query && parameter.Required);
+            foreach (var operation in path.Value.Operations!.Values)
+                Assert.DoesNotContain(operation.Parameters ?? [],
+                    parameter => parameter.In == ParameterLocation.Query && parameter.Required);
+        }
+
+        var output = Path.Combine(Path.GetTempPath(), "directoryobjects-patch-tests", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(output);
+        try
+        {
+            var config = new GeneratorConfig("Microsoft.Graph.PowerShell.DirectoryObjects.Client", output);
+            var service = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile);
+            await service.GenerateAsync(CancellationToken.None);
+
+            var patch = File.ReadAllText(Path.Combine(output, "UpdateMgDirectoryObject.g.cs"));
+            Assert.Single(Regex.Matches(patch, @"\.PatchAsync\("));
+            Assert.DoesNotContain(".GetAsync(", patch);
+            Assert.DoesNotContain("re-fetch", patch);
+            Assert.DoesNotContain("Refetch", patch);
+            Assert.DoesNotContain("ReadBack", patch);
+            Assert.DoesNotContain("PassThru", patch);
+            Assert.DoesNotContain("QueryParameters.", patch);
+            Assert.DoesNotContain("public string[]? Property", patch);
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", patch);
+            Assert.Contains("ShouldProcess(DirectoryObjectId", patch);
+            Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", patch);
+            Assert.Contains("body.DeletedDateTime = DeletedDateTime", patch);
+            Assert.Contains("if (result is not null)", patch);
+        }
+        finally
+        {
+            Directory.Delete(output, recursive: true);
+        }
+    }
+
     private sealed record Operation(string Method, string Path, string OperationId);
 
     private static string Key(Operation operation) => $"{operation.Method} {operation.Path} [{operation.OperationId}]";
@@ -234,14 +280,21 @@ public sealed class DirectoryObjectsDirectiveMigrationTests
 
     private static Operation[] ReadOperations(string specRoot, string profile)
     {
+        var document = ReadDocumentAsync(specRoot, profile).GetAwaiter().GetResult();
+        return document.Paths!.SelectMany(path => path.Value.Operations!.Select(operation =>
+            new Operation(operation.Key.Method.ToUpperInvariant(), path.Key, operation.Value.OperationId!))).ToArray();
+    }
+
+    private static async Task<OpenApiDocument> ReadDocumentAsync(string specRoot, string profile)
+    {
         var settings = new OpenApiReaderSettings();
         settings.AddYamlReader();
         using var stream = File.OpenRead(Path.Combine(RepoRoot(), specRoot, profile, "DirectoryObjects.yml"));
-        var document = OpenApiDocument.LoadAsync(stream, settings: settings, cancellationToken: CancellationToken.None)
-            .GetAwaiter().GetResult().Document;
+        var result = await OpenApiDocument.LoadAsync(stream, settings: settings, cancellationToken: CancellationToken.None)
+            .ConfigureAwait(false);
+        var document = result.Document;
         Assert.NotNull(document);
-        return document.Paths!.SelectMany(path => path.Value.Operations!.Select(operation =>
-            new Operation(operation.Key.Method.ToUpperInvariant(), path.Key, operation.Value.OperationId!))).ToArray();
+        return document;
     }
 
     private static string RepoRoot()
