@@ -71,20 +71,6 @@ namespace Microsoft.Graph.PowerShell.Sites
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Groups[GroupId].Sites[SiteId].PageTemplates[PageTemplateId].CanvasLayout.HorizontalSections[HorizontalSectionId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, HorizontalSectionId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
