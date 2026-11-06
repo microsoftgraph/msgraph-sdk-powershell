@@ -10,7 +10,6 @@ public sealed record EmitContext(string ClientNamespace, string ApiVersion = "v1
 {
     // Resolved per-operation inputs, not authored generator configuration.
     internal IReadOnlyList<CmdletProperty> RequiredQueries { get; init; } = [];
-    internal IReadOnlyList<CmdletProperty> RefetchRequiredQueries { get; init; } = [];
 
     public string ModelsNamespace => $"{ClientNamespace}.Models";
 
