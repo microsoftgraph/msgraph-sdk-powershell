@@ -96,6 +96,7 @@ namespace Microsoft.Graph.PowerShell.NetworkAccess
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
 
