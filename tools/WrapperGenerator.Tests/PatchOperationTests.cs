@@ -13,17 +13,17 @@ using static WrapperGenerator.CmdletConfigurator;
 
 namespace WrapperGenerator.Tests;
 
-public sealed class PatchRefetchTests
+public sealed class PatchOperationTests
 {
     [Theory]
     [InlineData("v1.0")]
     [InlineData("beta")]
     public async Task MutationsReturnOnlyTheirOwnResultAndGetInputsStayIndependent(string profile)
     {
-        var root = Path.Combine(Path.GetTempPath(), "wrapper-refetch-" + Guid.NewGuid().ToString("N"));
+        var root = Path.Combine(Path.GetTempPath(), "wrapper-patch-operations-" + Guid.NewGuid().ToString("N"));
         try
         {
-            await PatchRefetchFixture.GenerateAsync(root, profile);
+            await PatchOperationFixture.GenerateAsync(root, profile);
             var files = Directory.GetFiles(Path.Combine(root, "Cmdlets"), "*.g.cs")
                 .ToDictionary(path => Path.GetFileName(path)!, File.ReadAllText);
             foreach (var name in new[] { "UpdateMgAgreement", "UpdateMgProfileWidget_Route0", "UpdateMgProfileWidget_Route1",
@@ -46,7 +46,7 @@ public sealed class PatchRefetchTests
                 Assert.DoesNotContain("WithUrl", source);
                 Assert.Contains("requestConfiguration.Headers.Add(\"If-Match\", IfMatch!)", source);
                 Assert.Contains("if (result is not null)", source);
-                Assert.Contains("[OutputType(typeof(" + PatchRefetchFixture.ClientNamespace + ".Models.Widget))]", source);
+                Assert.Contains("[OutputType(typeof(" + PatchOperationFixture.ClientNamespace + ".Models.Widget))]", source);
                 Assert.DoesNotContain("PassThru", source);
                 Assert.Equal(1, source.Split("ShouldProcess(", StringSplitOptions.None).Length - 1);
                 Assert.True(source.IndexOf("ShouldProcess(", StringComparison.Ordinal) < source.IndexOf("var body", StringComparison.Ordinal));
@@ -76,8 +76,8 @@ public sealed class PatchRefetchTests
     }
 }
 
-// Shared by the source-level test and Test-WrapperPatchRefetch.ps1's real Kiota compile/transport gate.
-public static class PatchRefetchFixture
+// Shared by the source-level test and Test-WrapperPatchOperations.ps1's real Kiota compile/transport gate.
+public static class PatchOperationFixture
 {
     public const string ClientNamespace = "Microsoft.Graph.PowerShell.RefetchProbe.Client";
 

@@ -12,7 +12,7 @@ FixtureRoot must be new and is kept for reproducible evidence.
 
 .EXAMPLE
 dotnet build .\tools\WrapperGenerator.Tests --nologo
-pwsh -NoProfile -File .\tools\Test-WrapperPatchRefetch.ps1 -FixtureRoot <new-directory> -KiotaPath <kiota.exe> -AuthenticationModulePath <built-Authentication.psd1>
+pwsh -NoProfile -File .\tools\Test-WrapperPatchOperations.ps1 -FixtureRoot <new-directory> -KiotaPath <kiota.exe> -AuthenticationModulePath <built-Authentication.psd1>
 #>
 [CmdletBinding()]
 param(
@@ -36,7 +36,7 @@ if (-not $Probe) {
     if (Test-Path -LiteralPath $FixtureRoot) { throw "FixtureRoot must be a new directory: $FixtureRoot" }
     $TestAssembly = (Resolve-Path -LiteralPath $TestAssembly).Path
     $null = [Reflection.Assembly]::LoadFrom($TestAssembly)
-    $null = [WrapperGenerator.Tests.PatchRefetchFixture]::GenerateAsync($FixtureRoot, $ApiVersion).GetAwaiter().GetResult()
+    $null = [WrapperGenerator.Tests.PatchOperationFixture]::GenerateAsync($FixtureRoot, $ApiVersion).GetAwaiter().GetResult()
     $env:KIOTA_Generation__MaxDegreeOfParallelism = '1'
     & $KiotaPath generate -l CSharp -c ApiClient -n Microsoft.Graph.PowerShell.RefetchProbe.Client `
         -d "$FixtureRoot\openapi.json" -o "$FixtureRoot\Client" --log-level Warning

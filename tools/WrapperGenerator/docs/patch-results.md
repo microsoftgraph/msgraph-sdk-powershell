@@ -26,8 +26,8 @@ the same no-read-back semantics. Transport retries are unchanged.
 
 ## Regression gates
 
-The existing `PatchRefetchTests` and `Test-WrapperPatchRefetch.ps1` filenames are
-retained for continuity; their assertions now positively require **no read-back**.
+`PatchOperationTests` and `Test-WrapperPatchOperations.ps1` positively require
+**no read-back**.
 `EmitterTests`, `MutationRouteTests` and `CompositeKeyTests` preserve typed receiver,
 complete key dictionary/body separation and operation metadata coverage.
 `RequiredQueryTests` checks independent PATCH/GET input types and unselected
@@ -36,7 +36,7 @@ unsupported GET metadata.
 ```powershell
 dotnet build tools\WrapperGenerator.Tests\WrapperGenerator.Tests.csproj --no-incremental
 dotnet test tools\WrapperGenerator.Tests\WrapperGenerator.Tests.csproj --no-build `
-  --filter 'FullyQualifiedName~PatchRefetchTests|FullyQualifiedName~EmitterTests|FullyQualifiedName~MutationRouteTests|FullyQualifiedName~CompositeKeyTests|FullyQualifiedName~RequiredQueryTests'
+  --filter 'FullyQualifiedName~PatchOperationTests|FullyQualifiedName~EmitterTests|FullyQualifiedName~MutationRouteTests|FullyQualifiedName~CompositeKeyTests|FullyQualifiedName~RequiredQueryTests'
 ```
 
 The compiled gate requires Kiota 1.36.1, the .NET SDK, PowerShell 7 on .NET 10 and the
@@ -44,7 +44,7 @@ normally built Authentication 2.41.2 package first on process-local PSModulePath
 Run once per profile plus representative USGov coverage, with new artifact roots:
 
 ```powershell
-pwsh -NoProfile -NonInteractive -File .\tools\Test-WrapperPatchRefetch.ps1 `
+pwsh -NoProfile -NonInteractive -File .\tools\Test-WrapperPatchOperations.ps1 `
   -FixtureRoot <new-directory> -ApiVersion beta -Environment USGov `
   -KiotaPath <kiota.exe> -AuthenticationModulePath <normal-built-Authentication.psd1>
 pwsh -NoProfile -NonInteractive -File .\tools\Test-WrapperRequiredQuery.ps1 `

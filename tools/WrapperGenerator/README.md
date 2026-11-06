@@ -121,7 +121,7 @@ Whatever the shape, a generated cmdlet has the same skeleton:
   `Update` returns a model only when PATCH supplies one. A successful `204 No Content`
   returns no object and never triggers an automatic GET. Retrieve the updated resource
   with a separate explicit `Get-Mg...` command if needed. See
-  [PATCH result semantics](docs/patch-refetch.md) for the offline regression gate.
+  [PATCH result semantics](docs/patch-results.md) for the offline regression gate.
   See [docs/body-property-binding.md](docs/body-property-binding.md) for the full mapping, the
   `date`/`time` input contract, and what remains unbound.
 - **`New`/`Update`/`Remove`** are gated by `ShouldProcess`, so `-WhatIf` and `-Confirm` work.
