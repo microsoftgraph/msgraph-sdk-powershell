@@ -46,18 +46,18 @@ pipelines:
         credscan:
           lastModifiedDate: 2024-10-10
         eslint:
-          lastModifiedDate: 2026-05-13
+          lastModifiedDate: 2026-11-06
         psscriptanalyzer:
-          lastModifiedDate: 2026-05-13
+          lastModifiedDate: 2026-11-06
         armory:
-          lastModifiedDate: 2026-05-13
+          lastModifiedDate: 2026-11-06
         accessibilityinsights:
-          lastModifiedDate: 2025-07-03
+          lastModifiedDate: 2026-11-06
       binary:
         credscan:
           lastModifiedDate: 2024-10-18
         spotbugs:
-          lastModifiedDate: 2026-11-05
+          lastModifiedDate: 2026-11-06
     usedNonDefaultBranch: true
   658:
     retail:
