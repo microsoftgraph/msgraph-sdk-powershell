@@ -34,7 +34,7 @@ this migration; this include adds no module directive entries or v3 overrides.
 
 Both required profiles are present; neither is excluded. Only the
 `openApiDocs_KiotaCompat` specifications were used, without a legacy fallback.
-After normally merging `powershell-v3` at `844672d7c2` (merged #3891),
+After normally merging `powershell-v3` at `6475f3f5be` (merged #3886),
 the current compatible specifications have these Git blobs:
 
 | Profile | Compatible specification | Git blob | Paths | Operations |
@@ -86,6 +86,11 @@ and the reviewed mapping ledger is empty. Real-spec generation asserts all 42
 cmdlet sources and the explicit actual profile in all 36 transport workers:
 `GetRequestAdapter("v1.0")` or `GetRequestAdapter("beta")`, never the implicit
 v1.0 overload.
+All six full-module PATCH families have no native query inputs; no operation in
+either specification has a required query input. The tests inspect both
+operation and inherited path parameters, not just the empty migration ledger.
+Generated PATCH workers contain one PATCH call and no GET, preserve bound body
+and headers, return no output for 204, and return the actual model for 200.
 
 The strict shared-directive inventory must return zero rows with
 `-Module Identity.Partner -FailOnUnresolved`. This is a no-directive audit, not a
@@ -97,6 +102,9 @@ the committed output directory casing: `wrapper\v1.0` and `wrapper\Beta`.
 Current-target acceptance uses normally packaged adapted Authentication 2.41.2,
 which owns the complete Kiota dependency closure. Wrapper manifests require it
 without dependency preloads, and wrapper output contains only the module,
-client, and runtime DLLs. Fresh compiled transport evidence must distinguish
-typed-body/URL/safety checks from any generic-header PATCH-refetch failure; the
-empty shared audit does not authorize a framework fix or waive that contract.
+client, and runtime DLLs. Fresh compiled transport evidence asserts one selected
+PATCH and no implicit GET, including when the independent GET is configured to
+return 403. A caller-requested GET owns its own headers, queries, result, and
+errors. Historical pre-#3886 refetch-header failures remain historical evidence;
+they are superseded by the user-directed no-readback contract, not relabeled as
+new passing runs.

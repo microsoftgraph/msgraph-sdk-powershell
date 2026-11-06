@@ -91,6 +91,11 @@ public sealed class IdentityPartnerDirectiveMigrationTests
                     $"Missing {profile} operation: {method} {path}");
                 Assert.Equal(fullOperationId ? operationSuffix : route.OperationPrefix + operationSuffix,
                     operation.OperationId);
+                var queries = (pathItem.Parameters ?? []).Concat(operation.Parameters ?? [])
+                    .Where(parameter => parameter.In == ParameterLocation.Query).ToArray();
+                Assert.DoesNotContain(queries, parameter => parameter.Required);
+                if (method == HttpMethod.Patch)
+                    Assert.Empty(queries);
 
                 foreach (var useCollisionData in new[] { false, true })
                 {
@@ -105,30 +110,40 @@ public sealed class IdentityPartnerDirectiveMigrationTests
                     Assert.Equal("Mg" + noun, naming.Noun);
                 }
             }
+        }
 
-            var output = Path.Combine(Path.GetTempPath(), "IdentityPartnerProfile-" + Guid.NewGuid().ToString("N"));
-            try
+        var output = Path.Combine(Path.GetTempPath(), "IdentityPartnerProfile-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            var config = new GeneratorConfig("Test.Client", output);
+            var service = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance,
+                apiVersion: profile);
+            await service.GenerateAsync(TestContext.Current.CancellationToken);
+            var sources = Directory.GetFiles(output, "*.g.cs").Select(File.ReadAllText).ToArray();
+            Assert.Equal(42, sources.Length);
+            var transportSources = sources.Where(source => source.Contains("GetRequestAdapter(", StringComparison.Ordinal))
+                .ToArray();
+            Assert.Equal(36, transportSources.Length);
+            Assert.All(transportSources, source =>
             {
-                var config = new GeneratorConfig("Test.Client", output);
-                var service = new PowerShellWrapperGenerationService(document, config, NullLogger.Instance,
-                    apiVersion: profile);
-                await service.GenerateAsync(TestContext.Current.CancellationToken);
-                var sources = Directory.GetFiles(output, "*.g.cs").Select(File.ReadAllText).ToArray();
-                Assert.Equal(42, sources.Length);
-                var transportSources = sources.Where(source => source.Contains("GetRequestAdapter(", StringComparison.Ordinal))
-                    .ToArray();
-                Assert.Equal(36, transportSources.Length);
-                Assert.All(transportSources, source =>
-                {
-                    Assert.Contains($"GetRequestAdapter(\"{profile}\")", source, StringComparison.Ordinal);
-                    Assert.DoesNotContain("GetRequestAdapter()", source, StringComparison.Ordinal);
-                });
-            }
-            finally
+                Assert.Contains($"GetRequestAdapter(\"{profile}\")", source, StringComparison.Ordinal);
+                Assert.DoesNotContain("GetRequestAdapter()", source, StringComparison.Ordinal);
+            });
+            foreach (var route in Routes)
             {
-                if (Directory.Exists(output))
-                    Directory.Delete(output, recursive: true);
+                var patch = File.ReadAllText(Path.Combine(output, $"UpdateMg{route.Noun}.g.cs"));
+                Assert.Single(System.Text.RegularExpressions.Regex.Matches(patch, @"\.PatchAsync\("));
+                Assert.DoesNotContain(".GetAsync(", patch, StringComparison.Ordinal);
+                Assert.DoesNotContain("QueryParameters.", patch, StringComparison.Ordinal);
+                Assert.Contains("if (result is not null)", patch, StringComparison.Ordinal);
+                Assert.Contains("WriteObject(result);", patch, StringComparison.Ordinal);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", patch, StringComparison.Ordinal);
             }
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
         }
     }
 
