@@ -300,6 +300,14 @@ directive:
     set:
       subject: $1
 # Rename cmdlets
+  # Keep updateRequest actions separate from resource PATCH operations.
+  - where:
+      verb: Update
+      subject: ^((IdentityGovernancePrivilegedAccessGroup|RoleManagementDirectoryRole|RoleManagementEntitlementManagementRole)AssignmentScheduleRequest)$
+      variant: ^(Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1)$
+    set:
+      verb: Invoke
+      subject: Update$1
   - where:
       verb: Get
       subject: ^(PrivilegedRole)(Assignment)$

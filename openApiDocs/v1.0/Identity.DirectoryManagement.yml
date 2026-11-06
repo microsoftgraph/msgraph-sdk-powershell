@@ -7824,6 +7824,38 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /devices/microsoft.graph.provision:
+    post:
+      tags:
+        - devices.device.Actions
+      summary: Invoke action provision
+      description: Provision a device on behalf of an approved Virtual Desktop Infrastructure (VDI) provider. This action wraps the Zero Touch Deployment (ZTD) protocol to create a device in a pending state in the customer's directory. The device can't be used for authentication until it completes its registration. The created device is stamped with a system label that identifies the approved VDI provider. Only VDI applications on Microsoft's approved list of VDI providers can successfully call this action. Calls from other applications are blocked even when the application is granted the required permission.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/device-provision?view=graph-rest-1.0
+      operationId: device_provision
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                provisioningBlob:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.provisionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /devices/microsoft.graph.validateProperties:
     post:
       tags:
@@ -14321,6 +14353,7 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Get tenantGovernance from directory
+      description: Container for Microsoft Entra Tenant Governance capabilities.
       operationId: directory_GetTenantGovernance
       parameters:
         - name: $select
@@ -14397,7 +14430,11 @@ paths:
     get:
       tags:
         - directory.tenantGovernance
-      summary: Get governanceInvitations from directory
+      summary: List governanceInvitations
+      description: Get a list of the governanceInvitation objects and their properties. This API method returns all governance invitations where the calling tenant is either the governing tenant or the governed tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-governanceinvitations?view=graph-rest-1.0
       operationId: directory.tenantGovernance_ListGovernanceInvitation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14447,7 +14484,11 @@ paths:
     post:
       tags:
         - directory.tenantGovernance
-      summary: Create new navigation property to governanceInvitations for directory
+      summary: Create governanceInvitation
+      description: Create a new governanceInvitation to establish a governance relationship with a governed tenant. Invitations provide an alternative mechanism to governance requests for initiating relationships.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-post-governanceinvitations?view=graph-rest-1.0
       operationId: directory.tenantGovernance_CreateGovernanceInvitation
       requestBody:
         description: New navigation property
@@ -14470,7 +14511,11 @@ paths:
     get:
       tags:
         - directory.tenantGovernance
-      summary: Get governanceInvitations from directory
+      summary: Get governanceInvitation
+      description: Read the properties of a governanceInvitation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governanceinvitation-get?view=graph-rest-1.0
       operationId: directory.tenantGovernance_GetGovernanceInvitation
       parameters:
         - name: governanceInvitation-id
@@ -14545,7 +14590,11 @@ paths:
     delete:
       tags:
         - directory.tenantGovernance
-      summary: Delete navigation property governanceInvitations for directory
+      summary: Delete governanceInvitation
+      description: Delete a governanceInvitation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governanceinvitation-delete?view=graph-rest-1.0
       operationId: directory.tenantGovernance_DeleteGovernanceInvitation
       parameters:
         - name: governanceInvitation-id
@@ -14586,7 +14635,11 @@ paths:
     get:
       tags:
         - directory.tenantGovernance
-      summary: Get governancePolicyTemplates from directory
+      summary: List governancePolicyTemplates
+      description: Get a list of the tenantGovernancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-governancepolicytemplates?view=graph-rest-1.0
       operationId: directory.tenantGovernance_ListGovernancePolicyTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14636,7 +14689,11 @@ paths:
     post:
       tags:
         - directory.tenantGovernance
-      summary: Create new navigation property to governancePolicyTemplates for directory
+      summary: Create tenantGovernancePolicyTemplate
+      description: 'Create a new tenantGovernancePolicyTemplate that defines the configuration for establishing governance relationships, including role assignments and applications to provision.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-post-governancepolicytemplates?view=graph-rest-1.0
       operationId: directory.tenantGovernance_CreateGovernancePolicyTemplate
       requestBody:
         description: New navigation property
@@ -14659,7 +14716,11 @@ paths:
     get:
       tags:
         - directory.tenantGovernance
-      summary: Get governancePolicyTemplates from directory
+      summary: Get tenantGovernancePolicyTemplate
+      description: Read the properties of a tenantGovernancePolicyTemplate object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancepolicytemplate-get?view=graph-rest-1.0
       operationId: directory.tenantGovernance_GetGovernancePolicyTemplate
       parameters:
         - name: tenantGovernancePolicyTemplate-id
@@ -14703,7 +14764,11 @@ paths:
     patch:
       tags:
         - directory.tenantGovernance
-      summary: Update the navigation property governancePolicyTemplates in directory
+      summary: Update tenantGovernancePolicyTemplate
+      description: Update the properties of a tenantGovernancePolicyTemplate object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancepolicytemplate-update?view=graph-rest-1.0
       operationId: directory.tenantGovernance_UpdateGovernancePolicyTemplate
       parameters:
         - name: tenantGovernancePolicyTemplate-id
@@ -14734,7 +14799,11 @@ paths:
     delete:
       tags:
         - directory.tenantGovernance
-      summary: Delete navigation property governancePolicyTemplates for directory
+      summary: Delete tenantGovernancePolicyTemplate
+      description: Delete a tenantGovernancePolicyTemplate object. You can't delete the default template or templates currently used by active relationships.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-delete-governancepolicytemplates?view=graph-rest-1.0
       operationId: directory.tenantGovernance_DeleteGovernancePolicyTemplate
       parameters:
         - name: tenantGovernancePolicyTemplate-id
@@ -14775,7 +14844,11 @@ paths:
     get:
       tags:
         - directory.tenantGovernance
-      summary: Get governanceRelationships from directory
+      summary: List governanceRelationships
+      description: Get a list of the governanceRelationship objects and their properties. This API method returns all governance relationships where the calling tenant is either the governing tenant or the governed tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-governancerelationships?view=graph-rest-1.0
       operationId: directory.tenantGovernance_ListGovernanceRelationship
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14848,7 +14921,11 @@ paths:
     get:
       tags:
         - directory.tenantGovernance
-      summary: Get governanceRelationships from directory
+      summary: Get governanceRelationship
+      description: Read the properties of a governanceRelationship object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancerelationship-get?view=graph-rest-1.0
       operationId: directory.tenantGovernance_GetGovernanceRelationship
       parameters:
         - name: governanceRelationship-id
@@ -14892,7 +14969,11 @@ paths:
     patch:
       tags:
         - directory.tenantGovernance
-      summary: Update the navigation property governanceRelationships in directory
+      summary: Update governanceRelationship
+      description: "Update the status property of a governanceRelationship to initiate the termination process. There are two models for termination:\r\n1) Initiated by the governing tenant: After the governing tenant updates the status to terminationRequestedByGoverningTenant, the governed tenant may subsequently update the status to terminated.\r\n1) Directly terminated by the governed tenant: The governed tenant updates the status to terminated to immediately terminate the relationship. When the governed tenant updates the status to terminated in either model, the resources that were provisioned in the governed tenant upon relationship creation are deleted."
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancerelationship-update?view=graph-rest-1.0
       operationId: directory.tenantGovernance_UpdateGovernanceRelationship
       parameters:
         - name: governanceRelationship-id
@@ -14964,7 +15045,11 @@ paths:
     get:
       tags:
         - directory.tenantGovernance
-      summary: Get governanceRequests from directory
+      summary: List governanceRequests
+      description: Get a list of the governanceRequest objects and their properties. This API method returns all governance requests where the calling tenant is either the governing tenant or the governed tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-governancerequests?view=graph-rest-1.0
       operationId: directory.tenantGovernance_ListGovernanceRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15014,7 +15099,11 @@ paths:
     post:
       tags:
         - directory.tenantGovernance
-      summary: Create new navigation property to governanceRequests for directory
+      summary: Create governanceRequest
+      description: Create a new governanceRequest to establish a governance relationship with a governed tenant. The governed tenant can then accept or reject the request.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-post-governancerequests?view=graph-rest-1.0
       operationId: directory.tenantGovernance_CreateGovernanceRequest
       requestBody:
         description: New navigation property
@@ -15037,7 +15126,11 @@ paths:
     get:
       tags:
         - directory.tenantGovernance
-      summary: Get governanceRequests from directory
+      summary: Get governanceRequest
+      description: Read the properties of a governanceRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancerequest-get?view=graph-rest-1.0
       operationId: directory.tenantGovernance_GetGovernanceRequest
       parameters:
         - name: governanceRequest-id
@@ -15081,7 +15174,11 @@ paths:
     patch:
       tags:
         - directory.tenantGovernance
-      summary: Update the navigation property governanceRequests in directory
+      summary: Update governanceRequest
+      description: Update the status property of a governanceRequest to accept or reject the governance request. Only the governed tenant can update the request status.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancerequest-update?view=graph-rest-1.0
       operationId: directory.tenantGovernance_UpdateGovernanceRequest
       parameters:
         - name: governanceRequest-id
@@ -15140,6 +15237,7 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Get governancePolicyTemplate from directory
+      description: The governance policy template associated with this request.
       operationId: directory.tenantGovernance.governanceRequest_GetGovernancePolicyTemplate
       parameters:
         - name: governanceRequest-id
@@ -15198,7 +15296,11 @@ paths:
     get:
       tags:
         - directory.tenantGovernance
-      summary: Get relatedTenants from directory
+      summary: List relatedTenants
+      description: 'Get a list of relatedTenant objects and their properties, including relationship metrics.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-relatedtenants?view=graph-rest-1.0
       operationId: directory.tenantGovernance_ListRelatedTenant
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15271,7 +15373,11 @@ paths:
     get:
       tags:
         - directory.tenantGovernance
-      summary: Get relatedTenants from directory
+      summary: Get relatedTenant
+      description: Read the properties and relationships of a relatedTenant object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-relatedtenant-get?view=graph-rest-1.0
       operationId: directory.tenantGovernance_GetRelatedTenant
       parameters:
         - name: relatedTenant-id
@@ -15374,6 +15480,7 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Get appB2BSignInActivityMetrics from directory
+      description: B2B sign-in activity metrics for this related tenant. Expanded by default.
       operationId: directory.tenantGovernance.relatedTenant_GetAppB2BSignInActivityMetric
       parameters:
         - name: relatedTenant-id
@@ -15419,6 +15526,7 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Get b2BRegistrationMetrics from directory
+      description: B2B registration metrics for this related tenant. Expanded by default.
       operationId: directory.tenantGovernance.relatedTenant_GetB2BRegistrationMetric
       parameters:
         - name: relatedTenant-id
@@ -15464,6 +15572,7 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Get b2BSignInActivityMetrics from directory
+      description: B2B sign-in activity metrics for this related tenant. Expanded by default.
       operationId: directory.tenantGovernance.relatedTenant_GetB2BSignInActivityMetric
       parameters:
         - name: relatedTenant-id
@@ -15509,6 +15618,7 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Get billingMetrics from directory
+      description: Billing metrics for this related tenant. Expanded by default.
       operationId: directory.tenantGovernance.relatedTenant_GetBillingMetric
       parameters:
         - name: relatedTenant-id
@@ -15554,6 +15664,7 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Get multiTenantApplicationMetrics from directory
+      description: Multi-tenant application usage metrics for this related tenant. Expanded by default.
       operationId: directory.tenantGovernance.relatedTenant_GetMultiTenantApplicationMetric
       parameters:
         - name: relatedTenant-id
@@ -15613,6 +15724,10 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Invoke action refresh
+      description: Refresh the list of related tenants. The list is also automatically refreshed daily.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-relatedtenant-refresh?view=graph-rest-1.0
       operationId: directory.tenantGovernance.relatedTenant_refresh
       responses:
         2XX:
@@ -15620,11 +15735,31 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /directory/tenantGovernance/relatedTenants/microsoft.graph.refreshStatus():
+    get:
+      tags:
+        - directory.tenantGovernance
+      summary: Invoke function refreshStatus
+      operationId: directory.tenantGovernance.relatedTenant_refreshStatus
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.relatedTenantsRefreshStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /directory/tenantGovernance/settings:
     get:
       tags:
         - directory.tenantGovernance
-      summary: Get settings from directory
+      summary: Get tenantGovernanceSetting
+      description: 'Read the properties of the tenantGovernanceSetting singleton, which controls related tenant discovery and invitation capabilities.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-tenantgovernancesetting-get?view=graph-rest-1.0
       operationId: directory.tenantGovernance_GetSetting
       parameters:
         - name: $select
@@ -15660,7 +15795,11 @@ paths:
     patch:
       tags:
         - directory.tenantGovernance
-      summary: Update the navigation property settings in directory
+      summary: Update tenantGovernanceSetting
+      description: Update the canReceiveInvitations property of the tenantGovernanceSetting singleton. This property controls whether the tenant can receive governance invitations.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-tenantgovernancesetting-update?view=graph-rest-1.0
       operationId: directory.tenantGovernance_UpdateSetting
       requestBody:
         description: New navigation property values
@@ -15702,6 +15841,10 @@ paths:
       tags:
         - directory.tenantGovernance
       summary: Invoke action enableRelatedTenants
+      description: 'Enable the related tenants feature for tenant discovery. After calling this action, the isRelatedTenantsEnabled property of tenantGovernanceSetting is set to true, which allows the use of related tenant APIs.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/tenantgovernanceservices-tenantgovernancesetting-enablerelatedtenants?view=graph-rest-1.0
       operationId: directory.tenantGovernance.setting_enableRelatedTenant
       responses:
         2XX:
@@ -24450,7 +24593,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. See Key differences from Microsoft 365 group labeling to learn more about managing this property for Microsoft 365 vs. cloud security groups.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group or a cloud security group. Requires a Microsoft Entra ID P1 license. Requires $select to retrieve. This property can be specified during group creation or update. However, for cloud security groups, it''s immutable once set. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role. To learn more about managing this property for Microsoft 365 vs. cloud security groups, see Key differences from Microsoft 365 group labeling.'
             assignedLicenses:
               type: array
               items:
@@ -25156,7 +25299,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The roles exposed by the application that''s linked to this service principal. For more information, see the appRoles property definition on the application entity. Not nullable.'
+              description: 'The roles exposed by the application that''s linked to this service principal. For more information, see the appRoles property definition on the application entity. Not nullable. App roles and exposed delegated permission scopes (oauth2PermissionScopes) share a default limit of 700 permission definitions per service principal, including definitions inherited from the application and definitions added directly to the service principal. Enabled and disabled definitions both count. This limit counts definitions, not app role assignments. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             createdByAppId:
               type: string
               description: The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.
@@ -25210,7 +25353,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionScope'
-              description: 'The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity''s api property. Not nullable.'
+              description: 'The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. These scopes and appRoles share a default limit of 700 permission definitions per service principal. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             passwordCredentials:
               type: array
               items:
@@ -25361,6 +25504,18 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.provisionResponse:
+      title: provisionResponse
+      type: object
+      properties:
+        challenge:
+          type: string
+          description: The cryptographic challenge that the device uses to complete its registration with the directory.
+        deviceId:
+          type: string
+          description: The unique identifier of the provisioned device.
+      additionalProperties:
+        type: object
     microsoft.graph.directory:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -25454,7 +25609,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.'
+              description: 'The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable. App roles and exposed delegated permission scopes (api.oauth2PermissionScopes) share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. This limit is separate from the aggregate 1,200-entry application manifest limit and from app role assignment limits. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             authenticationBehaviors:
               $ref: '#/components/schemas/microsoft.graph.authenticationBehaviors'
             certification:
@@ -26102,26 +26257,31 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceInvitation'
+              description: Collection of governance invitations associated with the tenant.
               x-ms-navigationProperty: true
             governancePolicyTemplates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tenantGovernancePolicyTemplate'
+              description: Collection of governance policy templates associated with the tenant.
               x-ms-navigationProperty: true
             governanceRelationships:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRelationship'
+              description: Collection of governance relationships associated with the tenant.
               x-ms-navigationProperty: true
             governanceRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceRequest'
+              description: Collection of governance requests associated with the tenant.
               x-ms-navigationProperty: true
             relatedTenants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.relatedTenant'
+              description: Collection of related tenants associated with the tenant.
               x-ms-navigationProperty: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.tenantGovernanceSetting'
@@ -26136,19 +26296,25 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the invitation was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the invitation expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             governedTenantId:
               type: string
+              description: 'The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.'
             governedTenantName:
               type: string
+              description: 'The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.'
             governingTenantId:
               type: string
+              description: 'The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.'
             governingTenantName:
               type: string
+              description: 'The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.'
           additionalProperties:
             type: object
     microsoft.graph.tenantGovernancePolicyTemplate:
@@ -26160,27 +26326,35 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the template was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             delegatedAdministrationRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.delegatedAdministrationRoleAssignment'
+              description: A collection of delegated administration role assignments to be applied in the governed tenant when the governance relationship is established.
             description:
               type: string
+              description: 'A description of the policy template. Supports $filter (eq, ne) and $orderBy.'
             displayName:
               type: string
+              description: 'The display name of the policy template. Supports $filter (eq, ne) and $orderBy.'
             governedTenantCanTerminate:
               type: boolean
+              description: Not implemented.
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the template was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             multiTenantApplicationsToProvision:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationsToProvision'
+              description: A collection of multi-tenant applications to be provisioned in the governed tenant when the governance relationship is established.
             version:
               type: string
+              description: 'The version of the policy template. Version count increased by 1 when updated. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
           additionalProperties:
             type: object
     microsoft.graph.governanceRelationship:
@@ -26194,15 +26368,20 @@ components:
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the relationship was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026 is 2026-01-01T00:00:00Z. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             governedTenantId:
               type: string
+              description: 'The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.'
             governedTenantName:
               type: string
+              description: 'The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.'
             governingTenantId:
               type: string
+              description: 'The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.'
             governingTenantName:
               type: string
+              description: 'The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.'
             policySnapshot:
               $ref: '#/components/schemas/microsoft.graph.relationshipPolicy'
             status:
@@ -26218,20 +26397,26 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the request expires if not accepted or rejected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             governedTenantId:
               type: string
+              description: 'The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.'
             governedTenantName:
               type: string
+              description: 'The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.'
             governingTenantId:
               type: string
+              description: 'The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.'
             governingTenantName:
               type: string
+              description: 'The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.'
             policySnapshot:
               $ref: '#/components/schemas/microsoft.graph.relationshipPolicy'
             requestDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the request was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.'
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.requestStatus'
@@ -26248,10 +26433,11 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the related tenant was discovered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
               format: date-time
             isMicrosoftInfrastructure:
               type: boolean
-              description: Indicates whether this tenant is a Microsoft infrastructure tenant.
+              description: Indicates whether the related tenant is a Microsoft infrastructure tenant. Read-only.
               readOnly: true
             appB2BSignInActivityMetrics:
               $ref: '#/components/schemas/microsoft.graph.b2BSignInActivityMetrics'
@@ -26313,6 +26499,21 @@ components:
               $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationMetricsRecent'
           additionalProperties:
             type: object
+    microsoft.graph.relatedTenantsRefreshStatus:
+      title: relatedTenantsRefreshStatus
+      type: object
+      properties:
+        isFirstRefresh:
+          type: boolean
+        mostRecentRefreshDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        mostRecentRefreshRequestStatus:
+          type: string
+      additionalProperties:
+        type: object
+      description: Represents the status of the most recent Related Tenants refresh operation.
     microsoft.graph.tenantGovernanceSetting:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -26321,8 +26522,10 @@ components:
           properties:
             canReceiveInvitations:
               type: boolean
+              description: 'Indicates whether the tenant can receive governance invitations. When set to false, the tenant cannot receive new governance invitations. When set to true, other tenants can send your tenant invitations by providing your tenant id or domain name. Default value is false.'
             isRelatedTenantsEnabled:
               type: boolean
+              description: 'Indicates whether the related tenants feature is enabled for tenant discovery. When set to false, related tenant APIs don''t work. This property can be enabled by calling the enableRelatedTenants action. Default value is false.'
           additionalProperties:
             type: object
     microsoft.graph.directoryRole:
@@ -27388,6 +27591,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               description: Represents a platform credential instance registered to a user on Mac OS.
+              x-ms-navigationProperty: true
+            resourceAccountKeyAuthenticationMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceAccountKeyAuthenticationMethod'
+              description: Represents the resource account key credentials registered to a user for authentication on shared devices.
               x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
@@ -29358,11 +29567,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Offline, OutOfOffice, PresenceUnknown.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.'
+              description: 'The base presence information for a user. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Focusing, InACall, InAMeeting, Offline, Presenting, PresenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
@@ -30074,7 +30283,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.permissionScope'
-          description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.'
+          description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes. These scopes and the application''s appRoles share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
         preAuthorizedApplications:
           type: array
           items:
@@ -30498,11 +30707,13 @@ components:
       properties:
         groupDisplayName:
           type: string
+          description: The display name of the security group referenced by the group navigation property. Server-populated and read-only; returns null if the referenced group has been deleted.
           nullable: true
         roleTemplates:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.roleTemplate'
+          description: A collection of role templates that define the roles to be assigned to the group in the governed tenant.
         group:
           $ref: '#/components/schemas/microsoft.graph.group'
       additionalProperties:
@@ -30513,14 +30724,18 @@ components:
       properties:
         appId:
           type: string
+          description: The appId (client ID) of the multi-tenant application.
         displayName:
           type: string
+          description: The display name of the application.
         objectId:
           type: string
+          description: The object ID of the service principal in the governing tenant.
         requiredResourceAccesses:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.applicationsRequiredResourceAccess'
+          description: The collection of resource accesses (permissions) required by the application.
       additionalProperties:
         type: object
     microsoft.graph.relationshipCreationType:
@@ -30551,18 +30766,23 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.delegatedAdministrationRoleAssignmentSnapshot'
+          description: A snapshot of the delegated administration role assignments configured in this policy.
         governedTenantCanTerminate:
           type: boolean
+          description: Indicates whether the governed tenant can terminate the relationship.
         multiTenantApplicationsToProvision:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.multiTenantApplicationsToProvisionSnapshot'
+          description: A snapshot of the multi-tenant applications to be provisioned in the governed tenant.
         policyId:
           type: string
+          description: The identifier of the source policy template from which this snapshot was created.
         version:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: The version of the source policy template from which this snapshot was created.
           format: int32
           nullable: true
           readOnly: true
@@ -30625,6 +30845,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp that represents when the time B2B sign-in activity content was initially aggregated for the related tenant.
               format: date-time
           additionalProperties:
             type: object
@@ -30637,6 +30858,7 @@ components:
             updateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp that represents the most recent time B2B registration data was aggregated and have sufficiently changed for the related tenant.
               format: date-time
           additionalProperties:
             type: object
@@ -30649,6 +30871,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp that represents the date time that B2B registration data was initially aggregated.
               format: date-time
           additionalProperties:
             type: object
@@ -30661,6 +30884,7 @@ components:
             updateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp that represents the most recent time B2B registration data was aggregated and have sufficiently changed for the related tenant.
               format: date-time
           additionalProperties:
             type: object
@@ -30673,6 +30897,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp that represents when billing metrics are initially aggregated for the related tenant.
               format: date-time
           additionalProperties:
             type: object
@@ -30685,6 +30910,7 @@ components:
             updateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp that represents when billing metrics are aggregated and have sufficiently changed for the related tenant.
               format: date-time
           additionalProperties:
             type: object
@@ -30697,6 +30923,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp that represents when multitenant application metrics are initially aggregated for the related tenant.
               format: date-time
           additionalProperties:
             type: object
@@ -30709,6 +30936,7 @@ components:
             updateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp that represents when multitenant application metrics are aggregated and have sufficiently changed for the related tenant.
               format: date-time
           additionalProperties:
             type: object
@@ -30797,6 +31025,7 @@ components:
         - ios
         - android
         - mac
+        - linux
         - unknownFutureValue
       type: string
       x-ms-enum-flags:
@@ -32155,6 +32384,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodKeyStrength'
             platform:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodPlatform'
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
+    microsoft.graph.resourceAccountKeyAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: resourceAccountKeyAuthenticationMethod
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the resource account key credential as shown in the Teams Room interface.
+              nullable: true
             device:
               $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
@@ -36181,8 +36424,10 @@ components:
       properties:
         id:
           type: string
+          description: 'The template ID of the Microsoft Entra role (e.g., 62e90394-69f5-4237-9190-012177145e10 for Global Administrator).'
         name:
           type: string
+          description: 'The display name of the role (e.g., ''Global Administrator'', ''Helpdesk Administrator'').'
       additionalProperties:
         type: object
     microsoft.graph.applicationsRequiredResourceAccess:
@@ -36193,8 +36438,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.applicationResourcePermission'
+          description: The collection of resource permissions required by the application.
         resourceAppId:
           type: string
+          description: The appId (client ID) of the resource that the application needs to access.
       additionalProperties:
         type: object
     microsoft.graph.delegatedAdministrationRoleAssignmentSnapshot:
@@ -36203,13 +36450,16 @@ components:
       properties:
         groupDisplayName:
           type: string
+          description: The display name of the security group identified by groupId at the time the snapshot was created. Read-only.
           nullable: true
         groupId:
           type: string
+          description: The object ID of the role-assignable security group in the governing tenant that will be assigned the specified roles.
         roleTemplates:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.roleTemplate'
+          description: The collection of role templates that define the Microsoft Entra roles to be assigned.
       additionalProperties:
         type: object
     microsoft.graph.multiTenantApplicationsToProvisionSnapshot:
@@ -36218,14 +36468,18 @@ components:
       properties:
         appId:
           type: string
+          description: The appId (client ID) of the multi-tenant application.
         displayName:
           type: string
+          description: The display name of the application.
         objectId:
           type: string
+          description: The object ID of the service principal in the governing tenant.
         requiredResourceAccesses:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.applicationsRequiredResourceAccess'
+          description: The collection of resource accesses (permissions) required by the application.
       additionalProperties:
         type: object
     microsoft.graph.b2BSignInActivityMetricsBase:
@@ -36236,19 +36490,24 @@ components:
           properties:
             inboundMonthlyTotalApplications:
               type: number
+              description: The total number of applications accessed by inbound users in the last month.
               format: decimal
             inboundMonthlyTotalUsers:
               type: number
+              description: The total number of unique inbound users with sign-in activity in the last month.
               format: decimal
             outboundMonthlyTotalApplications:
               type: number
+              description: The total number of applications accessed by outbound users in the last month.
               format: decimal
             outboundMonthlyTotalUsers:
               type: number
+              description: The total number of unique outbound users with sign-in activity in the last month.
               format: decimal
             watermarkDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the metrics snapshot was taken.
               format: date-time
           additionalProperties:
             type: object
@@ -36260,13 +36519,16 @@ components:
           properties:
             inboundTotalUsers:
               type: number
+              description: The total number of inbound B2B guest users registered.
               format: decimal
             outboundTotalUsers:
               type: number
+              description: The total number of outbound B2B users from this tenant registered in other tenants.
               format: decimal
             watermarkDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the metrics snapshot was taken.
               format: date-time
           additionalProperties:
             type: object
@@ -36278,29 +36540,37 @@ components:
           properties:
             foreignAssociatedTenantBillingManagementActiveCount:
               type: number
+              description: The number of foreign associated tenants with active billing management.
               format: decimal
             foreignAssociatedTenantCount:
               type: number
+              description: The total number of foreign associated tenants.
               format: decimal
             foreignAssociatedTenantProvisioningActiveCount:
               type: number
+              description: The number of foreign associated tenants with active provisioning.
               format: decimal
             localAssociatedTenantBillingManagementActiveCount:
               type: number
+              description: The number of local associated tenants with active billing management.
               format: decimal
             localAssociatedTenantCount:
               type: number
+              description: The total number of local associated tenants.
               format: decimal
             localAssociatedTenantIds:
               type: array
               items:
                 type: string
+              description: The list of local associated tenant IDs.
             localAssociatedTenantProvisioningActiveCount:
               type: number
+              description: The number of local associated tenants with active provisioning.
               format: decimal
             watermarkDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the metrics snapshot was taken.
               format: date-time
           additionalProperties:
             type: object
@@ -36312,13 +36582,16 @@ components:
           properties:
             inboundMonthlyTotalApplications:
               type: number
+              description: The total number of inbound multi-tenant applications in the last month.
               format: decimal
             outboundMonthlyTotalApplications:
               type: number
+              description: The total number of outbound multi-tenant applications in the last month.
               format: decimal
             watermarkDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time when the metrics snapshot was taken.
               format: date-time
           additionalProperties:
             type: object
@@ -37832,6 +38105,18 @@ components:
             resource:
               type: string
               description: Required. Specifies the resource that is monitored for changes. Don't include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+            vapidPublicKey:
+              type: string
+              description: 'Optional. The application server''s VAPID public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained by calling the getVapidPublicKey function on the subscription collection. The browser passes this value to PushManager.subscribe({ applicationServerKey: vapidPublicKey }) to bind the push subscription to this server identity. Required when notificationUrl targets a known Web Push service origin (for example, *.push.apple.com, fcm.googleapis.com, updates.push.services.mozilla.com); rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8292.'
+              nullable: true
+            webPushEncryptionP256dhPublicKey:
+              type: string
+              description: 'Optional. The subscriber''s ECDH public key, base64url-encoded (P-256 uncompressed point, 65 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''p256dh''). Used as the peer public key during ECDH key agreement to derive the per-message content encryption key for RFC 8291 payload encryption. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
+            webPushEncryptionSecret:
+              type: string
+              description: 'Optional. The subscriber''s auth secret, base64url-encoded (16 bytes pre-encoding). Obtained from the browser via PushSubscription.getKey(''auth''). Used as the HMAC-SHA-256 salt for the HKDF combine step that derives key material for RFC 8291 payload encryption. Write-only: this value is never returned in GET responses (returned as null). Treat as a secret. Required when notificationUrl targets a known Web Push service origin; rejected with 400 Bad Request if supplied on a standard webhook subscription. For more information, see RFC 8291 Section 3.'
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.thumbnailSet:
@@ -40693,8 +40978,10 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier of the permission.
         name:
           type: string
+          description: The name of the permission.
           nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.applicationPermissionType'

@@ -174,7 +174,7 @@ paths:
       tags:
         - admin.adminReportSettings
       summary: List apiUsageReportMetrics
-      description: Get the list of SharePoint API usage report metrics and their enablement status for the tenant. The supported metrics are egressReport and throttlingReport.
+      description: 'Get the list of SharePoint API usage report metrics and their enablement status for the tenant. The supported metrics are egressReport, sharePointServicePrioritizationReport, and throttlingReport.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sharepointreportsettings-list-apiusagereportmetrics?view=graph-rest-beta
@@ -15462,7 +15462,7 @@ paths:
       tags:
         - reports.reportRoot.Functions
       summary: Invoke function getSharePointApiUsage
-      description: 'Get aggregated usage data for all applications in a tenant. Specify either a period or a date, but not both. Optionally filter the results by application ID. Data is returned in CSV format by default, or in JSON format when requested through the $format query parameter. Use the optional reportType parameter to choose which usage metrics to return: egressReport (default) includes usage (UsageMB in CSV, usageMB in JSON), and throttlingReport includes throttled request counts (ThrottledRequests in CSV, throttledRequests in JSON). Each report type must be enabled (onboarded) for the tenant before its data is available. Use enableApiUsageReport to enable a report metric, disableApiUsageReport to disable it, and List apiUsageReportMetrics to check the enablement status. If you request a report type that isn''t enabled for the tenant, this method returns a 403 Forbidden response with the error code accessDenied and the message ''Tenant is not enabled for this report type.'' CSV column headers use PascalCase (ThrottledRequests) while JSON properties use camelCase (throttledRequests) to maintain consistency with other Microsoft Graph reporting APIs.'
+      description: 'Get aggregated usage data for all applications in a tenant. Specify either a period or a date, but not both. Optionally filter the results by application ID. Data is returned in CSV format by default, or in JSON format when requested through the $format query parameter. Use the optional reportType parameter to choose which usage metrics to return: The sharePointServicePrioritizationReport is intended for tenants that use SharePoint Service Prioritization. For details about the offering and onboarding, see SharePoint Service Prioritization. Each report type must be enabled (onboarded) for the tenant before its data is available. Use enableApiUsageReport to enable a report metric, disableApiUsageReport to disable it, and List apiUsageReportMetrics to check the enablement status. If you request a report type that isn''t enabled for the tenant, this method returns a 403 Forbidden response with the error code accessDenied and the message ''Tenant is not enabled for this report type.'' CSV column headers use PascalCase (for example, BilledStandardRequestCount), and JSON properties use camelCase (for example, billedStandardRequestCount) to maintain consistency with other Microsoft Graph reporting APIs.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/reportroot-getsharepointapiusage?view=graph-rest-beta
@@ -19112,6 +19112,194 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /reports/partners/billing/aggregatedUsage:
+    get:
+      tags:
+        - reports.partners
+      summary: Get aggregatedUsage from reports
+      description: Represents aggregated Azure usage data for partner billing.
+      operationId: report.partner.billing_GetAggregatedUsage
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.azureAggregatedUsage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.partners
+      summary: Update the navigation property aggregatedUsage in reports
+      operationId: report.partner.billing_UpdateAggregatedUsage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.azureAggregatedUsage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.azureAggregatedUsage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.partners
+      summary: Delete navigation property aggregatedUsage for reports
+      operationId: report.partner.billing_DeleteAggregatedUsage
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/partners/billing/aggregatedUsage/billed:
+    get:
+      tags:
+        - reports.partners
+      summary: Get billed from reports
+      description: The billed aggregated usage data that can be exported.
+      operationId: report.partner.billing.aggregatedUsage_GetBilled
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.billedAggregatedUsage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.partners
+      summary: Update the navigation property billed in reports
+      operationId: report.partner.billing.aggregatedUsage_UpdateBilled
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.billedAggregatedUsage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.billedAggregatedUsage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.partners
+      summary: Delete navigation property billed for reports
+      operationId: report.partner.billing.aggregatedUsage_DeleteBilled
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/partners/billing/aggregatedUsage/billed/microsoft.graph.partners.billing.export:
+    post:
+      tags:
+        - reports.partners
+      summary: Invoke action export
+      description: Export billed aggregated Azure usage data for a specific invoice from a billedAggregatedUsage resource.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/partners-billing-billedaggregatedusage-export?view=graph-rest-beta
+      operationId: report.partner.billing.aggregatedUsage.billed_export
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                invoiceId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.partners.billing.operation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /reports/partners/billing/manifests:
     get:
       tags:
@@ -26055,7 +26243,7 @@ components:
       properties:
         metric:
           type: string
-          description: 'The name of the API usage report metric. The supported values are: egressReport, throttlingReport.'
+          description: 'The name of the API usage report metric. The supported values are: egressReport, sharePointServicePrioritizationReport, throttlingReport.'
         onboardingStatus:
           $ref: '#/components/schemas/microsoft.graph.apiUsageReportOnboardingStatus'
       additionalProperties:
@@ -26422,7 +26610,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.'
+              description: 'The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable. App roles and exposed delegated permission scopes (api.oauth2PermissionScopes) share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. This limit is separate from the aggregate 1,200-entry application manifest limit and from app role assignment limits. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             authenticationBehaviors:
               $ref: '#/components/schemas/microsoft.graph.authenticationBehaviors'
             certification:
@@ -27673,7 +27861,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.'
+              description: 'The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable. App roles and exposed delegated permission scopes (publishedPermissionScopes) share a default limit of 700 permission definitions per service principal, including definitions inherited from the application and definitions added directly to the service principal. Enabled and disabled definitions both count. This limit counts definitions, not app role assignments. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             createdByAppId:
               type: string
               description: The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.
@@ -27753,7 +27941,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionScope'
-              description: 'The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.'
+              description: 'The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0. These scopes and appRoles share a default limit of 700 permission definitions per service principal. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
             publisherName:
               type: string
               description: The name of the Microsoft Entra tenant that published the application.
@@ -27855,6 +28043,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
               x-ms-navigationProperty: true
+            lifecycle:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.identityLifecycle'
             memberOf:
               type: array
               items:
@@ -29144,6 +29334,8 @@ components:
         - title: billing
           type: object
           properties:
+            aggregatedUsage:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.azureAggregatedUsage'
             manifests:
               type: array
               items:
@@ -29160,6 +29352,43 @@ components:
               $ref: '#/components/schemas/microsoft.graph.partners.billing.billingReconciliation'
             usage:
               $ref: '#/components/schemas/microsoft.graph.partners.billing.azureUsage'
+          additionalProperties:
+            type: object
+    microsoft.graph.partners.billing.azureAggregatedUsage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: azureAggregatedUsage
+          type: object
+          properties:
+            billed:
+              $ref: '#/components/schemas/microsoft.graph.partners.billing.billedAggregatedUsage'
+          additionalProperties:
+            type: object
+    microsoft.graph.partners.billing.billedAggregatedUsage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: billedAggregatedUsage
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.partners.billing.operation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: operation
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The time of the last action of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            status:
+              $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
           additionalProperties:
             type: object
     microsoft.graph.partners.billing.manifest:
@@ -29205,26 +29434,6 @@ components:
             schemaVersion:
               type: string
               description: The version of the manifest schema.
-          additionalProperties:
-            type: object
-    microsoft.graph.partners.billing.operation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: operation
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-            lastActionDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The time of the last action of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-            status:
-              $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
           additionalProperties:
             type: object
     microsoft.graph.partners.billing.billingReconciliation:
@@ -30220,7 +30429,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.permissionScope'
-          description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.'
+          description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes. These scopes and the application''s appRoles share a default limit of 700 permission definitions per application. Enabled and disabled definitions both count. For counting rules, behavior for existing objects above the limit, and design guidance, see App role limits.'
         preAuthorizedApplications:
           type: array
           items:
@@ -30445,6 +30654,7 @@ components:
           nullable: true
         isDeviceAccessEnabled:
           type: boolean
+          description: Indicates whether the Microsoft Entra Private Access application is accessible or available in device access mode. false by default.
         isDnsResolutionEnabled:
           type: boolean
           description: Indicates Microsoft Entra Private Access should handle DNS resolution. false by default.
@@ -31262,6 +31472,8 @@ components:
         - adminConfirmedAgentCompromised
         - adminDismissedRiskForAgent
         - microsoftRevokedSessions
+        - aiElevatedAccountRisk
+        - userPassedVerifiedIdDrivenByRiskBasedPolicy
       type: string
     microsoft.graph.riskLevel:
       title: riskLevel
@@ -31919,6 +32131,28 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.identityGovernance.identityLifecycle:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityLifecycle
+          type: object
+          properties:
+            lastAttestationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the identity was last attested. This value can be null if the identity hasn't yet been attested.
+              format: date-time
+              nullable: true
+            complianceIssues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.complianceIssue'
+              description: The collection of compliance issues that describe why the identity is currently non-compliant with its governing policy.
+              x-ms-navigationProperty: true
+            effectiveGoverningPolicy:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+          additionalProperties:
+            type: object
     microsoft.graph.oAuth2PermissionGrant:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32214,6 +32448,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.longRunningOperationStatus:
+      title: longRunningOperationStatus
+      enum:
+        - notStarted
+        - running
+        - succeeded
+        - failed
+        - unknownFutureValue
+      type: string
     microsoft.graph.partners.billing.blob:
       title: blob
       type: object
@@ -32226,15 +32469,6 @@ components:
           description: 'The partition that contains the file. A large partition is split into multiple files, each with the same partitionValue.'
       additionalProperties:
         type: object
-    microsoft.graph.longRunningOperationStatus:
-      title: longRunningOperationStatus
-      enum:
-        - notStarted
-        - running
-        - succeeded
-        - failed
-        - unknownFutureValue
-      type: string
     microsoft.graph.serviceLevelAgreementAttainment:
       title: serviceLevelAgreementAttainment
       type: object
@@ -33786,6 +34020,94 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.complianceIssue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: complianceIssue
+          type: object
+          properties:
+            description:
+              type: string
+              description: A human-readable description of the compliance issue.
+            governingPolicyReferenceId:
+              type: string
+              description: The identifier of the lifecycle policy that generated the compliance issue.
+            issueCode:
+              type: string
+              description: A code that identifies the type of compliance issue.
+            ruleType:
+              type: string
+              description: 'The type of rule that generated the compliance issue, so callers can identify which rule caused non-compliance.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.identityGovernance.lifecyclePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicy
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the policy was created.
+              format: date-time
+            description:
+              type: string
+              description: The description of the policy.
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the policy.
+            enforcementAction:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction'
+            gracePeriodInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The number of days after an identity becomes non-compliant before the enforcement action is applied.
+              format: int32
+              nullable: true
+            isEnabled:
+              type: boolean
+              description: Indicates whether the policy is enabled and actively evaluated.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the policy was last modified.
+              format: date-time
+            notificationSchedule:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings'
+            policySource:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySource'
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.subjectSet'
+            versionNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: 'The version number of the policy, which increments each time the policy is updated.'
+              format: int32
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            report:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyReport'
+            rules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRule'
+              description: The collection of inline compliance rules evaluated for the policy. Rules are combined with AND logic. A maximum of 10 rules are allowed per policy.
+              x-ms-navigationProperty: true
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicy'
+              description: The collection of previous versions of the policy.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.preApprovalDetail:
       title: preApprovalDetail
       type: object
@@ -34270,6 +34592,83 @@ components:
           description: An ordered list of transformations that are applied in sequence.
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementAction:
+      title: lifecyclePolicyEnforcementAction
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyNotificationSettings:
+      title: lifecyclePolicyNotificationSettings
+      type: object
+      properties:
+        additionalFallbackRecipients:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The email addresses used when no targeted notification recipient has a valid email address. These addresses aren't copied on every notification or used alongside a valid targeted recipient.
+        offsetsAfterNonComplianceInDays:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: number
+            format: int32
+            nullable: true
+          description: 'The offsets, in days after an identity becomes non-compliant, at which notifications are sent.'
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicySource:
+      title: lifecyclePolicySource
+      enum:
+        - userCreated
+        - systemDefault
+        - unknownFutureValue
+      type: string
+    microsoft.graph.subjectSet:
+      title: subjectSet
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyReport:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicyReport
+          type: object
+          properties:
+            policyVersion:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The version of the lifecycle policy represented by the report.
+              format: int32
+            scopeProcessing:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessing'
+            subjectsInScopeCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The number of subjects currently in scope for the policy.
+              format: int32
+            subjects:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectReport'
+              description: The processing results for subjects included in the report.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicyRule
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+              description: Indicates whether the rule is enabled and evaluated as part of its policy.
+          additionalProperties:
+            type: object
     microsoft.graph.preApprovedPermissions:
       title: preApprovedPermissions
       type: object
@@ -34671,6 +35070,46 @@ components:
           $ref: '#/components/schemas/microsoft.graph.transformationAttribute'
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessing:
+      title: lifecyclePolicyScopeProcessing
+      type: object
+      properties:
+        currentStartedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the current scope-processing operation started.
+          format: date-time
+          nullable: true
+        currentStatus:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingStatus'
+        lastSuccessfulProcessingDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when scope processing last completed successfully.
+          format: date-time
+          nullable: true
+        latestAttempt:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingAttempt'
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicySubjectReport:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: lifecyclePolicySubjectReport
+          type: object
+          properties:
+            compliance:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectCompliance'
+            effectivePolicy:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyReference'
+            enforcement:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectEnforcement'
+            relationship:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyRelationship'
+            subject:
+              $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicySubjectReference'
+          additionalProperties:
+            type: object
     microsoft.graph.permissionKind:
       title: permissionKind
       enum:
@@ -35091,6 +35530,113 @@ components:
           description: 'This flag is only relevant in the case where the attribute is multivalued. By default, transformations are only applied to the first element in a multi-valued claim, however setting this flag to true ensures the transformation is applied to all values, resulting in a multivalued output.'
       additionalProperties:
         type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingStatus:
+      title: lifecyclePolicyScopeProcessingStatus
+      enum:
+        - idle
+        - notStarted
+        - evaluating
+        - processing
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingAttempt:
+      title: lifecyclePolicyScopeProcessingAttempt
+      type: object
+      properties:
+        completedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the attempt completed.
+          format: date-time
+          nullable: true
+        error:
+          $ref: '#/components/schemas/microsoft.graph.publicError'
+        startedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the attempt started.
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingAttemptStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicySubjectCompliance:
+      title: lifecyclePolicySubjectCompliance
+      type: object
+      properties:
+        evaluatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the subject's compliance was evaluated.
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyComplianceStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyReference:
+      title: lifecyclePolicyReference
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier of the referenced lifecycle policy.
+        version:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The version of the referenced lifecycle policy.
+          format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicySubjectEnforcement:
+      title: lifecyclePolicySubjectEnforcement
+      type: object
+      properties:
+        isLocked:
+          type: boolean
+          description: Indicates whether enforcement is locked.
+        isTerminal:
+          type: boolean
+          description: Indicates whether enforcement reached a terminal state.
+        lastAction:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementActionState'
+        lastActionDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the last enforcement action completed.
+          format: date-time
+          nullable: true
+        nextAction:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyNextEnforcementAction'
+        nextActionDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the next enforcement action is scheduled.
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.identityGovernance.lifecyclePolicyEnforcementStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyRelationship:
+      title: lifecyclePolicyRelationship
+      enum:
+        - effective
+        - inScopeButIneffective
+        - pending
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityGovernance.lifecyclePolicySubjectReference:
+      title: lifecyclePolicySubjectReference
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier of the subject.
+      additionalProperties:
+        type: object
     microsoft.graph.customSecurityAttributeExemption:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -35297,6 +35843,89 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.publicError:
+      title: publicError
+      type: object
+      properties:
+        code:
+          type: string
+          description: Represents the error code.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
+          description: Details of the error.
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.publicInnerError'
+        message:
+          type: string
+          description: A non-localized message for the developer.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.identityGovernance.lifecyclePolicyScopeProcessingAttemptStatus:
+      title: lifecyclePolicyScopeProcessingAttemptStatus
+      enum:
+        - notStarted
+        - evaluating
+        - processing
+        - completed
+        - failed
+        - timedOut
+        - invalidScope
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyComplianceStatus:
+      title: lifecyclePolicyComplianceStatus
+      enum:
+        - notEvaluated
+        - compliant
+        - nonCompliant
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementActionState:
+      title: lifecyclePolicyEnforcementActionState
+      enum:
+        - none
+        - warningStateEnabled
+        - nonComplianceNotificationSent
+        - firstNotificationSent
+        - secondNotificationSent
+        - finalNotificationSent
+        - disabled
+        - deleted
+        - complianceRestored
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyNextEnforcementAction:
+      title: lifecyclePolicyNextEnforcementAction
+      enum:
+        - nonComplianceNotification
+        - firstNotification
+        - secondNotification
+        - finalNotification
+        - disable
+        - disableNotification
+        - delete
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityGovernance.lifecyclePolicyEnforcementStatus:
+      title: lifecyclePolicyEnforcementStatus
+      enum:
+        - notRequired
+        - notStarted
+        - processing
+        - waiting
+        - actionDue
+        - complete
+        - unknown
+        - unknownFutureValue
+      type: string
     microsoft.graph.customSecurityAttributeComparisonOperator:
       title: customSecurityAttributeComparisonOperator
       enum:
@@ -35420,6 +36049,47 @@ components:
         - Extensions
         - BaseObjectName
       type: string
+    microsoft.graph.publicErrorDetail:
+      title: publicErrorDetail
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.publicInnerError:
+      title: publicInnerError
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
+          description: A collection of error details.
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyAttributeMappingSourceValuePair:
       title: stringKeyAttributeMappingSourceValuePair
       type: object

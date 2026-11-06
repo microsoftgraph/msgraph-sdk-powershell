@@ -2848,9 +2848,21 @@ components:
       title: plannerArchivalInfo
       type: object
       properties:
+        isArchived:
+          type: boolean
+          description: Read-only. Indicates whether the entity is archived.
+          nullable: true
         justification:
           type: string
           description: Read-only. Reason why the entity was archived or unarchived.
+          nullable: true
+        modifiedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Read-only. Date and time at which the entity's archive status changed.
+          format: date-time
           nullable: true
         statusChangedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
