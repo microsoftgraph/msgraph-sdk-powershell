@@ -119,7 +119,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.TimeClockSettings = TimeClockSettings;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.Schedule? result;
@@ -136,7 +136,6 @@ namespace Microsoft.Graph.PowerShell.Teams
                 ThrowGraphRequestFailed(ex, TeamTemplateDefinitionId);
                 return;
             }
-
 
             if (result is not null)
                 WriteObject(result);

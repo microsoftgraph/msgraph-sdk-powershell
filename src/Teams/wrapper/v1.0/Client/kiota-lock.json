@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "2281B3C42ED115EF380EF9336C4DBCD81E2A3E9AC21A56F7BCAA626A0CFCAA327386172BC34DF750F272C825D089193C2055826A8C106064CD02CC3D8D1C6573",
+  "descriptionHash": "9A48EF13A042D983A398FCD5D8AB76B1777B08D4EA44E86835149D299691A2512BFCCDCEB70A4F76A2B52F0A0152FE9659C7CBE8A8DB50188A1143AB997F3676",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Teams.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Teams.Client",

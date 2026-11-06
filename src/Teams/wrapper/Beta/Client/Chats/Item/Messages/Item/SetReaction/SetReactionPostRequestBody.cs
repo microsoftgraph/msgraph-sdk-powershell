@@ -14,6 +14,22 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Chats.Item.Messages.Item.SetRe
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName { get; set; }
+#nullable restore
+#else
+        public string DisplayName { get; set; }
+#endif
+        /// <summary>The reactionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReactionId { get; set; }
+#nullable restore
+#else
+        public string ReactionId { get; set; }
+#endif
         /// <summary>The reactionType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +63,8 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Chats.Item.Messages.Item.SetRe
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "reactionId", n => { ReactionId = n.GetStringValue(); } },
                 { "reactionType", n => { ReactionType = n.GetStringValue(); } },
             };
         }
@@ -57,6 +75,8 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Chats.Item.Messages.Item.SetRe
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("reactionId", ReactionId);
             writer.WriteStringValue("reactionType", ReactionType);
             writer.WriteAdditionalData(AdditionalData);
         }

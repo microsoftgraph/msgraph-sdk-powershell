@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.SortType = SortType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkSection? result;
@@ -101,20 +101,6 @@ namespace Microsoft.Graph.PowerShell.Teams
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Users[UserId].Teamwork.Sections[TeamworkSectionId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, TeamworkSectionId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

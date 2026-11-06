@@ -129,7 +129,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.Visibility = Visibility;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.Team? result;
@@ -146,7 +146,6 @@ namespace Microsoft.Graph.PowerShell.Teams
                 ThrowGraphRequestFailed(ex, GroupId);
                 return;
             }
-
 
             if (result is not null)
                 WriteObject(result);

@@ -3,6 +3,7 @@
 using Microsoft.Graph.PowerShell.Teams.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Teams.Client.Models;
 using Microsoft.Graph.PowerShell.Teams.Client.Teams.Item.PrimaryChannel.Planner.Plans;
+using Microsoft.Graph.PowerShell.Teams.Client.Teams.Item.PrimaryChannel.Planner.Plans_v2;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Teams.Item.PrimaryChannel.Plan
         public global::Microsoft.Graph.PowerShell.Teams.Client.Teams.Item.PrimaryChannel.Planner.Plans.PlansRequestBuilder Plans
         {
             get => new global::Microsoft.Graph.PowerShell.Teams.Client.Teams.Item.PrimaryChannel.Planner.Plans.PlansRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The plans_v2 property</summary>
+        public global::Microsoft.Graph.PowerShell.Teams.Client.Teams.Item.PrimaryChannel.Planner.Plans_v2.Plans_v2RequestBuilder Plans_v2
+        {
+            get => new global::Microsoft.Graph.PowerShell.Teams.Client.Teams.Item.PrimaryChannel.Planner.Plans_v2.Plans_v2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Teams.Client.Teams.Item.PrimaryChannel.Planner.PlannerRequestBuilder"/> and sets the default values.

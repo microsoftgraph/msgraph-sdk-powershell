@@ -233,7 +233,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.SpecifiedCompletionRequirements = SpecifiedCompletionRequirements;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.PlannerTask? result;
@@ -251,20 +251,6 @@ namespace Microsoft.Graph.PowerShell.Teams
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Teamwork.TeamTemplates[TeamTemplateId].Definitions[TeamTemplateDefinitionId].TeamDefinition.Channels[ChannelId].Planner.Plans[PlannerPlanId].Tasks[PlannerTaskId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, PlannerTaskId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

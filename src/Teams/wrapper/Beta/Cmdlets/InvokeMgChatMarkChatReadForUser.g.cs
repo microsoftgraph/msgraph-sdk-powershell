@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Teams
     if (this.IsParameterBound(nameof(User)))
         body.User = User;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

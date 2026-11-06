@@ -12,13 +12,13 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Teams
 {
-    [GraphRoute("GET", "/teamwork/messaging/customEmojis/{teamworkCustomEmoji-displayName}")]
+    [GraphRoute("GET", "/teamwork/messaging/customEmojis/{teamworkCustomEmoji-id}")]
     [Cmdlet(VerbsCommon.Get, "MgTeamworkMessagingCustomEmojis_Get")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkCustomEmoji))]
     public class GetMgTeamworkMessagingCustomEmojis_GetCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
-        public string TeamworkCustomEmojiDisplayName { get; set; } = string.Empty;
+        public string TeamworkCustomEmojiId { get; set; } = string.Empty;
 
 
 
@@ -34,13 +34,13 @@ namespace Microsoft.Graph.PowerShell.Teams
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkCustomEmoji? result;
             try
             {
-                result = client.Teamwork.Messaging.CustomEmojis[TeamworkCustomEmojiDisplayName].GetAsync(requestConfiguration =>
+                result = client.Teamwork.Messaging.CustomEmojis[TeamworkCustomEmojiId].GetAsync(requestConfiguration =>
                 {
                     if (this.IsParameterBound(nameof(Property)))
                         requestConfiguration.QueryParameters.Select = Property;
@@ -50,12 +50,13 @@ namespace Microsoft.Graph.PowerShell.Teams
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, TeamworkCustomEmojiDisplayName);
+                ThrowGraphRequestFailed(ex, TeamworkCustomEmojiId);
                 return;
             }
 
