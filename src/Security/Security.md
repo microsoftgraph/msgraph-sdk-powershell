@@ -34,6 +34,12 @@ serialization and request URLs, scalar count results and queries, mandatory-ID
 binding, and `WhatIf`/declined-confirmation safety. Offline transport proof is not
 a claim of live service validity.
 
+After the merged PATCH operation update, a 204 response succeeds without output
+or implicit GET; a 200 response returns the PATCH's own typed model. Explicit
+reads remain separate calls with independent query inputs, headers, results,
+and permissions. The actual Security specs have no required query parameters
+and no native PATCH query parameters; GET-only inputs are not added to PATCH.
+
 ## AutoRest Configuration
 
 > see <https://aka.ms/autorest>

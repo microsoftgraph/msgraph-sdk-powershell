@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -334,6 +336,68 @@ public sealed class SecurityDirectiveMigrationTests
     }
 
     private static GeneratorConfig Config(bool useCollisionData = true) => new("Test.Client", "unused", UseCollisionData: useCollisionData);
+
+    [Theory]
+    [InlineData("v1.0", 87)]
+    [InlineData("beta", 135)]
+    public void ActualSecurityQueryInventoryDoesNotInventRequiredMutationInputs(string profile, int patchCount)
+    {
+        var document = Specs.Value[$"openApiDocs_KiotaCompat|{profile}"];
+        Assert.Equal(patchCount, Operations(document).Count(o => o.Method == "PATCH"));
+        foreach (var path in document.Paths)
+        foreach (var operation in path.Value.Operations!)
+        {
+            var queries = (path.Value.Parameters ?? []).Concat(operation.Value.Parameters ?? [])
+                .Where(p => p.In == ParameterLocation.Query).ToArray();
+            Assert.DoesNotContain(queries, p => p.Required);
+            if (operation.Key == HttpMethod.Patch)
+                Assert.Empty(queries);
+        }
+    }
+
+    [Theory]
+    [InlineData("v1.0", true)]
+    [InlineData("v1.0", false)]
+    [InlineData("beta", true)]
+    [InlineData("beta", false)]
+    public async Task ActualAlertPatchEmitsOnlyItsOwnOperationAndTypedResult(string profile, bool useCollisionData)
+    {
+        const string path = "/security/alerts_v2/{alert-id}";
+        var original = Specs.Value[$"openApiDocs_KiotaCompat|{profile}"];
+        var document = new OpenApiDocument
+        {
+            Info = original.Info,
+            Components = original.Components,
+            Servers = original.Servers,
+            Paths = new OpenApiPaths { [path] = original.Paths[path] },
+        };
+        var output = Path.Combine(Path.GetTempPath(), "security-patch-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            var config = new GeneratorConfig("SecurityPatch.Client", output, UseCollisionData: useCollisionData);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: profile)
+                .GenerateAsync(CancellationToken.None);
+            var source = File.ReadAllText(Path.Combine(output, "UpdateMgSecurityAlertV2.g.cs"));
+            Assert.Contains(".PatchAsync(body, requestConfiguration =>", source);
+            Assert.DoesNotContain(".GetAsync(", source);
+            Assert.DoesNotContain("QueryParameters", source);
+            Assert.DoesNotContain("public string Query", source);
+            Assert.DoesNotContain("PassThru", source);
+            Assert.Contains("if (result is not null)", source);
+            Assert.Contains("WriteObject(result)", source);
+            Assert.Contains("[OutputType(typeof(SecurityPatch.Client.Models.Security.Alert))]", source);
+            Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", source);
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+            Assert.Contains("public string AlertId", source);
+            Assert.Contains("body.Title = Title", source);
+            Assert.Single(Regex.Matches(source, @"ShouldProcess\("));
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
 
     private static JsonDocument ReadLedger() =>
         JsonDocument.Parse(File.ReadAllText(Path.Combine(RepoRoot.Value, "src", "Security", "wrapper", "Security_directiveMigrationMap.json")));
