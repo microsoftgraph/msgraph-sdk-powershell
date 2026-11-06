@@ -83,7 +83,6 @@ namespace Microsoft.Graph.PowerShell.Users
                 return;
             }
 
-
             if (result is not null)
                 WriteObject(result);
         }
