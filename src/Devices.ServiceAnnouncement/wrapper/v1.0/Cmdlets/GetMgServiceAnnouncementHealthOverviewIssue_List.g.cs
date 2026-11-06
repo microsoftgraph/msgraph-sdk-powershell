@@ -94,6 +94,7 @@ namespace Microsoft.Graph.PowerShell.Devices.ServiceAnnouncement
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
 
