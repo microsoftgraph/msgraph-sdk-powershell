@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Planner
     if (this.IsParameterBound(nameof(AssignmentMethod)))
         body.AssignmentMethod = AssignmentMethod;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerRoster? result;
