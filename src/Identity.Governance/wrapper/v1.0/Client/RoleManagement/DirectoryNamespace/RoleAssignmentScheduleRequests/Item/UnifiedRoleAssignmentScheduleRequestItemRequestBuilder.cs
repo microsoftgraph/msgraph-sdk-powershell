@@ -9,6 +9,7 @@ using Microsoft.Graph.PowerShell.Identity.Governance.Client.RoleManagement.Direc
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.Principal;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.RoleDefinition;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.TargetSchedule;
+using Microsoft.Graph.PowerShell.Identity.Governance.Client.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.UpdateRequest;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -59,6 +60,11 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.RoleManagement.D
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.TargetSchedule.TargetScheduleRequestBuilder TargetSchedule
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.TargetSchedule.TargetScheduleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The updateRequest property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.UpdateRequest.UpdateRequestRequestBuilder UpdateRequest
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.UpdateRequest.UpdateRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.Governance.Client.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.UnifiedRoleAssignmentScheduleRequestItemRequestBuilder"/> and sets the default values.

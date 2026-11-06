@@ -70,7 +70,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #else
         public string Justification { get; set; }
 #endif
-        /// <summary>The permission property</summary>
+        /// <summary>The permission that grants the principal access to a resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewInstanceDecisionItemPermission? Permission { get; set; }

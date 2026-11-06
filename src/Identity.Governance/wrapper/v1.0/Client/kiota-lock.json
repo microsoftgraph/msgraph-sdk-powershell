@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "E70820FE62D1CE4342131685B32F943183A3F8C9E534ADE28EB3E8BC5C928E6B2866FC5AAD7C7567EB2FD8E6698A80BE343C483EC0CA69B73567E19F245B5175",
+  "descriptionHash": "7413CBE600C4BA3664C07DAADD43D7AE338AE0D902C80C0A1B6735CF8279F86CC9C8AC8ABAC55E0566E07BE8FB9CC6BB863AE95DF459943C1DC1453B417F4A6E",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Identity.Governance.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Identity.Governance.Client",

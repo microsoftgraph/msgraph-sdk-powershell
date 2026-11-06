@@ -14,7 +14,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>The description of the permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName { get; set; }
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The identifier of the permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
 #else
         public string OdataType { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of the permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

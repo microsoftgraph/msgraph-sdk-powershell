@@ -116,7 +116,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         body.StageSettings = StageSettings!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessReviewScheduleDefinition? result;

@@ -34,7 +34,8 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernan
         {
         }
         /// <summary>
-        /// Invoke action batchApplyCustomDataProvidedResourceDecisions
+        /// Enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in a specific accessReviewInstance in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state. This action is part of the unified access reviews surface and is available only through the /identityGovernance/accessReviews/unified route. For more information, see unifiedRoot.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstance-batchapplycustomdataprovidedresourcedecisions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernan
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action batchApplyCustomDataProvidedResourceDecisions
+        /// Enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in a specific accessReviewInstance in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state. This action is part of the unified access reviews surface and is available only through the /identityGovernance/accessReviews/unified route. For more information, see unifiedRoot.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

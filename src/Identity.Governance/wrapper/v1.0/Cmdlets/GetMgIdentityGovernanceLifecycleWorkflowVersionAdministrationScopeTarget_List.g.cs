@@ -62,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.DirectoryObjectCollectionResponse? result;
@@ -93,6 +93,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
 
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
+
 
 
 
