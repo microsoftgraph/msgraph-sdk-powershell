@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -209,6 +211,55 @@ public sealed class WindowsUpdatesDirectiveMigrationTests
             Assert.Empty(profile.GetProperty("operations").EnumerateArray());
             Assert.False(profile.TryGetProperty("absenceExpected", out _));
             Assert.False(profile.TryGetProperty("operationIdSource", out _));
+        }
+    }
+
+    [Fact]
+    public async Task ActualBetaPatchSurfaceReturnsOnlyMutationResultsWithoutGetQueryRequirements()
+    {
+        var settings = new OpenApiReaderSettings();
+        settings.AddYamlReader();
+        using var stream = File.OpenRead(Path.Combine(RepoRoot, "openApiDocs_KiotaCompat", "beta", "WindowsUpdates.yml"));
+        var document = (await OpenApiDocument.LoadAsync(stream, settings: settings)).Document!;
+        var operations = document.Paths.SelectMany(path => path.Value.Operations!.Select(operation =>
+            (Path: path.Key, Item: path.Value, Method: operation.Key, Operation: operation.Value))).ToArray();
+        Assert.Equal(266, operations.Length);
+        Assert.All(operations, operation => Assert.Empty(
+            (operation.Item.Parameters ?? []).Concat(operation.Operation.Parameters ?? [])
+                .Where(parameter => parameter.In == ParameterLocation.Query && parameter.Required)));
+        var root = Path.Combine(Path.GetTempPath(), "windowsupdates-patch-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            var config = new GeneratorConfig("Microsoft.Graph.PowerShell.WindowsUpdates.Client", root);
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, "beta")
+                .GenerateAsync(CancellationToken.None);
+            var patches = operations.Where(operation => operation.Method == HttpMethod.Patch &&
+                !CmdletConfigurator.IsSuppressed(operation.Method, operation.Path, config, apiVersion: "beta")).ToArray();
+            Assert.NotEmpty(patches);
+            foreach (var patch in patches)
+            {
+                Assert.Empty((patch.Item.Parameters ?? []).Concat(patch.Operation.Parameters ?? [])
+                    .Where(parameter => parameter.In == ParameterLocation.Query));
+                var name = Naming.Resolve(new OperationInfo(patch.Method, patch.Path), config, apiVersion: "beta");
+                var source = File.ReadAllText(Path.Combine(root, name.VerbName + name.Noun + ".g.cs"));
+                Assert.Single(Regex.Matches(source, @"\.PatchAsync\("));
+                Assert.DoesNotContain(".GetAsync(", source);
+                Assert.DoesNotContain("QueryParameters", source);
+                Assert.DoesNotContain("if (result is null)", source);
+                Assert.Contains("if (result is not null)", source);
+                Assert.Contains("[OutputType(typeof(", source);
+                Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", source);
+                Assert.Contains("GetRequestAdapter(\"beta\")", source);
+                Assert.Single(Regex.Matches(source, @"ShouldProcess\("));
+                Assert.DoesNotContain("PassThru", source);
+                Assert.DoesNotContain("ReadBack", source);
+                Assert.DoesNotContain("Refetch", source);
+            }
+        }
+        finally
+        {
+            if (Directory.Exists(root))
+                Directory.Delete(root, recursive: true);
         }
     }
 

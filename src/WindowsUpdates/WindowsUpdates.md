@@ -23,6 +23,10 @@ that its API operations are absent. The adjacent wrapper configuration and
 All AutoRest directives below remain active. Profile-local and global directives
 are outside this migration. Parameter aliases/transforms and schema/response
 directives remain deferred; the temporary Wu alias group is also not implemented.
+Beta PATCH cmdlets return only the mutation response: 204 succeeds without output
+or an automatic GET, while a returned model is emitted. Retrieval is a separate
+explicit GET. The current compatible beta surface has no required query inputs;
+PATCH does not acquire parameters or permission requirements from sibling GETs.
 
 ``` yaml
 directive:
