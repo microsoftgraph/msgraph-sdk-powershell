@@ -33,6 +33,11 @@ historical audit of the three inherited functions' final namespace qualifier.
 The three direct assignedPrincipals functions remain unsuppressed but client-only:
 the existing wrapper emitter does not support their OData parameter aliases.
 
+PATCH cmdlets follow the mutation's own response contract: 204 succeeds without
+output or an automatic GET, while a model-bearing 200 returns that actual model.
+Reading the resource afterward is a separate caller-explicit GET; no read-back
+switch or GET-only query requirements are added to PATCH.
+
 ``` yaml
 directive:
 # Remove invalid paths.

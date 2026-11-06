@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
 using WrapperGenerator;
@@ -189,6 +190,44 @@ public sealed class DeviceManagementEnrollmentDirectiveMigrationTests
             CmdletConfigurator.TryGetOverriddenVerb(HttpMethod.Post, AutopilotItem + "/updateDeviceProperties", config, apiVersion: "v1.0"));
         Assert.Equal("DeviceManagementWindowsAutopilotDeviceIdentityUserToDevice",
             CmdletConfigurator.ApplyNounOverrides(HttpMethod.Post, AutopilotItem + "/assignUserToDevice", "unused", config, apiVersion: "v1.0"));
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task ConditionalAccessPatchUsesOnlyItsOwnOperation(string profile, bool useCollisionData)
+    {
+        var document = await ReadSpecAsync("openApiDocs_KiotaCompat", profile);
+        const string route = "/deviceManagement/conditionalAccessSettings";
+        foreach (var path in document.Paths!.Keys.Where(path => path != route).ToArray())
+            document.Paths.Remove(path);
+        var output = Path.Combine(Path.GetTempPath(), "enrollment-patch-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            await new PowerShellWrapperGenerationService(document,
+                new GeneratorConfig("Test.Client", output, useCollisionData),
+                NullLogger.Instance, apiVersion: profile).GenerateAsync(TestContext.Current.CancellationToken);
+            var source = await File.ReadAllTextAsync(Path.Combine(output,
+                "UpdateMgDeviceManagementConditionalAccessSetting.g.cs"));
+            Assert.Single(Regex.Matches(source, @"\.PatchAsync\("));
+            Assert.DoesNotContain(".GetAsync(", source);
+            Assert.DoesNotContain("if (result is null)", source);
+            Assert.Contains("if (result is not null)", source);
+            Assert.Contains("WriteObject(result)", source);
+            Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", source);
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+            Assert.DoesNotContain("PassThru", source);
+            Assert.DoesNotContain("ReadBack", source);
+            Assert.DoesNotContain("Refetch", source);
+            Assert.Single(Regex.Matches(source, @"ShouldProcess\("));
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
     }
 
     private static JsonDocument ReadLedger() => JsonDocument.Parse(File.ReadAllText(
