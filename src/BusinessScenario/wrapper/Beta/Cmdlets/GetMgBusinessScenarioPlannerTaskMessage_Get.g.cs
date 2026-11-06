@@ -54,6 +54,7 @@ namespace Microsoft.Graph.PowerShell.BusinessScenario
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
