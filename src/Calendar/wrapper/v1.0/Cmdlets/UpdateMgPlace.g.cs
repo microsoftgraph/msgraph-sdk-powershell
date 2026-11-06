@@ -105,7 +105,6 @@ namespace Microsoft.Graph.PowerShell.Calendar
                 return;
             }
 
-
             if (result is not null)
                 WriteObject(result);
         }
