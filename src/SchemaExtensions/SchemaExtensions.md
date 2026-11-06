@@ -64,3 +64,9 @@ enabled and disabled, passing the profile separately to the generation, naming,
 and suppression APIs. Exact method/path metadata is checked on each emitted
 worker. This preserves the existing surface without adding suppression or rename
 rules for nonexistent shared directives.
+
+The PATCH worker executes only its own mutation. A 204 response succeeds without
+an output object or automatic GET; a model response is returned as received.
+GET selection remains an independent caller operation. These specs declare no
+required query inputs, and PATCH does not acquire its sibling GET's OData inputs
+or a readback switch. Module tests pin this one-operation contract.

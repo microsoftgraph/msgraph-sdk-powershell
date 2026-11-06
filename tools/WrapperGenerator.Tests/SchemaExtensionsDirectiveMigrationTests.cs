@@ -77,6 +77,18 @@ public sealed class SchemaExtensionsDirectiveMigrationTests
                     source);
                 Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
                 Assert.DoesNotContain("GetRequestAdapter()", source);
+                if (method == HttpMethod.Patch)
+                {
+                    Assert.Contains(".PatchAsync(", source);
+                    Assert.DoesNotContain(".GetAsync(", source);
+                    Assert.Contains("if (result is not null)", source);
+                    Assert.Contains("AddRequestHeaders(requestConfiguration.Headers);", source);
+                    Assert.DoesNotContain("QueryParameters", source);
+                    Assert.DoesNotContain("public string[]? Property", source);
+                    Assert.DoesNotContain("PassThru", source);
+                    Assert.DoesNotContain("ReadBack", source);
+                    Assert.DoesNotContain("Refetch", source);
+                }
             }
         }
         finally
