@@ -71,20 +71,6 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Communications.Calls[CallId].AudioRoutingGroups[AudioRoutingGroupId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, AudioRoutingGroupId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
