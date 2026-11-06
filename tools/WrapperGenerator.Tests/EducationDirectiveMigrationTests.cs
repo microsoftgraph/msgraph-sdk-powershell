@@ -211,6 +211,77 @@ public sealed class EducationDirectiveMigrationTests
         }
     }
 
+    [Theory]
+    [InlineData("v1.0")]
+    [InlineData("beta")]
+    public void RequiredReferenceDeleteQueriesRemainWithinOriginalSuppressedSelection(string profile)
+    {
+        var document = ReadDocument(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, "Education.yml"));
+        var requiredQueryOperations = new List<SpecOperation>();
+        foreach (var route in document.Paths)
+        {
+            foreach (var operation in route.Value.Operations!)
+            {
+                var parameters = (route.Value.Parameters ?? []).Concat(operation.Value.Parameters ?? [])
+                    .GroupBy(parameter => (parameter.Name, parameter.In)).Select(group => group.Last());
+                var required = parameters.Where(parameter => parameter.In == ParameterLocation.Query && parameter.Required).ToArray();
+                if (required.Length == 0)
+                    continue;
+
+                var query = Assert.Single(required);
+                Assert.Equal("@id", query.Name);
+                Assert.Equal(JsonSchemaType.String, query.Schema!.Type);
+                Assert.Equal(HttpMethod.Delete, operation.Key);
+                requiredQueryOperations.Add(new(operation.Key, route.Key, operation.Value.OperationId!));
+                Assert.True(CmdletConfigurator.IsSuppressed(operation.Key, route.Key,
+                    new GeneratorConfig("Test.Client", "unused"), apiVersion: profile));
+            }
+        }
+        Assert.Equal(OriginalSelection.OrderBy(operation => operation.Path),
+            requiredQueryOperations.OrderBy(operation => operation.Path));
+    }
+
+    [Theory]
+    [InlineData("v1.0", false)]
+    [InlineData("v1.0", true)]
+    [InlineData("beta", false)]
+    [InlineData("beta", true)]
+    public async Task EducationPatchGeneratesOnlyItsOwnOperationWithOrWithoutSiblingGet(string profile, bool includeGet)
+    {
+        const string path = "/education/classes/{educationClass-id}";
+        var document = ReadDocument(Path.Combine(FindRepoRoot(), "openApiDocs_KiotaCompat", profile, "Education.yml"));
+        foreach (var key in document.Paths.Keys.Where(key => key != path).ToArray())
+            document.Paths.Remove(key);
+        var operations = document.Paths[path].Operations!;
+        foreach (var method in operations.Keys.Where(method => method != HttpMethod.Patch && (!includeGet || method != HttpMethod.Get)).ToArray())
+            operations.Remove(method);
+
+        var output = Path.Combine(Path.GetTempPath(), "education-patch-tests", Guid.NewGuid().ToString("N"));
+        try
+        {
+            var service = new PowerShellWrapperGenerationService(document,
+                new GeneratorConfig("Test.Client", output, UseCollisionData: false), NullLogger.Instance, apiVersion: profile);
+            await service.GenerateAsync(CancellationToken.None);
+            var source = File.ReadAllText(Path.Combine(output, "UpdateMgEducationClass.g.cs"));
+            Assert.DoesNotContain(".GetAsync(", source);
+            Assert.DoesNotContain("if (result is null)", source);
+            Assert.Contains("if (result is not null)", source);
+            Assert.Single(Regex.Matches(source, @"\.PatchAsync\("));
+            Assert.Contains("body.Course = Course", source);
+            Assert.Contains("AddRequestHeaders(requestConfiguration.Headers)", source);
+            Assert.Contains($"GetRequestAdapter(\"{profile}\")", source);
+            Assert.DoesNotContain("QueryView", source);
+            Assert.DoesNotContain("PassThru", source);
+            Assert.DoesNotContain("ReadBack", source);
+            Assert.DoesNotContain("Refetch", source);
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
     private static SpecOperation[] ReadOperations(string path) =>
         ReadDocument(path).Paths.SelectMany(route => route.Value.Operations!
             .Select(operation => new SpecOperation(operation.Key, route.Key, operation.Value.OperationId!))).ToArray();
