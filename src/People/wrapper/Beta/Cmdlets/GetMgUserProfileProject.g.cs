@@ -21,6 +21,7 @@ namespace Microsoft.Graph.PowerShell.People
 
 
 
+
         [Parameter(Mandatory = false)]
         [Alias("Select")]
         public string[]? Property { get; set; }
