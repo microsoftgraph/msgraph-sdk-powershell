@@ -2,9 +2,7 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Azure.Core;
 using Microsoft.Graph.PowerShell.Authentication.Common;
-using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
@@ -29,11 +27,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     [OutputType(typeof(MgAccessTokenInfo))]
     public class GetMgAccessToken : PSCmdlet
     {
-        /// <summary>
-        /// The time window before expiry at which a cached token is considered stale and must be refreshed.
-        /// </summary>
-        private static readonly TimeSpan RefreshWindow = TimeSpan.FromMinutes(5);
-
         [Parameter(Mandatory = false, Position = 0, HelpMessage = Constants.HelpMessages.Scopes)]
         public string[] Scopes { get; set; }
 
@@ -94,38 +87,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 if (requestedScopes == null || !requestedScopes.Any())
                     throw new PSInvalidOperationException(Core.ErrorConstants.Message.MissingAuthContext);
 
-                string cacheKey = string.Join(" ", requestedScopes.OrderBy(scope => scope, StringComparer.OrdinalIgnoreCase));
-
-                AccessToken accessToken;
-                bool hasCachedToken = GraphSession.Instance.AccessTokenCache.TryGetValue(cacheKey, out accessToken);
-                bool requiresRefresh = ForceRefresh.IsPresent
-                    || !hasCachedToken
-                    || accessToken.ExpiresOn - DateTimeOffset.UtcNow < RefreshWindow;
-
-                if (requiresRefresh)
-                {
-                    var tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(authContext).ConfigureAwait(false);
-                    accessToken = await tokenCredential.GetTokenAsync(new TokenRequestContext(requestedScopes), default).ConfigureAwait(false);
-                    GraphSession.Instance.AccessTokenCache[cacheKey] = accessToken;
-                }
-
-                var secureToken = new SecureString();
-                foreach (char character in accessToken.Token)
-                    secureToken.AppendChar(character);
-                secureToken.MakeReadOnly();
+                var accessToken = await AuthenticationHelpers.GetAccessTokenAsync(authContext, requestedScopes, ForceRefresh.IsPresent).ConfigureAwait(false);
 
                 if (AsObject.IsPresent)
                 {
                     WriteObject(new MgAccessTokenInfo
                     {
-                        Token = secureToken,
+                        Token = accessToken.Token,
                         ExpiresOn = accessToken.ExpiresOn,
                         Scopes = requestedScopes
                     });
                 }
                 else
                 {
-                    WriteObject(secureToken);
+                    WriteObject(accessToken.Token);
                 }
             }
         }

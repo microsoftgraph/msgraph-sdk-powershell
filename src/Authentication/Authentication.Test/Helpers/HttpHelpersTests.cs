@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         }
 
         [Fact]
-        public async void GetGraphHttpClientShouldBeThreadSafeAsync()
+        public async Task GetGraphHttpClientShouldBeThreadSafeAsync()
         {
             GraphSession.Initialize(() => new GraphSession());
             GraphSession.Instance.RequestContext = new RequestContext();

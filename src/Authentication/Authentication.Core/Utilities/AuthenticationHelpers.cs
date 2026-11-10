@@ -15,6 +15,7 @@ using System.Diagnostics.Tracing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -28,6 +29,35 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
     /// </summary>
     public static class AuthenticationHelpers
     {
+        private static readonly TimeSpan AccessTokenRefreshWindow = TimeSpan.FromMinutes(5);
+
+        /// <summary>
+        /// Gets a cached access token, refreshing it when forced or within five minutes of expiry.
+        /// </summary>
+        public static async Task<(SecureString Token, DateTimeOffset ExpiresOn)> GetAccessTokenAsync(
+            IAuthContext authContext, string[] scopes, bool forceRefresh = false, CancellationToken cancellationToken = default)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+            if (scopes == null || !scopes.Any())
+                throw new ArgumentException("At least one scope is required.", nameof(scopes));
+
+            string cacheKey = string.Join(" ", scopes.OrderBy(scope => scope, StringComparer.OrdinalIgnoreCase));
+            bool hasCachedToken = GraphSession.Instance.AccessTokenCache.TryGetValue(cacheKey, out AccessToken accessToken);
+            if (forceRefresh || !hasCachedToken || accessToken.ExpiresOn - DateTimeOffset.UtcNow < AccessTokenRefreshWindow)
+            {
+                var tokenCredential = await GetTokenCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
+                accessToken = await tokenCredential.GetTokenAsync(new TokenRequestContext(scopes), cancellationToken).ConfigureAwait(false);
+                GraphSession.Instance.AccessTokenCache[cacheKey] = accessToken;
+            }
+
+            var secureToken = new SecureString();
+            foreach (char character in accessToken.Token)
+                secureToken.AppendChar(character);
+            secureToken.MakeReadOnly();
+            return (secureToken, accessToken.ExpiresOn);
+        }
+
         /// <summary>
         /// Gets a <see cref="TokenCredential"/> using the provide <see cref="IAuthContext"/>.
         /// </summary>

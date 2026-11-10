@@ -1,7 +1,9 @@
 ﻿using Azure.Core;
 using Azure.Identity;
 using Microsoft.Graph.Authentication.Test.Mocks;
+using Microsoft.Graph.PowerShell;
 using Microsoft.Graph.PowerShell.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
 using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using System;
@@ -29,6 +31,86 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             GraphSession.Instance.GraphOption = new GraphOption();
             mockAuthRecord = new MockAuthRecord("test");
             mockAuthRecord.SerializeToFile();
+        }
+
+        [Fact]
+        public async Task GetAccessTokenAcquiresAndCachesTokenAsync()
+        {
+            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(MockConstants.DummyAccessToken));
+            var authContext = new AuthContext { AuthType = AuthenticationType.UserProvidedAccessToken };
+
+            var result = await AuthenticationHelpers.GetAccessTokenAsync(authContext, new[] { "User.Read" });
+
+            using (result.Token)
+            {
+                Assert.True(result.Token.IsReadOnly());
+                Assert.Equal(MockConstants.DummyAccessToken, result.Token.ConvertToString());
+                var cachedToken = Assert.Single(GraphSession.Instance.AccessTokenCache).Value;
+                Assert.Equal(MockConstants.DummyAccessToken, cachedToken.Token);
+                Assert.Equal(cachedToken.ExpiresOn, result.ExpiresOn);
+            }
+        }
+
+        [Fact]
+        public async Task GetAccessTokenReusesCacheForReorderedScopesAsync()
+        {
+            var expiresOn = DateTimeOffset.UtcNow.AddHours(1);
+            GraphSession.Instance.AccessTokenCache["Mail.Read User.Read"] = new AccessToken("cached-token", expiresOn);
+            var authContext = new AuthContext { AuthType = AuthenticationType.UserProvidedAccessToken };
+
+            var result = await AuthenticationHelpers.GetAccessTokenAsync(authContext, new[] { "User.Read", "Mail.Read" });
+
+            using (result.Token)
+            {
+                Assert.Equal("cached-token", result.Token.ConvertToString());
+                Assert.Equal(expiresOn, result.ExpiresOn);
+                Assert.Single(GraphSession.Instance.AccessTokenCache);
+            }
+        }
+
+        [Theory]
+        [InlineData(false, -1)]
+        [InlineData(false, 4)]
+        [InlineData(true, 60)]
+        public async Task GetAccessTokenRefreshesCacheAsync(bool forceRefresh, int minutesUntilExpiry)
+        {
+            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(MockConstants.DummyAccessToken));
+            GraphSession.Instance.AccessTokenCache["User.Read"] = new AccessToken("cached-token", DateTimeOffset.UtcNow.AddMinutes(minutesUntilExpiry));
+            var authContext = new AuthContext { AuthType = AuthenticationType.UserProvidedAccessToken };
+
+            var result = await AuthenticationHelpers.GetAccessTokenAsync(authContext, new[] { "User.Read" }, forceRefresh);
+
+            using (result.Token)
+            {
+                Assert.Equal(MockConstants.DummyAccessToken, result.Token.ConvertToString());
+                Assert.Equal(MockConstants.DummyAccessToken, GraphSession.Instance.AccessTokenCache["User.Read"].Token);
+                Assert.Equal(GraphSession.Instance.AccessTokenCache["User.Read"].ExpiresOn, result.ExpiresOn);
+            }
+        }
+
+        [Fact]
+        public async Task GetAccessTokenDoesNotReuseDifferentScopesAsync()
+        {
+            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(MockConstants.DummyAccessToken));
+            GraphSession.Instance.AccessTokenCache["Mail.Read"] = new AccessToken("cached-token", DateTimeOffset.UtcNow.AddHours(1));
+            var authContext = new AuthContext { AuthType = AuthenticationType.UserProvidedAccessToken };
+
+            var result = await AuthenticationHelpers.GetAccessTokenAsync(authContext, new[] { "User.Read" });
+
+            using (result.Token)
+            {
+                Assert.Equal(MockConstants.DummyAccessToken, result.Token.ConvertToString());
+                Assert.Equal("cached-token", GraphSession.Instance.AccessTokenCache["Mail.Read"].Token);
+                Assert.Equal(2, GraphSession.Instance.AccessTokenCache.Count);
+            }
+        }
+
+        [Fact]
+        public async Task GetAccessTokenRejectsMissingContextAndScopesAsync()
+        {
+            await Assert.ThrowsAsync<AuthenticationException>(() => AuthenticationHelpers.GetAccessTokenAsync(null, new[] { "User.Read" }));
+            await Assert.ThrowsAsync<ArgumentException>(() => AuthenticationHelpers.GetAccessTokenAsync(new AuthContext(), null));
+            await Assert.ThrowsAsync<ArgumentException>(() => AuthenticationHelpers.GetAccessTokenAsync(new AuthContext(), Array.Empty<string>()));
         }
 
         [Fact]
@@ -596,7 +678,6 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 authContext, CancellationToken.None, capturingCredential);
 
             // Assert: GetTokenAsync must have been called and provided a context.
-            Assert.NotNull(capturedContext);
             Assert.NotNull(capturedContext.Scopes);
 
             // GetTokenAsync must receive isCaeEnabled: true so that MSAL caches
@@ -658,10 +739,8 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 new Uri("https://graph.microsoft.com/v1.0/me"));
 
             // the cached token silently during API calls.
-            Assert.NotNull(signInContext);
             Assert.True(signInContext.IsCaeEnabled,
                 "SignInAsync must pass isCaeEnabled: true to GetTokenAsync.");
-            Assert.NotNull(providerContext);
             Assert.True(providerContext.IsCaeEnabled,
                 "AzureIdentityAccessTokenProvider must forward isCaeEnabled: true.");
 
