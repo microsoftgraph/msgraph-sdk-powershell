@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Management.Automation;
 using System.Net.Http;
-
+using System.Threading.Tasks;
 using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
 
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         }
 
         [Fact]
-        public void SetRequestContentShouldSerializeDictionaryWithPSObjectWrappedValues()
+        public async Task SetRequestContentShouldSerializeDictionaryWithPSObjectWrappedValues()
         {
             var cmdlet = new InvokeMgGraphRequest();
             using (var request = new HttpRequestMessage(HttpMethod.Post,
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 var contentLength = cmdlet.SetRequestContent(request, body);
 
                 Assert.True(contentLength > 0);
-                var json = request.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                var json = await request.Content.ReadAsStringAsync();
                 var parsedBody = JObject.Parse(json);
                 Assert.Equal("recipient@example.com",
                     parsedBody.SelectToken("message.toRecipients[0].emailAddress.address").Value<string>());
