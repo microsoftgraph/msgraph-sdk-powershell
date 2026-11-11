@@ -27,6 +27,13 @@ When it comes to modifying existing cmdlets, we recommend you use [AutoREST dire
 
 See our [SDK generation steps wiki](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/Generation-Process) for more information.
 
+Build tooling is installed with `npm install --no-package-lock` at the repository root.
+Keep the root `@microsoft/rush` version aligned with `autorest.powershell/rush.json` so Rush
+uses the local installation rather than bootstrapping an unconstrained dependency tree.
+The root manifest temporarily overrides Rush's `@typespec/ts-http-runtime` to `0.3.9`
+to avoid the ESM-only proxy dependency introduced in `0.3.10` while CI remains on Node 18.
+This is a compatibility workaround, not a change to the supported Node requirements of those dependencies.
+
 ## Debugging the Auth module
 
 * In a terminal run `.\tools\GenerateAuthenticationModule.ps1 -Build -Pack`
