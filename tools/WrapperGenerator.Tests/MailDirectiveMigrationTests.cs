@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -44,7 +45,8 @@ public sealed class MailDirectiveMigrationTests
             Assert.Equal("Mail", mapping.GetProperty("module").GetString());
             Assert.Equal(i + 1, mapping.GetProperty("directiveIndex").GetInt32());
             Assert.Equal(i == 0 ? "CmdletSuppression" : "SubjectRename", mapping.GetProperty("classification").GetString());
-            Assert.Equal("DerivedParityData", mapping.GetProperty("implementation").GetString());
+            Assert.Equal("CmdletConfigurator", mapping.GetProperty("implementation").GetString());
+            Assert.True(mapping.GetProperty("replacesParityData").GetBoolean());
             Assert.Contains(mapping.GetProperty("sourceContains").GetString()!, source, StringComparison.Ordinal);
             var profile = mapping.GetProperty("profiles").GetProperty("v1.0");
             Assert.False(profile.GetProperty("absenceExpected").GetBoolean());
@@ -117,16 +119,18 @@ public sealed class MailDirectiveMigrationTests
     }
 
     [Fact]
-    public void FolderContentSuppressionUsesExistingExactGetParityEntry()
+    public void FolderContentSuppressionIsOwnedByModuleConfiguration()
     {
         const string path = FolderMessage + "/$value";
         Assert.Equal("user.mailFolder_GetMessagesContent", SpecOperation("GET", path).OperationId);
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, Config, apiVersion: Profile));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, apiVersion: Profile));
-        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path,
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, apiVersion: Profile));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path,
             Config with { UseCollisionData = false }, apiVersion: Profile));
         Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get,
             "/users/{id}/mailFolders/{folder}/messages/{message}/$value", Config, apiVersion: Profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Post, path, Config, apiVersion: Profile));
+        Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path + "/other", Config, apiVersion: Profile));
     }
 
     [Theory]
@@ -161,7 +165,7 @@ public sealed class MailDirectiveMigrationTests
 
     [Theory]
     [MemberData(nameof(ReplyActions))]
-    public void ReplyAllRenamesUseExistingParityAndKeepPlainReplyNeighbors(
+    public void ModuleOwnsReplyAllRenamesAndKeepsPlainReplyNeighbors(
         string path, string verb, string noun, bool migrated)
     {
         var operation = SpecOperation("POST", path);
@@ -173,8 +177,114 @@ public sealed class MailDirectiveMigrationTests
         Assert.Equal(noun, naming.Noun);
         if (migrated)
         {
-            // These names require the existing derived data, not new curated overrides.
-            Assert.NotEqual(noun, Naming.Resolve(info, Config with { UseCollisionData = false }, apiVersion: Profile).Noun);
+            foreach (var config in new[] { null, Config with { UseCollisionData = false } })
+            {
+                var authored = Naming.Resolve(info, config, apiVersion: Profile);
+                Assert.Equal(verb, authored.VerbName);
+                Assert.Equal(noun, authored.Noun);
+            }
+            Assert.Equal("Unchanged", CmdletConfigurator.ApplyNounOverrides(
+                HttpMethod.Get, path, "Unchanged", Config with { UseCollisionData = false }, apiVersion: Profile));
+            Assert.Equal("Unchanged", CmdletConfigurator.ApplyNounOverrides(
+                HttpMethod.Post, path + "/other", "Unchanged", Config with { UseCollisionData = false }, apiVersion: Profile));
+            Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(
+                HttpMethod.Get, path, Config with { UseCollisionData = false }, apiVersion: Profile));
+            Assert.Null(CmdletConfigurator.TryGetOverriddenVerb(
+                HttpMethod.Post, path + "/other", Config with { UseCollisionData = false }, apiVersion: Profile));
+        }
+    }
+
+    [Fact]
+    public void ModuleOwnedOperationsHaveNoDuplicateDerivedEntries()
+    {
+        var owned = ReplyActions().Where(row => (bool)row[3])
+            .Select(row => "POST " + CmdletConfigurator.NormalizePathTemplate((string)row[0]))
+            .Append("GET " + CmdletConfigurator.NormalizePathTemplate(FolderMessage + "/$value"))
+            .ToHashSet(StringComparer.Ordinal);
+        var data = Path.Combine(RepoRoot.Value, "tools", "WrapperGenerator", "data");
+        foreach (var name in new[] { "parity-renames.v1.0.json", "parity-suppressions.v1.0.json",
+            "collision-renames.v1.0.json", "collision-suppressions.v1.0.json" })
+        {
+            using var document = JsonDocument.Parse(File.ReadAllText(Path.Combine(data, name)));
+            foreach (var entry in document.RootElement.EnumerateArray())
+                Assert.DoesNotContain(entry.GetProperty("method").GetString() + " " + entry.GetProperty("uri").GetString(), owned);
+        }
+    }
+
+    [Fact]
+    public async Task SelectedDirectivesGenerateWithoutDerivedData()
+    {
+        var output = Path.Combine(Path.GetTempPath(), "mail-authored-directives", Guid.NewGuid().ToString("N"));
+        try
+        {
+            var document = ReadSpec("openApiDocs_KiotaCompat");
+            var selected = ReplyActions().Where(row => (bool)row[3]).ToArray();
+            var paths = selected.Select(row => (string)row[0]).Append(FolderMessage + "/$value").ToHashSet(StringComparer.Ordinal);
+            foreach (var path in document.Paths.Keys.Where(path => !paths.Contains(path)).ToArray())
+                document.Paths.Remove(path);
+            var content = (OpenApiPathItem)document.Paths[FolderMessage + "/$value"];
+            content.Operations = new Dictionary<HttpMethod, OpenApiOperation>
+            {
+                [HttpMethod.Get] = content.Operations![HttpMethod.Get],
+            };
+            var config = Config with { OutputPath = output, UseCollisionData = false };
+            await new PowerShellWrapperGenerationService(document, config, NullLogger.Instance, apiVersion: Profile)
+                .GenerateAsync(CancellationToken.None);
+            var expected = selected.Select(row => $"{row[1]}{row[2]}.g.cs").OrderBy(name => name);
+            Assert.Equal(expected, Directory.GetFiles(output, "*.g.cs").Select(Path.GetFileName).OrderBy(name => name));
+        }
+        finally
+        {
+            if (Directory.Exists(output))
+                Directory.Delete(output, recursive: true);
+        }
+    }
+
+    [Fact]
+    public void ParityDerivationDoesNotRecreateModuleOwnedEntries()
+    {
+        var output = Path.Combine(Path.GetTempPath(), "mail-parity-ownership", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(output);
+        try
+        {
+            var rows = new List<string> { "\"ApiVersion\",\"Command\",\"Method\",\"Uri\",\"Disposition\",\"OracleCommands\"" };
+            foreach (var row in ReplyActions().Where(row => (bool)row[3]))
+            {
+                var path = Regex.Replace((string)row[0], @"\{[^}]*\}", "{param}");
+                rows.Add($"\"v1.0\",\"Invoke-MgHistoricalName\",\"POST\",\"{path}\",\"mismatch\",\"{row[1]}-{row[2]}\"");
+            }
+            rows.Add("\"v1.0\",\"Get-MgUserMailFolderMessageContent\",\"GET\",\"/users/{param}/mailFolders/{param}/messages/{param}/$value\",\"no-oracle\",\"\"");
+            rows.Add("\"v1.0\",\"Invoke-MgUserMessageReply\",\"POST\",\"/users/{param}/messages/{param}/reply\",\"mismatch\",\"Invoke-MgReplyUserMessage\"");
+            rows.Add("\"v1.0\",\"Get-MgUnshippedNeighbor\",\"GET\",\"/unshippedNeighbor\",\"no-oracle\",\"\"");
+            File.WriteAllLines(Path.Combine(output, "parity-input-ledger.v1.0.csv"), rows);
+            var oracle = Path.Combine(output, "oracle.json");
+            File.WriteAllText(oracle, """[{"ApiVersion":"v1.0","Command":"Invoke-MgReplyUserMessage"}]""");
+            var start = new ProcessStartInfo("pwsh")
+            {
+                ArgumentList = { "-NoProfile", "-NonInteractive", "-File",
+                    Path.Combine(RepoRoot.Value, "tools", "Derive-ParityResolutions.ps1"),
+                    "-OutDir", output, "-OraclePath", oracle },
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+            };
+            using var process = Process.Start(start) ?? throw new InvalidOperationException("Failed to start parity derivation.");
+            var stdout = process.StandardOutput.ReadToEnd();
+            var stderr = process.StandardError.ReadToEnd();
+            process.WaitForExit();
+            Assert.True(process.ExitCode == 0, stdout + stderr);
+            using var renames = JsonDocument.Parse(File.ReadAllText(Path.Combine(output, "parity-renames.v1.0.json")));
+            var rename = Assert.Single(renames.RootElement.EnumerateArray());
+            Assert.Equal("/users/{}/messages/{}/reply", rename.GetProperty("uri").GetString());
+            Assert.Equal("ReplyUserMessage", rename.GetProperty("replacementNoun").GetString());
+            using var suppressions = JsonDocument.Parse(File.ReadAllText(Path.Combine(output, "parity-suppressions.v1.0.json")));
+            Assert.Equal("/unshippedneighbor", Assert.Single(suppressions.RootElement.EnumerateArray()).GetProperty("uri").GetString());
+            Assert.Equal(7, File.ReadLines(Path.Combine(output, "parity-resolution-ledger.v1.0.csv"))
+                .Count(line => line.Contains("\"module-configuration\"", StringComparison.Ordinal)));
+        }
+        finally
+        {
+            Directory.Delete(output, recursive: true);
         }
     }
 

@@ -35,20 +35,27 @@ in the compatible document. The adjacent ledger uses current literal IDs, while
 `MailDirectiveMigrationTests` checks both full source selections and their
 compatible route sets. No source-selected operation was removed.
 
+`wrapper\Mail_cmdletConfigurations.cs` is the source of truth for these seven
+operations, including the `New` verbs for reply-draft creation. The corresponding
+entries have been removed from the parity JSON files. The reviewed ledger marks
+their implementation as `CmdletConfigurator`, so parity derivation records module
+ownership instead of recreating those entries from its frozen historical input.
+Tests pin these outcomes with derived data both enabled and disabled.
+
 ``` yaml
 # Directives go here!
 directive:
 # Remove cmdlets.
 # Wrapper migration: the exact GET .../mailFolders/{id}/messages/{id}/$value
-# suppression already exists in parity-suppressions.v1.0.json. MailDirectiveMigrationTests
-# pins it and neighboring routes; no duplicate curated entry is needed. Keep active
+# suppression is owned by wrapper/Mail_cmdletConfigurations.cs. MailDirectiveMigrationTests
+# pins it without derived parity data and preserves neighboring routes. Keep active
 # until the legacy service-module pipeline is retired.
   - where:
       verb: Get
       subject: ^UserMailFolderMessageContent$
     remove: true
-# Wrapper migration: all three replyAll actions already have the ReplyAll-prefixed
-# nouns in parity-renames.v1.0.json. The reviewed map records exact POST operations;
+# Wrapper migration: all three replyAll actions have ReplyAll-prefixed nouns in
+# wrapper/Mail_cmdletConfigurations.cs. The reviewed map records exact POST operations;
 # MailDirectiveMigrationTests also pins the unaffected reply actions. Keep active.
   - where:
       verb: Invoke
@@ -56,8 +63,8 @@ directive:
       variant: ^Reply1$|^ReplyExpanded1$|^ReplyViaIdentity1$|^ReplyViaIdentityExpanded1$
     set:
       subject: $1All$2
-# Wrapper migration: all three createReplyAll actions already have New- verbs and
-# ReplyAll-suffixed nouns in parity-renames.v1.0.json. MailDirectiveMigrationTests
+# Wrapper migration: all three createReplyAll actions have New- verbs and
+# ReplyAll-suffixed nouns in wrapper/Mail_cmdletConfigurations.cs. MailDirectiveMigrationTests
 # pins these and the neighboring createReply actions. Keep this directive active.
   - where:
       verb: New
