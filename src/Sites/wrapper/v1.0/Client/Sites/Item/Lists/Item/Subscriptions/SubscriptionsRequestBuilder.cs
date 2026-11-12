@@ -3,6 +3,7 @@
 using Microsoft.Graph.PowerShell.Sites.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Sites.Client.Models;
 using Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Subscriptions.Count;
+using Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Subscriptions.GetVapidPublicKey;
 using Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Subscriptions.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Subscrip
         public global::Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Subscriptions.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Subscriptions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getVapidPublicKey property</summary>
+        public global::Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Subscriptions.GetVapidPublicKey.GetVapidPublicKeyRequestBuilder GetVapidPublicKey
+        {
+            get => new global::Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Lists.Item.Subscriptions.GetVapidPublicKey.GetVapidPublicKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.PowerShell.Sites.Client.sites.item.lists.item.subscriptions.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

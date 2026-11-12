@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Sites
                 return;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 
