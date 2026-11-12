@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.DirectoryObjects
     if (this.IsParameterBound(nameof(SecurityEnabledOnly)))
         body.SecurityEnabledOnly = SecurityEnabledOnly;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.DirectoryObjects.Client.DirectoryObjects.Item.GetMemberGroups.GetMemberGroupsPostResponse? result;
