@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Devices.ServiceAnnouncement
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.ServiceAnnouncement.Client.Models.ServiceHealth? result;
@@ -47,6 +47,7 @@ namespace Microsoft.Graph.PowerShell.Devices.ServiceAnnouncement
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 

@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "E82E893BB1BFA21751C38E97FFB33D56490543DA15401AA2B986D4FD4CC5B63DA123B33173097F94A305E2FA33FBC79E9320FCE21D18F49AAC9060450B145285",
-  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/Beta/Devices.ServiceAnnouncement.yml",
+  "descriptionHash": "AAF58C49D0B85DC1B2DA9DD1F982BEF754A3CB41ABA57B27F40C2B93CE1882B4FBEFCEB1843BCBA94F2291F0AD299D8E652062A45E329A62FC4EF3A0DC31FD3C",
+  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/beta/Devices.ServiceAnnouncement.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Devices.ServiceAnnouncement.Client",
