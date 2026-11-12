@@ -9,7 +9,9 @@ public static partial class CmdletConfigurator
     [
         // Compliance.md removes the Update1/Delete1 variants for
         // ComplianceEdiscoveryCaseNoncustodialDataSource. Those variants are the nested
-        // /dataSource navigation operations; the parent noncustodialDataSource item remains.
+        // /dataSource navigation operations. Neither compatible profile currently contains
+        // eDiscovery routes (see the reviewed ledger); retain these dormant exact rules
+        // without affecting /compliance or the parent item if the routes return.
         new(OverrideKind.SuppressOperation, HttpMethod.Patch,
             "/compliance/ediscovery/cases/{}/noncustodialdatasources/{}/datasource",
             Match: PathMatch.Exact, Value: null,
@@ -21,6 +23,7 @@ public static partial class CmdletConfigurator
 
         // Compliance.md renames the corresponding Get1 variant by appending DataSource.
         // The wrapper's path-based naming already emits that published noun, so no override
-        // entry is needed; NamingTests pins it beside the suppressions above.
+        // entry is needed. ComplianceDirectiveMigrationTests pins the retired semantics
+        // separately from actual current-spec coverage.
     ];
 }

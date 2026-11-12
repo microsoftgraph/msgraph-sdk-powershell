@@ -33,7 +33,7 @@ namespace Microsoft.Graph.PowerShell.Compliance
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Compliance.Client.Models.Compliance? result;
@@ -46,6 +46,7 @@ namespace Microsoft.Graph.PowerShell.Compliance
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 
