@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
     if (this.IsParameterBound(nameof(ClientContext)))
         body.ClientContext = ClientContext;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.StopHoldMusicOperation? result;
