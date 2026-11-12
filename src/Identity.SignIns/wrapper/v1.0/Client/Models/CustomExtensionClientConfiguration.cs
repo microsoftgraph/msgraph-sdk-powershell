@@ -14,7 +14,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The max number of retries that Microsoft Entra ID makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.</summary>
+        /// <summary>The max number of retries that Microsoft Entra ID makes to the external API. For a roleManagementCustomCalloutExtension, the valid range is from 0 through 5. For other custom extensions, values of 0 or 1 are supported. If null, the default for the service applies.</summary>
         public int? MaximumRetries { get; set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models
 #else
         public string OdataType { get; set; }
 #endif
-        /// <summary>The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.</summary>
+        /// <summary>The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. For a roleManagementCustomCalloutExtension, the valid range is from 1000 through 60000 milliseconds. For other custom extensions, the valid range is from 200 through 2000 milliseconds and the default is 1000 milliseconds.</summary>
         public int? TimeoutInMilliseconds { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.CustomExtensionClientConfiguration"/> and sets the default values.

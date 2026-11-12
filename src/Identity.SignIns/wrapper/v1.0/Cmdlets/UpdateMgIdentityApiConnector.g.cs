@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
         body.AuthenticationConfiguration = AuthenticationConfiguration;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.IdentityApiConnector? result;
@@ -69,20 +69,6 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Identity.ApiConnectors[IdentityApiConnectorId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, IdentityApiConnectorId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
