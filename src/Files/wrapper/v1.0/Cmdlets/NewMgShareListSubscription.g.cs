@@ -62,6 +62,15 @@ namespace Microsoft.Graph.PowerShell.Files
         [Parameter(Mandatory = false)]
         public string? Resource { get; set; }
 
+        [Parameter(Mandatory = false)]
+        public string? VapidPublicKey { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? WebPushEncryptionP256dhPublicKey { get; set; }
+
+        [Parameter(Mandatory = false)]
+        public string? WebPushEncryptionSecret { get; set; }
+
 
 
 
@@ -117,9 +126,18 @@ namespace Microsoft.Graph.PowerShell.Files
     if (this.IsParameterBound(nameof(Resource)))
         body.Resource = Resource;
 
+    if (this.IsParameterBound(nameof(VapidPublicKey)))
+        body.VapidPublicKey = VapidPublicKey;
+
+    if (this.IsParameterBound(nameof(WebPushEncryptionP256dhPublicKey)))
+        body.WebPushEncryptionP256dhPublicKey = WebPushEncryptionP256dhPublicKey;
+
+    if (this.IsParameterBound(nameof(WebPushEncryptionSecret)))
+        body.WebPushEncryptionSecret = WebPushEncryptionSecret;
 
 
-        var requestAdapter = GetRequestAdapter();
+
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Files.Client.Models.Subscription? result;

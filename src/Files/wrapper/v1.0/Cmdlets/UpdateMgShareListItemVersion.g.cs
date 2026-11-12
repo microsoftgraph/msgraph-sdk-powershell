@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Files
         body.Publication = Publication;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Files.Client.Models.ListItemVersion? result;
@@ -73,20 +73,6 @@ namespace Microsoft.Graph.PowerShell.Files
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Shares[SharedDriveItemId].List.Items[ListItemId].Versions[ListItemVersionId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, ListItemVersionId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
