@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Mail
     if (this.IsParameterBound(nameof(AttachmentItem)))
         body.AttachmentItem = AttachmentItem;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Mail.Client.Models.UploadSession? result;
