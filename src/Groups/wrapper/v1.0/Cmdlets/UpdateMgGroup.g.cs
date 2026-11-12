@@ -345,7 +345,7 @@ namespace Microsoft.Graph.PowerShell.Groups
         body.ServiceProvisioningErrors = ServiceProvisioningErrors!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Groups.Client.Models.Group? result;
@@ -363,20 +363,6 @@ namespace Microsoft.Graph.PowerShell.Groups
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Groups[GroupId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, GroupId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

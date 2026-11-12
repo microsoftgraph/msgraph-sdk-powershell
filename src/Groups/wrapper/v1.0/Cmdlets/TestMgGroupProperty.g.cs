@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Groups
     if (this.IsParameterBound(nameof(OnBehalfOfUserId)))
         body.OnBehalfOfUserId = OnBehalfOfUserId;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.Groups
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Groups.Client.Models.Attachment? result;
