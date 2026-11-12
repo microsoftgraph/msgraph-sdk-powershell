@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestor
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get activityLogs from solutions
+        /// The list of activity logs in the tenant.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ActivityLogBase"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestor
             return requestInfo;
         }
         /// <summary>
-        /// Get activityLogs from solutions
+        /// The list of activity logs in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestor
         {
         }
         /// <summary>
-        /// Get activityLogs from solutions
+        /// The list of activity logs in the tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActivityLogBaseItemRequestBuilderGetQueryParameters 

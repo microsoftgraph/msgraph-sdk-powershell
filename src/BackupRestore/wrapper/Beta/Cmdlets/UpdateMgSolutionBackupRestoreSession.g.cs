@@ -93,7 +93,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
         body.Status = Status;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BackupRestore.Client.Models.RestoreSessionBase? result;
@@ -111,20 +111,6 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Solutions.BackupRestore.RestoreSessions[RestoreSessionBaseId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, RestoreSessionBaseId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
