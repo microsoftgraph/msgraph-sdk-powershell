@@ -87,7 +87,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         body.MemberType = MemberType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.PrivilegedAccessGroupEligibilitySchedule? result;
@@ -105,20 +105,6 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules[PrivilegedAccessGroupEligibilityScheduleId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, PrivilegedAccessGroupEligibilityScheduleId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

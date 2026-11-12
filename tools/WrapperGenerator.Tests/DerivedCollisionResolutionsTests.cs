@@ -36,7 +36,7 @@ public sealed class DerivedCollisionResolutionsTests
         Assert.Equal("MgEntitlementManagementCatalogResourceRole", renamed.Noun);
 
         var untouched = Naming.Resolve(new OperationInfo(HttpMethod.Get, path));
-        Assert.Equal("MgIdentityGovernanceEntitlementManagementCatalogResourceRole", untouched.Noun);
+        Assert.Equal("MgEntitlementManagementCatalogResourceRole", untouched.Noun);
     }
 
     // A derived rename is keyed by method: the GET rename of the resourceRoles route must not

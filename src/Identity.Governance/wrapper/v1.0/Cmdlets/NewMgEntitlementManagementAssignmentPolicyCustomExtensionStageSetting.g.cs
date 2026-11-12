@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         body.Stage = Stage;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomExtensionStageSetting? result;
