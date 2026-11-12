@@ -19,6 +19,12 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string ManagedDeviceId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string Id { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 2)]
+        public string PolicyId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 3)]
+        public string DeviceId { get; set; } = string.Empty;
 
 
 
@@ -34,13 +40,13 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceHealthScriptPolicyState? result;
             try
             {
-                result = client.DeviceManagement.ManagedDevices[ManagedDeviceId].DeviceHealthScriptStates.Id='{id}',policyId='{policyId}',deviceId='{deviceId}'.GetAsync(requestConfiguration =>
+                result = new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.ManagedDevices.Item.DeviceHealthScriptStates.WithIdWithPolicyIdWithDeviceId.WithIdWithPolicyIdWithDeviceIdRequestBuilder(new global::System.Collections.Generic.Dictionary<string, object> { { "baseurl", requestAdapter.BaseUrl! }, { "managedDevice%2Did", ManagedDeviceId }, { "id", Id }, { "policyId", PolicyId }, { "deviceId", DeviceId }, }, requestAdapter).GetAsync(requestConfiguration =>
                 {
                     if (this.IsParameterBound(nameof(Property)))
                         requestConfiguration.QueryParameters.Select = Property;
@@ -50,12 +56,13 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
 
 
 
+
         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, ManagedDeviceId);
+                ThrowGraphRequestFailed(ex, DeviceId);
                 return;
             }
 

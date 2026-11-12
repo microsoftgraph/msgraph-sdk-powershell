@@ -41,6 +41,9 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         public Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.AssignmentFilterManagementType? AssignmentFilterManagementType { get; set; }
 
         [Parameter(Mandatory = false)]
+        public Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.AssignmentFilterEvaluationMode? EvaluationMode { get; set; }
+
+        [Parameter(Mandatory = false)]
         public Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PayloadByFilter[]? Payloads { get; set; }
 
         [Parameter(Mandatory = false)]
@@ -79,6 +82,9 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     if (this.IsParameterBound(nameof(AssignmentFilterManagementType)))
         body.AssignmentFilterManagementType = AssignmentFilterManagementType;
 
+    if (this.IsParameterBound(nameof(EvaluationMode)))
+        body.EvaluationMode = EvaluationMode;
+
     if (this.IsParameterBound(nameof(Payloads)))
         body.Payloads = Payloads!.ToList();
 
@@ -86,7 +92,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.Platform = Platform;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceAndAppManagementAssignmentFilter? result;

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.DeviceCleanupRulePlatformType = DeviceCleanupRulePlatformType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.ManagedDeviceCleanupRule? result;
@@ -75,20 +75,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.DeviceManagement.ManagedDeviceCleanupRules[ManagedDeviceCleanupRuleId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, ManagedDeviceCleanupRuleId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

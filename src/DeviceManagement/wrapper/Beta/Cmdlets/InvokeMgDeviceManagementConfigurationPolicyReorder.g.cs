@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     if (this.IsParameterBound(nameof(Priority)))
         body.Priority = Priority;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

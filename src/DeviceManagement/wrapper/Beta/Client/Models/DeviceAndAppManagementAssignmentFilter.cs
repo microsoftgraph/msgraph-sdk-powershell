@@ -33,6 +33,8 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
 #else
         public string DisplayName { get; set; }
 #endif
+        /// <summary>Represents the mode used by the service to evaluate an assignment filter.</summary>
+        public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.AssignmentFilterEvaluationMode? EvaluationMode { get; set; }
         /// <summary>Last modified time of the Assignment Filter. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>Indicates associated assignments for a specific filter.</summary>
@@ -83,6 +85,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "evaluationMode", n => { EvaluationMode = n.GetEnumValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.AssignmentFilterEvaluationMode>(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "payloads", n => { Payloads = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PayloadByFilter>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PayloadByFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "platform", n => { Platform = n.GetEnumValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DevicePlatformType>(); } },
@@ -102,6 +105,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.AssignmentFilterEvaluationMode>("evaluationMode", EvaluationMode);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PayloadByFilter>("payloads", Payloads);
             writer.WriteEnumValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DevicePlatformType>("platform", Platform);

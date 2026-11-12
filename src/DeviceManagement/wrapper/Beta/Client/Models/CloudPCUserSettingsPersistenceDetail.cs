@@ -12,8 +12,40 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
     public partial class CloudPCUserSettingsPersistenceDetail : global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The autoCleanupDetail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPCUserSettingsPersistenceAutoCleanupDetail? AutoCleanupDetail { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPCUserSettingsPersistenceAutoCleanupDetail AutoCleanupDetail { get; set; }
+#endif
         /// <summary>Indicates the grace period end time when user settings persistence exceeds the available quota. If usage exceeds the available quota when the grace period expires, the system automatically deletes the profile with the oldest last attached timestamp. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? GracePeriodEndDateTime { get; set; }
+        /// <summary>The snapshotConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcUserSettingsPersistenceSnapshotConfiguration? SnapshotConfiguration { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcUserSettingsPersistenceSnapshotConfiguration SnapshotConfiguration { get; set; }
+#endif
+        /// <summary>The storageConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcStorageConfiguration? StorageConfiguration { get; set; }
+#nullable restore
+#else
+        public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcStorageConfiguration StorageConfiguration { get; set; }
+#endif
+        /// <summary>The userProfileSnapshots property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcUserProfileSnapshot>? UserProfileSnapshots { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcUserProfileSnapshot> UserProfileSnapshots { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,7 +64,11 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "autoCleanupDetail", n => { AutoCleanupDetail = n.GetObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPCUserSettingsPersistenceAutoCleanupDetail>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPCUserSettingsPersistenceAutoCleanupDetail.CreateFromDiscriminatorValue); } },
                 { "gracePeriodEndDateTime", n => { GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "snapshotConfiguration", n => { SnapshotConfiguration = n.GetObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcUserSettingsPersistenceSnapshotConfiguration>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcUserSettingsPersistenceSnapshotConfiguration.CreateFromDiscriminatorValue); } },
+                { "storageConfiguration", n => { StorageConfiguration = n.GetObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcStorageConfiguration>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcStorageConfiguration.CreateFromDiscriminatorValue); } },
+                { "userProfileSnapshots", n => { UserProfileSnapshots = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcUserProfileSnapshot>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcUserProfileSnapshot.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -43,7 +79,11 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPCUserSettingsPersistenceAutoCleanupDetail>("autoCleanupDetail", AutoCleanupDetail);
             writer.WriteDateTimeOffsetValue("gracePeriodEndDateTime", GracePeriodEndDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcUserSettingsPersistenceSnapshotConfiguration>("snapshotConfiguration", SnapshotConfiguration);
+            writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcStorageConfiguration>("storageConfiguration", StorageConfiguration);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.CloudPcUserProfileSnapshot>("userProfileSnapshots", UserProfileSnapshots);
         }
     }
 }

@@ -49,7 +49,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     if (this.IsParameterBound(nameof(EndDateTime)))
         body.EndDateTime = EndDateTime;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.MicrosoftTunnelServerLogCollectionResponse? result;

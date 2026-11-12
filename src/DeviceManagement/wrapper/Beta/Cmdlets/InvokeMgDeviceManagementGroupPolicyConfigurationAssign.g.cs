@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     if (this.IsParameterBound(nameof(Assignments)))
         body.Assignments = Assignments!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.GroupPolicyConfigurations.Item.Assign.AssignPostResponse? result;
