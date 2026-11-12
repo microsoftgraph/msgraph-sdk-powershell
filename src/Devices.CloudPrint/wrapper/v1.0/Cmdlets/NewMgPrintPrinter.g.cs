@@ -74,7 +74,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
     if (this.IsParameterBound(nameof(CertificateSigningRequest)))
         body.CertificateSigningRequest = CertificateSigningRequest;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

@@ -1,0 +1,85 @@
+{
+  "generationPrerequisites": [
+    {
+      "classification": "ExistingReviewedCollisionPolicy",
+      "profiles": ["v1.0", "beta"],
+      "existingPolicy": "tools/WrapperGenerator/data/collision-suppressions.v1.0.json",
+      "publishedMetadata": "src/Authentication/Authentication/custom/common/MgCommandMetadata.json",
+      "notes": "Full beta generation exposed the same two reference-deletion collisions already resolved by the reviewed v1.0 collision policy. Both profiles' published Remove-Mg(Beta)PrintShareAllowedGroupByRef and Remove-Mg(Beta)PrintShareAllowedUserByRef metadata records the collection $ref DELETE (including Delete/Delete1 variants). Extend only the existing exact item-DELETE suppressions to beta/no-data; retain collection GET/POST/DELETE. This is an explicit generation prerequisite, not an invented third shared directive or a new whole-collection suppression. Cross-path variant support remains subject to the existing reviewed policy.",
+      "suppress": [
+        {
+          "method": "DELETE",
+          "path": "/print/shares/{printerShare-id}/allowedGroups/{group-id}/$ref",
+          "operationId": "print.share.allowedGroup_DeleteGroupGraphBPreRef"
+        },
+        {
+          "method": "DELETE",
+          "path": "/print/shares/{printerShare-id}/allowedUsers/{user-id}/$ref",
+          "operationId": "print.share.allowedUser_DeleteUserGraphBPreRef"
+        }
+      ],
+      "retain": [
+        {
+          "method": "DELETE",
+          "path": "/print/shares/{printerShare-id}/allowedGroups/$ref",
+          "operationId": "print.share_DeleteAllowedGroupGraphBPreRef"
+        },
+        {
+          "method": "DELETE",
+          "path": "/print/shares/{printerShare-id}/allowedUsers/$ref",
+          "operationId": "print.share_DeleteAllowedUserGraphBPreRef"
+        }
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "module": "Devices.CloudPrint",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^print(_.*Report|\\.report.*)",
+      "implementation": "ReviewedAbsence",
+      "notes": "Reviewed all operation IDs in both legacy openApiDocs and compatible openApiDocs_KiotaCompat Devices.CloudPrint specs for v1.0 and beta: none match the exact shared report regex. This is genuine legacy-selector absence, not an absence inferred from converted operation IDs. No suppression or invented route is needed. DevicesCloudPrintDirectiveMigrationTests pins absence in all four documents and keeps unrelated print operations available.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Devices.CloudPrint",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "variant: ^Create$|^CreateExpanded$",
+      "implementation": "CmdletConfigurator",
+      "notes": "New PrintPrinter Create/CreateExpanded are the ordinary collection POST print_CreatePrinter in both profiles. Reviewed original same-profile openApiDocs and current compatible specs select exactly this same method/path/operation-ID set after ID alignment; the compatible survivor set is complete. The distinct action print.printer_create is POST /print/printers/microsoft.graph.create in the original spec and POST /print/printers/create in the compatible spec; it remains available, and v1.0 derived naming exposes it as New-MgPrintPrinter. Existing parity-suppressions.v1.0.json already suppresses the ordinary POST with derived data enabled; one exact curated entry supplies the missing beta/no-data coverage without duplicate per-profile overrides. GeneratorConfig run settings are shared while explicit separate runtime profiles select derived data in tests. Printer GET, item PATCH/DELETE, job POST, and the create action remain available.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/print/printers",
+              "operationId": "print_CreatePrinter"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/print/printers",
+              "operationId": "print_CreatePrinter"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
