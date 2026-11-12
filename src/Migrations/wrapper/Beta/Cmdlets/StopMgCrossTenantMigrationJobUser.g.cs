@@ -14,13 +14,15 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Migrations
 {
-    [GraphRoute("POST", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/migrate")]
-    [Cmdlet(VerbsLifecycle.Invoke, "MgMigrationCrossTenantMigrationJobMigrate", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
-    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob))]
-    public class InvokeMgMigrationCrossTenantMigrationJobMigrateCommand : GraphClientCmdlet
+    [GraphRoute("POST", "/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob-id}/users/{crossTenantMigrationTask-id}/cancel")]
+    [Cmdlet(VerbsLifecycle.Stop, "MgCrossTenantMigrationJobUser", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationCancelResponse))]
+    public class StopMgCrossTenantMigrationJobUserCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string CrossTenantMigrationJobId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string CrossTenantMigrationTaskId { get; set; } = string.Empty;
 
 
 
@@ -31,17 +33,17 @@ namespace Microsoft.Graph.PowerShell.Migrations
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(CrossTenantMigrationJobId, "Invoke"))
+            if (!ShouldProcess(CrossTenantMigrationTaskId, "Stop"))
                 return;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
-            Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob? result;
+            Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationCancelResponse? result;
             try
             {
-                result = client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].Migrate.PostAsync(requestConfiguration =>
+                result = client.Solutions.Migrations.CrossTenantMigrationJobs[CrossTenantMigrationJobId].Users[CrossTenantMigrationTaskId].Cancel.PostAsync(requestConfiguration =>
                 {
 
                         AddRequestHeaders(requestConfiguration.Headers);
@@ -49,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Migrations
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, CrossTenantMigrationJobId);
+                ThrowGraphRequestFailed(ex, CrossTenantMigrationTaskId);
                 return;
             }
 
