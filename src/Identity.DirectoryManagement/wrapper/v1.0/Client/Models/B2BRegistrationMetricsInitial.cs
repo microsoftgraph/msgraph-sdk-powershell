@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     public partial class B2BRegistrationMetricsInitial : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.B2BRegistrationMetricsBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Timestamp that represents the date time that B2B registration data was initially aggregated.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.B2BRegistrationMetricsInitial"/> and sets the default values.

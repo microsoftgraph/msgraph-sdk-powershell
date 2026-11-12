@@ -107,7 +107,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
         body.CertificateAuthorityType = CertificateAuthorityType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.CertificateAuthorityDetail? result;
@@ -125,20 +125,6 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Directory.PublicKeyInfrastructure.CertificateBasedAuthConfigurations[CertificateBasedAuthPkiId].CertificateAuthorities[CertificateAuthorityDetailId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, CertificateAuthorityDetailId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

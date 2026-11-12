@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
         {
         }
         /// <summary>
-        /// Get appB2BSignInActivityMetrics from directory
+        /// B2B sign-in activity metrics for this related tenant. Expanded by default.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.B2BSignInActivityMetrics"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.B2BSignInActivityMetrics>(requestInfo, global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.B2BSignInActivityMetrics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get appB2BSignInActivityMetrics from directory
+        /// B2B sign-in activity metrics for this related tenant. Expanded by default.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             return new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.DirectoryNamespace.TenantGovernance.RelatedTenants.Item.AppB2BSignInActivityMetrics.AppB2BSignInActivityMetricsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get appB2BSignInActivityMetrics from directory
+        /// B2B sign-in activity metrics for this related tenant. Expanded by default.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AppB2BSignInActivityMetricsRequestBuilderGetQueryParameters 

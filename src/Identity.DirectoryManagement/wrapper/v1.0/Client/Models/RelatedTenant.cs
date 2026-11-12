@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     public partial class RelatedTenant : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The appB2BSignInActivityMetrics property</summary>
+        /// <summary>B2B sign-in activity metrics for this related tenant. Expanded by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.B2BSignInActivityMetrics? AppB2BSignInActivityMetrics { get; set; }
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.B2BSignInActivityMetrics AppB2BSignInActivityMetrics { get; set; }
 #endif
-        /// <summary>The b2BRegistrationMetrics property</summary>
+        /// <summary>B2B registration metrics for this related tenant. Expanded by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.B2bRegistrationMetrics? B2BRegistrationMetrics { get; set; }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.B2bRegistrationMetrics B2BRegistrationMetrics { get; set; }
 #endif
-        /// <summary>The b2BSignInActivityMetrics property</summary>
+        /// <summary>B2B sign-in activity metrics for this related tenant. Expanded by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.B2BSignInActivityMetrics? B2BSignInActivityMetrics { get; set; }
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.B2BSignInActivityMetrics B2BSignInActivityMetrics { get; set; }
 #endif
-        /// <summary>The billingMetrics property</summary>
+        /// <summary>Billing metrics for this related tenant. Expanded by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.BillingMetrics? BillingMetrics { get; set; }
@@ -44,11 +44,11 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.BillingMetrics BillingMetrics { get; set; }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the related tenant was discovered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
-        /// <summary>Indicates whether this tenant is a Microsoft infrastructure tenant.</summary>
+        /// <summary>Indicates whether the related tenant is a Microsoft infrastructure tenant. Read-only.</summary>
         public bool? IsMicrosoftInfrastructure { get; private set; }
-        /// <summary>The multiTenantApplicationMetrics property</summary>
+        /// <summary>Multi-tenant application usage metrics for this related tenant. Expanded by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.MultiTenantApplicationMetrics? MultiTenantApplicationMetrics { get; set; }

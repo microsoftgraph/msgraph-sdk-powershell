@@ -63,7 +63,8 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get settings from directory
+        /// Read the properties of the tenantGovernanceSetting singleton, which controls related tenant discovery and invitation capabilities.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantgovernanceservices-tenantgovernancesetting-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernanceSetting"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +87,8 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernanceSetting>(requestInfo, global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernanceSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property settings in directory
+        /// Update the canReceiveInvitations property of the tenantGovernanceSetting singleton. This property controls whether the tenant can receive governance invitations.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantgovernanceservices-tenantgovernancesetting-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernanceSetting"/></returns>
         /// <param name="body">The request body</param>
@@ -130,7 +132,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             return requestInfo;
         }
         /// <summary>
-        /// Get settings from directory
+        /// Read the properties of the tenantGovernanceSetting singleton, which controls related tenant discovery and invitation capabilities.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property settings in directory
+        /// Update the canReceiveInvitations property of the tenantGovernanceSetting singleton. This property controls whether the tenant can receive governance invitations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +190,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Directo
         {
         }
         /// <summary>
-        /// Get settings from directory
+        /// Read the properties of the tenantGovernanceSetting singleton, which controls related tenant discovery and invitation capabilities.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SettingsRequestBuilderGetQueryParameters 

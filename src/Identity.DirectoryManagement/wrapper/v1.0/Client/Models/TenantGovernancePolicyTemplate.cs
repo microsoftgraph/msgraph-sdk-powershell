@@ -12,9 +12,9 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     public partial class TenantGovernancePolicyTemplate : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the template was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
-        /// <summary>The delegatedAdministrationRoleAssignments property</summary>
+        /// <summary>A collection of delegated administration role assignments to be applied in the governed tenant when the governance relationship is established.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.DelegatedAdministrationRoleAssignment>? DelegatedAdministrationRoleAssignments { get; set; }
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.DelegatedAdministrationRoleAssignment> DelegatedAdministrationRoleAssignments { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>A description of the policy template. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the policy template. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName { get; set; }
@@ -38,11 +38,11 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The governedTenantCanTerminate property</summary>
+        /// <summary>Not implemented.</summary>
         public bool? GovernedTenantCanTerminate { get; set; }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time when the template was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
-        /// <summary>The multiTenantApplicationsToProvision property</summary>
+        /// <summary>A collection of multi-tenant applications to be provisioned in the governed tenant when the governance relationship is established.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.MultiTenantApplicationsToProvision>? MultiTenantApplicationsToProvision { get; set; }
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.MultiTenantApplicationsToProvision> MultiTenantApplicationsToProvision { get; set; }
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>The version of the policy template. Version count increased by 1 when updated. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version { get; set; }
