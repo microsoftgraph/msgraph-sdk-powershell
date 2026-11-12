@@ -64,7 +64,7 @@ namespace Microsoft.Graph.PowerShell.Security
     if (this.IsParameterBound(nameof(IntegratedAppMetadata)))
         body.IntegratedAppMetadata = IntegratedAppMetadata;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Security.Client.Security.DataSecurityAndGovernance.ProtectionScopes.Compute.ComputePostResponse? result;

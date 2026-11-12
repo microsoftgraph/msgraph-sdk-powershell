@@ -62,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.Security
         body.Host = Host;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.Security.HostCookie? result;

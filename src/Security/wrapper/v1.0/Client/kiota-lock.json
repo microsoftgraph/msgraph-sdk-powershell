@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "084D9669A38D801D9E624AB2BEAB9DF53B8D85304DE492710DAE52FACB1AC11D424121C99715345365CB9A22A92B4B2EB07FCDDBEF076E23B98C65C244272346",
+  "descriptionHash": "415286225CE70B23EB0D61453ECD9214342209D2E7771593174BEA0432FB96B32BE6C2EBA35959218D30761EA1B85EC766D0040742746D2590A3C1A12C97546E",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Security.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Security.Client",
