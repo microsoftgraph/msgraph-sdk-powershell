@@ -74,7 +74,7 @@ namespace Microsoft.Graph.PowerShell.Search
         body.SearchSettings = SearchSettings;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalConnection? result;
