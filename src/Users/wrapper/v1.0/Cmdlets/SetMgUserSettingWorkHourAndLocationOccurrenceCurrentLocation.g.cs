@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Users
     if (this.IsParameterBound(nameof(WorkLocationType)))
         body.WorkLocationType = WorkLocationType;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

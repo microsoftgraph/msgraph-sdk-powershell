@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Users
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Users.Client.Models.AttachmentBase? result;
@@ -53,6 +53,7 @@ namespace Microsoft.Graph.PowerShell.Users
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 

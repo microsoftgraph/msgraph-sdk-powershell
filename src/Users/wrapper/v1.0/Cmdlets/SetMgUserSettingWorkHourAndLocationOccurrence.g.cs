@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.Users
         body.WorkLocationType = WorkLocationType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Users.Client.Models.WorkPlanOccurrence? result;
@@ -88,7 +88,6 @@ namespace Microsoft.Graph.PowerShell.Users
                 ThrowGraphRequestFailed(ex, WorkPlanOccurrenceId);
                 return;
             }
-
 
             if (result is not null)
                 WriteObject(result);

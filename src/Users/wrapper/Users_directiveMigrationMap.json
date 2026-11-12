@@ -1,0 +1,164 @@
+{
+  "audit": {
+    "source": "src/Users/Users.md",
+    "baseline": "6475f3f5beb4908d39ea356db32bf1e0fd3273cb",
+    "requiredProfiles": ["v1.0", "beta"],
+    "excludedProfiles": [],
+    "ignored": ["src/Users/v1.0/readme.md", "src/Users/beta/readme.md", "src/readme.graph.md"],
+    "deferred": "Parameter aliases/transforms and schema/response directives; none occur in the shared source.",
+    "compatibleSpecBlobs": {
+      "v1.0": "7cb83e0f6f59232ce7e7fd585001d3836c3938d2",
+      "beta": "71a3ce7e835abfecb84bad4776a22e5a6814531c"
+    },
+    "legacySpecBlobs": {
+      "v1.0": "6eab7f412e4e1fd88e1156b4daa0e68a7a1c5edb",
+      "beta": "639e0bee6e68c4a9550dcdc2cd071c3f9ab1adbc"
+    },
+    "lineage": "The original case-sensitive regex selects exactly root todo GET/PATCH/DELETE in each actual same-profile legacy spec. All three survive at identical exact method/path with aligned user_GetTodo/user_UpdateTodo/user_DeleteTodo IDs in the current compatible specs. The complete original-survivor and literal-current selected sets are equal (3/3 in each profile). user_GetOutlook does not match lowercase outlook. No removals, namespace translations or reserved legacy-ledger fields are needed.",
+    "coverage": "Exact module entries preserve v1.0 derived suppressions while supplying the missing beta coverage. Existing curated /photos suppressions remain unchanged. The unreachable UserTodo List rename is subsumed, not implemented as a new public noun.",
+    "patchContract": "Normally merged #3886 makes Update User perform only its PATCH. A 204 succeeds with no returned object and no implicit GET; a 200 returns the actual typed model in one request. Caller-explicit Get User retains independent headers, queries and error behavior. No readback flag or GET-only query requirement is added.",
+    "photoMediaContract": {
+      "defaultPath": "/users/{user-id}/photo/$value",
+      "additionalPath": "/users/{user-id}/photos/{profilePhoto-id}/$value",
+      "methods": ["GET", "DELETE"],
+      "publishedHelpCommit": "07b0cf8f6305213f3c3830c301fca69a3e82ed17",
+      "getHelp": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.users/get-mgbetauserphotocontent?view=graph-powershell-beta",
+      "deleteHelp": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.users/remove-mgbetauserphotocontent?view=graph-powershell-beta",
+      "defaultEvidence": "Published Get (Default) requires UserId and OutFile; Get1 additionally requires ProfilePhotoId. Delete (Default) requires UserId; Delete1 additionally requires ProfilePhotoId. Thus the singleton is independently verified as the published default, not guessed from the metadata oracle's first URI.",
+      "routeFidelity": "Media is incompatible with the merged natural-ID entity dispatcher. An exact shared noun repair names the explicit ProfilePhotoId route UserPhotoContentById, justified by source user_GetPhotosContent/user_SetPhotosContent/user_DeletePhotosContent and its distinct mandatory ID. Singleton UserPhotoContent and its URL remain unchanged. No endpoints are pruned and no grouping, selectors, profile authoring or capability flags are introduced.",
+      "wrapperSemantics": "Keep existing optional OutFile behavior (bytes when omitted). Frozen v1.0 derived suppressions of the additional GET/DELETE media route remain unchanged; beta exposes the distinct ById commands. PUT media with only a 2XX response remains an unsuppressed baseline client-only operation, not a compiled neighbor pass."
+    },
+    "betaCollisionRepair": {
+      "method": "DELETE",
+      "path": "/users/{user-id}/sponsors/{directoryObject-id}/$ref",
+      "operationId": "user.sponsor_DeleteDirectoryObjectGraphBPreRef",
+      "noun": "UserSponsorDirectoryObjectByRef",
+      "evidence": "The repository's beta MgCommandMetadata row independently publishes Remove-MgBetaUserSponsorDirectoryObjectByRef for this exact item URI. It is not the root Remove-MgBetaUserSponsorByRef command. No route is suppressed or renamed speculatively.",
+      "publishedHelp": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.users/remove-mgbetausersponsordirectoryobjectbyref?view=graph-powershell-beta",
+      "publishedHelpCommit": "07b0cf8f6305213f3c3830c301fca69a3e82ed17",
+      "requiredParameters": ["UserId", "DirectoryObjectId"],
+      "rootNeighbor": "DELETE /users/{user-id}/sponsors/$ref remains separately named SponsorByRef. This is the only effective required query operation in each current module spec: @id:string. Normally merged #3882 supplies mandatory QueryId (no legacy Id alias), assigning the typed Kiota Id member and preserving the native @id wire name. The separately published item route still uses only UserId/DirectoryObjectId. No module authoring flags, copied repair or one-member group.",
+      "rootPublishedHelp": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.beta.users/remove-mgbetausersponsorbyref?view=graph-powershell-beta"
+    }
+  },
+  "mappings": [
+    {
+      "module": "Users",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: user_(Get|Create|Update|Delete|Set)(Todo|outlook)",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress exactly root todo GET/PATCH/DELETE, preserving nested todo/lists. The complete original legacy match set has three surviving operations in each profile; uppercase user_GetOutlook is not selected.",
+      "profiles": {
+        "v1.0": {
+          "notes": "All three original matches survive at exact method/path with aligned IDs. Complete source-survivor and current literal selector sets are equal.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/todo",
+              "operationId": "user_GetTodo"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/todo",
+              "operationId": "user_UpdateTodo"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/todo",
+              "operationId": "user_DeleteTodo"
+            }
+          ]
+        },
+        "beta": {
+          "notes": "All three original matches survive at exact method/path with aligned IDs. Complete source-survivor and current literal selector sets are equal.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/todo",
+              "operationId": "user_GetTodo"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/todo",
+              "operationId": "user_UpdateTodo"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/todo",
+              "operationId": "user_DeleteTodo"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Users",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^UserLicenseDetail$",
+      "implementation": "CmdletConfigurator",
+      "notes": "New UserLicenseDetail selects only POST /users/{user-id}/licenseDetails: user_CreateLicenseDetail in both legacy and current compatible profiles. Retain collection/item reads and item mutations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "POST", "path": "/users/{user-id}/licenseDetails", "operationId": "user_CreateLicenseDetail" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "POST", "path": "/users/{user-id}/licenseDetails", "operationId": "user_CreateLicenseDetail" }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Users",
+      "directiveIndex": 3,
+      "classification": "SubjectRename",
+      "sourceContains": "variant: List",
+      "implementation": "SupersededBySuppression",
+      "notes": "The earlier operation-ID directive removes the root todo path before this Get UserTodo List rename can act. Actual legacy user_GetTodo returns singleton microsoft.graph.todo (not a List collection), and its exact GET successor survives in both compatible specs but is suppressed by directive 1. Evidence records this route's lineage, not API absence or an invented List variant. Nested GET /todo/lists already structurally produces UserTodoList; no redundant rename.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/users/{user-id}/todo", "operationId": "user_GetTodo" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "GET", "path": "/users/{user-id}/todo", "operationId": "user_GetTodo" }
+          ]
+        }
+      }
+    },
+    {
+      "module": "Users",
+      "directiveIndex": 4,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^UserPhoto$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Update UserPhoto selects only PATCH /users/{user-id}/photo: user_UpdatePhoto in both legacy and current compatible profiles. Preserve singleton GET and unsuppressed GET/PUT photo/$value selection, plus the pre-existing curated /photos behavior.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "PATCH", "path": "/users/{user-id}/photo", "operationId": "user_UpdatePhoto" }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            { "method": "PATCH", "path": "/users/{user-id}/photo", "operationId": "user_UpdatePhoto" }
+          ]
+        }
+      }
+    }
+  ]
+}
