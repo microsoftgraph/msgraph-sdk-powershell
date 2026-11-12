@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
                 return;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Users.Actions.Client.Models.User? result;

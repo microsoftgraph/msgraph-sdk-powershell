@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
     if (this.IsParameterBound(nameof(MailTipsOptions)))
         body.MailTipsOptions = MailTipsOptions;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.GetMailTips.GetMailTipsPostResponse? result;
