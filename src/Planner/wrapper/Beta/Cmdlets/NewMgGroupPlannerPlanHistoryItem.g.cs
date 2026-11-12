@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.Planner
         body.EventType = EventType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerHistoryItem? result;
