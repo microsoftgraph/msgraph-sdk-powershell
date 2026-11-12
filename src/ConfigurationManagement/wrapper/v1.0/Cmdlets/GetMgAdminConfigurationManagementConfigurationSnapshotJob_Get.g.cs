@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationSnapshotJob? result;
@@ -47,6 +47,7 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 
