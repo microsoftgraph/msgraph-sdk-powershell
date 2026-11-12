@@ -21,6 +21,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
 
 
 
+
         [Parameter(Mandatory = false)]
         [Alias("Select")]
         public string[]? Property { get; set; }
