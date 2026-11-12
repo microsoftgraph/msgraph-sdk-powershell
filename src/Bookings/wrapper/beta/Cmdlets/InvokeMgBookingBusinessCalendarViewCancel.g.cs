@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
     if (this.IsParameterBound(nameof(CancellationMessage)))
         body.CancellationMessage = CancellationMessage;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

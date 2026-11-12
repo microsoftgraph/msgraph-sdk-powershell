@@ -239,7 +239,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.BookingBusinesses.Item
         /// Represents a Microsoft Bookings Business.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BookingBusinessItemRequestBuilderGetQueryParameters
+        public partial class BookingBusinessItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -101,7 +101,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
         body.Status = Status;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistration? result;
@@ -119,20 +119,6 @@ namespace Microsoft.Graph.PowerShell.Bookings
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Solutions.VirtualEvents.Webinars[VirtualEventWebinarId].Registrations[VirtualEventRegistrationId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, VirtualEventRegistrationId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
