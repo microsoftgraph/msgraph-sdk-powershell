@@ -36,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.People
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.People.Client.Models.Person? result;
@@ -49,6 +49,7 @@ namespace Microsoft.Graph.PowerShell.People
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 
