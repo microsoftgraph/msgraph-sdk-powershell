@@ -3,6 +3,7 @@
 using Microsoft.Graph.PowerShell.Teams.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Teams.Client.Models;
 using Microsoft.Graph.PowerShell.Teams.Client.Teamwork.Messaging.CustomEmojis;
+using Microsoft.Graph.PowerShell.Teams.Client.Teamwork.Messaging.CustomEmojisWithDisplayName;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -39,6 +40,14 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Teamwork.Messaging
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public MessagingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/messaging{?%24expand,%24select}", rawUrl)
         {
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \teamwork\messaging\customEmojis(displayName=&apos;{displayName}&apos;)
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Teams.Client.Teamwork.Messaging.CustomEmojisWithDisplayName.CustomEmojisWithDisplayNameRequestBuilder"/></returns>
+        public global::Microsoft.Graph.PowerShell.Teams.Client.Teamwork.Messaging.CustomEmojisWithDisplayName.CustomEmojisWithDisplayNameRequestBuilder CustomEmojisWithDisplayName()
+        {
+            return new global::Microsoft.Graph.PowerShell.Teams.Client.Teamwork.Messaging.CustomEmojisWithDisplayName.CustomEmojisWithDisplayNameRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Delete navigation property messaging for teamwork
