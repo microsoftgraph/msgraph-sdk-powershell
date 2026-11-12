@@ -42,7 +42,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.PersonalContacts.Client.Models.Extension? result;
@@ -55,6 +55,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 
