@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Applications
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Applications.Client.Models.TargetDeviceGroup? result;
@@ -61,20 +61,6 @@ namespace Microsoft.Graph.PowerShell.Applications
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.ServicePrincipals[ServicePrincipalId].RemoteDesktopSecurityConfiguration.TargetDeviceGroups[TargetDeviceGroupId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, TargetDeviceGroupId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

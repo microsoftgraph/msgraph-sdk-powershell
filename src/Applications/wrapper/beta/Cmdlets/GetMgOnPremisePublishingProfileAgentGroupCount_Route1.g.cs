@@ -11,13 +11,15 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Applications
 {
-    [GraphRoute("GET", "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/$count")]
-    [Cmdlet(VerbsCommon.Get, "MgServicePrincipalFederatedIdentityCredentialCount")]
+    [GraphRoute("GET", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/$count")]
+    [Cmdlet(VerbsCommon.Get, "MgOnPremisePublishingProfileAgentGroupCount_Route1")]
     [OutputType(typeof(int))]
-    public class GetMgServicePrincipalFederatedIdentityCredentialCountCommand : GraphClientCmdlet
+    public class GetMgOnPremisePublishingProfileAgentGroupCount_Route1Command : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
-        public string ServicePrincipalId { get; set; } = string.Empty;
+        public string OnPremisesPublishingProfileId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1)]
+        public string OnPremisesAgentId { get; set; } = string.Empty;
 
 
 
@@ -32,13 +34,13 @@ namespace Microsoft.Graph.PowerShell.Applications
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             int? result;
             try
             {
-                result = client.ServicePrincipals[ServicePrincipalId].FederatedIdentityCredentials.Count.GetAsync(requestConfiguration =>
+                result = client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].Agents[OnPremisesAgentId].AgentGroups.Count.GetAsync(requestConfiguration =>
                 {
                     if (this.IsParameterBound(nameof(Filter)))
                         requestConfiguration.QueryParameters.Filter = Filter;
@@ -51,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, ServicePrincipalId);
+                ThrowGraphRequestFailed(ex, OnPremisesAgentId);
                 return;
             }
 

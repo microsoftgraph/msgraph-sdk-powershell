@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Applications
         body.SynchronizationJobSettings = SynchronizationJobSettings!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Applications.Client.Models.SynchronizationJob? result;
@@ -77,20 +77,6 @@ namespace Microsoft.Graph.PowerShell.Applications
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.ServicePrincipals[ServicePrincipalId].Synchronization.Jobs[SynchronizationJobId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, SynchronizationJobId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

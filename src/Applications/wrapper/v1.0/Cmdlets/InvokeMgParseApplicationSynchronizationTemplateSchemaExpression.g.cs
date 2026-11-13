@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Applications
     if (this.IsParameterBound(nameof(TargetAttributeDefinition)))
         body.TargetAttributeDefinition = TargetAttributeDefinition;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Applications.Client.Models.ParseExpressionResponse? result;
