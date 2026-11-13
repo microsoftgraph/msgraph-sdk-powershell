@@ -1,0 +1,61 @@
+#nullable enable
+
+using System;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Devices.CloudPrint.Client;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
+{
+    [GraphRoute("DELETE", "/print/shares/{printerShare-id}/allowedGroups/$ref")]
+    [Cmdlet(VerbsCommon.Remove, "MgPrintShareAllowedGroupByRef", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
+    public class RemoveMgPrintShareAllowedGroupByRefCommand : GraphClientCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string PrinterShareId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1,
+            HelpMessage = "Value for the '@id' query parameter.")]
+        [ValidateNotNullOrEmpty]
+        public string QueryId { get; set; } = string.Empty;
+
+
+        [Parameter(Mandatory = false,
+            HelpMessage = "Sets the 'If-Match' request header (for example an ETag for optimistic concurrency; some Graph APIs require it even where the spec marks it optional).")]
+        public string? IfMatch { get; set; }
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(PrinterShareId, "Remove"))
+                return;
+
+        var requestAdapter = GetRequestAdapter("beta");
+        var client = new ApiClient(requestAdapter);
+
+            // DeleteAsync returns a plain Task: a standard delete response has no body.
+            try
+            {
+                client.Print.Shares[PrinterShareId].AllowedGroups.Ref.DeleteAsync(requestConfiguration =>
+                {
+
+                        if (this.IsParameterBound(nameof(IfMatch)))
+                            requestConfiguration.Headers.Add("If-Match", IfMatch!);
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                        requestConfiguration.QueryParameters.Id = QueryId;
+                })
+                    .GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, PrinterShareId);
+                return;
+            }
+        }
+    }
+}

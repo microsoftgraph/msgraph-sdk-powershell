@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.BusinessScenario
         body.LastModifiedBy = LastModifiedBy;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BusinessScenario.Client.Models.PlannerPlanConfiguration? result;
@@ -87,20 +87,6 @@ namespace Microsoft.Graph.PowerShell.BusinessScenario
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Solutions.BusinessScenarios[BusinessScenarioId].Planner.PlanConfiguration.GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, BusinessScenarioId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

@@ -13,6 +13,10 @@ DERIVED from MgCommandMetadata.json per operation and reviewed as data.
 
 Input is the parity gate's own ledger (Compare-WrapperCmdletNames.ps1 -OutLedger), so this
 script reuses the gate's oracle join instead of re-implementing it; the two cannot drift.
+Reviewed operations whose directive migration ledger declares CmdletConfigurator ownership
+and replacesParityData: true are recorded as module-configuration, not duplicated in the
+derived JSON. Their module configuration and regression tests own the behavior; the frozen
+input remains historical.
 
 Per ledger row, exactly one action:
 
@@ -103,6 +107,37 @@ function NounOf([string]$command) { ($command -split '-', 2)[1] -replace '^Mg', 
 
 function VerbOf([string]$command) { ($command -split '-', 2)[0] }
 
+function OperationKey([string]$method, [string]$path) {
+    $normalized = ($path -replace '\{[^}]*\}', '{}').Replace('()', '').TrimEnd('/').ToLowerInvariant()
+    "$($method.ToUpperInvariant()) $normalized"
+}
+
+$moduleOwners = @{}
+foreach ($directory in Get-ChildItem (Join-Path $PSScriptRoot '..\src') -Directory) {
+    $mappingPath = Join-Path $directory.FullName "wrapper\$($directory.Name)_directiveMigrationMap.json"
+    if (-not (Test-Path $mappingPath)) { continue }
+    $mappingDocument = Get-Content $mappingPath -Raw | ConvertFrom-Json
+    foreach ($mapping in $mappingDocument.mappings) {
+        if ($null -eq $mapping.PSObject.Properties['replacesParityData']) { continue }
+        if ($mapping.replacesParityData -isnot [bool]) {
+            throw "replacesParityData must be a boolean in $mappingPath."
+        }
+        if (-not $mapping.replacesParityData) { continue }
+        if ($mapping.implementation -cne 'CmdletConfigurator') {
+            throw "Only CmdletConfigurator mappings can replace parity data in $mappingPath."
+        }
+        $profile = $mapping.profiles.$ApiVersion
+        if ($null -eq $profile -or $profile.excluded) { continue }
+        foreach ($operation in $profile.operations) {
+            if ([string]::IsNullOrWhiteSpace($operation.method) -or [string]::IsNullOrWhiteSpace($operation.path)) {
+                throw "Module-owned parity operation requires method and path in $mappingPath."
+            }
+            $moduleOwners[(OperationKey $operation.method $operation.path)] =
+                "owned by src/$($directory.Name)/wrapper/$($directory.Name)_cmdletConfigurations.cs (directive $($mapping.directiveIndex))"
+        }
+    }
+}
+
 $byKey = @{}
 foreach ($r in $rows) {
     # Only legacy dispatchers lack routes. Metadata-bearing dispatchers contribute one ordinary
@@ -116,6 +151,13 @@ foreach ($r in $rows) {
     # -CaptureInput sweep, and the skip can go with them.
     if ($r.Disposition -in 'dispatcher', 'cast', 'parameterized-function') { continue }
     $key = "$($r.Method) $($r.Uri)"
+    if ($moduleOwners.ContainsKey((OperationKey $r.Method $r.Uri))) {
+        $byKey[$key] = [pscustomobject]@{
+            Method = $r.Method; Uri = $r.Uri; Action = 'module-configuration'; Noun = $null; Verb = $null
+            OurCommand = $r.Command; Evidence = $moduleOwners[(OperationKey $r.Method $r.Uri)]
+        }
+        continue
+    }
     $action, $noun, $verb, $evidence = switch ($r.Disposition) {
         'matched'   { 'keep', $null, $null, $r.OracleCommands }
         'corrected' { 'keep', $null, $null, "deliberate correction; oracle ships $($r.OracleCommands)" }
@@ -267,6 +309,7 @@ $suppressionsPath = Join-Path $OutDir "parity-suppressions.$ApiVersion.json"
 "ledger rows ($ApiVersion)   : $($rows.Count)"
 "distinct method+uri         : $($byKey.Count)"
 "  keep                      : $(@($all | Where-Object Action -eq 'keep').Count)"
+"  module-configuration      : $(@($all | Where-Object Action -eq 'module-configuration').Count)"
 "  rename                    : $($renames.Count)"
 "  suppress                  : $($suppressions.Count)"
 "  deferred (no entry)       : $($deferred.Count)"

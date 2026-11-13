@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "0D2E49A9123FAAC8F7351DF3BA666A5A9EB9520DA1F66DFB0A282666F57D37AE102678023B800F803FF7949CA405BBCEDCE6DE64CC5707AF18F8F14CF3B370EC",
+  "descriptionHash": "0421EA884E69741ED73118AC4494F7BDDF052E41F80C9E625FA48137FE11181C9D0ED0279D613C3DD864E785D1BD9E53E8AF7E71841201BBF16657490494F8DA",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/CloudCommunications.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.CloudCommunications.Client",

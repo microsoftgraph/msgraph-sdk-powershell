@@ -31,7 +31,7 @@ namespace Microsoft.Graph.PowerShell.ChangeNotifications
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.ChangeNotifications.Client.Models.Subscription? result;
@@ -41,6 +41,7 @@ namespace Microsoft.Graph.PowerShell.ChangeNotifications
                 {
                     if (this.IsParameterBound(nameof(Property)))
                         requestConfiguration.QueryParameters.Select = Property;
+
 
 
 

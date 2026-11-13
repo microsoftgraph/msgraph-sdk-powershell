@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             System.IO.Stream? result;

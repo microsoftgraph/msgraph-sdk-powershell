@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "3E9B3412247A712A633CA4B24E0AE224FC6D70FCA52F20998634502155E8179C535F40236EE4F4FAA203F29ED0C7ABC9A504BBE5EDEB19A2D385C6A2B8340AA0",
+  "descriptionHash": "76FEF911C74524B47EF9FFA80F35A08E6D9FD23CF3F15D2E07B29F7E16CE3BF588BF741320BBD9058B7957572A01617A486603E8BB35EB676364DE0187FAF1A5",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/ConfigurationManagement.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.ConfigurationManagement.Client",
