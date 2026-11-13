@@ -128,8 +128,8 @@ public sealed class NamingTests
     [InlineData("GET", "/groups/{group-id}/groupLifecyclePolicies", "Get", "MgGroupLifecyclePolicyByGroup")]
     // boundary word-overlap collapse (Get-MgDomainNameReference)
     [InlineData("GET", "/domains/{domain-id}/domainNameReferences", "Get", "MgDomainNameReference")]
-    // adjacent-duplicate collapse (Get-MgUserOnenoteSectionGroup... family)
-    [InlineData("GET", "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups", "Get", "MgUserOnenoteSectionGroup")]
+    // Notes distinguishes the nested collection from the root item with the same mandatory IDs.
+    [InlineData("GET", "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups", "Get", "MgUserOnenoteSectionGroupNestedSectionGroup")]
     // OData cast segments (Get-MgGroupOwnerAsUser)
     [InlineData("GET", "/groups/{group-id}/owners/{directoryObject-id}/graph.user", "Get", "MgGroupOwnerAsUser")]
     // A /$count directly after a cast counts the cast-filtered collection, and the published name
