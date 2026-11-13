@@ -19,5 +19,15 @@ require:
 # Directives go here!
 directive:
 #Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0.
+# Wrapper migration: the actual legacy v1.0 spec has no selector matches. In beta,
+# both selected collection DELETE /registeredOwners/$ref and /registeredUsers/$ref
+# survive in the aligned compatible spec with the same operation IDs. Literal
+# selector matches equal the complete legacy survivor set. Exact suppressions
+# retain that source intent; item-reference DELETEs and collection GET/POST remain.
+# Exact spec/search and unaffected-route evidence is recorded in
+# wrapper/CrossDeviceExperiences_directiveMigrationMap.json and pinned by
+# CrossDeviceExperiencesDirectiveMigrationTests. Keep this AutoRest directive active
+# until the service-module pipeline is retired. Global/profile-local directives are
+# excluded; parameter/schema migration remains deferred (none in this shared file).
   - remove-path-by-operation: ^user.device_DeleteRegisteredOwnerGraphBPreRef$|^user.device_DeleteRegisteredUserGraphBPreRef$
 ```
