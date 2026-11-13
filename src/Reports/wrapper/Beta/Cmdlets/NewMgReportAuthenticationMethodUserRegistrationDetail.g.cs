@@ -128,7 +128,7 @@ namespace Microsoft.Graph.PowerShell.Reports
         body.UserType = UserType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Reports.Client.Models.UserRegistrationDetails? result;

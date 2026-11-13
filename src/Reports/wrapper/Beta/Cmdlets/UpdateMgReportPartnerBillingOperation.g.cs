@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Reports
         body.Status = Status;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.Operation? result;
@@ -69,20 +69,6 @@ namespace Microsoft.Graph.PowerShell.Reports
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Reports.Partners.Billing.Operations[OperationId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, OperationId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "8DCF74D4A8B585268FDC2A62513B7C50D7381F51365F1C81C6FD8065EB3991AEA78AF3507D71D49BB66E466712066C1F143E9D77CC6EE8E6ADDB4FABA3F2E8A8",
+  "descriptionHash": "F204B21F2754F469F53872907F3EB0190B8574791C8A680C74A8DD51AE2014A4C94235B56393496E9C9C2403D1373F58FE124718143FAB799FE646DBF3EBE9F8",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Reports.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Reports.Client",
