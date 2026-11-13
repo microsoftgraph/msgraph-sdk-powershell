@@ -15,9 +15,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("POST", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.iosLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/commit")]
-    [Cmdlet(VerbsLifecycle.Invoke, "MgDeviceAppManagementMobileAppAsIosLobAppContentVersionFileCommit", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [Cmdlet(VerbsLifecycle.Invoke, "MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFileCommit", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
 
-    public class InvokeMgDeviceAppManagementMobileAppAsIosLobAppContentVersionFileCommitCommand : GraphClientCmdlet
+    public class InvokeMgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFileCommitCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
     if (this.IsParameterBound(nameof(FileEncryptionInfo)))
         body.FileEncryptionInfo = FileEncryptionInfo;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

@@ -13,9 +13,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("GET", "/deviceAppManagement/mobileApps/graph.iosLobApp")]
-    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsIosLobApp_List")]
+    [Cmdlet(VerbsCommon.Get, "MgDeviceAppManagementMobileAppAsiOSLobApp_List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.IosLobApp))]
-    public class GetMgDeviceAppManagementMobileAppAsIosLobApp_ListCommand : GraphClientCmdlet
+    public class GetMgDeviceAppManagementMobileAppAsiOSLobApp_ListCommand : GraphClientCmdlet
     {
 
 
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.IosLobAppCollectionResponse? result;
@@ -90,6 +90,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
+
 
 
 

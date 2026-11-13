@@ -81,7 +81,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
         body.CustomSettings = CustomSettings!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Models.TargetedManagedAppConfiguration? result;
@@ -99,20 +99,6 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.DeviceAppManagement.TargetedManagedAppConfigurations[TargetedManagedAppConfigurationId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, TargetedManagedAppConfigurationId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
