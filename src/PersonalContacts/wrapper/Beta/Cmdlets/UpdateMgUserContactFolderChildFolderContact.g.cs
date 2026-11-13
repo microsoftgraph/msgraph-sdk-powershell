@@ -279,7 +279,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
         body.Websites = Websites!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.PersonalContacts.Client.Models.Contact? result;
@@ -297,20 +297,6 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Users[UserId].ContactFolders[ContactFolderId].ChildFolders[ContactFolderId1].Contacts[ContactId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, ContactId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

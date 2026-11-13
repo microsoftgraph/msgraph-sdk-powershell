@@ -62,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.PersonalContacts.Client.Models.ContactCollectionResponse? result;
@@ -93,6 +93,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
 
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
+
 
 
 

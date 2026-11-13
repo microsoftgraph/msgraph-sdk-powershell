@@ -80,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.ConfigurationManagement
         body.Baseline = Baseline;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.ConfigurationManagement.Client.Models.ConfigurationMonitor? result;

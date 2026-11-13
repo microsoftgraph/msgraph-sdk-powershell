@@ -38,7 +38,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.PrintTaskTrigger? result;
@@ -51,6 +51,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 

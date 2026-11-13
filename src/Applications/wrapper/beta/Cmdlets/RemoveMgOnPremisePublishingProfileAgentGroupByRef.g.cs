@@ -10,7 +10,7 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Applications
 {
-    [GraphRoute("DELETE", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/$ref")]
+    [GraphRoute("DELETE", "/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/$ref")]
     [Cmdlet(VerbsCommon.Remove, "MgOnPremisePublishingProfileAgentGroupByRef", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     public class RemoveMgOnPremisePublishingProfileAgentGroupByRefCommand : GraphClientCmdlet
     {
@@ -18,8 +18,10 @@ namespace Microsoft.Graph.PowerShell.Applications
         public string OnPremisesPublishingProfileId { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 1)]
         public string OnPremisesAgentId { get; set; } = string.Empty;
-        [Parameter(Mandatory = true, Position = 2)]
-        public string OnPremisesAgentGroupId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 2,
+            HelpMessage = "Value for the '@id' query parameter.")]
+        [ValidateNotNullOrEmpty]
+        public string QueryId { get; set; } = string.Empty;
 
 
         [Parameter(Mandatory = false,
@@ -31,28 +33,29 @@ namespace Microsoft.Graph.PowerShell.Applications
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(OnPremisesAgentGroupId, "Remove"))
+            if (!ShouldProcess(OnPremisesAgentId, "Remove"))
                 return;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].Agents[OnPremisesAgentId].AgentGroups[OnPremisesAgentGroupId].Ref.DeleteAsync(requestConfiguration =>
+                client.OnPremisesPublishingProfiles[OnPremisesPublishingProfileId].Agents[OnPremisesAgentId].AgentGroups.Ref.DeleteAsync(requestConfiguration =>
                 {
 
                         if (this.IsParameterBound(nameof(IfMatch)))
                             requestConfiguration.Headers.Add("If-Match", IfMatch!);
 
                         AddRequestHeaders(requestConfiguration.Headers);
+                        requestConfiguration.QueryParameters.Id = QueryId;
                 })
                     .GetAwaiter().GetResult();
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, OnPremisesAgentGroupId);
+                ThrowGraphRequestFailed(ex, OnPremisesAgentId);
                 return;
             }
         }

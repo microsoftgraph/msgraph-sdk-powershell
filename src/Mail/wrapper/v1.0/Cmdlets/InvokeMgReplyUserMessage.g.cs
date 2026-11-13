@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Mail
     if (this.IsParameterBound(nameof(Message)))
         body.Message = Message;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

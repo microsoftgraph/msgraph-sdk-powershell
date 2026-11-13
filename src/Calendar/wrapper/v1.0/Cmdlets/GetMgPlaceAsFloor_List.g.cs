@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Calendar.Client.Models.FloorCollectionResponse? result;
@@ -90,6 +90,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
 
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
+
 
 
 

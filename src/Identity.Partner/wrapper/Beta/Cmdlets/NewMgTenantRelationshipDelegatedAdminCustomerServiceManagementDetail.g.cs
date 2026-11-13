@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Partner.Client.Models.DelegatedAdminServiceManagementDetail? result;

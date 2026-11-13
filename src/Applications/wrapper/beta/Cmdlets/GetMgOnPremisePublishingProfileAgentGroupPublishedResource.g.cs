@@ -23,6 +23,7 @@ namespace Microsoft.Graph.PowerShell.Applications
 
 
 
+
         [Parameter(Mandatory = false)]
         [Alias("Select")]
         public string[]? Property { get; set; }

@@ -279,7 +279,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
         body.Type = Type;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Calendar.Client.Models.Event? result;

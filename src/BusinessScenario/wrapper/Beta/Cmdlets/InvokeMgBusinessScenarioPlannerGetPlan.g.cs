@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.BusinessScenario
     if (this.IsParameterBound(nameof(Target)))
         body.Target = Target;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BusinessScenario.Client.Models.BusinessScenarioPlanReference? result;

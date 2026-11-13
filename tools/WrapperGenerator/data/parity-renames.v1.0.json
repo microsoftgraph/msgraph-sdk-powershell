@@ -23014,18 +23014,6 @@
   {
     "apiVersion": "v1.0",
     "method": "POST",
-    "uri": "/users/{}/mailfolders/{}/childfolders/{}/messages/{}/createreplyall",
-    "action": "rename",
-    "evidence": {
-      "ourCommand": "Invoke-MgUserMailFolderChildFolderMessageCreateReplyAll",
-      "oracle": "New-MgUserMailFolderChildFolderMessageReplyAll"
-    },
-    "replacementNoun": "UserMailFolderChildFolderMessageReplyAll",
-    "replacementVerb": "New"
-  },
-  {
-    "apiVersion": "v1.0",
-    "method": "POST",
     "uri": "/users/{}/mailfolders/{}/childfolders/{}/messages/{}/forward",
     "action": "rename",
     "evidence": {
@@ -23068,17 +23056,6 @@
       "oracle": "Invoke-MgReplyUserMailFolderChildFolderMessage"
     },
     "replacementNoun": "ReplyUserMailFolderChildFolderMessage"
-  },
-  {
-    "apiVersion": "v1.0",
-    "method": "POST",
-    "uri": "/users/{}/mailfolders/{}/childfolders/{}/messages/{}/replyall",
-    "action": "rename",
-    "evidence": {
-      "ourCommand": "Invoke-MgUserMailFolderChildFolderMessageReplyAll",
-      "oracle": "Invoke-MgReplyAllUserMailFolderChildFolderMessage"
-    },
-    "replacementNoun": "ReplyAllUserMailFolderChildFolderMessage"
   },
   {
     "apiVersion": "v1.0",
@@ -23179,18 +23156,6 @@
   {
     "apiVersion": "v1.0",
     "method": "POST",
-    "uri": "/users/{}/mailfolders/{}/messages/{}/createreplyall",
-    "action": "rename",
-    "evidence": {
-      "ourCommand": "Invoke-MgUserMailFolderMessageCreateReplyAll",
-      "oracle": "New-MgUserMailFolderMessageReplyAll"
-    },
-    "replacementNoun": "UserMailFolderMessageReplyAll",
-    "replacementVerb": "New"
-  },
-  {
-    "apiVersion": "v1.0",
-    "method": "POST",
     "uri": "/users/{}/mailfolders/{}/messages/{}/forward",
     "action": "rename",
     "evidence": {
@@ -23233,17 +23198,6 @@
       "oracle": "Invoke-MgReplyUserMailFolderMessage"
     },
     "replacementNoun": "ReplyUserMailFolderMessage"
-  },
-  {
-    "apiVersion": "v1.0",
-    "method": "POST",
-    "uri": "/users/{}/mailfolders/{}/messages/{}/replyall",
-    "action": "rename",
-    "evidence": {
-      "ourCommand": "Invoke-MgUserMailFolderMessageReplyAll",
-      "oracle": "Invoke-MgReplyAllUserMailFolderMessage"
-    },
-    "replacementNoun": "ReplyAllUserMailFolderMessage"
   },
   {
     "apiVersion": "v1.0",
@@ -23554,18 +23508,6 @@
   {
     "apiVersion": "v1.0",
     "method": "POST",
-    "uri": "/users/{}/messages/{}/createreplyall",
-    "action": "rename",
-    "evidence": {
-      "ourCommand": "Invoke-MgUserMessageCreateReplyAll",
-      "oracle": "New-MgUserMessageReplyAll"
-    },
-    "replacementNoun": "UserMessageReplyAll",
-    "replacementVerb": "New"
-  },
-  {
-    "apiVersion": "v1.0",
-    "method": "POST",
     "uri": "/users/{}/messages/{}/forward",
     "action": "rename",
     "evidence": {
@@ -23608,17 +23550,6 @@
       "oracle": "Invoke-MgReplyUserMessage"
     },
     "replacementNoun": "ReplyUserMessage"
-  },
-  {
-    "apiVersion": "v1.0",
-    "method": "POST",
-    "uri": "/users/{}/messages/{}/replyall",
-    "action": "rename",
-    "evidence": {
-      "ourCommand": "Invoke-MgUserMessageReplyAll",
-      "oracle": "Invoke-MgReplyAllUserMessage"
-    },
-    "replacementNoun": "ReplyAllUserMessage"
   },
   {
     "apiVersion": "v1.0",
