@@ -32,21 +32,33 @@
     }
   },
   "sourceCorrection": {
-    "status": "Authorized intentional source repair",
+    "status": "Historical parenthesis repair superseded by reviewed source simplification",
     "directiveIndex": 1,
     "originalDirective": "- remove-path-by-operation: ^(user|group|site)_.*Onenote$|.*\\.onenote\\..*parent.*|.*\\.notebook_(Get|Update|Delete)Section.*|.*\\.notebook\\.section.*|.*\\.sectionGroup_(Get|Update|Delete)Section.*|.*\\.sectionGroup\\.section.*|.*\\.section_(Get|Update|Delete)Page|.*\\.section.page.*|.*\\.onenote_(List|Create|Update|Delete)(Operation|Resource)|group\\.site_.*Onenote$|group\\.site\\.onenote.*$|.*\\.onenote\\..*\\.parent.*|.*\\.notebook\\.section.*|.*\\.sectionGroup\\.section.*|.*\\.section\\.page.*|site\\..*_(Create|Get|Update|Delete)Activity$|site\\..*\\.activity.*|^site_(remove|add)$|^.*site\\.(.*_.*SourceColumn|contentType_.*(Base|BaseType|ColumnPosition)|.*_(Get|Create|Update|Delete)Activity|.*\\.activity.*",
     "originalParseError": "Invalid pattern '^(user|group|site)_.*Onenote$|.*\\.onenote\\..*parent.*|.*\\.notebook_(Get|Update|Delete)Section.*|.*\\.notebook\\.section.*|.*\\.sectionGroup_(Get|Update|Delete)Section.*|.*\\.sectionGroup\\.section.*|.*\\.section_(Get|Update|Delete)Page|.*\\.section.page.*|.*\\.onenote_(List|Create|Update|Delete)(Operation|Resource)|group\\.site_.*Onenote$|group\\.site\\.onenote.*$|.*\\.onenote\\..*\\.parent.*|.*\\.notebook\\.section.*|.*\\.sectionGroup\\.section.*|.*\\.section\\.page.*|site\\..*_(Create|Get|Update|Delete)Activity$|site\\..*\\.activity.*|^site_(remove|add)$|^.*site\\.(.*_.*SourceColumn|contentType_.*(Base|BaseType|ColumnPosition)|.*_(Get|Create|Update|Delete)Activity|.*\\.activity.*' at offset 665. Not enough )'s.",
     "correctedDirective": "- remove-path-by-operation: ^(user|group|site)_.*Onenote$|.*\\.onenote\\..*parent.*|.*\\.notebook_(Get|Update|Delete)Section.*|.*\\.notebook\\.section.*|.*\\.sectionGroup_(Get|Update|Delete)Section.*|.*\\.sectionGroup\\.section.*|.*\\.section_(Get|Update|Delete)Page|.*\\.section.page.*|.*\\.onenote_(List|Create|Update|Delete)(Operation|Resource)|group\\.site_.*Onenote$|group\\.site\\.onenote.*$|.*\\.onenote\\..*\\.parent.*|.*\\.notebook\\.section.*|.*\\.sectionGroup\\.section.*|.*\\.section\\.page.*|site\\..*_(Create|Get|Update|Delete)Activity$|site\\..*\\.activity.*|^site_(remove|add)$|^.*site\\.(.*_.*SourceColumn|contentType_.*(Base|BaseType|ColumnPosition)|.*_(Get|Create|Update|Delete)Activity|.*\\.activity.*)",
-    "change": "Append exactly one terminal ')' to balance the final site branch. Original regex cannot execute and has no claimed match set."
+    "change": "Append exactly one terminal ')' to balance the final site branch. Original regex cannot execute and has no claimed match set.",
+    "activeDirective": "- remove-path-by-operation: ^(user|group|site)_.*Onenote$|.*\\.onenote\\..*parent.*|.*\\.notebook_(Get|Update|Delete)Section.*|.*\\.notebook\\.section.*|.*\\.sectionGroup_(Get|Update|Delete)Section.*|.*\\.sectionGroup\\.section.*|.*\\.section_(Get|Update|Delete)Page|.*\\.section.page.*|.*\\.onenote_(List|Create|Update|Delete)(Operation|Resource)|group\\.site_.*Onenote$|group\\.site\\.onenote.*$|.*\\.onenote\\..*\\.parent.*|.*\\.notebook\\.section.*|.*\\.sectionGroup\\.section.*|.*\\.section\\.page.*|site\\..*_(Create|Get|Update|Delete)Activity$|site\\..*\\.activity.*|^site_(remove|add)$",
+    "sourceRefactor": {
+      "commit": "fdee6855ef8ecc9258297a5e6ca5c4934aa63ddf",
+      "change": "Remove the unrelated final site metadata alternation from the shared selector at source. Keep the invalid original and one-parenthesis repair only as historical evidence.",
+      "removedAlternation": "^.*site\\.(.*_.*SourceColumn|contentType_.*(Base|BaseType|ColumnPosition)|.*_(Get|Create|Update|Delete)Activity|.*\\.activity.*)",
+      "reviewedProfiles": [
+        "v1.0",
+        "beta"
+      ],
+      "exactSelectedOperationsUnchangedPerProfile": 298,
+      "removedAlternationNotesMatches": 0
+    }
   },
   "mappings": [
     {
       "module": "Notes",
       "directiveIndex": 1,
       "classification": "OperationIdSuppression",
-      "sourceContains": "- remove-path-by-operation: ^(user|group|site)_.*Onenote$|.*\\.onenote\\..*parent.*|.*\\.notebook_(Get|Update|Delete)Section.*|.*\\.notebook\\.section.*|.*\\.sectionGroup_(Get|Update|Delete)Section.*|.*\\.sectionGroup\\.section.*|.*\\.section_(Get|Update|Delete)Page|.*\\.section.page.*|.*\\.onenote_(List|Create|Update|Delete)(Operation|Resource)|group\\.site_.*Onenote$|group\\.site\\.onenote.*$|.*\\.onenote\\..*\\.parent.*|.*\\.notebook\\.section.*|.*\\.sectionGroup\\.section.*|.*\\.section\\.page.*|site\\..*_(Create|Get|Update|Delete)Activity$|site\\..*\\.activity.*|^site_(remove|add)$|^.*site\\.(.*_.*SourceColumn|contentType_.*(Base|BaseType|ColumnPosition)|.*_(Get|Create|Update|Delete)Activity|.*\\.activity.*)",
+      "sourceContains": "- remove-path-by-operation: ^(user|group|site)_.*Onenote$|.*\\.onenote\\..*parent.*|.*\\.notebook_(Get|Update|Delete)Section.*|.*\\.notebook\\.section.*|.*\\.sectionGroup_(Get|Update|Delete)Section.*|.*\\.sectionGroup\\.section.*|.*\\.section_(Get|Update|Delete)Page|.*\\.section.page.*|.*\\.onenote_(List|Create|Update|Delete)(Operation|Resource)|group\\.site_.*Onenote$|group\\.site\\.onenote.*$|.*\\.onenote\\..*\\.parent.*|.*\\.notebook\\.section.*|.*\\.sectionGroup\\.section.*|.*\\.section\\.page.*|site\\..*_(Create|Get|Update|Delete)Activity$|site\\..*\\.activity.*|^site_(remove|add)$",
       "implementation": "CmdletConfigurator",
-      "notes": "Intentional approved source repair: append exactly one missing terminal parenthesis, retaining the invalid original and parse error. The invalid original could not execute and has no claimed match set. The corrected active selector selects 298 actual historical operations per profile; all survive and now match literally in the current compatible specs. No API removal, runtime legacy lookup, or bridge schema is used.",
+      "notes": "The user source simplification removes the unrelated final site metadata alternation from Notes.md. Both actual historical and current compatible profiles still select exactly the same 298 reviewed operations. The active source regex parses; the earlier invalid original and minimal parenthesis repair remain historical audit evidence only. No operation, suppression or generated route changes are required.",
       "profiles": {
         "v1.0": {
           "absenceExpected": false,
@@ -1542,7 +1554,7 @@
               "operationId": "user.onenote.section.page_GetCount"
             }
           ],
-          "notes": "All 298 current literal matches equal the complete actual same-profile historical selector survivors. The finite required-path ID alignment restored nine IDs; no runtime source-bridge integration or API-absence assertion is used."
+          "notes": "All 298 active source-selector literal matches equal the complete actual same-profile historical survivors and the prior reviewed selection; zero operations are added or removed by the source simplification."
         },
         "beta": {
           "absenceExpected": false,
@@ -3038,7 +3050,7 @@
               "operationId": "user.onenote.section.page_GetCount"
             }
           ],
-          "notes": "All 298 current literal matches equal the complete actual same-profile historical selector survivors. The finite required-path ID alignment restored nine IDs; no runtime source-bridge integration or API-absence assertion is used."
+          "notes": "All 298 active source-selector literal matches equal the complete actual same-profile historical survivors and the prior reviewed selection; zero operations are added or removed by the source simplification."
         }
       }
     },

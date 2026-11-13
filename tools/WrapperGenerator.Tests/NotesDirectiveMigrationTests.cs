@@ -58,7 +58,7 @@ public sealed class NotesDirectiveMigrationTests
     }
 
     [Fact]
-    public void PreservesInvalidOriginalAndRepairsExactlyOneTerminalParenthesis()
+    public void PreservesHistoricalRepairAndUsesTheReviewedSimplifiedSourceSelector()
     {
         using var ledger = JsonDocument.Parse(File.ReadAllText(
             Path.Combine(RepoRoot(), "src", "Notes", "wrapper", "Notes_directiveMigrationMap.json")));
@@ -70,8 +70,39 @@ public sealed class NotesDirectiveMigrationTests
         Assert.Contains("Not enough )'s", audit.GetProperty("originalParseError").GetString());
         var corrected = prefix + invalidOriginal + ")";
         Assert.Equal(corrected, audit.GetProperty("correctedDirective").GetString());
+        var removedBranchStart = corrected.LastIndexOf(@"|^.*site\.(", StringComparison.Ordinal);
+        Assert.True(removedBranchStart > prefix.Length);
+        var simplified = corrected[..removedBranchStart];
+        Assert.Equal(simplified, audit.GetProperty("activeDirective").GetString());
+        Assert.Equal(corrected[(removedBranchStart + 1)..],
+            audit.GetProperty("sourceRefactor").GetProperty("removedAlternation").GetString());
+        Assert.Equal(simplified, ledger.RootElement.GetProperty("mappings")[0].GetProperty("sourceContains").GetString());
+        Assert.NotNull(new Regex(simplified[prefix.Length..]));
         var source = File.ReadAllText(Path.Combine(RepoRoot(), "src", "Notes", "Notes.md"));
-        Assert.Equal(corrected, Regex.Match(source, @"(?m)^  - remove-path-by-operation: .+$").Value.Trim());
+        Assert.Equal(simplified, Regex.Match(source, @"(?m)^  - remove-path-by-operation: .+$").Value.Trim());
+    }
+
+    [Theory]
+    [InlineData("user_GetOnenote", true)]
+    [InlineData("group_UpdateOnenote", true)]
+    [InlineData("site_DeleteOnenote", true)]
+    [InlineData("user_GetOnenoteExtra", false)]
+    [InlineData("group.onenote.section.page_preview", true)]
+    [InlineData("group.onenote.sectionGroup_ListSectionGroup", false)]
+    [InlineData("group.onenote_ListNotebook", false)]
+    [InlineData("group.onenote.page_onenotePatchContent", false)]
+    [InlineData("group.onenote_ListOperation", true)]
+    [InlineData("group.onenote_GetOperation", false)]
+    [InlineData("site_remove", true)]
+    [InlineData("site_removeExtra", false)]
+    [InlineData("site.list_GetSourceColumn", false)]
+    [InlineData("site.contentType_GetBase", false)]
+    public void SimplifiedSourceSelectorPreservesNotesBoundariesWithoutUnrelatedMetadata(string operationId, bool expected)
+    {
+        var source = File.ReadAllText(Path.Combine(RepoRoot(), "src", "Notes", "Notes.md"));
+        var pattern = Regex.Match(source, @"(?m)^  - remove-path-by-operation: (?<pattern>.+)$")
+            .Groups["pattern"].Value.Trim();
+        Assert.Equal(expected, new Regex(pattern).IsMatch(operationId));
     }
 
     [Theory]
@@ -90,6 +121,15 @@ public sealed class NotesDirectiveMigrationTests
                 (Path: path.Key, Method: op.Key, Operation: op.Value)))
             .Where(op => regex.IsMatch(op.Operation.OperationId!)).ToArray();
         Assert.Equal(298, sourceMatches.Length);
+        var priorPattern = ledger.RootElement.GetProperty("sourceCorrection").GetProperty("correctedDirective")
+            .GetString()!["- remove-path-by-operation: ".Length..];
+        var priorRegex = new Regex(priorPattern);
+        var previousSourceKeys = legacy.Paths.SelectMany(path => path.Value.Operations!.Select(op =>
+                (Path: path.Key, Method: op.Key, Operation: op.Value)))
+            .Where(op => priorRegex.IsMatch(op.Operation.OperationId!))
+            .Select(op => $"{op.Method} {op.Path} [{op.Operation.OperationId}]").ToHashSet();
+        Assert.True(previousSourceKeys.SetEquals(
+            sourceMatches.Select(op => $"{op.Method} {op.Path} [{op.Operation.OperationId}]")));
         var profileMap = first.GetProperty("profiles").GetProperty(profile);
         Assert.False(profileMap.GetProperty("absenceExpected").GetBoolean());
         Assert.False(profileMap.TryGetProperty("operationIdSource", out _));
@@ -145,6 +185,11 @@ public sealed class NotesDirectiveMigrationTests
             .Select(op => $"{op.Method} {op.Path}").ToHashSet();
         Assert.Equal(298, literalKeys.Count);
         Assert.True(literalKeys.SetEquals(survivingSourceKeys));
+        var previousLiteralKeys = compatible.Paths.SelectMany(path => path.Value.Operations!.Select(op =>
+                (Path: path.Key, Method: op.Key, Operation: op.Value)))
+            .Where(op => priorRegex.IsMatch(op.Operation.OperationId!))
+            .Select(op => $"{op.Method} {op.Path}").ToHashSet();
+        Assert.True(previousLiteralKeys.SetEquals(literalKeys));
 
         foreach (var operation in ledger.RootElement.GetProperty("mappings")[1]
             .GetProperty("profiles").GetProperty(profile).GetProperty("operations").EnumerateArray())

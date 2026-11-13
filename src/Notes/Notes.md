@@ -29,13 +29,19 @@ the three nested collections and the three root collection counts. These baselin
 endpoint gaps block a full-fidelity claim and are not repaired by silently changing
 global data in this module.
 
-The compatible IDs now align with all 298 of the corrected selector's actual
+The compatible IDs now align with all 298 of the active selector's actual
 same-profile legacy selections. The finite required-path ID corrections in
 the normally merged prerequisite restore nine section/page action/function IDs.
 The ledger uses ordinary literal method/path/ID evidence, without a runtime
 legacy lookup or bridge schema. A one-time historical source comparison in the
 module tests verifies all surviving routes and the final action/function
 qualification changes; no selected API is classified as removed.
+
+The source selector no longer includes the unrelated terminal site metadata
+alternation. The simplified regex is valid and selects the same 298 operations
+in each legacy and compatible Notes profile. The earlier invalid regex and its
+minimal parenthesis repair remain historical audit evidence, not the active
+selector; the ledger's active source anchor matches this file.
 
 Validation targets PowerShell 7/Core only; explicit PowerShell 5.1 support is
 outside the v3 scope.
@@ -49,11 +55,12 @@ historical implicit-readback validation, without adding a readback switch.
 ``` yaml
 directive:
 # Remove paths that are not valid.
-# Wrapper migration: intentional source repair appends exactly one missing ')'.
-# The original could not execute ("Not enough )'s", offset 665); it has no match
-# set. The exact invalid original and parse error are retained in the adjacent
+# Wrapper migration: the simplified active source selector removes the unrelated
+# terminal site metadata alternation. It parses and preserves the exact Notes
+# selections. The invalid original ("Not enough )'s", offset 665) and previous
+# minimal parenthesis repair remain historical in the adjacent
 # Notes_directiveMigrationMap.json sourceCorrection audit and regression tests.
-# Only the corrected active selector below selects 298 actual legacy operations
+# The active selector below selects 298 actual legacy operations
 # per profile: historical comparison found 244 exact paths and 54 final
 # action/function qualification changes. Current literal IDs cover all 298.
 # All have real compatible successors; none are claimed removed. Exact
