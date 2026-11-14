@@ -17,6 +17,11 @@ require:
 
 ``` yaml
 directive:
+  # Preserve v2 resource names during cmdlet name inference.
+  - from: openapi-document
+    where: $.paths.*.*.operationId
+    transform: >-
+      $ = $.replace(/^((?:(?:group|user)\.)?planner\.(?:plans|tasks))_v2(?=[._])/, '$1V2');
 # Remove paths that are not valid.
   - remove-path-by-operation: ^user.planner_(Create|Update|Delete)All|planner.bucket_(Get|Create|Update|Delete)Task|planner.bucket.task.*|planner.plan_(Get|Create|Update|Delete)Bucket|planner.plan.bucket.*|planner.plan_(Get|Create|Update|Delete)Task|planner.plan.task.*$
 # Remove cmdlets

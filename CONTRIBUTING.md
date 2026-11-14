@@ -27,6 +27,19 @@ When it comes to modifying existing cmdlets, we recommend you use [AutoREST dire
 
 See our [SDK generation steps wiki](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/Generation-Process) for more information.
 
+Build tooling is installed with `npm install --no-package-lock` at the repository root.
+Keep the root `@microsoft/rush` version aligned with `autorest.powershell/rush.json` so Rush
+uses the local installation rather than bootstrapping an unconstrained dependency tree.
+The root manifest temporarily overrides Rush's `@typespec/ts-http-runtime` to `0.3.9`
+to avoid the ESM-only proxy dependency introduced in `0.3.10` while CI remains on Node 18.
+This is a compatibility workaround, not a change to the supported Node requirements of those dependencies.
+
+The npm postinstall step patches AutoREST core 3.10.4 to share a queue of at most
+32 concurrent temporary document/source-map writes per process. Cache prepopulation
+applies the same patch to cached core installations. The patch fails explicitly if
+the version or expected write sites change; review it when upgrading core.
+Run its focused tests with `node --test tools/Tests/AutorestWriteQueue.test.cjs`.
+
 ## Debugging the Auth module
 
 * In a terminal run `.\tools\GenerateAuthenticationModule.ps1 -Build -Pack`

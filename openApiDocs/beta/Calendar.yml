@@ -16205,7 +16205,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Invoke function delta
-      description: 'Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.'
+      description: 'Get a set of calendar resources added, updated, or deleted in a user''s mailbox. Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-delta?view=graph-rest-beta
@@ -18955,7 +18955,7 @@ paths:
       tags:
         - users.calendar
       summary: Invoke function delta
-      description: 'Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.'
+      description: 'Get a set of calendar resources added, updated, or deleted in a user''s mailbox. Typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-delta?view=graph-rest-beta

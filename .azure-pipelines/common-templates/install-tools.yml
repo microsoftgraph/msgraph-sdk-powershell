@@ -65,20 +65,14 @@ steps:
         Write-Host "Copied npm config to $dst"
 
   - task: Npm@1
-    displayName: Install AutoRest
+    displayName: Install Node build tools
     retryCountOnTaskFailure: 2
     inputs:
       command: custom
       workingDir: $(Build.SourcesDirectory)
-      customCommand: install --no-package-lock autorest@3.7.2
-
-  - task: Npm@1
-    displayName: Install AutorestCore
-    retryCountOnTaskFailure: 2
-    inputs:
-      command: custom
-      workingDir: $(Build.SourcesDirectory)
-      customCommand: install --no-package-lock @autorest/core@3.10.4
+      # Use the root manifest's Rush pin and transitive override. Matching rush.json
+      # avoids a second, unconstrained installation in Rush's global cache.
+      customCommand: install --no-package-lock
 
   - task: PowerShell@2
     displayName: Pre-populate autorest extension cache
@@ -87,14 +81,6 @@ steps:
       pwsh: true
       filePath: $(Build.SourcesDirectory)/tools/utilities/PrePopulateAutorestCache.ps1
 
-  - task: Npm@1
-    displayName: Install Rush
-    retryCountOnTaskFailure: 2
-    inputs:
-      command: custom
-      workingDir: $(Build.SourcesDirectory)
-      customCommand: install --no-package-lock @microsoft/rush
-  
   - task: PowerShell@2
     displayName: Rush Build
     inputs:
