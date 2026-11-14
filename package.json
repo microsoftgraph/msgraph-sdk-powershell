@@ -1,6 +1,9 @@
 {
   "name": "msgraph-sdk-powershell-build",
   "private": true,
+  "scripts": {
+    "postinstall": "node tools/Utilities/Patch-AutorestCore.cjs"
+  },
   "dependencies": {
     "@autorest/core": "3.10.4",
     "@microsoft/rush": "5.179.0",

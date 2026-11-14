@@ -34,6 +34,12 @@ The root manifest temporarily overrides Rush's `@typespec/ts-http-runtime` to `0
 to avoid the ESM-only proxy dependency introduced in `0.3.10` while CI remains on Node 18.
 This is a compatibility workaround, not a change to the supported Node requirements of those dependencies.
 
+The npm postinstall step patches AutoREST core 3.10.4 to share a queue of at most
+32 concurrent temporary document/source-map writes per process. Cache prepopulation
+applies the same patch to cached core installations. The patch fails explicitly if
+the version or expected write sites change; review it when upgrading core.
+Run its focused tests with `node --test tools/Tests/AutorestWriteQueue.test.cjs`.
+
 ## Debugging the Auth module
 
 * In a terminal run `.\tools\GenerateAuthenticationModule.ps1 -Build -Pack`
