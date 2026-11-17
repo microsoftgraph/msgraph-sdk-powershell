@@ -15,6 +15,7 @@ require:
 
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
+
 ``` yaml
 directive:
 # Remove paths that are not valid.
