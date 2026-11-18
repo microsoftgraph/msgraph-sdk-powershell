@@ -68,7 +68,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
     if (this.IsParameterBound(nameof(Participants)))
         body.Participants = Participants;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.OnlineMeeting? result;

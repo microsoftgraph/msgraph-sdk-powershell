@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Applications
     if (this.IsParameterBound(nameof(Ids)))
         body.Ids = Ids!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Applications.Client.Applications.Item.CheckMemberObjects.CheckMemberObjectsPostResponse? result;

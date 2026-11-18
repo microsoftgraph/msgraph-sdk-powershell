@@ -80,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Reports
     if (this.IsParameterBound(nameof(OrderBy)))
         body.OrderBy = OrderBy!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             System.IO.Stream? result;

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
     if (this.IsParameterBound(nameof(ExpirationDuration)))
         body.ExpirationDuration = ExpirationDuration;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

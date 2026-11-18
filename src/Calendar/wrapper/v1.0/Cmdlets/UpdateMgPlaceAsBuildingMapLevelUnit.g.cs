@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Calendar.Client.Models.UnitMap? result;
@@ -69,20 +69,6 @@ namespace Microsoft.Graph.PowerShell.Calendar
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Places[PlaceId].GraphBuilding.Map.Levels[LevelMapId].Units[UnitMapId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, UnitMapId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

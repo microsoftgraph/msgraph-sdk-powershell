@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
     if (this.IsParameterBound(nameof(OdataId)))
         body.OdataId = OdataId;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

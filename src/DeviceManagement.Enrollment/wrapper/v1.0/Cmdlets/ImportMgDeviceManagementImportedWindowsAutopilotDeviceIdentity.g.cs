@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
     if (this.IsParameterBound(nameof(ImportedWindowsAutopilotDeviceIdentities)))
         body.ImportedWindowsAutopilotDeviceIdentities = ImportedWindowsAutopilotDeviceIdentities!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportPostResponse? result;

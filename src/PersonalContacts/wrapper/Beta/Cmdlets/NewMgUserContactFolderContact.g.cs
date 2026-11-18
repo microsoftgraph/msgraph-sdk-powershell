@@ -275,7 +275,7 @@ namespace Microsoft.Graph.PowerShell.PersonalContacts
         body.Websites = Websites!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.PersonalContacts.Client.Models.Contact? result;

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.DeviceAndAppManagementRoleAssignment? result;
@@ -47,6 +47,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 

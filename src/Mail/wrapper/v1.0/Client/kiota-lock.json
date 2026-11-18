@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "D4B08426AF43673A48EA6D5428FBC45463742F5D6417086394091D7FF8DB79CD61941F322787F6CA926994D944BEEB3416A35866C10ED2DC58AAB99C049E57D1",
+  "descriptionHash": "5AC868661CA1F8F04A362957EAD6205137BD87C83B2D7BB69EE517DCE76D86A088DC4AE8EF9430FE1F808F6622C4EBCAFAF166FDD5CF5659FFC2BEB360E70C86",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Mail.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Mail.Client",

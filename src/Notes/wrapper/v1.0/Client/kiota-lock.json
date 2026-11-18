@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "F37AFC9F4EF90B69A415949AB7145E7CA1FA4294A25719AB5B1079C72DD2709F286EC2EB84D51C9D91FC9556D96C66EF54F4BB38AEBAA64117D7DD06EEC1EF89",
+  "descriptionHash": "7296300C43832BE01427E2FCF15EC723233686CF7BD9801596859D0568DC0DAF9ACD1C541FC4F68552AA523759F24951528A5E01EFF342BF43F5D86F2F99863C",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/Notes.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.Notes.Client",

@@ -27,14 +27,14 @@ namespace Microsoft.Graph.PowerShell.Teams.Client.Teamwork.Messaging.CustomEmoji
         }
         /// <summary>Gets an item from the Microsoft.Graph.PowerShell.Teams.Client.teamwork.messaging.customEmojis.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Teams.Client.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder"/></returns>
-        public global::Microsoft.Graph.PowerShell.Teams.Client.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Teams.Client.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.PowerShell.Teams.Client.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("teamworkCustomEmoji%2DdisplayName", position);
-                return new global::Microsoft.Graph.PowerShell.Teams.Client.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiDisplayNameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("teamworkCustomEmoji%2Did", position);
+                return new global::Microsoft.Graph.PowerShell.Teams.Client.Teamwork.Messaging.CustomEmojis.Item.TeamworkCustomEmojiItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

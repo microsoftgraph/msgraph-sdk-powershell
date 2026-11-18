@@ -445,6 +445,14 @@ For each reviewed directive:
 4. Run the inventory validation and WrapperGenerator tests. Generate committed profile output
    only in a separately reviewed profile-specific change.
 
+When moving an existing parity rule into module configuration, remove the corresponding
+`parity-renames`/`parity-suppressions` JSON entry and mark the reviewed mapping's
+`implementation` as `CmdletConfigurator` with `replacesParityData: true`.
+`Derive-ParityResolutions.ps1` records those explicitly transferred exact
+method/path operations as `module-configuration` instead of recreating their parity entries;
+the frozen input ledger remains unchanged. Pin the module's behavior with derived data disabled,
+including any required verb override, and run parity derivation's `-Validate` gate.
+
 When `openApiDocs_KiotaCompat/<profile>/<Module>.yml` is unavailable, use an explicit profile
 exclusion rather than claiming the API operations are absent:
 

@@ -66,6 +66,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models
                 "#microsoft.graph.deviceEnrollmentConfiguration" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.DeviceEnrollmentConfiguration(),
                 "#microsoft.graph.deviceManagementAutopilotEvent" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.DeviceManagementAutopilotEvent(),
                 "#microsoft.graph.directoryObject" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.DirectoryObject(),
+                "#microsoft.graph.directoryRoleManagementDeletedItemContainer" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.DirectoryRoleManagementDeletedItemContainer(),
                 "#microsoft.graph.enrollmentConfigurationAssignment" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.EnrollmentConfigurationAssignment(),
                 "#microsoft.graph.enrollmentProfile" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.EnrollmentProfile(),
                 "#microsoft.graph.importedAppleDeviceIdentity" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.ImportedAppleDeviceIdentity(),

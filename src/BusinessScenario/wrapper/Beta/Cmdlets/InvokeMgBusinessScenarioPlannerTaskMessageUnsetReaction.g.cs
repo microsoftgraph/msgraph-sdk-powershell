@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.BusinessScenario
     if (this.IsParameterBound(nameof(ReactionType)))
         body.ReactionType = ReactionType;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

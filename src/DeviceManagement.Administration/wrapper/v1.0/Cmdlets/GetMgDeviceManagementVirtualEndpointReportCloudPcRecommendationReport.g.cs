@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
     if (this.IsParameterBound(nameof(ReportType)))
         body.ReportType = ReportType;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             System.IO.Stream? result;

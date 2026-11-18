@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Applications
     if (this.IsParameterBound(nameof(ServiceManagementReference)))
         body.ServiceManagementReference = ServiceManagementReference;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Applications.Client.Models.ApplicationServicePrincipal? result;

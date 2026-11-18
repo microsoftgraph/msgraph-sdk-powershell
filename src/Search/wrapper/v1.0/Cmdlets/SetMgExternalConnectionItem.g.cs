@@ -61,7 +61,7 @@ namespace Microsoft.Graph.PowerShell.Search
         body.Properties = Properties;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Search.Client.Models.ExternalConnectors.ExternalItem? result;
@@ -78,7 +78,6 @@ namespace Microsoft.Graph.PowerShell.Search
                 ThrowGraphRequestFailed(ex, ExternalItemId);
                 return;
             }
-
 
             if (result is not null)
                 WriteObject(result);
