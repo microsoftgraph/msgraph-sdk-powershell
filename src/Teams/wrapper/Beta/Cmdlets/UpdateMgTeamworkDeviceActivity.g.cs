@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.LastModifiedBy = LastModifiedBy;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkDeviceActivity? result;
@@ -81,20 +81,6 @@ namespace Microsoft.Graph.PowerShell.Teams
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Teamwork.Devices[TeamworkDeviceId].Activity.GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, TeamworkDeviceId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

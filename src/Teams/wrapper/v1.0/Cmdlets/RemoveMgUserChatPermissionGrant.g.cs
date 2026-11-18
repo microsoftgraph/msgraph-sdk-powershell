@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Teams
             if (!ShouldProcess(ResourceSpecificPermissionGrantId, "Remove"))
                 return;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             // DeleteAsync returns a plain Task: a standard delete response has no body.
