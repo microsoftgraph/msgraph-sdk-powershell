@@ -7572,7 +7572,7 @@ components:
           nullable: true
         isCollapsed:
           type: boolean
-          description: Indicates whether the current result is collapses when the collapseProperties property in the searchRequest is used.
+          description: Indicates whether the current result is collapsed when the collapseProperties property in the searchRequest is used.
           nullable: true
         rank:
           maximum: 2147483647
@@ -7583,8 +7583,10 @@ components:
           nullable: true
         resultTemplateId:
           type: string
-          description: 'ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.'
+          description: 'ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchResponse as well.'
           nullable: true
+        sensitivityLabel:
+          $ref: '#/components/schemas/microsoft.graph.sensitivityLabelInfo'
         summary:
           type: string
           description: 'A summary of the result, if a summary is available.'
@@ -7743,6 +7745,35 @@ components:
         key:
           type: string
           description: The discrete value of the field that an aggregation was computed on.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sensitivityLabelInfo:
+      title: sensitivityLabelInfo
+      type: object
+      properties:
+        color:
+          type: string
+          description: 'The color that the UI should display for the label, if configured.'
+          nullable: true
+        displayName:
+          type: string
+          description: The display name of the sensitivity label.
+          nullable: true
+        priority:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The display priority of the sensitivity label.
+          format: int32
+          nullable: true
+        sensitivityLabelId:
+          type: string
+          description: The identifier of the sensitivity label.
+          nullable: true
+        tooltip:
+          type: string
+          description: The tooltip that the UI should display for the sensitivity label.
           nullable: true
       additionalProperties:
         type: object

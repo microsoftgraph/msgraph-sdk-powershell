@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFrameworks>net8.0;net472</TargetFrameworks>
     <IsPackable>false</IsPackable>
-    <Version>2.38.1</Version>
+    <Version>2.41.2</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.2" />
@@ -12,8 +12,8 @@
          System.Management.Automation. Keep this on the latest 7.4.x (net8.0) release so PSObject-dependent
          tests exercise the real PowerShell runtime. -->
     <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.4.17" PrivateAssets="all" Condition="'$(TargetFramework)' == 'net8.0'" />
-    <PackageReference Include="Moq" Version="4.20.72" />
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="8.0.4" />
+    <PackageReference Include="Moq" Version="4.21.0" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="8.0.5" />
     <PackageReference Include="xunit" Version="2.9.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
       <PrivateAssets>all</PrivateAssets>
@@ -26,5 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Authentication\Microsoft.Graph.Authentication.csproj" />
+    <!-- Tests exercise Core internals (Azure.Identity / MSAL types) directly; reference it explicitly now that the cmdlet assembly no longer exposes them. -->
+    <ProjectReference Include="..\Authentication.Core\Microsoft.Graph.Authentication.Core.csproj" />
   </ItemGroup>
 </Project>
