@@ -83,6 +83,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.entraProtectionPolicy" => new global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.EntraProtectionPolicy(),
                 "#microsoft.graph.exchangeProtectionPolicy" => new global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ExchangeProtectionPolicy(),
                 "#microsoft.graph.oneDriveForBusinessProtectionPolicy" => new global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.OneDriveForBusinessProtectionPolicy(),
                 "#microsoft.graph.sharePointProtectionPolicy" => new global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.SharePointProtectionPolicy(),

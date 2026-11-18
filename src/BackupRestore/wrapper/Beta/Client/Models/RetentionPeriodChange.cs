@@ -14,7 +14,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The effectiveFromDateTime property</summary>
+        /// <summary>The date and time from which the retention period change takes effect. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026, is 2026-01-01T00:00:00Z.</summary>
         public DateTimeOffset? EffectiveFromDateTime { get; set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore.Client.Models
 #endif
         /// <summary>The status property</summary>
         public global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.RetentionPeriodChangeStatus? Status { get; set; }
-        /// <summary>The targetRetentionPeriodInDays property</summary>
+        /// <summary>Specifies the retention period, in days, that applies after the change is completed.</summary>
         public int? TargetRetentionPeriodInDays { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.BackupRestore.Client.Models.RetentionPeriodChange"/> and sets the default values.

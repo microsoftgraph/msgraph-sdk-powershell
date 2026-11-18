@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
     if (this.IsParameterBound(nameof(OrderBy)))
         body.OrderBy = OrderBy;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.BackupRestore.Client.Solutions.BackupRestore.BrowseSessions.Item.Browse.BrowsePostResponse? result;

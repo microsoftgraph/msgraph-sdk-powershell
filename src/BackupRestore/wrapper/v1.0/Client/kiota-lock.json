@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "971976F95609BBB7E2EC157CE4B7B03EDC8644E46395461456047E27C9821350089F4B2A7B341F6B8FC2FC84054673A62C9E140DF5247D7EAF64A5FCAF68DC72",
+  "descriptionHash": "FAAF83DC1F6929CF1550922FF1CA81A3B7B2DA448EC1411194736A77B3156F5D9962B40BCB5D9983DA7D9865626FED10A0C41A9D240669B92765726DFE6EACDC",
   "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/v1.0/BackupRestore.yml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph.PowerShell.BackupRestore.Client",
