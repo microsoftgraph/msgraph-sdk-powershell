@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Sites
     if (this.IsParameterBound(nameof(Recipients)))
         body.Recipients = Recipients!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Sites.Client.Sites.Item.Permissions.Item.Grant.GrantPostResponse? result;

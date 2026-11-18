@@ -93,7 +93,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         body.WorkingHours = WorkingHours;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.MailboxSettings? result;
@@ -111,20 +111,6 @@ namespace Microsoft.Graph.PowerShell.Sites
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Groups[GroupId].Sites[SiteId].Lists[ListId].Items[ListItemId].LastModifiedByUser.MailboxSettings.GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, ListItemId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

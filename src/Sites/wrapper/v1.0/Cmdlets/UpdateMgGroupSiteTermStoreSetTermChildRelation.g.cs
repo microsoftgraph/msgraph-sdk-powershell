@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         body.Relationship = Relationship;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.TermStore.Relation? result;
@@ -69,20 +69,6 @@ namespace Microsoft.Graph.PowerShell.Sites
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Groups[GroupId].Sites[SiteId].TermStore.Sets[SetId].Terms[TermId].Children[TermId1].Relations[RelationId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, RelationId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

@@ -49,7 +49,7 @@ namespace Microsoft.Graph.PowerShell.Sites
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.TermStore.Store? result;
