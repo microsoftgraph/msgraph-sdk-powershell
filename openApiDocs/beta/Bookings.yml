@@ -14595,6 +14595,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityLogBase'
+              description: The list of activity logs in the tenant.
               x-ms-navigationProperty: true
             browseSessions:
               type: array
@@ -14633,6 +14634,11 @@ components:
               x-ms-navigationProperty: true
             emailNotificationsSetting:
               $ref: '#/components/schemas/microsoft.graph.emailNotificationsSetting'
+            entraProtectionPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.entraProtectionPolicy'
+              x-ms-navigationProperty: true
             exchangeProtectionPolicies:
               type: array
               items:
@@ -15766,9 +15772,11 @@ components:
             eventDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Timestamp of activity completion.
               format: date-time
             performedBy:
               type: string
+              description: The identity of the person who performed the activity.
               nullable: true
             resultStatus:
               $ref: '#/components/schemas/microsoft.graph.activityLogResultStatus'
@@ -15918,6 +15926,13 @@ components:
               description: Indicates whether notifications are enabled.
             recipients:
               $ref: '#/components/schemas/microsoft.graph.notificationRecipients'
+          additionalProperties:
+            type: object
+    microsoft.graph.entraProtectionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
+        - title: entraProtectionPolicy
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.exchangeProtectionPolicy:
@@ -16269,7 +16284,7 @@ components:
             offboardRequestedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The time when protection unit offboard was requested.
+              description: 'The time when protection unit offboard was requested. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             pendingRetentionPeriodChange:
@@ -17417,7 +17432,7 @@ components:
         period:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: The period of time to retain the protected data for a single Microsoft 365 service.
+          description: 'The period of time to retain the protected data for a single Microsoft 365 service. The possible values are: P90D, P180D, P365D, P730D, P1095D, P1460D, P1825D, P2190D, P2555D, P2920D, P3285D, and P3650D. Other values aren''t supported.'
           format: duration
           nullable: true
       additionalProperties:
@@ -17440,6 +17455,7 @@ components:
         effectiveFromDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time from which the retention period change takes effect. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026, is 2026-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         status:
@@ -17448,6 +17464,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: number
+          description: 'Specifies the retention period, in days, that applies after the change is completed.'
           format: int32
           nullable: true
       additionalProperties:
@@ -18522,9 +18539,21 @@ components:
       title: plannerArchivalInfo
       type: object
       properties:
+        isArchived:
+          type: boolean
+          description: Read-only. Indicates whether the entity is archived.
+          nullable: true
         justification:
           type: string
           description: Read-only. Reason why the entity was archived or unarchived.
+          nullable: true
+        modifiedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Read-only. Date and time at which the entity's archive status changed.
+          format: date-time
           nullable: true
         statusChangedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
