@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
     if (this.IsParameterBound(nameof(ImportedAppleDeviceIdentities)))
         body.ImportedAppleDeviceIdentities = ImportedAppleDeviceIdentities!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList.ImportAppleDeviceIdentityListPostResponse? result;
