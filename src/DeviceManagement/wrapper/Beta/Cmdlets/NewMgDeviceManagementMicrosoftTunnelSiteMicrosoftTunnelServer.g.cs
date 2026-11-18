@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.TunnelServerHealthStatus = TunnelServerHealthStatus;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.MicrosoftTunnelServer? result;

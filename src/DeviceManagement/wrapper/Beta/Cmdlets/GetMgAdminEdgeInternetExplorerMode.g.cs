@@ -33,7 +33,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.InternetExplorerMode? result;
@@ -46,6 +46,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 

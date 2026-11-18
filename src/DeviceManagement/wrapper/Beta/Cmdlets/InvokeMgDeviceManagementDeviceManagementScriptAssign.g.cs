@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     if (this.IsParameterBound(nameof(DeviceManagementScriptAssignments)))
         body.DeviceManagementScriptAssignments = DeviceManagementScriptAssignments!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

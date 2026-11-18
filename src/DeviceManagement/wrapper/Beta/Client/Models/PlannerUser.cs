@@ -52,6 +52,14 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerPlan> Plans { get; set; }
 #endif
+        /// <summary>Read-only. Nullable. The collection of Planner Graph V4 plans associated with the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.Plan>? PlansV2 { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.Plan> PlansV2 { get; set; }
+#endif
         /// <summary>A collection that contains references to the plans that the user recently viewed in apps that support recent plans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +92,14 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerTask> Tasks { get; set; }
 #endif
+        /// <summary>Read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.TaskObject>? TasksV2 { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.TaskObject> TasksV2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -107,10 +123,12 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
                 { "favoritePlans", n => { FavoritePlans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerPlan>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "myDayTasks", n => { MyDayTasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerTask>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerTask.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "plans", n => { Plans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerPlan>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "plans_v2", n => { PlansV2 = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.Plan>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.Plan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recentPlanReferences", n => { RecentPlanReferences = n.GetObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerRecentPlanReferenceCollection>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerRecentPlanReferenceCollection.CreateFromDiscriminatorValue); } },
                 { "recentPlans", n => { RecentPlans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerPlan>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rosterPlans", n => { RosterPlans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerPlan>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerTask>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerTask.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tasks_v2", n => { TasksV2 = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.TaskObject>(global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.TaskObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -126,10 +144,12 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerPlan>("favoritePlans", FavoritePlans);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerTask>("myDayTasks", MyDayTasks);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerPlan>("plans", Plans);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.Plan>("plans_v2", PlansV2);
             writer.WriteObjectValue<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerRecentPlanReferenceCollection>("recentPlanReferences", RecentPlanReferences);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerPlan>("recentPlans", RecentPlans);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerPlan>("rosterPlans", RosterPlans);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.PlannerTask>("tasks", Tasks);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.TaskObject>("tasks_v2", TasksV2);
         }
     }
 }

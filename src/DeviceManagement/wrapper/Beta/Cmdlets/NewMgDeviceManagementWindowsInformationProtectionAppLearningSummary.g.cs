@@ -50,7 +50,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.ApplicationType = ApplicationType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.WindowsInformationProtectionAppLearningSummary? result;

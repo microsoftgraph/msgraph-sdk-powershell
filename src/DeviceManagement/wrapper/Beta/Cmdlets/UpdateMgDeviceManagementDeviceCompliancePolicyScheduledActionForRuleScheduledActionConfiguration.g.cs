@@ -61,7 +61,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.ActionType = ActionType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceComplianceActionItem? result;
@@ -79,20 +79,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.DeviceManagement.DeviceCompliancePolicies[DeviceCompliancePolicyId].ScheduledActionsForRule[DeviceComplianceScheduledActionForRuleId].ScheduledActionConfigurations[DeviceComplianceActionItemId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, DeviceComplianceActionItemId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     if (this.IsParameterBound(nameof(UpdateWindowsDeviceAccountActionParameter)))
         body.UpdateWindowsDeviceAccountActionParameter = UpdateWindowsDeviceAccountActionParameter;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 
