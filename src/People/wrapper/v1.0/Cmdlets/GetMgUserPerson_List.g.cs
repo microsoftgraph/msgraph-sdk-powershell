@@ -60,7 +60,7 @@ namespace Microsoft.Graph.PowerShell.People
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.People.Client.Models.PersonCollectionResponse? result;
@@ -91,6 +91,7 @@ namespace Microsoft.Graph.PowerShell.People
 
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
+
 
 
 

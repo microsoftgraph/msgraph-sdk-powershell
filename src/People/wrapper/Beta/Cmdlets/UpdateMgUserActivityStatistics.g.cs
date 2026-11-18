@@ -13,9 +13,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.People
 {
     [GraphRoute("PATCH", "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}")]
-    [Cmdlet(VerbsData.Update, "MgUserAnalyticActivityStatistics", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [Cmdlet(VerbsData.Update, "MgUserActivityStatistics", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof(Microsoft.Graph.PowerShell.People.Client.Models.ActivityStatistics))]
-    public class UpdateMgUserAnalyticActivityStatisticsCommand : GraphClientCmdlet
+    public class UpdateMgUserActivityStatisticsCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.PowerShell.People
         body.Activity = Activity;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.People.Client.Models.ActivityStatistics? result;
@@ -83,20 +83,6 @@ namespace Microsoft.Graph.PowerShell.People
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Users[UserId].Analytics.ActivityStatistics[ActivityStatisticsId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, ActivityStatisticsId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

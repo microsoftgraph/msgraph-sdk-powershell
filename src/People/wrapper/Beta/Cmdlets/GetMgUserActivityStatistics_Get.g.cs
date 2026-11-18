@@ -13,9 +13,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.People
 {
     [GraphRoute("GET", "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}")]
-    [Cmdlet(VerbsCommon.Get, "MgUserAnalyticActivityStatistics_Get")]
+    [Cmdlet(VerbsCommon.Get, "MgUserActivityStatistics_Get")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.People.Client.Models.ActivityStatistics))]
-    public class GetMgUserAnalyticActivityStatistics_GetCommand : GraphClientCmdlet
+    public class GetMgUserActivityStatistics_GetCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.People
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.People.Client.Models.ActivityStatistics? result;
@@ -49,6 +49,7 @@ namespace Microsoft.Graph.PowerShell.People
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 
