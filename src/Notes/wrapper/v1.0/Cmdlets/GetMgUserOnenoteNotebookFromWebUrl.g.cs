@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Notes
     if (this.IsParameterBound(nameof(WebUrl)))
         body.WebUrl = WebUrl;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Notes.Client.Models.CopyNotebookModel? result;
