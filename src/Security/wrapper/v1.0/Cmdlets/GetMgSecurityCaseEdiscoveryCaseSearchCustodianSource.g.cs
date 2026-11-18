@@ -23,6 +23,7 @@ namespace Microsoft.Graph.PowerShell.Security
 
 
 
+
         [Parameter(Mandatory = false)]
         [Alias("Select")]
         public string[]? Property { get; set; }

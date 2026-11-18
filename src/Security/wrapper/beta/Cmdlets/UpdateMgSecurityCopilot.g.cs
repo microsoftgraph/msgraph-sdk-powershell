@@ -1,0 +1,61 @@
+#nullable enable
+
+using System;
+using System.Linq;
+using System.Management.Automation;
+using System.Net.Http;
+using Microsoft.Graph.Wrapper.Runtime;
+using Microsoft.Graph.PowerShell.Security.Client;
+using Microsoft.Graph.PowerShell.Security.Client.Models;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+namespace Microsoft.Graph.PowerShell.Security
+{
+    [GraphRoute("PATCH", "/security/securityCopilot")]
+    [Cmdlet(VerbsData.Update, "MgSecurityCopilot", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
+    [OutputType(typeof(Microsoft.Graph.PowerShell.Security.Client.Models.SecurityCopilot))]
+    public class UpdateMgSecurityCopilotCommand : GraphClientCmdlet
+    {
+
+
+
+
+
+
+
+
+
+        protected override void ProcessRecord()
+        {
+            if (!ShouldProcess(null, "Update"))
+                return;
+
+            var body = new Microsoft.Graph.PowerShell.Security.Client.Models.SecurityCopilot();
+
+
+
+
+        var requestAdapter = GetRequestAdapter("beta");
+        var client = new ApiClient(requestAdapter);
+
+            Microsoft.Graph.PowerShell.Security.Client.Models.SecurityCopilot? result;
+            try
+            {
+                result = client.Security.SecurityCopilot.PatchAsync(body, requestConfiguration =>
+                {
+
+                        AddRequestHeaders(requestConfiguration.Headers);
+                }).GetAwaiter().GetResult();
+            }
+            catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
+            {
+                ThrowGraphRequestFailed(ex, null);
+                return;
+            }
+
+            if (result is not null)
+                WriteObject(result);
+        }
+    }
+}

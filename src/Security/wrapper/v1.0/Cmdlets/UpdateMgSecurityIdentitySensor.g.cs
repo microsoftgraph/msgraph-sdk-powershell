@@ -93,7 +93,7 @@ namespace Microsoft.Graph.PowerShell.Security
         body.Settings = Settings;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.Security.Sensor? result;
@@ -111,20 +111,6 @@ namespace Microsoft.Graph.PowerShell.Security
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Security.Identities.Sensors[SensorId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, SensorId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

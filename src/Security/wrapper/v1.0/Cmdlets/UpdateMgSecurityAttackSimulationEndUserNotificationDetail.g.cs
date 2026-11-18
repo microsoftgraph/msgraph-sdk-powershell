@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.Security
         body.SentFrom = SentFrom;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.EndUserNotificationDetail? result;
@@ -89,20 +89,6 @@ namespace Microsoft.Graph.PowerShell.Security
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Security.AttackSimulation.EndUserNotifications[EndUserNotificationId].Details[EndUserNotificationDetailId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, EndUserNotificationDetailId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
