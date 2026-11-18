@@ -65,7 +65,7 @@ if (-not ($RushInstalled -and $AutoRestInstalled)) {
     Write-Host "Node build tools not found at '$RepoRoot'. Installing rush and autorest..."
     Push-Location $RepoRoot
     try {
-        npm install --no-package-lock '@microsoft/rush' 'autorest@3.7.2' '@autorest/core@3.10.4'
+        npm install --no-package-lock
         if ($LASTEXITCODE -ne 0) {
             throw "Command 'npm install' for Node build tools (rush, autorest) failed with exit code $LASTEXITCODE."
         }
