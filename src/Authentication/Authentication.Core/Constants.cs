@@ -22,6 +22,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core
         internal const string AuthRecordName = "mg.authrecord.json";
         internal const int MaxAuthRetry = 2;
         internal static readonly string AuthRecordPath = Path.Combine(GraphDirectoryPath, AuthRecordName);
+
+        /// <summary>
+        /// Header names mirrored from Microsoft.Graph.Core's CoreConstants so callers do not need a reference to that assembly.
+        /// </summary>
+        public static class Headers
+        {
+            public const string SdkVersionHeaderName = "SdkVersion";
+            public const string ClientRequestId = "client-request-id";
+        }
     }
 
     internal static class EnvironmentVariables
