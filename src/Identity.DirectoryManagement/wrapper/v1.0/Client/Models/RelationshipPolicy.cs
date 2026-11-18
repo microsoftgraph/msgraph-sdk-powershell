@@ -14,7 +14,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The delegatedAdministrationRoleAssignments property</summary>
+        /// <summary>A snapshot of the delegated administration role assignments configured in this policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.DelegatedAdministrationRoleAssignmentSnapshot>? DelegatedAdministrationRoleAssignments { get; set; }
@@ -22,9 +22,9 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.DelegatedAdministrationRoleAssignmentSnapshot> DelegatedAdministrationRoleAssignments { get; set; }
 #endif
-        /// <summary>The governedTenantCanTerminate property</summary>
+        /// <summary>Indicates whether the governed tenant can terminate the relationship.</summary>
         public bool? GovernedTenantCanTerminate { get; set; }
-        /// <summary>The multiTenantApplicationsToProvision property</summary>
+        /// <summary>A snapshot of the multi-tenant applications to be provisioned in the governed tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.MultiTenantApplicationsToProvisionSnapshot>? MultiTenantApplicationsToProvision { get; set; }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string OdataType { get; set; }
 #endif
-        /// <summary>The policyId property</summary>
+        /// <summary>The identifier of the source policy template from which this snapshot was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyId { get; set; }
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string PolicyId { get; set; }
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>The version of the source policy template from which this snapshot was created.</summary>
         public int? Version { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RelationshipPolicy"/> and sets the default values.

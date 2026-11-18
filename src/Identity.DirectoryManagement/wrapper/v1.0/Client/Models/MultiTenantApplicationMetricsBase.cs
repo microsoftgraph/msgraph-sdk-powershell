@@ -12,11 +12,11 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     public partial class MultiTenantApplicationMetricsBase : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The inboundMonthlyTotalApplications property</summary>
+        /// <summary>The total number of inbound multi-tenant applications in the last month.</summary>
         public decimal? InboundMonthlyTotalApplications { get; set; }
-        /// <summary>The outboundMonthlyTotalApplications property</summary>
+        /// <summary>The total number of outbound multi-tenant applications in the last month.</summary>
         public decimal? OutboundMonthlyTotalApplications { get; set; }
-        /// <summary>The watermarkDateTime property</summary>
+        /// <summary>The date and time when the metrics snapshot was taken.</summary>
         public DateTimeOffset? WatermarkDateTime { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
