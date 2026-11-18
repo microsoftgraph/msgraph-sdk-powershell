@@ -61,6 +61,29 @@ others exist.
 - **References:** kiota's CSharpReservedClassNamesProvider;
   PowerShellWrapperGenerationService.KiotaReservedModelNames.
 
+## Reserved request-builder navigation: post -> PostPath
+
+- **Class:** kiota-symbol-prediction
+- **Status:** handled (property-only escape; production-spec regression tests)
+- **Evidence:** Kiota 1.36.1 exposes Financials beta's literal `/post` action as
+  `PostPath` on the journal, purchase-invoice and sales-invoice item builders. The
+  wrapper predicted `.Post.PostAsync` and all three calls failed with CS1061.
+  An isolated client generated from those three actual spec paths reproduces the
+  failures before the fix and compiles with the corrected wrappers afterward.
+  The existing `/delete` escape also remains verified against Kiota 1.36.1.
+- **Decision:** extend `Naming.AvoidRequestMethodClash` from `Delete` to the observed
+  `Post` property. Do not suffix namespaces, request-builder classes, request-body
+  types or cmdlet nouns: `/post` still uses namespace `Post`, `PostRequestBuilder`
+  and (when a body exists) `PostPostRequestBody`. Qualified
+  `microsoft.graph.post`, parameterized `post(value='{value}')`, and `postAndSend`
+  retain their original members; zero-argument `post()` and intermediate resource
+  `/post` navigations use `PostPath`. These shapes were generated and compiled
+  against actual Kiota output, without modifying generated C#.
+- **Migration impact:** none to public names, parameter binding, source routes,
+  HTTP methods or default-route selection; fixes typed internal navigation only.
+- **References:** `ReservedNavigationTests`; `ActionFunctionTests.KeepsReservedNavigationEscapesOutOfRequestBodyTypes`;
+  `openApiDocs_KiotaCompat/beta/Financials.yml`.
+
 ## A model that shares its name with a kiota sub-namespace moves inside it
 
 - **Class:** kiota-symbol-prediction
