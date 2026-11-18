@@ -84,6 +84,14 @@ namespace Microsoft.Graph.PowerShell.Users.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Users.Client.Models.PlatformCredentialAuthenticationMethod> PlatformCredentialMethods { get; set; }
 #endif
+        /// <summary>Represents the resource account key credentials registered to a user for authentication on shared devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.PowerShell.Users.Client.Models.ResourceAccountKeyAuthenticationMethod>? ResourceAccountKeyAuthenticationMethods { get; set; }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.PowerShell.Users.Client.Models.ResourceAccountKeyAuthenticationMethod> ResourceAccountKeyAuthenticationMethods { get; set; }
+#endif
         /// <summary>The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,6 +143,7 @@ namespace Microsoft.Graph.PowerShell.Users.Client.Models
                 { "passwordMethods", n => { PasswordMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.PasswordAuthenticationMethod>(global::Microsoft.Graph.PowerShell.Users.Client.Models.PasswordAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "phoneMethods", n => { PhoneMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.PhoneAuthenticationMethod>(global::Microsoft.Graph.PowerShell.Users.Client.Models.PhoneAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "platformCredentialMethods", n => { PlatformCredentialMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.PlatformCredentialAuthenticationMethod>(global::Microsoft.Graph.PowerShell.Users.Client.Models.PlatformCredentialAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "resourceAccountKeyAuthenticationMethods", n => { ResourceAccountKeyAuthenticationMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.ResourceAccountKeyAuthenticationMethod>(global::Microsoft.Graph.PowerShell.Users.Client.Models.ResourceAccountKeyAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "softwareOathMethods", n => { SoftwareOathMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.SoftwareOathAuthenticationMethod>(global::Microsoft.Graph.PowerShell.Users.Client.Models.SoftwareOathAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "temporaryAccessPassMethods", n => { TemporaryAccessPassMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.TemporaryAccessPassAuthenticationMethod>(global::Microsoft.Graph.PowerShell.Users.Client.Models.TemporaryAccessPassAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "windowsHelloForBusinessMethods", n => { WindowsHelloForBusinessMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.WindowsHelloForBusinessAuthenticationMethod>(global::Microsoft.Graph.PowerShell.Users.Client.Models.WindowsHelloForBusinessAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -157,6 +166,7 @@ namespace Microsoft.Graph.PowerShell.Users.Client.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.PasswordAuthenticationMethod>("passwordMethods", PasswordMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.PhoneAuthenticationMethod>("phoneMethods", PhoneMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.PlatformCredentialAuthenticationMethod>("platformCredentialMethods", PlatformCredentialMethods);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.ResourceAccountKeyAuthenticationMethod>("resourceAccountKeyAuthenticationMethods", ResourceAccountKeyAuthenticationMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.SoftwareOathAuthenticationMethod>("softwareOathMethods", SoftwareOathMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.TemporaryAccessPassAuthenticationMethod>("temporaryAccessPassMethods", TemporaryAccessPassMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.PowerShell.Users.Client.Models.WindowsHelloForBusinessAuthenticationMethod>("windowsHelloForBusinessMethods", WindowsHelloForBusinessMethods);
