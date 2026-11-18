@@ -9,13 +9,14 @@ using Microsoft.Graph.PowerShell.Migrations.Client.Models;
 namespace Microsoft.Graph.PowerShell.Migrations
 {
     [GraphRoute("GET", "/solutions/migrations/crossTenantMigrationJobs")]
-    [Cmdlet(VerbsCommon.Get, "MgMigrationCrossTenantMigrationJob", DefaultParameterSetName = "List")]
+    [Cmdlet(VerbsCommon.Get, "MgCrossTenantMigrationJob", DefaultParameterSetName = "List")]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJobCollectionResponse), ParameterSetName = new[] { "List" })]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Migrations.Client.Models.CrossTenantMigrationJob), ParameterSetName = new[] { "Get" })]
-    public class GetMgMigrationCrossTenantMigrationJobCommand : GraphClientCmdlet
+    public class GetMgCrossTenantMigrationJobCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 0)]
         public string CrossTenantMigrationJobId { get; set; } = string.Empty;
+
 
 
 
@@ -56,11 +57,11 @@ namespace Microsoft.Graph.PowerShell.Migrations
 
 
 
-        // Delegates to Get-MgMigrationCrossTenantMigrationJob_Get or Get-MgMigrationCrossTenantMigrationJob_List, the two cmdlets
+        // Delegates to Get-MgCrossTenantMigrationJob_Get or Get-MgCrossTenantMigrationJob_List, the two cmdlets
         // that actually call Graph.
         protected override void ProcessRecord()
         {
-            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgMigrationCrossTenantMigrationJob_Get" : "Get-MgMigrationCrossTenantMigrationJob_List";
+            var internalCmdletName = ParameterSetName == "Get" ? "Get-MgCrossTenantMigrationJob_Get" : "Get-MgCrossTenantMigrationJob_List";
             try
             {
                 InvokeCommand.InvokeScript(
