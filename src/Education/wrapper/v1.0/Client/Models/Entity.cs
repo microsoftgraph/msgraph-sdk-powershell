@@ -210,6 +210,7 @@ namespace Microsoft.Graph.PowerShell.Education.Client.Models
                 "#microsoft.graph.readingCoachPassage" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.ReadingCoachPassage(),
                 "#microsoft.graph.reflectCheckInResponse" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.ReflectCheckInResponse(),
                 "#microsoft.graph.reportsRoot" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.ReportsRoot(),
+                "#microsoft.graph.resourceAccountKeyAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.ResourceAccountKeyAuthenticationMethod(),
                 "#microsoft.graph.resourceSpecificPermissionGrant" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.ResourceSpecificPermissionGrant(),
                 "#microsoft.graph.richLongRunningOperation" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.RichLongRunningOperation(),
                 "#microsoft.graph.schedule" => new global::Microsoft.Graph.PowerShell.Education.Client.Models.Schedule(),

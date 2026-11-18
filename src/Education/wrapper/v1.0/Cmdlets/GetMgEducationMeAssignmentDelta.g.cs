@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.Education
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             // Cleared before the request so a failed or interrupted run cannot leave the previous
