@@ -5,6 +5,7 @@ using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.P
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.Group;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.Principal;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.TargetSchedule;
+using Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.UpdateRequest;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Identity.Governance.Client.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -47,6 +48,11 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernan
         public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.TargetSchedule.TargetScheduleRequestBuilder TargetSchedule
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.TargetSchedule.TargetScheduleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The updateRequest property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.UpdateRequest.UpdateRequestRequestBuilder UpdateRequest
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.UpdateRequest.UpdateRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests.Item.PrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder"/> and sets the default values.

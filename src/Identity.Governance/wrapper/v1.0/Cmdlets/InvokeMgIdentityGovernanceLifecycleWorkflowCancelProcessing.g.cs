@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
     if (this.IsParameterBound(nameof(Scope)))
         body.Scope = Scope;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

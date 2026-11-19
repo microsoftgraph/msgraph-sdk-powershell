@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
     if (this.IsParameterBound(nameof(Subject)))
         body.Subject = Subject;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.AwaitedWorkflowProcessingResult? result;
