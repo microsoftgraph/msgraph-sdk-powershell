@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
     if (this.IsParameterBound(nameof(ServicePrincipalIds)))
         body.ServicePrincipalIds = ServicePrincipalIds!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 
