@@ -27,10 +27,10 @@ Describe 'Get-MgContext' {
 
         
     It 'Should return the correct environment when specified via Connect-MgGraph -Environment' {
-        Connect-MgGraph -AccessToken (ConvertTo-SecureString -AsPlainText -String $DummyToken) -Environment Germany
+        Connect-MgGraph -AccessToken (ConvertTo-SecureString -AsPlainText -String $DummyToken) -Environment DelosCloud
         $Context = Get-MgContext
         $Context | Should -Not -Be $null
-        $Context.Environment | Should -Be "Germany"
+        $Context.Environment | Should -Be "DelosCloud"
         $Context.AuthType | Should -Be "UserProvidedAccessToken"
     }
 }

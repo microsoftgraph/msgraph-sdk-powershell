@@ -1,0 +1,45 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+# Fetches the Microsoft Graph DevX GitHub App credentials from Key Vault and mints a short-lived
+# installation access token, exposing it to subsequent steps as the secret variable GITHUB_TOKEN.
+#
+# Include this template immediately before any step that pushes to GitHub or creates a pull
+# request. Downstream steps continue to reference $(GITHUB_TOKEN) exactly as before, but the value
+# is now a GitHub App installation token instead of a long-lived PAT. Because installation tokens
+# expire after ~1 hour, generate the token right before it is used rather than once per job.
+
+parameters:
+  - name: RepoName
+    type: string
+    default: microsoftgraph/msgraph-sdk-powershell
+
+steps:
+  - task: AzureKeyVault@2
+    displayName: "Azure Key Vault: Get GitHub App secrets"
+    inputs:
+      azureSubscription: "Federated AKV Managed Identity Connection"
+      KeyVaultName: akv-prod-eastus
+      SecretsFilter: "microsoft-graph-devx-bot-appid,microsoft-graph-devx-bot-privatekey"
+
+  - task: PowerShell@2
+    displayName: "Generate GitHub App installation token"
+    env:
+      GhAppId: $(microsoft-graph-devx-bot-appid)
+      GhAppKey: $(microsoft-graph-devx-bot-privatekey)
+    inputs:
+      pwsh: true
+      targetType: inline
+      errorActionPreference: stop
+      script: |
+        $token = & "$(System.DefaultWorkingDirectory)/scripts/Generate-Github-Token.ps1" `
+          -AppClientId $env:GhAppId `
+          -AppPrivateKeyContents $env:GhAppKey `
+          -Repository "${{ parameters.RepoName }}"
+        if ([string]::IsNullOrWhiteSpace($token)) {
+          throw "Failed to generate GitHub App installation token (empty result)."
+        }
+        # Mask the token so it can never surface in pipeline logs, then expose it to later steps.
+        Write-Host "##vso[task.setsecret]$token"
+        Write-Host "##vso[task.setvariable variable=GITHUB_TOKEN;issecret=true]$token"
+        Write-Host "Generated GitHub App installation token and set GITHUB_TOKEN."

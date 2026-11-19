@@ -1,6 +1,38 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
+function Invoke-WithRetry {
+    param(
+        [Parameter(Mandatory = $true)]
+        [scriptblock]$ScriptBlock,
+
+        [Parameter(Mandatory = $false)]
+        [int]$MaxRetries = 5,
+
+        [Parameter(Mandatory = $false)]
+        [int]$InitialDelayMs = 100,
+
+        [Parameter(Mandatory = $false)]
+        [string]$OperationName = "Operation"
+    )
+
+    for ($attempt = 1; $attempt -le $MaxRetries; $attempt++) {
+        try {
+            return & $ScriptBlock
+        }
+        catch {
+            if ($attempt -eq $MaxRetries) {
+                Write-Error "$OperationName failed after $MaxRetries attempts. Last error: $_"
+                throw
+            }
+
+            $delayMs = $InitialDelayMs * [Math]::Pow(2, $attempt - 1)
+            Write-Warning "$OperationName failed (attempt $attempt/$MaxRetries). Retrying in $delayMs ms. Error: $_"
+            Start-Sleep -Milliseconds $delayMs
+        }
+    }
+}
+
 function Set-CSProjValues(
     [parameter(Mandatory = $true)][string] $ModuleCsProj,
     [parameter(Mandatory = $true)][string] $ModuleVersion,

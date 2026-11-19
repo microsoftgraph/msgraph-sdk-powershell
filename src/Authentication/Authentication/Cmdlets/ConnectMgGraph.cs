@@ -86,6 +86,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Alias("UseDeviceAuthentication", "DeviceCode", "DeviceAuth", "Device")]
         public SwitchParameter UseDeviceCode { get; set; }
 
+        [Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.LoginHint)]
+        [ValidateNotNullOrEmpty]
+        public string LoginHint { get; set; }
+
         [Parameter(ParameterSetName = Constants.AppCertificateParameterSet, HelpMessage = HelpMessages.ClientTimeout)]
         [Parameter(ParameterSetName = Constants.AppSecretCredentialParameterSet, HelpMessage = HelpMessages.ClientTimeout)]
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet, HelpMessage = HelpMessages.ClientTimeout)]
@@ -194,6 +198,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                                 // Default to CurrentUser but allow the customer to change this via `-ContextScope`.
                                 authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
                             }
+if (this.IsParameterBound(nameof(LoginHint)) && !string.IsNullOrWhiteSpace(LoginHint))
+    authContext.LoginHint = LoginHint;
                             authContext.TokenCredentialType = UseDeviceCode ? TokenCredentialType.DeviceCode : TokenCredentialType.InteractiveBrowser;
                         }
                         break;
@@ -275,6 +281,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             stringBuilder.AppendLine($"SDK Docs: {Constants.SdkDocsLink}");
             stringBuilder.AppendLine($"API Docs: {Constants.ApiDocsLink}{System.Environment.NewLine}");
             stringBuilder.AppendLine($"NOTE: You can use the -NoWelcome parameter to suppress this message.");
+            stringBuilder.AppendLine($"NOTE: Sign in by Web Account Manager (WAM) is enabled by default on Windows systems and cannot be disabled when using the default ClientId.");
+            stringBuilder.AppendLine($"To disable WAM run Set-MgGraphOption -DisableLoginByWAM $true and then use a custom ClientId.");
             return stringBuilder.ToString();
         }
 

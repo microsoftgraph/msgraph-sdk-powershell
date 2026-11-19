@@ -181,6 +181,9 @@ directive:
         properties:
           - Id
           - DeletedDateTime
+          - DisplayName
+          - CreatedDateTime
+          - Description
   - where:
       model-name: ^MicrosoftGraphPlace\d*$
     set:

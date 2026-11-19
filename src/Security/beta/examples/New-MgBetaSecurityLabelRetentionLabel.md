@@ -6,28 +6,34 @@ Import-Module Microsoft.Graph.Beta.Security
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.security.retentionLabel"
-	displayName = "String"
-	behaviorDuringRetentionPeriod = "String"
-	actionAfterRetentionPeriod = "String"
-	retentionTrigger = "String"
+	displayName = "Retention Schedule 10005"
+	behaviorDuringRetentionPeriod = "retain"
+	actionAfterRetentionPeriod = "startDispositionReview"
+	retentionTrigger = "dateOfEvent"
+	"retentionEventType@odata.bind" = "https://graph.microsoft.com/beta/security/triggerTypes/retentionEventTypes('e095f4fc-b966-4c40-94de-fb8a383658e4')"
 	retentionDuration = @{
-		"@odata.type" = "microsoft.graph.security.retentionDuration"
+		"@odata.type" = "microsoft.graph.security.retentionDurationInDays"
+		days = 
 	}
-	isInUse = "Boolean"
-	descriptionForAdmins = "String"
-	descriptionForUsers = "String"
-	createdBy = @{
-		"@odata.type" = "microsoft.graph.identitySet"
+	dispositionReviewStages = @(
+		@{
+			stageNumber = 1
+			name = "Stage1"
+			"reviewersEmailAddresses " = @(
+			"Admin@contoso.onmicrosoft.com"
+		)
 	}
-	labelToBeApplied = "String"
-	defaultRecordBehavior = "String"
-	descriptors = @{
-		"authorityTemplate@odata.bind" = "https://graph.microsoft.com/beta/security/labels/authorities('fie3f4fc-b966-4c40-94de-fb8a383658e4')"
-		"categoryTemplate@odata.bind" = "https://graph.microsoft.com/beta/security/labels/categories('0bjk8-b966-4c40-94de-fb8a383658e4')"
-		"citationTemplate@odata.bind" = "https://graph.microsoft.com/beta/security/labels/citations('0e23f4fc-b966-4c40-94de-fb8a383658e4')"
-		"departmentTemplate@odata.bind" = "https://graph.microsoft.com/beta/security/labels/departments('p99ef4fc-b966-4c40-94de-fb8a383658e4')"
-		"filePlanReferenceTemplate@odata.bind" = "https://graph.microsoft.com/beta/security/labels/filePlanReferences('e095f4fc-b966-4c40-94de-fb8a383658e4')"
-	}
+)
+descriptionForAdmins = "retain for 7 years"
+descriptionForUsers = "retain for 7 years"
+descriptors = @{
+	"authorityTemplate@odata.bind" = "https://graph.microsoft.com/beta/security/labels/authorities('fie3f4fc-b966-4c40-94de-fb8a383658e4')"
+	"categoryTemplate@odata.bind" = "https://graph.microsoft.com/beta/security/labels/categories('0bjk8-b966-4c40-94de-fb8a383658e4')"
+	"citationTemplate@odata.bind" = "https://graph.microsoft.com/beta/security/labels/citations('0e23f4fc-b966-4c40-94de-fb8a383658e4')"
+	"departmentTemplate@odata.bind" = "https://graph.microsoft.com/beta/security/labels/departments('p99ef4fc-b966-4c40-94de-fb8a383658e4')"
+	"filePlanReferenceTemplate@odata.bind" = "https://graph.microsoft.com/beta/security/labels/filePlanReferences('e095f4fc-b966-4c40-94de-fb8a383658e4')"
+}
+defaultRecordBehavior = "startLocked"
 }
 
 New-MgBetaSecurityLabelRetentionLabel -BodyParameter $params

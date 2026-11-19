@@ -7,11 +7,7 @@ BeforeAll {
     $ModulePath = Join-Path $PSScriptRoot "..\artifacts\$ModuleName.psd1"
     Import-Module $ModulePath -Force
     $RandomClientId = (New-Guid).Guid
-    
-    $AvailableAzModule = Get-Module Az.Accounts -ListAvailable
-    if ($AvailableAzModule.Count -lt 1) {
-        Install-Module Az.Accounts -Repository PSGallery -Scope CurrentUser -Force -AllowClobber
-    }
+    Install-Module Az.Accounts -Repository PSGallery -Scope CurrentUser -Force -AllowClobber
 }
 Describe 'Connect-MgGraph ParameterSets' {
     BeforeAll {
@@ -26,7 +22,15 @@ Describe 'Connect-MgGraph ParameterSets' {
         $UserParameterSet | Should -Not -BeNull
         $UserParameterSet.IsDefault | Should -BeTrue
         $UserParameterSet.Parameters | Where-Object IsMandatory | Should -HaveCount 0
-        @('ClientId', 'TenantId', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $UserParameterSet.Parameters.Name
+        @('ClientId', 'TenantId', 'ContextScope', 'Environment', 'ClientTimeout', 'LoginHint') | Should -BeIn $UserParameterSet.Parameters.Name
+    }
+
+    It 'Should have an optional LoginHint parameter only in UserParameterSet' {
+        $LoginHintParameter = $ConnectMgGraphCommand.Parameters['LoginHint']
+        $LoginHintParameter | Should -Not -BeNull
+        $LoginHintParameter.ParameterType | Should -Be ([string])
+        $LoginHintParameter.ParameterSets.Keys | Should -Be 'UserParameterSet'
+        $LoginHintParameter.ParameterSets['UserParameterSet'].IsMandatory | Should -BeFalse
     }
 
     It 'Should have AppCertificateParameterSet' {
@@ -81,7 +85,7 @@ Describe 'Connect-MgGraph In Environment Variable Mode' {
             $Env:AZURE_CLIENT_SECRET = "Not_Valid"
             $Env:AZURE_TENANT_ID = "common"
             Connect-MgGraph -EnvironmentVariable -ErrorAction Stop
-        } | Should -Throw -ExpectedMessage "*ClientSecretCredential authentication failed: AADSTS700016: Application with identifier 'Not_Valid' was not found in the directory 'Microsoft'.*"
+        } | Should -Throw -ExpectedMessage "ClientSecretCredential authentication failed: "
     }
 }
 
@@ -99,7 +103,7 @@ Describe 'Connect-MgGraph In App Mode' {
 Describe 'Connect-MgGraph Dependency Resolution' {
     It 'Should load Mg module side by side with Az module.' {
         { Connect-AzAccount -ApplicationId $RandomClientId -CertificateThumbprint "Invalid" -Tenant "Invalid" -ErrorAction Stop } | Should -Throw -ExpectedMessage "*Could not find tenant id*"
-        { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS90002*"
+        { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "DeviceCodeCredential authentication failed: "
     }
 }
 

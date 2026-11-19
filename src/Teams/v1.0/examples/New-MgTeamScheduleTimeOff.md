@@ -5,19 +5,15 @@
 Import-Module Microsoft.Graph.Teams
 
 $params = @{
-	userId = "c5d0c76b-80c4-481c-be50-923cd8d680a1"
+	userId = "aa162a04-bec6-4b81-ba99-96caa7b2b24d"
 	sharedTimeOff = @{
-		timeOffReasonId = "TOR_891045ca-b5d2-406b-aa06-a3c8921245d7"
-		startDateTime = [System.DateTime]::Parse("2019-03-11T07:00:00Z")
-		endDateTime = [System.DateTime]::Parse("2019-03-12T07:00:00Z")
-		theme = "white"
+		timeOffReasonId = "TOR_29a5ba96-c7ef-4e76-bec6-055323746314"
+		startDateTime = [System.DateTime]::Parse("2024-10-10T19:00:00Z")
+		endDateTime = [System.DateTime]::Parse("2024-10-10T20:00:00Z")
+		theme = "blue"
 	}
-	draftTimeOff = @{
-		timeOffReasonId = "TOR_891045ca-b5d2-406b-aa06-a3c8921245d7"
-		startDateTime = [System.DateTime]::Parse("2019-03-11T07:00:00Z")
-		endDateTime = [System.DateTime]::Parse("2019-03-12T07:00:00Z")
-		theme = "pink"
-	}
+	draftTimeOff = $null
+	isStagedForDeletion = $false
 }
 
 New-MgTeamScheduleTimeOff -TeamId $teamId -BodyParameter $params

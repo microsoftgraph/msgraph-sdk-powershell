@@ -5,15 +5,24 @@ steps:
     targetType: 'inline'
     pwsh: true
     script: |
+          # Register the central CFS feed (network-isolation compliance) and install the SDK modules from it.
+          $token = ConvertTo-SecureString "$env:SYSTEM_ACCESSTOKEN" -AsPlainText -Force
+          $cred = [System.Management.Automation.PSCredential]::new("azure", $token)
+          $feedUrl = "https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell_V2_Build/nuget/v2"
+          if (-not (Get-PSRepository -Name PowerShell_V2_Build -ErrorAction SilentlyContinue)) {
+              Register-PSRepository -Name PowerShell_V2_Build -SourceLocation $feedUrl -InstallationPolicy Trusted -Credential $cred
+          }
           try{
               # Installing Beta module.
-              Install-Module Microsoft.Graph.Beta -Repository PSGallery -Scope AllUsers -AcceptLicense -SkipPublisherCheck -Force -AllowClobber
+              Install-Module Microsoft.Graph.Beta -Repository PowerShell_V2_Build -Credential $cred -Scope AllUsers -AcceptLicense -SkipPublisherCheck -Force -AllowClobber
           }catch{
                 echo "Error when installing Beta"
           }
           try{
               # Installing V1 module.
-              Install-Module Microsoft.Graph -Repository PSGallery -Scope AllUsers -AcceptLicense -SkipPublisherCheck -Force -AllowClobber
+              Install-Module Microsoft.Graph -Repository PowerShell_V2_Build -Credential $cred -Scope AllUsers -AcceptLicense -SkipPublisherCheck -Force -AllowClobber
           }catch{
                 echo "Error when installing V1"
           }
+  env:
+    SYSTEM_ACCESSTOKEN: $(System.AccessToken)

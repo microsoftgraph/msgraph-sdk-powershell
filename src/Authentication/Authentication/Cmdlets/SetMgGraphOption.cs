@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     public class SetMgGraphOption : PSCmdlet
     {
         [Parameter]
-        public bool EnableLoginByWAM { get; set; }
+        public bool? DisableLoginByWAM { get; set; }
 
         protected override void BeginProcessing()
         {
@@ -22,10 +22,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            if (this.IsParameterBound(nameof(EnableLoginByWAM)))
+            if (this.IsParameterBound(nameof(DisableLoginByWAM)))
             {
-                GraphSession.Instance.GraphOption.EnableWAMForMSGraph = EnableLoginByWAM;
-                WriteDebug($"Signin by Web Account Manager (WAM) is {(EnableLoginByWAM ? "enabled" : "disabled")}.");
+                GraphSession.Instance.GraphOption.DisableWAMForMSGraph = DisableLoginByWAM;
+                WriteDebug($"Requested to {(DisableLoginByWAM == true ? "disable" : "enable")} sign in by Web Account Manager (WAM).");
+                if (DisableLoginByWAM == true)
+                {
+                    WriteDebug("Note: DisableLoginByWAM only applies when using your own ClientId. When using the default ClientId, WAM will remain enabled.");
+                }
             }
             File.WriteAllText(Constants.GraphOptionsFilePath, JsonConvert.SerializeObject(GraphSession.Instance.GraphOption, Formatting.Indented));
         }

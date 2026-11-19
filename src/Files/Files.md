@@ -18,6 +18,15 @@ require:
 ``` yaml
 directive:
   - remove-path-by-operation: .*_(Create|Get|Update|Set|Delete)Activity$|.*\.activity.*$|share\..*_createLink
+  - remove-path-by-operation: ^share\.listItem\.permission_grant$
+  # Keep both revokeGrants routes without merging their distinct request-body types.
+  - where:
+      verb: Revoke
+      subject: ^ShareListItemPermissionGrant$
+      variant: ^(Revoke|RevokeViaIdentity)1$
+      parameter-name: ^(Body|BodyParameter)$
+    set:
+      parameter-name: SharedListItemBodyParameter
   - where:
       verb: Get
       subject: ^(Group|User)(Drive)$

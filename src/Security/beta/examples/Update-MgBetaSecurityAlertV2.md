@@ -9,6 +9,9 @@ $params = @{
 	classification = "truePositive"
 	determination = "malware"
 	status = "inProgress"
+	CustomDetails = @{
+		newKey = "newValue"
+	}
 }
 
 Update-MgBetaSecurityAlertV2 -AlertId $alertId -BodyParameter $params

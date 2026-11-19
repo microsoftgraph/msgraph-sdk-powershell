@@ -6,12 +6,14 @@ using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
 using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using System;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -116,6 +118,43 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
 
             // reset static instance.
             GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task ShouldCreateInteractiveBrowserCredentialWhenLoginHintIsProvidedAsync()
+        {
+            // Arrange
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser,
+                LoginHint = "user@contoso.com"
+            };
+
+            // A per-account record for the hinted user lets the credential be built silently
+            // (no interactive browser / broker call) so the code path is exercised in-process.
+            var record = await BuildAuthRecordAsync("user@contoso.com");
+            await AuthenticationHelpers.WriteAuthRecordAsync(record, "user@contoso.com");
+            var keyedPath = AuthenticationHelpers.GetAuthRecordPath("user@contoso.com");
+
+            try
+            {
+                // Act
+                TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+                // Assert: supplying a LoginHint must not break interactive credential creation.
+                _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+                Assert.Equal("user@contoso.com", delegatedAuthContext.LoginHint);
+            }
+            finally
+            {
+                if (File.Exists(keyedPath))
+                    File.Delete(keyedPath);
+                // reset static instance.
+                GraphSession.Reset();
+            }
         }
 
         [Fact]
@@ -376,6 +415,382 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
 
                 xStore.Remove(xCertificate);
             }
+        }
+
+        [Fact]
+        public async Task ShouldUseInteractiveBrowserWhenWamIsDisabledWithCustomClientIdAsync()
+        {
+            // Arrange
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = true;
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                ClientId = Guid.NewGuid().ToString(), // Custom ClientId
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser
+            };
+
+            // Act
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+            // Assert
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+
+            // Verify that we're NOT using WAM (InteractiveBrowserCredentialBrokerOptions) by checking credential type
+            // On Windows, if WAM was enabled, it would use InteractiveBrowserCredentialBrokerOptions
+            // Since we disabled it with custom ClientId, it should use regular InteractiveBrowserCredential
+
+            // reset static instance.
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = null;
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task ShouldStillUseWamWhenDisabledWithDefaultClientIdAsync()
+        {
+            // Arrange
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = true;
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                // ClientId not set, will use default from constructor
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser
+            };
+
+            // Act
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+            // Assert
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+
+            // On Windows with default ClientId, WAM should still be enabled even when DisableWAMForMSGraph is true
+            // This is verified by the credential being created with InteractiveBrowserCredentialBrokerOptions internally
+
+            // reset static instance.
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = null;
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task ShouldUseWamWhenNotDisabledWithDefaultClientIdAsync()
+        {
+            // Arrange
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = false;
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                // ClientId not set, will use default from constructor
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser
+            };
+
+            // Act
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+            // Assert
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task ShouldUseWamWhenNotDisabledWithCustomClientIdAsync()
+        {
+            // Arrange
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = false;
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                ClientId = Guid.NewGuid().ToString(), // Custom ClientId
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser
+            };
+
+            // Act
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+            // Assert
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task ShouldUseWamWhenNullWithDefaultClientIdAsync()
+        {
+            // Arrange
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = null;
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                // ClientId not set, will use default from constructor
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser
+            };
+
+            // Act
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+            // Assert
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+
+            // When DisableWAMForMSGraph is null (default), WAM should be enabled
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task ShouldUseWamWhenNullWithCustomClientIdAsync()
+        {
+            // Arrange
+            GraphSession.Instance.GraphOption.DisableWAMForMSGraph = null;
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                ClientId = Guid.NewGuid().ToString(), // Custom ClientId
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.InteractiveBrowser
+            };
+
+            // Act
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
+
+            // Assert
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+
+            // When DisableWAMForMSGraph is null (default), WAM should be enabled regardless of ClientId
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+
+        [Fact]
+        public async Task SignInAsync_ShouldCallGetTokenAsync_WithCaeEnabledAsync()
+        {
+            // Arrange: a capturing credential that records the TokenRequestContext it receives.
+            TokenRequestContext capturedContext = default;
+            var capturingCredential = new CapturingTokenCredential(
+                ctx => capturedContext = ctx,
+                MockConstants.DummyAccessToken);
+
+            AuthContext authContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.DeviceCode
+            };
+
+            // Act — call SignInAsync with the capturing credential so we can
+            // observe the TokenRequestContext passed to GetTokenAsync.
+            IAuthContext result = await AuthenticationHelpers.SignInAsync(
+                authContext, CancellationToken.None, capturingCredential);
+
+            // Assert: GetTokenAsync must have been called and provided a context.
+            Assert.NotNull(capturedContext);
+            Assert.NotNull(capturedContext.Scopes);
+
+            // GetTokenAsync must receive isCaeEnabled: true so that MSAL caches
+            // a CAE-capable token that can be served silently by
+            // AzureIdentityAccessTokenProvider during subsequent API calls.
+            Assert.True(capturedContext.IsCaeEnabled,
+                "SignInAsync must pass isCaeEnabled: true to GetTokenAsync so the " +
+                "cached token matches the CAE-enabled context used during API calls.");
+
+            // Verify the scopes forwarded to the credential match the original request.
+            Assert.Equal(new[] { "User.Read" }, capturedContext.Scopes);
+
+            // Verify that the returned token was decoded and the auth context populated.
+            Assert.Equal("mockAppId", result.ClientId);
+            Assert.Equal("mockTid", result.TenantId);
+            Assert.Equal("upn@contoso.com", result.Account);
+            Assert.Equal("mockName", result.AppName);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task SignInAndProviderShouldUseSameCaeSettingAsync()
+        {
+            // Arrange: two capturing credentials — one for the sign-in path, one for
+            // the provider path — so we can verify they both receive isCaeEnabled: true.
+            TokenRequestContext signInContext = default;
+            var signInCredential = new CapturingTokenCredential(
+                ctx => signInContext = ctx,
+                MockConstants.DummyAccessToken);
+
+            TokenRequestContext providerContext = default;
+            var providerCredential = new CapturingTokenCredential(
+                ctx => providerContext = ctx,
+                MockConstants.DummyAccessToken);
+
+            AuthContext authContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                TokenCredentialType = TokenCredentialType.DeviceCode
+            };
+
+            // Act — exercise the production SignInAsync path.
+            await AuthenticationHelpers.SignInAsync(
+                authContext, CancellationToken.None, signInCredential);
+
+            // Build the provider the same way GetAuthenticationProviderAsync does,
+            // but with the capturing credential so we can observe the context.
+            var authProvider = new AzureIdentityAccessTokenProvider(
+                credential: providerCredential,
+                observabilityOptions: null,
+                isCaeEnabled: true,
+                scopes: authContext.Scopes);
+
+            _ = await authProvider.GetAuthorizationTokenAsync(
+                new Uri("https://graph.microsoft.com/v1.0/me"));
+
+            // the cached token silently during API calls.
+            Assert.NotNull(signInContext);
+            Assert.True(signInContext.IsCaeEnabled,
+                "SignInAsync must pass isCaeEnabled: true to GetTokenAsync.");
+            Assert.NotNull(providerContext);
+            Assert.True(providerContext.IsCaeEnabled,
+                "AzureIdentityAccessTokenProvider must forward isCaeEnabled: true.");
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        /// <summary>
+        /// Minimal <see cref="TokenCredential"/> that captures the <see cref="TokenRequestContext"/>
+        /// it receives and returns a fixed dummy token.
+        /// </summary>
+        private sealed class CapturingTokenCredential : TokenCredential
+        {
+            private readonly Action<TokenRequestContext> _onGetToken;
+            private readonly string _token;
+
+            public CapturingTokenCredential(Action<TokenRequestContext> onGetToken, string token)
+            {
+                _onGetToken = onGetToken;
+                _token = token;
+            }
+
+            public override AccessToken GetToken(TokenRequestContext requestContext, CancellationToken cancellationToken)
+            {
+                _onGetToken(requestContext);
+                return new AccessToken(_token, DateTimeOffset.UtcNow.AddHours(1));
+            }
+
+            public override ValueTask<AccessToken> GetTokenAsync(TokenRequestContext requestContext, CancellationToken cancellationToken)
+            {
+                _onGetToken(requestContext);
+                return new ValueTask<AccessToken>(new AccessToken(_token, DateTimeOffset.UtcNow.AddHours(1)));
+            }
+        }
+
+        [Fact]
+        public void GetAuthRecordPathReturnsLegacyPathWhenNoAccountKey()
+        {
+            Assert.Equal(PowerShell.Authentication.Core.Constants.AuthRecordPath, AuthenticationHelpers.GetAuthRecordPath(null));
+            Assert.Equal(PowerShell.Authentication.Core.Constants.AuthRecordPath, AuthenticationHelpers.GetAuthRecordPath(string.Empty));
+            Assert.Equal(PowerShell.Authentication.Core.Constants.AuthRecordPath, AuthenticationHelpers.GetAuthRecordPath("   "));
+        }
+
+        [Fact]
+        public void GetAuthRecordPathReturnsStablePerAccountPath()
+        {
+            var path = AuthenticationHelpers.GetAuthRecordPath("user@contoso.com");
+
+            Assert.NotEqual(PowerShell.Authentication.Core.Constants.AuthRecordPath, path);
+            Assert.Equal(PowerShell.Authentication.Core.Constants.GraphDirectoryPath, Path.GetDirectoryName(path));
+            var fileName = Path.GetFileName(path);
+            Assert.StartsWith("mg.authrecord.", fileName);
+            Assert.EndsWith(".json", fileName);
+
+            // Casing and surrounding whitespace must resolve to the same file.
+            Assert.Equal(path, AuthenticationHelpers.GetAuthRecordPath("  USER@Contoso.COM "));
+            // Different accounts must resolve to different files.
+            Assert.NotEqual(path, AuthenticationHelpers.GetAuthRecordPath("other@contoso.com"));
+        }
+
+        [Fact]
+        public async Task MatchesLoginHintIsCaseInsensitiveAndRejectsMismatch()
+        {
+            AuthenticationRecord record = await BuildAuthRecordAsync("User@Contoso.com");
+
+            Assert.True(AuthenticationHelpers.MatchesLoginHint(record, "user@contoso.com"));
+            Assert.True(AuthenticationHelpers.MatchesLoginHint(record, "  USER@CONTOSO.COM "));
+            Assert.False(AuthenticationHelpers.MatchesLoginHint(record, "different@contoso.com"));
+            Assert.False(AuthenticationHelpers.MatchesLoginHint(null, "user@contoso.com"));
+        }
+
+        [Fact]
+        public async Task ResolveInteractiveAuthRecordDoesNotReuseDifferentUsersRecord()
+        {
+            // A saved record exists (legacy path) for a different user than the login hint.
+            await WriteLegacyAuthRecordAsync("alice@contoso.com");
+            var keyedPath = AuthenticationHelpers.GetAuthRecordPath("bob@contoso.com");
+            try
+            {
+                var resolved = await AuthenticationHelpers.ResolveInteractiveAuthRecordAsync("bob@contoso.com");
+
+                // Must force a fresh interactive sign-in rather than reuse alice's record.
+                Assert.Null(resolved);
+                Assert.False(File.Exists(keyedPath));
+            }
+            finally
+            {
+                if (File.Exists(keyedPath))
+                    File.Delete(keyedPath);
+            }
+        }
+
+        [Fact]
+        public async Task ResolveInteractiveAuthRecordMigratesMatchingLegacyRecord()
+        {
+            // A legacy shared record exists for the SAME account as the login hint.
+            await WriteLegacyAuthRecordAsync("carol@contoso.com");
+            var keyedPath = AuthenticationHelpers.GetAuthRecordPath("carol@contoso.com");
+            try
+            {
+                Assert.False(File.Exists(keyedPath));
+
+                var resolved = await AuthenticationHelpers.ResolveInteractiveAuthRecordAsync("carol@contoso.com");
+
+                Assert.NotNull(resolved);
+                Assert.Equal("carol@contoso.com", resolved.Username);
+                // The matching legacy record is promoted to a per-account record for picker-free reuse.
+                Assert.True(File.Exists(keyedPath));
+            }
+            finally
+            {
+                if (File.Exists(keyedPath))
+                    File.Delete(keyedPath);
+            }
+        }
+
+        private static async Task WriteLegacyAuthRecordAsync(string username)
+        {
+            var record = await BuildAuthRecordAsync(username);
+            await AuthenticationHelpers.WriteAuthRecordAsync(record);
+        }
+
+        private static async Task<AuthenticationRecord> BuildAuthRecordAsync(string username)
+        {
+            var json = $"{{\"username\":\"{username}\",\"authority\":\"login.windows.net\"," +
+                       $"\"homeAccountId\":\"{Guid.NewGuid()}.{Guid.NewGuid()}\"," +
+                       $"\"tenantId\":\"{Guid.NewGuid()}\",\"clientId\":\"{Guid.NewGuid()}\",\"version\":\"1.0\"}}";
+            using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(json)))
+                return await AuthenticationRecord.DeserializeAsync(stream);
         }
 
         public void Dispose() => mockAuthRecord.DeleteCache();

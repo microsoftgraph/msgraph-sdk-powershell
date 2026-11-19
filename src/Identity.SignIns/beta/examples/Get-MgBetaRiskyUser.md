@@ -1,6 +1,6 @@
 ### Example 1: List all risky users
 ```powershell
-Connect-MgBetaGraph -Scopes "IdentityRiskyUser.Read.All"
+Connect-MgGraph -Scopes "IdentityRiskyUser.Read.All"
 Select-MgBetaProfile beta
 Get-MgBetaRiskyUser | Format-Table UserDisplayName, RiskDetail, RiskLevel, RiskLastUpdatedDateTime
 
@@ -15,7 +15,7 @@ This command returns all risky users
 
 ### Example 2: List all risky users by RiskLevel
 ```powershell
-Connect-MgBetaGraph -Scopes "IdentityRiskyUser.Read.All"
+Connect-MgGraph -Scopes "IdentityRiskyUser.Read.All"
 Select-MgBetaProfile beta
 Get-MgBetaRiskyUser -Filter "RiskLevel ne 'none'" | Format-Table UserDisplayName, RiskDetail, RiskLevel, RiskLastUpdatedDateTime
 

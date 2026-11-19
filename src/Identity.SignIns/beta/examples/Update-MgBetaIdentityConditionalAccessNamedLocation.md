@@ -1,7 +1,7 @@
 ### Example 1: Update a country named location by adding to the list of countries
 
 ```powershell
-Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
 
 $params = @{
 "@odata.type" = "#microsoft.graph.countryNamedLocation"

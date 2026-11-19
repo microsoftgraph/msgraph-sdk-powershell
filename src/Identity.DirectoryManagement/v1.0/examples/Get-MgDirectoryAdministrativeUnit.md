@@ -1,11 +1,22 @@
-### Example 1: Code snippet
+### Example 1: Get an administrative unit
 
 ```powershell
 
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 
-Get-MgDirectoryAdministrativeUnit
+Get-MgDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId
 
 ```
-This example shows how to use the Get-MgDirectoryAdministrativeUnit Cmdlet.
+This example will get an administrative unit
+
+### Example 2: Get a restricted management administrative unit
+
+```powershell
+
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+
+Get-MgDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId
+
+```
+This example will get a restricted management administrative unit
 

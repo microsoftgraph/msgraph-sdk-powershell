@@ -45,6 +45,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
         string Environment { get; set; }
         string AppName { get; set; }
         string Account { get; set; }
+        string LoginHint { get; set; }
+        string HomeAccountId { get; set; }
         string CertificateThumbprint { get; set; }
         string CertificateSubjectName { get; set; }
         bool SendCertificateChain {  get; set; }
@@ -52,5 +54,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         ContextScope ContextScope { get; set; }
         Version PSHostVersion { get; set; }
         SecureString ClientSecret { get; set; }
+        bool WamEnabled { get; }
     }
 }

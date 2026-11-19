@@ -6,7 +6,7 @@ Import-Module Microsoft.Graph.Security
 
 $params = @{
 	email = "admin@contoso.com"
-	includedSources = "mailbox, site"
+	includedSources = "mailbox"
 }
 
 New-MgSecurityCaseEdiscoveryCaseCustodianUserSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId -BodyParameter $params

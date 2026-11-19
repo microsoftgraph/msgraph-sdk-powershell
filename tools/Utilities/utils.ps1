@@ -25,3 +25,17 @@ Function Get-LocalCertificate {
     }
     return $global:DefaultCertificate
 }
+
+<#
+    Converts a simple single-level YAML string into a hashtable.
+#>
+Function ConvertFrom-SimpleYaml {
+    param([string]$Yaml)
+    $result = @{}
+    $Yaml -split "`n" | ForEach-Object {
+        if ($_.Trim() -match '^([^:]+):\s*(.*)$') {
+            $result[$Matches[1].Trim()] = $Matches[2].Trim()
+        }
+    }
+    return $result
+}

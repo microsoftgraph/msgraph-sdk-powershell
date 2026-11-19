@@ -6,6 +6,9 @@ Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
 $params = @{
 	displayName = "Fabrikam"
+	groupSyncInbound = @{
+		isSyncAllowed = $true
+	}
 	userSyncInbound = @{
 		isSyncAllowed = $true
 	}

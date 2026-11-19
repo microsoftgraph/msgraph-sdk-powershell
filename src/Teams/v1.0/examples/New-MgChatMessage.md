@@ -46,5 +46,5 @@ $params = @{
 New-MgChatMessage -ChatId $chatId -BodyParameter $params
 
 ```
-This example will### Example 2: send a message with an emoji
+This example will send a message with an emoji
 

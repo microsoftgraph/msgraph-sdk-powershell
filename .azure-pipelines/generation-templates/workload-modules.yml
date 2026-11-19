@@ -39,6 +39,13 @@ steps:
       pwsh: true
       script: |
         . $(System.DefaultWorkingDirectory)/tools/PostGeneration/FindDuplicateCommand.ps1 -SourcePath "$(System.DefaultWorkingDirectory)/src/"
+  - task: PowerShell@2
+    displayName: Generate authentication module metadata
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/PostGeneration/AuthModuleMetadata.ps1
 
   - ${{ if eq(parameters.Sign, true) }}:
       - template: ../common-templates/esrp/strongname.yml
@@ -49,7 +56,7 @@ steps:
       - template: ../common-templates/esrp/codesign.yml
         parameters:
           FolderPath: "$(System.DefaultWorkingDirectory)/src"
-          Pattern: "Microsoft.Graph.*.private.dll, Microsoft.Graph.*.psm1, Microsoft.Graph.*.psd1, Microsoft.Graph.*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1"
+          Pattern: "Microsoft.Graph.*.private.dll, Microsoft.Graph.*.psm1, Microsoft.Graph.*.psd1, Microsoft.Graph.*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1, Unprotect-SecureString.ps1, *-Mg*EntitlementManagement*.ps1"
 
       - task: PowerShell@2
         displayName: "Validate Authenticode Signature"

@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.4
 info:
   title: Bookings
   version: v1.0
@@ -65,246 +65,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /solutions/backupRestore/microsoft.graph.enable:
-    post:
-      tags:
-        - solutions.Actions
-      summary: Invoke action enable
-      description: 'Enable the Microsoft 365 Backup Storage service for a tenant. Before you call this API, call List protection policies to initialize the data store in the tenant. Data store initialization takes about 5 minutes. If you call this API before the data store is initialized, the call results in an error.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/backuprestoreroot-enable?view=graph-rest-1.0
-      operationId: solution.backupRestore_enable
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                appOwnerTenantId:
-                  type: string
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.serviceStatus'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/solutions/backupRestore/protectionPolicies/{protectionPolicyBase-id}/microsoft.graph.activate':
-    post:
-      tags:
-        - solutions.Actions
-      summary: Invoke action activate
-      description: 'Activate a protectionPolicyBase. Currently, only one active backup policy per underlying service is supported (that is, one for OneDrive accounts, one for SharePoint sites, and one for Exchange Online users). You can add or remove artifacts (sites or user accounts) to or from each active policy.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/protectionpolicybase-activate?view=graph-rest-1.0
-      operationId: solution.backupRestore.protectionPolicy_activate
-      parameters:
-        - name: protectionPolicyBase-id
-          in: path
-          description: The unique identifier of protectionPolicyBase
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: protectionPolicyBase
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/solutions/backupRestore/protectionPolicies/{protectionPolicyBase-id}/microsoft.graph.deactivate':
-    post:
-      tags:
-        - solutions.Actions
-      summary: Invoke action deactivate
-      description: Deactivate a protectionPolicyBase.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/protectionpolicybase-deactivate?view=graph-rest-1.0
-      operationId: solution.backupRestore.protectionPolicy_deactivate
-      parameters:
-        - name: protectionPolicyBase-id
-          in: path
-          description: The unique identifier of protectionPolicyBase
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: protectionPolicyBase
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  /solutions/backupRestore/restorePoints/microsoft.graph.search:
-    post:
-      tags:
-        - solutions.Actions
-      summary: Invoke action search
-      description: Search for the restorePoint objects associated with a protectionUnit.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/restorepoint-search?view=graph-rest-1.0
-      operationId: solution.backupRestore.restorePoint_search
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                protectionUnitIds:
-                  type: array
-                  items:
-                    type: string
-                    nullable: true
-                protectionTimePeriod:
-                  $ref: '#/components/schemas/microsoft.graph.timePeriod'
-                restorePointPreference:
-                  $ref: '#/components/schemas/microsoft.graph.restorePointPreference'
-                tags:
-                  $ref: '#/components/schemas/microsoft.graph.restorePointTags'
-                artifactQuery:
-                  $ref: '#/components/schemas/microsoft.graph.artifactQuery'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.restorePointSearchResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/solutions/backupRestore/restoreSessions/{restoreSessionBase-id}/microsoft.graph.activate':
-    post:
-      tags:
-        - solutions.Actions
-      summary: Invoke action activate
-      description: 'Activate a draft restoreSessionBase object. The following points apply to restoring a protection unit:'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/restoresessionbase-activate?view=graph-rest-1.0
-      operationId: solution.backupRestore.restoreSession_activate
-      parameters:
-        - name: restoreSessionBase-id
-          in: path
-          description: The unique identifier of restoreSessionBase
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: restoreSessionBase
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.restoreSessionBase'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/solutions/backupRestore/serviceApps/{serviceApp-id}/microsoft.graph.activate':
-    post:
-      tags:
-        - solutions.Actions
-      summary: Invoke action activate
-      description: Activate a serviceApp.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceapp-activate?view=graph-rest-1.0
-      operationId: solution.backupRestore.serviceApp_activate
-      parameters:
-        - name: serviceApp-id
-          in: path
-          description: The unique identifier of serviceApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: serviceApp
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                effectiveDateTime:
-                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-                  type: string
-                  format: date-time
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.serviceApp'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/solutions/backupRestore/serviceApps/{serviceApp-id}/microsoft.graph.deactivate':
-    post:
-      tags:
-        - solutions.Actions
-      summary: Invoke action deactivate
-      description: Deactivate a serviceApp.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/serviceapp-deactivate?view=graph-rest-1.0
-      operationId: solution.backupRestore.serviceApp_deactivate
-      parameters:
-        - name: serviceApp-id
-          in: path
-          description: The unique identifier of serviceApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: serviceApp
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.serviceApp'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /solutions/bookingBusinesses:
     get:
       tags:
         - solutions.bookingBusiness
       summary: List bookingBusinesses
-      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation.'
+      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it doesn''t return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0
@@ -733,7 +499,7 @@ paths:
   '/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}/microsoft.graph.cancel':
     post:
       tags:
-        - solutions.Actions
+        - solutions.bookingBusiness
       summary: Invoke action cancel
       description: Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
       externalDocs:
@@ -1054,7 +820,7 @@ paths:
   '/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}/microsoft.graph.cancel':
     post:
       tags:
-        - solutions.Actions
+        - solutions.bookingBusiness
       summary: Invoke action cancel
       description: Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
       externalDocs:
@@ -1654,7 +1420,7 @@ paths:
   '/solutions/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.getStaffAvailability':
     post:
       tags:
-        - solutions.Actions
+        - solutions.bookingBusiness
       summary: Invoke action getStaffAvailability
       description: Get the availability information of staff members of a Microsoft Bookings calendar.
       externalDocs:
@@ -1714,7 +1480,7 @@ paths:
   '/solutions/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.publish':
     post:
       tags:
-        - solutions.Actions
+        - solutions.bookingBusiness
       summary: Invoke action publish
       description: 'Make the scheduling page of a business available to external customers. Set the isPublished property to true, and the publicUrl property to the URL of the scheduling page.'
       externalDocs:
@@ -1739,7 +1505,7 @@ paths:
   '/solutions/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.unpublish':
     post:
       tags:
-        - solutions.Actions
+        - solutions.bookingBusiness
       summary: Invoke action unpublish
       description: 'Make the scheduling page of this business not available to external customers. Set the isPublished property to false, and the publicUrl property to null.'
       externalDocs:
@@ -1920,7 +1686,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update bookingservice
-      description: "Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any time buffer to set up before or finish up after the service\n- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment."
+      description: "Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:\r\n- Price\r\n- Typical length of an appointment\r\n- Reminders\r\n- Any time buffer to set up before or finish up after the service\r\n- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
@@ -2743,7 +2509,7 @@ paths:
   '/solutions/virtualEvents/events/{virtualEvent-id}/microsoft.graph.cancel':
     post:
       tags:
-        - solutions.Actions
+        - solutions.virtualEventsRoot
       summary: Invoke action cancel
       operationId: solution.virtualEvent.event_cancel
       parameters:
@@ -2764,7 +2530,7 @@ paths:
   '/solutions/virtualEvents/events/{virtualEvent-id}/microsoft.graph.publish':
     post:
       tags:
-        - solutions.Actions
+        - solutions.virtualEventsRoot
       summary: Invoke action publish
       operationId: solution.virtualEvent.event_publish
       parameters:
@@ -2776,6 +2542,40 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: virtualEvent
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/virtualEvents/events/{virtualEvent-id}/microsoft.graph.setExternalEventInformation':
+    post:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Invoke action setExternalEventInformation
+      operationId: solution.virtualEvent.event_setExternalEventInformation
+      parameters:
+        - name: virtualEvent-id
+          in: path
+          description: The unique identifier of virtualEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEvent
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                externalEventId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -3905,7 +3705,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get virtualEventTownhall
-      description: Read the properties and relationships of a virtualEventTownhall object.
+      description: Read the properties and relationships of a virtualEventTownhall object. All roles can get the details of a townhall event.
       operationId: solution.virtualEvent_ListTownhall
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3983,7 +3783,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get virtualEventTownhall
-      description: Read the properties and relationships of a virtualEventTownhall object.
+      description: Read the properties and relationships of a virtualEventTownhall object. All roles can get the details of a townhall event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventtownhall-get?view=graph-rest-1.0
@@ -4031,7 +3831,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update virtualEventTownhall
-      description: Update the properties of a virtualEventTownhall object.
+      description: Update the properties of a virtualEventTownhall object. Only the Organizer and Co-organizer can make changes to a townhall event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventtownhall-update?view=graph-rest-1.0
@@ -4093,7 +3893,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List presenters
-      description: "Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event types are:\n- virtualEventTownhall\n- virtualEventWebinar"
+      description: "Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event types are:\r\n- virtualEventTownhall\r\n- virtualEventWebinar"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualevent-list-presenters?view=graph-rest-1.0
@@ -4155,7 +3955,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create virtualEventPresenter
-      description: "Create a new virtualEventPresenter object on a virtual event. Currently, the following types of virtual events are supported: \n- virtualEventTownhall\n- virtualEventWebinar"
+      description: "Create a new virtualEventPresenter object on a virtual event. Currently, the following types of virtual events are supported: \r\n- virtualEventTownhall\r\n- virtualEventWebinar"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualevent-post-presenters?view=graph-rest-1.0
@@ -4191,7 +3991,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get virtualEventPresenter
-      description: "Read the properties and relationships of a virtualEventPresenter object. Currently the supported virtual event types are: \n- virtualEventTownhall\n- virtualEventWebinar"
+      description: "Read the properties and relationships of a virtualEventPresenter object. Currently the supported virtual event types are: \r\n- virtualEventTownhall\r\n- virtualEventWebinar"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventpresenter-get?view=graph-rest-1.0
@@ -4286,7 +4086,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete virtualEventPresenter
-      description: "Delete a virtualEventPresenter from a virtual event. Currently the supported virtual event types are:\n- virtualEventTownhall\n- virtualEventWebinar"
+      description: "Delete a virtualEventPresenter from a virtual event. Currently the supported virtual event types are:\r\n- virtualEventTownhall\r\n- virtualEventWebinar"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventpresenter-delete?view=graph-rest-1.0
@@ -4326,6 +4126,1093 @@ paths:
         - solutions.virtualEventsRoot
       summary: Get the number of the resource
       operationId: solution.virtualEvent.townhall.presenter_GetCount
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get virtualEventTownhallRegistrationConfiguration
+      description: Read the properties and relationships of a virtualEventTownhallRegistrationConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventtownhallregistrationconfiguration-get?view=graph-rest-1.0
+      operationId: solution.virtualEvent.townhall_GetRegistrationConfiguration
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventTownhallRegistrationConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update the navigation property registrationConfiguration in solutions
+      operationId: solution.virtualEvent.townhall_UpdateRegistrationConfiguration
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventTownhallRegistrationConfiguration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventTownhallRegistrationConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property registrationConfiguration for solutions
+      operationId: solution.virtualEvent.townhall_DeleteRegistrationConfiguration
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get questions from solutions
+      description: Registration questions.
+      operationId: solution.virtualEvent.townhall.registrationConfiguration_ListQuestion
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationQuestionBaseCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Create new navigation property to questions for solutions
+      operationId: solution.virtualEvent.townhall.registrationConfiguration_CreateQuestion
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/{virtualEventRegistrationQuestionBase-id}':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get questions from solutions
+      description: Registration questions.
+      operationId: solution.virtualEvent.townhall.registrationConfiguration_GetQuestion
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: virtualEventRegistrationQuestionBase-id
+          in: path
+          description: The unique identifier of virtualEventRegistrationQuestionBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistrationQuestionBase
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update the navigation property questions in solutions
+      operationId: solution.virtualEvent.townhall.registrationConfiguration_UpdateQuestion
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: virtualEventRegistrationQuestionBase-id
+          in: path
+          description: The unique identifier of virtualEventRegistrationQuestionBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistrationQuestionBase
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property questions for solutions
+      operationId: solution.virtualEvent.townhall.registrationConfiguration_DeleteQuestion
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: virtualEventRegistrationQuestionBase-id
+          in: path
+          description: The unique identifier of virtualEventRegistrationQuestionBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistrationQuestionBase
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrationConfiguration/questions/$count':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get the number of the resource
+      operationId: solution.virtualEvent.townhall.registrationConfiguration.question_GetCount
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      description: Registration records of the town hall.
+      operationId: solution.virtualEvent.townhall_ListRegistration
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Create new navigation property to registrations for solutions
+      operationId: solution.virtualEvent.townhall_CreateRegistration
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      description: Registration records of the town hall.
+      operationId: solution.virtualEvent.townhall_GetRegistration
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update the navigation property registrations in solutions
+      operationId: solution.virtualEvent.townhall_UpdateRegistration
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property registrations for solutions
+      operationId: solution.virtualEvent.townhall_DeleteRegistration
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Invoke action cancel
+      operationId: solution.virtualEvent.townhall.registration_cancel
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      description: Sessions for a registration.
+      operationId: solution.virtualEvent.townhall.registration_ListSession
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.virtualEventSessionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions/{virtualEventSession-id}':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      description: Sessions for a registration.
+      operationId: solution.virtualEvent.townhall.registration_GetSession
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/{virtualEventRegistration-id}/sessions/$count':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get the number of the resource
+      operationId: solution.virtualEvent.townhall.registration.session_GetCount
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email=''{email}'')':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      description: Registration records of the town hall.
+      operationId: solution.virtualEvent.townhall.registration_GetGraphBPreEmail
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: email
+          in: path
+          description: Alternate key of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update the navigation property registrations in solutions
+      operationId: solution.virtualEvent.townhall.registration_UpdateGraphBPreEmail
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: email
+          in: path
+          description: Alternate key of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property registrations for solutions
+      operationId: solution.virtualEvent.townhall.registration_DeleteGraphBPreEmail
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: email
+          in: path
+          description: Alternate key of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(email=''{email}'')/microsoft.graph.cancel':
+    post:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Invoke action cancel
+      operationId: solution.virtualEvent.townhall.registration.email_cancel
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: email
+          in: path
+          description: Alternate key of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId=''{userId}'')':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      description: Registration records of the town hall.
+      operationId: solution.virtualEvent.townhall.registration_GetGraphBPreUserId
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: userId
+          in: path
+          description: Alternate key of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update the navigation property registrations in solutions
+      operationId: solution.virtualEvent.townhall.registration_UpdateGraphBPreUserId
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: userId
+          in: path
+          description: Alternate key of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property registrations for solutions
+      operationId: solution.virtualEvent.townhall.registration_DeleteGraphBPreUserId
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: userId
+          in: path
+          description: Alternate key of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations(userId=''{userId}'')/microsoft.graph.cancel':
+    post:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Invoke action cancel
+      operationId: solution.virtualEvent.townhall.registration.userId_cancel
+      parameters:
+        - name: virtualEventTownhall-id
+          in: path
+          description: The unique identifier of virtualEventTownhall
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventTownhall
+        - name: userId
+          in: path
+          description: Alternate key of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/virtualEvents/townhalls/{virtualEventTownhall-id}/registrations/$count':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get the number of the resource
+      operationId: solution.virtualEvent.townhall.registration_GetCount
       parameters:
         - name: virtualEventTownhall-id
           in: path
@@ -4564,8 +5451,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get attendanceReports from solutions
-      description: The attendance reports of an online meeting. Read-only.
+      summary: List meetingAttendanceReports
+      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting or a virtualEvent. Each time an online meeting or a virtual event ends, an attendance report is generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
       operationId: solution.virtualEvent.townhall.session_ListAttendanceReport
       parameters:
         - name: virtualEventTownhall-id
@@ -4671,8 +5561,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get attendanceReports from solutions
-      description: The attendance reports of an online meeting. Read-only.
+      summary: Get meetingAttendanceReport
+      description: 'Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. When an online meeting ends, an attendance report is generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.townhall.session_GetAttendanceReport
       parameters:
         - name: virtualEventTownhall-id
@@ -4822,8 +5715,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get attendanceRecords from solutions
-      description: List of attendance records of an attendance report. Read-only.
+      summary: List attendanceRecords
+      description: Get a list of attendanceRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: solution.virtualEvent.townhall.session.attendanceReport_ListAttendanceRecord
       parameters:
         - name: virtualEventTownhall-id
@@ -5220,12 +6116,173 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/townhalls/microsoft.graph.getByUserIdAndRole(userId=''{userId}'',role=''{role}'')':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Invoke function getByUserIdAndRole
+      description: Get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuseridandrole?view=graph-rest-1.0
+      operationId: solution.virtualEvent.townhall_getGraphBPreUserIdAndRole
+      parameters:
+        - name: userId
+          in: path
+          description: 'Usage: userId=''{userId}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: role
+          in: path
+          description: 'Usage: role=''{role}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of virtualEventTownhall
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.virtualEventTownhall'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/solutions/virtualEvents/townhalls/microsoft.graph.getByUserRole(role=''{role}'')':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Invoke function getByUserRole
+      description: Get a list of virtualEventTownhall objects where the signed-in user is either the organizer or a coorganizer.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuserrole?view=graph-rest-1.0
+      operationId: solution.virtualEvent.townhall_getGraphBPreUserRole
+      parameters:
+        - name: role
+          in: path
+          description: 'Usage: role=''{role}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of virtualEventTownhall
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.virtualEventTownhall'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /solutions/virtualEvents/webinars:
     get:
       tags:
         - solutions.virtualEventsRoot
       summary: List webinars
-      description: Get the list of all virtualEventWebinar objects created in the tenant.
+      description: Get the list of all virtualEventWebinar objects created in a tenant.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventsroot-list-webinars?view=graph-rest-1.0
@@ -5306,7 +6363,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get virtualEventWebinar
-      description: Read the properties and relationships of a virtualEventWebinar object.
+      description: Read the properties and relationships of a virtualEventWebinar object. All roles can get the details of a webinar event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventwebinar-get?view=graph-rest-1.0
@@ -5354,7 +6411,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update virtualEventWebinar
-      description: Update the properties of a virtualEventWebinar object.
+      description: Update the properties of a virtualEventWebinar object. Only the Organizer and Co-organizer can make changes to a webinar event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventwebinar-update?view=graph-rest-1.0
@@ -5475,7 +6532,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create virtualEventPresenter
-      description: "Create a new virtualEventPresenter object on a virtual event. Currently, the following types of virtual events are supported: \n- virtualEventTownhall\n- virtualEventWebinar"
+      description: "Create a new virtualEventPresenter object on a virtual event. Currently, the following types of virtual events are supported: \r\n- virtualEventTownhall\r\n- virtualEventWebinar"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualevent-post-presenters?view=graph-rest-1.0
@@ -5564,7 +6621,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update virtualEventPresenter
-      description: "Update the properties of a virtualEventPresenter object. Currently the supported virtual event types are:\n- virtualEventWebinar."
+      description: "Update the properties of a virtualEventPresenter object. Currently the supported virtual event types are:\r\n- virtualEventWebinar."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventpresenter-update?view=graph-rest-1.0
@@ -5770,7 +6827,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List questions
-      description: Get a list of all registration questions for a webinar. The list can include either predefined registration questions or custom registration questions.
+      description: Get a list of all registration questions for a webinar or town hall. The list can include either predefined registration questions or custom registration questions.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistrationconfiguration-list-questions?view=graph-rest-1.0
@@ -5832,7 +6889,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create virtualEventRegistrationCustomQuestion
-      description: Create a registration question for a webinar. You can create either a predefined registration question or a custom registration question.
+      description: Create a registration question for a webinar or town hall. You can create either a predefined registration question or a custom registration question.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistrationconfiguration-post-questions?view=graph-rest-1.0
@@ -5960,7 +7017,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete virtualEventRegistrationQuestionBase
-      description: 'Delete a registration question from a webinar. The question can either be a predefined registration question or a custom registration question. '
+      description: 'Delete a registration question from a webinar or town hall. The question can either be a predefined registration question or a custom registration question. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistrationquestionbase-delete?view=graph-rest-1.0
@@ -6021,7 +7078,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List virtualEventRegistrations
-      description: Get a list of all registration records of a webinar.
+      description: Get a list of all registration records of a webinar or town hall.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistration-list?view=graph-rest-1.0
@@ -6083,7 +7140,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create virtualEventRegistration
-      description: 'Create a registration record for a registrant of a webinar. This method registers the person for the webinar. '
+      description: 'Create a registration record for a registrant of a webinar or town hall. This method registers the person for the webinar or town hall. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventwebinar-post-registrations?view=graph-rest-1.0
@@ -6247,9 +7304,9 @@ paths:
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/microsoft.graph.cancel':
     post:
       tags:
-        - solutions.Actions
+        - solutions.virtualEventsRoot
       summary: Invoke action cancel
-      description: 'Cancel a registrant''s registration record for a webinar. '
+      description: 'Cancel a registrant''s registration record for a webinar or town hall. '
       operationId: solution.virtualEvent.webinar.registration_cancel
       parameters:
         - name: virtualEventWebinar-id
@@ -6279,7 +7336,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List sessions for a virtual event registration
-      description: 'Get a list of sessions summaries that a registrant registered for in a webinar. A session summary contains only the endDateTime, id, joinWebUrl, startDateTime, and subject of a virtual event session. The rest of session properties will be null. To get all the properties of a virtualEventSession, use the Get virtualEventSession method. '
+      description: 'Get a list of sessions summaries that a registrant registered for in a webinar or town hall. A session summary contains only the endDateTime, id, joinWebUrl, startDateTime, and subject of a virtual event session. The remaining session properties are null. To get all the properties of a virtualEventSession, use the Get virtualEventSession method. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventregistration-list-sessions?view=graph-rest-1.0
@@ -6570,9 +7627,9 @@ paths:
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(email=''{email}'')/microsoft.graph.cancel':
     post:
       tags:
-        - solutions.Actions
+        - solutions.virtualEventsRoot
       summary: Invoke action cancel
-      description: 'Cancel a registrant''s registration record for a webinar. '
+      description: 'Cancel a registrant''s registration record for a webinar or town hall. '
       operationId: solution.virtualEvent.webinar.registration.email_cancel
       parameters:
         - name: virtualEventWebinar-id
@@ -6730,9 +7787,9 @@ paths:
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations(userId=''{userId}'')/microsoft.graph.cancel':
     post:
       tags:
-        - solutions.Actions
+        - solutions.virtualEventsRoot
       summary: Invoke action cancel
-      description: 'Cancel a registrant''s registration record for a webinar. '
+      description: 'Cancel a registrant''s registration record for a webinar or town hall. '
       operationId: solution.virtualEvent.webinar.registration.userId_cancel
       parameters:
         - name: virtualEventWebinar-id
@@ -6784,7 +7841,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List sessions for a virtual event
-      description: "Get a list of all virtualEventSession summary objects under a virtual event. A session summary contains only the endDateTime, id, joinWebUrl, startDateTime, and subject of a virtual event session. The rest of session properties will be null. Currently, the following virtual event types are supported: \n- virtualEventTownhall\n- virtualEventWebinar"
+      description: "Get a list of all virtualEventSession summary objects under a virtual event. A session summary contains only the endDateTime, id, joinWebUrl, startDateTime, and subject of a virtual event session. The rest of session properties will be null. Currently, the following virtual event types are supported: \r\n- virtualEventTownhall\r\n- virtualEventWebinar"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualevent-list-sessions?view=graph-rest-1.0
@@ -6878,7 +7935,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get virtualEventSession
-      description: "Read the properties and relationships of a virtualEventSession object.  Currently, the following virtual event types are supported: \n- virtualEventTownhall\n- virtualEventWebinar"
+      description: "Read the properties and relationships of a virtualEventSession object.  Currently, the following virtual event types are supported: \r\n- virtualEventTownhall\r\n- virtualEventWebinar"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-1.0
@@ -7271,8 +8328,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get attendanceRecords from solutions
-      description: List of attendance records of an attendance report. Read-only.
+      summary: List attendanceRecords
+      description: Get a list of attendanceRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session.attendanceReport_ListAttendanceRecord
       parameters:
         - name: virtualEventWebinar-id
@@ -7672,7 +8732,7 @@ paths:
   '/solutions/virtualEvents/webinars/microsoft.graph.getByUserIdAndRole(userId=''{userId}'',role=''{role}'')':
     get:
       tags:
-        - solutions.Functions
+        - solutions.virtualEventsRoot
       summary: Invoke function getByUserIdAndRole
       description: Get a virtualEventWebinar collection where the specified user is either the organizer or a coorganizer.
       externalDocs:
@@ -7756,7 +8816,7 @@ paths:
   '/solutions/virtualEvents/webinars/microsoft.graph.getByUserRole(role=''{role}'')':
     get:
       tags:
-        - solutions.Functions
+        - solutions.virtualEventsRoot
       summary: Invoke function getByUserRole
       description: Get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
       externalDocs:
@@ -7852,206 +8912,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.virtualEventsRoot'
       additionalProperties:
         type: object
-    microsoft.graph.serviceStatus:
-      title: serviceStatus
-      type: object
-      properties:
-        backupServiceConsumer:
-          $ref: '#/components/schemas/microsoft.graph.backupServiceConsumer'
-        disableReason:
-          $ref: '#/components/schemas/microsoft.graph.disableReason'
-        gracePeriodDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The expiration time of the grace period.
-          format: date-time
-          nullable: true
-        lastModifiedBy:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
-        lastModifiedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: Timestamp of the last modification of the entity.
-          format: date-time
-          nullable: true
-        restoreAllowedTillDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The expiration time of the restoration allowed period.
-          format: date-time
-          nullable: true
-        status:
-          $ref: '#/components/schemas/microsoft.graph.backupServiceStatus'
-      additionalProperties:
-        type: object
-    microsoft.graph.protectionPolicyBase:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: protectionPolicyBase
-          type: object
-          properties:
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The time of creation of the policy.
-              format: date-time
-              nullable: true
-            displayName:
-              type: string
-              description: The name of the policy to be created.
-              nullable: true
-            lastModifiedBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The timestamp of the last modification of the policy.
-              format: date-time
-              nullable: true
-            retentionSettings:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.retentionSetting'
-              description: Contains the retention setting details for the policy.
-            status:
-              $ref: '#/components/schemas/microsoft.graph.protectionPolicyStatus'
-          additionalProperties:
-            type: object
-    microsoft.graph.timePeriod:
-      title: timePeriod
-      type: object
-      properties:
-        endDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The date time of the end of the time period.
-          format: date-time
-          nullable: true
-        startDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The date time of the start of the time period.
-          format: date-time
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.restorePointPreference:
-      title: restorePointPreference
-      enum:
-        - latest
-        - oldest
-        - unknownFutureValue
-      type: string
-    microsoft.graph.restorePointTags:
-      title: restorePointTags
-      enum:
-        - none
-        - fastRestore
-        - unknownFutureValue
-      type: string
-      x-ms-enum-flags:
-        isFlags: true
-    microsoft.graph.artifactQuery:
-      title: artifactQuery
-      type: object
-      properties:
-        artifactType:
-          $ref: '#/components/schemas/microsoft.graph.restorableArtifact'
-        queryExpression:
-          type: string
-          description: Specifies criteria to retrieve artifacts.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.restorePointSearchResponse:
-      title: restorePointSearchResponse
-      type: object
-      properties:
-        noResultProtectionUnitIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Contains  alist of protection units with no restore points.
-        searchResponseId:
-          type: string
-          description: The unique identifier of the search response.
-          nullable: true
-        searchResults:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.restorePointSearchResult'
-          description: Contains a collection of restore points.
-      additionalProperties:
-        type: object
-    microsoft.graph.restoreSessionBase:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: restoreSessionBase
-          type: object
-          properties:
-            completedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The time of completion of the restore session.
-              format: date-time
-              nullable: true
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The time of creation of the restore session.
-              format: date-time
-              nullable: true
-            error:
-              $ref: '#/components/schemas/microsoft.graph.publicError'
-            lastModifiedBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Timestamp of the last modification of the restore session.
-              format: date-time
-              nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.restoreSessionStatus'
-          additionalProperties:
-            type: object
-    microsoft.graph.serviceApp:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: serviceApp
-          type: object
-          properties:
-            application:
-              $ref: '#/components/schemas/microsoft.graph.identity'
-            effectiveDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Timestamp of the effective activation of the service app.
-              format: date-time
-              nullable: true
-            lastModifiedBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Timestamp of the last modification of the entity.
-              format: date-time
-              nullable: true
-            registrationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Timestamp of the creation of the service app entity.
-              format: date-time
-              nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.serviceAppStatus'
-          additionalProperties:
-            type: object
     microsoft.graph.bookingBusiness:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8217,7 +9077,7 @@ components:
             filledAttendeesCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: The current number of customers in the appointment.
               format: int32
               readOnly: true
@@ -8241,7 +9101,7 @@ components:
             maximumAttendeesCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.'
               format: int32
             optOutOfCustomerEmail:
@@ -8261,6 +9121,7 @@ components:
               type: number
               description: The regular price for an appointment for the specified bookingService.
               format: double
+              nullable: true
             priceType:
               $ref: '#/components/schemas/microsoft.graph.bookingPriceType'
             reminders:
@@ -8399,6 +9260,7 @@ components:
               type: number
               description: The default monetary price for the service.
               format: double
+              nullable: true
             defaultPriceType:
               $ref: '#/components/schemas/microsoft.graph.bookingPriceType'
             defaultReminders:
@@ -8438,7 +9300,7 @@ components:
             maximumAttendeesCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: 'The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.'
               format: int32
             notes:
@@ -8534,6 +9396,15 @@ components:
               nullable: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            externalEventInformation:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventExternalInformation'
+              description: 'The external information of a virtual event. Returned only for event organizers or coorganizers; otherwise, null.'
+            isRegistrationRequired:
+              type: boolean
+              description: Indicates whether attendee registration is enabled for the virtual event.
+              nullable: true
             settings:
               $ref: '#/components/schemas/microsoft.graph.virtualEventSettings'
             startDateTime:
@@ -8576,10 +9447,21 @@ components:
         - title: virtualEventSession
           type: object
           properties:
+            capacity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: Represents the expected number of attendees for the virtual event session.
+              format: int32
+              nullable: true
             endDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             startDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            videoOnDemandWebUrl:
+              type: string
+              description: The URL of the video on demand (VOD) for Microsoft Teams events that allows webinar and town hall organizers to quickly publish and share event recordings.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.meetingAttendanceReport:
@@ -8588,6 +9470,11 @@ components:
         - title: meetingAttendanceReport
           type: object
           properties:
+            externalEventInformation:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventExternalInformation'
+              description: The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.
             meetingEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -8603,7 +9490,7 @@ components:
             totalParticipantCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total number of participants. Read-only.
               format: int32
               nullable: true
@@ -8630,16 +9517,22 @@ components:
               type: string
               description: Email address of the user associated with this attendance record.
               nullable: true
+            externalRegistrationInformation:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventExternalRegistrationInformation'
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
+            registrationId:
+              type: string
+              description: Unique identifier of a virtualEventRegistration that is available to all participants registered for the virtualEventWebinar.
+              nullable: true
             role:
               type: string
-              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
+              description: 'Role of the attendee. The possible values are: None, Attendee, Presenter, and Organizer.'
               nullable: true
             totalAttendanceInSeconds:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total duration of the attendances in seconds.
               format: int32
               nullable: true
@@ -8653,6 +9546,13 @@ components:
           properties:
             audience:
               $ref: '#/components/schemas/microsoft.graph.meetingAudience'
+            capacity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: Represents the expected number of attendees for the town hall.
+              format: int32
+              nullable: true
             coOrganizers:
               type: array
               items:
@@ -8667,43 +9567,21 @@ components:
               type: boolean
               description: Indicates whether the town hall is only open to invited people and groups within your organization. The isInviteOnly property can only be true if the value of the audience property is set to organization.
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.virtualEventWebinar:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.virtualEvent'
-        - title: virtualEventWebinar
-          type: object
-          properties:
-            audience:
-              $ref: '#/components/schemas/microsoft.graph.meetingAudience'
-            coOrganizers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
-              description: Identity information of coorganizers of the webinar.
             registrationConfiguration:
-              $ref: '#/components/schemas/microsoft.graph.virtualEventWebinarRegistrationConfiguration'
+              $ref: '#/components/schemas/microsoft.graph.virtualEventTownhallRegistrationConfiguration'
             registrations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
-              description: Registration records of the webinar.
+              description: Registration records of the town hall.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.virtualEventWebinarRegistrationConfiguration:
+    microsoft.graph.virtualEventTownhallRegistrationConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationConfiguration'
-        - title: virtualEventWebinarRegistrationConfiguration
+        - title: virtualEventTownhallRegistrationConfiguration
           type: object
-          properties:
-            isManualApprovalEnabled:
-              type: boolean
-              nullable: true
-            isWaitlistEnabled:
-              type: boolean
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.virtualEventRegistrationQuestionBase:
@@ -8738,6 +9616,8 @@ components:
               type: string
               description: Email address of the registrant.
               nullable: true
+            externalRegistrationInformation:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventExternalRegistrationInformation'
             firstName:
               type: string
               description: First name of the registrant.
@@ -8779,6 +9659,36 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.virtualEventWebinar:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.virtualEvent'
+        - title: virtualEventWebinar
+          type: object
+          properties:
+            audience:
+              $ref: '#/components/schemas/microsoft.graph.meetingAudience'
+            coOrganizers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+              description: Identity information of coorganizers of the webinar.
+            registrationConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventWebinarRegistrationConfiguration'
+            registrations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              description: Registration records of the webinar.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEventWebinarRegistrationConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationConfiguration'
+        - title: virtualEventWebinarRegistrationConfiguration
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.backupRestoreRoot:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8787,6 +9697,12 @@ components:
           properties:
             serviceStatus:
               $ref: '#/components/schemas/microsoft.graph.serviceStatus'
+            browseSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.browseSessionBase'
+              description: The list of browse sessions in the tenant.
+              x-ms-navigationProperty: true
             driveInclusionRules:
               type: array
               items:
@@ -8799,6 +9715,13 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
               description: The list of drive protection units in the tenant.
               x-ms-navigationProperty: true
+            driveProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
+              x-ms-navigationProperty: true
+            emailNotificationsSetting:
+              $ref: '#/components/schemas/microsoft.graph.emailNotificationsSetting'
             exchangeProtectionPolicies:
               type: array
               items:
@@ -8822,6 +9745,17 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
               description: The list of mailbox protection units in the tenant.
+              x-ms-navigationProperty: true
+            mailboxProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
+              x-ms-navigationProperty: true
+            oneDriveForBusinessBrowseSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.oneDriveForBusinessBrowseSession'
+              description: The list of OneDrive for Business browse sessions in the tenant.
               x-ms-navigationProperty: true
             oneDriveForBusinessProtectionPolicies:
               type: array
@@ -8865,6 +9799,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.serviceApp'
               description: List of Backup Storage apps in the tenant.
               x-ms-navigationProperty: true
+            sharePointBrowseSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sharePointBrowseSession'
+              description: The list of SharePoint browse sessions in the tenant.
+              x-ms-navigationProperty: true
             sharePointProtectionPolicies:
               type: array
               items:
@@ -8889,45 +9829,13 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
               description: The list of site protection units in the tenant.
               x-ms-navigationProperty: true
+            siteProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.backupServiceConsumer:
-      title: backupServiceConsumer
-      enum:
-        - unknown
-        - firstparty
-        - thirdparty
-        - unknownFutureValue
-      type: string
-    microsoft.graph.disableReason:
-      title: disableReason
-      enum:
-        - none
-        - invalidBillingProfile
-        - userRequested
-        - unknownFutureValue
-      type: string
-    microsoft.graph.identitySet:
-      title: identitySet
-      type: object
-      properties:
-        application:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        device:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        user:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-      additionalProperties:
-        type: object
-    microsoft.graph.backupServiceStatus:
-      title: backupServiceStatus
-      enum:
-        - disabled
-        - enabled
-        - protectionChangeLocked
-        - restoreLocked
-        - unknownFutureValue
-      type: string
     microsoft.graph.entity:
       title: entity
       type: object
@@ -8937,111 +9845,6 @@ components:
           description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
-    microsoft.graph.retentionSetting:
-      title: retentionSetting
-      type: object
-      properties:
-        interval:
-          type: string
-          description: The frequency of the backup.
-          nullable: true
-        period:
-          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-          type: string
-          description: The period of time to retain the protected data for a single Microsoft 365 service.
-          format: duration
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.protectionPolicyStatus:
-      title: protectionPolicyStatus
-      enum:
-        - inactive
-        - activeWithErrors
-        - updating
-        - active
-        - unknownFutureValue
-      type: string
-    microsoft.graph.restorableArtifact:
-      title: restorableArtifact
-      enum:
-        - message
-        - unknownFutureValue
-      type: string
-    microsoft.graph.restorePointSearchResult:
-      title: restorePointSearchResult
-      type: object
-      properties:
-        artifactHitCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Total number of artifacts restored.
-          format: int32
-          nullable: true
-        restorePoint:
-          $ref: '#/components/schemas/microsoft.graph.restorePoint'
-      additionalProperties:
-        type: object
-    microsoft.graph.publicError:
-      title: publicError
-      type: object
-      properties:
-        code:
-          type: string
-          description: Represents the error code.
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
-          description: Details of the error.
-        innerError:
-          $ref: '#/components/schemas/microsoft.graph.publicInnerError'
-        message:
-          type: string
-          description: A non-localized message for the developer.
-          nullable: true
-        target:
-          type: string
-          description: The target of the error.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.restoreSessionStatus:
-      title: restoreSessionStatus
-      enum:
-        - draft
-        - activating
-        - active
-        - completedWithError
-        - completed
-        - unknownFutureValue
-        - failed
-      type: string
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The display name of the identity.For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.serviceAppStatus:
-      title: serviceAppStatus
-      enum:
-        - inactive
-        - active
-        - pendingActive
-        - pendingInactive
-        - unknownFutureValue
-      type: string
     microsoft.graph.physicalAddress:
       title: physicalAddress
       type: object
@@ -9169,6 +9972,8 @@ components:
         - '-INF'
         - INF
         - NaN
+      type: string
+      nullable: true
     microsoft.graph.bookingPriceType:
       title: bookingPriceType
       enum:
@@ -9329,6 +10134,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bodyType'
       additionalProperties:
         type: object
+    microsoft.graph.virtualEventExternalInformation:
+      title: virtualEventExternalInformation
+      type: object
+      properties:
+        applicationId:
+          type: string
+          description: Identifier of the application that hosts the externalEventId. Read-only.
+          nullable: true
+        externalEventId:
+          type: string
+          description: 'The identifier for a virtualEventExternalInformation object that associates the virtual event with an event ID in an external application. This association bundles all the information (both supported and not supported in virtualEvent) into one virtual event object. Optional. If set, the maximum supported length is 256 characters.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.virtualEventSettings:
       title: virtualEventSettings
       type: object
@@ -9347,6 +10166,20 @@ components:
         - canceled
         - unknownFutureValue
       type: string
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The display name of the identity.For drive items, the display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user don''t show up as changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: 'Unique identifier for the identity or actor. For example, in the access reviews decisions API, this property might record the id of the principal, that is, the group, user, or application that''s subject to review.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.virtualEventPresenterDetails:
       title: virtualEventPresenterDetails
       type: object
@@ -9394,22 +10227,64 @@ components:
               type: boolean
               description: Indicates whether attendees can turn on their microphone.
               nullable: true
+            allowBreakoutRooms:
+              type: boolean
+              description: Indicates whether breakout rooms are enabled for the meeting.
+              nullable: true
+            allowCopyingAndSharingMeetingContent:
+              type: boolean
+              description: Indicates whether the ability to copy and share meeting content is enabled for the meeting.
+              nullable: true
+            allowedLobbyAdmitters:
+              $ref: '#/components/schemas/microsoft.graph.allowedLobbyAdmitterRoles'
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowLiveShare:
+              $ref: '#/components/schemas/microsoft.graph.meetingLiveShareOptions'
             allowMeetingChat:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
+            allowPowerPointSharing:
+              type: boolean
+              description: Indicates whether PowerPoint live is enabled for the meeting.
+              nullable: true
+            allowRecording:
+              type: boolean
+              description: Indicates whether recording is enabled for the meeting.
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
+            allowTranscription:
+              type: boolean
+              description: Indicates whether transcription is enabled for the meeting.
+              nullable: true
+            allowWhiteboard:
+              type: boolean
+              description: Indicates whether whiteboard is enabled for the meeting.
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            chatRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
+            cloudVideoInteropInfo:
+              $ref: '#/components/schemas/microsoft.graph.cloudVideoInteropInfo'
+            expiryDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            isEndToEndEncryptionEnabled:
+              type: boolean
+              description: Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
+              nullable: true
             isEntryExitAnnounced:
               type: boolean
               description: Indicates whether to announce when callers join or leave.
@@ -9424,10 +10299,22 @@ components:
               nullable: true
             lobbyBypassSettings:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            meetingOptionsWebUrl:
+              type: string
+              description: Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.
+              nullable: true
+            meetingSpokenLanguageTag:
+              type: string
+              description: Specifies the spoken language used during the meeting for recording and transcription purposes.
+              nullable: true
+            meetingType:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingType'
             recordAutomatically:
               type: boolean
               description: Indicates whether to record the meeting automatically.
               nullable: true
+            sensitivityLabelAssignment:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingSensitivityLabelAssignment'
             shareMeetingChatHistoryDefault:
               $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             subject:
@@ -9455,7 +10342,7 @@ components:
         durationInSeconds:
           maximum: 2147483647
           minimum: -2147483648
-          type: integer
+          type: number
           description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
@@ -9470,6 +10357,20 @@ components:
           type: string
           description: The time the attendee left in UTC.
           format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualEventExternalRegistrationInformation:
+      title: virtualEventExternalRegistrationInformation
+      type: object
+      properties:
+        referrer:
+          type: string
+          description: A URL or string that represents the location from which the registrant registered. Optional.
+          nullable: true
+        registrationId:
+          type: string
+          description: 'The identifier for a virtualEventExternalRegistrationInformation object. Optional. If set, the maximum supported length is 256 characters.'
           nullable: true
       additionalProperties:
         type: object
@@ -9501,9 +10402,17 @@ components:
             capacity:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
+              type: number
               description: Total capacity of the virtual event.
               format: int32
+              nullable: true
+            isManualApprovalEnabled:
+              type: boolean
+              description: Indicates whether registrations require organizer approval before a participant is confirmed.
+              nullable: true
+            isWaitlistEnabled:
+              type: boolean
+              description: Indicates whether more registrants are automatically placed on a waitlist when capacity is reached.
               nullable: true
             registrationWebUrl:
               type: string
@@ -9736,19 +10645,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualEventWebinarCollectionResponse:
-      title: Collection of virtualEventWebinar
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.virtualEventWebinar'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.virtualEventRegistrationQuestionBaseCollectionResponse:
       title: Collection of virtualEventRegistrationQuestionBase
       type: object
@@ -9775,6 +10671,88 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.virtualEventWebinarCollectionResponse:
+      title: Collection of virtualEventWebinar
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.virtualEventWebinar'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceStatus:
+      title: serviceStatus
+      type: object
+      properties:
+        backupServiceConsumer:
+          $ref: '#/components/schemas/microsoft.graph.backupServiceConsumer'
+        disableReason:
+          $ref: '#/components/schemas/microsoft.graph.disableReason'
+        gracePeriodDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The expiration time of the grace period.
+          format: date-time
+          nullable: true
+        lastModifiedBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Timestamp of the last modification of the entity.
+          format: date-time
+          nullable: true
+        restoreAllowedTillDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The expiration time of the restoration allowed period.
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.backupServiceStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.browseSessionBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: browseSessionBase
+          type: object
+          properties:
+            backupSizeInBytes:
+              type: string
+              description: The size of the backup in bytes.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the browse session was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time after which the browse session is deleted automatically.
+              format: date-time
+              nullable: true
+            restorePointDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time of the restore point on which the browse session is created.
+              format: date-time
+              nullable: true
+            restorePointId:
+              type: string
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.browseSessionStatus'
+          additionalProperties:
+            type: object
     microsoft.graph.driveProtectionRule:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.protectionRuleBase'
@@ -9809,6 +10787,41 @@ components:
               readOnly: true
           additionalProperties:
             type: object
+    microsoft.graph.driveProtectionUnitsBulkAdditionJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobBase'
+        - title: driveProtectionUnitsBulkAdditionJob
+          type: object
+          properties:
+            directoryObjectIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of OneDrive directoryObjectIds to add to the OneDrive protection policy.
+            drives:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of email addresses to add to the OneDrive protection policy.
+          additionalProperties:
+            type: object
+    microsoft.graph.emailNotificationsSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: emailNotificationsSetting
+          type: object
+          properties:
+            additionalEvents:
+              $ref: '#/components/schemas/microsoft.graph.notificationEventsType'
+            isEnabled:
+              type: boolean
+              description: Indicates whether notifications are enabled.
+            recipients:
+              $ref: '#/components/schemas/microsoft.graph.notificationRecipients'
+          additionalProperties:
+            type: object
     microsoft.graph.exchangeProtectionPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
@@ -9826,6 +10839,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnit'
               description: The protection units (mailboxes) that are  protected under the Exchange protection policy.
+              x-ms-navigationProperty: true
+            mailboxProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxProtectionUnitsBulkAdditionJob'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -9845,6 +10863,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
               description: A collection of restore points and destination details that can be used to restore Exchange mailboxes.
+              x-ms-navigationProperty: true
+            mailboxRestoreArtifactsBulkAdditionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest'
+              description: A collection of user mailboxes and destination details that can be used to restore Exchange mailboxes.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -9882,6 +10906,38 @@ components:
               readOnly: true
           additionalProperties:
             type: object
+    microsoft.graph.mailboxProtectionUnitsBulkAdditionJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobBase'
+        - title: mailboxProtectionUnitsBulkAdditionJob
+          type: object
+          properties:
+            directoryObjectIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of Exchange directoryObjectIds to add to the Exchange protection policy.
+            mailboxes:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of Exchange email addresses to add to the Exchange protection policy.
+          additionalProperties:
+            type: object
+    microsoft.graph.oneDriveForBusinessBrowseSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.browseSessionBase'
+        - title: oneDriveForBusinessBrowseSession
+          type: object
+          properties:
+            directoryObjectId:
+              type: string
+              description: Id of the backed-up OneDrive.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.oneDriveForBusinessProtectionPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
@@ -9900,6 +10956,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.driveProtectionUnit'
               description: Contains the protection units associated with a  OneDrive for Business protection policy.
               x-ms-navigationProperty: true
+            driveProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveProtectionUnitsBulkAdditionJob'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.oneDriveForBusinessRestoreSession:
@@ -9912,8 +10973,59 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifact'
-              description: A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+              description: A collection of restore points and destination details that can be used to restore a OneDrive for work or school drive.
               x-ms-navigationProperty: true
+            driveRestoreArtifactsBulkAdditionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.driveRestoreArtifactsBulkAdditionRequest'
+              description: A collection of user mailboxes and destination details that can be used to restore a OneDrive for work or school drive.
+              x-ms-navigationProperty: true
+            granularDriveRestoreArtifacts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.granularDriveRestoreArtifact'
+              description: A collection of browse session ID and item key details that can be used to restore OneDrive for work or school files and folders.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.protectionPolicyBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: protectionPolicyBase
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time of creation of the policy.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the policy to be created.
+              nullable: true
+            isEnabled:
+              type: boolean
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The timestamp of the last modification of the policy.
+              format: date-time
+              nullable: true
+            protectionPolicyArtifactCount:
+              $ref: '#/components/schemas/microsoft.graph.protectionPolicyArtifactCount'
+            retentionSettings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.retentionSetting'
+              description: Contains the retention setting details for the policy.
+            status:
+              $ref: '#/components/schemas/microsoft.graph.protectionPolicyStatus'
           additionalProperties:
             type: object
     microsoft.graph.protectionUnitBase:
@@ -9927,7 +11039,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The time of creation of the protection unit.
+              description: 'The time of creation of the protection unit. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             error:
@@ -9937,13 +11049,21 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of the last modification of this protection unit.
+              description: 'Timestamp of the last modification of this protection unit. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            offboardRequestedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when protection unit offboard was requested. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             policyId:
               type: string
               description: The unique identifier of the protection policy based on which protection unit was created.
               nullable: true
+            protectionSources:
+              $ref: '#/components/schemas/microsoft.graph.protectionSource'
             status:
               $ref: '#/components/schemas/microsoft.graph.protectionUnitStatus'
           additionalProperties:
@@ -9972,6 +11092,88 @@ components:
               $ref: '#/components/schemas/microsoft.graph.protectionUnitBase'
           additionalProperties:
             type: object
+    microsoft.graph.restoreSessionBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: restoreSessionBase
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time of completion of the restore session.
+              format: date-time
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time of creation of the restore session.
+              format: date-time
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the last modification of the restore session.
+              format: date-time
+              nullable: true
+            restoreJobType:
+              $ref: '#/components/schemas/microsoft.graph.restoreJobType'
+            restoreSessionArtifactCount:
+              $ref: '#/components/schemas/microsoft.graph.restoreSessionArtifactCount'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.restoreSessionStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.serviceApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: serviceApp
+          type: object
+          properties:
+            application:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            effectiveDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the effective activation of the service app.
+              format: date-time
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the last modification of the entity.
+              format: date-time
+              nullable: true
+            registrationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the creation of the service app entity.
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.serviceAppStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.sharePointBrowseSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.browseSessionBase'
+        - title: sharePointBrowseSession
+          type: object
+          properties:
+            siteId:
+              type: string
+              description: Id of the backed-up SharePoint site.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.sharePointProtectionPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.protectionPolicyBase'
@@ -9990,6 +11192,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.siteProtectionUnit'
               description: The protection units (sites) that are protected under the site protection policy.
               x-ms-navigationProperty: true
+            siteProtectionUnitsBulkAdditionJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteProtectionUnitsBulkAdditionJob'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.sharePointRestoreSession:
@@ -9998,11 +11205,23 @@ components:
         - title: sharePointRestoreSession
           type: object
           properties:
+            granularSiteRestoreArtifacts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.granularSiteRestoreArtifact'
+              description: A collection of browse session ID and item key details that can be used to restore SharePoint files and folders.
+              x-ms-navigationProperty: true
             siteRestoreArtifacts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifact'
               description: A collection of restore points and destination details that can be used to restore SharePoint sites.
+              x-ms-navigationProperty: true
+            siteRestoreArtifactsBulkAdditionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.siteRestoreArtifactsBulkAdditionRequest'
+              description: A collection of SharePoint site URLs and destination details that can be used to restore SharePoint sites.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -10040,47 +11259,26 @@ components:
               readOnly: true
           additionalProperties:
             type: object
-    microsoft.graph.publicErrorDetail:
-      title: publicErrorDetail
-      type: object
-      properties:
-        code:
-          type: string
-          description: The error code.
-          nullable: true
-        message:
-          type: string
-          description: The error message.
-          nullable: true
-        target:
-          type: string
-          description: The target of the error.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.publicInnerError:
-      title: publicInnerError
-      type: object
-      properties:
-        code:
-          type: string
-          description: The error code.
-          nullable: true
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
-          description: A collection of error details.
-        message:
-          type: string
-          description: The error message.
-          nullable: true
-        target:
-          type: string
-          description: The target of the error.
-          nullable: true
-      additionalProperties:
-        type: object
+    microsoft.graph.siteProtectionUnitsBulkAdditionJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobBase'
+        - title: siteProtectionUnitsBulkAdditionJob
+          type: object
+          properties:
+            siteIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of SharePoint site IDs to add to the SharePoint protection policy.
+            siteWebUrls:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of SharePoint site URLs to add to the SharePoint protection policy.
+          additionalProperties:
+            type: object
     microsoft.graph.bookingPageAccessControl:
       title: bookingPageAccessControl
       enum:
@@ -10219,6 +11417,18 @@ components:
         - outOfOffice
         - unknownFutureValue
       type: string
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
     microsoft.graph.endpointType:
       title: endpointType
       enum:
@@ -10234,6 +11444,13 @@ components:
         - text
         - html
       type: string
+    microsoft.graph.allowedLobbyAdmitterRoles:
+      title: allowedLobbyAdmitterRoles
+      enum:
+        - organizerAndCoOrganizersAndPresenters
+        - organizerAndCoOrganizers
+        - unknownFutureValue
+      type: string
     microsoft.graph.onlineMeetingPresenters:
       title: onlineMeetingPresenters
       enum:
@@ -10241,6 +11458,13 @@ components:
         - organization
         - roleIsPresenter
         - organizer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.meetingLiveShareOptions:
+      title: meetingLiveShareOptions
+      enum:
+        - enabled
+        - disabled
         - unknownFutureValue
       type: string
     microsoft.graph.meetingChatMode:
@@ -10303,6 +11527,34 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatRestrictions:
+      title: chatRestrictions
+      type: object
+      properties:
+        allowTextOnly:
+          type: boolean
+          description: Indicates whether only text is allowed in the meeting chat. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudVideoInteropInfo:
+      title: cloudVideoInteropInfo
+      type: object
+      properties:
+        moreInfoWebUrl:
+          type: string
+          description: Provides other video teleconferencing (VTC) dial-in options. Read-only.
+          nullable: true
+        tenantKey:
+          type: string
+          description: The tenant key that is used to dial into the interactive voice response (IVR) of the partner CVI service.
+          nullable: true
+        videoTeleconferenceId:
+          type: string
+          description: The video teleconferencing ID. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -10331,6 +11583,26 @@ components:
           nullable: true
         scope:
           $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.onlineMeetingType:
+      title: onlineMeetingType
+      enum:
+        - adhoc
+        - scheduled
+        - recurring
+        - broadcast
+        - meetnow
+        - unknownFutureValue
+      type: string
+    microsoft.graph.onlineMeetingSensitivityLabelAssignment:
+      title: onlineMeetingSensitivityLabelAssignment
+      type: object
+      properties:
+        sensitivityLabelId:
+          type: string
+          description: The ID of the sensitivity label that is applied to the Teams meeting.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.meetingChatHistoryDefaultMode:
@@ -10376,6 +11648,64 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.backupServiceConsumer:
+      title: backupServiceConsumer
+      enum:
+        - unknown
+        - firstparty
+        - thirdparty
+        - unknownFutureValue
+      type: string
+    microsoft.graph.disableReason:
+      title: disableReason
+      enum:
+        - none
+        - invalidBillingProfile
+        - userRequested
+        - unknownFutureValue
+      type: string
+    microsoft.graph.backupServiceStatus:
+      title: backupServiceStatus
+      enum:
+        - disabled
+        - enabled
+        - protectionChangeLocked
+        - restoreLocked
+        - unknownFutureValue
+      type: string
+    microsoft.graph.publicError:
+      title: publicError
+      type: object
+      properties:
+        code:
+          type: string
+          description: Represents the error code.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
+          description: Details of the error.
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.publicInnerError'
+        message:
+          type: string
+          description: A non-localized message for the developer.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.browseSessionStatus:
+      title: browseSessionStatus
+      enum:
+        - creating
+        - created
+        - failed
+        - unknownFutureValue
+      type: string
     microsoft.graph.protectionRuleBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10394,7 +11724,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicError'
             isAutoApplyEnabled:
               type: boolean
-              description: Indicates whether the protection rule is static or dynamic.
+              description: true indicates that the protection rule is dynamic; false that it's static.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -10408,6 +11738,60 @@ components:
               $ref: '#/components/schemas/microsoft.graph.protectionRuleStatus'
           additionalProperties:
             type: object
+    microsoft.graph.protectionUnitsBulkJobBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: protectionUnitsBulkJobBase
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time of creation of the job.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the protection units bulk addition job.
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of the last modification made to the job.
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.protectionUnitsBulkJobStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.notificationEventsType:
+      title: notificationEventsType
+      enum:
+        - none
+        - restoreAndPolicyUpdates
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.notificationRecipients:
+      title: notificationRecipients
+      type: object
+      properties:
+        customRecipients:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.emailIdentity'
+          description: A list of users or groups that receive notifications. Only specify this property when role is set to custom.
+        role:
+          $ref: '#/components/schemas/microsoft.graph.notificationRecipientsType'
+      additionalProperties:
+        type: object
     microsoft.graph.granularMailboxRestoreArtifact:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.mailboxRestoreArtifact'
@@ -10417,8 +11801,8 @@ components:
             artifactCount:
               maximum: 2147483647
               minimum: -2147483648
-              type: integer
-              description: .
+              type: number
+              description: This property will be deprecated soon. Don't use.
               format: int32
               nullable: true
             searchResponseId:
@@ -10441,6 +11825,33 @@ components:
               description: The new restored folder name.
               nullable: true
               readOnly: true
+            restoredItemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              description: The number of items that are being restored in the folder.
+              format: int32
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.mailboxRestoreArtifactsBulkAdditionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactsBulkRequestBase'
+        - title: mailboxRestoreArtifactsBulkAdditionRequest
+          type: object
+          properties:
+            directoryObjectIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of directory object IDs that are added to the corresponding Exchange restore session in a bulk operation.
+            mailboxes:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of email addresses that are added to the corresponding Exchange restore session in a bulk operation.
           additionalProperties:
             type: object
     microsoft.graph.driveRestoreArtifact:
@@ -10465,6 +11876,103 @@ components:
               readOnly: true
           additionalProperties:
             type: object
+    microsoft.graph.driveRestoreArtifactsBulkAdditionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactsBulkRequestBase'
+        - title: driveRestoreArtifactsBulkAdditionRequest
+          type: object
+          properties:
+            directoryObjectIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of directory object IDs that are added to the corresponding OneDrive for work or school restore session in a bulk operation.
+            drives:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of email addresses that are added to the corresponding OneDrive for work or school restore session in a bulk operation.
+          additionalProperties:
+            type: object
+    microsoft.graph.granularDriveRestoreArtifact:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.granularRestoreArtifactBase'
+        - title: granularDriveRestoreArtifact
+          type: object
+          properties:
+            directoryObjectId:
+              type: string
+              description: Id of the drive in which artifact is present.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.protectionPolicyArtifactCount:
+      title: protectionPolicyArtifactCount
+      type: object
+      properties:
+        completed:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+        failed:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+        inProgress:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+        total:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.retentionSetting:
+      title: retentionSetting
+      type: object
+      properties:
+        interval:
+          type: string
+          description: The frequency of the backup.
+          nullable: true
+        period:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: The period of time to retain the protected data for a single Microsoft 365 service.
+          format: duration
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.protectionPolicyStatus:
+      title: protectionPolicyStatus
+      enum:
+        - inactive
+        - activeWithErrors
+        - updating
+        - active
+        - unknownFutureValue
+      type: string
+    microsoft.graph.protectionSource:
+      title: protectionSource
+      enum:
+        - none
+        - manual
+        - dynamicRule
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.protectionUnitStatus:
       title: protectionUnitStatus
       enum:
@@ -10474,7 +11982,93 @@ components:
         - unprotected
         - removeRequested
         - unknownFutureValue
+        - offboardRequested
+        - offboarded
+        - cancelOffboardRequested
       type: string
+    microsoft.graph.restorePointTags:
+      title: restorePointTags
+      enum:
+        - none
+        - fastRestore
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.restoreJobType:
+      title: restoreJobType
+      enum:
+        - standard
+        - bulk
+        - unknownFutureValue
+        - granular
+      type: string
+    microsoft.graph.restoreSessionArtifactCount:
+      title: restoreSessionArtifactCount
+      type: object
+      properties:
+        completed:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts whose restoration completed.
+          format: int32
+          nullable: true
+        failed:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts whose restoration failed.
+          format: int32
+          nullable: true
+        inProgress:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts whose restoration is in progress.
+          format: int32
+          nullable: true
+        total:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          description: The number of artifacts present in the restore session.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.restoreSessionStatus:
+      title: restoreSessionStatus
+      enum:
+        - draft
+        - activating
+        - active
+        - completedWithError
+        - completed
+        - unknownFutureValue
+        - failed
+      type: string
+    microsoft.graph.serviceAppStatus:
+      title: serviceAppStatus
+      enum:
+        - inactive
+        - active
+        - pendingActive
+        - pendingInactive
+        - unknownFutureValue
+      type: string
+    microsoft.graph.granularSiteRestoreArtifact:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.granularRestoreArtifactBase'
+        - title: granularSiteRestoreArtifact
+          type: object
+          properties:
+            siteId:
+              type: string
+              description: Id of the site in which artifact is present.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.siteRestoreArtifact:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.restoreArtifactBase'
@@ -10495,6 +12089,26 @@ components:
               description: The web URL of the restored site.
               nullable: true
               readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.siteRestoreArtifactsBulkAdditionRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.restoreArtifactsBulkRequestBase'
+        - title: siteRestoreArtifactsBulkAdditionRequest
+          type: object
+          properties:
+            siteIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation.
+            siteWebUrls:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of SharePoint site URLs that are added to the corresponding SharePoint restore session in a bulk operation.
           additionalProperties:
             type: object
     microsoft.graph.bookingsServiceAvailabilityType:
@@ -10536,6 +12150,47 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.publicErrorDetail:
+      title: publicErrorDetail
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.publicInnerError:
+      title: publicInnerError
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
+          description: A collection of error details.
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.protectionRuleStatus:
       title: protectionRuleStatus
       enum:
@@ -10544,7 +12199,42 @@ components:
         - completed
         - completedWithErrors
         - unknownFutureValue
+        - updateRequested
+        - deleteRequested
       type: string
+    microsoft.graph.protectionUnitsBulkJobStatus:
+      title: protectionUnitsBulkJobStatus
+      enum:
+        - unknown
+        - active
+        - completed
+        - completedWithErrors
+        - unknownFutureValue
+      type: string
+    microsoft.graph.emailIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: emailIdentity
+          type: object
+          properties:
+            email:
+              type: string
+              description: Email address of the user.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.notificationRecipientsType:
+      title: notificationRecipientsType
+      enum:
+        - none
+        - globalAdmins
+        - backupAdmins
+        - custom
+        - allAdmins
+        - unknownFutureValue
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
     microsoft.graph.restoreArtifactBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10573,6 +12263,100 @@ components:
               $ref: '#/components/schemas/microsoft.graph.restorePoint'
           additionalProperties:
             type: object
+    microsoft.graph.restoreArtifactsBulkRequestBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: restoreArtifactsBulkRequestBase
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time when the bulk request was created.
+              format: date-time
+              nullable: true
+            destinationType:
+              $ref: '#/components/schemas/microsoft.graph.destinationType'
+            displayName:
+              type: string
+              description: Name of the addition request.
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp when this entity was last modified.
+              format: date-time
+              nullable: true
+            protectionTimePeriod:
+              $ref: '#/components/schemas/microsoft.graph.timePeriod'
+            protectionUnitIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Indicates which protection units to restore. This property isn't implemented yet. Future value; don't use.
+            restorePointPreference:
+              $ref: '#/components/schemas/microsoft.graph.restorePointPreference'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.restoreArtifactsBulkRequestStatus'
+            tags:
+              $ref: '#/components/schemas/microsoft.graph.restorePointTags'
+          additionalProperties:
+            type: object
+    microsoft.graph.granularRestoreArtifactBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: granularRestoreArtifactBase
+          type: object
+          properties:
+            browseSessionId:
+              type: string
+              description: The unique identifier of the browseSession
+              nullable: true
+            completionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date time when the artifact's restoration completes.
+              format: date-time
+              nullable: true
+            restoredItemKey:
+              type: string
+              description: The unique identifier for the restored artifact.
+              nullable: true
+            restoredItemPath:
+              type: string
+              description: The path of the restored artifact. It's the path of the folder where all the artifacts are restored within a granular restore session.
+              nullable: true
+            restoredItemWebUrl:
+              type: string
+              description: The web url of the restored artifact.
+              nullable: true
+            restorePointDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The restore point date time to which the artifact is restored.
+              format: date-time
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The start time of the restoration.
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.artifactRestoreStatus'
+            webUrl:
+              type: string
+              description: The original web url of the artifact being restored.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.destinationType:
       title: destinationType
       enum:
@@ -10589,6 +12373,40 @@ components:
         - inProgress
         - succeeded
         - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.timePeriod:
+      title: timePeriod
+      type: object
+      properties:
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date time of the end of the time period.
+          format: date-time
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date time of the start of the time period.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.restorePointPreference:
+      title: restorePointPreference
+      enum:
+        - latest
+        - oldest
+        - unknownFutureValue
+      type: string
+    microsoft.graph.restoreArtifactsBulkRequestStatus:
+      title: restoreArtifactsBulkRequestStatus
+      enum:
+        - unknown
+        - active
+        - completed
+        - completedWithErrors
         - unknownFutureValue
       type: string
   responses:
@@ -10682,12 +12500,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.virtualEventTownhallCollectionResponse'
-    microsoft.graph.virtualEventWebinarCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.virtualEventWebinarCollectionResponse'
     microsoft.graph.virtualEventRegistrationQuestionBaseCollectionResponse:
       description: Retrieved collection
       content:
@@ -10700,6 +12512,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationCollectionResponse'
+    microsoft.graph.virtualEventWebinarCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.virtualEventWebinarCollectionResponse'
   parameters:
     top:
       name: $top

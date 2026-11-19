@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 2: Code snippet
 
 ```powershell
 
@@ -9,7 +9,7 @@ Get-MgBetaShareDriveItem -SharedDriveItemId $sharedDriveItemId
 ```
 This example shows how to use the Get-MgBetaShareDriveItem Cmdlet.
 
-### Example 2: Code snippet
+### Example 3: Code snippet
 
 ```powershell
 

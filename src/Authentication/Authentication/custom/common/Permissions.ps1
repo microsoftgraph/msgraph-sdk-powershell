@@ -34,15 +34,34 @@ function Permissions_GetPermissionsData([bool] $online) {
     # Make a REST request to MS Graph to get the permissions data from the Microsoft Graph service principal
     if ( $online -or ! $_permissions.msGraphServicePrincipal -or ! $_permissions.isFromInvokeMgGraphRequest ) {
         try {
-            $restResult = Invoke-MgGraphRequest -method GET -OutputType PSObject $_permissions.msGraphPermissionsRequestUri
+            
+            # Get-MgContext is used to get the current context for the request to MS Graph
+            # From the context, we can get the current environment and use it to get the permissions request URI
+            # If the context is not available, then we will use the default permissions request URI
+
+            $context = Get-MgContext
+            $uri = $_permissions.msGraphPermissionsRequestUri
+            if($context){
+                $currentEnv = $context.Environment
+                $allEnv = Get-MgEnvironment
+                $env = $allEnv | Where-Object { $_.Name -eq $currentEnv }
+                $uri = $env.GraphEndpoint + "/v1.0/servicePrincipals?`$filter=appId eq '$Permissions_msGraphApplicationId'"
+            }
+            $restResult = Invoke-MgGraphRequest -method GET -OutputType PSObject $uri
 
             if ( $restResult ) {
                 $_permissions.msGraphServicePrincipal = $restResult | Select-Object -ExpandProperty value
                 $_permissions.isFromInvokeMgGraphRequest = $true
             }
         }
-        catch [System.Management.Automation.ValidationMetadataException], [System.Net.Http.HttpRequestException], [Microsoft.Graph.PowerShell.AuthenticationException] {
-            if ( $online ) {
+        catch {
+            # [Microsoft.Graph.PowerShell.AuthenticationException] lives in the isolated AssemblyLoadContext and cannot be
+            # used as a type literal here, so match on the type name instead.
+            $exceptionType = $_.Exception.GetType()
+            $isExpected = $exceptionType.FullName -eq 'Microsoft.Graph.PowerShell.AuthenticationException' -or
+                $_.Exception -is [System.Management.Automation.ValidationMetadataException] -or
+                $_.Exception -is [System.Net.Http.HttpRequestException]
+            if ( -not $isExpected -or $online ) {
                 throw
             }
             # We can't get the data from MS Graph, so just use a local static (possibly stale) copy

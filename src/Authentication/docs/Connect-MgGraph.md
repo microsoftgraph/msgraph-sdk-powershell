@@ -15,39 +15,41 @@ Microsoft Graph PowerShell supports two types of authentication: delegated and a
 ### UserParameterSet (Default)
 ```
 Connect-MgGraph [[-Scopes] <String[]>] [[-ClientId] <String>] [-TenantId <String>]
- [-ContextScope <ContextScope>] [-Environment <String>] [-UseDeviceCode] [-ClientTimeout <Double>] [-NoWelcome]
- [<CommonParameters>]
+ [-ContextScope <ContextScope>] [-Environment <String>] [-UseDeviceCode] [-LoginHint <String>]
+ [-ClientTimeout <Double>] [-NoWelcome] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### AppCertificateParameterSet
 ```
 Connect-MgGraph [-ClientId] <String> [[-CertificateSubjectName] <String>] [[-CertificateThumbprint] <String>]
- [-Certificate <X509Certificate2>] [-TenantId <String>] [-ContextScope <ContextScope>] [-Environment <String>]
- [-ClientTimeout <Double>] [-NoWelcome] [<CommonParameters>]
+ [-SendCertificateChain <Boolean>] [-Certificate <X509Certificate2>] [-TenantId <String>]
+ [-ContextScope <ContextScope>] [-Environment <String>] [-ClientTimeout <Double>] [-NoWelcome]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### IdentityParameterSet
 ```
 Connect-MgGraph [[-ClientId] <String>] [-ContextScope <ContextScope>] [-Environment <String>]
- [-ClientTimeout <Double>] [-Identity] [-NoWelcome] [<CommonParameters>]
+ [-ClientTimeout <Double>] [-Identity] [-NoWelcome] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### AppSecretCredentialParameterSet
 ```
 Connect-MgGraph [-ClientSecretCredential <PSCredential>] [-TenantId <String>] [-ContextScope <ContextScope>]
- [-Environment <String>] [-ClientTimeout <Double>] [-NoWelcome] [<CommonParameters>]
+ [-Environment <String>] [-ClientTimeout <Double>] [-NoWelcome] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ### AccessTokenParameterSet
 ```
 Connect-MgGraph [-AccessToken] <SecureString> [-Environment <String>] [-ClientTimeout <Double>] [-NoWelcome]
- [<CommonParameters>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### EnvironmentVariableParameterSet
 ```
 Connect-MgGraph [-ContextScope <ContextScope>] [-Environment <String>] [-ClientTimeout <Double>]
- [-EnvironmentVariable] [-NoWelcome] [<CommonParameters>]
+ [-EnvironmentVariable] [-NoWelcome] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -131,23 +133,49 @@ Uses a user created managed identity as a standalone Azure resource.
 ### Example 11: Connecting to an environment or cloud
 ```powershell
 PS C:\> Get-MgEnvironment
-Name     AzureADEndpoint                   GraphEndpoint                           Type
-----     ---------------                   -------------                           ----
-China    https://login.chinacloudapi.cn    https://microsoftgraph.chinacloudapi.cn Built-in
-Global   https://login.microsoftonline.com https://graph.microsoft.com             Built-in
-USGov    https://login.microsoftonline.us  https://graph.microsoft.us              Built-in
-USGovDoD https://login.microsoftonline.us  https://dod-graph.microsoft.us          Built-in
+Name         AzureADEndpoint                        GraphEndpoint                           Type
+----         ---------------                        -------------                           ----
+BleuCloud    https://login.sovcloud-identity.fr     https://graph.svc.sovcloud.fr           Built-in
+China        https://login.chinacloudapi.cn         https://microsoftgraph.chinacloudapi.cn Built-in
+DelosCloud   https://login.sovcloud-identity.de     https://graph.svc.sovcloud.de           Built-in
+Global       https://login.microsoftonline.com      https://graph.microsoft.com             Built-in
+GovSGCloud   https://login.sovcloud-identity.sg     https://graph.svc.sovcloud.sg           Built-in
+USGov        https://login.microsoftonline.us       https://graph.microsoft.us              Built-in
+USGovDoD     https://login.microsoftonline.us       https://dod-graph.microsoft.us          Built-in
 PS C:\> Connect-MgGraph -Environment USGov
 ```
 
 When you use Connect-MgGraph, you can choose to target other environments. By default, Connect-MgGraph targets the global public cloud.
 
-### Example 12: Connecting to an environment as a different identity
+### Example 12: Connecting to a sovereign cloud with a custom application
+```powershell
+PS C:\> Connect-MgGraph -ClientId "YOUR_APP_CLIENT_ID" -TenantId "YOUR_TENANT_ID" -Environment BleuCloud -Scopes "User.Read.All"
+```
+
+Sovereign cloud environments (BleuCloud, DelosCloud, GovSGCloud) require a custom application registration. You cannot use the default Microsoft Graph PowerShell application in these environments. When registering your application, add an additional redirect URI of `ms-appx-web://Microsoft.AAD.BrokerPlugin/<YOUR_APP_CLIENT_ID>` to support WAM broker-based authentication. Requires Microsoft.Graph.Authentication v2.36.1 or later.
+
+### Example 13: Connecting to a sovereign cloud when WAM authentication hangs
+```powershell
+PS C:\> Set-MgGraphOption -DisableLoginByWAM $true
+PS C:\> Connect-MgGraph -ClientId "YOUR_APP_CLIENT_ID" -TenantId "YOUR_TENANT_ID" -Environment BleuCloud
+```
+
+If the authentication popup hangs or times out when connecting to a sovereign cloud (for example, from a jumpbox), WAM broker-based login may not work in that environment. Disable WAM to use interactive browser sign-in instead. You only need to run `Set-MgGraphOption -DisableLoginByWAM $true` once; the setting persists across sessions.
+
+### Example 14: Connecting to an environment as a different identity
 ```powershell
 PS C:\> Connect-MgGraph -ContextScope Process
 ```
 
 To connect as a different identity other than CurrentUser, specify the -ContextScope parameter with the value Process.
+
+### Example 15: Delegated access: Pre-populating the account during interactive sign-in
+```powershell
+PS C:\> Connect-MgGraph -Scopes "User.Read.All" -LoginHint "user@contoso.com"
+```
+
+Use the -LoginHint parameter to pre-populate the account (login_hint) shown in the interactive browser sign-in prompt.
+On Windows, WAM may still display the account picker on the first sign-in for an account; later sign-ins with the same -LoginHint are silent.
 
 ## PARAMETERS
 
@@ -336,6 +364,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LoginHint
+The login hint (typically a username or email) used to pre-populate the account field during interactive browser authentication.
+
+```yaml
+Type: String
+Parameter Sets: UserParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -NoWelcome
 Hides the welcome message.
 
@@ -343,6 +386,21 @@ Hides the welcome message.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+Determines how PowerShell responds to progress updates generated by this cmdlet. This is a common parameter introduced in PowerShell 7.4.
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
 
 Required: False
 Position: Named
@@ -361,6 +419,21 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SendCertificateChain
+Include x5c header in client claims when acquiring a token to enable subject name / issuer based authentication using given certificate.
+
+```yaml
+Type: Boolean
+Parameter Sets: AppCertificateParameterSet
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

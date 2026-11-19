@@ -20,6 +20,8 @@ This example will update the accountenabled property of a device
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 
 $params = @{
+	"extensionAttribute1" = "Value1"
+	"extensionAttribute2" = "Value2"
 }
 
 Update-MgDevice -DeviceId $deviceId -BodyParameter $params

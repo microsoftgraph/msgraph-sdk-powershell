@@ -1,0 +1,197 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+
+parameters:
+- name: BuildAgent
+  default: 1es-windows-ps-compute-m
+  displayName: Build Agent
+- name: PackageVersion
+  type: string
+  default: 3.0.0
+  displayName: Package version
+- name: Sign
+  type: boolean
+  default: true
+- name: Publish
+  type: boolean
+  default: false
+- name: InternalFeed
+  type: string
+  # The feed is PROJECT-scoped (dev.azure.com/microsoftgraph/Graph Developer Experiences/
+  # _artifacts/feed/MSGraph_PowerShell_V3_Build), so publishVstsFeed needs the project
+  # qualifier - a bare feed name only resolves for organization-scoped feeds.
+  default: Graph Developer Experiences/MSGraph_PowerShell_V3_Build
+  displayName: Internal NuGet feed
+
+variables:
+  BuildAgent: ${{ parameters.BuildAgent }}
+  WrapperConfiguration: Release
+  WrapperPrerelease: alpha$(Build.BuildId)
+
+trigger: none
+pr: none
+
+resources:
+  repositories:
+  - repository: 1ESPipelineTemplates
+    type: git
+    name: 1ESPipelineTemplates/1ESPipelineTemplates
+    ref: refs/tags/release
+
+extends:
+  template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
+  parameters:
+    pool: $(BuildAgent)
+    settings:
+      networkIsolationPolicy: Permissive
+    sdl:
+      binskim:
+        enabled: false
+        justificationForDisabling: "Matches sdk-release.yml; BinSkim currently blocks internal-feed publishing."
+      credscan:
+        suppressionsFile: $(Build.SourcesDirectory)/.azure-pipelines/config/credscan/credscan-suppressions.json
+      policheck:
+        exclusionFile: $(Build.SourcesDirectory)/.azure-pipelines/config/policheck/policheck-exclusions.xml
+    customBuildTags:
+    - ES365AIMigrationTooling
+    stages:
+    - stage: Build
+      displayName: Build wrapper modules
+      jobs:
+      - job: Wrapper_Build
+        displayName: Generate, build, pack, and sign wrapper modules
+        timeoutInMinutes: 840
+        templateContext:
+          outputs:
+          - output: pipelineArtifact
+            displayName: Publish wrapper module artifacts
+            targetPath: $(Build.ArtifactStagingDirectory)
+            artifactName: drop
+            publishLocation: Container
+        steps:
+        - script: git submodule update --init --recursive
+          displayName: Initialize submodules
+
+        # Deliberately NOT install-tools.yml: that template is the AutoRest toolchain - Node,
+        # the private npm feed, AutoRest, Rush and a full rush rebuild - none of which this
+        # pipeline uses. The wrapper modules compile from committed sources, so the whole
+        # toolchain is the .NET SDK, feed auth for restore, and the kiota CLI.
+        - task: UseDotNet@2
+          displayName: Use .NET SDK 10
+          retryCountOnTaskFailure: 2
+          inputs:
+            version: 10.x
+        - task: NuGetAuthenticate@1
+        # Under 1ES network isolation api.nuget.org is not reliably reachable, so every restore
+        # on this pipeline - the kiota tool below and the module build after it - resolves
+        # through the team's own feed first, whose upstream proxies nuget.org. The config is
+        # written at the sources root so dotnet picks it up everywhere; NuGetAuthenticate above
+        # supplies the credentials.
+        - task: PowerShell@2
+          displayName: Route NuGet through the internal feed
+          inputs:
+            targetType: inline
+            pwsh: true
+            script: |
+              $cfg = @'
+              <?xml version="1.0" encoding="utf-8"?>
+              <configuration>
+                <packageSources>
+                  <clear />
+                  <add key="MSGraphV3" value="https://pkgs.dev.azure.com/microsoftgraph/Graph%20Developer%20Experiences/_packaging/MSGraph_PowerShell_V3_Build/nuget/v3/index.json" />
+                </packageSources>
+              </configuration>
+              '@
+              Set-Content -Path '$(Build.SourcesDirectory)/nuget.config' -Value $cfg -Encoding utf8
+              Write-Host "wrote $(Build.SourcesDirectory)/nuget.config"
+        # Build-WrapperModule.ps1 refuses to run without kiota on PATH even under -SkipKiota
+        # (the guard is unconditional), and future -Generate runs need it anyway.
+        - task: PowerShell@2
+          displayName: Install kiota CLI
+          retryCountOnTaskFailure: 2
+          inputs:
+            targetType: inline
+            pwsh: true
+            workingDirectory: $(Build.SourcesDirectory)
+            script: |
+              dotnet tool install --global Microsoft.OpenApi.Kiota --configfile '$(Build.SourcesDirectory)/nuget.config' --ignore-failed-sources
+              if ($LASTEXITCODE -ne 0) { throw "kiota install failed with exit code $LASTEXITCODE" }
+              Write-Host "##vso[task.prependpath]$env:USERPROFILE\.dotnet\tools"
+        - template: .azure-pipelines/common-templates/security-pre-checks.yml@self
+
+        # Version and prerelease go to the script directly (-ModuleVersion/-Prerelease); the
+        # script owns package identity. Nothing here edits ModuleMetadata.json - that file
+        # belongs to the v2 release train.
+        - task: PowerShell@2
+          displayName: Build and pack wrapper modules
+          inputs:
+            targetType: inline
+            pwsh: true
+            script: |
+              $params = @{
+                ApiVersion        = 'v1.0'
+                Configuration     = '$(WrapperConfiguration)'
+                ArtifactsLocation = '$(Build.ArtifactStagingDirectory)'
+                ModuleVersion     = '${{ parameters.PackageVersion }}'
+                Prerelease        = '$(WrapperPrerelease)'
+                # Deliberately NOT -SkipKiota: the pipeline runs the whole chain - kiota client
+                # generation from the committed OpenAPI docs, wrapper generation on top, then
+                # compile - so a change in any step is built and tested end to end, and the run
+                # can never fail on committed clients lagging the docs. Clients are still
+                # committed to the repo for reviewable diffs and clean local checkouts.
+                Pack              = $true
+              }
+              & '$(Build.SourcesDirectory)/tools/Build-WrapperModule.ps1' @params
+              if ($LASTEXITCODE -ne 0) { throw "Wrapper build failed with exit code $LASTEXITCODE." }
+
+        - task: PowerShell@2
+          displayName: Verify wrapper packages were produced
+          inputs:
+            targetType: inline
+            pwsh: true
+            script: |
+              $packages = @(Get-ChildItem '$(Build.ArtifactStagingDirectory)' -Recurse -Filter 'Microsoft.Graph.Wrapper.*.nupkg')
+              Write-Host "Wrapper packages produced: $($packages.Count)"
+              $packages | ForEach-Object { Write-Host "  $($_.FullName)" }
+              if ($packages.Count -eq 0) { throw 'No wrapper packages were produced.' }
+
+        - template: .azure-pipelines/common-templates/guardian-analyzer.yml@self
+
+        - ${{ if eq(parameters.Sign, true) }}:
+          - template: .azure-pipelines/common-templates/esrp/codesign-nuget.yml@self
+            parameters:
+              FolderPath: $(Build.ArtifactStagingDirectory)
+              Pattern: Microsoft.Graph.Wrapper.*.nupkg
+
+        - template: .azure-pipelines/common-templates/security-post-checks.yml@self
+
+    - ${{ if eq(parameters.Publish, true) }}:
+      - stage: Deploy_to_Internal_Feed
+        displayName: Deploy wrapper packages to internal feed
+        dependsOn: Build
+        jobs:
+        - deployment: DeployToInternalFeed
+          displayName: Publish to MSGraph PowerShell V3 build feed
+          environment: PowerShellInternalFeed
+          templateContext:
+            type: releaseJob
+            isProduction: true
+            inputs:
+            - input: pipelineArtifact
+              artifactName: drop
+              targetPath: $(System.DefaultWorkingDirectory)/drop
+          strategy:
+            runOnce:
+              deploy:
+                steps:
+                - task: 1ES.PublishNuget@1
+                  displayName: Publish wrapper packages to internal feed
+                  inputs:
+                    useDotNetTask: false
+                    packageParentPath: $(System.DefaultWorkingDirectory)
+                    packagesToPush: $(System.DefaultWorkingDirectory)/**/drop/**/Microsoft.Graph.Wrapper.*.nupkg
+                    publishVstsFeed: ${{ parameters.InternalFeed }}
+                    nuGetFeedType: internal
+                    allowPackageConflicts: false

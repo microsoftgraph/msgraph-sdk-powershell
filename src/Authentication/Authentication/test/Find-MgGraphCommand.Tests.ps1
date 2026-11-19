@@ -73,22 +73,22 @@ Describe "Find-MgGraphCommand Command" {
         }
         It 'Should find command using regex' {
             {
-                $Uri = "/users/{id}/calendars/.*"
+                $Uri = "/bookingBusinesses/{bookingBusiness-id}/.*"
                 $MgCommand = Find-MgGraphCommand -Uri $Uri -Method POST -ApiVersion beta
                 $MgCommand.Count | Should -BeGreaterThan 1
                 $MgCommand.Method | Select-Object -Unique | Should -Be "POST"
                 $MgCommand.APIVersion | Select-Object -Unique | Should -Be "beta"
-                $MgCommand.Command | Select-Object -Unique | Should -BeLike "*-MgBetaUserCalendar*"
+                $MgCommand.Command | Select-Object -Unique | Should -BeLike "*-MgBetaBookingBusiness*" 
             } | Should -Not -Throw
         }
         It 'Should find command using action with FQNamespace.' {
             {
-                $Uri = "/sites/{site-id}/onenote/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent"
+                $Uri = "/groups/{group-id}/sites/{site-id}/onenote/pages/{onenotePage-id}/microsoft.graph.copyToSection"
                 $MgCommand = Find-MgGraphCommand -Uri $Uri -ApiVersion beta
                 $MgCommand.Method | Should -Be "POST"
                 $MgCommand.APIVersion | Should -Be "beta"
-                $MgCommand.Command | Should -Be "Update-MgBetaSiteOnenotePageContent"
-                $MgCommand.Uri | Should -Be "/sites/{site-id}/onenote/pages/{onenotePage-id}/onenotePatchContent"
+                $MgCommand.Command | Should -Be "Copy-MgBetaGroupSiteOnenotePageToSection"
+                $MgCommand.Uri | Should -Be "/groups/{group-id}/sites/{site-id}/onenote/pages/{onenotePage-id}/copyToSection"
             } | Should -Not -Throw
         }
         It 'Should find command using action with nested FQNamespace.' {
@@ -103,12 +103,12 @@ Describe "Find-MgGraphCommand Command" {
         }
         It 'Should find command using function without FQNamespace.' {
             {
-                $Uri = "/deviceManagement/assignmentFilters/getState"
+                $Uri = "/deviceManagement/getEffectivePermissions"
                 $MgCommand = Find-MgGraphCommand -Uri $Uri -ApiVersion beta
                 $MgCommand.Method | Should -Be "GET"
                 $MgCommand.APIVersion | Should -Be "beta"
-                $MgCommand.Command | Should -Be "Get-MgBetaDeviceManagementAssignmentFilterState"
-                $MgCommand.Uri | Should -Be "/deviceManagement/assignmentFilters/getState"
+                $MgCommand.Command | Should -Be "Get-MgBetaDeviceManagementEffectivePermission"
+                $MgCommand.Uri | Should -Be "/deviceManagement/getEffectivePermissions"
             } | Should -Not -Throw
         }
         It 'Should support pipeline input' {
@@ -189,12 +189,12 @@ Describe "Find-MgGraphCommand Command" {
         Context "FindByCommand" {
             It 'Should find command using all parameters' {
                 {
-                    $MgCommand = Find-MgGraphCommand -Command "Invoke-MgBetaAcceptGroupCalendarEvent" -ApiVersion beta
+                    $MgCommand = Find-MgGraphCommand -Command "Invoke-MgBetaAcceptGroupEvent" -ApiVersion beta
                     $MgCommand | Should -HaveCount 1
                     $MgCommand.Method | Should -Be "POST"
                     $MgCommand.APIVersion | Should -Be "beta"
-                    $MgCommand.Command | Should -Be "Invoke-MgBetaAcceptGroupCalendarEvent"
-                    $MgCommand.URI | Should -Be "/groups/{group-id}/calendar/events/{event-id}/accept"
+                    $MgCommand.Command | Should -Be "Invoke-MgBetaAcceptGroupEvent"
+                    $MgCommand.URI | Should -Be "/groups/{group-id}/events/{event-id}/accept"
                 } | Should -Not -Throw
             }
             It 'Should find command using regex' {

@@ -567,7 +567,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <param name="request"></param>
         /// <param name="content"></param>
         /// <returns></returns>
-        private long SetRequestContent(HttpRequestMessage request, IDictionary content)
+        internal long SetRequestContent(HttpRequestMessage request, IDictionary content)
         {
             if (request == null)
             {
@@ -579,8 +579,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 throw new ArgumentNullException(nameof(content));
             }
 
-            // Covert all dictionaries to Json
-            var body = JsonConvert.SerializeObject(content);
+            // Convert all dictionaries to Json.
+            // Unwrap PSObject-wrapped values (e.g. values produced by the PowerShell pipeline) so the
+            // underlying CLR values are serialized instead of their PSObject wrappers. See https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/3654.
+            var body = JsonConvert.SerializeObject(content, new PSObjectJsonConverter());
             return SetRequestContent(request, body);
         }
 
@@ -1003,11 +1005,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// </summary>
         private void ResetGraphSessionEnvironment()
         {
-            var currentEnvironment = GraphSession.Instance.Environment;
-            if(currentEnvironment != null && !currentEnvironment.Equals(_originalEnvironment))
-            {
-                GraphSession.Instance.Environment = _originalEnvironment;
-            }
+            _originalEnvironment = GraphSession.Instance.Environment;
         }
 
         #region CmdLet LifeCycle
@@ -1046,8 +1044,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             if (ShouldCheckHttpStatus && !isSuccess)
                             {
                                 var httpErrorRecord = await GenerateHttpErrorRecordAsync(httpResponseMessageFormatter, httpRequestMessage);
-                                // A reset of the GraphSession Environment is required to avoid side effects
-                                ResetGraphSessionEnvironment();
                                 ThrowTerminatingError(httpErrorRecord);
                             }
                             await ProcessResponseAsync(httpResponseMessage);

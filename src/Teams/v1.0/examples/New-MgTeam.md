@@ -7,7 +7,8 @@ Import-Module Microsoft.Graph.Teams
 $params = @{
 	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
 	displayName = "My Sample Team"
-	description = "My Sample Team’s Description"
+	description = "My sample team’s description"
+	firstChannelName = "My first channel of the sample team"
 }
 
 New-MgTeam -BodyParameter $params
@@ -24,7 +25,8 @@ Import-Module Microsoft.Graph.Teams
 $params = @{
 	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
 	displayName = "My Sample Team"
-	description = "My Sample Team’s Description"
+	description = "My sample team’s description"
+	firstChannelName = "My first channel of the sample team"
 	members = @(
 		@{
 			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
@@ -52,6 +54,7 @@ $params = @{
 	visibility = "Private"
 	displayName = "Sample Engineering Team"
 	description = "This is a sample engineering team, used to showcase the range of properties supported by this API"
+	firstChannelName = "My First Channel of the team"
 	channels = @(
 		@{
 			displayName = "Announcements 📢"

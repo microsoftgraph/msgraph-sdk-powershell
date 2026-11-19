@@ -14,6 +14,7 @@ $copyExtensions = @('.dll', '.pdb')
 
 # Source code locations
 $coreSrc = Join-Path $PSScriptRoot "../$ModuleName.Core"
+$loaderSrc = Join-Path $PSScriptRoot "../$ModuleName.Loader"
 $cmdletsSrc = Join-Path $PSScriptRoot "../$ModuleName"
 
 # Generated output locations
@@ -54,6 +55,7 @@ if (-not $Isolated) {
 # Clean build folders.
 Write-Host -ForegroundColor Green 'Cleaning build folders...'
 $null = Remove-Item -Path "$coreSrc/bin", "$coreSrc/obj" -Recurse -ErrorAction Ignore
+$null = Remove-Item -Path "$loaderSrc/bin", "$loaderSrc/obj" -Recurse -ErrorAction Ignore
 $null = Remove-Item -Path "$cmdletsSrc/bin", "$cmdletsSrc/obj" -Recurse -ErrorAction Ignore
 
 if ((Test-Path "$cmdletsSrc/bin") -or (Test-Path "$cmdletsSrc/obj")) {
@@ -67,6 +69,11 @@ Push-Location $coreSrc
 dotnet publish -c $Configuration -f $netStandard --verbosity quiet /nologo
 dotnet publish -c $Configuration -f $netApp --verbosity quiet /nologo
 dotnet publish -c $Configuration -f $netFx --verbosity quiet /nologo
+Pop-Location
+
+# Build the AssemblyLoadContext loader (PowerShell 7+ only).
+Push-Location $loaderSrc
+dotnet publish -c $Configuration -f $netApp --verbosity quiet /nologo
 Pop-Location
 
 # Build authentication.
@@ -163,34 +170,52 @@ Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName-Help.xml" -Recurse -Desti
 # Copy custom commands.
 Copy-Item -Path "$cmdletsSrc/custom" -Recurse -Destination $outDir
 
-# Core assemblies to include with cmdlets (Let PowerShell load them).
+# Assemblies that are shared with the cmdlet assembly / generated service modules and therefore must live in the
+# module root (default AssemblyLoadContext). Everything else is isolated under Dependencies.
+$SharedAssemblies = @('Newtonsoft.Json')
+
+# The engine assembly. On PowerShell 7+ it is loaded into the isolated AssemblyLoadContext from Dependencies/Core,
+# on Windows PowerShell 5.1 from Dependencies/Desktop via AssemblyResolve. It must NOT be in the module root, otherwise
+# PowerShell would load it (and all of its dependencies) into the default context.
 $CoreAssemblies = @('Microsoft.Graph.Authentication.Core')
 
 # Copy each authentication.core asset to out directory and remember it.
 $Deps = [System.Collections.Generic.HashSet[string]]::new()
 Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netStandard/publish/" |
 Where-Object { $_.Extension -in $copyExtensions } |
-Where-Object { -not $CoreAssemblies.Contains($_.BaseName) } |
+Where-Object { -not $CoreAssemblies.Contains($_.BaseName) -and -not $SharedAssemblies.Contains($_.BaseName) } |
 ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDeps -Recurse }
 
 Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netApp/publish/" |
-Where-Object { -not $CoreAssemblies.Contains($_.BaseName) } |
+Where-Object { -not $SharedAssemblies.Contains($_.BaseName) } |
 ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outCore -Recurse }
 
 Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netFx/publish/" |
-Where-Object { -not $CoreAssemblies.Contains($_.BaseName) } |
+Where-Object { -not $SharedAssemblies.Contains($_.BaseName) } |
 ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDesktop -Recurse }
+
+# Copy the loader next to the PowerShell 7+ dependencies.
+Get-ChildItem -Path "$loaderSrc/bin/$Configuration/$netApp/publish/" |
+Where-Object { $_.BaseName -eq 'Microsoft.Graph.Authentication.Loader' -and $_.Extension -in $copyExtensions } |
+ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outCore }
+
+# Shared assemblies go to the module root.
+Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netStandard/publish/" |
+Where-Object { $SharedAssemblies.Contains($_.BaseName) -and $_.Extension -in $copyExtensions } |
+ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDir }
 
 # Now copy each authentication asset, not taking any found in authentication.core.
 Get-ChildItem -Path "$cmdletsSrc/bin/$Configuration/$netStandard/publish/" |
 Where-Object { -not $Deps.Contains($_.Name) -and $_.Extension -in $copyExtensions } |
 ForEach-Object { Copy-Item -Path $_.FullName -Destination $outDir -Recurse }
 
-# Update module manifest with nested assemblies.
-$RequiredAssemblies = @(
-  'Microsoft.Graph.Authentication.dll', 
-  'Microsoft.Graph.Authentication.Core.dll'
-)
-Update-ModuleManifest -Path (Join-Path $outDir "$ModulePrefix.$ModuleName.psd1") -NestedModules $RequiredAssemblies
+# NOTE: The cmdlet assembly is intentionally NOT declared in NestedModules/RequiredAssemblies. PowerShell processes those
+# before the RootModule (.psm1) runs, which would load Microsoft.Graph.Authentication.dll (and resolve its reference to
+# Microsoft.Graph.Authentication.Core) before the isolated AssemblyLoadContext hook is registered. The .psm1 sets up the
+# load context first and then imports the dll itself.
+$Manifest = Import-PowerShellDataFile (Join-Path $outDir "$ModulePrefix.$ModuleName.psd1")
+if ($Manifest.ContainsKey('NestedModules') -or $Manifest.ContainsKey('RequiredAssemblies')) {
+  Write-Error 'The module manifest must not declare NestedModules or RequiredAssemblies; the .psm1 loads the assemblies after initializing the AssemblyLoadContext.'
+}
 
 Write-Host -ForegroundColor Green '-------------Done-------------'

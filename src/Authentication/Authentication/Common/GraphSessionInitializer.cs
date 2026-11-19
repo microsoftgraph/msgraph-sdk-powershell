@@ -65,6 +65,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
                 },
                 WriteObject = cmdLet.WriteObject,
                 WriteVerbose = cmdLet.WriteVerbose,
+                WriteWarning = cmdLet.WriteWarning,
                 WriteError = (exception, errorId, errorCategory, targetObject) =>
                 {
                     var parseResult = Enum.TryParse(errorCategory.ToString(), out ErrorCategory result);

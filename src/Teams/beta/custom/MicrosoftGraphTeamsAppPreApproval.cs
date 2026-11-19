@@ -15,6 +15,7 @@ namespace Microsoft.Graph.Beta.PowerShell.Models
         IMicrosoftGraphTeamsAppPreApprovalInternal,
         Runtime.IValidates
     {
+
         /// <summary>
         /// Backing field for Inherited model <see cref= "Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphEntity" />
         /// </summary>

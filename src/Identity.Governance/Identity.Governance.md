@@ -19,6 +19,10 @@ require:
 directive:
 #Prevent cmdlets with the below operation Ids from being generated to allow for aliasing as a result of breaking changes in 2.18.0 and 2.17.0. The affected operation Ids starts from connectedOrganization_DeleteExternalSponsorGraphBPreRef$
   - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScope|\.accessPackageResourceRoleScope.*|\.accessPackageAssignmentPolicy\..*|\.accessPackageAssignmentRequest\..*|\.accessPackageAssignmentResourceRole\..*|\.accessPackageAssignment\..*|\.accessPackageCatalog\..*|\.accessPackageResourceRequest\..*|\.accessPackageResource\..*|\.accessPackage\..*)|^identityGovernance\.accessReview\.definition\.instance\.decision\.instance(\.|_).*|^identityGovernance\.accessReview\.definition\.instance\.stage\.decision\..*$|^privilegedAccess.roleAssignmentRequest.(resource|roleDefinition).*$|^privilegedAccess.roleAssignment.(resource|roleDefinition).*$|^privilegedAccess.roleDefinition.(resource|roleSetting).*$|^privilegedAccess.roleSetting.(resource|roleDefinition).*$|^identityGovernance_.*LifecycleWorkflow|^identityGovernance\.lifecycleWorkflow\.deletedItem\.(workflow|run|userProcessingResult)\..*|^identityGovernance\.lifecycleWorkflow\.workflow\.run\.userProcessingResult\.taskProcessingResult.*|^identityGovernance\.lifecycleWorkflow\.workflow\.userProcessingResult\.taskProcessingResult.*|^identityGovernance_.*RoleManagementAlert$|^identityGovernance\.roleManagementAlert_refresh$|^identityGovernance\.entitlementManagement\.resourceRoleScope_.*Scope$|^identityGovernance.entitlementManagement.connectedOrganization_DeleteExternalSponsorGraphBPreRef$|^identityGovernance.entitlementManagement.connectedOrganization_DeleteInternalSponsorGraphBPreRef$
+  - remove-path-by-operation: ^identityGovernance\.accessReview\..*\..*_batchApplyCustomDataProvidedResourceDecision$
+  - remove-path-by-operation: ^identityGovernance\.accessReview\.(unified\.)?(definition\..*|instance\.(decision|stage\.decision)\..*|decision\.instance\.stage)_batchRecordDecision$
+  - remove-path-by-operation: ^identityGovernance\.accessReview\.unified\..*_(CreateInsight|recordAllDecision|CreateContactedReviewer|CreateDecision|CreateStage|batchRecordDecision)$
+  - remove-path-by-operation: ^identityGovernance\.lifecycleWorkflow\.workflow\.(run\.)?subjectProcessingResult\.taskProcessingResult_resume$
 # Remove cmdlets
   - where:
       verb: Get|Remove|Set
@@ -270,6 +274,10 @@ directive:
       subject: ^(.*)AgreementFile$
       variant: (.*\d)
     remove: true
+  - where:
+      verb: Remove
+      subject: ^EntitlementManagementAccessPackageAssignment$
+    remove: true
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(BusinessFlowTemplate)(\1)+
@@ -292,6 +300,14 @@ directive:
     set:
       subject: $1
 # Rename cmdlets
+  # Keep updateRequest actions separate from resource PATCH operations.
+  - where:
+      verb: Update
+      subject: ^((IdentityGovernancePrivilegedAccessGroup|RoleManagementDirectoryRole|RoleManagementEntitlementManagementRole)AssignmentScheduleRequest)$
+      variant: ^(Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1)$
+    set:
+      verb: Invoke
+      subject: Update$1
   - where:
       verb: Get
       subject: ^(PrivilegedRole)(Assignment)$

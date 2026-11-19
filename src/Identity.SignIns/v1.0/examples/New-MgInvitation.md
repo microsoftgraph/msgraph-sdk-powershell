@@ -29,3 +29,24 @@ Invite a guest user with the following:
 - Once the user redeems the invitation, the user will be redirected to https://myapplications.microsoft.com
 - The usertype will be set to Member
 - SendInvitationMessage is not specified so by default an invitation email will NOT be sent 
+
+### Example 2: Send CC email for a new invited user.
+
+```powershell
+
+Import-Module Microsoft.Graph.Identity.SignIns
+
+$InvitedUserMessageInfo = @{
+	CustomizedMessageBody = "Welcome!"
+	ccRecipients = @(
+		@{
+			emailAddress = @{
+				address = "user@ccaddress.com"
+			}
+		}
+	)
+}
+
+New-MgInvitation -InvitedUserDisplayName "User" -InvitedUserEmailAddress "user@logonaddress.com" -InviteRedirectUrl "https://myapplications.microsoft.com" -InvitedUserMessageInfo $InvitedUserMessageInfo -SendInvitationMessage -Debug
+```
+This example will send cc email to a new invited user

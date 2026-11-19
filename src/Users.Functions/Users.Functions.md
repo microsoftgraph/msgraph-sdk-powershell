@@ -25,14 +25,4 @@ directive:
       subject: ^(UserOnenote)Notebook(RecentNotebook)$
     set:
       subject: $1$2
-  - where:
-      verb: Invoke
-      subject: ^(CalendarUserEventCalendar|CalendarUserCalendar)$
-    set:
-      subject: $1AllowedCalendarSharingRoles
-  - where:
-      verb: Get
-      subject: ^(User)(ChatMessage|OnlineMeetingTranscript|OnlineMeetingRecording)$
-    set:
-      subject: All$1$2
 ```

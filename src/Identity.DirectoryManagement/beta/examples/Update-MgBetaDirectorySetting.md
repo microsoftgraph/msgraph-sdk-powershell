@@ -18,3 +18,23 @@ Update-MgBetaDirectorySetting -DirectorySettingId $directorySettingId -BodyParam
 ```
 This example shows how to use the Update-MgBetaDirectorySetting Cmdlet.
 
+### Example 2: Code snippet
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+$params = @{
+	values = @(
+		@{
+			name = "EnableMIPLabels"
+			value = "true"
+		}
+	)
+}
+
+Update-MgBetaDirectorySetting -DirectorySettingId $directorySettingId -BodyParameter $params
+
+```
+This example shows how to use the Update-MgBetaDirectorySetting Cmdlet.
+

@@ -35,6 +35,11 @@ $params = @{
 		locale = "en-US"
 	}
 	provisioningType = "dedicated"
+	userExperienceType = "cloudPc"
+	userSettingsPersistenceConfiguration = @{
+		userSettingsPersistenceEnabled = $true
+		userSettingsPersistenceStorageSizeCategory = "fourGB"
+	}
 }
 
 New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy -BodyParameter $params
