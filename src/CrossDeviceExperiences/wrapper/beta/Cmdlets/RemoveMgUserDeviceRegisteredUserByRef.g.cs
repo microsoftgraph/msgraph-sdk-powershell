@@ -10,9 +10,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
 {
-    [GraphRoute("DELETE", "/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}/$ref")]
-    [Cmdlet(VerbsCommon.Remove, "MgUserDeviceRegisteredOwnerDirectoryObjectByRef", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    public class RemoveMgUserDeviceRegisteredOwnerDirectoryObjectByRefCommand : GraphClientCmdlet
+    [GraphRoute("DELETE", "/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}/$ref")]
+    [Cmdlet(VerbsCommon.Remove, "MgUserDeviceRegisteredUserByRef", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
+    public class RemoveMgUserDeviceRegisteredUserByRefCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string UserId { get; set; } = string.Empty;
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.CrossDeviceExperiences
             // DeleteAsync returns a plain Task: a standard delete response has no body.
             try
             {
-                client.Users[UserId].Devices[DeviceId].RegisteredOwners[DirectoryObjectId].Ref.DeleteAsync(requestConfiguration =>
+                client.Users[UserId].Devices[DeviceId].RegisteredUsers[DirectoryObjectId].Ref.DeleteAsync(requestConfiguration =>
                 {
 
                         if (this.IsParameterBound(nameof(IfMatch)))
