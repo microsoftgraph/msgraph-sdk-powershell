@@ -37,7 +37,7 @@ namespace Microsoft.Graph.PowerShell.Applications
             var body = new global::Microsoft.Graph.PowerShell.Applications.Client.ServicePrincipals.Item.GetPasswordSingleSignOnCredentials.GetPasswordSingleSignOnCredentialsPostRequestBody();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Applications.Client.Models.PasswordSingleSignOnCredentialSet? result;

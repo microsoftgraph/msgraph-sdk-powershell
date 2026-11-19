@@ -74,7 +74,7 @@ namespace Microsoft.Graph.PowerShell.Reports
     if (this.IsParameterBound(nameof(Top)))
         body.Top = Top;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             System.IO.Stream? result;

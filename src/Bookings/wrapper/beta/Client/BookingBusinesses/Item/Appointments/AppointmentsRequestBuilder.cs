@@ -155,7 +155,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.BookingBusinesses.Item.Appo
         /// All the appointments of this business. Read-only. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AppointmentsRequestBuilderGetQueryParameters
+        public partial class AppointmentsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

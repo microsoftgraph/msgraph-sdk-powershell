@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
     if (this.IsParameterBound(nameof(FileEncryptionInfo)))
         body.FileEncryptionInfo = FileEncryptionInfo;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

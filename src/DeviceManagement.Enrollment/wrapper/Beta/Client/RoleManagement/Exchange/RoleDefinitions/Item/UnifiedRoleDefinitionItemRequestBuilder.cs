@@ -4,6 +4,7 @@ using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.OData
 using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models;
 using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId;
 using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.InheritsPermissionsFrom;
+using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.Restore;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleMana
         public global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.InheritsPermissionsFrom.InheritsPermissionsFromRequestBuilder InheritsPermissionsFrom
         {
             get => new global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.InheritsPermissionsFrom.InheritsPermissionsFromRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The restore property</summary>
+        public global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.Restore.RestoreRequestBuilder Restore
+        {
+            get => new global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.UnifiedRoleDefinitionItemRequestBuilder"/> and sets the default values.
@@ -69,7 +75,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleMana
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
+        /// Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider. For the directory provider, you can also get a soft-deleted custom role definition from the deleted-items collection. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.UnifiedRoleDefinition"/></returns>
@@ -137,7 +143,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleMana
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
+        /// Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider. For the directory provider, you can also get a soft-deleted custom role definition from the deleted-items collection. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -195,7 +201,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleMana
         {
         }
         /// <summary>
-        /// Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
+        /// Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider. For the directory provider, you can also get a soft-deleted custom role definition from the deleted-items collection. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UnifiedRoleDefinitionItemRequestBuilderGetQueryParameters 

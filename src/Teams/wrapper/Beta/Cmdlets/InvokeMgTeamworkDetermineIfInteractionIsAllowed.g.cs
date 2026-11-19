@@ -46,7 +46,7 @@ namespace Microsoft.Graph.PowerShell.Teams
     if (this.IsParameterBound(nameof(InteractionType)))
         body.InteractionType = InteractionType;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Teams.Client.Teamwork.DetermineIfInteractionIsAllowed.DetermineIfInteractionIsAllowedPostResponse? result;

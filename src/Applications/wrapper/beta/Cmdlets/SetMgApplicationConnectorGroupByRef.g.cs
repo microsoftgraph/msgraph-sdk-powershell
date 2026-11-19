@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Applications
     if (this.IsParameterBound(nameof(OdataId)))
         body.OdataId = OdataId;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

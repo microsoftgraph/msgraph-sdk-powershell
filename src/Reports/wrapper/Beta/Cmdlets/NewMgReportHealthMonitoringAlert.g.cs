@@ -80,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Reports
         body.State = State;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Reports.Client.Models.HealthMonitoring.Alert? result;

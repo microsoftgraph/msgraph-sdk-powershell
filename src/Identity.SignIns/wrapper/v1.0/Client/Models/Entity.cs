@@ -243,6 +243,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models
                 "#microsoft.graph.printTaskDefinition" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.PrintTaskDefinition(),
                 "#microsoft.graph.printTaskTrigger" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.PrintTaskTrigger(),
                 "#microsoft.graph.profilePhoto" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.ProfilePhoto(),
+                "#microsoft.graph.resourceAccountKeyAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.ResourceAccountKeyAuthenticationMethod(),
                 "#microsoft.graph.resourceSpecificPermissionGrant" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.ResourceSpecificPermissionGrant(),
                 "#microsoft.graph.richLongRunningOperation" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.RichLongRunningOperation(),
                 "#microsoft.graph.riskDetection" => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.RiskDetection(),

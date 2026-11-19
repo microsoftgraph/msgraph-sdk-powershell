@@ -117,7 +117,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
         body.InvitedAttendees = InvitedAttendees!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhall? result;
@@ -135,20 +135,6 @@ namespace Microsoft.Graph.PowerShell.Bookings
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Solutions.VirtualEvents.Townhalls[VirtualEventTownhallId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, VirtualEventTownhallId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

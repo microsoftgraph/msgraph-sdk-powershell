@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
     if (this.IsParameterBound(nameof(EndDateTime)))
         body.EndDateTime = EndDateTime;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Bookings.Client.Solutions.BookingBusinesses.Item.GetStaffAvailability.GetStaffAvailabilityPostResponse? result;

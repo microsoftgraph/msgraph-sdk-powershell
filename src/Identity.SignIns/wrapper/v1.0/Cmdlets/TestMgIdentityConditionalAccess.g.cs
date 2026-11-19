@@ -56,7 +56,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
     if (this.IsParameterBound(nameof(SignInConditions)))
         body.SignInConditions = SignInConditions;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Identity.ConditionalAccess.Evaluate.EvaluatePostResponse? result;

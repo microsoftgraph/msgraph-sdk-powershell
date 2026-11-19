@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns
     if (this.IsParameterBound(nameof(HostName)))
         body.HostName = HostName;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.SignIns.Client.Models.WebApplicationFirewallVerificationModel? result;

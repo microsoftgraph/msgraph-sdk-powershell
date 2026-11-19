@@ -1,0 +1,134 @@
+{
+  "mappings": [
+    {
+      "module": "DeviceManagement.Enrollment",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^(deviceManagement_.*UserExperienceAnalytic.*|roleManagement\\..*\\.roleDefinition\\.inheritsPermissionsFrom.*)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Reviewed the complete original regex match set in each actual same-profile source and verified that the current literal selector covers exactly its surviving operations. Preserve inherited navigation CRUD and direct role-definition assignedPrincipals functions. No selected source operation was removed.",
+      "profiles": {
+        "v1.0": {
+          "notes": "The original selector matches zero actual source operations and zero current compatible operations; reviewed default no-match evidence. Neither analytics nor inherited role routes exist in this profile.",
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "notes": "All eleven original regex matches survive and all eleven current compatible IDs now match literally after required-path ID alignment. Historical review confirms the three inherited assignedPrincipals GET functions differ only by the final microsoft.graph. qualifier; the module tests preserve this finite source audit without a runtime bridge.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice",
+              "operationId": "deviceManagement_ListUserExperienceAnalyticsNotAutopilotReadyDevice"
+            },
+            {
+              "method": "POST",
+              "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice",
+              "operationId": "deviceManagement_CreateUserExperienceAnalyticsNotAutopilotReadyDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
+              "operationId": "deviceManagement_GetUserExperienceAnalyticsNotAutopilotReadyDevice"
+            },
+            {
+              "method": "PATCH",
+              "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
+              "operationId": "deviceManagement_UpdateUserExperienceAnalyticsNotAutopilotReadyDevice"
+            },
+            {
+              "method": "DELETE",
+              "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/{userExperienceAnalyticsNotAutopilotReadyDevice-id}",
+              "operationId": "deviceManagement_DeleteUserExperienceAnalyticsNotAutopilotReadyDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
+              "operationId": "roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_assignedPrincipal"
+            },
+            {
+              "method": "GET",
+              "path": "/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
+              "operationId": "roleManagement.cloudPC.roleDefinition.inheritsPermissionsFrom_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
+              "operationId": "roleManagement.deviceManagement.roleDefinition.inheritsPermissionsFrom_assignedPrincipal"
+            },
+            {
+              "method": "GET",
+              "path": "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
+              "operationId": "roleManagement.deviceManagement.roleDefinition.inheritsPermissionsFrom_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}/assignedPrincipals(transitive=@transitive,directoryScopeType='@directoryScopeType',directoryScopeId='@directoryScopeId')",
+              "operationId": "roleManagement.exchange.roleDefinition.inheritsPermissionsFrom_assignedPrincipal"
+            },
+            {
+              "method": "GET",
+              "path": "/roleManagement/exchange/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/$count",
+              "operationId": "roleManagement.exchange.roleDefinition.inheritsPermissionsFrom_GetCount"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "DeviceManagement.Enrollment",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DeviceManagementWindowAutopilotDeviceIdentity$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The legacy Window subject identifies PATCH on the windowsAutopilotDeviceIdentities item, not POST updateDeviceProperties. Preserve the existing v1.0 derived suppression and other item operations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}",
+              "operationId": "deviceManagement_UpdateWindowsAutopilotDeviceIdentity"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "PATCH",
+              "path": "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}",
+              "operationId": "deviceManagement_UpdateWindowsAutopilotDeviceIdentity"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "DeviceManagement.Enrollment",
+      "directiveIndex": 3,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^DeviceManagementUserExperienceAnalyticNotAutopilotReadyDeviceCount$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress only GET analytics /$count. Its dotted legacy operation ID is not selected by directive 1. The v1.0 spec contains no analytics route.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice/$count",
+              "operationId": "deviceManagement.userExperienceAnalyticsNotAutopilotReadyDevice_GetCount"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

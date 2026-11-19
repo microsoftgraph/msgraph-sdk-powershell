@@ -32,6 +32,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Mode
                 "#microsoft.graph.passwordAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.PasswordAuthenticationMethod(),
                 "#microsoft.graph.phoneAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.PhoneAuthenticationMethod(),
                 "#microsoft.graph.platformCredentialAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.PlatformCredentialAuthenticationMethod(),
+                "#microsoft.graph.resourceAccountKeyAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.ResourceAccountKeyAuthenticationMethod(),
                 "#microsoft.graph.softwareOathAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.SoftwareOathAuthenticationMethod(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.TemporaryAccessPassAuthenticationMethod(),
                 "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.DeviceManagement.Administration.Client.Models.WindowsHelloForBusinessAuthenticationMethod(),

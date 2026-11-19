@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Teams
     if (this.IsParameterBound(nameof(AdditionalMessage)))
         body.AdditionalMessage = AdditionalMessage;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Teams.Client.Users.Item.Chats.Item.TargetedMessages.Item.Replies.ForwardToChat.ForwardToChatPostResponse? result;

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Applications
     if (this.IsParameterBound(nameof(Proof)))
         body.Proof = Proof;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

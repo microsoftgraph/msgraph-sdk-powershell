@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
                 return;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Identity.Governance.Client.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewTaskFailures.PreviewTaskFailuresPostResponse? result;

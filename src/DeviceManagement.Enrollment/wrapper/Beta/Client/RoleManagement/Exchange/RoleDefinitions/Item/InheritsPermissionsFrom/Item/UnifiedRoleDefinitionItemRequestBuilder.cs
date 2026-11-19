@@ -3,6 +3,7 @@
 using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models;
 using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.InheritsPermissionsFrom.Item.AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId;
+using Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.InheritsPermissionsFrom.Item.Restore;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleMana
         public global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.InheritsPermissionsFrom.Item.AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId.AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId
         {
             get => new global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.InheritsPermissionsFrom.Item.AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId.AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The restore property</summary>
+        public global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.InheritsPermissionsFrom.Item.Restore.RestoreRequestBuilder Restore
+        {
+            get => new global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.InheritsPermissionsFrom.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.RoleManagement.Exchange.RoleDefinitions.Item.InheritsPermissionsFrom.Item.UnifiedRoleDefinitionItemRequestBuilder"/> and sets the default values.

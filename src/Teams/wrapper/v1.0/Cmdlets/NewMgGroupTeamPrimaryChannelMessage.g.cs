@@ -165,7 +165,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.Reactions = Reactions!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.ChatMessage? result;

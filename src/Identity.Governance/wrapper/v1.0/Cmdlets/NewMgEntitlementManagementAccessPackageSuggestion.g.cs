@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance
         body.Reasons = Reasons!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.AccessPackageSuggestion? result;

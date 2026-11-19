@@ -65,6 +65,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Governance.Client.Models
             return mappingValue switch
             {
                 "#microsoft.graph.identityGovernance.customTaskExtension" => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.IdentityGovernance.CustomTaskExtension(),
+                "#microsoft.graph.roleManagementCustomCalloutExtension" => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.RoleManagementCustomCalloutExtension(),
                 _ => new global::Microsoft.Graph.PowerShell.Identity.Governance.Client.Models.CustomCalloutExtension(),
             };
         }

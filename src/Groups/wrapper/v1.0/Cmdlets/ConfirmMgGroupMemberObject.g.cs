@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Groups
     if (this.IsParameterBound(nameof(Ids)))
         body.Ids = Ids!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Groups.Client.Groups.Item.CheckMemberObjects.CheckMemberObjectsPostResponse? result;

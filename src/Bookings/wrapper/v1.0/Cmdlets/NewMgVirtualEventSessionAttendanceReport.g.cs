@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
         body.ExternalEventInformation = ExternalEventInformation!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Bookings.Client.Models.MeetingAttendanceReport? result;
