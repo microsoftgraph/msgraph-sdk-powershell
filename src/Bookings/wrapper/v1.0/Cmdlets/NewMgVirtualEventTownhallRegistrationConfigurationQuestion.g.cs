@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventRegistrationQuestionBase? result;

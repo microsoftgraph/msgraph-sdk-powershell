@@ -185,7 +185,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.BookingCurrencies.Item
         /// Get entity from bookingCurrencies by key
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BookingCurrencyItemRequestBuilderGetQueryParameters
+        public partial class BookingCurrencyItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -155,7 +155,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.BookingBusinesses.Item.Staf
         /// All the staff members that provide services in this business. Read-only. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class StaffMembersRequestBuilderGetQueryParameters
+        public partial class StaffMembersRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
