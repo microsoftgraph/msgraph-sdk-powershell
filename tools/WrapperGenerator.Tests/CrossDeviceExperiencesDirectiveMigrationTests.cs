@@ -150,9 +150,9 @@ public sealed class CrossDeviceExperiencesDirectiveMigrationTests
         var config = new GeneratorConfig("Test.Client", "unused", UseCollisionData: useCollisionData);
         var item = Naming.Resolve(new OperationInfo(HttpMethod.Delete, itemPath), config, apiVersion: "beta");
         var collection = Naming.Resolve(new OperationInfo(HttpMethod.Delete, collectionPath), config, apiVersion: "beta");
-        Assert.Equal($"MgUserDevice{noun}DirectoryObjectByRef", item.Noun);
+        Assert.Equal($"MgUserDevice{noun}ByRef", item.Noun);
         Assert.Equal($"MgUserDevice{noun}ByRef", collection.Noun);
-        Assert.NotEqual(item.ClassName, collection.ClassName);
+        Assert.Equal(item.ClassName, collection.ClassName);
         Assert.Equal("Remove", item.VerbName);
         Assert.Equal("Remove", collection.VerbName);
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Delete, itemPath, config, apiVersion: "beta"));
@@ -225,8 +225,11 @@ public sealed class CrossDeviceExperiencesDirectiveMigrationTests
             }
             if (profile == "beta")
             {
-                Assert.Contains(Path.Combine(output, "RemoveMgUserDeviceRegisteredOwnerDirectoryObjectByRef.g.cs"), files);
-                Assert.Contains(Path.Combine(output, "RemoveMgUserDeviceRegisteredUserDirectoryObjectByRef.g.cs"), files);
+                foreach (var noun in new[] { "RegisteredOwner", "RegisteredUser" })
+                {
+                    Assert.Contains(Path.Combine(output, $"RemoveMgUserDevice{noun}ByRef.g.cs"), files);
+                    Assert.DoesNotContain(Path.Combine(output, $"RemoveMgUserDevice{noun}DirectoryObjectByRef.g.cs"), files);
+                }
             }
         }
         finally
