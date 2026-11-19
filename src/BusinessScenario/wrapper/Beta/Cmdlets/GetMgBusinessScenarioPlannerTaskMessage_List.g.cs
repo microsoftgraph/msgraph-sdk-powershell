@@ -62,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.BusinessScenario
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BusinessScenario.Client.Models.PlannerTaskChatMessageCollectionResponse? result;
@@ -93,6 +93,7 @@ namespace Microsoft.Graph.PowerShell.BusinessScenario
 
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
+
 
 
 

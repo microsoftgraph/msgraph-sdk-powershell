@@ -46,7 +46,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Partner.Client.Models.DelegatedAdminCustomer? result;

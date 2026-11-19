@@ -31,6 +31,7 @@ namespace Microsoft.Graph.PowerShell.Teams
 
 
 
+
         [Parameter(Mandatory = false)]
         [Alias("Select")]
         public string[]? Property { get; set; }

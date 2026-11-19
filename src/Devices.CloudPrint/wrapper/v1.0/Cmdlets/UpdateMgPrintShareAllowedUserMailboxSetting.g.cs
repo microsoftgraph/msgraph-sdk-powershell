@@ -89,7 +89,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
         body.WorkingHours = WorkingHours;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.MailboxSettings? result;
@@ -107,20 +107,6 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Print.Shares[PrinterShareId].AllowedUsers[UserId].MailboxSettings.GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, UserId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

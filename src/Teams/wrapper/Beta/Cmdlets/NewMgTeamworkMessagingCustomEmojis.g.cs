@@ -56,7 +56,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.CreatedBy = CreatedBy;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkCustomEmoji? result;

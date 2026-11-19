@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Enrollment.Client.Models.AndroidForWorkEnrollmentProfileCollectionResponse? result;
@@ -90,6 +90,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
 
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
+
 
 
 

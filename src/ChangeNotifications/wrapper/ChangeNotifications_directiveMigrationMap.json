@@ -1,0 +1,104 @@
+{
+  "mappings": [],
+  "audit": {
+    "module": "ChangeNotifications",
+    "source": "src/ChangeNotifications/ChangeNotifications.md",
+    "disposition": "NoSharedDirectives",
+    "sharedCmdletDirectiveCount": 0,
+    "deferredParameterDirectiveCount": 0,
+    "deferredSchemaDirectiveCount": 0,
+    "excludedProfiles": [],
+    "ignoredSources": [
+      "src/readme.graph.md",
+      "src/ChangeNotifications/v1.0/readme.md",
+      "src/ChangeNotifications/beta/readme.md"
+    ],
+    "notes": "These are unaffected-operation audit evidence, not directive mappings. No curated overrides are needed. Revalidated after #3849 against target 08e409a6aa8fd48736b8f9a9199559f46fc0d1ad: compatible operation IDs now align with the original subscription_* IDs; compatible v1.0 now also includes getVapidPublicKey(). Existing v1.0 parity data renames reauthorize; action/function naming differences from the legacy SDK remain baseline behavior. Runtime profile context is passed separately from shared GeneratorConfig, with derived data both enabled and disabled.",
+    "profiles": {
+      "v1.0": {
+        "spec": "openApiDocs_KiotaCompat/v1.0/ChangeNotifications.yml",
+        "specGitBlob": "e53bd7d80255a87fe5c11b94c5d1f09e15adc854",
+        "trackedOutputDirectory": "src/ChangeNotifications/wrapper/v1.0",
+        "operations": [
+          {
+            "method": "GET",
+            "path": "/subscriptions",
+            "operationId": "subscription_ListSubscription"
+          },
+          {
+            "method": "POST",
+            "path": "/subscriptions",
+            "operationId": "subscription_CreateSubscription"
+          },
+          {
+            "method": "GET",
+            "path": "/subscriptions/{subscription-id}",
+            "operationId": "subscription_GetSubscription"
+          },
+          {
+            "method": "PATCH",
+            "path": "/subscriptions/{subscription-id}",
+            "operationId": "subscription_UpdateSubscription"
+          },
+          {
+            "method": "DELETE",
+            "path": "/subscriptions/{subscription-id}",
+            "operationId": "subscription_DeleteSubscription"
+          },
+          {
+            "method": "POST",
+            "path": "/subscriptions/{subscription-id}/reauthorize",
+            "operationId": "subscription_reauthorize"
+          },
+          {
+            "method": "GET",
+            "path": "/subscriptions/getVapidPublicKey()",
+            "operationId": "subscription_getVapidPublicKey"
+          }
+        ]
+      },
+      "beta": {
+        "spec": "openApiDocs_KiotaCompat/beta/ChangeNotifications.yml",
+        "specGitBlob": "14bf6c727c87c5433274bfec78a4a681169e5390",
+        "trackedOutputDirectory": "src/ChangeNotifications/wrapper/Beta",
+        "operations": [
+          {
+            "method": "GET",
+            "path": "/subscriptions",
+            "operationId": "subscription_ListSubscription"
+          },
+          {
+            "method": "POST",
+            "path": "/subscriptions",
+            "operationId": "subscription_CreateSubscription"
+          },
+          {
+            "method": "GET",
+            "path": "/subscriptions/{subscription-id}",
+            "operationId": "subscription_GetSubscription"
+          },
+          {
+            "method": "PATCH",
+            "path": "/subscriptions/{subscription-id}",
+            "operationId": "subscription_UpdateSubscription"
+          },
+          {
+            "method": "DELETE",
+            "path": "/subscriptions/{subscription-id}",
+            "operationId": "subscription_DeleteSubscription"
+          },
+          {
+            "method": "POST",
+            "path": "/subscriptions/{subscription-id}/reauthorize",
+            "operationId": "subscription_reauthorize"
+          },
+          {
+            "method": "GET",
+            "path": "/subscriptions/getVapidPublicKey()",
+            "operationId": "subscription_getVapidPublicKey"
+          }
+        ]
+      }
+    }
+  }
+}

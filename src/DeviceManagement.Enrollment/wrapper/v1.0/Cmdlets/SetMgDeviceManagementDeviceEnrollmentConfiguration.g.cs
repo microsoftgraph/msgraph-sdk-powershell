@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
     if (this.IsParameterBound(nameof(EnrollmentConfigurationAssignments)))
         body.EnrollmentConfigurationAssignments = EnrollmentConfigurationAssignments!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

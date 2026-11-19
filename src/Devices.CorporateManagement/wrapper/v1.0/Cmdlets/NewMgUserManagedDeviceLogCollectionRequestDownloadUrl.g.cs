@@ -39,7 +39,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
                 return;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Devices.CorporateManagement.Client.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl.CreateDownloadUrlPostResponse? result;

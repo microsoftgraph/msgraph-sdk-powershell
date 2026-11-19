@@ -96,5 +96,13 @@ namespace Microsoft.Graph.PowerShell.Reports.Client.Models
         #pragma warning disable CS1591
         MicrosoftRevokedSessions,
         #pragma warning restore CS1591
+        [EnumMember(Value = "aiElevatedAccountRisk")]
+        #pragma warning disable CS1591
+        AiElevatedAccountRisk,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "userPassedVerifiedIdDrivenByRiskBasedPolicy")]
+        #pragma warning disable CS1591
+        UserPassedVerifiedIdDrivenByRiskBasedPolicy,
+        #pragma warning restore CS1591
     }
 }

@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Notes
             if (!ShouldProcess(OnenoteResourceId, "Set"))
                 return;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Notes.Client.Models.OnenoteResource? result;

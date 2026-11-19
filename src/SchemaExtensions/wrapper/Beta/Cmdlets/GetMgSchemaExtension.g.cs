@@ -19,6 +19,7 @@ namespace Microsoft.Graph.PowerShell.SchemaExtensions
 
 
 
+
         [Parameter(Mandatory = false)]
         [Alias("Select")]
         public string[]? Property { get; set; }

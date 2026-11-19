@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
     if (this.IsParameterBound(nameof(Comment)))
         body.Comment = Comment;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

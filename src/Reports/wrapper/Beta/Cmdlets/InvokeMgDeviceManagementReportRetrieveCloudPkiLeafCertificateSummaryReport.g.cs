@@ -50,7 +50,7 @@ namespace Microsoft.Graph.PowerShell.Reports
     if (this.IsParameterBound(nameof(Select)))
         body.Select = Select!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             System.IO.Stream? result;

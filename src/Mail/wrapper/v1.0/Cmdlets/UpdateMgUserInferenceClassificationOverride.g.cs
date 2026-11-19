@@ -49,7 +49,7 @@ namespace Microsoft.Graph.PowerShell.Mail
         body.SenderEmailAddress = SenderEmailAddress;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Mail.Client.Models.InferenceClassificationOverride? result;
@@ -67,20 +67,6 @@ namespace Microsoft.Graph.PowerShell.Mail
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Users[UserId].InferenceClassification.Overrides[InferenceClassificationOverrideId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, InferenceClassificationOverrideId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

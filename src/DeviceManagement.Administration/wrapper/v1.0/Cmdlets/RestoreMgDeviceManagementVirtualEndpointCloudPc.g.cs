@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Administration
     if (this.IsParameterBound(nameof(CloudPcSnapshotId)))
         body.CloudPcSnapshotId = CloudPcSnapshotId;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

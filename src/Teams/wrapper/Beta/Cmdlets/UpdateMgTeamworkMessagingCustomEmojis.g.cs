@@ -12,13 +12,13 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace Microsoft.Graph.PowerShell.Teams
 {
-    [GraphRoute("PATCH", "/teamwork/messaging/customEmojis/{teamworkCustomEmoji-displayName}")]
+    [GraphRoute("PATCH", "/teamwork/messaging/customEmojis/{teamworkCustomEmoji-id}")]
     [Cmdlet(VerbsData.Update, "MgTeamworkMessagingCustomEmojis", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.Medium)]
     [OutputType(typeof(Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkCustomEmoji))]
     public class UpdateMgTeamworkMessagingCustomEmojisCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
-        public string TeamworkCustomEmojiDisplayName { get; set; } = string.Empty;
+        public string TeamworkCustomEmojiId { get; set; } = string.Empty;
 
         [Parameter(Mandatory = false)]
         public string? ContentBytes { get; set; }
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.PowerShell.Teams
 
         protected override void ProcessRecord()
         {
-            if (!ShouldProcess(TeamworkCustomEmojiDisplayName, "Update"))
+            if (!ShouldProcess(TeamworkCustomEmojiId, "Update"))
                 return;
 
             var body = new Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkCustomEmoji();
@@ -57,13 +57,13 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.CreatedBy = CreatedBy;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.TeamworkCustomEmoji? result;
             try
             {
-                result = client.Teamwork.Messaging.CustomEmojis[TeamworkCustomEmojiDisplayName].PatchAsync(body, requestConfiguration =>
+                result = client.Teamwork.Messaging.CustomEmojis[TeamworkCustomEmojiId].PatchAsync(body, requestConfiguration =>
                 {
 
                         AddRequestHeaders(requestConfiguration.Headers);
@@ -71,24 +71,10 @@ namespace Microsoft.Graph.PowerShell.Teams
             }
             catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
             {
-                ThrowGraphRequestFailed(ex, TeamworkCustomEmojiDisplayName);
+                ThrowGraphRequestFailed(ex, TeamworkCustomEmojiId);
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Teamwork.Messaging.CustomEmojis[TeamworkCustomEmojiDisplayName].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, TeamworkCustomEmojiDisplayName);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
