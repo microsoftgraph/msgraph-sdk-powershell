@@ -46,13 +46,17 @@ foreach ($ext in $extensions) {
 
     if (Test-Path $nodeModules) {
         Write-Host "Cache already present: $ext"
-        continue
     }
-
-    New-Item -ItemType Directory -Force -Path $cacheDir | Out-Null
-    Write-Host "Pre-installing $ext into $cacheDir"
-    npm install $ext --prefix $cacheDir @npmFeedArgs
-    if ($LASTEXITCODE -ne 0) { throw "Failed to pre-install $ext (exit $LASTEXITCODE)" }
-    Write-Host "Done: $ext"
+    else {
+        New-Item -ItemType Directory -Force -Path $cacheDir | Out-Null
+        Write-Host "Pre-installing $ext into $cacheDir"
+        npm install $ext --prefix $cacheDir @npmFeedArgs
+        if ($LASTEXITCODE -ne 0) { throw "Failed to pre-install $ext (exit $LASTEXITCODE)" }
+        Write-Host "Done: $ext"
+    }
+    if ($pkg -eq "@autorest/core") {
+        node (Join-Path $PSScriptRoot "Patch-AutorestCore.cjs") $nodeModules
+        if ($LASTEXITCODE -ne 0) { throw "Failed to patch AutoREST core cache writes (exit $LASTEXITCODE)" }
+    }
 }
 

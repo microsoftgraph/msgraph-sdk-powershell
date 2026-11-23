@@ -8,7 +8,7 @@
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Loader</RootNamespace>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
-    <Version>2.38.1</Version>
+    <Version>2.42.0</Version>
     <!-- Suppress .NET Target Framework Moniker (TFM) Support Build Warnings -->
     <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
   </PropertyGroup>
