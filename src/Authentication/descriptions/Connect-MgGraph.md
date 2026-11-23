@@ -1,1 +1,3 @@
-You must invoke Connect-MgGraph before any commands that access Microsoft Graph. This cmdlet gets the access token using the Microsoft Authentication Library
+Invoke Connect-MgGraph before commands that access Microsoft Graph. This cmdlet obtains access tokens through Azure.Identity and the Microsoft Authentication Library (MSAL), or uses a caller-provided access token. Use Get-MgContext to inspect the connected account, tenant, authentication type, and permissions.
+
+On Windows, interactive authentication uses Web Account Manager (WAM) by default. To use browser sign-in instead, run Set-MgGraphOption -DisableLoginByWAM $true before connecting with a custom -ClientId. WAM cannot be disabled for the default Microsoft Graph PowerShell client ID.

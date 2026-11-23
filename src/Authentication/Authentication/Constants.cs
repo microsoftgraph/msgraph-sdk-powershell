@@ -33,17 +33,17 @@ namespace Microsoft.Graph.PowerShell.Authentication
         {
             public const string Scopes = "An array of delegated permissions to consent to.";
             public const string ClientId = "The client id of your application.";
-            public const string CertificateSubjectName = "The subject distinguished name of a certificate. The Certificate will be retrieved from the current user's certificate store.";
-            public const string CertificateThumbprint = "The thumbprint of your certificate. The Certificate will be retrieved from the current user's certificate store.";
+            public const string CertificateSubjectName = "The subject distinguished name of a certificate. The certificate is searched for in the current user's certificate store, then the local machine's certificate store.";
+            public const string CertificateThumbprint = "The thumbprint of your certificate. The certificate is searched for in the current user's certificate store, then the local machine's certificate store.";
             public const string SendCertificateChain = "Include x5c header in client claims when acquiring a token to enable subject name / issuer based authentication using given certificate.";
             public const string Certificate = "An X.509 certificate supplied during invocation.";
             public const string ClientSecretCredential = "The PSCredential object provides the application ID and client secret for service principal credentials. For more information about the PSCredential object, type Get-Help Get-Credential.";
             public const string AccessToken = "Specifies a bearer token for Microsoft Graph service. Access tokens do timeout and you'll have to handle their refresh.";
             public const string TenantId = "The id of the tenant to connect to. You can also use this parameter to specify your sign-in audience. i.e., common, organizations, or consumers. See https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-client-application-configuration#authority.";
-            public const string ContextScope = "Determines the scope of authentication context. This accepts `Process` for the current process, or `CurrentUser` for all sessions started by user.";
+            public const string ContextScope = "Determines the scope of authentication context. `Process` keeps tokens in memory for the current PowerShell process; `CurrentUser` persists tokens for reuse across sessions. Delegated authentication defaults to `CurrentUser`, except on WSL where it uses `Process`. Certificate, client secret, managed identity, and environment-variable authentication default to `Process`. This controls token persistence, not account selection.";
             public const string Environment = "The name of the national cloud environment to connect to. By default global cloud is used.";
             public const string UseDeviceCode = "Use device code authentication instead of a browser control.";
-            public const string LoginHint = "The login hint (typically a username or email) used to pre-populate the account field during interactive browser authentication.";
+            public const string LoginHint = "The login hint (typically a username or email) used to pre-populate the account field during interactive browser or WAM authentication. A matching cached authentication record can be reused, but sign-in prompts may still be required. This parameter is not used with -UseDeviceCode.";
             public const string ClientTimeout = "Sets the HTTP client timeout in seconds.";
             public const string NoWelcome = "Hides the welcome message.";
             public const string Identity = "Login using a Managed Identity.";
