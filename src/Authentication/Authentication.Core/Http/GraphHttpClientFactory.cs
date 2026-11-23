@@ -51,12 +51,24 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Http
             if (requestContext is null)
                 throw new AuthenticationException(string.Format(CultureInfo.InvariantCulture, ErrorConstants.Message.MissingSessionProperty, nameof(requestContext)));
 
-            var authProvider = AuthenticationHelpers.GetAuthenticationProviderAsync(authContext).ConfigureAwait(false).GetAwaiter().GetResult();
-
-            var delegatingHandlers = new List<DelegatingHandler>
+            var delegatingHandlers = new List<DelegatingHandler>();
+#if ONEAUTH_PREVIEW
+            bool useDPoP = OneAuthPreview.UseDPoP;
+            DPoPAuthenticationHandler proofHandler = null;
+            if (useDPoP)
             {
-                new AuthenticationHandler(authProvider)
-            };
+                var credential = AuthenticationHelpers.GetTokenCredentialAsync(authContext).ConfigureAwait(false).GetAwaiter().GetResult();
+                var scopes = AuthenticationHelpers.GetScopes(authContext);
+                var provider = new Microsoft.Graph.Authentication.AzureIdentityAccessTokenProvider(
+                    credential: credential, observabilityOptions: null, isCaeEnabled: true, scopes: scopes);
+                proofHandler = new DPoPAuthenticationHandler(credential, scopes, provider.AllowedHostsValidator.IsUrlHostValid);
+            }
+            else
+#endif
+            {
+                var authProvider = AuthenticationHelpers.GetAuthenticationProviderAsync(authContext).ConfigureAwait(false).GetAwaiter().GetResult();
+                delegatingHandlers.Add(new AuthenticationHandler(authProvider));
+            }
 
             if (customHandlers != null)
                 delegatingHandlers.AddRange(customHandlers);
@@ -67,11 +79,21 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Http
                 MaxRetry = requestContext.MaxRetry,
                 RetriesTimeLimit = requestContext.RetriesTimeLimit
             }));
-            delegatingHandlers.Add(new RedirectHandler());
+#if ONEAUTH_PREVIEW
+            if (!useDPoP)
+#endif
+                delegatingHandlers.Add(new RedirectHandler());
 
             if (trailingHandlers != null)
                 delegatingHandlers.AddRange(trailingHandlers);
 
+#if ONEAUTH_PREVIEW
+            if (useDPoP)
+            {
+                delegatingHandlers.Add(proofHandler);
+                useLegacyClientHandler = true; // Disable transport redirects as well as redirect middleware.
+            }
+#endif
             HttpClient httpClient = useLegacyClientHandler
                 ? GraphClientFactory.Create(delegatingHandlers, finalHandler: new HttpClientHandler
                 {

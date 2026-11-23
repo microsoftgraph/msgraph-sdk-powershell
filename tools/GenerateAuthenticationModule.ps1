@@ -11,7 +11,8 @@ Param(
   [switch] $EnableSigning,
   [switch] $BuildWhenEqual,
   [switch] $Test,
-  [switch] $Run
+  [switch] $Run,
+  [switch] $OneAuthPreview
 )
 $ErrorActionPreference = 'Stop'
 $LASTEXITCODE = 0
@@ -56,11 +57,15 @@ if ($Build -or $Run) {
     Set-CSProjValues -ModuleCsProj $AuthTestCSProj -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
     Set-CSProjValues -ModuleCsProj $AuthLoaderCSProj -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
   }
-  & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -EnableSigning:$EnableSigning -Version $ModuleMetadata.versions.authentication.version -Prerelease $ModuleMetadata.versions.authentication.prerelease -ModuleMetadata $ModuleMetadata.Clone()
+  & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $AuthModulePath -EnableSigning:$EnableSigning -Version $ModuleMetadata.versions.authentication.version -Prerelease $ModuleMetadata.versions.authentication.prerelease -ModuleMetadata $ModuleMetadata.Clone() -OneAuthPreview:$OneAuthPreview
 }
 
 if ($Test) {
-  dotnet test $AuthSrcPath --verbosity quiet
+  $testArguments = @()
+  if ($OneAuthPreview) {
+    $testArguments += '-p:EnableOneAuthPreview=true'
+  }
+  dotnet test $AuthSrcPath --verbosity quiet @testArguments
   if (-not $?) {
     Write-Error "Failed to execute: dotnet test $AuthSrcPath"
   }

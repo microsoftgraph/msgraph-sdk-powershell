@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup Condition="'$(EnableOneAuthPreview)' == 'true'">
+    <DefineConstants>$(DefineConstants);ONEAUTH_PREVIEW</DefineConstants>
+    <NoWarn>$(NoWarn);AZID0005</NoWarn>
+    <RestoreConfigFile>$(MSBuildThisFileDirectory)NuGet.OneAuthPreview.Config</RestoreConfigFile>
+  </PropertyGroup>
+</Project>

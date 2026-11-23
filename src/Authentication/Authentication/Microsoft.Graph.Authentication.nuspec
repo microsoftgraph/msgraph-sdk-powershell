@@ -29,8 +29,8 @@
     <file src="artifacts\custom\" target="custom" />
     <!-- Copy framework dependent assemblies to respective framework directory. -->
     <!-- Shared -->
-    <file src="artifacts\Dependencies\Azure.Identity.dll" target="Dependencies" />
-    <file src="artifacts\Dependencies\Azure.Identity.Broker.dll" target="Dependencies" />
+    <!-- The OneAuth preview embeds Azure.Identity in Azure.Core; only the broker DLL is separate. -->
+    <file src="artifacts\Dependencies\Azure.Identity*.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.Identity.Client.Broker.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.Identity.Client.NativeInterop.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.Bcl.AsyncInterfaces.dll" target="Dependencies" />
@@ -60,6 +60,12 @@
     <file src="artifacts\Dependencies\Core\Microsoft.Graph.Core.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Microsoft.Identity.Client.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Microsoft.Identity.Client.Extensions.Msal.dll" target="Dependencies\Core" />
+    <!-- Optional OneAuth private-preview assets. Keep native libraries in architecture-specific folders. -->
+    <file src="artifacts\Dependencies\Core\Microsoft.Authentication.Client*.dll" target="Dependencies\Core" />
+    <file src="artifacts\Dependencies\Core\System.Threading.Channels*.dll" target="Dependencies\Core" />
+    <file src="artifacts\Dependencies\Core\runtimes\win-x64\native\OneAuthInterop*.dll" target="Dependencies\Core\runtimes\win-x64\native" />
+    <file src="artifacts\Dependencies\Core\runtimes\win-x86\native\OneAuthInterop*.dll" target="Dependencies\Core\runtimes\win-x86\native" />
+    <file src="artifacts\Dependencies\Core\runtimes\win-arm64\native\OneAuthInterop*.dll" target="Dependencies\Core\runtimes\win-arm64\native" />
     <!-- Desktop (Windows PowerShell 5.1): loaded via AppDomain.AssemblyResolve -->
     <file src="artifacts\Dependencies\Desktop\Microsoft.Graph.Authentication.Core.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\Azure.Core.dll" target="Dependencies\Desktop" />

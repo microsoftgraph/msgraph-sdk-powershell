@@ -38,6 +38,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
 
+#if ONEAUTH_PREVIEW
+            if (OneAuthPreview.IsActive &&
+                (authContext.AuthType != AuthenticationType.Delegated ||
+                 authContext.TokenCredentialType != TokenCredentialType.InteractiveBrowser ||
+                 !ShouldUseWam(authContext)))
+            {
+                throw new NotSupportedException("The OneAuth preview requires Windows, WAM, and delegated interactive authentication. Disable both OneAuth switches before using another authentication flow.");
+            }
+#endif
             switch (authContext.AuthType)
             {
                 case AuthenticationType.Delegated:
@@ -121,13 +130,23 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             interactiveOptions.ClientId = authContext.ClientId;
             interactiveOptions.TenantId = authContext.TenantId ?? "common";
             interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
-            interactiveOptions.TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext);
             var loginHint = authContext.LoginHint;
             if (!string.IsNullOrWhiteSpace(loginHint))
             {
                 interactiveOptions.LoginHint = loginHint;
             }
 
+#if ONEAUTH_PREVIEW
+            if (OneAuthPreview.IsActive)
+            {
+                var brokerOptions = (InteractiveBrowserCredentialBrokerOptions)interactiveOptions;
+                brokerOptions.UseDefaultBrokerAccount = string.IsNullOrWhiteSpace(loginHint);
+                brokerOptions.DisableAutomaticAuthentication = true;
+                // OneAuth owns its account/cache state; do not reuse MSAL authentication records.
+                return new InteractiveBrowserCredential(brokerOptions);
+            }
+#endif
+            interactiveOptions.TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext);
             // Resolve the persisted authentication record for this account. When a login hint is
             // supplied a per-account record is used so we never silently reuse a different user's
             // record and so repeat sign-ins for the same account are picker-free.
@@ -345,6 +364,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 }
                 catch (AuthenticationFailedException authEx)
                 {
+#if ONEAUTH_PREVIEW
+                    if (OneAuthPreview.IsActive)
+                        throw;
+#endif
                     if (authEx.InnerException is MsalCachePersistenceException)
                     {
                         // Can't securely persist token on disk. Retry with in-memory cache.
@@ -392,11 +415,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             // Use isCaeEnabled: true to match the TokenRequestContext that AzureIdentityAccessTokenProvider will use
             // during API calls, ensuring MSAL caches a CAE-capable token that can be found silently later.
             var token = await tokenCredential.GetTokenAsync(new TokenRequestContext(GetScopes(authContext), isCaeEnabled: true), cancellationToken).ConfigureAwait(false);
+#if ONEAUTH_PREVIEW
+            if (OneAuthPreview.UseDPoP &&
+                (!string.Equals(token.TokenType, "DPoP", StringComparison.OrdinalIgnoreCase) || token.ProofProvider == null))
+                throw new InvalidOperationException("The OneAuth preview requires a DPoP token and proof provider.");
+#endif
             JwtHelpers.DecodeJWT(token.Token, account: null, ref authContext);
             return authContext;
         }
 
-        private static string[] GetScopes(IAuthContext authContext)
+        internal static string[] GetScopes(IAuthContext authContext)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
@@ -534,6 +562,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         public static async Task<IAuthContext> LogoutAsync(bool signOutFromBroker = false)
         {
             var authContext = GraphSession.Instance.AuthContext;
+#if ONEAUTH_PREVIEW
+            if (OneAuthPreview.IsActive)
+            {
+                if (signOutFromBroker)
+                    throw new NotSupportedException("Broker sign-out is not supported by this OneAuth preview. Disconnect without -SignOutFromBroker to clear only the Graph session.");
+
+                GraphSession.Instance.OutputWriter.WriteWarning("Disconnect clears the Graph session, not the OneAuth/WAM account or its shared token cache.");
+                GraphSession.Instance.InMemoryTokenCache?.ClearCache();
+                GraphSession.Instance.AuthContext = null;
+                GraphSession.Instance.GraphHttpClient = null;
+                return authContext;
+            }
+#endif
             GraphSession.Instance.InMemoryTokenCache?.ClearCache();
 
             // The login hint (when supplied at sign-in) keys the per-account auth record for this

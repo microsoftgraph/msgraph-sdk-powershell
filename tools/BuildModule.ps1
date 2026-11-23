@@ -10,7 +10,8 @@ Param(
     [hashtable[]] $RequiredModules,
     [switch] $EnableSigning,
     [switch] $ExcludeExampleTemplates,
-    [switch] $ExcludeNotesSection
+    [switch] $ExcludeNotesSection,
+    [switch] $OneAuthPreview
 )
 $ErrorActionPreference = "Stop"
 if ($PSEdition -ne "Core") {
@@ -99,7 +100,7 @@ Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $FullVersionNumber
 if ($ModuleFullName -eq "Microsoft.Graph.Authentication") {
     # Build auth modules.
     Write-Debug "Building '$ModuleFullName' module..."
-    & $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
+    & $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection -OneAuthPreview:$OneAuthPreview
     if ($lastexitcode -ne 0) {
         Write-Debug "Failed to build '$ModuleFullName' module."
         exit $lastexitcode

@@ -1,7 +1,8 @@
 ﻿param(
   [switch]$Isolated,
   [switch]$Pack,
-  [switch]$Release
+  [switch]$Release,
+  [switch]$OneAuthPreview
 )
 
 $ErrorActionPreference = 'Stop'
@@ -11,6 +12,10 @@ $netStandard = "netstandard2.0"
 $netApp = "net6.0"
 $netFx = "net472"
 $copyExtensions = @('.dll', '.pdb')
+$publishArguments = @()
+if ($OneAuthPreview) {
+  $publishArguments += '-p:EnableOneAuthPreview=true'
+}
 
 # Source code locations
 $coreSrc = Join-Path $PSScriptRoot "../$ModuleName.Core"
@@ -66,19 +71,23 @@ if ((Test-Path "$cmdletsSrc/bin") -or (Test-Path "$cmdletsSrc/obj")) {
 Write-Host -ForegroundColor Green 'Compiling module...'
 # Build authentication.core for each framework.
 Push-Location $coreSrc
-dotnet publish -c $Configuration -f $netStandard --verbosity quiet /nologo
-dotnet publish -c $Configuration -f $netApp --verbosity quiet /nologo
-dotnet publish -c $Configuration -f $netFx --verbosity quiet /nologo
+dotnet publish -c $Configuration -f $netStandard --verbosity quiet /nologo @publishArguments
+if ($LastExitCode -ne 0) { throw 'Authentication.Core compilation failed.' }
+dotnet publish -c $Configuration -f $netApp --verbosity quiet /nologo @publishArguments
+if ($LastExitCode -ne 0) { throw 'Authentication.Core compilation failed.' }
+dotnet publish -c $Configuration -f $netFx --verbosity quiet /nologo @publishArguments
+if ($LastExitCode -ne 0) { throw 'Authentication.Core compilation failed.' }
 Pop-Location
 
 # Build the AssemblyLoadContext loader (PowerShell 7+ only).
 Push-Location $loaderSrc
 dotnet publish -c $Configuration -f $netApp --verbosity quiet /nologo
+if ($LastExitCode -ne 0) { throw 'Authentication.Loader compilation failed.' }
 Pop-Location
 
 # Build authentication.
 Push-Location $cmdletsSrc
-dotnet publish -c $Configuration --verbosity quiet /nologo
+dotnet publish -c $Configuration --verbosity quiet /nologo @publishArguments
 Pop-Location
 
 if ($LastExitCode -ne 0) {
@@ -94,6 +103,8 @@ New-Item -Path $outDeps -ItemType Directory | out-null
 New-Item -Path $outCore -ItemType Directory | out-null
 New-Item -Path $outDesktop -ItemType Directory | out-null
 
+# The preview does not change cmdlet help; reuse the checked-in help without regenerating public docs.
+if (-not $OneAuthPreview) {
 #Process markdown xml help
 Write-Host -ForegroundColor Green 'Generate doc files ...'
 $GenerateDocFilesS1 = (Join-Path $PSScriptRoot "generate-doc-files.ps1")
@@ -158,6 +169,7 @@ $CommandDescription = "The name of a command. e.g., Get-MgUser."
 
 # Update Find-MgGraphCommand markdown file by replacing place holders with actual value.
 (Get-Content "$DocsPath/Find-MgGraphCommand.md") -replace "{{ Fill ApiVersion Description }}", $ApiVersionDescription -replace "{{ Fill Command Description }", $CommandDescription -replace "{{ Fill InputObject Description }}", "Pipeline input object" -replace "{{ Fill Uri Description }}", $UriDescription -replace "{{ Fill Method Description }}", $MethodDescription -replace "{{ Fill Command Description }}", $CommandDescription -replace "{{ Fill ProgressAction Description }}", "Treat this as a common parameter."| Set-Content "$DocsPath/Find-MgGraphCommand.md"
+}
 # Copy manifest.
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.format.ps1xml" -Destination $outDir
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psm1" -Destination $outDir
@@ -189,6 +201,12 @@ ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destinat
 Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netApp/publish/" |
 Where-Object { -not $SharedAssemblies.Contains($_.BaseName) } |
 ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outCore -Recurse }
+
+if ($OneAuthPreview) {
+  # This package puts its implementation under runtimes/any; the loader probes managed DLLs at the dependency root.
+  Copy-Item -Path "$outCore/runtimes/any/lib/netstandard2.0/Microsoft.Authentication.Client.dll" -Destination $outCore
+  [void]$Deps.Add('Microsoft.Authentication.Client.dll')
+}
 
 Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netFx/publish/" |
 Where-Object { -not $SharedAssemblies.Contains($_.BaseName) } |
