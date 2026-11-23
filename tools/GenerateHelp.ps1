@@ -7,8 +7,12 @@ Param(
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc")
 )
 # Install PlatyPS
+# CFSClean: install tooling modules from the private feed (PowerShell Gallery upstream).
+. (Join-Path $PSScriptRoot 'Get-CfsFeedCredential.ps1')
+$__cfsCred = Get-CfsFeedCredential
+if ($null -ne $__cfsCred) { $PSDefaultParameterValues['Install-Module:Credential'] = $__cfsCred }
 if (!(Get-Module -Name PlatyPS -ListAvailable)) {
-    Install-Module PlatyPS -Force
+    Install-Module PlatyPS -Repository (Get-CfsFeedName) -Force
 }
 Import-Module PlatyPS -Force -Scope Global
 
