@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.WorkHoursA
         {
         }
         /// <summary>
-        /// Get work plan occurrences from your own work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
+        /// Get work plan occurrences from a user&apos;s work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workhoursandlocationssetting-occurrencesview?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.WorkHoursAndLocations.OccurrencesViewWithStartDateTimeWithEndDateTime.OccurrencesViewWithStartDateTimeWithEndDateTimeGetResponse"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.WorkHoursA
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.WorkHoursAndLocations.OccurrencesViewWithStartDateTimeWithEndDateTime.OccurrencesViewWithStartDateTimeWithEndDateTimeGetResponse>(requestInfo, global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.WorkHoursAndLocations.OccurrencesViewWithStartDateTimeWithEndDateTime.OccurrencesViewWithStartDateTimeWithEndDateTimeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get work plan occurrences from your own work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
+        /// Get work plan occurrences from a user&apos;s work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workhoursandlocationssetting-occurrencesview?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.WorkHoursAndLocations.OccurrencesViewWithStartDateTimeWithEndDateTime.OccurrencesViewWithStartDateTimeWithEndDateTimeResponse"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.WorkHoursA
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.WorkHoursAndLocations.OccurrencesViewWithStartDateTimeWithEndDateTime.OccurrencesViewWithStartDateTimeWithEndDateTimeResponse>(requestInfo, global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.WorkHoursAndLocations.OccurrencesViewWithStartDateTimeWithEndDateTime.OccurrencesViewWithStartDateTimeWithEndDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get work plan occurrences from your own work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
+        /// Get work plan occurrences from a user&apos;s work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.WorkHoursA
             return new global::Microsoft.Graph.PowerShell.Users.Client.Users.Item.Settings.WorkHoursAndLocations.OccurrencesViewWithStartDateTimeWithEndDateTime.OccurrencesViewWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get work plan occurrences from your own work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
+        /// Get work plan occurrences from a user&apos;s work plan within a specified date range. This function requires the startDateTime and endDateTime parameters.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OccurrencesViewWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters 

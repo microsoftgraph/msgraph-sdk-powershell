@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.Users
         body.WellknownListName = WellknownListName;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Users.Client.Models.TodoTaskList? result;
