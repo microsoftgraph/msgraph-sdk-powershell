@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
     if (this.IsParameterBound(nameof(AppOwnerTenantId)))
         body.AppOwnerTenantId = AppOwnerTenantId;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ServiceStatus? result;

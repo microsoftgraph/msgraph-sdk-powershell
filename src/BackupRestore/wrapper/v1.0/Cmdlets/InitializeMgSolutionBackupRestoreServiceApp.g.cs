@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
     if (this.IsParameterBound(nameof(EffectiveDateTime)))
         body.EffectiveDateTime = EffectiveDateTime;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BackupRestore.Client.Models.ServiceApp? result;

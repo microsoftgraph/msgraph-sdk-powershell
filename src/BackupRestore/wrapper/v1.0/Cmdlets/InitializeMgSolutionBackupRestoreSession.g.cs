@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
                 return;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BackupRestore.Client.Models.RestoreSessionBase? result;

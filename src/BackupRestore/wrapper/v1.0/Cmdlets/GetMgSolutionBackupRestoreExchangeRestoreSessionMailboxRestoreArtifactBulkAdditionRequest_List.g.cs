@@ -60,7 +60,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BackupRestore.Client.Models.MailboxRestoreArtifactsBulkAdditionRequestCollectionResponse? result;
@@ -91,6 +91,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
 
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
+
 
 
 

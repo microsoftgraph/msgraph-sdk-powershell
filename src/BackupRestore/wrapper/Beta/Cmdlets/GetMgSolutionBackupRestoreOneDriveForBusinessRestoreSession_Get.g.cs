@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.BackupRestore.Client.Models.OneDriveForBusinessRestoreSession? result;
@@ -47,6 +47,7 @@ namespace Microsoft.Graph.PowerShell.BackupRestore
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 
