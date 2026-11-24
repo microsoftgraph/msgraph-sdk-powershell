@@ -37,7 +37,7 @@ You must upgrade to Microsoft Graph PowerShell version 2.37.0 or later before en
 
 Otherwise, sign-in or reauthentication will fail and Microsoft Graph PowerShell won't obtain an access token. Windows brokered sign-in, device code authentication, application-only authentication, customer-owned application registrations, and access tokens supplied by the caller aren't directly affected.
 
-For update and validation instructions, see [Authentication](./docs/authentication.md#upcoming-browser-based-interactive-sign-in-security-change).
+For update instructions, see [Updating the SDK](https://learn.microsoft.com/powershell/microsoftgraph/installation#updating-the-sdk).
 
 ## Modules
 
