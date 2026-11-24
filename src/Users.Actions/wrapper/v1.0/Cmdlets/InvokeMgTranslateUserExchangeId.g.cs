@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Users.Actions
     if (this.IsParameterBound(nameof(SourceIdType)))
         body.SourceIdType = SourceIdType;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Users.Actions.Client.Users.Item.TranslateExchangeIds.TranslateExchangeIdsPostResponse? result;
