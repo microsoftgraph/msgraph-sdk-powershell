@@ -249,6 +249,22 @@ public sealed class ActionFunctionTests
         Assert.Contains("public bool? SaveToSentItems", source, StringComparison.Ordinal);
     }
 
+    [Theory]
+    [InlineData("post", "PostPath", "Post", "Post")]
+    [InlineData("delete", "DeletePath", "Delete", "Delete")]
+    [InlineData("microsoft.graph.post", "MicrosoftGraphPost", "MicrosoftGraphPost", "Post")]
+    public void KeepsReservedNavigationEscapesOutOfRequestBodyTypes(
+        string segment, string navigation, string typeNamespace, string typeName)
+    {
+        var yaml = SendMailYaml.Replace("sendMail", segment, StringComparison.Ordinal);
+        var (_, source) = Generate(yaml, $"InvokeMgUser{typeName}.g.cs");
+
+        Assert.Contains($"client.Users[UserId].{navigation}.PostAsync(body,", source, StringComparison.Ordinal);
+        Assert.Contains($"new global::Microsoft.Graph.PowerShell.Test.Client.Users.Item.{typeNamespace}.{typeName}PostRequestBody()", source, StringComparison.Ordinal);
+        Assert.Contains("public bool? SaveToSentItems", source, StringComparison.Ordinal);
+        Assert.Contains($"[GraphRoute(\"POST\", \"/users/{{user-id}}/{segment}\")]", source, StringComparison.Ordinal);
+    }
+
     // An action with no request body: kiota's PostAsync takes no body argument, so emitting one
     // would not compile.
     private const string RestoreYaml = """
