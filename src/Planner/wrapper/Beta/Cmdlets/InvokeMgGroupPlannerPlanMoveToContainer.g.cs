@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Planner
     if (this.IsParameterBound(nameof(Container)))
         body.Container = Container;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Planner.Client.Models.PlannerPlan? result;

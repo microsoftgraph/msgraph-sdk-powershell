@@ -1,0 +1,3225 @@
+{
+  "mappings": [
+    {
+      "module": "Planner",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^user.planner_(Create|Update|Delete)All|planner.bucket_(Get|Create|Update|Delete)Task|planner.bucket.task.*|planner.plan_(Get|Create|Update|Delete)Bucket|planner.plan.bucket.*|planner.plan_(Get|Create|Update|Delete)Task|planner.plan.task.*$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The unchanged original selector selects 137 v1.0 and 206 beta historical surviving routes. Normally merged required-path operation-ID alignment makes current literal selection complete in both profiles. The module tests preserve the historical 24 beta final action/function route audit without an integration schema or runtime bridge.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets",
+              "operationId": "group.planner.plan_CreateBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "group.planner.plan_GetBucket"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "group.planner.plan_UpdateBucket"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "group.planner.plan_DeleteBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "group.planner.plan.bucket_ListTask"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "group.planner.plan.bucket_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan.bucket_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan.bucket_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan.bucket_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.bucket.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.bucket.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.bucket.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
+              "operationId": "group.planner.plan.bucket.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/$count",
+              "operationId": "group.planner.plan.bucket_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks",
+              "operationId": "group.planner.plan_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/$count",
+              "operationId": "group.planner.plan.task_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks",
+              "operationId": "planner.bucket_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.bucket_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.bucket_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.bucket_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.bucket.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.bucket.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.bucket.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.bucket.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.bucket.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.bucket.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.bucket.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.bucket.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.bucket.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.bucket.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.bucket.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.bucket.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/$count",
+              "operationId": "planner.bucket.task_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/plans/{plannerPlan-id}/buckets",
+              "operationId": "planner.plan_CreateBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "planner.plan_GetBucket"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "planner.plan_UpdateBucket"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "planner.plan_DeleteBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "planner.plan.bucket_ListTask"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "planner.plan.bucket_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.plan.bucket_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.plan.bucket_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.plan.bucket_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.plan.bucket.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.plan.bucket.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.plan.bucket.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
+              "operationId": "planner.plan.bucket.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/$count",
+              "operationId": "planner.plan.bucket_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/plans/{plannerPlan-id}/tasks",
+              "operationId": "planner.plan_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.plan_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.plan_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.plan_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.plan.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.plan.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.plan.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.plan.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.plan.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.plan.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.plan.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.plan.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.plan.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.plan.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.plan.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.plan.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/$count",
+              "operationId": "planner.plan.task_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets",
+              "operationId": "user.planner.plan_CreateBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "user.planner.plan_GetBucket"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "user.planner.plan_UpdateBucket"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "user.planner.plan_DeleteBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "user.planner.plan.bucket_ListTask"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "user.planner.plan.bucket_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan.bucket_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan.bucket_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan.bucket_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.bucket.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.bucket.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.bucket.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
+              "operationId": "user.planner.plan.bucket.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/$count",
+              "operationId": "user.planner.plan.bucket_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks",
+              "operationId": "user.planner.plan_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/$count",
+              "operationId": "user.planner.plan.task_GetCount"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent. Complete original and current literal populations: 137 surviving selected routes; no fabricated absences. Historical qualified final action/function paths are audited only in module tests."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets",
+              "operationId": "group.planner.plan_CreateBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "group.planner.plan_GetBucket"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "group.planner.plan_UpdateBucket"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "group.planner.plan_DeleteBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "group.planner.plan.bucket_ListTask"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "group.planner.plan.bucket_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan.bucket_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan.bucket_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan.bucket_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.bucket.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.bucket.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.bucket.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "group.planner.plan.bucket.task_ListMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "group.planner.plan.bucket.task_CreateMessage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "group.planner.plan.bucket.task_GetMessage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "group.planner.plan.bucket.task_UpdateMessage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "group.planner.plan.bucket.task_DeleteMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+              "operationId": "group.planner.plan.bucket.task.message_setReaction"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+              "operationId": "group.planner.plan.bucket.task.message_unsetReaction"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
+              "operationId": "group.planner.plan.bucket.task.message_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
+              "operationId": "group.planner.plan.bucket.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/delta()",
+              "operationId": "group.planner.plan.bucket.task_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/$count",
+              "operationId": "group.planner.plan.bucket_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/delta()",
+              "operationId": "group.planner.plan.bucket_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks",
+              "operationId": "group.planner.plan_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "group.planner.plan.task_ListMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "group.planner.plan.task_CreateMessage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "group.planner.plan.task_GetMessage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "group.planner.plan.task_UpdateMessage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "group.planner.plan.task_DeleteMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+              "operationId": "group.planner.plan.task.message_setReaction"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+              "operationId": "group.planner.plan.task.message_unsetReaction"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/$count",
+              "operationId": "group.planner.plan.task.message_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/$count",
+              "operationId": "group.planner.plan.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/delta()",
+              "operationId": "group.planner.plan.task_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks",
+              "operationId": "planner.bucket_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.bucket_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.bucket_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.bucket_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.bucket.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.bucket.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.bucket.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.bucket.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.bucket.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.bucket.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.bucket.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.bucket.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.bucket.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "planner.bucket.task_ListMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "planner.bucket.task_CreateMessage"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "planner.bucket.task_GetMessage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "planner.bucket.task_UpdateMessage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "planner.bucket.task_DeleteMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+              "operationId": "planner.bucket.task.message_setReaction"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+              "operationId": "planner.bucket.task.message_unsetReaction"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
+              "operationId": "planner.bucket.task.message_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.bucket.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.bucket.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.bucket.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/$count",
+              "operationId": "planner.bucket.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/buckets/{plannerBucket-id}/tasks/delta()",
+              "operationId": "planner.bucket.task_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/plans/{plannerPlan-id}/buckets",
+              "operationId": "planner.plan_CreateBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "planner.plan_GetBucket"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "planner.plan_UpdateBucket"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "planner.plan_DeleteBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "planner.plan.bucket_ListTask"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "planner.plan.bucket_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.plan.bucket_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.plan.bucket_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.plan.bucket_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.plan.bucket.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.plan.bucket.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.plan.bucket.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "planner.plan.bucket.task_ListMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "planner.plan.bucket.task_CreateMessage"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "planner.plan.bucket.task_GetMessage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "planner.plan.bucket.task_UpdateMessage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "planner.plan.bucket.task_DeleteMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+              "operationId": "planner.plan.bucket.task.message_setReaction"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+              "operationId": "planner.plan.bucket.task.message_unsetReaction"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
+              "operationId": "planner.plan.bucket.task.message_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
+              "operationId": "planner.plan.bucket.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/delta()",
+              "operationId": "planner.plan.bucket.task_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/$count",
+              "operationId": "planner.plan.bucket_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/buckets/delta()",
+              "operationId": "planner.plan.bucket_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/plans/{plannerPlan-id}/tasks",
+              "operationId": "planner.plan_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.plan_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.plan_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "planner.plan_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.plan.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.plan.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "planner.plan.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.plan.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.plan.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "planner.plan.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.plan.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.plan.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "planner.plan.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "planner.plan.task_ListMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "planner.plan.task_CreateMessage"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "planner.plan.task_GetMessage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "planner.plan.task_UpdateMessage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "planner.plan.task_DeleteMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+              "operationId": "planner.plan.task.message_setReaction"
+            },
+            {
+              "method": "POST",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+              "operationId": "planner.plan.task.message_unsetReaction"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/$count",
+              "operationId": "planner.plan.task.message_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.plan.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.plan.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "planner.plan.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/$count",
+              "operationId": "planner.plan.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/planner/plans/{plannerPlan-id}/tasks/delta()",
+              "operationId": "planner.plan.task_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/all",
+              "operationId": "user.planner_CreateAll"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/all/{plannerDelta-id}",
+              "operationId": "user.planner_UpdateAll"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/all/{plannerDelta-id}",
+              "operationId": "user.planner_DeleteAll"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets",
+              "operationId": "user.planner.plan_CreateBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "user.planner.plan_GetBucket"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "user.planner.plan_UpdateBucket"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "user.planner.plan_DeleteBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "user.planner.plan.bucket_ListTask"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "user.planner.plan.bucket_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan.bucket_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan.bucket_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan.bucket_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.bucket.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.bucket.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.bucket.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "user.planner.plan.bucket.task_ListMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "user.planner.plan.bucket.task_CreateMessage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.plan.bucket.task_GetMessage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.plan.bucket.task_UpdateMessage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.plan.bucket.task_DeleteMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+              "operationId": "user.planner.plan.bucket.task.message_setReaction"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+              "operationId": "user.planner.plan.bucket.task.message_unsetReaction"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
+              "operationId": "user.planner.plan.bucket.task.message_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
+              "operationId": "user.planner.plan.bucket.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/delta()",
+              "operationId": "user.planner.plan.bucket.task_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/$count",
+              "operationId": "user.planner.plan.bucket_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/delta()",
+              "operationId": "user.planner.plan.bucket_delta"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks",
+              "operationId": "user.planner.plan_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "user.planner.plan.task_ListMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "user.planner.plan.task_CreateMessage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.plan.task_GetMessage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.plan.task_UpdateMessage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.plan.task_DeleteMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+              "operationId": "user.planner.plan.task.message_setReaction"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+              "operationId": "user.planner.plan.task.message_unsetReaction"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/$count",
+              "operationId": "user.planner.plan.task.message_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/$count",
+              "operationId": "user.planner.plan.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/delta()",
+              "operationId": "user.planner.plan.task_delta"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent. Complete original and current literal populations: 206 surviving selected routes; no fabricated absences. Historical qualified final action/function paths are audited only in module tests."
+        }
+      }
+    },
+    {
+      "module": "Planner",
+      "directiveIndex": 2,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^(User|Group)Planner$",
+      "implementation": "CmdletConfigurator",
+      "notes": "DELETE of user/group planner singletons only; GET and PATCH remain.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner",
+              "operationId": "group_DeletePlanner"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner",
+              "operationId": "user_DeletePlanner"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner",
+              "operationId": "group_DeletePlanner"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner",
+              "operationId": "user_DeletePlanner"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        }
+      }
+    },
+    {
+      "module": "Planner",
+      "directiveIndex": 3,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^(User|Group)Planner(Task|Plan)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Create, update and delete user/group plan/task navigation resources only; collection GET remains.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans",
+              "operationId": "group.planner_CreatePlan"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}",
+              "operationId": "group.planner_UpdatePlan"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}",
+              "operationId": "group.planner_DeletePlan"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans",
+              "operationId": "user.planner_CreatePlan"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}",
+              "operationId": "user.planner_UpdatePlan"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}",
+              "operationId": "user.planner_DeletePlan"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/tasks",
+              "operationId": "user.planner_CreateTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}",
+              "operationId": "user.planner_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}",
+              "operationId": "user.planner_DeleteTask"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans",
+              "operationId": "group.planner_CreatePlan"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}",
+              "operationId": "group.planner_UpdatePlan"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}",
+              "operationId": "group.planner_DeletePlan"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans",
+              "operationId": "user.planner_CreatePlan"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}",
+              "operationId": "user.planner_UpdatePlan"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}",
+              "operationId": "user.planner_DeletePlan"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/tasks",
+              "operationId": "user.planner_CreateTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}",
+              "operationId": "user.planner_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}",
+              "operationId": "user.planner_DeleteTask"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        }
+      }
+    },
+    {
+      "module": "Planner",
+      "directiveIndex": 4,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^Planner(Plan|Task)Detail$",
+      "implementation": "CmdletConfigurator",
+      "notes": "DELETE of root plan/task details only; GET and PATCH and group plan details remain.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/details",
+              "operationId": "planner.plan_DeleteDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/tasks/{plannerTask-id}/details",
+              "operationId": "planner.task_DeleteDetail"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/planner/plans/{plannerPlan-id}/details",
+              "operationId": "planner.plan_DeleteDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/planner/tasks/{plannerTask-id}/details",
+              "operationId": "planner.task_DeleteDetail"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        }
+      }
+    },
+    {
+      "module": "Planner",
+      "directiveIndex": 5,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^UserPlanner(Task|Plan)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "GET item variants of user plans/tasks only, not the List variants on their collections.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}",
+              "operationId": "user.planner_GetPlan"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}",
+              "operationId": "user.planner_GetTask"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}",
+              "operationId": "user.planner_GetPlan"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}",
+              "operationId": "user.planner_GetTask"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        }
+      }
+    },
+    {
+      "module": "Planner",
+      "directiveIndex": 6,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^UserPlannerPlanTask$",
+      "implementation": "CmdletConfigurator",
+      "notes": "GET item variant of user plan tasks; already covered by directive 1. This selector does not select List, but directive 7 independently suppresses the UserPlannerPlanTask collection subject.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_GetTask"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_GetTask"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        }
+      }
+    },
+    {
+      "module": "Planner",
+      "directiveIndex": 7,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^UserPlanner(Task[A-Z].*|Plan[A-Z].*)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "User plan/task descendant resource subjects, including counts, and calls on descendant message subjects. Calls directly on Plan/Task retain the parent subject and do not match the required uppercase suffix: preserve plan archive/unarchive/moveToContainer/getUsageRights and plan/task delta. The deeper plan bucket/task subtree overlaps directive 1.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets",
+              "operationId": "user.planner.plan_ListBucket"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets",
+              "operationId": "user.planner.plan_CreateBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "user.planner.plan_GetBucket"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "user.planner.plan_UpdateBucket"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "user.planner.plan_DeleteBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "user.planner.plan.bucket_ListTask"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "user.planner.plan.bucket_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan.bucket_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan.bucket_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan.bucket_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.bucket.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.bucket.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.bucket.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
+              "operationId": "user.planner.plan.bucket.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/$count",
+              "operationId": "user.planner.plan.bucket_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/details",
+              "operationId": "user.planner.plan_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/details",
+              "operationId": "user.planner.plan_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/details",
+              "operationId": "user.planner.plan_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks",
+              "operationId": "user.planner.plan_ListTask"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks",
+              "operationId": "user.planner.plan_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/$count",
+              "operationId": "user.planner.plan.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/$count",
+              "operationId": "user.planner.plan_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/$count",
+              "operationId": "user.planner.task_GetCount"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets",
+              "operationId": "user.planner.plan_ListBucket"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets",
+              "operationId": "user.planner.plan_CreateBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "user.planner.plan_GetBucket"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "user.planner.plan_UpdateBucket"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}",
+              "operationId": "user.planner.plan_DeleteBucket"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "user.planner.plan.bucket_ListTask"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "user.planner.plan.bucket_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan.bucket_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan.bucket_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan.bucket_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.bucket.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.bucket.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.bucket.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "user.planner.plan.bucket.task_ListMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "user.planner.plan.bucket.task_CreateMessage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.plan.bucket.task_GetMessage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.plan.bucket.task_UpdateMessage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.plan.bucket.task_DeleteMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+              "operationId": "user.planner.plan.bucket.task.message_setReaction"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+              "operationId": "user.planner.plan.bucket.task.message_unsetReaction"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
+              "operationId": "user.planner.plan.bucket.task.message_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
+              "operationId": "user.planner.plan.bucket.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/delta()",
+              "operationId": "user.planner.plan.bucket.task_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/$count",
+              "operationId": "user.planner.plan.bucket_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/delta()",
+              "operationId": "user.planner.plan.bucket_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/details",
+              "operationId": "user.planner.plan_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/details",
+              "operationId": "user.planner.plan_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/details",
+              "operationId": "user.planner.plan_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/historyItems",
+              "operationId": "user.planner.plan_ListHistoryItem"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/historyItems",
+              "operationId": "user.planner.plan_CreateHistoryItem"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/historyItems/{plannerHistoryItem-id}",
+              "operationId": "user.planner.plan_GetHistoryItem"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/historyItems/{plannerHistoryItem-id}",
+              "operationId": "user.planner.plan_UpdateHistoryItem"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/historyItems/{plannerHistoryItem-id}",
+              "operationId": "user.planner.plan_DeleteHistoryItem"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/historyItems/$count",
+              "operationId": "user.planner.plan.historyItem_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks",
+              "operationId": "user.planner.plan_ListTask"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks",
+              "operationId": "user.planner.plan_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}",
+              "operationId": "user.planner.plan_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.plan.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.plan.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.plan.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "user.planner.plan.task_ListMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "user.planner.plan.task_CreateMessage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.plan.task_GetMessage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.plan.task_UpdateMessage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.plan.task_DeleteMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+              "operationId": "user.planner.plan.task.message_setReaction"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+              "operationId": "user.planner.plan.task.message_unsetReaction"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/$count",
+              "operationId": "user.planner.plan.task.message_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.plan.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/$count",
+              "operationId": "user.planner.plan.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/delta()",
+              "operationId": "user.planner.plan.task_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/plans/$count",
+              "operationId": "user.planner.plan_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "user.planner.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "user.planner.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/details",
+              "operationId": "user.planner.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/messages",
+              "operationId": "user.planner.task_ListMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/messages",
+              "operationId": "user.planner.task_CreateMessage"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.task_GetMessage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.task_UpdateMessage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "user.planner.task_DeleteMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+              "operationId": "user.planner.task.plannerTask.message.plannerTaskChatMessage_setReaction"
+            },
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+              "operationId": "user.planner.task.plannerTask.message.plannerTaskChatMessage_unsetReaction"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/messages/$count",
+              "operationId": "user.planner.task.message_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/users/{user-id}/planner/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "user.planner.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/planner/tasks/$count",
+              "operationId": "user.planner.task_GetCount"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        }
+      }
+    },
+    {
+      "module": "Planner",
+      "directiveIndex": 8,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^GroupPlanner(PlanBucket[A-Z].*|PlanTask[A-Z].*)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Group plan bucket/task descendant subjects; already covered by directive 1. The PlanBucket/PlanTask collection subjects themselves do not match the required uppercase suffix.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "group.planner.plan.bucket_ListTask"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "group.planner.plan.bucket_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan.bucket_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan.bucket_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan.bucket_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.bucket.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.bucket.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.bucket.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
+              "operationId": "group.planner.plan.bucket.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/$count",
+              "operationId": "group.planner.plan.bucket_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/$count",
+              "operationId": "group.planner.plan.task_GetCount"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob 6b17e5c670edb0cfa60f0e0c3f4f03f43ca9e950; historical source blob dd3e46fdb6f30eb2c530119979654f2876dca775. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "group.planner.plan.bucket_ListTask"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks",
+              "operationId": "group.planner.plan.bucket_CreateTask"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan.bucket_GetTask"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan.bucket_UpdateTask"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}",
+              "operationId": "group.planner.plan.bucket_DeleteTask"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.bucket.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.bucket.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.bucket.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "group.planner.plan.bucket.task_ListMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "group.planner.plan.bucket.task_CreateMessage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "group.planner.plan.bucket.task_GetMessage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "group.planner.plan.bucket.task_UpdateMessage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "group.planner.plan.bucket.task_DeleteMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+              "operationId": "group.planner.plan.bucket.task.message_setReaction"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+              "operationId": "group.planner.plan.bucket.task.message_unsetReaction"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/messages/$count",
+              "operationId": "group.planner.plan.bucket.task.message_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.bucket.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count",
+              "operationId": "group.planner.plan.bucket.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/delta()",
+              "operationId": "group.planner.plan.bucket.task_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/$count",
+              "operationId": "group.planner.plan.bucket_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/delta()",
+              "operationId": "group.planner.plan.bucket_delta"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.task_GetAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.task_UpdateAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat",
+              "operationId": "group.planner.plan.task_DeleteAssignedToTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.task_GetBucketTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.task_UpdateBucketTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat",
+              "operationId": "group.planner.plan.task_DeleteBucketTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.task_GetDetail"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.task_UpdateDetail"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details",
+              "operationId": "group.planner.plan.task_DeleteDetail"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "group.planner.plan.task_ListMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages",
+              "operationId": "group.planner.plan.task_CreateMessage"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "group.planner.plan.task_GetMessage"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "group.planner.plan.task_UpdateMessage"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}",
+              "operationId": "group.planner.plan.task_DeleteMessage"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/setReaction",
+              "operationId": "group.planner.plan.task.message_setReaction"
+            },
+            {
+              "method": "POST",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/{plannerTaskChatMessage-id}/unsetReaction",
+              "operationId": "group.planner.plan.task.message_unsetReaction"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/messages/$count",
+              "operationId": "group.planner.plan.task.message_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.task_GetProgressTaskBoardFormat"
+            },
+            {
+              "method": "PATCH",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.task_UpdateProgressTaskBoardFormat"
+            },
+            {
+              "method": "DELETE",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat",
+              "operationId": "group.planner.plan.task_DeleteProgressTaskBoardFormat"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/$count",
+              "operationId": "group.planner.plan.task_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/delta()",
+              "operationId": "group.planner.plan.task_delta"
+            }
+          ],
+          "notes": "Ordinary current method/path/ID evidence. Compatible spec blob ae762ea25793ba27bc4c013870176fd8e94ef8d3; historical source blob ff945046e9fb2d11ae0207f1ea3e4d0cbc7ae32d. Root user plan/task count subjects remain included when historical kind metadata is absent."
+        }
+      }
+    }
+  ]
+}

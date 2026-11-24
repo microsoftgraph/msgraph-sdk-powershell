@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Planner
             if (!ShouldProcess(PlannerHistoryItemId, "Remove"))
                 return;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             // DeleteAsync returns a plain Task: a standard delete response has no body.
