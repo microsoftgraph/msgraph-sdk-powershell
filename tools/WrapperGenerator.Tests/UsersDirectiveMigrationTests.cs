@@ -17,17 +17,18 @@ namespace WrapperGenerator.Tests;
 
 public sealed class UsersDirectiveMigrationTests
 {
-    private static readonly (string Method, string Path, string LegacyId, string CurrentId)[] RootTodo =
+    private static readonly (string Method, string Path, string LegacyId, string CurrentId)[] SharedRootSuppressions =
     [
         ("GET", "/users/{user-id}/todo", "user_GetTodo", "user_GetTodo"),
         ("PATCH", "/users/{user-id}/todo", "user_UpdateTodo", "user_UpdateTodo"),
         ("DELETE", "/users/{user-id}/todo", "user_DeleteTodo", "user_DeleteTodo"),
+        ("GET", "/users/{user-id}/outlook", "user_GetOutlook", "user_GetOutlook"),
     ];
 
     [Theory]
     [InlineData("v1.0")]
     [InlineData("beta")]
-    public async Task OriginalSelectorAccountsForEveryActualLegacyMatchAndUniqueSuccessor(string profile)
+    public async Task CorrectedSelectorAccountsForEveryActualLegacyMatchAndUniqueSuccessor(string profile)
     {
         var legacy = await ReadSpec("openApiDocs", profile);
         var compatible = await ReadSpec("openApiDocs_KiotaCompat", profile);
@@ -41,13 +42,17 @@ public sealed class UsersDirectiveMigrationTests
                     Path: path.Key, Id: operation.Value.OperationId)))
             .ToArray();
 
-        Assert.Equal(RootTodo.Length, selected.Length);
+        var historicalRegex = new Regex("user_(Get|Create|Update|Delete|Set)(Todo|outlook)");
+        Assert.DoesNotMatch(historicalRegex, "user_GetOutlook");
+        Assert.Equal(3, legacy.Paths.SelectMany(path => path.Value.Operations!.Values)
+            .Count(operation => historicalRegex.IsMatch(operation.OperationId!)));
+        Assert.Equal(SharedRootSuppressions.Length, selected.Length);
         var currentSelected = compatible.Paths.SelectMany(path => path.Value.Operations!
             .Where(operation => regex.IsMatch(operation.Value.OperationId!))
             .Select(operation => $"{operation.Key.Method} {path.Key} [{operation.Value.OperationId}]")).ToArray();
         Assert.Equal(selected.Select(operation => $"{operation.Method} {operation.Path} [{operation.Id}]").Order(),
             currentSelected.Order());
-        foreach (var expected in RootTodo)
+        foreach (var expected in SharedRootSuppressions)
         {
             Assert.Single(selected, operation => operation.Method == expected.Method
                 && operation.Path == expected.Path && operation.Id == expected.LegacyId);
@@ -57,7 +62,8 @@ public sealed class UsersDirectiveMigrationTests
             Assert.Matches(regex, successor.Value.OperationId!);
         }
 
-        Assert.DoesNotMatch(regex, "user_GetOutlook");
+        Assert.Matches(regex, "user_GetOutlook");
+        Assert.DoesNotMatch(regex, "user.outlook_ListMasterCategory");
         Assert.DoesNotMatch(regex, "user.todo_ListList");
         // The later List rename cannot resurrect a path removed by directive 1.
         var singleton = legacy.Paths["/users/{user-id}/todo"].Operations![HttpMethod.Get];
@@ -98,8 +104,8 @@ public sealed class UsersDirectiveMigrationTests
         Assert.False(rootMapping.TryGetProperty("operationIdSource", out _));
         Assert.False(rootMapping.TryGetProperty("removedLegacyOperations", out _));
         var bridges = rootMapping.GetProperty("operations").EnumerateArray().ToArray();
-        Assert.Equal(RootTodo.Length, bridges.Length);
-        foreach (var expected in RootTodo)
+        Assert.Equal(SharedRootSuppressions.Length, bridges.Length);
+        foreach (var expected in SharedRootSuppressions)
         {
             Assert.Single(bridges, bridge =>
                 bridge.GetProperty("method").GetString() == expected.Method
@@ -128,7 +134,7 @@ public sealed class UsersDirectiveMigrationTests
     {
         var document = await ReadSpec("openApiDocs_KiotaCompat", profile);
         var config = new GeneratorConfig("Test.Client", "unused", useCollisionData);
-        foreach (var operation in RootTodo)
+        foreach (var operation in SharedRootSuppressions)
             AssertSuppressed(document, config, profile, operation.Method, operation.Path, operation.CurrentId);
         AssertSuppressed(document, config, profile, "POST", "/users/{user-id}/licenseDetails", "user_CreateLicenseDetail");
         AssertSuppressed(document, config, profile, "PATCH", "/users/{user-id}/photo", "user_UpdatePhoto");
@@ -137,6 +143,8 @@ public sealed class UsersDirectiveMigrationTests
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/todo/lists/{todoTaskList-id}", config, apiVersion: profile));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Patch, "/users/{user-id}/photos/{profilePhoto-id}/child", config, apiVersion: profile));
         Assert.False(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/licensedetails/child", config, apiVersion: profile));
+        foreach (var method in new[] { HttpMethod.Post, HttpMethod.Patch, HttpMethod.Delete })
+            Assert.False(CmdletConfigurator.IsSuppressed(method, "/users/{user-id}/outlook", config, apiVersion: profile));
     }
 
     [Theory]
@@ -161,6 +169,9 @@ public sealed class UsersDirectiveMigrationTests
             ("GET", "/users/{user-id}/todo/lists", "MgUserTodoList"),
             ("POST", "/users/{user-id}/todo/lists", "MgUserTodoList"),
             ("GET", "/users/{user-id}/todo/lists/{todoTaskList-id}", "MgUserTodoList"),
+            ("GET", "/users/{user-id}/outlook/masterCategories", "MgUserOutlookMasterCategory"),
+            ("POST", "/users/{user-id}/outlook/masterCategories", "MgUserOutlookMasterCategory"),
+            ("GET", "/users/{user-id}/outlook/masterCategories/{outlookCategory-id}", "MgUserOutlookMasterCategory"),
         ];
         foreach (var neighbor in neighbors)
         {
@@ -175,10 +186,7 @@ public sealed class UsersDirectiveMigrationTests
             Assert.True(document.Paths.ContainsKey(path));
             Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, path, config, apiVersion: profile));
         }
-        // Preserve the existing v1.0 derived Outlook suppression without extending a
-        // case-sensitive legacy selector to an operation it did not select in beta.
-        Assert.Equal(profile == "v1.0" && useCollisionData,
-            CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/outlook", config, apiVersion: profile));
+        Assert.True(CmdletConfigurator.IsSuppressed(HttpMethod.Get, "/users/{user-id}/outlook", config, apiVersion: profile));
     }
 
     [Theory]
@@ -282,8 +290,15 @@ public sealed class UsersDirectiveMigrationTests
         {
             "GetMgUserTodo.g.cs", "UpdateMgUserTodo.g.cs", "RemoveMgUserTodo.g.cs",
             "NewMgUserLicenseDetail.g.cs", "UpdateMgUserPhoto.g.cs",
+            "GetMgUserOutlook.g.cs",
         })
             Assert.False(output.ContainsKey(suppressed), $"Suppressed command was generated: {suppressed}");
+        Assert.Contains("/users/{user-id}/outlook/masterCategories",
+            output["GetMgUserOutlookMasterCategory_List.g.cs"], StringComparison.Ordinal);
+        Assert.Contains("/users/{user-id}/outlook/masterCategories/{outlookCategory-id}",
+            output["GetMgUserOutlookMasterCategory_Get.g.cs"], StringComparison.Ordinal);
+        Assert.Contains("/users/{user-id}/outlook/masterCategories",
+            output["NewMgUserOutlookMasterCategory.g.cs"], StringComparison.Ordinal);
     }
 
     [Theory]

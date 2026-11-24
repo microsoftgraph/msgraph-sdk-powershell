@@ -7,14 +7,16 @@ public static partial class CmdletConfigurator
 {
     private static readonly List<Entry> UsersCmdletConfigurations =
     [
-        // Users.md directive 1 matches these three legacy operations, not the nested
-        // /todo/lists routes or user_GetOutlook (the original regex uses lowercase outlook).
+        // Corrected Users.md directive 1 removes only the selected root operations,
+        // not their nested Outlook and /todo/lists routes.
         new(OverrideKind.SuppressOperation, HttpMethod.Get, "/users/{}/todo", PathMatch.Exact, null,
             "Users.md directive 1: user_GetTodo is aligned in both compatible profiles"),
         new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/users/{}/todo", PathMatch.Exact, null,
             "Users.md directive 1: user_UpdateTodo is aligned in both compatible profiles"),
         new(OverrideKind.SuppressOperation, HttpMethod.Delete, "/users/{}/todo", PathMatch.Exact, null,
             "Users.md directive 1: user_DeleteTodo is aligned in both compatible profiles"),
+        new(OverrideKind.SuppressOperation, HttpMethod.Get, "/users/{}/outlook", PathMatch.Exact, null,
+            "Users.md directive 1: corrected Outlook casing selects user_GetOutlook in both compatible profiles"),
         new(OverrideKind.SuppressOperation, HttpMethod.Post, "/users/{}/licensedetails", PathMatch.Exact, null,
             "Users.md directive 2: remove New UserLicenseDetail; retain license-detail reads and item operations"),
         new(OverrideKind.SuppressOperation, HttpMethod.Patch, "/users/{}/photo", PathMatch.Exact, null,

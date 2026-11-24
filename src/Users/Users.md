@@ -27,11 +27,11 @@ Exact legacy-to-compatible evidence is recorded in
 ``` yaml
 directive:
 # Remove invalid root paths e.g. users{id}/todo
-# Wrapper migration, directive 1: the ORIGINAL case-sensitive regex selects only
-# root todo GET/PATCH/DELETE in each legacy profile. All three survive with
-# aligned compatible IDs and exact method/path module suppressions.
-# It does not select user_GetOutlook or any nested todo/lists operation.
-  - remove-path-by-operation: user_(Get|Create|Update|Delete|Set)(Todo|outlook)
+# Wrapper migration, directive 1: correct the original lowercase outlook typo.
+# The reviewed selector includes user_GetOutlook plus root todo GET/PATCH/DELETE
+# in both legacy and compatible profiles. Exact module suppressions preserve
+# nested Outlook and todo/lists operations.
+  - remove-path-by-operation: user_(Get|Create|Update|Delete|Set)(Todo|Outlook)
 # Remove commands
 # Wrapper migration, directive 2: suppress POST .../licenseDetails only. The
 # curated entry preserves existing v1.0 derived behavior and also covers beta.

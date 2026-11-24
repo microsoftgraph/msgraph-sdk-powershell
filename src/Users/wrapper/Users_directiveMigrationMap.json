@@ -1,7 +1,7 @@
 {
   "audit": {
     "source": "src/Users/Users.md",
-    "baseline": "6475f3f5beb4908d39ea356db32bf1e0fd3273cb",
+    "baseline": "27747686a942ff071d97aa5c1f01117e6c28009f",
     "requiredProfiles": ["v1.0", "beta"],
     "excludedProfiles": [],
     "ignored": ["src/Users/v1.0/readme.md", "src/Users/beta/readme.md", "src/readme.graph.md"],
@@ -14,7 +14,15 @@
       "v1.0": "6eab7f412e4e1fd88e1156b4daa0e68a7a1c5edb",
       "beta": "639e0bee6e68c4a9550dcdc2cd071c3f9ab1adbc"
     },
-    "lineage": "The original case-sensitive regex selects exactly root todo GET/PATCH/DELETE in each actual same-profile legacy spec. All three survive at identical exact method/path with aligned user_GetTodo/user_UpdateTodo/user_DeleteTodo IDs in the current compatible specs. The complete original-survivor and literal-current selected sets are equal (3/3 in each profile). user_GetOutlook does not match lowercase outlook. No removals, namespace translations or reserved legacy-ledger fields are needed.",
+    "lineage": "The historical lowercase outlook selector missed user_GetOutlook due to case sensitivity. The user-directed correction to Outlook selects root Outlook GET plus todo GET/PATCH/DELETE in each actual same-profile legacy spec. All four survive at identical exact method/path with aligned IDs in the compatible specs. Complete corrected source-survivor and literal-current selected sets are equal (4/4 in each profile). Nested user.outlook_* and user.todo_* operations remain outside the selector. No actual API removals, namespace translations or reserved legacy-ledger fields are needed.",
+    "selectorCorrection": {
+      "historicalPattern": "user_(Get|Create|Update|Delete|Set)(Todo|outlook)",
+      "correctedPattern": "user_(Get|Create|Update|Delete|Set)(Todo|Outlook)",
+      "reason": "User-directed correction: user_GetOutlook must be removed; the original case-sensitive lowercase outlook alternative was wrong.",
+      "addedOperation": { "method": "GET", "path": "/users/{user-id}/outlook", "operationId": "user_GetOutlook" },
+      "historicalMatchesPerProfile": 3,
+      "correctedMatchesPerProfile": 4
+    },
     "coverage": "Exact module entries preserve v1.0 derived suppressions while supplying the missing beta coverage. Existing curated /photos suppressions remain unchanged. The unreachable UserTodo List rename is subsumed, not implemented as a new public noun.",
     "patchContract": "Normally merged #3886 makes Update User perform only its PATCH. A 204 succeeds with no returned object and no implicit GET; a 200 returns the actual typed model in one request. Caller-explicit Get User retains independent headers, queries and error behavior. No readback flag or GET-only query requirement is added.",
     "photoMediaContract": {
@@ -46,12 +54,12 @@
       "module": "Users",
       "directiveIndex": 1,
       "classification": "OperationIdSuppression",
-      "sourceContains": "remove-path-by-operation: user_(Get|Create|Update|Delete|Set)(Todo|outlook)",
+      "sourceContains": "remove-path-by-operation: user_(Get|Create|Update|Delete|Set)(Todo|Outlook)",
       "implementation": "CmdletConfigurator",
-      "notes": "Suppress exactly root todo GET/PATCH/DELETE, preserving nested todo/lists. The complete original legacy match set has three surviving operations in each profile; uppercase user_GetOutlook is not selected.",
+      "notes": "Correct the original Outlook casing error and suppress exactly root Outlook GET and todo GET/PATCH/DELETE in both profiles. Preserve all nested Outlook and todo/lists routes. Complete corrected legacy and current literal selected sets each contain four surviving operations.",
       "profiles": {
         "v1.0": {
-          "notes": "All three original matches survive at exact method/path with aligned IDs. Complete source-survivor and current literal selector sets are equal.",
+          "notes": "All four corrected matches survive at exact method/path with aligned IDs. Complete corrected source-survivor and current literal selector sets are equal.",
           "absenceExpected": false,
           "operations": [
             {
@@ -68,11 +76,16 @@
               "method": "DELETE",
               "path": "/users/{user-id}/todo",
               "operationId": "user_DeleteTodo"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/outlook",
+              "operationId": "user_GetOutlook"
             }
           ]
         },
         "beta": {
-          "notes": "All three original matches survive at exact method/path with aligned IDs. Complete source-survivor and current literal selector sets are equal.",
+          "notes": "All four corrected matches survive at exact method/path with aligned IDs. Complete corrected source-survivor and current literal selector sets are equal.",
           "absenceExpected": false,
           "operations": [
             {
@@ -89,6 +102,11 @@
               "method": "DELETE",
               "path": "/users/{user-id}/todo",
               "operationId": "user_DeleteTodo"
+            },
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/outlook",
+              "operationId": "user_GetOutlook"
             }
           ]
         }
