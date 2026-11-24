@@ -30,7 +30,7 @@ namespace Microsoft.Graph.PowerShell.Education
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             string? result;

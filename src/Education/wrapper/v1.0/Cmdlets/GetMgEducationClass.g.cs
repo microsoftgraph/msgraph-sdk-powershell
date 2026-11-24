@@ -19,6 +19,7 @@ namespace Microsoft.Graph.PowerShell.Education
 
 
 
+
         [Parameter(Mandatory = false)]
         [Alias("Select")]
         public string[]? Property { get; set; }
