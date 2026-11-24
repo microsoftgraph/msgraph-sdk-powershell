@@ -1,0 +1,167 @@
+{
+  "properties": {
+    "helpUri": "https://eng.ms/docs/microsoft-security/security/azure-security/cloudai-security-fundamentals-engineering/security-integration/guardian-wiki/microsoft-guardian/general/baselines"
+  },
+  "version": "1.0.0",
+  "baselines": {
+    "default": {
+      "name": "default",
+      "createdDate": "2026-11-06 09:58:44Z",
+      "lastUpdatedDate": "2026-11-06 09:58:44Z"
+    }
+  },
+  "results": {
+    "441d8ecf9222873a109c9f65625cbcc63721118150b6302fefc063b502651214": {
+      "signature": "441d8ecf9222873a109c9f65625cbcc63721118150b6302fefc063b502651214",
+      "alternativeSignatures": [
+        "72617cef1e984aa8c30a9a1c02357b40e54547e05302ec97143a7b0c2d9e24dd",
+        "62f80c0f6774cc1aecb4e1cbe38164adfb04702c35c8a78545c3611fe257ff2a",
+        "8642c024584fc994f944715744754a8ad92ec6d5fa146b62904928003884d7c3"
+      ],
+      "target": "src/Authentication/Authentication.Test/Mocks/MockDataStore.cs",
+      "line": 42,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "roslynanalyzers",
+      "ruleId": "CA1310",
+      "createdDate": "2026-11-06 09:58:44Z",
+      "expirationDate": "2027-04-25 10:00:29Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-11-06 10:00:29Z"
+    },
+    "cc5b46591bd8c5f1813de59bfc320131eb3bcab0f5b356c9dd0b1b71c271a6cb": {
+      "signature": "cc5b46591bd8c5f1813de59bfc320131eb3bcab0f5b356c9dd0b1b71c271a6cb",
+      "alternativeSignatures": [
+        "d5dc0835f5716c02b9da842bc0ee63e2b2497423228c994f620eb025df601607",
+        "7289c0a55bee4aa9705789c00082667bb710a4154fe1be837445be7f064a460d",
+        "915d7aecdfb195ff70679cb44112895415b1888de952873463c974b0f7962cec"
+      ],
+      "target": "src/Authentication/Authentication.Test/Mocks/MockDataStore.cs",
+      "line": 65,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "roslynanalyzers",
+      "ruleId": "CA1310",
+      "createdDate": "2026-11-06 09:58:44Z",
+      "expirationDate": "2027-04-25 10:00:29Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-11-06 10:00:29Z"
+    },
+    "929aca2686499f4e9077413bee293efa20f1a23e894bced49693cf2089a21dc4": {
+      "signature": "929aca2686499f4e9077413bee293efa20f1a23e894bced49693cf2089a21dc4",
+      "alternativeSignatures": [
+        "5be9c65d87739c49960b1f77c7ebd59b5d35999f3f3581b3f6d6086c01bec55f",
+        "4db00a4cb1c5c54a7f1e3d5953f5d632c2c86ea69874784591e4241a1b3083e1",
+        "78faf808ce9e370343f2d6e510284bb193cd5bc69d993c8c648a1b2eabb4a18b"
+      ],
+      "target": "src/Authentication/Authentication.Test/Mocks/MockDataStore.cs",
+      "line": 77,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "roslynanalyzers",
+      "ruleId": "CA1310",
+      "createdDate": "2026-11-06 09:58:44Z",
+      "expirationDate": "2027-04-25 10:00:29Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-11-06 10:00:29Z"
+    },
+    "20488385a6b32e6994fd94a6b43b2274048080b8c1ccd928c38e4eb331343001": {
+      "signature": "20488385a6b32e6994fd94a6b43b2274048080b8c1ccd928c38e4eb331343001",
+      "alternativeSignatures": [
+        "ad85eb80be6206e6051106b723529620923d99065fbe7b2b1bfa1e6afd8a2a03",
+        "63b3c09bab88f052adb380c5b0dce580ebb332eaee94821ee475f12bddf8b91b",
+        "c9e62499f5d66e1e55fcbae3728c3068521108ee69929e5f36607bcb89acc035"
+      ],
+      "target": "src/Authentication/Authentication.Test/Mocks/MockDataStore.cs",
+      "line": 151,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "roslynanalyzers",
+      "ruleId": "CA1310",
+      "createdDate": "2026-11-06 09:58:44Z",
+      "expirationDate": "2027-04-25 10:00:29Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-11-06 10:00:29Z"
+    },
+    "25b29b11627a84062dba36a9b91e4823167ff9b80ab91a68a3ae49a1a4a70bb0": {
+      "signature": "25b29b11627a84062dba36a9b91e4823167ff9b80ab91a68a3ae49a1a4a70bb0",
+      "alternativeSignatures": [
+        "7aaf44aac55be7359326f1cc4d836f8565468145729fc23b1ac4610eae868c38",
+        "d88f572719a0a28fd6fa7f52be06dce0cfd2f4c5c0e0acd804fe2bb3095f1d4e",
+        "81e075563117db20f5604cacbde2d0c1bce00fd6f3b34681f6df8a7067f5a397"
+      ],
+      "target": "src/Authentication/Authentication.Test/Mocks/MockDataStore.cs",
+      "line": 94,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "roslynanalyzers",
+      "ruleId": "CA1310",
+      "createdDate": "2026-11-06 09:58:44Z",
+      "expirationDate": "2027-04-25 10:00:29Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-11-06 10:00:29Z"
+    },
+    "feb39168ad275c28f51b01cbcfcc6a12216a4ee40f9ccc94e529df560aff75a0": {
+      "signature": "feb39168ad275c28f51b01cbcfcc6a12216a4ee40f9ccc94e529df560aff75a0",
+      "alternativeSignatures": [
+        "a621438230579d8c77c9191011e956fbba09121af9fff0ae0c52d347641b64a0",
+        "a9ef9fd53e07dd1197747bb2dbb57ff010f6a08b6b9896edf489c819d44ba1e9",
+        "1d0d6a20b6e397a3426f80259f4fb98824003fb2f84317e08cc387278aeaaa88"
+      ],
+      "target": "src/Authentication/Authentication.Test/Mocks/MockDataStore.cs",
+      "line": 111,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "roslynanalyzers",
+      "ruleId": "CA1310",
+      "createdDate": "2026-11-06 09:58:44Z",
+      "expirationDate": "2027-04-25 10:00:29Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-11-06 10:00:29Z"
+    },
+    "b9e619465a5026cd488ffdd2378bad6ca186b357a44875790001da5ebcfa24e8": {
+      "signature": "b9e619465a5026cd488ffdd2378bad6ca186b357a44875790001da5ebcfa24e8",
+      "alternativeSignatures": [
+        "c38219e90f8b6c4e6fac50122f93ae5ba8cac8960c95cab52b4a43d6cc8891ae",
+        "0824b852c352f0a9ff19909c1ef26c34483f6f98a13992e87f8bab8d116c5b6e",
+        "9d5e8c2e36abc23152bdc36302881709dc5c1aa705e85137ef94bf4595db9563"
+      ],
+      "target": "src/Authentication/Authentication.Test/Mocks/MockDataStore.cs",
+      "line": 167,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "roslynanalyzers",
+      "ruleId": "CA1310",
+      "createdDate": "2026-11-06 09:58:44Z",
+      "expirationDate": "2027-04-25 10:00:29Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-11-06 10:00:29Z"
+    },
+    "a322f0bdb5eeb863dbfa654e8f0ec7fede25e555a4c3cd4310f35376ff17f4a2": {
+      "signature": "a322f0bdb5eeb863dbfa654e8f0ec7fede25e555a4c3cd4310f35376ff17f4a2",
+      "alternativeSignatures": [
+        "7484c8a9afbfb4444c9b76635925b1429e6350828b72f46838da027e6a479495",
+        "9b087d488583b0fd43caf5c876b2e7b9de7dc0b896a9f33fbde003dd0989a822",
+        "cfd13036140f078e0c40ce2e414c3e74e51753e548ba5a57899f53b11ef64bb1"
+      ],
+      "target": "src/Authentication/Authentication.Test/Mocks/MockDataStore.cs",
+      "line": 137,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "roslynanalyzers",
+      "ruleId": "CA1310",
+      "createdDate": "2026-11-06 09:58:44Z",
+      "expirationDate": "2027-04-25 10:00:29Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-11-06 10:00:29Z"
+    }
+  }
+}

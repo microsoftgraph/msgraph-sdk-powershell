@@ -1,0 +1,94 @@
+## DO NOT MODIFY THIS FILE MANUALLY. This is part of auto-baselining from 1ES Pipeline Templates. Go to [https://aka.ms/1espt-autobaselining] for more details.
+
+pipelines:
+  220:
+    retail:
+      source:
+        credscan:
+          lastModifiedDate: 2024-09-13
+        eslint:
+          lastModifiedDate: 2026-05-15
+        psscriptanalyzer:
+          lastModifiedDate: 2026-05-15
+        armory:
+          lastModifiedDate: 2026-05-15
+        accessibilityinsights:
+          lastModifiedDate: 2025-07-31
+      binary:
+        credscan:
+          lastModifiedDate: 2025-02-14
+        binskim:
+          lastModifiedDate: 2026-07-17
+        spotbugs:
+          lastModifiedDate: 2026-07-17
+  221:
+    retail:
+      source:
+        credscan:
+          lastModifiedDate: 2024-10-02
+        eslint:
+          lastModifiedDate: 2026-08-15
+        psscriptanalyzer:
+          lastModifiedDate: 2026-08-15
+        armory:
+          lastModifiedDate: 2026-08-15
+        accessibilityinsights:
+          lastModifiedDate: 2025-07-08
+      binary:
+        credscan:
+          lastModifiedDate: 2024-10-02
+        spotbugs:
+          lastModifiedDate: 2024-10-02
+    usedNonDefaultBranch: true
+  187:
+    retail:
+      source:
+        credscan:
+          lastModifiedDate: 2024-10-10
+        eslint:
+          lastModifiedDate: 2026-11-06
+        psscriptanalyzer:
+          lastModifiedDate: 2026-11-06
+        armory:
+          lastModifiedDate: 2026-11-06
+        accessibilityinsights:
+          lastModifiedDate: 2026-11-06
+      binary:
+        credscan:
+          lastModifiedDate: 2024-10-18
+        spotbugs:
+          lastModifiedDate: 2026-11-06
+    usedNonDefaultBranch: true
+  658:
+    retail:
+      source:
+        eslint:
+          lastModifiedDate: 2025-12-20
+        psscriptanalyzer:
+          lastModifiedDate: 2025-12-20
+        armory:
+          lastModifiedDate: 2025-12-20
+        accessibilityinsights:
+          lastModifiedDate: 2025-12-20
+  663:
+    retail:
+      source:
+        eslint:
+          lastModifiedDate: 2026-05-13
+        psscriptanalyzer:
+          lastModifiedDate: 2026-05-13
+        armory:
+          lastModifiedDate: 2026-05-13
+        accessibilityinsights:
+          lastModifiedDate: 2026-03-07
+  714:
+    retail:
+      source:
+        eslint:
+          lastModifiedDate: 2026-07-22
+        psscriptanalyzer:
+          lastModifiedDate: 2026-07-22
+        armory:
+          lastModifiedDate: 2026-07-22
+        accessibilityinsights:
+          lastModifiedDate: 2026-07-22
