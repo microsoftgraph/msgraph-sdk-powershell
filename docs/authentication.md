@@ -5,6 +5,51 @@ The Microsoft Graph PowerShell module supports two types of authentication:
 - Delegated Access
 - App-only Access
 
+## Upcoming browser-based interactive sign-in security change
+
+> [!IMPORTANT]
+> Starting February 23, 2027 at 11:00 a.m. Pacific Standard Time (7:00 p.m. Coordinated Universal Time), Microsoft plans to require a more secure browser response for interactive sign-in through the default Microsoft Graph PowerShell application.
+
+You're affected only if all the following conditions apply:
+
+- You use Microsoft Graph PowerShell version 2.36.0 or earlier.
+- You use browser-based interactive sign-in.
+- You use the default Microsoft Graph PowerShell application, **Microsoft Graph Command Line Tools**, application ID `14d82eec-204b-4c2f-b7e8-296a70dab67e`.
+
+If all three conditions apply, upgrade to Microsoft Graph PowerShell version 2.37.0 or later before enforcement. Otherwise, sign-in or reauthentication will fail and Microsoft Graph PowerShell won't obtain an access token.
+
+Check the installed authentication module:
+
+```PowerShell
+Get-Module Microsoft.Graph.Authentication -ListAvailable |
+    Sort-Object Version -Descending |
+    Select-Object Name, Version, Path
+```
+
+Update the complete Microsoft Graph PowerShell module:
+
+```PowerShell
+Update-Module Microsoft.Graph
+```
+
+If you installed only the authentication module, update it directly:
+
+```PowerShell
+Update-Module Microsoft.Graph.Authentication
+```
+
+Close and reopen PowerShell after updating. Then validate browser-based interactive sign-in and the commands your organization relies on.
+
+The following authentication methods and configurations aren't directly affected:
+
+- Windows brokered sign-in
+- Device code authentication
+- Application-only authentication with a certificate, client secret, or managed identity
+- Customer-owned application registrations
+- Access tokens obtained outside Microsoft Graph PowerShell and supplied by the caller
+
+For updates and known issues, follow [GitHub issue #3629](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/3629).
+
 ## Delegated Access
 
 Delegated access uses a public client to get an access token and consume Microsoft Graph resources on behalf of the signed-in user.
