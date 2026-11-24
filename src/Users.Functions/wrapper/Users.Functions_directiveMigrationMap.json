@@ -1,0 +1,276 @@
+{
+  "mappings": [
+    {
+      "module": "Users.Functions",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: .*exceptionOccurrence.*|user\\.joinedGroup.*|user\\.joinedTeam.*|user\\.onenote\\..*.parent.*|user.*\\.calendarView.*|.*\\.notebook\\.section.*|.*\\.sectionGroup.section.*|.*\\.section\\.page.*|user\\.calendar\\.event\\..*|user\\.calendarGroup\\.calendar|user\\.calendar\\.event\\..*|user\\.event\\.calendar\\..*|user\\.pendingAccessReviewInstance\\.stage\\.decision.*|user\\.pendingAccessReviewInstance(\\.decision|\\.stage\\.decision)\\.instance.*",
+      "implementation": "NoMatchingOperations",
+      "notes": "Original regex evaluated against all 7 v1.0 and 16 beta actual legacy operations: zero matches in either source or compatible profile. absenceExpected describes selector absence, NOT API absence. All 23 functions survive with aligned IDs and metadata-kind-guarded final namespace conversion, recorded separately in scopeAudit. No suppressions or removed operations are invented.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    },
+    {
+      "module": "Users.Functions",
+      "directiveIndex": 2,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^(UserOnenote)Notebook(RecentNotebook)$",
+      "implementation": "NoMatchingOperations",
+      "notes": "Neither actual profile has an onenote path in legacy or compatible Users.Functions; there is no UserOnenoteNotebookRecentNotebook operation to rename here. This is a module-scope selector absence, not removal of a real API. Do not modify another owning module or add a redundant global override.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": true,
+          "operations": []
+        }
+      }
+    }
+  ],
+  "scopeAudit": {
+    "notes": "Complete actual module operation inventory, NOT selected directive operations. Only GET operations marked function in BOTH specifications are bridged by removing microsoft.graph. from the FINAL segment; method, parent, bare function name, argument syntax and values remain exact. No functions are removed. All shared directives remain active. Profile-local readmes and src\\readme.graph.md were ignored. Parameter/schema aliases and transforms are deferred (none occur in this shared source). No profiles are excluded.",
+    "profiles": {
+      "v1.0": {
+        "sourceSpec": "openApiDocs\\v1.0\\Users.Functions.yml",
+        "sourceSpecBlob": "9360646a6a69a6a3102736385d6b1d981f0e6900",
+        "compatibleSpec": "openApiDocs_KiotaCompat\\v1.0\\Users.Functions.yml",
+        "compatibleSpecBlob": "0e474db9ed061b25e4e99a5714778a07074ff7ef",
+        "sourceOperationCount": 7,
+        "compatibleOperationCount": 7,
+        "originalSelectorMatchCount": 0,
+        "compatibleSelectorMatchCount": 0,
+        "operations": [
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/exportDeviceAndAppManagementData()",
+            "operationId": "user_exportDeviceAndAppManagementData",
+            "sourcePath": "/users/{user-id}/microsoft.graph.exportDeviceAndAppManagementData()",
+            "sourceOperationId": "user_exportDeviceAndAppManagementData",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/exportDeviceAndAppManagementData(skip={skip},top={top})",
+            "operationId": "user_exportDeviceAndAppManagementData",
+            "sourcePath": "/users/{user-id}/microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})",
+            "sourceOperationId": "user_exportDeviceAndAppManagementData",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/getManagedAppDiagnosticStatuses()",
+            "operationId": "user_getManagedAppDiagnosticStatus",
+            "sourcePath": "/users/{user-id}/microsoft.graph.getManagedAppDiagnosticStatuses()",
+            "sourceOperationId": "user_getManagedAppDiagnosticStatus",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/getManagedAppPolicies()",
+            "operationId": "user_getManagedAppPolicy",
+            "sourcePath": "/users/{user-id}/microsoft.graph.getManagedAppPolicies()",
+            "sourceOperationId": "user_getManagedAppPolicy",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/getManagedDevicesWithAppFailures()",
+            "operationId": "user_getManagedDevicesGraphWPreAppFailure",
+            "sourcePath": "/users/{user-id}/microsoft.graph.getManagedDevicesWithAppFailures()",
+            "sourceOperationId": "user_getManagedDevicesGraphWPreAppFailure",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')",
+            "operationId": "user_reminderView",
+            "sourcePath": "/users/{user-id}/microsoft.graph.reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')",
+            "sourceOperationId": "user_reminderView",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/delta()",
+            "operationId": "user_delta",
+            "sourcePath": "/users/microsoft.graph.delta()",
+            "sourceOperationId": "user_delta",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          }
+        ]
+      },
+      "beta": {
+        "sourceSpec": "openApiDocs\\beta\\Users.Functions.yml",
+        "sourceSpecBlob": "5ed78f054ac468864bade1ad43552e4a1f3fc08b",
+        "compatibleSpec": "openApiDocs_KiotaCompat\\beta\\Users.Functions.yml",
+        "compatibleSpecBlob": "c576db1e2fcbd65d2eb7c91275f87507ccd9d6dd",
+        "sourceOperationCount": 16,
+        "compatibleOperationCount": 16,
+        "originalSelectorMatchCount": 0,
+        "compatibleSelectorMatchCount": 0,
+        "operations": [
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/exportDeviceAndAppManagementData()",
+            "operationId": "user_exportDeviceAndAppManagementData",
+            "sourcePath": "/users/{user-id}/microsoft.graph.exportDeviceAndAppManagementData()",
+            "sourceOperationId": "user_exportDeviceAndAppManagementData",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/exportDeviceAndAppManagementData(skip={skip},top={top})",
+            "operationId": "user_exportDeviceAndAppManagementData",
+            "sourcePath": "/users/{user-id}/microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})",
+            "sourceOperationId": "user_exportDeviceAndAppManagementData",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/findRoomLists()",
+            "operationId": "user_findRoomList",
+            "sourcePath": "/users/{user-id}/microsoft.graph.findRoomLists()",
+            "sourceOperationId": "user_findRoomList",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/findRooms()",
+            "operationId": "user_findRoom",
+            "sourcePath": "/users/{user-id}/microsoft.graph.findRooms()",
+            "sourceOperationId": "user_findRoom",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/findRooms(RoomList='{RoomList}')",
+            "operationId": "user_findRoom",
+            "sourcePath": "/users/{user-id}/microsoft.graph.findRooms(RoomList='{RoomList}')",
+            "sourceOperationId": "user_findRoom",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/getEffectiveDeviceEnrollmentConfigurations()",
+            "operationId": "user_getEffectiveDeviceEnrollmentConfiguration",
+            "sourcePath": "/users/{user-id}/microsoft.graph.getEffectiveDeviceEnrollmentConfigurations()",
+            "sourceOperationId": "user_getEffectiveDeviceEnrollmentConfiguration",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/getLoggedOnManagedDevices()",
+            "operationId": "user_getLoggedOnManagedDevice",
+            "sourcePath": "/users/{user-id}/microsoft.graph.getLoggedOnManagedDevices()",
+            "sourceOperationId": "user_getLoggedOnManagedDevice",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/getManagedAppDiagnosticStatuses()",
+            "operationId": "user_getManagedAppDiagnosticStatus",
+            "sourcePath": "/users/{user-id}/microsoft.graph.getManagedAppDiagnosticStatuses()",
+            "sourceOperationId": "user_getManagedAppDiagnosticStatus",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/getManagedAppPolicies()",
+            "operationId": "user_getManagedAppPolicy",
+            "sourcePath": "/users/{user-id}/microsoft.graph.getManagedAppPolicies()",
+            "sourceOperationId": "user_getManagedAppPolicy",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/getManagedDevicesWithAppFailures()",
+            "operationId": "user_getManagedDevicesGraphWPreAppFailure",
+            "sourcePath": "/users/{user-id}/microsoft.graph.getManagedDevicesWithAppFailures()",
+            "sourceOperationId": "user_getManagedDevicesGraphWPreAppFailure",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/getManagedDevicesWithFailedOrPendingApps()",
+            "operationId": "user_getManagedDevicesGraphWPreFailedOrPendingApp",
+            "sourcePath": "/users/{user-id}/microsoft.graph.getManagedDevicesWithFailedOrPendingApps()",
+            "sourceOperationId": "user_getManagedDevicesGraphWPreFailedOrPendingApp",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/isManagedAppUserBlocked()",
+            "operationId": "user_isManagedAppUserBlocked",
+            "sourcePath": "/users/{user-id}/microsoft.graph.isManagedAppUserBlocked()",
+            "sourceOperationId": "user_isManagedAppUserBlocked",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')",
+            "operationId": "user_reminderView",
+            "sourcePath": "/users/{user-id}/microsoft.graph.reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')",
+            "sourceOperationId": "user_reminderView",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/retrieveManagedDevicesWithAppInstallationIssues()",
+            "operationId": "user_retrieveManagedDevicesGraphWPreAppInstallationIssue",
+            "sourcePath": "/users/{user-id}/microsoft.graph.retrieveManagedDevicesWithAppInstallationIssues()",
+            "sourceOperationId": "user_retrieveManagedDevicesGraphWPreAppInstallationIssue",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/delta()",
+            "operationId": "user_delta",
+            "sourcePath": "/users/microsoft.graph.delta()",
+            "sourceOperationId": "user_delta",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          },
+          {
+            "method": "GET",
+            "path": "/users/getManagedAppBlockedUsers()",
+            "operationId": "user_getManagedAppBlockedUser",
+            "sourcePath": "/users/microsoft.graph.getManagedAppBlockedUsers()",
+            "sourceOperationId": "user_getManagedAppBlockedUser",
+            "sourceKind": "function",
+            "compatibleKind": "function"
+          }
+        ]
+      }
+    }
+  }
+}
