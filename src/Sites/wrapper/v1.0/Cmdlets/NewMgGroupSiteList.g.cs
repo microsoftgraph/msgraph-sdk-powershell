@@ -113,7 +113,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         body.System = System;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.List? result;

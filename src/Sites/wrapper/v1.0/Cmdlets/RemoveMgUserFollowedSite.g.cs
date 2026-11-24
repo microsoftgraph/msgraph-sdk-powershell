@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Sites
     if (this.IsParameterBound(nameof(Value)))
         body.Value = Value!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Sites.Client.Users.Item.FollowedSites.Remove.RemovePostResponse? result;

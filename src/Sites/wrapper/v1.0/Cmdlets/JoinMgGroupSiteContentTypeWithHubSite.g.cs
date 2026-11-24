@@ -51,7 +51,7 @@ namespace Microsoft.Graph.PowerShell.Sites
     if (this.IsParameterBound(nameof(PropagateToExistingLists)))
         body.PropagateToExistingLists = PropagateToExistingLists;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

@@ -105,7 +105,7 @@ namespace Microsoft.Graph.PowerShell.Sites
         body.Link = Link;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Sites.Client.Models.Permission? result;
@@ -123,20 +123,6 @@ namespace Microsoft.Graph.PowerShell.Sites
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Groups[GroupId].Sites[SiteId].Lists[ListId].Permissions[PermissionId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, PermissionId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
