@@ -141,7 +141,7 @@ namespace Microsoft.Graph.PowerShell.Security
         body.Host = Host;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Security.Client.Models.Security.WhoisRecord? result;
@@ -159,20 +159,6 @@ namespace Microsoft.Graph.PowerShell.Security
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Security.ThreatIntelligence.WhoisRecords[WhoisRecordId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, WhoisRecordId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

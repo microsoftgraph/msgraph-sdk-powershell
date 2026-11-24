@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.PowerShell.Security.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Security.Client.Models.Security;
-using Microsoft.Graph.PowerShell.Security.Client.Security.Alerts;
 using Microsoft.Graph.PowerShell.Security.Client.Security.Alerts_v2;
 using Microsoft.Graph.PowerShell.Security.Client.Security.AttackSimulation;
 using Microsoft.Graph.PowerShell.Security.Client.Security.AuditLog;
@@ -35,11 +34,6 @@ namespace Microsoft.Graph.PowerShell.Security.Client.Security
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SecurityRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The alerts property</summary>
-        public global::Microsoft.Graph.PowerShell.Security.Client.Security.Alerts.AlertsRequestBuilder Alerts
-        {
-            get => new global::Microsoft.Graph.PowerShell.Security.Client.Security.Alerts.AlertsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The alerts_v2 property</summary>
         public global::Microsoft.Graph.PowerShell.Security.Client.Security.Alerts_v2.Alerts_v2RequestBuilder Alerts_v2
         {
