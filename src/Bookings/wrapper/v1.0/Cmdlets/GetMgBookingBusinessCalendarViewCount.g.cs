@@ -18,6 +18,14 @@ namespace Microsoft.Graph.PowerShell.Bookings
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string BookingBusinessId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1,
+            HelpMessage = "Value for the 'start' query parameter.")]
+        [ValidateNotNullOrEmpty]
+        public string QueryStart { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 2,
+            HelpMessage = "Value for the 'end' query parameter.")]
+        [ValidateNotNullOrEmpty]
+        public string QueryEnd { get; set; } = string.Empty;
 
 
 
@@ -32,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             int? result;
@@ -45,6 +53,8 @@ namespace Microsoft.Graph.PowerShell.Bookings
 
                     if (this.IsParameterBound(nameof(Search)))
                         requestConfiguration.QueryParameters.Search = Search;
+                    requestConfiguration.QueryParameters.Start = QueryStart;
+                    requestConfiguration.QueryParameters.End = QueryEnd;
 
                         AddRequestHeaders(requestConfiguration.Headers);
                 }).GetAwaiter().GetResult();

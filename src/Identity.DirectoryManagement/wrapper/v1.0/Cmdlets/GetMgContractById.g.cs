@@ -46,7 +46,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
     if (this.IsParameterBound(nameof(Types)))
         body.Types = Types!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Contracts.GetByIds.GetByIdsPostResponse? result;

@@ -14,7 +14,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The appId property</summary>
+        /// <summary>The appId (client ID) of the multi-tenant application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId { get; set; }
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string AppId { get; set; }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName { get; set; }
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The objectId property</summary>
+        /// <summary>The object ID of the service principal in the governing tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId { get; set; }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string OdataType { get; set; }
 #endif
-        /// <summary>The requiredResourceAccesses property</summary>
+        /// <summary>The collection of resource accesses (permissions) required by the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.ApplicationsRequiredResourceAccess>? RequiredResourceAccesses { get; set; }

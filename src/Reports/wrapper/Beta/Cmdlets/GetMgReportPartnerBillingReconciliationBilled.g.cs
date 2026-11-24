@@ -33,7 +33,7 @@ namespace Microsoft.Graph.PowerShell.Reports
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Reports.Client.Models.Partners.Billing.BilledReconciliation? result;
@@ -46,6 +46,7 @@ namespace Microsoft.Graph.PowerShell.Reports
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 

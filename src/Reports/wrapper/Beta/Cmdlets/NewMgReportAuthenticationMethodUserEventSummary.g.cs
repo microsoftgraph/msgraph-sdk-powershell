@@ -74,7 +74,7 @@ namespace Microsoft.Graph.PowerShell.Reports
         body.Feature = Feature;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Reports.Client.Models.UserEventsSummary? result;

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.PowerShell.BusinessScenario
 
 
 
+
         [Parameter(Mandatory = false)]
         [Alias("Select")]
         public string[]? Property { get; set; }

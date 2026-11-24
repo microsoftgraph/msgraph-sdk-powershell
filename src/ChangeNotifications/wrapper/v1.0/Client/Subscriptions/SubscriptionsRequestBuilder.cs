@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.PowerShell.ChangeNotifications.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.ChangeNotifications.Client.Models;
+using Microsoft.Graph.PowerShell.ChangeNotifications.Client.Subscriptions.GetVapidPublicKey;
 using Microsoft.Graph.PowerShell.ChangeNotifications.Client.Subscriptions.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -19,6 +20,11 @@ namespace Microsoft.Graph.PowerShell.ChangeNotifications.Client.Subscriptions
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The getVapidPublicKey property</summary>
+        public global::Microsoft.Graph.PowerShell.ChangeNotifications.Client.Subscriptions.GetVapidPublicKey.GetVapidPublicKeyRequestBuilder GetVapidPublicKey
+        {
+            get => new global::Microsoft.Graph.PowerShell.ChangeNotifications.Client.Subscriptions.GetVapidPublicKey.GetVapidPublicKeyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Microsoft.Graph.PowerShell.ChangeNotifications.Client.subscriptions.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Microsoft.Graph.PowerShell.ChangeNotifications.Client.Subscriptions.Item.SubscriptionItemRequestBuilder"/></returns>

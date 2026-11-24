@@ -107,7 +107,7 @@ namespace Microsoft.Graph.PowerShell.Notes
         body.UserRole = UserRole;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Notes.Client.Models.Notebook? result;
@@ -125,20 +125,6 @@ namespace Microsoft.Graph.PowerShell.Notes
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Users[UserId].Onenote.Notebooks[NotebookId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, NotebookId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

@@ -1,0 +1,35 @@
+{
+  "descriptionHash": "A544EA5E325271BC998F0583CC92FD5CCD6CC85CC5E0A25B87A4B37B1F198D5001BF7150B298C3F5A683C1F1EF9D4D53698A21A8855B47C01F104FCA3BE3B977",
+  "descriptionLocation": "../../../../../openApiDocs_KiotaCompat/beta/Financials.yml",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.36.1",
+  "clientClassName": "ApiClient",
+  "typeAccessModifier": "Public",
+  "clientNamespaceName": "Microsoft.Graph.PowerShell.Financials.Client",
+  "language": "CSharp",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
+  "includeAdditionalData": true,
+  "disableSSLValidation": false,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
+}

@@ -11,8 +11,8 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
 {
     [GraphRoute("DELETE", "/deviceAppManagement/mobileApps/{mobileApp-id}/graph.iosLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}")]
-    [Cmdlet(VerbsCommon.Remove, "MgDeviceAppManagementMobileAppAsIosLobAppContentVersionFile", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    public class RemoveMgDeviceAppManagementMobileAppAsIosLobAppContentVersionFileCommand : GraphClientCmdlet
+    [Cmdlet(VerbsCommon.Remove, "MgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
+    public class RemoveMgDeviceAppManagementMobileAppAsiOSLobAppContentVersionFileCommand : GraphClientCmdlet
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string MobileAppId { get; set; } = string.Empty;
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
             if (!ShouldProcess(MobileAppContentFileId, "Remove"))
                 return;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             // DeleteAsync returns a plain Task: a standard delete response has no body.

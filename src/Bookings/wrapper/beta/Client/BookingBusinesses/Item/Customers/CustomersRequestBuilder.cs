@@ -155,7 +155,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.BookingBusinesses.Item.Cust
         /// All the customers of this business. Read-only. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CustomersRequestBuilderGetQueryParameters
+        public partial class CustomersRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

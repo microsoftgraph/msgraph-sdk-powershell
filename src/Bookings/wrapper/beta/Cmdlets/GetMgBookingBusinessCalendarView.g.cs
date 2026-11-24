@@ -19,6 +19,16 @@ namespace Microsoft.Graph.PowerShell.Bookings
         [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 1)]
         public string BookingAppointmentId { get; set; } = string.Empty;
 
+        [Parameter(Mandatory = true, ParameterSetName = "List", Position = 1)]
+        [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 2)]
+        [ValidateNotNullOrEmpty]
+        public string QueryStart { get; set; } = string.Empty;
+
+        [Parameter(Mandatory = true, ParameterSetName = "List", Position = 2)]
+        [Parameter(Mandatory = true, ParameterSetName = "Get", Position = 3)]
+        [ValidateNotNullOrEmpty]
+        public string QueryEnd { get; set; } = string.Empty;
+
 
 
         [Parameter(Mandatory = false)]

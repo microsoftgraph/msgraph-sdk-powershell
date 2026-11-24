@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.SchemaExtensions
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.SchemaExtensions.Client.Models.SchemaExtensionCollectionResponse? result;
@@ -90,6 +90,7 @@ namespace Microsoft.Graph.PowerShell.SchemaExtensions
 
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
+
 
 
 

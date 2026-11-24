@@ -122,7 +122,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
         body.InvitedAttendees = InvitedAttendees!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Bookings.Client.Models.VirtualEventTownhall? result;

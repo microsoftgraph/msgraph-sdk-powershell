@@ -19,6 +19,14 @@ namespace Microsoft.Graph.PowerShell.Bookings
     {
         [Parameter(Mandatory = true, Position = 0)]
         public string BookingBusinessId { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 1,
+            HelpMessage = "Value for the 'start' query parameter.")]
+        [ValidateNotNullOrEmpty]
+        public string QueryStart { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 2,
+            HelpMessage = "Value for the 'end' query parameter.")]
+        [ValidateNotNullOrEmpty]
+        public string QueryEnd { get; set; } = string.Empty;
 
 
 
@@ -60,7 +68,7 @@ namespace Microsoft.Graph.PowerShell.Bookings
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Bookings.Client.Models.BookingAppointmentCollectionResponse? result;
@@ -91,6 +99,9 @@ namespace Microsoft.Graph.PowerShell.Bookings
 
                     if (Count.IsPresent)
                         requestConfiguration.QueryParameters.Count = true;
+
+                    requestConfiguration.QueryParameters.Start = QueryStart;
+                    requestConfiguration.QueryParameters.End = QueryEnd;
 
 
 

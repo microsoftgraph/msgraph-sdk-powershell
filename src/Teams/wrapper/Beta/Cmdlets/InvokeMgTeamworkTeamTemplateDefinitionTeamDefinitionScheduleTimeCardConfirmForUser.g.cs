@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Teams
     if (this.IsParameterBound(nameof(UserId)))
         body.UserId = UserId;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.TimeCard? result;

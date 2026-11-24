@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
     if (this.IsParameterBound(nameof(TokenValidityInSeconds)))
         body.TokenValidityInSeconds = TokenValidityInSeconds;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

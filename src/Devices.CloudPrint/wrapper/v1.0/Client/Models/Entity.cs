@@ -191,6 +191,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models
                 "#microsoft.graph.printTaskDefinition" => new global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.PrintTaskDefinition(),
                 "#microsoft.graph.printTaskTrigger" => new global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.PrintTaskTrigger(),
                 "#microsoft.graph.profilePhoto" => new global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.ProfilePhoto(),
+                "#microsoft.graph.resourceAccountKeyAuthenticationMethod" => new global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.ResourceAccountKeyAuthenticationMethod(),
                 "#microsoft.graph.resourceSpecificPermissionGrant" => new global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.ResourceSpecificPermissionGrant(),
                 "#microsoft.graph.richLongRunningOperation" => new global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.RichLongRunningOperation(),
                 "#microsoft.graph.schedule" => new global::Microsoft.Graph.PowerShell.Devices.CloudPrint.Client.Models.Schedule(),

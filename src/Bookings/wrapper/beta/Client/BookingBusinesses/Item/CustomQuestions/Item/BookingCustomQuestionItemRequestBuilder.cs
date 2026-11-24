@@ -185,7 +185,7 @@ namespace Microsoft.Graph.PowerShell.Bookings.Client.BookingBusinesses.Item.Cust
         /// All custom questions of this business.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BookingCustomQuestionItemRequestBuilderGetQueryParameters
+        public partial class BookingCustomQuestionItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

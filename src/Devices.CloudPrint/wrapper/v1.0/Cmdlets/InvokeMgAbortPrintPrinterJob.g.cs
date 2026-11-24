@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CloudPrint
     if (this.IsParameterBound(nameof(Reason)))
         body.Reason = Reason;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

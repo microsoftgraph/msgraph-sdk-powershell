@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.SharedShift = SharedShift;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.Shift? result;

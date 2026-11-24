@@ -81,7 +81,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
     if (this.IsParameterBound(nameof(Prompts)))
         body.Prompts = Prompts!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.RecordOperation? result;

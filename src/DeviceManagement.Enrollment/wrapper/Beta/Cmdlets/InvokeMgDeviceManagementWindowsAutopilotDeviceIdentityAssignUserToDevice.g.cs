@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Enrollment
     if (this.IsParameterBound(nameof(AddressableUserName)))
         body.AddressableUserName = AddressableUserName;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

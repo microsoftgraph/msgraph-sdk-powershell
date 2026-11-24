@@ -38,7 +38,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
         protected override void ProcessRecord()
         {
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.CloudCommunications.Client.Models.EngagementConversationMessage? result;
@@ -51,6 +51,7 @@ namespace Microsoft.Graph.PowerShell.CloudCommunications
 
                     if (this.IsParameterBound(nameof(ExpandProperty)))
                         requestConfiguration.QueryParameters.Expand = ExpandProperty;
+
 
 
 

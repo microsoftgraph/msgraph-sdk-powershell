@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Applications
         body.PublishingType = PublishingType;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Applications.Client.Models.PublishedResource? result;

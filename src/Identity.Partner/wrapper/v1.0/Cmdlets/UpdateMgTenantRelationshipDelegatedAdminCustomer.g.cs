@@ -47,7 +47,7 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.Partner.Client.Models.DelegatedAdminCustomer? result;
@@ -65,20 +65,6 @@ namespace Microsoft.Graph.PowerShell.Identity.Partner
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.TenantRelationships.DelegatedAdminCustomers[DelegatedAdminCustomerId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, DelegatedAdminCustomerId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

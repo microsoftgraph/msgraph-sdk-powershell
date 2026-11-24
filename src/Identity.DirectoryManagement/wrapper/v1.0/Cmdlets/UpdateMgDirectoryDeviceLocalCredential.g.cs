@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
         body.Credentials = Credentials!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.DeviceLocalCredentialInfo? result;
@@ -75,20 +75,6 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Directory.DeviceLocalCredentials[DeviceLocalCredentialInfoId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, DeviceLocalCredentialInfoId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

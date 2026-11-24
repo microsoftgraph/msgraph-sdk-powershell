@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.Devices.CorporateManagement
     if (this.IsParameterBound(nameof(MobileAppAssignments)))
         body.MobileAppAssignments = MobileAppAssignments!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
 

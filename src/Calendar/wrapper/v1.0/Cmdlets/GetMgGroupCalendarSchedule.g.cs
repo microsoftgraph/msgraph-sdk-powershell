@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.Calendar
     if (this.IsParameterBound(nameof(StartTime)))
         body.StartTime = StartTime;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.Calendar.Client.Groups.Item.Calendar.GetSchedule.GetSchedulePostResponse? result;

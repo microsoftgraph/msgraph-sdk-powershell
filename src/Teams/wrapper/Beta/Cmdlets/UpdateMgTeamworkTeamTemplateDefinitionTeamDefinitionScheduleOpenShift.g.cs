@@ -67,7 +67,7 @@ namespace Microsoft.Graph.PowerShell.Teams
         body.SharedOpenShift = SharedOpenShift;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Teams.Client.Models.OpenShift? result;
@@ -85,20 +85,6 @@ namespace Microsoft.Graph.PowerShell.Teams
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Teamwork.TeamTemplates[TeamTemplateId].Definitions[TeamTemplateDefinitionId].TeamDefinition.Schedule.OpenShifts[OpenShiftId].GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, OpenShiftId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }

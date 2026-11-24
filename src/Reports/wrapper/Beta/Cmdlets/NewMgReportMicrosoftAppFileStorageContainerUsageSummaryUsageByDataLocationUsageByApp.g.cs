@@ -37,7 +37,7 @@ namespace Microsoft.Graph.PowerShell.Reports
 
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Reports.Client.Models.MicrosoftAppsFileStorageContainerAppUsage? result;

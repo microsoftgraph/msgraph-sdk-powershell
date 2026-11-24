@@ -11,6 +11,7 @@ using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authenticati
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authentication.PasswordMethods;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authentication.PhoneMethods;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authentication.PlatformCredentialMethods;
+using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authentication.SoftwareOathMethods;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authentication.TemporaryAccessPassMethods;
 using Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authentication.WindowsHelloForBusinessMethods;
@@ -74,6 +75,11 @@ namespace Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authenti
         public global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder PlatformCredentialMethods
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The resourceAccountKeyAuthenticationMethods property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder ResourceAccountKeyAuthenticationMethods
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The softwareOathMethods property</summary>
         public global::Microsoft.Graph.PowerShell.Identity.SignIns.Client.Users.Item.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder SoftwareOathMethods

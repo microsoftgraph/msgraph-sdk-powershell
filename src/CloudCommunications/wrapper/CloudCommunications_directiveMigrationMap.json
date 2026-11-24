@@ -1,0 +1,520 @@
+{
+  "notes": "Shared CloudCommunications.md only; ignore all profile-local and global directives. No shared parameter/schema directives require deferral. Normal target merge 08e409a6aa8fd48736b8f9a9199559f46fc0d1ad includes aligned compatible IDs. Original same-profile legacy selector and current literal selector select exactly the same 13 surviving method/path operations per profile; lineage is pinned in module tests, not reserved unmerged-helper fields.",
+  "mappings": [
+    {
+      "module": "CloudCommunications",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation: ^communication(.cloudCommunication_.*CloudCommunication|_(List|Create|Update|Delete)CallRecord|.callRecord.session_.*Segment|(_List|_Update)Call)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The original legacy regex and the current compatible literal regex select exactly 13 identical method/path survivors per profile after ID alignment. Suppress only these exact operations; preserve item GET callRecords, POST/GET-item/DELETE calls and unrelated descendants. No legacy translation extension is needed.",
+      "profiles": {
+        "v1.0": {
+          "notes": "All 13 original source matches survive at identical method/path with aligned literal IDs; zero pruned or inferred operations.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/communications",
+              "operationId": "communication.cloudCommunication_GetCloudCommunication"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications",
+              "operationId": "communication.cloudCommunication_UpdateCloudCommunication"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/callRecords",
+              "operationId": "communication_ListCallRecord"
+            },
+            {
+              "method": "POST",
+              "path": "/communications/callRecords",
+              "operationId": "communication_CreateCallRecord"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications/callRecords/{callRecord-id}",
+              "operationId": "communication_UpdateCallRecord"
+            },
+            {
+              "method": "DELETE",
+              "path": "/communications/callRecords/{callRecord-id}",
+              "operationId": "communication_DeleteCallRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
+              "operationId": "communication.callRecord.session_ListSegment"
+            },
+            {
+              "method": "POST",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
+              "operationId": "communication.callRecord.session_CreateSegment"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "operationId": "communication.callRecord.session_GetSegment"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "operationId": "communication.callRecord.session_UpdateSegment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "operationId": "communication.callRecord.session_DeleteSegment"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/calls",
+              "operationId": "communication_ListCall"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications/calls/{call-id}",
+              "operationId": "communication_UpdateCall"
+            }
+          ]
+        },
+        "beta": {
+          "notes": "All 13 original source matches survive at identical method/path with aligned literal IDs; zero pruned or inferred operations.",
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/communications",
+              "operationId": "communication.cloudCommunication_GetCloudCommunication"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications",
+              "operationId": "communication.cloudCommunication_UpdateCloudCommunication"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/callRecords",
+              "operationId": "communication_ListCallRecord"
+            },
+            {
+              "method": "POST",
+              "path": "/communications/callRecords",
+              "operationId": "communication_CreateCallRecord"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications/callRecords/{callRecord-id}",
+              "operationId": "communication_UpdateCallRecord"
+            },
+            {
+              "method": "DELETE",
+              "path": "/communications/callRecords/{callRecord-id}",
+              "operationId": "communication_DeleteCallRecord"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
+              "operationId": "communication.callRecord.session_ListSegment"
+            },
+            {
+              "method": "POST",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments",
+              "operationId": "communication.callRecord.session_CreateSegment"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "operationId": "communication.callRecord.session_GetSegment"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "operationId": "communication.callRecord.session_UpdateSegment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}",
+              "operationId": "communication.callRecord.session_DeleteSegment"
+            },
+            {
+              "method": "GET",
+              "path": "/communications/calls",
+              "operationId": "communication_ListCall"
+            },
+            {
+              "method": "PATCH",
+              "path": "/communications/calls/{call-id}",
+              "operationId": "communication_UpdateCall"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "CloudCommunications",
+      "directiveIndex": 2,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: MuteAll$1",
+      "implementation": "CmdletConfigurator",
+      "notes": "Mute1 denotes the collection-bound beta muteAll action (legacy communication.call.participant_muteAll); it is not the individual participant mute action. Rename to Invoke-MgMuteAllCommunicationCallParticipant. The action metadata supplies Invoke; no verb override is needed.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": true,
+          "notes": "Neither compatible nor legacy v1.0 contains the collection-bound muteAll action; individual participant mute remains present and unchanged.",
+          "operations": []
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/communications/calls/{call-id}/participants/muteAll",
+              "operationId": "communication.call.participant_muteAll"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "CloudCommunications",
+      "directiveIndex": 3,
+      "classification": "SubjectAndVerbRename",
+      "sourceContains": "variant: ^Create1$|^CreateExpanded1$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Create1 identifies collection-bound createOrGet, not POST /communications/onlineMeetings. The shared noun override emits CreateOrGetCommunicationOnlineMeeting in both profiles; x-ms-docs-operation-type: action supplies Invoke structurally, so no redundant ReplaceVerb entry is needed. Existing v1.0 parity rename agrees and remains authoritative.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/communications/onlineMeetings/createOrGet",
+              "operationId": "communication.onlineMeeting_createOrGet"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/communications/onlineMeetings/createOrGet",
+              "operationId": "communication.onlineMeeting_createOrGet"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "CloudCommunications",
+      "directiveIndex": 4,
+      "classification": "CmdletSuppression",
+      "sourceContains": "variant: ^(Create|CreateExpanded|CreateViaIdentity|CreateViaIdentityExpanded)([1-9]{1,2})$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The actual numbered UserOnlineMeeting create operation in both specs is user-bound createOrGet (legacy user.onlineMeeting_createOrGet); suppress only this POST action, preserving ordinary collection POST and item CRUD. Existing v1.0 derived suppression agrees; the curated entry also covers beta and collision-data-disabled generation.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onlineMeetings/createOrGet",
+              "operationId": "user.onlineMeeting_createOrGet"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/users/{user-id}/onlineMeetings/createOrGet",
+              "operationId": "user.onlineMeeting_createOrGet"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "CloudCommunications",
+      "directiveIndex": 5,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^AllUserOnlineMeetingRecording$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress only user-bound getAllRecordings (legacy user.onlineMeeting_getAllRecording) for the #3241 alias conflict. Keep communication-bound and adhoc-call functions and meeting-level recordings navigation operations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onlineMeetings/getAllRecordings(meetingOrganizerUserId='@meetingOrganizerUserId',startDateTime=@startDateTime,endDateTime=@endDateTime)",
+              "operationId": "user.onlineMeeting_getAllRecording"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onlineMeetings/getAllRecordings(meetingOrganizerUserId='@meetingOrganizerUserId',startDateTime=@startDateTime,endDateTime=@endDateTime)",
+              "operationId": "user.onlineMeeting_getAllRecording"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "CloudCommunications",
+      "directiveIndex": 6,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^AllUserOnlineMeetingTranscript$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress only user-bound getAllTranscripts (legacy user.onlineMeeting_getAllTranscript) for the #3241 alias conflict. Keep communication-bound and adhoc-call functions and meeting-level transcripts navigation operations.",
+      "profiles": {
+        "v1.0": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onlineMeetings/getAllTranscripts(meetingOrganizerUserId='@meetingOrganizerUserId',startDateTime=@startDateTime,endDateTime=@endDateTime)",
+              "operationId": "user.onlineMeeting_getAllTranscript"
+            }
+          ]
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/users/{user-id}/onlineMeetings/getAllTranscripts(meetingOrganizerUserId='@meetingOrganizerUserId',startDateTime=@startDateTime,endDateTime=@endDateTime)",
+              "operationId": "user.onlineMeeting_getAllTranscript"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "collisionNaming": {
+    "implementation": "SharedExactNounOverrides",
+    "normalTargetMerge": "08e409a6aa8fd48736b8f9a9199559f46fc0d1ad",
+    "latestReportEvidence": "The current compatible meetingAttendanceReport description in both scopes says: The attendance report of the latest online meeting session. Read-only.",
+    "liveEventEvidence": "The current compatible recording description in both scopes says: The content stream of the recording of a Teams live event. Read-only.",
+    "decision": "Meaningful distinct LatestAttendanceReport and LiveEventRecording nouns retain all source operations. No selector, profile-authored filter, response union, operation suppression or new mutation variant is used.",
+    "defaults": "Ordinary paired GETs retain their existing List default. The historical published combined Get2 alias-function default cannot be reproduced: COMM aliases remain baseline unsupported and USER aggregate remains selected by shared directive 5 suppression.",
+    "history": "Supersedes inactive premerge beta Route/Allow* policy and all unactivated historical variant drafts; only the actually merged three-setting configuration and separate oracle profile are used.",
+    "publishedBaselineEvidence": {
+      "version": "2.38.0",
+      "kind": "Captured actual public proxy parameter sets and compiled route-construction IL, not first metadata URI; published combined names differ intentionally from these disambiguated nouns.",
+      "package": "Microsoft.Graph.Beta.CloudCommunications",
+      "sha256": "BE21FFEF7F8F1B0D30ACC110589715E64A4FA31BC3E4A62051213E167D20C336"
+    },
+    "profiles": {
+      "v1.0": {
+        "compatibleSpecBlob": "953e67b74c8ca733f8e39ebd6d1af02432e20fb8",
+        "operations": []
+      },
+      "beta": {
+        "compatibleSpecBlob": "1efe3be4e3fced8a9e177e5bec11250543e292e3",
+        "operations": [
+          {
+            "method": "GET",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
+            "operationId": "communication.onlineMeeting_GetMeetingAttendanceReport",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReport",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "PATCH",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
+            "operationId": "communication.onlineMeeting_UpdateMeetingAttendanceReport",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReport",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "DELETE",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
+            "operationId": "communication.onlineMeeting_DeleteMeetingAttendanceReport",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReport",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "GET",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords",
+            "operationId": "communication.onlineMeeting.meetingAttendanceReport_ListAttendanceRecord",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "POST",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords",
+            "operationId": "communication.onlineMeeting.meetingAttendanceReport_CreateAttendanceRecord",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "GET",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
+            "operationId": "communication.onlineMeeting.meetingAttendanceReport_GetAttendanceRecord",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "PATCH",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
+            "operationId": "communication.onlineMeeting.meetingAttendanceReport_UpdateAttendanceRecord",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "DELETE",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
+            "operationId": "communication.onlineMeeting.meetingAttendanceReport_DeleteAttendanceRecord",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "GET",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/$count",
+            "operationId": "communication.onlineMeeting.meetingAttendanceReport.attendanceRecord_GetCount",
+            "noun": "CommunicationOnlineMeetingLatestAttendanceReportAttendanceRecordCount",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "GET",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/recording",
+            "operationId": "communication_GetOnlineMeetingsRecording",
+            "noun": "CommunicationOnlineMeetingLiveEventRecording",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "PUT",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/recording",
+            "operationId": "communication_SetOnlineMeetingsRecording",
+            "noun": "CommunicationOnlineMeetingLiveEventRecording",
+            "expectedCompiled": false,
+            "baselineLimitation": "Existing emitter skips binary PUT with a bodyless success response. The route remains in the compatible client and is not suppressed or claimed as a compiled cmdlet."
+          },
+          {
+            "method": "DELETE",
+            "path": "/communications/onlineMeetings/{onlineMeeting-id}/recording",
+            "operationId": "communication_DeleteOnlineMeetingsRecording",
+            "noun": "CommunicationOnlineMeetingLiveEventRecording",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
+            "operationId": "user.onlineMeeting_GetMeetingAttendanceReport",
+            "noun": "UserOnlineMeetingLatestAttendanceReport",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "PATCH",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
+            "operationId": "user.onlineMeeting_UpdateMeetingAttendanceReport",
+            "noun": "UserOnlineMeetingLatestAttendanceReport",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "DELETE",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport",
+            "operationId": "user.onlineMeeting_DeleteMeetingAttendanceReport",
+            "noun": "UserOnlineMeetingLatestAttendanceReport",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords",
+            "operationId": "user.onlineMeeting.meetingAttendanceReport_ListAttendanceRecord",
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "POST",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords",
+            "operationId": "user.onlineMeeting.meetingAttendanceReport_CreateAttendanceRecord",
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
+            "operationId": "user.onlineMeeting.meetingAttendanceReport_GetAttendanceRecord",
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "PATCH",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
+            "operationId": "user.onlineMeeting.meetingAttendanceReport_UpdateAttendanceRecord",
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "DELETE",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}",
+            "operationId": "user.onlineMeeting.meetingAttendanceReport_DeleteAttendanceRecord",
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecord",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/$count",
+            "operationId": "user.onlineMeeting.meetingAttendanceReport.attendanceRecord_GetCount",
+            "noun": "UserOnlineMeetingLatestAttendanceReportAttendanceRecordCount",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "GET",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording",
+            "operationId": "user_GetOnlineMeetingsRecording",
+            "noun": "UserOnlineMeetingLiveEventRecording",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          },
+          {
+            "method": "PUT",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording",
+            "operationId": "user_SetOnlineMeetingsRecording",
+            "noun": "UserOnlineMeetingLiveEventRecording",
+            "expectedCompiled": false,
+            "baselineLimitation": "Existing emitter skips binary PUT with a bodyless success response. The route remains in the compatible client and is not suppressed or claimed as a compiled cmdlet."
+          },
+          {
+            "method": "DELETE",
+            "path": "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording",
+            "operationId": "user_DeleteOnlineMeetingsRecording",
+            "noun": "UserOnlineMeetingLiveEventRecording",
+            "expectedCompiled": true,
+            "baselineLimitation": null
+          }
+        ]
+      }
+    }
+  }
+}
