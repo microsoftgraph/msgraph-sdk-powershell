@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     if (this.IsParameterBound(nameof(CarrierUrl)))
         body.CarrierUrl = CarrierUrl;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

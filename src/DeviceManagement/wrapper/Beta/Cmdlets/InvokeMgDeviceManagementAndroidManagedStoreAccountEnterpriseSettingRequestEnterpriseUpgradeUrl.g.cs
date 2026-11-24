@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
                 return;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestEnterpriseUpgradeUrl.RequestEnterpriseUpgradeUrlPostResponse? result;

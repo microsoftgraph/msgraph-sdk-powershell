@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     if (this.IsParameterBound(nameof(AlertRecordIds)))
         body.AlertRecordIds = AlertRecordIds!.ToList();
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

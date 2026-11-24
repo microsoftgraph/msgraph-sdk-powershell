@@ -86,7 +86,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
         body.Threshold = Threshold;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.DeviceManagement.AlertRule? result;

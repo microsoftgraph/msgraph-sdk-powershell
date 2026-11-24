@@ -22,7 +22,6 @@ using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.Device
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceCompliancePolicySettingStateSummaries;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceConfigurationConflictSummary;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceConfigurationDeviceStateSummaries;
-using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceConfigurationUserStateSummaries;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceConfigurations;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceHealthScripts;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceManagementScripts;
@@ -186,11 +185,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement
         public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceConfigurations.DeviceConfigurationsRequestBuilder DeviceConfigurations
         {
             get => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceConfigurations.DeviceConfigurationsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The deviceConfigurationUserStateSummaries property</summary>
-        public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder DeviceConfigurationUserStateSummaries
-        {
-            get => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceConfigurationUserStateSummaries.DeviceConfigurationUserStateSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The deviceHealthScripts property</summary>
         public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceHealthScripts.DeviceHealthScriptsRequestBuilder DeviceHealthScripts

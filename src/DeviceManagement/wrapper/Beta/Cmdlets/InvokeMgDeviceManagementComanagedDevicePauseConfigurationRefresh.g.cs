@@ -41,7 +41,7 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement
     if (this.IsParameterBound(nameof(PauseTimePeriodInMinutes)))
         body.PauseTimePeriodInMinutes = PauseTimePeriodInMinutes;
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
 

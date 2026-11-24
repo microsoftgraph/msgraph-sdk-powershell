@@ -5,7 +5,6 @@ using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.Device
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceCompliancePolicies.GetNoncompliantDevicesToRetire;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceCompliancePolicies.HasPayloadLinks;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceCompliancePolicies.Item;
-using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceCompliancePolicies.SetScheduledRetireState;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceCompliancePolicies.ValidateComplianceScript;
 using Microsoft.Graph.PowerShell.DeviceManagement.Client.Models.ODataErrors;
@@ -45,11 +44,6 @@ namespace Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.De
         public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceCompliancePolicies.HasPayloadLinks.HasPayloadLinksRequestBuilder HasPayloadLinks
         {
             get => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceCompliancePolicies.HasPayloadLinks.HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The refreshDeviceComplianceReportSummarization property</summary>
-        public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization.RefreshDeviceComplianceReportSummarizationRequestBuilder RefreshDeviceComplianceReportSummarization
-        {
-            get => new global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization.RefreshDeviceComplianceReportSummarizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The setScheduledRetireState property</summary>
         public global::Microsoft.Graph.PowerShell.DeviceManagement.Client.DeviceManagement.DeviceCompliancePolicies.SetScheduledRetireState.SetScheduledRetireStateRequestBuilder SetScheduledRetireState
