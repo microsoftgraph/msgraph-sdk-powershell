@@ -135,7 +135,7 @@ namespace Microsoft.Graph.PowerShell.People
         body.Sponsors = Sponsors!.ToList();
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("beta");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.People.Client.Models.ProjectParticipation? result;
