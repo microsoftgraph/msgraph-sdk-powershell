@@ -1,0 +1,2915 @@
+{
+  "mappings": [
+    {
+      "module": "WindowsUpdates",
+      "directiveIndex": 1,
+      "classification": "OperationIdSuppression",
+      "sourceContains": "remove-path-by-operation:",
+      "implementation": "CmdletConfigurator",
+      "notes": "Original shared regex evaluated against all 266 actual openApiDocs/beta/WindowsUpdates.yml operation IDs: exactly 59 matches. After the powershell-v3 aligned-ID/spec refresh (abab9dac88), the literal compatible regex selects exactly the same 59 method/path operations with no missing or extra route. Eight selected IDs differ between sources (24 across the module); each current ID is recorded exactly, not assumed equal to its legacy ID. WindowsUpdatesDirectiveMigrationTests reads both actual sources and proves complete method/path/old-ID/current-ID coverage. Suppress only these 59 routes, not other children of /deployments/{deployment-id}/audience. The supported literal mapping schema now applies without the unmerged Legacy helper.",
+      "profiles": {
+        "v1.0": {
+          "excluded": true,
+          "operations": [],
+          "notes": "No openApiDocs_KiotaCompat/v1.0/WindowsUpdates.yml exists. Excluded compatible profile, not an API-operation absence assertion; no legacy fallback."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/admin/windows",
+              "operationId": "admin_DeleteWindow"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows",
+              "operationId": "admin_GetWindow"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows",
+              "operationId": "admin_UpdateWindow"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates",
+              "operationId": "admin.window_DeleteUpdate"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates",
+              "operationId": "admin.window_GetUpdate"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates",
+              "operationId": "admin.window_UpdateUpdate"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences",
+              "operationId": "admin.window.update_ListDeploymentAudience"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences",
+              "operationId": "admin.window.update_CreateDeploymentAudience"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}",
+              "operationId": "admin.window.update_DeleteDeploymentAudience"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}",
+              "operationId": "admin.window.update_GetDeploymentAudience"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}",
+              "operationId": "admin.window.update_UpdateDeploymentAudience"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent",
+              "operationId": "admin.window.update.deploymentAudience_ListApplicableContent"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent",
+              "operationId": "admin.window.update.deploymentAudience_CreateApplicableContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.deploymentAudience_DeleteApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.deploymentAudience_GetApplicableContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.deploymentAudience_UpdateApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/catalogEntry",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_GetCatalogEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_ListMatchedDevice"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_CreateMatchedDevice"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_DeleteMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_GetMatchedDevice"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_UpdateMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/$count",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent.matchedDevice_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/$count",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions",
+              "operationId": "admin.window.update.deploymentAudience_ListExclusion"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions",
+              "operationId": "admin.window.update.deploymentAudience_CreateExclusion"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deploymentAudience_DeleteExclusion"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deploymentAudience_GetExclusion"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deploymentAudience_UpdateExclusion"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.deploymentAudience.exclusion.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.deploymentAudience.exclusion.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.deploymentAudience.exclusion.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.deploymentAudience.exclusion.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/$count",
+              "operationId": "admin.window.update.deploymentAudience.exclusion_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.deploymentAudience.exclusion_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.deploymentAudience.exclusion_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.deploymentAudience.exclusion_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.deploymentAudience.exclusion_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members",
+              "operationId": "admin.window.update.deploymentAudience_ListMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members",
+              "operationId": "admin.window.update.deploymentAudience_CreateMember"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deploymentAudience_DeleteMember"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deploymentAudience_GetMember"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deploymentAudience_UpdateMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.deploymentAudience.member.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.deploymentAudience.member.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.deploymentAudience.member.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.deploymentAudience.member.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/$count",
+              "operationId": "admin.window.update.deploymentAudience.member_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.deploymentAudience.member_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.deploymentAudience.member_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.deploymentAudience.member_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.deploymentAudience.member_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/microsoft.graph.windowsUpdates.updateAudience",
+              "operationId": "admin.window.update.deploymentAudience_updateAudience"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/microsoft.graph.windowsUpdates.updateAudienceById",
+              "operationId": "admin.window.update.deploymentAudience_updateAudienceGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/$count",
+              "operationId": "admin.window.update.deploymentAudience_GetCount"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience",
+              "operationId": "admin.window.update.deployment_DeleteAudience"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience",
+              "operationId": "admin.window.update.deployment_GetAudience"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience",
+              "operationId": "admin.window.update.deployment_UpdateAudience"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/microsoft.graph.windowsUpdates.updateAudience",
+              "operationId": "admin.window.update.updatePolicy.audience_updateAudience"
+            }
+          ],
+          "notes": "Refreshed against compatible beta spec blob82aa2f9f62870051b5a4ff06266625cc301b5d69 and actual legacy source blobfd6db54e8473636d98938390e3532b6f40546b3e. All 59 original selected routes survive unchanged; literal compatible selection is identical by method/path. No API-absence assertion, path translation, or unmerged helper fields."
+        }
+      }
+    },
+    {
+      "module": "WindowsUpdates",
+      "directiveIndex": 2,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: (.*)AdminWindowUpdate(.*)",
+      "implementation": "CmdletConfigurator",
+      "notes": "After the earlier path suppression, all 207 remaining legacy operations have the AdminWindowUpdate subject family. Exact compatible-route noun overrides replace the structural AdminWindowsUpdate prefix with WindowsUpdates, preserving suffixes and methods. The root updatePolicies exception is recorded separately by directive 8. Suppressed cmdlets need no dead noun override. Existing derived data remains authoritative.",
+      "profiles": {
+        "v1.0": {
+          "excluded": true,
+          "operations": [],
+          "notes": "No openApiDocs_KiotaCompat/v1.0/WindowsUpdates.yml exists. Excluded compatible profile, not an API-operation absence assertion; no legacy fallback."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/catalog",
+              "operationId": "admin.window.update_DeleteCatalog"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/catalog",
+              "operationId": "admin.window.update_GetCatalog"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/catalog",
+              "operationId": "admin.window.update_UpdateCatalog"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/catalog/entries",
+              "operationId": "admin.window.update.catalog_ListEntry"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/catalog/entries",
+              "operationId": "admin.window.update.catalog_CreateEntry"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/catalog/entries/{catalogEntry-id}",
+              "operationId": "admin.window.update.catalog_DeleteEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/catalog/entries/{catalogEntry-id}",
+              "operationId": "admin.window.update.catalog_GetEntry"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/catalog/entries/{catalogEntry-id}",
+              "operationId": "admin.window.update.catalog_UpdateEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/catalog/entries/$count",
+              "operationId": "admin.window.update.catalog.entry_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments",
+              "operationId": "admin.window.update_ListDeployment"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments",
+              "operationId": "admin.window.update_CreateDeployment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deployments/{deployment-id}",
+              "operationId": "admin.window.update_DeleteDeployment"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}",
+              "operationId": "admin.window.update_GetDeployment"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deployments/{deployment-id}",
+              "operationId": "admin.window.update_UpdateDeployment"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent",
+              "operationId": "admin.window.update.deployment.audience_ListApplicableContent"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent",
+              "operationId": "admin.window.update.deployment.audience_CreateApplicableContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.deployment.audience_DeleteApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.deployment.audience_GetApplicableContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.deployment.audience_UpdateApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/catalogEntry",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_GetCatalogEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_ListMatchedDevice"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_CreateMatchedDevice"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_DeleteMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_GetMatchedDevice"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_UpdateMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/$count",
+              "operationId": "admin.window.update.deployment.audience.applicableContent.matchedDevice_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/$count",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions",
+              "operationId": "admin.window.update.deployment.audience_ListExclusion"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions",
+              "operationId": "admin.window.update.deployment.audience_CreateExclusion"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_DeleteExclusion"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_GetExclusion"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_UpdateExclusion"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.deployment.audience.exclusion.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.deployment.audience.exclusion.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.deployment.audience.exclusion.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.deployment.audience.exclusion.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/$count",
+              "operationId": "admin.window.update.deployment.audience.exclusion_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.deployment.audience.exclusion_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.deployment.audience.exclusion_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.deployment.audience.exclusion_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.deployment.audience.exclusion_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members",
+              "operationId": "admin.window.update.deployment.audience_ListMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members",
+              "operationId": "admin.window.update.deployment.audience_CreateMember"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_DeleteMember"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_GetMember"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_UpdateMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.deployment.audience.member.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.deployment.audience.member.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.deployment.audience.member.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.deployment.audience.member.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/$count",
+              "operationId": "admin.window.update.deployment.audience.member_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.deployment.audience.member_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.deployment.audience.member_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.deployment.audience.member_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.deployment.audience.member_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/microsoft.graph.windowsUpdates.updateAudience",
+              "operationId": "admin.window.update.deployment.audience_updateAudience"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/microsoft.graph.windowsUpdates.updateAudienceById",
+              "operationId": "admin.window.update.deployment.audience_updateAudienceGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/$count",
+              "operationId": "admin.window.update.deployment_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies",
+              "operationId": "admin.window.update_ListPolicy"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/policies",
+              "operationId": "admin.window.update_CreatePolicy"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/policies/{policy-id}",
+              "operationId": "admin.window.update_DeletePolicy"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}",
+              "operationId": "admin.window.update_GetPolicy"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/policies/{policy-id}",
+              "operationId": "admin.window.update_UpdatePolicy"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent",
+              "operationId": "admin.window.update.policy_ListApplicableContent"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent",
+              "operationId": "admin.window.update.policy_CreateApplicableContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.policy_DeleteApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.policy_GetApplicableContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.policy_UpdateApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/catalogEntry",
+              "operationId": "admin.window.update.policy.applicableContent_GetCatalogEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.policy.applicableContent_ListMatchedDevice"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.policy.applicableContent_CreateMatchedDevice"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.policy.applicableContent_DeleteMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.policy.applicableContent_GetMatchedDevice"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.policy.applicableContent_UpdateMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/$count",
+              "operationId": "admin.window.update.policy.applicableContent.matchedDevice_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/$count",
+              "operationId": "admin.window.update.policy.applicableContent_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals",
+              "operationId": "admin.window.update.policy_ListApproval"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals",
+              "operationId": "admin.window.update.policy_CreateApproval"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals/{policyApproval-id}",
+              "operationId": "admin.window.update.policy_DeleteApproval"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals/{policyApproval-id}",
+              "operationId": "admin.window.update.policy_GetApproval"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals/{policyApproval-id}",
+              "operationId": "admin.window.update.policy_UpdateApproval"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals/{policyApproval-id}/catalogEntry",
+              "operationId": "admin.window.update.policy.approval_GetCatalogEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals/$count",
+              "operationId": "admin.window.update.policy.approval_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/rings",
+              "operationId": "admin.window.update.policy_ListRing"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/policies/{policy-id}/rings",
+              "operationId": "admin.window.update.policy_CreateRing"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/policies/{policy-id}/rings/{ring-id}",
+              "operationId": "admin.window.update.policy_DeleteRing"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/rings/{ring-id}",
+              "operationId": "admin.window.update.policy_GetRing"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/policies/{policy-id}/rings/{ring-id}",
+              "operationId": "admin.window.update.policy_UpdateRing"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/rings/$count",
+              "operationId": "admin.window.update.policy.ring_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/$count",
+              "operationId": "admin.window.update.policy_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products",
+              "operationId": "admin.window.update_ListProduct"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/products",
+              "operationId": "admin.window.update_CreateProduct"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}",
+              "operationId": "admin.window.update_DeleteProduct"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}",
+              "operationId": "admin.window.update_GetProduct"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}",
+              "operationId": "admin.window.update_UpdateProduct"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/editions",
+              "operationId": "admin.window.update.product_ListEdition"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/products/{product-id}/editions",
+              "operationId": "admin.window.update.product_CreateEdition"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/editions/{edition-id}",
+              "operationId": "admin.window.update.product_DeleteEdition"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/editions/{edition-id}",
+              "operationId": "admin.window.update.product_GetEdition"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/editions/{edition-id}",
+              "operationId": "admin.window.update.product_UpdateEdition"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/editions/$count",
+              "operationId": "admin.window.update.product.edition_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues",
+              "operationId": "admin.window.update.product_ListKnownIssue"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues",
+              "operationId": "admin.window.update.product_CreateKnownIssue"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}",
+              "operationId": "admin.window.update.product_DeleteKnownIssue"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}",
+              "operationId": "admin.window.update.product_GetKnownIssue"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}",
+              "operationId": "admin.window.update.product_UpdateKnownIssue"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/originatingKnowledgeBaseArticle",
+              "operationId": "admin.window.update.product.knownIssue_DeleteOriginatingKnowledgeBaseArticle"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/originatingKnowledgeBaseArticle",
+              "operationId": "admin.window.update.product.knownIssue_GetOriginatingKnowledgeBaseArticle"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/originatingKnowledgeBaseArticle",
+              "operationId": "admin.window.update.product.knownIssue_UpdateOriginatingKnowledgeBaseArticle"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/resolvingKnowledgeBaseArticle",
+              "operationId": "admin.window.update.product.knownIssue_DeleteResolvingKnowledgeBaseArticle"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/resolvingKnowledgeBaseArticle",
+              "operationId": "admin.window.update.product.knownIssue_GetResolvingKnowledgeBaseArticle"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/resolvingKnowledgeBaseArticle",
+              "operationId": "admin.window.update.product.knownIssue_UpdateResolvingKnowledgeBaseArticle"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/$count",
+              "operationId": "admin.window.update.product.knownIssue_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/microsoft.graph.windowsUpdates.getKnownIssuesByTimeRange(daysInPast={daysInPast},includeAllActive=@includeAllActive)",
+              "operationId": "admin.window.update.product_getKnownIssuesGraphBPreTimeRange"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/revisions",
+              "operationId": "admin.window.update.product_ListRevision"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/products/{product-id}/revisions",
+              "operationId": "admin.window.update.product_CreateRevision"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}",
+              "operationId": "admin.window.update.product_DeleteRevision"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}",
+              "operationId": "admin.window.update.product_GetRevision"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}",
+              "operationId": "admin.window.update.product_UpdateRevision"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/catalogEntry",
+              "operationId": "admin.window.update.product.revision_DeleteCatalogEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/catalogEntry",
+              "operationId": "admin.window.update.product.revision_GetCatalogEntry"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/catalogEntry",
+              "operationId": "admin.window.update.product.revision_UpdateCatalogEntry"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/knowledgeBaseArticle",
+              "operationId": "admin.window.update.product.revision_DeleteKnowledgeBaseArticle"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/knowledgeBaseArticle",
+              "operationId": "admin.window.update.product.revision_GetKnowledgeBaseArticle"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/knowledgeBaseArticle",
+              "operationId": "admin.window.update.product.revision_UpdateKnowledgeBaseArticle"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/$count",
+              "operationId": "admin.window.update.product.revision_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/$count",
+              "operationId": "admin.window.update.product_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/microsoft.graph.windowsUpdates.findByCatalogId(catalogID='{catalogID}')",
+              "operationId": "admin.window.update.product_findGraphBPreCatalogId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/microsoft.graph.windowsUpdates.findByKbNumber(kbNumber={kbNumber})",
+              "operationId": "admin.window.update.product_findGraphBPreKbNumber"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/resourceConnections",
+              "operationId": "admin.window.update_ListResourceConnection"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/resourceConnections",
+              "operationId": "admin.window.update_CreateResourceConnection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/resourceConnections/{resourceConnection-id}",
+              "operationId": "admin.window.update_DeleteResourceConnection"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/resourceConnections/{resourceConnection-id}",
+              "operationId": "admin.window.update_GetResourceConnection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/resourceConnections/{resourceConnection-id}",
+              "operationId": "admin.window.update_UpdateResourceConnection"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/resourceConnections/$count",
+              "operationId": "admin.window.update.resourceConnection_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatableAssets",
+              "operationId": "admin.window.update_ListUpdatableAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets",
+              "operationId": "admin.window.update_CreateUpdatableAsset"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}",
+              "operationId": "admin.window.update_DeleteUpdatableAsset"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}",
+              "operationId": "admin.window.update_GetUpdatableAsset"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}",
+              "operationId": "admin.window.update_UpdateUpdatableAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatableAssets/$count",
+              "operationId": "admin.window.update.updatableAsset_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.updatableAsset_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.updatableAsset_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.updatableAsset_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.updatableAsset_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies",
+              "operationId": "admin.window.update_ListUpdatePolicy"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies",
+              "operationId": "admin.window.update_CreateUpdatePolicy"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}",
+              "operationId": "admin.window.update_DeleteUpdatePolicy"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}",
+              "operationId": "admin.window.update_GetUpdatePolicy"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}",
+              "operationId": "admin.window.update_UpdateUpdatePolicy"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience",
+              "operationId": "admin.window.update.updatePolicy_DeleteAudience"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience",
+              "operationId": "admin.window.update.updatePolicy_GetAudience"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience",
+              "operationId": "admin.window.update.updatePolicy_UpdateAudience"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent",
+              "operationId": "admin.window.update.updatePolicy.audience_ListApplicableContent"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent",
+              "operationId": "admin.window.update.updatePolicy.audience_CreateApplicableContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.updatePolicy.audience_DeleteApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.updatePolicy.audience_GetApplicableContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.updatePolicy.audience_UpdateApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/catalogEntry",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_GetCatalogEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_ListMatchedDevice"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_CreateMatchedDevice"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_DeleteMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_GetMatchedDevice"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_UpdateMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/$count",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent.matchedDevice_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/$count",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions",
+              "operationId": "admin.window.update.updatePolicy.audience_ListExclusion"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions",
+              "operationId": "admin.window.update.updatePolicy.audience_CreateExclusion"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.updatePolicy.audience_DeleteExclusion"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.updatePolicy.audience_GetExclusion"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.updatePolicy.audience_UpdateExclusion"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/$count",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members",
+              "operationId": "admin.window.update.updatePolicy.audience_ListMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members",
+              "operationId": "admin.window.update.updatePolicy.audience_CreateMember"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.updatePolicy.audience_DeleteMember"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.updatePolicy.audience_GetMember"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.updatePolicy.audience_UpdateMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.updatePolicy.audience.member.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.updatePolicy.audience.member.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.updatePolicy.audience.member.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.updatePolicy.audience.member.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/$count",
+              "operationId": "admin.window.update.updatePolicy.audience.member_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.updatePolicy.audience.member_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.updatePolicy.audience.member_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.updatePolicy.audience.member_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.updatePolicy.audience.member_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/microsoft.graph.windowsUpdates.updateAudienceById",
+              "operationId": "admin.window.update.updatePolicy.audience_updateAudienceGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges",
+              "operationId": "admin.window.update.updatePolicy_ListComplianceChange"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges",
+              "operationId": "admin.window.update.updatePolicy_CreateComplianceChange"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/{complianceChange-id}",
+              "operationId": "admin.window.update.updatePolicy_DeleteComplianceChange"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/{complianceChange-id}",
+              "operationId": "admin.window.update.updatePolicy_GetComplianceChange"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/{complianceChange-id}",
+              "operationId": "admin.window.update.updatePolicy_UpdateComplianceChange"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/{complianceChange-id}/updatePolicy",
+              "operationId": "admin.window.update.updatePolicy.complianceChange_GetUpdatePolicy"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/$count",
+              "operationId": "admin.window.update.updatePolicy.complianceChange_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/$count",
+              "operationId": "admin.window.update.updatePolicy_GetCount"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "WindowsUpdates",
+      "directiveIndex": 3,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^WindowsUpdatesCatalog$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress only GET/PATCH/DELETE on the catalog singleton; preserve catalog entries and their count.",
+      "profiles": {
+        "v1.0": {
+          "excluded": true,
+          "operations": [],
+          "notes": "No openApiDocs_KiotaCompat/v1.0/WindowsUpdates.yml exists. Excluded compatible profile, not an API-operation absence assertion; no legacy fallback."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/catalog",
+              "operationId": "admin.window.update_DeleteCatalog"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/catalog",
+              "operationId": "admin.window.update_GetCatalog"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/catalog",
+              "operationId": "admin.window.update_UpdateCatalog"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "WindowsUpdates",
+      "directiveIndex": 4,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^WindowsUpdates(CatalogEntry|DeploymentAudienceMember|DeploymentAudienceExclusion)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress POST/PATCH/DELETE for catalog entries and deployment audience member/exclusion resources, not their reads or bound actions. The direct deploymentAudiences forms were already removed by directive 1.",
+      "profiles": {
+        "v1.0": {
+          "excluded": true,
+          "operations": [],
+          "notes": "No openApiDocs_KiotaCompat/v1.0/WindowsUpdates.yml exists. Excluded compatible profile, not an API-operation absence assertion; no legacy fallback."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/catalog/entries",
+              "operationId": "admin.window.update.catalog_CreateEntry"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/catalog/entries/{catalogEntry-id}",
+              "operationId": "admin.window.update.catalog_DeleteEntry"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/catalog/entries/{catalogEntry-id}",
+              "operationId": "admin.window.update.catalog_UpdateEntry"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions",
+              "operationId": "admin.window.update.deployment.audience_CreateExclusion"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_DeleteExclusion"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_UpdateExclusion"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members",
+              "operationId": "admin.window.update.deployment.audience_CreateMember"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_DeleteMember"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_UpdateMember"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "WindowsUpdates",
+      "directiveIndex": 5,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^WindowsUpdatesDeploymentAudience(ExclusionMember|ExclusionMemberById)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress the plain deployment audience exclusion addMembers/removeMembers actions. Actual legacy IDs end exclusion_addMember/exclusion_removeMember. The distinct ById routes have legacy IDs ending GraphBPreId, not the literal ById subject in the selector; the published Beta.WindowsUpdates metadata retains those routes. Do not newly suppress them based on renamed compatible IDs. Direct deploymentAudiences equivalents were already removed by directive 1.",
+      "profiles": {
+        "v1.0": {
+          "excluded": true,
+          "operations": [],
+          "notes": "No openApiDocs_KiotaCompat/v1.0/WindowsUpdates.yml exists. Excluded compatible profile, not an API-operation absence assertion; no legacy fallback."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.deployment.audience.exclusion.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.deployment.audience.exclusion.updatableAsset_removeMember"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "WindowsUpdates",
+      "directiveIndex": 6,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: ^(Enroll|UnEnroll)WindowsUpdatesDeploymentAudience(ExclusionAsset|ExclusionAssetById|MemberAsset|MemberAssetById)$",
+      "implementation": "CmdletConfigurator",
+      "notes": "Suppress the four plain deployment audience member/exclusion enrollAssets/unenrollAssets actions. Actual legacy IDs end enrollAsset/unenrollAsset. Distinct enrollAssetsById/unenrollAssetsById routes carry GraphBPreId legacy subjects and remain published; preserve them rather than infer new matches from current terminal names. Direct deploymentAudiences equivalents were already removed by directive 1.",
+      "profiles": {
+        "v1.0": {
+          "excluded": true,
+          "operations": [],
+          "notes": "No openApiDocs_KiotaCompat/v1.0/WindowsUpdates.yml exists. Excluded compatible profile, not an API-operation absence assertion; no legacy fallback."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.deployment.audience.exclusion_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.deployment.audience.exclusion_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.deployment.audience.member_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.deployment.audience.member_unenrollAsset"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "WindowsUpdates",
+      "directiveIndex": 7,
+      "classification": "CmdletSuppression",
+      "sourceContains": "subject: (.*)WindowsUpdatesDeploymentAudience(.*)",
+      "implementation": "SatisfiedByEarlierSuppression",
+      "notes": "Numbered variants are an AutoRest collision artifact, not an API suffix. All 49 direct /deploymentAudiences operations forming the overlapping family were already removed by the earlier operation-ID rule. Published deployment-scoped audience children have unnumbered Get/List/Create/Update/Delete variants. No additional live /deployments/{deployment-id}/audience child is suppressed; keep every unique surviving route.",
+      "profiles": {
+        "v1.0": {
+          "excluded": true,
+          "operations": [],
+          "notes": "No openApiDocs_KiotaCompat/v1.0/WindowsUpdates.yml exists. Excluded compatible profile, not an API-operation absence assertion; no legacy fallback."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences",
+              "operationId": "admin.window.update_ListDeploymentAudience"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences",
+              "operationId": "admin.window.update_CreateDeploymentAudience"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}",
+              "operationId": "admin.window.update_DeleteDeploymentAudience"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}",
+              "operationId": "admin.window.update_GetDeploymentAudience"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}",
+              "operationId": "admin.window.update_UpdateDeploymentAudience"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent",
+              "operationId": "admin.window.update.deploymentAudience_ListApplicableContent"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent",
+              "operationId": "admin.window.update.deploymentAudience_CreateApplicableContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.deploymentAudience_DeleteApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.deploymentAudience_GetApplicableContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.deploymentAudience_UpdateApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/catalogEntry",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_GetCatalogEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_ListMatchedDevice"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_CreateMatchedDevice"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_DeleteMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_GetMatchedDevice"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_UpdateMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/$count",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent.matchedDevice_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/applicableContent/$count",
+              "operationId": "admin.window.update.deploymentAudience.applicableContent_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions",
+              "operationId": "admin.window.update.deploymentAudience_ListExclusion"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions",
+              "operationId": "admin.window.update.deploymentAudience_CreateExclusion"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deploymentAudience_DeleteExclusion"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deploymentAudience_GetExclusion"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deploymentAudience_UpdateExclusion"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.deploymentAudience.exclusion.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.deploymentAudience.exclusion.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.deploymentAudience.exclusion.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.deploymentAudience.exclusion.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/$count",
+              "operationId": "admin.window.update.deploymentAudience.exclusion_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.deploymentAudience.exclusion_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.deploymentAudience.exclusion_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.deploymentAudience.exclusion_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/exclusions/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.deploymentAudience.exclusion_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members",
+              "operationId": "admin.window.update.deploymentAudience_ListMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members",
+              "operationId": "admin.window.update.deploymentAudience_CreateMember"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deploymentAudience_DeleteMember"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deploymentAudience_GetMember"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deploymentAudience_UpdateMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.deploymentAudience.member.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.deploymentAudience.member.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.deploymentAudience.member.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.deploymentAudience.member.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/$count",
+              "operationId": "admin.window.update.deploymentAudience.member_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.deploymentAudience.member_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.deploymentAudience.member_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.deploymentAudience.member_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/members/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.deploymentAudience.member_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/microsoft.graph.windowsUpdates.updateAudience",
+              "operationId": "admin.window.update.deploymentAudience_updateAudience"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deploymentAudiences/{deploymentAudience-id}/microsoft.graph.windowsUpdates.updateAudienceById",
+              "operationId": "admin.window.update.deploymentAudience_updateAudienceGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deploymentAudiences/$count",
+              "operationId": "admin.window.update.deploymentAudience_GetCount"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "WindowsUpdates",
+      "directiveIndex": 8,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: ^WindowsUpdatesPolicy(Count)?$",
+      "implementation": "CmdletConfigurator",
+      "notes": "The published beta command inventory associates numbered Get1/GetViaIdentity1/List1 variants with the updatePolicies roots/count, and unnumbered variants with policies. After the shared prefix replacement, structural overlap collapse would call both roots WindowsUpdatesPolicy. Three exact noun overrides retain WindowsUpdatesUpdatePolicy for updatePolicies collection/item/count and preserve WindowsUpdatesPolicy for policies; all methods and descendants remain available.",
+      "profiles": {
+        "v1.0": {
+          "excluded": true,
+          "operations": [],
+          "notes": "No openApiDocs_KiotaCompat/v1.0/WindowsUpdates.yml exists. Excluded compatible profile, not an API-operation absence assertion; no legacy fallback."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies",
+              "operationId": "admin.window.update_ListUpdatePolicy"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies",
+              "operationId": "admin.window.update_CreateUpdatePolicy"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}",
+              "operationId": "admin.window.update_DeleteUpdatePolicy"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}",
+              "operationId": "admin.window.update_GetUpdatePolicy"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}",
+              "operationId": "admin.window.update_UpdateUpdatePolicy"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/$count",
+              "operationId": "admin.window.update.updatePolicy_GetCount"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "module": "WindowsUpdates",
+      "directiveIndex": 10,
+      "classification": "SubjectRename",
+      "sourceContains": "subject: (.*)(Wu)(.*)",
+      "implementation": "CmdletConfigurator",
+      "notes": "The final restore from temporary Wu subjects preserves WindowsUpdates names for all 207 post-path-filter operations. The temporary alias/rename group (directive 9) is explicitly deferred; never expose a Wu primary cmdlet noun or add a second rename. The existing exact shared-prefix configuration supplies the final names.",
+      "profiles": {
+        "v1.0": {
+          "excluded": true,
+          "operations": [],
+          "notes": "No openApiDocs_KiotaCompat/v1.0/WindowsUpdates.yml exists. Excluded compatible profile, not an API-operation absence assertion; no legacy fallback."
+        },
+        "beta": {
+          "absenceExpected": false,
+          "operations": [
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/catalog",
+              "operationId": "admin.window.update_DeleteCatalog"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/catalog",
+              "operationId": "admin.window.update_GetCatalog"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/catalog",
+              "operationId": "admin.window.update_UpdateCatalog"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/catalog/entries",
+              "operationId": "admin.window.update.catalog_ListEntry"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/catalog/entries",
+              "operationId": "admin.window.update.catalog_CreateEntry"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/catalog/entries/{catalogEntry-id}",
+              "operationId": "admin.window.update.catalog_DeleteEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/catalog/entries/{catalogEntry-id}",
+              "operationId": "admin.window.update.catalog_GetEntry"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/catalog/entries/{catalogEntry-id}",
+              "operationId": "admin.window.update.catalog_UpdateEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/catalog/entries/$count",
+              "operationId": "admin.window.update.catalog.entry_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments",
+              "operationId": "admin.window.update_ListDeployment"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments",
+              "operationId": "admin.window.update_CreateDeployment"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deployments/{deployment-id}",
+              "operationId": "admin.window.update_DeleteDeployment"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}",
+              "operationId": "admin.window.update_GetDeployment"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deployments/{deployment-id}",
+              "operationId": "admin.window.update_UpdateDeployment"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent",
+              "operationId": "admin.window.update.deployment.audience_ListApplicableContent"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent",
+              "operationId": "admin.window.update.deployment.audience_CreateApplicableContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.deployment.audience_DeleteApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.deployment.audience_GetApplicableContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.deployment.audience_UpdateApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/catalogEntry",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_GetCatalogEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_ListMatchedDevice"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_CreateMatchedDevice"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_DeleteMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_GetMatchedDevice"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_UpdateMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/$count",
+              "operationId": "admin.window.update.deployment.audience.applicableContent.matchedDevice_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/applicableContent/$count",
+              "operationId": "admin.window.update.deployment.audience.applicableContent_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions",
+              "operationId": "admin.window.update.deployment.audience_ListExclusion"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions",
+              "operationId": "admin.window.update.deployment.audience_CreateExclusion"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_DeleteExclusion"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_GetExclusion"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_UpdateExclusion"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.deployment.audience.exclusion.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.deployment.audience.exclusion.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.deployment.audience.exclusion.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.deployment.audience.exclusion.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/$count",
+              "operationId": "admin.window.update.deployment.audience.exclusion_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.deployment.audience.exclusion_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.deployment.audience.exclusion_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.deployment.audience.exclusion_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/exclusions/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.deployment.audience.exclusion_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members",
+              "operationId": "admin.window.update.deployment.audience_ListMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members",
+              "operationId": "admin.window.update.deployment.audience_CreateMember"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_DeleteMember"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_GetMember"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.deployment.audience_UpdateMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.deployment.audience.member.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.deployment.audience.member.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.deployment.audience.member.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.deployment.audience.member.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/$count",
+              "operationId": "admin.window.update.deployment.audience.member_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.deployment.audience.member_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.deployment.audience.member_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.deployment.audience.member_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/members/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.deployment.audience.member_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/microsoft.graph.windowsUpdates.updateAudience",
+              "operationId": "admin.window.update.deployment.audience_updateAudience"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/deployments/{deployment-id}/audience/microsoft.graph.windowsUpdates.updateAudienceById",
+              "operationId": "admin.window.update.deployment.audience_updateAudienceGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/deployments/$count",
+              "operationId": "admin.window.update.deployment_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies",
+              "operationId": "admin.window.update_ListPolicy"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/policies",
+              "operationId": "admin.window.update_CreatePolicy"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/policies/{policy-id}",
+              "operationId": "admin.window.update_DeletePolicy"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}",
+              "operationId": "admin.window.update_GetPolicy"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/policies/{policy-id}",
+              "operationId": "admin.window.update_UpdatePolicy"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent",
+              "operationId": "admin.window.update.policy_ListApplicableContent"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent",
+              "operationId": "admin.window.update.policy_CreateApplicableContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.policy_DeleteApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.policy_GetApplicableContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.policy_UpdateApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/catalogEntry",
+              "operationId": "admin.window.update.policy.applicableContent_GetCatalogEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.policy.applicableContent_ListMatchedDevice"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.policy.applicableContent_CreateMatchedDevice"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.policy.applicableContent_DeleteMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.policy.applicableContent_GetMatchedDevice"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.policy.applicableContent_UpdateMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/$count",
+              "operationId": "admin.window.update.policy.applicableContent.matchedDevice_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/applicableContent/$count",
+              "operationId": "admin.window.update.policy.applicableContent_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals",
+              "operationId": "admin.window.update.policy_ListApproval"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals",
+              "operationId": "admin.window.update.policy_CreateApproval"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals/{policyApproval-id}",
+              "operationId": "admin.window.update.policy_DeleteApproval"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals/{policyApproval-id}",
+              "operationId": "admin.window.update.policy_GetApproval"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals/{policyApproval-id}",
+              "operationId": "admin.window.update.policy_UpdateApproval"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals/{policyApproval-id}/catalogEntry",
+              "operationId": "admin.window.update.policy.approval_GetCatalogEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/approvals/$count",
+              "operationId": "admin.window.update.policy.approval_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/rings",
+              "operationId": "admin.window.update.policy_ListRing"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/policies/{policy-id}/rings",
+              "operationId": "admin.window.update.policy_CreateRing"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/policies/{policy-id}/rings/{ring-id}",
+              "operationId": "admin.window.update.policy_DeleteRing"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/rings/{ring-id}",
+              "operationId": "admin.window.update.policy_GetRing"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/policies/{policy-id}/rings/{ring-id}",
+              "operationId": "admin.window.update.policy_UpdateRing"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/{policy-id}/rings/$count",
+              "operationId": "admin.window.update.policy.ring_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/policies/$count",
+              "operationId": "admin.window.update.policy_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products",
+              "operationId": "admin.window.update_ListProduct"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/products",
+              "operationId": "admin.window.update_CreateProduct"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}",
+              "operationId": "admin.window.update_DeleteProduct"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}",
+              "operationId": "admin.window.update_GetProduct"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}",
+              "operationId": "admin.window.update_UpdateProduct"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/editions",
+              "operationId": "admin.window.update.product_ListEdition"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/products/{product-id}/editions",
+              "operationId": "admin.window.update.product_CreateEdition"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/editions/{edition-id}",
+              "operationId": "admin.window.update.product_DeleteEdition"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/editions/{edition-id}",
+              "operationId": "admin.window.update.product_GetEdition"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/editions/{edition-id}",
+              "operationId": "admin.window.update.product_UpdateEdition"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/editions/$count",
+              "operationId": "admin.window.update.product.edition_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues",
+              "operationId": "admin.window.update.product_ListKnownIssue"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues",
+              "operationId": "admin.window.update.product_CreateKnownIssue"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}",
+              "operationId": "admin.window.update.product_DeleteKnownIssue"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}",
+              "operationId": "admin.window.update.product_GetKnownIssue"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}",
+              "operationId": "admin.window.update.product_UpdateKnownIssue"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/originatingKnowledgeBaseArticle",
+              "operationId": "admin.window.update.product.knownIssue_DeleteOriginatingKnowledgeBaseArticle"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/originatingKnowledgeBaseArticle",
+              "operationId": "admin.window.update.product.knownIssue_GetOriginatingKnowledgeBaseArticle"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/originatingKnowledgeBaseArticle",
+              "operationId": "admin.window.update.product.knownIssue_UpdateOriginatingKnowledgeBaseArticle"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/resolvingKnowledgeBaseArticle",
+              "operationId": "admin.window.update.product.knownIssue_DeleteResolvingKnowledgeBaseArticle"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/resolvingKnowledgeBaseArticle",
+              "operationId": "admin.window.update.product.knownIssue_GetResolvingKnowledgeBaseArticle"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/{knownIssue-id}/resolvingKnowledgeBaseArticle",
+              "operationId": "admin.window.update.product.knownIssue_UpdateResolvingKnowledgeBaseArticle"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/knownIssues/$count",
+              "operationId": "admin.window.update.product.knownIssue_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/microsoft.graph.windowsUpdates.getKnownIssuesByTimeRange(daysInPast={daysInPast},includeAllActive=@includeAllActive)",
+              "operationId": "admin.window.update.product_getKnownIssuesGraphBPreTimeRange"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/revisions",
+              "operationId": "admin.window.update.product_ListRevision"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/products/{product-id}/revisions",
+              "operationId": "admin.window.update.product_CreateRevision"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}",
+              "operationId": "admin.window.update.product_DeleteRevision"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}",
+              "operationId": "admin.window.update.product_GetRevision"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}",
+              "operationId": "admin.window.update.product_UpdateRevision"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/catalogEntry",
+              "operationId": "admin.window.update.product.revision_DeleteCatalogEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/catalogEntry",
+              "operationId": "admin.window.update.product.revision_GetCatalogEntry"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/catalogEntry",
+              "operationId": "admin.window.update.product.revision_UpdateCatalogEntry"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/knowledgeBaseArticle",
+              "operationId": "admin.window.update.product.revision_DeleteKnowledgeBaseArticle"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/knowledgeBaseArticle",
+              "operationId": "admin.window.update.product.revision_GetKnowledgeBaseArticle"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/{productRevision-id}/knowledgeBaseArticle",
+              "operationId": "admin.window.update.product.revision_UpdateKnowledgeBaseArticle"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/{product-id}/revisions/$count",
+              "operationId": "admin.window.update.product.revision_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/$count",
+              "operationId": "admin.window.update.product_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/microsoft.graph.windowsUpdates.findByCatalogId(catalogID='{catalogID}')",
+              "operationId": "admin.window.update.product_findGraphBPreCatalogId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/products/microsoft.graph.windowsUpdates.findByKbNumber(kbNumber={kbNumber})",
+              "operationId": "admin.window.update.product_findGraphBPreKbNumber"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/resourceConnections",
+              "operationId": "admin.window.update_ListResourceConnection"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/resourceConnections",
+              "operationId": "admin.window.update_CreateResourceConnection"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/resourceConnections/{resourceConnection-id}",
+              "operationId": "admin.window.update_DeleteResourceConnection"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/resourceConnections/{resourceConnection-id}",
+              "operationId": "admin.window.update_GetResourceConnection"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/resourceConnections/{resourceConnection-id}",
+              "operationId": "admin.window.update_UpdateResourceConnection"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/resourceConnections/$count",
+              "operationId": "admin.window.update.resourceConnection_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatableAssets",
+              "operationId": "admin.window.update_ListUpdatableAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets",
+              "operationId": "admin.window.update_CreateUpdatableAsset"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}",
+              "operationId": "admin.window.update_DeleteUpdatableAsset"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}",
+              "operationId": "admin.window.update_GetUpdatableAsset"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}",
+              "operationId": "admin.window.update_UpdateUpdatableAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatableAssets/$count",
+              "operationId": "admin.window.update.updatableAsset_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.updatableAsset_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.updatableAsset_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.updatableAsset_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatableAssets/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.updatableAsset_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies",
+              "operationId": "admin.window.update_ListUpdatePolicy"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies",
+              "operationId": "admin.window.update_CreateUpdatePolicy"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}",
+              "operationId": "admin.window.update_DeleteUpdatePolicy"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}",
+              "operationId": "admin.window.update_GetUpdatePolicy"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}",
+              "operationId": "admin.window.update_UpdateUpdatePolicy"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience",
+              "operationId": "admin.window.update.updatePolicy_DeleteAudience"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience",
+              "operationId": "admin.window.update.updatePolicy_GetAudience"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience",
+              "operationId": "admin.window.update.updatePolicy_UpdateAudience"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent",
+              "operationId": "admin.window.update.updatePolicy.audience_ListApplicableContent"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent",
+              "operationId": "admin.window.update.updatePolicy.audience_CreateApplicableContent"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.updatePolicy.audience_DeleteApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.updatePolicy.audience_GetApplicableContent"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}",
+              "operationId": "admin.window.update.updatePolicy.audience_UpdateApplicableContent"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/catalogEntry",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_GetCatalogEntry"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_ListMatchedDevice"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_CreateMatchedDevice"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_DeleteMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_GetMatchedDevice"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/{applicableContentDeviceMatch-deviceId}",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_UpdateMatchedDevice"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/{applicableContent-catalogEntryId}/matchedDevices/$count",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent.matchedDevice_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/applicableContent/$count",
+              "operationId": "admin.window.update.updatePolicy.audience.applicableContent_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions",
+              "operationId": "admin.window.update.updatePolicy.audience_ListExclusion"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions",
+              "operationId": "admin.window.update.updatePolicy.audience_CreateExclusion"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.updatePolicy.audience_DeleteExclusion"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.updatePolicy.audience_GetExclusion"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}",
+              "operationId": "admin.window.update.updatePolicy.audience_UpdateExclusion"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/$count",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/exclusions/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.updatePolicy.audience.exclusion_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members",
+              "operationId": "admin.window.update.updatePolicy.audience_ListMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members",
+              "operationId": "admin.window.update.updatePolicy.audience_CreateMember"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.updatePolicy.audience_DeleteMember"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.updatePolicy.audience_GetMember"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}",
+              "operationId": "admin.window.update.updatePolicy.audience_UpdateMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembers",
+              "operationId": "admin.window.update.updatePolicy.audience.member.updatableAsset_addMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.addMembersById",
+              "operationId": "admin.window.update.updatePolicy.audience.member.updatableAsset_addMembersGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembers",
+              "operationId": "admin.window.update.updatePolicy.audience.member.updatableAsset_removeMember"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/{updatableAsset-id}/microsoft.graph.windowsUpdates.removeMembersById",
+              "operationId": "admin.window.update.updatePolicy.audience.member.updatableAsset_removeMembersGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/$count",
+              "operationId": "admin.window.update.updatePolicy.audience.member_GetCount"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/microsoft.graph.windowsUpdates.enrollAssets",
+              "operationId": "admin.window.update.updatePolicy.audience.member_enrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/microsoft.graph.windowsUpdates.enrollAssetsById",
+              "operationId": "admin.window.update.updatePolicy.audience.member_enrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/microsoft.graph.windowsUpdates.unenrollAssets",
+              "operationId": "admin.window.update.updatePolicy.audience.member_unenrollAsset"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/members/microsoft.graph.windowsUpdates.unenrollAssetsById",
+              "operationId": "admin.window.update.updatePolicy.audience.member_unenrollAssetsGraphBPreId"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/audience/microsoft.graph.windowsUpdates.updateAudienceById",
+              "operationId": "admin.window.update.updatePolicy.audience_updateAudienceGraphBPreId"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges",
+              "operationId": "admin.window.update.updatePolicy_ListComplianceChange"
+            },
+            {
+              "method": "POST",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges",
+              "operationId": "admin.window.update.updatePolicy_CreateComplianceChange"
+            },
+            {
+              "method": "DELETE",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/{complianceChange-id}",
+              "operationId": "admin.window.update.updatePolicy_DeleteComplianceChange"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/{complianceChange-id}",
+              "operationId": "admin.window.update.updatePolicy_GetComplianceChange"
+            },
+            {
+              "method": "PATCH",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/{complianceChange-id}",
+              "operationId": "admin.window.update.updatePolicy_UpdateComplianceChange"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/{complianceChange-id}/updatePolicy",
+              "operationId": "admin.window.update.updatePolicy.complianceChange_GetUpdatePolicy"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/{updatePolicy-id}/complianceChanges/$count",
+              "operationId": "admin.window.update.updatePolicy.complianceChange_GetCount"
+            },
+            {
+              "method": "GET",
+              "path": "/admin/windows/updates/updatePolicies/$count",
+              "operationId": "admin.window.update.updatePolicy_GetCount"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
