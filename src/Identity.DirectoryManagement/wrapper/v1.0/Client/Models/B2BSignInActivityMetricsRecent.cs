@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     public partial class B2BSignInActivityMetricsRecent : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.B2BSignInActivityMetricsBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The updateDateTime property</summary>
+        /// <summary>Timestamp that represents the most recent time B2B registration data was aggregated and have sufficiently changed for the related tenant.</summary>
         public DateTimeOffset? UpdateDateTime { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.B2BSignInActivityMetricsRecent"/> and sets the default values.

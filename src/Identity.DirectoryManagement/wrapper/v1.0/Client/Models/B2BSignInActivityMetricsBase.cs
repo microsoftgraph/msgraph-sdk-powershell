@@ -12,15 +12,15 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     public partial class B2BSignInActivityMetricsBase : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The inboundMonthlyTotalApplications property</summary>
+        /// <summary>The total number of applications accessed by inbound users in the last month.</summary>
         public decimal? InboundMonthlyTotalApplications { get; set; }
-        /// <summary>The inboundMonthlyTotalUsers property</summary>
+        /// <summary>The total number of unique inbound users with sign-in activity in the last month.</summary>
         public decimal? InboundMonthlyTotalUsers { get; set; }
-        /// <summary>The outboundMonthlyTotalApplications property</summary>
+        /// <summary>The total number of applications accessed by outbound users in the last month.</summary>
         public decimal? OutboundMonthlyTotalApplications { get; set; }
-        /// <summary>The outboundMonthlyTotalUsers property</summary>
+        /// <summary>The total number of unique outbound users with sign-in activity in the last month.</summary>
         public decimal? OutboundMonthlyTotalUsers { get; set; }
-        /// <summary>The watermarkDateTime property</summary>
+        /// <summary>The date and time when the metrics snapshot was taken.</summary>
         public DateTimeOffset? WatermarkDateTime { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

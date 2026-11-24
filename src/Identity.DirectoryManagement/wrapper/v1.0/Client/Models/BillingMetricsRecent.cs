@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     public partial class BillingMetricsRecent : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.BillingMetricsBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The updateDateTime property</summary>
+        /// <summary>Timestamp that represents when billing metrics are aggregated and have sufficiently changed for the related tenant.</summary>
         public DateTimeOffset? UpdateDateTime { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

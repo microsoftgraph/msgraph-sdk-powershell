@@ -5,6 +5,7 @@ using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Devices.Del
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Devices.GetAvailableExtensionProperties;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Devices.GetByIds;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Devices.Item;
+using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Devices.Provision;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Devices.ValidateProperties;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.ODataErrors;
 using Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models;
@@ -43,6 +44,11 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Devices
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Devices.GetByIds.GetByIdsRequestBuilder GetByIds
         {
             get => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Devices.GetByIds.GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The provision property</summary>
+        public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Devices.Provision.ProvisionRequestBuilder Provision
+        {
+            get => new global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Devices.Provision.ProvisionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The validateProperties property</summary>
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Devices.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties

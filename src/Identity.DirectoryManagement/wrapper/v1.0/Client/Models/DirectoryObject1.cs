@@ -101,7 +101,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public List<global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.CompanySubscription> Subscriptions { get; set; }
 #endif
-        /// <summary>The tenantGovernance property</summary>
+        /// <summary>Container for Microsoft Entra Tenant Governance capabilities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernance? TenantGovernance { get; set; }

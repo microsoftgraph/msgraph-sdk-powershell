@@ -12,9 +12,9 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
     public partial class GovernanceRequest : global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The expirationDateTime property</summary>
+        /// <summary>The date and time when the request expires if not accepted or rejected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
         public DateTimeOffset? ExpirationDateTime { get; set; }
-        /// <summary>The governancePolicyTemplate property</summary>
+        /// <summary>The governance policy template associated with this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernancePolicyTemplate? GovernancePolicyTemplate { get; set; }
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.TenantGovernancePolicyTemplate GovernancePolicyTemplate { get; set; }
 #endif
-        /// <summary>The governedTenantId property</summary>
+        /// <summary>The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GovernedTenantId { get; set; }
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string GovernedTenantId { get; set; }
 #endif
-        /// <summary>The governedTenantName property</summary>
+        /// <summary>The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GovernedTenantName { get; set; }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string GovernedTenantName { get; set; }
 #endif
-        /// <summary>The governingTenantId property</summary>
+        /// <summary>The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GoverningTenantId { get; set; }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public string GoverningTenantId { get; set; }
 #endif
-        /// <summary>The governingTenantName property</summary>
+        /// <summary>The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GoverningTenantName { get; set; }
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models
 #else
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RelationshipPolicy PolicySnapshot { get; set; }
 #endif
-        /// <summary>The requestDateTime property</summary>
+        /// <summary>The date and time when the request was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
         public DateTimeOffset? RequestDateTime { get; set; }
         /// <summary>The status property</summary>
         public global::Microsoft.Graph.PowerShell.Identity.DirectoryManagement.Client.Models.RequestStatus? Status { get; set; }
