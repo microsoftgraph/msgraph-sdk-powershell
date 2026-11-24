@@ -87,7 +87,7 @@ namespace Microsoft.Graph.PowerShell.Files
         body.WorkingHours = WorkingHours;
 
 
-        var requestAdapter = GetRequestAdapter();
+        var requestAdapter = GetRequestAdapter("v1.0");
         var client = new ApiClient(requestAdapter);
 
             Microsoft.Graph.PowerShell.Files.Client.Models.MailboxSettings? result;
@@ -105,20 +105,6 @@ namespace Microsoft.Graph.PowerShell.Files
                 return;
             }
 
-
-            if (result is null)
-            {
-                WriteVerbose("PATCH succeeded with no response body, re-fetching the updated resource.");
-                try
-                {
-                    result = client.Shares[SharedDriveItemId].List.CreatedByUser.MailboxSettings.GetAsync().GetAwaiter().GetResult();
-                }
-                catch (Exception ex) when (ex is not PipelineStoppedException && ex is not OperationCanceledException)
-                {
-                    ThrowGraphRequestFailed(ex, SharedDriveItemId);
-                    return;
-                }
-            }
             if (result is not null)
                 WriteObject(result);
         }
