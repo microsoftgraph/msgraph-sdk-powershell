@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Beta.WindowsUpdates
 
-Get-MgBetaWindowsUpdatesPolicy -Filter "isof('microsoft.graph.windowsUpdates.qualityUpdatePolicy')" 
+Get-MgBetaWindowsUpdatesPolicy -PolicyId $policyId
 
 ```
 This example shows how to use the Get-MgBetaWindowsUpdatesPolicy Cmdlet.
