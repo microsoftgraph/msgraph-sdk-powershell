@@ -24,6 +24,21 @@ The Microsoft Graph PowerShell SDK is made up of a set of modules that enable yo
   <a href="#license">License</a>
 </p>
 
+## Upcoming browser-based interactive sign-in security change
+
+> [!IMPORTANT]
+> Starting February 23, 2027 at 11:00 a.m. Pacific Standard Time (7:00 p.m. Coordinated Universal Time), Microsoft plans to require a more secure browser response for interactive sign-in through the default Microsoft Graph PowerShell application.
+
+You must upgrade to Microsoft Graph PowerShell version 2.37.0 or later before enforcement if all the following conditions apply:
+
+- You use Microsoft Graph PowerShell version 2.36.0 or earlier.
+- You use browser-based interactive sign-in.
+- You use the default Microsoft Graph PowerShell application.
+
+Otherwise, sign-in or reauthentication will fail and Microsoft Graph PowerShell won't obtain an access token. Windows brokered sign-in, device code authentication, application-only authentication, customer-owned application registrations, and access tokens supplied by the caller aren't directly affected.
+
+For update instructions, see [Updating the SDK](https://learn.microsoft.com/powershell/microsoftgraph/installation#updating-the-sdk).
+
 ## Modules
 
 This repository publishes complete bundle modules, the authentication module, and scenario-specific modules for the Microsoft Graph v1.0 and beta endpoints. For faster installation and import, prefer the scenario-specific modules you need instead of the complete `Microsoft.Graph` and `Microsoft.Graph.Beta` bundle modules. The bundle modules install all their respective scenario-specific modules as dependencies.
