@@ -127,13 +127,16 @@ This repository publishes complete bundle modules, the authentication module, an
 
 ### 1. Installation
 
-Microsoft Graph PowerShell module is published on [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph). Installing is as simple as:
+PowerShell 7 or later is recommended on all platforms. Install the modules you need from [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph). For the examples below:
 
 ```powershell
-Install-Module Microsoft.Graph
+Install-Module Microsoft.Graph.Users -Scope CurrentUser
+Install-Module Microsoft.Graph.Applications -Scope CurrentUser
 ```
 
-> Run `Install-Module` with `-AllowClobber` and `-Force` parameters if you run into command name conflicts when upgrading to older versions of the module. This may be the case when upgrading from v1.x to v2.x:
+These modules automatically install `Microsoft.Graph.Authentication`, which provides `Connect-MgGraph`. To install all v1.0 modules instead, use `Install-Module Microsoft.Graph -Scope CurrentUser`.
+
+> If you encounter command name conflicts when upgrading from v1.x to v2.x, use `-AllowClobber` and `-Force`:
 >
 > ```powershell
 > Install-Module Microsoft.Graph -AllowClobber -Force
@@ -147,23 +150,27 @@ The module supports two main types of authentication:
 
 #### Delegated access
 
-Get access to Microsoft Graph resources on behalf of a user.
+Get access to Microsoft Graph resources on behalf of a user. Request only the delegated permissions needed for your operations; some permissions require administrator consent.
 
 ```powershell
 # Using interactive authentication.
 Connect-MgGraph -Scopes "User.ReadBasic.All", "Application.ReadWrite.All"
 ```
 
+On Windows, interactive sign-in uses Web Account Manager (WAM) by default. `-LoginHint "user@contoso.com"` can pre-populate the account for interactive sign-in; it does not guarantee a prompt-free sign-in. For device code authentication, use `-UseDeviceCode`.
+
+Delegated sign-in uses the `CurrentUser` token cache by default, so it can persist across PowerShell sessions. Use `-ContextScope Process` to keep tokens in the current process instead; this does not select a different account. Inspect the connected account, tenant, and permissions with `Get-MgContext`.
+
 #### App-only access (client credentials grant flow)
 
-Get access to Microsoft Graph resources using the identity on an app and not on behalf of a user.
+Get access to Microsoft Graph resources using an application's identity, not on behalf of a user. Configure the required application permissions and grant administrator consent before connecting.
 
 ```powershell
 # Using -CertificateThumbprint
 Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateThumbprint "YOUR_CERT_THUMBPRINT"
 ```
 
-See [Authentication](./docs/authentication.md) for more information on the usage of `Connect-MgGraph`.
+See [Authentication](./docs/authentication.md) for client secret, managed identity, custom application, sovereign cloud, and WAM configuration examples.
 
 ### 3. List users in your tenant
 
@@ -185,20 +192,22 @@ New-MgApplication -DisplayName "ScriptedGraphPSApp" `
                   -Web @{ RedirectUris = "https://localhost"}
 ```
 
-### 6. Sign out of the current logged-in context i.e. app only or delegated access
+### 6. Sign out of the current authentication context
 
 ```powershell
 Disconnect-MgGraph
 ```
 
+This clears the SDK's in-memory authentication state and, for `CurrentUser`, clears persisted tokens for the session's account when it can be identified. It does not clear the Windows WAM broker cache by default. See [Sign out and token caching](./docs/authentication.md#sign-out-and-token-caching) before using `-SignOutFromBroker`.
+
 ## API Version
 
-Install `Microsoft.Graph.Beta` module to commands that call Microsoft Graph Beta API endpoint.
+Use v1.0 APIs for production scripts. Beta APIs are preview features and can introduce breaking changes. Install the beta scenario-specific modules you need (or `Microsoft.Graph.Beta` for all beta modules); v1.0 and beta modules can coexist and share authentication.
 
 ```powershell
-Install-Module Microsoft.Graph.Beta
+Install-Module Microsoft.Graph.Beta.Users -Scope CurrentUser
 # Consume Microsoft Graph beta resources.
-Connect-MgGraph
+Connect-MgGraph -Scopes "User.ReadBasic.All"
 $Users = Get-MgBetaUser
 ```
 
@@ -228,7 +237,7 @@ See the [v2 upgrade guide](./docs/upgrade-to-v2.md) for more details.
 
 When working with various operations in the Graph, you may encounter an error such as "Insufficient privileges to complete the operation." For example, this particular error can occur when using the `New-MgApplication` command if the appropriate permissions are not granted.
 
-If permission-related errors occur and the signed-in user/app has been granted the appropriate permissions to perform the operation, you can explicitly fetch a new access token by running `Disconnect-MgGraph`, then `Connect-MgGraph`. This will trigger a refresh of the access token in your cache. Microsoft Authentication Library (MSAL) will only refresh access tokens in your cache if they have expired (usually an hour).
+Check the tenant, authentication type, and granted permissions with `Get-MgContext`. Delegated access also depends on the signed-in user's privileges; app-only access requires application permissions with administrator consent. After permissions or consent change, allow time for propagation, then run `Disconnect-MgGraph` and reconnect with the required scopes or app credentials. Caller-provided access tokens must be replaced by the caller.
 
 See [Microsoft Graph API Permissions Reference](https://learn.microsoft.com/graph/permissions-reference) for more details.
 
@@ -240,10 +249,7 @@ See our [troubleshooting guide](https://learn.microsoft.com/powershell/microsoft
 
 - Using the `-Property {PropertyName}` parameter will not select the property as the output of the command. All commands return CLR objects, and customers should pipe the command outputs to `Format-Table` or `Select-Object` to return individual properties.
 
-- Customers upgrading from previous versions of the SDK may encounter auth prompts on every command call. If this happens, one can use the following steps to reset their token cache:
-  - Use `Disconnect-MgGraph` to sign out of the current session.
-  - Run `Remove-Item "$env:USERPROFILE\.mg" -Recurse -Force` to delete your token cache.
-  - Run `Connect-MgGraph` to reconstruct a clean token cache.
+- Customers upgrading from previous versions of the SDK may encounter authentication prompts on every command call. Start by running `Disconnect-MgGraph`, then reconnect with `Connect-MgGraph`. Do not delete the entire `.mg` directory: it also contains SDK options and environment settings. For Windows broker sign-in issues, see [WAM guidance](./docs/authentication.md#web-account-manager-wam), including the custom `-ClientId` requirement when disabling WAM.
 
 ## Feedback
 

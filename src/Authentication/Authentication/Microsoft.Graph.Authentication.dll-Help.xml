@@ -215,7 +215,8 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>You must invoke Connect-MgGraph before any commands that access Microsoft Graph. This cmdlet gets the access token using the Microsoft Authentication Library</maml:para>
+      <maml:para>Invoke Connect-MgGraph before commands that access Microsoft Graph. This cmdlet obtains access tokens through Azure.Identity and the Microsoft Authentication Library (MSAL), or uses a caller-provided access token. Use Get-MgContext to inspect the connected account, tenant, authentication type, and permissions.</maml:para>
+      <maml:para>On Windows, interactive authentication uses Web Account Manager (WAM) by default. To use browser sign-in instead, run Set-MgGraphOption -DisableLoginByWAM $true before connecting with a custom -ClientId. WAM cannot be disabled for the default Microsoft Graph PowerShell client ID.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -297,7 +298,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="CertificateSubject, CertificateName">
           <maml:name>CertificateSubjectName</maml:name>
           <maml:description>
-            <maml:para>The subject distinguished name of a certificate. The Certificate will be retrieved from the current user's certificate store.</maml:para>
+            <maml:para>The subject distinguished name of a certificate. The certificate is searched for in the current user's certificate store, then the local machine's certificate store.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -309,7 +310,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
           <maml:name>CertificateThumbprint</maml:name>
           <maml:description>
-            <maml:para>The thumbprint of your certificate. The Certificate will be retrieved from the current user's certificate store.</maml:para>
+            <maml:para>The thumbprint of your certificate. The certificate is searched for in the current user's certificate store, then the local machine's certificate store.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -345,7 +346,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ContextScope</maml:name>
           <maml:description>
-            <maml:para>Determines the scope of authentication context. This accepts `Process` for the current process, or `CurrentUser` for all sessions started by user.</maml:para>
+            <maml:para>Determines the scope of authentication context. `Process` keeps tokens in memory for the current PowerShell process; `CurrentUser` persists tokens for reuse across sessions. Delegated authentication defaults to `CurrentUser`, except on WSL where it uses `Process`. Certificate, client secret, managed identity, and environment-variable authentication default to `Process`. This controls token persistence, not account selection.</maml:para>
           </maml:description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
@@ -459,7 +460,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ContextScope</maml:name>
           <maml:description>
-            <maml:para>Determines the scope of authentication context. This accepts `Process` for the current process, or `CurrentUser` for all sessions started by user.</maml:para>
+            <maml:para>Determines the scope of authentication context. `Process` keeps tokens in memory for the current PowerShell process; `CurrentUser` persists tokens for reuse across sessions. Delegated authentication defaults to `CurrentUser`, except on WSL where it uses `Process`. Certificate, client secret, managed identity, and environment-variable authentication default to `Process`. This controls token persistence, not account selection.</maml:para>
           </maml:description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
@@ -487,7 +488,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>LoginHint</maml:name>
           <maml:description>
-            <maml:para>The login hint (typically a username or email) used to pre-populate the account field during interactive browser authentication.</maml:para>
+            <maml:para>The login hint (typically a username or email) used to pre-populate the account field during interactive browser or WAM authentication. A matching cached authentication record can be reused, but sign-in prompts may still be required. This parameter is not used with -UseDeviceCode.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -583,7 +584,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ContextScope</maml:name>
           <maml:description>
-            <maml:para>Determines the scope of authentication context. This accepts `Process` for the current process, or `CurrentUser` for all sessions started by user.</maml:para>
+            <maml:para>Determines the scope of authentication context. `Process` keeps tokens in memory for the current PowerShell process; `CurrentUser` persists tokens for reuse across sessions. Delegated authentication defaults to `CurrentUser`, except on WSL where it uses `Process`. Certificate, client secret, managed identity, and environment-variable authentication default to `Process`. This controls token persistence, not account selection.</maml:para>
           </maml:description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
@@ -661,7 +662,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ContextScope</maml:name>
           <maml:description>
-            <maml:para>Determines the scope of authentication context. This accepts `Process` for the current process, or `CurrentUser` for all sessions started by user.</maml:para>
+            <maml:para>Determines the scope of authentication context. `Process` keeps tokens in memory for the current PowerShell process; `CurrentUser` persists tokens for reuse across sessions. Delegated authentication defaults to `CurrentUser`, except on WSL where it uses `Process`. Certificate, client secret, managed identity, and environment-variable authentication default to `Process`. This controls token persistence, not account selection.</maml:para>
           </maml:description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
@@ -739,7 +740,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ContextScope</maml:name>
           <maml:description>
-            <maml:para>Determines the scope of authentication context. This accepts `Process` for the current process, or `CurrentUser` for all sessions started by user.</maml:para>
+            <maml:para>Determines the scope of authentication context. `Process` keeps tokens in memory for the current PowerShell process; `CurrentUser` persists tokens for reuse across sessions. Delegated authentication defaults to `CurrentUser`, except on WSL where it uses `Process`. Certificate, client secret, managed identity, and environment-variable authentication default to `Process`. This controls token persistence, not account selection.</maml:para>
           </maml:description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
@@ -828,7 +829,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="CertificateSubject, CertificateName">
         <maml:name>CertificateSubjectName</maml:name>
         <maml:description>
-          <maml:para>The subject distinguished name of a certificate. The Certificate will be retrieved from the current user's certificate store.</maml:para>
+          <maml:para>The subject distinguished name of a certificate. The certificate is searched for in the current user's certificate store, then the local machine's certificate store.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -840,7 +841,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
         <maml:name>CertificateThumbprint</maml:name>
         <maml:description>
-          <maml:para>The thumbprint of your certificate. The Certificate will be retrieved from the current user's certificate store.</maml:para>
+          <maml:para>The thumbprint of your certificate. The certificate is searched for in the current user's certificate store, then the local machine's certificate store.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -888,7 +889,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ContextScope</maml:name>
         <maml:description>
-          <maml:para>Determines the scope of authentication context. This accepts `Process` for the current process, or `CurrentUser` for all sessions started by user.</maml:para>
+          <maml:para>Determines the scope of authentication context. `Process` keeps tokens in memory for the current PowerShell process; `CurrentUser` persists tokens for reuse across sessions. Delegated authentication defaults to `CurrentUser`, except on WSL where it uses `Process`. Certificate, client secret, managed identity, and environment-variable authentication default to `Process`. This controls token persistence, not account selection.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">ContextScope</command:parameterValue>
         <dev:type>
@@ -936,7 +937,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>LoginHint</maml:name>
         <maml:description>
-          <maml:para>The login hint (typically a username or email) used to pre-populate the account field during interactive browser authentication.</maml:para>
+          <maml:para>The login hint (typically a username or email) used to pre-populate the account field during interactive browser or WAM authentication. A matching cached authentication record can be reused, but sign-in prompts may still be required. This parameter is not used with -UseDeviceCode.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -1059,15 +1060,16 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>--- Example 3: Delegated access: Using your own access token ---</maml:title>
-        <dev:code>PS C:\&gt; Connect-MgGraph -AccessToken $AccessToken</dev:code>
+        <maml:title>Example 3: Using your own access token</maml:title>
+        <dev:code>PS C:\&gt; $SecureAccessToken = ConvertTo-SecureString -String $AccessToken -AsPlainText -Force
+PS C:\&gt; Connect-MgGraph -AccessToken $SecureAccessToken</dev:code>
         <dev:remarks>
-          <maml:para>This example shows how to authenticate to graph using an access token.</maml:para>
+          <maml:para>This example converts a plain-text Microsoft Graph token in $AccessToken to the SecureString required by Connect-MgGraph. The token can represent delegated or app-only access. You are responsible for acquiring a replacement when it expires.</maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>Example 4: Delegated access: custom application for Microsoft Graph PowerShell</maml:title>
-        <dev:code>PS C:\&gt; Connect-MgGraph -ClientId &lt;YOUR_NEW_APP_ID&gt; -TenantId &lt;YOUR_TENANT_ID&gt;</dev:code>
+        <dev:code>PS C:\&gt; Connect-MgGraph -ClientId "YOUR_NEW_APP_ID" -TenantId "YOUR_TENANT_ID"</dev:code>
         <dev:remarks>
           <maml:para>Follow this link (https://learn.microsoft.com/en-us/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0#using-connect-mggraph)for more information on the steps for creating custom applications.</maml:para>
         </dev:remarks>
@@ -1150,17 +1152,17 @@ PS C:\&gt; Connect-MgGraph -ClientId "YOUR_APP_CLIENT_ID" -TenantId "YOUR_TENANT
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Example 14: Connecting to an environment as a different identity</maml:title>
+        <maml:title>Example 14: Limiting token caching to the current process</maml:title>
         <dev:code>PS C:\&gt; Connect-MgGraph -ContextScope Process</dev:code>
         <dev:remarks>
-          <maml:para>To connect as a different identity other than CurrentUser, specify the -ContextScope parameter with the value Process.</maml:para>
+          <maml:para>Use -ContextScope Process to keep tokens in memory for the current PowerShell process instead of persisting them across sessions. This controls token persistence, not account selection; it does not force a different identity or disable Windows single sign-on.</maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>Example 15: Delegated access: Pre-populating the account during interactive sign-in</maml:title>
         <dev:code>PS C:\&gt; Connect-MgGraph -Scopes "User.Read.All" -LoginHint "user@contoso.com"</dev:code>
         <dev:remarks>
-          <maml:para>Use the -LoginHint parameter to pre-populate the account (login_hint) shown in the interactive browser sign-in prompt. On Windows, WAM may still display the account picker on the first sign-in for an account; later sign-ins with the same -LoginHint are silent.</maml:para>
+          <maml:para>Use -LoginHint to pre-populate the account during interactive browser or WAM sign-in. A matching cached authentication record can be reused for that account, but an account picker, consent, or other authentication prompt may still be required. This parameter does not guarantee silent sign-in and is not used with -UseDeviceCode.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -2629,7 +2631,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>DisableLoginByWAM</maml:name>
           <maml:description>
-            <maml:para>{{ Fill DisableLoginByWAM Description }}</maml:para>
+            <maml:para>Set to $true to use interactive browser sign-in instead of Web Account Manager (WAM) on Windows when connecting with a custom -ClientId. Set to $false to re-enable WAM for subsequent interactive connections. WAM remains enabled for the default Microsoft Graph PowerShell client ID regardless of this setting. The option persists across PowerShell sessions and does not affect non-Windows platforms or device code authentication.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
           <dev:type>
@@ -2656,7 +2658,7 @@ Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-de
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>DisableLoginByWAM</maml:name>
         <maml:description>
-          <maml:para>{{ Fill DisableLoginByWAM Description }}</maml:para>
+          <maml:para>Set to $true to use interactive browser sign-in instead of Web Account Manager (WAM) on Windows when connecting with a custom -ClientId. Set to $false to re-enable WAM for subsequent interactive connections. WAM remains enabled for the default Microsoft Graph PowerShell client ID regardless of this setting. The option persists across PowerShell sessions and does not affect non-Windows platforms or device code authentication.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">Boolean</command:parameterValue>
         <dev:type>
@@ -2723,7 +2725,7 @@ PS C:\&gt; Connect-MgGraph -ClientId "YOUR_APP_CLIENT_ID" -TenantId "YOUR_TENANT
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/set-mgenvironment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/set-mggraphoption</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>

@@ -10,15 +10,16 @@ PS C:\> Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All" -UseDevic
 ```
 This example shows how to authenticate to graph with scopes and device.
 
-### Example 3: Delegated access: Using your own access token
+### Example 3: Using your own access token
 ```powershell
-PS C:\> Connect-MgGraph -AccessToken $AccessToken
+PS C:\> $SecureAccessToken = ConvertTo-SecureString -String $AccessToken -AsPlainText -Force
+PS C:\> Connect-MgGraph -AccessToken $SecureAccessToken
 ```
-This example shows how to authenticate to graph using an access token.
+This example converts a plain-text Microsoft Graph token in $AccessToken to the SecureString required by Connect-MgGraph. The token can represent delegated or app-only access. You are responsible for acquiring a replacement when it expires.
 
 ### Example 4: Delegated access: custom application for Microsoft Graph PowerShell
 ```powershell
-PS C:\> Connect-MgGraph -ClientId <YOUR_NEW_APP_ID> -TenantId <YOUR_TENANT_ID>
+PS C:\> Connect-MgGraph -ClientId "YOUR_NEW_APP_ID" -TenantId "YOUR_TENANT_ID"
 ```
 Follow this [link](https://learn.microsoft.com/en-us/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0#using-connect-mggraph) for more information on the steps for creating custom applications.
 
@@ -91,15 +92,14 @@ PS C:\> Connect-MgGraph -ClientId "YOUR_APP_CLIENT_ID" -TenantId "YOUR_TENANT_ID
 ```
 If the authentication popup hangs or times out when connecting to a sovereign cloud (for example, from a jumpbox), WAM broker-based login may not work in that environment. Disable WAM to use interactive browser sign-in instead. You only need to run `Set-MgGraphOption -DisableLoginByWAM $true` once; the setting persists across sessions.
 
-### Example 14: Connecting to an environment as a different identity
+### Example 14: Limiting token caching to the current process
 ```powershell
 PS C:\> Connect-MgGraph -ContextScope Process
 ```
-To connect as a different identity other than CurrentUser, specify the -ContextScope parameter with the value Process.
+Use -ContextScope Process to keep tokens in memory for the current PowerShell process instead of persisting them across sessions. This controls token persistence, not account selection; it does not force a different identity or disable Windows single sign-on.
 
 ### Example 15: Delegated access: Pre-populating the account during interactive sign-in
 ```powershell
 PS C:\> Connect-MgGraph -Scopes "User.Read.All" -LoginHint "user@contoso.com"
 ```
-Use the -LoginHint parameter to pre-populate the account (login_hint) shown in the interactive browser sign-in prompt.
-On Windows, WAM may still display the account picker on the first sign-in for an account; later sign-ins with the same -LoginHint are silent.
+Use -LoginHint to pre-populate the account during interactive browser or WAM sign-in. A matching cached authentication record can be reused for that account, but an account picker, consent, or other authentication prompt may still be required. This parameter does not guarantee silent sign-in and is not used with -UseDeviceCode.

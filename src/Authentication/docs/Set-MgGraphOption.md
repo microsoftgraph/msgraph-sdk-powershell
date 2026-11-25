@@ -1,7 +1,7 @@
 ﻿---
 external help file: Microsoft.Graph.Authentication.dll-Help.xml
 Module Name: Microsoft.Graph.Authentication
-online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/set-mgenvironment
+online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/set-mggraphoption
 schema: 2.0.0
 ---
 
@@ -39,7 +39,7 @@ If WAM broker-based authentication hangs or times out when connecting to a sover
 ## PARAMETERS
 
 ### -DisableLoginByWAM
-{{ Fill DisableLoginByWAM Description }}
+Set to $true to use interactive browser sign-in instead of Web Account Manager (WAM) on Windows when connecting with a custom -ClientId. Set to $false to re-enable WAM for subsequent interactive connections. WAM remains enabled for the default Microsoft Graph PowerShell client ID regardless of this setting. The option persists across PowerShell sessions and does not affect non-Windows platforms or device code authentication.
 
 ```yaml
 Type: Boolean
