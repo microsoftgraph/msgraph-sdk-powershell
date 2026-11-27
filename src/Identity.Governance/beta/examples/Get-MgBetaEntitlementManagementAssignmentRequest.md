@@ -1,4 +1,4 @@
-### Example scenarios for using query parameters
+### Example 1: Code snippet
 
 ```powershell
 
